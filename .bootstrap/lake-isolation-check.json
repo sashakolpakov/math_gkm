@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/opt/homebrew/bin/codex",
+    "sandbox",
+    "-P",
+    "cleanroom",
+    "-C",
+    "/Users/sasha/math_gkm",
+    "-c",
+    "default_permissions=\"cleanroom\"",
+    "-c",
+    "permissions.cleanroom={\"extends\"=\":workspace\",\"filesystem\"={\":root\"=\"deny\",\":minimal\"=\"read\",\":tmpdir\"=\"deny\",\":slash_tmp\"=\"deny\",\"/opt/homebrew/Cellar\"=\"read\",\"/opt/homebrew/bin\"=\"read\",\"/opt/homebrew/opt\"=\"read\",\"/opt/homebrew/lib\"=\"read\",\"/opt/homebrew/share\"=\"read\",\"/Users/sasha/.elan\"=\"read\",\"/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Cli\"=\"read\",\"/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient\"=\"read\",\"/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq\"=\"read\",\"/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop\"=\"read\",\"/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries\"=\"read\",\"/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph\"=\"read\",\"/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib\"=\"read\",\"/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible\"=\"read\",\"/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets\"=\"read\",\":workspace_roots\"={\".git\"=\"deny\",\".bootstrap\"=\"read\",\"MISSION.md\"=\"read\",\"docs/DESIGN.md\"=\"read\",\"lean-toolchain\"=\"read\",\"lake-manifest.json\"=\"read\"}},\"network\"={\"enabled\"=false}}",
+    "--",
+    "/opt/homebrew/bin/python3",
+    "-I",
+    "-S",
+    "-c",
+    "import os,subprocess,json\nr=subprocess.run(['/Users/sasha/.elan/bin/lake','env','lean','--version'],env={**os.environ,'GIT_CONFIG_NOSYSTEM':'1','GIT_CONFIG_GLOBAL':'/dev/null'},capture_output=True,text=True,timeout=45)\nprint(json.dumps({'exit':r.returncode,'stdout':r.stdout,'stderr':r.stderr}))\n"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"exit\": 0, \"stdout\": \"Lean (version 4.32.2, arm64-apple-darwin24.6.0, commit f3b06c705e6c85f5314019d5d3baab0fec5b580c, Release)\\n\", \"stderr\": \"\"}\n",
+  "stderr": ""
+}
