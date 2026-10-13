@@ -1,0 +1,18 @@
+{
+  "lean_path": "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean:/Users/sasha/math_gkm/.scratch/markov:/Users/sasha/math_gkm/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "records": [
+    {
+      "module": "MathGKM.MarkovLogConcavity",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/markov/MathGKM/MarkovLogConcavity.olean",
+        "MathGKM/MarkovLogConcavity.lean"
+      ],
+      "returncode": 1,
+      "stdout": "MathGKM/MarkovLogConcavity.lean:94:30: warning: This simp argument is unused:\n  he\n\nHint: Omit it from the simp argument list.\n  simp [CoeffSeq, Smooth, h\u0335e\u0335,\u0335 \u0335add_mul, show \u00ac\u0335 \u0335(\u0335\u2191\u0335n\u0335\u00ac\u0332(\u0332\u2191\u0332n\u0332 + 1 : \u2124) < 0 by omega, show \u00ac\u0335 \u0335(\u0335\u2191\u0335n\u0335\u00ac\u0332(\u0332\u2191\u0332n\u0332 : \u2124) < 0 by omega]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nMathGKM/MarkovLogConcavity.lean:112:4: error: unsolved goals\ncase pos\nA B D : \u211d\nhk : \u00ac\u21912 < 0\nh0 : \u00ac2 = 0\nh1 : \u00ac2 = 1\n\u22a2 ((C A).coeff (Int.toNat 2) + B * X.coeff (Int.toNat 2) + if Int.toNat 2 = 2 then D else 0) = D\nMathGKM/MarkovLogConcavity.lean:106:2: error: unsolved goals\ncase neg\nA B D : \u211d\nk : \u2115\nhk : \u00ac\u2191k < 0\nh0 : \u00ack = 0\nh1 : \u00ack = 1\nh2 : \u00ack = 2\n\u22a2 1 = k \u2192 B = 0\n",
+      "stderr": "",
+      "seconds": 19.209667375005665
+    }
+  ]
+}

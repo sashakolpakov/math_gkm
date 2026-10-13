@@ -2,16 +2,23 @@
   "origin": "actual_live_Codex_gpt-6-astra_proposer",
   "date": "2026-10-13",
   "phase": "markov",
-  "status": "selected_next_request_not_executed",
+  "status": "executed_in_live_markov_campaign",
   "predecessor": {
     "phase": "agoh",
     "result": "Uniform n-fold cleared and reduced numerator theorems proved; Theorems 1.1 and 3.1 obtained; final conjecture refuted on its regular domain under both quantifier readings.",
-    "proofs": ["MathGKM/AgohMain.lean", "MathGKM/AgohConsequences.lean"],
+    "proofs": [
+      "MathGKM/AgohMain.lean",
+      "MathGKM/AgohConsequences.lean"
+    ],
     "audit": "docs/round2/AGOH.md"
   },
   "source": {
     "title": "Arithmetic and Geometry of Markov polynomials",
-    "authors": ["S. J. Evans", "A. P. Veselov", "B. Winn"],
+    "authors": [
+      "S. J. Evans",
+      "A. P. Veselov",
+      "B. Winn"
+    ],
     "primary": "https://arxiv.org/abs/2501.14882",
     "publisher": "https://armj.math.stonybrook.edu/Articles/250708-Winn/index.html",
     "target": "Conjecture 6.3, coefficient log-concavity"
@@ -28,5 +35,7 @@
     "No change to foundations, dependency pins, transport or permissions",
     "No numerical scan presented as a universal proof",
     "No invented claim that the Markov conjecture has been settled"
-  ]
+  ],
+  "execution_record": "docs/round2/MARKOV.md",
+  "engine_run": "evidence/markov/research-run"
 }

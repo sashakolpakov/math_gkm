@@ -1,0 +1,1527 @@
+'MathGKM.Markov.indices_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.indices_advance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.indices_fold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.indices_frame' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.coprime_of_det' depends on axioms: [propext, Quot.sound]
+'MathGKM.Markov.frame_reduced' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.crossLC_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.crossLC_forward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.crossLC_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.crossLC_pascal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.crossLC_adjacent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.quad_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.crossLC_quad' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.quadratic_pascal_logConcave' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.coeffSeq_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.coeffSeq_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.coeffSeq_binomial_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.quadratic_binomial_logConcave' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.third_gap_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.third_parameters' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.third_diagonal_expression_logConcave' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.sourceThird_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.third_diagonal_of_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.edgeEval_U' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.edgeEval_V' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.edgeEval_S' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.edge_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.edge_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.edge_advance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.edge_fold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.boundary_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.coeffSeq_X_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.crossLC_X_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.crossLC_binomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.crossLC_X_pow_binomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.boundary_logConcave' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.edgeEval_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.boundary_raw_logConcave' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.one_third_numerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.one_third_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.normalization_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.one_third_raw_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.subtraction_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.nonreal_seed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.nonreal_seed_no_real_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.endpoint_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.endpoint_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MathGKM.Markov.initial_weakLC' depends on axioms: [propext, Classical.choice, Quot.sound]
+def MathGKM.Markov.Conjecture63 : Prop :=
+MathGKM.Markov.WeakLC 0 1 1 ∧
+  MathGKM.Markov.WeakLC 1 1 (MathGKM.Markov.U + MathGKM.Markov.V) ∧
+    ∀ (path : List Bool),
+      have m := (MathGKM.Markov.frame path).mid;
+      MathGKM.Markov.WeakLC m.a m.b m.p
+theorem MathGKM.Markov.boundary_raw_logConcave : ∀ (path : List Bool) (i : ℕ),
+  MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p i 0 *
+      MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p (i + 2) 0 ≤
+    MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p (i + 1) 0 ^ 2 :=
+fun path i =>
+  have h := MathGKM.Markov.boundary_logConcave path (↑i + 1);
+  have hn := fun a => MathGKM.Markov.boundary_raw_logConcave._proof_1_1 i a;
+  have hn1 := fun a => MathGKM.Markov.boundary_raw_logConcave._proof_1_2 i hn a;
+  have hn2 := fun a => MathGKM.Markov.boundary_raw_logConcave._proof_1_3 i hn a;
+  cast
+    (Eq.trans
+      (congr
+        (congrArg LE.le
+          (congrArg (HMul.hMul ↑(MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p i 0))
+            (congrArg Int.cast
+              (congrFun'
+                (congrArg (MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p)
+                  (congrArg Int.toNat
+                    (congr (congrArg HAdd.hAdd (congrArg (HAdd.hAdd ↑i) (Eq.symm Nat.cast_one)))
+                      (Eq.symm Nat.cast_one))))
+                0))))
+        (congrFun'
+          (congrArg HPow.hPow
+            (congrArg Int.cast
+              (congrFun'
+                (congrArg (MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p)
+                  (congrArg Int.toNat (congrArg (HAdd.hAdd ↑i) (Eq.symm Nat.cast_one))))
+                0)))
+          2))
+      (Eq.trans
+        (congr
+          (congrArg LE.le
+            (Eq.trans
+              (congrArg (HMul.hMul ↑(MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p i 0))
+                (congrArg Int.cast
+                  (congrFun'
+                    (congrArg (MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p)
+                      (congrArg Int.toNat
+                        (Eq.trans (congrFun' (congrArg HAdd.hAdd (Nat.cast_add._simp_1 i 1)) ↑1)
+                          (Nat.cast_add._simp_1 (i + 1) 1))))
+                    0)))
+              (Int.cast_mul._simp_1 (MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p i 0)
+                (MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p (i + 1 + 1) 0))))
+          (Eq.trans
+            (congrFun'
+              (congrArg HPow.hPow
+                (congrArg Int.cast
+                  (congrFun'
+                    (congrArg (MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p)
+                      (congrArg Int.toNat (Nat.cast_add._simp_1 i 1)))
+                    0)))
+              2)
+            (Int.cast_pow._simp_1 (MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p (i + 1) 0) 2)))
+        Int.cast_le._simp_1))
+    (Eq.mp
+      (congr
+        (congrArg LE.le
+          (congr
+            (congrArg HMul.hMul
+              (Eq.trans
+                (ite_congr (Eq.trans (congrFun' (congrArg LT.lt (add_sub_cancel_right (↑i) 1)) 0) (eq_false hn))
+                  (fun a => Eq.refl 0) fun a =>
+                  Eq.trans
+                    (congrArg (MathGKM.Markov.edgeEval (MathGKM.Markov.frame path).mid.p).coeff
+                      (congrArg Int.toNat (add_sub_cancel_right (↑i) 1)))
+                    (MathGKM.Markov.edgeEval_coeff (MathGKM.Markov.frame path).mid.p i))
+                (if_false 0 ↑(MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p i 0))))
+            (Eq.trans
+              (ite_congr (eq_false hn2) (fun a => Eq.refl 0) fun a =>
+                MathGKM.Markov.edgeEval_coeff (MathGKM.Markov.frame path).mid.p (↑i + 1 + 1).toNat)
+              (if_false 0 ↑(MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p (↑i + 1 + 1).toNat 0)))))
+        (congrFun'
+          (congrArg HPow.hPow
+            (Eq.trans
+              (ite_congr (eq_false hn1) (fun a => Eq.refl 0) fun a =>
+                MathGKM.Markov.edgeEval_coeff (MathGKM.Markov.frame path).mid.p (↑i + 1).toNat)
+              (if_false 0 ↑(MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p (↑i + 1).toNat 0))))
+          2))
+      h)
+theorem MathGKM.Markov.third_diagonal_expression_logConcave : ∀ (a b : ℕ),
+  3 ≤ a →
+    a < b →
+      ∀ (k : ℤ),
+        have f :=
+          MathGKM.Markov.CoeffSeq
+            ((1 + Polynomial.X) ^ (a + b - 5) *
+              MathGKM.Markov.Quadratic (MathGKM.Markov.ThirdA ↑a) (MathGKM.Markov.ThirdB ↑a ↑b)
+                (MathGKM.Markov.ThirdC ↑b));
+        f (k - 1) * f (k + 1) ≤ f k ^ 2 :=
+fun a b ha hab k =>
+  have h :=
+    MathGKM.Markov.third_parameters (cast (Eq.symm Nat.cast_le._simp_1) ha)
+      (cast
+        (Eq.symm
+          (Eq.trans (congrFun' (congrArg LE.le (congrArg (HAdd.hAdd ↑a) (Eq.symm Nat.cast_one))) ↑b)
+            (Eq.trans (congrFun' (congrArg LE.le (Nat.cast_add._simp_1 a 1)) ↑b) Nat.cast_le._simp_1)))
+        hab);
+  MathGKM.Markov.quadratic_binomial_logConcave h.left h.right.left h.right.right.left h.right.right.right (a + b - 5) k
+theorem MathGKM.Markov.third_diagonal_of_formula : ∀ (l : MathGKM.Markov.Label),
+  3 ≤ l.a →
+    l.a < l.b →
+      MathGKM.Markov.ThirdDiagonalFormula l →
+        ∀ (k : ℤ),
+          MathGKM.Markov.DiagonalSeq l.p (l.a + l.b - 3) (k - 1) *
+              MathGKM.Markov.DiagonalSeq l.p (l.a + l.b - 3) (k + 1) ≤
+            MathGKM.Markov.DiagonalSeq l.p (l.a + l.b - 3) k ^ 2 :=
+fun l ha hab hf k =>
+  Eq.mpr (id (congrArg (fun _a => _a (k - 1) * _a (k + 1) ≤ _a k ^ 2) hf))
+    (Eq.mpr
+      (id
+        (congrArg
+          (fun _a =>
+            MathGKM.Markov.CoeffSeq _a (k - 1) * MathGKM.Markov.CoeffSeq _a (k + 1) ≤ MathGKM.Markov.CoeffSeq _a k ^ 2)
+          (MathGKM.Markov.sourceThird_factor (↑l.a) (↑l.b) (l.a + l.b - 5))))
+      (MathGKM.Markov.third_diagonal_expression_logConcave l.a l.b ha hab k))
+theorem MathGKM.Markov.frame_reduced : ∀ (path : List Bool),
+  0 < (MathGKM.Markov.frame path).mid.a ∧
+    (MathGKM.Markov.frame path).mid.a < (MathGKM.Markov.frame path).mid.b ∧
+      (MathGKM.Markov.frame path).mid.a.Coprime (MathGKM.Markov.frame path).mid.b :=
+fun path =>
+  And.casesOn (MathGKM.Markov.indices_frame path) fun hma right =>
+    And.casesOn right fun hmb right =>
+      And.casesOn right fun hd right =>
+        And.casesOn right fun hlb right =>
+          And.casesOn right fun hrb right =>
+            And.casesOn right fun hra right =>
+              And.casesOn right fun hlo hhi =>
+                ⟨Decidable.byContradiction fun a => MathGKM.Markov.frame_reduced._proof_1_1 path hma hra a,
+                  ⟨Decidable.byContradiction fun a => MathGKM.Markov.frame_reduced._proof_1_2 path hma hmb hlo hhi a,
+                    MathGKM.Markov.coprime_of_det
+                      (Mathlib.Tactic.Linarith.eq_of_not_lt_of_not_gt
+                        ((MathGKM.Markov.frame path).hi.a * (MathGKM.Markov.frame path).mid.b)
+                        ((MathGKM.Markov.frame path).mid.a * (MathGKM.Markov.frame path).hi.b + 1)
+                        (Not.intro fun a =>
+                          Mathlib.Tactic.Linarith.lt_irrefl
+                            (Eq.mp
+                              (congrArg (fun _a => _a < 0)
+                                (Mathlib.Tactic.Ring.of_eq
+                                  (Mathlib.Tactic.Ring.Common.add_congr
+                                    (Mathlib.Tactic.Ring.Common.add_congr
+                                      (Mathlib.Tactic.Ring.Common.add_congr
+                                        (Mathlib.Tactic.Ring.Common.add_congr
+                                          (Mathlib.Tactic.Ring.Common.add_congr
+                                            (Mathlib.Tactic.Ring.Common.add_congr
+                                              (Mathlib.Tactic.Ring.Common.neg_congr
+                                                (Mathlib.Tactic.Ring.cast_pos
+                                                  (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)))
+                                                (Mathlib.Tactic.Ring.Common.neg_add
+                                                  (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                    (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                      (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                        (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                      (Eq.refl (Int.negOfNat 1))))
+                                                  Mathlib.Tactic.Ring.Common.neg_zero))
+                                              (Mathlib.Tactic.Ring.Common.neg_congr
+                                                (Mathlib.Tactic.Ring.Common.sub_congr
+                                                  (Mathlib.Tactic.Ring.Common.mul_congr
+                                                    (Mathlib.Tactic.Ring.Common.atom_pf
+                                                      (↑(MathGKM.Markov.frame path).hi.a) rfl
+                                                      (Eq.mpr
+                                                        (id
+                                                          (congrArg
+                                                            (fun _a =>
+                                                              ↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                                  Nat.rawCast 1 =
+                                                                ↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 * _a)
+                                                            (Eq.symm rfl)))
+                                                        (Eq.refl
+                                                          (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                            Nat.rawCast 1))))
+                                                    (Mathlib.Tactic.Ring.Common.atom_pf
+                                                      (↑(MathGKM.Markov.frame path).lo.b) rfl
+                                                      (Eq.mpr
+                                                        (id
+                                                          (congrArg
+                                                            (fun _a =>
+                                                              ↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                                  Nat.rawCast 1 =
+                                                                ↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 * _a)
+                                                            (Eq.symm rfl)))
+                                                        (Eq.refl
+                                                          (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                            Nat.rawCast 1))))
+                                                    (Mathlib.Tactic.Ring.Common.add_mul
+                                                      (Mathlib.Tactic.Ring.Common.mul_add
+                                                        (Mathlib.Tactic.Ring.Common.mul_pf_left
+                                                          (↑(MathGKM.Markov.frame path).hi.a) (Nat.rawCast 1)
+                                                          (Mathlib.Tactic.Ring.Common.mul_pf_right
+                                                            (↑(MathGKM.Markov.frame path).lo.b) (Nat.rawCast 1)
+                                                            (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                                              (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                                                (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1)
+                                                                (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1) (Eq.refl 1)))))
+                                                        (Mathlib.Tactic.Ring.Common.mul_zero
+                                                          (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                            Nat.rawCast 1))
+                                                        (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                          (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                              (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                                Nat.rawCast 1) +
+                                                            0)))
+                                                      (Mathlib.Tactic.Ring.Common.zero_mul
+                                                        (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                            Nat.rawCast 1 +
+                                                          0))
+                                                      (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                        (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                            (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                              Nat.rawCast 1) +
+                                                          0))))
+                                                  (Mathlib.Tactic.Ring.Common.add_congr
+                                                    (Mathlib.Tactic.Ring.Common.mul_congr
+                                                      (Mathlib.Tactic.Ring.Common.atom_pf
+                                                        (↑(MathGKM.Markov.frame path).lo.a) rfl
+                                                        (Eq.mpr
+                                                          (id
+                                                            (congrArg
+                                                              (fun _a =>
+                                                                ↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                                    Nat.rawCast 1 =
+                                                                  ↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                                    _a)
+                                                              (Eq.symm rfl)))
+                                                          (Eq.refl
+                                                            (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                              Nat.rawCast 1))))
+                                                      (Mathlib.Tactic.Ring.Common.atom_pf
+                                                        (↑(MathGKM.Markov.frame path).hi.b) rfl
+                                                        (Eq.mpr
+                                                          (id
+                                                            (congrArg
+                                                              (fun _a =>
+                                                                ↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                                    Nat.rawCast 1 =
+                                                                  ↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                                    _a)
+                                                              (Eq.symm rfl)))
+                                                          (Eq.refl
+                                                            (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                              Nat.rawCast 1))))
+                                                      (Mathlib.Tactic.Ring.Common.add_mul
+                                                        (Mathlib.Tactic.Ring.Common.mul_add
+                                                          (Mathlib.Tactic.Ring.Common.mul_pf_left
+                                                            (↑(MathGKM.Markov.frame path).lo.a) (Nat.rawCast 1)
+                                                            (Mathlib.Tactic.Ring.Common.mul_pf_right
+                                                              (↑(MathGKM.Markov.frame path).hi.b) (Nat.rawCast 1)
+                                                              (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                                                (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                                                  (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1)
+                                                                  (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1)
+                                                                  (Eq.refl 1)))))
+                                                          (Mathlib.Tactic.Ring.Common.mul_zero
+                                                            (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                              Nat.rawCast 1))
+                                                          (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                            (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                                (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                                  Nat.rawCast 1) +
+                                                              0)))
+                                                        (Mathlib.Tactic.Ring.Common.zero_mul
+                                                          (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                              Nat.rawCast 1 +
+                                                            0))
+                                                        (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                          (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                              (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                                Nat.rawCast 1) +
+                                                            0))))
+                                                    (Mathlib.Tactic.Ring.cast_pos
+                                                      (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)))
+                                                    (Mathlib.Tactic.Ring.Common.add_pf_add_gt (Nat.rawCast 1)
+                                                      (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                        (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                            (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                              Nat.rawCast 1) +
+                                                          0))))
+                                                  (Mathlib.Tactic.Ring.Common.sub_pf
+                                                    (Mathlib.Tactic.Ring.Common.neg_add
+                                                      (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                        (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                          (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                            (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                          (Eq.refl (Int.negOfNat 1))))
+                                                      (Mathlib.Tactic.Ring.Common.neg_add
+                                                        (Mathlib.Tactic.Ring.Common.neg_mul
+                                                          (↑(MathGKM.Markov.frame path).lo.a) (Nat.rawCast 1)
+                                                          (Mathlib.Tactic.Ring.Common.neg_mul
+                                                            (↑(MathGKM.Markov.frame path).hi.b) (Nat.rawCast 1)
+                                                            (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                              (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                                (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                                  (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                                (Eq.refl (Int.negOfNat 1))))))
+                                                        Mathlib.Tactic.Ring.Common.neg_zero))
+                                                    (Mathlib.Tactic.Ring.Common.add_pf_add_gt (Int.negOfNat 1).rawCast
+                                                      (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                                        (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                          (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                            Nat.rawCast 1))
+                                                        (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                                          (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                              (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                                (Int.negOfNat 1).rawCast) +
+                                                            0))))))
+                                                (Mathlib.Tactic.Ring.Common.neg_add
+                                                  (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                                    (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                                      (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                        (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                        (Eq.refl (Int.ofNat 1)))))
+                                                  (Mathlib.Tactic.Ring.Common.neg_add
+                                                    (Mathlib.Tactic.Ring.Common.neg_mul
+                                                      (↑(MathGKM.Markov.frame path).hi.a) (Nat.rawCast 1)
+                                                      (Mathlib.Tactic.Ring.Common.neg_mul
+                                                        (↑(MathGKM.Markov.frame path).lo.b) (Nat.rawCast 1)
+                                                        (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                          (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                            (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                              (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                            (Eq.refl (Int.negOfNat 1))))))
+                                                    (Mathlib.Tactic.Ring.Common.neg_add
+                                                      (Mathlib.Tactic.Ring.Common.neg_mul
+                                                        (↑(MathGKM.Markov.frame path).lo.a) (Nat.rawCast 1)
+                                                        (Mathlib.Tactic.Ring.Common.neg_mul
+                                                          (↑(MathGKM.Markov.frame path).hi.b) (Nat.rawCast 1)
+                                                          (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                                            (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                                              (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                                (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                                (Eq.refl (Int.ofNat 1)))))))
+                                                      Mathlib.Tactic.Ring.Common.neg_zero))))
+                                              (Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero
+                                                (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                                  (Mathlib.Meta.NormNum.isInt_add (Eq.refl HAdd.hAdd)
+                                                    (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                    (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                      (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                    (Eq.refl (Int.ofNat 0))))
+                                                (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                                  (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                      (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                        (Int.negOfNat 1).rawCast) +
+                                                    (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                        (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1) +
+                                                      0)))))
+                                            (Mathlib.Tactic.Ring.Common.sub_congr
+                                              (Mathlib.Tactic.Ring.Common.add_congr
+                                                (Mathlib.Tactic.Ring.Common.mul_congr
+                                                  (Mathlib.Tactic.Ring.Common.atom_pf
+                                                    (↑(MathGKM.Markov.frame path).hi.a) rfl
+                                                    (Eq.mpr
+                                                      (id
+                                                        (congrArg
+                                                          (fun _a =>
+                                                            ↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                                Nat.rawCast 1 =
+                                                              ↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 * _a)
+                                                          (Eq.symm rfl)))
+                                                      (Eq.refl
+                                                        (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1))))
+                                                  (Mathlib.Tactic.Ring.Common.atom_pf
+                                                    (↑(MathGKM.Markov.frame path).mid.b) rfl
+                                                    (Eq.mpr
+                                                      (id
+                                                        (congrArg
+                                                          (fun _a =>
+                                                            ↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                                Nat.rawCast 1 =
+                                                              ↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 * _a)
+                                                          (Eq.symm rfl)))
+                                                      (Eq.refl
+                                                        (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1))))
+                                                  (Mathlib.Tactic.Ring.Common.add_mul
+                                                    (Mathlib.Tactic.Ring.Common.mul_add
+                                                      (Mathlib.Tactic.Ring.Common.mul_pf_left
+                                                        (↑(MathGKM.Markov.frame path).hi.a) (Nat.rawCast 1)
+                                                        (Mathlib.Tactic.Ring.Common.mul_pf_right
+                                                          (↑(MathGKM.Markov.frame path).mid.b) (Nat.rawCast 1)
+                                                          (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                                            (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                                              (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1)
+                                                              (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1) (Eq.refl 1)))))
+                                                      (Mathlib.Tactic.Ring.Common.mul_zero
+                                                        (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1))
+                                                      (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                        (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                            (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                              Nat.rawCast 1) +
+                                                          0)))
+                                                    (Mathlib.Tactic.Ring.Common.zero_mul
+                                                      (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1 +
+                                                        0))
+                                                    (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                      (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                          (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                            Nat.rawCast 1) +
+                                                        0))))
+                                                (Mathlib.Tactic.Ring.cast_pos
+                                                  (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)))
+                                                (Mathlib.Tactic.Ring.Common.add_pf_add_gt (Nat.rawCast 1)
+                                                  (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                    (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                        (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1) +
+                                                      0))))
+                                              (Mathlib.Tactic.Ring.Common.add_congr
+                                                (Mathlib.Tactic.Ring.Common.mul_congr
+                                                  (Mathlib.Tactic.Ring.Common.atom_pf
+                                                    (↑(MathGKM.Markov.frame path).mid.a) rfl
+                                                    (Eq.mpr
+                                                      (id
+                                                        (congrArg
+                                                          (fun _a =>
+                                                            ↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                                Nat.rawCast 1 =
+                                                              ↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 * _a)
+                                                          (Eq.symm rfl)))
+                                                      (Eq.refl
+                                                        (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1))))
+                                                  (Mathlib.Tactic.Ring.Common.atom_pf
+                                                    (↑(MathGKM.Markov.frame path).hi.b) rfl
+                                                    (Eq.mpr
+                                                      (id
+                                                        (congrArg
+                                                          (fun _a =>
+                                                            ↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                                Nat.rawCast 1 =
+                                                              ↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 * _a)
+                                                          (Eq.symm rfl)))
+                                                      (Eq.refl
+                                                        (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1))))
+                                                  (Mathlib.Tactic.Ring.Common.add_mul
+                                                    (Mathlib.Tactic.Ring.Common.mul_add
+                                                      (Mathlib.Tactic.Ring.Common.mul_pf_right
+                                                        (↑(MathGKM.Markov.frame path).hi.b) (Nat.rawCast 1)
+                                                        (Mathlib.Tactic.Ring.Common.mul_pf_left
+                                                          (↑(MathGKM.Markov.frame path).mid.a) (Nat.rawCast 1)
+                                                          (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                                            (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                                              (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1)
+                                                              (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1) (Eq.refl 1)))))
+                                                      (Mathlib.Tactic.Ring.Common.mul_zero
+                                                        (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1))
+                                                      (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                        (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                            (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                              Nat.rawCast 1) +
+                                                          0)))
+                                                    (Mathlib.Tactic.Ring.Common.zero_mul
+                                                      (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1 +
+                                                        0))
+                                                    (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                      (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                          (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                            Nat.rawCast 1) +
+                                                        0))))
+                                                (Mathlib.Tactic.Ring.cast_pos
+                                                  (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 1)))
+                                                (Mathlib.Tactic.Ring.Common.add_pf_add_gt (Nat.rawCast 1)
+                                                  (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                    (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                        (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1) +
+                                                      0))))
+                                              (Mathlib.Tactic.Ring.Common.sub_pf
+                                                (Mathlib.Tactic.Ring.Common.neg_add
+                                                  (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                    (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                      (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                        (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                      (Eq.refl (Int.negOfNat 1))))
+                                                  (Mathlib.Tactic.Ring.Common.neg_add
+                                                    (Mathlib.Tactic.Ring.Common.neg_mul
+                                                      (↑(MathGKM.Markov.frame path).hi.b) (Nat.rawCast 1)
+                                                      (Mathlib.Tactic.Ring.Common.neg_mul
+                                                        (↑(MathGKM.Markov.frame path).mid.a) (Nat.rawCast 1)
+                                                        (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                          (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                            (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                              (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                            (Eq.refl (Int.negOfNat 1))))))
+                                                    Mathlib.Tactic.Ring.Common.neg_zero))
+                                                (Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero
+                                                  (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                                    (Mathlib.Meta.NormNum.isInt_add (Eq.refl HAdd.hAdd)
+                                                      (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                        (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                      (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                      (Eq.refl (Int.ofNat 0))))
+                                                  (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                                    (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                      (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                        Nat.rawCast 1))
+                                                    (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                                      (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                          (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                            (Int.negOfNat 1).rawCast) +
+                                                        0))))))
+                                            (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                              (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                  (Int.negOfNat 1).rawCast))
+                                              (Mathlib.Tactic.Ring.Common.add_pf_add_gt
+                                                (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                  (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                                (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                                  (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                    (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                                  (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                                    (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                        (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                          (Int.negOfNat 1).rawCast) +
+                                                      0))))))
+                                          (Mathlib.Tactic.Ring.Common.sub_congr
+                                            (Mathlib.Tactic.Ring.Common.mul_congr
+                                              (Mathlib.Tactic.Ring.Common.sub_congr
+                                                (Mathlib.Tactic.Ring.cast_zero
+                                                  (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)))
+                                                (Mathlib.Tactic.Ring.Common.atom_pf (↑(MathGKM.Markov.frame path).mid.a)
+                                                  rfl
+                                                  (Eq.mpr
+                                                    (id
+                                                      (congrArg
+                                                        (fun _a =>
+                                                          ↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                              Nat.rawCast 1 =
+                                                            ↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 * _a)
+                                                        (Eq.symm rfl)))
+                                                    (Eq.refl
+                                                      (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                        Nat.rawCast 1))))
+                                                (Mathlib.Tactic.Ring.Common.sub_pf
+                                                  (Mathlib.Tactic.Ring.Common.neg_add
+                                                    (Mathlib.Tactic.Ring.Common.neg_mul
+                                                      (↑(MathGKM.Markov.frame path).mid.a) (Nat.rawCast 1)
+                                                      (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                        (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                          (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                            (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                          (Eq.refl (Int.negOfNat 1)))))
+                                                    Mathlib.Tactic.Ring.Common.neg_zero)
+                                                  (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                                    (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                        (Int.negOfNat 1).rawCast +
+                                                      0))))
+                                              (Mathlib.Tactic.Ring.Common.sub_congr
+                                                (Mathlib.Tactic.Ring.Common.atom_pf (↑(MathGKM.Markov.frame path).mid.b)
+                                                  rfl
+                                                  (Eq.mpr
+                                                    (id
+                                                      (congrArg
+                                                        (fun _a =>
+                                                          ↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                              Nat.rawCast 1 =
+                                                            ↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 * _a)
+                                                        (Eq.symm rfl)))
+                                                    (Eq.refl
+                                                      (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                        Nat.rawCast 1))))
+                                                (Mathlib.Tactic.Ring.Common.add_congr
+                                                  (Mathlib.Tactic.Ring.Common.atom_pf
+                                                    (↑(MathGKM.Markov.frame path).lo.b) rfl
+                                                    (Eq.mpr
+                                                      (id
+                                                        (congrArg
+                                                          (fun _a =>
+                                                            ↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                                Nat.rawCast 1 =
+                                                              ↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 * _a)
+                                                          (Eq.symm rfl)))
+                                                      (Eq.refl
+                                                        (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1))))
+                                                  (Mathlib.Tactic.Ring.Common.atom_pf
+                                                    (↑(MathGKM.Markov.frame path).hi.b) rfl
+                                                    (Eq.mpr
+                                                      (id
+                                                        (congrArg
+                                                          (fun _a =>
+                                                            ↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                                Nat.rawCast 1 =
+                                                              ↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 * _a)
+                                                          (Eq.symm rfl)))
+                                                      (Eq.refl
+                                                        (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1))))
+                                                  (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                                    (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 * Nat.rawCast 1)
+                                                    (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                                      (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1 +
+                                                        0))))
+                                                (Mathlib.Tactic.Ring.Common.sub_pf
+                                                  (Mathlib.Tactic.Ring.Common.neg_add
+                                                    (Mathlib.Tactic.Ring.Common.neg_mul
+                                                      (↑(MathGKM.Markov.frame path).lo.b) (Nat.rawCast 1)
+                                                      (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                        (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                          (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                            (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                          (Eq.refl (Int.negOfNat 1)))))
+                                                    (Mathlib.Tactic.Ring.Common.neg_add
+                                                      (Mathlib.Tactic.Ring.Common.neg_mul
+                                                        (↑(MathGKM.Markov.frame path).hi.b) (Nat.rawCast 1)
+                                                        (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                          (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                            (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                              (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                            (Eq.refl (Int.negOfNat 1)))))
+                                                      Mathlib.Tactic.Ring.Common.neg_zero))
+                                                  (Mathlib.Tactic.Ring.Common.add_pf_add_gt
+                                                    (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                      (Int.negOfNat 1).rawCast)
+                                                    (Mathlib.Tactic.Ring.Common.add_pf_add_gt
+                                                      (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                        (Int.negOfNat 1).rawCast)
+                                                      (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                        (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                            Nat.rawCast 1 +
+                                                          0))))))
+                                              (Mathlib.Tactic.Ring.Common.add_mul
+                                                (Mathlib.Tactic.Ring.Common.mul_add
+                                                  (Mathlib.Tactic.Ring.Common.mul_pf_right
+                                                    (↑(MathGKM.Markov.frame path).lo.b) (Nat.rawCast 1)
+                                                    (Mathlib.Tactic.Ring.Common.mul_pf_left
+                                                      (↑(MathGKM.Markov.frame path).mid.a) (Nat.rawCast 1)
+                                                      (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                                        (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                                          (Mathlib.Meta.NormNum.isInt_mul (Eq.refl HMul.hMul)
+                                                            (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                            (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                            (Eq.refl (Int.ofNat 1)))))))
+                                                  (Mathlib.Tactic.Ring.Common.mul_add
+                                                    (Mathlib.Tactic.Ring.Common.mul_pf_right
+                                                      (↑(MathGKM.Markov.frame path).hi.b) (Nat.rawCast 1)
+                                                      (Mathlib.Tactic.Ring.Common.mul_pf_left
+                                                        (↑(MathGKM.Markov.frame path).mid.a) (Nat.rawCast 1)
+                                                        (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                                          (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                                            (Mathlib.Meta.NormNum.isInt_mul (Eq.refl HMul.hMul)
+                                                              (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                              (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                              (Eq.refl (Int.ofNat 1)))))))
+                                                    (Mathlib.Tactic.Ring.Common.mul_add
+                                                      (Mathlib.Tactic.Ring.Common.mul_pf_right
+                                                        (↑(MathGKM.Markov.frame path).mid.b) (Nat.rawCast 1)
+                                                        (Mathlib.Tactic.Ring.Common.mul_pf_left
+                                                          (↑(MathGKM.Markov.frame path).mid.a) (Nat.rawCast 1)
+                                                          (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                            (Mathlib.Meta.NormNum.isInt_mul (Eq.refl HMul.hMul)
+                                                              (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                              (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                                (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                              (Eq.refl (Int.negOfNat 1))))))
+                                                      (Mathlib.Tactic.Ring.Common.mul_zero
+                                                        (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                          (Int.negOfNat 1).rawCast))
+                                                      (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                        (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                            (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                              (Int.negOfNat 1).rawCast) +
+                                                          0)))
+                                                    (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                                      (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                        (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1))
+                                                      (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                                        (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                            (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                              (Int.negOfNat 1).rawCast) +
+                                                          0))))
+                                                  (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                                    (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                      (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                        Nat.rawCast 1))
+                                                    (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                                      (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                          (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                            Nat.rawCast 1) +
+                                                        (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                            (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                              (Int.negOfNat 1).rawCast) +
+                                                          0)))))
+                                                (Mathlib.Tactic.Ring.Common.zero_mul
+                                                  (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                      (Int.negOfNat 1).rawCast +
+                                                    (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                        (Int.negOfNat 1).rawCast +
+                                                      (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1 +
+                                                        0))))
+                                                (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                  (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                      (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                        Nat.rawCast 1) +
+                                                    (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                        (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1) +
+                                                      (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                          (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                            (Int.negOfNat 1).rawCast) +
+                                                        0))))))
+                                            (Mathlib.Tactic.Ring.cast_zero
+                                              (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)))
+                                            (Mathlib.Tactic.Ring.Common.sub_pf Mathlib.Tactic.Ring.Common.neg_zero
+                                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                    (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                      Nat.rawCast 1) +
+                                                  (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                      (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                        Nat.rawCast 1) +
+                                                    (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                        (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                          (Int.negOfNat 1).rawCast) +
+                                                      0))))))
+                                          (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                            (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                              (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                (Int.negOfNat 1).rawCast))
+                                            (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                              (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                              (Mathlib.Tactic.Ring.Common.add_pf_add_gt
+                                                (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                  (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                                (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                                  (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                    (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                                  (Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero
+                                                    (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero
+                                                      (↑(MathGKM.Markov.frame path).hi.b) (Nat.rawCast 1)
+                                                      (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero
+                                                        (↑(MathGKM.Markov.frame path).mid.a) (Nat.rawCast 1)
+                                                        (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                                          (Mathlib.Meta.NormNum.isInt_add (Eq.refl HAdd.hAdd)
+                                                            (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                            (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                              (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                            (Eq.refl (Int.ofNat 0))))))
+                                                    (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                                      (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                          (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                            (Int.negOfNat 1).rawCast) +
+                                                        0))))))))
+                                        (Mathlib.Tactic.Ring.Common.neg_congr
+                                          (Mathlib.Tactic.Ring.Common.sub_congr
+                                            (Mathlib.Tactic.Ring.Common.mul_congr
+                                              (Mathlib.Tactic.Ring.Common.sub_congr
+                                                (Mathlib.Tactic.Ring.cast_zero
+                                                  (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)))
+                                                (Mathlib.Tactic.Ring.Common.atom_pf (↑(MathGKM.Markov.frame path).lo.a)
+                                                  rfl
+                                                  (Eq.mpr
+                                                    (id
+                                                      (congrArg
+                                                        (fun _a =>
+                                                          ↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                              Nat.rawCast 1 =
+                                                            ↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 * _a)
+                                                        (Eq.symm rfl)))
+                                                    (Eq.refl
+                                                      (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                        Nat.rawCast 1))))
+                                                (Mathlib.Tactic.Ring.Common.sub_pf
+                                                  (Mathlib.Tactic.Ring.Common.neg_add
+                                                    (Mathlib.Tactic.Ring.Common.neg_mul
+                                                      (↑(MathGKM.Markov.frame path).lo.a) (Nat.rawCast 1)
+                                                      (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                        (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                          (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                            (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                          (Eq.refl (Int.negOfNat 1)))))
+                                                    Mathlib.Tactic.Ring.Common.neg_zero)
+                                                  (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                                    (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                        (Int.negOfNat 1).rawCast +
+                                                      0))))
+                                              (Mathlib.Tactic.Ring.Common.sub_congr
+                                                (Mathlib.Tactic.Ring.Common.atom_pf (↑(MathGKM.Markov.frame path).mid.b)
+                                                  rfl
+                                                  (Eq.mpr
+                                                    (id
+                                                      (congrArg
+                                                        (fun _a =>
+                                                          ↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                              Nat.rawCast 1 =
+                                                            ↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 * _a)
+                                                        (Eq.symm rfl)))
+                                                    (Eq.refl
+                                                      (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                        Nat.rawCast 1))))
+                                                (Mathlib.Tactic.Ring.Common.add_congr
+                                                  (Mathlib.Tactic.Ring.Common.atom_pf
+                                                    (↑(MathGKM.Markov.frame path).lo.b) rfl
+                                                    (Eq.mpr
+                                                      (id
+                                                        (congrArg
+                                                          (fun _a =>
+                                                            ↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                                Nat.rawCast 1 =
+                                                              ↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 * _a)
+                                                          (Eq.symm rfl)))
+                                                      (Eq.refl
+                                                        (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1))))
+                                                  (Mathlib.Tactic.Ring.Common.atom_pf
+                                                    (↑(MathGKM.Markov.frame path).hi.b) rfl
+                                                    (Eq.mpr
+                                                      (id
+                                                        (congrArg
+                                                          (fun _a =>
+                                                            ↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                                Nat.rawCast 1 =
+                                                              ↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 * _a)
+                                                          (Eq.symm rfl)))
+                                                      (Eq.refl
+                                                        (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1))))
+                                                  (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                                    (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 * Nat.rawCast 1)
+                                                    (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                                      (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1 +
+                                                        0))))
+                                                (Mathlib.Tactic.Ring.Common.sub_pf
+                                                  (Mathlib.Tactic.Ring.Common.neg_add
+                                                    (Mathlib.Tactic.Ring.Common.neg_mul
+                                                      (↑(MathGKM.Markov.frame path).lo.b) (Nat.rawCast 1)
+                                                      (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                        (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                          (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                            (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                          (Eq.refl (Int.negOfNat 1)))))
+                                                    (Mathlib.Tactic.Ring.Common.neg_add
+                                                      (Mathlib.Tactic.Ring.Common.neg_mul
+                                                        (↑(MathGKM.Markov.frame path).hi.b) (Nat.rawCast 1)
+                                                        (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                          (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                            (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                              (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                            (Eq.refl (Int.negOfNat 1)))))
+                                                      Mathlib.Tactic.Ring.Common.neg_zero))
+                                                  (Mathlib.Tactic.Ring.Common.add_pf_add_gt
+                                                    (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                      (Int.negOfNat 1).rawCast)
+                                                    (Mathlib.Tactic.Ring.Common.add_pf_add_gt
+                                                      (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                        (Int.negOfNat 1).rawCast)
+                                                      (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                        (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                            Nat.rawCast 1 +
+                                                          0))))))
+                                              (Mathlib.Tactic.Ring.Common.add_mul
+                                                (Mathlib.Tactic.Ring.Common.mul_add
+                                                  (Mathlib.Tactic.Ring.Common.mul_pf_right
+                                                    (↑(MathGKM.Markov.frame path).lo.b) (Nat.rawCast 1)
+                                                    (Mathlib.Tactic.Ring.Common.mul_pf_left
+                                                      (↑(MathGKM.Markov.frame path).lo.a) (Nat.rawCast 1)
+                                                      (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                                        (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                                          (Mathlib.Meta.NormNum.isInt_mul (Eq.refl HMul.hMul)
+                                                            (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                            (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                            (Eq.refl (Int.ofNat 1)))))))
+                                                  (Mathlib.Tactic.Ring.Common.mul_add
+                                                    (Mathlib.Tactic.Ring.Common.mul_pf_left
+                                                      (↑(MathGKM.Markov.frame path).lo.a) (Nat.rawCast 1)
+                                                      (Mathlib.Tactic.Ring.Common.mul_pf_right
+                                                        (↑(MathGKM.Markov.frame path).hi.b) (Nat.rawCast 1)
+                                                        (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                                          (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                                            (Mathlib.Meta.NormNum.isInt_mul (Eq.refl HMul.hMul)
+                                                              (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                              (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                              (Eq.refl (Int.ofNat 1)))))))
+                                                    (Mathlib.Tactic.Ring.Common.mul_add
+                                                      (Mathlib.Tactic.Ring.Common.mul_pf_left
+                                                        (↑(MathGKM.Markov.frame path).lo.a) (Nat.rawCast 1)
+                                                        (Mathlib.Tactic.Ring.Common.mul_pf_right
+                                                          (↑(MathGKM.Markov.frame path).mid.b) (Nat.rawCast 1)
+                                                          (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                            (Mathlib.Meta.NormNum.isInt_mul (Eq.refl HMul.hMul)
+                                                              (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                              (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                                (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                              (Eq.refl (Int.negOfNat 1))))))
+                                                      (Mathlib.Tactic.Ring.Common.mul_zero
+                                                        (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                          (Int.negOfNat 1).rawCast))
+                                                      (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                        (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                            (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                              (Int.negOfNat 1).rawCast) +
+                                                          0)))
+                                                    (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                                      (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                        (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1))
+                                                      (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                                        (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                            (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                              (Int.negOfNat 1).rawCast) +
+                                                          0))))
+                                                  (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                                    (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                      (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                        Nat.rawCast 1))
+                                                    (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                                      (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                          (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                            Nat.rawCast 1) +
+                                                        (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                            (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                              (Int.negOfNat 1).rawCast) +
+                                                          0)))))
+                                                (Mathlib.Tactic.Ring.Common.zero_mul
+                                                  (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                      (Int.negOfNat 1).rawCast +
+                                                    (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                        (Int.negOfNat 1).rawCast +
+                                                      (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1 +
+                                                        0))))
+                                                (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                  (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                      (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                        Nat.rawCast 1) +
+                                                    (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                        (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1) +
+                                                      (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                          (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                            (Int.negOfNat 1).rawCast) +
+                                                        0))))))
+                                            (Mathlib.Tactic.Ring.cast_zero
+                                              (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)))
+                                            (Mathlib.Tactic.Ring.Common.sub_pf Mathlib.Tactic.Ring.Common.neg_zero
+                                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                    (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                      Nat.rawCast 1) +
+                                                  (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                      (↑(MathGKM.Markov.frame path).hi.b ^ Nat.rawCast 1 *
+                                                        Nat.rawCast 1) +
+                                                    (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                        (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                          (Int.negOfNat 1).rawCast) +
+                                                      0))))))
+                                          (Mathlib.Tactic.Ring.Common.neg_add
+                                            (Mathlib.Tactic.Ring.Common.neg_mul (↑(MathGKM.Markov.frame path).lo.b)
+                                              (Nat.rawCast 1)
+                                              (Mathlib.Tactic.Ring.Common.neg_mul (↑(MathGKM.Markov.frame path).lo.a)
+                                                (Nat.rawCast 1)
+                                                (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                  (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                    (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                      (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                    (Eq.refl (Int.negOfNat 1))))))
+                                            (Mathlib.Tactic.Ring.Common.neg_add
+                                              (Mathlib.Tactic.Ring.Common.neg_mul (↑(MathGKM.Markov.frame path).lo.a)
+                                                (Nat.rawCast 1)
+                                                (Mathlib.Tactic.Ring.Common.neg_mul (↑(MathGKM.Markov.frame path).hi.b)
+                                                  (Nat.rawCast 1)
+                                                  (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                    (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                      (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                        (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                      (Eq.refl (Int.negOfNat 1))))))
+                                              (Mathlib.Tactic.Ring.Common.neg_add
+                                                (Mathlib.Tactic.Ring.Common.neg_mul (↑(MathGKM.Markov.frame path).lo.a)
+                                                  (Nat.rawCast 1)
+                                                  (Mathlib.Tactic.Ring.Common.neg_mul
+                                                    (↑(MathGKM.Markov.frame path).mid.b) (Nat.rawCast 1)
+                                                    (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                                      (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                                        (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                          (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                          (Eq.refl (Int.ofNat 1)))))))
+                                                Mathlib.Tactic.Ring.Common.neg_zero))))
+                                        (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                          (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                            (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                              (Int.negOfNat 1).rawCast))
+                                          (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                            (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                              (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                            (Mathlib.Tactic.Ring.Common.add_pf_add_gt
+                                              (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                  (Int.negOfNat 1).rawCast))
+                                              (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                                (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                  (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                                (Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero
+                                                  (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero
+                                                    (↑(MathGKM.Markov.frame path).lo.a) (Nat.rawCast 1)
+                                                    (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero
+                                                      (↑(MathGKM.Markov.frame path).hi.b) (Nat.rawCast 1)
+                                                      (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                                        (Mathlib.Meta.NormNum.isInt_add (Eq.refl HAdd.hAdd)
+                                                          (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                            (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                          (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                          (Eq.refl (Int.ofNat 0))))))
+                                                  (Mathlib.Tactic.Ring.Common.add_pf_add_gt
+                                                    (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                      (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                        Nat.rawCast 1))
+                                                    (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                      (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                          (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                            (Int.negOfNat 1).rawCast) +
+                                                        0)))))))))
+                                      (Mathlib.Tactic.Ring.Common.neg_congr
+                                        (Mathlib.Tactic.Ring.Common.sub_congr
+                                          (Mathlib.Tactic.Ring.Common.mul_congr
+                                            (Mathlib.Tactic.Ring.Common.sub_congr
+                                              (Mathlib.Tactic.Ring.cast_zero
+                                                (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)))
+                                              (Mathlib.Tactic.Ring.Common.atom_pf (↑(MathGKM.Markov.frame path).mid.b)
+                                                rfl
+                                                (Eq.mpr
+                                                  (id
+                                                    (congrArg
+                                                      (fun _a =>
+                                                        ↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                            Nat.rawCast 1 =
+                                                          ↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 * _a)
+                                                      (Eq.symm rfl)))
+                                                  (Eq.refl
+                                                    (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                      Nat.rawCast 1))))
+                                              (Mathlib.Tactic.Ring.Common.sub_pf
+                                                (Mathlib.Tactic.Ring.Common.neg_add
+                                                  (Mathlib.Tactic.Ring.Common.neg_mul
+                                                    (↑(MathGKM.Markov.frame path).mid.b) (Nat.rawCast 1)
+                                                    (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                      (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                        (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                        (Eq.refl (Int.negOfNat 1)))))
+                                                  Mathlib.Tactic.Ring.Common.neg_zero)
+                                                (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                                  (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                      (Int.negOfNat 1).rawCast +
+                                                    0))))
+                                            (Mathlib.Tactic.Ring.Common.sub_congr
+                                              (Mathlib.Tactic.Ring.Common.atom_pf (↑(MathGKM.Markov.frame path).mid.a)
+                                                rfl
+                                                (Eq.mpr
+                                                  (id
+                                                    (congrArg
+                                                      (fun _a =>
+                                                        ↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                            Nat.rawCast 1 =
+                                                          ↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 * _a)
+                                                      (Eq.symm rfl)))
+                                                  (Eq.refl
+                                                    (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                      Nat.rawCast 1))))
+                                              (Mathlib.Tactic.Ring.Common.add_congr
+                                                (Mathlib.Tactic.Ring.Common.atom_pf (↑(MathGKM.Markov.frame path).lo.a)
+                                                  rfl
+                                                  (Eq.mpr
+                                                    (id
+                                                      (congrArg
+                                                        (fun _a =>
+                                                          ↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                              Nat.rawCast 1 =
+                                                            ↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 * _a)
+                                                        (Eq.symm rfl)))
+                                                    (Eq.refl
+                                                      (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                        Nat.rawCast 1))))
+                                                (Mathlib.Tactic.Ring.Common.atom_pf (↑(MathGKM.Markov.frame path).hi.a)
+                                                  rfl
+                                                  (Eq.mpr
+                                                    (id
+                                                      (congrArg
+                                                        (fun _a =>
+                                                          ↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                              Nat.rawCast 1 =
+                                                            ↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 * _a)
+                                                        (Eq.symm rfl)))
+                                                    (Eq.refl
+                                                      (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                        Nat.rawCast 1))))
+                                                (Mathlib.Tactic.Ring.Common.add_pf_add_gt
+                                                  (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 * Nat.rawCast 1)
+                                                  (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                    (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 * Nat.rawCast 1 +
+                                                      0))))
+                                              (Mathlib.Tactic.Ring.Common.sub_pf
+                                                (Mathlib.Tactic.Ring.Common.neg_add
+                                                  (Mathlib.Tactic.Ring.Common.neg_mul
+                                                    (↑(MathGKM.Markov.frame path).hi.a) (Nat.rawCast 1)
+                                                    (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                      (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                        (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                        (Eq.refl (Int.negOfNat 1)))))
+                                                  (Mathlib.Tactic.Ring.Common.neg_add
+                                                    (Mathlib.Tactic.Ring.Common.neg_mul
+                                                      (↑(MathGKM.Markov.frame path).lo.a) (Nat.rawCast 1)
+                                                      (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                        (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                          (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                            (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                          (Eq.refl (Int.negOfNat 1)))))
+                                                    Mathlib.Tactic.Ring.Common.neg_zero))
+                                                (Mathlib.Tactic.Ring.Common.add_pf_add_gt
+                                                  (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                    (Int.negOfNat 1).rawCast)
+                                                  (Mathlib.Tactic.Ring.Common.add_pf_add_gt
+                                                    (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                      (Int.negOfNat 1).rawCast)
+                                                    (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                      (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1 +
+                                                        0))))))
+                                            (Mathlib.Tactic.Ring.Common.add_mul
+                                              (Mathlib.Tactic.Ring.Common.mul_add
+                                                (Mathlib.Tactic.Ring.Common.mul_pf_right
+                                                  (↑(MathGKM.Markov.frame path).hi.a) (Nat.rawCast 1)
+                                                  (Mathlib.Tactic.Ring.Common.mul_pf_left
+                                                    (↑(MathGKM.Markov.frame path).mid.b) (Nat.rawCast 1)
+                                                    (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                                      (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                                        (Mathlib.Meta.NormNum.isInt_mul (Eq.refl HMul.hMul)
+                                                          (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                          (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                          (Eq.refl (Int.ofNat 1)))))))
+                                                (Mathlib.Tactic.Ring.Common.mul_add
+                                                  (Mathlib.Tactic.Ring.Common.mul_pf_right
+                                                    (↑(MathGKM.Markov.frame path).lo.a) (Nat.rawCast 1)
+                                                    (Mathlib.Tactic.Ring.Common.mul_pf_left
+                                                      (↑(MathGKM.Markov.frame path).mid.b) (Nat.rawCast 1)
+                                                      (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                                        (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                                          (Mathlib.Meta.NormNum.isInt_mul (Eq.refl HMul.hMul)
+                                                            (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                            (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                            (Eq.refl (Int.ofNat 1)))))))
+                                                  (Mathlib.Tactic.Ring.Common.mul_add
+                                                    (Mathlib.Tactic.Ring.Common.mul_pf_left
+                                                      (↑(MathGKM.Markov.frame path).mid.b) (Nat.rawCast 1)
+                                                      (Mathlib.Tactic.Ring.Common.mul_pf_right
+                                                        (↑(MathGKM.Markov.frame path).mid.a) (Nat.rawCast 1)
+                                                        (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                          (Mathlib.Meta.NormNum.isInt_mul (Eq.refl HMul.hMul)
+                                                            (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                            (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                              (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                            (Eq.refl (Int.negOfNat 1))))))
+                                                    (Mathlib.Tactic.Ring.Common.mul_zero
+                                                      (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                        (Int.negOfNat 1).rawCast))
+                                                    (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                      (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                          (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                            (Int.negOfNat 1).rawCast) +
+                                                        0)))
+                                                  (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                                    (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                      (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                        Nat.rawCast 1))
+                                                    (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                                      (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                          (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                            (Int.negOfNat 1).rawCast) +
+                                                        0))))
+                                                (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                                  (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                    (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                      Nat.rawCast 1))
+                                                  (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                                    (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                        (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1) +
+                                                      (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                          (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                            (Int.negOfNat 1).rawCast) +
+                                                        0)))))
+                                              (Mathlib.Tactic.Ring.Common.zero_mul
+                                                (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                    (Int.negOfNat 1).rawCast +
+                                                  (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                      (Int.negOfNat 1).rawCast +
+                                                    (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                        Nat.rawCast 1 +
+                                                      0))))
+                                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                    (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                      Nat.rawCast 1) +
+                                                  (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                      (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                        Nat.rawCast 1) +
+                                                    (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                        (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                          (Int.negOfNat 1).rawCast) +
+                                                      0))))))
+                                          (Mathlib.Tactic.Ring.cast_zero
+                                            (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)))
+                                          (Mathlib.Tactic.Ring.Common.sub_pf Mathlib.Tactic.Ring.Common.neg_zero
+                                            (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                              (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                  (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 * Nat.rawCast 1) +
+                                                (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                    (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                      Nat.rawCast 1) +
+                                                  (↑(MathGKM.Markov.frame path).mid.b ^ Nat.rawCast 1 *
+                                                      (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                        (Int.negOfNat 1).rawCast) +
+                                                    0))))))
+                                        (Mathlib.Tactic.Ring.Common.neg_add
+                                          (Mathlib.Tactic.Ring.Common.neg_mul (↑(MathGKM.Markov.frame path).hi.a)
+                                            (Nat.rawCast 1)
+                                            (Mathlib.Tactic.Ring.Common.neg_mul (↑(MathGKM.Markov.frame path).mid.b)
+                                              (Nat.rawCast 1)
+                                              (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                  (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                    (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                  (Eq.refl (Int.negOfNat 1))))))
+                                          (Mathlib.Tactic.Ring.Common.neg_add
+                                            (Mathlib.Tactic.Ring.Common.neg_mul (↑(MathGKM.Markov.frame path).lo.a)
+                                              (Nat.rawCast 1)
+                                              (Mathlib.Tactic.Ring.Common.neg_mul (↑(MathGKM.Markov.frame path).mid.b)
+                                                (Nat.rawCast 1)
+                                                (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                  (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                    (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                      (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                    (Eq.refl (Int.negOfNat 1))))))
+                                            (Mathlib.Tactic.Ring.Common.neg_add
+                                              (Mathlib.Tactic.Ring.Common.neg_mul (↑(MathGKM.Markov.frame path).mid.b)
+                                                (Nat.rawCast 1)
+                                                (Mathlib.Tactic.Ring.Common.neg_mul (↑(MathGKM.Markov.frame path).mid.a)
+                                                  (Nat.rawCast 1)
+                                                  (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                                    (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                                      (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                        (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                        (Eq.refl (Int.ofNat 1)))))))
+                                              Mathlib.Tactic.Ring.Common.neg_zero))))
+                                      (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                        (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                          (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                            (Int.negOfNat 1).rawCast))
+                                        (Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero
+                                          (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero
+                                            (↑(MathGKM.Markov.frame path).hi.a) (Nat.rawCast 1)
+                                            (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero
+                                              (↑(MathGKM.Markov.frame path).mid.b) (Nat.rawCast 1)
+                                              (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                                (Mathlib.Meta.NormNum.isInt_add (Eq.refl HAdd.hAdd)
+                                                  (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                    (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                  (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                  (Eq.refl (Int.ofNat 0))))))
+                                          (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                            (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                              (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                (Int.negOfNat 1).rawCast))
+                                            (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                              (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                              (Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero
+                                                (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero
+                                                  (↑(MathGKM.Markov.frame path).lo.a) (Nat.rawCast 1)
+                                                  (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero
+                                                    (↑(MathGKM.Markov.frame path).mid.b) (Nat.rawCast 1)
+                                                    (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                                      (Mathlib.Meta.NormNum.isInt_add (Eq.refl HAdd.hAdd)
+                                                        (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                        (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                        (Eq.refl (Int.ofNat 0))))))
+                                                (Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero
+                                                  (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero
+                                                    (↑(MathGKM.Markov.frame path).mid.b) (Nat.rawCast 1)
+                                                    (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero
+                                                      (↑(MathGKM.Markov.frame path).mid.a) (Nat.rawCast 1)
+                                                      (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                                        (Mathlib.Meta.NormNum.isInt_add (Eq.refl HAdd.hAdd)
+                                                          (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                          (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                            (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                          (Eq.refl (Int.ofNat 0))))))
+                                                  (Mathlib.Tactic.Ring.Common.add_pf_zero_add 0))))))))
+                                    (Mathlib.Tactic.Ring.Common.sub_congr
+                                      (Mathlib.Tactic.Ring.Common.mul_congr
+                                        (Mathlib.Tactic.Ring.Common.sub_congr
+                                          (Mathlib.Tactic.Ring.cast_zero
+                                            (Mathlib.Meta.NormNum.isNat_ofNat ℤ (Eq.refl 0)))
+                                          (Mathlib.Tactic.Ring.Common.atom_pf (↑(MathGKM.Markov.frame path).lo.b) rfl
+                                            (Eq.mpr
+                                              (id
+                                                (congrArg
+                                                  (fun _a =>
+                                                    ↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 * Nat.rawCast 1 =
+                                                      ↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 * _a)
+                                                  (Eq.symm rfl)))
+                                              (Eq.refl
+                                                (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                                          (Mathlib.Tactic.Ring.Common.sub_pf
+                                            (Mathlib.Tactic.Ring.Common.neg_add
+                                              (Mathlib.Tactic.Ring.Common.neg_mul (↑(MathGKM.Markov.frame path).lo.b)
+                                                (Nat.rawCast 1)
+                                                (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                  (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                    (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                      (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                    (Eq.refl (Int.negOfNat 1)))))
+                                              Mathlib.Tactic.Ring.Common.neg_zero)
+                                            (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                              (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                  (Int.negOfNat 1).rawCast +
+                                                0))))
+                                        (Mathlib.Tactic.Ring.Common.sub_congr
+                                          (Mathlib.Tactic.Ring.Common.atom_pf (↑(MathGKM.Markov.frame path).mid.a) rfl
+                                            (Eq.mpr
+                                              (id
+                                                (congrArg
+                                                  (fun _a =>
+                                                    ↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 * Nat.rawCast 1 =
+                                                      ↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 * _a)
+                                                  (Eq.symm rfl)))
+                                              (Eq.refl
+                                                (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                                          (Mathlib.Tactic.Ring.Common.add_congr
+                                            (Mathlib.Tactic.Ring.Common.atom_pf (↑(MathGKM.Markov.frame path).lo.a) rfl
+                                              (Eq.mpr
+                                                (id
+                                                  (congrArg
+                                                    (fun _a =>
+                                                      ↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1 =
+                                                        ↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 * _a)
+                                                    (Eq.symm rfl)))
+                                                (Eq.refl
+                                                  (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                                            (Mathlib.Tactic.Ring.Common.atom_pf (↑(MathGKM.Markov.frame path).hi.a) rfl
+                                              (Eq.mpr
+                                                (id
+                                                  (congrArg
+                                                    (fun _a =>
+                                                      ↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                          Nat.rawCast 1 =
+                                                        ↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 * _a)
+                                                    (Eq.symm rfl)))
+                                                (Eq.refl
+                                                  (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                                            (Mathlib.Tactic.Ring.Common.add_pf_add_gt
+                                              (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 * Nat.rawCast 1)
+                                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 * Nat.rawCast 1 +
+                                                  0))))
+                                          (Mathlib.Tactic.Ring.Common.sub_pf
+                                            (Mathlib.Tactic.Ring.Common.neg_add
+                                              (Mathlib.Tactic.Ring.Common.neg_mul (↑(MathGKM.Markov.frame path).hi.a)
+                                                (Nat.rawCast 1)
+                                                (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                  (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                    (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                      (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                    (Eq.refl (Int.negOfNat 1)))))
+                                              (Mathlib.Tactic.Ring.Common.neg_add
+                                                (Mathlib.Tactic.Ring.Common.neg_mul (↑(MathGKM.Markov.frame path).lo.a)
+                                                  (Nat.rawCast 1)
+                                                  (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                    (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                                      (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                        (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                      (Eq.refl (Int.negOfNat 1)))))
+                                                Mathlib.Tactic.Ring.Common.neg_zero))
+                                            (Mathlib.Tactic.Ring.Common.add_pf_add_gt
+                                              (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                (Int.negOfNat 1).rawCast)
+                                              (Mathlib.Tactic.Ring.Common.add_pf_add_gt
+                                                (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                  (Int.negOfNat 1).rawCast)
+                                                (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                  (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 * Nat.rawCast 1 +
+                                                    0))))))
+                                        (Mathlib.Tactic.Ring.Common.add_mul
+                                          (Mathlib.Tactic.Ring.Common.mul_add
+                                            (Mathlib.Tactic.Ring.Common.mul_pf_right (↑(MathGKM.Markov.frame path).hi.a)
+                                              (Nat.rawCast 1)
+                                              (Mathlib.Tactic.Ring.Common.mul_pf_left
+                                                (↑(MathGKM.Markov.frame path).lo.b) (Nat.rawCast 1)
+                                                (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                                  (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                                    (Mathlib.Meta.NormNum.isInt_mul (Eq.refl HMul.hMul)
+                                                      (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                      (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                      (Eq.refl (Int.ofNat 1)))))))
+                                            (Mathlib.Tactic.Ring.Common.mul_add
+                                              (Mathlib.Tactic.Ring.Common.mul_pf_left
+                                                (↑(MathGKM.Markov.frame path).lo.b) (Nat.rawCast 1)
+                                                (Mathlib.Tactic.Ring.Common.mul_pf_right
+                                                  (↑(MathGKM.Markov.frame path).lo.a) (Nat.rawCast 1)
+                                                  (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                                    (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                                      (Mathlib.Meta.NormNum.isInt_mul (Eq.refl HMul.hMul)
+                                                        (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                        (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                        (Eq.refl (Int.ofNat 1)))))))
+                                              (Mathlib.Tactic.Ring.Common.mul_add
+                                                (Mathlib.Tactic.Ring.Common.mul_pf_left
+                                                  (↑(MathGKM.Markov.frame path).lo.b) (Nat.rawCast 1)
+                                                  (Mathlib.Tactic.Ring.Common.mul_pf_right
+                                                    (↑(MathGKM.Markov.frame path).mid.a) (Nat.rawCast 1)
+                                                    (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                                      (Mathlib.Meta.NormNum.isInt_mul (Eq.refl HMul.hMul)
+                                                        (Mathlib.Meta.NormNum.IsInt.of_raw ℤ (Int.negOfNat 1))
+                                                        (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℤ 1))
+                                                        (Eq.refl (Int.negOfNat 1))))))
+                                                (Mathlib.Tactic.Ring.Common.mul_zero
+                                                  (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                    (Int.negOfNat 1).rawCast))
+                                                (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                                  (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                      (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                        (Int.negOfNat 1).rawCast) +
+                                                    0)))
+                                              (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                                (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                  (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                                (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                                  (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                      (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                        (Int.negOfNat 1).rawCast) +
+                                                    0))))
+                                            (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                              (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                              (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                                (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                    (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                      Nat.rawCast 1) +
+                                                  (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 *
+                                                      (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 *
+                                                        (Int.negOfNat 1).rawCast) +
+                                                    0)))))
+                                          (Mathlib.Tactic.Ring.Common.zero_mul
+                                            (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                (Int.negOfNat 1).rawCast +
+                                              (↑(MathGKM.Markov.frame path).lo.a ^ Nat.rawCast 1 *
+                                                  (Int.negOfNat 1).rawCast +
+                                                (↑(MathGKM.Markov.frame path).mid.a ^ Nat.rawCast 1 * Nat.rawCast 1 +
+                                                  0))))
+                                          (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                            (↑(MathGKM.Markov.frame path).hi.a ^ Nat.rawCast 1 *
+                                                (↑(MathGKM.Markov.frame path).lo.b ^ Nat.rawCast 1 * Nat.rawCast 1) +
+                                              (⋯ + ⋯)))))
+                                      ⋯ ⋯)
+                                    ⋯)
+                                  ⋯))
+                              ⋯))
+                        ⋯)⟩⟩

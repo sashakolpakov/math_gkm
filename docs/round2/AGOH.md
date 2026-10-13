@@ -116,9 +116,11 @@ No proposition needed for the chosen substantial Agoh exercise remains open.
 We have not reproduced each of the paper's three proof routes, formalized the
 general symmetric-polynomial identities, or proved a general exact-multiplicity
 classification; none is assumed by the accepted results. Independent source
-and proof review remains the supervisor's role, not a mathematical hypothesis.
+and proof review has now passed all 43 declarations and the mathematical
+documentation; reports are in `evidence/independent-agoh`. This status update
+does not change any mathematical statement in the reviewed snapshot.
 
-Markov research has not started. The next machine-selected request is
-`requests/agoh-to-markov.json`: read the Markov primary source, audit the precise
-Conjecture 6.3 and coefficient conventions, then choose experiments and a
-universal proof route from that reading.
+The request `requests/agoh-to-markov.json` has now been executed. Markov research
+and its separate durable engine run are recorded in `docs/round2/MARKOV.md`.
+Full Conjecture 6.3 remains open; the new campaign has exact experiments and
+universal checked partial results.

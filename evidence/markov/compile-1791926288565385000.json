@@ -1,0 +1,31 @@
+{
+  "lean_path": "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean:/Users/sasha/math_gkm/.scratch/markov:/Users/sasha/math_gkm/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "records": [
+    {
+      "module": "MathGKM.MarkovLogConcavity",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/markov/MathGKM/MarkovLogConcavity.olean",
+        "MathGKM/MarkovLogConcavity.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 15.668784082998172
+    },
+    {
+      "module": "MathGKM.MarkovExamples",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/markov/MathGKM/MarkovExamples.olean",
+        "MathGKM/MarkovExamples.lean"
+      ],
+      "returncode": 1,
+      "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\nMathGKM/MarkovExamples.lean:90:61: error: unsolved goals\nh0 : InPolygon 1 2 0 (0 + 2)\nh1 : InPolygon 1 2 (0 + 1) (0 + 1)\nh2 : InPolygon 1 2 (0 + 2) 0\n\u22a2 X + X * C X * 2 + X ^ 2 + C X ^ 2 = X + X * C X * 2 + X ^ 2 + C (X ^ 2)\nMathGKM/MarkovExamples.lean:86:2: error: unsolved goals\ncase right.right\nh0 : InPolygon 1 2 0 (0 + 2)\nh1 : InPolygon 1 2 (0 + 1) (0 + 1)\nh2 : InPolygon 1 2 (0 + 2) 0\nhe : initial.mid.p = C (X ^ 2) + C (2 * X + 1) * X + X ^ 2\n\u22a2 1 \u2264 |2 + Polynomial.coeff 1 1|\n",
+      "stderr": "",
+      "seconds": 3.7931266669911565
+    }
+  ]
+}

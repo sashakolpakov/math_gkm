@@ -1,7 +1,7 @@
 {
-  "provenance": "Actual authorized live Codex/gpt-6-astra Agoh mathematics invocation, 2026-10-13; current reconstruction proofs reused",
-  "phase": "agoh",
-  "status": "agoh_uniform_main_theorem_and_regular_domain_conjecture_refutation_compiled",
+  "provenance": "Actual authorized live Codex/gpt-6-astra proposer, 2026-10-13; mathematical source and documentation independently reviewed; supervisor acceptance recorded after round 5.",
+  "phase": "markov",
+  "status": "markov_48_independently_reviewed_declarations_and_observed_feedback_checkpoint",
   "mission_complete": false,
   "certified_persistent_switch": false,
   "authoritative_admission": false,
@@ -10,10 +10,10 @@
     "docs/DESIGN.md"
   ],
   "read_next": [
-    "docs/round2/AGOH.md",
-    "MathGKM/AgohMain.lean",
-    "MathGKM/AgohConsequences.lean",
-    "requests/agoh-to-markov.json"
+    "docs/round2/MARKOV.md",
+    "evidence/markov/english-lean-review.md",
+    "requests/markov-next.json",
+    "evidence/markov/research-run/request-0010.json"
   ],
   "evidence": [
     "evidence/round2/checks.json",
@@ -26,7 +26,19 @@
     "evidence/construction/kernel.json",
     "evidence/agoh/build.json",
     "evidence/agoh/AgohAudit.log",
-    "evidence/agoh/research-record.json"
+    "evidence/agoh/research-record.json",
+    "evidence/independent-agoh/final-source-status.json",
+    "evidence/markov/build.json",
+    "evidence/markov/kernel.json",
+    "evidence/markov/MarkovAudit.log",
+    "evidence/markov/english-lean-review.md",
+    "evidence/markov/stress-result.json",
+    "evidence/markov/research-run/state.json",
+    "evidence/independent-markov/report.json",
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md",
+    "evidence/independent-markov/DOCUMENTATION_REVIEW.md",
+    "evidence/independent-markov/research-feedback-audit.json",
+    "evidence/independent-markov/markov_residual_scope_audit.md"
   ],
   "pending_transport": null,
   "historical_round2_request": "evidence/round2/research-run/request-0002.json",
@@ -54,28 +66,88 @@
     "source": "https://math.colgate.edu/~integers/aa9/aa9.pdf",
     "inventory": "docs/round2/AGOH.md",
     "scope": "Uniform n-fold theorem for all real polynomials; reduced numerator for f(1)!=0; exact cleared/reduced equivalence for every multiplicity; published Theorems 1.1 and 3.1; both conjecture quantifier readings refuted on the regular domain",
-    "proofs": ["MathGKM/AgohMain.lean", "MathGKM/AgohConsequences.lean"],
-    "status": "Substantial exercise complete and compiled; independent review remains external",
-    "axioms": ["propext", "Classical.choice", "Quot.sound"],
+    "proofs": [
+      "MathGKM/AgohMain.lean",
+      "MathGKM/AgohConsequences.lean"
+    ],
+    "status": "Complete; independent compilation and English/Lean review passed all 43 declarations, including n-fold theorem and cancellation bridge.",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
     "counterexample": "f=(X+1)^2, f(1)=4, valid simultaneously for every n",
     "not_done": []
   },
-  "markov": "not_started",
+  "markov": {
+    "status": "checked_partial_results_full_conjecture_open",
+    "source_audit": "evidence/markov/source-audit.md",
+    "inventory": "docs/round2/MARKOV.md",
+    "target": "MathGKM.Markov.Conjecture63",
+    "run": "evidence/markov/research-run",
+    "contract": "contracts/markov.json",
+    "consumed_live_responses": 10,
+    "events": 21,
+    "pending_request": "request-0010.json",
+    "checked_declarations": 48,
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "kernel_modules": 6,
+    "independent_review": "Passed: copied-source compilation, 48 theorem axiom closures, English/Lean correspondence, exact experiment reproduction, and chronological feedback audit. Evidence: evidence/independent-markov/.",
+    "unconditional_results": [
+      "frame_reduced",
+      "boundary_formula",
+      "boundary_raw_logConcave",
+      "quadratic_binomial_logConcave",
+      "third_diagonal_expression_logConcave",
+      "sourceThird_factor",
+      "normalization_counterexample",
+      "subtraction_counterexample"
+    ],
+    "conditional_result": "third_diagonal_of_formula requires ThirdDiagonalFormula; universal formula bridge still unproved",
+    "finite_evidence": {
+      "fractions": 241,
+      "triples": 229476,
+      "diagonals": 6822,
+      "critical_points": 20781
+    },
+    "machine_selected_conjecture": "Nonnegative log-concave upper-diagonal residuals after removing (1+X)^max(d-2r,0); unproved and distinct from full 6.3",
+    "remaining": [
+      "Full published Conjecture6.3",
+      "Universal recurrence-to-ThirdDiagonalFormula identity",
+      "Formal Stern-Brocot rational-index completeness and full Laurent correspondence",
+      "Universal residual conjecture and factor4 conjecture"
+    ],
+    "residual_scope_note": "Recorded residual experiments test nonnegativity and adjacent inequalities. They do not prove the stronger CrossLC condition required by the transport lemma. An independent finite audit found no CrossLC failure in the 1293 saved initial residual arrays; this is not a universal reduction or a resolution of any other direction."
+  },
   "remaining": [
     "Extend simulation to a larger engine language only if that scope is required: prove related successor observations and a cumulative cost bound for every admitted future interpreter replacement.",
     "For time-sensitive environments, prove an environmental-state relation or coupling yielding corresponding responses despite different elapsed costs.",
     "For reciprocal first-proof-time utility, define certified root evidence and prove stopping-time transport with all costs; current utility is reward minus abstract cost.",
     "For infinite horizons, define and prove convergence of the chosen utility; current theorem covers every positive finite horizon.",
     "Dependent declaration attachment requires actual model-extension witnesses and exact interpretation transport.",
-    "Execute requests/agoh-to-markov.json. The substantial Agoh exercise is complete; Markov has not started."
+    "Full published Conjecture6.3",
+    "Universal recurrence-to-ThirdDiagonalFormula identity",
+    "Formal Stern-Brocot rational-index completeness and full Laurent correspondence",
+    "Universal residual conjecture and factor4 conjecture"
   ],
-  "next_step": "Read requests/agoh-to-markov.json and the Markov primary paper; audit Conjecture 6.3 and its coefficient conventions before experiments or formal claims. Agoh proofs and source correspondence are in docs/round2/AGOH.md.",
-  "next_research_request": "requests/agoh-to-markov.json",
+  "next_step": "Read the pending Markov engine request and actual observations. Prove ThirdDiagonalFormula for generated labels with a>=3, or select a more informative universal lemma from the residual experiments. Full Conjecture63 remains open.",
+  "next_research_request": "requests/markov-next.json",
   "agoh_reproduce": "/opt/homebrew/bin/python3 evidence/agoh/reproduce.py",
-  "agoh_final_theorems": ["MathGKM.Agoh.main", "MathGKM.Agoh.theorem_1_1", "MathGKM.Agoh.theorem_3_1", "MathGKM.Agoh.cleared_iff_reduced", "MathGKM.Agoh.refutes_per_n", "MathGKM.Agoh.refutes_all_n"],
+  "agoh_final_theorems": [
+    "MathGKM.Agoh.main",
+    "MathGKM.Agoh.theorem_1_1",
+    "MathGKM.Agoh.theorem_3_1",
+    "MathGKM.Agoh.cleared_iff_reduced",
+    "MathGKM.Agoh.refutes_per_n",
+    "MathGKM.Agoh.refutes_all_n"
+  ],
   "model_switch_proved": true,
   "previous_round_reproduce": "/opt/homebrew/bin/python3 -u -m machinery.check",
-  "reproduce": "Use the absolute pinned Lean commands and LEAN_PATH recorded in evidence/construction/build.json. Compiled modules are in .scratch/construction.",
+  "reproduce": "/opt/homebrew/bin/python3 evidence/markov/reproduce.py",
   "previous_round_remaining": [
     "Supervisor freeze and independent validation of admission meanings, binaries, imports, validator and protected observation channel",
     "Full-language worker containment; nested sandbox and OS memory-limit calls unavailable here",
@@ -99,5 +171,6 @@
       "switch_including_initial_cost": 26,
       "initial_change": 5
     }
-  }
+  },
+  "historical_status_note": "previous_round_remaining and immutable historical engine requests record former statuses, not current Agoh mathematical obligations. The old round2 contract remains unchanged for chronology."
 }

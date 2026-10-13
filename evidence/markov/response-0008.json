@@ -1,0 +1,134 @@
+{
+  "request_id": "54287b48239248c29608475b6b1b981b",
+  "context_hash": "5b1cb4758831ab8fdfb616515394ef5b8c1ff8d6a2706e683f9f431bf2b87868",
+  "origin": "direct_bootstrap_proposer",
+  "decision": "Read the actual larger-scan output and final local compilation/kernel logs. Record 48 checked theorem declarations and exact finite observations with their pending action bindings. Full 6.3 and the universal ThirdDiagonalFormula bridge remain unproved.",
+  "actions": [
+    {
+      "kind": "external_observation",
+      "payload": {
+        "event_index": 9,
+        "action_hash": "fd4f4cd0bb61ddb4ba5d42eaf97feb6be38fae7e4cf01ff334b94d77d950106d",
+        "observation": {
+          "build": "evidence/markov/build.json",
+          "kernel": "evidence/markov/kernel.json",
+          "axioms": "evidence/markov/MarkovAudit.log",
+          "theorem_count": 48,
+          "source_sha256": {
+            "MathGKM.Markov": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+            "MathGKM.MarkovIndices": "d31b4077de76ad7af7bd5c98df0e80367e38364d526541ed12dfd665db1f5e76",
+            "MathGKM.MarkovLogConcavity": "458b5ff6169b3f09ceaed75a31f213a202257874620bda185a3752401a7a69a6",
+            "MathGKM.MarkovBoundary": "8354147ec0b75d0b4abebeb81fe116e2dac4334bf46831938decdf99cacab809",
+            "MathGKM.MarkovExamples": "169a7abb1f9135e668fd273fecdfcdc445c711f8e4973f42aa39ab493e0e30ec",
+            "MathGKM.MarkovAudit": "a21d3cf5c015a1e207c908f4df62a850c57963f51e44f44a27d948fc686c2d87"
+          },
+          "status": "local pinned Lean compilation, axiom inspection and kernel replay passed; not independent supervisor review",
+          "scope": "All-path j=0 raw boundary LC; universal quadratic-binomial and third-diagonal-expression LC; exact conditional diagonal bridge; indexing and counterexamples. Full Conjecture63 open."
+        }
+      }
+    },
+    {
+      "kind": "external_observation",
+      "payload": {
+        "event_index": 15,
+        "action_hash": "bd69948f51e6fd1f23b283fa470a2cd7d78e79518b64beddb200ac63020b6cc0",
+        "observation": {
+          "build": "evidence/markov/build.json",
+          "kernel": "evidence/markov/kernel.json",
+          "axioms": "evidence/markov/MarkovAudit.log",
+          "theorem_count": 48,
+          "source_sha256": {
+            "MathGKM.Markov": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+            "MathGKM.MarkovIndices": "d31b4077de76ad7af7bd5c98df0e80367e38364d526541ed12dfd665db1f5e76",
+            "MathGKM.MarkovLogConcavity": "458b5ff6169b3f09ceaed75a31f213a202257874620bda185a3752401a7a69a6",
+            "MathGKM.MarkovBoundary": "8354147ec0b75d0b4abebeb81fe116e2dac4334bf46831938decdf99cacab809",
+            "MathGKM.MarkovExamples": "169a7abb1f9135e668fd273fecdfcdc445c711f8e4973f42aa39ab493e0e30ec",
+            "MathGKM.MarkovAudit": "a21d3cf5c015a1e207c908f4df62a850c57963f51e44f44a27d948fc686c2d87"
+          },
+          "status": "local pinned Lean compilation, axiom inspection and kernel replay passed; not independent supervisor review",
+          "scope": "All-path j=0 raw boundary LC; universal quadratic-binomial and third-diagonal-expression LC; exact conditional diagonal bridge; indexing and counterexamples. Full Conjecture63 open."
+        }
+      }
+    },
+    {
+      "kind": "external_observation",
+      "payload": {
+        "event_index": 16,
+        "action_hash": "632772ae82cd8e16e8ff4e8dc95c7c7a6b424209511eecbb9641255998c12222",
+        "observation": {
+          "result": {
+            "denominator_bound": 28,
+            "counts": {
+              "fractions": 241,
+              "triples": 229476,
+              "diagonals": 6822,
+              "critical_points": 20781
+            },
+            "failures": [],
+            "raw_equalities_first10": [],
+            "residuals_17_28_first6": [
+              [
+                0,
+                [
+                  1
+                ]
+              ],
+              [
+                1,
+                [
+                  16,
+                  27
+                ]
+              ],
+              [
+                2,
+                [
+                  120,
+                  410,
+                  351
+                ]
+              ],
+              [
+                3,
+                [
+                  560,
+                  2905,
+                  5050,
+                  2925
+                ]
+              ],
+              [
+                4,
+                [
+                  1820,
+                  12740,
+                  33740,
+                  39800,
+                  17550
+                ]
+              ],
+              [
+                5,
+                [
+                  4368,
+                  38675,
+                  138764,
+                  250240,
+                  225400,
+                  80730
+                ]
+              ]
+            ],
+            "seconds": 4.976159459009068,
+            "status": "finite exact computation only"
+          },
+          "status": "exact finite experiment, not proof"
+        }
+      }
+    }
+  ],
+  "provider": {
+    "model": "Codex/gpt-6-astra",
+    "transport": "actual live session"
+  }
+}

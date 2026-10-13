@@ -1,0 +1,18 @@
+{
+  "lean_path": "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean:/Users/sasha/math_gkm/.scratch/markov:/Users/sasha/math_gkm/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "records": [
+    {
+      "module": "MathGKM.MarkovLogConcavity",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/markov/MathGKM/MarkovLogConcavity.olean",
+        "MathGKM/MarkovLogConcavity.lean"
+      ],
+      "returncode": 1,
+      "stdout": "MathGKM/MarkovLogConcavity.lean:92:13: error: unsolved goals\ncase neg.succ\np : \u211d[X]\nn : \u2115\nhk : \u00ac\u2191(n + 1) < 0\nhe : \u2191(n + 1) - 1 = \u2191n\n\u22a2 (if \u2191n + 1 < 0 then 0 else p.coeff (n + 1) + p.coeff n) =\n    (if \u2191n + 1 < 0 then 0 else p.coeff (n + 1)) + if \u2191n < 0 then 0 else p.coeff n\nMathGKM/MarkovLogConcavity.lean:94:30: warning: This simp argument is unused:\n  he\n\nHint: Omit it from the simp argument list.\n  simp [CoeffSeq, Smooth, h\u0335e\u0335,\u0335 \u0335add_mul]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nMathGKM/MarkovLogConcavity.lean:104:2: error: unsolved goals\ncase neg\nA B D : \u211d\nk : \u2115\nhk : \u00ac\u2191k < 0\n\u22a2 (if \u2191k < 0 then 0 else (if k = 0 then A else 0) + B * X.coeff k + if k = 2 then D else 0) =\n    if k = 0 then A else if k = 1 then B else if \u2191k = 2 then D else 0\nMathGKM/MarkovLogConcavity.lean:105:40: warning: This simp argument is unused:\n  coeff_C_mul_X_pow\n\nHint: Omit it from the simp argument list.\n  simp [CoeffSeq, Quadratic, QuadSeq, c\u0335o\u0335e\u0335f\u0335f\u0335_\u0335C\u0335_\u0335m\u0335u\u0335l\u0335_\u0335X\u0335_\u0335p\u0335o\u0335w\u0335,\u0335 \u0335coeff_C_mul_X, coeff_C, Nat.cast_eq_zero, Nat.cast_eq_one]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nMathGKM/MarkovLogConcavity.lean:105:59: warning: This simp argument is unused:\n  coeff_C_mul_X\n\nHint: Omit it from the simp argument list.\n  simp [CoeffSeq, Quadratic, QuadSeq, coeff_C_mul_X_pow, c\u0335o\u0335e\u0335f\u0335f\u0335_\u0335C\u0335_\u0335m\u0335u\u0335l\u0335_\u0335X\u0335,\u0335coeff_C, Nat.cast_eq_zero,\n  \u0332  \u0332 \u0332 \u0332 \u0332 \u0332Nat.cast_eq_one]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nMathGKM/MarkovLogConcavity.lean:106:15: warning: This simp argument is unused:\n  Nat.cast_eq_zero\n\nHint: Omit it from the simp argument list.\n  simp [CoeffSeq, Quadratic, QuadSeq, coeff_C_mul_X_pow, coeff_C_mul_X, coeff_C, N\u0335a\u0335t\u0335.\u0335c\u0335a\u0335s\u0335t\u0335_\u0335e\u0335q\u0335_\u0335z\u0335e\u0335r\u0335o\u0335,\u0335 \u0335Nat.cast_eq_one]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nMathGKM/MarkovLogConcavity.lean:149:46: error: failed to prove positivity/nonnegativity/nonzeroness\nMathGKM/MarkovLogConcavity.lean:152:19: error: failed to prove positivity/nonnegativity/nonzeroness\n",
+      "stderr": "",
+      "seconds": 25.29316858299717
+    }
+  ]
+}

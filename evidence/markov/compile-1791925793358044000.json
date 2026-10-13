@@ -1,0 +1,31 @@
+{
+  "lean_path": "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean:/Users/sasha/math_gkm/.scratch/markov:/Users/sasha/math_gkm/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "records": [
+    {
+      "module": "MathGKM.Markov",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/markov/MathGKM/Markov.olean",
+        "MathGKM/Markov.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 27.683175999991363
+    },
+    {
+      "module": "MathGKM.MarkovLogConcavity",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/markov/MathGKM/MarkovLogConcavity.olean",
+        "MathGKM/MarkovLogConcavity.lean"
+      ],
+      "returncode": 1,
+      "stdout": "MathGKM/MarkovLogConcavity.lean:21:19: error: typeclass instance problem is stuck\n  Preorder ?m.37\n\nNote: Lean will not try to resolve this typeclass instance problem because the type argument to `Preorder` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.\n\nHint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.\nMathGKM/MarkovLogConcavity.lean:31:2: error: Type mismatch: After simplification, term\n  hs\n has type\n  CrossLC fun k => f k + f (k + -1)\nbut is expected to have type\n  CrossLC (Smooth f)\nMathGKM/MarkovLogConcavity.lean:63:43: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  0 \u2264 b \u2264 2\n  a \u2265 2\n  a - b \u2265 0\nwhere\n a := j\n b := i\nMathGKM/MarkovLogConcavity.lean:67:41: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b \u2264 -1\n  a - b \u2265 0\nwhere\n a := j\n b := i\n",
+      "stderr": "",
+      "seconds": 19.49943599999824
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "phase": "markov",
+  "summary": "Agoh is complete. Markov now has checked universal boundary log-concavity, a universal third-diagonal expression theorem, and explicit counterexamples to stronger assumptions. Full Conjecture 6.3 remains open.",
+  "files_changed": [
+    "MathGKM/Markov.lean",
+    "MathGKM/MarkovIndices.lean",
+    "MathGKM/MarkovLogConcavity.lean",
+    "MathGKM/MarkovBoundary.lean",
+    "MathGKM/MarkovExamples.lean",
+    "MathGKM/MarkovAudit.lean",
+    "contracts/markov.json",
+    "docs/round2/MARKOV.md",
+    "docs/round2/AGOH.md",
+    "requests/agoh-to-markov.json",
+    "requests/markov-next.json",
+    "evidence/markov/",
+    "README.md",
+    "RESUME.json"
+  ],
+  "checks": [
+    "48 declarations compiled with pinned Lean; permitted axioms only; six modules passed kernel replay.",
+    "10 live proposer responses consumed by the separate Markov engine run.",
+    "Exact scan: 241 fractions and 229,476 raw coefficient triples passed.",
+    "6,822 residual diagonals and 20,781 factor-4 checks passed; finite evidence only."
+  ],
+  "remaining": [
+    "Full Conjecture 6.3.",
+    "Universal recurrence-to-third-diagonal formula bridge.",
+    "Formal rational-index completeness and independent Markov review.",
+    "Universal residual and factor-4 conjectures."
+  ],
+  "next_step": "Resume request-0010.json and attempt the precise ThirdDiagonalFormula bridge recorded in requests/markov-next.json."
+}

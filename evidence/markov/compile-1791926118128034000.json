@@ -1,0 +1,18 @@
+{
+  "lean_path": "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean:/Users/sasha/math_gkm/.scratch/markov:/Users/sasha/math_gkm/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "records": [
+    {
+      "module": "MathGKM.MarkovExamples",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/markov/MathGKM/MarkovExamples.olean",
+        "MathGKM/MarkovExamples.lean"
+      ],
+      "returncode": 1,
+      "stdout": "MathGKM/MarkovExamples.lean:15:43: error: unsolved goals\nhe : (frame [false]).mid.p = C (X ^ 3) + C (3 * X ^ 2 + 2 * X + 1) * X + C (3 * X + 2) * X ^ 2 + X ^ 3\nhc : Polynomial.coeff (frame [false]).mid.p 1 = 3 * X ^ 2 + 2 * X + 1\n\u22a2 (((3 * if False then 1 else 0) + 2 * if False then 1 else 0) + if True then 1 else 0) = 1 \u2227\n    (((3 * if False then 1 else 0) + 2 * if True then 1 else 0) + if False then 1 else 0) = 2 \u2227\n      (((3 * if True then 1 else 0) + 2 * if False then 1 else 0) + if False then 1 else 0) = 3\n",
+      "stderr": "",
+      "seconds": 3.0694971670018276
+    }
+  ]
+}

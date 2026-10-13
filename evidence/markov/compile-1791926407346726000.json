@@ -1,0 +1,18 @@
+{
+  "lean_path": "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean:/Users/sasha/math_gkm/.scratch/markov:/Users/sasha/math_gkm/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "records": [
+    {
+      "module": "MathGKM.MarkovIndices",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/markov/MathGKM/MarkovIndices.olean",
+        "MathGKM/MarkovIndices.lean"
+      ],
+      "returncode": 1,
+      "stdout": "MathGKM/MarkovIndices.lean:18:12: error: Application type mismatch: The argument\n  rfl\nhas type\n  ?m.82 = ?m.82\nbut is expected to have type\n  True\nin the application\n  And.intro rfl\nMathGKM/MarkovIndices.lean:18:16: error: Application type mismatch: The argument\n  rfl\nhas type\n  ?m.86 = ?m.86\nbut is expected to have type\n  True\nin the application\n  And.intro rfl\nMathGKM/MarkovIndices.lean:18:45: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  h \u2265 0\n  g \u2265 0\n  g - h \u2265 0\n  e \u2265 0\n  d \u2265 1\n  c \u2265 1\n  c + d \u2265 0\n  b \u2265 1\n  b - d \u2264 0\n  a \u2265 0\n  a - c \u2264 -1\n  a + b \u2265 0\nwhere\n a := \u2191f.lo.a\n b := \u2191f.hi.a\n c := \u2191f.lo.b\n d := \u2191f.hi.b\n e := \u2191f.lo.a * \u2191f.hi.b\n g := \u2191f.lo.a * \u2191f.mid.b\n h := \u2191f.mid.a * \u2191f.lo.b\nMathGKM/MarkovIndices.lean:15:34: error: unsolved goals\ncase true\nf : Frame\nhma : f.mid.a = f.lo.a + f.hi.a\nhmb : f.mid.b = f.lo.b + f.hi.b\nhd : f.hi.a * f.lo.b = f.lo.a * f.hi.b + 1\nhlb : 0 < f.lo.b\nhrb : 0 < f.hi.b\nhra : 0 < f.hi.a\nhlo : f.lo.a < f.lo.b\nhhi : f.hi.a \u2264 f.hi.b\n\u22a2 True \u2227\n    True \u2227\n      f.hi.a * f.mid.b = f.mid.a * f.hi.b + 1 \u2227\n        0 < f.mid.b \u2227 0 < f.hi.b \u2227 0 < f.hi.a \u2227 f.mid.a < f.mid.b \u2227 f.hi.a \u2264 f.hi.b\nMathGKM/MarkovIndices.lean:18:51: error: unexpected token '||'; expected command\nMathGKM/MarkovIndices.lean:36:2: error: Type mismatch\n  (Nat.dvd_add_iff_left h2).mp h1\nhas type\n  a.gcd b \u2223 a * d + 1 + a * d\nbut is expected to have type\n  a.gcd b \u2223 1\n",
+      "stderr": "",
+      "seconds": 6.484662000002572
+    }
+  ]
+}
