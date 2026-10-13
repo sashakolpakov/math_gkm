@@ -28,6 +28,7 @@ def main():
     parser.add_argument('--round', type=int, required=True)
     parser.add_argument('--seconds', type=int, default=1200)
     parser.add_argument('--feedback', type=Path)
+    parser.add_argument('--task-prompt', type=Path)
     args = parser.parse_args()
     assert 1 <= args.round <= 100 and 1 <= args.seconds <= 1800
     directory = ROOT / '.bootstrap' / f'round-{args.round:04d}'
@@ -62,6 +63,8 @@ Work autonomously and leave durable progress notes and resumable state for subse
 
 At the end return the required JSON. List remaining gaps candidly, and identify exact evidence files. Do not claim the overall mission complete unless all its required work was actually done.
 '''
+    if args.task_prompt:
+        prompt = args.task_prompt.read_text()
     prompt += f'\nThis proposer invocation has a hard wall-clock limit of {args.seconds} seconds. Persist useful checkpoints during the work and leave resumable state before the limit.\n'
     if args.feedback:
         prompt += '\nSUPERVISOR AUDIT FEEDBACK (requirements/correctness only, not a supplied solution):\n' + args.feedback.read_text()

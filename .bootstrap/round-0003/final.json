@@ -1,0 +1,27 @@
+{
+  "phase": "construction",
+  "summary": "Proved verified_change: an executable guarded engine transformation improves one fixed utility over every positive finite horizon, including later engine searches, self-changes, and installation costs. Gluing preservation feeds directly into the proof. Concrete costs: incumbent 33, transformed continuation 26.",
+  "files_changed": [
+    "MathGKM/Continuation.lean",
+    "MathGKM/ContinuationExamples.lean",
+    "MathGKM/ConstructionAudit.lean",
+    "MathGKM/Gluing.lean",
+    "MathGKM.lean",
+    "docs/CONSTRUCTION_MATHEMATICS.md",
+    "RESUME.json",
+    "evidence/construction/build.json",
+    "evidence/construction/kernel.json"
+  ],
+  "checks": [
+    "Seven modules compiled; five kernel replays passed.",
+    "Axiom reports contain only propext and Quot.sound.",
+    "No admissions, custom axioms, native_decide, or self-soundness postulates.",
+    "Proved universal counterexamples covering incumbent self-improvement and excessive change costs."
+  ],
+  "remaining": [
+    "The proved domain uses observation-dependent environments and abstract costs.",
+    "General interpreter changes, time-sensitive response coupling, and first-proof-time or infinite-horizon utility require further proofs.",
+    "Agoh and Markov campaigns remain incomplete; no conjecture resolution is claimed."
+  ],
+  "next_step": "Resume from the mathematical audit and RESUME.json; extend the precise model where required, then continue Agoh before Markov."
+}

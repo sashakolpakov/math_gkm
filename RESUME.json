@@ -1,23 +1,50 @@
 {
-  "provenance": "Actual authorized Codex/Astra round-2 builder invocation, 2026-10-13",
+  "provenance": "Actual authorized Codex/gpt-6-astra mathematical construction invocation, 2026-10-13",
   "phase": "construction",
-  "status": "experimental_bootstrap_independent_validation_pending",
+  "status": "verified_finite_horizon_mathematical_model",
   "mission_complete": false,
   "certified_persistent_switch": false,
   "authoritative_admission": false,
-  "immutable_requirements": ["MISSION.md", "docs/DESIGN.md"],
-  "read_next": ["docs/round2/CONSTRUCTION.md", "docs/round2/TRANSPORT.md", "docs/round2/AGOH.md"],
-  "reproduce": "/opt/homebrew/bin/python3 -u -m machinery.check",
-  "evidence": ["evidence/round2/checks.json", "evidence/round2/formal-validation.json", "evidence/round2/tests-final.log", "evidence/round2/shadow-control.json", "evidence/round2/provenance.json"],
+  "immutable_requirements": [
+    "MISSION.md",
+    "docs/DESIGN.md"
+  ],
+  "read_next": [
+    "docs/CONSTRUCTION_MATHEMATICS.md",
+    "MathGKM/Continuation.lean",
+    "MathGKM/ContinuationExamples.lean",
+    "MathGKM/ConstructionAudit.lean"
+  ],
+  "evidence": [
+    "evidence/round2/checks.json",
+    "evidence/round2/formal-validation.json",
+    "evidence/round2/tests-final.log",
+    "evidence/round2/shadow-control.json",
+    "evidence/round2/provenance.json",
+    "evidence/construction/build.json",
+    "evidence/construction/MathGKM.ConstructionAudit.log",
+    "evidence/construction/kernel.json"
+  ],
   "pending_transport": "evidence/round2/research-run/request-0002.json",
   "freeze_request": "requests/freeze-boundary.json",
   "preserve": "All first-round evidence and genuine Lean results; round-2 failures are also retained.",
-  "do_not_use": ["Git internals", "external project trees except supplied dependency mounts", "package updates/downloads", "nested Codex or external model calls in bootstrap", "old receipts as admission authority"],
+  "do_not_use": [
+    "Git internals",
+    "external project trees except supplied dependency mounts",
+    "package updates/downloads",
+    "nested Codex or external model calls in bootstrap",
+    "old receipts as admission authority"
+  ],
   "construction_progress": [
     "Restricted proof gate excludes writable build imports and uses absolute toolchain binaries; actual shadow-Init exploit regression",
     "Durable response-bound experimental engine, bounded pure-Python programs, real restricted Lean proof checks, immutable-copy observations",
     "Lean transition guard executed by engine; request replay and budget theorems",
-    "Pushout universal property for types and formal incompatible-binding example"
+    "Pushout universal property for types and formal incompatible-binding example",
+    "Executable mutable engine programs with search and nested later engine installation",
+    "Universal positive-finite-horizon guarded switch theorem with equal observation traces, one unchanged reward-minus-cost utility, and charged installation",
+    "Pushout transition compatibility, uniqueness, exact observation equivalence, and cost non-descent obstruction",
+    "Concrete two-later-engine-change example and universal immediate-incumbent-improvement counterexample",
+    "Ordinary compilation and axiom reports; final verified_change connects transitions, installation, gluing, cost, and utility"
   ],
   "agoh": {
     "source": "https://math.colgate.edu/~integers/aa9/aa9.pdf",
@@ -25,10 +52,27 @@
     "scope": "Section 4 first-order cleared-numerator factor, all n>0 and all real polynomials; exact denominator-clearing hypotheses and negative examples",
     "proofs": "MathGKM/AgohExercise.lean",
     "status": "Lean proof objects; independent meaning/admission audit pending",
-    "not_done": ["Theorem 1.1 n-fold divisibility", "Theorem 3.1", "reduced rational numerator bridge", "final conjecture"]
+    "not_done": [
+      "Theorem 1.1 n-fold divisibility",
+      "Theorem 3.1",
+      "reduced rational numerator bridge",
+      "final conjecture"
+    ]
   },
   "markov": "not_started",
   "remaining": [
+    "Extend simulation to a larger engine language only if that scope is required: prove related successor observations and a cumulative cost bound for every admitted future interpreter replacement.",
+    "For time-sensitive environments, prove an environmental-state relation or coupling yielding corresponding responses despite different elapsed costs.",
+    "For reciprocal first-proof-time utility, define certified root evidence and prove stopping-time transport with all costs; current utility is reward minus abstract cost.",
+    "For infinite horizons, define and prove convergence of the chosen utility; current theorem covers every positive finite horizon.",
+    "Dependent declaration attachment requires actual model-extension witnesses and exact interpretation transport.",
+    "Resume the remaining Agoh mathematics, then the Markov conjecture. Neither campaign is completed by this construction result."
+  ],
+  "next_step": "Review the exact mathematical model and verified_change theorem in docs/CONSTRUCTION_MATHEMATICS.md. Choose a precise scope extension if required; otherwise continue the outstanding Agoh proofs before Markov. No new process, transport, permissions, or validation infrastructure is a prerequisite for the proved result.",
+  "model_switch_proved": true,
+  "previous_round_reproduce": "/opt/homebrew/bin/python3 -u -m machinery.check",
+  "reproduce": "Use the absolute pinned Lean commands and LEAN_PATH recorded in evidence/construction/build.json. Compiled modules are in .scratch/construction.",
+  "previous_round_remaining": [
     "Supervisor freeze and independent validation of admission meanings, binaries, imports, validator and protected observation channel",
     "Full-language worker containment; nested sandbox and OS memory-limit calls unavailable here",
     "Activate actual gpt-6-astra supervisor transport; bootstrap and fixture provenance is explicit",
@@ -37,5 +81,19 @@
     "Dependent Lean declaration attachment and semantic/cost simulations",
     "Independent English/Lean audit and remaining Agoh scope before Markov"
   ],
-  "next_step": "Independently validate and freeze the concrete boundary artifact, activate the pending proposal transport, and continue the controller continuation/cost bridge alongside the unfinished Agoh n-fold proof. Do not enable certified installation."
+  "final_theorem": "MathGKM.Continuation.verified_change",
+  "checked_model_scope": "Every positive finite number of complete engine rounds, every total observation-dependent environment, arbitrary later engine installations in the defined language, and one fixed integer reward-minus-cost objective.",
+  "validation": {
+    "compiled_modules": 7,
+    "kernel_replay_targets": 5,
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ],
+    "main_concrete_costs": {
+      "incumbent": 33,
+      "switch_including_initial_cost": 26,
+      "initial_change": 5
+    }
+  }
 }

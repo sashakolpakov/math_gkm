@@ -47,6 +47,30 @@ theorem necessary {D : Type} (u : B → D) (v : C → D)
     (hr : ∀ c, w (right f g c) = v c) (a : A) : u (f a) = v (g a) := by
   rw [← hl, ← hr, square]
 
+/-- The full pushout universal property in the category of types and functions. -/
+theorem universal {D : Type} (u : B → D) (v : C → D)
+    (compatible : ∀ a, u (f a) = v (g a)) :
+    ∃! w : Pushout f g → D,
+      (∀ b, w (left f g b) = u b) ∧ (∀ c, w (right f g c) = v c) := by
+  refine ⟨descend f g u v compatible, ⟨fun _ => rfl, fun _ => rfl⟩, ?_⟩
+  intro w hw
+  exact unique f g u v compatible w hw.1 hw.2
+
+/-- A predicate on the common interpretation holds globally precisely when it
+    holds on both components. This asserts no preservation for incompatible maps. -/
+theorem descend_predicate {D : Type} (u : B → D) (v : C → D)
+    (compatible : ∀ a, u (f a) = v (g a)) (P : D → Prop) :
+    (∀ q, P (descend f g u v compatible q)) ↔
+      (∀ b, P (u b)) ∧ (∀ c, P (v c)) := by
+  constructor
+  · intro h
+    exact ⟨fun b => h (left f g b), fun c => h (right f g c)⟩
+  · rintro ⟨hl, hr⟩ q
+    induction q using Quot.inductionOn with
+    | h x => cases x with
+      | inl b => exact hl b
+      | inr c => exact hr c
+
 theorem conflicting_binding :
     ¬ ∃ w : Pushout (fun _ : Unit => ()) (fun _ : Unit => ()) → Bool,
       (∀ b, w (left _ _ b) = false) ∧ (∀ c, w (right _ _ c) = true) := by
