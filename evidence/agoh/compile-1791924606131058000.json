@@ -1,0 +1,13 @@
+{
+  "source": "MathGKM/AgohMain.lean",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/.scratch/agoh/MathGKM/AgohMain.olean",
+    "MathGKM/AgohMain.lean"
+  ],
+  "lean_path": "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean:/Users/sasha/math_gkm/.scratch/agoh:/Users/sasha/math_gkm/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "returncode": 1,
+  "stdout": "MathGKM/AgohMain.lean:175:2: error: Type mismatch: After simplification, term\n  clears_denominators n (X + C a) x\n    (Eq.mpr\n      (id\n        (forall_congr fun i =>\n          implies_congr (Eq.trans mem_range._simp_1 Order.lt_add_one_iff._simp_1)\n            (congrFun' (congrArg Ne (Eq.trans eval_add (congr (congrArg HAdd.hAdd eval_X) eval_C))) 0)))\n      (Eq.mp\n        (forall_congr fun i =>\n          implies_congr (Eq.trans mem_range._simp_1 Order.lt_add_one_iff._simp_1) (Eq.refl \u00acx ^ i + a = 0))\n        hx))\n has type\n  eval x (numerator n (X + C a)) =\n    (\u220f k \u2208 range (n + 1), eval (x ^ k) (X + C a)) *\n      \u2211 i \u2208 range (n + 1), (-1) ^ i * \u2191(n.choose i) / eval (x ^ i) (X + C a)\nbut is expected to have type\n  eval x (numerator n (X + C a)) =\n    (\u220f k \u2208 range (n + 1), (x ^ k + a)) * \u2211 i \u2208 range (n + 1), (-1) ^ i * \u2191(n.choose i) / (x ^ i + a)\n",
+  "stderr": ""
+}

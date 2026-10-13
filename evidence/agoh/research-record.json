@@ -1,0 +1,41 @@
+{
+  "provenance": "Actual live Codex/gpt-6-astra proposer, 2026-10-13; no artificial test data",
+  "previous_request_record": "evidence/round2/research-run/request-0002.json",
+  "scope_update": "The current user explicitly requires the main n-fold theorem; the old first-order agenda is superseded, not counted as completion.",
+  "observations_and_decisions": [
+    {
+      "observation": "The primary source's second proof uses alternating sums of powers; the published Section 4 restricts its conclusion for repeated roots.",
+      "decision": "Prove the alternating substitution operator kills all polynomials modulo (X-1)^n, then use a polynomial inverse to f modulo this ideal. This avoids real-root and multiplicity assumptions."
+    },
+    {
+      "observation": "Coprimality of f and X-1 follows exactly from f(1) != 0, giving the required inverse by Bezout.",
+      "decision": "Use Mathlib polynomial coprimality and composition to prove the uniform regular theorem; treat f(1)=0 termwise only for the cleared polynomial."
+    },
+    {
+      "observation": "The common denominator evaluates to f(1)^(n+1), so cancellation cannot remove any X-1 factor on the intended domain.",
+      "decision": "Prove the exact cleared-versus-reduced equivalence for every exponent m, using RatFunc.num and its cross-multiplication identity."
+    },
+    {
+      "observation": "The compiled universal theorem includes repeated roots. The source leaves n unquantified and its final sentence omits f(1) != 0.",
+      "decision": "Restore the domain and formalize per-n and all-n conjectures separately. Use (X+1)^2, whose denominator at 1 is nonzero, as one simultaneous counterexample."
+    },
+    {
+      "observation": "The main theorem, reduced bridge, both conjecture refutations, special radical parameters and Section 4 degree example compiled with only ordinary Mathlib axioms.",
+      "decision": "Close the substantial Agoh exercise, preserve the source audit and failed elaborations, and select the next primary-source Markov request without beginning that campaign."
+    }
+  ],
+  "failed_attempts": {
+    "records": "evidence/agoh/compile-*.json",
+    "meaning": "Nonzero-status Lean elaboration attempts, not accepted mathematics",
+    "issues": [
+      "A simp-only use of neg_pow recursively expanded (-1)^i; replaced by a single explicit factorization and mul_pow.",
+      "The first Bezout linear-combination command had the wrong sign; corrected to the negated equality.",
+      "Finite erased-set computations required explicit decidable equalities.",
+      "Pointwise eval rewrites required simp_rw under finite-sum binders.",
+      "A power-successor simp expanded additional exponents; replaced by a targeted rewrite."
+    ]
+  },
+  "accepted_evidence": ["evidence/agoh/build.json", "evidence/agoh/AgohAudit.log"],
+  "remaining_agoh_required_propositions": [],
+  "next_request": "requests/agoh-to-markov.json"
+}

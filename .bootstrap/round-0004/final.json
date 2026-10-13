@@ -1,0 +1,25 @@
+{
+  "phase": "agoh",
+  "summary": "Proved the uniform n-fold theorem, strengthened to every real polynomial with f(1)≠0, including reduced numerators. Proved Theorem 3.1 and refuted both conjecture readings using (X+1)^2.",
+  "files_changed": [
+    "MathGKM/AgohMain.lean",
+    "MathGKM/AgohConsequences.lean",
+    "MathGKM/AgohAudit.lean",
+    "MathGKM.lean",
+    "docs/round2/AGOH.md",
+    "RESUME.json",
+    "requests/agoh-to-markov.json",
+    "evidence/agoh/"
+  ],
+  "checks": [
+    "Nine modules compile with pinned Lean v4.32.2, including MathGKM.",
+    "Axiom audit passes: only propext, Classical.choice and Quot.sound.",
+    "Proved exact cleared/reduced equivalence, exceptional-parameter examples and hypothesis-failure checks.",
+    "Documented source correspondence, quantifiers, domain conditions and failed attempts."
+  ],
+  "remaining": [
+    "Independent supervisor review.",
+    "Markov campaign remains unstarted."
+  ],
+  "next_step": "Execute requests/agoh-to-markov.json: read the primary paper and formalize the exact Conjecture 6.3 before experiments."
+}

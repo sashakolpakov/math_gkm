@@ -1,67 +1,124 @@
-# Machine-authored Agoh exercise and English/Lean audit
+# Agoh mathematics: completed substantial exercise
 
-Primary source retrieved with the hosted web tool on 2026-10-13:
-https://math.colgate.edu/~integers/aa9/aa9.pdf (9 pages).
-Raw tool response: evidence/round2/agoh-hosted-retrieval.json. This is a
-bootstrap retrieval record, not a protected supervisor attestation or a theorem.
-No predecessor mathematical result or strategy was an input.
+Actual live proposer: Codex/gpt-6-astra, 2026-10-13. Primary source read anew
+with hosted browsing: Takashi Agoh, *An Intrinsic Factor of an Alternating Sum
+Involving Certain Rational Functions*, INTEGERS 26 (2026), A9,
+https://math.colgate.edu/~integers/aa9/aa9.pdf.
 
-Statement inventory (formula labels refer to the primary paper):
+Theorem 1.1 is proved uniformly in n, including its reduced-numerator meaning.
+The stronger result also proves Theorem 3.1 and refutes both natural readings
+of the final conjecture on an explicitly nonsingular domain. The former
+first-order exercise remains in `MathGKM/AgohExercise.lean` as preparation.
 
-* (1.1): binomial identity for n >= 0 and x != 0.
-* (1.2): G_n = sum_i (-1)^i choose(n,i)/(x^i+a), a real, a != -1.
-  At an evaluated point, every denominator must be nonzero.
-* (1.3): H_n = sum_i (-1)^i choose(n,i) product_{k != i}(x^k+a).
-  This polynomial exists also where G_n is undefined; its equality to G_n
-  times the denominator is a rational identity, or a pointwise identity with
-  all denominator conditions. It is not automatically a reduced numerator.
-* Theorem 1.1: (X-1)^n divides the numerator for every n >= 0. Three proofs
-  are offered: induction, elementary symmetric polynomials, geometric series.
-  Formalization of this n-fold assertion is STILL OPEN here.
-* Theorem 3.1: analogous n-fold claim for Q_n=sum_i (-1)^i choose(n,i)/f(x^i),
-  with nonconstant real-rooted f, all roots simple and different from 1.
-  The presentation normalizes f to monic. STILL OPEN here.
-* Section 4: repeated real roots are permitted, f monic of positive degree,
-  f(1) != 0; the discussion claims at least one factor X-1. Its vanishing
-  calculation needs n>0. This is the SELECTED universal exercise.
-* Final conjecture: n-fold numerator divisibility characterized by f being
-  a monomial or having only simple roots different from 1. The quantification
-  over n needs explicit treatment before attempting a formal refutation.
-  It is not resolved by our first-order theorem or finite experiments.
+## Exact statements and source correspondence
 
-Chosen scope and exact Lean meaning:
+Write P=X-1, w_i=(-1)^i binomial(n,i),
+D_n(f)=product_{i=0}^n f(X^i), and
+H_n(f)=sum_{i=0}^n w_i product_{0<=k<=n,k!=i} f(X^k).
+These are `denominator` and the existing `numerator`. `range (n+1)` includes
+both endpoints 0 and n; `erase i` removes exactly the indicated index;
+`C` embeds a real coefficient as a constant polynomial. Every n is a natural
+number, with no finite bound. Empty products are 1.
 
-MathGKM/AgohExercise.lean defines numerator n f over R[X] with precisely the
-binomial weights and excluded-index products. first_order_factor proves
-(X-C(1)) divides this polynomial for EVERY n != 0 and EVERY real polynomial f.
-The proof evaluates at 1, counts the n factors in each erased product, applies
-the alternating binomial-sum identity, then applies the polynomial factor
-criterion. Real-rootedness and monicity are not needed for this particular
-claim; the stronger conclusion is explicit rather than a changed interpretation
-of the paper. clears_denominators proves its exact pointwise connection to
-Q_n, assuming each f(x^i) != 0. denominator_at_one proves the common denominator
-is nonzero at 1 when f(1) != 0. We have NOT formalized reduced rational-function
-numerators or cancellation through a gcd, so the formal theorem is stated as
-cleared-numerator divisibility, with that last reduced-numerator bridge open.
+| Source claim | Lean statement and exact meaning |
+|---|---|
+| (1.3), H_n(x;a) | `paper_H`: literal excluded-index product for f=X+C a. |
+| (1.2), G_n(x;a) | `paper_G`: H=DG at every real x where all x^i+a are nonzero. |
+| (3.1), Q_n(x;f) | `rationalSum`: the displayed finite sum in `RatFunc ℝ`; `clears_denominators` gives its real pointwise formula on the stated domain. |
+| Theorem 1.1 | `theorem_1_1`: for all n and real a != -1, P^n divides the canonical reduced numerator of G_n. |
+| Theorem 3.1 | `theorem_3_1`: positive-degree, real-split, squarefree f with f(1)!=0; same conclusion. Monicity is unnecessary. |
+| Simple roots | `simple_roots_iff_squarefree`: for nonzero real-split f, its multiset of roots has no repetitions iff f is squarefree. |
+| Section 4 | `repeated_root_family`: every multiplicity j and every b!=1, uniformly in n; in fact n factors, not only one. |
+| Exceptional values on p.9 | `H_three`, `extra_factor_three`, `extra_factor_radicals`: four factors for n=3 at a=2±sqrt(3), also after reduction. |
 
-Missing-condition checks: zero_order and missing_positive_n show that n=0
-has numerator 1 and cannot satisfy the first-order claim. singular_counterexample
-uses n=1, f=X-1, x=2: the cleared numerator is 1 but the common denominator is 0.
-Thus denominator nonvanishing cannot simply be omitted from pointwise clearing.
+`MathGKM/AgohMain.lean` proves the following stronger statements:
 
-Independent reading within this proposer turn found a defect in the third
-proof's convergence region: a=3, x=7/5 satisfy a>2 and |x-1|<1/2, but for i=4,
-|x^i/a|=2401/1875>1. geometric_region_counterexample checks those exact
-inequalities over the reals. The engine's rational experiment motivated the
-algebraic approach (research-run/response-0001.json). This shows that the
-stated bounds do not justify that geometric-series expansion uniformly in i;
-it does not refute Theorem 1.1. A neighborhood depending on n could repair it.
-The Section 4 displayed degree also warrants checking: powers j in every factor
-change the generic leading degree by a factor j. That observation is not
-formalized here. The printed T_j notation has index inconsistencies; our
-numerator follows the explicitly displayed excluded-index product.
+* `main`: for every real polynomial f and every n, P^n divides H_n(f).
+* `reduced_numerator`: for every f with f(1)!=0 and every n, P^n divides
+  `(rationalSum n f).num`.
+* `cleared_iff_reduced`: for every such f and every n,m, P^m divides H_n(f)
+  iff P^m divides the reduced numerator. Thus even exceptional higher
+  multiplicities are preserved, not just the lower bound n.
 
-Status: chosen first-order polynomial scope and explicit conditions have Lean
-proofs; independent English/Lean audit and protected admission remain pending.
-The main n-fold Agoh exercise and final conjecture are unfinished. Markov has
-not been researched or started.
+`RatFunc.num` uses Mathlib's canonical relatively prime numerator/monic
+denominator representation. Rescaling a reduced representation by a nonzero
+constant cannot change polynomial divisibility. The formal fraction identity
+`rationalSum_eq_fraction` and `denominator_eval_one` establish that D_n(1)
+=f(1)^(n+1)!=0. No inference rests on evaluating totalized division at zero.
+For evaluated Q_n the exact domain is all x with f(x^i)!=0 for 0<=i<=n.
+Since i=0 occurs, f(1)!=0 is necessary even away from x=1.
+
+## Machine-selected proof
+
+The proof is algebraic and uses no convergence or partial fractions.
+
+1. Define A_n(g)=sum_i w_i g(X^i). The binomial theorem proves
+   A_n(cX^k)=c(1-X^k)^n. Polynomial induction proves P^n divides A_n(g)
+   for every polynomial g.
+2. Substitution X -> X^i preserves the ideal generated by P^n, since
+   P divides X^i-1, including i=0.
+3. If f(1)!=0, Bezout gives a P^n+g f=1. After substitution,
+   1-g(X^i)f(X^i) is divisible by P^n. Multiply by each excluded-index
+   product and sum: H_n(f)-D_n(f)A_n(g) is divisible by P^n.
+4. If f(1)=0, each factor f(X^k) is divisible by P. Each excluded-index
+   product has exactly n factors, so the cleared theorem still holds.
+   This branch is only a polynomial statement, with no claim that Q is defined.
+5. Cross-multiply the reduced fraction and H/D. Coprimality of P and D
+   transfers every power P^m from H to the reduced numerator. The converse
+   follows because the reduced numerator divides the cleared numerator.
+
+## Conjecture and edge-case audit
+
+The source's final displayed conjecture leaves n unquantified and omits the
+domain condition f(1)!=0. `ConjecturePerN n` and `ConjectureAllN` restore that
+condition and formalize, respectively, a fixed n and a universal n inside the
+equivalence. Its alternatives mean a monomial cX^k or a polynomial with only
+simple roots different from 1. The nonzero and real-rooted hypotheses are
+explicit. `all_n_iff_positive` shows that including n=0 makes no difference
+to the all-n property.
+
+`repeatedExample=(X+1)^2` is proved nonzero, split over the reals, regular at
+1, neither a monomial nor squarefree. `repeatedExample_all_n` proves the
+reduced-numerator divisibility for every n. `refutes_per_n` therefore refutes
+the per-n characterization for every n (in particular every positive n), and
+`refutes_all_n` refutes the all-n characterization. This is one simultaneous
+counterexample with f(1)=4, not a finite scan or an undefined-expression trick.
+`complex_root_example` also proves the divisibility for f=X^2+1 for all n.
+
+Positive checks include exact H_2 and H_3 formulas and the exceptional radical
+parameters. Failures of omitted hypotheses are kept explicit:
+
+* `zero_order` and `missing_positive_n`: H_0=1; the Section 4 first-order
+  assertion needs n>0. The main n-fold theorem correctly includes n=0.
+* `singular_counterexample`: pointwise denominator clearing cannot omit
+  denominator nonvanishing.
+* `cancellation_without_regularity`: (X-1)/(X-1) is a valid rational function
+  whose reduced numerator is 1. A general cancellation bridge needs the
+  nonvanishing condition. This is not offered as a counterexample to Q_n.
+* `geometric_region_counterexample`: the third proof's stated region contains
+  a=3, x=7/5, i=4, where the geometric ratio exceeds 1. This disproves that
+  convergence justification, not Theorem 1.1.
+* `section_four_degree`: the displayed W polynomial at n=1,j=2,beta=-1 is
+  X^2+2X-3 and has degree 2, rather than the printed n(n+1)/2=1.
+  This example meets beta!=1. No universal corrected degree formula is claimed.
+
+## Compilation and remaining scope
+
+Run `/opt/homebrew/bin/python3 evidence/agoh/reproduce.py` from the project root.
+It uses pinned Lean v4.32.2 and the pinned Mathlib libraries, without package
+resolution. `evidence/agoh/build.json` and `AgohAudit.log` record successful
+compilation and exact elaborated statements. The audit rejects axioms outside
+`propext`, `Classical.choice`, and `Quot.sound`. There are no admissions,
+custom axioms, or native evaluation proofs. Failed drafts remain recorded in
+`evidence/agoh/compile-*.json`; they are attempts, not accepted conclusions.
+
+No proposition needed for the chosen substantial Agoh exercise remains open.
+We have not reproduced each of the paper's three proof routes, formalized the
+general symmetric-polynomial identities, or proved a general exact-multiplicity
+classification; none is assumed by the accepted results. Independent source
+and proof review remains the supervisor's role, not a mathematical hypothesis.
+
+Markov research has not started. The next machine-selected request is
+`requests/agoh-to-markov.json`: read the Markov primary source, audit the precise
+Conjecture 6.3 and coefficient conventions, then choose experiments and a
+universal proof route from that reading.

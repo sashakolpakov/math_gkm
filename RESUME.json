@@ -1,7 +1,7 @@
 {
-  "provenance": "Actual authorized Codex/gpt-6-astra mathematical construction invocation, 2026-10-13",
-  "phase": "construction",
-  "status": "verified_finite_horizon_mathematical_model",
+  "provenance": "Actual authorized live Codex/gpt-6-astra Agoh mathematics invocation, 2026-10-13; current reconstruction proofs reused",
+  "phase": "agoh",
+  "status": "agoh_uniform_main_theorem_and_regular_domain_conjecture_refutation_compiled",
   "mission_complete": false,
   "certified_persistent_switch": false,
   "authoritative_admission": false,
@@ -10,10 +10,10 @@
     "docs/DESIGN.md"
   ],
   "read_next": [
-    "docs/CONSTRUCTION_MATHEMATICS.md",
-    "MathGKM/Continuation.lean",
-    "MathGKM/ContinuationExamples.lean",
-    "MathGKM/ConstructionAudit.lean"
+    "docs/round2/AGOH.md",
+    "MathGKM/AgohMain.lean",
+    "MathGKM/AgohConsequences.lean",
+    "requests/agoh-to-markov.json"
   ],
   "evidence": [
     "evidence/round2/checks.json",
@@ -23,9 +23,13 @@
     "evidence/round2/provenance.json",
     "evidence/construction/build.json",
     "evidence/construction/MathGKM.ConstructionAudit.log",
-    "evidence/construction/kernel.json"
+    "evidence/construction/kernel.json",
+    "evidence/agoh/build.json",
+    "evidence/agoh/AgohAudit.log",
+    "evidence/agoh/research-record.json"
   ],
-  "pending_transport": "evidence/round2/research-run/request-0002.json",
+  "pending_transport": null,
+  "historical_round2_request": "evidence/round2/research-run/request-0002.json",
   "freeze_request": "requests/freeze-boundary.json",
   "preserve": "All first-round evidence and genuine Lean results; round-2 failures are also retained.",
   "do_not_use": [
@@ -49,15 +53,12 @@
   "agoh": {
     "source": "https://math.colgate.edu/~integers/aa9/aa9.pdf",
     "inventory": "docs/round2/AGOH.md",
-    "scope": "Section 4 first-order cleared-numerator factor, all n>0 and all real polynomials; exact denominator-clearing hypotheses and negative examples",
-    "proofs": "MathGKM/AgohExercise.lean",
-    "status": "Lean proof objects; independent meaning/admission audit pending",
-    "not_done": [
-      "Theorem 1.1 n-fold divisibility",
-      "Theorem 3.1",
-      "reduced rational numerator bridge",
-      "final conjecture"
-    ]
+    "scope": "Uniform n-fold theorem for all real polynomials; reduced numerator for f(1)!=0; exact cleared/reduced equivalence for every multiplicity; published Theorems 1.1 and 3.1; both conjecture quantifier readings refuted on the regular domain",
+    "proofs": ["MathGKM/AgohMain.lean", "MathGKM/AgohConsequences.lean"],
+    "status": "Substantial exercise complete and compiled; independent review remains external",
+    "axioms": ["propext", "Classical.choice", "Quot.sound"],
+    "counterexample": "f=(X+1)^2, f(1)=4, valid simultaneously for every n",
+    "not_done": []
   },
   "markov": "not_started",
   "remaining": [
@@ -66,9 +67,12 @@
     "For reciprocal first-proof-time utility, define certified root evidence and prove stopping-time transport with all costs; current utility is reward minus abstract cost.",
     "For infinite horizons, define and prove convergence of the chosen utility; current theorem covers every positive finite horizon.",
     "Dependent declaration attachment requires actual model-extension witnesses and exact interpretation transport.",
-    "Resume the remaining Agoh mathematics, then the Markov conjecture. Neither campaign is completed by this construction result."
+    "Execute requests/agoh-to-markov.json. The substantial Agoh exercise is complete; Markov has not started."
   ],
-  "next_step": "Review the exact mathematical model and verified_change theorem in docs/CONSTRUCTION_MATHEMATICS.md. Choose a precise scope extension if required; otherwise continue the outstanding Agoh proofs before Markov. No new process, transport, permissions, or validation infrastructure is a prerequisite for the proved result.",
+  "next_step": "Read requests/agoh-to-markov.json and the Markov primary paper; audit Conjecture 6.3 and its coefficient conventions before experiments or formal claims. Agoh proofs and source correspondence are in docs/round2/AGOH.md.",
+  "next_research_request": "requests/agoh-to-markov.json",
+  "agoh_reproduce": "/opt/homebrew/bin/python3 evidence/agoh/reproduce.py",
+  "agoh_final_theorems": ["MathGKM.Agoh.main", "MathGKM.Agoh.theorem_1_1", "MathGKM.Agoh.theorem_3_1", "MathGKM.Agoh.cleared_iff_reduced", "MathGKM.Agoh.refutes_per_n", "MathGKM.Agoh.refutes_all_n"],
   "model_switch_proved": true,
   "previous_round_reproduce": "/opt/homebrew/bin/python3 -u -m machinery.check",
   "reproduce": "Use the absolute pinned Lean commands and LEAN_PATH recorded in evidence/construction/build.json. Compiled modules are in .scratch/construction.",
