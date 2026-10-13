@@ -1,0 +1,63 @@
+{
+  "checks": {
+    "not_resolved": true,
+    "exact_wrapper_rejected": true,
+    "genuine_compiler_error": true,
+    "compiler_mentions_target": true
+  },
+  "result": {
+    "resolved": false,
+    "kind": "proof",
+    "checks": [
+      {
+        "module": "MathGKM.Markov",
+        "operation": "compile",
+        "argv": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+          "-o",
+          "/private/tmp/math_gkm_autonomy_audit_20261014/controller-check-2/independent-exact-negative/build/MathGKM/Markov.olean",
+          "MathGKM/Markov.lean"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "termination": null,
+        "captured_bytes": 0,
+        "elapsed_ns": 22916779541
+      },
+      {
+        "module": "ControllerCompletion",
+        "operation": "compile",
+        "argv": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+          "-o",
+          "/private/tmp/math_gkm_autonomy_audit_20261014/controller-check-2/independent-exact-negative/build/ControllerCompletion.olean",
+          "ControllerCompletion.lean"
+        ],
+        "returncode": 1,
+        "stdout": "ControllerCompletion.lean:3:61: error: Type mismatch\n  True.intro\nhas type\n  True\nbut is expected to have type\n  MathGKM.Markov.Conjecture63\n'ControllerRootCheck' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+        "stderr": "",
+        "termination": null,
+        "captured_bytes": 231,
+        "elapsed_ns": 19611867375
+      }
+    ],
+    "started": 1791930403.902061,
+    "bundle_hash": "d720a5c7c83f3a3403e73e59c91007696b3bb7b03b98271766dcecd98e2c2da9",
+    "binding": {
+      "contract_hash": "6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc",
+      "claim": {
+        "kind": "proof",
+        "module": "MathGKM.Markov",
+        "declaration": "True.intro",
+        "correspondence": "evidence/markov/english-lean-review.md"
+      },
+      "sources": {
+        "MathGKM.Markov": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "correspondence_sha256": "ad010bab558fc9fe22159cb3a0a6e7e2d86d48ca13893b665d6cee8f79c0f76c"
+    },
+    "rejection": "Lean compile failed: ControllerCompletion",
+    "finished": 1791930446.4582982
+  }
+}

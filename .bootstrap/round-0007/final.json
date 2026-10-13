@@ -1,0 +1,26 @@
+{
+  "phase": "construction",
+  "summary": "Fixed failed reports shadowing older completed evidence. Corrected documentation of overlapping controller and worker runtime.",
+  "files_changed": [
+    "machinery/controller.py",
+    "docs/CONTROLLER.md",
+    "tests/test_controller_history.py",
+    "RESUME.json",
+    "evidence/controller-history-repair.json",
+    "evidence/controller-history-repair-checkpoint.json",
+    "evidence/controller-history-repair-tests.log",
+    "evidence/controller-history-repair-before.log",
+    "evidence/controller-history-repair-harness-initial.log"
+  ],
+  "checks": [
+    "10 focused unit tests passed; compiler responses simulated.",
+    "Both shadowing regressions fail against the pre-repair lookup.",
+    "Exact binding and independent-audit requirements retained.",
+    "No live workers or nested Codex launched."
+  ],
+  "remaining": [
+    "Supervisor review and activation.",
+    "Full Markov conjecture remains open; no arbitrary-host self-change proof claimed."
+  ],
+  "next_step": "Review the saved repair record and activate the final controller. Resumable checkpoint recorded."
+}

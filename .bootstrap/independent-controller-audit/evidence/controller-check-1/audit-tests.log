@@ -1,0 +1,25 @@
+test_completion_real_lean_rejects_unrelated_theorem_and_pinned_mutation (test_controller.ControllerFixtures.test_completion_real_lean_rejects_unrelated_theorem_and_pinned_mutation) ... /opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py:1139: ResourceWarning: subprocess 84748 is still running
+  _warn("subprocess %s is still running" % self.pid,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+FAIL
+test_detached_fixture_survives_launcher_and_stop_is_effective (test_controller.ControllerFixtures.test_detached_fixture_survives_launcher_and_stop_is_effective) ... ok
+test_duplicate_exclusion_stop_resume_and_stale_status (test_controller.ControllerFixtures.test_duplicate_exclusion_stop_resume_and_stale_status) ... ok
+test_interrupt_engine_no_completed_effect_replayed (test_controller.ControllerFixtures.test_interrupt_engine_no_completed_effect_replayed) ... ok
+test_killed_controller_watchdog_holds_lock_and_resume_uses_receipt (test_controller.ControllerFixtures.test_killed_controller_watchdog_holds_lock_and_resume_uses_receipt) ... ok
+test_live_argv_only_constructed_not_executed (test_controller.ControllerFixtures.test_live_argv_only_constructed_not_executed) ... ok
+test_missing_malformed_killed_and_timeout_are_feedback (test_controller.ControllerFixtures.test_missing_malformed_killed_and_timeout_are_feedback) ... ok
+test_two_automatic_iterations_feedback_epoch_rollover_and_false_success (test_controller.ControllerFixtures.test_two_automatic_iterations_feedback_epoch_rollover_and_false_success) ... ok
+
+======================================================================
+FAIL: test_completion_real_lean_rejects_unrelated_theorem_and_pinned_mutation (test_controller.ControllerFixtures.test_completion_real_lean_rejects_unrelated_theorem_and_pinned_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/math_gkm_autonomy_audit_20261014/controller-check-1/tests/test_controller.py", line 198, in test_completion_real_lean_rejects_unrelated_theorem_and_pinned_mutation
+    self.assertIn('Lean compile failed', result['rejection'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Lean compile failed' not found in '[Errno 1] Operation not permitted'
+
+----------------------------------------------------------------------
+Ran 8 tests in 538.150s
+
+FAILED (failures=1)

@@ -1,0 +1,49 @@
+--- round6/docs/CONTROLLER.md
++++ round7/docs/CONTROLLER.md
+@@ -79,8 +79,13 @@
+ Optional `--total-seconds N` limits **cumulative worker runtime**, including failed
+ attempts; an interrupted attempt without a receipt is conservatively charged its
+ full reservation. The next worker's timeout is reduced to the remaining runtime.
+-Controller/protocol/validation overhead is separately measured as
+-`controller_active_seconds` and is not part of that worker-runtime limit.
++`controller_active_seconds` accumulates monotonic wall time from controller
++initialization through its latest save across invocations, including protocol
++work, validation and time spent waiting for workers. It overlaps worker runtime:
++do not add these two metrics.
++It is not an isolated overhead measurement and does not govern the worker-runtime
++limit. Time while the controller is down is excluded; an abrupt exit can lose
++the interval since its last save.
+ Process cleanup may add a few seconds. This is not a hard CPU/memory/disk quota.
+ 
+ Optional `--tokens N` is an admission limit between workers based on reported
+@@ -233,6 +238,12 @@
+ /opt/homebrew/bin/python3 -m machinery.controller resume --goal markov
+ ```
+ 
++On resume, the controller searches completed worker reports from newest to oldest
++for the audit's exact current bundle hash and reruns validation before requesting
++new work. Later failed reports, including those claiming the same bundle, cannot
++hide an earlier completed report. Source or correspondence changes invalidate
++the old binding; all independent correspondence obligations still apply.
++
+ Only the supervisor/independent reviewer invokes `audit`; the Codex permissions
+ make `.control` read-only. The JSON's contents alone cannot authenticate who
+ performed the review: authority rests on the protected command channel and the
+@@ -245,6 +256,17 @@
+ 
+ ## Tests and reproducible fixture run
+ 
++The focused completion-history regression suite requires no worker or compiler
++process. It uses isolated toy sources and simulated compiler/replay responses to
++check Python selection, exact bundle binding and independent-audit requirements:
++
++```sh
++/opt/homebrew/bin/python3 -m unittest tests.test_controller_history -v
++```
++
++These unit fixtures provide no Lean or mathematical validation. The broader
++controller fixtures below exercise actual subprocesses and the pinned compiler.
++
+ ```sh
+ /opt/homebrew/bin/python3 -m unittest tests.test_controller -v
+ /opt/homebrew/bin/python3 -m unittest tests.test_round2.EngineTests -v

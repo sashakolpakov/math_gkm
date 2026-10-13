@@ -1,0 +1,33 @@
+Regression sensitivity: removing only the outcome filter in memory; no source files changed.
+test_later_timeout_cannot_shadow_completed_bundle (tests.test_controller_history.CompletionHistoryFixtures.test_later_timeout_cannot_shadow_completed_bundle) ... FAIL
+test_later_nonzero_exit_cannot_shadow_completed_bundle (tests.test_controller_history.CompletionHistoryFixtures.test_later_nonzero_exit_cannot_shadow_completed_bundle) ... FAIL
+
+======================================================================
+FAIL: test_later_timeout_cannot_shadow_completed_bundle (tests.test_controller_history.CompletionHistoryFixtures.test_later_timeout_cannot_shadow_completed_bundle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sasha/math_gkm/tests/test_controller_history.py", line 92, in test_later_timeout_cannot_shadow_completed_bundle
+    self.assertEqual(selected['request_id'], 'earlier')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'later' != 'earlier'
+- later
++ earlier
+
+
+======================================================================
+FAIL: test_later_nonzero_exit_cannot_shadow_completed_bundle (tests.test_controller_history.CompletionHistoryFixtures.test_later_nonzero_exit_cannot_shadow_completed_bundle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sasha/math_gkm/tests/test_controller_history.py", line 101, in test_later_nonzero_exit_cannot_shadow_completed_bundle
+    self.assertEqual(selected['request_id'], 'earlier')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'later' != 'earlier'
+- later
++ earlier
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.009s
+
+FAILED (failures=2)
+Confirmed: both focused regressions fail against the pre-repair lookup.

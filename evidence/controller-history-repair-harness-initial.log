@@ -1,0 +1,43 @@
+Regression sensitivity: removing only the outcome filter in memory; no source files changed.
+test_later_timeout_cannot_shadow_completed_bundle (tests.test_controller_history.CompletionHistoryFixtures.test_later_timeout_cannot_shadow_completed_bundle) ... ERROR
+test_later_nonzero_exit_cannot_shadow_completed_bundle (tests.test_controller_history.CompletionHistoryFixtures.test_later_nonzero_exit_cannot_shadow_completed_bundle) ... ERROR
+
+======================================================================
+ERROR: test_later_timeout_cannot_shadow_completed_bundle (tests.test_controller_history.CompletionHistoryFixtures.test_later_timeout_cannot_shadow_completed_bundle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sasha/math_gkm/tests/test_controller_history.py", line 90, in test_later_timeout_cannot_shadow_completed_bundle
+    state, selected = self.run_history([
+                      ~~~~~~~~~~~~~~~~^^
+        self.observation('earlier'), self.observation('later', 'timeout')])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sasha/math_gkm/tests/test_controller_history.py", line 86, in run_history
+    controller.run()
+    ~~~~~~~~~~~~~~^^
+  File "<pre-repair-history-lookup>", line 6, in run
+machinery.gate.Rejected: controller implementation changed; independent review and explicit migration needed
+
+======================================================================
+ERROR: test_later_nonzero_exit_cannot_shadow_completed_bundle (tests.test_controller_history.CompletionHistoryFixtures.test_later_nonzero_exit_cannot_shadow_completed_bundle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sasha/math_gkm/tests/test_controller_history.py", line 99, in test_later_nonzero_exit_cannot_shadow_completed_bundle
+    state, selected = self.run_history([
+                      ~~~~~~~~~~~~~~~~^^
+        self.observation('earlier'), self.observation('later', 'nonzero_exit')])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sasha/math_gkm/tests/test_controller_history.py", line 86, in run_history
+    controller.run()
+    ~~~~~~~~~~~~~~^^
+  File "<pre-repair-history-lookup>", line 6, in run
+machinery.gate.Rejected: controller implementation changed; independent review and explicit migration needed
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.007s
+
+FAILED (errors=2)
+Traceback (most recent call last):
+  File "<string>", line 24, in <module>
+    assert len(result.failures) == 2 and not result.errors
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

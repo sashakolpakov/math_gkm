@@ -263,6 +263,10 @@ class Controller:
         if audit_path.exists():
             audit = read(audit_path)
             for observation in reversed(observations):
+                # Only completed attempts can supply completion evidence. A later
+                # failed report for the same bundle must not shadow an eligible one.
+                if observation.get('outcome') != 'completed':
+                    continue
                 claim = (observation.get('report') or {}).get('completion')
                 if claim:
                     try:
