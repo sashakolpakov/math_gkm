@@ -1,0 +1,54 @@
+{
+  "kind": "checked_proposition",
+  "target": [
+    "forallNat",
+    [
+      "eqNat",
+      [
+        "natvar",
+        0
+      ],
+      [
+        "natvar",
+        0
+      ]
+    ]
+  ],
+  "proof": [
+    "intro",
+    "rfl"
+  ],
+  "dependencies": [],
+  "axioms": [],
+  "contract_hash": "eb84a356752d73f5ca3ea0f0876dc3e79d52571178973ea86809bbf2293b5262",
+  "source": "GateChecks/P2d1a99162974b47fa671d7bc94b739dcb6cb3957f1e93a0b2766eb73e6bf4fb0.lean",
+  "source_hash": "ef1cb284369b1ec9d0e9d10f5dea68ef80d526267aff3331bce1b0e0a21abe78",
+  "olean_hash": "1dca1b6a6d91fc144a7137eacda096e5c4bde83c4e2a6353892ba6e3549656b5",
+  "checks": [
+    {
+      "argv": [
+        "lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/build/GateChecks/P2d1a99162974b47fa671d7bc94b739dcb6cb3957f1e93a0b2766eb73e6bf4fb0.olean",
+        "GateChecks/P2d1a99162974b47fa671d7bc94b739dcb6cb3957f1e93a0b2766eb73e6bf4fb0.lean"
+      ],
+      "returncode": 0,
+      "stdout": "GateChecks/P2d1a99162974b47fa671d7bc94b739dcb6cb3957f1e93a0b2766eb73e6bf4fb0.lean:3:59: warning: Variable name `h0` is not explicitly referenced.\n\nThe binding can be removed (if unused) or named `_` (if used implicitly).\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n'accepted' does not depend on any axioms\n",
+      "stderr": "",
+      "elapsed_ns": 319579750
+    },
+    {
+      "argv": [
+        "leanchecker",
+        "GateChecks.P2d1a99162974b47fa671d7bc94b739dcb6cb3957f1e93a0b2766eb73e6bf4fb0"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_ns": 3958484208
+    }
+  ],
+  "historical_novelty": "not_assessed",
+  "usefulness": "not_assessed",
+  "resolution": "proof"
+}

@@ -1,0 +1,158 @@
+{
+  "toolchain": "leanprover/lean4:v4.32.2",
+  "environment": {
+    "PATH": "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin:/opt/homebrew/bin:/usr/bin:/bin",
+    "HOME": "/Users/sasha",
+    "LANG": "en_US.UTF-8",
+    "GIT_CONFIG_NOSYSTEM": "1",
+    "GIT_CONFIG_GLOBAL": "/dev/null",
+    "TMPDIR": "/private/tmp/gkm_launch_adversarial_audit/leanchecker-v2",
+    "LEAN_PATH": "/private/tmp/gkm_launch_adversarial_audit/leanchecker-v2/build:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets/.lake/build/lib/lean"
+  },
+  "cases": {
+    "AuditValid": {
+      "source_sha256": "adedff294d3f10d27624fc7c5b2489a36aefc5191ebdf8e91321fbd180bdbfb7",
+      "compile": {
+        "command": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+          "-o",
+          "/private/tmp/gkm_launch_adversarial_audit/leanchecker-v2/build/AuditValid.olean",
+          "AuditValid.lean"
+        ],
+        "returncode": 0,
+        "stdout": "'audit_valid' does not depend on any axioms\n",
+        "stderr": "",
+        "timed_out": false,
+        "seconds": 0.483
+      },
+      "replay": {
+        "command": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+          "AuditValid"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "timed_out": false,
+        "seconds": 8.948
+      }
+    },
+    "AuditAxiom": {
+      "source_sha256": "d19e51260ca105bda7624bb6080fd5b012a793739b99b099a0e773c2e8ea3b02",
+      "compile": {
+        "command": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+          "-o",
+          "/private/tmp/gkm_launch_adversarial_audit/leanchecker-v2/build/AuditAxiom.olean",
+          "AuditAxiom.lean"
+        ],
+        "returncode": 0,
+        "stdout": "'audit_false' depends on axioms: [audit_bad_axiom]\n",
+        "stderr": "",
+        "timed_out": false,
+        "seconds": 0.327
+      },
+      "replay": {
+        "command": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+          "AuditAxiom"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "timed_out": false,
+        "seconds": 8.91
+      }
+    },
+    "AuditSorry": {
+      "source_sha256": "2a51a328773c6e91a304c1884e5d19ca1d62f7f73de8dd6a1ee45d1674d0315f",
+      "compile": {
+        "command": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+          "-o",
+          "/private/tmp/gkm_launch_adversarial_audit/leanchecker-v2/build/AuditSorry.olean",
+          "AuditSorry.lean"
+        ],
+        "returncode": 0,
+        "stdout": "AuditSorry.lean:2:8: warning: declaration uses `sorry`\n'audit_unproved' depends on axioms: [sorryAx]\n",
+        "stderr": "",
+        "timed_out": false,
+        "seconds": 0.307
+      },
+      "replay": {
+        "command": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+          "AuditSorry"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "timed_out": false,
+        "seconds": 8.609
+      }
+    },
+    "AuditForge": {
+      "source_sha256": "555f2fc91bfa71bee761ed2c41c52d76e8102acfd7c0add66e25f8e6af5d16d9",
+      "compile": {
+        "command": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+          "-o",
+          "/private/tmp/gkm_launch_adversarial_audit/leanchecker-v2/build/AuditForge.olean",
+          "AuditForge.lean"
+        ],
+        "returncode": 0,
+        "stdout": "'audit_forged' does not depend on any axioms\n",
+        "stderr": "",
+        "timed_out": false,
+        "seconds": 2.035
+      },
+      "replay": {
+        "command": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+          "AuditForge"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "leanchecker found a problem in AuditForge\nuncaught exception: while replaying declaration 'audit_forged':\n(kernel) declaration type mismatch, 'audit_forged' has type\n  True\nbut it is expected to have type\n  False\n",
+        "timed_out": false,
+        "seconds": 10.391
+      }
+    },
+    "AuditImportsForge": {
+      "source_sha256": "4714b1ee464c730ec7fa9b30a6226ddebc8763bb04a5414a9b8cb96e60adffa3",
+      "compile": {
+        "command": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+          "-o",
+          "/private/tmp/gkm_launch_adversarial_audit/leanchecker-v2/build/AuditImportsForge.olean",
+          "AuditImportsForge.lean"
+        ],
+        "returncode": 0,
+        "stdout": "'audit_imported_false' does not depend on any axioms\n",
+        "stderr": "",
+        "timed_out": false,
+        "seconds": 1.249
+      },
+      "replay": {
+        "command": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+          "AuditImportsForge"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "timed_out": false,
+        "seconds": 11.675
+      }
+    }
+  },
+  "checks": {
+    "valid_proof_passes": true,
+    "axiom_false_passes_replay": true,
+    "sorry_passes_replay": true,
+    "kernel_bypass_is_caught_in_target_module": true,
+    "imported_kernel_bypass_passes_default_replay": true
+  },
+  "observations_confirmed": true,
+  "scope": "Synthetic audit only. Axioms/sorry/bypasses are inadmissible negative fixtures; no project files changed."
+}

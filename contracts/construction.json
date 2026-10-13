@@ -1,0 +1,15 @@
+{
+  "id": "construction-2026-10-13-v1",
+  "status": "experimental_bootstrap",
+  "root_declaration": "MathGKM.Machine.concrete_switch",
+  "root_meaning": "For all code states and corresponding step-indexed input streams, preserve the final state at every finite tick horizon and strictly reduce declared abstract cost when all remaining overhead is less than that horizon.",
+  "scope": "verified bounded model; does not resolve the required executable Godel switch",
+  "preference": "same final state and lower abstract transition cost",
+  "cost": "reference dispatch 2, candidate dispatch 1, explicit rewrite 3, external delay supplied in Input; installation and validation charged separately",
+  "environment": "arbitrary Input stream indexed by tick; invariant under dispatch timing",
+  "assumptions": ["Lean kernel and pinned imported dependencies", "corresponding response streams"],
+  "limits": {"actions": 32, "lean_timeout_seconds": 120, "driver_horizon": 10000},
+  "completion": "model theorem does not close mission construction; host refinement, real costs, exact bindings and independent audit remain required",
+  "admission": "checked exact proposition; no source-length rewards; exploration cannot authorize persistent certified rewrites",
+  "provenance": "Machine-authored Codex/Astra in the authorized bootstrap invocation"
+}

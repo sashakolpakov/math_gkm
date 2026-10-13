@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/opt/homebrew/bin/codex",
+    "sandbox",
+    "-P",
+    "cleanroom",
+    "-C",
+    "/Users/sasha/math_gkm",
+    "-c",
+    "permissions.cleanroom={\"extends\"=\":workspace\",\"filesystem\"={\":root\"=\"deny\",\":minimal\"=\"read\",\":tmpdir\"=\"deny\",\":slash_tmp\"=\"deny\",\"/opt/homebrew/Cellar\"=\"read\",\"/opt/homebrew/bin\"=\"read\",\"/opt/homebrew/opt\"=\"read\",\"/opt/homebrew/lib\"=\"read\",\"/opt/homebrew/share\"=\"read\",\"/Users/sasha/.elan\"=\"read\",\"/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Cli\"=\"read\",\"/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient\"=\"read\",\"/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq\"=\"read\",\"/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop\"=\"read\",\"/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries\"=\"read\",\"/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph\"=\"read\",\"/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib\"=\"read\",\"/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible\"=\"read\",\"/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets\"=\"read\",\":workspace_roots\"={\".git\"=\"deny\",\".bootstrap\"=\"read\",\".\"=\"read\"}},\"network\"={\"enabled\"=false}}",
+    "--",
+    "/bin/zsh",
+    "-lc",
+    "env PATH=/opt/homebrew/bin:/Users/sasha/.elan/bin:/usr/bin:/bin GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /bin/sh -c 'command -v git python3; git -C .lake/packages/mathlib remote get-url origin; python3 --version; lake env lean --version'"
+  ],
+  "workspace_read_only": true,
+  "profile_unchanged_except_workspace_readonly": true,
+  "exit_code": 0,
+  "stdout": "/opt/homebrew/bin/git\n/opt/homebrew/bin/python3\nhttps://github.com/leanprover-community/mathlib4.git\nPython 3.14.6\nLean (version 4.32.2, arm64-apple-darwin24.6.0, commit f3b06c705e6c85f5314019d5d3baab0fec5b580c, Release)\n",
+  "stderr": ""
+}

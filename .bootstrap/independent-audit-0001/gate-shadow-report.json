@@ -1,0 +1,75 @@
+{
+  "scope": "Snapshot the machine's gate and test import shadowing in a separate fixture.\n\nThis does not prove Lean's False. It tests whether the gate binds its JSON\n`false` target to the trusted meaning of Lean's False. No project files change.\n",
+  "toolchain": "leanprover/lean4:v4.32.2",
+  "machine_source_hashes": {
+    "gate.py": "4c87121aaf92fe0eaeeca7b5b07b54c40cd72e9a86e0714962c101c1772de872",
+    "toolchain.py": "23dff71ee4c25f2729155457ad3ecf43551539910b04b89183be42e390e229c1"
+  },
+  "baseline": {
+    "rejected": "kernel elaboration failed: GateChecks/P0d1fd3e99931796ab848e425de1b29f65444cceaedbb103188e5031097d94c14.lean:3:28: error: Type mismatch\n  True.intro\nhas type\n  True\nbut is expected to have type\n  False\n'accepted' depends on axioms: [sorryAx]\n"
+  },
+  "shadow_compilation": {
+    "argv": [
+      "lean",
+      "-o",
+      "/private/tmp/gkm_launch_adversarial_audit/gate-shadow-v1/.scratch/build/Init.olean",
+      "Init.lean"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "elapsed_ns": 62794250
+  },
+  "attack_receipt": {
+    "kind": "checked_proposition",
+    "target": "false",
+    "proof": "trivial",
+    "dependencies": [],
+    "axioms": [],
+    "contract_hash": "370a26f017d73e801de8d70f957a0ff99581401d57b5db2f9996618739e598f9",
+    "source": "GateChecks/P0d1fd3e99931796ab848e425de1b29f65444cceaedbb103188e5031097d94c14.lean",
+    "source_hash": "8e082f5015534a6727c18ec41ea4c3c46cf719fc82455a628be6dddbd3360575",
+    "olean_hash": "ad7116f9febf6a73b0409b17af2277b457e78434e54e6be8efb96d5f5e5f9ce1",
+    "checks": [
+      {
+        "argv": [
+          "lean",
+          "-o",
+          "/private/tmp/gkm_launch_adversarial_audit/gate-shadow-v1/.scratch/build/GateChecks/P0d1fd3e99931796ab848e425de1b29f65444cceaedbb103188e5031097d94c14.olean",
+          "GateChecks/P0d1fd3e99931796ab848e425de1b29f65444cceaedbb103188e5031097d94c14.lean"
+        ],
+        "returncode": 0,
+        "stdout": "'accepted' does not depend on any axioms\n",
+        "stderr": "",
+        "elapsed_ns": 52474625
+      },
+      {
+        "argv": [
+          "leanchecker",
+          "GateChecks.P0d1fd3e99931796ab848e425de1b29f65444cceaedbb103188e5031097d94c14"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "elapsed_ns": 12891153333
+      }
+    ],
+    "historical_novelty": "not_assessed",
+    "usefulness": "not_assessed",
+    "resolution": "proof"
+  },
+  "attack_error": null,
+  "fixture_hashes": {
+    ".scratch/build/GateChecks/P0d1fd3e99931796ab848e425de1b29f65444cceaedbb103188e5031097d94c14.olean": "ad7116f9febf6a73b0409b17af2277b457e78434e54e6be8efb96d5f5e5f9ce1",
+    ".scratch/build/Init.olean": "7639cf941880183ea98f2113659f83298e3ad7e68786acc12dc83b84ec0bf6eb",
+    "GateChecks/P0d1fd3e99931796ab848e425de1b29f65444cceaedbb103188e5031097d94c14.lean": "8e082f5015534a6727c18ec41ea4c3c46cf719fc82455a628be6dddbd3360575",
+    "Init.lean": "c123d65c6d7a259a11a8da3def0f14120af341c70f76a9c13b65a39db210386d",
+    "machinery/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "machinery/__pycache__/__init__.cpython-314.pyc": "671fd971263b6880cb0f58cde42ae4069a2b02da0ca762c201ae879105d93d83",
+    "machinery/__pycache__/gate.cpython-314.pyc": "7636919a317d68efbc4a44bc812e774e6b61af5e04f383778bdd31859b98694c",
+    "machinery/__pycache__/toolchain.cpython-314.pyc": "33093c6ca78caa631f7bcd1f1da4eb9e5897e76bdbe483622621087a9b6b5000",
+    "machinery/gate.py": "4c87121aaf92fe0eaeeca7b5b07b54c40cd72e9a86e0714962c101c1772de872",
+    "machinery/toolchain.py": "23dff71ee4c25f2729155457ad3ecf43551539910b04b89183be42e390e229c1"
+  },
+  "vulnerability_reproduced": true
+}

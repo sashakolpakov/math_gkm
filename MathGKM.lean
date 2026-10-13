@@ -1,3 +1,3 @@
-import Mathlib
-
-/- Clean bootstrap: no project definitions or theorems are supplied. -/
+-- Machine-authored by Codex/Astra, 2026-10-13. Experimental bootstrap.
+import MathGKM.Foundations
+import MathGKM.Machine

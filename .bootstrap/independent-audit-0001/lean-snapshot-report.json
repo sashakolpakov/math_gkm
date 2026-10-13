@@ -1,0 +1,169 @@
+{
+  "scope": "Independently rebuild a reviewed source snapshot with trusted imports first.\n\nThis external audit neither edits the project nor supplies research proofs.\nIt does not certify the project verifier or any implementation/refinement claim.\n",
+  "toolchain": "leanprover/lean4:v4.32.2",
+  "binary_hashes": {
+    "lean": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+    "leanchecker": "4c4f966e8c42ae7a7ce6d7f5999de8c1b1fbc920040f72e60d2086aa25ceec01"
+  },
+  "environment": {
+    "PATH": "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin:/opt/homebrew/bin:/usr/bin:/bin",
+    "HOME": "/Users/sasha",
+    "LANG": "en_US.UTF-8",
+    "TMPDIR": "/private/tmp/gkm_launch_adversarial_audit/project-snapshot-v1",
+    "GIT_CONFIG_NOSYSTEM": "1",
+    "GIT_CONFIG_GLOBAL": "/dev/null",
+    "LEAN_PATH": "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets/.lake/build/lib/lean:/private/tmp/gkm_launch_adversarial_audit/project-snapshot-v1/build"
+  },
+  "source_hashes": {
+    "MathGKM/Foundations.lean": "c01afc90b2cd6b4d51409b3b113d612d4609d07456079ab47643dc051e0c0ec3",
+    "MathGKM/Machine.lean": "1d03fb8b754190ca2d08fe4d392f2cf017ea4f36a0525f0458cbd2a7c9792fd5",
+    "MathGKM.lean": "4ce089eb711ebd34ddfd6e734844294b25cdb56f102fa324925c0a788dfb7389",
+    "MathGKM/Driver.lean": "129f349a881aee7dc554acf3dcc89cd9273c3e9aa6ed885f8e3787b3c1ece68f",
+    "MathGKM/Audit.lean": "f44be99f6eeb6efaaaf849f26a5dd1e4e35927679a6213a762eca19e12a46f56"
+  },
+  "source_unchanged_at_end": {
+    "MathGKM/Foundations.lean": true,
+    "MathGKM/Machine.lean": true,
+    "MathGKM.lean": true,
+    "MathGKM/Driver.lean": true,
+    "MathGKM/Audit.lean": true
+  },
+  "results": {
+    "MathGKM.Foundations": {
+      "compile": {
+        "args": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+          "-o",
+          "/private/tmp/gkm_launch_adversarial_audit/project-snapshot-v1/build/MathGKM/Foundations.olean",
+          "MathGKM/Foundations.lean"
+        ],
+        "returncode": 0,
+        "stdout": "MathGKM/Foundations.lean:35:7: warning: Variable name `a` is not explicitly referenced.\n\nThe binding can be removed (if unused) or named `_` (if used implicitly).\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n",
+        "stderr": "",
+        "timeout": false,
+        "seconds": 1.406
+      },
+      "replay": {
+        "args": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+          "MathGKM.Foundations"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "timeout": false,
+        "seconds": 15.978
+      },
+      "olean_sha256": "9fbca86f045ed5bda551cd422b62378df33a517c0c0fdd37bde5e5405cd101e1"
+    },
+    "MathGKM.Machine": {
+      "compile": {
+        "args": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+          "-o",
+          "/private/tmp/gkm_launch_adversarial_audit/project-snapshot-v1/build/MathGKM/Machine.olean",
+          "MathGKM/Machine.lean"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "timeout": false,
+        "seconds": 2.218
+      },
+      "replay": {
+        "args": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+          "MathGKM.Machine"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "timeout": false,
+        "seconds": 14.68
+      },
+      "olean_sha256": "a423b6cb55b9650e5e31672b8e3e773dff15a9d8b322b70b5ee34ae3b2d7f471"
+    },
+    "MathGKM": {
+      "compile": {
+        "args": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+          "-o",
+          "/private/tmp/gkm_launch_adversarial_audit/project-snapshot-v1/build/MathGKM.olean",
+          "MathGKM.lean"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "timeout": false,
+        "seconds": 0.737
+      },
+      "replay": {
+        "args": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+          "MathGKM"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "timeout": false,
+        "seconds": 14.832
+      },
+      "olean_sha256": "9d0d6ad8998c019ac8415371dc61fff7e75b43a6d0e634a3956c72a9bcdea5d1"
+    },
+    "MathGKM.Driver": {
+      "compile": {
+        "args": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+          "-o",
+          "/private/tmp/gkm_launch_adversarial_audit/project-snapshot-v1/build/MathGKM/Driver.olean",
+          "MathGKM/Driver.lean"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "timeout": false,
+        "seconds": 2.914
+      },
+      "replay": {
+        "args": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+          "MathGKM.Driver"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "timeout": false,
+        "seconds": 15.39
+      },
+      "olean_sha256": "7b9978511cfd2897811534b001999d107673f096534319c933f53787a9142fb9"
+    },
+    "MathGKM.Audit": {
+      "compile": {
+        "args": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+          "-o",
+          "/private/tmp/gkm_launch_adversarial_audit/project-snapshot-v1/build/MathGKM/Audit.olean",
+          "MathGKM/Audit.lean"
+        ],
+        "returncode": 0,
+        "stdout": "DECLARATION MathGKM.attachment_conservative\nTYPE \u2200 {X Y : Type} (C : X \u2192 Prop) (R : X \u2192 Y \u2192 Prop),\n  (\u2200 (x : X), C x \u2192 \u2203 y, R x y) \u2192\n    \u2200 (P : X \u2192 Prop), (\u2200 (a : MathGKM.Attachment C R), P (MathGKM.forget a)) \u2194 \u2200 (x : X), C x \u2192 P x\nDIRECT PROOF DEPENDENCIES [Exists,\n Iff.intro,\n MathGKM.Attachment,\n MathGKM.forget,\n Exists.casesOn,\n Subtype.mk,\n Prod,\n And,\n Prod.fst,\n Prod.snd,\n Prod.mk,\n And.intro,\n Subtype.val,\n And.left,\n Subtype.property]\nDECLARATION MathGKM.sequential_extension\nTYPE \u2200 {X Y Z : Type} (C : X \u2192 Prop) (R : X \u2192 Y \u2192 Prop) (S : X \u2192 Y \u2192 Z \u2192 Prop),\n  (\u2200 (x : X), C x \u2192 \u2203 y, R x y) \u2192\n    (\u2200 (x : X) (y : Y), C x \u2192 R x y \u2192 \u2203 z, S x y z) \u2192 \u2200 (x : X), C x \u2192 \u2203 yz, R x yz.fst \u2227 S x yz.fst yz.snd\nDIRECT PROOF DEPENDENCIES [Exists, Exists.casesOn, Prod, And, Prod.fst, Prod.snd, Exists.intro, Prod.mk, And.intro]\nDECLARATION MathGKM.inconsistent_attachment\nTYPE (\u2200 (a : MathGKM.Attachment (fun x => True) fun x x_1 => False), False) \u2227 \u00ac\u2200 (x : Unit), True \u2192 False\nDIRECT PROOF DEPENDENCIES [And.intro,\n MathGKM.Attachment,\n Unit,\n True,\n False,\n Not,\n And.right,\n Prod.fst,\n Subtype.val,\n Prod,\n And,\n Prod.snd,\n Subtype.property,\n Unit.unit,\n trivial]\nDECLARATION MathGKM.transport\nTYPE \u2200 {X Y : Type} (f : X \u2192 Y) (P : X \u2192 Prop) (Q : Y \u2192 Prop), (\u2200 (x : X), P x \u2194 Q (f x)) \u2192 \u2200 (x : X), Q (f x) \u2192 P x\nDIRECT PROOF DEPENDENCIES [Iff, Iff.mpr]\nDECLARATION MathGKM.collision_obstruction\nTYPE \u2200 {X Y : Type} (f : X \u2192 Y) (P : X \u2192 Prop) (a b : X), f a = f b \u2192 P a \u2192 \u00acP b \u2192 \u00ac\u2203 Q, \u2200 (x : X), P x \u2194 Q (f x)\nDIRECT PROOF DEPENDENCIES [Eq, Not, Exists, Iff, Exists.casesOn, False, Iff.mpr, Eq.mpr, id, congrArg, Eq.symm, Iff.mp]\nDECLARATION MathGKM.lossy_bool\nTYPE \u00ac\u2203 Q, \u2200 (b : Bool), b = true \u2194 Q ()\nDIRECT PROOF DEPENDENCIES [Exists,\n Unit,\n Bool,\n Iff,\n Eq,\n Bool.true,\n Unit.unit,\n Exists.casesOn,\n False,\n Bool.false,\n Iff.mpr,\n Iff.mp,\n rfl,\n Eq.casesOn,\n HEq,\n False.elim,\n Eq.refl,\n noConfusion_of_Nat,\n Bool.ctorIdx,\n HEq.refl]\nDECLARATION MathGKM.Machine.continuation_preserves\nTYPE \u2200 (n : \u2115) (s : MathGKM.Machine.State) (env : \u2115 \u2192 MathGKM.Machine.Input),\n  (MathGKM.Machine.run n MathGKM.Machine.Engine.candidate s env).state =\n    (MathGKM.Machine.run n MathGKM.Machine.Engine.reference s env).state\nDIRECT PROOF DEPENDENCIES [Nat,\n MathGKM.Machine.State,\n MathGKM.Machine.Input,\n Nat.recAux,\n Eq,\n MathGKM.Machine.Result.state,\n MathGKM.Machine.run,\n MathGKM.Machine.Engine.candidate,\n MathGKM.Machine.Engine.reference,\n Eq.refl,\n OfNat.ofNat,\n instOfNatNat,\n MathGKM.Machine.step,\n HAdd.hAdd,\n instHAdd,\n instAddNat]\nDECLARATION MathGKM.Machine.continuation_cost\nTYPE \u2200 (n : \u2115) (s : MathGKM.Machine.State) (env : \u2115 \u2192 MathGKM.Machine.Input),\n  (MathGKM.Machine.run n MathGKM.Machine.Engine.candidate s env).cost + n =\n    (MathGKM.Machine.run n MathGKM.Machine.Engine.reference s env).cost\nDIRECT PROOF DEPENDENCIES [Nat,\n MathGKM.Machine.State,\n MathGKM.Machine.Input,\n Nat.recAux,\n Eq,\n HAdd.hAdd,\n instHAdd,\n instAddNat,\n MathGKM.Machine.Result.cost,\n MathGKM.Machine.run,\n MathGKM.Machine.Engine.candidate,\n MathGKM.Machine.Engine.reference,\n Eq.refl,\n OfNat.ofNat,\n instOfNatNat,\n MathGKM.Machine.step,\n id,\n Decidable.byContradiction,\n MathGKM.Machine.operationCost,\n instDecidableEqNat,\n Not,\n MathGKM.Machine.continuation_cost._proof_1_7]\nDECLARATION MathGKM.Machine.concrete_switch\nTYPE \u2200 (n k : \u2115) (s : MathGKM.Machine.State) (env : \u2115 \u2192 MathGKM.Machine.Input),\n  k < n \u2192\n    (MathGKM.Machine.run n MathGKM.Machine.Engine.candidate s env).state =\n        (MathGKM.Machine.run n MathGKM.Machine.Engine.reference s env).state \u2227\n      k + (MathGKM.Machine.run n MathGKM.Machine.Engine.candidate s env).cost <\n        (MathGKM.Machine.run n MathGKM.Machine.Engine.reference s env).cost\nDIRECT PROOF DEPENDENCIES [Nat,\n MathGKM.Machine.State,\n MathGKM.Machine.Input,\n LT.lt,\n instLTNat,\n And.intro,\n Eq,\n MathGKM.Machine.Result.state,\n MathGKM.Machine.run,\n MathGKM.Machine.Engine.candidate,\n MathGKM.Machine.Engine.reference,\n HAdd.hAdd,\n instHAdd,\n instAddNat,\n MathGKM.Machine.Result.cost,\n MathGKM.Machine.continuation_preserves,\n MathGKM.Machine.continuation_cost,\n Decidable.byContradiction,\n Nat.decLt,\n Not,\n MathGKM.Machine.concrete_switch._proof_1_1]\nDECLARATION MathGKM.Machine.overhead_removes_gain\nTYPE \u2200 (n k : \u2115) (s : MathGKM.Machine.State) (env : \u2115 \u2192 MathGKM.Machine.Input),\n  n \u2264 k \u2192\n    \u00ack + (MathGKM.Machine.run n MathGKM.Machine.Engine.candidate s env).cost <\n        (MathGKM.Machine.run n MathGKM.Machine.Engine.reference s env).cost\nDIRECT PROOF DEPENDENCIES [Nat,\n MathGKM.Machine.State,\n MathGKM.Machine.Input,\n LE.le,\n instLENat,\n Eq,\n HAdd.hAdd,\n instHAdd,\n instAddNat,\n MathGKM.Machine.Result.cost,\n MathGKM.Machine.run,\n MathGKM.Machine.Engine.candidate,\n MathGKM.Machine.Engine.reference,\n MathGKM.Machine.continuation_cost,\n LT.lt,\n instLTNat,\n MathGKM.Machine.overhead_removes_gain._proof_1_1]\nDECLARATION MathGKM.Machine.deadline_counterexample\nTYPE \u00ac3 +\n        (MathGKM.Machine.run 1 MathGKM.Machine.Engine.candidate { code := [MathGKM.Machine.Instruction.record 7] }\n            fun x => { }).cost \u2264\n      2 \u2227\n  (MathGKM.Machine.run 1 MathGKM.Machine.Engine.reference { code := [MathGKM.Machine.Instruction.record 7] } fun x =>\n        { }).cost \u2264\n    2\nDIRECT PROOF DEPENDENCIES [of_decide_eq_true,\n And,\n Not,\n LE.le,\n Nat,\n instLENat,\n HAdd.hAdd,\n instHAdd,\n instAddNat,\n OfNat.ofNat,\n instOfNatNat,\n MathGKM.Machine.Result.cost,\n MathGKM.Machine.run,\n MathGKM.Machine.Engine.candidate,\n MathGKM.Machine.State.mk,\n List.cons,\n MathGKM.Machine.Instruction,\n MathGKM.Machine.Instruction.record,\n List.nil,\n Option.none,\n MathGKM.Machine.Input.mk,\n MathGKM.Machine.Program,\n MathGKM.Machine.Engine.reference,\n instDecidableAnd,\n instDecidableNot,\n Nat.decLe,\n id,\n Eq,\n Bool,\n Decidable.decide,\n Bool.true,\n Eq.refl]\nDECLARATION MathGKM.Machine.frozen_incumbent_counterexample\nTYPE (MathGKM.Machine.run 2 MathGKM.Machine.Engine.reference { code := [MathGKM.Machine.Instruction.request 0] }\n          fun x => { replacement := some [MathGKM.Machine.Instruction.record 9] }).state.archive =\n    [9, 0] \u2227\n  (MathGKM.Machine.run 2 MathGKM.Machine.Engine.reference { code := [MathGKM.Machine.Instruction.request 0] } fun x =>\n          { }).state.archive =\n    [0]\nDIRECT PROOF DEPENDENCIES [of_decide_eq_true,\n And,\n Eq,\n List,\n Nat,\n MathGKM.Machine.State.archive,\n MathGKM.Machine.Result.state,\n MathGKM.Machine.run,\n OfNat.ofNat,\n instOfNatNat,\n MathGKM.Machine.Engine.reference,\n MathGKM.Machine.State.mk,\n List.cons,\n MathGKM.Machine.Instruction,\n MathGKM.Machine.Instruction.request,\n List.nil,\n Option.none,\n MathGKM.Machine.Input.mk,\n Option.some,\n MathGKM.Machine.Program,\n MathGKM.Machine.Instruction.record,\n instDecidableAnd,\n instDecidableEqList,\n instDecidableEqNat,\n id,\n Bool,\n Decidable.decide,\n Bool.true,\n Eq.refl]\nDECLARATION MathGKM.Machine.time_dependent_response_counterexample\nTYPE (MathGKM.Machine.run 1 MathGKM.Machine.Engine.candidate { code := [MathGKM.Machine.Instruction.request 0] }\n        fun x => { answer := MathGKM.Machine.dispatchCost MathGKM.Machine.Engine.candidate }).state.archive \u2260\n  (MathGKM.Machine.run 1 MathGKM.Machine.Engine.reference { code := [MathGKM.Machine.Instruction.request 0] } fun x =>\n        { answer := MathGKM.Machine.dispatchCost MathGKM.Machine.Engine.reference }).state.archive\nDIRECT PROOF DEPENDENCIES [of_decide_eq_true,\n Ne,\n List,\n Nat,\n MathGKM.Machine.State.archive,\n MathGKM.Machine.Result.state,\n MathGKM.Machine.run,\n OfNat.ofNat,\n instOfNatNat,\n MathGKM.Machine.Engine.candidate,\n MathGKM.Machine.State.mk,\n List.cons,\n MathGKM.Machine.Instruction,\n MathGKM.Machine.Instruction.request,\n List.nil,\n Option.none,\n MathGKM.Machine.Input.mk,\n MathGKM.Machine.dispatchCost,\n MathGKM.Machine.Program,\n MathGKM.Machine.Engine.reference,\n instDecidableNot,\n Eq,\n instDecidableEqList,\n instDecidableEqNat,\n id,\n Bool,\n Decidable.decide,\n Bool.true,\n Eq.refl]\n'MathGKM.attachment_conservative' does not depend on any axioms\n'MathGKM.sequential_extension' does not depend on any axioms\n'MathGKM.inconsistent_attachment' does not depend on any axioms\n'MathGKM.transport' does not depend on any axioms\n'MathGKM.collision_obstruction' does not depend on any axioms\n'MathGKM.lossy_bool' does not depend on any axioms\n'MathGKM.Machine.continuation_preserves' depends on axioms: [propext]\n'MathGKM.Machine.continuation_cost' depends on axioms: [propext, Quot.sound]\n'MathGKM.Machine.concrete_switch' depends on axioms: [propext, Quot.sound]\n'MathGKM.Machine.overhead_removes_gain' depends on axioms: [propext, Quot.sound]\n'MathGKM.Machine.deadline_counterexample' depends on axioms: [propext]\n'MathGKM.Machine.frozen_incumbent_counterexample' depends on axioms: [propext]\n'MathGKM.Machine.time_dependent_response_counterexample' depends on axioms: [propext]\n",
+        "stderr": "",
+        "timeout": false,
+        "seconds": 1.627
+      },
+      "replay": {
+        "args": [
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+          "MathGKM.Audit"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "timeout": false,
+        "seconds": 9.805
+      },
+      "olean_sha256": "4eb9c149f7dc34371618f6b77e11fca4ab5023f43539f8e9e90801f54bf997c0"
+    }
+  },
+  "snapshot_compiles_and_replays": true
+}

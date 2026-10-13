@@ -1,14 +1,24 @@
-# math_gkm: clean machine-led restart
+# math_gkm: machine-led construction
 
-This repository starts from a design contract, pinned Lean/Mathlib dependencies,
-and an empty project module. The autonomous Codex/Astra proposer must develop
-the research machinery and then carry out the two mathematical campaigns.
-No prior project implementation, theorem, experiment, or result is an input.
+Machine-authored by Codex/Astra from the fixed [mission](MISSION.md) and
+[design](docs/DESIGN.md). Current status: experimental construction with checked
+finite-model Lean theorems. **No certified persistent switch, Agoh formalization,
+or Markov resolution is claimed.**
 
-Read [the detailed design](docs/DESIGN.md) and [the mission](MISSION.md).
-The initial construction phase is experimental bootstrapping. It becomes a
-Gödel-certified self-rewrite only when the required execution connection and
-switch certificate have actually been established.
+Run the bounded build, separate kernel replay, adversarial gate tests and broker
+example using the supplied dependencies:
 
-Local Git records every bootstrap and machine-generated checkpoint. There is
-no configured remote, and nothing is published automatically.
+```sh
+/opt/homebrew/bin/python3 -u -m machinery.check
+```
+
+Do not use Lake in this environment: its metadata validation attempted to refresh
+a read-only dependency. The wrapper invokes pinned Lean directly with explicit
+library paths, workspace-local temporary files and the required Git environment.
+It performs no package update, cache download, shell networking or external LLM call.
+
+Read [the construction audit](docs/CONSTRUCTION.md) for exact theorem meanings,
+implementation limits and remaining obligations, [the attempt log](docs/ATTEMPTS.md)
+for failures, and [RESUME.json](RESUME.json) for the next checkpoint. Validation
+records are in `evidence/`; compiled objects and experimental profiles are in
+`.scratch/`. The supervisor owns Git versioning and independent acceptance.

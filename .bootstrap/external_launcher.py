@@ -32,10 +32,12 @@ def main():
     assert 1 <= args.round <= 100 and 1 <= args.seconds <= 1800
     directory = ROOT / '.bootstrap' / f'round-{args.round:04d}'
     directory.mkdir(parents=True, exist_ok=False)
+    (directory / 'launcher.py').write_bytes(Path(__file__).read_bytes())
     profile = json.loads(PROFILE.read_text())
     profile['filesystem'][':workspace_roots'].update({
         'MISSION.md': 'read', 'docs/DESIGN.md': 'read',
-        'lean-toolchain': 'read', 'lake-manifest.json': 'read'})
+        'lean-toolchain': 'read', 'lake-manifest.json': 'read',
+        'lakefile.toml': 'read', '.lake/packages': 'read'})
     schema = {'type': 'object', 'properties': {
         'phase': {'type': 'string', 'enum': ['construction', 'agoh', 'markov']},
         'summary': {'type': 'string'},
@@ -50,7 +52,7 @@ def main():
     prompt = '''You are the actual Codex/Astra proposer and builder for a clean machine-led mathematical-research project.
 The user requires YOU to rebuild its machinery, then formalize the Agoh paper, then attack the Markov conjecture. No predecessor implementation, theorem, result, or proof strategy is supplied. Read MISSION.md and docs/DESIGN.md completely before implementing. These requirements are fixed and read-only.
 
-This is a real work invocation, not a request for another proposal or permission. Create and test executable machinery and Lean proofs in this workspace. You have shell tools and hosted live web search. Read pinned Mathlib as needed. Python and GAP may be available; discover capabilities honestly. Shell networking is disabled; use hosted search for literature. Temporary files must stay inside the workspace (create a .scratch directory as needed). Dependencies are read-only; do not run package updates or cache downloads. Git's unrelated system and user configurations are disabled with GIT_CONFIG_NOSYSTEM=1 and GIT_CONFIG_GLOBAL=/dev/null; retain those settings when invoking Lake.
+This is a real work invocation, not a request for another proposal or permission. Create and test executable machinery and Lean proofs in this workspace. You have shell tools and hosted live web search. Read pinned Mathlib as needed. Python and GAP may be available; discover capabilities honestly. Shell networking is disabled; use hosted search for literature. Temporary files must stay inside the workspace (create a .scratch directory as needed). Dependencies are read-only; do not run package updates or cache downloads. Git's unrelated system and user configurations are disabled with GIT_CONFIG_NOSYSTEM=1 and GIT_CONFIG_GLOBAL=/dev/null; retain those settings when invoking Lake. The login shell may reset PATH to Apple wrappers that cannot run in this sandbox. Use /opt/homebrew/bin/python3 explicitly and prefix Lake calls with env PATH=/opt/homebrew/bin:/Users/sasha/.elan/bin:/usr/bin:/bin to select Homebrew Git.
 
 Start with construction, including its operational semantics, proof gate, action interface, and self-rewrite obligations. Individual mathematical results may be checked during experimental bootstrap; full certified-switch completion is not a prerequisite for every mathematical action. Do not skip to the paper merely because code compiles. A claimed full Gödel switch must connect the actual running code to its checked whole-continuation comparison, including future self-rewrites and resource costs. If that is incomplete, explicitly record the gap and keep working on construction. Avoid hand-built finite outcome tables masquerading as this comparison. No exact Kolmogorov computation or description-length reward; no manufactured mathematical levels.
 
@@ -60,19 +62,36 @@ Work autonomously and leave durable progress notes and resumable state for subse
 
 At the end return the required JSON. List remaining gaps candidly, and identify exact evidence files. Do not claim the overall mission complete unless all its required work was actually done.
 '''
+    prompt += f'\nThis proposer invocation has a hard wall-clock limit of {args.seconds} seconds. Persist useful checkpoints during the work and leave resumable state before the limit.\n'
     if args.feedback:
         prompt += '\nSUPERVISOR AUDIT FEEDBACK (requirements/correctness only, not a supplied solution):\n' + args.feedback.read_text()
     (directory / 'prompt.txt').write_text(prompt)
-    inputs = {str(p.relative_to(ROOT)): sha(p) for p in ROOT.rglob('*')
-              if p.is_file() and not any(x in {'.git', '.lake', '.bootstrap', '.scratch', '__pycache__'} for x in p.relative_to(ROOT).parts)}
+    inputs = {}
+    excluded = {'.git', '.lake', '.bootstrap', '.scratch', '__pycache__'}
+    for folder, dirs, files in os.walk(ROOT, followlinks=False):
+        dirs[:] = [d for d in dirs if d not in excluded]
+        for name in dirs + files:
+            p = Path(folder) / name
+            if p.is_symlink():
+                raise RuntimeError('refusing candidate symlink in input manifest: ' + str(p.relative_to(ROOT)))
+        for name in files:
+            p = Path(folder) / name
+            inputs[str(p.relative_to(ROOT))] = sha(p)
     (directory / 'input-manifest.json').write_text(json.dumps(inputs, indent=2, sort_keys=True) + '\n')
+    shell_environment = {
+        'PATH': '/opt/homebrew/bin:/Users/sasha/.elan/bin:/usr/bin:/bin:/usr/sbin:/sbin',
+        'HOME': '/Users/sasha', 'LANG': 'en_US.UTF-8',
+        'GIT_CONFIG_NOSYSTEM': '1', 'GIT_CONFIG_GLOBAL': '/dev/null',
+        'TMPDIR': str(ROOT / '.scratch')}
+    (ROOT / '.scratch').mkdir(exist_ok=True)
     command = ['/opt/homebrew/bin/codex', '--no-daemon', '-a', 'never', 'exec',
                '--model', 'gpt-6-astra', '--ephemeral', '--ignore-user-config',
                '--skip-git-repo-check', '--json', '--color', 'never', '-C', str(ROOT),
                '-c', 'default_permissions="cleanroom"',
                '-c', 'permissions.cleanroom=' + inline(profile),
                '-c', 'web_search="live"', '-c', 'model_reasoning_effort="high"',
-               '-c', 'shell_environment_policy.set={GIT_CONFIG_NOSYSTEM="1",GIT_CONFIG_GLOBAL="/dev/null"}',
+               '-c', 'shell_environment_policy.inherit="none"',
+               '-c', 'shell_environment_policy.set=' + inline(shell_environment),
                '--output-schema', str(directory / 'schema.json'),
                '--output-last-message', str(directory / 'final.json')]
     for key in ['features.memories', 'memories.use_memories', 'memories.generate_memories',
@@ -88,7 +107,7 @@ At the end return the required JSON. List remaining gaps candidly, and identify 
     try:
         environment = os.environ.copy()
         environment.update({'GIT_CONFIG_NOSYSTEM': '1', 'GIT_CONFIG_GLOBAL': '/dev/null'})
-        (directory / 'environment-overrides.json').write_text(json.dumps({'GIT_CONFIG_NOSYSTEM': '1', 'GIT_CONFIG_GLOBAL': '/dev/null'}, indent=2) + '\n')
+        (directory / 'environment-overrides.json').write_text(json.dumps({'host_overrides': {'GIT_CONFIG_NOSYSTEM': '1', 'GIT_CONFIG_GLOBAL': '/dev/null'}, 'tool_inherit': 'none', 'tool_environment': shell_environment}, indent=2) + '\n')
         process = subprocess.Popen(command, cwd=ROOT, env=environment, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                                    stderr=subprocess.PIPE, start_new_session=True)
         process.stdin.write(prompt.encode())
@@ -113,13 +132,22 @@ At the end return the required JSON. List remaining gaps candidly, and identify 
             process.wait(timeout=5)
     except BaseException as exc:
         error = type(exc).__name__ + ': ' + str(exc)
-        if process is not None and process.poll() is None:
-            os.killpg(process.pid, signal.SIGTERM)
+    finally:
+        if process is not None:
+            try:
+                os.killpg(process.pid, signal.SIGTERM)
+            except ProcessLookupError:
+                pass
             try:
                 process.wait(timeout=3)
             except subprocess.TimeoutExpired:
                 os.killpg(process.pid, signal.SIGKILL)
                 process.wait()
+            # The parent may have exited while descendants kept inherited pipes.
+            try:
+                os.killpg(process.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
     receipt = {'model_requested': 'gpt-6-astra', 'round': args.round,
                'seconds': round(time.monotonic() - started, 3), 'error': error,
                'exit_code': process.returncode if process is not None else None,
