@@ -1,0 +1,113 @@
+{
+  "lean_path": "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean:/Users/sasha/math_gkm/.scratch/agoh:/Users/sasha/math_gkm/.scratch/construction:/Users/sasha/math_gkm/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "results": [
+    {
+      "module": "MathGKM.Foundations",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/agoh/MathGKM/Foundations.olean",
+        "MathGKM/Foundations.lean"
+      ],
+      "returncode": 0,
+      "stdout": "MathGKM/Foundations.lean:35:7: warning: Variable name `a` is not explicitly referenced.\n\nThe binding can be removed (if unused) or named `_` (if used implicitly).\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n",
+      "stderr": ""
+    },
+    {
+      "module": "MathGKM.Machine",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/agoh/MathGKM/Machine.olean",
+        "MathGKM/Machine.lean"
+      ],
+      "returncode": 0,
+      "stdout": "MathGKM/Machine.lean:95:89: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n",
+      "stderr": ""
+    },
+    {
+      "module": "MathGKM.Gluing",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/agoh/MathGKM/Gluing.olean",
+        "MathGKM/Gluing.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "module": "MathGKM.Continuation",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/agoh/MathGKM/Continuation.olean",
+        "MathGKM/Continuation.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "module": "MathGKM.AgohExercise",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/agoh/MathGKM/AgohExercise.olean",
+        "MathGKM/AgohExercise.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "module": "MathGKM.AgohMain",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/agoh/MathGKM/AgohMain.olean",
+        "MathGKM/AgohMain.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "module": "MathGKM.AgohConsequences",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/agoh/MathGKM/AgohConsequences.olean",
+        "MathGKM/AgohConsequences.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "module": "MathGKM.AgohAudit",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/agoh/MathGKM/AgohAudit.olean",
+        "MathGKM/AgohAudit.lean"
+      ],
+      "returncode": 0,
+      "stdout": "DECLARATION MathGKM.Agoh.alternating_monomial\nTYPE \u2200 (n k : \u2115) (c : \u211d),\n  MathGKM.Agoh.alternating n ((Polynomial.monomial k) c) = Polynomial.C c * (1 - Polynomial.X ^ k) ^ n\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.alternating_dvd\nTYPE \u2200 (n : \u2115) (g : Polynomial \u211d), (Polynomial.X - Polynomial.C 1) ^ n \u2223 MathGKM.Agoh.alternating n g\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.coprime_at_one\nTYPE \u2200 (f : Polynomial \u211d), Polynomial.eval 1 f \u2260 0 \u2192 IsCoprime (Polynomial.X - Polynomial.C 1) f\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.power_dvd_comp\nTYPE \u2200 (n i : \u2115) (q : Polynomial \u211d),\n  (Polynomial.X - Polynomial.C 1) ^ n \u2223 q \u2192 (Polynomial.X - Polynomial.C 1) ^ n \u2223 q.comp (Polynomial.X ^ i)\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.main_regular\nTYPE \u2200 (n : \u2115) (f : Polynomial \u211d),\n  Polynomial.eval 1 f \u2260 0 \u2192 (Polynomial.X - Polynomial.C 1) ^ n \u2223 MathGKM.Agoh.numerator n f\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.main\nTYPE \u2200 (n : \u2115) (f : Polynomial \u211d), (Polynomial.X - Polynomial.C 1) ^ n \u2223 MathGKM.Agoh.numerator n f\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.denominator_eval_one\nTYPE \u2200 (n : \u2115) (f : Polynomial \u211d), Polynomial.eval 1 (MathGKM.Agoh.denominator n f) = Polynomial.eval 1 f ^ (n + 1)\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.denominator_ne_zero\nTYPE \u2200 (n : \u2115) (f : Polynomial \u211d), Polynomial.eval 1 f \u2260 0 \u2192 MathGKM.Agoh.denominator n f \u2260 0\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.rationalSum_eq_fraction\nTYPE \u2200 (n : \u2115) (f : Polynomial \u211d),\n  Polynomial.eval 1 f \u2260 0 \u2192\n    MathGKM.Agoh.rationalSum n f =\n      (algebraMap (Polynomial \u211d) (RatFunc \u211d)) (MathGKM.Agoh.numerator n f) /\n        (algebraMap (Polynomial \u211d) (RatFunc \u211d)) (MathGKM.Agoh.denominator n f)\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.reduced_numerator\nTYPE \u2200 (n : \u2115) (f : Polynomial \u211d),\n  Polynomial.eval 1 f \u2260 0 \u2192 (Polynomial.X - Polynomial.C 1) ^ n \u2223 (MathGKM.Agoh.rationalSum n f).num\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.cleared_iff_reduced\nTYPE \u2200 (n m : \u2115) (f : Polynomial \u211d),\n  Polynomial.eval 1 f \u2260 0 \u2192\n    ((Polynomial.X - Polynomial.C 1) ^ m \u2223 MathGKM.Agoh.numerator n f \u2194\n      (Polynomial.X - Polynomial.C 1) ^ m \u2223 (MathGKM.Agoh.rationalSum n f).num)\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.theorem_1_1\nTYPE \u2200 (n : \u2115) (a : \u211d),\n  a \u2260 -1 \u2192 (Polynomial.X - Polynomial.C 1) ^ n \u2223 (MathGKM.Agoh.rationalSum n (Polynomial.X + Polynomial.C a)).num\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.paper_H\nTYPE \u2200 (n : \u2115) (a : \u211d),\n  MathGKM.Agoh.numerator n (Polynomial.X + Polynomial.C a) =\n    \u2211 i \u2208 Finset.range (n + 1),\n      Polynomial.C ((-1) ^ i * \u2191(n.choose i)) *\n        \u220f k \u2208 (Finset.range (n + 1)).erase i, (Polynomial.X ^ k + Polynomial.C a)\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.paper_G\nTYPE \u2200 (n : \u2115) (a x : \u211d),\n  (\u2200 i \u2208 Finset.range (n + 1), x ^ i + a \u2260 0) \u2192\n    Polynomial.eval x (MathGKM.Agoh.numerator n (Polynomial.X + Polynomial.C a)) =\n      (\u220f k \u2208 Finset.range (n + 1), (x ^ k + a)) * \u2211 i \u2208 Finset.range (n + 1), (-1) ^ i * \u2191(n.choose i) / (x ^ i + a)\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.theorem_3_1\nTYPE \u2200 (n : \u2115) (f : Polynomial \u211d),\n  0 < f.natDegree \u2192\n    f.Splits \u2192\n      Squarefree f \u2192 Polynomial.eval 1 f \u2260 0 \u2192 (Polynomial.X - Polynomial.C 1) ^ n \u2223 (MathGKM.Agoh.rationalSum n f).num\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.repeated_root_family\nTYPE \u2200 (n j : \u2115) (b : \u211d),\n  b \u2260 1 \u2192 (Polynomial.X - Polynomial.C 1) ^ n \u2223 (MathGKM.Agoh.rationalSum n ((Polynomial.X - Polynomial.C b) ^ j)).num\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.simple_roots_iff_squarefree\nTYPE \u2200 (f : Polynomial \u211d), f \u2260 0 \u2192 f.Splits \u2192 (f.roots.Nodup \u2194 Squarefree f)\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.repeatedExample_regular\nTYPE Polynomial.eval 1 MathGKM.Agoh.repeatedExample \u2260 0\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.repeatedExample_nonzero\nTYPE MathGKM.Agoh.repeatedExample \u2260 0\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.repeatedExample_splits\nTYPE MathGKM.Agoh.repeatedExample.Splits\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.repeatedExample_not_monomial\nTYPE \u00ac\u2203 k c, MathGKM.Agoh.repeatedExample = (Polynomial.monomial k) c\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.repeatedExample_not_squarefree\nTYPE \u00acSquarefree MathGKM.Agoh.repeatedExample\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.repeatedExample_not_alternatives\nTYPE \u00acMathGKM.Agoh.PaperAlternatives MathGKM.Agoh.repeatedExample\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.repeatedExample_all_n\nTYPE \u2200 (n : \u2115), (Polynomial.X - Polynomial.C 1) ^ n \u2223 (MathGKM.Agoh.rationalSum n MathGKM.Agoh.repeatedExample).num\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.refutes_per_n\nTYPE \u2200 (n : \u2115), \u00acMathGKM.Agoh.ConjecturePerN n\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.refutes_all_n\nTYPE \u00acMathGKM.Agoh.ConjectureAllN\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.all_n_iff_positive\nTYPE \u2200 (f : Polynomial \u211d),\n  (\u2200 (n : \u2115), (Polynomial.X - Polynomial.C 1) ^ n \u2223 (MathGKM.Agoh.rationalSum n f).num) \u2194\n    \u2200 (n : \u2115), 0 < n \u2192 (Polynomial.X - Polynomial.C 1) ^ n \u2223 (MathGKM.Agoh.rationalSum n f).num\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.complex_root_example\nTYPE \u2200 (n : \u2115), (Polynomial.X - Polynomial.C 1) ^ n \u2223 (MathGKM.Agoh.rationalSum n (Polynomial.X ^ 2 + 1)).num\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.H_two\nTYPE \u2200 (a : \u211d),\n  MathGKM.Agoh.numerator 2 (Polynomial.X + Polynomial.C a) = (Polynomial.X - 1) ^ 2 * (Polynomial.X - Polynomial.C a)\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.H_three\nTYPE \u2200 (a : \u211d),\n  MathGKM.Agoh.numerator 3 (Polynomial.X + Polynomial.C a) =\n    (Polynomial.X - 1) ^ 3 *\n      (Polynomial.X ^ 3 - Polynomial.C (2 * a) * Polynomial.X ^ 2 - Polynomial.C (2 * a) * Polynomial.X +\n        Polynomial.C (a ^ 2))\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.extra_factor_three\nTYPE \u2200 (a : \u211d),\n  a ^ 2 - 4 * a + 1 = 0 \u2192 (Polynomial.X - Polynomial.C 1) ^ 4 \u2223 MathGKM.Agoh.numerator 3 (Polynomial.X + Polynomial.C a)\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.extra_factor_radicals\nTYPE (Polynomial.X - Polynomial.C 1) ^ 4 \u2223 (MathGKM.Agoh.rationalSum 3 (Polynomial.X + Polynomial.C (2 + \u221a3))).num \u2227\n  (Polynomial.X - Polynomial.C 1) ^ 4 \u2223 (MathGKM.Agoh.rationalSum 3 (Polynomial.X + Polynomial.C (2 - \u221a3))).num\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.section_four_polynomial\nTYPE MathGKM.Agoh.numerator 1 MathGKM.Agoh.repeatedExample =\n  Polynomial.X ^ 2 + Polynomial.C 2 * Polynomial.X - Polynomial.C 3\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.section_four_degree\nTYPE (MathGKM.Agoh.numerator 1 MathGKM.Agoh.repeatedExample).natDegree = 2\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.cancellation_without_regularity\nTYPE Polynomial.X - Polynomial.C 1 \u2223 Polynomial.X - Polynomial.C 1 \u2227\n  \u00acPolynomial.X - Polynomial.C 1 \u2223\n      ((algebraMap (Polynomial \u211d) (RatFunc \u211d)) (Polynomial.X - Polynomial.C 1) /\n          (algebraMap (Polynomial \u211d) (RatFunc \u211d)) (Polynomial.X - Polynomial.C 1)).num\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.clears_denominators\nTYPE \u2200 (n : \u2115) (f : Polynomial \u211d) (x : \u211d),\n  (\u2200 i \u2208 Finset.range (n + 1), Polynomial.eval (x ^ i) f \u2260 0) \u2192\n    Polynomial.eval x (MathGKM.Agoh.numerator n f) =\n      (\u220f k \u2208 Finset.range (n + 1), Polynomial.eval (x ^ k) f) *\n        \u2211 i \u2208 Finset.range (n + 1), (-1) ^ i * \u2191(n.choose i) / Polynomial.eval (x ^ i) f\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.zero_order\nTYPE \u2200 (f : Polynomial \u211d), MathGKM.Agoh.numerator 0 f = 1\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.first_order_factor\nTYPE \u2200 (n : \u2115), n \u2260 0 \u2192 \u2200 (f : Polynomial \u211d), Polynomial.X - Polynomial.C 1 \u2223 MathGKM.Agoh.numerator n f\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.singular_counterexample\nTYPE Polynomial.eval 2 (MathGKM.Agoh.numerator 1 (Polynomial.X - 1)) = 1 \u2227\n  \u220f k \u2208 Finset.range 2, Polynomial.eval (2 ^ k) (Polynomial.X - 1) = 0\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.missing_positive_n\nTYPE \u00acPolynomial.X - Polynomial.C 1 \u2223 MathGKM.Agoh.numerator 0 (Polynomial.X + 1)\nAXIOMS [propext, Classical.choice, Quot.sound]\nDECLARATION MathGKM.Agoh.geometric_region_counterexample\nTYPE 2 < 3 \u2227 |7 / 5 - 1| < 1 / 2 \u2227 \u00ac|(7 / 5) ^ 4 / 3| < 1\nAXIOMS [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.main' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.theorem_1_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.theorem_3_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.cleared_iff_reduced' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.refutes_all_n' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": ""
+    },
+    {
+      "module": "MathGKM",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/agoh/MathGKM.olean",
+        "MathGKM.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

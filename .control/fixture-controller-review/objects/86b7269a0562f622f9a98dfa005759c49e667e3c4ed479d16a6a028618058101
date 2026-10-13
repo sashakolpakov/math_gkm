@@ -1,0 +1,17 @@
+[
+  {
+    "step": "formal-validation",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "-u",
+      "-m",
+      "machinery.validate"
+    ],
+    "returncode": 1,
+    "stdout": "MathGKM.Foundations compile_module 0\nMathGKM.Foundations replay 0\nMathGKM.Machine compile_module 0\nMathGKM.Machine replay 0\nMathGKM compile_module 0\nMathGKM replay 0\nMathGKM.Driver compile_module 0\nMathGKM.Driver replay 0\nMathGKM.Audit compile_module 0\nMathGKM.Audit replay 0\nMathGKM.Gluing compile_module 0\nMathGKM.Gluing replay 0\nMathGKM.Protocol compile_module 0\nMathGKM.Protocol replay 0\nMathGKM.AgohExercise compile_module 1\nMathGKM/AgohExercise.lean:75:56: error: unsolved goals\nhr : range 2 = {0, 1}\n\u22a2 eval 2 (\u220f x \u2208 {0, 1}.erase 1, (X ^ x - 1)) = 0\n \n",
+    "stderr": "",
+    "termination": null,
+    "captured_bytes": 564,
+    "elapsed_ns": 87814225208
+  }
+]

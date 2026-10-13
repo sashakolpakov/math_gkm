@@ -1,0 +1,36 @@
+{
+  "phase": "construction",
+  "summary": "Implemented the goal-driven continuing Astra controller, durable recovery, resource controls, epoch rollover, completion validation, tests and usage documentation. No live research was launched.",
+  "files_changed": [
+    "machinery/controller.py",
+    "machinery/worker.py",
+    "machinery/completion.py",
+    "machinery/fixture_worker.py",
+    "machinery/engine.py",
+    "machinery/process.py",
+    "contracts/markov-goal.json",
+    "tests/test_controller.py",
+    "docs/CONTROLLER.md",
+    "requests/markov-controller-smoke.sh",
+    "RESUME.json",
+    "evidence/controller-implementation.json",
+    "evidence/controller-tests-initial.log",
+    "evidence/controller-tests-final-retests.log",
+    "evidence/controller-negative-completion.json",
+    "evidence/RESUME.before-controller.json",
+    ".control/fixture-controller-review/"
+  ],
+  "checks": [
+    "Eight controller tests passed across the initial run and targeted retests; initial failures retained.",
+    "Legacy engine feedback/replay test passed.",
+    "Real Lean rejected an unrelated theorem at the exact pinned Markov root.",
+    "Retained fixture demonstrates automatic feedback and epoch rollover.",
+    "Python and activation-script syntax checks passed."
+  ],
+  "remaining": [
+    "Independent implementation review and live smoke activation.",
+    "Full Markov conjecture remains open; resolution requires Lean validation and independent source correspondence audit.",
+    "No reboot autostart; documented resume is required. Token limits apply between workers."
+  ],
+  "next_step": "After review, run: /bin/sh requests/markov-controller-smoke.sh"
+}

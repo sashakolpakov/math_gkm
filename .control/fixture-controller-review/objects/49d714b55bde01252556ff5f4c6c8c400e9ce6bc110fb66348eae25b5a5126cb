@@ -1,0 +1,74 @@
+{
+  "source_sha256": {
+    "AgohExercise": "61f532279f8b22c8b9f5ed37f31b2e5085111539aeba1bd4e33ea44c703a74f6",
+    "AgohMain": "cd816a3f99d75461c417ab6881d3f66bf43b11f2f96de0e2e3d0cf1c91d4cbc6",
+    "AgohConsequences": "c0fba7aec10771466501b5b542045afc89a48827ccbd2d6e9c87f9cb8814a05b"
+  },
+  "theorem_count": 43,
+  "records": [
+    {
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/private/tmp/math_gkm_agoh_main_audit_20261013_v3/build/MathGKM/AgohExercise.olean",
+        "MathGKM/AgohExercise.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 2.620711833005771
+    },
+    {
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/private/tmp/math_gkm_agoh_main_audit_20261013_v3/build/MathGKM/AgohMain.olean",
+        "MathGKM/AgohMain.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 3.6842192920012167
+    },
+    {
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/private/tmp/math_gkm_agoh_main_audit_20261013_final/build/MathGKM/AgohConsequences.olean",
+        "MathGKM/AgohConsequences.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 15.038085541993496
+    },
+    {
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "Audit.lean"
+      ],
+      "returncode": 0,
+      "stdout": "'MathGKM.Agoh.eval_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.first_order_factor' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.clears_denominators' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.denominator_at_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.zero_order' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.geometric_region_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.missing_positive_n' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.singular_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.alternating_monomial' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.alternating_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.coprime_at_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.power_dvd_comp' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.main_regular' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.main' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.denominator_eval_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.denominator_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.rationalSum_eq_fraction' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.reduced_numerator' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.cleared_iff_reduced' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.theorem_1_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.paper_H' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.paper_G' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.theorem_3_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.repeated_root_family' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.simple_roots_iff_squarefree' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.repeatedExample_regular' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.repeatedExample_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.repeatedExample_splits' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.repeatedExample_not_monomial' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.repeatedExample_not_squarefree' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.repeatedExample_not_alternatives' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.repeatedExample_all_n' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.refutes_per_n' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.refutes_all_n' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.all_n_iff_positive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.complex_root_example' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.H_two' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.H_three' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.extra_factor_three' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.extra_factor_radicals' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.section_four_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.section_four_degree' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Agoh.cancellation_without_regularity' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "seconds": 2.2657778749999125
+    }
+  ],
+  "lean_path": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean",
+    "/private/tmp/math_gkm_agoh_main_audit_20261013_final/build",
+    "/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+    "/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq/.lake/build/lib/lean",
+    "/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop/.lake/build/lib/lean",
+    "/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries/.lake/build/lib/lean",
+    "/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph/.lake/build/lib/lean",
+    "/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean",
+    "/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible/.lake/build/lib/lean",
+    "/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets/.lake/build/lib/lean"
+  ],
+  "unchanged_dependency_builds_from": "/private/tmp/math_gkm_agoh_main_audit_20261013_v3",
+  "active_sources_unchanged": {
+    "AgohExercise": true,
+    "AgohMain": true,
+    "AgohConsequences": true
+  }
+}

@@ -1,0 +1,64 @@
+test_changed_hypotheses (test_boundaries.AdmissionTests.test_changed_hypotheses) ... ok
+test_complexity_audit_has_no_effect (test_boundaries.AdmissionTests.test_complexity_audit_has_no_effect) ... ok
+test_exact_refutation (test_boundaries.AdmissionTests.test_exact_refutation) ... ok
+test_false_proof_rejected_by_kernel (test_boundaries.AdmissionTests.test_false_proof_rejected_by_kernel) ... ok
+test_forged_receipt (test_boundaries.AdmissionTests.test_forged_receipt) ... ok
+test_numerical_case_does_not_prove_universal (test_boundaries.AdmissionTests.test_numerical_case_does_not_prove_universal) ... ok
+test_source_injection_and_omitted_dependency (test_boundaries.AdmissionTests.test_source_injection_and_omitted_dependency) ... ok
+test_universal_proof_has_no_axioms (test_boundaries.AdmissionTests.test_universal_proof_has_no_axioms) ... ok
+test_unrelated_true_does_not_close_root (test_boundaries.AdmissionTests.test_unrelated_true_does_not_close_root) ... ok
+test_valid_reduction_composes (test_boundaries.AdmissionTests.test_valid_reduction_composes) ... ERROR
+test_circular_dependency (test_boundaries.AttachmentTests.test_circular_dependency) ... ok
+test_compatible_sequential_graph (test_boundaries.AttachmentTests.test_compatible_sequential_graph) ... ok
+test_conflicting_binding (test_boundaries.AttachmentTests.test_conflicting_binding) ... ok
+test_missing_or_omitted_dependencies (test_boundaries.AttachmentTests.test_missing_or_omitted_dependencies) ... ok
+test_unproved_assumption (test_boundaries.AttachmentTests.test_unproved_assumption) ... ok
+test_bounded_actions (test_boundaries.BrokerTests.test_bounded_actions) ... ok
+test_exploration_cannot_install (test_boundaries.BrokerTests.test_exploration_cannot_install) ... ok
+test_fixture_is_not_live (test_boundaries.BrokerTests.test_fixture_is_not_live) ... ok
+test_no_complexity_scheduling (test_boundaries.BrokerTests.test_no_complexity_scheduling) ... ok
+test_nonproof_feedback_changes_agenda (test_boundaries.BrokerTests.test_nonproof_feedback_changes_agenda) ... ok
+test_unavailable_tool_not_refutation (test_boundaries.BrokerTests.test_unavailable_tool_not_refutation) ... ok
+test_a_missing_bridge_rejects_certified_install (test_boundaries.SwitchTests.test_a_missing_bridge_rejects_certified_install) ... ok
+test_b_all_binding_mutations (test_boundaries.SwitchTests.test_b_all_binding_mutations) ... ok
+test_c_overhead_removes_gain (test_boundaries.SwitchTests.test_c_overhead_removes_gain) ... ok
+test_d_forged_certificate (test_boundaries.SwitchTests.test_d_forged_certificate) ... ok
+test_z_experimental_install_and_replay_rejection (test_boundaries.SwitchTests.test_z_experimental_install_and_replay_rejection) ... ERROR
+
+======================================================================
+ERROR: test_valid_reduction_composes (test_boundaries.AdmissionTests.test_valid_reduction_composes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sasha/math_gkm/tests/test_boundaries.py", line 39, in test_valid_reduction_composes
+    result = self.gate.close_root(self.contract["root"], proof)
+  File "/Users/sasha/math_gkm/machinery/gate.py", line 144, in close_root
+    receipt = self.check(target, proof)
+  File "/Users/sasha/math_gkm/machinery/gate.py", line 122, in check
+    raise Rejected("kernel elaboration failed: " + elaboration["stdout"])
+machinery.gate.Rejected: kernel elaboration failed: GateChecks/P09a9c124b7dd4765ffbfc50621d38596a3dfb6122e4f9bb29e369f416bee84f3.lean:3:54: error: Type mismatch
+  (fun h0 h1 => rfl) True.intro
+has type
+  ∀ (h1 : ?m.8 True.intro), ?m.10 True.intro h1 = ?m.10 True.intro h1
+but is expected to have type
+  ∀ (n0 : Nat), n0 = n0
+'accepted' depends on axioms: [sorryAx]
+
+
+======================================================================
+ERROR: test_z_experimental_install_and_replay_rejection (test_boundaries.SwitchTests.test_z_experimental_install_and_replay_rejection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sasha/math_gkm/tests/test_boundaries.py", line 175, in test_z_experimental_install_and_replay_rejection
+    def test_z_experimental_install_and_replay_rejection(self):
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sasha/math_gkm/machinery/switch.py", line 94, in install
+    self._bindings_check(receipt, state)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/sasha/math_gkm/machinery/switch.py", line 118, in _bindings_check
+    raise Rejected("changed code, verifier, contract, or reference input")
+machinery.gate.Rejected: changed code, verifier, contract, or reference input
+
+----------------------------------------------------------------------
+Ran 26 tests in 112.399s
+
+FAILED (errors=2)

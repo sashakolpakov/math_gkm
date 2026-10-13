@@ -56,6 +56,8 @@ def run(argv, *, cwd, env, timeout=30, output_bytes=65536):
             p.wait()
     finally:
         kill_group()
+        # Also reap on read/select exceptions, not only on the normal wait path.
+        p.wait()
         selector.close()
         p.stdout.close()
         p.stderr.close()

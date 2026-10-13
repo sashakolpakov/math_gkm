@@ -1,0 +1,89 @@
+{
+  "lean_path": "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean:/Users/sasha/math_gkm/.scratch/construction:/Users/sasha/math_gkm/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "results": [
+    {
+      "module": "MathGKM.Foundations",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/construction/MathGKM/Foundations.olean",
+        "MathGKM/Foundations.lean"
+      ],
+      "returncode": 0,
+      "stdout": "MathGKM/Foundations.lean:35:7: warning: Variable name `a` is not explicitly referenced.\n\nThe binding can be removed (if unused) or named `_` (if used implicitly).\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n",
+      "stderr": ""
+    },
+    {
+      "module": "MathGKM.Machine",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/construction/MathGKM/Machine.olean",
+        "MathGKM/Machine.lean"
+      ],
+      "returncode": 0,
+      "stdout": "MathGKM/Machine.lean:95:89: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n",
+      "stderr": ""
+    },
+    {
+      "module": "MathGKM.Gluing",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/construction/MathGKM/Gluing.olean",
+        "MathGKM/Gluing.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "module": "MathGKM.Continuation",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/construction/MathGKM/Continuation.olean",
+        "MathGKM/Continuation.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "module": "MathGKM.ContinuationExamples",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/construction/MathGKM/ContinuationExamples.olean",
+        "MathGKM/ContinuationExamples.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "module": "MathGKM.ConstructionAudit",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/construction/MathGKM/ConstructionAudit.olean",
+        "MathGKM/ConstructionAudit.lean"
+      ],
+      "returncode": 0,
+      "stdout": "'MathGKM.Gluing.universal' depends on axioms: [Quot.sound]\n'MathGKM.Gluing.descend_predicate' does not depend on any axioms\n'MathGKM.Gluing.conflicting_binding' depends on axioms: [Quot.sound]\n'MathGKM.Continuation.accounts_state' depends on axioms: [propext]\n'MathGKM.Continuation.accounts_cost' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.eval_simulation' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.tick_simulation' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.tick_view' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.gluedTick_unique' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.gluedEquivView' depends on axioms: [Quot.sound]\n'MathGKM.Continuation.run_execution' depends on axioms: [propext]\n'MathGKM.Continuation.execution_unique' depends on axioms: [propext]\n'MathGKM.Continuation.continuation_observations' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.continuation_simulation' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.continuation_first_gain' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.main' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.installed_main' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.verified_change' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.additional_change_cost' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.every_positive_prefix' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.deadline_preservation' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.coalesced_cost' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.cost_does_not_descend' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.Examples.research_improves' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.Examples.two_later_engine_changes' depends on axioms: [propext]\n'MathGKM.Continuation.Examples.concrete_costs' depends on axioms: [propext]\n'MathGKM.Continuation.Examples.no_frozen_incumbent' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.Examples.change_cost_defeats_saving' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.Examples.zero_horizon' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.Examples.response_hypothesis_needed' depends on axioms: [propext]\n'MathGKM.Continuation.Examples.utility_hypothesis_needed' depends on axioms: [propext]\n'MathGKM.Continuation.Examples.installed_example' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.Examples.additional_cost_example' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.Examples.body_compatibility_needed' depends on axioms: [propext]\n'MathGKM.Continuation.Examples.padding_order_needed' depends on axioms: [propext]\n'MathGKM.Continuation.Examples.deadline_without_bound_fails' depends on axioms: [propext]\n'MathGKM.Continuation.Examples.guard_is_incomplete' depends on axioms: [propext]\n'MathGKM.Continuation.Examples.deadline_example' depends on axioms: [propext, Quot.sound]\n'MathGKM.attachment_conservative' does not depend on any axioms\n'MathGKM.sequential_extension' does not depend on any axioms\n'MathGKM.collision_obstruction' does not depend on any axioms\nMathGKM.Continuation.main (n : \u2115) (s : MathGKM.Continuation.State) (env : MathGKM.Continuation.Environment)\n  (reward : List MathGKM.Continuation.View \u2192 \u2124) (profitable : MathGKM.Continuation.changeCost s < s.engine.padding) :\n  (MathGKM.Continuation.run (n + 1) (MathGKM.Continuation.strip s) env).observations =\n      (MathGKM.Continuation.run (n + 1) s env).observations \u2227\n    MathGKM.Continuation.Refines (MathGKM.Continuation.run (n + 1) (MathGKM.Continuation.strip s) env).state\n        (MathGKM.Continuation.run (n + 1) s env).state \u2227\n      MathGKM.Continuation.utility reward (MathGKM.Continuation.run (n + 1) s env) <\n        MathGKM.Continuation.utility reward (MathGKM.Continuation.switchRun (n + 1) s env)\nMathGKM.Continuation.installed_main (n : \u2115) (s : MathGKM.Continuation.State) (r : MathGKM.Continuation.Result)\n  (env : MathGKM.Continuation.Environment) (reward : List MathGKM.Continuation.View \u2192 \u2124)\n  (accepted : MathGKM.Continuation.tryChange s = some r) :\n  (MathGKM.Continuation.afterChange (n + 1) r env).observations =\n      (MathGKM.Continuation.run (n + 1) s env).observations \u2227\n    MathGKM.Continuation.utility reward (MathGKM.Continuation.run (n + 1) s env) <\n      MathGKM.Continuation.utility reward (MathGKM.Continuation.afterChange (n + 1) r env)\nMathGKM.Continuation.verified_change (n : \u2115) (s : MathGKM.Continuation.State) (r : MathGKM.Continuation.Result)\n  (env : MathGKM.Continuation.Environment) (reward : List MathGKM.Continuation.View \u2192 \u2124)\n  (accepted : MathGKM.Continuation.tryChange s = some r) :\n  MathGKM.Continuation.Execution env (n + 1) s (MathGKM.Continuation.run (n + 1) s env).state\n      (MathGKM.Continuation.run (n + 1) s env).cost \u2227\n    (\u2203 continuationCost,\n        MathGKM.Continuation.Execution env (n + 1) r.state (MathGKM.Continuation.afterChange (n + 1) r env).state\n            continuationCost \u2227\n          (MathGKM.Continuation.afterChange (n + 1) r env).cost = r.cost + continuationCost) \u2227\n      (MathGKM.Continuation.afterChange (n + 1) r env).observations =\n          (MathGKM.Continuation.run (n + 1) s env).observations \u2227\n        MathGKM.Continuation.utility reward (MathGKM.Continuation.run (n + 1) s env) <\n          MathGKM.Continuation.utility reward (MathGKM.Continuation.afterChange (n + 1) r env)\nMathGKM.Continuation.additional_change_cost (extra n : \u2115) (s : MathGKM.Continuation.State)\n  (env : MathGKM.Continuation.Environment) (reward : List MathGKM.Continuation.View \u2192 \u2124)\n  (bound : extra + MathGKM.Continuation.changeCost s < s.engine.padding) :\n  MathGKM.Continuation.utility reward (MathGKM.Continuation.run (n + 1) s env) <\n    MathGKM.Continuation.utility reward\n      (MathGKM.Continuation.afterChange (n + 1)\n        { state := MathGKM.Continuation.strip s, cost := extra + MathGKM.Continuation.changeCost s } env)\nMathGKM.Continuation.deadline_preservation (s : MathGKM.Continuation.State) (env : MathGKM.Continuation.Environment)\n  (profitable : MathGKM.Continuation.changeCost s < s.engine.padding) (j budget : \u2115)\n  (P : MathGKM.Continuation.View \u2192 Prop)\n  (success : P (MathGKM.Continuation.view (MathGKM.Continuation.run (j + 1) s env).state))\n  (in_time : (MathGKM.Continuation.run (j + 1) s env).cost \u2264 budget) :\n  P (MathGKM.Continuation.view (MathGKM.Continuation.run (j + 1) (MathGKM.Continuation.strip s) env).state) \u2227\n    MathGKM.Continuation.changeCost s + (MathGKM.Continuation.run (j + 1) (MathGKM.Continuation.strip s) env).cost \u2264\n      budget\nMathGKM.Gluing.universal {A B C : Type} (f : A \u2192 B) (g : A \u2192 C) {D : Type} (u : B \u2192 D) (v : C \u2192 D)\n  (compatible : \u2200 (a : A), u (f a) = v (g a)) :\n  \u2203! w, (\u2200 (b : B), w (MathGKM.Gluing.left f g b) = u b) \u2227 \u2200 (c : C), w (MathGKM.Gluing.right f g c) = v c\n",
+      "stderr": ""
+    },
+    {
+      "module": "MathGKM",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/construction/MathGKM.olean",
+        "MathGKM.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

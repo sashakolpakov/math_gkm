@@ -1,0 +1,102 @@
+{
+  "source_sha256": {
+    "Markov": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+    "MarkovLogConcavity": "458b5ff6169b3f09ceaed75a31f213a202257874620bda185a3752401a7a69a6",
+    "MarkovBoundary": "8354147ec0b75d0b4abebeb81fe116e2dac4334bf46831938decdf99cacab809",
+    "MarkovExamples": "169a7abb1f9135e668fd273fecdfcdc445c711f8e4973f42aa39ab493e0e30ec",
+    "MarkovIndices": "d31b4077de76ad7af7bd5c98df0e80367e38364d526541ed12dfd665db1f5e76"
+  },
+  "theorem_count": 48,
+  "records": [
+    {
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/private/tmp/math_gkm_markov_all_audit_20261013/build/MathGKM/Markov.olean",
+        "MathGKM/Markov.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 15.175057500004186
+    },
+    {
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/private/tmp/math_gkm_markov_all_audit_20261013/build/MathGKM/MarkovLogConcavity.olean",
+        "MathGKM/MarkovLogConcavity.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 4.87896533300227
+    },
+    {
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/private/tmp/math_gkm_markov_all_audit_20261013/build/MathGKM/MarkovBoundary.olean",
+        "MathGKM/MarkovBoundary.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 3.6397024580073776
+    },
+    {
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/private/tmp/math_gkm_markov_all_audit_20261013/build/MathGKM/MarkovExamples.olean",
+        "MathGKM/MarkovExamples.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 4.024342832999537
+    },
+    {
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/private/tmp/math_gkm_markov_final_audit_20261013/build/MathGKM/MarkovIndices.olean",
+        "MathGKM/MarkovIndices.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 18.30244945900631
+    },
+    {
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "Audit.lean"
+      ],
+      "returncode": 0,
+      "stdout": "'MathGKM.Markov.crossLC_shift' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.crossLC_forward' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.crossLC_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.crossLC_pascal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.crossLC_adjacent' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.quad_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.crossLC_quad' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.quadratic_pascal_logConcave' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.coeffSeq_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.coeffSeq_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.coeffSeq_binomial_mul' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.quadratic_binomial_logConcave' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.third_gap_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.third_parameters' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.third_diagonal_expression_logConcave' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.sourceThird_factor' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.third_diagonal_of_formula' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.edgeEval_U' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.edgeEval_V' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.edgeEval_S' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.edge_initial' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.edge_step' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.edge_advance' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.edge_fold' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.boundary_formula' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.coeffSeq_X_mul' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.crossLC_X_mul' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.crossLC_binomial' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.crossLC_X_pow_binomial' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.boundary_logConcave' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.edgeEval_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.boundary_raw_logConcave' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.one_third_numerator' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.one_third_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.normalization_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.one_third_raw_check' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.subtraction_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.nonreal_seed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.nonreal_seed_no_real_root' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.endpoint_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.endpoint_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.initial_weakLC' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.indices_initial' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.indices_advance' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.indices_fold' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.indices_frame' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.coprime_of_det' depends on axioms: [propext, Quot.sound]\n'MathGKM.Markov.frame_reduced' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "seconds": 17.663759625007515
+    }
+  ],
+  "lean_path": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean",
+    "/private/tmp/math_gkm_markov_final_audit_20261013/build",
+    "/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+    "/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq/.lake/build/lib/lean",
+    "/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop/.lake/build/lib/lean",
+    "/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries/.lake/build/lib/lean",
+    "/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph/.lake/build/lib/lean",
+    "/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean",
+    "/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible/.lake/build/lib/lean",
+    "/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets/.lake/build/lib/lean"
+  ],
+  "unchanged_dependency_builds_from": "/private/tmp/math_gkm_markov_all_audit_20261013",
+  "active_sources_unchanged": {
+    "Markov": true,
+    "MarkovLogConcavity": true,
+    "MarkovBoundary": true,
+    "MarkovExamples": true,
+    "MarkovIndices": true
+  }
+}

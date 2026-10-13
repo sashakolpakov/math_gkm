@@ -1,0 +1,45 @@
+{
+  "utc": "2026-10-13T21:27:10.557205+00:00",
+  "consumed_response_count": 10,
+  "response_indices": [
+    0,
+    9
+  ],
+  "recorded_action_count": 21,
+  "pending": "request-0010.json",
+  "remaining_actions": 11,
+  "origins": {
+    "direct_bootstrap_proposer": 10
+  },
+  "action_kinds": {
+    "literature": 2,
+    "external_observation": 8,
+    "representation": 1,
+    "experiment": 5,
+    "strategy": 2,
+    "lean_source": 2,
+    "conjecture": 1
+  },
+  "bindings": "request/context IDs, response-action flattening, event chain, contract, external action hashes all pass",
+  "stress_output_matches_consumed_observation": true,
+  "stress_counts_reported_not_rerun": {
+    "fractions": 241,
+    "triples": 229476,
+    "diagonals": 6822,
+    "critical_points": 20781
+  },
+  "stress_denominator_bound": 28,
+  "stress_failures": [],
+  "K_audit_fields_in_projected_context": false,
+  "last_decision": "Read returned events17-19: external results are accurately marked unverified by the engine, while separate local Lean/kernel records passed. Select the exact missing recurrence-to-third-diagonal identity as the next proof target, without promoting finite residual evidence or partial boundary proofs to full 6.3.",
+  "trace_prefix_bytes": 281568,
+  "trace_prefix_sha256": "873804befb2fd573fe7c00360b40cb830fa3f355b1f73a486d8f71b58117d62b",
+  "state_snapshot_sha256": "a149605774449e000b5a36403f74814c1dac9e04d722f1869e2e9ccdc0b725f3",
+  "documentation_review": {
+    "files": {
+      "docs/round2/MARKOV.md": "ca5e9a356561944461e717a04d40cf88b9b7d90cacac7dcc7640c647ea18ee11",
+      "evidence/markov/english-lean-review.md": "ad010bab558fc9fe22159cb3a0a6e7e2d86d48ca13893b665d6cee8f79c0f76c"
+    },
+    "result": "Counts and claim levels agree with consumed records; local proposer review explicitly distinguished from independent review; finite data and residual conjecture not promoted to full conjecture; actual controller distinguished from Lean self-change model."
+  }
+}

@@ -1,0 +1,265 @@
+# Continuing goal controller
+
+Machine-authored by the authorized live Codex/gpt-6-astra builder. This is the
+explicitly authorized **experimental controller**, not a certified persistent
+switch or a theorem about arbitrary Python, operating-system or LLM behavior.
+Construction and the completed Agoh exercise stand. Full published Markov
+Conjecture 6.3 remains open. No live worker was launched during implementation;
+the tests use explicitly labeled deterministic transport fixtures.
+
+## Activation after independent code review
+
+Run from `/Users/sasha/math_gkm`. No packages, new credentials or alternate model
+transport are required. These commands use the existing authenticated Codex CLI.
+The supervisor should inspect `machinery/controller.py`, `worker.py`, `engine.py`,
+`completion.py`, the goal contract and tests before activating live execution.
+
+Prepare a real, bounded smoke run (these commands are **not executed by the
+builder**):
+
+```sh
+/opt/homebrew/bin/python3 -m machinery.controller init --goal markov-smoke --workers 2 --worker-seconds 120
+/opt/homebrew/bin/python3 -m machinery.controller run --goal markov-smoke
+/opt/homebrew/bin/python3 -m machinery.controller status --goal markov-smoke
+```
+
+The first two commands are also prepared in
+`requests/markov-controller-smoke.sh`; activate with
+`/bin/sh requests/markov-controller-smoke.sh` after review. It deliberately fails
+if `markov-smoke` already exists; use `resume` for an existing goal.
+
+Two bounded live workers are launched automatically, with the second reading
+the first worker's observations and proposed agenda. This is a smoke test of
+real transport and continuation, not an expectation of solving the conjecture
+in four minutes. Each worker may checkpoint progress before its hard timeout.
+
+For continuing research until explicit stop, accepted resolution or an
+operational blocker:
+
+```sh
+/opt/homebrew/bin/python3 -m machinery.controller init --goal markov --continue --worker-seconds 1200
+/opt/homebrew/bin/python3 -m machinery.controller run --goal markov
+/opt/homebrew/bin/python3 -m machinery.controller status --goal markov
+/opt/homebrew/bin/python3 -m machinery.controller stop --goal markov
+/opt/homebrew/bin/python3 -m machinery.controller resume --goal markov
+```
+
+`run` and `resume` detach by default using a new OS session with standard input
+closed and output redirected to `.control/GOAL/controller.log`. They survive the
+launching shell's exit. `--foreground` is available for inspection. The controller
+and bounded watchdog hold both a per-goal lock and a workspace lock: another
+controller cannot overlap even under a different goal name in this workspace.
+There is **no reboot autostart**. After reboot, run `resume --goal NAME`; the OS
+has released locks and the controller reconciles durable partial work first.
+
+The live adapter reproduces `.bootstrap/external_launcher.py`: `gpt-6-astra`,
+high reasoning effort, `--no-daemon`, `--ephemeral`, `--ignore-user-config`,
+`--skip-git-repo-check`, JSON events, structured final output, live hosted web
+search, no shell networking, no approval prompts, the supplied cleanroom
+permissions, disabled memories/plugins/apps/hooks and existing authentication.
+It keeps `GIT_CONFIG_NOSYSTEM=1`, `GIT_CONFIG_GLOBAL=/dev/null`, the supplied PATH
+and `.scratch` temp directory. No API key is read or copied into run records.
+
+## Goal and resource contract
+
+`contracts/markov-goal.json` fixes the full English scope, exact existing Lean
+root, root-file SHA-256, permitted axiom closure, source identity and required
+correspondence obligations. The root hash matches the final independent Markov
+report. Each goal gets its own immutable copy and hash. This release deliberately
+accepts only that reviewed contract; accepting a different mathematical goal
+needs an explicit new contract and validator review, not a worker edit.
+
+`init` requires a user choice of `--workers N` or `--continue`, **and**
+`--worker-seconds N` (1–1800). There is no implicit single-round research cap.
+The default epoch has 32 controller research actions; `--epoch-actions N` (1–32)
+can shorten it. An epoch is an accounting/protocol boundary, not a mathematical
+level or a limit on Lean commands inside a worker. A finished epoch is archived
+and the next starts automatically with the same contract and all earlier evidence.
+
+Optional `--total-seconds N` limits **cumulative worker runtime**, including failed
+attempts; an interrupted attempt without a receipt is conservatively charged its
+full reservation. The next worker's timeout is reduced to the remaining runtime.
+Controller/protocol/validation overhead is separately measured as
+`controller_active_seconds` and is not part of that worker-runtime limit.
+Process cleanup may add a few seconds. This is not a hard CPU/memory/disk quota.
+
+Optional `--tokens N` is an admission limit between workers based on reported
+input plus output tokens; one worker can exceed the remaining token allowance.
+The Codex CLI does not offer an exact hard per-call token-budget guarantee here.
+Cached input tokens are not added a second time. Missing usage under a token cap
+blocks further work instead of assuming zero cost. Provider usage records remain
+verbatim; monetary cost is `null`, since this transport provides no invoice.
+`--failure-limit N` on init (default 3) bounds consecutive operational failures.
+Timeouts, nonzero exits and invalid reports trigger another worker automatically
+until that limit, explicit stop or a selected resource limit is reached.
+
+Limits are cumulative across restarts. For example, to extend a two-worker smoke
+goal to ten total workers:
+
+```sh
+/opt/homebrew/bin/python3 -m machinery.controller resume --goal markov-smoke --workers 10 --worker-seconds 1200
+```
+
+To remove its worker-count ceiling, use `resume --goal markov-smoke --continue`.
+Previously selected runtime/token caps remain in force unless explicitly raised
+with the corresponding option. All limit changes are archived. Explicit resume
+opens a fresh consecutive-failure retry window; prior failure evidence and costs
+remain. A resolved goal cannot be restarted as research under the same identity.
+
+## Automatic decisions and actual tools
+
+Each action is a bounded open research invocation. The controller requests work
+on the goal, while Astra chooses mathematical actions, representations, searches,
+experiments, proofs and subsequent agenda. The inherited `markov-next.json` and
+old agenda are suggestions, not fixed routes. Each request includes the latest
+eight observations, current agenda, validator feedback, immutable inherited
+evidence and paths to the complete retained history. Context is bounded in the
+prompt without deleting older context from disk. Workers can consult any earlier
+request, event, report or artifact relevant to their next decision.
+
+The worker executes ordinary Lean and full-language experiments with its actual
+shell tools, and uses hosted web search for sources. This bypasses the *small
+example AST gate as a research vocabulary*, not mathematical verification. It
+must execute or report a concrete capability failure rather than produce an
+indefinitely pending supervisor action. Its tool event stream preserves actual
+tool calls and observations. The final report describes those actions and may
+revise the agenda. There is no artificial reward for lemma count, source length
+or complexity. Source text, experiment output and model confidence are not
+mathematical proofs.
+
+## Durable records and recovery
+
+All running-control records live under `.control/GOAL/`, read-only to the Codex
+research process. CLI/watchdog code writes them; workers cannot authorize
+completion by writing state. Research outputs go in the ordinary workspace.
+
+* `contract.json`, `implementation.json`, `limits.json`: exact goal, controller
+  byte hashes and resource choices. An implementation change blocks resume
+  pending review/migration; it is never silently accepted as a certified rewrite.
+* `inherited.json`: exact initial evidence and agenda snapshot. The historical
+  `evidence/markov/research-run` and its pending request are retained unchanged;
+  the controller starts a new explicitly linked run rather than replaying that
+  historical pending request.
+* `engine/`: request/response files, per-action journal, protocol states, complete
+  observation chain and archived epochs. The controller action is
+  `research_worker`; the raw tool events inside it remain separate observations.
+* `workers/NNNNNN/`: actual request, prompt, argv, environment overrides,
+  permissions, raw JSONL events, stderr, process identities, heartbeat, raw final
+  report, receipt, preimage manifest and changed-file snapshots. Reports are
+  data, separate from control state even though both are archived here.
+* `objects/SHA256`: preimage bytes of research files before workers run, including
+  files subsequently changed or deleted. History does not depend on Git.
+* `validations/`, `audits/`, `limit-history/`: append-only validation attempts,
+  externally supplied correspondence audits and resource amendments.
+
+The engine persists response claim, next action index and the active action
+before executing an effect. It commits each completed event atomically and
+marks the response fully consumed only after all actions finish. A crash after
+an effect but before its receipt leaves an explicit uncertain action. `recover`
+requires reconciliation, never automatic effect replay. If a worker's durable
+receipt exists, the controller imports that receipt without calling the worker
+again. Otherwise it records uncertainty, conservatively accounts the attempt,
+and tells the next worker to inspect retained files/logs and reconcile partial
+effects before selecting fresh work. It never pretends filesystem changes rolled
+back. A legacy partially consumed engine response without the new journal must
+be manually reconciled; it cannot be guessed safe.
+
+The bounded watchdog inherits both locks, so a killed controller cannot overlap
+its surviving worker. The watchdog still enforces timeout and the stop file,
+writes the receipt, then releases the locks. If **the watchdog itself is killed**
+and its Codex child still exists, recovery blocks on the recorded PID instead of
+blindly killing a possibly reused PID or starting overlapping research. Inspect
+the recorded process identity, terminate any surviving research process, then
+resume. OS-level hostile daemon escape is outside this experimental controller.
+
+`stop` writes a durable request; a running watchdog notices it within about a
+second and terminates the worker process group. SIGTERM/SIGINT to the controller
+do the same. During Lean validation, stop is checked between bounded compilation
+and replay operations (each at most 120 seconds). Abrupt kill or reboot is not a
+mathematical outcome. Filesystem atomic replacements include file and directory
+fsync; this is ordinary local-filesystem durability, not a distributed transaction.
+
+Status distinguishes `running`, `stopped`, `exhausted`, `operationally_blocked`
+and `mathematically_resolved`. A stale `running` file with no live lock is reported
+as operationally blocked and resumable. Status also reports stop requests, last
+activity, worker heartbeat, costs, failures, latest validation and active worker.
+
+## Completion and independent audit
+
+A model report can propose `{kind, module, declaration, correspondence}`.
+`kind` is `proof` or `refutation`; `correspondence` names a detailed argument
+file. The validator checks the pinned root bytes, copies all transitive project
+imports to a fresh source tree, compiles against only freshly rebuilt project
+objects and pinned dependencies, and independently replays each module with
+`leanchecker`. It generates a closed theorem whose type is exactly
+`MathGKM.Markov.Conjecture63` or `Not MathGKM.Markov.Conjecture63`, and checks that
+its axiom closure is a subset of `propext`, `Classical.choice`, `Quot.sound`.
+Source mutation during validation rejects the bundle. Conditional lemmas cannot
+inhabit the closed root wrapper; finite scans, normalized results, timeouts and
+exhaustion have no completion authority.
+
+Even a passing exact-root Lean check cannot alone discharge the published-source
+correspondence obligations identified by the existing independent review. The
+controller requires an independent reviewer to audit the **exact bundle hash**
+in `validations/NNNNNN/bundle.json` and its accompanying result. This review is
+at the resolution boundary, not a manual launch or proof-obligation choice at
+every round. While a correspondence audit is missing, the root stays open and
+ordinary research continues. Stop the controller before importing a review.
+
+The reviewer supplies a JSON file with this shape (place it inside the workspace):
+
+```json
+{
+  "bundle_hash": "exact hash from validation result",
+  "accepted": true,
+  "reviewer": "independent reviewer identity",
+  "checks": {
+    "coverage": "Exact universal coverage argument, or source reachability of the refutation witness; cite checked declarations and source passages.",
+    "source_family": "Recurrence/Laurent identification, with all hypotheses discharged.",
+    "homogeneity_coefficients": "Why w=1 recovers exactly the raw homogeneous numerator coefficients.",
+    "polygon": "Identification with the published Newton polygon.",
+    "directions_zeros_endpoints": "All three directions, retained zeros and endpoint conventions.",
+    "assumptions": "No extra mathematical assumptions; audit dependencies and generated wrapper.",
+    "proof_scope": "Full proof or exact source-family counterexample, not a conditional or partial theorem."
+  }
+}
+```
+
+These strings must be actual reasoned audit findings, not this template. Import
+them through the controller-owned command, then resume to rerun validation:
+
+```sh
+/opt/homebrew/bin/python3 -m machinery.controller audit --goal markov --file research/independent-completion-review.json
+/opt/homebrew/bin/python3 -m machinery.controller resume --goal markov
+```
+
+Only the supervisor/independent reviewer invokes `audit`; the Codex permissions
+make `.control` read-only. The JSON's contents alone cannot authenticate who
+performed the review: authority rests on the protected command channel and the
+reviewer's actual work. The existing partial-result audits are not a completion
+audit. This deliberately leaves final source/English judgment external rather
+than treating another model's success declaration as authority. No theorem about
+the abstract Lean continuation model certifies this Python validator, arbitrary
+Lean elaborator IO or future LLM edits. General-source validation uses the same
+supplied execution authority; independent implementation review remains needed.
+
+## Tests and reproducible fixture run
+
+```sh
+/opt/homebrew/bin/python3 -m unittest tests.test_controller -v
+/opt/homebrew/bin/python3 -m unittest tests.test_round2.EngineTests -v
+/opt/homebrew/bin/python3 -m machinery.controller init --goal fixture-demo --transport fixture --workers 2 --worker-seconds 5 --epoch-actions 1
+/opt/homebrew/bin/python3 -m machinery.controller run --goal fixture-demo --foreground
+```
+
+Every fixture receipt says `explicit_deterministic_transport_fixture`. It makes
+no model call and can never resolve mathematics. Tests cover two automatic
+iterations with actual first-result feedback, epoch rollover, per-action crash
+reconciliation without replay, missing/malformed reports, killed/timeout workers,
+duplicate exclusion, detached operation, controller death with watchdog survival,
+stop/resume, stale status and false completion. The negative completion test uses
+the real pinned Lean compiler to reject an unrelated theorem at the exact root.
+
+There are no controller-owned Git commits, pushes, remote creations or messages.
+The supervisor alone may record local Git commits after reviewing the artifacts.
+The controller's snapshots are local evidence checkpoints, not commits.

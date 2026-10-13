@@ -1,0 +1,75 @@
+{
+  "source_sha256": {
+    "Machine": "eff72e2f2d558a96b27eb1d90cf91fff6a658a8f628bcf87f965138bdc01f3de",
+    "Gluing": "c0572c8d6557dac7bfd2bc4b8e699e2a4be9337e7d997f3f71c3176fca47a558",
+    "Continuation": "599a14bd3c6bbe8a461820c52448983886a8a25ce1630f9006b0c41abbb42e87",
+    "ContinuationExamples": "5aa97524f1b08fb1aa9eab9199e3d6049555c2caa6e9d39197039789ba5b827d"
+  },
+  "active_sources_unchanged": {
+    "Machine": true,
+    "Gluing": true,
+    "Continuation": true,
+    "ContinuationExamples": true
+  },
+  "theorem_count": 49,
+  "records": [
+    {
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/private/tmp/math_gkm_continuation_audit_20261013_v2/build/MathGKM/Machine.olean",
+        "MathGKM/Machine.lean"
+      ],
+      "returncode": 0,
+      "stdout": "MathGKM/Machine.lean:95:89: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n",
+      "stderr": "",
+      "seconds": 1.1242904999962775
+    },
+    {
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/private/tmp/math_gkm_continuation_audit_20261013_v2/build/MathGKM/Gluing.olean",
+        "MathGKM/Gluing.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.9071921249997104
+    },
+    {
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/private/tmp/math_gkm_continuation_audit_20261013_v2/build/MathGKM/Continuation.olean",
+        "MathGKM/Continuation.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 1.493741250000312
+    },
+    {
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/private/tmp/math_gkm_continuation_audit_20261013_v2/build/MathGKM/ContinuationExamples.olean",
+        "MathGKM/ContinuationExamples.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 1.071561249991646
+    },
+    {
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "Audit.lean"
+      ],
+      "returncode": 0,
+      "stdout": "'MathGKM.Continuation.accounts_state' depends on axioms: [propext]\n'MathGKM.Continuation.accounts_cost' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.tick_state' depends on axioms: [propext]\n'MathGKM.Continuation.tick_cost' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.eval_simulation' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.tick_simulation' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.tick_view' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.glue_bridge' depends on axioms: [Quot.sound]\n'MathGKM.Continuation.gluedView_left' does not depend on any axioms\n'MathGKM.Continuation.gluedView_right' does not depend on any axioms\n'MathGKM.Continuation.gluedTick_left' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.gluedTick_right' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.gluedTick_unique' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.representative_view' does not depend on any axioms\n'MathGKM.Continuation.representative_glued' depends on axioms: [Quot.sound]\n'MathGKM.Continuation.run_execution' depends on axioms: [propext]\n'MathGKM.Continuation.execution_unique' depends on axioms: [propext]\n'MathGKM.Continuation.run_glued_left' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.run_glued_right' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.continuation_observations' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.continuation_simulation' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.continuation_first_gain' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.strip_refines' does not depend on any axioms\n'MathGKM.Continuation.main' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.accepted_change' does not depend on any axioms\n'MathGKM.Continuation.installed_main' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.verified_change' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.additional_change_cost' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.every_positive_prefix' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.deadline_preservation' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.coalesced_cost' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.cost_does_not_descend' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.Examples.research_improves' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.Examples.two_later_engine_changes' depends on axioms: [propext]\n'MathGKM.Continuation.Examples.concrete_costs' depends on axioms: [propext]\n'MathGKM.Continuation.Examples.immediate_coalescence' depends on axioms: [propext]\n'MathGKM.Continuation.Examples.no_frozen_incumbent' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.Examples.change_cost_defeats_saving' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.Examples.zero_horizon' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.Examples.response_hypothesis_needed' depends on axioms: [propext]\n'MathGKM.Continuation.Examples.utility_hypothesis_needed' depends on axioms: [propext]\n'MathGKM.Continuation.Examples.gluing_observation_example' depends on axioms: [Quot.sound]\n'MathGKM.Continuation.Examples.installed_example' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.Examples.additional_cost_example' depends on axioms: [propext, Quot.sound]\n'MathGKM.Continuation.Examples.body_compatibility_needed' depends on axioms: [propext]\n'MathGKM.Continuation.Examples.padding_order_needed' depends on axioms: [propext]\n'MathGKM.Continuation.Examples.deadline_without_bound_fails' depends on axioms: [propext]\n'MathGKM.Continuation.Examples.guard_is_incomplete' depends on axioms: [propext]\n'MathGKM.Continuation.Examples.deadline_example' depends on axioms: [propext, Quot.sound]\n",
+      "stderr": "",
+      "seconds": 0.9174845410016133
+    }
+  ]
+}

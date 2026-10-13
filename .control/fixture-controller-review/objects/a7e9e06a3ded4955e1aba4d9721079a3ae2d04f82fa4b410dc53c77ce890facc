@@ -1,0 +1,18 @@
+{
+  "lean_path": "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean:/Users/sasha/math_gkm/.scratch/markov:/Users/sasha/math_gkm/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/math_gkm/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "records": [
+    {
+      "module": "MathGKM.MarkovBoundary",
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/markov/MathGKM/MarkovBoundary.olean",
+        "MathGKM/MarkovBoundary.lean"
+      ],
+      "returncode": 1,
+      "stdout": "MathGKM/MarkovBoundary.lean:102:48: error: unsolved goals\nP : BiPoly\ni : \u2115\n\u22a2 eval 0 (Polynomial.coeff P i) = (Polynomial.coeff P i).coeff 0\nMathGKM/MarkovBoundary.lean:103:25: warning: This simp argument is unused:\n  Polynomial.eval_zero\n\nHint: Omit it from the simp argument list.\n  simp [edgeEval, coeff,\u0335 \u0335P\u0335o\u0335l\u0335y\u0335n\u0335o\u0335m\u0335i\u0335a\u0335l\u0335.\u0335e\u0335v\u0335a\u0335l\u0335_\u0335z\u0335e\u0335r\u0335o\u0335]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nMathGKM/MarkovBoundary.lean:115:23: warning: This simp argument is unused:\n  Int.toNat_add\n\nHint: Omit it from the simp argument list.\n  simp only [CoeffSeq, add_sub_cancel_right, hn, hn1, hn2, if_false,\n  \u0335  \u0335 \u0335 \u0335Int.toNat_natCast,\n  \u0332 I\u0335n\u0335t\u0335.\u0335t\u0335o\u0335N\u0335a\u0335t\u0335_\u0335a\u0335d\u0335d\u0335,\u0335  \u0332 \u0332Int.toNat_one, edgeEval_coeff] at h\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nMathGKM/MarkovBoundary.lean:115:38: warning: This simp argument is unused:\n  Int.toNat_one\n\nHint: Omit it from the simp argument list.\n  simp only [CoeffSeq, add_sub_cancel_right, hn, hn1, hn2, if_false, Int.toNat_natCast,\n  \u0332  \u0332 \u0332 \u0332Int.toNat_add, I\u0335n\u0335t\u0335.\u0335t\u0335o\u0335N\u0335a\u0335t\u0335_\u0335o\u0335n\u0335e\u0335,\u0335 \u0335edgeEval_coeff] at h\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+      "stderr": "",
+      "seconds": 3.363807250003447
+    }
+  ]
+}

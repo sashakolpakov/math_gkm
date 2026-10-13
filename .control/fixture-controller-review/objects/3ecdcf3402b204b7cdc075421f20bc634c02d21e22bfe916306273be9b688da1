@@ -1,0 +1,87 @@
+'MathGKM.Gluing.universal' depends on axioms: [Quot.sound]
+'MathGKM.Gluing.descend_predicate' does not depend on any axioms
+'MathGKM.Gluing.conflicting_binding' depends on axioms: [Quot.sound]
+'MathGKM.Continuation.accounts_state' depends on axioms: [propext]
+'MathGKM.Continuation.accounts_cost' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.eval_simulation' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.tick_simulation' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.tick_view' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.gluedTick_unique' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.gluedEquivView' depends on axioms: [Quot.sound]
+'MathGKM.Continuation.run_execution' depends on axioms: [propext]
+'MathGKM.Continuation.execution_unique' depends on axioms: [propext]
+'MathGKM.Continuation.continuation_observations' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.continuation_simulation' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.continuation_first_gain' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.main' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.installed_main' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.verified_change' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.additional_change_cost' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.every_positive_prefix' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.deadline_preservation' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.coalesced_cost' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.cost_does_not_descend' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.Examples.research_improves' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.Examples.two_later_engine_changes' depends on axioms: [propext]
+'MathGKM.Continuation.Examples.concrete_costs' depends on axioms: [propext]
+'MathGKM.Continuation.Examples.no_frozen_incumbent' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.Examples.change_cost_defeats_saving' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.Examples.zero_horizon' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.Examples.response_hypothesis_needed' depends on axioms: [propext]
+'MathGKM.Continuation.Examples.utility_hypothesis_needed' depends on axioms: [propext]
+'MathGKM.Continuation.Examples.installed_example' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.Examples.additional_cost_example' depends on axioms: [propext, Quot.sound]
+'MathGKM.Continuation.Examples.body_compatibility_needed' depends on axioms: [propext]
+'MathGKM.Continuation.Examples.padding_order_needed' depends on axioms: [propext]
+'MathGKM.Continuation.Examples.deadline_without_bound_fails' depends on axioms: [propext]
+'MathGKM.Continuation.Examples.guard_is_incomplete' depends on axioms: [propext]
+'MathGKM.Continuation.Examples.deadline_example' depends on axioms: [propext, Quot.sound]
+'MathGKM.attachment_conservative' does not depend on any axioms
+'MathGKM.sequential_extension' does not depend on any axioms
+'MathGKM.collision_obstruction' does not depend on any axioms
+MathGKM.Continuation.main (n : ℕ) (s : MathGKM.Continuation.State) (env : MathGKM.Continuation.Environment)
+  (reward : List MathGKM.Continuation.View → ℤ) (profitable : MathGKM.Continuation.changeCost s < s.engine.padding) :
+  (MathGKM.Continuation.run (n + 1) (MathGKM.Continuation.strip s) env).observations =
+      (MathGKM.Continuation.run (n + 1) s env).observations ∧
+    MathGKM.Continuation.Refines (MathGKM.Continuation.run (n + 1) (MathGKM.Continuation.strip s) env).state
+        (MathGKM.Continuation.run (n + 1) s env).state ∧
+      MathGKM.Continuation.utility reward (MathGKM.Continuation.run (n + 1) s env) <
+        MathGKM.Continuation.utility reward (MathGKM.Continuation.switchRun (n + 1) s env)
+MathGKM.Continuation.installed_main (n : ℕ) (s : MathGKM.Continuation.State) (r : MathGKM.Continuation.Result)
+  (env : MathGKM.Continuation.Environment) (reward : List MathGKM.Continuation.View → ℤ)
+  (accepted : MathGKM.Continuation.tryChange s = some r) :
+  (MathGKM.Continuation.afterChange (n + 1) r env).observations =
+      (MathGKM.Continuation.run (n + 1) s env).observations ∧
+    MathGKM.Continuation.utility reward (MathGKM.Continuation.run (n + 1) s env) <
+      MathGKM.Continuation.utility reward (MathGKM.Continuation.afterChange (n + 1) r env)
+MathGKM.Continuation.verified_change (n : ℕ) (s : MathGKM.Continuation.State) (r : MathGKM.Continuation.Result)
+  (env : MathGKM.Continuation.Environment) (reward : List MathGKM.Continuation.View → ℤ)
+  (accepted : MathGKM.Continuation.tryChange s = some r) :
+  MathGKM.Continuation.Execution env (n + 1) s (MathGKM.Continuation.run (n + 1) s env).state
+      (MathGKM.Continuation.run (n + 1) s env).cost ∧
+    (∃ continuationCost,
+        MathGKM.Continuation.Execution env (n + 1) r.state (MathGKM.Continuation.afterChange (n + 1) r env).state
+            continuationCost ∧
+          (MathGKM.Continuation.afterChange (n + 1) r env).cost = r.cost + continuationCost) ∧
+      (MathGKM.Continuation.afterChange (n + 1) r env).observations =
+          (MathGKM.Continuation.run (n + 1) s env).observations ∧
+        MathGKM.Continuation.utility reward (MathGKM.Continuation.run (n + 1) s env) <
+          MathGKM.Continuation.utility reward (MathGKM.Continuation.afterChange (n + 1) r env)
+MathGKM.Continuation.additional_change_cost (extra n : ℕ) (s : MathGKM.Continuation.State)
+  (env : MathGKM.Continuation.Environment) (reward : List MathGKM.Continuation.View → ℤ)
+  (bound : extra + MathGKM.Continuation.changeCost s < s.engine.padding) :
+  MathGKM.Continuation.utility reward (MathGKM.Continuation.run (n + 1) s env) <
+    MathGKM.Continuation.utility reward
+      (MathGKM.Continuation.afterChange (n + 1)
+        { state := MathGKM.Continuation.strip s, cost := extra + MathGKM.Continuation.changeCost s } env)
+MathGKM.Continuation.deadline_preservation (s : MathGKM.Continuation.State) (env : MathGKM.Continuation.Environment)
+  (profitable : MathGKM.Continuation.changeCost s < s.engine.padding) (j budget : ℕ)
+  (P : MathGKM.Continuation.View → Prop)
+  (success : P (MathGKM.Continuation.view (MathGKM.Continuation.run (j + 1) s env).state))
+  (in_time : (MathGKM.Continuation.run (j + 1) s env).cost ≤ budget) :
+  P (MathGKM.Continuation.view (MathGKM.Continuation.run (j + 1) (MathGKM.Continuation.strip s) env).state) ∧
+    MathGKM.Continuation.changeCost s + (MathGKM.Continuation.run (j + 1) (MathGKM.Continuation.strip s) env).cost ≤
+      budget
+MathGKM.Gluing.universal {A B C : Type} (f : A → B) (g : A → C) {D : Type} (u : B → D) (v : C → D)
+  (compatible : ∀ (a : A), u (f a) = v (g a)) :
+  ∃! w, (∀ (b : B), w (MathGKM.Gluing.left f g b) = u b) ∧ ∀ (c : C), w (MathGKM.Gluing.right f g c) = v c

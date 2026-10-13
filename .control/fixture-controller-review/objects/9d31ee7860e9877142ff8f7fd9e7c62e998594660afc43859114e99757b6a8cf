@@ -1,0 +1,244 @@
+{
+  "status": "provisional_rebuild_and_replay",
+  "authoritative": false,
+  "build_tree": "/Users/sasha/math_gkm/.scratch/validation-1ngy07bh",
+  "source_hashes": {
+    "MathGKM.Foundations": "c01afc90b2cd6b4d51409b3b113d612d4609d07456079ab47643dc051e0c0ec3",
+    "MathGKM.Machine": "eff72e2f2d558a96b27eb1d90cf91fff6a658a8f628bcf87f965138bdc01f3de",
+    "MathGKM": "4ce089eb711ebd34ddfd6e734844294b25cdb56f102fa324925c0a788dfb7389",
+    "MathGKM.Driver": "129f349a881aee7dc554acf3dcc89cd9273c3e9aa6ed885f8e3787b3c1ece68f",
+    "MathGKM.Audit": "adba4bc7ce13caf7dfce115138219bbf60d8f04e178d838b9a54ff8fcdf6f72c",
+    "MathGKM.Gluing": "f53f29e5f011b1ccfdf91afd9253c66d7eb55b7f394b5e9286cd20e217344611",
+    "MathGKM.Protocol": "60b543592c2dadac3aeefea7ea2dd664c36a7910723e65bfd4e9e2e179bcf97c",
+    "MathGKM.AgohExercise": "c87dcc85e0dcfd255af31eedc5558bb6e0773d4657f0bbf3ab3bb24c9961ec22",
+    "MathGKM.Round2Audit": "75ddb1cdd95e66fe574140988bc6e525e87c207fab8b5944390bf10922d4512e"
+  },
+  "records": [
+    {
+      "module": "MathGKM.Foundations",
+      "operation": "compile_module",
+      "argv": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/validation-1ngy07bh/MathGKM/Foundations.olean",
+        "MathGKM/Foundations.lean"
+      ],
+      "returncode": 0,
+      "stdout": "MathGKM/Foundations.lean:35:7: warning: Variable name `a` is not explicitly referenced.\n\nThe binding can be removed (if unused) or named `_` (if used implicitly).\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n",
+      "stderr": "",
+      "termination": null,
+      "captured_bytes": 245,
+      "elapsed_ns": 1762736334
+    },
+    {
+      "module": "MathGKM.Foundations",
+      "operation": "replay",
+      "argv": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+        "MathGKM.Foundations"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "termination": null,
+      "captured_bytes": 0,
+      "elapsed_ns": 7569319375
+    },
+    {
+      "module": "MathGKM.Machine",
+      "operation": "compile_module",
+      "argv": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/validation-1ngy07bh/MathGKM/Machine.olean",
+        "MathGKM/Machine.lean"
+      ],
+      "returncode": 0,
+      "stdout": "MathGKM/Machine.lean:95:89: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n",
+      "stderr": "",
+      "termination": null,
+      "captured_bytes": 179,
+      "elapsed_ns": 1043137458
+    },
+    {
+      "module": "MathGKM.Machine",
+      "operation": "replay",
+      "argv": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+        "MathGKM.Machine"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "termination": null,
+      "captured_bytes": 0,
+      "elapsed_ns": 7317867375
+    },
+    {
+      "module": "MathGKM",
+      "operation": "compile_module",
+      "argv": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/validation-1ngy07bh/MathGKM.olean",
+        "MathGKM.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "termination": null,
+      "captured_bytes": 0,
+      "elapsed_ns": 667639750
+    },
+    {
+      "module": "MathGKM",
+      "operation": "replay",
+      "argv": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+        "MathGKM"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "termination": null,
+      "captured_bytes": 0,
+      "elapsed_ns": 9309625041
+    },
+    {
+      "module": "MathGKM.Driver",
+      "operation": "compile_module",
+      "argv": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/validation-1ngy07bh/MathGKM/Driver.olean",
+        "MathGKM/Driver.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "termination": null,
+      "captured_bytes": 0,
+      "elapsed_ns": 3005263625
+    },
+    {
+      "module": "MathGKM.Driver",
+      "operation": "replay",
+      "argv": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+        "MathGKM.Driver"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "termination": null,
+      "captured_bytes": 0,
+      "elapsed_ns": 8948213667
+    },
+    {
+      "module": "MathGKM.Audit",
+      "operation": "compile_module",
+      "argv": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/validation-1ngy07bh/MathGKM/Audit.olean",
+        "MathGKM/Audit.lean"
+      ],
+      "returncode": 0,
+      "stdout": "DECLARATION MathGKM.attachment_conservative\nTYPE \u2200 {X Y : Type} (C : X \u2192 Prop) (R : X \u2192 Y \u2192 Prop),\n  (\u2200 (x : X), C x \u2192 \u2203 y, R x y) \u2192\n    \u2200 (P : X \u2192 Prop), (\u2200 (a : MathGKM.Attachment C R), P (MathGKM.forget a)) \u2194 \u2200 (x : X), C x \u2192 P x\nDIRECT PROOF DEPENDENCIES [Exists,\n Iff.intro,\n MathGKM.Attachment,\n MathGKM.forget,\n Exists.casesOn,\n Subtype.mk,\n Prod,\n And,\n Prod.fst,\n Prod.snd,\n Prod.mk,\n And.intro,\n Subtype.val,\n And.left,\n Subtype.property]\nDECLARATION MathGKM.sequential_extension\nTYPE \u2200 {X Y Z : Type} (C : X \u2192 Prop) (R : X \u2192 Y \u2192 Prop) (S : X \u2192 Y \u2192 Z \u2192 Prop),\n  (\u2200 (x : X), C x \u2192 \u2203 y, R x y) \u2192\n    (\u2200 (x : X) (y : Y), C x \u2192 R x y \u2192 \u2203 z, S x y z) \u2192 \u2200 (x : X), C x \u2192 \u2203 yz, R x yz.fst \u2227 S x yz.fst yz.snd\nDIRECT PROOF DEPENDENCIES [Exists, Exists.casesOn, Prod, And, Prod.fst, Prod.snd, Exists.intro, Prod.mk, And.intro]\nDECLARATION MathGKM.inconsistent_attachment\nTYPE (\u2200 (a : MathGKM.Attachment (fun x => True) fun x x_1 => False), False) \u2227 \u00ac\u2200 (x : Unit), True \u2192 False\nDIRECT PROOF DEPENDENCIES [And.intro,\n MathGKM.Attachment,\n Unit,\n True,\n False,\n Not,\n And.right,\n Prod.fst,\n Subtype.val,\n Prod,\n And,\n Prod.snd,\n Subtype.property,\n Unit.unit,\n trivial]\nDECLARATION MathGKM.transport\nTYPE \u2200 {X Y : Type} (f : X \u2192 Y) (P : X \u2192 Prop) (Q : Y \u2192 Prop), (\u2200 (x : X), P x \u2194 Q (f x)) \u2192 \u2200 (x : X), Q (f x) \u2192 P x\nDIRECT PROOF DEPENDENCIES [Iff, Iff.mpr]\nDECLARATION MathGKM.collision_obstruction\nTYPE \u2200 {X Y : Type} (f : X \u2192 Y) (P : X \u2192 Prop) (a b : X), f a = f b \u2192 P a \u2192 \u00acP b \u2192 \u00ac\u2203 Q, \u2200 (x : X), P x \u2194 Q (f x)\nDIRECT PROOF DEPENDENCIES [Eq, Not, Exists, Iff, Exists.casesOn, False, Iff.mpr, Eq.mpr, id, congrArg, Eq.symm, Iff.mp]\nDECLARATION MathGKM.lossy_bool\nTYPE \u00ac\u2203 Q, \u2200 (b : Bool), b = true \u2194 Q ()\nDIRECT PROOF DEPENDENCIES [Exists,\n Unit,\n Bool,\n Iff,\n Eq,\n Bool.true,\n Unit.unit,\n Exists.casesOn,\n False,\n Bool.false,\n Iff.mpr,\n Iff.mp,\n rfl,\n Eq.casesOn,\n HEq,\n False.elim,\n Eq.refl,\n noConfusion_of_Nat,\n Bool.ctorIdx,\n HEq.refl]\nDECLARATION MathGKM.Machine.dispatch_state\nTYPE \u2200 (e : MathGKM.Machine.Engine) (s : MathGKM.Machine.State) (i : MathGKM.Machine.Input),\n  (MathGKM.Machine.dispatch e s i).state = MathGKM.Machine.step s i\nDIRECT PROOF DEPENDENCIES [MathGKM.Machine.Engine,\n MathGKM.Machine.State,\n MathGKM.Machine.Input,\n MathGKM.Machine.Engine.casesOn,\n Eq,\n MathGKM.Machine.Result.state,\n MathGKM.Machine.dispatch,\n MathGKM.Machine.step,\n MathGKM.Machine.Engine.reference,\n Eq.ndrec,\n Eq.refl,\n Eq.symm,\n MathGKM.Machine.Engine.candidate]\nDECLARATION MathGKM.Machine.dispatch_cost\nTYPE \u2200 (e : MathGKM.Machine.Engine) (s : MathGKM.Machine.State) (i : MathGKM.Machine.Input),\n  (MathGKM.Machine.dispatch e s i).cost = MathGKM.Machine.dispatchCost e + MathGKM.Machine.operationCost s i\nDIRECT PROOF DEPENDENCIES [MathGKM.Machine.Engine,\n MathGKM.Machine.State,\n MathGKM.Machine.Input,\n MathGKM.Machine.Engine.casesOn,\n Eq,\n Nat,\n MathGKM.Machine.Result.cost,\n MathGKM.Machine.dispatch,\n HAdd.hAdd,\n instHAdd,\n instAddNat,\n MathGKM.Machine.dispatchCost,\n MathGKM.Machine.operationCost,\n MathGKM.Machine.Engine.reference,\n Eq.ndrec,\n Eq.mpr,\n OfNat.ofNat,\n instOfNatNat,\n id,\n congrFun',\n congrArg,\n MathGKM.Machine.Result,\n MathGKM.Machine.Result.mk,\n MathGKM.Machine.step,\n MathGKM.Machine.executeMicro.eq_2,\n List.cons,\n MathGKM.Machine.MicroInstruction,\n MathGKM.Machine.MicroInstruction.execute,\n List.nil,\n Decidable.byContradiction,\n instDecidableEqNat,\n Not,\n MathGKM.Machine.dispatch_cost._proof_1_11,\n Eq.symm,\n MathGKM.Machine.Engine.candidate,\n of_eq_true,\n Eq.trans,\n True,\n MathGKM.Machine.executeMicro.eq_3,\n eq_self,\n Eq.refl]\nDECLARATION MathGKM.Machine.continuation_preserves\nTYPE \u2200 (n : \u2115) (s : MathGKM.Machine.State) (env : \u2115 \u2192 MathGKM.Machine.Input),\n  (MathGKM.Machine.run n MathGKM.Machine.Engine.candidate s env).state =\n    (MathGKM.Machine.run n MathGKM.Machine.Engine.reference s env).state\nDIRECT PROOF DEPENDENCIES [Nat,\n MathGKM.Machine.State,\n MathGKM.Machine.Input,\n Nat.recAux,\n Eq,\n MathGKM.Machine.Result.state,\n MathGKM.Machine.run,\n MathGKM.Machine.Engine.candidate,\n MathGKM.Machine.Engine.reference,\n Eq.refl,\n OfNat.ofNat,\n instOfNatNat,\n Eq.mpr,\n HAdd.hAdd,\n instHAdd,\n instAddNat,\n MathGKM.Machine.step,\n id,\n congr,\n congrArg,\n MathGKM.Machine.Result,\n MathGKM.Machine.Result.mk,\n MathGKM.Machine.Result.cost,\n MathGKM.Machine.dispatch,\n congrFun',\n MathGKM.Machine.dispatch_state]\nDECLARATION MathGKM.Machine.continuation_cost\nTYPE \u2200 (n : \u2115) (s : MathGKM.Machine.State) (env : \u2115 \u2192 MathGKM.Machine.Input),\n  (MathGKM.Machine.run n MathGKM.Machine.Engine.candidate s env).cost + n =\n    (MathGKM.Machine.run n MathGKM.Machine.Engine.reference s env).cost\nDIRECT PROOF DEPENDENCIES [Nat,\n MathGKM.Machine.State,\n MathGKM.Machine.Input,\n Nat.recAux,\n Eq,\n HAdd.hAdd,\n instHAdd,\n instAddNat,\n MathGKM.Machine.Result.cost,\n MathGKM.Machine.run,\n MathGKM.Machine.Engine.candidate,\n MathGKM.Machine.Engine.reference,\n Eq.refl,\n OfNat.ofNat,\n instOfNatNat,\n MathGKM.Machine.step,\n Eq.mpr,\n MathGKM.Machine.operationCost,\n id,\n congr,\n congrArg,\n congrFun',\n MathGKM.Machine.Result,\n MathGKM.Machine.Result.mk,\n MathGKM.Machine.Result.state,\n MathGKM.Machine.dispatch,\n MathGKM.Machine.dispatch_state,\n MathGKM.Machine.dispatch_cost,\n Decidable.byContradiction,\n instDecidableEqNat,\n Not,\n MathGKM.Machine.continuation_cost._proof_1_7]\nDECLARATION MathGKM.Machine.concrete_switch\nTYPE \u2200 (n k : \u2115) (s : MathGKM.Machine.State) (env : \u2115 \u2192 MathGKM.Machine.Input),\n  k < n \u2192\n    (MathGKM.Machine.run n MathGKM.Machine.Engine.candidate s env).state =\n        (MathGKM.Machine.run n MathGKM.Machine.Engine.reference s env).state \u2227\n      k + (MathGKM.Machine.run n MathGKM.Machine.Engine.candidate s env).cost <\n        (MathGKM.Machine.run n MathGKM.Machine.Engine.reference s env).cost\nDIRECT PROOF DEPENDENCIES [Nat,\n MathGKM.Machine.State,\n MathGKM.Machine.Input,\n LT.lt,\n instLTNat,\n And.intro,\n Eq,\n MathGKM.Machine.Result.state,\n MathGKM.Machine.run,\n MathGKM.Machine.Engine.candidate,\n MathGKM.Machine.Engine.reference,\n HAdd.hAdd,\n instHAdd,\n instAddNat,\n MathGKM.Machine.Result.cost,\n MathGKM.Machine.continuation_preserves,\n MathGKM.Machine.continuation_cost,\n Decidable.byContradiction,\n Nat.decLt,\n Not,\n MathGKM.Machine.concrete_switch._proof_1_1]\nDECLARATION MathGKM.Machine.overhead_removes_gain\nTYPE \u2200 (n k : \u2115) (s : MathGKM.Machine.State) (env : \u2115 \u2192 MathGKM.Machine.Input),\n  n \u2264 k \u2192\n    \u00ack + (MathGKM.Machine.run n MathGKM.Machine.Engine.candidate s env).cost <\n        (MathGKM.Machine.run n MathGKM.Machine.Engine.reference s env).cost\nDIRECT PROOF DEPENDENCIES [Nat,\n MathGKM.Machine.State,\n MathGKM.Machine.Input,\n LE.le,\n instLENat,\n Eq,\n HAdd.hAdd,\n instHAdd,\n instAddNat,\n MathGKM.Machine.Result.cost,\n MathGKM.Machine.run,\n MathGKM.Machine.Engine.candidate,\n MathGKM.Machine.Engine.reference,\n MathGKM.Machine.continuation_cost,\n LT.lt,\n instLTNat,\n MathGKM.Machine.overhead_removes_gain._proof_1_1]\nDECLARATION MathGKM.Machine.deadline_counterexample\nTYPE \u00ac3 +\n        (MathGKM.Machine.run 1 MathGKM.Machine.Engine.candidate { code := [MathGKM.Machine.Instruction.record 7] }\n            fun x => { }).cost \u2264\n      2 \u2227\n  (MathGKM.Machine.run 1 MathGKM.Machine.Engine.reference { code := [MathGKM.Machine.Instruction.record 7] } fun x =>\n        { }).cost \u2264\n    2\nDIRECT PROOF DEPENDENCIES [of_decide_eq_true,\n And,\n Not,\n LE.le,\n Nat,\n instLENat,\n HAdd.hAdd,\n instHAdd,\n instAddNat,\n OfNat.ofNat,\n instOfNatNat,\n MathGKM.Machine.Result.cost,\n MathGKM.Machine.run,\n MathGKM.Machine.Engine.candidate,\n MathGKM.Machine.State.mk,\n List.cons,\n MathGKM.Machine.Instruction,\n MathGKM.Machine.Instruction.record,\n List.nil,\n Option.none,\n MathGKM.Machine.Input.mk,\n MathGKM.Machine.Program,\n MathGKM.Machine.Engine.reference,\n instDecidableAnd,\n instDecidableNot,\n Nat.decLe,\n id,\n Eq,\n Bool,\n Decidable.decide,\n Bool.true,\n Eq.refl]\nDECLARATION MathGKM.Machine.frozen_incumbent_counterexample\nTYPE (MathGKM.Machine.run 2 MathGKM.Machine.Engine.reference { code := [MathGKM.Machine.Instruction.request 0] }\n          fun x => { replacement := some [MathGKM.Machine.Instruction.record 9] }).state.archive =\n    [9, 0] \u2227\n  (MathGKM.Machine.run 2 MathGKM.Machine.Engine.reference { code := [MathGKM.Machine.Instruction.request 0] } fun x =>\n          { }).state.archive =\n    [0]\nDIRECT PROOF DEPENDENCIES [of_decide_eq_true,\n And,\n Eq,\n List,\n Nat,\n MathGKM.Machine.State.archive,\n MathGKM.Machine.Result.state,\n MathGKM.Machine.run,\n OfNat.ofNat,\n instOfNatNat,\n MathGKM.Machine.Engine.reference,\n MathGKM.Machine.State.mk,\n List.cons,\n MathGKM.Machine.Instruction,\n MathGKM.Machine.Instruction.request,\n List.nil,\n Option.none,\n MathGKM.Machine.Input.mk,\n Option.some,\n MathGKM.Machine.Program,\n MathGKM.Machine.Instruction.record,\n instDecidableAnd,\n instDecidableEqList,\n instDecidableEqNat,\n id,\n Bool,\n Decidable.decide,\n Bool.true,\n Eq.refl]\nDECLARATION MathGKM.Machine.time_dependent_response_counterexample\nTYPE (MathGKM.Machine.run 1 MathGKM.Machine.Engine.candidate { code := [MathGKM.Machine.Instruction.request 0] }\n        fun x => { answer := MathGKM.Machine.dispatchCost MathGKM.Machine.Engine.candidate }).state.archive \u2260\n  (MathGKM.Machine.run 1 MathGKM.Machine.Engine.reference { code := [MathGKM.Machine.Instruction.request 0] } fun x =>\n        { answer := MathGKM.Machine.dispatchCost MathGKM.Machine.Engine.reference }).state.archive\nDIRECT PROOF DEPENDENCIES [of_decide_eq_true,\n Ne,\n List,\n Nat,\n MathGKM.Machine.State.archive,\n MathGKM.Machine.Result.state,\n MathGKM.Machine.run,\n OfNat.ofNat,\n instOfNatNat,\n MathGKM.Machine.Engine.candidate,\n MathGKM.Machine.State.mk,\n List.cons,\n MathGKM.Machine.Instruction,\n MathGKM.Machine.Instruction.request,\n List.nil,\n Option.none,\n MathGKM.Machine.Input.mk,\n MathGKM.Machine.dispatchCost,\n MathGKM.Machine.Program,\n MathGKM.Machine.Engine.reference,\n instDecidableNot,\n Eq,\n instDecidableEqList,\n instDecidableEqNat,\n id,\n Bool,\n Decidable.decide,\n Bool.true,\n Eq.refl]\n'MathGKM.attachment_conservative' does not depend on any axioms\n'MathGKM.sequential_extension' does not depend on any axioms\n'MathGKM.inconsistent_attachment' does not depend on any axioms\n'MathGKM.transport' does not depend on any axioms\n'MathGKM.collision_obstruction' does not depend on any axioms\n'MathGKM.lossy_bool' does not depend on any axioms\n'MathGKM.Machine.dispatch_state' depends on axioms: [propext]\n'MathGKM.Machine.dispatch_cost' depends on axioms: [propext, Quot.sound]\n'MathGKM.Machine.continuation_preserves' depends on axioms: [propext]\n'MathGKM.Machine.continuation_cost' depends on axioms: [propext, Quot.sound]\n'MathGKM.Machine.concrete_switch' depends on axioms: [propext, Quot.sound]\n'MathGKM.Machine.overhead_removes_gain' depends on axioms: [propext, Quot.sound]\n'MathGKM.Machine.deadline_counterexample' depends on axioms: [propext]\n'MathGKM.Machine.frozen_incumbent_counterexample' depends on axioms: [propext]\n'MathGKM.Machine.time_dependent_response_counterexample' depends on axioms: [propext]\n",
+      "stderr": "",
+      "termination": null,
+      "captured_bytes": 11107,
+      "elapsed_ns": 1658269583
+    },
+    {
+      "module": "MathGKM.Audit",
+      "operation": "replay",
+      "argv": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+        "MathGKM.Audit"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "termination": null,
+      "captured_bytes": 0,
+      "elapsed_ns": 11043846708
+    },
+    {
+      "module": "MathGKM.Gluing",
+      "operation": "compile_module",
+      "argv": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/validation-1ngy07bh/MathGKM/Gluing.olean",
+        "MathGKM/Gluing.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "termination": null,
+      "captured_bytes": 0,
+      "elapsed_ns": 1023572500
+    },
+    {
+      "module": "MathGKM.Gluing",
+      "operation": "replay",
+      "argv": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+        "MathGKM.Gluing"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "termination": null,
+      "captured_bytes": 0,
+      "elapsed_ns": 9449749917
+    },
+    {
+      "module": "MathGKM.Protocol",
+      "operation": "compile_module",
+      "argv": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/validation-1ngy07bh/MathGKM/Protocol.olean",
+        "MathGKM/Protocol.lean"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "termination": null,
+      "captured_bytes": 0,
+      "elapsed_ns": 1715990167
+    },
+    {
+      "module": "MathGKM.Protocol",
+      "operation": "replay",
+      "argv": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+        "MathGKM.Protocol"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "termination": null,
+      "captured_bytes": 0,
+      "elapsed_ns": 9228707333
+    },
+    {
+      "module": "MathGKM.AgohExercise",
+      "operation": "compile_module",
+      "argv": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "-o",
+        "/Users/sasha/math_gkm/.scratch/validation-1ngy07bh/MathGKM/AgohExercise.olean",
+        "MathGKM/AgohExercise.lean"
+      ],
+      "returncode": 1,
+      "stdout": "MathGKM/AgohExercise.lean:75:56: error: unsolved goals\nhr : range 2 = {0, 1}\n\u22a2 eval 2 (\u220f x \u2208 {0, 1}.erase 1, (X ^ x - 1)) = 0\n",
+      "stderr": "",
+      "termination": null,
+      "captured_bytes": 132,
+      "elapsed_ns": 13904061916
+    }
+  ]
+}

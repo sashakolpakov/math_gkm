@@ -134,7 +134,7 @@
     "Formal Stern-Brocot rational-index completeness and full Laurent correspondence",
     "Universal residual conjecture and factor4 conjecture"
   ],
-  "next_step": "Read the pending Markov engine request and actual observations. Prove ThirdDiagonalFormula for generated labels with a>=3, or select a more informative universal lemma from the residual experiments. Full Conjecture63 remains open.",
+  "next_step": "Review the experimental continuing controller, then activate the two-worker live smoke invocation in docs/CONTROLLER.md. The machine selects subsequent mathematical obligations from actual observations; full published Conjecture 6.3 remains open.",
   "next_research_request": "requests/markov-next.json",
   "agoh_reproduce": "/opt/homebrew/bin/python3 evidence/agoh/reproduce.py",
   "agoh_final_theorems": [
@@ -172,5 +172,16 @@
       "initial_change": 5
     }
   },
-  "historical_status_note": "previous_round_remaining and immutable historical engine requests record former statuses, not current Agoh mathematical obligations. The old round2 contract remains unchanged for chronology."
+  "historical_status_note": "previous_round_remaining and immutable historical engine requests record former statuses, not current Agoh mathematical obligations. The old round2 contract remains unchanged for chronology.",
+  "continuing_controller": {
+    "status": "implemented and fixture-tested; ready for independent review and live smoke activation",
+    "entrypoint": "/opt/homebrew/bin/python3 -m machinery.controller",
+    "contract": "contracts/markov-goal.json",
+    "documentation": "docs/CONTROLLER.md",
+    "implementation_record": "evidence/controller-implementation.json",
+    "live_calls_started": 0,
+    "certified_persistent_switch": false,
+    "historical_subgoals": "revisable machine suggestions, not prescribed proof obligations",
+    "activation": "/bin/sh requests/markov-controller-smoke.sh"
+  }
 }

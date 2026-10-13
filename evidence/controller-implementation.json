@@ -1,0 +1,74 @@
+{
+  "provenance": "authorized live Codex/gpt-6-astra builder",
+  "phase": "construction",
+  "status": "implemented and fixture-tested; live activation awaits independent review",
+  "live_calls_started": 0,
+  "mathematical_status": "full published Markov Conjecture 6.3 remains open",
+  "entrypoint": "/opt/homebrew/bin/python3 -m machinery.controller",
+  "documentation": "docs/CONTROLLER.md",
+  "test_command": "/opt/homebrew/bin/python3 -m unittest tests.test_controller -v",
+  "test_log": ".scratch/controller-tests.log",
+  "next_activation": "Independent review, then the two-worker live smoke invocation documented in docs/CONTROLLER.md",
+  "certified_switch": false,
+  "tests": {
+    "coverage": "All 8 controller tests passed across the initial run and targeted corrected retests (6 initial passes plus 2 final passes). Initial failures retained, not erased.",
+    "initial_log": "evidence/controller-tests-initial.log",
+    "final_retests": "evidence/controller-tests-final-retests.log",
+    "negative_exact_root": "evidence/controller-negative-completion.json",
+    "legacy_engine": "tests.test_round2.EngineTests passed (1 test, 43.928 seconds)",
+    "syntax": "py_compile passed for changed Python modules and tests",
+    "retained_fixture": ".control/fixture-controller-review",
+    "fixture_status": {
+      "active_worker": null,
+      "agenda": [
+        "fixture next decision after completed"
+      ],
+      "contract_hash": "6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc",
+      "controller_active_seconds": 32.14946666700416,
+      "created": 1791930376.3605409,
+      "elapsed_seconds": 0.5869863033294678,
+      "failures": 0,
+      "last_activity": 1791930411.631062,
+      "last_result": {
+        "outcome": "completed",
+        "request_id": "b7617927f1844caa81863e7d3f3dec48"
+      },
+      "pid": 87527,
+      "reason": "user-selected cumulative resource limit reached; mathematical goal open",
+      "schema": "math-gkm.controller.v1",
+      "status": "exhausted",
+      "tokens": 30,
+      "transport": "fixture",
+      "usage_unknown": 0,
+      "watchdog_pid": null,
+      "workers_completed": 2,
+      "lock_held": false,
+      "stop_requested": false
+    }
+  },
+  "limitations": [
+    "Live Codex activation deliberately not performed",
+    "Final source/English correspondence audit remains independently supplied",
+    "No reboot autostart",
+    "Token cap is enforced between workers, not a hard provider cap",
+    "Experimental host bridge, not certified continuation"
+  ],
+  "activation": "/bin/sh requests/markov-controller-smoke.sh",
+  "source_files": {
+    "machinery/controller.py": "eb3e4558281df01cfb9f0408735556b1933c11f8e0ca9f152d6179d97459e713",
+    "machinery/worker.py": "65a1130e2624d8cda679984c49a268e2ab8e00844f69b9c63bf451ada0a35779",
+    "machinery/completion.py": "533c08b4b7c52442870afdd54652320c0e1614b0127b74869493d71a2ef2b1f6",
+    "machinery/engine.py": "6b0a2eae4b1e919233a3ac99f0ecb2af22f6c0cca0691befbb23af7a6be811dc",
+    "machinery/process.py": "e957b94c70634b9d21594f749e16c8955d759c77ce12eb16d763f7b979e336e9",
+    "machinery/fixture_worker.py": "d342813b1b725e700f97aa2a84eaf9d94fa3846bea586821df5fe93e9621b2c3",
+    "tests/test_controller.py": "4333978ef8988e063c0b0cef5c55f3e79ad31b6b5a7e710e9c6014ecd619d2dd",
+    "contracts/markov-goal.json": "10bc86a3043aefd4ff11978765bcc969e92c0a6731321b11f4c526d384f39ee7",
+    "docs/CONTROLLER.md": "1e15ebafd4cd955c1a750194db1ab1ed6be72dfcc15587e48122d635ea062789"
+  },
+  "notes": [
+    "Initial detached retest rejected a changed controller hash as designed; passed with implementation held fixed.",
+    "Initial broad negative check encountered operational PermissionError; final check compiles with one Lean thread and rejects True.intro at the exact root before replay. No positive full-root theorem exists for acceptance testing.",
+    "No live Codex call or background mathematical research started; only labeled fixture workers.",
+    "The independent final Markov source report confirms the pinned root hash; mathematical files were not changed."
+  ]
+}
