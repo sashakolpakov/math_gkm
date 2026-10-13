@@ -10,10 +10,12 @@ BUILD = ROOT / ".scratch" / "build"
 
 
 def environment():
-    env = os.environ.copy()
+    from .trust import environment as clean_environment
+    env = clean_environment()
     # leanchecker recursively scans these paths. Never include the workspace
     # root: it contains the denied Git directory and supervisor launch records.
-    paths = [str(BUILD)]
+    from .trust import CORE
+    paths = [str(CORE), str(BUILD)]
     paths += [str(p / ".lake/build/lib/lean")
               for p in sorted((ROOT / ".lake/packages").iterdir())]
     env.update(LEAN_PATH=":".join(paths), GIT_CONFIG_NOSYSTEM="1",
@@ -22,17 +24,16 @@ def environment():
 
 
 def invoke(args, timeout=120):
-    started = time.monotonic_ns()
-    try:
-        p = subprocess.run(args, cwd=ROOT, env=environment(), text=True,
-                           capture_output=True, timeout=timeout)
-        result = {"argv": args, "returncode": p.returncode,
-                "stdout": p.stdout, "stderr": p.stderr,
-                "elapsed_ns": time.monotonic_ns() - started}
-    except subprocess.TimeoutExpired:
-        result = {"argv": args, "returncode": None, "stdout": "",
-                "stderr": "timeout", "elapsed_ns": time.monotonic_ns() - started}
-    with (ROOT / "evidence/commands.jsonl").open("a") as log:
+    # General project build path is explicitly experimental, never admission.
+    from .process import run
+    from .trust import LEAN, CHECKER
+    args = list(args)
+    if args[0] == "lean":
+        args[0] = str(LEAN)
+    if args[0] == "leanchecker":
+        args[0] = str(CHECKER)
+    result = run(args, cwd=ROOT, env=environment(), timeout=min(timeout, 180))
+    with (ROOT / "evidence/round2/commands.jsonl").open("a") as log:
         log.write(json.dumps(result) + "\n")
     return result
 

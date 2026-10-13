@@ -1,27 +1,41 @@
 {
-  "provenance": "Codex/Astra, machine-authored bootstrap 2026-10-13",
+  "provenance": "Actual authorized Codex/Astra round-2 builder invocation, 2026-10-13",
   "phase": "construction",
-  "status": "experimental_bootstrap_with_checked_finite_model",
+  "status": "experimental_bootstrap_independent_validation_pending",
   "mission_complete": false,
   "certified_persistent_switch": false,
+  "authoritative_admission": false,
   "immutable_requirements": ["MISSION.md", "docs/DESIGN.md"],
-  "read_next": ["docs/CONSTRUCTION.md", "docs/ATTEMPTS.md", "evidence/checks.json", "evidence/provenance.json"],
+  "read_next": ["docs/round2/CONSTRUCTION.md", "docs/round2/TRANSPORT.md", "docs/round2/AGOH.md"],
   "reproduce": "/opt/homebrew/bin/python3 -u -m machinery.check",
-  "do_not_use": ["Lake dependency resolution", "package updates", "cache downloads", "external LLM APIs", "nested Codex", "Git or external project trees"],
-  "preserve": ["MathGKM/Foundations.lean", "MathGKM/Machine.lean", "MathGKM/Audit.lean", "evidence/commands.jsonl", "evidence/tests-first-attempt.log"],
-  "checked_scope": "conservative attachment, predicate transport/collision obstruction, executable bounded continuation with nested future program rewrites, abstract instruction-cost comparison and formal missing-condition examples",
-  "runtime_scope": "restricted exact-target proof admission with separate kernel replay; bounded broker; fixture-only proposer interface; guarded experimental profile install; certified path always rejects",
-  "next_obligation": "Extend the model from the bytecode interpreter to the actual broker, proof gate, resource accounting and installer, including subsequent engine rewrites; establish an operational refinement and justified remaining-cost bound before enabling certified installation.",
-  "remaining": [
-    "Complete-controller semantics and host execution refinement",
-    "Account for checking/installing/migration costs at a common baseline",
-    "Justify timed response coupling or use a time/history-dependent environment model",
-    "General mathematical proof admission and actual Lean dependency extraction for reusable components",
-    "Typed semantic attachment certificates and implementation simulation",
-    "Independent English-versus-Lean and runtime audit",
-    "Agoh primary-source retrieval, hypothesis inventory and formalization",
-    "Subsequent exact Markov Conjecture 6.3 audit and reproducible attack"
+  "evidence": ["evidence/round2/checks.json", "evidence/round2/formal-validation.json", "evidence/round2/tests-final.log", "evidence/round2/shadow-control.json", "evidence/round2/provenance.json"],
+  "pending_transport": "evidence/round2/research-run/request-0002.json",
+  "freeze_request": "requests/freeze-boundary.json",
+  "preserve": "All first-round evidence and genuine Lean results; round-2 failures are also retained.",
+  "do_not_use": ["Git internals", "external project trees except supplied dependency mounts", "package updates/downloads", "nested Codex or external model calls in bootstrap", "old receipts as admission authority"],
+  "construction_progress": [
+    "Restricted proof gate excludes writable build imports and uses absolute toolchain binaries; actual shadow-Init exploit regression",
+    "Durable response-bound experimental engine, bounded pure-Python programs, real restricted Lean proof checks, immutable-copy observations",
+    "Lean transition guard executed by engine; request replay and budget theorems",
+    "Pushout universal property for types and formal incompatible-binding example"
   ],
-  "campaigns": {"agoh": "not_started", "markov": "not_started"},
-  "validation": "See evidence/checks.json and evidence/tests.log; do not infer success from this resume file."
+  "agoh": {
+    "source": "https://math.colgate.edu/~integers/aa9/aa9.pdf",
+    "inventory": "docs/round2/AGOH.md",
+    "scope": "Section 4 first-order cleared-numerator factor, all n>0 and all real polynomials; exact denominator-clearing hypotheses and negative examples",
+    "proofs": "MathGKM/AgohExercise.lean",
+    "status": "Lean proof objects; independent meaning/admission audit pending",
+    "not_done": ["Theorem 1.1 n-fold divisibility", "Theorem 3.1", "reduced rational numerator bridge", "final conjecture"]
+  },
+  "markov": "not_started",
+  "remaining": [
+    "Supervisor freeze and independent validation of admission meanings, binaries, imports, validator and protected observation channel",
+    "Full-language worker containment; nested sandbox and OS memory-limit calls unavailable here",
+    "Activate actual gpt-6-astra supervisor transport; bootstrap and fixture provenance is explicit",
+    "Complete controller/proof-search/interpreter self-rewrite semantics and host refinement",
+    "Whole-continuation concrete improvement including future interpreter replacements, real validation/install costs and timed environment coupling",
+    "Dependent Lean declaration attachment and semantic/cost simulations",
+    "Independent English/Lean audit and remaining Agoh scope before Markov"
+  ],
+  "next_step": "Independently validate and freeze the concrete boundary artifact, activate the pending proposal transport, and continue the controller continuation/cost bridge alongside the unfinished Agoh n-fold proof. Do not enable certified installation."
 }

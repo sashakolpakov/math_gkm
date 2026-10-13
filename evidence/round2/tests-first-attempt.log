@@ -1,0 +1,53 @@
+test_actual_shadow_import (test_round2.BoundaryTests.test_actual_shadow_import) ... ok
+test_positive_and_real_false (test_round2.BoundaryTests.test_positive_and_real_false) ... ok
+test_project_dependencies_and_injection (test_round2.BoundaryTests.test_project_dependencies_and_injection) ... ok
+test_real_refutation_exact_target (test_round2.BoundaryTests.test_real_refutation_exact_target) ... ok
+test_arbitrary_experiment (test_round2.BrokerTests.test_arbitrary_experiment) ... FAIL
+test_citation_is_unverified (test_round2.BrokerTests.test_citation_is_unverified) ... ok
+test_failures_record_and_limits_contract (test_round2.BrokerTests.test_failures_record_and_limits_contract) ... ok
+test_forbidden_host_access (test_round2.BrokerTests.test_forbidden_host_access) ... ok
+test_mutation_cannot_rewrite_history (test_round2.BrokerTests.test_mutation_cannot_rewrite_history) ... ok
+test_no_complexity_in_context (test_round2.BrokerTests.test_no_complexity_in_context) ... ok
+test_output_and_timeout (test_round2.BrokerTests.test_output_and_timeout) ... FAIL
+test_real_proof_attempt (test_round2.BrokerTests.test_real_proof_attempt) ... ok
+test_fixture_feedback_continuation_and_replay (test_round2.EngineTests.test_fixture_feedback_continuation_and_replay) ... FAIL
+
+======================================================================
+FAIL: test_arbitrary_experiment (test_round2.BrokerTests.test_arbitrary_experiment)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sasha/math_gkm/tests/test_round2.py", line 52, in test_arbitrary_experiment
+    self.assertEqual(r['evidence'],'computation',r)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'execution_failure' != 'computation'
+- execution_failure
++ computation
+ : {'evidence': 'execution_failure', 'language': 'pure Python AST subset v1', 'execution': {'argv': ['/opt/homebrew/bin/python3', '-I', '-c', "import sys; from pathlib import Path; sys.path.insert(0, '/Users/sasha/math_gkm'); from machinery.experiment_worker import main; sys.stdin=open('/Users/sasha/math_gkm/.scratch/experiment-iygvi7vi/input.json'); main()"], 'returncode': 1, 'stdout': '', 'stderr': 'Traceback (most recent call last):\n  File "<string>", line 1, in <module>\n    import sys; from pathlib import Path; sys.path.insert(0, \'/Users/sasha/math_gkm\'); from machinery.experiment_worker import main; sys.stdin=open(\'/Users/sasha/math_gkm/.scratch/experiment-iygvi7vi/input.json\'); main()\n                                                                                                                                                                                                                      ~~~~^^\n  File "/Users/sasha/math_gkm/machinery/experiment_worker.py", line 46, in main\n    resource.setrlimit(resource.RLIMIT_AS, (512 * 1024 * 1024, 512 * 1024 * 1024))\n    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: current limit exceeds maximum limit\n', 'termination': None, 'captured_bytes': 810, 'elapsed_ns': 60739417}, 'program_hash': '322be97b905c3f30f1a15056531a30c92058c188d5e957a634f6d300c173a50e', 'mathematical_resolution': False}
+
+======================================================================
+FAIL: test_output_and_timeout (test_round2.BrokerTests.test_output_and_timeout)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sasha/math_gkm/tests/test_round2.py", line 87, in test_output_and_timeout
+    self.assertEqual(r['execution']['termination'],reason,r)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'output_limit' != 'timeout'
+- output_limit
++ timeout
+ : {'evidence': 'execution_failure', 'language': 'pure Python AST subset v1', 'execution': {'argv': ['/opt/homebrew/bin/python3', '-I', '-c', "import sys; from pathlib import Path; sys.path.insert(0, '/Users/sasha/math_gkm'); from machinery.experiment_worker import main; sys.stdin=open('/Users/sasha/math_gkm/.scratch/experiment-zlg0vn39/input.json'); main()"], 'returncode': -9, 'stdout': '', 'stderr': 'Traceback (most recent call last):\n  File "<string>", line 1, in <module>\n    import sys; from pathl', 'termination': 'output_limit', 'captured_bytes': 100, 'elapsed_ns': 58714417}, 'program_hash': '527b33ed501827efab69af9ca0a9aebd7801c090abb651a8540d2da1d2a74e5e', 'mathematical_resolution': False}
+
+======================================================================
+FAIL: test_fixture_feedback_continuation_and_replay (test_round2.EngineTests.test_fixture_feedback_continuation_and_replay)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sasha/math_gkm/tests/test_round2.py", line 103, in test_fixture_feedback_continuation_and_replay
+    self.assertEqual(nxt['context']['observations'][0]['result']['execution']['stdout'].strip(),'45')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '' != '45'
++ 45
+
+
+----------------------------------------------------------------------
+Ran 13 tests in 9.380s
+
+FAILED (failures=3)

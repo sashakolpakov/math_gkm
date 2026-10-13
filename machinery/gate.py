@@ -9,6 +9,9 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import tempfile
+from . import trust
+from .process import run
 from pathlib import Path
 from .toolchain import ROOT, BUILD, invoke, compile_module, replay
 
@@ -111,27 +114,40 @@ class ProofGate:
         formula = proposition(target)
         term = proof_term(proof)
         identity = digest({"target": target, "proof": proof})
-        module = "GateChecks.P" + identity
-        path = ROOT / (module.replace(".", "/") + ".lean")
-        path.parent.mkdir(exist_ok=True)
-        source = ("-- Machine-generated closed proof AST; Codex/Astra bootstrap.\n"
-                  "import Init\n"
+        directory = Path(tempfile.mkdtemp(prefix="gate-", dir=ROOT / ".scratch"))
+        path = directory / "GateProof.lean"
+        source = ("-- Machine-generated closed AST, provisional boundary check.\n"
+                  "import Lean\n"
                   f"theorem accepted : {formula} := {term}\n"
-                  "#print axioms accepted\n")
+                  "open Lean Elab Command in\n"
+                  "run_cmd do\n"
+                  "  unless (← collectAxioms ``accepted).isEmpty do\n"
+                  "    throwError \"nonempty axiom dependencies\"\n")
         path.write_text(source)
-        elaboration = compile_module(module)
-        if elaboration["returncode"] != 0:
+        binary_hashes = {str(p): trust.sha(p) for p in (trust.LEAN, trust.CHECKER)}
+        # No writable import directory during elaboration. Core precedes the
+        # isolated output directory during replay; only GateProof is produced.
+        elaboration = run([str(trust.LEAN), "-o", "GateProof.olean", "GateProof.lean"],
+                          cwd=directory, env=trust.environment([trust.CORE]), timeout=120)
+        if elaboration["returncode"] != 0 or elaboration["termination"]:
             raise Rejected("kernel elaboration failed: " + elaboration["stdout"])
-        output = elaboration["stdout"]
-        if "does not depend on any axioms" not in output:
-            raise Rejected("this gate requires an empty axiom dependency set")
-        checked = replay(module)
-        if checked["returncode"] != 0:
+        allowed = {"GateProof.lean", "GateProof.olean", "GateProof.olean.private",
+                   "GateProof.olean.server", "GateProof.ilean"}
+        if any(p.is_symlink() or p.name not in allowed for p in directory.iterdir()):
+            raise Rejected("unexpected import artifact")
+        checked = run([str(trust.CHECKER), "GateProof"], cwd=directory,
+                      env=trust.environment([trust.CORE, directory]), timeout=120)
+        if checked["returncode"] != 0 or checked["termination"]:
             raise Rejected("kernel replay failed")
-        return {"kind": "checked_proposition", "target": target, "proof": proof,
+        if path.read_text() != source or any(trust.sha(Path(p)) != h for p, h in binary_hashes.items()):
+            raise Rejected("changed source or executable during check")
+        return {"kind": "bootstrap_check_candidate", "authoritative": False,
+                "boundary_status": "supervisor_freeze_and_validation_pending",
+                "target": json.loads(canonical(target)), "proof": json.loads(canonical(proof)),
                 "dependencies": [], "axioms": [], "contract_hash": digest(self.contract),
                 "source": str(path.relative_to(ROOT)), "source_hash": file_digest(path),
-                "olean_hash": file_digest(BUILD / (module.replace(".", "/") + ".olean")),
+                "olean_hash": file_digest(directory / "GateProof.olean"),
+                "binary_hashes": binary_hashes, "trusted_import_root": str(trust.CORE),
                 "checks": [elaboration, checked], "historical_novelty": "not_assessed",
                 "usefulness": "not_assessed"}
 
@@ -144,7 +160,8 @@ class ProofGate:
         if target != exact:
             raise Rejected("not the exact contract root or its negation")
         receipt = self.check(target, proof)
-        receipt["resolution"] = polarity
+        receipt["resolution_attempt"] = polarity
+        receipt["root_closed"] = False
         return receipt
 
     def recheck(self, receipt):
