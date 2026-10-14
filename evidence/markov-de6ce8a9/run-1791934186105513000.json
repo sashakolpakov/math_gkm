@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovResidualDe6.lean:19:30: error(lean.unknownIdentifier): Unknown identifier `monomial_add`\n/Users/sasha/math_gkm/research/MarkovResidualDe6.lean:19:44: warning: This simp argument is unused:\n  C_add\n\nHint: Omit it from the simp argument list.\n  simp only [map_add, monomial_add,\u0335 \u0335C\u0335_\u0335a\u0335d\u0335d\u0335] at *\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovResidualDe6.lean:31:6: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  CommRing ?m.24[X][X]\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovResidualDe6.lean:55:21: error: unsolved goals\npath : List Bool\nr : \u2115\ns : \u2124[X] := 1 + X\nd : \u2115 := (frame path).mid.a + (frame path).mid.b - 1\nh : s = 0\nhh : Polynomial.coeff 1 1 + 1 = 0\n\u22a2 False\n'MathGKM.Markov.evalTri_natural_de6' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.residual_divisibility_de6' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovResidualDe6.lean",
+  "sha256": "83d50dda7a12bdfa5d8a1401f41eec9269d7bb7906246632353172790448a614",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-de6ce8a9/MarkovResidualDe6.olean",
+    "/Users/sasha/math_gkm/research/MarkovResidualDe6.lean"
+  ],
+  "seconds": 39.18546537500515,
+  "lean_path": "/Users/sasha/math_gkm/evidence/markov-de6ce8a9:/Users/sasha/math_gkm/evidence/markov-4b57f2c3:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean",
+  "imports_status": "Inherited compiled project imports; new module rebuilt from source"
+}

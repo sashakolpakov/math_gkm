@@ -1,0 +1,47 @@
+[
+  {
+    "source": "MathGKM/Markov.lean",
+    "sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+    "command": [
+      "lean",
+      "-o",
+      "/Users/sasha/math_gkm/evidence/markov-21afc594/MathGKM/Markov.olean",
+      "MathGKM/Markov.lean"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "seconds": 28.523296167011722,
+    "lean_path": "/Users/sasha/math_gkm/evidence/markov-21afc594:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean"
+  },
+  {
+    "source": "MathGKM/MarkovIndices.lean",
+    "sha256": "d31b4077de76ad7af7bd5c98df0e80367e38364d526541ed12dfd665db1f5e76",
+    "command": [
+      "lean",
+      "-o",
+      "/Users/sasha/math_gkm/evidence/markov-21afc594/MathGKM/MarkovIndices.olean",
+      "MathGKM/MarkovIndices.lean"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "seconds": 10.041411874990445,
+    "lean_path": "/Users/sasha/math_gkm/evidence/markov-21afc594:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean"
+  },
+  {
+    "source": "research/MarkovDegree21a.lean",
+    "sha256": "3649905d81be7b759c9f63152f9441af645ed000aba9cefa370daf661a5080b1",
+    "command": [
+      "lean",
+      "-o",
+      "/Users/sasha/math_gkm/evidence/markov-21afc594/MarkovDegree21a.olean",
+      "research/MarkovDegree21a.lean"
+    ],
+    "returncode": 1,
+    "stdout": "research/MarkovDegree21a.lean:18:32: error: unsolved goals\nP Q : BiPoly\nd : \u2115\nhp : DegreeBound21a P d\nhq : DegreeBound21a Q d\ni j : \u2115\nhij : d < i + j\n\u22a2 (Polynomial.coeff P i).coeff j + (Polynomial.coeff Q i).coeff j = 0\nresearch/MarkovDegree21a.lean:20:37: warning: This simp argument is unused:\n  hp i j hij\n\nHint: Omit it from the simp argument list.\n  simp [coeff, Polynomial.coeff_add, hp\u0335 \u0335i\u0335 \u0335j\u0335 \u0335h\u0335i\u0335j\u0335,\u0335 \u0335h\u0335q i j hij] at *\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nresearch/MarkovDegree21a.lean:20:49: warning: This simp argument is unused:\n  hq i j hij\n\nHint: Omit it from the simp argument list.\n  simp [coeff, Polynomial.coeff_add, hp i j hij,\u0335 \u0335h\u0335q\u0335 \u0335i\u0335 \u0335j\u0335 \u0335h\u0335i\u0335j\u0335] at *\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nresearch/MarkovDegree21a.lean:26:2: error: Type mismatch: After simplification, term\n  sub_self (coeff P i j)\n has type\n  True\nbut is expected to have type\n  (Polynomial.coeff P i).coeff j - (Polynomial.coeff Q i).coeff j = 0\nresearch/MarkovDegree21a.lean:33:42: warning: `Polynomial.finset_sum_coeff` has been deprecated: Use `Polynomial.finsetSum_coeff` instead\nresearch/MarkovDegree21a.lean:38:42: error: Application type mismatch: The argument\n  hab\nhas type\n  ab \u2208 Finset.HasAntidiagonal.antidiagonal i\nbut is expected to have type\n  ?m.47 \u2208 Finset.antidiagonal ?m.44 ?m.45 ?m.46\nin the application\n  Finset.mem_antidiagonal.mp hab\nresearch/MarkovDegree21a.lean:55:2: error: unsolved goals\ncase pos\nj : \u2115\nhij : 1 < 1 + j\n\u22a2 Polynomial.coeff 1 j = 0\nresearch/MarkovDegree21a.lean:56:2: error: unsolved goals\ncase neg\ni j : \u2115\nhij : 1 < i + j\nhi : \u00aci = 1\n\u22a2 (if 1 = i then 1 else 0).coeff j = 0\nresearch/MarkovDegree21a.lean:55:49: warning: This simp argument is unused:\n  show j \u2260 0 by omega\n\nHint: Omit it from the simp argument list.\n  simp [coeff, U, Polynomial.coeff_X,\u0335 \u0335s\u0335h\u0335o\u0335w\u0335 \u0335j\u0335 \u0335\u2260\u0335 \u03350\u0335 \u0335b\u0335y\u0335 \u0335o\u0335m\u0335e\u0335g\u0335a\u0335]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nresearch/MarkovDegree21a.lean:56:40: warning: This simp argument is unused:\n  hi\n\nHint: Omit it from the simp argument list.\n  simp [coeff, U, Polynomial.coeff_X,\u0335 \u0335h\u0335i\u0335]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nresearch/MarkovDegree21a.lean:61:2: error: unsolved goals\ncase pos\nj : \u2115\nhij : 1 < 0 + j\n\u22a2 \u00ac1 = j\nresearch/MarkovDegree21a.lean:62:6: warning: This simp argument is unused:\n  show j \u2260 1 by omega\n\nHint: Omit it from the simp argument list.\n  simp [coeff, V, Polynomial.coeff_C, Polynomial.coeff_X,\u0335\n  \u0335 \u0335 \u0335 \u0335 \u0335 \u0335 \u0335s\u0335h\u0335o\u0335w\u0335 \u0335j\u0335 \u0335\u2260\u0335 \u03351\u0335 \u0335b\u0335y\u0335 \u0335o\u0335m\u0335e\u0335g\u0335a\u0335]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n'MathGKM.Markov.degree_frame_21a' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.coefficient_above_degree_21a' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+    "stderr": "",
+    "seconds": 7.622259750001831,
+    "lean_path": "/Users/sasha/math_gkm/evidence/markov-21afc594:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean"
+  }
+]

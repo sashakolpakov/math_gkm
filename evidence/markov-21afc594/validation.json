@@ -1,0 +1,120 @@
+{
+  "request_id": "21afc5949a0649388be45f280b6747f2",
+  "completion": null,
+  "status": "locally rebuilt and kernel-replayed partial coefficient bridges",
+  "independent_audit": false,
+  "root_unchanged": true,
+  "modules": {
+    "MathGKM/Markov.lean": {
+      "sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "compile": "evidence/markov-21afc594/run-1791932110734116000.json",
+      "kernel": "evidence/markov-21afc594/run-1791932280695177000.json"
+    },
+    "MathGKM/MarkovIndices.lean": {
+      "sha256": "d31b4077de76ad7af7bd5c98df0e80367e38364d526541ed12dfd665db1f5e76",
+      "compile": "evidence/markov-21afc594/run-1791932110734116000.json",
+      "kernel": "evidence/markov-21afc594/run-1791932280695177000.json"
+    },
+    "research/MarkovDegree21a.lean": {
+      "sha256": "8843c065a5ddfb009d774efee650ac8cce8aeec83b03cc8b9dfe57e9f7d4e73c",
+      "compile": "evidence/markov-21afc594/run-1791932222419832000.json",
+      "kernel": "evidence/markov-21afc594/run-1791932280695177000.json"
+    },
+    "research/MarkovHomogeneous21a.lean": {
+      "sha256": "a74a22dc402bf98393a5019c285ba8fefb7dace86a7f90dc6aa932a01b788d41",
+      "compile": "evidence/markov-21afc594/run-1791932305655465000.json",
+      "kernel": "evidence/markov-21afc594/run-1791932344688393000.json"
+    }
+  },
+  "theorem_axioms": {
+    "MathGKM.Markov.degree_frame_21a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathGKM.Markov.coefficient_above_degree_21a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathGKM.Markov.raw_homogeneous_coeff_21a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathGKM.Markov.raw_coeff_recovered_21a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathGKM.Markov.homogeneous_support_21a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathGKM.Markov.homogenize_injective_21a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathGKM.Markov.dehomogenize_homogenize_21a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathGKM.Markov.homogeneous_reconstruction_21a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathGKM.Markov.homogeneous_specialization_injective_21a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathGKM.Markov.laurent_exponent_injective_21a": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MathGKM.Markov.laurent_total_degree_21a": [
+      "propext"
+    ],
+    "MathGKM.Markov.frame_homogeneous_21a": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "rejected_attempts": [
+    {
+      "receipt": "evidence/markov-21afc594/run-1791932110734116000.json",
+      "source": "research/MarkovDegree21a.lean",
+      "sha256": "3649905d81be7b759c9f63152f9441af645ed000aba9cefa370daf661a5080b1"
+    },
+    {
+      "receipt": "evidence/markov-21afc594/run-1791932179804227000.json",
+      "source": "research/MarkovDegree21a.lean",
+      "sha256": "94f1a25b57d315245ef543f36f02e8c4bc909d5a2bc5613b4973ea2acbdd3a73"
+    },
+    {
+      "receipt": "evidence/markov-21afc594/run-1791932251589605000.json",
+      "source": "research/MarkovHomogeneous21a.lean",
+      "sha256": "33c4b862a7b02a98791171b0f22f6a3de65a723e4e17c6252bb23cb5995be04f"
+    }
+  ],
+  "artifacts": {
+    "research/markov-21afc594-checkpoint.md": "da331c690e19a3024828dcee103c2b6888bf8b715df785271fb8e0008e123788",
+    "research/markov-21afc594-correspondence.md": "99b61614d1d96d218b3eb34005e85d410bba86f70542ccdbbb06d2b9a8921a75",
+    "research/validate_degree_21a.py": "30b671670ec3855567da69b1132aedf44de20460918bdb9200c747bc7d7a6f95",
+    "research/cohn_words_21a.py": "60df0a2c5caa430a1f6920fd80d5faa7cd1d0672958e317ed1b317ef25c2cf61",
+    "research/finalize_21a.py": "556e869179a09330521500854bc3d3984e48e92b6bad4cdf794b6f7b2a035c3b",
+    "evidence/markov-21afc594/cohn-words.json": "a761857a378d941dc2c64780b61e04db9e7b80499c3c58117dc67e8fcb8d9a17"
+  },
+  "stop_exists": false,
+  "remaining": [
+    "formal source homogeneous/Laurent identity",
+    "Newton polygon equality",
+    "universal raw coefficient inequalities in all three directions",
+    "independent hash-bound English/source completion audit"
+  ]
+}

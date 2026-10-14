@@ -1,0 +1,17 @@
+[
+  {
+    "source": "research/MarkovDegree21a.lean",
+    "sha256": "94f1a25b57d315245ef543f36f02e8c4bc909d5a2bc5613b4973ea2acbdd3a73",
+    "command": [
+      "lean",
+      "-o",
+      "/Users/sasha/math_gkm/evidence/markov-21afc594/MarkovDegree21a.olean",
+      "research/MarkovDegree21a.lean"
+    ],
+    "returncode": 1,
+    "stdout": "research/MarkovDegree21a.lean:43:15: error(lean.unknownIdentifier): Unknown constant `Finset.Nat.mem_antidiagonal.mp`\nresearch/MarkovDegree21a.lean:36:38: error: unsolved goals\nP Q : BiPoly\nd e : \u2115\nhp : DegreeBound21a P d\nhq : DegreeBound21a Q e\ni j : \u2115\nhij : d + e < i + j\nab : \u2115 \u00d7 \u2115\nhab : ab \u2208 Finset.HasAntidiagonal.antidiagonal i\ncd : \u2115 \u00d7 \u2115\nhcd : cd \u2208 Finset.HasAntidiagonal.antidiagonal j\n\u22a2 (Polynomial.coeff P ab.1).coeff cd.1 * (Polynomial.coeff Q ab.2).coeff cd.2 = 0\nresearch/MarkovDegree21a.lean:61:27: warning: This simp argument is unused:\n  show 0 \u2260 j by omega\n\nHint: Omit it from the simp argument list.\n  simp [coeff, U, Polynomial.coeff_X, Polynomial.coeff_one, show j \u2260 0 by o\u0335m\u0335e\u0335g\u0335a\u0335,\u0335 \u0335s\u0335h\u0335o\u0335w\u0335 \u03350\u0335 \u0335\u2260\u0335 \u0335j\u0335 \u0335b\u0335y\u0335 \u0335omega]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nresearch/MarkovDegree21a.lean:62:40: warning: This simp argument is unused:\n  hi\n\nHint: Omit it from the simp argument list.\n  simp [coeff, U, Polynomial.coeff_X, h\u0335i\u0335,\u0335 \u0335Ne.symm hi]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n'MathGKM.Markov.degree_frame_21a' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.coefficient_above_degree_21a' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+    "stderr": "",
+    "seconds": 15.441645208004047,
+    "lean_path": "/Users/sasha/math_gkm/evidence/markov-21afc594:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean"
+  }
+]

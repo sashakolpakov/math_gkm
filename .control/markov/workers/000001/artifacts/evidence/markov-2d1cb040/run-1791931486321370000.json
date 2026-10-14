@@ -1,0 +1,47 @@
+[
+  {
+    "source": "MathGKM/Markov.lean",
+    "sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+    "command": [
+      "lean",
+      "-o",
+      "/Users/sasha/math_gkm/evidence/markov-2d1cb040/MathGKM/Markov.olean",
+      "MathGKM/Markov.lean"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "seconds": 83.5705180829973,
+    "lean_path": "/Users/sasha/math_gkm/evidence/markov-2d1cb040:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean"
+  },
+  {
+    "source": "MathGKM/MarkovIndices.lean",
+    "sha256": "d31b4077de76ad7af7bd5c98df0e80367e38364d526541ed12dfd665db1f5e76",
+    "command": [
+      "lean",
+      "-o",
+      "/Users/sasha/math_gkm/evidence/markov-2d1cb040/MathGKM/MarkovIndices.olean",
+      "MathGKM/MarkovIndices.lean"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "seconds": 50.96512120901025,
+    "lean_path": "/Users/sasha/math_gkm/evidence/markov-2d1cb040:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean"
+  },
+  {
+    "source": "research/MarkovExchange2d1.lean",
+    "sha256": "80833f207e407180cc39f90685253bdb668e20add47a1c0890dbd5d7ff5350c6",
+    "command": [
+      "lean",
+      "-o",
+      "/Users/sasha/math_gkm/evidence/markov-2d1cb040/MarkovExchange2d1.olean",
+      "research/MarkovExchange2d1.lean"
+    ],
+    "returncode": 1,
+    "stdout": "research/MarkovExchange2d1.lean:34:4: error: ring failed, ring expressions not equal\nf : Frame\nhi : FrameIndices f\nh : f.mid.p ^ 2 + weight2d1 f.hi * f.lo.p ^ 2 + weight2d1 f.lo * f.hi.p ^ 2 = S * f.lo.p * f.mid.p * f.hi.p\nhw : weight2d1 f.mid = weight2d1 f.lo * weight2d1 f.hi\n\u22a2 -(S * f.lo.p * f.mid.p * weight2d1 f.lo * f.hi.p) + S * f.lo.p * f.mid.p * f.hi.p * U ^ f.lo.a * V ^ f.lo.b = 0\nresearch/MarkovExchange2d1.lean:38:4: error: ring failed, ring expressions not equal\nf : Frame\nhi : FrameIndices f\nh : f.mid.p ^ 2 + weight2d1 f.hi * f.lo.p ^ 2 + weight2d1 f.lo * f.hi.p ^ 2 = S * f.lo.p * f.mid.p * f.hi.p\nhw : weight2d1 f.mid = weight2d1 f.lo * weight2d1 f.hi\n\u22a2 -(S * f.hi.p * f.mid.p * weight2d1 f.hi * f.lo.p) + S * f.hi.p * f.mid.p * f.lo.p * U ^ f.hi.a * V ^ f.hi.b = 0\n'MathGKM.Markov.weight_mid_2d1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.exchange_initial_2d1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.exchange_advance_2d1' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.exchange_fold_2d1' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.exchange_frame_2d1' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.exchange_right_2d1' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.exchange_left_2d1' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+    "stderr": "",
+    "seconds": 49.732147417002125,
+    "lean_path": "/Users/sasha/math_gkm/evidence/markov-2d1cb040:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean"
+  }
+]

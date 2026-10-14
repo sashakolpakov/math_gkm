@@ -1,0 +1,147 @@
+{
+  "request_id": "16cb07cef5ee44828a8b722ba3203632",
+  "completion": null,
+  "status": "local checks only; inherited compiled project imports; no independent completion audit",
+  "modules": {
+    "MarkovDiagonal16cb": {
+      "source": "research/MarkovDiagonal16cb.lean",
+      "sha256": "733725d12230aabec0d397822a7a34ee059ab65da57fc5c12900c51bf7ba12b9",
+      "builds": [
+        "evidence/markov-16cb07ce/run-1791935320673695000.json"
+      ],
+      "kernels": [
+        "evidence/markov-16cb07ce/run-1791935439593735000.json"
+      ],
+      "olean_sha256": "65b52eb087e55c35dffe33749e0bad0f0b4356ef096012d7c6c2c1859bb7e343"
+    },
+    "MarkovQuotient16cb": {
+      "source": "research/MarkovQuotient16cb.lean",
+      "sha256": "1366902273103a5ab74c0796cfa09bd1cb5811ad77ab93e6aba0db9c065e04c9",
+      "builds": [
+        "evidence/markov-16cb07ce/run-1791935241447279000.json"
+      ],
+      "kernels": [
+        "evidence/markov-16cb07ce/run-1791935305376849000.json"
+      ],
+      "olean_sha256": "d4b8d66746fd909585926f596be04e097a782e810e13544e2cc92b4714e7dc7f"
+    },
+    "MarkovMatrix16cb": {
+      "source": "research/MarkovMatrix16cb.lean",
+      "sha256": "3a02b19ab45f0dae90b95a0afa36207d77f712a119e36d3e6e2b21183e9c8c6e",
+      "builds": [
+        "evidence/markov-16cb07ce/run-1791935584794937000.json"
+      ],
+      "kernels": [
+        "evidence/markov-16cb07ce/run-1791935684023135000.json"
+      ],
+      "olean_sha256": "b55efb8527b837b6fb5b2b9b77e5982b61158c293ec407f6ef7f389c0bfc54f0"
+    },
+    "MarkovPositive16cb": {
+      "source": "research/MarkovPositive16cb.lean",
+      "sha256": "17e1a44787c09064fab930bae86d9887f47a981c1005a983017cf99e16f51bcc",
+      "builds": [
+        "evidence/markov-16cb07ce/run-1791935683982941000.json"
+      ],
+      "kernels": [
+        "evidence/markov-16cb07ce/run-1791935760260621000.json"
+      ],
+      "olean_sha256": "a3f18fa765da0c5288efb7b113257021ee42f0882c338d54e00c6520b93a8d18"
+    },
+    "MarkovScaling16cb": {
+      "source": "research/MarkovScaling16cb.lean",
+      "sha256": "5ad17932de812199b47474c8d508d85ea737e4cd6930566d8e7937cf649ec186",
+      "builds": [
+        "evidence/markov-16cb07ce/run-1791935646862161000.json"
+      ],
+      "kernels": [
+        "evidence/markov-16cb07ce/run-1791935684007374000.json"
+      ],
+      "olean_sha256": "42fe47623dfb661e92105334fe92292126c2d5f6555264c4b119c53d4430170b"
+    }
+  },
+  "axioms": {
+    "MathGKM.Markov.quotient_step_exact16": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MathGKM.Markov.source_quotient16": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathGKM.Markov.diagonal_coeff_eval16": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathGKM.Markov.diagonal_coeff_homogeneous16": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathGKM.Markov.diagonal_raw_coeff16": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathGKM.Markov.diagonal_raw_coeff_on16": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathGKM.Markov.quotient_matrix16": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathGKM.Markov.quotient_scaling16": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathGKM.Markov.quotient_coeff_nonneg16": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MathGKM.Markov.source_positive_quotient16": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "inherited_import_hashes": {
+    "evidence/markov-de6ce8a9/MarkovBlowupDe6.olean": "7d72cc053e89e4ce49e19d169af27db99dc2af4e18a92ea972fc6a0cb404780b",
+    "evidence/markov-de6ce8a9/MarkovResidualDe6.olean": "1b44bb3692230e9d020cd794e44bbb169b9884234b4f815df2f961c9d14c0b25",
+    "evidence/markov-4b57f2c3/MarkovDegree21a.olean": "b0dbe5956aef5ae257d04dadf985528d458e48d50bb2c99e76d36c68d5175e1b",
+    "evidence/markov-4b57f2c3/MarkovHomogeneous21a.olean": "327681fca4652784002233941e74d6b235693f34f0cf40fb38565f34bf712a04",
+    "evidence/markov-4b57f2c3/MarkovSource4b5.olean": "77d8a2711347a85cb3d83f1080f3295271ddecd006cba9f9db76c95e037fcc04",
+    "evidence/markov-4b57f2c3/MathGKM/Markov.olean": "c55902b7357b79f10ad156aaa9dc379b3da4dd01a810adbe5077d31e6dc7ca4c",
+    "evidence/markov-4b57f2c3/MathGKM/MarkovIndices.olean": "c54008ad69e99b95b3905ca034e6003654b86151a73e0c9ae07141e21c10d9ae"
+  },
+  "root_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+  "root_unchanged": true,
+  "successful_receipts": [
+    "evidence/markov-16cb07ce/run-1791935044063943000.json",
+    "evidence/markov-16cb07ce/run-1791935241447279000.json",
+    "evidence/markov-16cb07ce/run-1791935305376849000.json",
+    "evidence/markov-16cb07ce/run-1791935320673695000.json",
+    "evidence/markov-16cb07ce/run-1791935439593735000.json",
+    "evidence/markov-16cb07ce/run-1791935584794937000.json",
+    "evidence/markov-16cb07ce/run-1791935646862161000.json",
+    "evidence/markov-16cb07ce/run-1791935683982941000.json",
+    "evidence/markov-16cb07ce/run-1791935684007374000.json",
+    "evidence/markov-16cb07ce/run-1791935684023135000.json",
+    "evidence/markov-16cb07ce/run-1791935760260621000.json"
+  ],
+  "rejected_receipts": [
+    "evidence/markov-16cb07ce/run-1791935042878549000.json",
+    "evidence/markov-16cb07ce/run-1791935112900857000.json",
+    "evidence/markov-16cb07ce/run-1791935176479608000.json",
+    "evidence/markov-16cb07ce/run-1791935199446124000.json",
+    "evidence/markov-16cb07ce/run-1791935268601009000.json",
+    "evidence/markov-16cb07ce/run-1791935441060962000.json",
+    "evidence/markov-16cb07ce/run-1791935512472798000.json"
+  ],
+  "all_new_modules_rebuilt_and_replayed": true
+}

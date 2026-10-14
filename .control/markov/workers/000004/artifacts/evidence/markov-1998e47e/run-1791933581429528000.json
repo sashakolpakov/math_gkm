@@ -1,0 +1,17 @@
+[
+  {
+    "source": "research/MarkovTopLC1998.lean",
+    "sha256": "e5021888f0e46a06488b032c022455585b0cc136eca2c43a5fcd8aaace141208",
+    "command": [
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+      "-o",
+      "/Users/sasha/math_gkm/evidence/markov-1998e47e/MarkovTopLC1998.olean",
+      "research/MarkovTopLC1998.lean"
+    ],
+    "returncode": 1,
+    "stdout": "research/MarkovTopLC1998.lean:51:48: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  c \u2265 0\n  b \u2265 0\n  b + c \u2265 1\n  a \u2265 0\n  a - b - c \u2264 -2\nwhere\n a := \u2191?m.38\n b := \u2191(frame path).mid.a\n c := \u2191(frame path).mid.b\n'MathGKM.Markov.choose_raw_lc1998' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.top_raw_logConcave1998' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.top_raw_positive1998' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.top_in_polygon1998' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.total_degree_exact1998' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+    "stderr": "",
+    "seconds": 20.518682334004552,
+    "lean_path": "/Users/sasha/math_gkm/evidence/markov-1998e47e:/Users/sasha/math_gkm/evidence/markov-4b57f2c3:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean"
+  }
+]
