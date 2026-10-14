@@ -1,0 +1,67 @@
+{
+  "time": "2026-10-14T18:25:10.162310+00:00",
+  "modules": [
+    {
+      "module": "MarkovShearedTransfer5c90",
+      "source": "research/MarkovShearedTransfer5c90.lean",
+      "sha256": "18df7a106a0c961d9b0a22de3108111bb92c2b25bba9eac4c6e7ca68d5473384",
+      "build": "evidence/markov-5c90b506/run-1792001741459597000.json",
+      "replay": "evidence/markov-5c90b506/run-1792002110892694000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.horizontalShear_coeff5c' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.gauge_word5c' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.raw_word_ambient5c' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.source_ambient_identity5c' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.source_ambient_coeff5c' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.source_polygon_shear5c' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "olean_sha256": "42e58d4d55d670dfd98446693d14cb85917fdaae9fbf917cc48167450241fd6b"
+    },
+    {
+      "module": "MarkovAmbientKernel5c90",
+      "source": "research/MarkovAmbientKernel5c90.lean",
+      "sha256": "d7a1df52255219e22191d30f27cbfa2b589fdec03c5a936831ab0e930c23cc1c",
+      "build": "evidence/markov-5c90b506/run-1792001813431751000.json",
+      "replay": "evidence/markov-5c90b506/run-1792002172426293000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.ambient_replicate_pell5c' depends on axioms: [propext]",
+        "'MathGKM.Markov.ambient_pell_generating5c' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.ambient_pell_cassini5c' depends on axioms: [propext, Quot.sound]",
+        "'MathGKM.Markov.ambient_source_one_third5c' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.source_ambient_pell5c' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.ambient_one_third_no_real_root5c' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "olean_sha256": "e19bc56a7da2290cc76eb7095a8b619ab093d9e9df911eac9366aa22f2d99f91"
+    },
+    {
+      "module": "MarkovAmbientReduction5c90",
+      "source": "research/MarkovAmbientReduction5c90.lean",
+      "sha256": "08e8f33486369dc8c4aff9260ada3c0f543a4e31fd36687b30b359e17f4e6aee",
+      "build": "evidence/markov-5c90b506/run-1792001959685030000.json",
+      "replay": "evidence/markov-5c90b506/run-1792002052554320000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.ambient_word_implies_source5c' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.ambient_word_implies_raw_horizontal5c' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.source_ambient_vertical5c' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.source_ambient_diagonal5c' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "olean_sha256": "6516c8aabf98a8c4d23051419520d06fbca4ade59cbfd2b478c8c0b06fd06d38"
+    },
+    {
+      "module": "MarkovAmbientSlices5c90",
+      "source": "research/MarkovAmbientSlices5c90.lean",
+      "sha256": "2369918f1f6a237a54d3186bd2a82142f4180e19af398c0861a415fb86aa292d",
+      "build": "evidence/markov-5c90b506/run-1792002171231277000.json",
+      "replay": "evidence/markov-5c90b506/run-1792002241420275000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.ambient_slice_step5c' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.ambient_slice_denominator5c' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "olean_sha256": "c7f4f75599553b36cc3ec4759bde8f7f8c87df1414fd9d0759a685a694bdad71"
+    }
+  ],
+  "root_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+  "contract_canonical_sha256": "6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc",
+  "imports": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "independent_audit": false
+}
