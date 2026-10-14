@@ -1,0 +1,22 @@
+{
+  "request_id": "00b360ee01fe4f14ac8183ef8da6b5c9",
+  "summary": "Proved the complete positive lower-excess series representation for all Pell sources and an exact reduction of their remaining inequalities. Full pinned Conjecture63 remains unresolved.",
+  "actions": [
+    "Reconciled the interrupted predecessor and verified its saved hashes and receipts: evidence/markov-00b360ee/reconciliation.json.",
+    "Proved the boundary-complete coefficient formula, formal-series bridge, positive transfer and exact Pell equivalence: research/MarkovPellLowerAll00b3.lean, research/MarkovPellSeries00b3.lean, research/MarkovPellExcess00b3.lean.",
+    "Compiled and kernel-replayed three new modules: evidence/markov-00b360ee/validation.json.",
+    "Recorded exact summation probes and correspondence limits: evidence/markov-00b360ee/refinement-probe.json and research/markov-00b360ee-correspondence.md."
+  ],
+  "observations": [
+    "Every Pell raw coefficient on i+j=a+s equals [x^i y^j](x+y)^(2s)/((1-x)^(s+1)(1-y)^s), including zero excess and above-degree zeros.",
+    "The positive transfer kernel is proved; its cross-strip log-concavity remains unproved. Other rational families are not covered by the new representation.",
+    "Finite probes through a=44 found no aggregate horizontal-fiber failure; an outside-in partial-sum criterion fails at -15. These are experiments, not proofs.",
+    "Successful printed closures use only permitted axioms. Validation reused inherited compiled imports; root hash is unchanged. Capability failures and rejected elaborations are preserved."
+  ],
+  "agenda": [
+    "Prove or refute the two exact ExcessHorizontal00b3 and ExcessVertical00b3 predicates; positivity of the kernel alone is insufficient.",
+    "Seek a transfer invariant that extends from the Pell series to all mechanical source words.",
+    "Require fresh whole-source rebuilding and independent hash-bound English/source auditing before any root closure."
+  ],
+  "completion": null
+}
