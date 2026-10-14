@@ -1,0 +1,15 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCutMasksFe01.lean:79:12: error: unsolved goals\ncase cons.succ.nil\nr : Bool\nrs : List Bool\nih : \u2200 (s : \u2115), (cutMasksFe01 rs s).Nodup\ns : \u2115\na : List (Bool \u00d7 Bool)\nha : a \u2208 cutMasksFe01 rs (s + 1)\n\u22a2 (\u2203 a \u2208 cutMasksFe01 rs s, (r, true) :: a = []) \u2192 (r, false) :: a \u2260 []\n\ncase cons.succ.cons\nr : Bool\nrs : List Bool\nih : \u2200 (s : \u2115), (cutMasksFe01 rs s).Nodup\ns : \u2115\na : List (Bool \u00d7 Bool)\nha : a \u2208 cutMasksFe01 rs (s + 1)\nhead\u271d : Bool \u00d7 Bool\ntail\u271d : List (Bool \u00d7 Bool)\n\u22a2 (\u2203 a \u2208 cutMasksFe01 rs s, (r, true) :: a = head\u271d :: tail\u271d) \u2192 (r, false) :: a \u2260 head\u271d :: tail\u271d\n/Users/sasha/math_gkm/research/MarkovCutMasksFe01.lean:83:16: warning: This simp argument is unused:\n  List.disjoint_left\n\nHint: Omit it from the simp argument list.\n  simp only [List.d\u0335i\u0335s\u0335j\u0335o\u0335i\u0335n\u0335t\u0335_\u0335l\u0335e\u0335f\u0335t\u0335,\u0335L\u0335i\u0335s\u0335t\u0335.\u0335mem_map]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n'MathGKM.Markov.cutMasks_sumFe01' depends on axioms: [propext, Quot.sound]\n'MathGKM.Markov.cutMasks_lengthFe01' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.source_masks_coeffFe01' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.cutMasks_specFe01' depends on axioms: [propext, Quot.sound]\n'MathGKM.Markov.cutMasks_nodupFe01' depends on axioms: [propext, sorryAx, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovCutMasksFe01.lean",
+  "sha256": "78af0e0546c4a905333d38113f5752268bdb7384e2d6f26537be65bae39c9999",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-fe01d46b/MarkovCutMasksFe01.olean",
+    "/Users/sasha/math_gkm/research/MarkovCutMasksFe01.lean"
+  ],
+  "seconds": 12.802274667017628,
+  "imports_status": "Inherited compiled imports reused; not a fresh whole-source rebuild"
+}

@@ -1,0 +1,15 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSecondAll340.lean:31:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  (frame (List.replicate n true)).mid.a\nin the target expression\n  \u00ac5 \u2264 (frame (List.replicate n true)).mid.b\n\ncase neg\ni n : \u2115\nh0 : InPolygon (n + 1) (frame (List.replicate n true)).mid.b i 2\nh2 : InPolygon (n + 1) (frame (List.replicate n true)).mid.b (i + 2) 2\nhb : \u00ac5 \u2264 (frame (List.replicate n true)).mid.b\nha : \u00acn + 1 = 1\nhi :\n  0 < (frame (List.replicate n true)).mid.a \u2227\n    (frame (List.replicate n true)).mid.a < (frame (List.replicate n true)).mid.b \u2227\n      (frame (List.replicate n true)).mid.a.Coprime (frame (List.replicate n true)).mid.b\nhnear : (frame (List.replicate n true)).mid.b = (frame (List.replicate n true)).mid.a + 1\n\u22a2 let m := (frame (List.replicate n true)).mid;\n  let s := i + 2 - m.a;\n  (\u2191s + 2) * (\u2191m.b - 1 - \u2191s) * coeff m.p i 2 * coeff m.p (i + 2) 2 \u2264\n    (\u2191s + 1) * (\u2191m.b - 2 - \u2191s) * coeff m.p (i + 1) 2 ^ 2\n'MathGKM.Markov.source_second_ambient_all340' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovSecondAll340.lean",
+  "sha256": "3ba2a1003017430032db035cd03929199fb8566a42f0cdc546c7bea8b9463507",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-34071a88/MarkovSecondAll340.olean",
+    "/Users/sasha/math_gkm/research/MarkovSecondAll340.lean"
+  ],
+  "seconds": 17.366585999989184,
+  "imports_status": "Inherited compiled imports reused; not a fresh whole-source build"
+}

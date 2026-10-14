@@ -1,0 +1,15 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSecondSource340.lean:19:38: error: mod_cast has type\n  (n + 1) * n.choose h = (n + 1).choose (h + 1) * (h + 1)\nbut is expected to have type\n  (h + 1) * (n + 1).choose (h + 1) = (n + 1) * n.choose h\n/Users/sasha/math_gkm/research/MarkovSecondSource340.lean:21:1: error: `simp` made no progress\n/Users/sasha/math_gkm/research/MarkovSecondSource340.lean:34:34: error: failed to prove positivity/nonnegativity/nonzeroness\n/Users/sasha/math_gkm/research/MarkovSecondSource340.lean:46:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  (?a / ?b) ^ ?n\nin the target expression\n  secondNorm340 (\u2191(h + 1)) (\u2191(n + 1)) m t * secondNorm340 (\u2191(h + 1) + 2) (\u2191(n + 1)) m t / K ^ 2 \u2264\n    secondNorm340 (\u2191(h + 1) + 1) (\u2191(n + 1)) m t ^ 2 / K ^ 2\n\nn h : \u2115\nm t : \u211d\nhn : 3 \u2264 n\nhend : h + 2 \u2264 n\nhm : 0 \u2264 m\nht : 0 \u2264 t\nhtm : t \u2264 2 * m\nhmn : m \u2264 \u2191n\nhsource : \u2191n \u2264 2 * m \u2228 t = 0\nK : \u211d := (\u2191n + 1) * \u2191n * (\u2191n - 1) * (\u2191n - 2)\nhnR : 3 \u2264 \u2191n\nhK : 0 < K\nhc : \u2200 q \u2264 n, (secondRow340 n m t).coeff q / \u2191((n + 1).choose (q + 1)) = secondNorm340 (\u2191q + 1) (\u2191n + 1) m t / K\nhg :\n  secondNorm340 (\u2191(h + 1)) (\u2191(n + 1)) m t * secondNorm340 (\u2191(h + 1) + 2) (\u2191(n + 1)) m t \u2264\n    secondNorm340 (\u2191(h + 1) + 1) (\u2191(n + 1)) m t ^ 2\nhd :\n  secondNorm340 (\u2191(h + 1)) (\u2191(n + 1)) m t * secondNorm340 (\u2191(h + 1) + 2) (\u2191(n + 1)) m t / K ^ 2 \u2264\n    secondNorm340 (\u2191(h + 1) + 1) (\u2191(n + 1)) m t ^ 2 / K ^ 2\n\u22a2 (\u2191h + 3) * (\u2191n - \u2191h) * (secondRow340 n m t).coeff h * (secondRow340 n m t).coeff (h + 2) \u2264\n    (\u2191h + 2) * (\u2191n - \u2191h - 1) * (secondRow340 n m t).coeff (h + 1) ^ 2\n'MathGKM.Markov.second_row_cleared340' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.source_second_ambient340' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovSecondSource340.lean",
+  "sha256": "faa2d60f5b6aab95eb75816a0bd0482efb6adf9d5c1d7b5f6ca5af6cadb73b79",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-34071a88/MarkovSecondSource340.olean",
+    "/Users/sasha/math_gkm/research/MarkovSecondSource340.lean"
+  ],
+  "seconds": 14.40787987501244,
+  "imports_status": "Inherited compiled imports reused; not a fresh whole-source build"
+}

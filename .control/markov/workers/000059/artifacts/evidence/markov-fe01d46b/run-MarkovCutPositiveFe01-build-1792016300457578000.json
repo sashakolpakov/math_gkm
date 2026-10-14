@@ -1,0 +1,15 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCutPositiveFe01.lean:20:21: error(lean.unknownIdentifier): Unknown constant `Polynomial.coeff_natCast`\n/Users/sasha/math_gkm/research/MarkovCutPositiveFe01.lean:20:10: error: `simp` made no progress\n/Users/sasha/math_gkm/research/MarkovCutPositiveFe01.lean:31:7: error: Type mismatch\n  polyNN_natFe01 0\nhas type\n  PolyNonnegFe01 \u21910\nbut is expected to have type\n  PolyNonnegFe01 (cutChargeA27 X p q false)\n/Users/sasha/math_gkm/research/MarkovCutPositiveFe01.lean:36:7: error: Type mismatch\n  polyNN_natFe01 1\nhas type\n  PolyNonnegFe01 \u21911\nbut is expected to have type\n  PolyNonnegFe01 (cutFactorA27 X false)\n/Users/sasha/math_gkm/research/MarkovCutPositiveFe01.lean:37:28: error: Application type mismatch: The argument\n  polyNN_natFe01 1\nhas type\n  PolyNonnegFe01 \u21911\nbut is expected to have type\n  PolyNonnegFe01 1\nin the application\n  polyNN_addFe01 (polyNN_natFe01 1)\n/Users/sasha/math_gkm/research/MarkovCutPositiveFe01.lean:41:28: error: Application type mismatch: The argument\n  polyNN_natFe01 1\nhas type\n  PolyNonnegFe01 \u21911\nbut is expected to have type\n  PolyNonnegFe01 1\nin the application\n  ih X 1 polyNN_XFe01 (polyNN_natFe01 1)\n/Users/sasha/math_gkm/research/MarkovCutPositiveFe01.lean:45:44: error: Application type mismatch: The argument\n  polyNN_natFe01 1\nhas type\n  PolyNonnegFe01 \u21911\nbut is expected to have type\n  PolyNonnegFe01 1\nin the application\n  mask_nonneg_generalFe01 m X 1 polyNN_XFe01 (polyNN_natFe01 1)\n'MathGKM.Markov.mask_coeff_nonnegFe01' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.mask_coeff_zeroFe01' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.mask_no_gapsFe01' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.sourceTerms_nonnegFe01' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovCutPositiveFe01.lean",
+  "sha256": "9f916e9e3e3ebaab532c97020761f7a6c08548cb5c8b4009c037d73afb6dc480",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-fe01d46b/MarkovCutPositiveFe01.olean",
+    "/Users/sasha/math_gkm/research/MarkovCutPositiveFe01.lean"
+  ],
+  "seconds": 9.36845487501705,
+  "imports_status": "Inherited compiled imports reused; not a fresh whole-source rebuild"
+}

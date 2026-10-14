@@ -1,0 +1,15 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCutSourceFe01.lean:13:17: error: unsolved goals\ncase cons.false.true\nR : Type u_1\nS : Type u_2\ninst\u271d\u00b9 : CommRing R\ninst\u271d : CommRing S\nf : R \u2192+* S\ny : R\nrs : List (Bool \u00d7 Bool)\nih : \u2200 (p q : R), f (maskWeight340 y p q rs) = maskWeight340 (f y) (f p) (f q) rs\np q : R\n\u22a2 maskWeight340 (f y) (f y * (f p + f 2 * f q)) (f q) rs = maskWeight340 (f y) (f y * (f p + 2 * f q)) (f q) rs\n/Users/sasha/math_gkm/research/MarkovCutSourceFe01.lean:29:1: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b \u2265 0\n  a \u2265 0\n  a - b \u2264 -1\n  a \u2265 1\nwhere\n a := \u2191[].length\n b := \u2191((frame path).mid.b - 1)\n/Users/sasha/math_gkm/research/MarkovCutSourceFe01.lean:25:48: warning: This simp argument is unused:\n  List.length_singleton\n\nHint: Omit it from the simp argument list.\n  simp only [\u0335L\u0335i\u0335s\u0335t\u0335.\u0335l\u0335e\u0335n\u0335g\u0335t\u0335h\u0335_\u0335c\u0335o\u0335n\u0335s\u0335,\u0335L\u0335i\u0335s\u0335t\u0335.\u0335l\u0335e\u0335n\u0335g\u0335t\u0335h\u0335_\u0335a\u0335p\u0335p\u0335e\u0335n\u0335d\u0335,\u0335L\u0335i\u0335s\u0335t\u0335.\u0335l\u0335e\u0335n\u0335g\u0335t\u0335h\u0335_\u0335s\u0335i\u0335n\u0335g\u0335l\u0335e\u0335t\u0335o\u0335n\u0335]\u0335[\u0332L\u0332i\u0332s\u0332t\u0332.\u0332l\u0332e\u0332n\u0332g\u0332t\u0332h\u0332_\u0332c\u0332o\u0332n\u0332s\u0332,\u0332 \u0332L\u0332i\u0332s\u0332t\u0332.\u0332l\u0332e\u0332n\u0332g\u0332t\u0332h\u0332_\u0332a\u0332p\u0332p\u0332e\u0332n\u0332d\u0332]\u0332 at hc\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n'MathGKM.Markov.sourceTerms_lengthFe01' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.sourceTerms_coeffFe01' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.sourceTerms_term_lcFe01' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovCutSourceFe01.lean",
+  "sha256": "138f6febd7183b0c2b71dc5ab4cdd58eee6fd03500fbc7fdfdf10939d244cb6d",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-fe01d46b/MarkovCutSourceFe01.olean",
+    "/Users/sasha/math_gkm/research/MarkovCutSourceFe01.lean"
+  ],
+  "seconds": 16.16852141698473,
+  "imports_status": "Inherited compiled imports reused; not a fresh whole-source rebuild"
+}

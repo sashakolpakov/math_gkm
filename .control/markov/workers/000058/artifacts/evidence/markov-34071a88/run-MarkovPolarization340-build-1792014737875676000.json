@@ -1,0 +1,15 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovPolarization340.lean:21:88: error: unsolved goals\nR : Type u_1\ninst\u271d : CommRing R\ny : R\n\u22a2 True \u2227 True \u2227 True \u2227 True\n/Users/sasha/math_gkm/research/MarkovPolarization340.lean:29:97: error: unsolved goals\nh0 : maskWeight340 X X 1 [(false, true), (false, false), (false, false), (true, false)] = 1 + X\nh1 : maskWeight340 X X 1 [(false, true), (false, true), (false, false), (true, false)] = (1 + X) ^ 2\nh2 : maskWeight340 X X 1 [(false, true), (false, false), (false, true), (true, false)] = 1 + X\nh3 : maskWeight340 X X 1 [(false, true), (false, true), (false, true), (true, false)] = (1 + X) ^ 3\n\u22a2 Polynomial.coeff 1 1 = 0\n'MathGKM.Markov.cut_site_coefficients340' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.polarization_positive_failure340' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovPolarization340.lean",
+  "sha256": "de3413692f3c9270837e689e771a245155b2d1e55740f403ca500812dffc742d",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-34071a88/MarkovPolarization340.olean",
+    "/Users/sasha/math_gkm/research/MarkovPolarization340.lean"
+  ],
+  "seconds": 8.444103334011743,
+  "imports_status": "Inherited compiled imports reused; not a fresh whole-source build"
+}

@@ -1,0 +1,9 @@
+Machine-authored request 07a7e5b7. Mission/design, exact root, inherited index and independent target/residual audits read. Latest worker effects reconciled; no inherited side effect replayed. Root remains unresolved. Investigating order-sensitive cut aggregation. .scratch is denied by higher-priority policy.
+
+Checkpoint: 81 predecessor and six inherited hashes matched. Exact degree-layer renewal tested against enumeration; 489 sources through denominator 40 passed all layer/prefix/suffix tests. 16,383 arbitrary words through length 13 passed individual layers but fail cumulative layers. Source 2/7 refutes joint degree concavity; source 11/13 refutes chronological partial aggregation. Formal source-prefix module currently validating. None resolves the root.
+
+Checkpoint: checked structural term-degree formula and exact source exhaustion bridge. Checked 2/7 degree-coordinate failure with full raw triple gap 574. Checked positive three-state transfer and marked-mask expansion; x/z coefficient bridges validating. Chronological-prefix kernel replay timed out at 100 seconds; no replay success asserted yet. Three-state transfer matched 533,536 coefficients on 1,222 words/sources; finite only.
+
+Checkpoint: all five new Lean modules compiled with permitted printed axiom closures. Three rejected elaborations preserved. Separate kernel replay of MarkovCutDegree07a7 succeeded; remaining replays running sequentially. Source 2/7 also gives an exact auxiliary z=1/100 weighted failure [10311,325,14] after uniform denominator clearing, gap -38729; full z=1 raw gap remains574. No root conclusion.
+
+Checkpoint: 37,405 marked-gap polynomial tests through b=18 reject the all-direction z>=1 extension at source1/3: gaps z^2(4-z), z^2(4-3z). All13,285 marked-diagonal shifted-coefficient tests passed, finite only. Kernel replays remain sequential and bounded by the worker deadline.

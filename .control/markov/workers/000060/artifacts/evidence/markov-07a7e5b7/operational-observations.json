@@ -1,0 +1,51 @@
+{
+  "failed_validation_attempts": [
+    {
+      "record": "evidence/markov-07a7e5b7/run-MarkovCutDegree07a7-build-1792016970587336000.json",
+      "source": "research/MarkovCutDegree07a7.lean",
+      "timeout": false,
+      "returncode": 1,
+      "stdout": "/Users/sasha/math_gkm/research/MarkovCutDegree07a7.lean:49:6: error: Type mismatch: After simplification, term\n  natDegree_add_C\n has type\n  True\nbut is expected to have type\n  (p + 2).natDegree = p.natDegree\n/Users/sasha/math_gkm/research/MarkovCutDegree07a7.lean:71:13: error: unsolved goals\ncase cons.true.true\nrs : List (Bool \u00d7 Bool)\nih : \u2200 (p : \u211d[X]), p.coeff 0 = 0 \u2192 (maskWeight340 X p 1 rs).natDegree = maskDegree07a7 p.natDegree rs\np : \u211d[X]\nhp : p.coeff 0 = 0\nhp1 : p + 1 \u2260 0\nhp2 : p + 2 \u2260 0\nhd1 : (p + 1).natDegree = p.natDegree\nhd2 : (p + 2).natDegree = p.natDegree\nhX : 1 + X \u2260 0\nhi : (maskWeight340 X X 1 rs).natDegree = maskDegree07a7 X.natDegree rs\n\u22a2 p.natDegree + (1 + X).natDegree = 1 + p.natDegree\n'MathGKM.Markov.mask_natDegree07a7' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.degreePrefix_exhaust07a7' depends on axioms: [propext, Quot.sound]\n'MathGKM.Markov.source_degreePrefix_coeff07a7' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": ""
+    },
+    {
+      "record": "evidence/markov-07a7e5b7/run-MarkovCutPrefix07a7-replay-1792016928698718000.json",
+      "source": "research/MarkovCutPrefix07a7.lean",
+      "timeout": true,
+      "returncode": null,
+      "stdout": "None",
+      "stderr": "None"
+    },
+    {
+      "record": "evidence/markov-07a7e5b7/run-MarkovDegreeBridge07a7-build-1792017225013662000.json",
+      "source": "research/MarkovDegreeBridge07a7.lean",
+      "timeout": false,
+      "returncode": 1,
+      "stdout": "/Users/sasha/math_gkm/research/MarkovDegreeBridge07a7.lean:47:4: error: unsolved goals\ncase pos\nR : Type u_1\ninst\u271d : CommRing R\ny : R\nw : List Bool\ns d : \u2115\nhm : \u2200 (m : List (Bool \u00d7 Bool)), maskWeight340 (C y) (C y) 1 m = C (maskWeight340 y y 1 m)\nm : List (Bool \u00d7 Bool)\nms : List (List (Bool \u00d7 Bool))\nih :\n  (List.map (fun a => (if d = maskDegree07a7 1 a then 1 else 0) * maskWeight340 y y 1 a) ms).sum =\n    (List.map (maskWeight340 y y 1) (List.filter (fun m => decide (maskDegree07a7 1 m = d)) ms)).sum\nh : maskDegree07a7 1 m = d\n\u22a2 (List.map (fun a => if d = maskDegree07a7 1 a then maskWeight340 y y 1 a else 0) ms).sum =\n    (List.map (maskWeight340 y y 1) (List.filter (fun m => decide (maskDegree07a7 1 m = d)) ms)).sum\n/Users/sasha/math_gkm/research/MarkovDegreeBridge07a7.lean:48:4: error: unsolved goals\ncase neg\nR : Type u_1\ninst\u271d : CommRing R\ny : R\nw : List Bool\ns d : \u2115\nhm : \u2200 (m : List (Bool \u00d7 Bool)), maskWeight340 (C y) (C y) 1 m = C (maskWeight340 y y 1 m)\nm : List (Bool \u00d7 Bool)\nms : List (List (Bool \u00d7 Bool))\nih :\n  (List.map (fun a => (if d = maskDegree07a7 1 a then 1 else 0) * maskWeight340 y y 1 a) ms).sum =\n    (List.map (maskWeight340 y y 1) (List.filter (fun m => decide (maskDegree07a7 1 m = d)) ms)).sum\nh : \u00acmaskDegree07a7 1 m = d\n\u22a2 (if d = maskDegree07a7 1 m then maskWeight340 y y 1 m else 0) +\n      (List.map (fun a => if d = maskDegree07a7 1 a then maskWeight340 y y 1 a else 0) ms).sum =\n    (List.map (maskWeight340 y y 1) (List.filter (fun m => decide (maskDegree07a7 1 m = d)) ms)).sum\n/Users/sasha/math_gkm/research/MarkovDegreeBridge07a7.lean:47:14: warning: This simp argument is unused:\n  ih\n\nHint: Omit it from the simp argument list.\n  simp [h,\u0335i\u0335h\u0335]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovDegreeBridge07a7.lean:48:14: warning: This simp argument is unused:\n  ih\n\nHint: Omit it from the simp argument list.\n  simp [h,\u0335i\u0335h\u0335]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n'MathGKM.Markov.degreeEval_coeff07a7' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.degreeCoeff_layer07a7' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.source_degreeCoeff07a7' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": ""
+    },
+    {
+      "record": "evidence/markov-07a7e5b7/run-MarkovDegreeBridge07a7-build-1792017267257870000.json",
+      "source": "research/MarkovDegreeBridge07a7.lean",
+      "timeout": false,
+      "returncode": 1,
+      "stdout": "/Users/sasha/math_gkm/research/MarkovDegreeBridge07a7.lean:49:4: error: unsolved goals\ncase neg\nR : Type u_1\ninst\u271d : CommRing R\ny : R\nw : List Bool\ns d : \u2115\nhm : \u2200 (m : List (Bool \u00d7 Bool)), maskWeight340 (C y) (C y) 1 m = C (maskWeight340 y y 1 m)\nm : List (Bool \u00d7 Bool)\nms : List (List (Bool \u00d7 Bool))\nih :\n  (List.map (fun a => if d = maskDegree07a7 1 a then maskWeight340 y y 1 a else 0) ms).sum =\n    (List.map (maskWeight340 y y 1) (List.filter (fun m => decide (maskDegree07a7 1 m = d)) ms)).sum\nh : \u00acmaskDegree07a7 1 m = d\n\u22a2 (if d = maskDegree07a7 1 m then maskWeight340 y y 1 m else 0) +\n      (List.map (maskWeight340 y y 1) (List.filter (fun m => decide (d = maskDegree07a7 1 m)) ms)).sum =\n    (List.map (maskWeight340 y y 1) (List.filter (fun m => decide (d = maskDegree07a7 1 m)) (m :: ms))).sum\n/Users/sasha/math_gkm/research/MarkovDegreeBridge07a7.lean:49:12: warning: This simp argument is unused:\n  h\n\nHint: Omit it from the simp argument list.\n  simp [h\u0335,\u0335eq_comm, \u0332ih]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n'MathGKM.Markov.degreeEval_coeff07a7' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.degreeCoeff_layer07a7' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.source_degreeCoeff07a7' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.degreeLayer_no_gaps07a7' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": ""
+    }
+  ],
+  "capabilities": [
+    ".scratch denied by higher-priority policy; durable research/evidence files used",
+    "Sage not discoverable",
+    "SymPy import raised ModuleNotFoundError",
+    "GAP discoverable, not required",
+    "Initial guessed cut_experiment_fe01.py path and optional historical horizontal-roots-12-True.json absent; no mathematical inference"
+  ],
+  "web": {
+    "primary": "https://armj.math.stonybrook.edu/Articles/250708-Winn/index.html",
+    "queries": [
+      "Markov polynomial coefficient log concavity Christoffel words horizontal log concavity 2026",
+      "log concavity coefficients fence poset rank polynomial circular fence Christoffel"
+    ],
+    "use": "Source rereading and exploratory literature search; no external theorem adopted"
+  }
+}
