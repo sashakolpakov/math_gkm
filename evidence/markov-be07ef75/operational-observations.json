@@ -1,0 +1,51 @@
+{
+  "rejected_elaborations": [
+    {
+      "record": "evidence/markov-be07ef75/run-1791999277313840000.json",
+      "source": "research/MarkovLocalRadiusBe07.lean",
+      "sha256": "b9553cf3d93d5ed1960ad36f6d4694431076225c97377318593c0eedf0df6cd7",
+      "returncode": 1,
+      "stdout": "/Users/sasha/math_gkm/research/MarkovLocalRadiusBe07.lean:30:1: error: Type mismatch\n  radius_local_pairBe07 h t q r ht (hi q hq) (hd q hq r hr)\nhas type\n  radiusLowBe07 h t q * radiusHighBe07 t r \u2264 radiusMidBe07 h t ^ 2\nbut is expected to have type\n  radiusLowBe07 h t q * radiusHighBe07 t r \u2264 radiusMidBe07 h t * radiusMidBe07 h t\n/Users/sasha/math_gkm/research/MarkovLocalRadiusBe07.lean:63:1: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  c \u2265 0\n  b \u2265 0\n  a \u2265 1\nwhere\n a := \u2191(\u2211 x \u2208 range (h + 1), (h + 2) ^ (2 * x))\n b := \u2191h\n c := \u2191((h + 1 + 1) ^ (2 * h + 2))\n'MathGKM.Markov.radius_local_pairBe07' depends on axioms: [propext, Quot.sound]\n'MathGKM.Markov.radius_windowBe07' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.radius_low_geometricBe07' depends on axioms: [propext, Quot.sound]\n'MathGKM.Markov.radius_high_geometricBe07' depends on axioms: [propext, Quot.sound]\n'MathGKM.Markov.no_fixed_local_radiusBe07' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+      "stderr": ""
+    },
+    {
+      "record": "evidence/markov-be07ef75/run-1791999679980360000.json",
+      "source": "research/MarkovUltraSummandBe07.lean",
+      "sha256": "819e1b4ad64cf6ff628c8b8331e89a2aca2d5eadf85c42e7a2ef3fb574d88800",
+      "returncode": 1,
+      "stdout": "/Users/sasha/math_gkm/research/MarkovUltraSummandBe07.lean:19:31: error: mod_cast has type\n  k < n\nbut is expected to have type\n  0 < Int.subNatNat n k\n/Users/sasha/math_gkm/research/MarkovUltraSummandBe07.lean:20:33: error: mod_cast has type\n  n \u2264 a\nbut is expected to have type\n  0 \u2264 a - n\n/Users/sasha/math_gkm/research/MarkovUltraSummandBe07.lean:31:33: error: mod_cast has type\n  k + 1 \u2264 a\nbut is expected to have type\n  0 \u2264 Int.subNatNat a k - 1\n/Users/sasha/math_gkm/research/MarkovUltraSummandBe07.lean:51:6: error: Type mismatch\n  this\nhas type\n  0 \u2264 (\u2191s + 1 + 1) * (\u2191a - (\u2191s + 1) - 1) * \u2191((a - q).choose (s + 1 + 1)) ^ 2\nbut is expected to have type\n  0 \u2264 (\u2191(s + 1) + 1) * (\u2191a - \u2191(s + 1) - 1) * \u2191((a - q).choose (s + 1 + 1)) ^ 2\n/Users/sasha/math_gkm/research/MarkovUltraSummandBe07.lean:52:41: error: mod_cast has type\n  s + 2 \u2264 a\nbut is expected to have type\n  0 \u2264 Int.subNatNat a (s + 1) - 1\n/Users/sasha/math_gkm/research/MarkovUltraSummandBe07.lean:60:7: error: `simp` made no progress\n'MathGKM.Markov.choose_ultra_ambientBe07' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.horizontal_term_ultraBe07' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+      "stderr": ""
+    },
+    {
+      "record": "evidence/markov-be07ef75/run-1791999756074835000.json",
+      "source": "research/MarkovUltraSummandBe07.lean",
+      "sha256": "8f57ff493c7883fa267b8533fcc2a3ea4a569eba81c61af0593af6f17b4230e0",
+      "returncode": 1,
+      "stdout": "/Users/sasha/math_gkm/research/MarkovUltraSummandBe07.lean:70:75: error: `ring_nf` made no progress on the goal\n'MathGKM.Markov.choose_ultra_ambientBe07' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.horizontal_term_ultraBe07' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+      "stderr": ""
+    },
+    {
+      "record": "evidence/markov-be07ef75/run-1791999822701115000.json",
+      "source": "research/MarkovUltraSummandBe07.lean",
+      "sha256": "3889564172962c690ca52325efc86b6342ec06f0003d704f3e68878abef54428",
+      "returncode": 1,
+      "stdout": "/Users/sasha/math_gkm/research/MarkovUltraSummandBe07.lean:65:65: error: unsolved goals\ncase e'_2\na j q s : \u2115\nhs : s + 3 \u2264 a\nhj : q \u2264 j\nhA :\n  (\u2191s + 1 + 2) * (\u2191a - (\u2191s + 1)) * \u2191((a - q).choose (s + 1)) * \u2191((a - q).choose (s + 1 + 2)) \u2264\n    (\u2191s + 1 + 1) * (\u2191a - (\u2191s + 1) - 1) * \u2191((a - q).choose (s + 1 + 1)) ^ 2\nhB : \u2191((s + q).choose q) * \u2191((s + q + 2).choose q) \u2264 \u2191((s + q + 1).choose q) ^ 2\nhC : \u2191((2 * s + 2).choose (j - q)) * \u2191((2 * s + 2 + 4).choose (j - q)) \u2264 \u2191((2 * s + 2 + 2).choose (j - q)) ^ 2\nhBC :\n  \u2191((s + q).choose q) * \u2191((2 * s + 2).choose (j - q)) * (\u2191((s + q + 2).choose q) * \u2191((2 * s + 6).choose (j - q))) \u2264\n    (\u2191((s + q + 1).choose q) * \u2191((2 * s + 4).choose (j - q))) ^ 2\nhBCQ :\n  \u2191((s + q).choose q) * \u2191((2 * s + 2).choose (j - q)) * (\u2191((s + q + 2).choose q) * \u2191((2 * s + 6).choose (j - q))) \u2264\n    (\u2191((s + q + 1).choose q) * \u2191((2 * s + 4).choose (j - q))) ^ 2\nhmul :\n  (\u2191s + 1 + 2) * (\u2191a - (\u2191s + 1)) * \u2191((a - q).choose (s + 1)) * \u2191((a - q).choose (s + 1 + 2)) *\n      (\u2191((s + q).choose q) * \u2191((2 * s + 2).choose (j - q)) *\n        (\u2191((s + q + 2).choose q) * \u2191((2 * s + 6).choose (j - q)))) \u2264\n    (\u2191s + 1 + 1) * (\u2191a - (\u2191s + 1) - 1) * \u2191((a - q).choose (s + 1 + 1)) ^ 2 *\n      (\u2191((s + q + 1).choose q) * \u2191((2 * s + 4).choose (j - q))) ^ 2\n\u22a2 Rat.instLE = Rat.instPreorder.toLE\ncase e'_2\na j q s : \u2115\nhs : s + 3 \u2264 a\nhj : q \u2264 j\nhA :\n  (\u2191s + 1 + 2) * (\u2191a - (\u2191s + 1)) * \u2191((a - q).choose (s + 1)) * \u2191((a - q).choose (s + 1 + 2)) \u2264\n    (\u2191s + 1 + 1) * (\u2191a - (\u2191s + 1) - 1) * \u2191((a - q).choose (s + 1 + 1)) ^ 2\nhB : \u2191((s + q).choose q) * \u2191((s + q + 2).choose q) \u2264 \u2191((s + q + 1).choose q) ^ 2\nhC : \u2191((2 * s + 2).choose (j - q)) * \u2191((2 * s + 2 + 4).choose (j - q)) \u2264 \u2191((2 * s + 2 + 2).choose (j - q)) ^ 2\nhBC :\n  \u2191((s + q).choose q) * \u2191((2 * s + 2).choose (j - q)) * (\u2191((s + q + 2).choose q) * \u2191((2 * s + 6).choose (j - q))) \u2264\n    (\u2191((s + q + 1).choose q) * \u2191((2 * s + 4).choose (j - q))) ^ 2\nhBCQ :\n  \u2191((s + q).choose q) * \u2191((2 * s + 2).choose (j - q)) * (\u2191((s + q + 2).choose q) * \u2191((2 * s + 6).choose (j - q))) \u2264\n    (\u2191((s + q + 1).choose q) * \u2191((2 * s + 4).choose (j - q))) ^ 2\nhmul :\n  (\u2191s + 1 + 2) * (\u2191a - (\u2191s + 1)) * \u2191((a - q).choose (s + 1)) * \u2191((a - q).choose (s + 1 + 2)) *\n      (\u2191((s + q).choose q) * \u2191((2 * s + 2).choose (j - q)) *\n        (\u2191((s + q + 2).choose q) * \u2191((2 * s + 6).choose (j - q)))) \u2264\n    (\u2191s + 1 + 1) * (\u2191a - (\u2191s + 1) - 1) * \u2191((a - q).choose (s + 1 + 1)) ^ 2 *\n      (\u2191((s + q + 1).choose q) * \u2191((2 * s + 4).choose (j - q))) ^ 2\n\u22a2 Rat.instLE = Rat.instPreorder.toLE\n'MathGKM.Markov.choose_ultra_ambientBe07' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.horizontal_term_ultraBe07' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+      "stderr": ""
+    }
+  ],
+  "capability_failures": [
+    "Shell heredoc could not create a temporary file; no Python action executed by that attempt.",
+    ".scratch denied by higher-priority policy; avoided and used research/evidence.",
+    "Two exploratory cat inputs did not exist; one unmatched shell glob rejected a search. No claim depends on them."
+  ],
+  "experiment_corrections": [
+    "Initial global probe used an off-by-one scalar; corrected script/result retained separately.",
+    "Importing global_probe_be07 accidentally reran it and replaced timing only. Import removed from ultra_refined_be07; original and repeated stdout outcomes recorded below."
+  ],
+  "original_global_seconds": 2.7031529170053545,
+  "repeated_global_seconds": 2.2372141660016496,
+  "source_search": [
+    "https://armj.math.stonybrook.edu/Articles/250708-Winn/index.html"
+  ],
+  "stop_file_present": false
+}

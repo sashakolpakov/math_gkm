@@ -1,0 +1,34 @@
+{
+  "request_id": "67c3f3f5030b42499b0a8bba235e6267",
+  "root_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+  "contract_canonical_sha256": "6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc",
+  "predecessor_controller_outcome": "timeout",
+  "raw_events": ".control/markov/workers/000042/events.jsonl",
+  "raw_events_sha256": "a4680e34451a618939b125984e542b7f4fd388780205d68e058026c86fd85e88",
+  "reconciliation": "Last raw events show completed final validation and report update. All three module build and replay records exist; no pending side effect replayed.",
+  "modules": [
+    {
+      "module": "MarkovZeroWeight80b7",
+      "source_matches": true,
+      "build_rc": 0,
+      "replay_rc": 0
+    },
+    {
+      "module": "MarkovZeroAll80b7",
+      "source_matches": true,
+      "build_rc": 0,
+      "replay_rc": 0
+    },
+    {
+      "module": "MarkovParameter80b7",
+      "source_matches": true,
+      "build_rc": 0,
+      "replay_rc": 0
+    }
+  ],
+  "capability_failures": [
+    "zsh heredoc attempted its system temporary file and was denied; switched to Python -c/apply_patch",
+    ".scratch is denied by active higher-priority policy; no access attempted",
+    "Initial reads under MathGKM for predecessor modules failed; actual sources found under research"
+  ]
+}

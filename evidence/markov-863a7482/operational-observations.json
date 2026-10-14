@@ -1,0 +1,51 @@
+{
+  "rejected_elaborations": [
+    {
+      "record": "evidence/markov-863a7482/run-1791998062892501000.json",
+      "returncode": 1,
+      "timeout": false,
+      "diagnostics": "/Users/sasha/math_gkm/research/MarkovDistanceTwo863a.lean:15:1: error: ring failed, ring expressions not equal\nn k : \u2115\nhk : k \u2264 n\nh1 : \u2191((n + 1).choose (k + 1)) * (\u2191n + 1 + 1) = \u2191((n + 1 + 1).choose (k + 1)) * \u2191(n + 1 - k)\nh0 : (\u2191n + 1) * \u2191(n.choose k) = \u2191((n + 1).choose (k + 1)) * (\u2191k + 1)\n\u22a2 \u2191((n + 2).choose (k + 1)) + \u2191((n + 2).choose (k + 1)) * \u2191k * \u2191n - \u2191((n + 2).choose (k + 1)) * \u2191k * \u2191(n + 1 - k) -\n                        \u2191((n + 2).choose (k + 1)) * \u2191k ^ 2 +\n                      \u2191((n + 2).choose (k + 1)) * \u2191n -\n                    \u2191((n + 2).choose (k + 1)) * \u2191(n + 1 - k) +\n                  \u2191k * \u2191n * \u2191((n + 1).choose (k + 1)) * 2 +\n                \u2191k * \u2191((n + 1).choose (k + 1)) * 4 +\n              \u2191n * \u2191((n + 1).choose (k + 1)) * 2 -\n            \u2191n * \u2191(n.choose k) * 6 -\n          \u2191n ^ 2 * \u2191(n.choose k) * 2 +\n        \u2191((n + 1).choose (k + 1)) * 4 -\n      \u2191(n.choose k) * 4 =\n    0\n/Users/sasha/math_gkm/research/MarkovDistanceTwo863a.lean:89:9: error: Type mismatch: After simplification, term\n  reverse_stride_certificate863 (\u2191s) (\u2191h) (Nat.cast_nonneg' h) hhR\n has type\n  \u2191s * ((2 * \u2191s + 4) * ((2 * \u2191s + 3) * ((\u2191h + 1) * (2 * \u2191s + 1 - \u2191h)))) \u2264\n    (\u2191s + 1) * ((2 * \u2191s + 2) * ((2 * \u2191s + 1) * ((\u2191h + 2) * (2 * \u2191s + 2 - \u2191h))))\nbut is expected to have type\n  (2 * \u2191s + 4) * ((2 * \u2191s + 3) * (\u2191s * ((\u2191h + 1) * (2 * \u2191s + 1 - \u2191h)))) \u2264\n    (\u2191s + 1) * ((2 * \u2191s + 2) * ((2 * \u2191s + 1) * ((\u2191h + 2) * (2 * \u2191s + 2 - \u2191h))))\n'MathGKM.Markov.choose_skew_lc863' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.rising_reverse863' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.stride_reverse863' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "record": "evidence/markov-863a7482/run-1791998154912114000.json",
+      "returncode": 1,
+      "timeout": false,
+      "diagnostics": "/Users/sasha/math_gkm/research/MarkovDistanceFiber863a.lean:26:24: error: `ring_nf` made no progress on the goal\n/Users/sasha/math_gkm/research/MarkovDistanceFiber863a.lean:40:34: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovDistanceFiber863a.lean:39:42: warning: 'norm_cast' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n'MathGKM.Markov.binomial_reverse_pair863' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.horizontal_reverse_two863' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "record": "evidence/markov-863a7482/run-1791998269518907000.json",
+      "returncode": 1,
+      "timeout": false,
+      "diagnostics": "/Users/sasha/math_gkm/research/MarkovDistanceForward863a.lean:65:30: error: `ring_nf` made no progress on the goal\n/Users/sasha/math_gkm/research/MarkovDistanceForward863a.lean:110:6: error: unsolved goals\ns h : \u2115\nhs : 1 \u2264 s\nhh : h + 2 \u2264 2 * s\nhhR : \u2191h + 2 \u2264 2 * \u2191s\nh0 :\n  \u2191((2 * s + 2).choose (h + 1)) * (2 * \u2191s + 2 - (\u2191h + 1)) * (2 * \u2191s + 1 - (\u2191h + 1)) * (2 * \u2191s - (\u2191h + 1)) =\n    \u2191((2 * s).choose (h + 1 + 1)) * (\u2191h + 1 + 1) * (2 * \u2191s + 2) * (2 * \u2191s + 1)\nh1 :\n  \u2191((2 * s + 2 + 2).choose h) * (2 * \u2191s + 2 + 2 - \u2191h) * (2 * \u2191s + 2 + 1 - \u2191h) * (2 * \u2191s + 2 - \u2191h) =\n    \u2191((2 * s + 2).choose (h + 1)) * (\u2191h + 1) * (2 * \u2191s + 2 + 2) * (2 * \u2191s + 2 + 1)\n\u22a2 0 < (\u2191s + 2) * (2 * \u2191s + 1 - \u2191h) * (2 * \u2191s - \u2191h) * (2 * \u2191s - 1 - \u2191h)\n/Users/sasha/math_gkm/research/MarkovDistanceForward863a.lean:111:6: error: unsolved goals\ns h : \u2115\nhs : 1 \u2264 s\nhh : h + 2 \u2264 2 * s\nhhR : \u2191h + 2 \u2264 2 * \u2191s\nh0 :\n  \u2191((2 * s + 2).choose (h + 1)) * (2 * \u2191s + 2 - (\u2191h + 1)) * (2 * \u2191s + 1 - (\u2191h + 1)) * (2 * \u2191s - (\u2191h + 1)) =\n    \u2191((2 * s).choose (h + 1 + 1)) * (\u2191h + 1 + 1) * (2 * \u2191s + 2) * (2 * \u2191s + 1)\nh1 :\n  \u2191((2 * s + 2 + 2).choose h) * (2 * \u2191s + 2 + 2 - \u2191h) * (2 * \u2191s + 2 + 1 - \u2191h) * (2 * \u2191s + 2 - \u2191h) =\n    \u2191((2 * s + 2).choose (h + 1)) * (\u2191h + 1) * (2 * \u2191s + 2 + 2) * (2 * \u2191s + 2 + 1)\n\u22a2 0 < (2 * \u2191s + 4 - \u2191h) * (2 * \u2191s + 3 - \u2191h) * (2 * \u2191s + 2 - \u2191h)\n'MathGKM.Markov.choose_twisted_lc863' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.rising_forward863' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.stride_forward863' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "record": "evidence/markov-863a7482/run-1791998303291944000.json",
+      "returncode": 1,
+      "timeout": false,
+      "diagnostics": "/Users/sasha/math_gkm/research/MarkovDistanceFiber863a.lean:27:24: error: `ring_nf` made no progress on the goal\nn s q h : \u2115\nhs : 1 \u2264 s\nhb : (\u2191s + 1) * \u2191((s + q + 1).choose (q + 2)) * \u2191((s + q + 1).choose q) \u2264 \u2191s * \u2191((s + q + 1).choose (q + 1)) ^ 2\nhc : \u2191s * \u2191((2 * s).choose h) * \u2191((2 * s + 4).choose (h + 2)) \u2264 (\u2191s + 1) * \u2191((2 * s + 2).choose (h + 1)) ^ 2\nhp : 0 < \u2191s * (\u2191s + 1)\nhk :\n  \u2191((s + q + 1).choose (q + 2)) * \u2191((2 * s).choose h) * (\u2191((s + q + 1).choose q) * \u2191((2 * s + 4).choose (h + 2))) \u2264\n    (\u2191((s + q + 1).choose (q + 1)) * \u2191((2 * s + 2).choose (h + 1))) ^ 2\nhh :\n  \u2191(n.choose s) * \u2191((n + 2).choose (s + 2)) *\n      (\u2191((s + q + 1).choose (q + 2)) * \u2191((2 * s).choose h) *\n        (\u2191((s + q + 1).choose q) * \u2191((2 * s + 4).choose (h + 2)))) \u2264\n    \u2191((n + 1).choose (s + 1)) ^ 2 * (\u2191((s + q + 1).choose (q + 1)) * \u2191((2 * s + 2).choose (h + 1))) ^ 2\n\u22a2 \u2191(n.choose s) * \u2191((s + q + 1).choose (q + 2)) * \u2191((2 * s).choose h) *\n      (\u2191((n + 2).choose (s + 2)) * \u2191((s + q + 1).choose q) * \u2191((2 * s + 4).choose (h + 2))) \u2264\n    (\u2191((n + 1).choose (s + 1)) * \u2191((s + q + 1).choose (q + 1)) * \u2191((2 * s + 2).choose (h + 1))) ^ 2\n/Users/sasha/math_gkm/research/MarkovDistanceFiber863a.lean:41:34: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovDistanceFiber863a.lean:40:42: warning: 'norm_cast' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n'MathGKM.Markov.binomial_reverse_pair863' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.horizontal_reverse_two863' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "record": "evidence/markov-863a7482/run-1791998338431715000.json",
+      "returncode": 1,
+      "timeout": false,
+      "diagnostics": "/Users/sasha/math_gkm/research/MarkovDistanceForward863a.lean:66:19: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovDistanceForward863a.lean:110:9: error: failed to prove positivity/nonnegativity/nonzeroness\n/Users/sasha/math_gkm/research/MarkovDistanceForward863a.lean:111:9: error: failed to prove positivity/nonnegativity/nonzeroness\n'MathGKM.Markov.choose_twisted_lc863' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.rising_forward863' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.stride_forward863' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n"
+    }
+  ],
+  "finalizer_observation": "First finalizer call ran before tail replay finished and correctly rejected the missing receipt; it wrote no validation or report. Rerun only after replay completion.",
+  "capability_failures": [
+    ".scratch denied by higher-priority policy; no access attempted",
+    "SymPy and NumPy unavailable",
+    "Sage not on PATH"
+  ],
+  "capabilities": {
+    "python": "/opt/homebrew/bin/python3",
+    "gap": "/opt/homebrew/bin/gap",
+    "hosted_source_retrieval": "succeeded"
+  },
+  "source": {
+    "url": "https://armj.math.stonybrook.edu/Articles/250708-Winn/index.html",
+    "retrieved": "2026-10-14",
+    "use": "Target source only; no added mathematical axiom"
+  },
+  "stop_file": "Absent at check; no stop signal observed"
+}
