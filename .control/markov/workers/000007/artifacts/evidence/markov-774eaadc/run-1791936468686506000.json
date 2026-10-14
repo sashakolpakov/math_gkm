@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTransfer774.lean:28:50: error(lean.unknownIdentifier): Unknown constant `Int.castRingHom_apply`\n/Users/sasha/math_gkm/research/MarkovTransfer774.lean:29:2: error: mod_cast has type\n  (Int.castRingHom \u211d) (p.coeff i) * (Int.castRingHom \u211d) (p.coeff (i + 2)) \u2264 (Int.castRingHom \u211d) (p.coeff (i + 1)) ^ 2\nbut is expected to have type\n  p.coeff i * p.coeff (i + 2) \u2264 p.coeff (i + 1) ^ 2\n/Users/sasha/math_gkm/research/MarkovTransfer774.lean:69:36: error(lean.unknownIdentifier): Unknown constant `Int.castRingHom_apply`\n/Users/sasha/math_gkm/research/MarkovTransfer774.lean:70:4: error: mod_cast has type\n  (0 : \u2124) \u2264 (quotientSlice774 path r).coeff k.toNat\nbut is expected to have type\n  (0 : \u211d) \u2264 (Int.castRingHom \u211d) ((quotientSlice774 path r).coeff k.toNat)\n'MathGKM.Markov.integral_binomial_lc774' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.upper_raw_lc_of_quotient774' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.upper_raw_lc_of_adjacent_interval774' depends on axioms: [propext,\n sorryAx,\n Classical.choice,\n Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovTransfer774.lean",
+  "sha256": "c0736380ccbc50689de4a42bf5a9df6f040b074f89cab7dd0e4ea0a5d6ab26ef",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-774eaadc/MarkovTransfer774.olean",
+    "/Users/sasha/math_gkm/research/MarkovTransfer774.lean"
+  ],
+  "seconds": 9.310116041000583,
+  "lean_path": "/Users/sasha/math_gkm/evidence/markov-774eaadc:/Users/sasha/math_gkm/evidence/markov-1998e47e:/Users/sasha/math_gkm/evidence/markov-16cb07ce:/Users/sasha/math_gkm/evidence/markov-de6ce8a9:/Users/sasha/math_gkm/evidence/markov-4b57f2c3:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean",
+  "imports_status": "Inherited compiled project imports; fresh named module only"
+}

@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCross774.lean:19:11: error: unsolved goals\ncase zero\nf : \u2124 \u2192 \u211d\nhn : \u2200 (k : \u2124), 0 \u2264 f k\nha : \u2200 (k : \u2124), f (k - 1) * f (k + 1) \u2264 f k ^ 2\nhs : IntervalSupport774 f\ni : \u2124\n\u22a2 f i * f (i + 1) \u2264 f (i + 1) * f i\n/Users/sasha/math_gkm/research/MarkovCross774.lean:24:36: error: unsolved goals\nf : \u2124 \u2192 \u211d\nhn : \u2200 (k : \u2124), 0 \u2264 f k\nha : \u2200 (k : \u2124), f (k - 1) * f (k + 1) \u2264 f k ^ 2\nhs : IntervalSupport774 f\nn : \u2115\nih : \u2200 (i : \u2124), f i * f (i + \u2191n + 1) \u2264 f (i + 1) * f (i + \u2191n)\ni : \u2124\nj : \u2124 := i + \u2191n + 1\n\u22a2 i + (\u2191n + 1) = i + \u2191n + 1\n/Users/sasha/math_gkm/research/MarkovCross774.lean:37:34: error(lean.invalidField): Invalid field `mp`: The environment does not contain `Function.mp`, so it is not possible to project the field `mp` from an expression\n  mul_le_mul_right ?m.339\nof type\n  \u2200 (a : ?m.333), a * ?m.337 \u2264 a * ?m.338\n/Users/sasha/math_gkm/research/MarkovCross774.lean:37:30: error: Application type mismatch: The argument\n  hp\nhas type\n  0 < f j\nbut is expected to have type\n  ?m.337 \u2264 ?m.338\nin the application\n  mul_le_mul_right hp\n'MathGKM.Markov.crossLC_of_adjacent_interval774' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovCross774.lean",
+  "sha256": "7be1f6adabcd0e823e667a49a714d11997cfeee9edac2968277f3eee7d944a1e",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-774eaadc/MarkovCross774.olean",
+    "/Users/sasha/math_gkm/research/MarkovCross774.lean"
+  ],
+  "seconds": 65.06915474998823,
+  "lean_path": "/Users/sasha/math_gkm/evidence/markov-774eaadc:/Users/sasha/math_gkm/evidence/markov-1998e47e:/Users/sasha/math_gkm/evidence/markov-16cb07ce:/Users/sasha/math_gkm/evidence/markov-de6ce8a9:/Users/sasha/math_gkm/evidence/markov-4b57f2c3:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean",
+  "imports_status": "Inherited compiled project imports; fresh named module only"
+}

@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSlices774.lean:43:37: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  (C ?m.160 * ?p).coeff ?m.161\nin the target expression\n  (diagonalPolyDe6 (numerator4b5 (frame path).mid)).coeff r * (s ^ 2) ^ r =\n    (C s ^ ((frame path).mid.a + (frame path).mid.b - 1) * (qTree16 (C X) 1 X path).2.1).coeff r\n\npath : List Bool\nr : \u2115\ns : \u2124[X] := 1 + X\nh :\n  (diagonalPolyDe6 (numerator4b5 (frame path).mid)).comp (C (s ^ 2) * X) =\n    C s ^ ((frame path).mid.a + (frame path).mid.b - 1) * (qTree16 (C X) 1 X path).2.1\nhe : C X + 1 = C s\nhc :\n  (diagonalPolyDe6 (numerator4b5 (frame path).mid)).coeff r * (s ^ 2) ^ r =\n    (C s ^ ((frame path).mid.a + (frame path).mid.b - 1) * (qTree16 (C X) 1 X path).2.1).coeff r\n\u22a2 (diagonalPolyDe6 (numerator4b5 (frame path).mid)).coeff r * (1 + X) ^ (2 * r) =\n    (1 + X) ^ ((frame path).mid.a + (frame path).mid.b - 1) * quotientSlice774 path r\n'MathGKM.Markov.quotient_slice_nonneg774' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.slice_balance774' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.upper_slice_factor774' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.lower_slice_factor774' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.upper_residual_positive774' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovSlices774.lean",
+  "sha256": "734f5cbeef79e269dbc27b4916670c756fa730fbdea000dc60b2a4a7a9c7a412",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-774eaadc/MarkovSlices774.olean",
+    "/Users/sasha/math_gkm/research/MarkovSlices774.lean"
+  ],
+  "seconds": 61.83296725001128,
+  "lean_path": "/Users/sasha/math_gkm/evidence/markov-774eaadc:/Users/sasha/math_gkm/evidence/markov-16cb07ce:/Users/sasha/math_gkm/evidence/markov-de6ce8a9:/Users/sasha/math_gkm/evidence/markov-4b57f2c3:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean",
+  "imports_status": "Inherited compiled project imports; fresh named module only"
+}

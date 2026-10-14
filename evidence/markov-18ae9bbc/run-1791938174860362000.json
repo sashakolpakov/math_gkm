@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovRawMatrix18.lean:24:2: error: unsolved goals\ncase right\n\u22a2 True \u2227 True \u2227 True \u2227 True \u2227 True\n/Users/sasha/math_gkm/research/MarkovRawMatrix18.lean:49:20: error: Type mismatch\n  ih (advance f r) ?m.32 (indices_advance hi r)\nhas type\n  MatValid16 U V (advance f r) ?m.32.1 ?m.32.2 \u2192\n    RawCorrect18 (advance f r) ?m.32 \u2192\n      RawCorrect18 (List.foldl advance (advance f r) rs) (List.foldl matPairStep16 ?m.32 rs)\nbut is expected to have type\n  RawCorrect18 (List.foldl advance f (r :: rs)) (List.foldl matPairStep16 xy (r :: rs))\n/Users/sasha/math_gkm/research/MarkovRawMatrix18.lean:50:6: error: unexpected token '('; expected command\n'MathGKM.Markov.raw_matrix18' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.raw_coeff_nonneg18' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovRawMatrix18.lean",
+  "sha256": "b3ded1266a540857305d20a34073f557cccb02a8df94b8c7abd2c8b68d460a81",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-18ae9bbc/MarkovRawMatrix18.olean",
+    "/Users/sasha/math_gkm/research/MarkovRawMatrix18.lean"
+  ],
+  "seconds": 48.2821804999985,
+  "lean_path": "/Users/sasha/math_gkm/evidence/markov-18ae9bbc:/Users/sasha/math_gkm/evidence/markov-5a7c193a:/Users/sasha/math_gkm/evidence/markov-774eaadc:/Users/sasha/math_gkm/evidence/markov-1998e47e:/Users/sasha/math_gkm/evidence/markov-16cb07ce:/Users/sasha/math_gkm/evidence/markov-de6ce8a9:/Users/sasha/math_gkm/evidence/markov-4b57f2c3:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean",
+  "imports_status": "Inherited compiled project imports; fresh named module only"
+}

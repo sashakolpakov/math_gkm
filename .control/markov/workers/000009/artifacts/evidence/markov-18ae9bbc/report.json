@@ -1,0 +1,25 @@
+{
+  "request_id": "18ae9bbc80dc488c816e56bdde0bc2ff",
+  "summary": "Established checked raw matrix, nonnegativity and Newton-polygon bridges, plus an exact full-root reduction. Published Conjecture 6.3 remains unresolved.",
+  "actions": [
+    "Read mission, full design, contract, inherited evidence and independent audits; reconciled prior status in research/markov-18ae9bbc-checkpoint.md.",
+    "Proved the universal raw Cohn-matrix identity and coefficient nonnegativity in research/MarkovRawMatrix18.lean.",
+    "Proved weighted minimum degrees, polygon containment, vertex positivity and real Newton-polygon equality in research/MarkovWeighted18.lean, research/MarkovPolygon18.lean, research/MarkovVertices18.lean and research/MarkovGeometry18.lean.",
+    "Proved root_iff_raw_matrix18, preserving all directions, zeros, endpoints and universal scope, in research/MarkovReduction18.lean.",
+    "Compiled and kernel-replayed all six new modules and rebuilt the inherited exchange module; validation: evidence/markov-18ae9bbc/validation-1791939123445506000.json.",
+    "Executed exact source-matrix experiments and recorded capability failures in evidence/markov-18ae9bbc/raw-invariants.json and operational-observations.json."
+  ],
+  "observations": [
+    "newton_polygon18 identifies the convex hull of every source-path coefficient support with the published polygon; inPolygon_iff_region18 connects its lattice points to the pinned predicate. This does not prove saturation.",
+    "The entire pinned root is equivalent to GlobalLC18 on source-restricted positive matrix products. The resulting universal coefficient inequalities remain unproved.",
+    "All six successful new module closures use only permitted axioms. Seven rejected compilation attempts are preserved; inherited compiled imports were used.",
+    "The 127-fraction experiment, denominator at most 20, found no matrix mismatch, weighted-minimum mismatch or adjacent log-concavity failure in any matrix entry. This is finite evidence only.",
+    "The root hash is unchanged. No independent completion audit is claimed. Correspondence and remaining obligations: research/markov-18ae9bbc-correspondence.md."
+  ],
+  "agenda": [
+    "Attack RawMatrixGoal18 using a recurrence-preserved coefficient invariant for actual Farey matrix pairs; investigate the experimentally supported all-entry inequalities.",
+    "Retain exact source restrictions: arbitrary and palindromic word extensions have inherited counterexamples.",
+    "Resolve universal inequalities in all three directions; retain fresh source rebuild and independent hash-bound source/English audit requirements before any completion claim."
+  ],
+  "completion": null
+}
