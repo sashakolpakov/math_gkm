@@ -1,0 +1,48 @@
+{
+  "rejected_attempts": [
+    {
+      "record": "evidence/markov-0d052acb/run-MarkovTransitionGapsD052-build-1792010523479780000.json",
+      "timeout": true,
+      "returncode": null,
+      "source_sha256": "cbd5bff53a1f47ffc2c9a640c3e84437ce1bc5d882bebb4bd3f08ee1375c4a6d"
+    },
+    {
+      "record": "evidence/markov-0d052acb/run-MarkovSmallRunsD052-build-1792010660704482000.json",
+      "timeout": true,
+      "returncode": null,
+      "source_sha256": "03d65e5ce7ce199311172a5164ccaf5f0f574aa2fd27233a0bbacec222b3b504"
+    },
+    {
+      "record": "evidence/markov-0d052acb/run-MarkovSecondAllD052-build-1792011021232462000.json",
+      "timeout": false,
+      "returncode": 1,
+      "source_sha256": "ac4a561232ce2e98428fca8a424e02cda3c870c7539db1546c8c2ab58253f6a6"
+    },
+    {
+      "record": "evidence/markov-0d052acb/run-MarkovInteriorD052-build-1792011293904771000.json",
+      "timeout": false,
+      "returncode": 1,
+      "source_sha256": "f6d8fae6a7347cce7ccbf8152bb7ee56489348e8b145ed8cffee59e677e3be1a"
+    },
+    {
+      "record": "evidence/markov-0d052acb/run-MarkovInteriorD052-replay-1792011465076834000.json",
+      "timeout": true,
+      "returncode": null,
+      "source_sha256": "2ad90fa7419fa7907b7e4891edf385797e4a246240f9b687f6d75268abc66bc6"
+    }
+  ],
+  "capabilities": {
+    "sage": null,
+    "gap": "/opt/homebrew/bin/gap",
+    "sympy": false,
+    "scratch": "Developer denies reads; use research/evidence for auditable working artifacts."
+  },
+  "other_observations": [
+    "Initial combined file-read output was truncated; required design and independent audits were read in separate subsequent calls.",
+    "STOP.json was absent at the recorded read; this is not a mathematical result.",
+    "A zsh glob for nonexistent source paths failed; bounded rg over actual source directories succeeded.",
+    "Initial small-run build required explicit Nat.choose unfolding and whitespace preventing the graph token \u2264s. Failed generated sorryAx closures, if printed, are excluded from accepted receipts.",
+    "Expanded transition-gap build timed out; Horner-form retry compiled.",
+    "No supervisor execution request, background process, LLM invocation, controller edit, package update or Git access was used."
+  ]
+}
