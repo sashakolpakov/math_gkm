@@ -1,0 +1,63 @@
+{
+  "time": "2026-10-14T20:00:41.152126+00:00",
+  "modules": [
+    {
+      "module": "MarkovSecondRunBF",
+      "source": "research/MarkovSecondRunBF.lean",
+      "sha256": "007f58fab4f8c9581e95a086aff845ffb2787dfe6db2bfb62ee553b36201bf76",
+      "build": "evidence/markov-bf38fa19/run-1792007381659829000.json",
+      "replay": "evidence/markov-bf38fa19/run-1792007442687529000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.second_run_mulBF' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.lowerMatrix_second_relationBF' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.adjacent_run_order_gapBF' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "olean_sha256": "abb7f7cb5ce4b15e3082421b7719711fcaf5d64c02b408f03f251bc6f53a0b1e"
+    },
+    {
+      "module": "MarkovCyclicSecondBF",
+      "source": "research/MarkovCyclicSecondBF.lean",
+      "sha256": "1f9b0b62284fa35209172685a04ed79f4740aa5932a1279d3c4e13a7c0e87c2e",
+      "build": "evidence/markov-bf38fa19/run-1792007549225931000.json",
+      "replay": "evidence/markov-bf38fa19/run-1792007608694882000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.run_summaryBF' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.run_trace_secondBF' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.run_trace_two_blocksBF' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.source_second_lower_formulaBF' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "olean_sha256": "9ae5a7c965d0cccf8894af5a494c065f2cca3276a73200b8759d1cabf6b5899f"
+    },
+    {
+      "module": "MarkovSecondSourceBF",
+      "source": "research/MarkovSecondSourceBF.lean",
+      "sha256": "555c20ce95d070b4f4b403f747942524f1ff9df5fec87a94bb5ab9ce74b7acfd",
+      "build": "evidence/markov-bf38fa19/run-1792007607470178000.json",
+      "replay": "evidence/markov-bf38fa19/run-1792007700047469000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.source_run_substitutionBF' depends on axioms: [propext, Quot.sound]",
+        "'MathGKM.Markov.source_second_sliceBF' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.source_second_recursiveBF' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "olean_sha256": "af4460da31ea18b165f211f555fade6b86e66e9e39cf4923d48f71efeca8d877"
+    },
+    {
+      "module": "MarkovRunRecurrenceBF",
+      "source": "research/MarkovRunRecurrenceBF.lean",
+      "sha256": "8b880e3e04dc7651c3c91228e6ecb01ba1fd15e8496a426865613319ff3d3eee",
+      "build": "evidence/markov-bf38fa19/run-1792007839939054000.json",
+      "replay": "evidence/markov-bf38fa19/run-1792007966798385000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.lowerMatrix_scalar_jetsBF' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.source_run_descentBF' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.second_tail_boundBF' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "olean_sha256": "db888e1921cf5fa00102668a68323410398c6a6e74f40fe493986dd50cb323da"
+    }
+  ],
+  "root_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+  "contract_canonical_sha256": "6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc",
+  "imports": "Pinned inherited compiled imports reused; no fresh whole-source rebuild",
+  "independent_audit": false,
+  "completion": null
+}

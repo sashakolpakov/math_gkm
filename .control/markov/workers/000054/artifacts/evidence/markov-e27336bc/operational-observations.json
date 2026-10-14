@@ -1,0 +1,91 @@
+{
+  "provenance": "Machine-authored live worker e27336bc",
+  "rejected_attempts": [
+    {
+      "record": "evidence/markov-e27336bc/run-MarkovChooseShapeE273-replay-1792009890958532000.json",
+      "source": "research/MarkovChooseShapeE273.lean",
+      "timeout": true,
+      "returncode": null
+    },
+    {
+      "record": "evidence/markov-e27336bc/run-1792009316595880000.json",
+      "source": "research/MarkovRunKernelsE273.lean",
+      "timeout": false,
+      "returncode": 1
+    },
+    {
+      "record": "evidence/markov-e27336bc/run-1792009436960439000.json",
+      "source": "research/MarkovSecondKernelE273.lean",
+      "timeout": false,
+      "returncode": 1
+    },
+    {
+      "record": "evidence/markov-e27336bc/run-1792009702018810000.json",
+      "source": "research/MarkovChooseShapeE273.lean",
+      "timeout": false,
+      "returncode": 1
+    },
+    {
+      "record": "evidence/markov-e27336bc/run-MarkovSparseKernelE273-replay-1792009866264902000.json",
+      "source": "research/MarkovSparseKernelE273.lean",
+      "timeout": true,
+      "returncode": null
+    },
+    {
+      "record": "evidence/markov-e27336bc/run-MarkovSecondInteriorE273-build-1792009889449561000.json",
+      "source": "research/MarkovSecondInteriorE273.lean",
+      "timeout": false,
+      "returncode": 1
+    },
+    {
+      "record": "evidence/markov-e27336bc/run-1792009700460062000.json",
+      "source": "research/MarkovSparseKernelE273.lean",
+      "timeout": false,
+      "returncode": 1
+    },
+    {
+      "record": "evidence/markov-e27336bc/run-1792009642894570000.json",
+      "source": "research/MarkovSparseKernelE273.lean",
+      "timeout": false,
+      "returncode": 1
+    },
+    {
+      "record": "evidence/markov-e27336bc/run-MarkovInteriorE273-replay-1792010271070349000.json",
+      "source": "research/MarkovInteriorE273.lean",
+      "timeout": true,
+      "returncode": null
+    },
+    {
+      "record": "evidence/markov-e27336bc/run-1792009486712284000.json",
+      "source": "research/MarkovSecondKernelE273.lean",
+      "timeout": false,
+      "returncode": 1
+    },
+    {
+      "record": "evidence/markov-e27336bc/run-MarkovInteriorE273-replay-1792009866264766000.json",
+      "source": "research/MarkovInteriorE273.lean",
+      "timeout": true,
+      "returncode": null
+    },
+    {
+      "record": "evidence/markov-e27336bc/run-MarkovSecondInteriorE273-build-1792009997529574000.json",
+      "source": "research/MarkovSecondInteriorE273.lean",
+      "timeout": false,
+      "returncode": 1
+    }
+  ],
+  "capabilities": {
+    "sage": null,
+    "gap": "/opt/homebrew/bin/gap",
+    "sympy": false,
+    "scratch": "Denied by developer permissions; research/evidence used instead",
+    "shell_heredoc": "Failed to create temporary file; use apply_patch and Python -c"
+  },
+  "record_collision": "Concurrent ChooseShape and SparseKernel builds received identical time.time_ns. SparseKernel record replaced ChooseShape receipt. Module-specific snapshots survived. Validator filenames now include module/mode; ChooseShape was recompiled with a fresh printed axiom closure. No mathematical claim relies on the overwritten receipt.",
+  "read_failures": [
+    "Shell heredoc could not create temporary file under denied system temp directory; switched to apply_patch and Python -c.",
+    "Several guessed inherited filenames/globs and the installed Lean Checker source path were absent; no external source was accessed.",
+    "One progress-document patch had a context mismatch and made no change; a subsequent append recorded the update."
+  ],
+  "meaning": "Tool failures, timeouts, and records are operational evidence, never mathematical results."
+}

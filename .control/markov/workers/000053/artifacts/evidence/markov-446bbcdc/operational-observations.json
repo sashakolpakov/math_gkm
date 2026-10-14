@@ -1,0 +1,60 @@
+{
+  "rejected_attempts": [
+    {
+      "record": "evidence/markov-446bbcdc/run-1792008797934622000.json",
+      "returncode": 1,
+      "timeout": false,
+      "source": "research/MarkovInterior446.lean"
+    },
+    {
+      "record": "evidence/markov-446bbcdc/run-1792008501956773000.json",
+      "returncode": 1,
+      "timeout": false,
+      "source": "research/MarkovCubicBounds446.lean"
+    },
+    {
+      "record": "evidence/markov-446bbcdc/run-1792008583375189000.json",
+      "returncode": 1,
+      "timeout": false,
+      "source": "research/MarkovSecondLowSource446.lean"
+    },
+    {
+      "record": "evidence/markov-446bbcdc/run-1792008187569489000.json",
+      "returncode": 1,
+      "timeout": false,
+      "source": "research/MarkovAdjacency446.lean"
+    },
+    {
+      "record": "evidence/markov-446bbcdc/run-1792008731569730000.json",
+      "returncode": 1,
+      "timeout": false,
+      "source": "research/MarkovUpperShape446.lean"
+    },
+    {
+      "record": "evidence/markov-446bbcdc/run-1792008942456894000.json",
+      "returncode": 1,
+      "timeout": false,
+      "source": "research/MarkovLowerShape446.lean"
+    },
+    {
+      "record": "evidence/markov-446bbcdc/run-1792008330339568000.json",
+      "returncode": 1,
+      "timeout": false,
+      "source": "research/MarkovRunCompression446.lean"
+    }
+  ],
+  "capabilities": {
+    "sage": null,
+    "gap": "/opt/homebrew/bin/gap",
+    "sympy": false,
+    "scratch": "Denied by developer permissions; research/evidence used instead",
+    "shell_heredoc": "Failed: shell could not create temporary file; use patch and Python -c"
+  },
+  "additional": [
+    "Initial shell heredoc failed because temporary-file creation is denied; switched to apply_patch/Python -c.",
+    "One apply_patch call for upper_cubic_446b.py had a malformed hunk and made no edit; corrected patch succeeded.",
+    "Upper-shape expanded certificate hit default heartbeat limit; failed receipt retained. Increased bounded heartbeat limit, then factored the certificate and rebuilt current bytes.",
+    "Factoring happened while an earlier upper-shape compilation was pending. Its archived input remains preserved; validation of current bytes requires the separate current-hash build and replay."
+  ],
+  "experimental_status": "All numerical and symbolic experiment checks are evidence only; no source theorem is inferred from a finite scan."
+}
