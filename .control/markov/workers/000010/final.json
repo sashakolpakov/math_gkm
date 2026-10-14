@@ -1,0 +1,23 @@
+{
+  "actions": [
+    "Proved universal ordered-gap and shifted-binomial coefficient expansions in research/MarkovGasF80.lean, MarkovRenewalF80.lean, MarkovCutsF80.lean and MarkovBlocksF80.lean.",
+    "Proved a balanced, coprime non-source-word obstruction in research/MarkovObstructionF80.lean.",
+    "Compiled and kernel-replayed all five modules; validation: evidence/markov-f80fb8bc/validation-1791940248424180000.json.",
+    "Recorded experiments, reconciliation and scope in research/markov-f80fb8bc-checkpoint.md and research/markov-f80fb8bc-correspondence.md."
+  ],
+  "agenda": [
+    "Investigate coefficient inequalities through the checked ordered-mask expansion, retaining exact source-word order.",
+    "Avoid replacing canonical Farey words with balanced or cyclically balanced words.",
+    "Resolve all three universal raw inequalities and complete independent source correspondence auditing."
+  ],
+  "completion": null,
+  "observations": [
+    "Every source raw coefficient now has a checked finite shifted-binomial sum representation; log-concavity of those sums remains unproved.",
+    "Balanced reduced word ABAAAAB gives coefficients 6,8,12 and 64<72. It is not a source witness; the actual 2/7 source gives 4,8,12.",
+    "The 489-fraction matrix scan found no failures; 41 source fractions matched mask enumeration. Both are finite evidence only.",
+    "Successful axiom reports use only permitted axioms. Six rejected attempts were preserved; validation used inherited compiled imports.",
+    "The pinned root is unchanged. Full report: evidence/markov-f80fb8bc/report.json."
+  ],
+  "request_id": "f80fb8bcebd0420782ff3305c88ecadb",
+  "summary": "Established checked raw coefficient expansions and excluded broader word strategies. Full published Conjecture 6.3 remains unresolved."
+}

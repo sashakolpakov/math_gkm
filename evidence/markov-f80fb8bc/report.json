@@ -1,0 +1,24 @@
+{
+  "request_id": "f80fb8bcebd0420782ff3305c88ecadb",
+  "summary": "Established a checked ordered-gap expansion for every raw source numerator and ruled out balance plus coprimality as a sufficient word restriction. Full published Conjecture 6.3 remains unresolved.",
+  "actions": [
+    "Read mission, design, pinned contract, inherited evidence and independent audits; reconciled prior status in research/markov-f80fb8bc-checkpoint.md.",
+    "Proved the source rank-one model, renewal identity, deletion-mask expansion and exact raw coefficient sum in research/MarkovGasF80.lean, MarkovRenewalF80.lean, MarkovCutsF80.lean and MarkovBlocksF80.lean.",
+    "Proved balanced_reduced_not_sufficient80 in research/MarkovObstructionF80.lean; this concerns a broadened word family, not a source counterexample.",
+    "Compiled and kernel-replayed all five modules; validation: evidence/markov-f80fb8bc/validation-1791940248424180000.json.",
+    "Executed balanced-word, cyclic-word, synchronization, source-entry and mask experiments; interpretation: research/markov-f80fb8bc-partition-model.md."
+  ],
+  "observations": [
+    "Every raw source coefficient is an exact finite sum of coefficients of zero or shifted-binomial mask terms u^p v^q (u+v)^e. This establishes a representation, not log-concavity of the sum.",
+    "The balanced reduced word ABAAAAB has vertical coefficients 6,8,12, with 64<72. The actual source word at 2/7 is AAABAAB and has 4,8,12 at those points.",
+    "The 489-fraction scan through denominator 40 found no LC failure in any source matrix entry; the 41-fraction mask comparison found no coefficient mismatch. These are finite evidence only.",
+    "Cyclic rotations and pairwise summand synchronization failed experimentally; neither failure refutes the pinned root.",
+    "Successful printed axiom closures use only permitted axioms; six rejected attempts are preserved. Builds used inherited compiled imports. The root hash is unchanged; remaining scope is in research/markov-f80fb8bc-correspondence.md."
+  ],
+  "agenda": [
+    "Investigate a source-order-dependent injection or inequality for pairs of ordered deletion masks using the checked raw coefficient expansion.",
+    "Retain exact canonical Farey words: balance, coprimality, prescribed boundary letters and cyclic balance are insufficient replacements.",
+    "Resolve universal raw inequalities in all three directions and retain fresh source rebuild and independent hash-bound correspondence-audit requirements."
+  ],
+  "completion": null
+}

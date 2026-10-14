@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSecondSource8934.lean:42:40: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  (X ^ ?n * ?p).coeff (?d + ?n)\nin the target expression\n  0 = (X ^ (0 + m) * ((X + 1) ^ (n - 3) * secondExpr8934 X \u2191n \u2191(0 + m) \u2191s)).coeff (0 + m)\n\ncase neg\npath : List Bool\nhb : 5 \u2264 (frame path).mid.b\ne : Bool\nw : List Bool\nhn : (e :: w).length + 2 = (frame path).mid.b\nhm : List.count true (e :: w) + 1 = (frame path).mid.a\nhe : Bivariate.swap (frame path).mid.p = hword46 X (e :: w)\nn : \u2115 := (e :: w).length\nm : \u2115 := List.count true (e :: w)\ns : \u2115 := stat8934 e w\nhn3 : 3 \u2264 n\nhf : 2 * (Bivariate.swap (frame path).mid.p).coeff 2 = X ^ m * (X + 1) ^ (n - 3) * secondExpr8934 X \u2191n \u2191m \u2191s\nhz : \u00acn \u2264 2 * m\nhout : coeff (frame path).mid.p m 2 = 0\nhc : 0 = (X ^ (0 + m) * ((X + 1) ^ (n - 3) * secondExpr8934 X \u2191n \u2191(0 + m) \u2191s)).coeff (0 + m)\n\u22a2 s = 0\n'MathGKM.Markov.second_source_formula8934' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.second_large_crossLC8934' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovSecondSource8934.lean",
+  "sha256": "42b927ede0cd1e8280e3d28e0b5b4f16769f24dfc61bd8f89ffd5fa523ff4b0f",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-8934af17/MarkovSecondSource8934.olean",
+    "/Users/sasha/math_gkm/research/MarkovSecondSource8934.lean"
+  ],
+  "seconds": 60.84619683299388,
+  "lean_path": "/Users/sasha/math_gkm/evidence/markov-8934af17:/Users/sasha/math_gkm/evidence/markov-b46c0efc:/Users/sasha/math_gkm/evidence/markov-f80fb8bc:/Users/sasha/math_gkm/evidence/markov-18ae9bbc:/Users/sasha/math_gkm/evidence/markov-5a7c193a:/Users/sasha/math_gkm/evidence/markov-774eaadc:/Users/sasha/math_gkm/evidence/markov-1998e47e:/Users/sasha/math_gkm/evidence/markov-16cb07ce:/Users/sasha/math_gkm/evidence/markov-de6ce8a9:/Users/sasha/math_gkm/evidence/markov-4b57f2c3:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean",
+  "imports_status": "Inherited compiled project imports; fresh named module only"
+}
