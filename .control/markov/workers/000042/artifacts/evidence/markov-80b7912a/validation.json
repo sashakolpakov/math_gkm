@@ -1,0 +1,51 @@
+{
+  "time": "2026-10-14T16:49:05.958370+00:00",
+  "modules": [
+    {
+      "module": "MarkovZeroWeight80b7",
+      "source": "research/MarkovZeroWeight80b7.lean",
+      "sha256": "c765393695b0853f8d44cafa455b264cbbc3a71af9a282d1cb255d0e0d8da0b7",
+      "build": "evidence/markov-80b7912a/run-1791995956946854000.json",
+      "replay": "evidence/markov-80b7912a/run-1791996248656297000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.typeP_zero80' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.zero_weight_coeff80' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.zero_weight_horizontal80' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.weighted_zero_horizontal80' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "olean_sha256": "36bbdfd93f3d8336577e067fdaea625c30583ebd7b1e0f4db6b65ecb4ed47813"
+    },
+    {
+      "module": "MarkovZeroAll80b7",
+      "source": "research/MarkovZeroAll80b7.lean",
+      "sha256": "e34ea75ab6e00a23e1cd0b95b7dbe0f8852e4860d92b900ebc71539085049132",
+      "build": "evidence/markov-80b7912a/run-1791996179651281000.json",
+      "replay": "evidence/markov-80b7912a/run-1791996249854297000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.zeroBin_step80' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.zeroBin_vertical80' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.zero_weight_all80' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "olean_sha256": "e0a6c8715f447ce9ba8626b58999770d0fd997c0b8ac4e8f11c89d67a63a0db2"
+    },
+    {
+      "module": "MarkovParameter80b7",
+      "source": "research/MarkovParameter80b7.lean",
+      "sha256": "e9f62d34c260ec7186affb5877dc933cb97abe7807535e28c4ad16b151c61438",
+      "build": "evidence/markov-80b7912a/run-1791996412259797000.json",
+      "replay": "evidence/markov-80b7912a/run-1791996494247771000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.parameter_source80' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.parameter_linear80' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.parameter_raw_coeff80' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.parameter_raw_source80' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.parameter_gap_constant80' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "olean_sha256": "f007904398b28f1bec4db9304305f57df0d19a7ccbe2d852b6a1e589d49d90c0"
+    }
+  ],
+  "root_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+  "contract_canonical_sha256": "6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc",
+  "imports": "Inherited compiled imports reused; not fresh whole-source rebuild",
+  "independent_audit": false
+}

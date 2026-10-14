@@ -1,0 +1,60 @@
+{
+  "time": "2026-10-14T16:09:47.297983+00:00",
+  "modules": [
+    {
+      "module": "MarkovDeformedJetA3c5",
+      "source": "research/MarkovDeformedJetA3c5.lean",
+      "sha256": "5d7fb024074daf0d81823a3b3200964c0b0cf62db3a48ab151f297af4e4fae88",
+      "build": "evidence/markov-a3c53fa7/run-1791993847686869000.json",
+      "replay": "evidence/markov-a3c53fa7/run-1791993873697180000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.deform_jets3' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "olean_sha256": "943bee98653832f2411e51ef3d743ae24a63721b97fdbdb999e4a4575217ec65"
+    },
+    {
+      "module": "MarkovDeformedSourceA3c5",
+      "source": "research/MarkovDeformedSourceA3c5.lean",
+      "sha256": "9a05d3301a2067c3437059f6776beddf7dcdc26deef890b7fad23f9ab241c536",
+      "build": "evidence/markov-a3c53fa7/run-1791993955861725000.json",
+      "replay": "evidence/markov-a3c53fa7/run-1791993976890322000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.typeP_source3' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.typeP_moving_coeff3' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.typeP_gap3' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "olean_sha256": "d259363c28acc34f2f87ad023361e14fa078426c5488f4c68013874254338ea7"
+    },
+    {
+      "module": "MarkovDeformationThresholdA3c5",
+      "source": "research/MarkovDeformationThresholdA3c5.lean",
+      "sha256": "3e630142ed93bf080213868bd89914ce311f9e5b77f31dbfb0ae68e941d6c335",
+      "build": "evidence/markov-a3c53fa7/run-1791994017185402000.json",
+      "replay": "evidence/markov-a3c53fa7/run-1791994110697324000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.source_corner_polygon3' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.typeGap_uniform_iff3' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.typeP_weight_two_failure3' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.source_corner_strict3' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "olean_sha256": "83760dc36a0e9004f60379a6e969f33bf5f7e277716ed24aa97e0a3e741fbff2"
+    },
+    {
+      "module": "MarkovTypeMatrixA3c5",
+      "source": "research/MarkovTypeMatrixA3c5.lean",
+      "sha256": "a160c2ca7bfef41add14068a23cf92f2f49c37b5d7935f4953519961723e332f",
+      "build": "evidence/markov-a3c53fa7/run-1791993976889509000.json",
+      "replay": "evidence/markov-a3c53fa7/run-1791994017183170000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.typeP_matrix3' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.source_type_matrix3' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.type_matrix_triple_failure3' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "olean_sha256": "6dcf8fca4d517cd298a378ad76867b6375eb1a86e9b47ae06f38cf714ae1b8af"
+    }
+  ],
+  "root_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+  "contract_canonical_sha256": "6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc",
+  "imports": "Inherited compiled imports; not fresh whole-source rebuild",
+  "independent_audit": false
+}
