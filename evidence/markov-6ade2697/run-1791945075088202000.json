@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBinomialLC6ade.lean:16:6: error: mod_cast has type\n  n.choose k * (n + 1) = (n + 1).choose k * (n + 1 - k)\nbut is expected to have type\n  \u2191(n.choose k * (n + 1)) = \u2191((n + 1).choose k) * Int.subNatNat (n + 1) k\n/Users/sasha/math_gkm/research/MarkovBinomialLC6ade.lean:21:6: error: mod_cast has type\n  (n + 1).choose k * (n + 2) = (n + 2).choose k * (n + 2 - k)\nbut is expected to have type\n  \u2191((n + 1).choose k * (n + 2)) = \u2191((n + 2).choose k) * Int.subNatNat (n + 2) k\n/Users/sasha/math_gkm/research/MarkovBinomialLC6ade.lean:36:27: warning: Variable name `hy` is not explicitly referenced.\n\nThe binding can be removed (if unused) or named `_` (if used implicitly).\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n'MathGKM.Markov.choose_upper_lc6' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.lc_product6' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovBinomialLC6ade.lean",
+  "sha256": "9fae6075a4df3126138a74685b874ceea2a80d334d2d49ca1900758fa173f8ae",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-6ade2697/MarkovBinomialLC6ade.olean",
+    "/Users/sasha/math_gkm/research/MarkovBinomialLC6ade.lean"
+  ],
+  "seconds": 7.254184500008705,
+  "lean_path": "/Users/sasha/math_gkm/evidence/markov-6ade2697:/Users/sasha/math_gkm/evidence/markov-274e6973:/Users/sasha/math_gkm/evidence/markov-02592c7b:/Users/sasha/math_gkm/evidence/markov-8934af17:/Users/sasha/math_gkm/evidence/markov-b46c0efc:/Users/sasha/math_gkm/evidence/markov-f80fb8bc:/Users/sasha/math_gkm/evidence/markov-18ae9bbc:/Users/sasha/math_gkm/evidence/markov-5a7c193a:/Users/sasha/math_gkm/evidence/markov-774eaadc:/Users/sasha/math_gkm/evidence/markov-1998e47e:/Users/sasha/math_gkm/evidence/markov-16cb07ce:/Users/sasha/math_gkm/evidence/markov-de6ce8a9:/Users/sasha/math_gkm/evidence/markov-4b57f2c3:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Cli/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean",
+  "imports_status": "Inherited compiled project imports; fresh named module only"
+}
