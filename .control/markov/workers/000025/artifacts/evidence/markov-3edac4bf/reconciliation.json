@@ -1,0 +1,238 @@
+{
+  "request_id": "3edac4bf4f1040d0b967711f6c52c66f",
+  "prior_validation": {
+    "request_id": "28b112de527c4d3ea1fa665cec2dc394",
+    "modules": [
+      {
+        "module": "MarkovPalindrome28b1",
+        "source": "research/MarkovPalindrome28b1.lean",
+        "sha256": "d110c5a1bae5c7457cea27ba844ec34f587b4df13a1666ea5a727fe9987ea2e8",
+        "status": "compiled and kernel-replayed",
+        "builds": [
+          "evidence/markov-28b112de/run-1791955424612817000.json"
+        ],
+        "kernels": [
+          "evidence/markov-28b112de/run-1791955458031303000.json"
+        ],
+        "direct_import_binaries": [
+          {
+            "module": "MarkovGasF80",
+            "path": "/Users/sasha/math_gkm/evidence/markov-f80fb8bc/MarkovGasF80.olean",
+            "sha256": "8116838223e122cf801f9328ff74a262c3f7bc2efa39b953b1f9335989f3c7d5"
+          },
+          {
+            "module": "Mathlib.Data.List.Palindrome",
+            "path": "/Users/sasha/collatz/Novikov_Collatz_Path_Complexes/formal/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/List/Palindrome.olean",
+            "sha256": "ebe97d3734c58f6fa6c2c9b28473723bc6b54f7580ee89afb02764fc89785875"
+          }
+        ],
+        "axiom_output": "'MathGKM.Markov.gasCore_palindrome28' depends on axioms: [propext, Quot.sound]\n'MathGKM.Markov.source_gas_exact28' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+      },
+      {
+        "module": "MarkovSquares28b1",
+        "source": "research/MarkovSquares28b1.lean",
+        "sha256": "7e0f27376d06eeffb047335c429900161bfda2921bd8297ecebb5790c11bf4a0",
+        "status": "compiled and kernel-replayed",
+        "builds": [
+          "evidence/markov-28b112de/run-1791955458031650000.json"
+        ],
+        "kernels": [
+          "evidence/markov-28b112de/run-1791955511847107000.json"
+        ],
+        "direct_import_binaries": [
+          {
+            "module": "MarkovPalindrome28b1",
+            "path": "/Users/sasha/math_gkm/evidence/markov-28b112de/MarkovPalindrome28b1.olean",
+            "sha256": "127c3d663cb5ed93d83f90efb2473ddc66863db19d24fcf5d19175519c55ee33"
+          }
+        ],
+        "axiom_output": "'MathGKM.Markov.gasQuad_sandwich28' depends on axioms: [propext]\n'MathGKM.Markov.source_positive_squares28' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+      },
+      {
+        "module": "MarkovWordWitness28b1",
+        "source": "research/MarkovWordWitness28b1.lean",
+        "sha256": "ab34b1e14dfd7f1455a2e357d28850b6afac28890fa91247599b407ac562a410",
+        "status": "compiled and kernel-replayed",
+        "builds": [
+          "evidence/markov-28b112de/run-1791955809826812000.json"
+        ],
+        "kernels": [
+          "evidence/markov-28b112de/run-1791955863363897000.json"
+        ],
+        "direct_import_binaries": [
+          {
+            "module": "MarkovPalindrome28b1",
+            "path": "/Users/sasha/math_gkm/evidence/markov-28b112de/MarkovPalindrome28b1.olean",
+            "sha256": "127c3d663cb5ed93d83f90efb2473ddc66863db19d24fcf5d19175519c55ee33"
+          }
+        ],
+        "axiom_output": "'MathGKM.Markov.word_suffix_atom28' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.word_prefix_atom28' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+      },
+      {
+        "module": "MarkovPolygonWord28b1",
+        "source": "research/MarkovPolygonWord28b1.lean",
+        "sha256": "a8c4a4bccdaad70a22d77daa0cf73824c19aed99b9e7a42bd2d9aa5fff7803ad",
+        "status": "compiled and kernel-replayed",
+        "builds": [
+          "evidence/markov-28b112de/run-1791955921577851000.json"
+        ],
+        "kernels": [
+          "evidence/markov-28b112de/run-1791955994908697000.json"
+        ],
+        "direct_import_binaries": [
+          {
+            "module": "MarkovWordWitness28b1",
+            "path": "/Users/sasha/math_gkm/evidence/markov-28b112de/MarkovWordWitness28b1.olean",
+            "sha256": "71e40afea4dedb44ebc9aa8461c9e9a87ff89d4acb2806cd20d8467e321d82b5"
+          },
+          {
+            "module": "MarkovPolygon18",
+            "path": "/Users/sasha/math_gkm/evidence/markov-18ae9bbc/MarkovPolygon18.olean",
+            "sha256": "c790df60fc603a8328832e63ca9e206287aeb4681eff77ee0b5c465927d69f14"
+          }
+        ],
+        "axiom_output": "'MathGKM.Markov.polygon_prefix_floor28' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.source_prefix_floor28' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+      },
+      {
+        "module": "MarkovWordRigidity28b1",
+        "source": "research/MarkovWordRigidity28b1.lean",
+        "sha256": "7604f2d48d7cf07009ef6db3a339d927b432f77b8ad3c6ed24db74d3f40026b1",
+        "status": "compiled and kernel-replayed",
+        "builds": [
+          "evidence/markov-28b112de/run-1791956059349392000.json"
+        ],
+        "kernels": [
+          "evidence/markov-28b112de/run-1791956093321402000.json"
+        ],
+        "direct_import_binaries": [
+          {
+            "module": "MarkovPolygonWord28b1",
+            "path": "/Users/sasha/math_gkm/evidence/markov-28b112de/MarkovPolygonWord28b1.olean",
+            "sha256": "e7b3b9ba36944be8ff25df2b264d5f5b46ff60e1415d9fcba7a12bdeb1a1ab43"
+          },
+          {
+            "module": "MarkovCoverage098",
+            "path": "/Users/sasha/math_gkm/evidence/markov-098a5a66/MarkovCoverage098.olean",
+            "sha256": "0ef760242de1ad962f32bbe860306a48119a3c2963ab99c1b4b8c8b5d9556021"
+          }
+        ],
+        "axiom_output": "'MathGKM.Markov.supported_core_unique28' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.supported_word_is_source28' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+      },
+      {
+        "module": "MarkovSupportedGoal28b1",
+        "source": "research/MarkovSupportedGoal28b1.lean",
+        "sha256": "92bcf5df4f69003ebf41d1a619b0ba99b6090005e1a61cf290a96edf25d60697",
+        "status": "compiled and kernel-replayed",
+        "builds": [
+          "evidence/markov-28b112de/run-1791956093321397000.json"
+        ],
+        "kernels": [
+          "evidence/markov-28b112de/run-1791956133113103000.json"
+        ],
+        "direct_import_binaries": [
+          {
+            "module": "MarkovWordRigidity28b1",
+            "path": "/Users/sasha/math_gkm/evidence/markov-28b112de/MarkovWordRigidity28b1.olean",
+            "sha256": "e8a74669315d38c207adc83e94062715ae1e3e8b4c5af32a5aa5f7f875f6e532"
+          },
+          {
+            "module": "MarkovReduction18",
+            "path": "/Users/sasha/math_gkm/evidence/markov-18ae9bbc/MarkovReduction18.olean",
+            "sha256": "9d5d31938d44c974cd88ed7413974302b1f71b1a634b1ce28fdbd2add24f65e8"
+          }
+        ],
+        "axiom_output": "'MathGKM.Markov.root_iff_supported_words28' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+      }
+    ],
+    "root_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+    "rejected_attempts": [
+      "evidence/markov-28b112de/run-1791955354908321000.json",
+      "evidence/markov-28b112de/run-1791955601299094000.json",
+      "evidence/markov-28b112de/run-1791955661463144000.json",
+      "evidence/markov-28b112de/run-1791955863369142000.json",
+      "evidence/markov-28b112de/run-1791955994908693000.json"
+    ],
+    "timeouts": [],
+    "scope": "Named-module fresh source compilation and kernel replay using inherited compiled imports; not independent full-source verification",
+    "completion": null
+  },
+  "interrupted_event_log_sha256": "b43843f773f58013812b36624f3394a72d833bd55382b5e122d5f1f12d50735a",
+  "event_tail": [
+    {
+      "type": "item.completed",
+      "id": "item_72",
+      "exit_code": null
+    },
+    {
+      "type": "item.started",
+      "id": "item_73",
+      "exit_code": null
+    },
+    {
+      "type": "item.started",
+      "id": "item_74",
+      "exit_code": null
+    },
+    {
+      "type": "item.completed",
+      "id": "item_74",
+      "exit_code": null
+    },
+    {
+      "type": "item.completed",
+      "id": "item_75",
+      "exit_code": null
+    },
+    {
+      "type": "item.started",
+      "id": "item_76",
+      "exit_code": null
+    },
+    {
+      "type": "item.completed",
+      "id": "item_73",
+      "exit_code": 0
+    },
+    {
+      "type": "item.started",
+      "id": "item_77",
+      "exit_code": null
+    },
+    {
+      "type": "item.completed",
+      "id": "item_76",
+      "exit_code": 1
+    },
+    {
+      "type": "item.started",
+      "id": "item_78",
+      "exit_code": null
+    },
+    {
+      "type": "item.completed",
+      "id": "item_78",
+      "exit_code": 0
+    },
+    {
+      "type": "item.completed",
+      "id": "item_77",
+      "exit_code": 0
+    }
+  ],
+  "reconciliation": [
+    "Latest worker completed; no new interruption to replay.",
+    "Earlier 05ef interruption was reconciled in evidence/markov-28b112de/reconciliation.json; raw event tail inspected again.",
+    "Sixth diagonal and structural word results already completed. HorizontalTwo05ef remains rejected duplicate; untouched."
+  ],
+  "root_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+  "capabilities": {
+    "sage": null,
+    "gap": "/opt/homebrew/bin/gap",
+    "lean": "/Users/sasha/.elan/bin/lean",
+    "lake": "/Users/sasha/.elan/bin/lake"
+  },
+  "limitations": [
+    "System denies .scratch reads; use unique research temporary directory instead.",
+    "Initial zsh heredoc failed because default temporary location is denied; use Python files or -c."
+  ]
+}

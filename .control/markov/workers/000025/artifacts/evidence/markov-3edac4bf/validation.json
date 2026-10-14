@@ -1,0 +1,197 @@
+{
+  "request_id": "3edac4bf4f1040d0b967711f6c52c66f",
+  "modules": [
+    {
+      "module": "MarkovMechanical3eda",
+      "source": "research/MarkovMechanical3eda.lean",
+      "sha256": "de355dfd7b2611c5db374ed1be35c99f4eb9afd57fa851963eb14410a78d3f29",
+      "status": "compiled and kernel-replayed",
+      "builds": [
+        "evidence/markov-3edac4bf/run-1791956573950028000.json"
+      ],
+      "kernels": [
+        "evidence/markov-3edac4bf/run-1791956603404176000.json"
+      ],
+      "direct_import_binaries": [
+        {
+          "module": "MarkovWordRigidity28b1",
+          "path": "/Users/sasha/math_gkm/evidence/markov-28b112de/MarkovWordRigidity28b1.olean",
+          "sha256": "e8a74669315d38c207adc83e94062715ae1e3e8b4c5af32a5aa5f7f875f6e532"
+        }
+      ],
+      "axiom_output": "'MathGKM.Markov.source_take_floor3eda' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "forbidden_source_tokens": []
+    },
+    {
+      "module": "MarkovSaturation3eda",
+      "source": "research/MarkovSaturation3eda.lean",
+      "sha256": "6f4838e68c71eeeea8b6e7d28d873069e782d63494e4c830a3141cbddb299921",
+      "status": "compiled and kernel-replayed",
+      "builds": [
+        "evidence/markov-3edac4bf/run-1791956714158645000.json"
+      ],
+      "kernels": [
+        "evidence/markov-3edac4bf/run-1791956752864081000.json"
+      ],
+      "direct_import_binaries": [
+        {
+          "module": "MarkovMechanical3eda",
+          "path": "/Users/sasha/math_gkm/evidence/markov-3edac4bf/MarkovMechanical3eda.olean",
+          "sha256": "4520df194279aacc2f1a1e85d40a1041f766adbcff53a70232c006308a9cb452"
+        },
+        {
+          "module": "MarkovIntervals725",
+          "path": "/Users/sasha/math_gkm/evidence/markov-7252232b/MarkovIntervals725.olean",
+          "sha256": "9da10702ce9e3a81b5c2bd9e7b5ef66eac5adaadb6514e5e3ced0e58d0f0a18f"
+        },
+        {
+          "module": "MarkovVertices18",
+          "path": "/Users/sasha/math_gkm/evidence/markov-18ae9bbc/MarkovVertices18.olean",
+          "sha256": "c60839a53cacf858cedf7ef5d316c747d670299b824b2080297a9ca0a1f14891"
+        }
+      ],
+      "axiom_output": "/Users/sasha/math_gkm/research/MarkovSaturation3eda.lean:45:43: warning: This simp argument is unused:\n  List.count_cons\n\nHint: Omit it from the simp argument list.\n  simp [List.count_append,\u0335L\u0335i\u0335s\u0335t\u0335.\u0335c\u0335o\u0335u\u0335n\u0335t\u0335_\u0335c\u0335o\u0335n\u0335s\u0335] at hc \u22a2\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n'MathGKM.Markov.source_saturated3eda' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.source_positive_iff_polygon3eda' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.source_zero_iff_outside3eda' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "forbidden_source_tokens": []
+    },
+    {
+      "module": "MarkovDiagonalSupport3eda",
+      "source": "research/MarkovDiagonalSupport3eda.lean",
+      "sha256": "3cd11137dff9eeae55dcce3558361bcbad9214b77d3ebdc02f05b4ec6d02977c",
+      "status": "compiled and kernel-replayed",
+      "builds": [
+        "evidence/markov-3edac4bf/run-1791956752864083000.json"
+      ],
+      "kernels": [
+        "evidence/markov-3edac4bf/run-1791956817606730000.json"
+      ],
+      "direct_import_binaries": [
+        {
+          "module": "MarkovSaturation3eda",
+          "path": "/Users/sasha/math_gkm/evidence/markov-3edac4bf/MarkovSaturation3eda.olean",
+          "sha256": "54c3dafe516b952c4366eb7db8dcaf20da99ff371f5964bc3d0e711a5abb29d4"
+        }
+      ],
+      "axiom_output": "'MathGKM.Markov.rawDiagonal_interval3eda' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.rawDiagonal_cross_iff3eda' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "forbidden_source_tokens": []
+    },
+    {
+      "module": "MarkovMechanicalGoal3eda",
+      "source": "research/MarkovMechanicalGoal3eda.lean",
+      "sha256": "eaac6d7d4a84525e5e26f0ba688d0507f8834b620e52c5d89923634cb6f6cef5",
+      "status": "compiled and kernel-replayed",
+      "builds": [
+        "evidence/markov-3edac4bf/run-1791956817606598000.json"
+      ],
+      "kernels": [
+        "evidence/markov-3edac4bf/run-1791956903095153000.json"
+      ],
+      "direct_import_binaries": [
+        {
+          "module": "MarkovMechanical3eda",
+          "path": "/Users/sasha/math_gkm/evidence/markov-3edac4bf/MarkovMechanical3eda.olean",
+          "sha256": "4520df194279aacc2f1a1e85d40a1041f766adbcff53a70232c006308a9cb452"
+        },
+        {
+          "module": "MarkovReduction18",
+          "path": "/Users/sasha/math_gkm/evidence/markov-18ae9bbc/MarkovReduction18.olean",
+          "sha256": "9d5d31938d44c974cd88ed7413974302b1f71b1a634b1ce28fdbd2add24f65e8"
+        }
+      ],
+      "axiom_output": "'MathGKM.Markov.source_word_mechanical3eda' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.root_iff_mechanical3eda' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "forbidden_source_tokens": []
+    },
+    {
+      "module": "MarkovCrossGoal3eda",
+      "source": "research/MarkovCrossGoal3eda.lean",
+      "sha256": "f82bcdf3091db65de3afe505516a02b5a1649dda24c0d135d649e8ff54984300",
+      "status": "compiled and kernel-replayed",
+      "builds": [
+        "evidence/markov-3edac4bf/run-1791957006730459000.json"
+      ],
+      "kernels": [
+        "evidence/markov-3edac4bf/run-1791957125566479000.json"
+      ],
+      "direct_import_binaries": [
+        {
+          "module": "MarkovDiagonalSupport3eda",
+          "path": "/Users/sasha/math_gkm/evidence/markov-3edac4bf/MarkovDiagonalSupport3eda.olean",
+          "sha256": "d253b234b48172ab31df5c26e2e5dc33615440f2254383e04a7e5ee190444d66"
+        },
+        {
+          "module": "MarkovReduction18",
+          "path": "/Users/sasha/math_gkm/evidence/markov-18ae9bbc/MarkovReduction18.olean",
+          "sha256": "9d5d31938d44c974cd88ed7413974302b1f71b1a634b1ce28fdbd2add24f65e8"
+        }
+      ],
+      "axiom_output": "'MathGKM.Markov.all_diagonal_cross_iff3eda' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.root_iff_cross3eda' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "forbidden_source_tokens": []
+    },
+    {
+      "module": "MarkovPalindromeObstruction3eda",
+      "source": "research/MarkovPalindromeObstruction3eda.lean",
+      "sha256": "f50346d16233378d342b32fde0940ffbc3b6030f35b422f5657f6dd25dbe7c9b",
+      "status": "compiled and kernel-replayed",
+      "builds": [
+        "evidence/markov-3edac4bf/run-1791956697201921000.json"
+      ],
+      "kernels": [
+        "evidence/markov-3edac4bf/run-1791956752864505000.json"
+      ],
+      "direct_import_binaries": [
+        {
+          "module": "MarkovSquares28b1",
+          "path": "/Users/sasha/math_gkm/evidence/markov-28b112de/MarkovSquares28b1.olean",
+          "sha256": "a3d80e8951f99a5e8c970154fb11d7577cd5ebdbbce58569ab0bacc8ae526929"
+        },
+        {
+          "module": "MarkovObstructionF80",
+          "path": "/Users/sasha/math_gkm/evidence/markov-f80fb8bc/MarkovObstructionF80.olean",
+          "sha256": "6d8925b7faee58e488c4c988e95a2cd1e4cc4e3d51008cea747f6ea9db4a278b"
+        },
+        {
+          "module": "MarkovPolygon18",
+          "path": "/Users/sasha/math_gkm/evidence/markov-18ae9bbc/MarkovPolygon18.olean",
+          "sha256": "c790df60fc603a8328832e63ca9e206287aeb4681eff77ee0b5c465927d69f14"
+        }
+      ],
+      "axiom_output": "'MathGKM.Markov.palindrome_balance_not_sufficient3eda' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.badCore_not_source_three_eighths3eda' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "forbidden_source_tokens": []
+    },
+    {
+      "module": "MarkovDirectionObstruction3eda",
+      "source": "research/MarkovDirectionObstruction3eda.lean",
+      "sha256": "f5b975f7c9eec56339482b9208b9326d5454d52bf9d190ae6beddb7b9028a186",
+      "status": "compiled and kernel-replayed",
+      "builds": [
+        "evidence/markov-3edac4bf/run-1791957008100360000.json"
+      ],
+      "kernels": [
+        "evidence/markov-3edac4bf/run-1791957125566216000.json"
+      ],
+      "direct_import_binaries": [
+        {
+          "module": "MarkovFibonacciFormula6ade",
+          "path": "/Users/sasha/math_gkm/evidence/markov-6ade2697/MarkovFibonacciFormula6ade.olean",
+          "sha256": "dcf275d1d4d5f77ad6678f7bd374a465f8836f316b03e0be668060315563fe17"
+        },
+        {
+          "module": "MarkovFibonacciLC6ade",
+          "path": "/Users/sasha/math_gkm/evidence/markov-6ade2697/MarkovFibonacciLC6ade.olean",
+          "sha256": "e1a703d0190913aa35b93a9cc413c358d4e1f3a4ce5c4f817969f1e04858ee87"
+        }
+      ],
+      "axiom_output": "'MathGKM.Markov.source_ninth_coeff3eda' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.source_ninth_valid3eda' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.source_nonprincipal_failure3eda' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "forbidden_source_tokens": []
+    }
+  ],
+  "root_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+  "root_unchanged": true,
+  "pinned_inputs": {
+    "lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+    "lakefile.toml": "211507039f4919cdc9d54f87efaf7bebf53532272377623f75269c714fb5b575",
+    "lake-manifest.json": "b513f28de3996d022de1bad05cd06002dc5f21286f4cd26454fcfae26a745725",
+    ".control/markov/contract.json": "cc930bda09aaaa16b0662e9c0afa3c48167b1a07f2087eb6c2106c73c4a16068"
+  },
+  "imports_status": "Inherited compiled imports; not a fresh full-source dependency rebuild",
+  "completion": null
+}

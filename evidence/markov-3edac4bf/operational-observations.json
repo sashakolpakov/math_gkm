@@ -1,0 +1,66 @@
+{
+  "request_id": "3edac4bf4f1040d0b967711f6c52c66f",
+  "rejected_or_timed_out_runs": [
+    {
+      "record": "evidence/markov-3edac4bf/run-1791956479836994000.json",
+      "source": "research/MarkovMechanical3eda.lean",
+      "timeout": false,
+      "returncode": 1
+    },
+    {
+      "record": "evidence/markov-3edac4bf/run-1791956535711059000.json",
+      "source": "research/MarkovMechanical3eda.lean",
+      "timeout": false,
+      "returncode": 1
+    },
+    {
+      "record": "evidence/markov-3edac4bf/run-1791956602214389000.json",
+      "source": "research/MarkovSaturation3eda.lean",
+      "timeout": false,
+      "returncode": 1
+    },
+    {
+      "record": "evidence/markov-3edac4bf/run-1791956660787116000.json",
+      "source": "research/MarkovSaturation3eda.lean",
+      "timeout": false,
+      "returncode": 1
+    },
+    {
+      "record": "evidence/markov-3edac4bf/run-1791956951253158000.json",
+      "source": "research/MarkovCrossGoal3eda.lean",
+      "timeout": false,
+      "returncode": 1
+    }
+  ],
+  "capabilities": {
+    "sage": null,
+    "gap": "/opt/homebrew/bin/gap",
+    "lean": "/Users/sasha/.elan/bin/lean",
+    "lake": "/Users/sasha/.elan/bin/lake"
+  },
+  "failures": [
+    "Default zsh heredoc temporary creation was denied; no side effect occurred; switched to Python files and -c.",
+    "A source-search glob matched no files and zsh rejected the command; reran with explicit existing paths.",
+    "Two documentation patch attempts failed their context checks and made no changes; corrected patch then succeeded.",
+    "Sage absent from PATH; GAP present but not needed for these experiments."
+  ],
+  "restrictions": [
+    ".scratch reads denied by system; used research/markov-3edac4bf-tmp.",
+    "No shell networking, package updates, controllers, model calls, background processes, Git access or control-record edits."
+  ],
+  "source_access": [
+    {
+      "url": "https://armj.math.stonybrook.edu/Articles/250708-Winn/index.html",
+      "method": "hosted web open",
+      "result": "retrieved"
+    },
+    {
+      "url": "https://arxiv.org/html/2604.18333v1",
+      "method": "hosted web open",
+      "result": "retrieved"
+    }
+  ],
+  "foreground_sessions_completed": true,
+  "stop_file_present": false,
+  "validation_limitations": "Inherited compiled imports; not a fresh full-source dependency rebuild"
+}
