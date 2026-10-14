@@ -1,0 +1,109 @@
+{
+  "request_id": "0c12f51d13954e288fe0129642b586e0",
+  "time": "2026-10-14T14:55:31.138195+00:00",
+  "inherited_index": {
+    "RESUME.json": {
+      "recorded": "9c4cda71331349bd2b18e040157b07b013cdb0e393bc77160f651666c1132df7",
+      "actual": "9c4cda71331349bd2b18e040157b07b013cdb0e393bc77160f651666c1132df7",
+      "matches": true
+    },
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": {
+      "recorded": "c43cd8a52bef2073f028bafcb8a793b8d2208f7924ba318257b7acfbcee45c1d",
+      "actual": "c43cd8a52bef2073f028bafcb8a793b8d2208f7924ba318257b7acfbcee45c1d",
+      "matches": true
+    },
+    "evidence/independent-markov/markov_residual_scope_audit.md": {
+      "recorded": "6cb707622a6c57fb2b8ac5167b302b5c21daafe5ac332b223b137407db874e35",
+      "actual": "6cb707622a6c57fb2b8ac5167b302b5c21daafe5ac332b223b137407db874e35",
+      "matches": true
+    },
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": {
+      "recorded": "63a5d6b9fd6b89dfdc92c0382c165c9c6868313ea1598250c41ae0562cd7df8a",
+      "actual": "63a5d6b9fd6b89dfdc92c0382c165c9c6868313ea1598250c41ae0562cd7df8a",
+      "matches": true
+    },
+    "evidence/markov/research-run/state.json": {
+      "recorded": "37c095598ce39fad509297b6f74b4293594b3ecdc2f69524722f41023ec50b8d",
+      "actual": "37c095598ce39fad509297b6f74b4293594b3ecdc2f69524722f41023ec50b8d",
+      "matches": true
+    },
+    "requests/markov-next.json": {
+      "recorded": "b2c014a6a6a2dca6a4d28a42fcc1356e66858709bfb861cd29b361a20154b755",
+      "actual": "b2c014a6a6a2dca6a4d28a42fcc1356e66858709bfb861cd29b361a20154b755",
+      "matches": true
+    }
+  },
+  "prior_raw_events_sha256": "72ec0fef3678748e50b80de9bb6b3fd6d3a1a2af3545c61ce72971767e56c63c",
+  "prior_raw_event_count": 145,
+  "prior_validation": [
+    {
+      "module": "MarkovAbel65c4",
+      "source_matches": true,
+      "build": 0,
+      "replay": 0
+    },
+    {
+      "module": "MarkovTruncatedFiber65c4",
+      "source_matches": true,
+      "build": 0,
+      "replay": 0
+    },
+    {
+      "module": "MarkovFiberPolynomial65c4",
+      "source_matches": true,
+      "build": 0,
+      "replay": 0
+    }
+  ],
+  "prior_last_events": [
+    {
+      "type": "item.started",
+      "item": {
+        "id": "item_73",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/finalize_65c4.py'",
+        "aggregated_output": "",
+        "exit_code": null,
+        "status": "in_progress"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_73",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/finalize_65c4.py'",
+        "aggregated_output": "{\"validated\": [\"MarkovAbel65c4\", \"MarkovTruncatedFiber65c4\", \"MarkovFiberPolynomial65c4\"], \"failed\": 4, \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\"}\n",
+        "exit_code": 0,
+        "status": "completed"
+      }
+    },
+    {
+      "type": "item.started",
+      "item": {
+        "id": "item_74",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc \"/opt/homebrew/bin/python3 -c 'import json;from pathlib import Path;p=Path(\\\"evidence/markov-65c4dfb8/report.json\\\");d=json.loads(p.read_text());assert d[\\\"request_id\\\"]==\\\"65c4dfb883e140b0a62fddbffe247137\\\" and d[\\\"completion\\\"] is None;v=json.loads(Path(\\\"evidence/markov-65c4dfb8/validation.json\\\").read_text());assert all(x[\\\"build\\\"] and x[\\\"replay\\\"] and \\\"sorryAx\\\" not in x[\\\"axiom_output\\\"] for x in v[\\\"modules\\\"]);print(\\\"Final report and three hash-bound build/replay records checked.\\\")'\"",
+        "aggregated_output": "",
+        "exit_code": null,
+        "status": "in_progress"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_74",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc \"/opt/homebrew/bin/python3 -c 'import json;from pathlib import Path;p=Path(\\\"evidence/markov-65c4dfb8/report.json\\\");d=json.loads(p.read_text());assert d[\\\"request_id\\\"]==\\\"65c4dfb883e140b0a62fddbffe247137\\\" and d[\\\"completion\\\"] is None;v=json.loads(Path(\\\"evidence/markov-65c4dfb8/validation.json\\\").read_text());assert all(x[\\\"build\\\"] and x[\\\"replay\\\"] and \\\"sorryAx\\\" not in x[\\\"axiom_output\\\"] for x in v[\\\"modules\\\"]);print(\\\"Final report and three hash-bound build/replay records checked.\\\")'\"",
+        "aggregated_output": "Final report and three hash-bound build/replay records checked.\n",
+        "exit_code": 0,
+        "status": "completed"
+      }
+    }
+  ],
+  "reconciliation": "Controller reported timeout, but predecessor saved its report, all three build/replay receipts, and final verification command completed. No final delivered JSON event occurs in the inspected ending. Preserve completed effects and do not rerun them.",
+  "root_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+  "capability_failures": [
+    "Shell here-document failed: cannot create temp file, operation not permitted. Developer denies .scratch reads; use research/evidence working artifacts instead."
+  ]
+}

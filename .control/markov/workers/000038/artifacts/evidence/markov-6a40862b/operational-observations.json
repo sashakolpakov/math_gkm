@@ -1,0 +1,44 @@
+{
+  "rejected_runs": [
+    {
+      "record": "evidence/markov-6a40862b/run-1791991194686597000.json",
+      "source": "research/MarkovLayerCertificate6a40.lean",
+      "timeout": true,
+      "returncode": null
+    },
+    {
+      "record": "evidence/markov-6a40862b/run-1791991305054667000.json",
+      "source": "research/MarkovBinomialRatios6a40.lean",
+      "timeout": false,
+      "returncode": 1
+    },
+    {
+      "record": "evidence/markov-6a40862b/run-1791991426085762000.json",
+      "source": "research/MarkovBinomialRatios6a40.lean",
+      "timeout": false,
+      "returncode": 1
+    },
+    {
+      "record": "evidence/markov-6a40862b/run-1791991490011093000.json",
+      "source": "research/MarkovLayerIdentity6a40.lean",
+      "timeout": false,
+      "returncode": 1
+    },
+    {
+      "record": "evidence/markov-6a40862b/run-1791991766228159000.json",
+      "source": "research/MarkovLayerMonotone6a40.lean",
+      "timeout": false,
+      "returncode": 1
+    }
+  ],
+  "capability_observations": [
+    "Developer forbids .scratch reads; all working files retained in research/evidence.",
+    "sage was not found; GAP executable was found but not needed. No package changes.",
+    "Process inspection using ps was denied by the sandbox.",
+    "An early validator invocation preceded completion of certificate generation and found no source file; no proof effect.",
+    "research/setup_0c12.py was absent; the actual predecessor setup was then inspected.",
+    "Initial combined document output was truncated; required documents were reread in smaller batches.",
+    "STOP.json was absent at check time.",
+    "Monolithic certificate elaboration timed out; split certificate identities were used instead."
+  ]
+}

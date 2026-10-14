@@ -1,0 +1,56 @@
+{
+  "time": "2026-10-14T15:31:46.543790+00:00",
+  "modules": [
+    {
+      "module": "MarkovLayerPositive6a40",
+      "source": "research/MarkovLayerPositive6a40.lean",
+      "sha256": "7bda2e2957cebd34008f6e9ff180e8b46c6e198d10fd6e722015b33783fa4278",
+      "build": "evidence/markov-6a40862b/run-1791991400450470000.json",
+      "replay": "evidence/markov-6a40862b/run-1791991572901752000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.layerCert6_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "olean_sha256": "c514bcbbbaf155567986cdd051b80f0b750ca698bf2ed908422d4868841d5ce5"
+    },
+    {
+      "module": "MarkovLayerIdentity6a40",
+      "source": "research/MarkovLayerIdentity6a40.lean",
+      "sha256": "b20ef44819b6944fa61dad481807d6b593cb6366ec6eef3d3f6f639be2daf209",
+      "build": "evidence/markov-6a40862b/run-1791991590540311000.json",
+      "replay": "evidence/markov-6a40862b/run-1791991766228173000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.layer_certificate_identity6' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "olean_sha256": "665377bc404ae7c6e22c7b2790e0b225570628d99172590d3d991eff8890540d"
+    },
+    {
+      "module": "MarkovLayerMonotone6a40",
+      "source": "research/MarkovLayerMonotone6a40.lean",
+      "sha256": "fb5e095a1c6fba7cbb8a995cb75fb24fa560edfbcac46db7d746b333ffb8e6d9",
+      "build": "evidence/markov-6a40862b/run-1791991842424211000.json",
+      "replay": null,
+      "axiom_lines": [
+        "'MathGKM.Markov.layer_cleared_monotone6' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.layer_ratio_monotone6' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "olean_sha256": "605e2aeb97e487fcb89978d8939b84cf2ca7ad438395e9a1b067e6c3a1698e46"
+    },
+    {
+      "module": "MarkovBinomialRatios6a40",
+      "source": "research/MarkovBinomialRatios6a40.lean",
+      "sha256": "fdda232ff7f1be421cd3edf06b031b07fffd31957de4e7e82230bc4ba4421676",
+      "build": "evidence/markov-6a40862b/run-1791991505435660000.json",
+      "replay": "evidence/markov-6a40862b/run-1791991591737524000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.bc_lower6' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.bc_upper6' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.bc_lower_ratio6' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.bc_upper_back6' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ],
+      "olean_sha256": "66ccb00c4b7706e60578c61b92ab00854e3ab2953180a36b590d2e2e928f6801"
+    }
+  ],
+  "imports": "Inherited compiled imports, not fresh whole-source rebuilding",
+  "independent_audit": false,
+  "root_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+}
