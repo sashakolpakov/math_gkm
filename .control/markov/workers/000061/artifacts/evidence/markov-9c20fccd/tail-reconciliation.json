@@ -1,0 +1,40 @@
+{
+  "status": "reconciled partial effects; no replay of prior side effects",
+  "manifest_mismatches": [
+    "evidence/markov-07a7e5b7/replay-progress.json",
+    "evidence/markov-07a7e5b7/replays.log"
+  ],
+  "explanation": "These files gained the final prefix timeout and completion line after artifacts.json was written. Individual raw receipts agree with final progress entries. Four modules replayed successfully; prefix replay timed out twice. Earlier claim of absent final receipt is corrected here.",
+  "checks": [
+    {
+      "module": "MarkovCutDegree07a7",
+      "matches_raw_receipt": true,
+      "returncode": 0,
+      "timeout": null
+    },
+    {
+      "module": "MarkovDegreeTransfer07a7",
+      "matches_raw_receipt": true,
+      "returncode": 0,
+      "timeout": null
+    },
+    {
+      "module": "MarkovDegreeBridge07a7",
+      "matches_raw_receipt": true,
+      "returncode": 0,
+      "timeout": null
+    },
+    {
+      "module": "MarkovDegreeObstruction07a7",
+      "matches_raw_receipt": true,
+      "returncode": 0,
+      "timeout": null
+    },
+    {
+      "module": "MarkovCutPrefix07a7",
+      "matches_raw_receipt": true,
+      "returncode": null,
+      "timeout": true
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovRunLayer6d34.lean:30:2: error: ring failed, ring expressions not equal\nR : Type u_1\ninst\u271d : CommRing R\ny : R\nn s : \u2115\nh :\n  cutCoeffA27 y y 1 (List.replicate (n + 1) true) (s + 1) =\n    cutCoeffA27 y y 1 (List.replicate n true) (s + 1) +\n      (List.map (fun m => maskWeight340 y y 1 (m ++ [(true, true)])) (cutMasksFe01 (List.replicate n true) s)).sum\n\u22a2 (List.map (fun m => maskWeight340 y y 1 (m ++ [(true, true)])) (cutMasksFe01 (List.replicate n true) s)).sum * 2 +\n        cutCoeffA27 y y 1 (List.replicate n true) (s + 1) * 2 -\n      cutCoeffA27 y y 1 (List.replicate (n + 1) true) (s + 1) * 2 =\n    0\n/Users/sasha/math_gkm/research/MarkovRunLayer6d34.lean:56:4: error: Type mismatch\n  cut_run_increment6d34 y n s\nhas type\n  (List.map (fun m => maskWeight340 y y 1 (m ++ [(true, true)])) (cutMasksFe01 (List.replicate n true) s)).sum =\n    cutCoeffA27 y y 1 (List.replicate (n + 1) true) (s + 1) - cutCoeffA27 y y 1 (List.replicate n true) (s + 1)\nbut is expected to have type\n  (List.map (fun m => maskWeight340 y y 1 (m ++ [(true, true)])) (cutMasksFe01 (List.replicate n true) s)).sum =\n    cutCoeffA27 y y 1 (List.replicate n true ++ [true]) (s + 1) - cutCoeffA27 y y 1 (List.replicate n true) (s + 1)\n'MathGKM.Markov.layer_run_step6d34' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.layer_run_exact6d34' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovRunLayer6d34.lean",
+  "sha256": "46c1fe7d12b23bc865436238bfb1d9378e88ff2edc2e6a7f410253e38a25da71",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-6d34d54a/MarkovRunLayer6d34.olean",
+    "/Users/sasha/math_gkm/research/MarkovRunLayer6d34.lean"
+  ],
+  "seconds": 14.876272958004847,
+  "imports_status": "Inherited compiled imports reused; not a fresh whole-source rebuild"
+}

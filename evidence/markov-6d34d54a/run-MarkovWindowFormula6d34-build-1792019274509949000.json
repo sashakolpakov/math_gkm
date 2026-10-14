@@ -1,0 +1,15 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovWindowFormula6d34.lean:24:19: error(lean.unknownIdentifier): Unknown constant `Polynomial.monomial_eq_C_mul_X`\n/Users/sasha/math_gkm/research/MarkovWindowFormula6d34.lean:23:59: error: unsolved goals\nwidth : \u2115\n\u22a2 \u2211 x \u2208 range (width + 1), (monomial x) 1 = \u2211 r \u2208 range (width + 1), X ^ r\n/Users/sasha/math_gkm/research/MarkovWindowFormula6d34.lean:67:4: error: unsolved goals\ncase pos\ns N width k : \u2115\nhk : k \u2264 N\nr : \u2115\nhr : r \u2208 range (width + 1)\nh : k + r \u2264 N\n\u22a2 N + r + k < N \u2192 0 = \u2191((N - k - r + s).choose s)\n/Users/sasha/math_gkm/research/MarkovWindowFormula6d34.lean:88:2: error: Type mismatch: After simplification, term\n  h\n has type\n  @LE.le \u211d Real.instLE\n    (if \u2191k + 1 + 1 < 0 then 0\n    else\n      if \u2191k < 0 then 0\n      else\n        ((1 + X) ^ t * intervalPoly6d34 s N width).coeff k *\n          ((1 + X) ^ t * intervalPoly6d34 s N width).coeff (\u2191k + 1 + 1).toNat)\n    (if \u2191k + 1 < 0 then 0 else ((1 + X) ^ t * intervalPoly6d34 s N width).coeff (k + 1) ^ 2)\nbut is expected to have type\n  @LE.le \u211d Real.instLE\n    (((1 + X) ^ t * intervalPoly6d34 s N width).coeff k * ((1 + X) ^ t * intervalPoly6d34 s N width).coeff (k + 2))\n    (((1 + X) ^ t * intervalPoly6d34 s N width).coeff (k + 1) ^ 2)\n'MathGKM.Markov.intervalPoly_seq6d34' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.intervalPoly_smoothed_lc6d34' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovWindowFormula6d34.lean",
+  "sha256": "ff8448d2e57a959d41d7217cc890763742a936f689619ff548e77f0300994d39",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-6d34d54a/MarkovWindowFormula6d34.olean",
+    "/Users/sasha/math_gkm/research/MarkovWindowFormula6d34.lean"
+  ],
+  "seconds": 13.873566249996657,
+  "imports_status": "Inherited compiled imports reused; not a fresh whole-source rebuild"
+}

@@ -1,0 +1,15 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCountCoeff68a4.lean:15:13: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ?a ^ ?n * ?b ^ ?n\nin the target expression\n  (C z + X * C z ^ 2) ^ n = C (z ^ n) * (1 + C z * X) ^ n\n\nR : Type u_1\ninst\u271d : CommRing R\nz : R\nn s : \u2115\n\u22a2 (C z + X * C z ^ 2) ^ n = C (z ^ n) * (1 + C z * X) ^ n\n/Users/sasha/math_gkm/research/MarkovCountCoeff68a4.lean:31:1: error: unsolved goals\ncase pos\nr h n s d : \u2115\nhrs : r \u2264 s\nhp : X ^ h * (\u2191(n.choose (s - r)) * X ^ (n + (s - r))) = C \u2191(n.choose (s - r)) * X ^ (h + n + (s - r))\n\u22a2 (if d = h + n + (s - r) then \u2191(n.choose (s - r)) else 0) = if h + n + (s - r) = d then \u2191(n.choose (s - r)) else 0\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovCountCoeff68a4.lean:62:27: error: unsolved goals\ncase neg\np q s d : \u2115\nh\u271d\u00b9 : s = 0\nh\u271d : \u00acd = 0\n\u22a2 Polynomial.coeff 1 d = 0\n'MathGKM.Markov.count_atom_coeff68' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.singleA_layer_count68' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovCountCoeff68a4.lean",
+  "sha256": "01876a521574e8bd15daf93d33e679cd85d173656c49e9e8c3b69b423633f443",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-68a44d34/MarkovCountCoeff68a4.olean",
+    "/Users/sasha/math_gkm/research/MarkovCountCoeff68a4.lean"
+  ],
+  "seconds": 11.907560833002208,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild"
+}

@@ -1,0 +1,15 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCountDiagonal68a4.lean:39:25: error(lean.unknownIdentifier): Unknown constant `Finset.card_Icc`\n/Users/sasha/math_gkm/research/MarkovCountDiagonal68a4.lean:23:34: error: unsolved goals\nn N : \u2115\nc : \u2124\nhi : \u2200 (k : \u2115), (\u2211 l \u2208 range (n + 1), if k + l = N then c else 0) = if k \u2264 N \u2227 N - k \u2264 n then c else 0\nhf : {k \u2208 range (n + 1) | k \u2264 N \u2227 N - k \u2264 n} = Icc (N - n) (min n N)\n\u22a2 #(Icc (N - n) (min n N)) \u2022 c = \u2191(min n N + 1 - (N - n)) * c\n/Users/sasha/math_gkm/research/MarkovCountDiagonal68a4.lean:30:53: warning: This simp argument is unused:\n  Nat.lt_succ_iff\n\nHint: Omit it from the simp argument list.\n  simp [\u0335h\u0335e\u0335,\u0335F\u0335i\u0335n\u0335s\u0335e\u0335t\u0335.\u0335s\u0335u\u0335m\u0335_\u0335i\u0335t\u0335e\u0335_\u0335e\u0335q\u0335'\u0335,\u0335F\u0335i\u0335n\u0335s\u0335e\u0335t\u0335.\u0335m\u0335e\u0335m\u0335_\u0335r\u0335a\u0335n\u0335g\u0335e\u0335,\u0335h\u0335k\u0335,\u0335N\u0335a\u0335t\u0335.\u0335l\u0335t\u0335_\u0335s\u0335u\u0335c\u0335c\u0335_\u0335i\u0335f\u0335f\u0335]\u0335[\u0332h\u0332e\u0332,\u0332 \u0332F\u0332i\u0332n\u0332s\u0332e\u0332t\u0332.\u0332s\u0332u\u0332m\u0332_\u0332i\u0332t\u0332e\u0332_\u0332e\u0332q\u0332'\u0332,\u0332 \u0332F\u0332i\u0332n\u0332s\u0332e\u0332t\u0332.\u0332m\u0332e\u0332m\u0332_\u0332r\u0332a\u0332n\u0332g\u0332e\u0332,\u0332 \u0332h\u0332k\u0332]\u0332\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovCountDiagonal68a4.lean:57:67: error: unsolved goals\ncase pos\nn : \u2115\nhn : 2 \u2264 n\nh1 : n + 6 - 4 - 1 = n + 1\nh2 : n + 6 - 5 - 1 = n\nh3 : n + 6 - 6 - 1 = n - 1\nhm : min n (n - 1) = n - 1\nh\u271d\u2075 : \u00acn + 6 - 2 - 3 < n\nh\u271d\u2074 : \u00ac1 + n = n + 3\nh\u271d\u00b3 : \u00acn + 6 - 2 - 4 < n\nh\u271d\u00b2 : \u00ac1 + n = n + 2\nh\u271d\u00b9 : n + 6 - 2 - 5 < n\nh\u271d : 1 + n = n + 1\n\u22a2 True \u2227 True \u2227 True\n'MathGKM.Markov.source_count_456_formula68' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovCountDiagonal68a4.lean",
+  "sha256": "f37f3ea930b5d2712e029ca391668d6afeac12e4b0c46db7f25e551e3577e694",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-68a44d34/MarkovCountDiagonal68a4.olean",
+    "/Users/sasha/math_gkm/research/MarkovCountDiagonal68a4.lean"
+  ],
+  "seconds": 17.036661416001152,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild"
+}

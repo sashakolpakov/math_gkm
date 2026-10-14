@@ -1,0 +1,15 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCountTransfer68a4.lean:36:1: error: Tactic `apply` failed: could not unify the conclusion of `sum_congr rfl`\n  Finset.sum ?m.57 ?m.54 = Finset.sum ?m.57 ?m.55\nwith the goal\n  \u2211 k \u2208 range n, t ^ (k + 1) = 1\n\nNote: The full type of `sum_congr rfl` is\n  (\u2200 x \u2208 ?m.57, ?m.54 x = ?m.55 x) \u2192 Finset.sum ?m.57 ?m.54 = Finset.sum ?m.57 ?m.55\n\ncase e_a\nR : Type u_1\ninst\u271d : CommRing R\nt : R\nn : \u2115\n\u22a2 \u2211 k \u2208 range n, t ^ (k + 1) = 1\n/Users/sasha/math_gkm/research/MarkovCountTransfer68a4.lean:49:56: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  if ?m.117 = ?m.117 then ?m.119 else ?m.120\nin the target expression\n  (match countPair68 x z (List.replicate n true ++ w) with\n    | (a, b) => if true = true then (a, x * z * a + (z + x * z ^ 2) * b) else (a + b, x * (a + z * b))) =\n    ((countPair68 x z w).1,\n      (z + x * z ^ 2) ^ (n + 1) * (countPair68 x z w).2 +\n        x * z * (countPair68 x z w).1 * geomCount68 (z + x * z ^ 2) (n + 1))\n\ncase succ\nR : Type u_1\ninst\u271d : CommRing R\nx z : R\nw : List Bool\nn : \u2115\nih :\n  countPair68 x z (List.replicate n true ++ w) =\n    ((countPair68 x z w).1,\n      (z + x * z ^ 2) ^ n * (countPair68 x z w).2 + x * z * (countPair68 x z w).1 * geomCount68 (z + x * z ^ 2) n)\n\u22a2 (match countPair68 x z (List.replicate n true ++ w) with\n    | (a, b) => if true = true then (a, x * z * a + (z + x * z ^ 2) * b) else (a + b, x * (a + z * b))) =\n    ((countPair68 x z w).1,\n      (z + x * z ^ 2) ^ (n + 1) * (countPair68 x z w).2 +\n        x * z * (countPair68 x z w).1 * geomCount68 (z + x * z ^ 2) (n + 1))\n/Users/sasha/math_gkm/research/MarkovCountTransfer68a4.lean:47:17: warning: This simp argument is unused:\n  countPair68\n\nHint: Omit it from the simp argument list.\n  simp [c\u0335o\u0335u\u0335n\u0335t\u0335P\u0335a\u0335i\u0335r\u03356\u03358\u0335,\u0335geomCount68]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovCountTransfer68a4.lean:74:1: error: Type mismatch: After simplification, term\n  h\n has type\n  eval 0 (degreeLayer07a7 X w s d) = degreeLayer07a7 0 w s d\nbut is expected to have type\n  (degreeLayer07a7 X w s d).coeff 0 = degreeLayer07a7 0 w s d\n'MathGKM.Markov.singleA_count_formula68' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.marked_count_coeff68' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovCountTransfer68a4.lean",
+  "sha256": "a07bb6134cf375e6f3673cbd9f1191604dd672012831a9c93b16dcca623e6f22",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-68a44d34/MarkovCountTransfer68a4.olean",
+    "/Users/sasha/math_gkm/research/MarkovCountTransfer68a4.lean"
+  ],
+  "seconds": 35.044911000004504,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild"
+}

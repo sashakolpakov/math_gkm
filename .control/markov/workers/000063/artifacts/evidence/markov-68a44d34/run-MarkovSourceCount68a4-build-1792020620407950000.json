@@ -1,0 +1,15 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSourceCount68a4.lean:57:1: error: mod_cast has type\n  coeff (frame path).mid.p (s + (frame path).mid.a) 0 = \u2191(((frame path).mid.b - 1).choose s)\nbut is expected to have type\n  coeff (frame path).mid.p ((frame path).mid.a + s) 0 = \u2191(((frame path).mid.b - 1).choose s)\n/Users/sasha/math_gkm/research/MarkovSourceCount68a4.lean:68:64: error: unexpected identifier after decimal point; consider parenthesizing the number\n/Users/sasha/math_gkm/research/MarkovSourceCount68a4.lean:68:63: error: (\u21a5) must have a function type, not\n  \u2124\n/Users/sasha/math_gkm/research/MarkovSourceCount68a4.lean:65:66: error: unsolved goals\ncase h\nha : (frame (oneAPath68 33)).mid.a = 67\nhb : (frame (oneAPath68 33)).mid.b = 69\ns : \u2115\n\u22a2 coeff (frame (oneAPath68 33)).mid.p (67 + s) 0 = sorry\n\nha : (frame (oneAPath68 33)).mid.a = 67\nhb : (frame (oneAPath68 33)).mid.b = 69\nh : \u2200 (s : \u2115), coeff (frame (oneAPath68 33)).mid.p (67 + s) 0 = sorry\n\u22a2 let m := (frame (oneAPath68 33)).mid;\n  m.a = 67 \u2227\n    m.b = 69 \u2227\n      InPolygon m.a m.b 71 0 \u2227\n        InPolygon m.a m.b 72 0 \u2227\n          InPolygon m.a m.b 73 0 \u2227\n            coeff m.p 71 0 = 814385 \u2227\n              coeff m.p 72 0 = 10424128 \u2227\n                coeff m.p 73 0 = 109453344 \u2227 coeff m.p 72 0 ^ 2 - coeff m.p 71 0 * coeff m.p 73 0 = 19525283006944\n'MathGKM.Markov.oneA_layer_count68' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.source_fixed_degree_horizontal_failure68' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.source_full_raw_triple68' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovSourceCount68a4.lean",
+  "sha256": "76399fff756e7f3e1afd944bd98cb69910fde1a307d6c5417d5ea425c7c5027f",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-68a44d34/MarkovSourceCount68a4.olean",
+    "/Users/sasha/math_gkm/research/MarkovSourceCount68a4.lean"
+  ],
+  "seconds": 12.450504542008275,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild"
+}
