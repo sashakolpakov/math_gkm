@@ -1,0 +1,77 @@
+{
+  "request_id": "26dd33d6a67b4559b60690a5fd08502c",
+  "modules": [
+    {
+      "module": "MarkovSmallQuartic26dd",
+      "source": "research/MarkovSmallQuartic26dd.lean",
+      "sha256": "af0c48415056639ffdb1b7b36a66d1b562150a4f2563fb51cf7277f07103221b",
+      "builds": [
+        "evidence/markov-26dd33d6/run-1791952024430566000.json"
+      ],
+      "kernels": [
+        "evidence/markov-26dd33d6/run-1791952111401819000.json"
+      ],
+      "direct_import_binaries": [
+        {
+          "module": "MarkovQuarticSource4f8",
+          "path": "/Users/sasha/math_gkm/evidence/markov-4f8ceeeb/MarkovQuarticSource4f8.olean",
+          "sha256": "e10f8d0c8ecb58d04788ca5a48d1a03b5f228b7dd525aaa3fe535d180340498f"
+        }
+      ]
+    },
+    {
+      "module": "MarkovFiniteQuartic26dd",
+      "source": "research/MarkovFiniteQuartic26dd.lean",
+      "sha256": "9dbd9ade243c22c59b6f0e576fc6f54f577bf1d8b2e4035f3098e0dac1394df5",
+      "builds": [
+        "evidence/markov-26dd33d6/run-1791951900752573000.json"
+      ],
+      "kernels": [
+        "evidence/markov-26dd33d6/run-1791952025608926000.json"
+      ],
+      "direct_import_binaries": [
+        {
+          "module": "MarkovQuarticSource4f8",
+          "path": "/Users/sasha/math_gkm/evidence/markov-4f8ceeeb/MarkovQuarticSource4f8.olean",
+          "sha256": "e10f8d0c8ecb58d04788ca5a48d1a03b5f228b7dd525aaa3fe535d180340498f"
+        }
+      ]
+    },
+    {
+      "module": "MarkovFifthAll26dd",
+      "source": "research/MarkovFifthAll26dd.lean",
+      "sha256": "61afef553a5e64afd4c19450c7eda71e93eacedb0a0b01927d027a9de07af1a6",
+      "builds": [
+        "evidence/markov-26dd33d6/run-1791952216156985000.json"
+      ],
+      "kernels": [
+        "evidence/markov-26dd33d6/run-1791952276668711000.json"
+      ],
+      "direct_import_binaries": [
+        {
+          "module": "MarkovSmallQuartic26dd",
+          "path": "/Users/sasha/math_gkm/evidence/markov-26dd33d6/MarkovSmallQuartic26dd.olean",
+          "sha256": "09f12caebc7f622f870244da4bbae5ae36db97798f71bbb7098532d734748258"
+        },
+        {
+          "module": "MarkovFiniteQuartic26dd",
+          "path": "/Users/sasha/math_gkm/evidence/markov-26dd33d6/MarkovFiniteQuartic26dd.olean",
+          "sha256": "492615d50cb51e3996d1a5368bc44f107288c9de0ef076cad34fff1ea0785c4d"
+        },
+        {
+          "module": "MarkovRemaining6ade",
+          "path": "/Users/sasha/math_gkm/evidence/markov-6ade2697/MarkovRemaining6ade.olean",
+          "sha256": "4787cd490100b2e42cb0301bc5d689dab1abfc96239526c2041e3eaa21394306"
+        }
+      ]
+    }
+  ],
+  "root_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+  "rejected_attempts": [
+    "evidence/markov-26dd33d6/run-1791951847380523000.json",
+    "evidence/markov-26dd33d6/run-1791951935346991000.json",
+    "evidence/markov-26dd33d6/run-1791952111392229000.json"
+  ],
+  "scope": "Fresh named modules and kernel replay using inherited compiled imports, not an independent full-source rebuild",
+  "completion": null
+}
