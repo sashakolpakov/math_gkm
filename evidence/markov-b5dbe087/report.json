@@ -1,0 +1,25 @@
+{
+  "request_id": "b5dbe087bddc41aaa420318d5cb776a1",
+  "summary": "Proved universal vertical top-face log-concavity and an exact interior reduction; full published Markov Conjecture 6.3 remains unresolved.",
+  "actions": [
+    "Reconciled the interrupted predecessor without replaying side effects: evidence/markov-b5dbe087/reconciliation.json.",
+    "Compiled and kernel-replayed eight Lean modules: evidence/markov-b5dbe087/validation.json.",
+    "Executed exact vertical, transfer-state, palindrome and source mixed-gap experiments: evidence/markov-b5dbe087/vertical-probe.json, transfer-invariants.json, source-invariants.json, palindrome-invariants.json, synchrony.json, and source-mixed-stress.json.",
+    "Saved derivations and all correspondence limits: research/markov-b5dbe087-mathematics.md and research/markov-b5dbe087-correspondence.md."
+  ],
+  "observations": [
+    "The pinned root and contract hashes are unchanged. Completion is null.",
+    "Every source vertical triple ending on the top face satisfies the raw inequality, retaining zeros and small-degree cases. Combined with inherited results, root_iff_interiorB5 exactly reduces the root to the remaining infinite interior triples.",
+    "The uniform vertical multiplicative constant one is sharp: for every real c>1, a checked actual source triple violates the c-strengthened inequality.",
+    "An actual Pell-source sheared minor equals 32(6-j), strictly negative for every j≥7, with all four polygon memberships checked. This excludes a TP2 invariant, not the pinned conjecture.",
+    "491572 finite top-triple tests had no failure; 4720 exact transfer/formula identities agreed. Palindromic state tests had no ULC failure in 8860294 checks, but palindrome mixed-gap nonnegativity failed at AB^9A. Source mixed-gap tests, including 84 additional selected fractions, found no failure. These are experiments only.",
+    "The checked common quadratic form supplies exact ambient sandwich and source identities; it establishes no log-concavity closure.",
+    "Successful axiom closures contain only permitted axioms. Validation reused inherited compiled imports; no independent completion audit was performed. 4 rejected elaborations and capability limitations are retained in evidence/markov-b5dbe087/operational-observations.json."
+  ],
+  "agenda": [
+    "Investigate the source-specific component and mixed-gap inequalities for the ambient transfer; palindrome alone does not ensure the mixed inequality.",
+    "Use the common quadratic form and sandwich identities for a possible palindrome induction, without assuming sum-of-squares preserves coefficient log-concavity.",
+    "Use root_iff_interiorB5 as an exact residual description; preserve every direction, zero, endpoint, source bridge and universal quantifier."
+  ],
+  "completion": null
+}

@@ -1,0 +1,69 @@
+{
+  "failed_elaborations": [
+    {
+      "record": "evidence/markov-a27f6d42/run-1792005222511465000.json",
+      "returncode": 1,
+      "timeout": false,
+      "diagnostics": "/Users/sasha/math_gkm/research/MarkovCutPartitionA27.lean:67:74: error: unsolved goals\ncase true\nR : Type u_1\ninst\u271d : CommRing R\ny : R\nrs : List Bool\nih : \u2200 (p q : R) (s : \u2115), (cutEvalA27 X (C y) (C p) (C q) rs).coeff s = cutCoeffA27 y p q rs s\np q : R\ns : \u2115\n\u22a2 C y * (C p + 2 * C q) = C y * (C p + C 2 * C q)\n'MathGKM.Markov.cutCoeff_polynomialA27' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.source_cut_coeffA27' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.cutCoeff_boundA27' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.cutCoeff_nonnegA27' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "record": "evidence/markov-a27f6d42/run-1792005343128044000.json",
+      "returncode": 1,
+      "timeout": false,
+      "diagnostics": "/Users/sasha/math_gkm/research/MarkovCutGapsA27.lean:21:42: error: unsolved goals\ncase e_a\nR : Type u_1\ninst\u271d : CommRing R\ny : R\nn : \u2115\n\u22a2 y ^ (0 + 1) = y\n/Users/sasha/math_gkm/research/MarkovCutGapsA27.lean:23:12: warning: This simp argument is unused:\n  pow_one\n\nHint: Omit it from the simp argument list.\n  simp only [p\u0335o\u0335w\u0335_\u0335o\u0335n\u0335e\u0335,\u0335runSumA27, \u0332mul_add, \u0332mul_one, \u0332Finset.mul_sum]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovCutGapsA27.lean:33:13: error: unsolved goals\ncase succ\nR : Type u_1\ninst\u271d : CommRing R\ny q : R\nn : \u2115\nih : \u2200 (p : R), gapChargeA27 y p q (List.replicate n true) = y ^ n * p + 2 * q * runSumA27 y n\np : R\n\u22a2 y * y ^ n * p + y * y ^ n * q * 2 + q * runSumA27 y n * 2 = y * y ^ n * p + y * q * 2 + y * q * runSumA27 y n * 2\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovCutGapsA27.lean:48:71: error: unsolved goals\nR : Type u_1\ninst\u271d : CommRing R\ny : R\nu : List Bool\nn : \u2115\n\u22a2 (1 + y ^ n * if false = true then y * 2 + y * gapChargeA27 y y 1 u else 0) + runSumA27 y n * 2 = 1 + runSumA27 y n * 2\n/Users/sasha/math_gkm/research/MarkovCutGapsA27.lean:50:25: warning: This simp argument is unused:\n  if_false\n\nHint: Omit it from the simp argument list.\n  simp only [\u0335c\u0335u\u0335t\u0335C\u0335h\u0335a\u0335r\u0335g\u0335e\u0335A\u03352\u03357\u0335,\u0335i\u0335f\u0335_\u0335f\u0335a\u0335l\u0335s\u0335e\u0335,\u0335g\u0335a\u0335p\u0335C\u0335h\u0335a\u0335r\u0335g\u0335e\u0335_\u0335r\u0335u\u0335n\u0335A\u03352\u03357\u0335]\u0335[\u0332c\u0332u\u0332t\u0332C\u0332h\u0332a\u0332r\u0332g\u0332e\u0332A\u03322\u03327\u0332,\u0332 \u0332g\u0332a\u0332p\u0332C\u0332h\u0332a\u0332r\u0332g\u0332e\u0332_\u0332r\u0332u\u0332n\u0332A\u03322\u03327\u0332]\u0332\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovCutGapsA27.lean:61:3: error: Tactic `simp` failed with a nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get diagnostic information\n/Users/sasha/math_gkm/research/MarkovCutGapsA27.lean:78:48: error: No goals to be solved\n'MathGKM.Markov.gapWeight_pureA27' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.gapWeight_resetA27' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.gapWeight_splitA27' depends on axioms: [propext, sorryAx, Quot.sound]\n'MathGKM.Markov.gapWeight_split_falseA27' depends on axioms: [propext]\n'MathGKM.Markov.gapWeight_split_true_falseA27' depends on axioms: [propext]\n"
+    },
+    {
+      "record": "evidence/markov-a27f6d42/run-1792005402352834000.json",
+      "returncode": 1,
+      "timeout": false,
+      "diagnostics": "/Users/sasha/math_gkm/research/MarkovCutRootA27.lean:1:0: error: object file '/Users/sasha/math_gkm/evidence/markov-1998e47e/MathGKM/MarkovExamples.olean' of module MathGKM.MarkovExamples does not exist\n"
+    },
+    {
+      "record": "evidence/markov-a27f6d42/run-1792005415995636000.json",
+      "returncode": 1,
+      "timeout": false,
+      "diagnostics": "/Users/sasha/math_gkm/research/MarkovCutGapsA27.lean:49:71: error: unsolved goals\nR : Type u_1\ninst\u271d : CommRing R\ny : R\nu : List Bool\nn : \u2115\n\u22a2 2 * runSumA27 y n + 1 = 1 + 2 * runSumA27 y n\n/Users/sasha/math_gkm/research/MarkovCutGapsA27.lean:64:35: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovCutGapsA27.lean:80:51: warning: this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`\n/Users/sasha/math_gkm/research/MarkovCutGapsA27.lean:80:51: warning: 'ring' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n/Users/sasha/math_gkm/research/MarkovCutGapsA27.lean:85:47: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n'MathGKM.Markov.gapWeight_pureA27' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.gapWeight_resetA27' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.gapWeight_splitA27' depends on axioms: [propext, Quot.sound]\n'MathGKM.Markov.gapWeight_split_falseA27' depends on axioms: [propext]\n'MathGKM.Markov.gapWeight_split_true_falseA27' depends on axioms: [propext]\n"
+    },
+    {
+      "record": "evidence/markov-a27f6d42/run-1792005477729918000.json",
+      "returncode": 1,
+      "timeout": false,
+      "diagnostics": "/Users/sasha/math_gkm/research/MarkovCutRootA27.lean:9:24: error: unexpected token '+'; expected term\n/Users/sasha/math_gkm/research/MarkovCutRootA27.lean:17:1: error: Tactic `split_ifs` failed: no if-then-else conditions to split\n\npath : List Bool\ni j : \u2115\n\u22a2 sorry = coeff (frame path).mid.p i j\n'MathGKM.Markov.cutRaw_eqA27' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.root_iff_cutA27' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "record": "evidence/markov-a27f6d42/run-1792005479066131000.json",
+      "returncode": 1,
+      "timeout": false,
+      "diagnostics": "/Users/sasha/math_gkm/research/MarkovCutObstructionA27.lean:19:53: error: unsolved goals\n\u22a2 X.coeff 2 = 0 \u2227 X.coeff 3 = 0 \u2227 X.coeff 4 = 0\n/Users/sasha/math_gkm/research/MarkovCutObstructionA27.lean:33:24: error: unsolved goals\n\u22a2 False\n'MathGKM.Markov.cutBad_sliceA27' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.cutBad_reversedA27' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.cutBad_polygon_exclusionA27' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "record": "evidence/markov-a27f6d42/run-1792005496607771000.json",
+      "returncode": 1,
+      "timeout": false,
+      "diagnostics": "/Users/sasha/math_gkm/research/MarkovCutObstructionA27.lean:20:53: error: unsolved goals\n\u22a2 X.coeff 2 = 0 \u2227 X.coeff 3 = 0 \u2227 X.coeff 4 = 0\n/Users/sasha/math_gkm/research/MarkovCutObstructionA27.lean:34:24: error: unsolved goals\n\u22a2 False\n'MathGKM.Markov.cutBad_sliceA27' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.cutBad_reversedA27' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.cutBad_polygon_exclusionA27' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.cutBad_not_sourceA27' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "record": "evidence/markov-a27f6d42/run-1792005637705906000.json",
+      "returncode": null,
+      "timeout": true,
+      "diagnostics": "None"
+    },
+    {
+      "record": "evidence/markov-a27f6d42/run-1792005637706134000.json",
+      "returncode": null,
+      "timeout": true,
+      "diagnostics": "None"
+    }
+  ],
+  "capabilities": "capabilities.json",
+  "corrections": [
+    "Initial second-row envelope admitted an unrealizable statistic; saved failure retained and sharper envelope tested separately.",
+    "Sparse-polynomial certificates retain negative terms and were not promoted to proofs.",
+    "An ad hoc printed BA^n mixed-gap diagnostic used weights shifted by one; the saved polygon-state-probe uses the correct weights and gives -432 at n=9. The diagnostic was not used in any theorem.",
+    "Initial arbitrary-word obstruction draft incorrectly claimed a polygon exclusion. Lean rejected it. The corrected theorem proves all three memberships and excludes source membership by non-palindromicity.",
+    "A guessed imported Examples object was unavailable; endpoint cases were proved locally from the exact polygon definition.",
+    "Importing the second-normal probe during an ad hoc diagnostic repeated the same deterministic sharper-envelope scan and rewrote its run duration; mathematical output was unchanged.",
+    "The first finalizer ran before the final two replay receipts existed and stopped at its assertion without writing a validation manifest. Parallel replays of the root and obstruction modules then each timed out at 100 seconds; these do not invalidate compilation or establish a mathematical conclusion. A sequential root replay was attempted."
+  ],
+  "foreground_status": "All completed sessions are recorded; no background process launched"
+}

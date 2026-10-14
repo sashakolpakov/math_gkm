@@ -1,0 +1,65 @@
+{
+  "time": "2026-10-14T19:23:03.993663+00:00",
+  "modules": [
+    {
+      "module": "MarkovCutPartitionA27",
+      "source": "research/MarkovCutPartitionA27.lean",
+      "sha256": "5f0873d54b80b7a76fb61b62f70d749482ee56b8f843460fe7469dc49817beca",
+      "olean_sha256": "4d79295352b76a9d322f543f901afe78a9ed2ac3c9484e8bb0fcbd352419ddeb",
+      "build": "evidence/markov-a27f6d42/run-1792005301056399000.json",
+      "replay": "evidence/markov-a27f6d42/run-1792005344318403000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.cutCoeff_polynomialA27' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.source_cut_coeffA27' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.cutCoeff_boundA27' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.cutCoeff_nonnegA27' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ]
+    },
+    {
+      "module": "MarkovCutGapsA27",
+      "source": "research/MarkovCutGapsA27.lean",
+      "sha256": "72f4bb5dd5700311b595139f25094e27da4693cf215f33514f0b650bc72ecdad",
+      "olean_sha256": "eef32fba8e91260f9aa0503f4ad74799534bea1fed2d905222b2784ab01b4f28",
+      "build": "evidence/markov-a27f6d42/run-1792005448819805000.json",
+      "replay": "evidence/markov-a27f6d42/run-1792005537455973000.json",
+      "axiom_lines": [
+        "'MathGKM.Markov.gapWeight_pureA27' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.gapWeight_resetA27' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.gapWeight_splitA27' depends on axioms: [propext, Quot.sound]",
+        "'MathGKM.Markov.gapWeight_split_falseA27' depends on axioms: [propext]",
+        "'MathGKM.Markov.gapWeight_split_true_falseA27' depends on axioms: [propext]"
+      ]
+    },
+    {
+      "module": "MarkovCutRootA27",
+      "source": "research/MarkovCutRootA27.lean",
+      "sha256": "05754d655e2bb3e019858868e88430ea5728cf8fcf9d00323ee5c1415b0afa05",
+      "olean_sha256": "0cd9529171204f225816cd50cced3738791511770ed2a42d3caffcaa0a1a3a24",
+      "build": "evidence/markov-a27f6d42/run-1792005535073011000.json",
+      "replay": null,
+      "axiom_lines": [
+        "'MathGKM.Markov.cutRaw_eqA27' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.root_iff_cutA27' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      ]
+    },
+    {
+      "module": "MarkovCutObstructionA27",
+      "source": "research/MarkovCutObstructionA27.lean",
+      "sha256": "9961c71dc0e79ea491d369f5ea1b311605edfa9b18655d2298ad20a51c0acefc",
+      "olean_sha256": "e00bdaef8ed45392c371285522c63134dffb8520fbfa38582c90de15e96bfff1",
+      "build": "evidence/markov-a27f6d42/run-1792005536251733000.json",
+      "replay": null,
+      "axiom_lines": [
+        "'MathGKM.Markov.cutBad_sliceA27' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.cutBad_reversedA27' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.cutBad_polygonA27' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'MathGKM.Markov.cutBad_not_sourceA27' depends on axioms: [propext, Quot.sound]"
+      ]
+    }
+  ],
+  "root_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+  "contract_canonical_sha256": "6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc",
+  "imports": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "independent_audit": false,
+  "completion": null
+}
