@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovConvK0B.lean:24:4: error: unsolved goals\ncase pos.h\u2080\na : \u2124\nm j : \u2115\nh : m \u2264 j\nb : \u2115\nhb : b \u2208 Finset.range (j + 1)\nhbm : b \u2260 m\n\u22a2 b = m \u2192 a = 0 \u2228 (7 + (j - b)).choose 7 = 0\n/Users/sasha/math_gkm/research/MarkovConvK0B.lean:30:4: error: unsolved goals\ncase neg\na : \u2124\nm j : \u2115\nh : \u00acm \u2264 j\nb : \u2115\nhb : b \u2208 Finset.range (j + 1)\nhb' : b < j + 1\nhm : m \u2260 b\n\u22a2 b = m \u2192 a = 0 \u2228 (7 + (j - b)).choose 7 = 0\n/Users/sasha/math_gkm/research/MarkovConvK0B.lean:25:12: warning: This simp argument is unused:\n  Ne.symm hbm\n\nHint: Omit it from the simp argument list.\n  simp \u0335[\u0335N\u0335e\u0335.\u0335s\u0335y\u0335m\u0335m\u0335 \u0335h\u0335b\u0335m\u0335]\u0335\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovConvK0B.lean:33:12: warning: This simp argument is unused:\n  hm\n\nHint: Omit it from the simp argument list.\n  simp \u0335[\u0335h\u0335m\u0335]\u0335\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+  "stderr": "",
+  "source": "research/MarkovConvK0B.lean",
+  "sha256": "77f801bd77eb2558b44407547ded99d8fef8382fd87d16c063188c5b9d3a456d",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-0b212317/MarkovConvK0B.olean",
+    "/Users/sasha/math_gkm/research/MarkovConvK0B.lean"
+  ],
+  "seconds": 8.411338749981951,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

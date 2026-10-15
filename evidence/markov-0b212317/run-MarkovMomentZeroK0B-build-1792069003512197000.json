@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovMomentZeroK0B.lean:23:67: error: unsolved goals\nA : Type u_1\ninst\u271d : CommRing A\nN x c r q t u : A\nhe : localThirdNumBC N 0 x = fun x_1 q x_2 => if q = true then zeroThird1K0B N x else zeroThird0K0B N x\n\u22a2 (c * if false = true then zeroThird1K0B N x else zeroThird0K0B N x) +\n      r *\n        ((if true = true then zeroThird1K0B N x else zeroThird0K0B N x) -\n          if false = true then zeroThird1K0B N x else zeroThird0K0B N x) =\n    c * zeroThird0K0B N x + r * (zeroThird1K0B N x - zeroThird0K0B N x)\n/Users/sasha/math_gkm/research/MarkovMomentZeroK0B.lean:32:72: error: unsolved goals\nA : Type u_1\ninst\u271d : CommRing A\nN x : A\nc r : \u2115\nhe : localFourNumBC N 0 x = fun x_1 q x_2 x_3 => if q = true then zeroFour1K0B N x else zeroFour0K0B N x\n\u22a2 (\u2191c * if false = true then zeroFour1K0B N x else zeroFour0K0B N x) +\n      \u2191r *\n        ((if true = true then zeroFour1K0B N x else zeroFour0K0B N x) -\n          if false = true then zeroFour1K0B N x else zeroFour0K0B N x) =\n    \u2191c * zeroFour0K0B N x + \u2191r * (zeroFour1K0B N x - zeroFour0K0B N x)\n",
+  "stderr": "",
+  "source": "research/MarkovMomentZeroK0B.lean",
+  "sha256": "6cc92c0b5e49005931f4afac5e116e55a254d465ff182328b7089f91f6109ef7",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-0b212317/MarkovMomentZeroK0B.olean",
+    "/Users/sasha/math_gkm/research/MarkovMomentZeroK0B.lean"
+  ],
+  "seconds": 5.877551834011683,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

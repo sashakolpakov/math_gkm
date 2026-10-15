@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovShiftGapPart5F2.lean:18:1: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Graph ?m.10 ?m.11) 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Graph ?m.10 ?m.11\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovShiftGapPart5F2.lean:18:4: error: Function expected at\n  hiftGapPart5F2\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  N\n\nHint: The identifier `hiftGapPart5F2` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n",
+  "stderr": "",
+  "source": "research/MarkovShiftGapPart5F2.lean",
+  "sha256": "da6c954a61b5b98d47d64faa58630c9ddc6be529563b11eb5b6d7f6f6d8cb8d6",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-f2da221d/MarkovShiftGapPart5F2.olean",
+    "/Users/sasha/math_gkm/research/MarkovShiftGapPart5F2.lean"
+  ],
+  "seconds": 25.429274082998745,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}
