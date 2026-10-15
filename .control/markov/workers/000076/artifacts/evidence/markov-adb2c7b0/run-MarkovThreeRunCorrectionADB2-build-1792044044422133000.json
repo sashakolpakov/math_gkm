@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovThreeRunCorrectionADB2.lean:11:71: error: unsolved goals\nn : \u2115\np q : Bool\nha :\n  Polynomial.coeff (lowerMatrix487 (n + if q = true then 1 else 0)).a 1 =\n    2 * runSumA27 X (n + if q = true then 1 else 0) + X ^ ((n + if q = true then 1 else 0) + 1)\nhb : Polynomial.coeff (lowerMatrix487 (n + if q = true then 1 else 0)).b 1 = 1\n\u22a2 2 * runSumA27 X (n + if q = true then 1 else 0) + X ^ ((n + if q = true then 1 else 0) + 1) +\n      Polynomial.coeff\n        ((lowerMatrix487 (n + if q = true then 1 else 0)).b * -(C 2 * C (runSumA27 X (n + if q = true then 1 else 0))))\n        1 =\n    X ^ ((n + if q = true then 1 else 0) + 1)\n'MathGKM.Markov.source_third_run_poly_threeADB2' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovThreeRunCorrectionADB2.lean",
+  "sha256": "cc22417e1c5ae85e8132f3477e211cedf3dbd7c64ca4be360dc9b9e4c74900bd",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-adb2c7b0/MarkovThreeRunCorrectionADB2.olean",
+    "/Users/sasha/math_gkm/research/MarkovThreeRunCorrectionADB2.lean"
+  ],
+  "seconds": 36.5790810000035,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

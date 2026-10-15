@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCyclicLocalBridgeADB2.lean:47:5: error: Type mismatch: After simplification, term\n  congrArg (fun x => edgeLADB2 m p + x) hh\n has type\n  openLADB2 [p, q] + 6 * p.c.coeff 1 * q.a.coeff 1 = edgeLADB2 p q + singleLADB2 q\nbut is expected to have type\n  edgeLADB2 m p + openLADB2 [p, q] + 6 * p.c.coeff 1 * q.a.coeff 1 = edgeLADB2 m p + (edgeLADB2 p q + singleLADB2 q)\n/Users/sasha/math_gkm/research/MarkovCyclicLocalBridgeADB2.lean:115:3: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached\n\nNote: Use `set_option maxHeartbeats <num>` to set the limit.\n\nHint: Additional diagnostic information may be available using the `set_option diagnostics true` command.\n'MathGKM.Markov.cyclicL_scanADB2' depends on axioms: [propext, sorryAx, Quot.sound]\n'MathGKM.Markov.matrixL_booleanADB2' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovCyclicLocalBridgeADB2.lean",
+  "sha256": "75b90b1fbafe1edd4ae37e2a29b174fe0925e1165f5639c69f8f362c851cd2f7",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-adb2c7b0/MarkovCyclicLocalBridgeADB2.olean",
+    "/Users/sasha/math_gkm/research/MarkovCyclicLocalBridgeADB2.lean"
+  ],
+  "seconds": 38.283877875015605,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCubicCycle6905.lean:14:16: warning: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\n/Users/sasha/math_gkm/research/MarkovCubicCycle6905.lean:42:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  lastC6905 (?ms ++ [?n])\nin the target expression\n  (projProduct6905 (n :: (ms ++ [p, q]))).c.coeff 2 =\n    lastC6905 (n :: (ms ++ [p])) * q.a.coeff 1 + sumD6905 (n :: (ms ++ [p])) * q.c.coeff 1 + q.c.coeff 2\n\nR : Type u_1\ninst\u271d : CommRing R\nm n p q : Mat16 R[X]\nms : List (Mat16 R[X])\nh : \u2200 z \u2208 m :: n :: (ms ++ [p, q]), Projection6905 z\nhn : \u2200 z \u2208 n :: (ms ++ [p]) ++ [q], Projection6905 z\nhc2 :\n  (projProduct6905 (n :: (ms ++ [p, q]))).c.coeff 2 =\n    lastC6905 (n :: (ms ++ [p])) * q.a.coeff 1 + sumD6905 (n :: (ms ++ [p])) * q.c.coeff 1 + q.c.coeff 2\nhe : n :: (ms ++ [p]) ++ [q] = n :: (ms ++ [p, q])\n\u22a2 (tr16 (projProduct6905 (m :: n :: (ms ++ [p, q])))).coeff 3 = cyclicCubic6905 m n ms p q\n/Users/sasha/math_gkm/research/MarkovCubicCycle6905.lean:37:44: warning: This simp argument is unused:\n  List.mem_singleton\n\nHint: Omit it from the simp argument list.\n  simp only [\u0335L\u0335i\u0335s\u0335t\u0335.\u0335m\u0335e\u0335m\u0335_\u0335c\u0335o\u0335n\u0335s\u0335,\u0335L\u0335i\u0335s\u0335t\u0335.\u0335m\u0335e\u0335m\u0335_\u0335a\u0335p\u0335p\u0335e\u0335n\u0335d\u0335,\u0335L\u0335i\u0335s\u0335t\u0335.\u0335m\u0335e\u0335m\u0335_\u0335s\u0335i\u0335n\u0335g\u0335l\u0335e\u0335t\u0335o\u0335n\u0335]\u0335[\u0332L\u0332i\u0332s\u0332t\u0332.\u0332m\u0332e\u0332m\u0332_\u0332c\u0332o\u0332n\u0332s\u0332,\u0332 \u0332L\u0332i\u0332s\u0332t\u0332.\u0332m\u0332e\u0332m\u0332_\u0332a\u0332p\u0332p\u0332e\u0332n\u0332d\u0332]\u0332 at hz \u22a2\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n'MathGKM.Markov.projection_trace3_cyclic6905' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovCubicCycle6905.lean",
+  "sha256": "62859675bdbf6991a9c3d0c61e948e71623e2ae223ea9efea6fc626de3e6cb3d",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-6905e489/MarkovCubicCycle6905.olean",
+    "/Users/sasha/math_gkm/research/MarkovCubicCycle6905.lean"
+  ],
+  "seconds": 7.694124749978073,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

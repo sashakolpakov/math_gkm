@@ -1,0 +1,13 @@
+# Research checkpoint 8bbb934e
+
+Full pinned Conjecture63 is open. Read mission, design, exact contract, inherited index, independent target/residual/math audits, latest full reports. Verified latest artifacts and raw-event completion. New action: finish the two-block correction, then seek universal inequalities in the next run-length region using exact ring certificates. No inherited source premise is silently assumed.
+
+Checkpoint: the run-one polynomial has nine coefficients; all four universal chamber inequalities compiled using exact ring identities and positivity. The source adapter is in progress. The two-block determinant proof has rejected builds retained, no rejected theorem is accepted.
+
+Checkpoint: arbitrary-n two-block correction proved and replayed; all-cycle parameter-only identity proved and replayed. Run-one source bridge and large-cycle inequality now compile. Three exceptional run-one parameter polynomials are identified; their all-index inequalities are being checked. Exact experiments matched 6,644 raw positions and 6,992 independent backward positions on 236 sources. No root completion.
+
+Checkpoint: all 13 main modules compiled and separately replayed; 65 named theorem axiom closures are permitted. The third lower source inequality now covers all 3a≤2b, with exact root residual equivalence. A new finite interpolation candidate targets arbitrary n at interior coefficient centers 5≤j≤n−1. Its coefficient formula is not proved. A first failed interpolation included center j=4 and was rejected. Corrected finite-difference tests yield nonnegative Newton-basis gap coefficients. A separate abstract candidate inequality is now being checked; it is not source identification.
+
+Final mathematical checkpoint: 14 accepted modules, including correction support, and 66 named theorems. The abstract uniform interior proof attempts timed out at 120 and 180 seconds, with a second independent-variable attempt also timing out at 120 seconds. They and the uncompiled conditional transfer draft are explicitly excluded from accepted validation. Candidate source identification is unproved. All candidate timeout processes terminated. Final audit/manifest generation is in progress.
+
+Validation finished: all 14 accepted mathematical modules and final axiom audit compiled and replayed. The final audit replay was repeated after confirmed build completion. Only propext, Classical.choice, Quot.sound occur in all 66 new accepted theorem closures. All foreground processes completed. Full root remains open; optional uniform-interior proofs and transfer draft remain unvalidated and excluded.

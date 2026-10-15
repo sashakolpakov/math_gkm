@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTwoRunCorrection8BBB.lean:38:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  det16 (runBooleanGaugeADB2 ?n ?p ?q)\nin the target expression\n  (det16\n          (gauge75 (C (2 * runSumA27 X (n + if p = true then 1 else 0)))\n            (C (2 * runSumA27 X (n + if q = true then 1 else 0)))\n            (lowerMatrix487 (n + if q = true then 1 else 0)))).coeff\n      2 =\n    0\n\nn : \u2115\np q : Bool\n\u22a2 (det16\n          (gauge75 (C (2 * runSumA27 X (n + if p = true then 1 else 0)))\n            (C (2 * runSumA27 X (n + if q = true then 1 else 0)))\n            (lowerMatrix487 (n + if q = true then 1 else 0)))).coeff\n      2 =\n    0\n/Users/sasha/math_gkm/research/MarkovTwoRunCorrection8BBB.lean:72:12: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  c \u2265 1\n  b \u2265 0\n  a \u2265 0\nwhere\n a := \u2191(frame rest).mid.b * \u2191(n + 1)\n b := \u2191n\n c := \u2191(if false = true then 1 else 0)\n'MathGKM.Markov.source_third_run_poly_two8BBB' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovTwoRunCorrection8BBB.lean",
+  "sha256": "31f3f4509a41e1fdd840f7254c6301a42d22a3bf6961865d98aadb2401114e6a",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-8bbb934e/MarkovTwoRunCorrection8BBB.olean",
+    "/Users/sasha/math_gkm/research/MarkovTwoRunCorrection8BBB.lean"
+  ],
+  "seconds": 41.66327916699811,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

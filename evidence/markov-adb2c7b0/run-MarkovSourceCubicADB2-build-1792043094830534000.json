@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSourceCubicADB2.lean:100:29: error: typeclass instance problem is stuck\n  Semiring ?m.538\n\nNote: Lean will not try to resolve this typeclass instance problem because the type argument to `Semiring` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.\n\nHint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.\n'MathGKM.Markov.source_cubic_momentADB2' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.source_third_formulaADB2' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovSourceCubicADB2.lean",
+  "sha256": "4c69df8b4b243ce369704228843fa545667f608fecbb9375595ebb598c814377",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-adb2c7b0/MarkovSourceCubicADB2.olean",
+    "/Users/sasha/math_gkm/research/MarkovSourceCubicADB2.lean"
+  ],
+  "seconds": 14.138402624987066,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

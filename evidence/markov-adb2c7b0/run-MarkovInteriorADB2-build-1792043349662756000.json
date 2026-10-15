@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovInteriorADB2.lean:12:38: error(lean.unknownIdentifier): Unknown constant `Nat.a`\n\nNote: Inferred this name from the expected resulting type of `.a`:\n  \u2115\n/Users/sasha/math_gkm/research/MarkovInteriorADB2.lean:15:38: error(lean.unknownIdentifier): Unknown constant `Nat.a`\n\nNote: Inferred this name from the expected resulting type of `.a`:\n  \u2115\n/Users/sasha/math_gkm/research/MarkovInteriorADB2.lean:12:31: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  HAdd \u2115 \u2115 (Matroid (?m.316 path i j))\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovInteriorADB2.lean:12:38: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  HSub \u2115 \u2115 (Matroid (?m.316 path i j))\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovInteriorADB2.lean:15:31: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  HAdd \u2115 \u2115 (Matroid (?m.330 path i j))\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovInteriorADB2.lean:15:38: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  HSub \u2115 \u2115 (Matroid (?m.330 path i j))\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovInteriorADB2.lean:25:11: error: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce\n\ncase mp\nh : Interior637d80\n\u22a2 Interior63ADB2\n/Users/sasha/math_gkm/research/MarkovInteriorADB2.lean:29:24: error: Function expected at\n  h\nbut this term has type\n  Interior63ADB2\n\nNote: Expected a function because this term is being applied to the argument\n  path\n/Users/sasha/math_gkm/research/MarkovInteriorADB2.lean:29:10: error: Tactic `rcases` failed: `x\u271d : ?m.14` is not an inductive datatype\n'MathGKM.Markov.root_iff_interiorADB2' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovInteriorADB2.lean",
+  "sha256": "82bc24d1436a3c48dc17558835b1d5afbc13a2b5dc7cf4456d6d9514ceb91509",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-adb2c7b0/MarkovInteriorADB2.olean",
+    "/Users/sasha/math_gkm/research/MarkovInteriorADB2.lean"
+  ],
+  "seconds": 10.376147917006165,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

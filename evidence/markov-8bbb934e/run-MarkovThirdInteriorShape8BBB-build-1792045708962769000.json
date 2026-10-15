@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovThirdInteriorShape8BBB.lean:19:14: error: unexpected token ':='; expected term\n/Users/sasha/math_gkm/research/MarkovThirdInteriorShape8BBB.lean:19:11: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Graph ?m.113 ?m.114) 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Graph ?m.113 ?m.114\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovThirdInteriorShape8BBB.lean:13:41: error: unsolved goals\ncase hs\nn c r j : \u2124\nhr : 1 \u2264 r\nhc : r + 1 \u2264 c\nhj : 5 \u2264 j\nhn : j + 1 \u2264 n\nt : \u2124 := j - 5\ns : \u2124 := n - j - 1\nu : \u2124 := r - 1\nv : \u2124 := c - r - 1\nht : 0 \u2264 t\n\u22a2 sorry \u2264s sorry\n\nn c r j : \u2124\nhr : 1 \u2264 r\nhc : r + 1 \u2264 c\nhj : 5 \u2264 j\nhn : j + 1 \u2264 n\nt : \u2124 := j - 5\ns : \u2124 := n - j - 1\nu : \u2124 := r - 1\nv : \u2124 := c - r - 1\nht : 0 \u2264 t\nhs : sorry \u2264s sorry\n\u22a2 thirdInteriorShape8BBB n c r (j - 1) * thirdInteriorShape8BBB n c r (j + 1) \u2264 thirdInteriorShape8BBB n c r j ^ 2\n'MathGKM.Markov.thirdInteriorShape_lc8BBB' depends on axioms: [propext, sorryAx, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovThirdInteriorShape8BBB.lean",
+  "sha256": "66ffa073ec160c139517f7a6e0959d4563c42a710873f3bd7946df11d7fe0858",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-8bbb934e/MarkovThirdInteriorShape8BBB.olean",
+    "/Users/sasha/math_gkm/research/MarkovThirdInteriorShape8BBB.lean"
+  ],
+  "seconds": 30.231546583003365,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}
