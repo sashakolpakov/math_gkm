@@ -1,0 +1,7 @@
+{
+  "action": "First invocation of research/finalize_b485.py",
+  "outcome": "AssertionError at contract hash comparison",
+  "cause": "Compared SHA256 of file bytes against the request's canonical-JSON contract hash.",
+  "partial_effects": "validation.json and operational-observations.json were written. No preservation or artifact manifest was written by the failed invocation. No protected input changed.",
+  "reconciliation": "The file-byte hash cc930bda09aaaa16b0662e9c0afa3c48167b1a07f2087eb6c2106c73c4a16068 matches the initial reconciliation. Canonical sorted compact JSON hashes to the pinned 6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc. Finalizer now checks both distinctions explicitly."
+}

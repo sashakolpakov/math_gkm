@@ -1,0 +1,321 @@
+{
+  "activity.json": {
+    "status": "finite exact experiment only; modified site activities are not raw source coefficients",
+    "checks": 265022,
+    "failures": {
+      "ambient": {
+        "a": 2,
+        "b": 9,
+        "word": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        "weights": [
+          100,
+          100,
+          100,
+          2,
+          1,
+          10,
+          10,
+          1
+        ],
+        "s": 4,
+        "j": 5,
+        "values": [
+          3000200,
+          157339200,
+          5600160000
+        ],
+        "gap": -31904042918400000,
+        "unweighted": [
+          4,
+          83,
+          348
+        ]
+      },
+      "raw": {
+        "a": 1,
+        "b": 15,
+        "word": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "weights": [
+          10,
+          100,
+          1,
+          10,
+          100,
+          100,
+          10,
+          2,
+          1,
+          10,
+          100,
+          100,
+          1,
+          10
+        ],
+        "s": 6,
+        "j": 6,
+        "values": [
+          222100000,
+          166744640000,
+          127666898880000
+        ],
+        "gap": -551043272518400000000,
+        "unweighted": [
+          7,
+          224,
+          2352
+        ]
+      }
+    },
+    "seconds": 1.1616617079998832,
+    "inputs_count": 1887
+  },
+  "activity-minimal.json": {
+    "checked": 199,
+    "seconds": 0.020733833982376382,
+    "failure": {
+      "N": 7,
+      "word": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "heavy": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "t": 10000,
+      "s": 2,
+      "j": 2,
+      "values": [
+        20001,
+        1500140001,
+        10028005900120000
+      ],
+      "gap": -198319725985699839999
+    },
+    "inputs_count": 0
+  },
+  "activity-shape.json": {
+    "status": "finite exact experiment only",
+    "checks": 31812,
+    "failure": {
+      "a": 7,
+      "b": 11,
+      "word": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "weights": [
+        4096,
+        4096,
+        4096,
+        4096,
+        1024,
+        256,
+        64,
+        16,
+        4,
+        1
+      ],
+      "s": 4,
+      "j": 11,
+      "values": [
+        67108864,
+        24526410743808,
+        28772236881580523520
+      ],
+      "gap": -1329327307887790966142140416
+    },
+    "seconds": 0.14945808300399221,
+    "inputs_count": 435
+  },
+  "activity-geometric.json": {
+    "status": "finite exact experiments only",
+    "checks": 6712,
+    "failure": {
+      "a": 7,
+      "b": 10,
+      "word": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "q": 10,
+      "reverse": true,
+      "s": 3,
+      "j": 9,
+      "values": [
+        57000000000,
+        164995910680000000000,
+        1119348370486266718120000000000
+      ],
+      "gap": -36579206576594664870440000000000000000000
+    },
+    "seconds": 0.027652874996419996,
+    "inputs_count": 116
+  },
+  "geometric-family.json": {
+    "status": "finite exact experiments only; fields are not raw source coefficients",
+    "checks": 104,
+    "seconds": 51.240915292000864,
+    "inputs_count": 104
+  },
+  "independent-raw.json": {
+    "status": "independent exact finite recurrence computation, not proof",
+    "coefficient_positions": 785,
+    "results": [
+      {
+        "a": 1,
+        "b": 8,
+        "path": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "points": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "values": [
+          3,
+          30,
+          100
+        ],
+        "gap": 600,
+        "polygon_guards": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "a": 7,
+        "b": 10,
+        "path": [
+          true,
+          true,
+          false,
+          false
+        ],
+        "points": [
+          [
+            1,
+            9
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            3,
+            9
+          ]
+        ],
+        "values": [
+          12,
+          472,
+          5092
+        ],
+        "gap": 161680,
+        "polygon_guards": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "a": 7,
+        "b": 11,
+        "path": [
+          true,
+          false,
+          true,
+          true
+        ],
+        "points": [
+          [
+            0,
+            11
+          ],
+          [
+            1,
+            11
+          ],
+          [
+            2,
+            11
+          ]
+        ],
+        "values": [
+          1,
+          96,
+          1806
+        ],
+        "gap": 7410,
+        "polygon_guards": [
+          true,
+          true,
+          true
+        ]
+      }
+    ],
+    "inputs_count": 0
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCutActivityB485.lean:11:6: warning: Variable name `t` is not explicitly referenced.\n\nThe binding can be removed (if unused) or named `_` (if used implicitly).\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n/Users/sasha/math_gkm/research/MarkovCutActivityB485.lean:41:10: error: unsolved goals\ncase cons.zero\nR : Type u_1\ninst\u271d : CommRing R\ny : R\nrs : List (Bool \u00d7 R)\nih :\n  \u2200 (p q : R) (s : \u2115),\n    (siteEval340 (C y) (C p) (C q) (List.map (fun rt => (rt.1, X * C rt.2)) rs)).coeff s = activityCoeffB485 y p q rs s\np q : R\nr : Bool\nt : R\nhc : cutChargeA27 (C y) (C p) (C q) r = C (cutChargeA27 y p q r)\nhf : cutFactorA27 (C y) r = C (cutFactorA27 y r)\nhe :\n  X * C t * cutFactorA27 (C y) r * (C p + C q) *\n      siteEval340 (C y) (C y) 1 (List.map (fun rt => (rt.1, X * C rt.2)) rs) =\n    X *\n      (C (t * cutFactorA27 y r * (p + q)) * siteEval340 (C y) (C y) (C 1) (List.map (fun rt => (rt.1, X * C rt.2)) rs))\n\u22a2 (siteEval340 (C y) (C (cutChargeA27 y p q r)) (C q) (List.map (fun rt => (rt.1, C rt.2 * X)) rs)).coeff 0 =\n    activityCoeffB485 y (cutChargeA27 y p q r) q rs 0\n/Users/sasha/math_gkm/research/MarkovCutActivityB485.lean:41:48: warning: This simp argument is unused:\n  he\n\nHint: Omit it from the simp argument list.\n  simp [List.map_cons, \u0332siteEval340, \u0332hc,h\u0335e\u0335,\u0335 \u0332ih, \u0332activityCoeffB485]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovCutActivityB485.lean:41:51: warning: This simp argument is unused:\n  ih\n\nHint: Omit it from the simp argument list.\n  simp [List.map_cons, \u0332siteEval340, \u0332hc, \u0332he,i\u0335h\u0335,\u0335 \u0332activityCoeffB485]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n'MathGKM.Markov.activity_uniformB485' depends on axioms: [propext]\n'MathGKM.Markov.activity_polynomialB485' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.activity_word_sourceB485' does not depend on any axioms\n",
+  "stderr": "",
+  "source": "research/MarkovCutActivityB485.lean",
+  "sha256": "82109a97ca4cefadb009b0c8933f2da00d8ce697bf2337d4479eae19d3779787",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-b485717c/MarkovCutActivityB485.olean",
+    "/Users/sasha/math_gkm/research/MarkovCutActivityB485.lean"
+  ],
+  "seconds": 27.37122770800488,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}
