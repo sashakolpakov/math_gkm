@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovReflectBlocksM1B.lean:7:20: error: unexpected token ')'; expected term\n/Users/sasha/math_gkm/research/MarkovReflectBlocksM1B.lean:21:12: error(lean.unknownIdentifier): Unknown identifier `reflect_shift_padM1B`\n/Users/sasha/math_gkm/research/MarkovReflectBlocksM1B.lean:20:64: error: unsolved goals\nH0 H1 H2 H3 H4 : \u2124[X]\nn : \u2115\nh0 : H0.natDegree \u2264 12\nh1 : H1.natDegree \u2264 12\nh2 : H2.natDegree \u2264 13\nh3 : H3.natDegree \u2264 14\nh4 : H4.natDegree \u2264 15\n\u22a2 reflect (4 * n + 15) (H0 + X ^ n * H1 + X ^ (2 * n) * H2 + X ^ (3 * n) * H3 + X ^ (4 * n) * H4) =\n    X ^ (4 * n + 3) * reflect 12 H0 + X ^ (3 * n + 3) * reflect 12 H1 + X ^ (2 * n + 2) * reflect 13 H2 +\n        X ^ (n + 1) * reflect 14 H3 +\n      reflect 15 H4\n",
+  "stderr": "",
+  "source": "research/MarkovReflectBlocksM1B.lean",
+  "sha256": "9cc1a6d933eaf5121e80fe8a6cc34dc4867e398fc05180f6b9299e0ac40755fa",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-1b02dddc/MarkovReflectBlocksM1B.olean",
+    "/Users/sasha/math_gkm/research/MarkovReflectBlocksM1B.lean"
+  ],
+  "seconds": 20.01102833400364,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

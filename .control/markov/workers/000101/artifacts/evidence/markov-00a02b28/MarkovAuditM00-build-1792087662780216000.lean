@@ -1,0 +1,51 @@
+import MarkovMiddleValue0M00
+import MarkovMiddleValue1M00
+import MarkovMiddleValue2M00
+import MarkovMiddleValue3M00
+import MarkovMiddleValue4M00
+import MarkovMiddleValue5M00
+import MarkovOnsetAdapter0M00
+import MarkovOnsetAdapter1M00
+import MarkovOnsetAdapter2M00
+import MarkovOnsetAdapter3M00
+import MarkovOnsetColumns0_1M00
+import MarkovOnsetColumns0_2M00
+import MarkovOnsetColumns0_3M00
+import MarkovOnsetColumns0_4M00
+import MarkovOnsetColumns0_5M00
+import MarkovOnsetColumns1_1M00
+import MarkovOnsetColumns1_2M00
+import MarkovOnsetColumns1_3M00
+import MarkovOnsetColumns1_4M00
+import MarkovOnsetColumns1_5M00
+import MarkovOnsetColumns2_1M00
+import MarkovOnsetColumns2_2M00
+import MarkovOnsetColumns2_3M00
+import MarkovOnsetColumns2_4M00
+import MarkovOnsetColumns2_5M00
+import MarkovOnsetColumns3_1M00
+import MarkovOnsetColumns3_2M00
+import MarkovOnsetColumns3_3M00
+import MarkovOnsetColumns3_4M00
+import MarkovOnsetColumns3_5M00
+import MarkovOnsetColumns4_1M00
+import MarkovOnsetColumns5_1M00
+import MarkovOnsetColumns5_2M00
+import MarkovOnsetColumns5_3M00
+import MarkovOnsetColumns5_4M00
+import MarkovOnsetLowM00
+import MarkovPenFallingM00
+/-! Machine-authored 00a02b28. Local axiom inventory. -/
+#print axioms MathGKM.Markov.source_fourth_onset_lowM00
+#print axioms MathGKM.Markov.source_fourth_after_middle_lowM00
+#print axioms MathGKM.Markov.pen_convolutionM00
+#print axioms MathGKM.Markov.source_fourth_middle_value0M00
+#print axioms MathGKM.Markov.source_fourth_middle_value1M00
+#print axioms MathGKM.Markov.source_fourth_middle_value2M00
+#print axioms MathGKM.Markov.source_fourth_middle_value3M00
+#print axioms MathGKM.Markov.source_fourth_middle_value4M00
+#print axioms MathGKM.Markov.source_fourth_middle_value5M00
+#print axioms MathGKM.Markov.source_fourth_onset_chamber0M00
+#print axioms MathGKM.Markov.source_fourth_onset_chamber1M00
+#print axioms MathGKM.Markov.source_fourth_onset_chamber2M00
+#print axioms MathGKM.Markov.source_fourth_onset_chamber3M00
