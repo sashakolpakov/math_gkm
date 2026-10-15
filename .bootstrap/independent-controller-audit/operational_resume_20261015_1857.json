@@ -1,0 +1,27 @@
+{
+  "observed_at": "2026-10-15T18:57:37.036892+00:00",
+  "scope": "Operational monitoring and restart only; no mathematical agenda, proposer input, or proof changes.",
+  "prior_controller_pid": 52884,
+  "prior_status": "operationally_blocked",
+  "reason": "Configured three consecutive worker failures: 101 timeout, 102 explicit model-capacity error, 103 timeout.",
+  "resume_command": [
+    "python3",
+    "-m",
+    "machinery.controller",
+    "resume",
+    "--goal",
+    "markov",
+    "--worker-seconds",
+    "1800"
+  ],
+  "state_after": {
+    "status": "running",
+    "reason": "controller active",
+    "pid": 48377,
+    "active_worker": "/Users/sasha/math_gkm/.control/markov/workers/000104",
+    "failures": 0,
+    "workers_completed": 104,
+    "last_activity": 1792090656.895144
+  },
+  "caffeinate_pid": 59394
+}
