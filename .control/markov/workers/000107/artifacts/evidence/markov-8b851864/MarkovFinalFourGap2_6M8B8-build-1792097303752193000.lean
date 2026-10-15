@@ -1,0 +1,20 @@
+import MarkovOnsetValues2M1B
+/-! Machine-authored request 8b851864. Exact short-run final transition. -/
+namespace MathGKM.Markov
+noncomputable section
+set_option maxHeartbeats 8000000
+set_option maxRecDepth 65536
+
+def finalFourGap2_6M8B8 (C R : ℤ) : ℤ := ((((((((858370867200*C + (6398764646400*R + 12173259571200))*C + ((20821996339200*R + 78670990540800)*R + 74153163571200))*C + (((38626689024000*R + 217284879974400)*R + 403336765440000)*R + 249112881561600))*C + ((((44674301952000*R + 332423626752000)*R + 911840219136000)*R + 1105224022425600)*R + 501165845913600))*C + (((((32982250291200*R + 304201433088000)*R + 1096432223846400)*R + 1957839903129600)*R + 1743557695488000)*R + 618807361536000))*C + ((((((15177557606400*R + 166484931379200)*R + 739384082841600)*R + 1730085499699200)*R + 2270558391091200)*R + 1587708922060800)*R + 459677209420800))*C + (((((((3979719475200*R + 50448796876800)*R + 265067524915200)*R + 762275598336000)*R + 1310420179353600)*R + 1351221245337600)*R + 770975138304000)*R + 186132967372800))*C + ((((((((455196672000*R + 6528820838400)*R + 39459048652800)*R + 133918860902400)*R + 282641367859200)*R + 381397911552000)*R + 320692151808000)*R + 152559571046400)*R + 31165629465600))
+
+theorem finalFour_lc2_6M8B8 (C R : ℤ) (hC : 0≤C) (hR : 0≤R) :
+ onsetValue2_6M1B 4 (5+3*C+2*R) (2+1*C+1*R)*onsetValue2_8M1B 4 (5+3*C+2*R) (2+1*C+1*R)≤(onsetValue2_7M1B 4 (5+3*C+2*R) (2+1*C+1*R))^2 := by
+ apply sub_nonneg.mp
+ have he : (onsetValue2_7M1B 4 (5+3*C+2*R) (2+1*C+1*R))^2-onsetValue2_6M1B 4 (5+3*C+2*R) (2+1*C+1*R)*onsetValue2_8M1B 4 (5+3*C+2*R) (2+1*C+1*R)=finalFourGap2_6M8B8 C R := by
+  unfold onsetValue2_6M1B onsetValue2_7M1B onsetValue2_8M1B backShape2M94 onsetCorrection2_6M1B onsetCorrection2_7M1B onsetCorrection2_8M1B finalFourGap2_6M8B8
+  ring
+ rw [he]
+ unfold finalFourGap2_6M8B8
+ positivity
+end
+end MathGKM.Markov

@@ -1,0 +1,472 @@
+import MarkovOnsetLowGap3M253
+/-! Machine-authored request 8b851864. Extend onset gaps to N >= -4 (n >= 3). -/
+namespace MathGKM.Markov
+noncomputable section
+set_option maxHeartbeats 16000000
+set_option maxRecDepth 65536
+
+theorem onsetLowGC3_0_0M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_0_0M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_0_0M253 N=((((((((((((39715445145600*(N+4) + 1808265621012480)*(N+4) + 37910228338999296)*(N+4) + 483864433718722560)*(N+4) + 4186886530415984640)*(N+4) + 25871921376256327680)*(N+4) + 117046570379550916608)*(N+4) + 390554096731112079360)*(N+4) + 953692970239410831360)*(N+4) + 1661519204685521879040)*(N+4) + 1959532165037558071296)*(N+4) + 1403916251741249863680)*(N+4) + 461833488066753331200) := by
+  unfold onsetLowGC3_0_0M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_0_1M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_0_1M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_0_1M253 N=((((((((((((190079230279680*(N+4) + 8701623907909632)*(N+4) + 183219067287502848)*(N+4) + 2345857645994311680)*(N+4) + 20337757563629076480)*(N+4) + 125759795021986922496)*(N+4) + 568659481111636475904)*(N+4) + 1894352746779114209280)*(N+4) + 4613402922991422013440)*(N+4) + 8008524202582294659072)*(N+4) + 9403658656720228712448)*(N+4) + 6703644619470604861440)*(N+4) + 2193181514362434355200) := by
+  unfold onsetLowGC3_0_1M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_0_2M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_0_2M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_0_2M253 N=((((((((((((396177551917056*(N+4) + 18238299004993536)*(N+4) + 385757114888355840)*(N+4) + 4955624263794032640)*(N+4) + 43055537793099890688)*(N+4) + 266484405183612715008)*(N+4) + 1204689450119410483200)*(N+4) + 4007679403256142888960)*(N+4) + 9736882033917774790656)*(N+4) + 16847144415446361440256)*(N+4) + 19702184539783165378560)*(N+4) + 13979909498451473203200)*(N+4) + 4550313469851736473600) := by
+  unfold onsetLowGC3_0_2M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_0_3M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_0_3M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_0_3M253 N=((((((((((((468667619868672*(N+4) + 21701881654935552)*(N+4) + 461230149413634048)*(N+4) + 5947035748443095040)*(N+4) + 51798401765810896896)*(N+4) + 321018297214986878976)*(N+4) + 1451454759745968144384)*(N+4) + 4824127912883815710720)*(N+4) + 11697933278827394629632)*(N+4) + 20183375742919426179072)*(N+4) + 23519693058597321965568)*(N+4) + 16618979282041086935040)*(N+4) + 5384196586795106304000) := by
+  unfold onsetLowGC3_0_3M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_0_4M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_0_4M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_0_4M253 N=((((((((((((343607567450112*(N+4) + 16009720309481472)*(N+4) + 342035346336251904)*(N+4) + 4428404365291683840)*(N+4) + 38686426335151128576)*(N+4) + 240196534144918880256)*(N+4) + 1086794238729227599872)*(N+4) + 3610831644741913804800)*(N+4) + 8744117907692158451712)*(N+4) + 15053520332988674998272)*(N+4) + 17489792758345202663424)*(N+4) + 12313883343862651944960)*(N+4) + 3973186492615478476800) := by
+  unfold onsetLowGC3_0_4M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_0_5M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_0_5M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_0_5M253 N=((((((((((((159686212976640*(N+4) + 7489710402306048)*(N+4) + 160929503533596672)*(N+4) + 2093364785750999040)*(N+4) + 18353157298433556480)*(N+4) + 114232385780532117504)*(N+4) + 517566722497792966656)*(N+4) + 1720169793822051532800)*(N+4) + 4162992457957197742080)*(N+4) + 7156053669494912974848)*(N+4) + 8295315332907620892672)*(N+4) + 5823371470895760015360)*(N+4) + 1872507409775905996800) := by
+  unfold onsetLowGC3_0_5M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_0_6M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_0_6M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_0_6M253 N=((((((((((((45901858996224*(N+4) + 2168324842586112)*(N+4) + 46884557043007488)*(N+4) + 613127581209722880)*(N+4) + 5398507361792950272)*(N+4) + 33708910908744400896)*(N+4) + 153058053474666676224)*(N+4) + 509277893520575692800)*(N+4) + 1232730291200279445504)*(N+4) + 2117546926545926356992)*(N+4) + 2451015563046919077888)*(N+4) + 1716887086729640017920)*(N+4) + 550545258326792601600) := by
+  unfold onsetLowGC3_0_6M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_0_7M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_0_7M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_0_7M253 N=((((((((((((7457942274048*(N+4) + 355021728251904)*(N+4) + 7729937318412288)*(N+4) + 101700204452904960)*(N+4) + 900000964625301504)*(N+4) + 5642495845824724992)*(N+4) + 25697992220715515904)*(N+4) + 85680901621693808640)*(N+4) + 207620861635747381248)*(N+4) + 356714544588814024704)*(N+4) + 412627875303373406208)*(N+4) + 288637236021244723200)*(N+4) + 92366230045733683200) := by
+  unfold onsetLowGC3_0_7M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_0_8M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_0_8M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_0_8M253 N=((((((((((((524254445568*(N+4) + 25164213387264)*(N+4) + 552107576918016)*(N+4) + 7313687744348160)*(N+4) + 65107654254526464)*(N+4) + 410224531228065792)*(N+4) + 1875814280067022848)*(N+4) + 6273280109067632640)*(N+4) + 15233100861111533568)*(N+4) + 26202542618437484544)*(N+4) + 30318083118188199936)*(N+4) + 21195943484483174400)*(N+4) + 6773820302721024000) := by
+  unfold onsetLowGC3_0_8M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_1_0M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_1_0M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_1_0M253 N=((((((((((((95039615139840*(N+4) + 4252736207978496)*(N+4) + 87508982899408896)*(N+4) + 1094711604207943680)*(N+4) + 9270605405560504320)*(N+4) + 55980229298976718848)*(N+4) + 247117845801618505728)*(N+4) + 803400954356491223040)*(N+4) + 1908808426837697495040)*(N+4) + 3231496332710546374656)*(N+4) + 3699092087844072062976)*(N+4) + 2569792836157117562880)*(N+4) + 819047275374595276800) := by
+  unfold onsetLowGC3_1_0M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_1_1M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_1_1M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_1_1M253 N=((((((((((((396177551917056*(N+4) + 17816119859478528)*(N+4) + 368000206978940928)*(N+4) + 4615340763497103360)*(N+4) + 39134713979066646528)*(N+4) + 236308990798687371264)*(N+4) + 1041831375791155052544)*(N+4) + 3378765752789807923200)*(N+4) + 7999199875146665558016)*(N+4) + 13481059123223863492608)*(N+4) + 15349240681176635670528)*(N+4) + 10598781107582136483840)*(N+4) + 3355724726074441728000) := by
+  unfold onsetLowGC3_1_1M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_1_2M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_1_2M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_1_2M253 N=((((((((((((703001429803008*(N+4) + 31774598995378176)*(N+4) + 658909799475314688)*(N+4) + 8286340901555404800)*(N+4) + 70364537285177769984)*(N+4) + 424967432713803399168)*(N+4) + 1871638021719236542464)*(N+4) + 6056527013618000855040)*(N+4) + 14291689518530086699008)*(N+4) + 23983373919213066387456)*(N+4) + 27167772454013083189248)*(N+4) + 18650584541231760015360)*(N+4) + 5867295823448388403200) := by
+  unfold onsetLowGC3_1_2M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_1_3M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_1_3M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_1_3M253 N=((((((((((((687215134900224*(N+4) + 31225276520202240)*(N+4) + 650239783829766144)*(N+4) + 8201958792678604800)*(N+4) + 69771815165815160832)*(N+4) + 421614024909237780480)*(N+4) + 1855618700729934938112)*(N+4) + 5993724817584606412800)*(N+4) + 14102516708725804498944)*(N+4) + 23574388805579078369280)*(N+4) + 26578385152843120902144)*(N+4) + 18146492041911651532800)*(N+4) + 5674144404796755148800) := by
+  unfold onsetLowGC3_1_3M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_1_4M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_1_4M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_1_4M253 N=((((((((((((399215532441600*(N+4) + 18240833077641216)*(N+4) + 381583847092912128)*(N+4) + 4829654163526778880)*(N+4) + 41175538523103559680)*(N+4) + 249062732831756648448)*(N+4) + 1095974110563007463424)*(N+4) + 3535339652407107256320)*(N+4) + 8298314064137874309120)*(N+4) + 13825089689255646068736)*(N+4) + 15520703702506626613248)*(N+4) + 10543913790788586700800)*(N+4) + 3278377062619545600000) := by
+  unfold onsetLowGC3_1_4M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_1_5M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_1_5M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_1_5M253 N=((((((((((((137705576988672*(N+4) + 6329746707185664)*(N+4) + 133078511479947264)*(N+4) + 1690964153881067520)*(N+4) + 14456172520119730176)*(N+4) + 87580004627106496512)*(N+4) + 385541831335788675072)*(N+4) + 1242761719493075927040)*(N+4) + 2911852455301220401152)*(N+4) + 4837730608715135975424)*(N+4) + 5411168150558934564864)*(N+4) + 3659685114260517027840)*(N+4) + 1132052513491294617600) := by
+  unfold onsetLowGC3_1_5M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_1_6M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_1_6M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_1_6M253 N=((((((((((((26102797959168*(N+4) + 1207611659649024)*(N+4) + 25530510813954048)*(N+4) + 325869122334228480)*(N+4) + 2795329500273967104)*(N+4) + 16972901942361587712)*(N+4) + 74799118582026338304)*(N+4) + 241102601216380108800)*(N+4) + 564298589680045129728)*(N+4) + 935559612280250302464)*(N+4) + 1043300181281470414848)*(N+4) + 702889066171473592320)*(N+4) + 216427190341533696000) := by
+  unfold onsetLowGC3_1_6M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_1_7M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_1_7M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_1_7M253 N=((((((((((((2097017782272*(N+4) + 97697352646656)*(N+4) + 2078212267966464)*(N+4) + 26663707937341440)*(N+4) + 229663339117019136)*(N+4) + 1398660058828505088)*(N+4) + 6175357273104187392)*(N+4) + 19920297446017597440)*(N+4) + 46608440727428923392)*(N+4) + 77169023011421945856)*(N+4) + 85857264275967442944)*(N+4) + 57658251343870033920)*(N+4) + 17682264756663091200) := by
+  unfold onsetLowGC3_1_7M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_2_0M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_2_0M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_2_0M253 N=((((((((((((99044387979264*(N+4) + 4348485178490880)*(N+4) + 87668215806689280)*(N+4) + 1072851320485969920)*(N+4) + 8873637461471526912)*(N+4) + 52248727485893836800)*(N+4) + 224538348667414118400)*(N+4) + 709542586930916229120)*(N+4) + 1636103293313665204224)*(N+4) + 2684327332022381445120)*(N+4) + 2973981489303235461120)*(N+4) + 1997252235943068303360)*(N+4) + 614713980414217420800) := by
+  unfold onsetLowGC3_2_0M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_2_1M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_2_1M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_2_1M253 N=((((((((((((351500714901504*(N+4) + 15498187754176512)*(N+4) + 313396674661711872)*(N+4) + 3841744346472775680)*(N+4) + 31786189250876669952)*(N+4) + 186969942521215451136)*(N+4) + 801625138045808541696)*(N+4) + 2524036762877318922240)*(N+4) + 5792328988721031020544)*(N+4) + 9447955792680074084352)*(N+4) + 10396468359927074783232)*(N+4) + 6928883963463157678080)*(N+4) + 2114829354209299660800) := by
+  unfold onsetLowGC3_2_1M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_2_2M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_2_2M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_2_2M253 N=((((((((((((515411351175168*(N+4) + 22823334316081152)*(N+4) + 462959860632256512)*(N+4) + 5685505746335170560)*(N+4) + 47064425626755661824)*(N+4) + 276604894910229774336)*(N+4) + 1183382311483514290176)*(N+4) + 3713389154440788049920)*(N+4) + 8482778982823708459008)*(N+4) + 13758284823206533005312)*(N+4) + 15039503098516913651712)*(N+4) + 9948628416646238699520)*(N+4) + 3011688127991041228800) := by
+  unfold onsetLowGC3_2_2M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_2_3M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_2_3M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_2_3M253 N=((((((((((((399215532441600*(N+4) + 17757390149517312)*(N+4) + 361400091103199232)*(N+4) + 4447479725304053760)*(N+4) + 36844321686222274560)*(N+4) + 216420742173337583616)*(N+4) + 924193149278306697216)*(N+4) + 2891111719572893859840)*(N+4) + 6576245985625390448640)*(N+4) + 10609078389705431580672)*(N+4) + 11523758637723578007552)*(N+4) + 7568241138950484787200)*(N+4) + 2272937980465152000000) := by
+  unfold onsetLowGC3_2_3M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_2_4M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_2_4M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_2_4M253 N=((((((((((((172131971235840*(N+4) + 7693148608266240)*(N+4) + 157144978336776192)*(N+4) + 1938576520343715840)*(N+4) + 16078297671495843840)*(N+4) + 94428859603888373760)*(N+4) + 402667856172549144576)*(N+4) + 1256282124426899619840)*(N+4) + 2846595760966776913920)*(N+4) + 4569559066418282496000)*(N+4) + 4934078735043763372032)*(N+4) + 3218372186323911966720)*(N+4) + 959228555317995110400) := by
+  unfold onsetLowGC3_2_4M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_2_5M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_2_5M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_2_5M253 N=((((((((((((39154196938752*(N+4) + 1758970905624576)*(N+4) + 36076793748258816)*(N+4) + 446341451580702720)*(N+4) + 3707963034782662656)*(N+4) + 21784798987642994688)*(N+4) + 92809922083635068928)*(N+4) + 288930193920648806400)*(N+4) + 652489998989411745792)*(N+4) + 1042752729111840423936)*(N+4) + 1119768671609808224256)*(N+4) + 725729403613457940480)*(N+4) + 214746281064883814400) := by
+  unfold onsetLowGC3_2_5M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_2_6M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_2_6M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_2_6M253 N=((((((((((((3669781118976*(N+4) + 165791240552448)*(N+4) + 3416071562330112)*(N+4) + 42409288563425280)*(N+4) + 353091944466874368)*(N+4) + 2076405289728344064)*(N+4) + 8843115250178850816)*(N+4) + 27486096652857507840)*(N+4) + 61898614453101920256)*(N+4) + 98533052774180978688)*(N+4) + 105284622256763830272)*(N+4) + 67831514273839841280)*(N+4) + 19935752817357619200) := by
+  unfold onsetLowGC3_2_6M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_3_0M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_3_0M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_3_0M253 N=((((((((((((58583452483584*(N+4) + 2518179335110656)*(N+4) + 49624656138731520)*(N+4) + 592597762588016640)*(N+4) + 4774408740302487552)*(N+4) + 27334562691206873088)*(N+4) + 114016170878596546560)*(N+4) + 349079467522908487680)*(N+4) + 778528794721774731264)*(N+4) + 1233361364954270662656)*(N+4) + 1317303314039014686720)*(N+4) + 851541809768567930880)*(N+4) + 251905024393150464000) := by
+  unfold onsetLowGC3_3_0M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_3_1M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_3_1M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_3_1M253 N=((((((((((((171803783725056*(N+4) + 7409237080670208)*(N+4) + 146297695928057856)*(N+4) + 1748011434482073600)*(N+4) + 14070940612860837888)*(N+4) + 80372686813925474304)*(N+4) + 333995188609519976448)*(N+4) + 1017378134711610900480)*(N+4) + 2254533769115169325056)*(N+4) + 3544682360292259135488)*(N+4) + 3753235187166031773696)*(N+4) + 2402904553067906334720)*(N+4) + 703402262916150067200) := by
+  unfold onsetLowGC3_3_1M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_3_2M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_3_2M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_3_2M253 N=((((((((((((199607766220800*(N+4) + 8636973610696704)*(N+4) + 170886245432426496)*(N+4) + 2043140142331330560)*(N+4) + 16434070993407836160)*(N+4) + 93665213349554552832)*(N+4) + 387834000150204776448)*(N+4) + 1175524326144371589120)*(N+4) + 2588734363308221399040)*(N+4) + 4039868156264960753664)*(N+4) + 4241108511979591827456)*(N+4) + 2689489985243350302720)*(N+4) + 779157489249622425600) := by
+  unfold onsetLowGC3_3_2M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_3_3M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_3_3M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_3_3M253 N=((((((((((((114754647490560*(N+4) + 4982742555033600)*(N+4) + 98805070581202944)*(N+4) + 1182357110139125760)*(N+4) + 9505288589861191680)*(N+4) + 54069485632628981760)*(N+4) + 223132827554167652352)*(N+4) + 673132031466374430720)*(N+4) + 1473475100301974568960)*(N+4) + 2282879158057162506240)*(N+4) + 2376707673647242543104)*(N+4) + 1493206354990997176320)*(N+4) + 428210279867665612800) := by
+  unfold onsetLowGC3_3_3M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_3_4M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_3_4M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_3_4M253 N=((((((((((((32628497448960*(N+4) + 1422103601479680)*(N+4) + 28271044586373120)*(N+4) + 338714000999055360)*(N+4) + 2722502452979957760)*(N+4) + 15461799327757762560)*(N+4) + 63615887620586864640)*(N+4) + 191073952199116062720)*(N+4) + 415885920155302625280)*(N+4) + 639899815716976066560)*(N+4) + 660868877629327933440)*(N+4) + 411467472784557342720)*(N+4) + 116834908992425164800) := by
+  unfold onsetLowGC3_3_4M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_3_5M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_3_5M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_3_5M253 N=((((((((((((3669781118976*(N+4) + 160612113973248)*(N+4) + 3202353318592512)*(N+4) + 38429975358996480)*(N+4) + 308968386145026048)*(N+4) + 1752668223553142784)*(N+4) + 7192576566006644736)*(N+4) + 21517797544427520000)*(N+4) + 46587603224626200576)*(N+4) + 71213896811878023168)*(N+4) + 72983604010105700352)*(N+4) + 45045963646823301120)*(N+4) + 12668243553681408000) := by
+  unfold onsetLowGC3_3_5M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_4_0M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_4_0M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_4_0M253 N=((((((((((((21475472965632*(N+4) + 901337006997504)*(N+4) + 17311646638669824)*(N+4) + 201098856911339520)*(N+4) + 1572967529268903936)*(N+4) + 8725452074696835072)*(N+4) + 35191175463690043392)*(N+4) + 103967313155567124480)*(N+4) + 223290777738943660032)*(N+4) + 339968785710735949824)*(N+4) + 348281274335044829184)*(N+4) + 215527603102698700800)*(N+4) + 60919145955518054400) := by
+  unfold onsetLowGC3_4_0M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_4_1M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_4_1M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_4_1M253 N=((((((((((((49901941555200*(N+4) + 2098813036658688)*(N+4) + 40337630797234176)*(N+4) + 468180934569492480)*(N+4) + 3653316560305520640)*(N+4) + 20185824766094475264)*(N+4) + 80968913691365081088)*(N+4) + 237553166471976714240)*(N+4) + 505938187878957711360)*(N+4) + 762872439408339714048)*(N+4) + 773040040655554215936)*(N+4) + 472674019969353646080)*(N+4) + 131881679204902502400) := by
+  unfold onsetLowGC3_4_1M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_4_2M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_4_2M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_4_2M253 N=((((((((((((43032992808960*(N+4) + 1813769764208640)*(N+4) + 34884005488754688)*(N+4) + 404568969660334080)*(N+4) + 3149685492893614080)*(N+4) + 17336429179825029120)*(N+4) + 69167529831048413184)*(N+4) + 201543971731132907520)*(N+4) + 425710139642112245760)*(N+4) + 635767384626773360640)*(N+4) + 637310070216281161728)*(N+4) + 385074926862925824000)*(N+4) + 106071994009858867200) := by
+  unfold onsetLowGC3_4_2M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_4_3M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_4_3M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_4_3M253 N=((((((((((((16314248724480*(N+4) + 689199057469440)*(N+4) + 13267143952957440)*(N+4) + 153777981641195520)*(N+4) + 1194708984177623040)*(N+4) + 6552137202841681920)*(N+4) + 26007143494668779520)*(N+4) + 75280244733703618560)*(N+4) + 157734399952013230080)*(N+4) + 233362149799011287040)*(N+4) + 231457233745080483840)*(N+4) + 138223375394663301120)*(N+4) + 37596867680010240000) := by
+  unfold onsetLowGC3_4_3M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_4_4M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_4_4M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_4_4M253 N=((((((((((((2293613199360*(N+4) + 97145617121280)*(N+4) + 1872322961080320)*(N+4) + 21696444628992000)*(N+4) + 168264461105233920)*(N+4) + 919780284338012160)*(N+4) + 3633303094658334720)*(N+4) + 10450772379665694720)*(N+4) + 21728382026581278720)*(N+4) + 31854880649364111360)*(N+4) + 31269361549191413760)*(N+4) + 18460749887680020480)*(N+4) + 4959369536215449600) := by
+  unfold onsetLowGC3_4_4M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_5_0M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_5_0M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_5_0M253 N=((((((((((((4990194155520*(N+4) + 203838267064320)*(N+4) + 3802321970528256)*(N+4) + 42804661699215360)*(N+4) + 323745750460661760)*(N+4) + 1732535184375152640)*(N+4) + 6725469702249381888)*(N+4) + 19078679783168409600)*(N+4) + 39250314934378168320)*(N+4) + 57106961294766243840)*(N+4) + 55772549261000441856)*(N+4) + 32825128805652234240)*(N+4) + 8803432079563161600) := by
+  unfold onsetLowGC3_5_0M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_5_1M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_5_1M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_5_1M253 N=((((((((((((8606598561792*(N+4) + 351802214055936)*(N+4) + 6556511329320960)*(N+4) + 73624520616837120)*(N+4) + 554534104044404736)*(N+4) + 2950396550864437248)*(N+4) + 11367932129421557760)*(N+4) + 31957258658135408640)*(N+4) + 65051271202128003072)*(N+4) + 93510954224940220416)*(N+4) + 90111079392344801280)*(N+4) + 52268529958036439040)*(N+4) + 13801813011018547200) := by
+  unfold onsetLowGC3_5_1M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_5_2M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_5_2M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_5_2M253 N=((((((((((((4894274617344*(N+4) + 200203894259712)*(N+4) + 3728058712326144)*(N+4) + 41761242422968320)*(N+4) + 313267816803336192)*(N+4) + 1657284640520011776)*(N+4) + 6339064968539799552)*(N+4) + 17662524929904476160)*(N+4) + 35580853890123300864)*(N+4) + 50544628300394790912)*(N+4) + 48069203220605435904)*(N+4) + 27484833096094187520)*(N+4) + 7146924752004710400) := by
+  unfold onsetLowGC3_5_2M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_5_3M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_5_3M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_5_3M253 N=((((((((((((917445279744*(N+4) + 37563465203712)*(N+4) + 699040454934528)*(N+4) + 7813264708730880)*(N+4) + 58387658642030592)*(N+4) + 307223927891951616)*(N+4) + 1166943006363746304)*(N+4) + 3223837599376343040)*(N+4) + 6429637567120932864)*(N+4) + 9029897121611907072)*(N+4) + 8479008932855021568)*(N+4) + 4781136842305044480)*(N+4) + 1224833008612147200) := by
+  unfold onsetLowGC3_5_3M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_6_0M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_6_0M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_6_0M253 N=((((((((((((717216546816*(N+4) + 28404206272512)*(N+4) + 512459249025024)*(N+4) + 5566135491624960)*(N+4) + 40516861788684288)*(N+4) + 208146370959507456)*(N+4) + 773597641922445312)*(N+4) + 2095377109784985600)*(N+4) + 4104539212148637696)*(N+4) + 5670020046403141632)*(N+4) + 5242681017563480064)*(N+4) + 2913107342146928640)*(N+4) + 735598082064384000) := by
+  unfold onsetLowGC3_6_0M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_6_1M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_6_1M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_6_1M253 N=((((((((((((815712436224*(N+4) + 32274678546432)*(N+4) + 580733877878784)*(N+4) + 6280053648261120)*(N+4) + 45435532585992192)*(N+4) + 231602849684914176)*(N+4) + 852669650326781952)*(N+4) + 2284073481559080960)*(N+4) + 4417836408736579584)*(N+4) + 6016925081748897792)*(N+4) + 5477448583684030464)*(N+4) + 2992683953836523520)*(N+4) + 742227254260531200) := by
+  unfold onsetLowGC3_6_1M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_6_2M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_6_2M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_6_2M253 N=((((((((((((229361319936*(N+4) + 9067170889728)*(N+4) + 162730535288832)*(N+4) + 1752311235870720)*(N+4) + 12603548607971328)*(N+4) + 63768216845942784)*(N+4) + 232670418125193216)*(N+4) + 616785559997644800)*(N+4) + 1178944797473243136)*(N+4) + 1584720349639999488)*(N+4) + 1422101757836132352)*(N+4) + 765104959893012480)*(N+4) + 186680785187635200) := by
+  unfold onsetLowGC3_6_2M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_7_0M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_7_0M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_7_0M253 N=((((((((((((58265174016*(N+4) + 2227288670208)*(N+4) + 38680676794368)*(N+4) + 403337033809920)*(N+4) + 2811110734430208)*(N+4) + 13790331392753664)*(N+4) + 48807945069133824)*(N+4) + 125536382767595520)*(N+4) + 232816623250046976)*(N+4) + 303549187230793728)*(N+4) + 264050577383620608)*(N+4) + 137568215850024960)*(N+4) + 32457863725056000) := by
+  unfold onsetLowGC3_7_0M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_7_1M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_7_1M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_7_1M253 N=((((((((((((32765902848*(N+4) + 1249067925504)*(N+4) + 21591937253376)*(N+4) + 223721753149440)*(N+4) + 1546954771267584)*(N+4) + 7518174327078912)*(N+4) + 26327333971427328)*(N+4) + 66922275007365120)*(N+4) + 122539818476371968)*(N+4) + 157620039931920384)*(N+4) + 135186809981239296)*(N+4) + 69418269844439040)*(N+4) + 16141117921689600) := by
+  unfold onsetLowGC3_7_1M253
+  ring
+ rw [he]
+ positivity
+
+theorem onsetLowGC3_8_0M8B8_nonneg (N : ℤ) (hN : -4≤N) : 0≤onsetLowGC3_8_0M253 N := by
+ have h : 0≤N+4 := by omega
+ have he : onsetLowGC3_8_0M253 N=((((((((((((2047868928*(N+4) + 75176607744)*(N+4) + 1249992769536)*(N+4) + 12446088560640)*(N+4) + 82637241974784)*(N+4) + 385397635940352)*(N+4) + 1294415902015488)*(N+4) + 3154410130636800)*(N+4) + 5535430653247488)*(N+4) + 6821797092655104)*(N+4) + 5604952979275776)*(N+4) + 2757179379548160)*(N+4) + 614281406054400) := by
+  unfold onsetLowGC3_8_0M253
+  ring
+ rw [he]
+ positivity
+
+attribute [local irreducible] onsetLowC3_0_0M253 onsetLowC3_0_1M253 onsetLowC3_0_2M253 onsetLowC3_0_3M253 onsetLowC3_0_4M253 onsetLowC3_1_0M253 onsetLowC3_1_1M253 onsetLowC3_1_2M253 onsetLowC3_1_3M253 onsetLowC3_2_0M253 onsetLowC3_2_1M253 onsetLowC3_2_2M253 onsetLowC3_3_0M253 onsetLowC3_3_1M253 onsetLowC3_4_0M253 onsetLowC4_0_0M253 onsetLowC4_0_1M253 onsetLowC4_0_2M253 onsetLowC4_0_3M253 onsetLowC4_0_4M253 onsetLowC4_1_0M253 onsetLowC4_1_1M253 onsetLowC4_1_2M253 onsetLowC4_1_3M253 onsetLowC4_2_0M253 onsetLowC4_2_1M253 onsetLowC4_2_2M253 onsetLowC4_3_0M253 onsetLowC4_3_1M253 onsetLowC4_4_0M253 onsetLowC5_0_0M253 onsetLowC5_0_1M253 onsetLowC5_0_2M253 onsetLowC5_0_3M253 onsetLowC5_0_4M253 onsetLowC5_1_0M253 onsetLowC5_1_1M253 onsetLowC5_1_2M253 onsetLowC5_1_3M253 onsetLowC5_2_0M253 onsetLowC5_2_1M253 onsetLowC5_2_2M253 onsetLowC5_3_0M253 onsetLowC5_3_1M253 onsetLowC5_4_0M253
+
+theorem onsetLowGCol3_0M8B8_nonneg (N R : ℤ) (hN : -4≤N) (hR : 0≤R) : 0≤onsetLowGCol3_0M253 N R := by
+ unfold onsetLowGCol3_0M253
+ have h0 := onsetLowGC3_0_0M8B8_nonneg N hN
+ have h1 := onsetLowGC3_0_1M8B8_nonneg N hN
+ have h2 := onsetLowGC3_0_2M8B8_nonneg N hN
+ have h3 := onsetLowGC3_0_3M8B8_nonneg N hN
+ have h4 := onsetLowGC3_0_4M8B8_nonneg N hN
+ have h5 := onsetLowGC3_0_5M8B8_nonneg N hN
+ have h6 := onsetLowGC3_0_6M8B8_nonneg N hN
+ have h7 := onsetLowGC3_0_7M8B8_nonneg N hN
+ have h8 := onsetLowGC3_0_8M8B8_nonneg N hN
+ positivity
+
+theorem onsetLowGCol3_1M8B8_nonneg (N R : ℤ) (hN : -4≤N) (hR : 0≤R) : 0≤onsetLowGCol3_1M253 N R := by
+ unfold onsetLowGCol3_1M253
+ have h0 := onsetLowGC3_1_0M8B8_nonneg N hN
+ have h1 := onsetLowGC3_1_1M8B8_nonneg N hN
+ have h2 := onsetLowGC3_1_2M8B8_nonneg N hN
+ have h3 := onsetLowGC3_1_3M8B8_nonneg N hN
+ have h4 := onsetLowGC3_1_4M8B8_nonneg N hN
+ have h5 := onsetLowGC3_1_5M8B8_nonneg N hN
+ have h6 := onsetLowGC3_1_6M8B8_nonneg N hN
+ have h7 := onsetLowGC3_1_7M8B8_nonneg N hN
+ positivity
+
+theorem onsetLowGCol3_2M8B8_nonneg (N R : ℤ) (hN : -4≤N) (hR : 0≤R) : 0≤onsetLowGCol3_2M253 N R := by
+ unfold onsetLowGCol3_2M253
+ have h0 := onsetLowGC3_2_0M8B8_nonneg N hN
+ have h1 := onsetLowGC3_2_1M8B8_nonneg N hN
+ have h2 := onsetLowGC3_2_2M8B8_nonneg N hN
+ have h3 := onsetLowGC3_2_3M8B8_nonneg N hN
+ have h4 := onsetLowGC3_2_4M8B8_nonneg N hN
+ have h5 := onsetLowGC3_2_5M8B8_nonneg N hN
+ have h6 := onsetLowGC3_2_6M8B8_nonneg N hN
+ positivity
+
+theorem onsetLowGCol3_3M8B8_nonneg (N R : ℤ) (hN : -4≤N) (hR : 0≤R) : 0≤onsetLowGCol3_3M253 N R := by
+ unfold onsetLowGCol3_3M253
+ have h0 := onsetLowGC3_3_0M8B8_nonneg N hN
+ have h1 := onsetLowGC3_3_1M8B8_nonneg N hN
+ have h2 := onsetLowGC3_3_2M8B8_nonneg N hN
+ have h3 := onsetLowGC3_3_3M8B8_nonneg N hN
+ have h4 := onsetLowGC3_3_4M8B8_nonneg N hN
+ have h5 := onsetLowGC3_3_5M8B8_nonneg N hN
+ positivity
+
+theorem onsetLowGCol3_4M8B8_nonneg (N R : ℤ) (hN : -4≤N) (hR : 0≤R) : 0≤onsetLowGCol3_4M253 N R := by
+ unfold onsetLowGCol3_4M253
+ have h0 := onsetLowGC3_4_0M8B8_nonneg N hN
+ have h1 := onsetLowGC3_4_1M8B8_nonneg N hN
+ have h2 := onsetLowGC3_4_2M8B8_nonneg N hN
+ have h3 := onsetLowGC3_4_3M8B8_nonneg N hN
+ have h4 := onsetLowGC3_4_4M8B8_nonneg N hN
+ positivity
+
+theorem onsetLowGCol3_5M8B8_nonneg (N R : ℤ) (hN : -4≤N) (hR : 0≤R) : 0≤onsetLowGCol3_5M253 N R := by
+ unfold onsetLowGCol3_5M253
+ have h0 := onsetLowGC3_5_0M8B8_nonneg N hN
+ have h1 := onsetLowGC3_5_1M8B8_nonneg N hN
+ have h2 := onsetLowGC3_5_2M8B8_nonneg N hN
+ have h3 := onsetLowGC3_5_3M8B8_nonneg N hN
+ positivity
+
+theorem onsetLowGCol3_6M8B8_nonneg (N R : ℤ) (hN : -4≤N) (hR : 0≤R) : 0≤onsetLowGCol3_6M253 N R := by
+ unfold onsetLowGCol3_6M253
+ have h0 := onsetLowGC3_6_0M8B8_nonneg N hN
+ have h1 := onsetLowGC3_6_1M8B8_nonneg N hN
+ have h2 := onsetLowGC3_6_2M8B8_nonneg N hN
+ positivity
+
+theorem onsetLowGCol3_7M8B8_nonneg (N R : ℤ) (hN : -4≤N) (hR : 0≤R) : 0≤onsetLowGCol3_7M253 N R := by
+ unfold onsetLowGCol3_7M253
+ have h0 := onsetLowGC3_7_0M8B8_nonneg N hN
+ have h1 := onsetLowGC3_7_1M8B8_nonneg N hN
+ positivity
+
+theorem onsetLowGCol3_8M8B8_nonneg (N R : ℤ) (hN : -4≤N) (hR : 0≤R) : 0≤onsetLowGCol3_8M253 N R := by
+ unfold onsetLowGCol3_8M253
+ have h0 := onsetLowGC3_8_0M8B8_nonneg N hN
+ positivity
+
+attribute [local irreducible] onsetLowCol3_3_0M253 onsetLowCol3_3_1M253 onsetLowCol3_3_2M253 onsetLowCol3_3_3M253 onsetLowCol3_3_4M253 onsetLowCol3_4_0M253 onsetLowCol3_4_1M253 onsetLowCol3_4_2M253 onsetLowCol3_4_3M253 onsetLowCol3_4_4M253 onsetLowCol3_5_0M253 onsetLowCol3_5_1M253 onsetLowCol3_5_2M253 onsetLowCol3_5_3M253 onsetLowCol3_5_4M253
+
+theorem onsetLow_lc3M8B8 (N C R : ℤ) (hN : -4≤N) (hC : 0≤C) (hR : 0≤R) :
+ onsetLowV3M253 N C R*onsetLowV5M253 N C R ≤ (onsetLowV4M253 N C R)^2 := by
+ apply sub_nonneg.mp
+ rw [onsetLow_cols3_3M253,onsetLow_cols3_4M253,onsetLow_cols3_5M253]
+ have he : ((onsetLowCol3_4_0M253 N R*C^0 + onsetLowCol3_4_1M253 N R*C^1) + (onsetLowCol3_4_2M253 N R*C^2 + (onsetLowCol3_4_3M253 N R*C^3 + onsetLowCol3_4_4M253 N R*C^4)))^2-((onsetLowCol3_3_0M253 N R*C^0 + onsetLowCol3_3_1M253 N R*C^1) + (onsetLowCol3_3_2M253 N R*C^2 + (onsetLowCol3_3_3M253 N R*C^3 + onsetLowCol3_3_4M253 N R*C^4)))*((onsetLowCol3_5_0M253 N R*C^0 + onsetLowCol3_5_1M253 N R*C^1) + (onsetLowCol3_5_2M253 N R*C^2 + (onsetLowCol3_5_3M253 N R*C^3 + onsetLowCol3_5_4M253 N R*C^4)))=(((onsetLowGCol3_0M253 N R*C^0 + onsetLowGCol3_1M253 N R*C^1) + (onsetLowGCol3_2M253 N R*C^2 + onsetLowGCol3_3M253 N R*C^3)) + ((onsetLowGCol3_4M253 N R*C^4 + onsetLowGCol3_5M253 N R*C^5) + (onsetLowGCol3_6M253 N R*C^6 + (onsetLowGCol3_7M253 N R*C^7 + onsetLowGCol3_8M253 N R*C^8)))) := by
+  rw [←onsetLowGCol3_0M253_eq,←onsetLowGCol3_1M253_eq,←onsetLowGCol3_2M253_eq,←onsetLowGCol3_3M253_eq,←onsetLowGCol3_4M253_eq,←onsetLowGCol3_5M253_eq,←onsetLowGCol3_6M253_eq,←onsetLowGCol3_7M253_eq,←onsetLowGCol3_8M253_eq]
+  ring
+ rw [he]
+ have h0 := onsetLowGCol3_0M8B8_nonneg N R hN hR
+ have h1 := onsetLowGCol3_1M8B8_nonneg N R hN hR
+ have h2 := onsetLowGCol3_2M8B8_nonneg N R hN hR
+ have h3 := onsetLowGCol3_3M8B8_nonneg N R hN hR
+ have h4 := onsetLowGCol3_4M8B8_nonneg N R hN hR
+ have h5 := onsetLowGCol3_5M8B8_nonneg N R hN hR
+ have h6 := onsetLowGCol3_6M8B8_nonneg N R hN hR
+ have h7 := onsetLowGCol3_7M8B8_nonneg N R hN hR
+ have h8 := onsetLowGCol3_8M8B8_nonneg N R hN hR
+ positivity
+end
+end MathGKM.Markov

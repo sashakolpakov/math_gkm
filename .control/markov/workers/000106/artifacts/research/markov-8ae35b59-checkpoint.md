@@ -1,0 +1,19 @@
+# Request 8ae35b59
+
+Machine-authored live experimental research. Exact pinned root unresolved. Mission/design and independent audits read. Worker 105 completed and hashes reconciled. New action: central fourth-slice polynomial gap certificates, with Horner layout and staged coefficient assembly. Existing candidates are not assumed proved.
+
+First checkpoint: verified 301 inherited artifacts and six index entries. Two 60-second grouped-base builds timed out; immutable attempts retained. Nine split base builds and two base import assemblies passed. Exact finite central experiment passed 270 cases, 3600 coefficient identities, 2790 polygon-valid inequalities, 30 literal recurrence comparisons. Gap candidates remain unproved pending builds.
+
+Second checkpoint: all twelve Horner-base modules passed compilation and a union kernel replay (receipt kernel-union-1792094529868897000.json). Grouped gap builds still timed out, including with opaque rewrite inputs; split coefficient gap builds are now testing. Base axiom inventory build timed out and will be retried in a smaller or less contended run. No new raw source inequality is accepted yet.
+
+Third checkpoint: individual Horner gap builds pass after correcting Lean lexical spacing (the token <=m had been interpreted as matroid notation) and splitting grouped certificates. Column candidates were repaired to use simp only when some definition names are absent. Eight of nine top-predecessor gap coefficients compiled; source and full-slice candidates are prepared but not yet accepted. Exact onset threshold probe has 20/20 nonnegative coefficient certificates at n_base=3 (experimental only). A process-diagnostic command was denied; capability failure recorded.
+
+Fourth checkpoint: MarkovFourthTopCompleteM8AE compiled successfully (41.57 seconds). It proves raw central inequalities, the whole fourth slice for n>=7,c>=5,r+1=c, and Conjecture63 iff InteriorCore63TopM8AE. The root residual remains unproved. Kernel replay for this closure is running; axiom audit not yet finished. General coefficient gap pipeline is bounded to 900 seconds and may leave uncompiled candidates. No root completion claimed.
+
+Fifth checkpoint: top-predecessor complete module and its new certificate dependencies passed union kernel replay, and all its theorem axiom closures passed (permitted axioms only). Also compiled the stronger seven-position raw onset coefficient adapter for every n>=4. Numerator-two predecessor source candidates are now under construction, using the R=0 section of the low chart; general central chart completion remains open.
+
+Sixth checkpoint: numerator-two full-slice and cumulative exact-root residual compiled after correcting only addition associativity. Both new subfamily theorem closures use allowed axioms; the second axiom audit passed. A larger pending-module union replay is in progress. General certificate pipeline reached its 900-second budget and is finishing active builds before skipping remaining work. Final report will keep exact-root completion null.
+
+Final mathematical checkpoint: both complete subfamily modules and the n>=4 source adapter passed kernel replay. The final axiom audit covered 227 theorem closures, all permitted. The 900-second general certificate batch ended and skipped pending groups; its concrete unfinished inventory is recorded. Only the last auxiliary-component replay and final hash preservation checks remain before the report.
+
+Final validation checkpoint: all foreground executions ended. The last fifteen-module kernel replay passed. All 87 current mathematical modules have source-bound successful builds and kernel replays; all 227 theorem closures were audited with permitted axioms only. General all-predecessor completion is not claimed. Final artifact and protected-input hashes are being checked; consult final-check.json and last-verification.json for the final counts.
