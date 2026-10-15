@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovFullCoeff0DebugFA.lean:10:2: error: (deterministic) timeout at `\u00absynthesize pending MVars\u00bb`, maximum number of heartbeats (100000) has been reached\n\nNote: Use `set_option maxHeartbeats <num>` to set the limit.\n\nHint: Additional diagnostic information may be available using the `set_option diagnostics true` command.\n/Users/sasha/math_gkm/research/MarkovFullCoeff0DebugFA.lean:14:207: error: Function expected at\n  debugH0FA\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  N\n\nHint: The identifier `debugH0FA` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n/Users/sasha/math_gkm/research/MarkovFullCoeff0DebugFA.lean:15:13: error: Function expected at\n  debugH0FA\nbut this term has type\n  x\u271d\n\nNote: Expected a function because this term is being applied to the argument\n  N\n/Users/sasha/math_gkm/research/MarkovFullCoeff0DebugFA.lean:16:10: error: Tactic `unfold` failed: Local variable `debugH0FA` has no definition\n",
+  "stderr": "",
+  "source": "research/MarkovFullCoeff0DebugFA.lean",
+  "sha256": "3f4cd88e0c703593aec1a05924a89774d15c95430720ef3e1e9b581af6b2db6c",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-fa9eb434/MarkovFullCoeff0DebugFA.olean",
+    "/Users/sasha/math_gkm/research/MarkovFullCoeff0DebugFA.lean"
+  ],
+  "seconds": 24.824709292006446,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

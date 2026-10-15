@@ -1,0 +1,35 @@
+# Worker 000097 replay method audit
+
+Read-only audit of completed-timeout request `fa9eb434c31049be8cbf0c087d85105d`, using retained files in `/Users/sasha/math_gkm`. Sources and receipts were parsed and hashed with standard-library audit code only. No project execution, Lean, builds, imports, replays, finalizers, experiments, missing-check completion or project writes. The parent audit owns full artifact bindings, event/deadline completion and finalization.
+
+## Exact retained replay scope
+
+`accepted-modules.json` contains 49 new mathematical modules; their explicit source declarations comprise 79 theorems and 104 definitions. `declarations.json` lists exactly those 79 theorem names. There is no `audit-inventory.json` for this worker.
+
+There are 35 successful direct `ReplayKnown6d2c.lean` receipts covering 38 theorems and 36 definitions, two direct timeout receipts (`MarkovFullLocalsFA` and `MarkovFullPartsFA`, approximately 110 seconds each), and ten explicitly skipped queued direct checks. The skipped records have `mode: replay`, but no Lean command was launched by their skip branch; the generic reason text says queued build. Neither a timeout nor a skipped record is a successful direct check.
+
+The successful retained union receipt `kernel-union-1792080822228549000.json` explicitly selects all 49 accepted modules, with return code zero and `replay union passed`. It covers all 79 theorems and 104 definitions. All selected current source hashes match every corresponding completed-attempt receipt. There are 49 distinct successful targets overall, not 35 plus 49 distinct modules.
+
+Fourteen accepted modules lack individual direct success but are explicitly selected by that successful union: `MarkovFullChamber0FA`, `MarkovFullChamber1FA`, `MarkovFullLocalsFA`, `MarkovFullPartsFA`, `MarkovFullRunCoeff0FA` through `MarkovFullRunCoeff3FA`, `MarkovFullRunPartsFA`, `MarkovFullSplitFirstFA`, `MarkovFullSplitMomentFA`, `MarkovFullSplitSecondFA`, `MarkovFullSplitThirdFA`, and `MarkovFullThirdMomentFA`. The first two chamber modules are therefore replay targets, not merely compiled imports. `MarkovFullSourceFA` is both a successful direct target and a union target. `MarkovFullPartsFA` is the sole definition-only accepted module.
+
+`MarkovAuditFA` imports the accepted sources, prints exactly the matching 79 theorem axiom closures, has no explicit mathematical declarations, and is not a replay target. Named pending-list JSON files are retained work lists; replay outcomes are established by actual receipts, not by those filenames. Controller completion and deadline acceptance remain the parent audit's separate findings.
+
+## Imported bases and name checks
+
+The 49-module union has exactly one explicit inherited source root, `MarkovFourthBinomialBC`; implicit Init accounts for its recorded two inherited imports. The transitive local imported-source closure contains 121 modules, all present before worker97 and unchanged from their before97 hashes. No new worker97 module is imported in this union base.
+
+Across the union and all 37 actually attempted direct checks, the inspected static transitive bases contain neither their selected module(s) nor a selected explicit declaration name. There are no duplicate explicit target names and no source import cycles. Direct bases contain 121–167 local source modules. Their new worker97 imported sources are all separately selected in the successful union; they remain imported assumptions during the individual direct invocation itself. No preexisting local base source changed from before97. Selected source texts contain no raw `sorry`, `admit`, `native_decide`, `unsafe`, `partial`, `axiom`, or `skipKernelTC` token.
+
+Excluded `MarkovFullChamber2FA` through `MarkovFullChamber5FA` and all six `MarkovFullSourceChamber0FA` through `MarkovFullSourceChamber5FA` adapters occur in none of the inspected imported-source closures and are not selected. Their absence is not evidence that their intended statements were proved elsewhere. Exact graph edges, declarations and per-check boundaries are in the evidence JSON. External Mathlib source boundaries are recorded rather than independently scanned or rebuilt.
+
+## Procedure and retained limits
+
+Both drivers match before97. `ReplayKnown6d2c.lean` remains SHA256 `18acbc2d17aa7a1368de5d3b6f9d6b26340654c6fca17be091d0f63dc6bcb470`; `ReplayBatch07F1.lean` remains `502fedb68f64aad8487592b1844bf0a123d3c17d5826add10750a7b1c96c5cdc`. The validator (`08cbc659d5060596ed79d837a7698f6150cea7fab6b6dbf4d8c792bee2dc8b1a`) equals worker96's after request-ID substitution. The union wrapper (`acda6c8d836c7708078f3ead6492507552e22237e2679ee0af7f20c8bd09a7ea`) equals the earlier 120-second worker95 wrapper except for request ID and narrowing receipt discovery from `run-*.json` to `run-Markov*.json`. The narrower glob excludes the list-valued `run-stage-modules.json`; it does not change the kernel replay algorithm or matching-successful-build requirement.
+
+Direct validation snapshots source bytes before invoking pinned Lean v4.32.2, using the current evidence directory first in LEAN_PATH. Direct receipts store the captured source hash, command, output and elapsed time but no invocation driver or loaded-object digest. Their filename stamp is chosen before launch. The union wrapper hashes selected sources before launch, requires matching successful build records, and hashes its driver only after the subprocess returns; the union receipt is timestamped/written afterward. Successful event summaries retain output lengths while full output remains in receipt JSON. The current skip list does not erase earlier timeout or skip records.
+
+The unchanged direct and union drivers replay selected objects' most-private constants relative to their imported environment. Safe nonpartial declarations reach kernel checking; imported declarations are trusted, axioms remain axioms, and unsafe/partial declarations are skipped. Union-map duplicate names may overwrite earlier entries, and an imported theorem agreeing on relevant name/type metadata can avoid proof-body replay. No corresponding explicit-source duplicate or target reimport was found here. The pending-state mechanism does not insert a proof assumption; ordinary dependencies still require kernel acceptance, with inductives handled by the kernel's inductive path.
+
+These findings do not independently establish compiled import-table contents, private/generated constant names, exact loaded object bytes or load times, a fresh reconstruction of the inherited environment, or an allowed-axiom policy. Before/current driver agreement is distinct from an invocation-specific digest. The successful union supplies selected-module replay evidence for all 49 accepted modules; it does not complete excluded work or erase prior failures and skips.
+
+Evidence: `markov_worker_000097_replay_method_evidence.json`, SHA256 `ee53c267a7882ce56addb70ebce5a5620ae0fc8df57dd07e058e3b2a0d711c7d`, contains exact receipt/target associations, skipped records, accepted declaration comparisons, all source graphs, before/current hashes and 309 input hashes.
