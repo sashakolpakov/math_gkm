@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovWeightedRunE45e.lean:37:1: error: unsolved goals\ncase pos\ns N q : \u2115\nW : \u211d[X]\nhq : q \u2264 N\nhe :\n  \u2211 r \u2208 range (N + 1), W.coeff (N - r) * intervalCoeff6d34 s r 0 q =\n    \u2211 r \u2208 Ico q (N + 1), W.coeff (N - r) * intervalCoeff6d34 s r 0 q\nr : \u2115\nhr : r \u2208 range (N - q + 1)\nhr' : r \u2264 N - q\n\u22a2 W.coeff (N - q - r) * \u2191((q + s).choose s) * \u2191((s + (r - 0)).choose s) =\n    W.coeff (N - q - r) * \u2191((q + s).choose s) * \u2191((s + r).choose s)\n'MathGKM.Markov.weightedRunResidual_coeffE45' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.weightedRunResidual_lcE45' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovWeightedRunE45e.lean",
+  "sha256": "cf3dae3a8e04c4061de9825118dd973afb23db21338d4bd535d58e352e14b4b6",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-e45ef6ac/MarkovWeightedRunE45e.olean",
+    "/Users/sasha/math_gkm/research/MarkovWeightedRunE45e.lean"
+  ],
+  "seconds": 40.072031749994494,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

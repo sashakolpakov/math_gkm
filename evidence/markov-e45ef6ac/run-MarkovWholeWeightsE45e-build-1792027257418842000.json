@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovWholeWeightsE45e.lean:23:69: error: Application type mismatch: The argument\n  ht\nhas type\n  \u2200 m \u2208 ms, maskDegree07a7 1 m < D\nbut is expected to have type\n  cutMasksFe01 word s = ms\nin the application\n  ih ht\n/Users/sasha/math_gkm/research/MarkovWholeWeightsE45e.lean:19:16: error: unsolved goals\ncase cons.e_a\nword : List Bool\ns D : \u2115\nw : \u2115 \u2192 \u211d\nm : List (Bool \u00d7 Bool)\nms : List (List (Bool \u00d7 Bool))\nih :\n  cutMasksFe01 word s = ms \u2192\n    (\u2200 m \u2208 ms, maskDegree07a7 1 m < D) \u2192\n      (List.map (fun m => C (w (maskDegree07a7 1 m)) * maskWeight340 X X 1 m) ms).sum =\n        \u2211 x \u2208 range D,\n          C (w x) * (List.map (fun m => if maskDegree07a7 1 m = x then maskWeight340 X X 1 m else 0) ms).sum\nhe : cutMasksFe01 word s = m :: ms\nhD : \u2200 m_1 \u2208 m :: ms, maskDegree07a7 1 m_1 < D\nhm : maskDegree07a7 1 m < D\nht : \u2200 m \u2208 ms, maskDegree07a7 1 m < D\n\u22a2 (List.map (fun m => C (w (maskDegree07a7 1 m)) * maskWeight340 X X 1 m) ms).sum =\n    \u2211 x \u2208 range D, C (w x) * (List.map (fun m => if maskDegree07a7 1 m = x then maskWeight340 X X 1 m else 0) ms).sum\n'MathGKM.Markov.weightedCut_degree_sumE45' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.weightedCut_run_fullE45' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.weightedCut_run_lcE45' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovWholeWeightsE45e.lean",
+  "sha256": "dfdc9efcf6381f3cec7b66b955ae102e8b1eabd5a8730a3b207a1343e1c44998",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-e45ef6ac/MarkovWholeWeightsE45e.olean",
+    "/Users/sasha/math_gkm/research/MarkovWholeWeightsE45e.lean"
+  ],
+  "seconds": 67.7709823329933,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovWeightedSource320f.lean:31:31: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  weightedOne320 (fun k => C (w k)) X 0 0\n    (List.flatMap (fun r => endBlock320 (n + if r = true then 1 else 0)) rs ++ tail)\nin the target expression\n  resetWeighted320 w (n + if r = true then 1 else 0) +\n      weightedOne320 (fun k => C (w k)) X 0 0\n        (List.flatMap (fun r => List.replicate (n + if r = true then 1 else 0) true ++ [false]) rs ++ tail) =\n    resetWeighted320 w (n + if r = true then 1 else 0) +\n        (List.map (fun r => resetWeighted320 w (n + if r = true then 1 else 0)) rs).sum +\n      weightedOne320 (fun k => C (w k)) X 0 0 tail\n\ncase cons\nw : \u2115 \u2192 \u211d\nn : \u2115\ntail : List Bool\nr : Bool\nrs : List Bool\nih :\n  weightedOne320 (fun k => C (w k)) X 0 0\n      (List.flatMap (fun r => endBlock320 (n + if r = true then 1 else 0)) rs ++ tail) =\n    (List.map (fun r => resetWeighted320 w (n + if r = true then 1 else 0)) rs).sum +\n      weightedOne320 (fun k => C (w k)) X 0 0 tail\n\u22a2 resetWeighted320 w (n + if r = true then 1 else 0) +\n      weightedOne320 (fun k => C (w k)) X 0 0\n        (List.flatMap (fun r => List.replicate (n + if r = true then 1 else 0) true ++ [false]) rs ++ tail) =\n    resetWeighted320 w (n + if r = true then 1 else 0) +\n        (List.map (fun r => resetWeighted320 w (n + if r = true then 1 else 0)) rs).sum +\n      weightedOne320 (fun k => C (w k)) X 0 0 tail\n/Users/sasha/math_gkm/research/MarkovWeightedSource320f.lean:27:16: warning: This simp argument is unused:\n  weightedOne320\n\nHint: Omit it from the simp argument list.\n  simp \u0335[\u0335w\u0335e\u0335i\u0335g\u0335h\u0335t\u0335e\u0335d\u0335O\u0335n\u0335e\u03353\u03352\u03350\u0335]\u0335\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovWeightedSource320f.lean:61:40: warning: This simp argument is unused:\n  List.count_cons\n\nHint: Omit it from the simp argument list.\n  simp [\u0335i\u0335h\u0335,\u0335L\u0335i\u0335s\u0335t\u0335.\u0335c\u0335o\u0335u\u0335n\u0335t\u0335_\u0335c\u0335o\u0335n\u0335s\u0335,\u0335m\u0335a\u0335p\u0335_\u0335a\u0335d\u0335d\u0335]\u0335[\u0332i\u0332h\u0332,\u0332 \u0332m\u0332a\u0332p\u0332_\u0332a\u0332d\u0332d\u0332]\u0332\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n'MathGKM.Markov.source_weighted_runs320' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.weighted_runs_counts320' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovWeightedSource320f.lean",
+  "sha256": "9522d6510af7d1e3b150fd84ed81e57d58db455c5ce5c5e053aba35e1f74874f",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-320fe46f/MarkovWeightedSource320f.olean",
+    "/Users/sasha/math_gkm/research/MarkovWeightedSource320f.lean"
+  ],
+  "seconds": 23.592493417003425,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

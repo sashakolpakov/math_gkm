@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovOneCutRaw320f.lean:36:5: error: linarith failed to find a contradiction\ncase refine_1.left\nm : \u2115\nh0 : \u2191(coeff (frame (oneAPath68 (m + 3))).mid.p (m + 6) (m + 2)) = 20\nh1 : \u2191(coeff (frame (oneAPath68 (m + 3))).mid.p (m + 5) (m + 3)) = 12\nh2 : \u2191(coeff (frame (oneAPath68 (m + 3))).mid.p (m + 4) (m + 4)) = 4\nh0z : coeff (frame (oneAPath68 (m + 3))).mid.p (m + 6) (m + 2) = 20\nh1z : coeff (frame (oneAPath68 (m + 3))).mid.p (m + 5) (m + 3) = 12\nh2z : coeff (frame (oneAPath68 (m + 3))).mid.p (m + 4) (m + 4) = 4\nha : (frame (oneAPath68 (m + 3))).mid.a = 2 * (m + 3) + 1\nhb : (frame (oneAPath68 (m + 3))).mid.b = 2 * (m + 3) + 3\na\u271d : (2 * (m + 3) + 3) * (m + 3 + 3) + (2 * (m + 3) + 1) * (m + 3 - 1) < (2 * (m + 3) + 1) * (2 * (m + 3) + 3)\n\u22a2 False\nfailed\n/Users/sasha/math_gkm/research/MarkovOneCutRaw320f.lean:47:3: error: Type mismatch: After simplification, term\n  have this :=\n    Mathlib.Meta.NormNum.isNat_eq_true\n      (Mathlib.Meta.NormNum.IsInt.to_isNat\n        (Mathlib.Meta.NormNum.isInt_sub (Eq.refl HSub.hSub)\n          (Mathlib.Meta.NormNum.IsNat.to_isInt\n            (Mathlib.Meta.NormNum.isNat_pow (Eq.refl HPow.hPow) (Mathlib.Meta.NormNum.isNat_ofNat \u2124 (Eq.refl 12))\n              (Mathlib.Meta.NormNum.isNat_ofNat \u2115 (Eq.refl 2))\n              (Mathlib.Meta.NormNum.IsNatPowT.run Mathlib.Meta.NormNum.IsNatPowT.bit0)))\n          (Mathlib.Meta.NormNum.IsNat.to_isInt\n            (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul) (Mathlib.Meta.NormNum.isNat_ofNat \u2124 (Eq.refl 20))\n              (Mathlib.Meta.NormNum.isNat_ofNat \u2124 (Eq.refl 4)) (Eq.refl 80)))\n          (Eq.refl (Int.ofNat 64))))\n      (Mathlib.Meta.NormNum.isNat_ofNat \u2124 (Eq.refl 64));\n  this\n has type\n  12 ^ 2 - 20 * 4 = 64\nbut is expected to have type\n  12 ^ 2 - coeff (frame (oneAPath68 (m + 3))).mid.p (m + (3 + 3)) (m + 3 - 1) * 4 = 64\n'MathGKM.Markov.oneA_at_one320f' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.oneA_raw_top320f' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovOneCutRaw320f.lean",
+  "sha256": "05b1a1adaa3ac5e0c9a501b7eb7f620763e4072f1f20d8de8c425a9507bef093",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-320fe46f/MarkovOneCutRaw320f.olean",
+    "/Users/sasha/math_gkm/research/MarkovOneCutRaw320f.lean"
+  ],
+  "seconds": 20.383952458010754,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

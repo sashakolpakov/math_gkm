@@ -1,0 +1,349 @@
+{
+  "weighted-formula": {
+    "path": "evidence/markov-e45ef6ac/weighted-formula.json",
+    "sha256": "959464c61aab12da87dc83effb75817397b2352b62c8ef95eb731e3dc2a48d7d",
+    "input_count": 25,
+    "summary": {
+      "status": "exact finite check, not proof",
+      "formula_positions": 56550,
+      "weighted_inequalities": 52650,
+      "raw_recurrence_positions": 8800,
+      "failures": [],
+      "seconds": 0.5505620829935651
+    }
+  },
+  "probe-equal": {
+    "path": "evidence/markov-e45ef6ac/probe-equal.json",
+    "sha256": "f1bc6df8720620e14cbbd739a9c42ebe46ac830881a46044c4f3a8a8c6b62d5c",
+    "input_count": 43,
+    "summary": {
+      "mode": "equal",
+      "status": "finite exact computation only; arbitrary run words are not asserted to be source words",
+      "checks": 7706,
+      "nontrivial": 6558,
+      "failure": null,
+      "seconds": 64.13824387500063
+    }
+  },
+  "probe-runs": {
+    "path": "evidence/markov-e45ef6ac/probe-runs.json",
+    "sha256": "40511f06eb8eb5d28a6fa3271d1ce1bdfd6f62bb6771a5c970957e5ad8daef62",
+    "input_count": 23,
+    "summary": {
+      "mode": "runs",
+      "status": "finite exact computation only; arbitrary run words are not asserted to be source words",
+      "checks": 2218,
+      "nontrivial": 1956,
+      "failure": null,
+      "seconds": 108.15506779201678
+    }
+  },
+  "run-order": {
+    "path": "evidence/markov-e45ef6ac/run-order.json",
+    "sha256": "7d9100e4d27a4877b5ce0de2e3114b52ea258aac0a12ad83a2229109e33071dd",
+    "input_count": 420,
+    "summary": {
+      "status": "finite exact experiments on arbitrary adjacent-run words; not source witnesses",
+      "checks": 103546,
+      "failure": null,
+      "seconds": 18.02051562498673
+    }
+  },
+  "run-exhaustive": {
+    "path": "evidence/markov-e45ef6ac/run-exhaustive.json",
+    "sha256": "8db6c6c55da3fab28f91f9f753aa247efd7fd8d3b765dddc3c8bcdbcfcce89a1",
+    "input_count": 508,
+    "summary": {
+      "status": "finite exact experiments; arbitrary words need not be source words",
+      "raw_inequalities": 277990,
+      "transport_checks": 11638,
+      "failure": null,
+      "seconds": 17.21554512498551
+    }
+  },
+  "directions": {
+    "path": "evidence/markov-e45ef6ac/directions.json",
+    "sha256": "8f1f6ca21b3f082e7dc603ff5c7eb7acf12fc33ddda82f9da609e038a3ec04c3",
+    "input_count": 2044,
+    "summary": {
+      "status": "finite exact computation; synthetic labels do not establish source membership",
+      "checks": [
+        1758783,
+        10618,
+        1832502
+      ],
+      "failures": {
+        "1": {
+          "n": 0,
+          "interior": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "word": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "synthetic_a": 2,
+          "synthetic_b": 8,
+          "coprime": false,
+          "is_mechanical": false,
+          "mechanical_word": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "points": [
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ]
+          ],
+          "values": [
+            4,
+            6,
+            10
+          ],
+          "gap": -4
+        }
+      },
+      "seconds": 56.179187959001865
+    }
+  },
+  "palindrome": {
+    "path": "evidence/markov-e45ef6ac/palindrome.json",
+    "sha256": "4e7f3e04080a9d64f22bc8fae6a4549f8e5cd65daf668683f0faab968e1b9d36",
+    "input_count": 1520,
+    "summary": {
+      "status": "finite exact computation on coprime-label palindromic non-source words",
+      "checks": [
+        2363452,
+        12597,
+        2432288
+      ],
+      "failures": {
+        "1": {
+          "n": 0,
+          "interior": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "word": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "a": 3,
+          "b": 13,
+          "mechanical_word": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "points": [
+            [
+              1,
+              10
+            ],
+            [
+              1,
+              11
+            ],
+            [
+              1,
+              12
+            ]
+          ],
+          "values": [
+            20,
+            28,
+            40
+          ],
+          "gap": -16
+        }
+      },
+      "seconds": 89.99830433301395
+    }
+  },
+  "order-witness": {
+    "path": "evidence/markov-e45ef6ac/order-witness.json",
+    "sha256": "6a46c43f8b2f2fb66dcf428e4a97c95da2324b9eee1b938c7cc5c1ab4101c52c",
+    "input_count": 0,
+    "summary": {
+      "word": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "synthetic_label": [
+        2,
+        9
+      ],
+      "path_2_9": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "raw_source": [
+        4,
+        8,
+        12
+      ],
+      "word_polynomials": {
+        "4": [
+          70,
+          250,
+          337,
+          210,
+          59,
+          6
+        ],
+        "5": [
+          56,
+          275,
+          548,
+          562,
+          308,
+          83,
+          8
+        ],
+        "6": [
+          28,
+          180,
+          492,
+          740,
+          660,
+          348,
+          100,
+          12
+        ]
+      }
+    }
+  },
+  "palindrome-witness": {
+    "path": "evidence/markov-e45ef6ac/palindrome-witness.json",
+    "sha256": "651d7ac5679a1231ed198ccc964fdad856b38324ed9c8cb3da1bcf8430b1a966",
+    "input_count": 0,
+    "summary": {
+      "path": [
+        false,
+        false,
+        false,
+        true,
+        true
+      ],
+      "source_values": [
+        16,
+        28,
+        40
+      ],
+      "false_word": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "word_polynomials": {
+        "8": [
+          495,
+          4110,
+          15134,
+          32458,
+          44744,
+          41230,
+          25550,
+          10414,
+          2633,
+          364,
+          20
+        ],
+        "9": [
+          220,
+          2160,
+          9568,
+          25212,
+          43848,
+          52752,
+          44688,
+          26568,
+          10812,
+          2848,
+          432,
+          28
+        ],
+        "10": [
+          66,
+          755,
+          3950,
+          12496,
+          26620,
+          40227,
+          44220,
+          35640,
+          20922,
+          8745,
+          2486,
+          440,
+          40,
+          1
+        ]
+      }
+    }
+  }
+}

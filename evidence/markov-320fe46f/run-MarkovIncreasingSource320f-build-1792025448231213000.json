@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovIncreasingSource320f.lean:48:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2191(coeff (frame ?m.97).mid.p (i + 2) j)\nin the target expression\n  (cutCoeffA27 X X 1 (central28 (List.replicate n true ++ false :: rest) ++ [true]) 1).coeff j *\n      (cutCoeffA27 X X 1 (central28 (List.replicate n true ++ false :: rest) ++ [true]) 1).coeff (j + 2) \u2264\n    (cutCoeffA27 X X 1 (central28 (List.replicate n true ++ false :: rest) ++ [true]) 1).coeff (j + 1) ^ 2\n\nn : \u2115\nrest : List Bool\ni j : \u2115\nhs : i + j + 2 = (frame (List.replicate n true ++ false :: rest)).mid.a + 1\nh :\n  (cutCoeffA27 X X 1 (central28 (List.replicate n true ++ false :: rest) ++ [true]) 1).coeff j *\n      (cutCoeffA27 X X 1 (central28 (List.replicate n true ++ false :: rest) ++ [true]) 1).coeff (j + 2) \u2264\n    (cutCoeffA27 X X 1 (central28 (List.replicate n true ++ false :: rest) ++ [true]) 1).coeff (j + 1) ^ 2\n\u22a2 coeff (frame (List.replicate n true ++ false :: rest)).mid.p i (j + 2) *\n      coeff (frame (List.replicate n true ++ false :: rest)).mid.p (i + 2) j \u2264\n    coeff (frame (List.replicate n true ++ false :: rest)).mid.p (i + 1) (j + 1) ^ 2\n'MathGKM.Markov.source_mask_weighted_all_lc320' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.source_onecut_geometric_lc320' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.source_onecut_raw_lc320' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovIncreasingSource320f.lean",
+  "sha256": "dd6557b59a0a36bf5efa09edfc86c6a60d2d7263bd7c0fdf9a6808740253cf9f",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-320fe46f/MarkovIncreasingSource320f.olean",
+    "/Users/sasha/math_gkm/research/MarkovIncreasingSource320f.lean"
+  ],
+  "seconds": 33.54634354202426,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}
