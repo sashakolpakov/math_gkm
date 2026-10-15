@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovFourthOne0BE.lean:103:63: error: unsolved goals\nc r : \u2115\nhr : 0 < r\nhrc : r < c\nhl : 0 * r < 1 * c\nhu\u271d : 4 * r < 1 * c\nhqi : \u2191(2 * r - c) = 0\nhq : \u2191(2 * r - c) = C 0\nhti : \u2191(min (c - r) (3 * r - c)) = 0\nht : \u2191(min (c - r) (3 * r - c)) = C 0\nhui : \u2191(3 * r - 2 * c) = 0\nhu : \u2191(3 * r - 2 * c) = C 0\nhmi : \u2191(min (c - 2 * r) (4 * r - c)) = 0\nhm : \u2191(min (c - 2 * r) (4 * r - c)) = C 0\n\u22a2 -(\u2191c * 12) - \u2191c * X * 72 + \u2191c * X ^ 2 * 276 + \u2191c * X ^ 3 * 1800 + \u2191c * X ^ 4 * 2310 - \u2191c * X ^ 5 * 192 -\n                        \u2191c * X ^ 6 * 1152 +\n                      \u2191c * X ^ 7 * 96 -\n                    X * \u2191r * 144 -\n                  X ^ 2 * \u2191r * 1536 -\n                X ^ 3 * \u2191r * 4848 -\n              X ^ 4 * \u2191r * 3834 +\n            X ^ 5 * \u2191r * 3648 +\n          X ^ 6 * \u2191r * 3840 -\n        X ^ 7 * \u2191r * 960 -\n      \u2191r * 6 =\n    -(X * C \u2191r * 144) - X * C \u2191c * 72 - X ^ 2 * C \u2191r * 1536 + X ^ 2 * C \u2191c * 276 - X ^ 3 * C \u2191r * 4848 +\n                          X ^ 3 * C \u2191c * 1800 -\n                        X ^ 4 * C \u2191r * 3834 +\n                      X ^ 4 * C \u2191c * 2310 +\n                    X ^ 5 * C \u2191r * 3648 -\n                  X ^ 5 * C \u2191c * 192 +\n                X ^ 6 * C \u2191r * 3840 -\n              X ^ 6 * C \u2191c * 1152 -\n            X ^ 7 * C \u2191r * 960 +\n          X ^ 7 * C \u2191c * 96 -\n        C \u2191r * 6 -\n      C \u2191c * 12\n/Users/sasha/math_gkm/research/MarkovFourthOne0BE.lean:137:1: warning: 'push_cast' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n",
+  "stderr": "",
+  "source": "research/MarkovFourthOne0BE.lean",
+  "sha256": "854d5721a6a1638cf07f85511625c1844dbaaa6d71afb1715dda1b5313fe776a",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-be5676f9/MarkovFourthOne0BE.olean",
+    "/Users/sasha/math_gkm/research/MarkovFourthOne0BE.lean"
+  ],
+  "seconds": 77.46322104200954,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

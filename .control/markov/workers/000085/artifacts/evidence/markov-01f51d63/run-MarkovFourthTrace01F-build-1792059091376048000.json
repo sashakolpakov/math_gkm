@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovFourthTrace01F.lean:20:16: error: unsolved goals\ncase cons\nR : Type u_1\ninst\u271d : CommRing R\nm : Mat16 R[X]\nms : List (Mat16 R[X])\nih : projProduct6905 (List.map transpose01F ms.reverse) = transpose01F (projProduct6905 ms)\n\u22a2 mm16 (transpose01F (projProduct6905 ms)) (mm16 (transpose01F m) { a := 1, b := 0, c := 0, d := 1 }) =\n    mm16 (transpose01F (projProduct6905 ms)) (transpose01F m)\n/Users/sasha/math_gkm/research/MarkovFourthTrace01F.lean:74:1: error: Type mismatch: After simplification, term\n  he\n has type\n  logFour01F (tr16 (projProduct6905 (m :: n :: ms))) =\n    openFour01F (m :: n :: ms) +\n        boundaryFour01F (headRatioOne01F (m :: n :: ms)) (headRatioTwo01F (m :: n :: ms))\n          (headRatioThree01F (m :: n :: ms)) (headRatioOne01F (List.map transpose01F (m :: n :: ms).reverse))\n          (headRatioTwo01F (List.map transpose01F (m :: n :: ms).reverse))\n          (headRatioThree01F (List.map transpose01F (m :: n :: ms).reverse)) +\n      determinantFour01F ((projProduct6905 (m :: n :: ms)).d.coeff 1) ((projProduct6905 (m :: n :: ms)).d.coeff 2)\n        ((projProduct6905 (m :: n :: ms)).b.coeff 1) ((projProduct6905 (m :: n :: ms)).c.coeff 1)\n        ((det16 (projProduct6905 (m :: n :: ms))).coeff 2) ((det16 (projProduct6905 (m :: n :: ms))).coeff 3)\n        ((det16 (projProduct6905 (m :: n :: ms))).coeff 4)\nbut is expected to have type\n  logFour01F (tr16 (projProduct6905 (m :: n :: ms))) =\n    openFour01F (m :: n :: ms) +\n        boundaryFour01F (headRatioOne01F (m :: n :: ms)) (headRatioTwo01F (m :: n :: ms))\n          (headRatioThree01F (m :: n :: ms)) (headRatioOne01F (List.map transpose01F (m :: n :: ms).reverse))\n          (headRatioTwo01F (List.map transpose01F (m :: n :: ms).reverse))\n          (headRatioThree01F (List.map transpose01F (m :: n :: ms).reverse)) +\n      determinantFour01F ((projProduct6905 (m :: n :: ms)).d.coeff 1) ((projProduct6905 (m :: n :: ms)).d.coeff 2)\n        (headRatioOne01F (m :: n :: ms)) (headRatioOne01F (List.map transpose01F (m :: n :: ms).reverse))\n        ((det16 (projProduct6905 (m :: n :: ms))).coeff 2) ((det16 (projProduct6905 (m :: n :: ms))).coeff 3)\n        ((det16 (projProduct6905 (m :: n :: ms))).coeff 4)\n",
+  "stderr": "",
+  "source": "research/MarkovFourthTrace01F.lean",
+  "sha256": "145fd39ca98d17dc0e084350daeb06e06b3009c94176111bc6879af3ea7229ff",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-01f51d63/MarkovFourthTrace01F.olean",
+    "/Users/sasha/math_gkm/research/MarkovFourthTrace01F.lean"
+  ],
+  "seconds": 11.74076345897629,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

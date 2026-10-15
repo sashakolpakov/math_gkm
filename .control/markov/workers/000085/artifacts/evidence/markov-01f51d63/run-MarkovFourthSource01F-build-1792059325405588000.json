@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovFourthSource01F.lean:37:11: warning: Possibly looping simp theorem: `\u2190 C_pow`\n\nNote: Possibly caused by: `map_pow`\n\nHint: You can disable a simp theorem from the default simp set by passing `- theoremName` to `simp`.\n/Users/sasha/math_gkm/research/MarkovFourthSource01F.lean:37:1: error: Tactic `simp` failed with a nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get diagnostic information\n/Users/sasha/math_gkm/research/MarkovFourthSource01F.lean:54:7: error: Invalid rewrite argument: Expected an equality or iff proof or definition name, but `w` is a value of type\n  List (Mat16 BiPoly)\n/Users/sasha/math_gkm/research/MarkovFourthSource01F.lean:58:82: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Matroid ?m.62) 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Matroid ?m.62\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovFourthSource01F.lean:58:85: error(lean.unknownIdentifier): Unknown identifier `s.length`\n/Users/sasha/math_gkm/research/MarkovFourthSource01F.lean:58:74: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b \u2265 1\n  a \u2265 2\nwhere\n a := \u2191w.length\n b := \u2191ms.length\n/Users/sasha/math_gkm/research/MarkovFourthSource01F.lean:59:45: error: Type mismatch: After simplification, term\n  hs\n has type\n  \u2200 z \u2208 runBooleanListADB2 n true (sourceWord28 rest), Projection6905 z\nbut is expected to have type\n  Projection6905 m \u2227 Projection6905 k \u2227 \u2200 a \u2208 ks, Projection6905 a\n",
+  "stderr": "",
+  "source": "research/MarkovFourthSource01F.lean",
+  "sha256": "4c6ddd18e1b79538a5ce809423007d93bfbf844a5560144ebb90625b4869d76f",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-01f51d63/MarkovFourthSource01F.olean",
+    "/Users/sasha/math_gkm/research/MarkovFourthSource01F.lean"
+  ],
+  "seconds": 21.30472795901005,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovFourthAllCyclesBE.lean:31:40: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ps\nin the target expression\n  false :: ([false] ++ [true]) = shortSourceWordBE (frame rest).mid.b (frame rest).mid.a\n\ncase cons.nil.false\nrest : List Bool\nhc : (frame rest).mid.b \u2264 4\nhr : 0 < (frame rest).mid.a\nhrc : (frame rest).mid.a < (frame rest).mid.b\nhcop : (frame rest).mid.a.Coprime (frame rest).mid.b\nhlen : (central28 rest).length \u2264 2\nps : List Bool\nhp : ps = []\nhb : (frame rest).mid.b = 3\nhl : (false :: ([false] ++ [true])).length = (frame rest).mid.b\nhe : central28 rest = [false]\nhn : 1 = (frame rest).mid.a\n\u22a2 false :: ([false] ++ [true]) = shortSourceWordBE (frame rest).mid.b (frame rest).mid.a\n/Users/sasha/math_gkm/research/MarkovFourthAllCyclesBE.lean:31:40: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ps\nin the target expression\n  false :: ([true] ++ [true]) = shortSourceWordBE (frame rest).mid.b (frame rest).mid.a\n\ncase cons.nil.true\nrest : List Bool\nhc : (frame rest).mid.b \u2264 4\nhr : 0 < (frame rest).mid.a\nhrc : (frame rest).mid.a < (frame rest).mid.b\nhcop : (frame rest).mid.a.Coprime (frame rest).mid.b\nhlen : (central28 rest).length \u2264 2\nps : List Bool\nhp : ps = []\nhb : (frame rest).mid.b = 3\nhl : (false :: ([true] ++ [true])).length = (frame rest).mid.b\nhe : central28 rest = [true]\nhn : 2 = (frame rest).mid.a\n\u22a2 false :: ([true] ++ [true]) = shortSourceWordBE (frame rest).mid.b (frame rest).mid.a\n/Users/sasha/math_gkm/research/MarkovFourthAllCyclesBE.lean:32:15: error: unsolved goals\ncase cons.cons.false.false\nrest : List Bool\nhc : (frame rest).mid.b \u2264 4\nhr : 0 < (frame rest).mid.a\nhrc : (frame rest).mid.a < (frame rest).mid.b\nhlen : (central28 rest).length \u2264 2\nps qs : List Bool\nhqs : qs = []\nhb : (frame rest).mid.b = 4\nhp : ps = false :: qs\nhl : (false :: ([false, false] ++ [true])).length = (frame rest).mid.b\nhe : central28 rest = [false, false]\nhn : 1 = (frame rest).mid.a\nhcop : True\n\u22a2 false :: (false :: false :: qs ++ [true]) = shortSourceWordBE 4 1\n\ncase cons.cons.true.true\nrest : List Bool\nhc : (frame rest).mid.b \u2264 4\nhr : 0 < (frame rest).mid.a\nhrc : (frame rest).mid.a < (frame rest).mid.b\nhlen : (central28 rest).length \u2264 2\nps qs : List Bool\nhqs : qs = []\nhb : (frame rest).mid.b = 4\nhp : ps = true :: qs\nhl : (false :: ([true, true] ++ [true])).length = (frame rest).mid.b\nhe : central28 rest = [true, true]\nhn : 3 = (frame rest).mid.a\nhcop : True\n\u22a2 false :: (true :: true :: qs ++ [true]) = shortSourceWordBE 4 3\n",
+  "stderr": "",
+  "source": "research/MarkovFourthAllCyclesBE.lean",
+  "sha256": "a695d72e9d1df96391103bd06001cc741840b5ec7492294084b296f186dc3130",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-be5676f9/MarkovFourthAllCyclesBE.olean",
+    "/Users/sasha/math_gkm/research/MarkovFourthAllCyclesBE.lean"
+  ],
+  "seconds": 42.88612337500672,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

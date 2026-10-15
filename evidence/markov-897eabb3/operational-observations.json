@@ -1,0 +1,50 @@
+{
+  "failed_build_or_replay_receipts": [
+    {
+      "receipt": "evidence/markov-897eabb3/run-MarkovFourScan897-build-1792060687238023000.json",
+      "returncode": 1,
+      "timeout": false
+    },
+    {
+      "receipt": "evidence/markov-897eabb3/run-MarkovFourScan897-build-1792060751906672000.json",
+      "returncode": 1,
+      "timeout": false
+    },
+    {
+      "receipt": "evidence/markov-897eabb3/run-MarkovFourSource897-build-1792060938620207000.json",
+      "returncode": 1,
+      "timeout": false
+    },
+    {
+      "receipt": "evidence/markov-897eabb3/run-MarkovFourSource897-build-1792060955653395000.json",
+      "returncode": 1,
+      "timeout": false
+    },
+    {
+      "receipt": "evidence/markov-897eabb3/run-MarkovFourSource897-build-1792061048439755000.json",
+      "returncode": 1,
+      "timeout": false
+    },
+    {
+      "receipt": "evidence/markov-897eabb3/run-MarkovFourthCyclic897-build-1792061179663578000.json",
+      "returncode": 1,
+      "timeout": false
+    },
+    {
+      "receipt": "evidence/markov-897eabb3/run-MarkovResidual897-build-1792061592211973000.json",
+      "returncode": 1,
+      "timeout": false
+    }
+  ],
+  "capabilities": "capabilities.json",
+  "notes": [
+    "One initial shell heredoc failed before Python execution.",
+    "Sage and SymPy are unavailable; GAP is discoverable, not used.",
+    "Rejected builds retain simplifier issues, a redundant tactic, list-boundary rewrites, and a residual parser error. The latter generated error-recovery warnings and is excluded.",
+    "One premature dependent build failed because the new import was not yet built.",
+    "All accepted final sources must match successful builds, replay, and permitted axiom closures.",
+    "Worker 85 effects reconciled without replaying its unfinished finalizer. No controller records changed."
+  ],
+  "unvalidated": [],
+  "limits": "Inherited compiled imports reused. No fresh whole-source rebuild or independent hash-bound English/source completion audit. Local validation is not controller admission."
+}

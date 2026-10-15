@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovFourthSource01F.lean:35:95: error: unsolved goals\ncase neg\nn : \u2115\nrest : List Bool\nk : \u2115\nh\u271d\u00b9 : k = (frame rest).mid.b\nh\u271d : \u00ac(frame rest).mid.b = k\n\u22a2 False\n\ncase pos\nn : \u2115\nrest : List Bool\nk : \u2115\nh\u271d\u00b9 : \u00ack = (frame rest).mid.b\nh\u271d : (frame rest).mid.b = k\n\u22a2 0 = X ^ (frame (List.replicate n true ++ false :: rest)).mid.b\n/Users/sasha/math_gkm/research/MarkovFourthSource01F.lean:61:13: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Matroid ?m.101) 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Matroid ?m.101\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovFourthSource01F.lean:61:16: error(lean.unknownIdentifier): Unknown identifier `s.length`\n/Users/sasha/math_gkm/research/MarkovFourthSource01F.lean:51:32: error: unsolved goals\nn : \u2115\nrest : List Bool\nw : List (Mat16 BiPoly) := runBooleanListADB2 n true (sourceWord28 rest)\nhs : \u2200 z \u2208 w, Projection6905 z\nhl : 2 \u2264 w.length\nm : Mat16 BiPoly\nms : List (Mat16 BiPoly)\nhw : w = m :: ms\n\u22a2 logFour01F (tr16 (ambientWord5c U V (sourceWord28 (List.replicate n true ++ false :: rest)))) =\n    sourceFourthTrace01F n rest\n",
+  "stderr": "",
+  "source": "research/MarkovFourthSource01F.lean",
+  "sha256": "71193b68c63ab0f08eb0fb9584d7df4dec64674767ffbf118454d752ac743ffd",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-01f51d63/MarkovFourthSource01F.olean",
+    "/Users/sasha/math_gkm/research/MarkovFourthSource01F.lean"
+  ],
+  "seconds": 23.28942499999539,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

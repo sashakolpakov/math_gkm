@@ -1,0 +1,296 @@
+{
+  "request_id": "897eabb33b1e4aa8848c530bea99c83d",
+  "modules": [
+    {
+      "module": "MarkovFourScan897",
+      "source": "research/MarkovFourScan897.lean",
+      "sha256": "c8c6332114c07163f39a6b51d10432fe170b8c9fbfc566f3c014e298610f6918",
+      "build": "evidence/markov-897eabb3/run-MarkovFourScan897-build-1792060918085221000.json",
+      "replays": [
+        "evidence/markov-897eabb3/kernel-union-1792061752283506000.json"
+      ]
+    },
+    {
+      "module": "MarkovFourSource897",
+      "source": "research/MarkovFourSource897.lean",
+      "sha256": "662a2ee901db7a9f581f82d69e2ef5b1908a028459125123d8484b739d1d17b7",
+      "build": "evidence/markov-897eabb3/run-MarkovFourSource897-build-1792061189567389000.json",
+      "replays": [
+        "evidence/markov-897eabb3/kernel-union-1792061752283506000.json"
+      ]
+    },
+    {
+      "module": "MarkovFourthCyclic897",
+      "source": "research/MarkovFourthCyclic897.lean",
+      "sha256": "87ba3582c092f86ea86dccb19f995ad94ce35a3debbc1c15cc2b9261b831c4d5",
+      "build": "evidence/markov-897eabb3/run-MarkovFourthCyclic897-build-1792061235246597000.json",
+      "replays": [
+        "evidence/markov-897eabb3/kernel-union-1792061752283506000.json"
+      ]
+    },
+    {
+      "module": "MarkovFourthMoment897",
+      "source": "research/MarkovFourthMoment897.lean",
+      "sha256": "9f4a6ad21eaf2c05bed5f3ed9938801857379a555b92b793837a3908af1fe031",
+      "build": "evidence/markov-897eabb3/run-MarkovFourthMoment897-build-1792061326635696000.json",
+      "replays": [
+        "evidence/markov-897eabb3/kernel-union-1792061752283506000.json"
+      ]
+    },
+    {
+      "module": "MarkovFourthChambers897",
+      "source": "research/MarkovFourthChambers897.lean",
+      "sha256": "172dc7cf7aa1e3df20d36f2196437f3507b46b3fa31dec1eaf183c2f21827f1d",
+      "build": "evidence/markov-897eabb3/run-MarkovFourthChambers897-build-1792061402641808000.json",
+      "replays": [
+        "evidence/markov-897eabb3/kernel-union-1792061752283506000.json"
+      ]
+    },
+    {
+      "module": "MarkovFourthLowSource897",
+      "source": "research/MarkovFourthLowSource897.lean",
+      "sha256": "1a3efb06b9c2070451f15fbb4dce06cadf1a7e4b4b5bd352ee8212fa28d02b32",
+      "build": "evidence/markov-897eabb3/run-MarkovFourthLowSource897-build-1792061534682952000.json",
+      "replays": [
+        "evidence/markov-897eabb3/kernel-union-1792061752283506000.json"
+      ]
+    },
+    {
+      "module": "MarkovResidual897",
+      "source": "research/MarkovResidual897.lean",
+      "sha256": "5fe3b83dcbcdb0c70c18f2c7e44c1687df88fbd1260888027275728f1caebbe3",
+      "build": "evidence/markov-897eabb3/run-MarkovResidual897-build-1792061695383700000.json",
+      "replays": [
+        "evidence/markov-897eabb3/kernel-union-1792061752283506000.json"
+      ]
+    },
+    {
+      "module": "MarkovAudit897",
+      "source": "research/MarkovAudit897.lean",
+      "sha256": "3647f03685a21fab4f9d5aee7c3299dfed62ba4b0847462d7c3ea74502d455b9",
+      "build": "evidence/markov-897eabb3/run-MarkovAudit897-build-1792061740347706000.json",
+      "replays": [
+        "evidence/markov-897eabb3/run-MarkovAudit897-replay-1792061791592565000.json"
+      ]
+    }
+  ],
+  "axioms": {
+    "four_reset897": [
+      "propext"
+    ],
+    "four_replicate897": [
+      "propext"
+    ],
+    "four_lower_zero897": [
+      "Quot.sound",
+      "propext"
+    ],
+    "four_lower_one897": [
+      "propext"
+    ],
+    "four_lower_two897": [
+      "propext"
+    ],
+    "four_lower_many897": [
+      "Quot.sound",
+      "propext"
+    ],
+    "endPair_source_lower897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "triple_append_zero897": [
+      "propext"
+    ],
+    "source_triple_zero897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "triple_wrap897": [
+      "propext"
+    ],
+    "source_triple_wrap897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "four_source_lower_zero897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "four_source_lower_one897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "four_source_lower_two897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "four_source_lower_many897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "four_pell_small897": [
+      "Quot.sound",
+      "propext"
+    ],
+    "four_pell_many897": [
+      "Quot.sound",
+      "propext"
+    ],
+    "source_four_moment897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "fourth_local_tail897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "openFour_boolean897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "gauges_close897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "cyclicFour_boolean897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "fourScan_append897": [
+      "propext"
+    ],
+    "four_rotate897": [
+      "propext"
+    ],
+    "source_fourth_cyclic897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "fourthCanonical_split897": [
+      "Quot.sound",
+      "propext"
+    ],
+    "fourthCanonical_scan897": [
+      "Quot.sound",
+      "propext"
+    ],
+    "source_canonical_moment897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "source_fourth_moment897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "fourth_chamber_moment_0897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "source_fourth_chamber_0897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "fourth_chamber_moment_1897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "source_fourth_chamber_1897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "fourth_chamber_moment_2897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "source_fourth_chamber_2897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "fourth_chamber_moment_3897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "source_fourth_chamber_3897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "fourth_chamber_moment_4897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "source_fourth_chamber_4897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "fourth_chamber_moment_5897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "source_fourth_chamber_5897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "reduced_chamber_boundary897": [
+      "Quot.sound",
+      "propext"
+    ],
+    "source_false_fourth_large897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "source_false_fourth897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "source_fourth_lower_low897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "root_iff_core897": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "endPair_concat897": [],
+    "endPair_true897": [],
+    "endFour_append897": [],
+    "endTriple_append897": [],
+    "endPair_last897": []
+  },
+  "excluded": [],
+  "not_replayed": [],
+  "forbidden_tokens": [],
+  "completion": null,
+  "limits": "Inherited compiled imports reused. No fresh whole-source rebuild or independent hash-bound English/source completion audit. Local validation is not controller admission."
+}
