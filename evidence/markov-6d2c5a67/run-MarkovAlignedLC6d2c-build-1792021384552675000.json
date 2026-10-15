@@ -1,0 +1,15 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovAlignedLC6d2c.lean:10:66: error: unknown tactic\n/Users/sasha/math_gkm/research/MarkovAlignedLC6d2c.lean:10:26: error: Application type mismatch: The argument\n  crossLC_quad hA hB\n    (have this := ?m.72;\n    this)\nhas type\n  A * 0 \u2264 B ^ 2 \u2192 CrossLC (QuadSeq A B 0)\nbut is expected to have type\n  CrossLC ?m.61\nin the application\n  crossLC_pascal\n    (crossLC_quad hA hB\n      (have this := ?m.72;\n      this))\n/Users/sasha/math_gkm/research/MarkovAlignedLC6d2c.lean:10:47: error: unsolved goals\nr n : \u2115\nA B : \u211d\nhA : 0 \u2264 A\nhB : 0 \u2264 B\n\u22a2 0 \u2264 0\n/Users/sasha/math_gkm/research/MarkovAlignedLC6d2c.lean:9:51: error: unsolved goals\nr n : \u2115\nA B : \u211d\nhA : 0 \u2264 A\nhB : 0 \u2264 B\n\u22a2 CrossLC (CoeffSeq (X ^ r * ((1 + X) ^ n * (C A + C B * X))))\n/Users/sasha/math_gkm/research/MarkovAlignedLC6d2c.lean:39:55: error: unexpected token 'by'; expected ')', ',' or ':'\n/Users/sasha/math_gkm/research/MarkovAlignedLC6d2c.lean:33:6: error: Application type mismatch: The argument\n  X ^ r * ((1 + X) ^ n * (C A + C B * X))\nhas type\n  \u2124[X]\nbut is expected to have type\n  \u2115\nin the application\n  coeff_map (Int.castRingHom \u211d) (X ^ r * ((1 + X) ^ n * (C A + C B * X)))\n/Users/sasha/math_gkm/research/MarkovAlignedLC6d2c.lean:36:17: error: unexpected syntax\n  failed to pretty print term (use 'set_option pp.rawOnError true' for raw representation)\n'MathGKM.Markov.singleAAligned_lc6d' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.source_aligned_constant_lc6d' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovAlignedLC6d2c.lean",
+  "sha256": "0e99934b7bad2915e0e073c6eb03527cdf4049204686ee8c7fc5070a8858fab5",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-6d2c5a67/MarkovAlignedLC6d2c.olean",
+    "/Users/sasha/math_gkm/research/MarkovAlignedLC6d2c.lean"
+  ],
+  "seconds": 10.421930374985095,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild"
+}

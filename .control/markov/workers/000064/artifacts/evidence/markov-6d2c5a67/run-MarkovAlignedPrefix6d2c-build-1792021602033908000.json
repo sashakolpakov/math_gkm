@@ -1,0 +1,15 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovAlignedPrefix6d2c.lean:20:13: error: unsolved goals\ncase succ\nn e : \u2115\nih : e < n \u2192 alignedPrefix6d n e = (1 + X) ^ e * (1 + C (\u2191e + 1) * X)\nhen : e + 1 < n\n\u22a2 X * C \u2191e * (1 + X) ^ e + X * (1 + X) ^ e * 3 + X ^ 2 * C \u2191(1 + e) * (1 + X) ^ e + X ^ 2 * (1 + X) ^ e + (1 + X) ^ e =\n    X * C \u2191(1 + e) * (1 + X) ^ e + X * (1 + X) ^ e * 2 + X ^ 2 * C \u2191(1 + e) * (1 + X) ^ e + X ^ 2 * (1 + X) ^ e +\n      (1 + X) ^ e\n/Users/sasha/math_gkm/research/MarkovAlignedPrefix6d2c.lean:36:23: warning: This simp argument is unused:\n  map_one\n\nHint: Omit it from the simp argument list.\n  simp only [\u0335h\u0335c\u0335,\u0335m\u0335a\u0335p\u0335_\u0335a\u0335d\u0335d\u0335,\u0335m\u0335a\u0335p\u0335_\u0335o\u0335n\u0335e\u0335,\u0335m\u0335a\u0335p\u0335_\u0335o\u0335f\u0335N\u0335a\u0335t\u0335]\u0335[\u0332h\u0332c\u0332,\u0332 \u0332m\u0332a\u0332p\u0332_\u0332a\u0332d\u0332d\u0332,\u0332 \u0332m\u0332a\u0332p\u0332_\u0332o\u0332f\u0332N\u0332a\u0332t\u0332]\u0332\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovAlignedPrefix6d2c.lean:56:44: error: unsolved goals\nn : \u2115\nhn : 1 \u2264 n\nh : alignedPrefix6d n (2 * n + 1) = (1 + X) ^ (2 * n + 1) * (1 + C \u21911 * X)\n\u22a2 (1 + X) ^ (2 * n) * (1 + X) * (1 + X) = (1 + X) ^ (2 * n + 1 + 1)\n'MathGKM.Markov.alignedPrefix_below6d' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.alignedPrefix_above6d' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.alignedPrefix_stable6d' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.source_aligned_prefix_lc6d' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovAlignedPrefix6d2c.lean",
+  "sha256": "fdcb2df2c4fde2fef21b46e9d5c033d35bf5d735b8bad945d7228d3c0a0f91bf",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-6d2c5a67/MarkovAlignedPrefix6d2c.olean",
+    "/Users/sasha/math_gkm/research/MarkovAlignedPrefix6d2c.lean"
+  ],
+  "seconds": 21.874302832991816,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild"
+}

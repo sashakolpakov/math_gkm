@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovOneCutTailC416.lean:54:3: error: Tactic `split_ifs` failed: no if-then-else conditions to split\n\ncase left\nm : \u2115\nz : \u211d\nhp : \u2200 (j : \u2115), m \u2264 j \u2192 \u2211 k \u2208 range m, z ^ (k + 2) * ((1 + X) * purePolyFe01 k).coeff (j + 2) = 0\nhr : \u2200 (j : \u2115), m \u2264 j \u2192 \u2211 k \u2208 range m, z ^ (k + 1) * ((1 + X) * resetPolyFe01 k).coeff (j + 2) = 0\nhe :\n  \u2200 (j : \u2115),\n    (oneADeformedC416 (m + 3) z).coeff j =\n      \u2211 k \u2208 range (m + 3), z ^ (k + 2) * ((1 + X) * purePolyFe01 k).coeff j +\n          z ^ (m + 4) * (purePolyFe01 (m + 3)).coeff j +\n        \u2211 k \u2208 range (m + 4), z ^ (k + 1) * ((1 + X) * resetPolyFe01 k).coeff j\n\u22a2 z ^ (m + 2) + z ^ (m + 1 + 2) * 3 + z ^ (m + 2 + 2) * 4 + z ^ (m + 4) * 2 +\n      (z ^ (m + 1 + 1) * 2 + z ^ (m + 2 + 1) * 4 + z ^ (m + 3 + 1) * 4) =\n    3 * z ^ (m + 2) + 7 * z ^ (m + 3) + 10 * z ^ (m + 4)\n'MathGKM.Markov.oneA_top_coeffsC416' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.oneA_marked_gapC416' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'MathGKM.Markov.oneA_marked_failureC416' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovOneCutTailC416.lean",
+  "sha256": "52638db0de1e68a4221f89c4a0d7d2aa1545dab291016e6bc91898bdac98ac26",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-c4169865/MarkovOneCutTailC416.olean",
+    "/Users/sasha/math_gkm/research/MarkovOneCutTailC416.lean"
+  ],
+  "seconds": 20.659474166022846,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}
