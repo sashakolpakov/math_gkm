@@ -1,0 +1,546 @@
+{
+  "kind": "Static mathematical source audit, not proof execution or certificate recomputation",
+  "modules": {
+    "MarkovHorizontalSeedM13D": {
+      "sha256": "60bf46fd9af4eddc53fdb5738feea8622e9bab80b0df4d6b73ac61bae8716d09",
+      "theorem_statements": [],
+      "definitions": [
+        "h3c0M13D",
+        "h3c1M13D",
+        "h3c2M13D",
+        "h3c3M13D",
+        "h3c4M13D",
+        "h3c5M13D",
+        "h3seedM13D",
+        "H3BoundsM13D"
+      ]
+    },
+    "MarkovHorizontalChartsM13D": {
+      "sha256": "2bbdeef595daa61c4078d8f491e51ae9cad417135b6976f3c88efd88cdf8eaaa",
+      "theorem_statements": [
+        {
+          "name": "h3chart_low_0_1M13D",
+          "statement": "theorem h3chart_low_0_1M13D (x y : \u211d) (hx : 0 \u2264 x) (hy : 0 \u2264 y) :\n H3BoundsM13D (2+(x+0)) (3*(2+(x+0))+(y+1)) 0 0 0",
+          "line": 7
+        },
+        {
+          "name": "h3chart_low_1_0M13D",
+          "statement": "theorem h3chart_low_1_0M13D (x y : \u211d) (hx : 0 \u2264 x) (hy : 0 \u2264 y) :\n H3BoundsM13D (2+(x+1)) (3*(2+(x+1))+(y+0)) 0 0 0",
+          "line": 36
+        },
+        {
+          "name": "h3chart_midlow_0_4M13D",
+          "statement": "theorem h3chart_midlow_0_4M13D (x y : \u211d) (hx : 0 \u2264 x) (hy : 0 \u2264 y) :\n H3BoundsM13D ((x+0)+(y+4)) (3*(x+0)+2*(y+4)) 0 (y+4) 0",
+          "line": 65
+        },
+        {
+          "name": "h3chart_midhigh_0_4M13D",
+          "statement": "theorem h3chart_midhigh_0_4M13D (x y : \u211d) (hx : 0 \u2264 x) (hy : 0 \u2264 y) :\n H3BoundsM13D (2*(x+0)+(y+4)) (3*(x+0)+2*(y+4)) (x+0) ((x+0)+(y+4)) 0",
+          "line": 94
+        },
+        {
+          "name": "h3chart_midlow_1_2M13D",
+          "statement": "theorem h3chart_midlow_1_2M13D (x y : \u211d) (hx : 0 \u2264 x) (hy : 0 \u2264 y) :\n H3BoundsM13D ((x+1)+(y+2)) (3*(x+1)+2*(y+2)) 0 (y+2) 0",
+          "line": 123
+        },
+        {
+          "name": "h3chart_midhigh_1_2M13D",
+          "statement": "theorem h3chart_midhigh_1_2M13D (x y : \u211d) (hx : 0 \u2264 x) (hy : 0 \u2264 y) :\n H3BoundsM13D (2*(x+1)+(y+2)) (3*(x+1)+2*(y+2)) (x+1) ((x+1)+(y+2)) 0",
+          "line": 152
+        },
+        {
+          "name": "h3chart_midlow_2_1M13D",
+          "statement": "theorem h3chart_midlow_2_1M13D (x y : \u211d) (hx : 0 \u2264 x) (hy : 0 \u2264 y) :\n H3BoundsM13D ((x+2)+(y+1)) (3*(x+2)+2*(y+1)) 0 (y+1) 0",
+          "line": 181
+        },
+        {
+          "name": "h3chart_midhigh_2_1M13D",
+          "statement": "theorem h3chart_midhigh_2_1M13D (x y : \u211d) (hx : 0 \u2264 x) (hy : 0 \u2264 y) :\n H3BoundsM13D (2*(x+2)+(y+1)) (3*(x+2)+2*(y+1)) (x+2) ((x+2)+(y+1)) 0",
+          "line": 210
+        },
+        {
+          "name": "h3chart_midlow_3_0M13D",
+          "statement": "theorem h3chart_midlow_3_0M13D (x y : \u211d) (hx : 0 \u2264 x) (hy : 0 \u2264 y) :\n H3BoundsM13D ((x+3)+(y+0)) (3*(x+3)+2*(y+0)) 0 (y+0) 0",
+          "line": 239
+        },
+        {
+          "name": "h3chart_midhigh_3_0M13D",
+          "statement": "theorem h3chart_midhigh_3_0M13D (x y : \u211d) (hx : 0 \u2264 x) (hy : 0 \u2264 y) :\n H3BoundsM13D (2*(x+3)+(y+0)) (3*(x+3)+2*(y+0)) (x+3) ((x+3)+(y+0)) 0",
+          "line": 268
+        },
+        {
+          "name": "h3chart_high_1_4M13D",
+          "statement": "theorem h3chart_high_1_4M13D (x y : \u211d) (hx : 0 \u2264 x) (hy : 0 \u2264 y) :\n H3BoundsM13D (2*(x+1)+(y+4)) (3*(x+1)+(y+4)) ((x+1)+(y+4)) (x+1) (y+4)",
+          "line": 297
+        },
+        {
+          "name": "h3chart_high_2_1M13D",
+          "statement": "theorem h3chart_high_2_1M13D (x y : \u211d) (hx : 0 \u2264 x) (hy : 0 \u2264 y) :\n H3BoundsM13D (2*(x+2)+(y+1)) (3*(x+2)+(y+1)) ((x+2)+(y+1)) (x+2) (y+1)",
+          "line": 326
+        },
+        {
+          "name": "h3chart_high_3_0M13D",
+          "statement": "theorem h3chart_high_3_0M13D (x y : \u211d) (hx : 0 \u2264 x) (hy : 0 \u2264 y) :\n H3BoundsM13D (2*(x+3)+(y+0)) (3*(x+3)+(y+0)) ((x+3)+(y+0)) (x+3) (y+0)",
+          "line": 355
+        }
+      ],
+      "definitions": []
+    },
+    "MarkovHorizontalBoundsM13D": {
+      "sha256": "4841f8d28a28d261069699fc2b786e0a9041d4913473a5715a0390405f955307",
+      "theorem_statements": [
+        {
+          "name": "h3nat_midlow_0_4M13D",
+          "statement": "theorem h3nat_midlow_0_4M13D (x y : \u2115) (hx : 0\u2264x) (hy : 4\u2264y) :\n H3BoundsM13D ((x:\u211d)+y) (3*(x:\u211d)+2*y) 0 y 0",
+          "line": 6
+        },
+        {
+          "name": "h3nat_midlow_1_2M13D",
+          "statement": "theorem h3nat_midlow_1_2M13D (x y : \u2115) (hx : 1\u2264x) (hy : 2\u2264y) :\n H3BoundsM13D ((x:\u211d)+y) (3*(x:\u211d)+2*y) 0 y 0",
+          "line": 12
+        },
+        {
+          "name": "h3nat_midlow_2_1M13D",
+          "statement": "theorem h3nat_midlow_2_1M13D (x y : \u2115) (hx : 2\u2264x) (hy : 1\u2264y) :\n H3BoundsM13D ((x:\u211d)+y) (3*(x:\u211d)+2*y) 0 y 0",
+          "line": 18
+        },
+        {
+          "name": "h3nat_midlow_3_0M13D",
+          "statement": "theorem h3nat_midlow_3_0M13D (x y : \u2115) (hx : 3\u2264x) (hy : 0\u2264y) :\n H3BoundsM13D ((x:\u211d)+y) (3*(x:\u211d)+2*y) 0 y 0",
+          "line": 24
+        },
+        {
+          "name": "h3nat_midlowM13D",
+          "statement": "theorem h3nat_midlowM13D (x y : \u2115) (hb : 7\u22643*x+2*y) :\n H3BoundsM13D ((x:\u211d)+y) (3*(x:\u211d)+2*y) 0 y 0",
+          "line": 30
+        },
+        {
+          "name": "h3nat_midhigh_0_4M13D",
+          "statement": "theorem h3nat_midhigh_0_4M13D (x y : \u2115) (hx : 0\u2264x) (hy : 4\u2264y) :\n H3BoundsM13D (2*(x:\u211d)+y) (3*(x:\u211d)+2*y) x ((x:\u211d)+y) 0",
+          "line": 39
+        },
+        {
+          "name": "h3nat_midhigh_1_2M13D",
+          "statement": "theorem h3nat_midhigh_1_2M13D (x y : \u2115) (hx : 1\u2264x) (hy : 2\u2264y) :\n H3BoundsM13D (2*(x:\u211d)+y) (3*(x:\u211d)+2*y) x ((x:\u211d)+y) 0",
+          "line": 45
+        },
+        {
+          "name": "h3nat_midhigh_2_1M13D",
+          "statement": "theorem h3nat_midhigh_2_1M13D (x y : \u2115) (hx : 2\u2264x) (hy : 1\u2264y) :\n H3BoundsM13D (2*(x:\u211d)+y) (3*(x:\u211d)+2*y) x ((x:\u211d)+y) 0",
+          "line": 51
+        },
+        {
+          "name": "h3nat_midhigh_3_0M13D",
+          "statement": "theorem h3nat_midhigh_3_0M13D (x y : \u2115) (hx : 3\u2264x) (hy : 0\u2264y) :\n H3BoundsM13D (2*(x:\u211d)+y) (3*(x:\u211d)+2*y) x ((x:\u211d)+y) 0",
+          "line": 57
+        },
+        {
+          "name": "h3nat_midhighM13D",
+          "statement": "theorem h3nat_midhighM13D (x y : \u2115) (hb : 7\u22643*x+2*y) :\n H3BoundsM13D (2*(x:\u211d)+y) (3*(x:\u211d)+2*y) x ((x:\u211d)+y) 0",
+          "line": 63
+        },
+        {
+          "name": "h3nat_high_1_4M13D",
+          "statement": "theorem h3nat_high_1_4M13D (x y : \u2115) (hx : 1\u2264x) (hy : 4\u2264y) :\n H3BoundsM13D (2*(x:\u211d)+y) (3*(x:\u211d)+y) ((x:\u211d)+y) x y",
+          "line": 72
+        },
+        {
+          "name": "h3nat_high_2_1M13D",
+          "statement": "theorem h3nat_high_2_1M13D (x y : \u2115) (hx : 2\u2264x) (hy : 1\u2264y) :\n H3BoundsM13D (2*(x:\u211d)+y) (3*(x:\u211d)+y) ((x:\u211d)+y) x y",
+          "line": 78
+        },
+        {
+          "name": "h3nat_high_3_0M13D",
+          "statement": "theorem h3nat_high_3_0M13D (x y : \u2115) (hx : 3\u2264x) (hy : 0\u2264y) :\n H3BoundsM13D (2*(x:\u211d)+y) (3*(x:\u211d)+y) ((x:\u211d)+y) x y",
+          "line": 84
+        },
+        {
+          "name": "h3nat_highM13D",
+          "statement": "theorem h3nat_highM13D (x y : \u2115) (hx : 1\u2264x) (hb : 7\u22643*x+y) :\n H3BoundsM13D (2*(x:\u211d)+y) (3*(x:\u211d)+y) ((x:\u211d)+y) x y",
+          "line": 90
+        },
+        {
+          "name": "h3boundsM13D",
+          "statement": "theorem h3boundsM13D (a b : \u2115) (ha : 2\u2264a) (hb : 7\u2264b) (hab : a<b) :\n H3BoundsM13D a b (2*a-b:\u2115)\n   (min (b-a) (3*a-b):\u2115) (3*a-2*b:\u2115)",
+          "line": 98
+        }
+      ],
+      "definitions": []
+    },
+    "MarkovHorizontalGaugeM13D": {
+      "sha256": "8a9dc01d432bd0265195be78987d08f252a3efd7c538ce04e78516c8d49c3542",
+      "theorem_statements": [
+        {
+          "name": "hmap_mmM13D",
+          "statement": "theorem hmap_mmM13D {R S : Type*} [CommRing R] [CommRing S]\n (f : R \u2192+* S) (m n : Mat16 R) :\n hmapM13D f (mm16 m n)=mm16 (hmapM13D f m) (hmapM13D f n)",
+          "line": 15
+        },
+        {
+          "name": "hscale_mmM13D",
+          "statement": "theorem hscale_mmM13D {R : Type*} [CommRing R] (a b : R) (m n : Mat16 R) :\n mm16 (hscaleM13D a m) (hscaleM13D b n)=hscaleM13D (a*b) (mm16 m n)",
+          "line": 19
+        },
+        {
+          "name": "hinverseM13D",
+          "statement": "theorem hinverseM13D (x : \u211d) (hx : x+1\u22600) :\n mm16 (hrightM13D x) (hleftM13D x)=\u27e81,0,0,1\u27e9 \u2227\n mm16 (hleftM13D x) (hrightM13D x)=\u27e81,0,0,1\u27e9",
+          "line": 29
+        },
+        {
+          "name": "hconj_mmM13D",
+          "statement": "theorem hconj_mmM13D (x : \u211d) (hx : x+1\u22600) (m n : Mat16 \u211d[X]) :\n hconjM13D x (mm16 m n)=mm16 (hconjM13D x m) (hconjM13D x n)",
+          "line": 35
+        },
+        {
+          "name": "hconj_traceM13D",
+          "statement": "theorem hconj_traceM13D (x : \u211d) (hx : x+1\u22600) (m : Mat16 \u211d[X]) :\n tr16 (hconjM13D x m)=tr16 m",
+          "line": 41
+        },
+        {
+          "name": "hproj_shapeM13D",
+          "statement": "theorem hproj_shapeM13D (x : \u211d) (r : Bool) : Projection6905 (hprojM13D x r)",
+          "line": 56
+        },
+        {
+          "name": "hproj_letterM13D",
+          "statement": "theorem hproj_letterM13D (x : \u211d) (hx : x\u22600) (hh : x+1\u22600) (r : Bool) :\n hconjM13D x (hmapM13D (hrowEvalM13D x) (if r then rawB18 else rawA18))=\n hscaleM13D (C ((if r then x else 1)*(x+1))) (hprojM13D x r)",
+          "line": 59
+        }
+      ],
+      "definitions": [
+        "hmapM13D",
+        "hscaleM13D",
+        "hrowEvalM13D",
+        "hleftM13D",
+        "hrightM13D",
+        "hconjM13D",
+        "hprojM13D"
+      ]
+    },
+    "MarkovHorizontalTraceM13D": {
+      "sha256": "5759054621a81dfc5b2599fdae3fd6c1bab6b3c184c33cc980b8baa338dae31d",
+      "theorem_statements": [
+        {
+          "name": "hword_scaledM13D",
+          "statement": "theorem hword_scaledM13D (x : \u211d) (hx : x\u22600) (hh : x+1\u22600) (w : List Bool) :\n hconjM13D x (hmapM13D (hrowEvalM13D x) (rawWord80 w))=\n hscaleM13D (C (x^(w.count true)*(x+1)^w.length)) (hprojWordM13D x w)",
+          "line": 12
+        },
+        {
+          "name": "hsource_traceM13D",
+          "statement": "theorem hsource_traceM13D (x : \u211d) (hx : x\u22600) (hh : x+1\u22600) (path : List Bool) :\n C (x^(frame path).mid.a*(x+1)^(frame path).mid.b)*\n   tr16 (hprojWordM13D x (sourceWord28 path)) =\n (C (x+1)+X)*hrowEvalM13D x (frame path).mid.p",
+          "line": 29
+        },
+        {
+          "name": "hrowEval_coeffM13D",
+          "statement": "theorem hrowEval_coeffM13D (x : \u211d) (P : BiPoly) (j : \u2115) :\n (hrowEvalM13D x P).coeff j=\n Polynomial.eval\u2082 (Int.castRingHom \u211d) x ((Bivariate.swap P).coeff j)",
+          "line": 53
+        }
+      ],
+      "definitions": [
+        "hprojWordM13D"
+      ]
+    },
+    "MarkovHorizontalLCM13D": {
+      "sha256": "582cabea616b5b64bad9342832129eba1f9816d7dcae53699800219dbdfde8c2",
+      "theorem_statements": [
+        {
+          "name": "six_crossM13D",
+          "statement": "theorem six_crossM13D (a b c d e f : \u211d)\n (ha : 0 \u2264 a) (hb : 0 \u2264 b) (hc : 0 < c) (hd : 0 < d) (he : 0 < e) (hf : 0 < f)\n (h1 : a*c \u2264 b^2) (h2 : b*d \u2264 c^2) (h3 : c*e \u2264 d^2) (h4 : d*f \u2264 e^2) :\n CrossLC (sixSeqM13D a b c d e f)",
+          "line": 15
+        },
+        {
+          "name": "six_coeffM13D",
+          "statement": "theorem six_coeffM13D (a b c d e f : \u211d) :\n CoeffSeq (C a+C b*X+C c*X^2+C d*X^3+C e*X^4+C f*X^5)=sixSeqM13D a b c d e f",
+          "line": 47
+        },
+        {
+          "name": "h3seed_crossM13D",
+          "statement": "theorem h3seed_crossM13D (a b : \u2115) (ha : 2 \u2264 a) (hb : 7 \u2264 b) (hab : a < b) :\n CrossLC (CoeffSeq (h3seedM13D (a:\u211d) b (2*a-b:\u2115)\n   (min (b-a) (3*a-b):\u2115) (3*a-2*b:\u2115)))",
+          "line": 63
+        },
+        {
+          "name": "horizontal_third_of_formulaM13D",
+          "statement": "theorem horizontal_third_of_formulaM13D (path : List Bool)\n (ha : 2 \u2264 (frame path).mid.a) (hb : 7 \u2264 (frame path).mid.b)\n (he : HorizontalThirdFormulaM13D path) (i : \u2115) :\n coeff (frame path).mid.p i 3*coeff (frame path).mid.p (i+2) 3  \u2264 \n coeff (frame path).mid.p (i+1) 3^2",
+          "line": 77
+        }
+      ],
+      "definitions": [
+        "sixSeqM13D",
+        "HorizontalThirdFormulaM13D"
+      ]
+    },
+    "MarkovLocalMomentsM13D": {
+      "sha256": "792f54b2b025b1efa35d06cbb692c482187f6c8bb8efd7c026158f4eb44dfc16",
+      "theorem_statements": [
+        {
+          "name": "hopenL_consM13D",
+          "statement": "theorem hopenL_consM13D (m n p : Mat16 R[X]) (ms : List (Mat16 R[X])) :\n openLADB2 (m::n::p::ms)=hlocalLM13D m n p+openLADB2 (n::p::ms)",
+          "line": 21
+        },
+        {
+          "name": "hopenL_scanM13D",
+          "statement": "theorem hopenL_scanM13D (m n p q : Mat16 R[X]) (ms : List (Mat16 R[X])) :\n openLADB2 (m::n::(ms++[p,q]))=\n hscanM13D hlocalLM13D m n (ms++[p,q])+openLADB2 [p,q]",
+          "line": 27
+        },
+        {
+          "name": "hscan_appendM13D",
+          "statement": "theorem hscan_appendM13D (f : Mat16 R[X] \u2192 Mat16 R[X] \u2192 Mat16 R[X] \u2192 R)\n (m n p q : Mat16 R[X]) (ms vs : List (Mat16 R[X])) :\n hscanM13D f m n (ms++[p,q]++vs)=\n hscanM13D f m n (ms++[p,q])+hscanM13D f p q vs",
+          "line": 36
+        },
+        {
+          "name": "cyclicL_scanM13D",
+          "statement": "theorem cyclicL_scanM13D (m n p q : Mat16 R[X]) (ms : List (Mat16 R[X])) :\n cyclicL6905 m n ms p q=\n hscanM13D hlocalLM13D m n (ms++[p,q,m,n])",
+          "line": 46
+        },
+        {
+          "name": "hopenK_consM13D",
+          "statement": "theorem hopenK_consM13D (m n p : Mat16 R[X]) (ms : List (Mat16 R[X])) :\n hopenKM13D (m::n::p::ms)=hlocalKM13D m n p+hopenKM13D (n::p::ms)",
+          "line": 65
+        },
+        {
+          "name": "hopenK_scanM13D",
+          "statement": "theorem hopenK_scanM13D (m n p q : Mat16 R[X]) (ms : List (Mat16 R[X])) :\n hopenKM13D (m::n::(ms++[p,q]))=\n hscanM13D hlocalKM13D m n (ms++[p,q])+hopenKM13D [p,q]",
+          "line": 69
+        },
+        {
+          "name": "cyclicK_scanM13D",
+          "statement": "theorem cyclicK_scanM13D (m n p q : Mat16 R[X]) (ms : List (Mat16 R[X])) :\n cyclicK6905 m n ms p q=hscanM13D hlocalKM13D m n (ms++[p,q,m,n])",
+          "line": 76
+        },
+        {
+          "name": "hscan_mapM13D",
+          "statement": "theorem hscan_mapM13D (g : Bool \u2192 Mat16 R[X])\n (f : Mat16 R[X] \u2192 Mat16 R[X] \u2192 Mat16 R[X] \u2192 R) (p q : Bool) (w : List Bool) :\n hscanM13D f (g p) (g q) (w.map g)=\n tripleScanADB2 (fun p q r => f (g p) (g q) (g r)) p q w",
+          "line": 87
+        }
+      ],
+      "definitions": [
+        "hlocalLM13D",
+        "hscanM13D",
+        "hsingleKM13D",
+        "hlocalKM13D",
+        "hopenKM13D"
+      ]
+    },
+    "MarkovSourceMomentsM13D": {
+      "sha256": "ecefde63366fec49921f32ecb17d544bc953891dd9b214a017326c083b5c8f57",
+      "theorem_statements": [
+        {
+          "name": "hscan_singleM13D",
+          "statement": "theorem hscan_singleM13D (g : Bool \u2192 Mat16 R[X]) (p q s t : Bool) (w : List Bool) :\n tripleScanADB2 (fun p _ _ => (g p).d.coeff 1) p q (w++[s,t])=\n sumD6905 ((p::q::w).map g)",
+          "line": 19
+        },
+        {
+          "name": "htrace_rotateM13D",
+          "statement": "theorem htrace_rotateM13D (g : Bool \u2192 Mat16 R[X]) (w : List Bool) :\n tr16 (projProduct6905 ((false::(w++[true])).map g))=\n tr16 (projProduct6905 ((true::false::w).map g))",
+          "line": 26
+        },
+        {
+          "name": "hsource_momentsM13D",
+          "statement": "theorem hsource_momentsM13D (g : Bool \u2192 Mat16 R[X])\n (hg : \u2200 r, Projection6905 (g r)) (path : List Bool) (hb : 4 \u2264 (frame path).mid.b) :\n let T := tr16 (projProduct6905 ((sourceWord28 path).map g))\n let D := hsourceMomentM13D (fun p _ _ => (g p).d.coeff 1) path\n let K := hsourceMomentM13D (fun p q r => hlocalKM13D (g p) (g q) (g r)) path\n let L := hsourceMomentM13D (fun p q r => hlocalLM13D (g p) (g q) (g r)) path\n T.coeff 0=1 \u2227 T.coeff 1=D \u2227 2*T.coeff 2=D^2+K \u2227\n 6*T.coeff 3=D^3+3*D*K+L",
+          "line": 37
+        }
+      ],
+      "definitions": [
+        "hsourceMomentM13D"
+      ]
+    },
+    "MarkovHorizontalScaledM13D": {
+      "sha256": "e2f246beaf364654716effb0fea99c3a3fc0d5c2373684f5c9a89ffe86695166",
+      "theorem_statements": [
+        {
+          "name": "hD_closedM13D",
+          "statement": "theorem hD_closedM13D (x a b q t u : \u211d) (hh : x+1\u22600) :\n hDvalM13D x a b q t u=hDnM13D x a b/(x+1)^2",
+          "line": 24
+        },
+        {
+          "name": "hK_closedM13D",
+          "statement": "theorem hK_closedM13D (x a b q t u : \u211d) (hx : x\u22600) (hh : x+1\u22600) :\n hKvalM13D x a b q t u=hKnM13D x a b q/(x*(x+1)^4)",
+          "line": 32
+        },
+        {
+          "name": "hL_closedM13D",
+          "statement": "theorem hL_closedM13D (x a b q t u : \u211d) (hx : x\u22600) (hh : x+1\u22600) :\n hLvalM13D x a b q t u=hLnM13D x a b q t u/(x^2*(x+1)^6)",
+          "line": 40
+        },
+        {
+          "name": "hmoment_seedM13D",
+          "statement": "theorem hmoment_seedM13D (x a b q t u : \u211d) (hx : x\u22600) (hh : x+1\u22600) :\n let D := hDvalM13D x a b q t u\n let K := hKvalM13D x a b q t u\n let L := hLvalM13D x a b q t u\n x^2*(x+1)^3*((x+1)^3*(D^3+3*D*K+L)-3*(x+1)^2*(D^2+K)+6*(x+1)*D-6)=\n (h3seedM13D a b q t u).eval x",
+          "line": 48
+        }
+      ],
+      "definitions": [
+        "hDnM13D",
+        "hKnM13D",
+        "hLnM13D",
+        "hDvalM13D",
+        "hKvalM13D",
+        "hLvalM13D"
+      ]
+    },
+    "MarkovHorizontalThirdSourceM13D": {
+      "sha256": "38f08f2abf323197dc06b57341c746e9572e64057ad649555fd31a5491133234",
+      "theorem_statements": [
+        {
+          "name": "hthird_eval_clearedM13D",
+          "statement": "theorem hthird_eval_clearedM13D (path : List Bool) (hb : 4 \u2264 (frame path).mid.b)\n (x : \u211d) (hx : 0 < x) :\n let a := (frame path).mid.a\n let b := (frame path).mid.b\n let Q := h3seedM13D (a:\u211d) b (2*a-b:\u2115) (min (b-a) (3*a-b):\u2115) (3*a-2*b:\u2115)\n 6*x^2*(x+1)^7*(hrowEvalM13D x (frame path).mid.p).coeff 3=\n x^a*(x+1)^b*Q.eval x",
+          "line": 11
+        },
+        {
+          "name": "horizontal_third_formulaM13D",
+          "statement": "theorem horizontal_third_formulaM13D (path : List Bool)\n (ha : 2 \u2264 (frame path).mid.a) (hb : 7 \u2264 (frame path).mid.b) :\n HorizontalThirdFormulaM13D path",
+          "line": 58
+        },
+        {
+          "name": "horizontal_third_rawM13D",
+          "statement": "theorem horizontal_third_rawM13D (path : List Bool)\n (ha : 2 \u2264 (frame path).mid.a) (hb : 7 \u2264 (frame path).mid.b) (i : \u2115) :\n coeff (frame path).mid.p i 3*coeff (frame path).mid.p (i+2) 3 \u2264\n coeff (frame path).mid.p (i+1) 3^2",
+          "line": 98
+        }
+      ],
+      "definitions": []
+    }
+  },
+  "total_theorems": 60,
+  "total_definitions": 30,
+  "chart_count": 13,
+  "charts": [
+    {
+      "region": "low",
+      "coordinates": "a=2+(x+0), b=3a+(y+1)",
+      "offsets": [
+        0,
+        1
+      ]
+    },
+    {
+      "region": "low",
+      "coordinates": "a=2+(x+1), b=3a+(y+0)",
+      "offsets": [
+        1,
+        0
+      ]
+    },
+    {
+      "region": "midlow",
+      "offsets": [
+        0,
+        4
+      ],
+      "base_coordinates": "a=x+y,b=3x+2y,q=0,t=y,z=0"
+    },
+    {
+      "region": "midlow",
+      "offsets": [
+        1,
+        2
+      ],
+      "base_coordinates": "a=x+y,b=3x+2y,q=0,t=y,z=0"
+    },
+    {
+      "region": "midlow",
+      "offsets": [
+        2,
+        1
+      ],
+      "base_coordinates": "a=x+y,b=3x+2y,q=0,t=y,z=0"
+    },
+    {
+      "region": "midlow",
+      "offsets": [
+        3,
+        0
+      ],
+      "base_coordinates": "a=x+y,b=3x+2y,q=0,t=y,z=0"
+    },
+    {
+      "region": "midhigh",
+      "offsets": [
+        0,
+        4
+      ],
+      "base_coordinates": "a=2x+y,b=3x+2y,q=x,t=x+y,z=0"
+    },
+    {
+      "region": "midhigh",
+      "offsets": [
+        1,
+        2
+      ],
+      "base_coordinates": "a=2x+y,b=3x+2y,q=x,t=x+y,z=0"
+    },
+    {
+      "region": "midhigh",
+      "offsets": [
+        2,
+        1
+      ],
+      "base_coordinates": "a=2x+y,b=3x+2y,q=x,t=x+y,z=0"
+    },
+    {
+      "region": "midhigh",
+      "offsets": [
+        3,
+        0
+      ],
+      "base_coordinates": "a=2x+y,b=3x+2y,q=x,t=x+y,z=0"
+    },
+    {
+      "region": "high",
+      "offsets": [
+        1,
+        4
+      ],
+      "base_coordinates": "a=2x+y,b=3x+y,q=x+y,t=x,z=y"
+    },
+    {
+      "region": "high",
+      "offsets": [
+        2,
+        1
+      ],
+      "base_coordinates": "a=2x+y,b=3x+y,q=x+y,t=x,z=y"
+    },
+    {
+      "region": "high",
+      "offsets": [
+        3,
+        0
+      ],
+      "base_coordinates": "a=2x+y,b=3x+y,q=x+y,t=x,z=y"
+    }
+  ],
+  "region_partition": [
+    {
+      "condition": "3a<=b",
+      "coordinates": "low; a=2,b>=7 or a>=3,b>=3a",
+      "counts": "q=t=z=0"
+    },
+    {
+      "condition": "2a<=b<3a",
+      "coordinates": "x=b-2a,y=3a-b; a=x+y,b=3x+2y",
+      "counts": "q=0,t=y,z=0"
+    },
+    {
+      "condition": "b<2a and3a<=2b",
+      "coordinates": "x=2a-b,y=2b-3a; a=2x+y,b=3x+2y",
+      "counts": "q=x,t=x+y,z=0"
+    },
+    {
+      "condition": "3a>2b",
+      "coordinates": "x=b-a>=1,y=3a-2b; a=2x+y,b=3x+y",
+      "counts": "q=x+y,t=x,z=y"
+    }
+  ],
+  "final_source_scope": "For actual frame paths with a>=2,b>=7, exact raw horizontal row polynomial identity and raw adjacent inequality for every natural i. No InPolygon, formula, shape, support, or LC premise remains. The common projection shape is proved for hproj; arbitrary-Boolean-word trace does not replace actual source cyclic counts.",
+  "coefficient_identity": "6*(swap P).coeff3 = X^(a-2)*(1+X)^(b-7)*h3seed(a,b,(2a-b)_+,min(b-a,(3a-b)_+),(3a-2b)_+)",
+  "raw_triple": [
+    "(i,3)",
+    "(i+1,3)",
+    "(i+2,3)"
+  ],
+  "not_claimed": [
+    "all horizontal rows",
+    "a<2 or b<7 cases from this theorem",
+    "vertical or higher diagonal universal closure",
+    "full Conjecture63",
+    "fresh whole-source rebuild"
+  ]
+}

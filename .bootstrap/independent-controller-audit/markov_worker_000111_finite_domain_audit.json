@@ -1,0 +1,1131 @@
+{
+  "audit_kind": "Domain/index enumeration only; no project script import, no source recurrence, coefficient/gap calculation, symbolic expansion, or experiment rerun.",
+  "literal_domain": "Integers 7<=b<=40, 2<=a<b, gcd(a,b)=1; i in range(a+b+4), i.e. 0 through a+b+3 inclusive.",
+  "guard": "i+5<=a+b-1 and b*i+3*a>=a*b. For fixed j=3 and positive a,b these are precisely all three original horizontal polygon guards.",
+  "zero_accounting_limit": "Counts exterior positions from polygon geometry, not coefficient evaluation. Recorded zeros equals these exterior counts; the receipt reports no additional zeros. No polynomial/support theorem is independently rerun.",
+  "position_interval": {
+    "polygon_lower": "ceil(a*(b-3)/b)",
+    "polygon_upper": "a+b-4",
+    "tail_exterior_per_case": 7
+  },
+  "totals": {
+    "cases": 444,
+    "coefficient_positions": 20536,
+    "guarded_triples": 10521,
+    "leading_polygon_exterior_positions": 6019,
+    "trailing_polygon_exterior_positions": 3108,
+    "inside_polygon_positions": 11409,
+    "polygon_exterior_positions": 9127
+  },
+  "slope_region_case_counts": {
+    "low": 126,
+    "midlow": 79,
+    "midhigh": 79,
+    "high": 160
+  },
+  "by_denominator": [
+    {
+      "b": 7,
+      "cases": 5,
+      "coefficient_positions": 75,
+      "guarded_triples": 16,
+      "leading_polygon_exterior_positions": 14,
+      "trailing_polygon_exterior_positions": 35,
+      "inside_polygon_positions": 26,
+      "regions": {
+        "low": 1,
+        "midlow": 1,
+        "midhigh": 1,
+        "high": 2
+      }
+    },
+    {
+      "b": 8,
+      "cases": 3,
+      "coefficient_positions": 51,
+      "guarded_triples": 13,
+      "leading_polygon_exterior_positions": 11,
+      "trailing_polygon_exterior_positions": 21,
+      "inside_polygon_positions": 19,
+      "regions": {
+        "midlow": 1,
+        "midhigh": 1,
+        "high": 1
+      }
+    },
+    {
+      "b": 9,
+      "cases": 5,
+      "coefficient_positions": 91,
+      "guarded_triples": 26,
+      "leading_polygon_exterior_positions": 20,
+      "trailing_polygon_exterior_positions": 35,
+      "inside_polygon_positions": 36,
+      "regions": {
+        "low": 1,
+        "midlow": 1,
+        "midhigh": 1,
+        "high": 2
+      }
+    },
+    {
+      "b": 10,
+      "cases": 3,
+      "coefficient_positions": 61,
+      "guarded_triples": 19,
+      "leading_polygon_exterior_positions": 15,
+      "trailing_polygon_exterior_positions": 21,
+      "inside_polygon_positions": 25,
+      "regions": {
+        "low": 1,
+        "high": 2
+      }
+    },
+    {
+      "b": 11,
+      "cases": 9,
+      "coefficient_positions": 189,
+      "guarded_triples": 64,
+      "leading_polygon_exterior_positions": 44,
+      "trailing_polygon_exterior_positions": 63,
+      "inside_polygon_positions": 82,
+      "regions": {
+        "low": 2,
+        "midlow": 2,
+        "midhigh": 2,
+        "high": 3
+      }
+    },
+    {
+      "b": 12,
+      "cases": 3,
+      "coefficient_positions": 71,
+      "guarded_triples": 25,
+      "leading_polygon_exterior_positions": 19,
+      "trailing_polygon_exterior_positions": 21,
+      "inside_polygon_positions": 31,
+      "regions": {
+        "midlow": 1,
+        "midhigh": 1,
+        "high": 1
+      }
+    },
+    {
+      "b": 13,
+      "cases": 11,
+      "coefficient_positions": 264,
+      "guarded_triples": 100,
+      "leading_polygon_exterior_positions": 65,
+      "trailing_polygon_exterior_positions": 77,
+      "inside_polygon_positions": 122,
+      "regions": {
+        "low": 3,
+        "midlow": 2,
+        "midhigh": 2,
+        "high": 4
+      }
+    },
+    {
+      "b": 14,
+      "cases": 5,
+      "coefficient_positions": 131,
+      "guarded_triples": 51,
+      "leading_polygon_exterior_positions": 35,
+      "trailing_polygon_exterior_positions": 35,
+      "inside_polygon_positions": 61,
+      "regions": {
+        "low": 1,
+        "midlow": 1,
+        "midhigh": 1,
+        "high": 2
+      }
+    },
+    {
+      "b": 15,
+      "cases": 7,
+      "coefficient_positions": 192,
+      "guarded_triples": 78,
+      "leading_polygon_exterior_positions": 51,
+      "trailing_polygon_exterior_positions": 49,
+      "inside_polygon_positions": 92,
+      "regions": {
+        "low": 2,
+        "midlow": 1,
+        "midhigh": 1,
+        "high": 3
+      }
+    },
+    {
+      "b": 16,
+      "cases": 7,
+      "coefficient_positions": 203,
+      "guarded_triples": 85,
+      "leading_polygon_exterior_positions": 55,
+      "trailing_polygon_exterior_positions": 49,
+      "inside_polygon_positions": 99,
+      "regions": {
+        "low": 2,
+        "midlow": 1,
+        "midhigh": 1,
+        "high": 3
+      }
+    },
+    {
+      "b": 17,
+      "cases": 15,
+      "coefficient_positions": 450,
+      "guarded_triples": 196,
+      "leading_polygon_exterior_positions": 119,
+      "trailing_polygon_exterior_positions": 105,
+      "inside_polygon_positions": 226,
+      "regions": {
+        "low": 4,
+        "midlow": 3,
+        "midhigh": 3,
+        "high": 5
+      }
+    },
+    {
+      "b": 18,
+      "cases": 5,
+      "coefficient_positions": 163,
+      "guarded_triples": 71,
+      "leading_polygon_exterior_positions": 47,
+      "trailing_polygon_exterior_positions": 35,
+      "inside_polygon_positions": 81,
+      "regions": {
+        "low": 1,
+        "midlow": 1,
+        "midhigh": 1,
+        "high": 2
+      }
+    },
+    {
+      "b": 19,
+      "cases": 17,
+      "coefficient_positions": 561,
+      "guarded_triples": 256,
+      "leading_polygon_exterior_positions": 152,
+      "trailing_polygon_exterior_positions": 119,
+      "inside_polygon_positions": 290,
+      "regions": {
+        "low": 5,
+        "midlow": 3,
+        "midhigh": 3,
+        "high": 6
+      }
+    },
+    {
+      "b": 20,
+      "cases": 7,
+      "coefficient_positions": 247,
+      "guarded_triples": 113,
+      "leading_polygon_exterior_positions": 71,
+      "trailing_polygon_exterior_positions": 49,
+      "inside_polygon_positions": 127,
+      "regions": {
+        "low": 1,
+        "midlow": 2,
+        "midhigh": 2,
+        "high": 2
+      }
+    },
+    {
+      "b": 21,
+      "cases": 11,
+      "coefficient_positions": 400,
+      "guarded_triples": 188,
+      "leading_polygon_exterior_positions": 113,
+      "trailing_polygon_exterior_positions": 77,
+      "inside_polygon_positions": 210,
+      "regions": {
+        "low": 3,
+        "midlow": 2,
+        "midhigh": 2,
+        "high": 4
+      }
+    },
+    {
+      "b": 22,
+      "cases": 9,
+      "coefficient_positions": 343,
+      "guarded_triples": 163,
+      "leading_polygon_exterior_positions": 99,
+      "trailing_polygon_exterior_positions": 63,
+      "inside_polygon_positions": 181,
+      "regions": {
+        "low": 3,
+        "midlow": 1,
+        "midhigh": 1,
+        "high": 4
+      }
+    },
+    {
+      "b": 23,
+      "cases": 21,
+      "coefficient_positions": 819,
+      "guarded_triples": 400,
+      "leading_polygon_exterior_positions": 230,
+      "trailing_polygon_exterior_positions": 147,
+      "inside_polygon_positions": 442,
+      "regions": {
+        "low": 6,
+        "midlow": 4,
+        "midhigh": 4,
+        "high": 7
+      }
+    },
+    {
+      "b": 24,
+      "cases": 7,
+      "coefficient_positions": 291,
+      "guarded_triples": 141,
+      "leading_polygon_exterior_positions": 87,
+      "trailing_polygon_exterior_positions": 49,
+      "inside_polygon_positions": 155,
+      "regions": {
+        "low": 2,
+        "midlow": 1,
+        "midhigh": 1,
+        "high": 3
+      }
+    },
+    {
+      "b": 25,
+      "cases": 19,
+      "coefficient_positions": 800,
+      "guarded_triples": 400,
+      "leading_polygon_exterior_positions": 229,
+      "trailing_polygon_exterior_positions": 133,
+      "inside_polygon_positions": 438,
+      "regions": {
+        "low": 6,
+        "midlow": 3,
+        "midhigh": 3,
+        "high": 7
+      }
+    },
+    {
+      "b": 26,
+      "cases": 11,
+      "coefficient_positions": 485,
+      "guarded_triples": 243,
+      "leading_polygon_exterior_positions": 143,
+      "trailing_polygon_exterior_positions": 77,
+      "inside_polygon_positions": 265,
+      "regions": {
+        "low": 3,
+        "midlow": 2,
+        "midhigh": 2,
+        "high": 4
+      }
+    },
+    {
+      "b": 27,
+      "cases": 17,
+      "coefficient_positions": 769,
+      "guarded_triples": 392,
+      "leading_polygon_exterior_positions": 224,
+      "trailing_polygon_exterior_positions": 119,
+      "inside_polygon_positions": 426,
+      "regions": {
+        "low": 5,
+        "midlow": 3,
+        "midhigh": 3,
+        "high": 6
+      }
+    },
+    {
+      "b": 28,
+      "cases": 11,
+      "coefficient_positions": 519,
+      "guarded_triples": 265,
+      "leading_polygon_exterior_positions": 155,
+      "trailing_polygon_exterior_positions": 77,
+      "inside_polygon_positions": 287,
+      "regions": {
+        "low": 3,
+        "midlow": 2,
+        "midhigh": 2,
+        "high": 4
+      }
+    },
+    {
+      "b": 29,
+      "cases": 27,
+      "coefficient_positions": 1296,
+      "guarded_triples": 676,
+      "leading_polygon_exterior_positions": 377,
+      "trailing_polygon_exterior_positions": 189,
+      "inside_polygon_positions": 730,
+      "regions": {
+        "low": 8,
+        "midlow": 5,
+        "midhigh": 5,
+        "high": 9
+      }
+    },
+    {
+      "b": 30,
+      "cases": 7,
+      "coefficient_positions": 357,
+      "guarded_triples": 183,
+      "leading_polygon_exterior_positions": 111,
+      "trailing_polygon_exterior_positions": 49,
+      "inside_polygon_positions": 197,
+      "regions": {
+        "low": 1,
+        "midlow": 2,
+        "midhigh": 2,
+        "high": 2
+      }
+    },
+    {
+      "b": 31,
+      "cases": 29,
+      "coefficient_positions": 1479,
+      "guarded_triples": 784,
+      "leading_polygon_exterior_positions": 434,
+      "trailing_polygon_exterior_positions": 203,
+      "inside_polygon_positions": 842,
+      "regions": {
+        "low": 9,
+        "midlow": 5,
+        "midhigh": 5,
+        "high": 10
+      }
+    },
+    {
+      "b": 32,
+      "cases": 15,
+      "coefficient_positions": 795,
+      "guarded_triples": 421,
+      "leading_polygon_exterior_positions": 239,
+      "trailing_polygon_exterior_positions": 105,
+      "inside_polygon_positions": 451,
+      "regions": {
+        "low": 4,
+        "midlow": 3,
+        "midhigh": 3,
+        "high": 5
+      }
+    },
+    {
+      "b": 33,
+      "cases": 19,
+      "coefficient_positions": 1032,
+      "guarded_triples": 552,
+      "leading_polygon_exterior_positions": 309,
+      "trailing_polygon_exterior_positions": 133,
+      "inside_polygon_positions": 590,
+      "regions": {
+        "low": 6,
+        "midlow": 3,
+        "midhigh": 3,
+        "high": 7
+      }
+    },
+    {
+      "b": 34,
+      "cases": 15,
+      "coefficient_positions": 841,
+      "guarded_triples": 451,
+      "leading_polygon_exterior_positions": 255,
+      "trailing_polygon_exterior_positions": 105,
+      "inside_polygon_positions": 481,
+      "regions": {
+        "low": 5,
+        "midlow": 2,
+        "midhigh": 2,
+        "high": 6
+      }
+    },
+    {
+      "b": 35,
+      "cases": 23,
+      "coefficient_positions": 1316,
+      "guarded_triples": 714,
+      "leading_polygon_exterior_positions": 395,
+      "trailing_polygon_exterior_positions": 161,
+      "inside_polygon_positions": 760,
+      "regions": {
+        "low": 7,
+        "midlow": 4,
+        "midhigh": 4,
+        "high": 8
+      }
+    },
+    {
+      "b": 36,
+      "cases": 11,
+      "coefficient_positions": 655,
+      "guarded_triples": 353,
+      "leading_polygon_exterior_positions": 203,
+      "trailing_polygon_exterior_positions": 77,
+      "inside_polygon_positions": 375,
+      "regions": {
+        "low": 3,
+        "midlow": 2,
+        "midhigh": 2,
+        "high": 4
+      }
+    },
+    {
+      "b": 37,
+      "cases": 35,
+      "coefficient_positions": 2100,
+      "guarded_triples": 1156,
+      "leading_polygon_exterior_positions": 629,
+      "trailing_polygon_exterior_positions": 245,
+      "inside_polygon_positions": 1226,
+      "regions": {
+        "low": 11,
+        "midlow": 6,
+        "midhigh": 6,
+        "high": 12
+      }
+    },
+    {
+      "b": 38,
+      "cases": 17,
+      "coefficient_positions": 1055,
+      "guarded_triples": 579,
+      "leading_polygon_exterior_positions": 323,
+      "trailing_polygon_exterior_positions": 119,
+      "inside_polygon_positions": 613,
+      "regions": {
+        "low": 5,
+        "midlow": 3,
+        "midhigh": 3,
+        "high": 6
+      }
+    },
+    {
+      "b": 39,
+      "cases": 23,
+      "coefficient_positions": 1456,
+      "guarded_triples": 806,
+      "leading_polygon_exterior_positions": 443,
+      "trailing_polygon_exterior_positions": 161,
+      "inside_polygon_positions": 852,
+      "regions": {
+        "low": 7,
+        "midlow": 4,
+        "midhigh": 4,
+        "high": 8
+      }
+    },
+    {
+      "b": 40,
+      "cases": 15,
+      "coefficient_positions": 979,
+      "guarded_triples": 541,
+      "leading_polygon_exterior_positions": 303,
+      "trailing_polygon_exterior_positions": 105,
+      "inside_polygon_positions": 571,
+      "regions": {
+        "low": 5,
+        "midlow": 2,
+        "midhigh": 2,
+        "high": 6
+      }
+    }
+  ],
+  "recorded_receipt": {
+    "status": "Finite exact observations only, not proof",
+    "cases": 444,
+    "coefficient_identities": 20536,
+    "zeros": 9127,
+    "polygon_valid_triples": 10521,
+    "inputs": "Every reduced 2<=a<b, 7<=b<=40; all tested row positions including zeros",
+    "seconds": 6.891257167008007
+  },
+  "receipt_sha256": "3ad007b538379ab637d5034a0979205117168874e1b8d3aea1e65ab964694ab3",
+  "counts_match_record": true,
+  "seed_domain": "Integers 7<=b<=150,2<=a<b,gcd(a,b)=1; six coefficients and four adjacent seed gaps are tested by saved script; our enumeration counts pairs only.",
+  "seed_cases_counted": 6702,
+  "seed_cases_recorded": 6702,
+  "seed_by_denominator": [
+    {
+      "b": 7,
+      "cases": 5
+    },
+    {
+      "b": 8,
+      "cases": 3
+    },
+    {
+      "b": 9,
+      "cases": 5
+    },
+    {
+      "b": 10,
+      "cases": 3
+    },
+    {
+      "b": 11,
+      "cases": 9
+    },
+    {
+      "b": 12,
+      "cases": 3
+    },
+    {
+      "b": 13,
+      "cases": 11
+    },
+    {
+      "b": 14,
+      "cases": 5
+    },
+    {
+      "b": 15,
+      "cases": 7
+    },
+    {
+      "b": 16,
+      "cases": 7
+    },
+    {
+      "b": 17,
+      "cases": 15
+    },
+    {
+      "b": 18,
+      "cases": 5
+    },
+    {
+      "b": 19,
+      "cases": 17
+    },
+    {
+      "b": 20,
+      "cases": 7
+    },
+    {
+      "b": 21,
+      "cases": 11
+    },
+    {
+      "b": 22,
+      "cases": 9
+    },
+    {
+      "b": 23,
+      "cases": 21
+    },
+    {
+      "b": 24,
+      "cases": 7
+    },
+    {
+      "b": 25,
+      "cases": 19
+    },
+    {
+      "b": 26,
+      "cases": 11
+    },
+    {
+      "b": 27,
+      "cases": 17
+    },
+    {
+      "b": 28,
+      "cases": 11
+    },
+    {
+      "b": 29,
+      "cases": 27
+    },
+    {
+      "b": 30,
+      "cases": 7
+    },
+    {
+      "b": 31,
+      "cases": 29
+    },
+    {
+      "b": 32,
+      "cases": 15
+    },
+    {
+      "b": 33,
+      "cases": 19
+    },
+    {
+      "b": 34,
+      "cases": 15
+    },
+    {
+      "b": 35,
+      "cases": 23
+    },
+    {
+      "b": 36,
+      "cases": 11
+    },
+    {
+      "b": 37,
+      "cases": 35
+    },
+    {
+      "b": 38,
+      "cases": 17
+    },
+    {
+      "b": 39,
+      "cases": 23
+    },
+    {
+      "b": 40,
+      "cases": 15
+    },
+    {
+      "b": 41,
+      "cases": 39
+    },
+    {
+      "b": 42,
+      "cases": 11
+    },
+    {
+      "b": 43,
+      "cases": 41
+    },
+    {
+      "b": 44,
+      "cases": 19
+    },
+    {
+      "b": 45,
+      "cases": 23
+    },
+    {
+      "b": 46,
+      "cases": 21
+    },
+    {
+      "b": 47,
+      "cases": 45
+    },
+    {
+      "b": 48,
+      "cases": 15
+    },
+    {
+      "b": 49,
+      "cases": 41
+    },
+    {
+      "b": 50,
+      "cases": 19
+    },
+    {
+      "b": 51,
+      "cases": 31
+    },
+    {
+      "b": 52,
+      "cases": 23
+    },
+    {
+      "b": 53,
+      "cases": 51
+    },
+    {
+      "b": 54,
+      "cases": 17
+    },
+    {
+      "b": 55,
+      "cases": 39
+    },
+    {
+      "b": 56,
+      "cases": 23
+    },
+    {
+      "b": 57,
+      "cases": 35
+    },
+    {
+      "b": 58,
+      "cases": 27
+    },
+    {
+      "b": 59,
+      "cases": 57
+    },
+    {
+      "b": 60,
+      "cases": 15
+    },
+    {
+      "b": 61,
+      "cases": 59
+    },
+    {
+      "b": 62,
+      "cases": 29
+    },
+    {
+      "b": 63,
+      "cases": 35
+    },
+    {
+      "b": 64,
+      "cases": 31
+    },
+    {
+      "b": 65,
+      "cases": 47
+    },
+    {
+      "b": 66,
+      "cases": 19
+    },
+    {
+      "b": 67,
+      "cases": 65
+    },
+    {
+      "b": 68,
+      "cases": 31
+    },
+    {
+      "b": 69,
+      "cases": 43
+    },
+    {
+      "b": 70,
+      "cases": 23
+    },
+    {
+      "b": 71,
+      "cases": 69
+    },
+    {
+      "b": 72,
+      "cases": 23
+    },
+    {
+      "b": 73,
+      "cases": 71
+    },
+    {
+      "b": 74,
+      "cases": 35
+    },
+    {
+      "b": 75,
+      "cases": 39
+    },
+    {
+      "b": 76,
+      "cases": 35
+    },
+    {
+      "b": 77,
+      "cases": 59
+    },
+    {
+      "b": 78,
+      "cases": 23
+    },
+    {
+      "b": 79,
+      "cases": 77
+    },
+    {
+      "b": 80,
+      "cases": 31
+    },
+    {
+      "b": 81,
+      "cases": 53
+    },
+    {
+      "b": 82,
+      "cases": 39
+    },
+    {
+      "b": 83,
+      "cases": 81
+    },
+    {
+      "b": 84,
+      "cases": 23
+    },
+    {
+      "b": 85,
+      "cases": 63
+    },
+    {
+      "b": 86,
+      "cases": 41
+    },
+    {
+      "b": 87,
+      "cases": 55
+    },
+    {
+      "b": 88,
+      "cases": 39
+    },
+    {
+      "b": 89,
+      "cases": 87
+    },
+    {
+      "b": 90,
+      "cases": 23
+    },
+    {
+      "b": 91,
+      "cases": 71
+    },
+    {
+      "b": 92,
+      "cases": 43
+    },
+    {
+      "b": 93,
+      "cases": 59
+    },
+    {
+      "b": 94,
+      "cases": 45
+    },
+    {
+      "b": 95,
+      "cases": 71
+    },
+    {
+      "b": 96,
+      "cases": 31
+    },
+    {
+      "b": 97,
+      "cases": 95
+    },
+    {
+      "b": 98,
+      "cases": 41
+    },
+    {
+      "b": 99,
+      "cases": 59
+    },
+    {
+      "b": 100,
+      "cases": 39
+    },
+    {
+      "b": 101,
+      "cases": 99
+    },
+    {
+      "b": 102,
+      "cases": 31
+    },
+    {
+      "b": 103,
+      "cases": 101
+    },
+    {
+      "b": 104,
+      "cases": 47
+    },
+    {
+      "b": 105,
+      "cases": 47
+    },
+    {
+      "b": 106,
+      "cases": 51
+    },
+    {
+      "b": 107,
+      "cases": 105
+    },
+    {
+      "b": 108,
+      "cases": 35
+    },
+    {
+      "b": 109,
+      "cases": 107
+    },
+    {
+      "b": 110,
+      "cases": 39
+    },
+    {
+      "b": 111,
+      "cases": 71
+    },
+    {
+      "b": 112,
+      "cases": 47
+    },
+    {
+      "b": 113,
+      "cases": 111
+    },
+    {
+      "b": 114,
+      "cases": 35
+    },
+    {
+      "b": 115,
+      "cases": 87
+    },
+    {
+      "b": 116,
+      "cases": 55
+    },
+    {
+      "b": 117,
+      "cases": 71
+    },
+    {
+      "b": 118,
+      "cases": 57
+    },
+    {
+      "b": 119,
+      "cases": 95
+    },
+    {
+      "b": 120,
+      "cases": 31
+    },
+    {
+      "b": 121,
+      "cases": 109
+    },
+    {
+      "b": 122,
+      "cases": 59
+    },
+    {
+      "b": 123,
+      "cases": 79
+    },
+    {
+      "b": 124,
+      "cases": 59
+    },
+    {
+      "b": 125,
+      "cases": 99
+    },
+    {
+      "b": 126,
+      "cases": 35
+    },
+    {
+      "b": 127,
+      "cases": 125
+    },
+    {
+      "b": 128,
+      "cases": 63
+    },
+    {
+      "b": 129,
+      "cases": 83
+    },
+    {
+      "b": 130,
+      "cases": 47
+    },
+    {
+      "b": 131,
+      "cases": 129
+    },
+    {
+      "b": 132,
+      "cases": 39
+    },
+    {
+      "b": 133,
+      "cases": 107
+    },
+    {
+      "b": 134,
+      "cases": 65
+    },
+    {
+      "b": 135,
+      "cases": 71
+    },
+    {
+      "b": 136,
+      "cases": 63
+    },
+    {
+      "b": 137,
+      "cases": 135
+    },
+    {
+      "b": 138,
+      "cases": 43
+    },
+    {
+      "b": 139,
+      "cases": 137
+    },
+    {
+      "b": 140,
+      "cases": 47
+    },
+    {
+      "b": 141,
+      "cases": 91
+    },
+    {
+      "b": 142,
+      "cases": 69
+    },
+    {
+      "b": 143,
+      "cases": 119
+    },
+    {
+      "b": 144,
+      "cases": 47
+    },
+    {
+      "b": 145,
+      "cases": 111
+    },
+    {
+      "b": 146,
+      "cases": 71
+    },
+    {
+      "b": 147,
+      "cases": 83
+    },
+    {
+      "b": 148,
+      "cases": 71
+    },
+    {
+      "b": 149,
+      "cases": 147
+    },
+    {
+      "b": 150,
+      "cases": 39
+    }
+  ],
+  "script_hashes": {
+    "research/experiment_horizontal_13d40bd7.py": "9ccc1448af69c39a27a9e4913208f81da694b550ba972650eb06eff4a843e839",
+    "research/horizontal_third_13d40bd7.py": "3778770da96acb250144943cff91d3316be4263c637773984f4eec7acbc37f96"
+  },
+  "inherited_recurrence_hash": "2dffc322d2fa37292349ef2ea279270daad2468dbfdf89e03db7ea5694970a93"
+}

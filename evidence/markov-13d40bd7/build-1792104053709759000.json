@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovHorizontalBoundsM13D.lean:111:7: error: linarith failed to find a contradiction\ncase h2\nb : \u2115\nhb : 7 \u2264 b\nha : 2 \u2264 2\nhab : 2 < b\nh0 : 3 * 2 \u2264 b\nhq : 2 * 2 - b = 0\nht : min (b - 2) (3 * 2 - b) = 0\nhu : 3 * 2 - 2 * b = 0\nh : \u2191(b - 7) + 7 = \u2191b\na\u271d : \u2191b < 3 * (2 + \u21910) + (\u2191(b - 7) + 1)\n\u22a2 False\nfailed\n/Users/sasha/math_gkm/research/MarkovHorizontalBoundsM13D.lean:112:5: error: Type mismatch: After simplification, term\n  h3chart_low_0_1M13D 0 (\u2191(b - 7))\n    (Mathlib.Meta.NormNum.isNat_le_true (Mathlib.Meta.NormNum.isNat_ofNat \u211d Nat.cast_zero)\n      (Mathlib.Meta.NormNum.isNat_ofNat \u211d Nat.cast_zero) (Eq.refl true))\n    (Nat.cast_nonneg' (b - 7))\n has type\n  H3BoundsM13D 2 (3 * 2 + (\u2191(b - 7) + 1)) 0 0 0\nbut is expected to have type\n  H3BoundsM13D (\u21912) (\u2191b) 0 0 0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovHorizontalBoundsM13D": "00a851a0614adbaf0aa8d90207808011ca80766927ebc2a875dc03eb4e8c79c6"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-13d40bd7/MarkovHorizontalBoundsM13D.olean",
+    "/Users/sasha/math_gkm/research/MarkovHorizontalBoundsM13D.lean"
+  ],
+  "seconds": 8.511981832998572,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

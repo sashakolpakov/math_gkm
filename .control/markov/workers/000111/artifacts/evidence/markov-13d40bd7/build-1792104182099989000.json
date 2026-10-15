@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovHorizontalLCM13D.lean:32:16: error: unexpected token ':='; expected term\n/Users/sasha/math_gkm/research/MarkovHorizontalLCM13D.lean:19:19: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Graph ?m.94 ?m.95) 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Graph ?m.94 ?m.95\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovHorizontalLCM13D.lean:19:22: error(lean.unknownIdentifier): Unknown identifier `ixSeqM13D`\n/Users/sasha/math_gkm/research/MarkovHorizontalLCM13D.lean:18:37: error: unsolved goals\na b c d e f : \u211d\nha : 0 \u2264 a\nhb : 0 \u2264 b\nhc : 0 < c\nhd : 0 < d\nhe : 0 < e\nhf : 0 < f\nh1 : a * c \u2264 b ^ 2\nh2 : b * d \u2264 c ^ 2\nh3 : c * e \u2264 d ^ 2\nh4 : d * f \u2264 e ^ 2\n\u22a2 CrossLC (sixSeqM13D a b c d e f)\n/Users/sasha/math_gkm/research/MarkovHorizontalLCM13D.lean:88:1: error: `dsimp` made no progress\n",
+  "stderr": "",
+  "modules": {
+    "MarkovHorizontalLCM13D": "f0d96f5a5da836a4170eee9b98414ecc89fa48958da990a2bc6f0967dd6c447e"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-13d40bd7/MarkovHorizontalLCM13D.olean",
+    "/Users/sasha/math_gkm/research/MarkovHorizontalLCM13D.lean"
+  ],
+  "seconds": 5.0210078329837415,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

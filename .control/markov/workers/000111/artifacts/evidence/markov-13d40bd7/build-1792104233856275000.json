@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovHorizontalTraceM13D.lean:49:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ?a * (?b + ?c)\nin the target expression\n  C (x ^ (frame path).mid.a * (x + 1) ^ (frame path).mid.b) * tr16 (hprojWordM13D x (sourceWord28 path)) =\n    (C (x + 1) + X) * (hrowEvalM13D x) (frame path).mid.p\n\nx : \u211d\nhx : x \u2260 0\nhh : x + 1 \u2260 0\npath : List Bool\nh :\n  (hrowEvalM13D x) (rawWord80 (sourceWord28 path)).a + (hrowEvalM13D x) (rawWord80 (sourceWord28 path)).d =\n    C (x ^ (frame path).mid.a * (x + 1) ^ (frame path).mid.b) * (hprojWordM13D x (sourceWord28 path)).a +\n      C (x ^ (frame path).mid.a * (x + 1) ^ (frame path).mid.b) * (hprojWordM13D x (sourceWord28 path)).d\nhc : List.count true (sourceWord28 path) = (frame path).mid.a\nhl : (sourceWord28 path).length = (frame path).mid.b\nht : tr16 (rawWord80 (sourceWord28 path)) = S * (frame path).mid.p\nhp : (frame path).mid.p = (rawWord80 (sourceWord28 path)).b\nhS : (hrowEvalM13D x) S = C (x + 1) + X\nht' :\n  (hrowEvalM13D x) (rawWord80 (sourceWord28 path)).a + (hrowEvalM13D x) (rawWord80 (sourceWord28 path)).d =\n    (C (x + 1) + X) * (hrowEvalM13D x) (frame path).mid.p\n\u22a2 C (x ^ (frame path).mid.a * (x + 1) ^ (frame path).mid.b) * tr16 (hprojWordM13D x (sourceWord28 path)) =\n    (C (x + 1) + X) * (hrowEvalM13D x) (frame path).mid.p\n/Users/sasha/math_gkm/research/MarkovHorizontalTraceM13D.lean:60:18: error: unsolved goals\ncase pos\nx : \u211d\nj n m : \u2115\nz : \u2124\nh\u271d : m = j\n\u22a2 ((monomial j) \u2191z * C x ^ n).coeff j = \u2191z * x ^ n\n\ncase neg\nx : \u211d\nj n m : \u2115\nz : \u2124\nh\u271d : \u00acm = j\n\u22a2 ((monomial m) \u2191z * C x ^ n).coeff j = 0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovHorizontalTraceM13D": "e03856c6c46a5bace5c68da6493b08e1f7f660816e2dc8183e387d3f9a3a8dcb"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-13d40bd7/MarkovHorizontalTraceM13D.olean",
+    "/Users/sasha/math_gkm/research/MarkovHorizontalTraceM13D.lean"
+  ],
+  "seconds": 4.959672291006427,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
