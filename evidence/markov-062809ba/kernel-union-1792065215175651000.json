@@ -1,0 +1,21 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovFourthThreeCert2K062\ncollected MarkovFourthThreeCert5K062\ncollected MarkovAuditK062\nreplay union of 3 modules over 26 inherited imports\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovFourthThreeCert2K062": "8199685d2adb6bbf85bb795a04d7b8baeea3185baf791a0de2b72346eb3a28d5",
+    "MarkovFourthThreeCert5K062": "d5ab1f137068fd0d2ece6877a7fb0863733db5229e13d66bc82ceca52e2918d7",
+    "MarkovAuditK062": "ace9667e2e6bec45ea053e9775e7b6f9be23de4706318cf980eba64c7372ac5b"
+  },
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayBatch07F1.lean",
+    "MarkovFourthThreeCert2K062",
+    "MarkovFourthThreeCert5K062",
+    "MarkovAuditK062"
+  ],
+  "seconds": 18.389190166984918,
+  "driver_sha256": "502fedb68f64aad8487592b1844bf0a123d3c17d5826add10750a7b1c96c5cdc",
+  "limits": "Inherited import boundary reused. Union replay excludes these new modules from imports; no fresh whole-source rebuild."
+}

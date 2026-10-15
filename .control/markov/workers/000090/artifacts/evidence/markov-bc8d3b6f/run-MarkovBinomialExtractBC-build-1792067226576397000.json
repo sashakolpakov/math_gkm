@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBinomialExtractBC.lean:11:19: error(lean.unknownIdentifier): Unknown constant `Finset.Nat.antidiagonal`\n/Users/sasha/math_gkm/research/MarkovBinomialExtractBC.lean:12:11: error: Invalid projection: Type of\n  k\nis not known; cannot resolve projection `1`\n/Users/sasha/math_gkm/research/MarkovBinomialExtractBC.lean:12:21: error: Invalid projection: Type of\n  k\nis not known; cannot resolve projection `2`\n/Users/sasha/math_gkm/research/MarkovBinomialExtractBC.lean:32:5: error(lean.unknownIdentifier): Unknown identifier `coeff_of_one_sub_mulBC`\n/Users/sasha/math_gkm/research/MarkovBinomialExtractBC.lean:31:43: error: unsolved goals\nP Q : \u2124[X]\nd j : \u2115\nh : (1 - X) ^ (d + 1) * P = Q\n\u22a2 P.coeff j = \u2211 k \u2208 Finset.range (j + 1), Q.coeff k * \u2191((d + (j - k)).choose d)\n",
+  "stderr": "",
+  "source": "research/MarkovBinomialExtractBC.lean",
+  "sha256": "269f9a9149949e4de06d0897bc50bff5dd93a91e3bd853b6e77403a7234a06bc",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-bc8d3b6f/MarkovBinomialExtractBC.olean",
+    "/Users/sasha/math_gkm/research/MarkovBinomialExtractBC.lean"
+  ],
+  "seconds": 5.7386727500124834,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

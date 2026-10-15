@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBinomialExtractBC.lean:32:38: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2211 ij \u2208 Finset.HasAntidiagonal.antidiagonal ?n, ?f ij.1 ij.2\nin the target expression\n  \u2211 k \u2208 Finset.HasAntidiagonal.antidiagonal j, Q.coeff k.1 * \u2191((d + k.2).choose d) =\n    \u2211 k \u2208 Finset.range (j + 1), Q.coeff k * \u2191((d + (j - k)).choose d)\n\nP Q : \u2124[X]\nd j : \u2115\nh : (1 - X) ^ (d + 1) * P = Q\n\u22a2 \u2211 k \u2208 Finset.HasAntidiagonal.antidiagonal j, Q.coeff k.1 * \u2191((d + k.2).choose d) =\n    \u2211 k \u2208 Finset.range (j + 1), Q.coeff k * \u2191((d + (j - k)).choose d)\n",
+  "stderr": "",
+  "source": "research/MarkovBinomialExtractBC.lean",
+  "sha256": "d367cde8e06c74862370c435328b419da04f25904a843a054cf0ca900f16875c",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-bc8d3b6f/MarkovBinomialExtractBC.olean",
+    "/Users/sasha/math_gkm/research/MarkovBinomialExtractBC.lean"
+  ],
+  "seconds": 36.01928354197298,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBinomialExtractBC.lean:11:39: error: Application type mismatch: The argument\n  j\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  Set.IsPWO ?m.36\nof sort `Prop` in the application\n  Finset.antidiagonal j\n/Users/sasha/math_gkm/research/MarkovBinomialExtractBC.lean:12:11: error: Invalid projection: Type of\n  k\nis not known; cannot resolve projection `1`\n/Users/sasha/math_gkm/research/MarkovBinomialExtractBC.lean:12:21: error: Invalid projection: Type of\n  k\nis not known; cannot resolve projection `2`\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovBinomialExtractBC.lean:22:84: error: unsolved goals\nP Q : \u2124[X]\nd j : \u2115\nh : (1 - X) ^ (d + 1) * P = Q\nhs : (1 - PowerSeries.X) ^ (d + 1) * \u2191P = \u2191Q\nhi : (PowerSeries.mk fun n => \u2191((d + n).choose d)) * (1 - PowerSeries.X) ^ (d + 1) = 1\n\u22a2 \u2191P =\n    -((\u2191P * PowerSeries.mk fun k => \u2191((d + k).choose d)) * PowerSeries.X * (1 - PowerSeries.X) ^ d) +\n      (\u2191P * PowerSeries.mk fun k => \u2191((d + k).choose d)) * (1 - PowerSeries.X) ^ d\n/Users/sasha/math_gkm/research/MarkovBinomialExtractBC.lean:23:13: error: unsolved goals\nP Q : \u2124[X]\nd j : \u2115\nh : (1 - X) ^ (d + 1) * P = Q\nhs : (1 - PowerSeries.X) ^ (d + 1) * \u2191P = \u2191Q\nhi : (PowerSeries.mk fun n => \u2191((d + n).choose d)) * (1 - PowerSeries.X) ^ (d + 1) = 1\n\u22a2 \u2191P = (1 - PowerSeries.X) ^ (d + 1) * \u2191P * PowerSeries.mk fun k => \u2191((d + k).choose d)\n/Users/sasha/math_gkm/research/MarkovBinomialExtractBC.lean:31:5: error(lean.unknownIdentifier): Unknown identifier `coeff_of_one_sub_mulBC`\n/Users/sasha/math_gkm/research/MarkovBinomialExtractBC.lean:30:43: error: unsolved goals\nP Q : \u2124[X]\nd j : \u2115\nh : (1 - X) ^ (d + 1) * P = Q\n\u22a2 P.coeff j = \u2211 k \u2208 Finset.range (j + 1), Q.coeff k * \u2191((d + (j - k)).choose d)\n",
+  "stderr": "",
+  "source": "research/MarkovBinomialExtractBC.lean",
+  "sha256": "19ad9a4ce426a0b9fc439f2b87f1456ec0a64f8a5dd057efd2e7412fea07b127",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-bc8d3b6f/MarkovBinomialExtractBC.olean",
+    "/Users/sasha/math_gkm/research/MarkovBinomialExtractBC.lean"
+  ],
+  "seconds": 7.5705973749863915,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}
