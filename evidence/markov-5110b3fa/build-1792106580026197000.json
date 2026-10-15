@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovHorizontalPositiveM511.lean:13:42: error: unsolved goals\nx : \u211d\nm : Mat16 \u211d[X]\n\u22a2 C (-(1 + x)\u207b\u00b9) * m.d * C (1 + x) + m.b * C (1 + x) + m.d * C (1 + x) * C (1 + x)\u207b\u00b9 = m.b * C (1 + x)\n/Users/sasha/math_gkm/research/MarkovHorizontalPositiveM511.lean:43:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ?f (?x * ?y)\nin the target expression\n  C (x + 1) * eval\u2082 C (C ((x + 1) ^ 2) * X) ((hrowEvalM13D x) (frame path).mid.p) =\n    C (x ^ (frame path).mid.a) * C ((x + 1) ^ (frame path).mid.b) *\n      eval\u2082 C (C ((x + 1) ^ 2) * X) (hdiffM511 (hprojWordM13D x (sourceWord28 path)))\n\nx : \u211d\nhx : x \u2260 0\nhh : x + 1 \u2260 0\npath : List Bool\nhp : (frame path).mid.p = (rawWord80 (sourceWord28 path)).b\nhw :\n  C (x + 1) * (hrowEvalM13D x) (frame path).mid.p =\n    C (x ^ (frame path).mid.a * (x + 1) ^ (frame path).mid.b) * hdiffM511 (hprojWordM13D x (sourceWord28 path))\nhs :\n  C (x + 1) * eval\u2082 C (C ((x + 1) ^ 2) * X) ((hrowEvalM13D x) (frame path).mid.p) =\n    C (x ^ (frame path).mid.a) * C ((x + 1) ^ (frame path).mid.b) *\n      eval\u2082 C (C ((x + 1) ^ 2) * X) (hdiffM511 (hprojWordM13D x (sourceWord28 path)))\nhk :\n  hdiffM511 (hKwordM511 x (sourceWord28 path)) =\n    C (x ^ (frame path).mid.a) * (hsubM511 x) (hdiffM511 (hprojWordM13D x (sourceWord28 path)))\nhb : 1 \u2264 (frame path).mid.b\nhpow : (x + 1) ^ (frame path).mid.b = (x + 1) * (x + 1) ^ ((frame path).mid.b - 1)\n\u22a2 C (x + 1) * (hsubM511 x) ((hrowEvalM13D x) (frame path).mid.p) =\n    C (x + 1) *\n      (C ((x + 1) ^ ((frame path).mid.b - 1)) *\n        (C (x ^ (frame path).mid.a) * (hsubM511 x) (hdiffM511 (hprojWordM13D x (sourceWord28 path)))))\n/Users/sasha/math_gkm/research/MarkovHorizontalPositiveM511.lean:57:23: error: linarith failed to find a contradiction\npath : List Bool\nj : \u2115\nx : \u211d\nhx : x \u2208 Set.Ioi 0\nf : \u2124[X] \u2192+* \u211d := eval\u2082RingHom (Int.castRingHom \u211d) x\na\u271d : x + 1 = 0\n\u22a2 False\nfailed\n/Users/sasha/math_gkm/research/MarkovHorizontalPositiveM511.lean:69:1: error: `simp` made no progress\n",
+  "stderr": "",
+  "modules": {
+    "MarkovHorizontalPositiveM511": "4da3dd74e95aa25e93b04b14167ed6cb9d960ffdb4467852984a9033323b84e1"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-5110b3fa/MarkovHorizontalPositiveM511.olean",
+    "/Users/sasha/math_gkm/research/MarkovHorizontalPositiveM511.lean"
+  ],
+  "seconds": 31.934158082993235,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

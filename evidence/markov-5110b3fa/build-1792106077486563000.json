@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovHorizontalRescaleM511.lean:29:12: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovHorizontalRescaleM511.lean:69:1: error: 'change' tactic failed, pattern\n  C (x ^ (frame path).mid.a) * (C (x + 1) * C ((x + 1) ^ ((frame path).mid.b - 1))) *\n      (hsubM511 x) (tr16 (hprojWordM13D x (sourceWord28 path))) =\n    (C (x + 1) + C ((x + 1) ^ 2) * X) * (hsubM511 x) ((hrowEvalM13D x) (frame path).mid.p)\nis not definitionally equal to target\n  C (x ^ (frame path).mid.a) * (C (x + 1) * C ((x + 1) ^ ((frame path).mid.b - 1))) *\n      eval\u2082 C (C ((x + 1) ^ 2) * X) (tr16 (hprojWordM13D x (sourceWord28 path))) =\n    (C x + C 1 + C ((x + 1) ^ 2) * X) * eval\u2082 C (C ((x + 1) ^ 2) * X) ((hrowEvalM13D x) (frame path).mid.p)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovHorizontalRescaleM511": "47e529b195a55585946917b2fdbf34ade5373634c789b5a08dcfd008046a0f08"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-5110b3fa/MarkovHorizontalRescaleM511.olean",
+    "/Users/sasha/math_gkm/research/MarkovHorizontalRescaleM511.lean"
+  ],
+  "seconds": 7.823551084002247,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

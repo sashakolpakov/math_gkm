@@ -1,0 +1,23 @@
+{
+  "actions": [
+    "Reconciled worker 111 and verified 138 inherited artifact hashes: evidence/markov-5110b3fa/reconciliation.json.",
+    "Compiled and kernel-replayed 21 mathematical modules; audited 68 theorem closures: evidence/markov-5110b3fa/validation.json.",
+    "Verified 183 artifact hashes, 2,619 unchanged prior inputs, and pinned root and contract hashes: evidence/markov-5110b3fa/last-verification.json."
+  ],
+  "agenda": [
+    "Investigate log-concavity of the positive horizontal residual using actual source-word restrictions: research/markov-5110b3fa-next.md.",
+    "Resolve remaining horizontal exceptions and higher rows, vertical interiors, and higher diagonal slices.",
+    "Discharge every source-correspondence obligation before claiming exact-root completion."
+  ],
+  "completion": null,
+  "observations": [
+    "Proved fourth-horizontal-row raw log-concavity for every source with a≥3, b≥9 and every natural starting index, retaining zeros: horizontal_fourth_rawM511 in research/MarkovHorizontalFourthLCM511.lean.",
+    "Proved an all-order horizontal coefficient identity and an integral nonnegative residual factorization when 2j+1≤b: research/MarkovHorizontalAllOrderM511.lean and research/MarkovHorizontalResidualPositiveM511.lean. General residual log-concavity remains unproved.",
+    "Proved Conjecture63 ↔ InteriorCore63HorizontalM511; the residual remains unproved: research/MarkovResidualHorizontalM511.lean.",
+    "Finite experiments passed 35,630 fourth-row coefficient identities, 18,395 polygon-valid inequalities, and 1,020,928 residual inequalities. Experiments are not proofs: evidence/markov-5110b3fa/horizontal-fourth-experiments.json and uniform-horizontal-experiments.json.",
+    "All audited closures use permitted axioms. Inherited compiled imports were reused; no fresh whole-source rebuild or independent completion audit occurred. Scope: research/markov-5110b3fa-correspondence.md.",
+    "Retained 24 rejected compiler attempts and recorded capability failures. All foreground executions ended: evidence/markov-5110b3fa/final-check.json and research/markov-5110b3fa-checkpoint.md."
+  ],
+  "request_id": "5110b3fac1864ad1b18b3138b0f468e8",
+  "summary": "Proved fourth-horizontal-row log-concavity and a uniform positive integral horizontal residual representation. Full pinned Conjecture63 remains unresolved."
+}

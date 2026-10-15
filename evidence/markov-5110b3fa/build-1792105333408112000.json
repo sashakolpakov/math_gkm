@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovFourthGenericM511.lean:48:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  cyclicFour01F (g false :: List.map g (r :: s :: (w ++ [t, true])))\nin the target expression\n  cyclicFour01F (List.map g (false :: r :: s :: (w ++ [t, true]))) =\n    fourScan897 (hlocalFourM511 g) false r s (w ++ [t, true, false, r, s])\n\nR : Type u_1\ninst\u271d : CommRing R\ng : Bool \u2192 Mat16 R[X]\nhg : \u2200 (r : Bool), Projection6905 (g r)\nr s t : Bool\nw : List Bool\nhs : \u2200 z \u2208 List.map g (false :: r :: s :: (w ++ [t, true])), Projection6905 z\nh :\n  cyclicFour01F (g false :: List.map g (r :: s :: (w ++ [t, true]))) =\n    openFour01F\n        (g false :: List.map g (r :: s :: (w ++ [t, true])) ++\n          List.take 3 (g false :: List.map g (r :: s :: (w ++ [t, true])))) -\n      openFour01F (List.take 3 (g false :: List.map g (r :: s :: (w ++ [t, true]))))\nhe :\n  List.map g (false :: r :: s :: (w ++ [t, true])) ++ [g false, g r, g s] =\n    List.map g (false :: r :: s :: (w ++ [t, true, false, r, s]))\n\u22a2 cyclicFour01F (List.map g (false :: r :: s :: (w ++ [t, true]))) =\n    fourScan897 (hlocalFourM511 g) false r s (w ++ [t, true, false, r, s])\n",
+  "stderr": "",
+  "modules": {
+    "MarkovFourthGenericM511": "242ad5ee9371c2da9feb723527c533d926ea409ef6e3ca4fd70fecc3fca4267f"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-5110b3fa/MarkovFourthGenericM511.olean",
+    "/Users/sasha/math_gkm/research/MarkovFourthGenericM511.lean"
+  ],
+  "seconds": 24.563122583000222,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

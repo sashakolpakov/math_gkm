@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovEightLCM511.lean:33:16: error: unexpected token ':='; expected term\n/Users/sasha/math_gkm/research/MarkovEightLCM511.lean:33:13: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Type ?u.220) 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Type ?u.220\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovEightLCM511.lean:32:1: error: unsolved goals\ncase h0\na b c d e f g h : \u211d\nha : 0 \u2264 a\nhb : 0 \u2264 b\nhc : 0 \u2264 c\nhd : 0 < d\nhe : 0 < e\nhf : 0 < f\nhg : 0 < g\nhh : 0 < h\nhab : a \u2264 b\nhbc : b \u2264 c\nh1 : a * c \u2264 b ^ 2\nh2 : b * d \u2264 c ^ 2\nh3 : c * e \u2264 d ^ 2\nh4 : d * f \u2264 e ^ 2\nh5 : e * g \u2264 f ^ 2\nh6 : f * h \u2264 g ^ 2\nhn : \u2200 (k : \u2124), 0 \u2264 eightSeqM511 a b c d e f g h k\nhz : \u2200 (k : \u2124), k < 0 \u2228 7 < k \u2192 eightSeqM511 a b c d e f g h k = 0\ni k j : \u2124\nhik : i \u2264 k\nhkj : k \u2264 j\nhi : 0 < eightSeqM511 a b c d e f g h i\nhj : 0 < eightSeqM511 a b c d e f g h j\n\u22a2 InitialSeg (fun x1 x2 => sorry) fun x1 x2 => sorry\n\ncase hs\na b c d e f g h : \u211d\nha : 0 \u2264 a\nhb : 0 \u2264 b\nhc : 0 \u2264 c\nhd : 0 < d\nhe : 0 < e\nhf : 0 < f\nhg : 0 < g\nhh : 0 < h\nhab : a \u2264 b\nhbc : b \u2264 c\nh1 : a * c \u2264 b ^ 2\nh2 : b * d \u2264 c ^ 2\nh3 : c * e \u2264 d ^ 2\nh4 : d * f \u2264 e ^ 2\nh5 : e * g \u2264 f ^ 2\nh6 : f * h \u2264 g ^ 2\nhn : \u2200 (k : \u2124), 0 \u2264 eightSeqM511 a b c d e f g h k\nhz : \u2200 (k : \u2124), k < 0 \u2228 7 < k \u2192 eightSeqM511 a b c d e f g h k = 0\ni k j : \u2124\nhik : i \u2264 k\nhkj : k \u2264 j\nhi : 0 < eightSeqM511 a b c d e f g h i\nhj : 0 < eightSeqM511 a b c d e f g h j\nh0 : InitialSeg (fun x1 x2 => sorry) fun x1 x2 => sorry\n\u22a2 0 < eightSeqM511 a b c d e f g h k\n",
+  "stderr": "",
+  "modules": {
+    "MarkovEightLCM511": "e22aea714dda538699cda047d62fc417c565407311d3373724af9c3c914b50cf"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-5110b3fa/MarkovEightLCM511.olean",
+    "/Users/sasha/math_gkm/research/MarkovEightLCM511.lean"
+  ],
+  "seconds": 6.865113458014093,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

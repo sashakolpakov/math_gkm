@@ -1,0 +1,561 @@
+{
+  "audit_kind": "Static explicit source boundaries and hashing only. No proof/checker/experiment or whole-source rebuild.",
+  "worker": "000112",
+  "request": "5110b3fac1864ad1b18b3138b0f468e8",
+  "new_mathematical_modules": [
+    {
+      "module": "MarkovFourthGenericM511",
+      "source": "research/MarkovFourthGenericM511.lean",
+      "archive_sha256": "075ee7302d8b4e3bb2082b1b33ec0ba1657076f44bb6327c0d646b70ac337f30",
+      "current_sha256": "075ee7302d8b4e3bb2082b1b33ec0ba1657076f44bb6327c0d646b70ac337f30",
+      "validation_sha256": "075ee7302d8b4e3bb2082b1b33ec0ba1657076f44bb6327c0d646b70ac337f30",
+      "match": true,
+      "direct_imports": [
+        "MarkovFourMomentBE",
+        "MarkovFourthLocal01F",
+        "MarkovHorizontalTraceM13D"
+      ],
+      "theorems": [
+        "hopenFour_scanM511",
+        "hfour_cyclicM511",
+        "hsource_fourth_momentM511"
+      ],
+      "definitions": [
+        "hlocalFourM511"
+      ]
+    },
+    {
+      "module": "MarkovHorizontalFourthSeedM511",
+      "source": "research/MarkovHorizontalFourthSeedM511.lean",
+      "archive_sha256": "994ebaa1dd48cb4810f2ed3ad8578a1f7c104ec3832b366dd2fdcc0edae43f99",
+      "current_sha256": "994ebaa1dd48cb4810f2ed3ad8578a1f7c104ec3832b366dd2fdcc0edae43f99",
+      "validation_sha256": "994ebaa1dd48cb4810f2ed3ad8578a1f7c104ec3832b366dd2fdcc0edae43f99",
+      "match": true,
+      "direct_imports": [
+        "MarkovHorizontalScaledM13D"
+      ],
+      "theorems": [],
+      "definitions": [
+        "h4c0M511",
+        "h4c1M511",
+        "h4c2M511",
+        "h4c3M511",
+        "h4c4M511",
+        "h4c5M511",
+        "h4c6M511",
+        "h4c7M511",
+        "h4seedM511",
+        "h4vM511",
+        "h4wM511",
+        "h4zM511",
+        "H4BoundsM511"
+      ]
+    },
+    {
+      "module": "MarkovHorizontalFourthGoodM511",
+      "source": "research/MarkovHorizontalFourthGoodM511.lean",
+      "archive_sha256": "24a59cf5a4778483d6163f2ac195148d26505c0095c7807174ad0087598c1ee7",
+      "current_sha256": "24a59cf5a4778483d6163f2ac195148d26505c0095c7807174ad0087598c1ee7",
+      "validation_sha256": "24a59cf5a4778483d6163f2ac195148d26505c0095c7807174ad0087598c1ee7",
+      "match": true,
+      "direct_imports": [
+        "MarkovHorizontalFourthSeedM511"
+      ],
+      "theorems": [],
+      "definitions": [
+        "H4GoodM511"
+      ]
+    },
+    {
+      "module": "MarkovH4ChartLowM511",
+      "source": "research/MarkovH4ChartLowM511.lean",
+      "archive_sha256": "67fe10cf7dc1e2a28c5c87d45e229afbabef095c0521badf99edc650595655e0",
+      "current_sha256": "67fe10cf7dc1e2a28c5c87d45e229afbabef095c0521badf99edc650595655e0",
+      "validation_sha256": "67fe10cf7dc1e2a28c5c87d45e229afbabef095c0521badf99edc650595655e0",
+      "match": true,
+      "direct_imports": [
+        "MarkovHorizontalFourthGoodM511"
+      ],
+      "theorems": [
+        "h4chart_low_3_0M511"
+      ],
+      "definitions": []
+    },
+    {
+      "module": "MarkovH4ChartQuarterM511",
+      "source": "research/MarkovH4ChartQuarterM511.lean",
+      "archive_sha256": "560508b4ac55782cad2ab792927b1501665cc3c0491496bef9fa793bac9bf203",
+      "current_sha256": "560508b4ac55782cad2ab792927b1501665cc3c0491496bef9fa793bac9bf203",
+      "validation_sha256": "560508b4ac55782cad2ab792927b1501665cc3c0491496bef9fa793bac9bf203",
+      "match": true,
+      "direct_imports": [
+        "MarkovHorizontalFourthGoodM511"
+      ],
+      "theorems": [
+        "h4chart_quarter_0_3M511",
+        "h4chart_quarter_1_2M511",
+        "h4chart_quarter_2_1M511",
+        "h4chart_quarter_3_0M511"
+      ],
+      "definitions": []
+    },
+    {
+      "module": "MarkovH4ChartThirdM511",
+      "source": "research/MarkovH4ChartThirdM511.lean",
+      "archive_sha256": "445088f61e4ff9b951bdd032ec365b54c2a67089aa67d639930467f7382ff642",
+      "current_sha256": "445088f61e4ff9b951bdd032ec365b54c2a67089aa67d639930467f7382ff642",
+      "validation_sha256": "445088f61e4ff9b951bdd032ec365b54c2a67089aa67d639930467f7382ff642",
+      "match": true,
+      "direct_imports": [
+        "MarkovHorizontalFourthGoodM511"
+      ],
+      "theorems": [
+        "h4chart_third_0_5M511",
+        "h4chart_third_1_3M511",
+        "h4chart_third_2_2M511",
+        "h4chart_third_3_0M511"
+      ],
+      "definitions": []
+    },
+    {
+      "module": "MarkovHorizontalFourthScaledM511",
+      "source": "research/MarkovHorizontalFourthScaledM511.lean",
+      "archive_sha256": "38cfc849f1c8369a9ff7218071e7dcfa3638177fab7c7815f8f50f46e350f372",
+      "current_sha256": "38cfc849f1c8369a9ff7218071e7dcfa3638177fab7c7815f8f50f46e350f372",
+      "validation_sha256": "38cfc849f1c8369a9ff7218071e7dcfa3638177fab7c7815f8f50f46e350f372",
+      "match": true,
+      "direct_imports": [
+        "MarkovFourthGenericM511",
+        "MarkovHorizontalFourthSeedM511"
+      ],
+      "theorems": [
+        "h4local_closedM511",
+        "h4val_closedM511",
+        "h4source_valM511"
+      ],
+      "definitions": [
+        "h4localNumM511",
+        "h4valM511",
+        "h4numM511"
+      ]
+    },
+    {
+      "module": "MarkovH4ChartHighM511",
+      "source": "research/MarkovH4ChartHighM511.lean",
+      "archive_sha256": "a0f2e8b458f90a4461109fdb1a05a40adbe6e76f2003bf14d2a9b2e2b98533d7",
+      "current_sha256": "a0f2e8b458f90a4461109fdb1a05a40adbe6e76f2003bf14d2a9b2e2b98533d7",
+      "validation_sha256": "a0f2e8b458f90a4461109fdb1a05a40adbe6e76f2003bf14d2a9b2e2b98533d7",
+      "match": true,
+      "direct_imports": [
+        "MarkovHorizontalFourthGoodM511"
+      ],
+      "theorems": [
+        "h4chart_high_1_5M511",
+        "h4chart_high_2_1M511",
+        "h4chart_high_3_0M511"
+      ],
+      "definitions": []
+    },
+    {
+      "module": "MarkovH4ChartHalfM511",
+      "source": "research/MarkovH4ChartHalfM511.lean",
+      "archive_sha256": "de854c08f045fecb9acc38e653e045a18fdf68503ee9deff1aad789a880be408",
+      "current_sha256": "de854c08f045fecb9acc38e653e045a18fdf68503ee9deff1aad789a880be408",
+      "validation_sha256": "de854c08f045fecb9acc38e653e045a18fdf68503ee9deff1aad789a880be408",
+      "match": true,
+      "direct_imports": [
+        "MarkovHorizontalFourthGoodM511"
+      ],
+      "theorems": [
+        "h4chart_half_0_5M511",
+        "h4chart_half_1_3M511",
+        "h4chart_half_2_2M511",
+        "h4chart_half_3_0M511"
+      ],
+      "definitions": []
+    },
+    {
+      "module": "MarkovH4ChartTwothirdsM511",
+      "source": "research/MarkovH4ChartTwothirdsM511.lean",
+      "archive_sha256": "fa758c61ccb127746eae8998cfc8e9c70fddc12e4911e77b90a8b3dbef2d5985",
+      "current_sha256": "fa758c61ccb127746eae8998cfc8e9c70fddc12e4911e77b90a8b3dbef2d5985",
+      "validation_sha256": "fa758c61ccb127746eae8998cfc8e9c70fddc12e4911e77b90a8b3dbef2d5985",
+      "match": true,
+      "direct_imports": [
+        "MarkovHorizontalFourthGoodM511"
+      ],
+      "theorems": [
+        "h4chart_twothirds_0_3M511",
+        "h4chart_twothirds_1_2M511",
+        "h4chart_twothirds_2_1M511",
+        "h4chart_twothirds_3_0M511"
+      ],
+      "definitions": []
+    },
+    {
+      "module": "MarkovHorizontalFourthMomentSeedM511",
+      "source": "research/MarkovHorizontalFourthMomentSeedM511.lean",
+      "archive_sha256": "98b138f84d3f9657c4a98fd8b5b6a8acd59329231869369ec69bcfb51d9a64ce",
+      "current_sha256": "98b138f84d3f9657c4a98fd8b5b6a8acd59329231869369ec69bcfb51d9a64ce",
+      "validation_sha256": "98b138f84d3f9657c4a98fd8b5b6a8acd59329231869369ec69bcfb51d9a64ce",
+      "match": true,
+      "direct_imports": [
+        "MarkovHorizontalFourthScaledM511"
+      ],
+      "theorems": [
+        "hmoment_fourth_seedM511"
+      ],
+      "definitions": []
+    },
+    {
+      "module": "MarkovEightLCM511",
+      "source": "research/MarkovEightLCM511.lean",
+      "archive_sha256": "7dfb3a3a4581f423ef141a425cd297fe5ccb382bdc95ab2eef1247bb761de427",
+      "current_sha256": "7dfb3a3a4581f423ef141a425cd297fe5ccb382bdc95ab2eef1247bb761de427",
+      "validation_sha256": "7dfb3a3a4581f423ef141a425cd297fe5ccb382bdc95ab2eef1247bb761de427",
+      "match": true,
+      "direct_imports": [
+        "MarkovHorizontalLCM13D"
+      ],
+      "theorems": [
+        "eight_crossM511",
+        "eight_coeffM511"
+      ],
+      "definitions": [
+        "eightSeqM511"
+      ]
+    },
+    {
+      "module": "MarkovHorizontalFourthBoundsM511",
+      "source": "research/MarkovHorizontalFourthBoundsM511.lean",
+      "archive_sha256": "9a46a7dede836a8cf12e7eede96627cc1dcea80f730a0b3cdd84488999c863bb",
+      "current_sha256": "9a46a7dede836a8cf12e7eede96627cc1dcea80f730a0b3cdd84488999c863bb",
+      "validation_sha256": "9a46a7dede836a8cf12e7eede96627cc1dcea80f730a0b3cdd84488999c863bb",
+      "match": true,
+      "direct_imports": [
+        "MarkovH4ChartLowM511",
+        "MarkovH4ChartQuarterM511",
+        "MarkovH4ChartThirdM511",
+        "MarkovH4ChartHalfM511",
+        "MarkovH4ChartTwothirdsM511",
+        "MarkovH4ChartHighM511"
+      ],
+      "theorems": [
+        "h4nat_lowM511",
+        "h4nat_quarterM511",
+        "h4nat_thirdM511",
+        "h4nat_halfM511",
+        "h4nat_twothirdsM511",
+        "h4nat_highM511",
+        "h4boundsM511"
+      ],
+      "definitions": []
+    },
+    {
+      "module": "MarkovHorizontalFourthSourceM511",
+      "source": "research/MarkovHorizontalFourthSourceM511.lean",
+      "archive_sha256": "18b49f2520fc1fe436052d2044b52d1ee56a1e46db8ac861a52db2548ae6d1b7",
+      "current_sha256": "18b49f2520fc1fe436052d2044b52d1ee56a1e46db8ac861a52db2548ae6d1b7",
+      "validation_sha256": "18b49f2520fc1fe436052d2044b52d1ee56a1e46db8ac861a52db2548ae6d1b7",
+      "match": true,
+      "direct_imports": [
+        "MarkovHorizontalFourthMomentSeedM511",
+        "MarkovFourthMoment01F"
+      ],
+      "theorems": [
+        "h4source_seed_mapM511",
+        "hfourth_eval_clearedM511",
+        "horizontal_fourth_formulaM511"
+      ],
+      "definitions": [
+        "h4sourceSeedM511"
+      ]
+    },
+    {
+      "module": "MarkovHorizontalFourthLCM511",
+      "source": "research/MarkovHorizontalFourthLCM511.lean",
+      "archive_sha256": "b044a95a8e3a4b18a58ba3fc98395e89f2fe7e15c61fea4a7a8390e9657442d8",
+      "current_sha256": "b044a95a8e3a4b18a58ba3fc98395e89f2fe7e15c61fea4a7a8390e9657442d8",
+      "validation_sha256": "b044a95a8e3a4b18a58ba3fc98395e89f2fe7e15c61fea4a7a8390e9657442d8",
+      "match": true,
+      "direct_imports": [
+        "MarkovHorizontalFourthSourceM511",
+        "MarkovHorizontalFourthBoundsM511",
+        "MarkovEightLCM511"
+      ],
+      "theorems": [
+        "h4seed_crossM511",
+        "horizontal_fourth_rawM511"
+      ],
+      "definitions": []
+    },
+    {
+      "module": "MarkovHorizontalRescaleM511",
+      "source": "research/MarkovHorizontalRescaleM511.lean",
+      "archive_sha256": "712f9d391b7f6f1b13f781e13a3a58c584e36274faaf56ece89b6b8f2d12a3aa",
+      "current_sha256": "712f9d391b7f6f1b13f781e13a3a58c584e36274faaf56ece89b6b8f2d12a3aa",
+      "validation_sha256": "712f9d391b7f6f1b13f781e13a3a58c584e36274faaf56ece89b6b8f2d12a3aa",
+      "match": true,
+      "direct_imports": [
+        "MarkovHorizontalTraceM13D"
+      ],
+      "theorems": [
+        "hKletter_scaledM511",
+        "hmap_scaleM511",
+        "hKword_scaledM511",
+        "hKsource_traceM511"
+      ],
+      "definitions": [
+        "hKletterM511",
+        "hKwordM511",
+        "hsubM511"
+      ]
+    },
+    {
+      "module": "MarkovResidualHorizontalM511",
+      "source": "research/MarkovResidualHorizontalM511.lean",
+      "archive_sha256": "568ab511c1eee70cd88868c6c6fad37fd267bbc19ca6bd218eaf03666f456e1c",
+      "current_sha256": "568ab511c1eee70cd88868c6c6fad37fd267bbc19ca6bd218eaf03666f456e1c",
+      "validation_sha256": "568ab511c1eee70cd88868c6c6fad37fd267bbc19ca6bd218eaf03666f456e1c",
+      "match": true,
+      "direct_imports": [
+        "MarkovResidualFifthMCFC",
+        "MarkovHorizontalFourthLCM511",
+        "MarkovHorizontalThirdSourceM13D",
+        "MarkovSecondHorizontal8934"
+      ],
+      "theorems": [
+        "root_iff_horizontalM511"
+      ],
+      "definitions": [
+        "HorizontalUnresolvedM511",
+        "InteriorCore63HorizontalM511"
+      ]
+    },
+    {
+      "module": "MarkovHorizontalResidualM511",
+      "source": "research/MarkovHorizontalResidualM511.lean",
+      "archive_sha256": "ab3295d317b7578d980ae3b6e7095c67afe7d3036eb1983179e3d3593e091f62",
+      "current_sha256": "ab3295d317b7578d980ae3b6e7095c67afe7d3036eb1983179e3d3593e091f62",
+      "validation_sha256": "ab3295d317b7578d980ae3b6e7095c67afe7d3036eb1983179e3d3593e091f62",
+      "match": true,
+      "direct_imports": [
+        "MarkovHorizontalRescaleM511"
+      ],
+      "theorems": [
+        "hKletter_mapM511",
+        "hKword_mapM511",
+        "hKtrace_mapM511",
+        "hresidual_mapM511",
+        "hsub_coeffM511",
+        "hresidual_source_evalM511"
+      ],
+      "definitions": [
+        "hresidualM511"
+      ]
+    },
+    {
+      "module": "MarkovHorizontalAllOrderM511",
+      "source": "research/MarkovHorizontalAllOrderM511.lean",
+      "archive_sha256": "459e663cc8c4c7e809610730d18df63b3e6600c8604cb579631a4946cc58caf1",
+      "current_sha256": "459e663cc8c4c7e809610730d18df63b3e6600c8604cb579631a4946cc58caf1",
+      "validation_sha256": "459e663cc8c4c7e809610730d18df63b3e6600c8604cb579631a4946cc58caf1",
+      "match": true,
+      "direct_imports": [
+        "MarkovHorizontalResidualM511"
+      ],
+      "theorems": [
+        "horizontal_all_order_clearedM511",
+        "horizontal_all_order_factorM511",
+        "horizontal_binomial_dvdM511"
+      ],
+      "definitions": []
+    },
+    {
+      "module": "MarkovHorizontalPositiveM511",
+      "source": "research/MarkovHorizontalPositiveM511.lean",
+      "archive_sha256": "937c6925476efaa4dacba93b21b04f8dea14eddf0a5fe49d2174f03a333051cc",
+      "current_sha256": "937c6925476efaa4dacba93b21b04f8dea14eddf0a5fe49d2174f03a333051cc",
+      "validation_sha256": "937c6925476efaa4dacba93b21b04f8dea14eddf0a5fe49d2174f03a333051cc",
+      "match": true,
+      "direct_imports": [
+        "MarkovHorizontalResidualM511"
+      ],
+      "theorems": [
+        "hdiff_conjM511",
+        "hdiff_scaleM511",
+        "hdiff_mapM511",
+        "hdiff_source_evalM511",
+        "hresidual_diffM511",
+        "hdiff_lastM511"
+      ],
+      "definitions": [
+        "hdiffM511"
+      ]
+    },
+    {
+      "module": "MarkovHorizontalResidualPositiveM511",
+      "source": "research/MarkovHorizontalResidualPositiveM511.lean",
+      "archive_sha256": "46b35cb26eb3914dad2d9481172b55ecc285ed915826aa94f849e3f98faebb6b",
+      "current_sha256": "46b35cb26eb3914dad2d9481172b55ecc285ed915826aa94f849e3f98faebb6b",
+      "validation_sha256": "46b35cb26eb3914dad2d9481172b55ecc285ed915826aa94f849e3f98faebb6b",
+      "match": true,
+      "direct_imports": [
+        "MarkovHorizontalPositiveM511",
+        "MarkovHorizontalAllOrderM511"
+      ],
+      "theorems": [
+        "poly_pow_nonnegM511",
+        "poly_nat_nonnegM511",
+        "hKletter_nonnegM511",
+        "hKword_nonnegM511",
+        "hdiff_source_nonnegM511",
+        "hresidual_coeff_nonnegM511",
+        "horizontal_positive_factorM511"
+      ],
+      "definitions": []
+    }
+  ],
+  "inherited_explicit_source_boundaries": [
+    {
+      "path": "MathGKM/Markov.lean",
+      "before_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "current_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "matches_before": true
+    },
+    {
+      "path": "MathGKM/MarkovIndices.lean",
+      "before_sha256": "d31b4077de76ad7af7bd5c98df0e80367e38364d526541ed12dfd665db1f5e76",
+      "current_sha256": "d31b4077de76ad7af7bd5c98df0e80367e38364d526541ed12dfd665db1f5e76",
+      "matches_before": true
+    },
+    {
+      "path": "MathGKM/MarkovLogConcavity.lean",
+      "before_sha256": "458b5ff6169b3f09ceaed75a31f213a202257874620bda185a3752401a7a69a6",
+      "current_sha256": "458b5ff6169b3f09ceaed75a31f213a202257874620bda185a3752401a7a69a6",
+      "matches_before": true
+    },
+    {
+      "path": "research/MarkovRawMatrix18.lean",
+      "before_sha256": "fae8ccf54cd2a1aafe73b308095b72df077ec10cf22d7eb7f5658ad463b43cc8",
+      "current_sha256": "fae8ccf54cd2a1aafe73b308095b72df077ec10cf22d7eb7f5658ad463b43cc8",
+      "matches_before": true
+    },
+    {
+      "path": "research/MarkovFourMomentBE.lean",
+      "before_sha256": "192451f02c7d9fdf36aca43c19b2de5124bb53c8d96fd26a373e71f88a16a73f",
+      "current_sha256": "192451f02c7d9fdf36aca43c19b2de5124bb53c8d96fd26a373e71f88a16a73f",
+      "matches_before": true
+    },
+    {
+      "path": "research/MarkovFourthLocal01F.lean",
+      "before_sha256": "32ba8829f68682b2da9683fb0cf9d63168f86b5c543dfa09f3082d460375a79c",
+      "current_sha256": "32ba8829f68682b2da9683fb0cf9d63168f86b5c543dfa09f3082d460375a79c",
+      "matches_before": true
+    },
+    {
+      "path": "research/MarkovFourthTrace01F.lean",
+      "before_sha256": "b600768b40bcbbade2932d6d1c35ed6ac89f92c34cd9d440d06fea1cf76f532e",
+      "current_sha256": "b600768b40bcbbade2932d6d1c35ed6ac89f92c34cd9d440d06fea1cf76f532e",
+      "matches_before": true
+    },
+    {
+      "path": "research/MarkovFourthMoment897.lean",
+      "before_sha256": "9f4a6ad21eaf2c05bed5f3ed9938801857379a555b92b793837a3908af1fe031",
+      "current_sha256": "9f4a6ad21eaf2c05bed5f3ed9938801857379a555b92b793837a3908af1fe031",
+      "matches_before": true
+    },
+    {
+      "path": "research/MarkovFourSource897.lean",
+      "before_sha256": "662a2ee901db7a9f581f82d69e2ef5b1908a028459125123d8484b739d1d17b7",
+      "current_sha256": "662a2ee901db7a9f581f82d69e2ef5b1908a028459125123d8484b739d1d17b7",
+      "matches_before": true
+    },
+    {
+      "path": "research/MarkovFourthMoment01F.lean",
+      "before_sha256": "0935dca209bd04c615d101a5fdf4fd4bcfb76522a2d7967fb5e019a1107f9584",
+      "current_sha256": "0935dca209bd04c615d101a5fdf4fd4bcfb76522a2d7967fb5e019a1107f9584",
+      "matches_before": true
+    },
+    {
+      "path": "research/MarkovResidualFifthMCFC.lean",
+      "before_sha256": "c271a8fed26890e7623e85b46aebde94483a5ab2b3c7b22cf906e0141350770b",
+      "current_sha256": "c271a8fed26890e7623e85b46aebde94483a5ab2b3c7b22cf906e0141350770b",
+      "matches_before": true
+    },
+    {
+      "path": "research/MarkovSecondHorizontal8934.lean",
+      "before_sha256": "ded0fd45d6b56a3b1f2a147cc16f57b2aee33a16869c9d01b1ac4a18feff5579",
+      "current_sha256": "ded0fd45d6b56a3b1f2a147cc16f57b2aee33a16869c9d01b1ac4a18feff5579",
+      "matches_before": true
+    },
+    {
+      "path": "research/MarkovHorizontalThirdSourceM13D.lean",
+      "before_sha256": "38f08f2abf323197dc06b57341c746e9572e64057ad649555fd31a5491133234",
+      "current_sha256": "38f08f2abf323197dc06b57341c746e9572e64057ad649555fd31a5491133234",
+      "matches_before": true
+    },
+    {
+      "path": "research/MarkovHorizontalScaledM13D.lean",
+      "before_sha256": "e2f246beaf364654716effb0fea99c3a3fc0d5c2373684f5c9a89ffe86695166",
+      "current_sha256": "e2f246beaf364654716effb0fea99c3a3fc0d5c2373684f5c9a89ffe86695166",
+      "matches_before": true
+    },
+    {
+      "path": "research/MarkovHorizontalTraceM13D.lean",
+      "before_sha256": "5759054621a81dfc5b2599fdae3fd6c1bab6b3c184c33cc980b8baa338dae31d",
+      "current_sha256": "5759054621a81dfc5b2599fdae3fd6c1bab6b3c184c33cc980b8baa338dae31d",
+      "matches_before": true
+    },
+    {
+      "path": "research/MarkovHorizontalGaugeM13D.lean",
+      "before_sha256": "8a9dc01d432bd0265195be78987d08f252a3efd7c538ce04e78516c8d49c3542",
+      "current_sha256": "8a9dc01d432bd0265195be78987d08f252a3efd7c538ce04e78516c8d49c3542",
+      "matches_before": true
+    },
+    {
+      "path": "research/MarkovSourceMomentsM13D.lean",
+      "before_sha256": "ecefde63366fec49921f32ecb17d544bc953891dd9b214a017326c083b5c8f57",
+      "current_sha256": "ecefde63366fec49921f32ecb17d544bc953891dd9b214a017326c083b5c8f57",
+      "matches_before": true
+    },
+    {
+      "path": "research/MarkovHorizontalLCM13D.lean",
+      "before_sha256": "582cabea616b5b64bad9342832129eba1f9816d7dcae53699800219dbdfde8c2",
+      "current_sha256": "582cabea616b5b64bad9342832129eba1f9816d7dcae53699800219dbdfde8c2",
+      "matches_before": true
+    },
+    {
+      "path": "research/MarkovCross774.lean",
+      "before_sha256": "886e87cb2d96bbb80c75aefaaa7172602da12dc52213cc346d4028074edd33f6",
+      "current_sha256": "886e87cb2d96bbb80c75aefaaa7172602da12dc52213cc346d4028074edd33f6",
+      "matches_before": true
+    },
+    {
+      "path": "research/MarkovHorizontalLCB46.lean",
+      "before_sha256": "7298e29ecbf33942845269013976590daa30bfca2334861f673a5d5c201f17c6",
+      "current_sha256": "7298e29ecbf33942845269013976590daa30bfca2334861f673a5d5c201f17c6",
+      "matches_before": true
+    },
+    {
+      "path": "research/MarkovHorizontalB46.lean",
+      "before_sha256": "1eb8adb1d6f44e2c03eb670de80ca06fcc8e875f783a776049cb05e2a5e92c84",
+      "current_sha256": "1eb8adb1d6f44e2c03eb670de80ca06fcc8e875f783a776049cb05e2a5e92c84",
+      "matches_before": true
+    },
+    {
+      "path": "research/MarkovMechanical3eda.lean",
+      "before_sha256": "de355dfd7b2611c5db374ed1be35c99f4eb9afd57fa851963eb14410a78d3f29",
+      "current_sha256": "de355dfd7b2611c5db374ed1be35c99f4eb9afd57fa851963eb14410a78d3f29",
+      "matches_before": true
+    },
+    {
+      "path": "research/experiment_8833.py",
+      "before_sha256": "2dffc322d2fa37292349ef2ea279270daad2468dbfdf89e03db7ea5694970a93",
+      "current_sha256": "2dffc322d2fa37292349ef2ea279270daad2468dbfdf89e03db7ea5694970a93",
+      "matches_before": true
+    }
+  ],
+  "all_new_match": true,
+  "all_inherited_match": true
+}

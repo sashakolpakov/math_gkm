@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovHorizontalResidualM511.lean:16:79: error: unsolved goals\ncase true.b\nR : Type u_1\nS : Type u_2\ninst\u271d\u00b9 : CommRing R\ninst\u271d : CommRing S\nf : R \u2192+* S\nx : R\nn\u271d : \u2115\n\u22a2 ((C (f x) + C (f 2)) * X).coeff n\u271d = ((C (f x) + C 2) * X).coeff n\u271d\n\ncase true.c\nR : Type u_1\nS : Type u_2\ninst\u271d\u00b9 : CommRing R\ninst\u271d : CommRing S\nf : R \u2192+* S\nx : R\nn\u271d : \u2115\n\u22a2 (C (f x) * (C (f x) + C (f 2)) * X).coeff n\u271d = (C (f x) * (C (f x) + C 2) * X).coeff n\u271d\n\ncase true.d\nR : Type u_1\nS : Type u_2\ninst\u271d\u00b9 : CommRing R\ninst\u271d : CommRing S\nf : R \u2192+* S\nx : R\nn\u271d : \u2115\n\u22a2 (C (f x) * (C (f 2) * C (f x) + C (f 3)) * X).coeff n\u271d = (C (f x) * (C 2 * C (f x) + C 3) * X).coeff n\u271d\n/Users/sasha/math_gkm/research/MarkovHorizontalResidualM511.lean:53:7: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  (C ?x * X ^ ?k).coeff ?n\nin the target expression\n  (C c * (C (((x + 1) ^ 2) ^ n) * X ^ n)).coeff j = (x + 1) ^ (2 * j) * ((monomial n) c).coeff j\n\ncase monomial\nx : \u211d\nj n : \u2115\nc : \u211d\n\u22a2 (C c * (C (((x + 1) ^ 2) ^ n) * X ^ n)).coeff j = (x + 1) ^ (2 * j) * ((monomial n) c).coeff j\n/Users/sasha/math_gkm/research/MarkovHorizontalResidualM511.lean:69:5: error: Type mismatch: After simplification, term\n  h\n has type\n  ((hsubM511 x) ((hrowEvalM13D x) (frame path).mid.p)).coeff 0 =\n    ((C x + 1) ^ ((frame path).mid.b - 1)).coeff 0 * (tr16 (hKwordM511 x (sourceWord28 path))).coeff 0\nbut is expected to have type\n  ((hsubM511 x) ((hrowEvalM13D x) (frame path).mid.p)).coeff 0 =\n    (x + 1) ^ ((frame path).mid.b - 1) * (tr16 (hKwordM511 x (sourceWord28 path))).coeff 0\n/Users/sasha/math_gkm/research/MarkovHorizontalResidualM511.lean:74:5: error: 'change' tactic failed, pattern\n  P.coeff (j + 1) + (x + 1) * P.coeff j = ?m.163\nis not definitionally equal to target\n  ((hsubM511 x) ((hrowEvalM13D x) (frame path).mid.p)).coeff (j + 1) +\n      (x * ((hsubM511 x) ((hrowEvalM13D x) (frame path).mid.p)).coeff j +\n        ((hsubM511 x) ((hrowEvalM13D x) (frame path).mid.p)).coeff j) =\n    (x + 1) ^ ((frame path).mid.b - 1) * (tr16 (hKwordM511 x (sourceWord28 path))).coeff (j + 1)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovHorizontalResidualM511": "c7d4fb0d57783cc01a4796407070cc2a4c82da7bca6c3b020b403ced2c0953af"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-5110b3fa/MarkovHorizontalResidualM511.olean",
+    "/Users/sasha/math_gkm/research/MarkovHorizontalResidualM511.lean"
+  ],
+  "seconds": 12.267640583013417,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

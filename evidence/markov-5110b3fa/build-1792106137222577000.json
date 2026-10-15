@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovHorizontalRescaleM511.lean:29:12: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovHorizontalRescaleM511.lean:74:1: error: ring failed, ring expressions not equal\nx : \u211d\nhx : x \u2260 0\nhh : x + 1 \u2260 0\npath : List Bool\nhw :\n  tr16 (hKwordM511 x (sourceWord28 path)) =\n    C (x ^ (frame path).mid.a) * (hsubM511 x) (tr16 (hprojWordM13D x (sourceWord28 path)))\nhb : 1 \u2264 (frame path).mid.b\nhp : (x + 1) ^ (frame path).mid.b = (x + 1) * (x + 1) ^ ((frame path).mid.b - 1)\nht :\n  C x ^ (frame path).mid.a * (C (x + 1) * C ((x + 1) ^ ((frame path).mid.b - 1))) *\n      (hsubM511 x) (tr16 (hprojWordM13D x (sourceWord28 path))) =\n    (C (x + 1) + C ((x + 1) ^ 2) * X) * (hsubM511 x) ((hrowEvalM13D x) (frame path).mid.p)\n\u22a2 C (x + 1) * C x ^ (frame path).mid.a * C ((x + 1) ^ ((frame path).mid.b - 1)) *\n            (hsubM511 x) (tr16 (hprojWordM13D x (sourceWord28 path))) -\n          C (x + 1) * C ((x + 1) ^ ((frame path).mid.b - 1)) *\n              (hsubM511 x) (tr16 (hprojWordM13D x (sourceWord28 path))) *\n            C (x ^ (frame path).mid.a) +\n        C (x + 1) ^ 2 * X * (hsubM511 x) ((hrowEvalM13D x) (frame path).mid.p) -\n      X * (hsubM511 x) ((hrowEvalM13D x) (frame path).mid.p) * C ((x + 1) ^ 2) =\n    0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovHorizontalRescaleM511": "1a98d781b6bafda5a10dae71b1702a018cc4041a77340137f832f9c55385e7ac"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-5110b3fa/MarkovHorizontalRescaleM511.olean",
+    "/Users/sasha/math_gkm/research/MarkovHorizontalRescaleM511.lean"
+  ],
+  "seconds": 7.5929317499976605,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

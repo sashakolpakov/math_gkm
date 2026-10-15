@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovHorizontalRescaleM511.lean:29:12: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovHorizontalRescaleM511.lean:61:37: error(lean.unknownIdentifier): Unknown identifier `eval\u2082RingHom_apply`\n/Users/sasha/math_gkm/research/MarkovHorizontalRescaleM511.lean:68:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ?f (?x * ?y)\nin the target expression\n  (eval\u2082RingHom C (C ((x + 1) ^ 2) * X)) (C (x ^ (frame path).mid.a)) *\n        (eval\u2082RingHom C (C ((x + 1) ^ 2) * X)) (C ((x + 1) ^ (frame path).mid.b)) *\n      (eval\u2082RingHom C (C ((x + 1) ^ 2) * X)) (tr16 (hprojWordM13D x (sourceWord28 path))) =\n    ((eval\u2082RingHom C (C ((x + 1) ^ 2) * X)) (C x) + (eval\u2082RingHom C (C ((x + 1) ^ 2) * X)) (C 1) +\n        (eval\u2082RingHom C (C ((x + 1) ^ 2) * X)) X) *\n      (eval\u2082RingHom C (C ((x + 1) ^ 2) * X)) ((hrowEvalM13D x) (frame path).mid.p)\n\nx : \u211d\nhx : x \u2260 0\nhh : x + 1 \u2260 0\npath : List Bool\nhw :\n  tr16 (hKwordM511 x (sourceWord28 path)) =\n    C (x ^ (frame path).mid.a) * (hsubM511 x) (tr16 (hprojWordM13D x (sourceWord28 path)))\nht :\n  (eval\u2082RingHom C (C ((x + 1) ^ 2) * X)) (C (x ^ (frame path).mid.a)) *\n        (eval\u2082RingHom C (C ((x + 1) ^ 2) * X)) (C ((x + 1) ^ (frame path).mid.b)) *\n      (eval\u2082RingHom C (C ((x + 1) ^ 2) * X)) (tr16 (hprojWordM13D x (sourceWord28 path))) =\n    ((eval\u2082RingHom C (C ((x + 1) ^ 2) * X)) (C x) + (eval\u2082RingHom C (C ((x + 1) ^ 2) * X)) (C 1) +\n        (eval\u2082RingHom C (C ((x + 1) ^ 2) * X)) X) *\n      (eval\u2082RingHom C (C ((x + 1) ^ 2) * X)) ((hrowEvalM13D x) (frame path).mid.p)\nhb : 1 \u2264 (frame path).mid.b\nhp : (x + 1) ^ (frame path).mid.b = (x + 1) * (x + 1) ^ ((frame path).mid.b - 1)\n\u22a2 C (x + 1) * ((1 + C (x + 1) * X) * (hsubM511 x) ((hrowEvalM13D x) (frame path).mid.p)) =\n    C (x + 1) *\n      (C ((x + 1) ^ ((frame path).mid.b - 1)) *\n        (C (x ^ (frame path).mid.a) * (hsubM511 x) (tr16 (hprojWordM13D x (sourceWord28 path)))))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovHorizontalRescaleM511": "1469af46659f640f7d1dc93e21ed88edd7a8f9e25e483894fe583972b9a888c9"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-5110b3fa/MarkovHorizontalRescaleM511.olean",
+    "/Users/sasha/math_gkm/research/MarkovHorizontalRescaleM511.lean"
+  ],
+  "seconds": 30.375580791005632,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

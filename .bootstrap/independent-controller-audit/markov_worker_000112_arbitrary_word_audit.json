@@ -1,0 +1,67 @@
+{
+  "audit_kind": "Static review of the saved experiment and source admissibility; no matrix or coefficient experiment rerun.",
+  "receipt_sha256": "08073c2bffcb10994c75a4c52a71ba5a4ce61fcfc04f5f808028ce0f997af254",
+  "record": {
+    "status": "Exact finite obstruction to arbitrary-word residual LC; not a source witness or refutation",
+    "word": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "row": 2,
+    "coefficients": [
+      0,
+      2,
+      14,
+      106,
+      171,
+      0,
+      0,
+      0
+    ],
+    "failures": [
+      1
+    ],
+    "source_obstruction": "Word count 2/18 is not reduced; literal source words cannot have this label"
+  },
+  "saved_completed_command_events": [
+    {
+      "event_line": 283,
+      "event": {
+        "type": "item.completed",
+        "item": {
+          "id": "item_144",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc \"env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 -c 'import sys,json;sys.path.insert(0,\\\"research\\\"); from experiment_8833 import add,mul; from pathlib import Path; one={(0,0):1}; X={(1,0):1};Y={(0,1):1};H=add(one,X);H2=mul(H,H);Y2=mul(Y,Y);A=(Y,Y,mul(X,Y),add(one,mul(X,Y)));B=(add(Y,mul(H2,Y2)),add(mul(add(X,{(0,0):2}),Y),mul(H2,Y2)),add(mul(mul(X,add(X,{(0,0):2})),Y),mul(mul(X,H2),Y2)),add(add(X,mul(mul(X,add({(1,0):2},{(0,0):3})),Y)),mul(mul(X,H2),Y2))); mm=lambda m,n:tuple(add(mul(m[i],n[j]),mul(m[i+1],n[j+2])) for i in [0,2] for j in [0,1]);m=(one,{},{},one);word=[0]*16+[1]*2\nfor bit in word:m=mm(m,B if bit else A)\nd=add(add(m[1],m[3]),{k:-v for k,v in add(m[0],m[2]).items()});cs=[d.get((i,2),0) for i in range(8)];out=dict(status=\\\"Exact finite obstruction to arbitrary-word residual LC; not a source witness or refutation\\\",word=word,row=2,coefficients=cs,failures=[i for i in range(6) if cs[i]*cs[i+2]>cs[i+1]**2],source_obstruction=\\\"Word count 2/18 is not reduced; literal source words cannot have this label\\\");Path(\\\"evidence/markov-5110b3fa/arbitrary-word-obstruction.json\\\").write_text(json.dumps(out,indent=2)+\\\"\\\\n\\\");print(json.dumps(out))'\"",
+          "aggregated_output": "{\"status\": \"Exact finite obstruction to arbitrary-word residual LC; not a source witness or refutation\", \"word\": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], \"row\": 2, \"coefficients\": [0, 2, 14, 106, 171, 0, 0, 0], \"failures\": [1], \"source_obstruction\": \"Word count 2/18 is not reduced; literal source words cannot have this label\"}\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      }
+    }
+  ],
+  "events_file_sha256": "34850bea75f9dbed1c7d1f8965abd582e1ed5d5af3976112ad8725597c682768",
+  "actual_object": "Saved command computes [Y^2]D(K_word), D=M.b+M.d-M.a-M.c; it does not compute the generic trace-recursive hresidualM511.",
+  "source_identification_limit": "hresidual_diffM511 is stated for actual paths/sourceWord28; no extension to arbitrary words is proved.",
+  "word_length": 18,
+  "true_count": 2,
+  "gcd_count_length": 2,
+  "source_obstruction": "Source word counts and frame_reduced would force a=2,b=18 with coprimality; gcd 2 rules out an actual source word. Reducing the fraction to 1/9 does not identify this eighteen-letter word with a nine-letter source word.",
+  "failure_scope": "The saved coefficient vector violates adjacent LC at starting index 1 on row Y^2 of D. It obstructs unrestricted positive K-product D-row LC; it is neither an actual source residual witness nor a raw Markov polynomial counterexample.",
+  "root_conclusion": "No Conjecture63 refutation."
+}
