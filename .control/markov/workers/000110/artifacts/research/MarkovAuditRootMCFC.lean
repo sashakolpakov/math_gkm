@@ -1,0 +1,6 @@
+import MarkovResidualFifthMCFC
+#print axioms MathGKM.Markov.source_cycle_fourth_ge_four41MCFC
+#print axioms MathGKM.Markov.source_cycle_fourth_ge_four43MCFC
+#print axioms MathGKM.Markov.source_cycle_fourth_ge_seven43MCFC
+#print axioms MathGKM.Markov.source_fourth_all_gap_ge_twoMCFC
+#print axioms MathGKM.Markov.root_iff_coreFifthMCFC

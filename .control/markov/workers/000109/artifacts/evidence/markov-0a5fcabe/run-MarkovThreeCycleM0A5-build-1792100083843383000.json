@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovThreeCycleM0A5.lean:29:1: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovThreeCycleM0A5.lean:37:1: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovThreeCycleM0A5.lean:68:56: error: Type mismatch: After simplification, term\n  hl\n has type\n  1 \u2264 ms.length\nbut is expected to have type\n  0 < ms.length\n/Users/sasha/math_gkm/research/MarkovThreeCycleM0A5.lean:75:1: error: ring failed, ring expressions not equal\nn : \u2115\nrest : List Bool\nm : Mat16 BiPoly\nms : List (Mat16 BiPoly)\nhl : 2 \u2264 (m :: ms).length\nk : Mat16 BiPoly\nks : List (Mat16 BiPoly)\nhw : runBooleanListADB2 n true (sourceWord28 rest) = m :: k :: ks\nhs : \u2200 z \u2208 m :: k :: ks, Projection6905 z\nhk : ms = k :: ks\nha : (projProduct6905 (runBooleanListADB2 n true (sourceWord28 rest))).a.coeff 1 = 0\nht :\n  (projProduct6905 (runBooleanListADB2 n true (sourceWord28 rest))).d.coeff 1 =\n    firstRunPolyADB2 n (frame rest).mid.b (frame rest).mid.a + (1 + X)\n\u22a2 -2 + (projProduct6905 (runBooleanListADB2 n true (sourceWord28 rest))).d.coeff 1 * 2 -\n        firstRunPolyADB2 n (frame rest).mid.b (frame rest).mid.a * 2 -\n      X * 2 =\n    0\n/Users/sasha/math_gkm/research/MarkovThreeCycleM0A5.lean:89:1: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n",
+  "stderr": "",
+  "source": "research/MarkovThreeCycleM0A5.lean",
+  "sha256": "43d8b46bcb21f216af64720b206f56f35b1fba8f57772e5f32e6295e34a24a9c",
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-0a5fcabe/MarkovThreeCycleM0A5.olean",
+    "/Users/sasha/math_gkm/research/MarkovThreeCycleM0A5.lean"
+  ],
+  "seconds": 59.0888544160116,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild"
+}

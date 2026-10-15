@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovAllCycleValueM0A5.lean:46:1: error: Tactic `apply` failed: could not unify the conclusion of `coeff_of_one_sub_mul_rangeBC (plainFourthM0A5 n c r)\n  (fullNumeratorFA (\u2191n) (X ^ n) X c r) 7 j`\n  (plainFourthM0A5 n c r).coeff j =\n    \u2211 k \u2208 Finset.range (j + 1), (fullNumeratorFA (\u2191n) (X ^ n) X c r).coeff k * \u2191((7 + (j - k)).choose 7)\nwith the goal\n  (plainFourthM0A5 n c r).coeff j = fullFourthValueM06 n c r j\n\nNote: The full type of `coeff_of_one_sub_mul_rangeBC (plainFourthM0A5 n c r) (fullNumeratorFA (\u2191n) (X ^ n) X c r) 7\n  j` is\n  (1 - X) ^ (7 + 1) * plainFourthM0A5 n c r = fullNumeratorFA (\u2191n) (X ^ n) X c r \u2192\n    (plainFourthM0A5 n c r).coeff j =\n      \u2211 k \u2208 Finset.range (j + 1), (fullNumeratorFA (\u2191n) (X ^ n) X c r).coeff k * \u2191((7 + (j - k)).choose 7)\n\nn c r j : \u2115\n\u22a2 (plainFourthM0A5 n c r).coeff j = fullFourthValueM06 n c r j\n",
+  "stderr": "",
+  "source": "research/MarkovAllCycleValueM0A5.lean",
+  "sha256": "06cf43722b454e6cc07d283d8733edefdcde42d4741e618307a51a08956b9948",
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-0a5fcabe/MarkovAllCycleValueM0A5.olean",
+    "/Users/sasha/math_gkm/research/MarkovAllCycleValueM0A5.lean"
+  ],
+  "seconds": 61.14701800001785,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild"
+}
