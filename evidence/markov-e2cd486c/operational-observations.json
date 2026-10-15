@@ -1,0 +1,39 @@
+{
+  "failed_build_or_replay_receipts": [
+    {
+      "receipt": "evidence/markov-e2cd486c/run-MarkovFourthPolyE2-build-1792054173771246000.json",
+      "timeout": false,
+      "returncode": 1
+    },
+    {
+      "receipt": "evidence/markov-e2cd486c/run-MarkovRun4CombineE2-build-1792055041135969000.json",
+      "timeout": false,
+      "returncode": 1
+    },
+    {
+      "receipt": "evidence/markov-e2cd486c/run-MarkovTerminalAlgebraE2-build-1792054053519033000.json",
+      "timeout": false,
+      "returncode": 1
+    },
+    {
+      "receipt": "evidence/markov-e2cd486c/run-MarkovTerminalCoefficientsE2-build-1792054642953889000.json",
+      "timeout": false,
+      "returncode": 1
+    },
+    {
+      "receipt": "evidence/markov-e2cd486c/run-MarkovTerminalExtractE2-build-1792053966000198000.json",
+      "timeout": false,
+      "returncode": 1
+    }
+  ],
+  "capabilities": "capabilities.json",
+  "mathematical_candidate_failure": "terminal-experiment-failure.json",
+  "finalizer_repair": "finalizer-reconciliation.json",
+  "notes": [
+    "First shell heredoc failed on implicit temporary-file creation; apply_patch succeeded.",
+    "Initial middle-chamber candidate used the wrong min branch; exact source experiment rejected it. Final source bridges use the corrected branch.",
+    "Generator scripts preserve initial recipes; final-source snapshots and hash-bound receipts are authoritative. Do not blindly rerun generators."
+  ],
+  "unvalidated": [],
+  "limits": "Pinned inherited compiled imports reused. No fresh whole-source rebuild or independent English/source completion audit. Local validation is not controller admission."
+}

@@ -1,0 +1,13 @@
+# Live checkpoint e2cd486c
+
+Machine-authored. Read full mission/design, pinned root/contract, inherited index, independent target/residual/mathematical audits and latest worker reports/logs. Worker 81 completed final audit replay and finalizer. Prior artifacts verified; no predecessor action blindly replayed. Research: close fourth-band terminal triples with polygon guards, then reassess small-run/small-cycle residuals. Full Conjecture63 remains open.
+
+Checkpoint: exact symbolic fourth-band correction gives terminal coefficient formulas independent of run length. The last polygon-valid starting indices force c≤3r or 2c≤3r. Seven finite polynomial gap expansions have nonnegative coefficients in exhaustive chamber parameters; these remain experiments until Lean checks them. Initial Lean build rejected nonexistent lemma names and overbroad unfold, now being repaired.
+
+Checkpoint: corrected terminal algebra, fourth-band extraction, gap certificates and exhaustive chamber discharge passed a five-module union kernel replay. The independent recurrence caught and corrected a middle-chamber min substitution before source transfer. Revised experiment passed 1,274 sources, 3,380 coefficient identities, 168 independent raw recurrence positions and 1,274 terminal triples. Terminal source composition is in progress; run-four crossing certificates also being checked.
+
+Checkpoint: source_third_long_largeE2 compiled and passed a separate two-module union replay with its coefficient bridge. This proves all polygon-valid third-lower-slice triples for n≥5,c≥4. The four run-four gap modules and extended crossing coefficient module also passed a five-module union replay. A cast-normalization repair is being checked in their source composition. Final root-residual equivalence and axiom/preservation audit remain.
+
+Final mathematical checkpoint: all 15 mathematical modules compiled and separately kernel-replayed. source_third_ge_fourE2 proves the full third lower diagonal for every mixed source with n≥4,c≥4. root_iff_interiorE2 preserves an exact unproved residual of Conjecture63. All 74 theorem closures in the compiled audit are permitted. Final audit-module replay and artifact/preservation binding follow.
+
+Final checkpoint: audit-module replay passed. The first finalizer wrote validation.json then stopped on a file-byte versus canonical-JSON hash comparison. Canonical ASCII JSON exactly matches the request hash; raw bytes match the initial snapshot. Partial effects inspected, encoding check repaired, and failure retained in finalizer-reconciliation.json. All executions are foreground and complete.

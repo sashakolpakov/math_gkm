@@ -1,0 +1,90 @@
+import MarkovTerminalAlgebraE2
+import MarkovFourthPolyE2
+import MarkovTerminalExtractE2
+import MarkovTerminalGapsE2
+import MarkovTerminalChambersE2
+import MarkovTerminalCoefficientsE2
+import MarkovTerminalSourceE2
+import MarkovRun4LowOneE2
+import MarkovRun4LowLargeE2
+import MarkovRun4HighOneE2
+import MarkovRun4HighLargeE2
+import MarkovCrossCoefficientsE2
+import MarkovRun4CombineE2
+import MarkovLongSourceE2
+import MarkovResidualE2
+/-! Machine-authored explicit theorem closure audit. -/
+#print axioms MathGKM.Markov.terminal_lo_0_formulaE2
+#print axioms MathGKM.Markov.terminal_lo_1_formulaE2
+#print axioms MathGKM.Markov.terminal_lo_2_formulaE2
+#print axioms MathGKM.Markov.terminal_lo_3_formulaE2
+#print axioms MathGKM.Markov.terminal_mid_0_formulaE2
+#print axioms MathGKM.Markov.terminal_mid_1_formulaE2
+#print axioms MathGKM.Markov.terminal_mid_2_formulaE2
+#print axioms MathGKM.Markov.terminal_mid_3_formulaE2
+#print axioms MathGKM.Markov.terminal_hi_0_formulaE2
+#print axioms MathGKM.Markov.terminal_hi_1_formulaE2
+#print axioms MathGKM.Markov.terminal_hi_2_formulaE2
+#print axioms MathGKM.Markov.terminal_hi_3_formulaE2
+#print axioms MathGKM.Markov.fourth_polyE2
+#print axioms MathGKM.Markov.fourth_series0E2
+#print axioms MathGKM.Markov.fourth_series1E2
+#print axioms MathGKM.Markov.extract_four_bandsE2
+#print axioms MathGKM.Markov.tail_low_seriesE2
+#print axioms MathGKM.Markov.tail_high_seriesE2
+#print axioms MathGKM.Markov.terminal_gap_lo0_10E2
+#print axioms MathGKM.Markov.terminal_gap_lo0_01E2
+#print axioms MathGKM.Markov.terminal_gap_mid0_20E2
+#print axioms MathGKM.Markov.terminal_gap_mid0_11E2
+#print axioms MathGKM.Markov.terminal_gap_mid0_02E2
+#print axioms MathGKM.Markov.terminal_gap_hi0_10E2
+#print axioms MathGKM.Markov.terminal_gap_hi1_10E2
+#print axioms MathGKM.Markov.terminal_low_lcE2
+#print axioms MathGKM.Markov.terminal_mid_lcE2
+#print axioms MathGKM.Markov.terminal_high_lc0E2
+#print axioms MathGKM.Markov.terminal_high_lc1E2
+#print axioms MathGKM.Markov.terminal_lo_coeff0E2
+#print axioms MathGKM.Markov.terminal_lo_coeff1E2
+#print axioms MathGKM.Markov.terminal_lo_coeff2E2
+#print axioms MathGKM.Markov.terminal_mid_coeff0E2
+#print axioms MathGKM.Markov.terminal_mid_coeff1E2
+#print axioms MathGKM.Markov.terminal_mid_coeff2E2
+#print axioms MathGKM.Markov.terminal_hi_coeff0E2
+#print axioms MathGKM.Markov.terminal_hi_coeff1E2
+#print axioms MathGKM.Markov.terminal_hi_coeff2E2
+#print axioms MathGKM.Markov.terminal_hi_coeff3E2
+#print axioms MathGKM.Markov.third_terminal0_lcE2
+#print axioms MathGKM.Markov.third_terminal1_lcE2
+#print axioms MathGKM.Markov.third_polygon_terminal_chamberE2
+#print axioms MathGKM.Markov.source_third_long_largeE2
+#print axioms MathGKM.Markov.run4_LowOne_0E2
+#print axioms MathGKM.Markov.run4_LowOne_1E2
+#print axioms MathGKM.Markov.run4_LowOne_2E2
+#print axioms MathGKM.Markov.run4_LowOne_3E2
+#print axioms MathGKM.Markov.run4_LowLarge_0E2
+#print axioms MathGKM.Markov.run4_LowLarge_1E2
+#print axioms MathGKM.Markov.run4_LowLarge_2E2
+#print axioms MathGKM.Markov.run4_LowLarge_3E2
+#print axioms MathGKM.Markov.run4_HighOne_0E2
+#print axioms MathGKM.Markov.run4_HighOne_1E2
+#print axioms MathGKM.Markov.run4_HighOne_2E2
+#print axioms MathGKM.Markov.run4_HighOne_3E2
+#print axioms MathGKM.Markov.run4_HighLarge_0E2
+#print axioms MathGKM.Markov.run4_HighLarge_1E2
+#print axioms MathGKM.Markov.run4_HighLarge_2E2
+#print axioms MathGKM.Markov.run4_HighLarge_3E2
+#print axioms MathGKM.Markov.cross_tail_coeff1E2
+#print axioms MathGKM.Markov.cross_tail_coeff2E2
+#print axioms MathGKM.Markov.cross_tail_coeff3E2
+#print axioms MathGKM.Markov.cross_tail_coeff4E2
+#print axioms MathGKM.Markov.cross_tail_coeff5E2
+#print axioms MathGKM.Markov.cross_tail_coeff6E2
+#print axioms MathGKM.Markov.run4_cross_gap0E2
+#print axioms MathGKM.Markov.run4_cross_gap1E2
+#print axioms MathGKM.Markov.run4_cross_gap2E2
+#print axioms MathGKM.Markov.run4_cross_gap3E2
+#print axioms MathGKM.Markov.run4_cross_lcE2
+#print axioms MathGKM.Markov.third_three_bandsE2
+#print axioms MathGKM.Markov.source_third_three_bandsE2
+#print axioms MathGKM.Markov.source_third_ge_fourE2
+#print axioms MathGKM.Markov.root_iff_interiorE2

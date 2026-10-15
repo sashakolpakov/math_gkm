@@ -1,0 +1,21 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovSmallSourceFD\ncollected MarkovSmallCycles2FD\ncollected MarkovSmallCycles3FD\nreplay union of 3 modules over 7 inherited imports\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSmallSourceFD": "75b2a39627accae24d230f050e6be278055c87c429d8174500ea82309f7bf703",
+    "MarkovSmallCycles2FD": "f81825dff3befbc6a9efcb8267db763a9540913eaf339e9ad5bbbae9c06cd23c",
+    "MarkovSmallCycles3FD": "ae92df4ece7c8e62f09f7adeda5f3e9a6bccf003ed4841fafc213aed8ebc4276"
+  },
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayBatch07F1.lean",
+    "MarkovSmallSourceFD",
+    "MarkovSmallCycles2FD",
+    "MarkovSmallCycles3FD"
+  ],
+  "seconds": 46.24397633300396,
+  "driver_sha256": "502fedb68f64aad8487592b1844bf0a123d3c17d5826add10750a7b1c96c5cdc",
+  "limits": "Inherited import boundary reused. Union replay excludes these new modules from imports; no fresh whole-source rebuild."
+}
