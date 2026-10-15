@@ -1,0 +1,35 @@
+{
+  "failed_build_or_replay_receipts": [
+    {
+      "receipt": "evidence/markov-8833a0fb/run-MarkovThreeBridge8833-build-1792057718946096000.json",
+      "returncode": 1,
+      "timeout": false
+    },
+    {
+      "receipt": "evidence/markov-8833a0fb/run-MarkovTwoCoefficients8833-build-1792057494166782000.json",
+      "returncode": 1,
+      "timeout": false
+    },
+    {
+      "receipt": "evidence/markov-8833a0fb/run-MarkovTwoSource8833-build-1792057608204545000.json",
+      "returncode": 1,
+      "timeout": false
+    },
+    {
+      "receipt": "evidence/markov-8833a0fb/run-MarkovTwoTail8833-build-1792057310924340000.json",
+      "returncode": 1,
+      "timeout": false
+    }
+  ],
+  "capabilities": "capabilities.json",
+  "notes": [
+    "Two initial shell heredocs could not create implicit temporary files; scripts and apply_patch used subsequently.",
+    "Sage and SymPy unavailable; GAP discoverable but not needed.",
+    "Cast normalization, coefficient simplification, unknown simplification lemma, and overbroad reverse rewrites caused rejected builds. All snapshots retained.",
+    "One checkpoint documentation patch failed its context check without changing files; corrected afterward.",
+    "Generator scripts preserve development recipes; authoritative artifacts are final Lean sources and hash-bound receipts. Do not blindly rerun generators.",
+    "No old side effect replayed; no controller/control record edited."
+  ],
+  "unvalidated": [],
+  "limits": "Inherited compiled imports reused. No fresh whole-source rebuild or independent hash-bound English/source completion audit. Local validation is not controller admission."
+}

@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTwoSource8833.lean:47:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  (correctedThirdRun8BBB n (frame rest).mid.b (frame rest).mid.a).coeff (j + 2)\nin the target expression\n  6 * coeff (frame (List.replicate n true ++ false :: rest)).mid.p (i + 2) j *\n      (correctedThirdRun8BBB n (frame rest).mid.b (frame rest).mid.a).coeff (j + (frame rest).mid.b) \u2264\n    (correctedThirdRun8BBB n (frame rest).mid.b (frame rest).mid.a).coeff (j + (frame rest).mid.a) ^ (frame rest).mid.b\n\ncase neg\nn : \u2115\nrest : List Bool\ni j : \u2115\nhn : 4 \u2264 n\nhc : (frame rest).mid.b = 2\nhs : i + j + 2 = (frame (List.replicate n true ++ false :: rest)).mid.a + 3\nhj : \u00acj \u2264 2 * n\nha : (frame (List.replicate n true ++ false :: rest)).mid.a = (frame rest).mid.b * n + (frame rest).mid.a\nhb : (frame (List.replicate n true ++ false :: rest)).mid.b = (frame rest).mid.b * (n + 1) + (frame rest).mid.a\nhr : 0 < (frame rest).mid.a\nhrc : (frame rest).mid.a < (frame rest).mid.b\nright\u271d : (frame rest).mid.a.Coprime (frame rest).mid.b\nhr' : (frame rest).mid.a = 1\nhs' : i + j + 2 = 2 * n + 1 + 3\nhh :\n  6 * coeff (frame (List.replicate n true ++ false :: rest)).mid.p (i + 2) j *\n      (correctedThirdRun8BBB n (frame rest).mid.b (frame rest).mid.a).coeff (j + (frame rest).mid.b) \u2264\n    (correctedThirdRun8BBB n (frame rest).mid.b (frame rest).mid.a).coeff (j + (frame rest).mid.a) ^ (frame rest).mid.b\n\u22a2 coeff (frame (List.replicate n true ++ false :: rest)).mid.p i (j + 2) *\n      coeff (frame (List.replicate n true ++ false :: rest)).mid.p (i + 2) j \u2264\n    coeff (frame (List.replicate n true ++ false :: rest)).mid.p (i + 1) (j + 1) ^ 2\n",
+  "stderr": "",
+  "source": "research/MarkovTwoSource8833.lean",
+  "sha256": "bcb3742edd74069eb40cde1abd7c4e053384b96ad7a5dc5267181b63090c2db1",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-8833a0fb/MarkovTwoSource8833.olean",
+    "/Users/sasha/math_gkm/research/MarkovTwoSource8833.lean"
+  ],
+  "seconds": 29.02527166600339,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}
