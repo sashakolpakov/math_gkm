@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovFourthPolygonM96.lean:33:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  (frame (List.replicate n true ++ false :: rest)).mid.b\nin the target expression\n  i + j + 2 = (frame rest).mid.b * n + (frame rest).mid.a + 4\n\nn : \u2115\nrest : List Bool\ni j : \u2115\nhs : i + j + 2 = (frame rest).mid.b * n + (frame rest).mid.a + 4\nhp :\n  InPolygon ((frame rest).mid.b * n + (frame rest).mid.a) (frame (List.replicate n true ++ false :: rest)).mid.b i\n    (j + 2)\nha : (frame (List.replicate n true ++ false :: rest)).mid.a = (frame rest).mid.b * n + (frame rest).mid.a\nhb : (frame (List.replicate n true ++ false :: rest)).mid.b = (frame rest).mid.b * (n + 1) + (frame rest).mid.a\n\u22a2 j \u2264 4 * n + 5\n",
+  "stderr": "",
+  "source": "research/MarkovFourthPolygonM96.lean",
+  "sha256": "b6210e06927cc729da86a39c4d6bdc6caad2c3b12ea19c57444ffa31051cb201",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-96dea62b/MarkovFourthPolygonM96.olean",
+    "/Users/sasha/math_gkm/research/MarkovFourthPolygonM96.lean"
+  ],
+  "seconds": 41.61552349998965,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

@@ -1,0 +1,247 @@
+import MarkovOnsetPartsM96
+namespace MathGKM.Markov
+noncomputable section
+set_option maxHeartbeats 16000000
+set_option maxRecDepth 16384
+
+def onsetG3_0_0M96 (N : ℤ) : ℤ := (onsetP4_0_0M96 N*onsetP4_0_0M96 N-onsetP3_0_0M96 N*onsetP5_0_0M96 N)
+
+theorem onsetG3_0_0M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_0_0M96 N := by
+ have he : onsetG3_0_0M96 N=(((1868178208484201241600 + (4457143952672407718400*N + 4865846124921155136000*N^2)) + (3212674947265731494400*N^3 + (1428117351852814963200*N^4 + 450049369238585625600*N^5))) + ((103038753318970291200*N^6 + (17258180430919680000*N^7 + 2097310336140902400*N^8)) + ((180207987476428800*N^9 + 10382555896473600*N^10) + (359754935500800*N^11 + 5662321459200*N^12)))) := by
+  unfold onsetG3_0_0M96 onsetP3_0_0M96 onsetP4_0_0M96 onsetP5_0_0M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_0_1M96 (N : ℤ) : ℤ := ((onsetP4_0_0M96 N*onsetP4_0_1M96 N-onsetP3_0_0M96 N*onsetP5_0_1M96 N) + (onsetP4_0_1M96 N*onsetP4_0_0M96 N-onsetP3_0_1M96 N*onsetP5_0_0M96 N))
+
+theorem onsetG3_0_1M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_0_1M96 N := by
+ have he : onsetG3_0_1M96 N=(((2923454481978201292800 + (7113313269740928418560*N + 7916439239486744682240*N^2)) + (5326182099081136500480*N^3 + (2411629722679274576640*N^4 + 773780967896622336000*N^5))) + ((180290125920465469440*N^6 + (30715984210587863040*N^7 + 3794802476706017280*N^8)) + ((331268910717104640*N^9 + 19376048287249920*N^10) + (680972920750080*N^11 + 10859204321280*N^12)))) := by
+  unfold onsetG3_0_1M96 onsetP3_0_0M96 onsetP3_0_1M96 onsetP4_0_0M96 onsetP4_0_1M96 onsetP5_0_0M96 onsetP5_0_1M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_0_2M96 (N : ℤ) : ℤ := ((onsetP4_0_0M96 N*onsetP4_0_2M96 N-onsetP3_0_0M96 N*onsetP5_0_2M96 N) + ((onsetP4_0_1M96 N*onsetP4_0_1M96 N-onsetP3_0_1M96 N*onsetP5_0_1M96 N) + (onsetP4_0_2M96 N*onsetP4_0_0M96 N-onsetP3_0_2M96 N*onsetP5_0_0M96 N)))
+
+theorem onsetG3_0_2M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_0_2M96 N := by
+ have he : onsetG3_0_2M96 N=(((1988465730315014764800 + (4940020562048402019840*N + 5610416580342751532544*N^2)) + (3850067417510005542144*N^3 + (1777175450013312471808*N^4 + 581008125658728015360*N^5))) + ((137863303306624996352*N^6 + (23905909169455928832*N^7 + 3004134419286518784*N^8)) + ((266554912582022400*N^9 + 15833548254965504*N^10) + (564551818113024*N^11 + 9121768004608*N^12)))) := by
+  unfold onsetG3_0_2M96 onsetP3_0_0M96 onsetP3_0_1M96 onsetP3_0_2M96 onsetP4_0_0M96 onsetP4_0_1M96 onsetP4_0_2M96 onsetP5_0_0M96 onsetP5_0_1M96 onsetP5_0_2M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_0_3M96 (N : ℤ) : ℤ := (((onsetP4_0_0M96 N*onsetP4_0_3M96 N-onsetP3_0_0M96 N*onsetP5_0_3M96 N) + (onsetP4_0_1M96 N*onsetP4_0_2M96 N-onsetP3_0_1M96 N*onsetP5_0_2M96 N)) + ((onsetP4_0_2M96 N*onsetP4_0_1M96 N-onsetP3_0_2M96 N*onsetP5_0_1M96 N) + (onsetP4_0_3M96 N*onsetP4_0_0M96 N-onsetP3_0_3M96 N*onsetP5_0_0M96 N)))
+
+theorem onsetG3_0_3M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_0_3M96 N := by
+ have he : onsetG3_0_3M96 N=(((766627208198124134400 + (1947232720760432394240*N + 2259577241356244802048*N^2)) + (1583330296975228854528*N^3 + (745826875423692692224*N^4 + 248672941052638233600*N^5))) + ((60139754099296600064*N^6 + (10621795804006754304*N^7 + 1358557655542305792*N^8)) + ((122590117194101760*N^9 + 7398404946265088*N^10) + (267697596192768*N^11 + 4382873334784*N^12)))) := by
+  unfold onsetG3_0_3M96 onsetP3_0_0M96 onsetP3_0_1M96 onsetP3_0_2M96 onsetP3_0_3M96 onsetP4_0_0M96 onsetP4_0_1M96 onsetP4_0_2M96 onsetP4_0_3M96 onsetP5_0_0M96 onsetP5_0_1M96 onsetP5_0_2M96 onsetP5_0_3M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_0_4M96 (N : ℤ) : ℤ := (((onsetP4_0_0M96 N*onsetP4_0_4M96 N-onsetP3_0_0M96 N*onsetP5_0_4M96 N) + (onsetP4_0_1M96 N*onsetP4_0_3M96 N-onsetP3_0_1M96 N*onsetP5_0_3M96 N)) + ((onsetP4_0_2M96 N*onsetP4_0_2M96 N-onsetP3_0_2M96 N*onsetP5_0_2M96 N) + ((onsetP4_0_3M96 N*onsetP4_0_1M96 N-onsetP3_0_3M96 N*onsetP5_0_1M96 N) + (onsetP4_0_4M96 N*onsetP4_0_0M96 N-onsetP3_0_4M96 N*onsetP5_0_0M96 N))))
+
+theorem onsetG3_0_4M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_0_4M96 N := by
+ have he : onsetG3_0_4M96 N=(((182930241646453593600 + (475792269553449354240*N + 564916969571290479360*N^2)) + (404722709407939679232*N^3 + (194775003190977429248*N^4 + 66300786446678703360*N^5))) + ((16358005064199930880*N^6 + (2945206965520786176*N^7 + 383696986039094784*N^8)) + ((35233422136953600*N^9 + 2161475785154560*N^10) + (79393393723392*N^11 + 1317282944768*N^12)))) := by
+  unfold onsetG3_0_4M96 onsetP3_0_0M96 onsetP3_0_1M96 onsetP3_0_2M96 onsetP3_0_3M96 onsetP3_0_4M96 onsetP4_0_0M96 onsetP4_0_1M96 onsetP4_0_2M96 onsetP4_0_3M96 onsetP4_0_4M96 onsetP5_0_0M96 onsetP5_0_1M96 onsetP5_0_2M96 onsetP5_0_3M96 onsetP5_0_4M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_0_5M96 (N : ℤ) : ℤ := (((onsetP4_0_1M96 N*onsetP4_0_4M96 N-onsetP3_0_1M96 N*onsetP5_0_4M96 N) + (onsetP4_0_2M96 N*onsetP4_0_3M96 N-onsetP3_0_2M96 N*onsetP5_0_3M96 N)) + ((onsetP4_0_3M96 N*onsetP4_0_2M96 N-onsetP3_0_3M96 N*onsetP5_0_2M96 N) + (onsetP4_0_4M96 N*onsetP4_0_1M96 N-onsetP3_0_4M96 N*onsetP5_0_1M96 N)))
+
+theorem onsetG3_0_5M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_0_5M96 N := by
+ have he : onsetG3_0_5M96 N=(((27621213552582451200 + (73690591656829190400*N + 89662774312208643840*N^2)) + (65770106529578664192*N^3 + (32379751290790849792*N^4 + 11265875793114485760*N^5))) + ((2838711388481346560*N^6 + (521529604853677056*N^7 + 69266412391658496*N^8)) + ((6477488200727040*N^9 + 404185418739200*N^10) + (15077241188352*N^11 + 253542080512*N^12)))) := by
+  unfold onsetG3_0_5M96 onsetP3_0_1M96 onsetP3_0_2M96 onsetP3_0_3M96 onsetP3_0_4M96 onsetP4_0_1M96 onsetP4_0_2M96 onsetP4_0_3M96 onsetP4_0_4M96 onsetP5_0_1M96 onsetP5_0_2M96 onsetP5_0_3M96 onsetP5_0_4M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_0_6M96 (N : ℤ) : ℤ := ((onsetP4_0_2M96 N*onsetP4_0_4M96 N-onsetP3_0_2M96 N*onsetP5_0_4M96 N) + ((onsetP4_0_3M96 N*onsetP4_0_3M96 N-onsetP3_0_3M96 N*onsetP5_0_3M96 N) + (onsetP4_0_4M96 N*onsetP4_0_2M96 N-onsetP3_0_4M96 N*onsetP5_0_2M96 N)))
+
+theorem onsetG3_0_6M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_0_6M96 N := by
+ have he : onsetG3_0_6M96 N=(((2574499400701804800 + (7057254360943503360*N + 8813503570107543552*N^2)) + (6628834373579706624*N^3 + (3342989918005267712*N^4 + 1190353344801546240*N^5))) + ((306678300852023296*N^6 + (57554921035809792*N^7 + 7800573271120896*N^8)) + ((743546343187200*N^9 + 47225294916352*N^10) + (1789952016384*N^11 + 30512072192*N^12)))) := by
+  unfold onsetG3_0_6M96 onsetP3_0_2M96 onsetP3_0_3M96 onsetP3_0_4M96 onsetP4_0_2M96 onsetP4_0_3M96 onsetP4_0_4M96 onsetP5_0_2M96 onsetP5_0_3M96 onsetP5_0_4M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_0_7M96 (N : ℤ) : ℤ := ((onsetP4_0_3M96 N*onsetP4_0_4M96 N-onsetP3_0_3M96 N*onsetP5_0_4M96 N) + (onsetP4_0_4M96 N*onsetP4_0_3M96 N-onsetP3_0_4M96 N*onsetP5_0_3M96 N))
+
+theorem onsetG3_0_7M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_0_7M96 N := by
+ have he : onsetG3_0_7M96 N=(((135453347985715200 + (382014208003599360*N + 490303178559516672*N^2)) + (378594393214136064*N^3 + (195822961167473920*N^4 + 71446653738270720*N^5))) + ((18843220488651776*N^6 + (3616542958113792*N^7 + 500736073205760*N^8)) + ((48698772971520*N^9 + 3150961866752*N^10) + (121422034944*N^11 + 2098539520*N^12)))) := by
+  unfold onsetG3_0_7M96 onsetP3_0_3M96 onsetP3_0_4M96 onsetP4_0_3M96 onsetP4_0_4M96 onsetP5_0_3M96 onsetP5_0_4M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_0_8M96 (N : ℤ) : ℤ := (onsetP4_0_4M96 N*onsetP4_0_4M96 N-onsetP3_0_4M96 N*onsetP5_0_4M96 N)
+
+theorem onsetG3_0_8M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_0_8M96 N := by
+ have he : onsetG3_0_8M96 N=(((3088648518681600 + (8963095304217600*N + 11827499645170944*N^2)) + (9382147176385536*N^3 + (4981298334912256*N^4 + 1864055616917760*N^5))) + ((503804382405632*N^6 + (98998361457408*N^7 + 14018682628608*N^8)) + ((1392567133440*N^9 + 91879284224*N^10) + (3602221056*N^11 + 63137536*N^12)))) := by
+  unfold onsetG3_0_8M96 onsetP3_0_4M96 onsetP4_0_4M96 onsetP5_0_4M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_1_0M96 (N : ℤ) : ℤ := ((onsetP4_0_0M96 N*onsetP4_1_0M96 N-onsetP3_0_0M96 N*onsetP5_1_0M96 N) + (onsetP4_1_0M96 N*onsetP4_0_0M96 N-onsetP3_1_0M96 N*onsetP5_0_0M96 N))
+
+theorem onsetG3_1_0M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_1_0M96 N := by
+ have he : onsetG3_1_0M96 N=(((3896317147420680998400 + (9234167386167559100160*N + 10012645829539655850240*N^2)) + (6565352502617967502080*N^3 + (2898112068828855325440*N^4 + 906858250081439846400*N^5))) + ((206150940537284413440*N^6 + (34282543458205808640*N^7 + 4136499323524270080*N^8)) + ((352896616952087040*N^9 + 20188569469662720*N^10) + (694667837767680*N^11 + 10859204321280*N^12)))) := by
+  unfold onsetG3_1_0M96 onsetP3_0_0M96 onsetP3_1_0M96 onsetP4_0_0M96 onsetP4_1_0M96 onsetP5_0_0M96 onsetP5_1_0M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_1_1M96 (N : ℤ) : ℤ := (((onsetP4_0_0M96 N*onsetP4_1_1M96 N-onsetP3_0_0M96 N*onsetP5_1_1M96 N) + (onsetP4_0_1M96 N*onsetP4_1_0M96 N-onsetP3_0_1M96 N*onsetP5_1_0M96 N)) + ((onsetP4_1_0M96 N*onsetP4_0_1M96 N-onsetP3_1_0M96 N*onsetP5_0_1M96 N) + (onsetP4_1_1M96 N*onsetP4_0_0M96 N-onsetP3_1_1M96 N*onsetP5_0_0M96 N)))
+
+theorem onsetG3_1_1M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_1_1M96 N := by
+ have he : onsetG3_1_1M96 N=(((5326095763999175558400 + (12881804956036013168640*N + 14247355164830505623808*N^2)) + (9524364621276973590528*N^3 + (4284217332812187577856*N^4 + 1365383573874333296640*N^5))) + ((315958010095439401984*N^6 + (53456230222363551744*N^7 + 6557925871656380928*N^8)) + ((568434993132357120*N^9 + 33012765381611008*N^10) + (1152060040470528*N^11 + 18243536009216*N^12)))) := by
+  unfold onsetG3_1_1M96 onsetP3_0_0M96 onsetP3_0_1M96 onsetP3_1_0M96 onsetP3_1_1M96 onsetP4_0_0M96 onsetP4_0_1M96 onsetP4_1_0M96 onsetP4_1_1M96 onsetP5_0_0M96 onsetP5_0_1M96 onsetP5_1_0M96 onsetP5_1_1M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_1_2M96 (N : ℤ) : ℤ := (((onsetP4_0_0M96 N*onsetP4_1_2M96 N-onsetP3_0_0M96 N*onsetP5_1_2M96 N) + ((onsetP4_0_1M96 N*onsetP4_1_1M96 N-onsetP3_0_1M96 N*onsetP5_1_1M96 N) + (onsetP4_0_2M96 N*onsetP4_1_0M96 N-onsetP3_0_2M96 N*onsetP5_1_0M96 N))) + ((onsetP4_1_0M96 N*onsetP4_0_2M96 N-onsetP3_1_0M96 N*onsetP5_0_2M96 N) + ((onsetP4_1_1M96 N*onsetP4_0_1M96 N-onsetP3_1_1M96 N*onsetP5_0_1M96 N) + (onsetP4_1_2M96 N*onsetP4_0_0M96 N-onsetP3_1_2M96 N*onsetP5_0_0M96 N))))
+
+theorem onsetG3_1_2M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_1_2M96 N := by
+ have he : onsetG3_1_2M96 N=(((3096794729166511968000 + (7653442622970076934400*N + 8644175939016845224704*N^2)) + (5897580602267435993856*N^3 + (2705827579603116095232*N^4 + 879051301238568245760*N^5))) + ((207229507100332265472*N^6 + (35694278904985279488*N^7 + 4454858360289206016*N^8)) + ((392523308447639040*N^9 + 23151483153921024*N^10) + (819601609107456*N^11 + 13148620004352*N^12)))) := by
+  unfold onsetG3_1_2M96 onsetP3_0_0M96 onsetP3_0_1M96 onsetP3_0_2M96 onsetP3_1_0M96 onsetP3_1_1M96 onsetP3_1_2M96 onsetP4_0_0M96 onsetP4_0_1M96 onsetP4_0_2M96 onsetP4_1_0M96 onsetP4_1_1M96 onsetP4_1_2M96 onsetP5_0_0M96 onsetP5_0_1M96 onsetP5_0_2M96 onsetP5_1_0M96 onsetP5_1_1M96 onsetP5_1_2M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_1_3M96 (N : ℤ) : ℤ := ((((onsetP4_0_0M96 N*onsetP4_1_3M96 N-onsetP3_0_0M96 N*onsetP5_1_3M96 N) + (onsetP4_0_1M96 N*onsetP4_1_2M96 N-onsetP3_0_1M96 N*onsetP5_1_2M96 N)) + ((onsetP4_0_2M96 N*onsetP4_1_1M96 N-onsetP3_0_2M96 N*onsetP5_1_1M96 N) + (onsetP4_0_3M96 N*onsetP4_1_0M96 N-onsetP3_0_3M96 N*onsetP5_1_0M96 N))) + (((onsetP4_1_0M96 N*onsetP4_0_3M96 N-onsetP3_1_0M96 N*onsetP5_0_3M96 N) + (onsetP4_1_1M96 N*onsetP4_0_2M96 N-onsetP3_1_1M96 N*onsetP5_0_2M96 N)) + ((onsetP4_1_2M96 N*onsetP4_0_1M96 N-onsetP3_1_2M96 N*onsetP5_0_1M96 N) + (onsetP4_1_3M96 N*onsetP4_0_0M96 N-onsetP3_1_3M96 N*onsetP5_0_0M96 N))))
+
+theorem onsetG3_1_3M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_1_3M96 N := by
+ have he : onsetG3_1_3M96 N=(((991118476746832492800 + (2506638850301310923520*N + 2895050940319933016832*N^2)) + (2018316306645074123520*N^3 + (945561780477752006912*N^4 + 313452643148499697920*N^5))) + ((75346885271861921536*N^6 + (13223348287344195840*N^7 + 1680164145457545216*N^8)) + ((150577843780277760*N^9 + 9023839761836032*N^10) + (324175304355840*N^11 + 5269131779072*N^12)))) := by
+  unfold onsetG3_1_3M96 onsetP3_0_0M96 onsetP3_0_1M96 onsetP3_0_2M96 onsetP3_0_3M96 onsetP3_1_0M96 onsetP3_1_1M96 onsetP3_1_2M96 onsetP3_1_3M96 onsetP4_0_0M96 onsetP4_0_1M96 onsetP4_0_2M96 onsetP4_0_3M96 onsetP4_1_0M96 onsetP4_1_1M96 onsetP4_1_2M96 onsetP4_1_3M96 onsetP5_0_0M96 onsetP5_0_1M96 onsetP5_0_2M96 onsetP5_0_3M96 onsetP5_1_0M96 onsetP5_1_1M96 onsetP5_1_2M96 onsetP5_1_3M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_1_4M96 (N : ℤ) : ℤ := ((((onsetP4_0_1M96 N*onsetP4_1_3M96 N-onsetP3_0_1M96 N*onsetP5_1_3M96 N) + (onsetP4_0_2M96 N*onsetP4_1_2M96 N-onsetP3_0_2M96 N*onsetP5_1_2M96 N)) + ((onsetP4_0_3M96 N*onsetP4_1_1M96 N-onsetP3_0_3M96 N*onsetP5_1_1M96 N) + (onsetP4_0_4M96 N*onsetP4_1_0M96 N-onsetP3_0_4M96 N*onsetP5_1_0M96 N))) + (((onsetP4_1_0M96 N*onsetP4_0_4M96 N-onsetP3_1_0M96 N*onsetP5_0_4M96 N) + (onsetP4_1_1M96 N*onsetP4_0_3M96 N-onsetP3_1_1M96 N*onsetP5_0_3M96 N)) + ((onsetP4_1_2M96 N*onsetP4_0_2M96 N-onsetP3_1_2M96 N*onsetP5_0_2M96 N) + (onsetP4_1_3M96 N*onsetP4_0_1M96 N-onsetP3_1_3M96 N*onsetP5_0_1M96 N))))
+
+theorem onsetG3_1_4M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_1_4M96 N := by
+ have he : onsetG3_1_4M96 N=(((188245430051166432000 + (488022100118431764480*N + 577253233430130636288*N^2)) + (411800939013666617856*N^3 + (197247985458549885440*N^4 + 66797800306009678080*N^5))) + ((16389445437063510784*N^6 + (2933438245291830528*N^7 + 379772115073075200*N^8)) + ((34643296863383040*N^9 + 2110632318473728*N^10) + (76971458543616*N^11 + 1267710402560*N^12)))) := by
+  unfold onsetG3_1_4M96 onsetP3_0_1M96 onsetP3_0_2M96 onsetP3_0_3M96 onsetP3_0_4M96 onsetP3_1_0M96 onsetP3_1_1M96 onsetP3_1_2M96 onsetP3_1_3M96 onsetP4_0_1M96 onsetP4_0_2M96 onsetP4_0_3M96 onsetP4_0_4M96 onsetP4_1_0M96 onsetP4_1_1M96 onsetP4_1_2M96 onsetP4_1_3M96 onsetP5_0_1M96 onsetP5_0_2M96 onsetP5_0_3M96 onsetP5_0_4M96 onsetP5_1_0M96 onsetP5_1_1M96 onsetP5_1_2M96 onsetP5_1_3M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_1_5M96 (N : ℤ) : ℤ := (((onsetP4_0_2M96 N*onsetP4_1_3M96 N-onsetP3_0_2M96 N*onsetP5_1_3M96 N) + ((onsetP4_0_3M96 N*onsetP4_1_2M96 N-onsetP3_0_3M96 N*onsetP5_1_2M96 N) + (onsetP4_0_4M96 N*onsetP4_1_1M96 N-onsetP3_0_4M96 N*onsetP5_1_1M96 N))) + ((onsetP4_1_1M96 N*onsetP4_0_4M96 N-onsetP3_1_1M96 N*onsetP5_0_4M96 N) + ((onsetP4_1_2M96 N*onsetP4_0_3M96 N-onsetP3_1_2M96 N*onsetP5_0_3M96 N) + (onsetP4_1_3M96 N*onsetP4_0_2M96 N-onsetP3_1_3M96 N*onsetP5_0_2M96 N))))
+
+theorem onsetG3_1_5M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_1_5M96 N := by
+ have he : onsetG3_1_5M96 N=(((21187333062368524800 + (56404042510786709760*N + 68439590695650069504*N^2)) + (50034085575093887232*N^3 + (24536494213765992192*N^4 + 8499206435353724160*N^5))) + ((2131048523813782272*N^6 + (389406389901209856*N^7 + 51416123559929856*N^8)) + ((4777964883847680*N^9 + 296136652890624*N^10) + (10968257728512*N^11 + 183072433152*N^12)))) := by
+  unfold onsetG3_1_5M96 onsetP3_0_2M96 onsetP3_0_3M96 onsetP3_0_4M96 onsetP3_1_1M96 onsetP3_1_2M96 onsetP3_1_3M96 onsetP4_0_2M96 onsetP4_0_3M96 onsetP4_0_4M96 onsetP4_1_1M96 onsetP4_1_2M96 onsetP4_1_3M96 onsetP5_0_2M96 onsetP5_0_3M96 onsetP5_0_4M96 onsetP5_1_1M96 onsetP5_1_2M96 onsetP5_1_3M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_1_6M96 (N : ℤ) : ℤ := (((onsetP4_0_3M96 N*onsetP4_1_3M96 N-onsetP3_0_3M96 N*onsetP5_1_3M96 N) + (onsetP4_0_4M96 N*onsetP4_1_2M96 N-onsetP3_0_4M96 N*onsetP5_1_2M96 N)) + ((onsetP4_1_2M96 N*onsetP4_0_4M96 N-onsetP3_1_2M96 N*onsetP5_0_4M96 N) + (onsetP4_1_3M96 N*onsetP4_0_3M96 N-onsetP3_1_3M96 N*onsetP5_0_3M96 N)))
+
+theorem onsetG3_1_6M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_1_6M96 N := by
+ have he : onsetG3_1_6M96 N=(((1307572774199193600 + (3580396208763816960*N + 4463425423752519168*N^2)) + (3348851220764614656*N^3 + (1683684331357342720*N^4 + 597321427563705600*N^5))) + ((153239339366591744*N^6 + (28620582236483328*N^7 + 3858224366250240*N^8)) + ((365587353008640*N^9 + 23069560844288*N^10) + (868268169216*N^11 + 14689776640*N^12)))) := by
+  unfold onsetG3_1_6M96 onsetP3_0_3M96 onsetP3_0_4M96 onsetP3_1_2M96 onsetP3_1_3M96 onsetP4_0_3M96 onsetP4_0_4M96 onsetP4_1_2M96 onsetP4_1_3M96 onsetP5_0_3M96 onsetP5_0_4M96 onsetP5_1_2M96 onsetP5_1_3M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_1_7M96 (N : ℤ) : ℤ := ((onsetP4_0_4M96 N*onsetP4_1_3M96 N-onsetP3_0_4M96 N*onsetP5_1_3M96 N) + (onsetP4_1_3M96 N*onsetP4_0_4M96 N-onsetP3_1_3M96 N*onsetP5_0_4M96 N))
+
+theorem onsetG3_1_7M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_1_7M96 N := by
+ have he : onsetG3_1_7M96 N=(((34172683066368000 + (96337416497172480*N + 123516607136219136*N^2)) + (95214459002299392*N^3 + (49134664962779648*N^4 + 17874449476047360*N^5))) + ((4697459336217088*N^6 + (897812190567936*N^7 + 123709867083264*N^8)) + ((11965413788160*N^9 + 769430910976*N^10) + (29446889472*N^11 + 505100288*N^12)))) := by
+  unfold onsetG3_1_7M96 onsetP3_0_4M96 onsetP3_1_3M96 onsetP4_0_4M96 onsetP4_1_3M96 onsetP5_0_4M96 onsetP5_1_3M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_2_0M96 (N : ℤ) : ℤ := ((onsetP4_0_0M96 N*onsetP4_2_0M96 N-onsetP3_0_0M96 N*onsetP5_2_0M96 N) + ((onsetP4_1_0M96 N*onsetP4_1_0M96 N-onsetP3_1_0M96 N*onsetP5_1_0M96 N) + (onsetP4_2_0M96 N*onsetP4_0_0M96 N-onsetP3_2_0M96 N*onsetP5_0_0M96 N)))
+
+theorem onsetG3_2_0M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_2_0M96 N := by
+ have he : onsetG3_2_0M96 N=(((3562006790720408486400 + (8384588971258736678400*N + 9028705454282227198464*N^2)) + (5878745464817483913984*N^3 + (2576664019785152136448*N^4 + 800521567363520110080*N^5))) + ((180673440889010354432*N^6 + (29829887626992026112*N^7 + 3573435673855993344*N^8)) + ((302685520173093120*N^9 + 17193789922959104*N^10) + (587508222357504*N^11 + 9121768004608*N^12)))) := by
+  unfold onsetG3_2_0M96 onsetP3_0_0M96 onsetP3_1_0M96 onsetP3_2_0M96 onsetP4_0_0M96 onsetP4_1_0M96 onsetP4_2_0M96 onsetP5_0_0M96 onsetP5_1_0M96 onsetP5_2_0M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_2_1M96 (N : ℤ) : ℤ := (((onsetP4_0_0M96 N*onsetP4_2_1M96 N-onsetP3_0_0M96 N*onsetP5_2_1M96 N) + ((onsetP4_0_1M96 N*onsetP4_2_0M96 N-onsetP3_0_1M96 N*onsetP5_2_0M96 N) + (onsetP4_1_0M96 N*onsetP4_1_1M96 N-onsetP3_1_0M96 N*onsetP5_1_1M96 N))) + ((onsetP4_1_1M96 N*onsetP4_1_0M96 N-onsetP3_1_1M96 N*onsetP5_1_0M96 N) + ((onsetP4_2_0M96 N*onsetP4_0_1M96 N-onsetP3_2_0M96 N*onsetP5_0_1M96 N) + (onsetP4_2_1M96 N*onsetP4_0_0M96 N-onsetP3_2_1M96 N*onsetP5_0_0M96 N))))
+
+theorem onsetG3_2_1M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_2_1M96 N := by
+ have he : onsetG3_2_1M96 N=(((4164396031192691347200 + (10010967836208999851520*N + 11002683960744864562944*N^2)) + (7307762524626085417728*N^3 + (3265376319492321898752*N^4 + 1033640109741426001920*N^5))) + ((237545545159480008192*N^6 + (39909759065396849664*N^7 + 4861631935964676096*N^8)) + ((418422627875266560*N^9 + 24128706478808064*N^10) + (836110429636608*N^11 + 13148620004352*N^12)))) := by
+  unfold onsetG3_2_1M96 onsetP3_0_0M96 onsetP3_0_1M96 onsetP3_1_0M96 onsetP3_1_1M96 onsetP3_2_0M96 onsetP3_2_1M96 onsetP4_0_0M96 onsetP4_0_1M96 onsetP4_1_0M96 onsetP4_1_1M96 onsetP4_2_0M96 onsetP4_2_1M96 onsetP5_0_0M96 onsetP5_0_1M96 onsetP5_1_0M96 onsetP5_1_1M96 onsetP5_2_0M96 onsetP5_2_1M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_2_2M96 (N : ℤ) : ℤ := ((((onsetP4_0_0M96 N*onsetP4_2_2M96 N-onsetP3_0_0M96 N*onsetP5_2_2M96 N) + (onsetP4_0_1M96 N*onsetP4_2_1M96 N-onsetP3_0_1M96 N*onsetP5_2_1M96 N)) + ((onsetP4_0_2M96 N*onsetP4_2_0M96 N-onsetP3_0_2M96 N*onsetP5_2_0M96 N) + (onsetP4_1_0M96 N*onsetP4_1_2M96 N-onsetP3_1_0M96 N*onsetP5_1_2M96 N))) + (((onsetP4_1_1M96 N*onsetP4_1_1M96 N-onsetP3_1_1M96 N*onsetP5_1_1M96 N) + (onsetP4_1_2M96 N*onsetP4_1_0M96 N-onsetP3_1_2M96 N*onsetP5_1_0M96 N)) + ((onsetP4_2_0M96 N*onsetP4_0_2M96 N-onsetP3_2_0M96 N*onsetP5_0_2M96 N) + ((onsetP4_2_1M96 N*onsetP4_0_1M96 N-onsetP3_2_1M96 N*onsetP5_0_1M96 N) + (onsetP4_2_2M96 N*onsetP4_0_0M96 N-onsetP3_2_2M96 N*onsetP5_0_0M96 N)))))
+
+theorem onsetG3_2_2M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_2_2M96 N := by
+ have he : onsetG3_2_2M96 N=(((2011099552455472012800 + (4944299038418462607360*N + 5553453837081320577792*N^2)) + (3766879998158662764288*N^3 + (1717769658730198633728*N^4 + 554544167150427229440*N^5))) + ((129879929166922185216*N^6 + (22221839017000998144*N^7 + 2754481875479518464*N^8)) + ((241014036949862400*N^9 + 14115235147732992*N^10) + (496165550727168*N^11 + 7903697668608*N^12)))) := by
+  unfold onsetG3_2_2M96 onsetP3_0_0M96 onsetP3_0_1M96 onsetP3_0_2M96 onsetP3_1_0M96 onsetP3_1_1M96 onsetP3_1_2M96 onsetP3_2_0M96 onsetP3_2_1M96 onsetP3_2_2M96 onsetP4_0_0M96 onsetP4_0_1M96 onsetP4_0_2M96 onsetP4_1_0M96 onsetP4_1_1M96 onsetP4_1_2M96 onsetP4_2_0M96 onsetP4_2_1M96 onsetP4_2_2M96 onsetP5_0_0M96 onsetP5_0_1M96 onsetP5_0_2M96 onsetP5_1_0M96 onsetP5_1_1M96 onsetP5_1_2M96 onsetP5_2_0M96 onsetP5_2_1M96 onsetP5_2_2M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_2_3M96 (N : ℤ) : ℤ := ((((onsetP4_0_1M96 N*onsetP4_2_2M96 N-onsetP3_0_1M96 N*onsetP5_2_2M96 N) + (onsetP4_0_2M96 N*onsetP4_2_1M96 N-onsetP3_0_2M96 N*onsetP5_2_1M96 N)) + ((onsetP4_0_3M96 N*onsetP4_2_0M96 N-onsetP3_0_3M96 N*onsetP5_2_0M96 N) + ((onsetP4_1_0M96 N*onsetP4_1_3M96 N-onsetP3_1_0M96 N*onsetP5_1_3M96 N) + (onsetP4_1_1M96 N*onsetP4_1_2M96 N-onsetP3_1_1M96 N*onsetP5_1_2M96 N)))) + (((onsetP4_1_2M96 N*onsetP4_1_1M96 N-onsetP3_1_2M96 N*onsetP5_1_1M96 N) + (onsetP4_1_3M96 N*onsetP4_1_0M96 N-onsetP3_1_3M96 N*onsetP5_1_0M96 N)) + ((onsetP4_2_0M96 N*onsetP4_0_3M96 N-onsetP3_2_0M96 N*onsetP5_0_3M96 N) + ((onsetP4_2_1M96 N*onsetP4_0_2M96 N-onsetP3_2_1M96 N*onsetP5_0_2M96 N) + (onsetP4_2_2M96 N*onsetP4_0_1M96 N-onsetP3_2_2M96 N*onsetP5_0_1M96 N)))))
+
+theorem onsetG3_2_3M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_2_3M96 N := by
+ have he : onsetG3_2_3M96 N=(((512581634892213062400 + (1290874246873824533760*N + 1483957544224026509568*N^2)) + (1029339809874930296064*N^3 + (479632118320364181760*N^4 + 158087129739920398080*N^5))) + ((37771612385574228224*N^6 + (6587155191431630592*N^7 + 831487994872120320*N^8)) + ((74014473942850560*N^9 + 4404701751876608*N^10) + (157113422290944*N^11 + 2535420805120*N^12)))) := by
+  unfold onsetG3_2_3M96 onsetP3_0_1M96 onsetP3_0_2M96 onsetP3_0_3M96 onsetP3_1_0M96 onsetP3_1_1M96 onsetP3_1_2M96 onsetP3_1_3M96 onsetP3_2_0M96 onsetP3_2_1M96 onsetP3_2_2M96 onsetP4_0_1M96 onsetP4_0_2M96 onsetP4_0_3M96 onsetP4_1_0M96 onsetP4_1_1M96 onsetP4_1_2M96 onsetP4_1_3M96 onsetP4_2_0M96 onsetP4_2_1M96 onsetP4_2_2M96 onsetP5_0_1M96 onsetP5_0_2M96 onsetP5_0_3M96 onsetP5_1_0M96 onsetP5_1_1M96 onsetP5_1_2M96 onsetP5_1_3M96 onsetP5_2_0M96 onsetP5_2_1M96 onsetP5_2_2M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_2_4M96 (N : ℤ) : ℤ := ((((onsetP4_0_2M96 N*onsetP4_2_2M96 N-onsetP3_0_2M96 N*onsetP5_2_2M96 N) + (onsetP4_0_3M96 N*onsetP4_2_1M96 N-onsetP3_0_3M96 N*onsetP5_2_1M96 N)) + ((onsetP4_0_4M96 N*onsetP4_2_0M96 N-onsetP3_0_4M96 N*onsetP5_2_0M96 N) + (onsetP4_1_1M96 N*onsetP4_1_3M96 N-onsetP3_1_1M96 N*onsetP5_1_3M96 N))) + (((onsetP4_1_2M96 N*onsetP4_1_2M96 N-onsetP3_1_2M96 N*onsetP5_1_2M96 N) + (onsetP4_1_3M96 N*onsetP4_1_1M96 N-onsetP3_1_3M96 N*onsetP5_1_1M96 N)) + ((onsetP4_2_0M96 N*onsetP4_0_4M96 N-onsetP3_2_0M96 N*onsetP5_0_4M96 N) + ((onsetP4_2_1M96 N*onsetP4_0_3M96 N-onsetP3_2_1M96 N*onsetP5_0_3M96 N) + (onsetP4_2_2M96 N*onsetP4_0_2M96 N-onsetP3_2_2M96 N*onsetP5_0_2M96 N)))))
+
+theorem onsetG3_2_4M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_2_4M96 N := by
+ have he : onsetG3_2_4M96 N=(((72597283008533337600 + (187614196341277386240*N + 221102680200486094080*N^2)) + (157072841090350967040*N^3 + (74887918708155060480*N^4 + 25232478774327659520*N^5))) + ((6157240098573822720*N^6 + (1095617950878850560*N^7 + 140965151617866240*N^8)) + ((12775292007824640*N^9 + 773030223033600*N^10) + (27992008396800*N^11 + 457681082880*N^12)))) := by
+  unfold onsetG3_2_4M96 onsetP3_0_2M96 onsetP3_0_3M96 onsetP3_0_4M96 onsetP3_1_1M96 onsetP3_1_2M96 onsetP3_1_3M96 onsetP3_2_0M96 onsetP3_2_1M96 onsetP3_2_2M96 onsetP4_0_2M96 onsetP4_0_3M96 onsetP4_0_4M96 onsetP4_1_1M96 onsetP4_1_2M96 onsetP4_1_3M96 onsetP4_2_0M96 onsetP4_2_1M96 onsetP4_2_2M96 onsetP5_0_2M96 onsetP5_0_3M96 onsetP5_0_4M96 onsetP5_1_1M96 onsetP5_1_2M96 onsetP5_1_3M96 onsetP5_2_0M96 onsetP5_2_1M96 onsetP5_2_2M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_2_5M96 (N : ℤ) : ℤ := (((onsetP4_0_3M96 N*onsetP4_2_2M96 N-onsetP3_0_3M96 N*onsetP5_2_2M96 N) + ((onsetP4_0_4M96 N*onsetP4_2_1M96 N-onsetP3_0_4M96 N*onsetP5_2_1M96 N) + (onsetP4_1_2M96 N*onsetP4_1_3M96 N-onsetP3_1_2M96 N*onsetP5_1_3M96 N))) + ((onsetP4_1_3M96 N*onsetP4_1_2M96 N-onsetP3_1_3M96 N*onsetP5_1_2M96 N) + ((onsetP4_2_1M96 N*onsetP4_0_4M96 N-onsetP3_2_1M96 N*onsetP5_0_4M96 N) + (onsetP4_2_2M96 N*onsetP4_0_3M96 N-onsetP3_2_2M96 N*onsetP5_0_3M96 N))))
+
+theorem onsetG3_2_5M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_2_5M96 N := by
+ have he : onsetG3_2_5M96 N=(((5410503086244480000 + (14374561898325484800*N + 17395778972610468864*N^2)) + (12676449250294083072*N^3 + (6192947761227171840*N^4 + 2135936745544815360*N^5))) + ((532981059047630592*N^6 + (96877352642547456*N^7 + 12718000092349440*N^8)) + ((1174544043402240*N^9 + 72317128095744*N^10) + (2659746281472*N^11 + 44069329920*N^12)))) := by
+  unfold onsetG3_2_5M96 onsetP3_0_3M96 onsetP3_0_4M96 onsetP3_1_2M96 onsetP3_1_3M96 onsetP3_2_1M96 onsetP3_2_2M96 onsetP4_0_3M96 onsetP4_0_4M96 onsetP4_1_2M96 onsetP4_1_3M96 onsetP4_2_1M96 onsetP4_2_2M96 onsetP5_0_3M96 onsetP5_0_4M96 onsetP5_1_2M96 onsetP5_1_3M96 onsetP5_2_1M96 onsetP5_2_2M96
+  ring
+ rw [he]
+ positivity
+
+def onsetG3_2_6M96 (N : ℤ) : ℤ := ((onsetP4_0_4M96 N*onsetP4_2_2M96 N-onsetP3_0_4M96 N*onsetP5_2_2M96 N) + ((onsetP4_1_3M96 N*onsetP4_1_3M96 N-onsetP3_1_3M96 N*onsetP5_1_3M96 N) + (onsetP4_2_2M96 N*onsetP4_0_4M96 N-onsetP3_2_2M96 N*onsetP5_0_4M96 N)))
+
+theorem onsetG3_2_6M96_nonneg (N : ℤ) (hN : 0≤N) :
+ 0≤onsetG3_2_6M96 N := by
+ have he : onsetG3_2_6M96 N=(((165755920903372800 + (453408430945075200*N + 564276771540840960*N^2)) + (422383164739259136*N^3 + (211734479925299968*N^4 + 74851863245187840*N^5))) + ((19124011116385280*N^6 + (3555133551260928*N^7 + 476748947399424*N^8)) + ((44913315740160*N^9 + 2816206991360*N^10) + (105266036736*N^11 + 1767851008*N^12)))) := by
+  unfold onsetG3_2_6M96 onsetP3_0_4M96 onsetP3_1_3M96 onsetP3_2_2M96 onsetP4_0_4M96 onsetP4_1_3M96 onsetP4_2_2M96 onsetP5_0_4M96 onsetP5_1_3M96 onsetP5_2_2M96
+  ring
+ rw [he]
+ positivity
+end
+end MathGKM.Markov
