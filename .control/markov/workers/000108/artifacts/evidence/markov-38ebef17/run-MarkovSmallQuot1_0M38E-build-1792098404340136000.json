@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSmallQuot1_0M38E.lean:51:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  chamberNumerator0FA 1 (X ^ 1) (\u2191(frame rest).mid.b) (\u2191(frame rest).mid.a) X\nin the target expression\n  (1 - X) ^ 8 * (24 * cutCoeffA27 X X 1 (central28 (List.replicate 1 true ++ false :: rest) ++ [true]) 4) =\n    chamberNumerator0FA (\u21911) (X ^ 1) (\u2191(frame rest).mid.b) (\u2191(frame rest).mid.a) X\n\nrest : List Bool\nhc : 5 \u2264 (frame rest).mid.b\nhl : 0 * (frame rest).mid.b < 1 * (frame rest).mid.a\nhu : 4 * (frame rest).mid.a < 1 * (frame rest).mid.b\ni j : \u2115\nhs : i + j = (frame (List.replicate 1 true ++ false :: rest)).mid.a + 4\nh :\n  (1 - X) ^ 8 * (24 * cutCoeffA27 X X 1 (central28 (List.replicate 1 true ++ false :: rest) ++ [true]) 4) =\n    chamberNumerator0FA (\u21911) (X ^ 1) (\u2191(frame rest).mid.b) (\u2191(frame rest).mid.a) X\nhid :\n  chamberNumerator0FA 1 (X ^ 1) (\u2191(frame rest).mid.b) (\u2191(frame rest).mid.a) X =\n    (1 - X) ^ 8 * smallPoly1_0M38E \u2191(frame rest).mid.b \u2191(frame rest).mid.a\n\u22a2 24 * coeff (frame (List.replicate 1 true ++ false :: rest)).mid.p i j =\n    smallValue1_0M38E (\u2191(frame rest).mid.b) (\u2191(frame rest).mid.a) j\n",
+  "stderr": "",
+  "source": "research/MarkovSmallQuot1_0M38E.lean",
+  "sha256": "4015ba25c975358f949e6d8711706b311c9d1de5dcf6765a54718d888c3986b4",
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-38ebef17/MarkovSmallQuot1_0M38E.olean",
+    "/Users/sasha/math_gkm/research/MarkovSmallQuot1_0M38E.lean"
+  ],
+  "seconds": 32.31658374998369,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild"
+}

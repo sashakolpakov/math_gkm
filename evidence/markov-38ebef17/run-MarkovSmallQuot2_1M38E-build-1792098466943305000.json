@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSmallQuot2_1M38E.lean:58:31: error: unsolved goals\nrest : List Bool\nhc : 5 \u2264 (frame rest).mid.b\nhl : 1 * (frame rest).mid.b < 4 * (frame rest).mid.a\nhu : 3 * (frame rest).mid.a < 1 * (frame rest).mid.b\ni j : \u2115\nhs : i + j = (frame (List.replicate 2 true ++ false :: rest)).mid.a + 4\nhid :\n  chamberNumerator1FA 2 (X ^ 2) (\u2191(frame rest).mid.b) (\u2191(frame rest).mid.a) X =\n    (1 - X) ^ 8 * smallPoly2_1M38E \u2191(frame rest).mid.b \u2191(frame rest).mid.a\nh :\n  (1 - X) ^ 8 * (24 * cutCoeffA27 X X 1 (central28 (List.replicate 2 true ++ false :: rest) ++ [true]) 4) =\n    (1 - X) ^ 8 * smallPoly2_1M38E \u2191(frame rest).mid.b \u2191(frame rest).mid.a\nhe : 1 - X = 0\nhe1 : Polynomial.coeff 1 1 - 1 = 0\n\u22a2 False\n",
+  "stderr": "",
+  "source": "research/MarkovSmallQuot2_1M38E.lean",
+  "sha256": "c0a7847a688de3dfc580216c163ae39b7c9ae675968350200ac1786ddb52f185",
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-38ebef17/MarkovSmallQuot2_1M38E.olean",
+    "/Users/sasha/math_gkm/research/MarkovSmallQuot2_1M38E.lean"
+  ],
+  "seconds": 91.53853462499683,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild"
+}

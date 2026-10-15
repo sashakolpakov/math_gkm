@@ -1,0 +1,19 @@
+{
+  "chunks": [
+    [
+      "MarkovSmallRun3M38E",
+      "MarkovFourthAllM38E",
+      "MarkovResidualAllM38E"
+    ]
+  ],
+  "dependencies": {
+    "MarkovFourthAllM38E": [
+      "MarkovSmallRun3M38E"
+    ],
+    "MarkovResidualAllM38E": [
+      "MarkovFourthAllM38E"
+    ],
+    "MarkovSmallRun3M38E": []
+  },
+  "meaning": "Each new module is kernel-replayed; earlier checked/imported module dependencies are explicit. Not a fresh inherited source rebuild."
+}

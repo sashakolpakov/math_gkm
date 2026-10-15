@@ -1,0 +1,61 @@
+import MarkovFullSourceChamber0M06
+/-! Machine-authored request 38ebef17. Exact short-run fourth slice; no root closure. -/
+namespace MathGKM.Markov
+noncomputable section
+open Polynomial
+set_option maxHeartbeats 16000000
+set_option maxRecDepth 65536
+set_option linter.unusedSimpArgs false
+
+def smallValue1_0M38E (c r : ℤ) (j : ℕ) : ℤ :=
+ match j with
+ | 0 => ((((16*c + (32*r + (-80)))*c + ((24*r + (-120))*r + 140))*c + (((8*r + (-60))*r + 140)*r + (-100)))*c + ((((1*r + (-10))*r + 35)*r + (-50))*r + 24))
+ | 1 => ((((96*c + (240*r + (-464)))*c + ((216*r + (-960))*r + 768))*c + (((84*r + (-612))*r + 1248)*r + (-496)))*c + ((((12*r + (-124))*r + 432)*r + (-536))*r + 96))
+ | 2 => ((((216*c + (776*r + (-876)))*c + ((894*r + (-3426))*r + 972))*c + (((420*r + (-3030))*r + 5470)*r + (-216)))*c + ((((70*r + (-768))*r + 2810)*r + (-3456))*r + 144))
+ | 3 => ((((216*c + (1332*r + (-384)))*c + ((2124*r + (-6276))*r + (-1200)))*c + (((1260*r + (-8520))*r + 11568)*r + 2232))*c + ((((252*r + (-2820))*r + 9792)*r + (-9192))*r + 96))
+ | 4 => ((((81*c + (1188*r + 522))*c + ((3030*r + (-5106))*r + (-3117)))*c + (((2436*r + (-14034))*r + 8790)*r + 3378))*c + ((((609*r + (-6582))*r + 19299)*r + (-7854))*r + 24))
+ | 5 => ((((432*r + 432)*c + ((2448*r + (-384))*r + (-1200)))*c + (((3024*r + (-12432))*r + (-2880))*r + 192))*c + ((((1008*r + (-9696))*r + 19632)*r + 2880)*r))
+ | 6 => ((((864*r + 1152)*r + 480)*c + (((2240*r + (-3936))*r + (-4544))*r + (-1248)))*c + ((((1120*r + (-8416))*r + 6464)*r + 4288)*r))
+ | 7 => ((((768*r + 768)*r + 480)*r + 96)*c + ((((768*r + (-3328))*r + (-1824))*r + (-992))*r))
+ | 8 => ((((256*r)*r + 128)*r)*r)
+ | _ => 0
+
+def smallPoly1_0M38E (c r : ℤ) : ℤ[X] :=
+ C (smallValue1_0M38E c r 0)*X^0 + C (smallValue1_0M38E c r 1)*X^1 + C (smallValue1_0M38E c r 2)*X^2 + C (smallValue1_0M38E c r 3)*X^3 + C (smallValue1_0M38E c r 4)*X^4 + C (smallValue1_0M38E c r 5)*X^5 + C (smallValue1_0M38E c r 6)*X^6 + C (smallValue1_0M38E c r 7)*X^7 + C (smallValue1_0M38E c r 8)*X^8
+
+theorem small_identity1_0M38E (c r : ℤ) :
+ chamberNumerator0FA (1:ℤ[X]) (X^1) (C c) (C r) X =
+ (1-X)^8*smallPoly1_0M38E c r := by
+ unfold chamberNumerator0FA fullH0FA fullH1FA runH0n0FA runH0n1FA runH0n2FA runH0n3FA runH0n4FA runH1n0FA runH1n1FA runH1n2FA runH1n3FA chamberH02FA chamberH03FA chamberH04FA smallPoly1_0M38E smallValue1_0M38E
+ simp only [map_add,map_mul,map_pow,map_neg,map_ofNat,map_one,map_zero]
+ ring
+
+theorem small_coeff1_0M38E (c r : ℤ) (j : ℕ) : (smallPoly1_0M38E c r).coeff j=smallValue1_0M38E c r j := by
+ simp only [smallPoly1_0M38E,Polynomial.coeff_add,Polynomial.coeff_C_mul_X_pow]
+ by_cases hj : j≤8
+ · interval_cases j <;> norm_num [smallValue1_0M38E]
+ · have h : ∀ k, k≤8 → j≠k := by omega
+   simp only [if_neg (h 0 (by omega)),if_neg (h 1 (by omega)),if_neg (h 2 (by omega)),if_neg (h 3 (by omega)),if_neg (h 4 (by omega)),if_neg (h 5 (by omega)),if_neg (h 6 (by omega)),if_neg (h 7 (by omega)),if_neg (h 8 (by omega)),zero_add]
+   unfold smallValue1_0M38E
+   split <;> omega
+
+theorem source_small_coeff1_0M38E (rest : List Bool)
+ (hc : 5≤(frame rest).mid.b) (hl : 0*(frame rest).mid.b<1*(frame rest).mid.a)
+ (hu : 4*(frame rest).mid.a<1*(frame rest).mid.b) (i j : ℕ)
+ (hs : i+j=(frame (List.replicate 1 true++false::rest)).mid.a+4) :
+ 24*coeff (frame (List.replicate 1 true++false::rest)).mid.p i j=
+ smallValue1_0M38E (frame rest).mid.b (frame rest).mid.a j := by
+ have h := source_fourth_chamber0_clearedM06 1 rest hc hl hu
+ have hid := small_identity1_0M38E ((frame rest).mid.b:ℤ) ((frame rest).mid.a:ℤ)
+ simp only [C_eq_natCast] at hid
+ rw [hid] at h
+ have hn : (1-(X:ℤ[X]))^8≠0 := by
+  apply pow_ne_zero
+  intro he
+  have he1 := congrArg (fun p : ℤ[X] => p.coeff 1) he
+  norm_num at he1
+ have he := mul_left_cancel₀ hn h
+ have hh := congrArg (fun p : ℤ[X] => p.coeff j) he
+ simpa only [Polynomial.coeff_ofNat_mul,source_cut_coeffA27 _ i j 4 hs,small_coeff1_0M38E] using hh
+end
+end MathGKM.Markov
