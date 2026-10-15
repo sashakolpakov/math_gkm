@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovExtractAllFDDA.lean:8:37: error: Application type mismatch: The argument\n  j\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  Set.IsPWO ?m.32\nof sort `Prop` in the application\n  Finset.antidiagonal j\n/Users/sasha/math_gkm/research/MarkovExtractAllFDDA.lean:9:9: error: Invalid projection: Type of\n  p\nis not known; cannot resolve projection `1`\n/Users/sasha/math_gkm/research/MarkovExtractAllFDDA.lean:9:15: error: Invalid projection: Type of\n  p\nis not known; cannot resolve projection `2`\n/Users/sasha/math_gkm/research/MarkovExtractAllFDDA.lean:9:39: error: unsolved goals\nP K : \u2124[X]\nh : (1 - X) ^ 6 * P = K\nj : \u2115\nhh : (1 - X) ^ 6 * P = K + X ^ (j + 1) * 0\n\u22a2 \u2211 x \u2208 Finset.HasAntidiagonal.antidiagonal j, K.coeff x.1 * \u2191((x.2 + 5).choose 5) =\n    \u2211 p \u2208 sorry, K.coeff sorry * \u2191((sorry + 5).choose 5)\n/Users/sasha/math_gkm/research/MarkovExtractAllFDDA.lean:15:14: error(lean.unknownIdentifier): Unknown constant `extract_allFDDA`\n",
+  "stderr": "",
+  "source": "research/MarkovExtractAllFDDA.lean",
+  "sha256": "208877df3aa39743853f0c7c0377d6717f1b47ef3e7f9c1cadf5b57007ed1e6a",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-fddabb33/MarkovExtractAllFDDA.olean",
+    "/Users/sasha/math_gkm/research/MarkovExtractAllFDDA.lean"
+  ],
+  "seconds": 16.587107917002868,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

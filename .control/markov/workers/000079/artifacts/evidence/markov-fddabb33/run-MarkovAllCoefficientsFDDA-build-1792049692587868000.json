@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovAllCoefficientsFDDA.lean:30:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  (correctedThirdRun8BBB n (frame rest).mid.b (frame rest).mid.a).coeff j\nin the target expression\n  6 * coeff (frame (List.replicate n true ++ false :: rest)).mid.p i j =\n    \u2211 p \u2208 Finset.HasAntidiagonal.antidiagonal j,\n      (correctedNumeratorFDDA n (frame rest).mid.b (frame rest).mid.a).coeff p.1 * \u2191((p.2 + 5).choose 5)\n\nn : \u2115\nrest : List Bool\ni j : \u2115\nhij : i + j = (frame (List.replicate n true ++ false :: rest)).mid.a + 3\n\u22a2 6 * coeff (frame (List.replicate n true ++ false :: rest)).mid.p i j =\n    \u2211 p \u2208 Finset.HasAntidiagonal.antidiagonal j,\n      (correctedNumeratorFDDA n (frame rest).mid.b (frame rest).mid.a).coeff p.1 * \u2191((p.2 + 5).choose 5)\n'MathGKM.Markov.corrected_denominatorFDDA' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MathGKM.Markov.source_third_all_coeffFDDA' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovAllCoefficientsFDDA.lean",
+  "sha256": "4635df7c86d80a444545975c345d9b70ab2a7e2551043896b68026f08afed527",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-fddabb33/MarkovAllCoefficientsFDDA.olean",
+    "/Users/sasha/math_gkm/research/MarkovAllCoefficientsFDDA.lean"
+  ],
+  "seconds": 17.4034557910054,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

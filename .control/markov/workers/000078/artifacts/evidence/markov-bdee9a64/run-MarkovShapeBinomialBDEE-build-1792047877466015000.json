@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovShapeBinomialBDEE.lean:81:1: error: linarith failed to find a contradiction\ncase h1\nn c r : \u2124\nj : \u2115\nhj : 4 \u2264 j\nh :\n  8 * thirdShapeBDEE n c r \u2191j =\n    lowNumerator0BDEE n c r * (120 * \u2191((j + 5).choose 5)) + lowNumerator1BDEE n c r * (120 * \u2191((j + 4).choose 5)) +\n                    lowNumerator2BDEE n c r * (120 * \u2191((j + 5 - 2).choose 5)) +\n                  lowNumerator3BDEE n c r * (120 * \u2191((j + 5 - 3).choose 5)) +\n                lowNumerator4BDEE n c r * (120 * \u2191((j + 5 - 4).choose 5)) +\n              lowNumerator5BDEE n c r * (120 * \u2191(j.choose 5)) +\n            lowNumerator6BDEE n c r * (120 * \u2191((j + 5 - 6).choose 5)) +\n          lowNumerator7BDEE n c r * (120 * \u2191((j + 5 - 7).choose 5)) +\n        lowNumerator8BDEE n c r * (120 * \u2191((j + 5 - 8).choose 5)) +\n      lowNumerator9BDEE n c r * (120 * \u2191((j + 5 - 9).choose 5))\nh0 : fallingFiveBDEE (\u2191j + 5) = 120 * \u2191((j + 5).choose 5)\nh1 : fallingFiveBDEE (\u2191j + 5 - 1) = 120 * \u2191((j + 4).choose 5)\nh2 : fallingFiveBDEE (\u2191j + 5 - 2) = 120 * \u2191((j + 5 - 2).choose 5)\nh3 : fallingFiveBDEE (\u2191j + 5 - 3) = 120 * \u2191((j + 5 - 3).choose 5)\nh4 : fallingFiveBDEE (\u2191j + 5 - 4) = 120 * \u2191((j + 5 - 4).choose 5)\nh5 : fallingFiveBDEE \u2191j = 120 * \u2191(j.choose 5)\nh6 : fallingFiveBDEE (\u2191j + 5 - 6) = 120 * \u2191((j + 5 - 6).choose 5)\nh7 : fallingFiveBDEE (\u2191j + 5 - 7) = 120 * \u2191((j + 5 - 7).choose 5)\nh8 : fallingFiveBDEE (\u2191j + 5 - 8) = 120 * \u2191((j + 5 - 8).choose 5)\nh9 : fallingFiveBDEE (\u2191j + 5 - 9) = 120 * \u2191((j + 5 - 9).choose 5)\na\u271d :\n  thirdShapeBDEE n c r \u2191j <\n    15 *\n      (lowNumerator0BDEE n c r * \u2191((j + 5 - 0).choose 5) + lowNumerator1BDEE n c r * \u2191((j + 5 - 1).choose 5) +\n                      lowNumerator2BDEE n c r * \u2191((j + 5 - 2).choose 5) +\n                    lowNumerator3BDEE n c r * \u2191((j + 5 - 3).choose 5) +\n                  lowNumerator4BDEE n c r * \u2191((j + 5 - 4).choose 5) +\n                lowNumerator5BDEE n c r * \u2191((j + 5 - 5).choose 5) +\n              lowNumerator6BDEE n c r * \u2191((j + 5 - 6).choose 5) +\n            lowNumerator7BDEE n c r * \u2191((j + 5 - 7).choose 5) +\n          lowNumerator8BDEE n c r * \u2191((j + 5 - 8).choose 5) +\n        lowNumerator9BDEE n c r * \u2191((j + 5 - 9).choose 5))\n\u22a2 False\nfailed\n'MathGKM.Markov.thirdShape_chooseBDEE' depends on axioms: [propext, sorryAx, Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovShapeBinomialBDEE.lean",
+  "sha256": "ae553c5d5e508394886112cf384623cf038e46254acc5e3b1b4ee5fbc0c9bf1f",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-bdee9a64/MarkovShapeBinomialBDEE.olean",
+    "/Users/sasha/math_gkm/research/MarkovShapeBinomialBDEE.lean"
+  ],
+  "seconds": 14.289065459015546,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

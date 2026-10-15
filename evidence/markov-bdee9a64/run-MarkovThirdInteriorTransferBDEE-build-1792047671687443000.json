@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovThirdInteriorTransferBDEE.lean:39:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  thirdShapeBDEE \u2191n \u2191(frame rest).mid.b \u2191(frame rest).mid.a \u2191(j + 1)\nin the target expression\n  15 * (6 * coeff (frame (List.replicate n true ++ false :: rest)).mid.p (i + 2) j) *\n      thirdShapeBDEE \u2191n \u2191(frame rest).mid.b \u2191(frame rest).mid.a \u2191(j + 2) \u2264\n    thirdShapeBDEE (\u2191n) (\u2191(frame rest).mid.b) (\u2191(frame rest).mid.a) (\u2191j + 1) ^ 2\n\nn : \u2115\nrest : List Bool\nhf : ThirdInteriorFormulaBDEE n (frame rest).mid.b (frame rest).mid.a\ni j : \u2115\nhj : 4 \u2264 j\nhn : j + 2 \u2264 n\nhs : i + j + 2 = (frame (List.replicate n true ++ false :: rest)).mid.a + 3\nhr : 0 < (frame rest).mid.a\nhrc : (frame rest).mid.a < (frame rest).mid.b\nright\u271d : (frame rest).mid.a.Coprime (frame rest).mid.b\nh :\n  15 * (6 * coeff (frame (List.replicate n true ++ false :: rest)).mid.p (i + 2) j) *\n      thirdShapeBDEE \u2191n \u2191(frame rest).mid.b \u2191(frame rest).mid.a \u2191(j + 2) \u2264\n    thirdShapeBDEE (\u2191n) (\u2191(frame rest).mid.b) (\u2191(frame rest).mid.a) (\u2191j + 1) ^ 2\nh0 :\n  thirdShapeBDEE \u2191n \u2191(frame rest).mid.b \u2191(frame rest).mid.a \u2191j =\n    15 * (6 * coeff (frame (List.replicate n true ++ false :: rest)).mid.p (i + 2) j)\nh1 :\n  thirdShapeBDEE \u2191n \u2191(frame rest).mid.b \u2191(frame rest).mid.a \u2191(j + 1) =\n    15 * (6 * coeff (frame (List.replicate n true ++ false :: rest)).mid.p (i + 1) (j + 1))\nh2 :\n  thirdShapeBDEE \u2191n \u2191(frame rest).mid.b \u2191(frame rest).mid.a \u2191(j + 2) =\n    15 * (6 * coeff (frame (List.replicate n true ++ false :: rest)).mid.p i (j + 2))\nhc : \u2200 k \u2264 n, k < (frame rest).mid.b * (n + 1) + (frame rest).mid.a\nhe0 : \u2191j + 1 - 1 = \u2191j\nhe2 : \u2191j + 1 + 1 = \u2191(j + 2)\n\u22a2 coeff (frame (List.replicate n true ++ false :: rest)).mid.p i (j + 2) *\n      coeff (frame (List.replicate n true ++ false :: rest)).mid.p (i + 2) j \u2264\n    coeff (frame (List.replicate n true ++ false :: rest)).mid.p (i + 1) (j + 1) ^ 2\n'MathGKM.Markov.source_third_interior_of_formulaBDEE' depends on axioms: [propext,\n sorryAx,\n Classical.choice,\n Quot.sound]\n",
+  "stderr": "",
+  "source": "research/MarkovThirdInteriorTransferBDEE.lean",
+  "sha256": "568e850adbf1b3c3a5ce87cd5a4ed60b1f0551880a83f7632ff39e11a3024fb3",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-bdee9a64/MarkovThirdInteriorTransferBDEE.olean",
+    "/Users/sasha/math_gkm/research/MarkovThirdInteriorTransferBDEE.lean"
+  ],
+  "seconds": 12.574794790998567,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}

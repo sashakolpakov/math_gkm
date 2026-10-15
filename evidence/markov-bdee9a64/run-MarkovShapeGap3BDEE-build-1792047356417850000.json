@@ -1,0 +1,16 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovShapeGap3BDEE.lean:8:1: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Graph ?m.14 ?m.15) 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Graph ?m.14 ?m.15\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovShapeGap3BDEE.lean:8:4: error: Function expected at\n  hapeGap3BDEE\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  t\n\nHint: The identifier `hapeGap3BDEE` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n/Users/sasha/math_gkm/research/MarkovShapeGap3BDEE.lean:14:14: error(lean.unknownIdentifier): Unknown constant `shape_gap_3_nonnegBDEE`\n",
+  "stderr": "",
+  "source": "research/MarkovShapeGap3BDEE.lean",
+  "sha256": "598b143c7b3f7d27780b2d85d1849ca447f93bc3ea23e3835b7713241bab6c2f",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-bdee9a64/MarkovShapeGap3BDEE.olean",
+    "/Users/sasha/math_gkm/research/MarkovShapeGap3BDEE.lean"
+  ],
+  "seconds": 32.0945705420163,
+  "imports_status": "Inherited compiled imports reused; no fresh whole-source rebuild",
+  "mode": "build"
+}
