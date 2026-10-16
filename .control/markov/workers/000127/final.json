@@ -1,0 +1,22 @@
+{
+  "actions": [
+    "Reconciled 93 latest artifacts and 1,353 interrupted-worker artifacts: evidence/markov-f52ba141/reconciliation.json.",
+    "Compiled and kernel-replayed 13 mathematical modules; audited 44 theorem closures: evidence/markov-f52ba141/validation.json.",
+    "Verified 112 artifact hashes, 5,610 unchanged prior inputs, and pinned root/contract hashes: evidence/markov-f52ba141/final-check.json and last-verification.json."
+  ],
+  "agenda": [
+    "Investigate direct raw-gap certificates for higher rows, allowing non-log-concave residual seeds.",
+    "Consider the tested terminal-A continuation documented in research/markov-f52ba141-next.md; its universal Lean bridge remains pending.",
+    "Retain every unresolved region in research/MarkovResidualMF8.lean and discharge all correspondence obligations before root closure."
+  ],
+  "completion": null,
+  "observations": [
+    "Proved raw second-horizontal-row log-concavity for every A–core–B word and every natural starting index, retaining zeros: raw_word_second_allMF52 in research/MarkovSecondWordMF52.lean. This enlarges the proved word family but removes no new source residual region.",
+    "Proved an infinite family whose unsmoothed cubic fails LC while its raw second row satisfies LC; formally excluded those words from the source family: research/MarkovSmoothingRescueMF52.lean.",
+    "Full-degree experiments tested 2,347 enlarged words and 1,290,238 comparisons per grouped-gap predicate without failure. Directed components can fail. These are experiments, not proofs: evidence/markov-f52ba141/full-aggregate-experiments.json and directed-experiments.json.",
+    "All audited closures use permitted axioms. Inherited compiled imports were reused; no whole-source rebuild or independent completion audit occurred: research/markov-f52ba141-correspondence.md.",
+    "Preserved six rejected builds and capability failures, including denied scratch access and unavailable SymPy. All foreground executions ended: research/markov-f52ba141-operational.md."
+  ],
+  "request_id": "f52ba1417d354fe7831df8391636160f",
+  "summary": "Proved an unbounded enlarged-family raw second-row theorem using binomial-smoothing compensation. Full pinned Conjecture63 remains unresolved."
+}

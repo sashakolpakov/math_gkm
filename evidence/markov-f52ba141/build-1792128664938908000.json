@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSecondWordMF52.lean:50:5: error: mod_cast has type\n  (Int.castRingHom \u211d) (((hword46 X (e :: w)).coeff 2).coeff i) *\n      (Int.castRingHom \u211d) (((hword46 X (e :: w)).coeff 2).coeff (i + 2)) \u2264\n    (Int.castRingHom \u211d) (((hword46 X (e :: w)).coeff 2).coeff (i + 1)) ^ 2\nbut is expected to have type\n  ((hword46 X (e :: w)).coeff 2).coeff i * ((hword46 X (e :: w)).coeff 2).coeff (i + 2) \u2264\n    ((hword46 X (e :: w)).coeff 2).coeff (i + 1) ^ 2\n/Users/sasha/math_gkm/research/MarkovSecondWordMF52.lean:59:3: error: mod_cast has type\n  (Int.castRingHom \u211d) (((hword46 X w).coeff 2).coeff i) * (Int.castRingHom \u211d) (((hword46 X w).coeff 2).coeff (i + 2)) \u2264\n    (Int.castRingHom \u211d) (((hword46 X w).coeff 2).coeff (i + 1)) ^ 2\nbut is expected to have type\n  ((hword46 X w).coeff 2).coeff i * ((hword46 X w).coeff 2).coeff (i + 2) \u2264 ((hword46 X w).coeff 2).coeff (i + 1) ^ 2\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSecondWordMF52": "442f50d14389ae2ddd4b18a09e63f46442e31629bd98e3aad1fe47f01656fc32"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-f52ba141/MarkovSecondWordMF52.olean",
+    "/Users/sasha/math_gkm/research/MarkovSecondWordMF52.lean"
+  ],
+  "seconds": 4.640881041996181,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

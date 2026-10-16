@@ -1,0 +1,483 @@
+{
+  "worker": 127,
+  "request": "f52ba1417d354fe7831df8391636160f",
+  "created_at_utc": "2026-10-16T05:54:36.253642+00:00",
+  "scope": {
+    "word_family": "All Boolean cores w, literal rawWord80(false::(w++[true])).b; horizontal j=2, every natural starting i including zeros.",
+    "source_adapter": "Every actual Boolean source path via inherited source_hword46 and swap_coeff46, without denominator, balance, gap or coefficient-formula premise.",
+    "smoothed_envelope": "second_row_allMF52 n m t i for all natural n,m,t,i, n>=3,t<=2m; no m<=n or n<=2m requirement.",
+    "inner_envelope": "real m>=1,0<=t<=2m, natural i,j with1<=i+j; gap center k=i+1,l=j+1.",
+    "charts": "(k,l) in {1,2,>=3}^2 except(1,1); m=z+1,z>=0.24endpoint/mixed certificates.",
+    "clearing": "L=n(n-1)(n-2)>0 and(i+2)(j+2)L^2>0; binomial identity multiplies by B1^2>=0, no binomial-factor division.",
+    "zero_cases": "m=0 forces t=0; i+2>n uses right zero; before monomial shift first coefficient zero; coreslength<=2 use7inherited cases.",
+    "rescue_factor": "n>=2, core B A^n;2rawrow=X*(X+1)^(n-2)*seed.",
+    "rescue_seed": "coeff0,1,2=[4,28,12n+32]; strict reversed adjacent inequality for alln>=14.",
+    "rescue_raw": "allnatural n,i, rawsecondrow inequality.",
+    "rescue_exclusion": "for every n>=2 and path, rescueWord != sourceWord28 path; counts would2/(n+3), first2prefixviolatesfloor4/(n+3).",
+    "new_unconditional_source_lc_region": false,
+    "new_root_equivalence": false,
+    "inherited_root_equivalence": "Conjecture63 iff InteriorCore63MF8",
+    "root_refuted": false,
+    "full_root_proved": false,
+    "terminal_A": "Only48symboliccharts and finite2140core checks; no universal Lean coefficient or LC theorem."
+  },
+  "new_modules": [
+    {
+      "module": "MarkovSecondGapDefsMF52",
+      "sha256": "d20d1f3bff0edaa3d16ece9dc2fe519d8eded26aa9730daa016799bee13f0f0c",
+      "imports": [
+        "Mathlib"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "secondHMF52"
+        },
+        {
+          "kind": "def",
+          "name": "secondGapMF52"
+        },
+        {
+          "kind": "def",
+          "name": "secondMixedMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_bernsteinMF52"
+        }
+      ],
+      "theorem_statements": [
+        "theorem second_bernsteinMF52 (k l m t : ℝ) :\n (2*m)^2*secondGapMF52 k l m t=\n (2*m-t)^2*secondGapMF52 k l m 0+\n t*(2*m-t)*secondMixedMF52 k l m+t^2*secondGapMF52 k l m (2*m)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovSecondGapLargeLargeMF52",
+      "sha256": "a634c18e05ee9447c1e00f19edda9d3e17fb6552dbfdb883b2a43b2e4107f130",
+      "imports": [
+        "MarkovSecondGapDefsMF52"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "second_large_large_zeroMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_large_large_endMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_large_large_mixedMF52"
+        }
+      ],
+      "theorem_statements": [
+        "theorem second_large_large_zeroMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondGapMF52 (x+3) (y+3) (z+1) 0",
+        "theorem second_large_large_endMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondGapMF52 (x+3) (y+3) (z+1) (2*(z+1))",
+        "theorem second_large_large_mixedMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondMixedMF52 (x+3) (y+3) (z+1)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovSecondGapLargeOneMF52",
+      "sha256": "ba5d579326b45a62e60c3d5da7def06ed10ff2c070250e339b1ae1b4163d7058",
+      "imports": [
+        "MarkovSecondGapDefsMF52"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "second_large_one_zeroMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_large_one_endMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_large_one_mixedMF52"
+        }
+      ],
+      "theorem_statements": [
+        "theorem second_large_one_zeroMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondGapMF52 (x+3) 1 (z+1) 0",
+        "theorem second_large_one_endMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondGapMF52 (x+3) 1 (z+1) (2*(z+1))",
+        "theorem second_large_one_mixedMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondMixedMF52 (x+3) 1 (z+1)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovSecondGapLargeTwoMF52",
+      "sha256": "00244eaed641782d2863d3168390988567034142ded4fc168bd1a8c4bd3c0251",
+      "imports": [
+        "MarkovSecondGapDefsMF52"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "second_large_two_zeroMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_large_two_endMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_large_two_mixedMF52"
+        }
+      ],
+      "theorem_statements": [
+        "theorem second_large_two_zeroMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondGapMF52 (x+3) 2 (z+1) 0",
+        "theorem second_large_two_endMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondGapMF52 (x+3) 2 (z+1) (2*(z+1))",
+        "theorem second_large_two_mixedMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondMixedMF52 (x+3) 2 (z+1)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovSecondGapMF52",
+      "sha256": "934e70d2e8a11a3d42baeda0665af98f7b3d5cfd941ff5f8bc6d1c2d98940479",
+      "imports": [
+        "MarkovSecondGapOneTwoMF52",
+        "MarkovSecondGapOneLargeMF52",
+        "MarkovSecondGapTwoOneMF52",
+        "MarkovSecondGapTwoTwoMF52",
+        "MarkovSecondGapTwoLargeMF52",
+        "MarkovSecondGapLargeOneMF52",
+        "MarkovSecondGapLargeTwoMF52",
+        "MarkovSecondGapLargeLargeMF52"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "second_endpointsMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_gap_nonnegMF52"
+        }
+      ],
+      "theorem_statements": [
+        "theorem second_endpointsMF52 (i j : ℕ) (m : ℝ) (hm : 1 ≤ m) (hs : 1 ≤ i+j) :\n 0 ≤ secondGapMF52 (i+1) (j+1) m 0 ∧\n 0 ≤ secondGapMF52 (i+1) (j+1) m (2*m) ∧\n 0 ≤ secondMixedMF52 (i+1) (j+1) m",
+        "theorem second_gap_nonnegMF52 (i j : ℕ) (m t : ℝ)\n (hm : 1 ≤ m) (ht : 0 ≤ t) (htm : t ≤ 2*m) (hs : 1 ≤ i+j) :\n 0 ≤ secondGapMF52 (i+1) (j+1) m t"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovSecondGapOneLargeMF52",
+      "sha256": "ffbcd93b80a57835e00fa957e5efa5efea04a9bd712cd0e8911b290a0fd42079",
+      "imports": [
+        "MarkovSecondGapDefsMF52"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "second_one_large_zeroMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_one_large_endMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_one_large_mixedMF52"
+        }
+      ],
+      "theorem_statements": [
+        "theorem second_one_large_zeroMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondGapMF52 1 (y+3) (z+1) 0",
+        "theorem second_one_large_endMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondGapMF52 1 (y+3) (z+1) (2*(z+1))",
+        "theorem second_one_large_mixedMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondMixedMF52 1 (y+3) (z+1)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovSecondGapOneTwoMF52",
+      "sha256": "32a12d98e922d9348945ed706df9e21e39db3a9c90a9e71957d99f16dbbc780e",
+      "imports": [
+        "MarkovSecondGapDefsMF52"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "second_one_two_zeroMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_one_two_endMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_one_two_mixedMF52"
+        }
+      ],
+      "theorem_statements": [
+        "theorem second_one_two_zeroMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondGapMF52 1 2 (z+1) 0",
+        "theorem second_one_two_endMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondGapMF52 1 2 (z+1) (2*(z+1))",
+        "theorem second_one_two_mixedMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondMixedMF52 1 2 (z+1)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovSecondGapTwoLargeMF52",
+      "sha256": "627444692f170256a70f8124d4b020251d358e1348abbfe8480226acee3cbc00",
+      "imports": [
+        "MarkovSecondGapDefsMF52"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "second_two_large_zeroMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_two_large_endMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_two_large_mixedMF52"
+        }
+      ],
+      "theorem_statements": [
+        "theorem second_two_large_zeroMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondGapMF52 2 (y+3) (z+1) 0",
+        "theorem second_two_large_endMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondGapMF52 2 (y+3) (z+1) (2*(z+1))",
+        "theorem second_two_large_mixedMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondMixedMF52 2 (y+3) (z+1)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovSecondGapTwoOneMF52",
+      "sha256": "f466836f291d3752e7b85939556210c9830323072360c6a647b1b461d1de1852",
+      "imports": [
+        "MarkovSecondGapDefsMF52"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "second_two_one_zeroMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_two_one_endMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_two_one_mixedMF52"
+        }
+      ],
+      "theorem_statements": [
+        "theorem second_two_one_zeroMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondGapMF52 2 1 (z+1) 0",
+        "theorem second_two_one_endMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondGapMF52 2 1 (z+1) (2*(z+1))",
+        "theorem second_two_one_mixedMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondMixedMF52 2 1 (z+1)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovSecondGapTwoTwoMF52",
+      "sha256": "6d172a9176de1daba6edb357cb17bd6532ed835162cab87847060429c4cdd9af",
+      "imports": [
+        "MarkovSecondGapDefsMF52"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "second_two_two_zeroMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_two_two_endMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_two_two_mixedMF52"
+        }
+      ],
+      "theorem_statements": [
+        "theorem second_two_two_zeroMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondGapMF52 2 2 (z+1) 0",
+        "theorem second_two_two_endMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondGapMF52 2 2 (z+1) (2*(z+1))",
+        "theorem second_two_two_mixedMF52 (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) : 0 ≤ secondMixedMF52 2 2 (z+1)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovSecondRowMF52",
+      "sha256": "9262bfa8a51904d19d6671eaec6c06e60ae836b955661f57e147d7cc85f39448",
+      "imports": [
+        "MarkovSecondGapMF52",
+        "MarkovSecondCoeff340"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "second_coeff_clearMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_binomial_productMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_row_innerMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_row_degreeMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_zero_crossMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_row_allMF52"
+        }
+      ],
+      "theorem_statements": [
+        "theorem second_coeff_clearMF52 (n k : ℕ) (m t : ℝ) (hn : 3 ≤ n) (hk : k ≤ n) :\n (n:ℝ)*(n-1)*(n-2)*(secondRow340 n m t).coeff k =\n (n.choose k:ℝ)*secondHMF52 k (n-k) m t",
+        "theorem second_binomial_productMF52 (i j : ℕ) :\n (i+2:ℝ)*(j+2)*((i+j+2).choose i:ℝ)*((i+j+2).choose (i+2):ℝ)=\n (i+1:ℝ)*(j+1)*((i+j+2).choose (i+1):ℝ)^2",
+        "theorem second_row_innerMF52 (i j : ℕ) (m t : ℝ) (hs : 1 ≤ i+j)\n (hm : 1 ≤ m) (ht : 0 ≤ t) (htm : t ≤ 2*m) :\n (secondRow340 (i+j+2) m t).coeff i*(secondRow340 (i+j+2) m t).coeff (i+2) ≤\n (secondRow340 (i+j+2) m t).coeff (i+1)^2",
+        "theorem second_row_degreeMF52 (n : ℕ) (m t : ℝ) (hn : 3 ≤ n) :\n (secondRow340 n m t).natDegree ≤ n",
+        "theorem second_zero_crossMF52 (n : ℕ) : CrossLC (CoeffSeq (secondRow340 n 0 0))",
+        "theorem second_row_allMF52 (n m t i : ℕ) (hn : 3 ≤ n) (ht : t ≤ 2*m) :\n (secondRow340 n m t).coeff i*(secondRow340 n m t).coeff (i+2) ≤\n (secondRow340 n m t).coeff (i+1)^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovSecondWordMF52",
+      "sha256": "aab71dc7e4c520f8eed5cea56aa3e7a58772885d1c53aa2e2497089fac7ce9cb",
+      "imports": [
+        "MarkovSecondRowMF52",
+        "MarkovSecondSmall8934"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "shifted_adjacentMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "hword_second_allMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "raw_word_second_allMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_second_via_wordMF52"
+        }
+      ],
+      "theorem_statements": [
+        "theorem shifted_adjacentMF52 (p q : ℝ[X]) (a : ℕ) (he : 2*p=X^a*q)\n (hq : ∀ i : ℕ, q.coeff i*q.coeff (i+2) ≤ q.coeff (i+1)^2) (i : ℕ) :\n p.coeff i*p.coeff (i+2) ≤ p.coeff (i+1)^2",
+        "theorem hword_second_allMF52 (w : List Bool) (i : ℕ) :\n ((hword46 (X:ℤ[X]) w).coeff 2).coeff i*\n ((hword46 (X:ℤ[X]) w).coeff 2).coeff (i+2) ≤\n ((hword46 (X:ℤ[X]) w).coeff 2).coeff (i+1)^2",
+        "theorem raw_word_second_allMF52 (w : List Bool) (i : ℕ) :\n let P := (rawWord80 (false::(w++[true]))).b\n coeff P i 2*coeff P (i+2) 2 ≤ coeff P (i+1) 2^2",
+        "theorem source_second_via_wordMF52 (path : List Bool) (i : ℕ) :\n coeff (frame path).mid.p i 2*coeff (frame path).mid.p (i+2) 2 ≤\n coeff (frame path).mid.p (i+1) 2^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovSmoothingRescueMF52",
+      "sha256": "ccdc3c9fb5459367b0b26abf05e47749da71fd6684e2e6b6521a0cb92d2ace40",
+      "imports": [
+        "MarkovSecondWordMF52",
+        "MarkovMechanical3eda"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "rescueCoreMF52"
+        },
+        {
+          "kind": "def",
+          "name": "rescueWordMF52"
+        },
+        {
+          "kind": "def",
+          "name": "rescueSeedMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "false_run_statsMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "rescue_statsMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "rescue_factorMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "rescue_seed_coeffMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "rescue_seed_failureMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "rescue_word_rawMF52"
+        },
+        {
+          "kind": "theorem",
+          "name": "rescue_not_sourceMF52"
+        }
+      ],
+      "theorem_statements": [
+        "theorem false_run_statsMF52 (n : ℕ) :\n adj8934 false (List.replicate n false)=0 ∧\n last8934 false (List.replicate n false)=false",
+        "theorem rescue_statsMF52 (n : ℕ) (hn : 1 ≤ n) :\n stat8934 true (List.replicate n false)=1",
+        "theorem rescue_factorMF52 (n : ℕ) (hn : 2 ≤ n) :\n 2*(hword46 (X:ℤ[X]) (rescueCoreMF52 n)).coeff 2=\n X*(X+1)^(n-2)*rescueSeedMF52 n",
+        "theorem rescue_seed_coeffMF52 (n : ℕ) :\n (rescueSeedMF52 n).coeff 0=4 ∧ (rescueSeedMF52 n).coeff 1=28 ∧\n (rescueSeedMF52 n).coeff 2=12*(n:ℤ)+32",
+        "theorem rescue_seed_failureMF52 (n : ℕ) (hn : 14 ≤ n) :\n (rescueSeedMF52 n).coeff 1^2 < (rescueSeedMF52 n).coeff 0*(rescueSeedMF52 n).coeff 2",
+        "theorem rescue_word_rawMF52 (n i : ℕ) :\n coeff (rawWord80 (rescueWordMF52 n)).b i 2*\n coeff (rawWord80 (rescueWordMF52 n)).b (i+2) 2 ≤\n coeff (rawWord80 (rescueWordMF52 n)).b (i+1) 2^2",
+        "theorem rescue_not_sourceMF52 (n : ℕ) (hn : 2 ≤ n) (path : List Bool) :\n sourceWord28 path ≠ rescueWordMF52 n"
+      ],
+      "raw_forbidden_flags": []
+    }
+  ],
+  "new_counts": {
+    "def": 6,
+    "theorem": 44
+  },
+  "per_module_counts": {
+    "MarkovSecondGapDefsMF52": {
+      "def": 3,
+      "theorem": 1
+    },
+    "MarkovSecondGapLargeLargeMF52": {
+      "theorem": 3
+    },
+    "MarkovSecondGapLargeOneMF52": {
+      "theorem": 3
+    },
+    "MarkovSecondGapLargeTwoMF52": {
+      "theorem": 3
+    },
+    "MarkovSecondGapMF52": {
+      "theorem": 2
+    },
+    "MarkovSecondGapOneLargeMF52": {
+      "theorem": 3
+    },
+    "MarkovSecondGapOneTwoMF52": {
+      "theorem": 3
+    },
+    "MarkovSecondGapTwoLargeMF52": {
+      "theorem": 3
+    },
+    "MarkovSecondGapTwoOneMF52": {
+      "theorem": 3
+    },
+    "MarkovSecondGapTwoTwoMF52": {
+      "theorem": 3
+    },
+    "MarkovSecondRowMF52": {
+      "theorem": 6
+    },
+    "MarkovSecondWordMF52": {
+      "theorem": 4
+    },
+    "MarkovSmoothingRescueMF52": {
+      "def": 3,
+      "theorem": 7
+    }
+  }
+}

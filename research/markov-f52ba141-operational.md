@@ -1,0 +1,17 @@
+# Operational record
+
+Machine-authored request f52ba1417d354fe7831df8391636160f. This was explicitly authorized experimental research, not a certified controller switch.
+
+Read MISSION.md, docs/DESIGN.md, the actual request, pinned root/contract, inheritance index, latest reports and independent target/residual/core audits. Verified 93 immediate-predecessor artifacts and 1,353 surviving artifacts from interrupted worker 121. Parsed both complete raw event logs. The interrupted worker had already finalized substantial artifacts before its timeout; their effects were retained and checked, not replayed. All six inherited-index hashes matched. Reconciliation is recorded in evidence/markov-f52ba141/reconciliation.json.
+
+The active developer policy denies .scratch. It was not accessed; all new scripts and durable intermediate files use unique research/ and evidence/ paths. A zsh heredoc failed because its temporary-file location is denied. SymPy import failed under /opt/homebrew/bin/python3; the existing exact rational sparse-polynomial implementation was used without package changes. Hosted source retrieval worked. No shell networking, Git access, outside project source, controller execution, background processes, contact or publication occurred. No protected file, independent evidence, permissions or controller record was edited.
+
+The first certificate generator failed with an undefined output-path variable after writing drafts; those partial effects were inspected and corrected in this run's files. A following validator invocation failed because the generator had not yet written it. Mathematical failed builds are retained as immutable source snapshots and JSON receipts. Errors concerned Unicode-token spacing, binomial-index simplification, real/integer cast simplification and polynomial-coefficient simplification. Corrected sources compiled and were the only versions replayed/audited. No rejected elaboration is mathematical evidence.
+
+All Python executions used /opt/homebrew/bin/python3. Compilation and replay used pinned Lean 4.32.2 with GIT_CONFIG_NOSYSTEM=1, GIT_CONFIG_GLOBAL=/dev/null and PATH=/opt/homebrew/bin:/Users/sasha/.elan/bin:/usr/bin:/bin. Pinned compiled imports were reused. No package update, whole-source rebuild or independent completion audit occurred.
+
+The first finalization attempt rejected the contract checksum because this run's script used literal Unicode while the pinned canonical serialization uses ASCII escapes. The protected contract bytes still matched the initial snapshot. The new script was corrected to use the pinned serialization, without altering the contract or weakening the expected hash.
+
+Thirteen new mathematical modules passed compilation, isolated kernel replay and an audit of 44 theorem closures. The replay checker rejects explicitly selected mathematical names already present in the imported environment, as well as unsafe/partial declarations. All permitted closures are recorded with source hashes. The operational checker is separate from mathematical imports. Validation and preservation results are recorded in evidence/markov-f52ba141/validation.json and final-check.json.
+
+Finite experiments, symbolic candidate calculations and theorem evidence are separate files. The terminal-A continuation remains unformalized and is explicitly labeled as such. All launched foreground executions returned; no external action request remains pending. The full pinned root remains unresolved.

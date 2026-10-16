@@ -1,0 +1,106 @@
+{
+  "provenance": "Live research request f52ba1417d354fe7831df8391636160f",
+  "errors": [],
+  "inherited": {
+    "RESUME.json": true,
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": true,
+    "evidence/independent-markov/markov_residual_scope_audit.md": true,
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": true,
+    "evidence/markov/research-run/state.json": true,
+    "requests/markov-next.json": true
+  },
+  "10d15751": {
+    "checked": 93,
+    "mismatches": []
+  },
+  "ae257c53": {
+    "checked": 1353,
+    "mismatches": []
+  },
+  "000121": {
+    "raw_log_sha256": "cca8bfd2725a4af05d8d9996176344b35db3ed92b1fa25f830a384224af19918",
+    "event_count": 228,
+    "last_events": [
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_118",
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "/Users/sasha/math_gkm/research/markov-ae257c53-checkpoint.md",
+              "kind": "update"
+            },
+            {
+              "path": "/Users/sasha/math_gkm/research/markov-ae257c53-operational.md",
+              "kind": "update"
+            }
+          ],
+          "status": "completed"
+        }
+      },
+      {
+        "type": "item.started",
+        "item": {
+          "id": "item_119",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/finalize_ae257c53.py'",
+          "aggregated_output": "",
+          "exit_code": null,
+          "status": "in_progress"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_119",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/finalize_ae257c53.py'",
+          "aggregated_output": "{\"request_id\": \"ae257c53f22a4da2970651c23916380a\", \"compiled_modules\": 235, \"validated_modules\": 23, \"validated_theorem_closures\": 62, \"axiom_audited_modules\": 167, \"unchanged_prior_inputs\": 4104, \"failures\": [], \"nonzero_build_receipts\": 12, \"replay_timeouts\": 3, \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\", \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\", \"stop_file_present\": false, \"scope\": \"Local ordinary Lean builds; listed source modules replayed over compiled imports. Dependency-wide replay was not completed. No whole-source rebuild or independent completion audit.\", \"completion\": null}\nVerified artifacts 1353\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      }
+    ]
+  },
+  "000126": {
+    "raw_log_sha256": "ec822c942177053af7a73d17fa08611b3cbc625876611ed86b256f768e2c275e",
+    "event_count": 211,
+    "last_events": [
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_107",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/finalize_10d15751.py'",
+          "aggregated_output": "{\"request_id\": \"10d1575180b64743bae4589161aa0716\", \"new_compiled_modules\": 7, \"validated_modules\": 7, \"validated_theorem_closures\": 40, \"unchanged_prior_inputs\": 5415, \"unchanged_inherited_artifacts\": 97, \"failures\": [], \"nonzero_build_receipts\": 8, \"replay_failures\": 0, \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\", \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\", \"stop_file_present\": false, \"scope\": \"Local builds and isolated selected-declaration replay over compiled imports. No whole-source rebuild or independent completion audit.\", \"completion\": null}\nVerified artifacts 93\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_108",
+          "type": "agent_message",
+          "text": "{\n  \"actions\": [\n    \"Reconciled 97 latest artifacts and 1,355 interrupted-worker artifacts: evidence/markov-10d15751/reconciliation.json.\",\n    \"Compiled and kernel-replayed seven mathematical modules; audited 40 theorem closures: evidence/markov-10d15751/validation.json.\",\n    \"Executed exact recurrence and prefix experiments, retaining zeros: evidence/markov-10d15751/raw-prefix-scope-experiments.json.\",\n    \"Verified 93 artifact hashes, 5,415 unchanged prior inputs, and pinned root/contract hashes: evidence/markov-10d15751/final-check.json and last-verification.json.\"\n  ],\n  \"agenda\": [\n    \"Investigate aggregated gap inequalities using the integral raw pair recurrence; individual mixed terms can be negative.\",\n    \"Avoid the refuted prefix invariants. See research/markov-10d15751-next.md.\",\n    \"Retain every unresolved region in research/MarkovResidualMF8.lean and discharge all correspondence obligations before root closure.\"\n  ],\n  \"completion\": null,\n  \"observations\": [\n    \"Proved integral raw/residual conjugacy and an all-path source adapter, including both factorization ranges: research/MarkovWordConjugacyM10D.lean and research/MarkovSourceConjugacyM10D.lean. No new source LC region was proved.\",\n    \"Proved auxiliary F-prefix failure for every source 2/(2n+5), n\u22659, with triple [2,5,n+4]: research/MarkovSourcePrefixM10D.lean.\",\n    \"Proved a polygon-valid raw-prefix failure [10,14,20], and proved that prefix is not any source word. The actual 7/9 triple [4,12,20] satisfies LC. This refutes a prefix enlargement, not Conjecture63: research/MarkovRawPrefixM10D.lean and research/MarkovPrefixScopeM10D.lean.\",\n    \"The zero-inclusive prefix scan made 11,447,217 comparisons and found 257 diagonal failures, none at completed source words. These experiments are not proofs.\",\n    \"All audited closures use permitted axioms. Compiled imports were reused; no whole-source rebuild or independent completion audit occurred. Scope: research/markov-10d15751-correspondence.md.\",\n    \"Preserved eight unsuccessful build receipts and a corrected axiom-parser rejection. Scratch was policy-denied and Sage unavailable. All foreground executions ended: research/markov-10d15751-operational.md.\"\n  ],\n  \"request_id\": \"10d1575180b64743bae4589161aa0716\",\n  \"summary\": \"Proved an integral raw/residual bridge and refuted two proposed prefix invariants. Full pinned Conjecture63 remains unresolved.\"\n}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 7733533,
+          "cached_input_tokens": 7521280,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 50901,
+          "reasoning_output_tokens": 22110
+        }
+      }
+    ]
+  },
+  "reconciliation": "Latest worker completed. Interrupted worker 121 finalized many artifacts before timeout; surviving manifest checked. No inherited side effects replayed.",
+  "capabilities": {
+    "scratch": "Denied by higher-priority policy; not accessed. Unique research/evidence files used.",
+    "heredoc": "zsh heredoc failed: cannot create temporary file; use Python scripts or -c."
+  }
+}
