@@ -1,0 +1,1122 @@
+{
+  "worker": 133,
+  "request": "5703599b8b9a4638b67a688a6b77e4cb",
+  "created_at_utc": "2026-10-16T08:58:08.693867+00:00",
+  "historical_status": "timeout/null report, not upgraded by successful finalizer",
+  "scope": {
+    "final_conclusion": "source_strip_halfconeM570: every generated path satisfying2a<=b, every natural i, literal raw coeff P i2*coeff P i4<=coeff P i3^2, zeros retained; no denominator cap, additional run/shape assumption, or remaining formula/gap premise. source_strip_thirdconeM570 first proves3a<=b.",
+    "middle_source": "Reuses accepted/replayed132 MiddleSource+MiddleChoose, not excluded132 gap/assembly. Forb>=9,3a<=b<=4a seed=X^2[96(4a-b)+X Q4]; coeff extractionk+1+(a-1)=a+k. I_mid=(k+1)I+96t fall(l-3,5),t=(4a-b:Nat).",
+    "middle_gap": "Gmid=4(N-5)(N-6)(l-1)(k+1)H^2-3(N-3)(N-4)(l-2)J I_mid. L=l-7>=0,a=(k+L+9+t)/4; J,H,I_mid scaled16,64,256. Seven coefficient identities for4096Gmid have positive-literal Horner certificates. l3..6 use correctionzero andGmid=(k+1)oldGap; allnaturala,k,l,t with4a=N+2+t,l3,N7. No extra upper-t premise.",
+    "next_actual_seed": "For2a<=b<=3a actualq=0,t=3a-b,u=w=z=0,v=b-2a. c0=-480t+288at+96(b-2a);c1=(96a+96b-864)t. Seed=X^2[C(c0)+X(Q4+C(c1))]. Natural subtractions cast with source inequalities; constants real/integer distinguished.",
+    "next_cancellation": "Inherited hfourth_eval_clearedM511 requires onlyb>=5 andpositive x. Atb>=9 use infinite-positive evaluation equality, X^a=X*X^(a-1) sinceactuala>=1, cancelnonzeroX^3(1+X)^9. Gives24map(R4)=X^(a-1)(1+X)^(b-9)[C(c0)+X(Q4+C(c1))]. Noa>=3 orX^(a-3) restriction.",
+    "next_coefficient": "Extractcoefficientk+1+(a-1)=a+k,swap_coeff restoresliteralraw(a+k,4). 24c4=coeff((1+X)^(b-9)(Q4+C(c1)),k)+c0*choose(b-9,k+1). Multiplicativechoose identities retain natural zero cases; no division by coefficient/binomial.",
+    "next_gap": "Hnext=(k+1)H+24t fall(l-2,4)=stripHMCE8. Inext=(k+1)I+c0 fall(l-3,5)+c1(k+1)fall(l-3,4). Gnext=4(N-5)(N-6)(l-1)Hnext^2-3(N-3)(N-4)(l-2)(k+1)J Inext. Forl=L+7,a=(k+L+9+t)/3,scaledJ/Hnext/Inext9/27/81,seven729Gcoeffcertificates. l3..6directordinaryring_nf/positivity at(a,k)=(A+1,K+7-l); coversk0whenallowed,allnaturala,k,l,t with3a=N+2+t,l3,N7.",
+    "middle_scaling": "N=k+l=b-2,C=choose(N,k),k>=0,l>=3,N>=7:2fallN3*c2=ClJ,6fallN5*c3=Cl(l-1)H,24fallN7*(k+1)c4=Cl(l-1)(l-2)I_mid. Transfer144fallN5^2(N-5)(N-6)(k+1)*(c3^2-c2c4)=C^2*l^2*(l-1)Gmid.",
+    "next_scaling": "SameN/C:2fallN3*c2=ClJ,6fallN5*(k+1)c3=Cl(l-1)Hnext,24fallN7*(k+1)c4=Cl(l-1)(l-2)Inext. Transfer144fallN5^2(N-5)(N-6)(k+1)^2*(c3^2-c2c4)=C^2*l^2*(l-1)Gnext. Positive common scalar underk0,N7; nonnegative RHSunderl3. Finalexactintegercast; C neednotpositive inabstracttransfer.",
+    "assembly": "Firstb>=4auses132;middleextends3a<=bthenadjacent2a<=b. a1usesinheritedglobalLC. Actualcoprimalityrulesoutb=2afora>=2,so2a<b neededforlowerpolygonzero. b>=9: i<a givesc2zero, i+4>d givesc4zero,elsek=i-a,l=b-2-k inclk0,l3. Smallmiddle2/7pathFFT,i<=8;adjacent2/5FTi<=6,3/7FTTi<=9,3/8FTFi<=10; literalpolynomialcertificatespluspathuniqueness;outsideupperzero. 2/6excludedcoprime. Noadditionalfinitebound inuniversalsource theorem.",
+    "root": "Bothresidualdefinitions exactlyFullMCE8plusvertical(j=2 -> b<3a) orfinal(j=2 -> b<2a); forwardrestrict/reversefillsomittedj2cone. H j>=5,total+4;V i>=4,j>=2,total+4;Dtotal+8,a+5<=i+j+2,a+2<=b; allthreeoriginalpolygon guards/endpoints inheritedunchanged. Finalresidualunproved,fullrootopen.",
+    "historical": "30acceptedmath48theorems51defs; nofinalunbuilt/compiled-only math. Rejectedobsolete3snapshotsnotaccepted. NewM570certificationdoesnotupgrade132excludedMD11drafts. Controller133TIMEOUT/nullreportdespitepredeadlinevalidation/finalizer.",
+    "high_candidates": "b<2a highcone identities/gaps/positivechartrecords only finite/symbolic, no accepted Lean adapter or inequality. Negative coefficient charts arefailedrepresentation,notcounterexample. No fullconjectureproof/refutation."
+  },
+  "new_modules": [
+    {
+      "module": "MarkovMiddleAllM570",
+      "sha256": "df70b02db7eb253e3bbda7252c7014970eb3d2e45c49c759e5fa2167c32d0761",
+      "imports": [
+        "MarkovStripAllMD11",
+        "MarkovMiddleCoefficientsM570",
+        "MarkovMiddleTransferM570",
+        "MarkovSmallHorizontal2_7M9E1",
+        "MarkovUnique098"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "small_strip_2_7M570"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_middle_interiorM570"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_thirdconeM570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem small_strip_2_7M570 (i : ℕ) (hi : i ≤ 8) :\n coeff (frame [false,false,true]).mid.p i 2*coeff (frame [false,false,true]).mid.p i 4 ≤\n coeff (frame [false,false,true]).mid.p i 3^2",
+        "theorem source_middle_interiorM570 (path : List Bool) (k l : ℕ)\n (ha : 2 ≤ (frame path).mid.a) (hb : 9 ≤ (frame path).mid.b)\n (hs : 3*(frame path).mid.a ≤ (frame path).mid.b)\n (hu : (frame path).mid.b ≤ 4*(frame path).mid.a)\n (hbl : (frame path).mid.b=k+l+2) (hl : 3 ≤ l) :\n coeff (frame path).mid.p ((frame path).mid.a+k) 2*\n coeff (frame path).mid.p ((frame path).mid.a+k) 4 ≤\n coeff (frame path).mid.p ((frame path).mid.a+k) 3^2",
+        "theorem source_strip_thirdconeM570 (path : List Bool)\n (hs : 3*(frame path).mid.a ≤ (frame path).mid.b) (i : ℕ) :\n coeff (frame path).mid.p i 2*coeff (frame path).mid.p i 4 ≤ coeff (frame path).mid.p i 3^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovMiddleCert0M570",
+      "sha256": "17a3c07fd8821884b80ff0e950bcb4513d09646fba531004842ca79598b19f2a",
+      "imports": [
+        "MarkovMiddleDefsM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "gap_coefficient_0M570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem gap_coefficient_0M570 (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ g0M570 k l"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovMiddleCert1M570",
+      "sha256": "629df2cbe879348703ef25b9057a109e8fd746c309d3cfd50c1369d9a8460e0b",
+      "imports": [
+        "MarkovMiddleDefsM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "gap_coefficient_1M570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem gap_coefficient_1M570 (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ g1M570 k l"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovMiddleCert2M570",
+      "sha256": "255ec5ea2c03a0989a773dd796791becbb8b94277ae78a408d8e6bd888dc67ba",
+      "imports": [
+        "MarkovMiddleDefsM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "gap_coefficient_2M570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem gap_coefficient_2M570 (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ g2M570 k l"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovMiddleCert3M570",
+      "sha256": "ef9f5f70ea5f3bd725d61278b53f3af37aa4d0ec5fe6ecb2bf413c0b9c69dce4",
+      "imports": [
+        "MarkovMiddleDefsM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "gap_coefficient_3M570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem gap_coefficient_3M570 (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ g3M570 k l"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovMiddleCert4M570",
+      "sha256": "56e6e3b094fdb4740b5601cb04f89793114f9c6d8fd86254ea35b08d179e9073",
+      "imports": [
+        "MarkovMiddleDefsM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "gap_coefficient_4M570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem gap_coefficient_4M570 (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ g4M570 k l"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovMiddleCert5M570",
+      "sha256": "2e687fd2978305d6a09e58714a8f7085aac5e7849a583948094382404d2cb5fa",
+      "imports": [
+        "MarkovMiddleDefsM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "gap_coefficient_5M570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem gap_coefficient_5M570 (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ g5M570 k l"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovMiddleCert6M570",
+      "sha256": "d43ba78691d27467b6ea4ddc2f37e667af44f6c404fd38b1b06e852b240e88f0",
+      "imports": [
+        "MarkovMiddleDefsM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "gap_coefficient_6M570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem gap_coefficient_6M570 (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ g6M570 k l"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovMiddleCoefficientsM570",
+      "sha256": "e95e5d021925b952307571f9718c02737714455c493248c445802bf8086e3f47",
+      "imports": [
+        "MarkovStripMiddleChooseMD11",
+        "MarkovStripMiddleSourceMD11",
+        "MarkovStripCoefficientsMD11",
+        "MarkovMiddleDefsM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_middle_four_scaledM570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem source_middle_four_scaledM570 (path : List Bool) (k l : ℕ)\n (hb : 9 ≤ (frame path).mid.b) (hs : 3*(frame path).mid.a ≤ (frame path).mid.b)\n (hu : (frame path).mid.b ≤ 4*(frame path).mid.a)\n (hbl : (frame path).mid.b=k+l+2) (hl : 3 ≤ l) :\n 24*((k:ℝ)+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+l-5)*(k+l-6)*(k+1)*\n (coeff (frame path).mid.p ((frame path).mid.a+k) 4:ℝ)=\n ((k+l).choose k:ℝ)*l*(l-1)*(l-2)*\n stripMiddleIM570 (frame path).mid.a k l (4*(frame path).mid.a-(frame path).mid.b:ℕ)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovMiddleDefsM570",
+      "sha256": "bc80271cecef7925e26484b1be4ea9027bfb0755c2813073c2c7d7cd57ff86ad",
+      "imports": [
+        "MarkovStripGapMD11"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "stripMiddleIM570"
+        },
+        {
+          "kind": "def",
+          "name": "stripMiddleGapM570"
+        },
+        {
+          "kind": "def",
+          "name": "j0M570"
+        },
+        {
+          "kind": "def",
+          "name": "j1M570"
+        },
+        {
+          "kind": "def",
+          "name": "j2M570"
+        },
+        {
+          "kind": "def",
+          "name": "h0M570"
+        },
+        {
+          "kind": "def",
+          "name": "h1M570"
+        },
+        {
+          "kind": "def",
+          "name": "h2M570"
+        },
+        {
+          "kind": "def",
+          "name": "h3M570"
+        },
+        {
+          "kind": "def",
+          "name": "r0M570"
+        },
+        {
+          "kind": "def",
+          "name": "r1M570"
+        },
+        {
+          "kind": "def",
+          "name": "r2M570"
+        },
+        {
+          "kind": "def",
+          "name": "r3M570"
+        },
+        {
+          "kind": "def",
+          "name": "r4M570"
+        },
+        {
+          "kind": "def",
+          "name": "gapFM570"
+        },
+        {
+          "kind": "def",
+          "name": "gapEM570"
+        },
+        {
+          "kind": "def",
+          "name": "g0M570"
+        },
+        {
+          "kind": "def",
+          "name": "g1M570"
+        },
+        {
+          "kind": "def",
+          "name": "g2M570"
+        },
+        {
+          "kind": "def",
+          "name": "g3M570"
+        },
+        {
+          "kind": "def",
+          "name": "g4M570"
+        },
+        {
+          "kind": "def",
+          "name": "g5M570"
+        },
+        {
+          "kind": "def",
+          "name": "g6M570"
+        }
+      ],
+      "theorem_statements": [],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovMiddleExpandM570",
+      "sha256": "f1cafdf4110c81d6b9db95b1658b4b43d1f1367e6093c6f02a1be846753e2cdd",
+      "imports": [
+        "MarkovMiddleDefsM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "j_expandM570"
+        },
+        {
+          "kind": "theorem",
+          "name": "h_expandM570"
+        },
+        {
+          "kind": "theorem",
+          "name": "r_expandM570"
+        },
+        {
+          "kind": "theorem",
+          "name": "gap_expandM570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem j_expandM570 (k l t : ℝ) :\n 16*stripJMB9D ((k+l+9+t)/4) k (l+7)=j0M570 k l+j1M570 k l*t^1+j2M570 k l*t^2",
+        "theorem h_expandM570 (k l t : ℝ) :\n 64*stripHMB9D ((k+l+9+t)/4) k (l+7)=h0M570 k l+h1M570 k l*t^1+h2M570 k l*t^2+h3M570 k l*t^3",
+        "theorem r_expandM570 (k l t : ℝ) :\n 256*stripMiddleIM570 ((k+l+9+t)/4) k (l+7) t=r0M570 k l+r1M570 k l*t^1+r2M570 k l*t^2+r3M570 k l*t^3+r4M570 k l*t^4",
+        "theorem gap_expandM570 (k l t : ℝ) :\n 4096*stripMiddleGapM570 ((k+l+9+t)/4) k (l+7) t=\n g0M570 k l+g1M570 k l*t^1+g2M570 k l*t^2+g3M570 k l*t^3+g4M570 k l*t^4+g5M570 k l*t^5+g6M570 k l*t^6"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovMiddleGapM570",
+      "sha256": "c23a4ccae0801803c6b658a5bb880dab908a46ceee105ed62e3042bd7edf74a4",
+      "imports": [
+        "MarkovMiddleCert0M570",
+        "MarkovMiddleCert1M570",
+        "MarkovMiddleCert2M570",
+        "MarkovMiddleCert3M570",
+        "MarkovMiddleCert4M570",
+        "MarkovMiddleCert5M570",
+        "MarkovMiddleCert6M570",
+        "MarkovMiddleExpandM570",
+        "MarkovStripLCMD11"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "stripMiddle_largeM570"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_middle_smallM570"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_middle_gap_nonnegM570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem stripMiddle_largeM570 (k l t : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (ht : 0 ≤ t) :\n 0 ≤ stripMiddleGapM570 ((k+l+9+t)/4) k (l+7) t",
+        "theorem strip_middle_smallM570 (a k l t : ℝ)\n (hz : (l-3)*(l-4)*(l-5)*(l-6)*(l-7)=0) :\n stripMiddleGapM570 a k l t=(k+1)*stripGapMD11 a k l",
+        "theorem strip_middle_gap_nonnegM570 (a k l t : ℕ)\n (he : 4*a=k+l+2+t) (hl : 3 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ stripMiddleGapM570 a k l t"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovMiddleTransferM570",
+      "sha256": "2190e6a274b45cd74c8b5f04252990626162f22259821ef0f3bdea61affe1db0",
+      "imports": [
+        "MarkovMiddleGapM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "strip_middle_transferM570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem strip_middle_transferM570 (a k l t C c₂ c₃ c₄ : ℝ)\n (hk : 0 ≤ k) (hl : 3 ≤ l) (hN : 7 ≤ k+l)\n (h₂ : 2*(k+l)*(k+l-1)*(k+l-2)*c₂=C*l*stripJMB9D a k l)\n (h₃ : 6*(k+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*c₃=C*l*(l-1)*stripHMB9D a k l)\n (h₄ : 24*(k+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+l-5)*(k+l-6)*(k+1)*c₄=\n   C*l*(l-1)*(l-2)*stripMiddleIM570 a k l t)\n (hg : 0 ≤ stripMiddleGapM570 a k l t) : c₂*c₄ ≤ c₃^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovNextAllM570",
+      "sha256": "8bdb7d99beb9534e3a01bb0f36feba5f50022df59bedb3de65ceacadb3fc5cda",
+      "imports": [
+        "MarkovMiddleAllM570",
+        "MarkovNextCoefficientsM570",
+        "MarkovNextTransferM570",
+        "MarkovStripAllMCE8",
+        "MarkovSmallHorizontal2_5M9E1",
+        "MarkovSmallHorizontal3_7M9E1",
+        "MarkovSmallHorizontal3_8M9E1"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "next_small_2_5M570"
+        },
+        {
+          "kind": "theorem",
+          "name": "next_small_3_7M570"
+        },
+        {
+          "kind": "theorem",
+          "name": "next_small_3_8M570"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_next_interiorM570"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_halfconeM570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem next_small_2_5M570 (i : ℕ) (hi : i ≤ 6) :\n coeff (frame [false,true]).mid.p i 2*coeff (frame [false,true]).mid.p i 4 ≤\n coeff (frame [false,true]).mid.p i 3^2",
+        "theorem next_small_3_7M570 (i : ℕ) (hi : i ≤ 9) :\n coeff (frame [false,true,true]).mid.p i 2*coeff (frame [false,true,true]).mid.p i 4 ≤\n coeff (frame [false,true,true]).mid.p i 3^2",
+        "theorem next_small_3_8M570 (i : ℕ) (hi : i ≤ 10) :\n coeff (frame [false,true,false]).mid.p i 2*coeff (frame [false,true,false]).mid.p i 4 ≤\n coeff (frame [false,true,false]).mid.p i 3^2",
+        "theorem source_next_interiorM570 (path : List Bool) (k l : ℕ)\n (ha : 2 ≤ (frame path).mid.a) (hb : 9 ≤ (frame path).mid.b)\n (hs : 2*(frame path).mid.a ≤ (frame path).mid.b)\n (hu : (frame path).mid.b ≤ 3*(frame path).mid.a)\n (hbl : (frame path).mid.b=k+l+2) (hl : 3 ≤ l) :\n coeff (frame path).mid.p ((frame path).mid.a+k) 2*\n coeff (frame path).mid.p ((frame path).mid.a+k) 4 ≤\n coeff (frame path).mid.p ((frame path).mid.a+k) 3^2",
+        "theorem source_strip_halfconeM570 (path : List Bool)\n (hs : 2*(frame path).mid.a ≤ (frame path).mid.b) (i : ℕ) :\n coeff (frame path).mid.p i 2*coeff (frame path).mid.p i 4 ≤ coeff (frame path).mid.p i 3^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovNextCert0M570",
+      "sha256": "3ae6d2443993078ee1ae3a1e85840ba2e8f6355e64716b7a03d27c4a43c0a9e7",
+      "imports": [
+        "MarkovNextDefsM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "next_coefficient_0M570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem next_coefficient_0M570 (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ ng0M570 k l"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovNextCert1M570",
+      "sha256": "8e62169306c41ec63e2a1d065d8b5b27f0c62dd613e4fdaaeb6f70aa0305800e",
+      "imports": [
+        "MarkovNextDefsM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "next_coefficient_1M570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem next_coefficient_1M570 (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ ng1M570 k l"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovNextCert2M570",
+      "sha256": "9ae01ae67f19ec97ea50364bc540a009e0251909565b344bcf847665b2e54682",
+      "imports": [
+        "MarkovNextDefsM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "next_coefficient_2M570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem next_coefficient_2M570 (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ ng2M570 k l"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovNextCert3M570",
+      "sha256": "37fd206149fc1f7a54e4009b18d4c301e28436f9d882efa90a5fbd4932d825f4",
+      "imports": [
+        "MarkovNextDefsM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "next_coefficient_3M570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem next_coefficient_3M570 (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ ng3M570 k l"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovNextCert4M570",
+      "sha256": "a4730319877b1615a0e94257ba97f72e8477ee6f5a5814f494e6dfe64d957096",
+      "imports": [
+        "MarkovNextDefsM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "next_coefficient_4M570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem next_coefficient_4M570 (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ ng4M570 k l"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovNextCert5M570",
+      "sha256": "b3c15c90147b5068f72dfb221ba43adae7fb5e1bcf267df2905a669d04654d05",
+      "imports": [
+        "MarkovNextDefsM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "next_coefficient_5M570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem next_coefficient_5M570 (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ ng5M570 k l"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovNextCert6M570",
+      "sha256": "0c51f9b303f4187c0f38516e815738d6e86869af326289801175552350d7ce48",
+      "imports": [
+        "MarkovNextDefsM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "next_coefficient_6M570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem next_coefficient_6M570 (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ ng6M570 k l"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovNextCoefficientsM570",
+      "sha256": "ffa41e8e779d9dd66d16c4b0cb8f3f13ed871afa81aadf0a3c8cc979248f5633",
+      "imports": [
+        "MarkovNextSourceM570",
+        "MarkovNextDefsM570",
+        "MarkovStripMiddleChooseMD11",
+        "MarkovStripCoefficientsMD11"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_next_four_scaledM570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem source_next_four_scaledM570 (path : List Bool) (k l : ℕ)\n (hb : 9 ≤ (frame path).mid.b) (hs : 2*(frame path).mid.a ≤ (frame path).mid.b)\n (hu : (frame path).mid.b ≤ 3*(frame path).mid.a)\n (hbl : (frame path).mid.b=k+l+2) (hl : 3 ≤ l) :\n 24*((k:ℝ)+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+l-5)*(k+l-6)*(k+1)*\n (coeff (frame path).mid.p ((frame path).mid.a+k) 4:ℝ)=\n ((k+l).choose k:ℝ)*l*(l-1)*(l-2)*\n stripNextIM570 (frame path).mid.a k l (3*(frame path).mid.a-(frame path).mid.b:ℕ)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovNextDefsM570",
+      "sha256": "9c0031a1109bbdeaaf76496bd7497a1d0f74c5a0a36176bf6a7cbda4927c699c",
+      "imports": [
+        "MarkovStripGapMD11",
+        "MarkovStripGapMCE8"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "stripNextIM570"
+        },
+        {
+          "kind": "def",
+          "name": "stripNextGapM570"
+        },
+        {
+          "kind": "def",
+          "name": "nj0M570"
+        },
+        {
+          "kind": "def",
+          "name": "nj1M570"
+        },
+        {
+          "kind": "def",
+          "name": "nj2M570"
+        },
+        {
+          "kind": "def",
+          "name": "nh0M570"
+        },
+        {
+          "kind": "def",
+          "name": "nh1M570"
+        },
+        {
+          "kind": "def",
+          "name": "nh2M570"
+        },
+        {
+          "kind": "def",
+          "name": "nh3M570"
+        },
+        {
+          "kind": "def",
+          "name": "nr0M570"
+        },
+        {
+          "kind": "def",
+          "name": "nr1M570"
+        },
+        {
+          "kind": "def",
+          "name": "nr2M570"
+        },
+        {
+          "kind": "def",
+          "name": "nr3M570"
+        },
+        {
+          "kind": "def",
+          "name": "nr4M570"
+        },
+        {
+          "kind": "def",
+          "name": "nextFM570"
+        },
+        {
+          "kind": "def",
+          "name": "nextEM570"
+        },
+        {
+          "kind": "def",
+          "name": "ng0M570"
+        },
+        {
+          "kind": "def",
+          "name": "ng1M570"
+        },
+        {
+          "kind": "def",
+          "name": "ng2M570"
+        },
+        {
+          "kind": "def",
+          "name": "ng3M570"
+        },
+        {
+          "kind": "def",
+          "name": "ng4M570"
+        },
+        {
+          "kind": "def",
+          "name": "ng5M570"
+        },
+        {
+          "kind": "def",
+          "name": "ng6M570"
+        }
+      ],
+      "theorem_statements": [],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovNextExpandM570",
+      "sha256": "9a5def033083f3cf6a0536332fee0a0d1952023a389d0a1225682c8b8a937a7c",
+      "imports": [
+        "MarkovNextDefsM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "nj_expandM570"
+        },
+        {
+          "kind": "theorem",
+          "name": "nh_expandM570"
+        },
+        {
+          "kind": "theorem",
+          "name": "nr_expandM570"
+        },
+        {
+          "kind": "theorem",
+          "name": "next_expandM570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem nj_expandM570 (k l t : ℝ) :\n 9*stripJMB9D ((k+l+9+t)/3) k (l+7)=nj0M570 k l+nj1M570 k l*t^1+nj2M570 k l*t^2",
+        "theorem nh_expandM570 (k l t : ℝ) :\n 27*stripHMCE8 ((k+l+9+t)/3) k (l+7) t=nh0M570 k l+nh1M570 k l*t^1+nh2M570 k l*t^2+nh3M570 k l*t^3",
+        "theorem nr_expandM570 (k l t : ℝ) :\n 81*stripNextIM570 ((k+l+9+t)/3) k (l+7) t=nr0M570 k l+nr1M570 k l*t^1+nr2M570 k l*t^2+nr3M570 k l*t^3+nr4M570 k l*t^4",
+        "theorem next_expandM570 (k l t : ℝ) :\n 729*stripNextGapM570 ((k+l+9+t)/3) k (l+7) t=\n ng0M570 k l+ng1M570 k l*t^1+ng2M570 k l*t^2+ng3M570 k l*t^3+ng4M570 k l*t^4+ng5M570 k l*t^5+ng6M570 k l*t^6"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovNextGapM570",
+      "sha256": "edf5293183a0b1b34282b355c1da2f746023a356fda72dfb84c16d1f19e7d038",
+      "imports": [
+        "MarkovNextCert0M570",
+        "MarkovNextCert1M570",
+        "MarkovNextCert2M570",
+        "MarkovNextCert3M570",
+        "MarkovNextCert4M570",
+        "MarkovNextCert5M570",
+        "MarkovNextCert6M570",
+        "MarkovNextExpandM570",
+        "MarkovNextSmallGapM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "stripNext_largeM570"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_next_gap_nonnegM570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem stripNext_largeM570 (k l t : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (ht : 0 ≤ t) :\n 0 ≤ stripNextGapM570 ((k+l+9+t)/3) k (l+7) t",
+        "theorem strip_next_gap_nonnegM570 (a k l t : ℕ)\n (he : 3*a=k+l+2+t) (hl : 3 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ stripNextGapM570 a k l t"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovNextSmallGapM570",
+      "sha256": "b2393516cef8f4276503cead833061741c03bc831226a4749a251e63ed13cefe",
+      "imports": [
+        "MarkovNextDefsM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "next_small3M570"
+        },
+        {
+          "kind": "theorem",
+          "name": "next_small4M570"
+        },
+        {
+          "kind": "theorem",
+          "name": "next_small5M570"
+        },
+        {
+          "kind": "theorem",
+          "name": "next_small6M570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem next_small3M570 (a k t : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (ht : 0 ≤ t) :\n 0 ≤ stripNextGapM570 (a+1) (k+4) 3 t",
+        "theorem next_small4M570 (a k t : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (ht : 0 ≤ t) :\n 0 ≤ stripNextGapM570 (a+1) (k+3) 4 t",
+        "theorem next_small5M570 (a k t : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (ht : 0 ≤ t) :\n 0 ≤ stripNextGapM570 (a+1) (k+2) 5 t",
+        "theorem next_small6M570 (a k t : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (ht : 0 ≤ t) :\n 0 ≤ stripNextGapM570 (a+1) (k+1) 6 t"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovNextSourceM570",
+      "sha256": "1067f6e4d8d3174967d005a3d60ac4f34da3da61c9cf78a305f4eff66eeab285",
+      "imports": [
+        "MarkovStripSourceMD11"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "nextC0M570"
+        },
+        {
+          "kind": "def",
+          "name": "nextC1M570"
+        },
+        {
+          "kind": "def",
+          "name": "nextQuarticM570"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_next_seedM570"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_next_fourM570"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_next_four_coeffM570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem strip_next_seedM570 (a b : ℕ) (hs : 2*a ≤ b) (hu : b ≤ 3*a) :\n (h4sourceSeedM511 a b : ℝ[X])=\n X^2*(C (nextC0M570 a b (3*a-b:ℕ))+X*nextQuarticM570 a b (3*a-b:ℕ))",
+        "theorem source_strip_next_fourM570 (path : List Bool) (hb : 9 ≤ (frame path).mid.b)\n (hs : 2*(frame path).mid.a ≤ (frame path).mid.b)\n (hu : (frame path).mid.b ≤ 3*(frame path).mid.a) :\n 24*((Bivariate.swap (frame path).mid.p).coeff 4).map (Int.castRingHom ℝ)=\n X^((frame path).mid.a-1)*(1+X)^((frame path).mid.b-9)*\n (C (nextC0M570 (frame path).mid.a (frame path).mid.b (3*(frame path).mid.a-(frame path).mid.b:ℕ))+\n   X*nextQuarticM570 ((frame path).mid.a:ℝ) (frame path).mid.b (3*(frame path).mid.a-(frame path).mid.b:ℕ))",
+        "theorem strip_next_four_coeffM570 (path : List Bool) (hb : 9 ≤ (frame path).mid.b)\n (hs : 2*(frame path).mid.a ≤ (frame path).mid.b)\n (hu : (frame path).mid.b ≤ 3*(frame path).mid.a) (k : ℕ) :\n 24*(coeff (frame path).mid.p ((frame path).mid.a+k) 4:ℝ)=\n ((1+(X:ℝ[X]))^((frame path).mid.b-9)*\n nextQuarticM570 ((frame path).mid.a:ℝ) (frame path).mid.b (3*(frame path).mid.a-(frame path).mid.b:ℕ)).coeff k+\n nextC0M570 (frame path).mid.a (frame path).mid.b (3*(frame path).mid.a-(frame path).mid.b:ℕ)*\n (((frame path).mid.b-9).choose (k+1):ℝ)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovNextTransferM570",
+      "sha256": "45308a80cadaf69bec1ef94b9ac51ec046ea2197ed3a1d200831040ba640ba22",
+      "imports": [
+        "MarkovNextGapM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "strip_next_transferM570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem strip_next_transferM570 (a k l t C c₂ c₃ c₄ : ℝ)\n (hk : 0 ≤ k) (hl : 3 ≤ l) (hN : 7 ≤ k+l)\n (h₂ : 2*(k+l)*(k+l-1)*(k+l-2)*c₂=C*l*stripJMB9D a k l)\n (h₃ : 6*(k+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+1)*c₃=C*l*(l-1)*stripHMCE8 a k l t)\n (h₄ : 24*(k+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+l-5)*(k+l-6)*(k+1)*c₄=\n   C*l*(l-1)*(l-2)*stripNextIM570 a k l t)\n (hg : 0 ≤ stripNextGapM570 a k l t) : c₂*c₄ ≤ c₃^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovResidualHalfM570",
+      "sha256": "084db540d52b1b8fa7578e9f96d37df7b8cbf7032358808e39e2577286c9fee3",
+      "imports": [
+        "MarkovNextAllM570",
+        "MarkovResidualFullMCE8"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "InteriorCore63HalfM570"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_interior_halfM570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem root_iff_interior_halfM570 : Conjecture63 ↔ InteriorCore63HalfM570"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovResidualM570",
+      "sha256": "7f24d001ea9df9d284de4561f7790a107c3bea0f1239fccc7434718129c8afb6",
+      "imports": [
+        "MarkovMiddleAllM570",
+        "MarkovResidualFullMCE8"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "InteriorCore63M570"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_interiorM570"
+        }
+      ],
+      "theorem_statements": [
+        "theorem root_iff_interiorM570 : Conjecture63 ↔ InteriorCore63M570"
+      ],
+      "raw_forbidden_flags": []
+    }
+  ],
+  "accepted_counts": {
+    "theorem": 48,
+    "def": 51
+  },
+  "per_module_counts": {
+    "MarkovMiddleAllM570": {
+      "theorem": 3
+    },
+    "MarkovMiddleCert0M570": {
+      "theorem": 1
+    },
+    "MarkovMiddleCert1M570": {
+      "theorem": 1
+    },
+    "MarkovMiddleCert2M570": {
+      "theorem": 1
+    },
+    "MarkovMiddleCert3M570": {
+      "theorem": 1
+    },
+    "MarkovMiddleCert4M570": {
+      "theorem": 1
+    },
+    "MarkovMiddleCert5M570": {
+      "theorem": 1
+    },
+    "MarkovMiddleCert6M570": {
+      "theorem": 1
+    },
+    "MarkovMiddleCoefficientsM570": {
+      "theorem": 1
+    },
+    "MarkovMiddleDefsM570": {
+      "def": 23
+    },
+    "MarkovMiddleExpandM570": {
+      "theorem": 4
+    },
+    "MarkovMiddleGapM570": {
+      "theorem": 3
+    },
+    "MarkovMiddleTransferM570": {
+      "theorem": 1
+    },
+    "MarkovNextAllM570": {
+      "theorem": 5
+    },
+    "MarkovNextCert0M570": {
+      "theorem": 1
+    },
+    "MarkovNextCert1M570": {
+      "theorem": 1
+    },
+    "MarkovNextCert2M570": {
+      "theorem": 1
+    },
+    "MarkovNextCert3M570": {
+      "theorem": 1
+    },
+    "MarkovNextCert4M570": {
+      "theorem": 1
+    },
+    "MarkovNextCert5M570": {
+      "theorem": 1
+    },
+    "MarkovNextCert6M570": {
+      "theorem": 1
+    },
+    "MarkovNextCoefficientsM570": {
+      "theorem": 1
+    },
+    "MarkovNextDefsM570": {
+      "def": 23
+    },
+    "MarkovNextExpandM570": {
+      "theorem": 4
+    },
+    "MarkovNextGapM570": {
+      "theorem": 2
+    },
+    "MarkovNextSmallGapM570": {
+      "theorem": 4
+    },
+    "MarkovNextSourceM570": {
+      "def": 3,
+      "theorem": 3
+    },
+    "MarkovNextTransferM570": {
+      "theorem": 1
+    },
+    "MarkovResidualHalfM570": {
+      "def": 1,
+      "theorem": 1
+    },
+    "MarkovResidualM570": {
+      "def": 1,
+      "theorem": 1
+    }
+  },
+  "positive_literal_certificates": [
+    {
+      "module": "MarkovMiddleCert0M570",
+      "sha256": "17a3c07fd8821884b80ff0e950bcb4513d09646fba531004842ca79598b19f2a",
+      "theorem": "gap_coefficient_0M570",
+      "domain": "k,l real and nonnegative",
+      "Horner_rhs_grammar": "positive integer literals,k,l,+,*,parentheses only",
+      "positive_integer_literal_count": 151,
+      "proof_tail": "unfold g0M570 gapFM570 gapEM570 h0M570 j0M570 r0M570 ring rw [he] positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovMiddleCert1M570",
+      "sha256": "629df2cbe879348703ef25b9057a109e8fd746c309d3cfd50c1369d9a8460e0b",
+      "theorem": "gap_coefficient_1M570",
+      "domain": "k,l real and nonnegative",
+      "Horner_rhs_grammar": "positive integer literals,k,l,+,*,parentheses only",
+      "positive_integer_literal_count": 134,
+      "proof_tail": "unfold g1M570 gapFM570 gapEM570 h0M570 h1M570 j0M570 j1M570 r0M570 r1M570 ring rw [he] positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovMiddleCert2M570",
+      "sha256": "255ec5ea2c03a0989a773dd796791becbb8b94277ae78a408d8e6bd888dc67ba",
+      "theorem": "gap_coefficient_2M570",
+      "domain": "k,l real and nonnegative",
+      "Horner_rhs_grammar": "positive integer literals,k,l,+,*,parentheses only",
+      "positive_integer_literal_count": 118,
+      "proof_tail": "unfold g2M570 gapFM570 gapEM570 h0M570 h1M570 h2M570 j0M570 j1M570 j2M570 r0M570 r1M570 r2M570 ring rw [he] positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovMiddleCert3M570",
+      "sha256": "ef9f5f70ea5f3bd725d61278b53f3af37aa4d0ec5fe6ecb2bf413c0b9c69dce4",
+      "theorem": "gap_coefficient_3M570",
+      "domain": "k,l real and nonnegative",
+      "Horner_rhs_grammar": "positive integer literals,k,l,+,*,parentheses only",
+      "positive_integer_literal_count": 103,
+      "proof_tail": "unfold g3M570 gapFM570 gapEM570 h0M570 h1M570 h2M570 h3M570 j0M570 j1M570 j2M570 r1M570 r2M570 r3M570 ring rw [he] positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovMiddleCert4M570",
+      "sha256": "56e6e3b094fdb4740b5601cb04f89793114f9c6d8fd86254ea35b08d179e9073",
+      "theorem": "gap_coefficient_4M570",
+      "domain": "k,l real and nonnegative",
+      "Horner_rhs_grammar": "positive integer literals,k,l,+,*,parentheses only",
+      "positive_integer_literal_count": 89,
+      "proof_tail": "unfold g4M570 gapFM570 gapEM570 h1M570 h2M570 h3M570 j0M570 j1M570 j2M570 r2M570 r3M570 r4M570 ring rw [he] positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovMiddleCert5M570",
+      "sha256": "2e687fd2978305d6a09e58714a8f7085aac5e7849a583948094382404d2cb5fa",
+      "theorem": "gap_coefficient_5M570",
+      "domain": "k,l real and nonnegative",
+      "Horner_rhs_grammar": "positive integer literals,k,l,+,*,parentheses only",
+      "positive_integer_literal_count": 76,
+      "proof_tail": "unfold g5M570 gapFM570 gapEM570 h2M570 h3M570 j1M570 j2M570 r3M570 r4M570 ring rw [he] positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovMiddleCert6M570",
+      "sha256": "d43ba78691d27467b6ea4ddc2f37e667af44f6c404fd38b1b06e852b240e88f0",
+      "theorem": "gap_coefficient_6M570",
+      "domain": "k,l real and nonnegative",
+      "Horner_rhs_grammar": "positive integer literals,k,l,+,*,parentheses only",
+      "positive_integer_literal_count": 64,
+      "proof_tail": "unfold g6M570 gapFM570 gapEM570 h3M570 j2M570 r4M570 ring rw [he] positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovNextCert0M570",
+      "sha256": "3ae6d2443993078ee1ae3a1e85840ba2e8f6355e64716b7a03d27c4a43c0a9e7",
+      "theorem": "next_coefficient_0M570",
+      "domain": "k,l real and nonnegative",
+      "Horner_rhs_grammar": "positive integer literals,k,l,+,*,parentheses only",
+      "positive_integer_literal_count": 167,
+      "proof_tail": "unfold ng0M570 nextFM570 nextEM570 nh0M570 nj0M570 nr0M570 ring rw [he] positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovNextCert1M570",
+      "sha256": "8e62169306c41ec63e2a1d065d8b5b27f0c62dd613e4fdaaeb6f70aa0305800e",
+      "theorem": "next_coefficient_1M570",
+      "domain": "k,l real and nonnegative",
+      "Horner_rhs_grammar": "positive integer literals,k,l,+,*,parentheses only",
+      "positive_integer_literal_count": 149,
+      "proof_tail": "unfold ng1M570 nextFM570 nextEM570 nh0M570 nh1M570 nj0M570 nj1M570 nr0M570 nr1M570 ring rw [he] positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovNextCert2M570",
+      "sha256": "9ae01ae67f19ec97ea50364bc540a009e0251909565b344bcf847665b2e54682",
+      "theorem": "next_coefficient_2M570",
+      "domain": "k,l real and nonnegative",
+      "Horner_rhs_grammar": "positive integer literals,k,l,+,*,parentheses only",
+      "positive_integer_literal_count": 132,
+      "proof_tail": "unfold ng2M570 nextFM570 nextEM570 nh0M570 nh1M570 nh2M570 nj0M570 nj1M570 nj2M570 nr0M570 nr1M570 nr2M570 ring rw [he] positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovNextCert3M570",
+      "sha256": "37fd206149fc1f7a54e4009b18d4c301e28436f9d882efa90a5fbd4932d825f4",
+      "theorem": "next_coefficient_3M570",
+      "domain": "k,l real and nonnegative",
+      "Horner_rhs_grammar": "positive integer literals,k,l,+,*,parentheses only",
+      "positive_integer_literal_count": 116,
+      "proof_tail": "unfold ng3M570 nextFM570 nextEM570 nh0M570 nh1M570 nh2M570 nh3M570 nj0M570 nj1M570 nj2M570 nr1M570 nr2M570 nr3M570 ring rw [he] positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovNextCert4M570",
+      "sha256": "a4730319877b1615a0e94257ba97f72e8477ee6f5a5814f494e6dfe64d957096",
+      "theorem": "next_coefficient_4M570",
+      "domain": "k,l real and nonnegative",
+      "Horner_rhs_grammar": "positive integer literals,k,l,+,*,parentheses only",
+      "positive_integer_literal_count": 101,
+      "proof_tail": "unfold ng4M570 nextFM570 nextEM570 nh1M570 nh2M570 nh3M570 nj0M570 nj1M570 nj2M570 nr2M570 nr3M570 nr4M570 ring rw [he] positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovNextCert5M570",
+      "sha256": "b3c15c90147b5068f72dfb221ba43adae7fb5e1bcf267df2905a669d04654d05",
+      "theorem": "next_coefficient_5M570",
+      "domain": "k,l real and nonnegative",
+      "Horner_rhs_grammar": "positive integer literals,k,l,+,*,parentheses only",
+      "positive_integer_literal_count": 87,
+      "proof_tail": "unfold ng5M570 nextFM570 nextEM570 nh2M570 nh3M570 nj1M570 nj2M570 nr3M570 nr4M570 ring rw [he] positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovNextCert6M570",
+      "sha256": "0c51f9b303f4187c0f38516e815738d6e86869af326289801175552350d7ce48",
+      "theorem": "next_coefficient_6M570",
+      "domain": "k,l real and nonnegative",
+      "Horner_rhs_grammar": "positive integer literals,k,l,+,*,parentheses only",
+      "positive_integer_literal_count": 74,
+      "proof_tail": "unfold ng6M570 nextFM570 nextEM570 nh3M570 nj2M570 nr4M570 ring rw [he] positivity",
+      "expansion_recomputed": false
+    }
+  ],
+  "next_small_charts": {
+    "count": 4,
+    "l_values": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "a_shift": 1,
+    "k_shifts": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "proof": "unfold;ring_nf;positivity; not rerun"
+  },
+  "residuals_exact_added_j2_implications": [
+    3,
+    2
+  ]
+}

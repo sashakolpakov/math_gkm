@@ -1,0 +1,97 @@
+{
+  "request_id": "5703599b8b9a4638b67a688a6b77e4cb",
+  "inherited": {
+    "RESUME.json": true,
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": true,
+    "evidence/independent-markov/markov_residual_scope_audit.md": true,
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": true,
+    "evidence/markov/research-run/state.json": true,
+    "requests/markov-next.json": true
+  },
+  "d11e335e": {
+    "checked": 100,
+    "mismatches": []
+  },
+  "263d8c71": {
+    "checked": 218,
+    "mismatches": []
+  },
+  "000128": {
+    "sha256": "33a4bebc8aad19653af64794e27896b7ef7007170bc0697995741820b7e7f91c",
+    "count": 281,
+    "last_events": [
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_144",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc '/opt/homebrew/bin/python3 research/finalize_263d8c71.py'",
+          "aggregated_output": "{\"request_id\": \"263d8c71d1e34c09988ae5004b76a354\", \"compiled_and_replayed_mathematical_modules\": 26, \"audited_theorem_closures\": 85, \"unchanged_prior_inputs\": 5651, \"changed_prior_inputs\": [], \"rechecked_inherited_artifacts\": {\"f52ba141\": 112, \"ae257c53\": 1353}, \"unsuccessful_build_receipts\": 24, \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\", \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\", \"stop_file_present\": false, \"completion\": null, \"scope\": \"New-source compilation and isolated kernel replay over inherited compiled imports; no fresh whole-source rebuild or independent completion audit.\"}\nVerified artifacts 218\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      },
+      {
+        "type": "item.started",
+        "item": {
+          "id": "item_145",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc 'cat evidence/markov-263d8c71/last-verification.json'",
+          "aggregated_output": "",
+          "exit_code": null,
+          "status": "in_progress"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_145",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc 'cat evidence/markov-263d8c71/last-verification.json'",
+          "aggregated_output": "{\n  \"verified_artifacts\": 218,\n  \"manifest_sha256\": \"3f2f953aa5865af431426605981d29cd2b18e58ff6c744eaa4bb060e05887325\",\n  \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\",\n  \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\",\n  \"stop_file_present\": false\n}\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      }
+    ]
+  },
+  "000132": {
+    "sha256": "68d1d83019ef160356a3c6e6a014e3c0aa63aa64b6eefee44c8121e220169c3c",
+    "count": 178,
+    "last_events": [
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_92",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc '/opt/homebrew/bin/python3 research/refresh_manifest_d11e335e.py'",
+          "aggregated_output": "{\"verified_artifacts\": 100, \"manifest_sha256\": \"2300e258ebe1d798775e012181a6e64ce000ca4bda70be03475b499841bd00e5\", \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\", \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\", \"unchanged_prior_inputs\": 5799, \"stop_file_present\": false, \"scope\": \"Final documentation refresh; first completed manifest and verification preserved.\"}\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_93",
+          "type": "agent_message",
+          "text": "{\n  \"actions\": [\n    \"Reconciled 341 inherited artifacts and interrupted-worker effects: evidence/markov-d11e335e/reconciliation.json.\",\n    \"Compiled and kernel-replayed nine modules; audited 24 theorem closures: evidence/markov-d11e335e/validation.json.\",\n    \"Verified 100 artifact hashes, 5,799 unchanged prior inputs, and pinned root/contract hashes: evidence/markov-d11e335e/last-verification.json.\"\n  ],\n  \"agenda\": [\n    \"Investigate adjacent-cone certificates documented in research/markov-d11e335e-next.md; excluded drafts are not admitted theorems.\",\n    \"Retain every unresolved clause in research/MarkovResidualLowMD11.lean.\",\n    \"Discharge all source-correspondence obligations before claiming root completion.\"\n  ],\n  \"completion\": null,\n  \"observations\": [\n    \"Proved A(i,2)\u00b7A(i,4) \u2264 A(i,3)\u00b2 for every source path with b\u22654a and every natural i, retaining zeros: source_strip_allMD11 in research/MarkovStripAllMD11.lean.\",\n    \"Proved Conjecture63 \u2194 InteriorCore63LowMD11. The residual remains unproved: research/MarkovResidualLowMD11.lean.\",\n    \"Finite checks passed 14,997 coefficient identities and 6,958 inequalities, including 1,959 zero-containing triples. Experiments are not proofs: evidence/markov-d11e335e/next-strip-experiments.json.\",\n    \"Compiled adjacent-cone source bridges, but three gap-proof attempts timed out. No extension theorem is admitted: evidence/markov-d11e335e/excluded-drafts.json.\",\n    \"All audited closures use permitted axioms. No whole-source rebuild or independent completion audit occurred: research/markov-d11e335e-correspondence.md.\",\n    \"Preserved failed builds, replay timeout, and capability failures. All executions ended: research/markov-d11e335e-operational.md.\"\n  ],\n  \"request_id\": \"d11e335ef8db44b282c73b02009fc529\",\n  \"summary\": \"Proved universal raw vertical row-two log-concavity in the cone b\u22654a. Full pinned Conjecture63 remains unresolved.\"\n}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 5783116,
+          "cached_input_tokens": 5623424,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 42061,
+          "reasoning_output_tokens": 8010
+        }
+      }
+    ]
+  },
+  "reconciliation": "Worker 132 completed. Worker 128 interrupted effects were previously finalized; hashes and final raw events rechecked. No side effect replayed. The five excluded MD11 middle-cone drafts are not admitted and will be replaced only in new files if used.",
+  "capabilities": [
+    "Higher-priority policy denies .scratch; no access attempted. Unique research/evidence paths used."
+  ]
+}

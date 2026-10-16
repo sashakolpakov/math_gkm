@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovMiddleAllM570.lean:76:19: error: Tactic `decide` failed for proposition\n  2 = (frame [false, false, true]).mid.a\nbecause its `Decidable` instance\n  instDecidableEqNat 2 (frame [false, false, true]).mid.a\ndid not reduce to `isTrue` or `isFalse`.\n\nAfter unfolding the instances `instDecidableEqNat` and `Nat.decEq`, reduction got stuck at the `Decidable` instance\n  match h : Nat.beq 2 (frame [false, false, true]).mid.a with\n  | true => isTrue \u22ef\n  | false => isFalse \u22ef\n/Users/sasha/math_gkm/research/MarkovMiddleAllM570.lean:76:42: error: Tactic `decide` failed for proposition\n  7 = (frame [false, false, true]).mid.b\nbecause its `Decidable` instance\n  instDecidableEqNat 7 (frame [false, false, true]).mid.b\ndid not reduce to `isTrue` or `isFalse`.\n\nAfter unfolding the instances `instDecidableEqNat` and `Nat.decEq`, reduction got stuck at the `Decidable` instance\n  match h : Nat.beq 7 (frame [false, false, true]).mid.b with\n  | true => isTrue \u22ef\n  | false => isFalse \u22ef\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMiddleAllM570": "78ed503661f9bd4259d1b11377839a17b6b68248514093130ddd0e3d8f2d2103"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-5703599b/MarkovMiddleAllM570.olean",
+    "/Users/sasha/math_gkm/research/MarkovMiddleAllM570.lean"
+  ],
+  "seconds": 78.62404749996495,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
