@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovVerticalInverseM758.lean:17:55: warning: this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`\n/Users/sasha/math_gkm/research/MarkovVerticalInverseM758.lean:17:55: warning: 'ring' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n/Users/sasha/math_gkm/research/MarkovVerticalInverseM758.lean:52:65: error: unexpected token ')'; expected 'by' or 'from'\n/Users/sasha/math_gkm/research/MarkovVerticalInverseM758.lean:52:53: error: Application type mismatch: The argument\n  j\nhas type\n  \u2115\nbut is expected to have type\n  Matroid ?m.158\nin the application\n  Matroid.IsStrictMinor j\n/Users/sasha/math_gkm/research/MarkovVerticalInverseM758.lean:52:60: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b \u2265 0\n  a \u2265 0\n  a - b \u2265 1\nwhere\n a := \u2191m\n b := \u2191j\n/Users/sasha/math_gkm/research/MarkovVerticalInverseM758.lean:52:48: error: unsolved goals\nc : \u2124\nm j : \u2115\nh : \u00acm \u2264 j\n\u22a2 sorry <m \u22ef.elim\n/Users/sasha/math_gkm/research/MarkovVerticalInverseM758.lean:52:3: error: unsolved goals\ncase neg\nc : \u2124\nm j : \u2115\nh : \u00acm \u2264 j\n\u22a2 6 * 0 = c * 0\n/Users/sasha/math_gkm/research/MarkovVerticalInverseM758.lean:51:1: error: unsolved goals\ncase neg\nc : \u2124\nm j : \u2115\nh : \u00acm \u2264 j\n\u22a2 \u2200 x \u2208 Finset.range (j + 1), (c * if x = m then 1 else 0) * \u2191((3 + (j - x)).choose 3) = 0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovVerticalInverseM758": "416773a653ca64cb819ad215ba02196233b9e7ac261a3cea53b7759bd7d659cb"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-7584c5d0/MarkovVerticalInverseM758.olean",
+    "/Users/sasha/math_gkm/research/MarkovVerticalInverseM758.lean"
+  ],
+  "seconds": 35.453048458031844,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

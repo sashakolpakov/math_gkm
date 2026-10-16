@@ -1,0 +1,297 @@
+{
+  "worker": 115,
+  "method": "Independent integer loop-bound, predicate and support-envelope recount; saved metadata parsing only. No project imports/scripts/coefficients/symbolicpolynomials/recurrence/quotient/gap evaluation.",
+  "files": {
+    "research/experiment_7584c5d0.py": {
+      "archive_sha256": "9ab6ba7746adb56d3fc0fc3fc8d036228b91fa1eb2acf797448096b9980d1d67",
+      "current_sha256": "9ab6ba7746adb56d3fc0fc3fc8d036228b91fa1eb2acf797448096b9980d1d67"
+    },
+    "research/explore_seed_7584c5d0.py": {
+      "archive_sha256": "d72fbe54883bfc1d6e5e93bf43d0a3a0daf11496b7c6f116b03d6fc62589ca2f",
+      "current_sha256": "d72fbe54883bfc1d6e5e93bf43d0a3a0daf11496b7c6f116b03d6fc62589ca2f"
+    },
+    "research/generate_7584c5d0.py": {
+      "archive_sha256": "d9e83bea56d274ae56fcdbabc1f27d838d4826e87d535b32dbc760052c9e4218",
+      "current_sha256": "d9e83bea56d274ae56fcdbabc1f27d838d4826e87d535b32dbc760052c9e4218"
+    },
+    "research/small_columns_7584c5d0.py": {
+      "archive_sha256": "979ca6408fc1df7cec5f57be7c91b78b7303b3c9c763aa08c99e5b9e06a5a029",
+      "current_sha256": "979ca6408fc1df7cec5f57be7c91b78b7303b3c9c763aa08c99e5b9e06a5a029"
+    },
+    "research/small_sparse_7584c5d0.py": {
+      "archive_sha256": "3ca6f29b98deb397bebbe84d2ed29e74d49239de821a85b372a12d309a712744",
+      "current_sha256": "3ca6f29b98deb397bebbe84d2ed29e74d49239de821a85b372a12d309a712744"
+    },
+    "evidence/markov-7584c5d0/experiments.json": {
+      "archive_sha256": "a195b2eed11fcd704109818a76c71adc92744913f7c15c4f2514213ece270610",
+      "current_sha256": "a195b2eed11fcd704109818a76c71adc92744913f7c15c4f2514213ece270610"
+    },
+    "evidence/markov-7584c5d0/symbolic-gap-scan.json": {
+      "archive_sha256": "330e3fef46184f232043c2230b2ed871cc5ed3371db5c518503c0c62e82fb693",
+      "current_sha256": "330e3fef46184f232043c2230b2ed871cc5ed3371db5c518503c0c62e82fb693"
+    },
+    "evidence/markov-7584c5d0/small-column-corrections.json": {
+      "archive_sha256": "f9656cf260ba9ed38e8cc91212fe085b784f70c14ff7c34f207816844691f2ee",
+      "current_sha256": "f9656cf260ba9ed38e8cc91212fe085b784f70c14ff7c34f207816844691f2ee"
+    },
+    "evidence/markov-7584c5d0/small-sparse-candidates.json": {
+      "archive_sha256": "5b514a2609ea8631019031e82aea5b10c6786ef94c4ab3c1179c2a762fc6758c",
+      "current_sha256": "5b514a2609ea8631019031e82aea5b10c6786ef94c4ab3c1179c2a762fc6758c"
+    }
+  },
+  "primary_experiment": {
+    "receipt_metadata": {
+      "status": "Finite exact computation only; not root closure",
+      "seed_cases": 12615,
+      "seed_coefficient_comparisons": 504600,
+      "seed_adjacent_inequalities": 479370,
+      "seed_zeros": 56985,
+      "source_cases": 1080,
+      "raw_coefficient_comparisons": 112728,
+      "polygon_valid_inequalities": 23676,
+      "raw_zeros": 86892,
+      "failures": [],
+      "seconds": 131.3157289159717
+    },
+    "recount": {
+      "seed_cases": 12615,
+      "seed_coefficient_comparisons": 504600,
+      "seed_adjacent_inequalities": 479370,
+      "seed_zeros": 56985,
+      "source_cases": 1080,
+      "raw_coefficient_comparisons": 112728,
+      "polygon_valid_inequalities": 23676,
+      "raw_zeros": 86892
+    },
+    "seed_domain": "q=2..30,a=2..30,r=1..a-1, no coprimality restriction,435pairs/q. Array j=0..2q+7,length2q+8.",
+    "seed_zero_envelope": "j=0 and j=2q+5,2q+6,2q+7 give4zeros/case; j=1alsozero iff2r<=a. Counts agree withreceipt; no values regenerated.",
+    "raw_domain": "q=1..12,a=5..17,r=1..a-1,gcd(a,r)=1,b=aq+r,90fractions/q. Array j=0..a+b+4,lengtha+b+5.",
+    "saved_source_labels_and_order_match": true,
+    "raw_guard": "ab<=2b+aj andj+4<=a+b-1; equivalent to all3originalInPolygon guards fori=2.",
+    "raw_zero_envelope": "Integerpolygon exterior counts matchreceipt zeros, not a fresh coefficient/support-value check.",
+    "comparison_scope": "Seed comparisons are12,615parameter cases including noncoprimepairs, separate from1,080actual reducedsourcefractions. q1excludedfrompiecewise seed scan but includedinrawcomparison.",
+    "outcome": "Receipt records no failures; all retained observations finite."
+  },
+  "small_diagnosis": {
+    "receipt_status": "Finite exact correction diagnosis, not a source theorem",
+    "cases": 150,
+    "domain": "(a,r)=(2,1),(3,1),(3,2),(4,1),(4,3),q=1..30,b=aq+r",
+    "raw_positions_recount": 8760,
+    "raw_adjacent_tests_recount": 8460,
+    "saved_labels_match": true,
+    "recorded_corrections": {
+      "2,1": {
+        "cases": 30,
+        "recorded_correction_values": [
+          "[[1, 2]]"
+        ]
+      },
+      "3,1": {
+        "cases": 30,
+        "recorded_correction_values": [
+          "[]"
+        ]
+      },
+      "3,2": {
+        "cases": 30,
+        "recorded_correction_values": [
+          "[]"
+        ]
+      },
+      "4,1": {
+        "cases": 30,
+        "recorded_correction_values": [
+          "[]"
+        ]
+      },
+      "4,3": {
+        "cases": 30,
+        "recorded_correction_values": [
+          "[]"
+        ]
+      }
+    },
+    "negative_offset_cases": 30,
+    "source_code_behavior": "Computesdifferenceafterclearing(1+v)^(5-a),shiftsactualbyvwhenoffset=-1,recordsnonzeroterms; itassertsrawadjacentLC butdoesnotassertthecorrectionequalsaparticularcandidate. Savedreceiptshows+2vforalla2casesandzeroforother120cases.",
+    "scope": "2v(1+v)^3Pcol2=N+2v remainsunprovedfora2. No universal rawLC followsfromthisdiagnosis."
+  },
+  "small_sparse": {
+    "status": "Exact symbolic candidates, not Lean quotient identities or LC proofs",
+    "formula": "For a=3,4: (1-v)^4 * 2 raw_column = v^(b-2q-2)*(J0+v^q J1+v^(2q) J2). For a=2,r=1 the experimental +2v correction predicts (1-v)^4 * 2v raw_column=J0+v^q J1+v^(2q)J2.",
+    "cases_metadata": [
+      {
+        "a": 2,
+        "r": 1,
+        "dividing_power": 3,
+        "degrees": [
+          2,
+          3,
+          5
+        ]
+      },
+      {
+        "a": 3,
+        "r": 1,
+        "dividing_power": 2,
+        "degrees": [
+          3,
+          4,
+          6
+        ]
+      },
+      {
+        "a": 3,
+        "r": 2,
+        "dividing_power": 2,
+        "degrees": [
+          2,
+          4,
+          6
+        ]
+      },
+      {
+        "a": 4,
+        "r": 1,
+        "dividing_power": 1,
+        "degrees": [
+          4,
+          5,
+          7
+        ]
+      },
+      {
+        "a": 4,
+        "r": 3,
+        "dividing_power": 1,
+        "degrees": [
+          3,
+          5,
+          7
+        ]
+      }
+    ],
+    "scope": "Exactsymbolicquotienttablesfor5families; sources/LCnotnewacceptedtheorems. No symbolicdivisionrerun."
+  },
+  "symbolic_gap_scan": {
+    "status": "Exact symbolic exploration, not a proof",
+    "saved_gaps": {
+      "first": {
+        "low": {
+          "terms": 5,
+          "negative": 0,
+          "examples": []
+        },
+        "high": {
+          "terms": 15,
+          "negative": 0,
+          "examples": []
+        }
+      },
+      "low": {
+        "low": {
+          "terms": 72,
+          "negative": 0,
+          "examples": []
+        },
+        "high": {
+          "terms": 75,
+          "negative": 0,
+          "examples": []
+        }
+      },
+      "cross1": {
+        "low": {
+          "terms": 75,
+          "negative": 0,
+          "examples": []
+        },
+        "high": {
+          "terms": 75,
+          "negative": 0,
+          "examples": []
+        }
+      },
+      "cross2": {
+        "low": {
+          "terms": 75,
+          "negative": 0,
+          "examples": []
+        },
+        "high": {
+          "terms": 75,
+          "negative": 0,
+          "examples": []
+        }
+      },
+      "cross3": {
+        "low": {
+          "terms": 75,
+          "negative": 0,
+          "examples": []
+        },
+        "high": {
+          "terms": 75,
+          "negative": 0,
+          "examples": []
+        }
+      },
+      "mid": {
+        "low": {
+          "terms": 225,
+          "negative": 0,
+          "examples": []
+        },
+        "high": {
+          "terms": 225,
+          "negative": 0,
+          "examples": []
+        }
+      },
+      "tail1": {
+        "low": {
+          "terms": 75,
+          "negative": 0,
+          "examples": []
+        },
+        "high": {
+          "terms": 75,
+          "negative": 0,
+          "examples": []
+        }
+      },
+      "tail2": {
+        "low": {
+          "terms": 75,
+          "negative": 0,
+          "examples": []
+        },
+        "high": {
+          "terms": 75,
+          "negative": 0,
+          "examples": []
+        }
+      },
+      "tail3": {
+        "low": {
+          "terms": 75,
+          "negative": 0,
+          "examples": []
+        },
+        "high": {
+          "terms": 75,
+          "negative": 0,
+          "examples": []
+        }
+      }
+    },
+    "formula_names": [
+      "low",
+      "mid",
+      "bridge",
+      "tail2",
+      "tail3",
+      "tail4"
+    ],
+    "scope": "Savedexplorationhas9gapfamiliesx2charts; acceptedLeancertificatesalsohandletheq2overlapandpositivity/support. Symbolicreceiptnotusedasproofpremise."
+  }
+}

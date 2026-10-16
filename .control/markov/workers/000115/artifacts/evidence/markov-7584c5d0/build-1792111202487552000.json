@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovVerticalSeedLCM758.lean:38:5: error: mod_cast has type\n  (6 : \u2124) * (vNseedMDE6 n a r (2 * r - a)).coeff k = vEM758 \u2191a \u2191r \u2191(2 * r - a) \u2191(n + 1) \u2191k\nbut is expected to have type\n  (6 : \u211d) * (Int.castRingHom \u211d) ((vNseedMDE6 n a r (2 * r - a)).coeff k) = \u2191(vEM758 \u2191a \u2191r \u2191(2 * r - a) \u2191(n + 1) \u2191k)\n/Users/sasha/math_gkm/research/MarkovVerticalSeedLCM758.lean:41:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2191(vEM758 (\u2191a) (\u2191r) (\u2191(2 * r - a)) (\u2191n + 1) i)\nin the target expression\n  (fun j => \u2191(vEM758 (\u2191a) (\u2191r) (\u2191(2 * r - a)) (\u2191n + 1) j)) i *\n      (fun j => \u2191(vEM758 (\u2191a) (\u2191r) (\u2191(2 * r - a)) (\u2191n + 1) j)) (j + 1) \u2264\n    (fun j => \u2191(vEM758 (\u2191a) (\u2191r) (\u2191(2 * r - a)) (\u2191n + 1) j)) (i + 1) *\n      (fun j => \u2191(vEM758 (\u2191a) (\u2191r) (\u2191(2 * r - a)) (\u2191n + 1) j)) j\n\ncase neg\nn a r : \u2115\nhr : 1 \u2264 r\nhra : r < a\nhn : \u00acn = 0\nhq : 2 \u2264 \u2191n + 1\nhe : CrossLC fun j => \u2191(vEM758 (\u2191a) (\u2191r) (\u2191(2 * r - a)) (\u2191n + 1) j)\nhs :\n  \u2200 (k : \u2124),\n    6 * CoeffSeq (map (Int.castRingHom \u211d) (vNseedMDE6 n a r (2 * r - a))) k =\n      \u2191(vEM758 (\u2191a) (\u2191r) (\u2191(2 * r - a)) (\u2191n + 1) k)\ni j : \u2124\nhij : i \u2264 j\nhh :\n  (fun j => \u2191(vEM758 (\u2191a) (\u2191r) (\u2191(2 * r - a)) (\u2191n + 1) j)) i *\n      (fun j => \u2191(vEM758 (\u2191a) (\u2191r) (\u2191(2 * r - a)) (\u2191n + 1) j)) (j + 1) \u2264\n    (fun j => \u2191(vEM758 (\u2191a) (\u2191r) (\u2191(2 * r - a)) (\u2191n + 1) j)) (i + 1) *\n      (fun j => \u2191(vEM758 (\u2191a) (\u2191r) (\u2191(2 * r - a)) (\u2191n + 1) j)) j\n\u22a2 CoeffSeq (map (Int.castRingHom \u211d) (vNseedMDE6 n a r (2 * r - a))) i *\n      CoeffSeq (map (Int.castRingHom \u211d) (vNseedMDE6 n a r (2 * r - a))) (j + 1) \u2264\n    CoeffSeq (map (Int.castRingHom \u211d) (vNseedMDE6 n a r (2 * r - a))) (i + 1) *\n      CoeffSeq (map (Int.castRingHom \u211d) (vNseedMDE6 n a r (2 * r - a))) j\n",
+  "stderr": "",
+  "modules": {
+    "MarkovVerticalSeedLCM758": "acdf538f058a31ec01a26623ad61dae7f08b02629e8cd4f785a36609155ca89f"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-7584c5d0/MarkovVerticalSeedLCM758.olean",
+    "/Users/sasha/math_gkm/research/MarkovVerticalSeedLCM758.lean"
+  ],
+  "seconds": 22.196246166946366,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
