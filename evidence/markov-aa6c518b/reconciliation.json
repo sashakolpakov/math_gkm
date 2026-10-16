@@ -1,0 +1,60 @@
+{
+  "request_id": "aa6c518b255a4137a1bdbca51a6e9434",
+  "inherited": {
+    "RESUME.json": true,
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": true,
+    "evidence/independent-markov/markov_residual_scope_audit.md": true,
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": true,
+    "evidence/markov/research-run/state.json": true,
+    "requests/markov-next.json": true
+  },
+  "errors": [],
+  "interrupted_artifacts": {
+    "checked": 218,
+    "mismatches": []
+  },
+  "interrupted_raw_log": {
+    "sha256": "33a4bebc8aad19653af64794e27896b7ef7007170bc0697995741820b7e7f91c",
+    "events": 281,
+    "last_events": [
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_144",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc '/opt/homebrew/bin/python3 research/finalize_263d8c71.py'",
+          "aggregated_output": "{\"request_id\": \"263d8c71d1e34c09988ae5004b76a354\", \"compiled_and_replayed_mathematical_modules\": 26, \"audited_theorem_closures\": 85, \"unchanged_prior_inputs\": 5651, \"changed_prior_inputs\": [], \"rechecked_inherited_artifacts\": {\"f52ba141\": 112, \"ae257c53\": 1353}, \"unsuccessful_build_receipts\": 24, \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\", \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\", \"stop_file_present\": false, \"completion\": null, \"scope\": \"New-source compilation and isolated kernel replay over inherited compiled imports; no fresh whole-source rebuild or independent completion audit.\"}\nVerified artifacts 218\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      },
+      {
+        "type": "item.started",
+        "item": {
+          "id": "item_145",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc 'cat evidence/markov-263d8c71/last-verification.json'",
+          "aggregated_output": "",
+          "exit_code": null,
+          "status": "in_progress"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_145",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc 'cat evidence/markov-263d8c71/last-verification.json'",
+          "aggregated_output": "{\n  \"verified_artifacts\": 218,\n  \"manifest_sha256\": \"3f2f953aa5865af431426605981d29cd2b18e58ff6c744eaa4bb060e05887325\",\n  \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\",\n  \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\",\n  \"stop_file_present\": false\n}\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      }
+    ]
+  },
+  "reconciliation": "Worker 128 finished its finalizer before transport timeout. All saved manifest effects checked, no side effect replayed. Its clustered obstruction draft was excluded from validated inventory and remains unproved. New work will use separate names.",
+  "capability_failures": [
+    "Scratch is denied by developer policy; not accessed.",
+    "Initial inherited-index summary failed with AttributeError; corrected reader succeeded."
+  ]
+}

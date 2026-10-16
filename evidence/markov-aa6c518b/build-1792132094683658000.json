@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBottomCoefficientsMAA6.lean:30:3: error: mod_cast has type\n  (k + l - 1).choose (k + 1) * (k + l) = (k + l).choose (k + 1) * (l - 1)\nbut is expected to have type\n  \u2191((k + l - 1).choose (k + 1) * (k + l)) = \u2191((k + l).choose (k + 1)) * Int.subNatNat l 1\n/Users/sasha/math_gkm/research/MarkovBottomCoefficientsMAA6.lean:55:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2191(3 * (frame path).mid.a - 1)\nin the target expression\n  \u2191((k + l).choose k) * \u2191l *\n      ((\u2191l - 1) * (3 * \u2191(frame path).mid.a - 1) + \u2191k * (\u2191(frame path).mid.a + \u2191(frame path).mid.b - 1)) =\n    \u2191((k + l).choose k) * \u2191l * bottomTMAA6 \u2191(frame path).mid.a \u2191k \u2191l\n\npath : List Bool\nk l : \u2115\nhb : 5 \u2264 (frame path).mid.b\nhbl : (frame path).mid.b = k + l + 1\nhe : (frame path).mid.b - 3 = k + l - 2\nha : 0 < (frame path).mid.a\n\u22a2 \u2191((k + l).choose k) * \u2191l *\n      ((\u2191l - 1) * (3 * \u2191(frame path).mid.a - 1) + \u2191k * (\u2191(frame path).mid.a + \u2191(frame path).mid.b - 1)) =\n    \u2191((k + l).choose k) * \u2191l * bottomTMAA6 \u2191(frame path).mid.a \u2191k \u2191l\n/Users/sasha/math_gkm/research/MarkovBottomCoefficientsMAA6.lean:80:45: error: mod_cast has type\n  m = (frame path).mid.a - 1\nbut is expected to have type\n  \u2191m = Int.subNatNat (frame path).mid.a 1\n/Users/sasha/math_gkm/research/MarkovBottomCoefficientsMAA6.lean:81:34: error: mod_cast has type\n  n = k + l - 1\nbut is expected to have type\n  \u2191n = Int.subNatNat (k + l) 1\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBottomCoefficientsMAA6": "83ef7114c3e5d407a784969aa494ea08e576446997ced8089d4f5fd8a54ea9dc"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-aa6c518b/MarkovBottomCoefficientsMAA6.olean",
+    "/Users/sasha/math_gkm/research/MarkovBottomCoefficientsMAA6.lean"
+  ],
+  "seconds": 33.93972795899026,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

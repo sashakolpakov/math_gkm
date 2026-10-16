@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBottomLCMAA6.lean:30:38: error: Application type mismatch: The argument\n  hp\nhas type\n  0 < 2 * (k + 1) * (k + l - 2) * (k + l - 3) * ((k + l) * (k + l - 1)) ^ 2\nbut is expected to have type\n  0 < c\u2081 ^ 2 - C * c\u2082\nin the application\n  nonneg_of_mul_nonneg_left hn hp\n/Users/sasha/math_gkm/research/MarkovBottomLCMAA6.lean:31:1: error: linarith failed to find a contradiction\na k l C c\u2081 c\u2082 s : \u211d\nhk : 1 \u2264 k\nhl : 2 \u2264 l\nhN : 4 \u2264 k + l\nhC : 0 \u2264 C\nh\u2081 : (k + l) * (k + l - 1) * c\u2081 = C * l * bottomTMAA6 a k l\nh\u2082 : 2 * (k + l) * (k + l - 1) * (k + l - 2) * (k + l - 3) * (k + 1) * c\u2082 = C * l * (l - 1) * bottomJMAA6 a k l s\nhg : 0 \u2264 bottomGapMAA6 a k l s\nhe :\n  2 * (k + 1) * (k + l - 2) * (k + l - 3) * ((k + l) * (k + l - 1)) ^ 2 * (c\u2081 ^ 2 - C * c\u2082) =\n    C ^ 2 * l * bottomGapMAA6 a k l s\nhp : 0 < 2 * (k + 1) * (k + l - 2) * (k + l - 3) * ((k + l) * (k + l - 1)) ^ 2\nhn : 0 \u2264 2 * (k + 1) * (k + l - 2) * (k + l - 3) * ((k + l) * (k + l - 1)) ^ 2 * (c\u2081 ^ 2 - C * c\u2082)\nthis : 0 \u2264 2 * (k + 1) * (k + l - 2) * (k + l - 3) * ((k + l) * (k + l - 1)) ^ 2\na\u271d : c\u2081 ^ 2 < C * c\u2082\n\u22a2 False\nfailed\n/Users/sasha/math_gkm/research/MarkovBottomLCMAA6.lean:66:56: error: unexpected token '+'; expected term\n/Users/sasha/math_gkm/research/MarkovBottomLCMAA6.lean:66:15: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  LT ((frame path).mid.a + (frame path).mid.b - 1)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovBottomLCMAA6.lean:66:15: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  HSub \u2115 \u2115 (Type ?u.38)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovBottomLCMAA6.lean:57:35: error: unsolved goals\ncase pos\npath : List Bool\nhb : 5 \u2264 (frame path).mid.b\ni : \u2115\nha : 0 < (frame path).mid.a\nhab : (frame path).mid.a < (frame path).mid.b\nhcop : (frame path).mid.a.Coprime (frame path).mid.b\nhi : \u00aci < (frame path).mid.a\nht : sorry\n\u22a2 coeff (frame path).mid.p i 0 * coeff (frame path).mid.p i 2 \u2264 coeff (frame path).mid.p i 1 ^ 2\n\ncase neg\npath : List Bool\nhb : 5 \u2264 (frame path).mid.b\ni : \u2115\nha : 0 < (frame path).mid.a\nhab : (frame path).mid.a < (frame path).mid.b\nhcop : (frame path).mid.a.Coprime (frame path).mid.b\nhi : \u00aci < (frame path).mid.a\nht : \u00acsorry\n\u22a2 coeff (frame path).mid.p i 0 * coeff (frame path).mid.p i 2 \u2264 coeff (frame path).mid.p i 1 ^ 2\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBottomLCMAA6": "1751b4e6bab5adc955220e300a70ab2729b2db85d707f4bedb03fb71fc3fb475"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-aa6c518b/MarkovBottomLCMAA6.olean",
+    "/Users/sasha/math_gkm/research/MarkovBottomLCMAA6.lean"
+  ],
+  "seconds": 13.34921029099496,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovVertexStatMAA6.lean:40:3: error: 'change' tactic failed, pattern\n  bbScan446 e (w ++ [true]) = ?m.78\nis not definitionally equal to target\n  bbScan446 false (false :: (e :: w ++ [true])) = adj8934 e w + if e = true then 1 else 0\n/Users/sasha/math_gkm/research/MarkovVertexStatMAA6.lean:61:5: error: Type mismatch: After simplification, term\n  hc.left\n has type\n  (List.count true w + 1 + if e = true then 1 else 0) = (frame path).mid.a\nbut is expected to have type\n  (List.count true w + if e = true then 1 else 0) + 1 = (frame path).mid.a\n",
+  "stderr": "",
+  "modules": {
+    "MarkovVertexStatMAA6": "548920a5884ebeb8629099352c4a6801a8ef236c9511629cd764c150d5e88e0f"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-aa6c518b/MarkovVertexStatMAA6.olean",
+    "/Users/sasha/math_gkm/research/MarkovVertexStatMAA6.lean"
+  ],
+  "seconds": 11.205108000023756,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
