@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovLiftTransportMFEE.lean:29:1: error: `simp` made no progress\n/Users/sasha/math_gkm/research/MarkovLiftTransportMFEE.lean:52:39: error: Invalid `\u2190` modifier: `liftCutGapM7E2` is a declaration name to be unfolded\n\nHint: The simplifier cannot \"refold\" definitions by name. Use `rw` for this instead,\n                      or use the `\u2190` simp modifier with an equational lemma for `liftCutGapM7E2`.\n/Users/sasha/math_gkm/research/MarkovLiftTransportMFEE.lean:52:5: error: Type mismatch: After simplification, term\n  hcut j t h n\n has type\n  @LE.le \u211d Real.instLE 0 ((liftCutGapM7E2 j t h).coeff n)\nbut is expected to have type\n  @LE.le \u211d Real.instLE 0 ((liftCutM7E2 j (t + 1) h ^ 2 - liftCutM7E2 j t h * liftCutM7E2 j (t + 2) h).coeff n)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovLiftTransportMFEE": "3ddc1944fa914c538a86b1b640203ef09d4f0c8f7efc83026552953536583b8c"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-fee405c8/MarkovLiftTransportMFEE.olean",
+    "/Users/sasha/math_gkm/research/MarkovLiftTransportMFEE.lean"
+  ],
+  "seconds": 10.049036042008083,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

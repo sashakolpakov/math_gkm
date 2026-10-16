@@ -1,0 +1,13 @@
+# Research checkpoint
+
+Machine-authored request fee405c8897249a786084298201a14aa. Full pinned root remains open.
+
+Read the mission and design in full, pinned contract/root, inherited index, independent target/residual/mathematical audits, and current mathematical reports. Verified all six inherited bindings and 92 predecessor artifacts; pinned hashes match. Inspected interrupted worker 156's raw final events and subsequent revalidation; no mutation replayed. Managed policy denies `.scratch`; using unique research/evidence paths. Initial zsh heredoc failed before writing; apply_patch works. Sage unavailable; GAP available and used in the bounded experiments below.
+
+The general LC-positive-to-weighted-output transport and exact raw source bridge now compile in `MarkovPolynomialWeightMFEE.lean` and `MarkovLiftTransportMFEE.lean`. The complete h=t band is proved in `MarkovCutBoundaryMFEE.lean`. The opposite band t+1=j+h is proved in `MarkovCutOuterMFEE.lean` by adding back the deleted nonnegative left-factor term to the full-kernel gap. The auxiliary condition is now equivalent to `LiftMiddleMFEE`, whose domain is h<t and t+1<j+h (thus j>=3). This condition remains unproved. All cuts for j<=2 are now proved.
+
+The 187,425-comparison normalized-pair scan passed after correcting an initial support-guard bug; rejected source/output preserved under evidence/markov-fee405c8/pair-extension-rejected.*. Source/weighting experiments passed 114,750 source coefficient comparisons and 38,250 raw triples, including zeros. These remain finite experiments. GAP was invoked for symbolic rational expansion but timed out at 90 seconds, with no mathematical conclusion. SymPy and Sage are unavailable.
+
+Root residual bookkeeping and a generic normalized-cut lemma compile. The exact residual is `LowerHorizontalMFEE AND ThreeOutsideLowerMFEE AND OtherFourM9E2`; its first premise follows conditionally from the still-open LiftMiddleMFEE. A separate-ratio convexity obstruction is formally proved, and its polygon-valid source triple satisfies raw LC.
+
+Final joint replay passed for thirteen mathematical modules; all fifty theorem closures use only the permitted axioms. The 20,813-term normalized-pair polynomial remains an unvalidated candidate after a 120-second Lean timeout and is excluded from those modules. A thirty-comparison exact consistency probe of its factors/expansions/ratios passed; it is not a universal proof. All foreground sessions terminated. Final artifacts, unchanged inputs and pinned hashes are recorded by finalize_fee405c8.py. No new complete source direction, fresh whole-source rebuild, independent completion audit, or root resolution is claimed.

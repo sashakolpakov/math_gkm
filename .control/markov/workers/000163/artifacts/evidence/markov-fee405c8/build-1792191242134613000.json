@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovPolynomialWeightMFEE.lean:66:9: error: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce\n\ncase hw\nA B C : \u211d[X]\nhcut : \u2200 (h n : \u2115), 0 \u2264 (cutPolyMFEE h B ^ 2 - cutPolyMFEE h A * cutPolyMFEE h C).coeff n\nf : \u2124 \u2192 \u211d\nhf : CrossLC f\nhpos : \u2200 (k : \u2124), 0 \u2264 f k\nn : \u2115\nhe :\n  \u2211 p \u2208 HasAntidiagonal.antidiagonal n,\n      (f \u2191p.1 * B.coeff p.1 * (f \u2191p.2 * B.coeff p.2) - f \u2191p.1 * A.coeff p.1 * (f \u2191p.2 * C.coeff p.2)) =\n    \u2211 p \u2208 HasAntidiagonal.antidiagonal n,\n      (B.coeff p.1 * B.coeff p.2 - A.coeff p.1 * C.coeff p.2) * (f \u2191(min p.1 p.2) * f \u2191(n - min p.1 p.2))\n\u22a2 0 \u2264 f \u21910 * f \u2191(n - 0)\n/Users/sasha/math_gkm/research/MarkovPolynomialWeightMFEE.lean:71:3: error: Type mismatch\n  mul_nonneg (hpos ?m.347) (hpos ?m.348)\nhas type\n  0 \u2264 f ?m.347 * f ?m.348\nbut is expected to have type\n  \u2200 k < n / 2, f \u2191k * f \u2191(n - k) \u2264 f \u2191(k + 1) * f \u2191(n - (k + 1))\n/Users/sasha/math_gkm/research/MarkovPolynomialWeightMFEE.lean:73:54: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  c \u2265 0\n  b \u2265 0\n  2*b - c \u2265 -1\n  a - b \u2265 0\n  -1 \u2264 2*a - c \u2264 0\nwhere\n a := \u2191n / 2\n b := \u2191k\n c := \u2191n\n/Users/sasha/math_gkm/research/MarkovPolynomialWeightMFEE.lean:75:35: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  c \u2265 0\n  b \u2265 0\n  b - c \u2265 0\n  a - b \u2265 0\n  -1 \u2264 2*a - c \u2264 0\nwhere\n a := \u2191n / 2\n b := \u2191k\n c := \u2191n\n/Users/sasha/math_gkm/research/MarkovPolynomialWeightMFEE.lean:74:3: error: Type mismatch: After simplification, term\n  hh\n has type\n  f \u2191k * f (\u2191n - \u2191k) \u2264 f (\u2191k + 1) * f (\u2191n - (\u2191k + 1))\nbut is expected to have type\n  0 \u2264\n    \u2211 i \u2208 HasAntidiagonal.antidiagonal n,\n      if k \u2264 min i.1 i.2 then B.coeff i.1 * B.coeff i.2 - A.coeff i.1 * C.coeff i.2 else 0\n/Users/sasha/math_gkm/research/MarkovPolynomialWeightMFEE.lean:77:45: error: Application type mismatch: The argument\n  h\nhas type\n  \u2115 \u00d7 \u2115\nbut is expected to have type\n  \u2115\nin the application\n  hcut h\n",
+  "stderr": "",
+  "modules": {
+    "MarkovPolynomialWeightMFEE": "3af3283a62c69eeeb2d636fb15bb0d3f6b1c76c12bd0d479693a55e1fd316283"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-fee405c8/MarkovPolynomialWeightMFEE.olean",
+    "/Users/sasha/math_gkm/research/MarkovPolynomialWeightMFEE.lean"
+  ],
+  "seconds": 6.260197916999459,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

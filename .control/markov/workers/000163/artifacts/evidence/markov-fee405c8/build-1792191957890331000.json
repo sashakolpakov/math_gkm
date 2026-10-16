@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovNormalizedCutMFEE.lean:25:68: error: unsolved goals\n\u03b9 : Type u_1\ninst\u271d : DecidableEq \u03b9\ns u : Finset \u03b9\nhu : u \u2286 s\na b : \u03b9 \u2192 \u211d\nhb : \u2200 i \u2208 s, 0 < b i\nha : 0 \u2264 \u2211 i \u2208 s, a i\nhr : \u2200 i \u2208 s \\ u, \u2200 j \u2208 u, a i * b j \u2264 a j * b i\nhs : s.Nonempty\nhbtotal : 0 < \u2211 i \u2208 s, b i\nhbtail : 0 \u2264 \u2211 i \u2208 u, b i\nhcross : 0 \u2264 \u2211 i \u2208 s \\ u, \u2211 j \u2208 u, (a j * b i - a i * b j)\n\u22a2 \u2211 x \u2208 s \\ u, \u2211 x_1 \u2208 u, a x_1 * b x - \u2211 x \u2208 s \\ u, \u2211 x_1 \u2208 u, a x * b x_1 =\n    \u2211 x \u2208 u, ((\u2211 x \u2208 s \\ u, b x) * a x + (\u2211 x \u2208 u, b x) * a x) -\n      \u2211 x \u2208 u, ((\u2211 j \u2208 s \\ u, a j) * b x + (\u2211 j \u2208 u, a j) * b x)\n/Users/sasha/math_gkm/research/MarkovNormalizedCutMFEE.lean:27:32: warning: This simp argument is unused:\n  sum_mul\n\nHint: Omit it from the simp argument list.\n  simp only [\u0335s\u0335u\u0335m\u0335_\u0335s\u0335u\u0335b\u0335_\u0335d\u0335i\u0335s\u0335t\u0335r\u0335i\u0335b\u0335,\u0335s\u0335u\u0335m\u0335_\u0335m\u0335u\u0335l\u0335,\u0335m\u0335u\u0335l\u0335_\u0335s\u0335u\u0335m\u0335]\u0335[\u0332s\u0332u\u0332m\u0332_\u0332s\u0332u\u0332b\u0332_\u0332d\u0332i\u0332s\u0332t\u0332r\u0332i\u0332b\u0332,\u0332 \u0332m\u0332u\u0332l\u0332_\u0332s\u0332u\u0332m\u0332]\u0332\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovNormalizedCutMFEE": "9779817df6ca7f2a1b520343c8c8ec6cad52f1c70b926b03ec4945cd19d61e8b"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-fee405c8/MarkovNormalizedCutMFEE.olean",
+    "/Users/sasha/math_gkm/research/MarkovNormalizedCutMFEE.lean"
+  ],
+  "seconds": 24.739876042003743,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

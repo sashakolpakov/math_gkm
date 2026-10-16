@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCutOuterMFEE.lean:18:40: error: Function expected at\n  C (ePolyM7E2 j t).coeff\nbut this term has type\n  (\u2115 \u2192 \u211d)[X]\n\nNote: Expected a function because this term is being applied to the argument\n  0\n/Users/sasha/math_gkm/research/MarkovCutOuterMFEE.lean:24:3: error: unsolved goals\ncase pos\nj t : \u2115\nht : t + 1 = j + 0\nhh : 0 \u2264 0\n\u22a2 0 = (ePolyM7E2 j t).coeff 0 - (sorry ()).coeff 0\n/Users/sasha/math_gkm/research/MarkovCutOuterMFEE.lean:36:7: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  c \u2265 0\n  b \u2265 0\n  b - c \u2264 0\n  a \u2265 0\n  a + b \u2265 1\n  a + b - c \u2265 1\nwhere\n a := \u2191j\n b := \u2191h\n c := \u2191k\n/Users/sasha/math_gkm/research/MarkovCutOuterMFEE.lean:37:5: error: unsolved goals\ncase neg\nj t h : \u2115\nht : t + 1 = j + h\nk : \u2115\nhk : h \u2264 k\nhkt : \u00ack \u2264 t\n\u22a2 (sorry ()).coeff (k + 1 - h) = 0\n/Users/sasha/math_gkm/research/MarkovCutOuterMFEE.lean:60:1: error: ring failed, ring expressions not equal\nj t h : \u2115\nht : t + 1 = j + h\nh1 : liftCutM7E2 j (t + 1) h = X ^ h * ePolyM7E2 j (t + 1)\nh2 : liftCutM7E2 j (t + 2) h = X ^ (h + 1) * ePolyM7E2 j (t + 2)\nhl : X * liftCutM7E2 j t h = X ^ h * (ePolyM7E2 j t - sorry)\n\u22a2 X * X ^ h * liftCutM7E2 j t h * ePolyM7E2 j (t + 2) + X * X ^ (h * 2) * ePolyM7E2 j (t + 2) * ePolyM7E2 j t -\n            X * X ^ (h * 2) * ePolyM7E2 j (t + 2) * C ((ePolyM7E2 j t).coeff 0) -\n          X ^ 2 * X ^ h * liftCutM7E2 j t h * ePolyM7E2 j (t + 2) -\n        X ^ (h * 2) * ePolyM7E2 j (t + 2) * ePolyM7E2 j t +\n      X ^ (h * 2) * ePolyM7E2 j (t + 2) * sorry =\n    0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCutOuterMFEE": "df737b085f8d726f40893d1196887a07302c69c26a9c1c4a8429ebbe529736de"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-fee405c8/MarkovCutOuterMFEE.olean",
+    "/Users/sasha/math_gkm/research/MarkovCutOuterMFEE.lean"
+  ],
+  "seconds": 44.80162450001808,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,654 @@
+{
+  "worker": 163,
+  "request": "fee405c8897249a786084298201a14aa",
+  "created_at_utc": "2026-10-16T23:20:50.188574+00:00",
+  "historical_status": "Completed / return0 / delivered report; full root remains open.",
+  "scope": "Closed163 archive and explicit named inherited/current counterparts only. Static parsing, hashing, literal comparisons and input-index/domain counts. No project/compiler/proof/checker/replay/finalizer/experiment execution, mathematical-value recomputation, project edits, proposer contact or research assistance. Active164 unexamined. Earlier sealed observations remain final.",
+  "new_modules": [
+    {
+      "module": "MarkovRankWeightMFEE",
+      "path": "research/MarkovRankWeightMFEE.lean",
+      "bytes": 2189,
+      "sha256": "c0349344371ff27a9a78361d109cd21fdc12800f5ec9d21f68e59c302f3a9c0d",
+      "current_sha256": "c0349344371ff27a9a78361d109cd21fdc12800f5ec9d21f68e59c302f3a9c0d",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in163.",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "weight_telescopeMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_cut_expansionMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "rank_weight_nonnegMFEE"
+        }
+      ],
+      "object_path": "evidence/markov-fee405c8/MarkovRankWeightMFEE.olean",
+      "object_sha256": "d3afc83f734b2e65650695cde1384d6f9c99cf48177a87496c9ba0db338cc35f",
+      "successful_final_build": "build-1792191179269739000.json",
+      "successful_final_build_sha256": "9b8eeb7fec36201b2fed06fe3a1a3ce782ec1c4440182d025e9b7ed3c08b82f0",
+      "imports": [
+        "MarkovAbel65c4"
+      ],
+      "theorem_statements": [
+        "theorem weight_telescopeMFEE (w : ℕ → ℝ) (r : ℕ) :\n w r = w 0 + ∑ k ∈ range r, (w (k+1)-w k)",
+        "theorem weight_cut_expansionMFEE (w : ℕ → ℝ) (r N : ℕ) (hr : r ≤ N) :\n w r = w 0 + ∑ k ∈ range N, if k+1 ≤ r then w (k+1)-w k else 0",
+        "theorem rank_weight_nonnegMFEE {ι : Type*} (s : Finset ι) (a : ι → ℝ)\n (rank : ι → ℕ) (N : ℕ) (hr : ∀ i ∈ s, rank i ≤ N)\n (w : ℕ → ℝ) (hw : 0 ≤ w 0) (hm : ∀ k, k<N → w k ≤ w (k+1))\n (ha : ∀ h, h ≤ N → 0 ≤ ∑ i ∈ s, if h ≤ rank i then a i else 0) :\n 0 ≤ ∑ i ∈ s, a i*w (rank i)"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovPolynomialWeightMFEE",
+      "path": "research/MarkovPolynomialWeightMFEE.lean",
+      "bytes": 3947,
+      "sha256": "cb01d8213dac5cd6073517b406f1652e17a04c18fa80d292c1f13297bbe6ad4b",
+      "current_sha256": "cb01d8213dac5cd6073517b406f1652e17a04c18fa80d292c1f13297bbe6ad4b",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in163.",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "weightPolyMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_poly_coeffMFEE"
+        },
+        {
+          "kind": "def",
+          "name": "cutPolyMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_poly_coeffMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_gap_coeffMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_weight_minMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_gap_nonnegMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_value_lcMFEE"
+        }
+      ],
+      "object_path": "evidence/markov-fee405c8/MarkovPolynomialWeightMFEE.olean",
+      "object_sha256": "7a09ac4a475fddfcb555575fa36bca574de2af6013c4bf68498a9b9062ee457b",
+      "successful_final_build": "build-1792191265362968000.json",
+      "successful_final_build_sha256": "2c90087c0ffee09d981ed73b6e8237cfcc2d411b295e508e84fb4057ac875026",
+      "imports": [
+        "MarkovRankWeightMFEE"
+      ],
+      "theorem_statements": [
+        "theorem weight_poly_coeffMFEE (w : ℕ → ℝ) (P : ℝ[X]) (k : ℕ) :\n (weightPolyMFEE w P).coeff k=w k*P.coeff k",
+        "theorem cut_poly_coeffMFEE (h : ℕ) (P : ℝ[X]) (k : ℕ) :\n (cutPolyMFEE h P).coeff k=if h ≤ k then P.coeff k else 0",
+        "theorem cut_gap_coeffMFEE (A B C : ℝ[X]) (h n : ℕ) :\n ((cutPolyMFEE h B)^2-cutPolyMFEE h A*cutPolyMFEE h C).coeff n=\n ∑ p ∈ antidiagonal n, if h ≤ min p.1 p.2 then\n   B.coeff p.1*B.coeff p.2-A.coeff p.1*C.coeff p.2 else 0",
+        "theorem cross_weight_minMFEE (f : ℤ → ℝ) (n i j : ℕ) (h : i+j=n) :\n f i*f j=f ((min i j : ℕ):ℤ)*f ((n-min i j : ℕ):ℤ)",
+        "theorem weighted_gap_nonnegMFEE (A B C : ℝ[X])\n (hcut : ∀ h n, 0 ≤ ((cutPolyMFEE h B)^2-cutPolyMFEE h A*cutPolyMFEE h C).coeff n)\n (f : ℤ → ℝ) (hf : CrossLC f) (hpos : ∀ k, 0 ≤ f k) (n : ℕ) :\n 0 ≤ ((weightPolyMFEE (fun k => f k) B)^2-\n   weightPolyMFEE (fun k => f k) A*weightPolyMFEE (fun k => f k) C).coeff n",
+        "theorem weighted_value_lcMFEE (A B C : ℝ[X])\n (hcut : ∀ h n, 0 ≤ ((cutPolyMFEE h B)^2-cutPolyMFEE h A*cutPolyMFEE h C).coeff n)\n (f : ℤ → ℝ) (hf : CrossLC f) (hpos : ∀ k, 0 ≤ f k) :\n (weightPolyMFEE (fun k => f k) A).eval 1*(weightPolyMFEE (fun k => f k) C).eval 1 ≤\n (weightPolyMFEE (fun k => f k) B).eval 1^2"
+      ],
+      "definitions": [
+        "def weightPolyMFEE (w : ℕ → ℝ) (P : ℝ[X]) : ℝ[X] :=\n ∑ k ∈ range (P.natDegree+1), monomial k (w k*P.coeff k)",
+        "def cutPolyMFEE (h : ℕ) (P : ℝ[X]) : ℝ[X] :=\n weightPolyMFEE (fun k => if h ≤ k then 1 else 0) P"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLiftTransportMFEE",
+      "path": "research/MarkovLiftTransportMFEE.lean",
+      "bytes": 2749,
+      "sha256": "d3c4d6a07442be22087023466255625003f29950f9a3df12b0441faf9217b38f",
+      "current_sha256": "d3c4d6a07442be22087023466255625003f29950f9a3df12b0441faf9217b38f",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in163.",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "cut_lift_identityMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_lift_evalMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_lift_outputMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_output_lc_of_boundaryMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_horizontal_of_boundaryMFEE"
+        }
+      ],
+      "object_path": "evidence/markov-fee405c8/MarkovLiftTransportMFEE.olean",
+      "object_sha256": "ceb3f44c93bda776eaec4ee1302356627237282c42bd80103da6d04b41fb7d0d",
+      "successful_final_build": "build-1792191325725322000.json",
+      "successful_final_build_sha256": "8bd21f8b3e57e8b049697b330bf64f703eb432495052320a6c4dbe01a827d312",
+      "imports": [
+        "MarkovPolynomialWeightMFEE",
+        "MarkovLiftCutM7E2",
+        "MarkovBinomialAllM37B"
+      ],
+      "theorem_statements": [
+        "theorem cut_lift_identityMFEE (j t h : ℕ) :\n cutPolyMFEE h (liftPolyM7E2 j t)=liftCutM7E2 j t h",
+        "theorem weight_lift_evalMFEE (w : ℕ → ℝ) (j t : ℕ) :\n (weightPolyMFEE w (liftPolyM7E2 j t)).eval 1=\n ∑ k ∈ range (t+1), w k*(reverseLiftMAE9 j t k:ℝ)",
+        "theorem weighted_lift_outputMFEE (d j t : ℕ) :\n (weightPolyMFEE (fun k => zchooseM37B d k) (liftPolyM7E2 j t)).eval 1=\n (liftOutputMAE9 d j t:ℝ)",
+        "theorem lift_output_lc_of_boundaryMFEE (H : LiftBoundaryM7E2) (d j t : ℕ) :\n liftOutputMAE9 d j t*liftOutputMAE9 d j (t+2) ≤ liftOutputMAE9 d j (t+1)^2",
+        "theorem source_lower_horizontal_of_boundaryMFEE (H : LiftBoundaryM7E2)\n (q i j : ℕ) (r : Bool) (hj : j ≤ q) :\n threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCutCertificate0MFEE",
+      "path": "research/MarkovCutCertificate0MFEE.lean",
+      "bytes": 2062,
+      "sha256": "c4f76a72f769f39d7f2d238a36b32c18a14d9a4b76020232205dbdeb1d87535f",
+      "current_sha256": "c4f76a72f769f39d7f2d238a36b32c18a14d9a4b76020232205dbdeb1d87535f",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in163.",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "cutCertificate0MFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_certificate_nonneg0MFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_certificate_identity0MFEE"
+        }
+      ],
+      "object_path": "evidence/markov-fee405c8/MarkovCutCertificate0MFEE.olean",
+      "object_sha256": "bf43193dd6bb8815888974f0773cca29f68c3bcfd5b93bd0e1c0c5d62e7ee92c",
+      "successful_final_build": "build-1792191402961269000.json",
+      "successful_final_build_sha256": "d0dfc485885dc515b50469c9b6f6b9abfcb94be48c4c4521f19ae6a4a9dc490e",
+      "imports": [
+        "MarkovLiftRatioMAE9"
+      ],
+      "theorem_statements": [
+        "theorem cut_certificate_nonneg0MFEE (t s : ℚ) (ht : 0 ≤ t) (hs : 0 ≤ s) :\n 0 ≤ cutCertificate0MFEE t s",
+        "theorem cut_certificate_identity0MFEE (t s : ℚ) :\n (let j := s+2; 2*j^2*(t+j+4)^2*(liftWeightMAE9 j (t+1) 1)^2*liftDenMAE9 t 0*liftDenMAE9 (t+2) 2*(t+5)-j*(j-1)*(t+j+4)*(t+j+5)*(t+4)*liftWeightMAE9 j t 0*liftWeightMAE9 j (t+2) 2*(liftDenMAE9 (t+1) 1)^2)=cutCertificate0MFEE t s"
+      ],
+      "definitions": [
+        "def cutCertificate0MFEE (t s : ℚ) : ℚ :=\n (1*t^11*s^2+5*t^11*s+6*t^11+10*t^10*s^3+127*t^10*s^2+445*t^10*s+462*t^10+41*t^9*s^4+892*t^9*s^3+6347*t^9*s^2+17470*t^9*s+16032*t^9+88*t^8*s^5+2930*t^8*s^4+33972*t^8*s^3+174854*t^8*s^2+401306*t^8*s+330908*t^8+104*t^7*s^6+5192*t^7*s^5+90334*t^7*s^4+736136*t^7*s^3+3028959*t^7*s^2+6013013*t^7*s+4513422*t^7+64*t^6*s^7+5080*t^6*s^6+131064*t^6*s^5+1582088*t^6*s^4+10122266*t^6*s^3+35131955*t^6*s^2+61847637*t^6*s+42709294*t^6+16*t^5*s^8+2560*t^5*s^7+104072*t^5*s^6+1849880*t^5*s^5+17383557*t^5*s^4+92712524*t^5*s^3+280749153*t^5*s^2+446324744*t^5*s+286075292*t^5+512*t^4*s^8+41536*t^4*s^7+1158664*t^4*s^6+15972368*t^4*s^5+124453918*t^4*s^4+574606728*t^4*s^3+1554138952*t^4*s^2+2262517396*t^4*s+1356216936*t^4+6288*t^3*s^8+349824*t^3*s^7+7568112*t^3*s^6+86404800*t^3*s^5+581146516*t^3*s^4+2384583440*t^3*s^3+5861903988*t^3*s^2+7902294752*t^3*s+4459058992*t^3+37152*t^2*s^8+1613056*t^2*s^7+28994752*t^2*s^6+286025856*t^2*s^5+1708034536*t^2*s^4+6351266112*t^2*s^3+14384830528*t^2*s^2+18122980928*t^2*s+9682339584*t^2+106048*t*s^8+3863552*t*s^7+60331904*t*s^6+529819136*t*s^5+2868754784*t*s^4+9815218688*t*s^3+20708852800*t*s^2+24574089216*t*s+12494797056*t+117504*s^8+3760128*s^7+52618752*s^6+420581376*s^5+2098930176*s^4+6689267712*s^3+13269136896*s^2+14930915328*s+7258761216)/1"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCutCertificate1MFEE",
+      "path": "research/MarkovCutCertificate1MFEE.lean",
+      "bytes": 1879,
+      "sha256": "ccdaa9de420de73cadcd8f3b7d650c7080302e1b8a520af1958865602d8b2be4",
+      "current_sha256": "ccdaa9de420de73cadcd8f3b7d650c7080302e1b8a520af1958865602d8b2be4",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in163.",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "cutCertificate1MFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_certificate_nonneg1MFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_certificate_identity1MFEE"
+        }
+      ],
+      "object_path": "evidence/markov-fee405c8/MarkovCutCertificate1MFEE.olean",
+      "object_sha256": "39a49b7a64bc70de782ddea6c62adeb26128d11d5c9fd760c108b3fab5e869ee",
+      "successful_final_build": "build-1792191402961291000.json",
+      "successful_final_build_sha256": "cfbb753650041d906c082da912073a1dce1b31551653372dbec45a413582b750",
+      "imports": [
+        "MarkovLiftRatioMAE9"
+      ],
+      "theorem_statements": [
+        "theorem cut_certificate_nonneg1MFEE (t s : ℚ) (ht : 0 ≤ t) (hs : 0 ≤ s) :\n 0 ≤ cutCertificate1MFEE t s",
+        "theorem cut_certificate_identity1MFEE (t s : ℚ) :\n (let j := s+2; 2*j*(t+j+4)^2*liftWeightMAE9 j (t+1) 1*liftWeightMAE9 j (t+1) 0*liftDenMAE9 t 0*liftDenMAE9 (t+2) 1*(t+5)-j*(t+j+4)*(t+j+5)*(t+4)*liftWeightMAE9 j t 0*liftWeightMAE9 j (t+2) 1*liftDenMAE9 (t+1) 1*liftDenMAE9 (t+1) 0)=cutCertificate1MFEE t s"
+      ],
+      "definitions": [
+        "def cutCertificate1MFEE (t s : ℚ) : ℚ :=\n (1*t^11*s+2*t^11+10*t^10*s^2+97*t^10*s+154*t^10+41*t^9*s^3+765*t^9*s^2+4034*t^9*s+5336*t^9+88*t^8*s^4+2634*t^8*s^3+25704*t^8*s^2+96498*t^8*s+109844*t^8+104*t^7*s^5+4780*t^7*s^4+74010*t^7*s^3+501062*t^7*s^2+1489105*t^7*s+1492890*t^7+64*t^6*s^6+4736*t^6*s^5+112100*t^6*s^4+1194652*t^6*s^3+6288942*t^6*s^2+15656001*t^6*s+14067306*t^6+16*t^5*s^7+2400*t^5*s^6+91224*t^5*s^5+1482332*t^5*s^4+12215185*t^5*s^3+53186521*t^5*s^2+114879996*t^5*s+93785692*t^5+480*t^4*s^7+36896*t^4*s^6+962880*t^4*s^5+12086532*t^4*s^4+82077362*t^4*s^3+307289328*t^4*s^2+589912524*t^4*s+442414376*t^4+5616*t^3*s^7+297504*t^3*s^6+6012000*t^3*s^5+62217080*t^3*s^4+362514188*t^3*s^3+1198630276*t^3*s^2+2081509488*t^3*s+1447200688*t^3+32096*t^2*s^7+1326752*t^2*s^6+22197408*t^2*s^5+197430080*t^2*s^4+1015059368*t^2*s^3+3022845520*t^2*s^2+4813360160*t^2*s+3126445120*t^2+89792*t*s^7+3103104*t*s^6+44866048*t*s^5+353066368*t*s^4+1635257440*t*s^3+4452845312*t*s^2+6572157056*t*s+4014538752*t+98560*s^7+2974720*s^6+38295040*s^5+272419840*s^4+1154944000*s^3+2910530560*s^2+4017377280*s+2321141760)/1"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCutRationalMFEE",
+      "path": "research/MarkovCutRationalMFEE.lean",
+      "bytes": 3347,
+      "sha256": "d8e40f64467e581c023422f8855bdf7b2101f741b5ba37617cb86c5c85041fb5",
+      "current_sha256": "d8e40f64467e581c023422f8855bdf7b2101f741b5ba37617cb86c5c85041fb5",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in163.",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "cutBaseMFEE"
+        },
+        {
+          "kind": "def",
+          "name": "cutNext0MFEE"
+        },
+        {
+          "kind": "def",
+          "name": "cutNext1MFEE"
+        },
+        {
+          "kind": "def",
+          "name": "cutLast1MFEE"
+        },
+        {
+          "kind": "def",
+          "name": "cutLast2MFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_rational_zeroMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_rational_oneMFEE"
+        }
+      ],
+      "object_path": "evidence/markov-fee405c8/MarkovCutRationalMFEE.olean",
+      "object_sha256": "464efe5364218a72b87385e6b61e70e17d370569e7c8b3e33af6a85c7a153302",
+      "successful_final_build": "build-1792191484611153000.json",
+      "successful_final_build_sha256": "a0685cf817feb78612001f10976203cb324620dae77a4100444e407d7386a4d2",
+      "imports": [
+        "MarkovCutCertificate0MFEE",
+        "MarkovCutCertificate1MFEE"
+      ],
+      "theorem_statements": [
+        "theorem cut_rational_zeroMFEE (t s : ℚ) (ht : 0 ≤ t) (hs : 0 ≤ s) :\n cutBaseMFEE (s+2) t*cutLast2MFEE (s+2) t ≤ cutNext1MFEE (s+2) t^2",
+        "theorem cut_rational_oneMFEE (t s : ℚ) (ht : 0 ≤ t) (hs : 0 ≤ s) :\n cutBaseMFEE (s+2) t*cutLast1MFEE (s+2) t ≤\n   2*cutNext1MFEE (s+2) t*cutNext0MFEE (s+2) t"
+      ],
+      "definitions": [
+        "def cutBaseMFEE (j t : ℚ) : ℚ := liftWeightMAE9 j t 0/liftDenMAE9 t 0",
+        "def cutNext0MFEE (j t : ℚ) : ℚ :=\n (t+j+4)*liftWeightMAE9 j (t+1) 0/((t+4)*liftDenMAE9 (t+1) 0)",
+        "def cutNext1MFEE (j t : ℚ) : ℚ :=\n j*(t+j+4)*liftWeightMAE9 j (t+1) 1/((t+4)*liftDenMAE9 (t+1) 1)",
+        "def cutLast1MFEE (j t : ℚ) : ℚ :=\n j*(t+j+4)*(t+j+5)*liftWeightMAE9 j (t+2) 1/\n ((t+4)*(t+5)*liftDenMAE9 (t+2) 1)",
+        "def cutLast2MFEE (j t : ℚ) : ℚ :=\n j*(j-1)*(t+j+4)*(t+j+5)*liftWeightMAE9 j (t+2) 2/\n (2*(t+4)*(t+5)*liftDenMAE9 (t+2) 2)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCutValuesMFEE",
+      "path": "research/MarkovCutValuesMFEE.lean",
+      "bytes": 4063,
+      "sha256": "00a86418e5b846eabcf455899a25e8d36832d2cfa390f6eed90365c55c21ea06",
+      "current_sha256": "00a86418e5b846eabcf455899a25e8d36832d2cfa390f6eed90365c55c21ea06",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in163.",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "lift_normalizedMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "base_choose_stepMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "base_choose_twoMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_kernel_valuesMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_kernel_zeroMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_kernel_oneMFEE"
+        }
+      ],
+      "object_path": "evidence/markov-fee405c8/MarkovCutValuesMFEE.olean",
+      "object_sha256": "0271e77ca1673028fee1bcef08cde34521a0c8cad7fa8693e4988f2b69ff8f45",
+      "successful_final_build": "build-1792191595742612000.json",
+      "successful_final_build_sha256": "44b6355480e40b98f0840050af7a3570530f0486589eff05a91733c1716a7ac4",
+      "imports": [
+        "MarkovCutRationalMFEE"
+      ],
+      "theorem_statements": [
+        "theorem lift_normalizedMFEE (j t m : ℕ) (hm : m ≤ j) :\n (liftTermMAE9 j t m:ℚ)=((t+j+3).choose j:ℚ)*(j.choose m:ℚ)*\n   liftWeightMAE9 j t m/liftDenMAE9 t m",
+        "theorem base_choose_stepMFEE (j t : ℕ) :\n ((t+1+j+3).choose j:ℚ)=((t+j+3).choose j:ℚ)*(t+j+4)/(t+4)",
+        "theorem base_choose_twoMFEE (j t : ℕ) :\n ((t+2+j+3).choose j:ℚ)=((t+j+3).choose j:ℚ)*(t+j+4)*(t+j+5)/((t+4)*(t+5))",
+        "theorem cut_kernel_valuesMFEE (j t : ℕ) (hj : 2 ≤ j) :\n (liftTermMAE9 j t 0:ℚ)=((t+j+3).choose j:ℚ)*cutBaseMFEE j t ∧\n (liftTermMAE9 j (t+1) 0:ℚ)=((t+j+3).choose j:ℚ)*cutNext0MFEE j t ∧\n (liftTermMAE9 j (t+1) 1:ℚ)=((t+j+3).choose j:ℚ)*cutNext1MFEE j t ∧\n (liftTermMAE9 j (t+2) 1:ℚ)=((t+j+3).choose j:ℚ)*cutLast1MFEE j t ∧\n (liftTermMAE9 j (t+2) 2:ℚ)=((t+j+3).choose j:ℚ)*cutLast2MFEE j t",
+        "theorem cut_kernel_zeroMFEE (j t : ℕ) (hj : 2 ≤ j) :\n liftTermMAE9 j t 0*liftTermMAE9 j (t+2) 2 ≤ liftTermMAE9 j (t+1) 1^2",
+        "theorem cut_kernel_oneMFEE (j t : ℕ) (hj : 2 ≤ j) :\n liftTermMAE9 j t 0*liftTermMAE9 j (t+2) 1 ≤\n   2*liftTermMAE9 j (t+1) 1*liftTermMAE9 j (t+1) 0"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCutShiftMFEE",
+      "path": "research/MarkovCutShiftMFEE.lean",
+      "bytes": 2321,
+      "sha256": "9d18832e0000c2682d098ec85e43038e5816387e30db1d927c17db683a1b9d79",
+      "current_sha256": "9d18832e0000c2682d098ec85e43038e5816387e30db1d927c17db683a1b9d79",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in163.",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "lift_cut_shiftMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_zero_column_lcMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_cut_boundary_identityMFEE"
+        }
+      ],
+      "object_path": "evidence/markov-fee405c8/MarkovCutShiftMFEE.olean",
+      "object_sha256": "c467124a16a1e288d5f57c2aa02c8ad14613e03f0c252bae845957c53295b141",
+      "successful_final_build": "build-1792191666305238000.json",
+      "successful_final_build_sha256": "fbac5852ab4d7372fdbf0ec7a86dd62f41f821f6bd303273a6e25bc93392cf10",
+      "imports": [
+        "MarkovLiftCutM7E2"
+      ],
+      "theorem_statements": [
+        "theorem lift_cut_shiftMFEE (j h v : ℕ) :\n liftCutM7E2 j (h+v) h = X^h *\n   ∑ k ∈ range (v+1), monomial k (liftTermMAE9 j (h+v) (v-k):ℝ)",
+        "theorem lift_zero_column_lcMFEE (j t : ℕ) :\n liftTermMAE9 j t 0*liftTermMAE9 j (t+2) 0 ≤ liftTermMAE9 j (t+1) 0^2",
+        "theorem lift_cut_boundary_identityMFEE (j t : ℕ) :\n liftCutGapM7E2 j t t = X^(2*t)*(\n   C ((liftTermMAE9 j (t+1) 1:ℝ)^2-(liftTermMAE9 j t 0:ℝ)*(liftTermMAE9 j (t+2) 2:ℝ))+\n   C (2*(liftTermMAE9 j (t+1) 1:ℝ)*(liftTermMAE9 j (t+1) 0:ℝ)-\n     (liftTermMAE9 j t 0:ℝ)*(liftTermMAE9 j (t+2) 1:ℝ))*X+\n   C ((liftTermMAE9 j (t+1) 0:ℝ)^2-(liftTermMAE9 j t 0:ℝ)*(liftTermMAE9 j (t+2) 0:ℝ))*X^2)"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCutBoundaryMFEE",
+      "path": "research/MarkovCutBoundaryMFEE.lean",
+      "bytes": 3038,
+      "sha256": "af96140a8d45e098ac94535f93b4a4cca0ee09af710f2b23455a41fedba65960",
+      "current_sha256": "af96140a8d45e098ac94535f93b4a4cca0ee09af710f2b23455a41fedba65960",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in163.",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "lift_one_valuesMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_kernel_allMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_cut_boundary_nonnegMFEE"
+        },
+        {
+          "kind": "def",
+          "name": "LiftInteriorMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_boundary_iff_interiorMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_positive_iff_interiorMFEE"
+        }
+      ],
+      "object_path": "evidence/markov-fee405c8/MarkovCutBoundaryMFEE.olean",
+      "object_sha256": "d5b24616593d2c0c28c03d153cbf7b2ccd1e6c9ccd4768826eca4b9ab8364c52",
+      "successful_final_build": "build-1792191716327303000.json",
+      "successful_final_build_sha256": "e8235d204c43bdacd3d0cd423154f8402c879a97b0ca1f4ff5690bc71014aa8f",
+      "imports": [
+        "MarkovCutValuesMFEE",
+        "MarkovCutShiftMFEE"
+      ],
+      "theorem_statements": [
+        "theorem lift_one_valuesMFEE (t : ℕ) :\n liftTermMAE9 1 t 0=(t:ℤ)+8 ∧ liftTermMAE9 1 t 1=(t:ℤ)+4",
+        "theorem cut_kernel_allMFEE (j t : ℕ) :\n liftTermMAE9 j t 0*liftTermMAE9 j (t+2) 2 ≤ liftTermMAE9 j (t+1) 1^2 ∧\n liftTermMAE9 j t 0*liftTermMAE9 j (t+2) 1 ≤\n   2*liftTermMAE9 j (t+1) 1*liftTermMAE9 j (t+1) 0",
+        "theorem lift_cut_boundary_nonnegMFEE (j t k : ℕ) :\n 0 ≤ (liftCutGapM7E2 j t t).coeff k",
+        "theorem lift_boundary_iff_interiorMFEE : LiftBoundaryM7E2 ↔ LiftInteriorMFEE",
+        "theorem lift_positive_iff_interiorMFEE : LiftLCPositiveM7E2 ↔ LiftInteriorMFEE"
+      ],
+      "definitions": [
+        "def LiftInteriorMFEE : Prop := ∀ j t h k, h<t → t<j+h →\n 0 ≤ (liftCutGapM7E2 j t h).coeff k"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCutOuterMFEE",
+      "path": "research/MarkovCutOuterMFEE.lean",
+      "bytes": 3553,
+      "sha256": "ccd72ad1515418f3dd16861945609877bbe172856dbf4240fa22ee01e660ef75",
+      "current_sha256": "ccd72ad1515418f3dd16861945609877bbe172856dbf4240fa22ee01e660ef75",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in163.",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "e_coeff_nonnegMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_cut_outer_leftMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_cut_outer_identityMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_cut_outer_nonnegMFEE"
+        },
+        {
+          "kind": "def",
+          "name": "LiftMiddleMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_interior_iff_middleMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_positive_iff_middleMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_cut_small_jMFEE"
+        }
+      ],
+      "object_path": "evidence/markov-fee405c8/MarkovCutOuterMFEE.olean",
+      "object_sha256": "43490873856d62ff9e46ac65f5f3db0b9539f81cc46e90554dadb72ba6543283",
+      "successful_final_build": "build-1792191956566783000.json",
+      "successful_final_build_sha256": "b58d40f98e8ba63010b2b0488b908b173274f0df1500bfd51518c88b24c722f4",
+      "imports": [
+        "MarkovCutBoundaryMFEE"
+      ],
+      "theorem_statements": [
+        "theorem e_coeff_nonnegMFEE (j t k : ℕ) : 0 ≤ (ePolyM7E2 j t).coeff k",
+        "theorem lift_cut_outer_leftMFEE (j t h : ℕ) (ht : t+1=j+h) :\n X*liftCutM7E2 j t h=X^h*(ePolyM7E2 j t-C ((ePolyM7E2 j t).coeff 0))",
+        "theorem lift_cut_outer_identityMFEE (j t h : ℕ) (ht : t+1=j+h) :\n liftCutGapM7E2 j t h=X^(2*h)*(\n   ePolyM7E2 j (t+1)^2-ePolyM7E2 j t*ePolyM7E2 j (t+2)+\n   C ((ePolyM7E2 j t).coeff 0)*ePolyM7E2 j (t+2))",
+        "theorem lift_cut_outer_nonnegMFEE (j t h k : ℕ) (ht : t+1=j+h) :\n 0 ≤ (liftCutGapM7E2 j t h).coeff k",
+        "theorem lift_interior_iff_middleMFEE : LiftInteriorMFEE ↔ LiftMiddleMFEE",
+        "theorem lift_positive_iff_middleMFEE : LiftLCPositiveM7E2 ↔ LiftMiddleMFEE",
+        "theorem lift_cut_small_jMFEE (j t h k : ℕ) (hj : j ≤ 2) :\n 0 ≤ (liftCutGapM7E2 j t h).coeff k"
+      ],
+      "definitions": [
+        "def LiftMiddleMFEE : Prop := ∀ j t h k, h<t → t+1<j+h →\n 0 ≤ (liftCutGapM7E2 j t h).coeff k"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovNormalizedCutMFEE",
+      "path": "research/MarkovNormalizedCutMFEE.lean",
+      "bytes": 2312,
+      "sha256": "2479ca6a9ea049fb32d643fab5810ee3c69a636ef852d5ba003e63070773d5a1",
+      "current_sha256": "2479ca6a9ea049fb32d643fab5810ee3c69a636ef852d5ba003e63070773d5a1",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in163.",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "normalized_subset_nonnegMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "normalized_rank_cutMFEE"
+        }
+      ],
+      "object_path": "evidence/markov-fee405c8/MarkovNormalizedCutMFEE.olean",
+      "object_sha256": "4d4ba7b96ff2d7fdc40d1c84a2f6a572210d656dc5deec3d72440facd13d70b0",
+      "successful_final_build": "build-1792192002347082000.json",
+      "successful_final_build_sha256": "b8957658d5bf0f2fd8f1d10d35947e751736aee1255060398e5ea17d88e3e3fe",
+      "imports": [
+        "MarkovRankWeightMFEE"
+      ],
+      "theorem_statements": [
+        "theorem normalized_subset_nonnegMFEE {ι : Type*} [DecidableEq ι]\n (s u : Finset ι) (hu : u ⊆ s) (a b : ι → ℝ)\n (hb : ∀ i ∈ s, 0 < b i) (ha : 0 ≤ ∑ i ∈ s, a i)\n (hr : ∀ i ∈ s\\u, ∀ j ∈ u, a i*b j ≤ a j*b i) :\n 0 ≤ ∑ i ∈ u, a i",
+        "theorem normalized_rank_cutMFEE {ι : Type*} [DecidableEq ι]\n (s : Finset ι) (rank : ι → ℕ) (a b : ι → ℝ)\n (hb : ∀ i ∈ s, 0 < b i) (ha : 0 ≤ ∑ i ∈ s, a i)\n (hr : ∀ i ∈ s, ∀ j ∈ s, rank i ≤ rank j → a i*b j ≤ a j*b i)\n (h : ℕ) : 0 ≤ ∑ i ∈ s, if h ≤ rank i then a i else 0"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLiftRootMFEE",
+      "path": "research/MarkovLiftRootMFEE.lean",
+      "bytes": 2665,
+      "sha256": "08e6ec2e78d55507258661f2a3f43bfa37e28c82695cbaf134f4de2054977367",
+      "current_sha256": "08e6ec2e78d55507258661f2a3f43bfa37e28c82695cbaf134f4de2054977367",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in163.",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "LowerHorizontalMFEE"
+        },
+        {
+          "kind": "def",
+          "name": "ThreeOutsideLowerMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_lower_horizontalMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_horizontal_of_middleMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_of_middle_and_remainingMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_horizontal_paths_of_middleMFEE"
+        }
+      ],
+      "object_path": "evidence/markov-fee405c8/MarkovLiftRootMFEE.olean",
+      "object_sha256": "886c7ef190c31e21a197f5b5a126ebfe03d6e0b23dd66e8de87710ef4e5b7512",
+      "successful_final_build": "build-1792192002349932000.json",
+      "successful_final_build_sha256": "4711285a83eb9cb699b0358626c6d8b3d176de12d2f315a8b62b7930ff6a186f",
+      "imports": [
+        "MarkovLiftTransportMFEE",
+        "MarkovCutOuterMFEE",
+        "MarkovResidualMAE9"
+      ],
+      "theorem_statements": [
+        "theorem root_iff_lower_horizontalMFEE :\n Conjecture63 ↔ LowerHorizontalMFEE ∧ ThreeOutsideLowerMFEE ∧ OtherFourM9E2",
+        "theorem lower_horizontal_of_middleMFEE (H : LiftMiddleMFEE) : LowerHorizontalMFEE",
+        "theorem root_of_middle_and_remainingMFEE (H : LiftMiddleMFEE)\n (ho : ThreeOutsideLowerMFEE) (h4 : OtherFourM9E2) : Conjecture63",
+        "theorem lower_horizontal_paths_of_middleMFEE (H : LiftMiddleMFEE)\n (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1 ≤ q ∧ (frame path).mid.b=sourceNME9C q r ∧\n ∀ i j, j ≤ q → coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n   coeff (frame path).mid.p (i+1) j^2"
+      ],
+      "definitions": [
+        "def LowerHorizontalMFEE : Prop := ∀ q : ℕ, 1 ≤ q → ∀ r i j, j ≤ q →\n threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2",
+        "def ThreeOutsideLowerMFEE : Prop := ∀ q : ℕ, 1 ≤ q → ∀ r,\n (∀ i j, q<j → j≠5 →\n   threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2) ∧\n (∀ i j, ¬(((i=3 ∨ i=4) ∧ j+1 ≤ q) ∨ (5 ≤ i ∧ i ≤ 8 ∧ j+2 ≤ q)) →\n   threeRawM9E2 q r i j*threeRawM9E2 q r i (j+2) ≤ threeRawM9E2 q r i (j+1)^2) ∧\n (∀ i j, ¬(3 ≤ i ∧ i ≤ 6 ∧ j+2 ≤ q) →\n   threeRawM9E2 q r i (j+2)*threeRawM9E2 q r (i+2) j ≤\n     threeRawM9E2 q r (i+1) (j+1)^2)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovRatioObstructionMFEE",
+      "path": "research/MarkovRatioObstructionMFEE.lean",
+      "bytes": 1288,
+      "sha256": "dba77c63f826e6eaed1cf66174d94fb270d0ddd5891cbc1903a40c7f8cd41005",
+      "current_sha256": "dba77c63f826e6eaed1cf66174d94fb270d0ddd5891cbc1903a40c7f8cd41005",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in163.",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "previous_ratio_not_convexMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "previous_ratio_convex_failureMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "ratio_obstruction_source_validMFEE"
+        }
+      ],
+      "object_path": "evidence/markov-fee405c8/MarkovRatioObstructionMFEE.olean",
+      "object_sha256": "7f55716ba531fafa1019ebbe6788edb4f59ea10f2b8f4bc6f4aecde9c496a414",
+      "successful_final_build": "build-1792192350467149000.json",
+      "successful_final_build_sha256": "3f76f35218a7971345f0605d24a6a754fb8bc897a5eb180a5328f67e78ba7678",
+      "imports": [
+        "MarkovLiftRootMFEE"
+      ],
+      "theorem_statements": [
+        "theorem previous_ratio_not_convexMFEE :\n (liftTermMAE9 13 1 1:ℚ)/(liftTermMAE9 13 2 2:ℚ)-\n   2*((liftTermMAE9 13 1 0:ℚ)/(liftTermMAE9 13 2 1:ℚ)) =\n   -18761/44990946",
+        "theorem previous_ratio_convex_failureMFEE :\n (liftTermMAE9 13 1 1:ℚ)/(liftTermMAE9 13 2 2:ℚ) <\n   2*((liftTermMAE9 13 1 0:ℚ)/(liftTermMAE9 13 2 1:ℚ))",
+        "theorem ratio_obstruction_source_validMFEE :\n InPolygon 3 (sourceNME9C 13 true) 4 13 ∧\n InPolygon 3 (sourceNME9C 13 true) 5 13 ∧\n InPolygon 3 (sourceNME9C 13 true) 6 13 ∧\n threeRawM9E2 13 true 4 13*threeRawM9E2 13 true 6 13 ≤\n   threeRawM9E2 13 true 5 13^2"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    }
+  ],
+  "pending_modules": [
+    {
+      "module": "MarkovPairClearedMFEE",
+      "path": "research/MarkovPairClearedMFEE.lean",
+      "sha256": "0fe7ae8d90e397a8e121f3ac3e271bd7c9646a74625670add9636f0b0c57d75e",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pairClearedMFEE"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_cleared_nonnegMFEE"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pair_cleared_nonnegMFEE (T x g z : ℚ) (hT : 0 ≤ T) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 ≤ pairClearedMFEE T x g z"
+      ],
+      "definitions": [
+        "def pairClearedMFEE (T x g z : ℚ) : ℚ :=\n ((2+1*g+1*x)*(8+1*T+1*g+1*x)*(54+15*T+28*z+15*g+15*x+1*T^2+4*z*T+4*z^2+2*g*T+4*g*z+1*g^2+2*x*T+4*x*z+2*x*g+1*x^2)*(2+1*z+1*g)*(5+1*T+1*x)*(88+19*T+36*z+36*g+19*x+1*T^2+4*z*T+4*z^2+4*g*T+8*g*z+4*g^2+2*x*T+4*x*z+4*x*g+1*x^2)*(3+1*g+1*x)*(10+1*T+1*g+1*x)*(3+1*z+1*g)*(3+1*T+1*x)*(2+1*z)*(4+1*T+1*g+1*x)*(2+1*g+1*x)*(8+1*T+1*g+1*x)*(9+1*T+1*g+1*x)*(70+17*T+32*z+17*g+17*x+1*T^2+4*z*T+4*z^2+2*g*T+4*g*z+1*g^2+2*x*T+4*x*z+2*x*g+1*x^2)*(2+1*z+1*g)*(4+1*T+1*x)*(5+1*T+1*x)*(2+1*x)*(9+1*T+1*x)*(70+17*T+32*z+32*g+17*x+1*T^2+4*z*T+4*z^2+4*g*T+8*g*z+4*g^2+2*x*T+4*x*z+4*x*g+1*x^2))+\n ((1*x)*(5+1*T+1*x)*(84+19*T+36*z+36*g+19*x+1*T^2+4*z*T+4*z^2+4*g*T+8*g*z+4*g^2+2*x*T+4*x*z+4*x*g+1*x^2)*(1*z)*(8+1*T+1*g+1*x)*(58+15*T+28*z+15*g+15*x+1*T^2+4*z*T+4*z^2+2*g*T+4*g*z+1*g^2+2*x*T+4*x*z+2*x*g+1*x^2)*(1+1*z)*(6+1*T+1*g+1*x)*(1+1*x)*(7+1*T+1*x)*(2+1*z)*(4+1*T+1*g+1*x)*(5+1*T+1*g+1*x)*(2+1*g+1*x)*(8+1*T+1*g+1*x)*(70+17*T+32*z+17*g+17*x+1*T^2+4*z*T+4*z^2+2*g*T+4*g*z+1*g^2+2*x*T+4*x*z+2*x*g+1*x^2)*(2+1*z+1*g)*(5+1*T+1*x)*(2+1*x)*(8+1*T+1*x)*(9+1*T+1*x)*(70+17*T+32*z+32*g+17*x+1*T^2+4*z*T+4*z^2+4*g*T+8*g*z+4*g^2+2*x*T+4*x*z+4*x*g+1*x^2))-\n ((1+1*g+1*x)*(6+1*T+1*g+1*x)*(68+17*T+32*z+17*g+17*x+1*T^2+4*z*T+4*z^2+2*g*T+4*g*z+1*g^2+2*x*T+4*x*z+2*x*g+1*x^2)*(1+1*z+1*g)*(7+1*T+1*x)*(72+17*T+32*z+32*g+17*x+1*T^2+4*z*T+4*z^2+4*g*T+8*g*z+4*g^2+2*x*T+4*x*z+4*x*g+1*x^2)*(1+1*z)*(6+1*T+1*g+1*x)*(3+1*g+1*x)*(10+1*T+1*g+1*x)*(56+15*T+28*z+15*g+15*x+1*T^2+4*z*T+4*z^2+2*g*T+4*g*z+1*g^2+2*x*T+4*x*z+2*x*g+1*x^2)*(3+1*z+1*g)*(3+1*T+1*x)*(1+1*x)*(7+1*T+1*x)*(86+19*T+36*z+36*g+19*x+1*T^2+4*z*T+4*z^2+4*g*T+8*g*z+4*g^2+2*x*T+4*x*z+4*x*g+1*x^2)*(2+1*g+1*x)*(8+1*T+1*g+1*x)*(9+1*T+1*g+1*x)*(2+1*z+1*g)*(4+1*T+1*x)*(5+1*T+1*x))-\n ((1+1*x)*(7+1*T+1*x)*(68+17*T+32*z+32*g+17*x+1*T^2+4*z*T+4*z^2+4*g*T+8*g*z+4*g^2+2*x*T+4*x*z+4*x*g+1*x^2)*(1+1*z)*(6+1*T+1*g+1*x)*(72+17*T+32*z+17*g+17*x+1*T^2+4*z*T+4*z^2+2*g*T+4*g*z+1*g^2+2*x*T+4*x*z+2*x*g+1*x^2)*(1+1*z)*(6+1*T+1*g+1*x)*(3+1*g+1*x)*(10+1*T+1*g+1*x)*(56+15*T+28*z+15*g+15*x+1*T^2+4*z*T+4*z^2+2*g*T+4*g*z+1*g^2+2*x*T+4*x*z+2*x*g+1*x^2)*(3+1*z+1*g)*(3+1*T+1*x)*(1+1*x)*(7+1*T+1*x)*(86+19*T+36*z+36*g+19*x+1*T^2+4*z*T+4*z^2+4*g*T+8*g*z+4*g^2+2*x*T+4*x*z+4*x*g+1*x^2)*(2+1*z)*(4+1*T+1*g+1*x)*(5+1*T+1*g+1*x)*(2+1*x)*(8+1*T+1*x)*(9+1*T+1*x))"
+      ],
+      "forbidden_tokens": [],
+      "status": "Unvalidated: one120-second compiler timeout. Excluded from final selected replay/prints; no theorem credit.",
+      "build_receipt": "build-1792192175786611000.json",
+      "build_receipt_sha256": "f541f88c2dc91163542a0d8a36f0fad9b3cbad2b3f8e1232b826c6f9c32c1eb0",
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false
+    }
+  ],
+  "accepted_counts": {
+    "theorem": 50,
+    "def": 13
+  },
+  "rank_weight_scope": "Finite arbitrary type/index set, signed a, natural rank<=N, weight w0>=0 and wk<=w(k+1) only k<N. All upper rank cuts h<=N nonnegative. Exact telescoping finite interchange, no sign restriction on a/no coefficient division.",
+  "polynomial_weight_scope": "Arbitrary real A,B,C, no coefficient nonnegativity assumption. Every literal high-index cut gap coefficient h,n nonnegative; f:Z->R full CrossLC and nonnegative allintegers. On antidiagonal n, rank=min(i,j)<=floor(n/2), product f(k)f(n-k) increasing towardcenter from inherited Abel. Weighted coefficientwise gap nonnegative, theneval1 LC. Zero weights retained; adjacentLC not substituted.",
+  "source_bridge_scope": "Exact weighted lift eval for all naturald,j,t, binomial integerzeroextension CrossLC. LiftBoundary implies output LC allnatural t. Raw source lowerH j<=q, allnatural i: i<3 leftzero branch andi=t+3 exact raw identity otherwise. Actualq>=1 paths withnumerator3 classified both3q1/3q2; q0 genericlemma notextraactualcoverage. All zero tails retained; casts exact; global boundary premise remains.",
+  "boundary_scope": "Cutshift allj,h,v includes k<h/k>h+v andnaturalzero guards. h=t gap is X^(2t) times exactquadratic. Firsttwo inequalities use87/75term rational certificates j=s+2,s>=0,t>=0, allreal/rationaldenominatorspositive; fixedchoosebase squared multiplied, notdivided. Third viaoldQgap. j0tailzero,j1explicitvalues handled. CorrectL(1,t,1)=t+4; priorproset+5typo notsourceedit.",
+  "outer_scope": "t+1=j+h includesh0. X*leftcut=X^h(E-C(Ecoeff0)); middle=X^hE,next=X^(h+1)E. Xnonzero cancellation inR[X] provesgap=X^(2h)(Egap+C(Ecoeff0)Enext). NonnegativeEcoeffandgap allindices; no negative exponent or coefficientdivision.",
+  "middle_scope": "LiftBoundary iffLiftInterior h<t,t<j+h; LiftLCPositive iffLiftMiddle h<t,t+1<j+h. Allnaturalj,t,h,k. Exhaustivezero,tail,h=t,oppositeedge; allj<=2cutsunconditional. Remainingh<t,t+1<j+h (relative1<=t-h<=j-2) unproved; nofinite hbound.",
+  "normalized_scope": "Generic finite signed a, strictlypositiveb onEVERYs, totalsum a>=0, orderedcrossratio comparisons implysubset/rank-upper-cut sum>=0. Emptyset separatelyhandled. These strictdenominator andcenteredcut hypotheses are not provedforfullkernel; zero-factor outerterms unresolved.",
+  "root_scope": "Exactroot iffLowerHorizontal (q>=1,j<=q,allnaturali) andThreeOutsideLower (q<j,j!=5 H; retains literalV complement of i3/4,j+1<=q or i5..8,j+2<=q; D complementi3..6,j+2<=q) andOtherFourunchanged. H/V/D rawliteralindices,zero/endpoints/polygon inherited. LiftMiddle onlysufficient forLowerHorizontal/root withremaining premises, notiffauxiliarywithroot. No newunconditionalrawstrip orrootcompletion.",
+  "obstruction_scope": "Formal exactauxiliary ratio difference atj13,t2 equals-18761/44990946 andnegative. Sourcevalid theorem gives allthreepolygonmemberships andoldrawHLC atcolumns4,5,6,row13,q13,true (actual3/40), usinginheritedlower-band/source-horizontal theorem. No newrawLCregion orsourcecounterexample; no claim refutingsymmetric-pairmonotonicity.",
+  "candidate_scope": "PairCleared1definition1theorem, one120sectimeout, excluded. 42675raw/20813factored GAP literalterms and30finiteconsistency comparisons do notestablishLean theorem orratio/zerofactor/centered-tailbridges.",
+  "mathematical_values_recomputed": false
+}

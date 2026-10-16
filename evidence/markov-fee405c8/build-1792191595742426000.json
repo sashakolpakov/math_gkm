@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCutShiftMFEE.lean:30:50: error(lean.unknownIdentifier): Unknown identifier `coeff_mul_zero`\n/Users/sasha/math_gkm/research/MarkovCutShiftMFEE.lean:28:73: error: unsolved goals\nj t : \u2115\nh :\n  0 \u2264\n    ((qPolyM7E2 j (t + 1)).comp (X + 1) * (qPolyM7E2 j (t + 1)).comp (X + 1)).coeff 0 -\n      ((qPolyM7E2 j t).comp (X + 1) * (qPolyM7E2 j (t + 2)).comp (X + 1)).coeff 0\n\u22a2 liftTermMAE9 j t 0 * liftTermMAE9 j (t + 2) 0 \u2264 liftTermMAE9 j (t + 1) 0 ^ 2\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovCutShiftMFEE.lean:41:94: error: unsolved goals\nj t : \u2115\nh1 : liftCutM7E2 j (t + 1) t = X ^ t * \u2211 k \u2208 range (1 + 1), (monomial k) \u2191(liftTermMAE9 j (t + 1) (1 - k))\nh2 : liftCutM7E2 j (t + 2) t = X ^ t * \u2211 k \u2208 range (2 + 1), (monomial k) \u2191(liftTermMAE9 j (t + 2) (2 - k))\nh0 : liftCutM7E2 j t t = X ^ t * \u2211 x \u2208 range (0 + 1), (monomial x) \u2191(liftTermMAE9 j t (0 - x))\n\u22a2 X * X ^ (t * 2) * C \u2191(liftTermMAE9 j (1 + t) 1) * C \u2191(liftTermMAE9 j (1 + t) 0) * 2 -\n              X * X ^ (t * 2) * C \u2191(liftTermMAE9 j t 0) * C \u2191(liftTermMAE9 j (2 + t) 1) +\n            X ^ 2 * X ^ (t * 2) * C \u2191(liftTermMAE9 j (1 + t) 0) ^ 2 -\n          X ^ 2 * X ^ (t * 2) * C \u2191(liftTermMAE9 j t 0) * C \u2191(liftTermMAE9 j (2 + t) 0) +\n        X ^ (t * 2) * C \u2191(liftTermMAE9 j (1 + t) 1) ^ 2 -\n      X ^ (t * 2) * C \u2191(liftTermMAE9 j t 0) * C \u2191(liftTermMAE9 j (2 + t) 2) =\n    X * X ^ (t * 2) * C \u2191(liftTermMAE9 j (1 + t) 1) * C \u2191(liftTermMAE9 j (1 + t) 0) * C 2 -\n              X * X ^ (t * 2) * C \u2191(liftTermMAE9 j t 0) * C \u2191(liftTermMAE9 j (2 + t) 1) +\n            X ^ 2 * X ^ (t * 2) * C \u2191(liftTermMAE9 j (1 + t) 0) ^ 2 -\n          X ^ 2 * X ^ (t * 2) * C \u2191(liftTermMAE9 j t 0) * C \u2191(liftTermMAE9 j (2 + t) 0) +\n        X ^ (t * 2) * C \u2191(liftTermMAE9 j (1 + t) 1) ^ 2 -\n      X ^ (t * 2) * C \u2191(liftTermMAE9 j t 0) * C \u2191(liftTermMAE9 j (2 + t) 2)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCutShiftMFEE": "bde2d53196db5c047fe39085005d0f43c60192ae188470dae992a2f5dd55dc7c"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-fee405c8/MarkovCutShiftMFEE.olean",
+    "/Users/sasha/math_gkm/research/MarkovCutShiftMFEE.lean"
+  ],
+  "seconds": 24.501407707983162,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

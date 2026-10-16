@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovRankWeightMFEE.lean:20:1: error: Tactic `apply` failed: could not unify the conclusion of `sum_subset (range_mono hr)`\n  \u2211 x \u2208 range r, ?m.65 x = \u2211 x \u2208 range N, ?m.65 x\nwith the goal\n  (\u2211 k \u2208 range N, if k + 1 \u2264 r then w (k + 1) - w k else 0) = \u2211 k \u2208 range r, (w (k + 1) - w k)\n\nNote: The full type of `sum_subset (range_mono hr)` is\n  (\u2200 x \u2208 range N, x \u2209 range r \u2192 ?m.65 x = 0) \u2192 \u2211 x \u2208 range r, ?m.65 x = \u2211 x \u2208 range N, ?m.65 x\n\ncase e_a\nw : \u2115 \u2192 \u211d\nr N : \u2115\nhr : r \u2264 N\n\u22a2 (\u2211 k \u2208 range N, if k + 1 \u2264 r then w (k + 1) - w k else 0) = \u2211 k \u2208 range r, (w (k + 1) - w k)\n/Users/sasha/math_gkm/research/MarkovRankWeightMFEE.lean:49:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ?a * \u2211 i \u2208 ?s, ?f i\nin the target expression\n  (\u2211 x \u2208 s, a x * if k + 1 \u2264 rank x then w (k + 1) - w k else 0) =\n    \u2211 i \u2208 s, (w (k + 1) - w k) * if k + 1 \u2264 rank i then a i else 0\n\ncase e_a\n\u03b9 : Type u_1\ns : Finset \u03b9\na : \u03b9 \u2192 \u211d\nrank : \u03b9 \u2192 \u2115\nN : \u2115\nhr : \u2200 i \u2208 s, rank i \u2264 N\nw : \u2115 \u2192 \u211d\nhw : 0 \u2264 w 0\nhm : \u2200 k < N, w k \u2264 w (k + 1)\nha : \u2200 h \u2264 N, 0 \u2264 \u2211 i \u2208 s, if h \u2264 rank i then a i else 0\nhtotal : 0 \u2264 \u2211 i \u2208 s, a i\nk : \u2115\nhk : k \u2208 range N\n\u22a2 (\u2211 x \u2208 s, a x * if k + 1 \u2264 rank x then w (k + 1) - w k else 0) =\n    \u2211 i \u2208 s, (w (k + 1) - w k) * if k + 1 \u2264 rank i then a i else 0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovRankWeightMFEE": "09403ecbbcbaeab7890dd40656c6c755d33394a0070c1e74e3e8365e4e3c529e"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-fee405c8/MarkovRankWeightMFEE.olean",
+    "/Users/sasha/math_gkm/research/MarkovRankWeightMFEE.lean"
+  ],
+  "seconds": 38.062687833968084,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

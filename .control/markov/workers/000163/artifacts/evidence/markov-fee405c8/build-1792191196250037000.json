@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovPolynomialWeightMFEE.lean:42:23: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  n - i\nin the target expression\n  f \u2191i * f \u2191j = f (min \u2191i \u2191j) * f (\u2191n - \u2191i)\n\ncase pos\nf : \u2124 \u2192 \u211d\nn i j : \u2115\nh : i + j = n\nhij : i \u2264 j\n\u22a2 f \u2191i * f \u2191j = f (min \u2191i \u2191j) * f (\u2191n - \u2191i)\n/Users/sasha/math_gkm/research/MarkovPolynomialWeightMFEE.lean:43:39: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  n - j\nin the target expression\n  f \u2191i * f \u2191j = f (min \u2191i \u2191j) * f (\u2191n - \u2191j)\n\ncase neg\nf : \u2124 \u2192 \u211d\nn i j : \u2115\nh : i + j = n\nhij : \u00aci \u2264 j\n\u22a2 f \u2191i * f \u2191j = f (min \u2191i \u2191j) * f (\u2191n - \u2191j)\n/Users/sasha/math_gkm/research/MarkovPolynomialWeightMFEE.lean:54:7: error(lean.unknownIdentifier): Unknown identifier `p`\n/Users/sasha/math_gkm/research/MarkovPolynomialWeightMFEE.lean:54:19: error(lean.unknownIdentifier): Unknown identifier `p`\n/Users/sasha/math_gkm/research/MarkovPolynomialWeightMFEE.lean:54:26: error(lean.unknownIdentifier): Unknown identifier `p`\n/Users/sasha/math_gkm/research/MarkovPolynomialWeightMFEE.lean:54:38: error(lean.unknownIdentifier): Unknown identifier `p`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovPolynomialWeightMFEE": "a46e90ed1bdd53be0929061385ad1583ae17713dfa5a8fa65c370e3439f26254"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-fee405c8/MarkovPolynomialWeightMFEE.olean",
+    "/Users/sasha/math_gkm/research/MarkovPolynomialWeightMFEE.lean"
+  ],
+  "seconds": 9.684808666992467,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
