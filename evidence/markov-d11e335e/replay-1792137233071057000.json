@@ -1,0 +1,79 @@
+{
+  "timeout": true,
+  "stdout": "None",
+  "stderr": "None",
+  "modules": {
+    "MarkovStripGapMD11": "999cadf15cf8c5c1fdbbfa9d7c3a67e93c0656cfb16eb26a8100265fae36de5f",
+    "MarkovStripChooseMD11": "873047a49498f4ccb5fb7acc18d94453dc6dbc31fbfa2fb38d4a5070eb7d38ea",
+    "MarkovStripSourceMD11": "e48e7e5a9f9fc283e5ba8ea5b3c45b06a29ffb4cdf51307ab063d269497ad983",
+    "MarkovStripLCMD11": "8df14ce5de7569c0fe39402bdb3f331a651430e27bb2c1124296bedd14243a7f",
+    "MarkovStripCoefficientsMD11": "a6ecf85da11510d066bb99975ab2f9bb8abad5bbfc9f2cf999d9f115d2bc340d",
+    "MarkovStripAllMD11": "b01dda06fb6bf5819719b110c4aca55207b635d479358a405253f3a151208b0b",
+    "MarkovStripMiddleChooseMD11": "f6925b49f6a833931e7029e4206ad309007efadcd2f87890cec7813d2734ab01",
+    "MarkovStripMiddleSourceMD11": "b2156086cab87302dc0ca3c1f4bbbe1a1695ef906abb641cd7d6564f6865316a"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedMD11.lean",
+    "MarkovStripGapMD11",
+    "MarkovStripChooseMD11",
+    "MarkovStripSourceMD11",
+    "MarkovStripLCMD11",
+    "MarkovStripCoefficientsMD11",
+    "MarkovStripAllMD11",
+    "MarkovStripMiddleChooseMD11",
+    "MarkovStripMiddleSourceMD11"
+  ],
+  "seconds": 120.2911084590014,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "970a63944f0a737559bfae41319e2d80d8937218d3d98bb50cfc1a2335bc3b43",
+  "declared_names": {
+    "MarkovStripGapMD11": [
+      "stripQuarticMD11",
+      "stripIMD11",
+      "stripGapMD11",
+      "strip_largeMD11",
+      "strip_threeMD11",
+      "strip_fourMD11",
+      "strip_fiveMD11",
+      "strip_sixMD11"
+    ],
+    "MarkovStripChooseMD11": [
+      "choose_fourMD11",
+      "coeff_fourMD11",
+      "quartic_fallingMD11",
+      "quartic_allMD11"
+    ],
+    "MarkovStripSourceMD11": [
+      "strip_four_seedMD11",
+      "source_strip_fourMD11",
+      "strip_four_coeffMD11"
+    ],
+    "MarkovStripLCMD11": [
+      "strip_gap_nonnegMD11",
+      "strip_gap_transferMD11"
+    ],
+    "MarkovStripCoefficientsMD11": [
+      "strip_quartic_scaledMD11"
+    ],
+    "MarkovStripAllMD11": [
+      "source_strip_four_scaledMD11",
+      "source_strip_interiorMD11",
+      "source_strip_allMD11"
+    ],
+    "MarkovStripMiddleChooseMD11": [
+      "strip_choose_sevenMD11",
+      "strip_choose_correctionMD11"
+    ],
+    "MarkovStripMiddleSourceMD11": [
+      "strip_middle_seedMD11",
+      "source_strip_middle_fourMD11",
+      "strip_middle_four_coeffMD11"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed MD11; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

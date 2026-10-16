@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovStripCoefficientsMD11.lean:14:11: error(lean.unknownIdentifier): Unknown identifier `quartic_allMD11`\n/Users/sasha/math_gkm/research/MarkovStripCoefficientsMD11.lean:13:54: error: unsolved goals\nk l : \u2115\nhl : 3 \u2264 l\nhN : 7 \u2264 k + l\na : \u211d\n\u22a2 (\u2191k + \u2191l) * (\u2191k + \u2191l - 1) * (\u2191k + \u2191l - 2) * (\u2191k + \u2191l - 3) * (\u2191k + \u2191l - 4) * (\u2191k + \u2191l - 5) * (\u2191k + \u2191l - 6) *\n      ((1 + X) ^ (k + l - 7) * stripQuarticMD11 a (\u2191k + \u2191l + 2)).coeff k =\n    \u2191((k + l).choose k) * \u2191l * (\u2191l - 1) * (\u2191l - 2) * stripIMD11 a \u2191k \u2191l\n",
+  "stderr": "",
+  "modules": {
+    "MarkovStripCoefficientsMD11": "5d9205a895d6e5b7c6e456de132e05db4feeb6610acb86776ae0518a99b9f808"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-d11e335e/MarkovStripCoefficientsMD11.olean",
+    "/Users/sasha/math_gkm/research/MarkovStripCoefficientsMD11.lean"
+  ],
+  "seconds": 67.23419379099505,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,97 @@
+{
+  "request_id": "d11e335ef8db44b282c73b02009fc529",
+  "inherited": {
+    "RESUME.json": true,
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": true,
+    "evidence/independent-markov/markov_residual_scope_audit.md": true,
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": true,
+    "evidence/markov/research-run/state.json": true,
+    "requests/markov-next.json": true
+  },
+  "ce882be3": {
+    "checked": 123,
+    "mismatches": []
+  },
+  "263d8c71": {
+    "checked": 218,
+    "mismatches": []
+  },
+  "000128": {
+    "sha256": "33a4bebc8aad19653af64794e27896b7ef7007170bc0697995741820b7e7f91c",
+    "count": 281,
+    "last_events": [
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_144",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc '/opt/homebrew/bin/python3 research/finalize_263d8c71.py'",
+          "aggregated_output": "{\"request_id\": \"263d8c71d1e34c09988ae5004b76a354\", \"compiled_and_replayed_mathematical_modules\": 26, \"audited_theorem_closures\": 85, \"unchanged_prior_inputs\": 5651, \"changed_prior_inputs\": [], \"rechecked_inherited_artifacts\": {\"f52ba141\": 112, \"ae257c53\": 1353}, \"unsuccessful_build_receipts\": 24, \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\", \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\", \"stop_file_present\": false, \"completion\": null, \"scope\": \"New-source compilation and isolated kernel replay over inherited compiled imports; no fresh whole-source rebuild or independent completion audit.\"}\nVerified artifacts 218\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      },
+      {
+        "type": "item.started",
+        "item": {
+          "id": "item_145",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc 'cat evidence/markov-263d8c71/last-verification.json'",
+          "aggregated_output": "",
+          "exit_code": null,
+          "status": "in_progress"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_145",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc 'cat evidence/markov-263d8c71/last-verification.json'",
+          "aggregated_output": "{\n  \"verified_artifacts\": 218,\n  \"manifest_sha256\": \"3f2f953aa5865af431426605981d29cd2b18e58ff6c744eaa4bb060e05887325\",\n  \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\",\n  \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\",\n  \"stop_file_present\": false\n}\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      }
+    ]
+  },
+  "000131": {
+    "sha256": "8b347360aa854b41b1f6de0dd95ab84cfff5e6650dee95dc154e1a4b746398a9",
+    "count": 241,
+    "last_events": [
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_121",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc '/opt/homebrew/bin/python3 research/finalize_ce882be3.py'",
+          "aggregated_output": "{\"request_id\": \"ce882be3be764bbea0eaabd905e3bf18\", \"compiled_and_replayed_mathematical_modules\": 17, \"audited_theorem_closures\": 47, \"unchanged_prior_inputs\": 5756, \"changed_prior_inputs\": [], \"rechecked_inherited_artifacts\": {\"263d8c71\": 218, \"b9d0d341\": 87}, \"unsuccessful_build_receipts\": 6, \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\", \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\", \"stop_file_present\": false, \"completion\": null, \"scope\": \"New-source compilation and isolated kernel replay over inherited compiled imports; no fresh whole-source rebuild or independent completion audit.\"}\nVerified artifacts 123\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_123",
+          "type": "agent_message",
+          "text": "{\n  \"actions\": [\n    \"Reconciled 305 inherited artifacts and interrupted-worker effects: evidence/markov-ce882be3/reconciliation.json.\",\n    \"Compiled and kernel-replayed 17 mathematical modules; audited 47 theorem closures: evidence/markov-ce882be3/validation.json.\",\n    \"Verified 123 artifact hashes, 5,756 unchanged prior inputs, and pinned root/contract hashes: evidence/markov-ce882be3/final-check.json and last-verification.json.\"\n  ],\n  \"agenda\": [\n    \"Investigate the next vertical strip using research/markov-ce882be3-next.md; its candidate certificates lack Lean source bridges.\",\n    \"Retain every unresolved clause in research/MarkovResidualFullMCE8.lean.\",\n    \"Discharge all source-correspondence obligations before claiming root completion.\"\n  ],\n  \"completion\": null,\n  \"observations\": [\n    \"Proved A[i,1]\u00b7A[i,3] \u2264 A[i,2]\u00b2 for every source path and every natural i, across all slopes and retaining zeros: source_strip_fullMCE8 in research/MarkovStripFullMCE8.lean.\",\n    \"Proved Conjecture63 \u2194 InteriorCore63FullMCE8. The residual remains unproved; its vertical clause now starts at j\u22652: research/MarkovResidualFullMCE8.lean.\",\n    \"Exact finite checks passed 711 source-polynomial comparisons and 37,287 strip inequalities, including 16,457 zero-containing triples. Experiments are not proofs: evidence/markov-ce882be3/strip-experiments.json.\",\n    \"Recorded candidate certificates and finite checks for the next strip: evidence/markov-ce882be3/next-strip-probe.json and next-strip-experiments.json. No universal next-strip theorem is claimed.\",\n    \"All audited closures use permitted axioms. Inherited compiled imports were reused; no whole-source rebuild or independent completion audit occurred. Six rejected builds were preserved, and all foreground executions ended. Scope: research/markov-ce882be3-correspondence.md and operational record.\"\n  ],\n  \"request_id\": \"ce882be3be764bbea0eaabd905e3bf18\",\n  \"summary\": \"Proved universal raw vertical log-concavity for triples starting at j=1. Full pinned Conjecture63 remains unresolved.\"\n}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 6056560,
+          "cached_input_tokens": 5880192,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 39269,
+          "reasoning_output_tokens": 6082
+        }
+      }
+    ]
+  },
+  "reconciliation": "Worker 131 completed; interrupted worker 128 finalization already completed and reconciled. Actual final raw events and hashes rechecked. No actions replayed or excluded draft admitted.",
+  "capability_failures": [
+    "zsh here-document failed because shell temporary storage is denied. No scratch access attempted: higher-priority policy denies it. Unique research/evidence paths used."
+  ]
+}

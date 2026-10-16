@@ -1,0 +1,518 @@
+{
+  "worker": 132,
+  "request": "d11e335ef8db44b282c73b02009fc529",
+  "created_at_utc": "2026-10-16T08:08:48.191904+00:00",
+  "scope": {
+    "accepted_conclusion": "source_strip_allMD11: every generated path satisfying4a<=b, every natural i, raw coeff P i2*coeff P i4<=coeff P i3^2; zeros retained; no denominator cap or formula/gap/shape premise.",
+    "actual_seed": "h4sourceSeed uses q=(2a-b)+,t=min(b-a,(3a-b)+),u=(3a-2b)+,v,w,z from actual-source statistics. Under4a<=b allsix vanish, exact seed=X^3 Q4. Natural subtraction precedes casting.",
+    "cancellation": "Inherited hfourth_eval_clearedM511 requires onlyb>=5 andpositive realx. Infinite-positive evaluation equality gives24X^3(1+X)^9 map(R4)=X^a(1+X)^b seed. Underb>=9 cancel nonzero X^3(1+X)^9 inrealpolynomialdomain, obtaining24map(R4)=X^a(1+X)^(b-9)Q4. Noa>=3 orX^(a-3), no coefficient division.",
+    "coefficient_index": "Extract at k+a, use coeff_X_pow_mul,coeff_map,swap_coeff46 torestoreliteralraw(a+k,4) withfactor24.",
+    "quartic_boundary": "quartic_falling requiresj>=1; quartic_all separately provesj0 fori>=4, indispensablewhen l3 in applicationj=l-3. Coeff_four coversi<4byzero andchoose_four coversn<3explicitly. Zero-inclusive multiplicativeidentities,nochoose division.",
+    "scaling": "N=k+l=b-2,C=choose(N,k),k>=0,l>=3,N>=7. 2fall(N,3)c2=ClJ;6fall(N,5)c3=Cl(l-1)H;24fall(N,7)c4=Cl(l-1)(l-2)I. I usesh4c3..7atzerosandfall(k,r)fall(l-3,4-r).",
+    "gap": "G=4(N-5)(N-6)(l-1)H^2-3(N-3)(N-4)(l-2)JI. Fiveordinaryring_nf/positivity charts a=A+1;(k,l)=(K,L+7),(K+4,3),(K+3,4),(K+2,5),(K+1,6),allfreeparametersnonnegative. Coversnaturala>=1,k>=0,l>=3,N>=7 includingk0,l3. Abstractgap hasnoslopepremise.",
+    "transfer": "144fall(N,5)^2(N-5)(N-6)(c3^2-c2c4)=C^2*l^2*(l-1)G. Strictpositivecommonscalar underN7; l3rightnonnegative. Abstracttransferdoesnotrequirek>=0orCpositive; sourcekNat. Finalintegercast; no binomialorcoefficient division.",
+    "small_and_zeros": "a1 inheritedsource_one_global6; a>=2and4a<=b implyb>=8,onlyb<9case2/8excludedcoprime. i<a givesc2zero bypolygonandslope; i+4>d givesc4zero. Remainingk=i-a,l=b-2-k inclk0,l3. No finite small-source certificate neededforacceptedcone.",
+    "middle_accepted": "MiddleSource3theorems andMiddleChoose2theorems are compiled,replayed,printed. Forb>=9,3a<=b<=4a onlyv=(4a-b)+survives, seed=X^2(96v+XQ4), cancellationgivesX^(a-1),coefficientk+1; exactformula noLC. Seventhorder multiplicativechooseandk+1shift forallk zerosincluded.",
+    "excluded": "Fiveunbuiltdrafts12theoremheaders3defs:MiddleGap(5/2),MiddleLC(2/0),MiddleCoefficients(1/0),MiddleAll(3/0),Residual(1/1). Gapthreeattemptstimeout,final4096factoredcertificatealsofailed. No b>=3aLCor strongerrootiffadmitted; intended2/7exception isunvalidateddraft. No inferencefromdraftprooftext.",
+    "root": "Conjecture63 iff InteriorCore63LowMD11 exactpriorFullMCE8 plusverticalpremise(j=2 -> b<4a); j>=2 andallotherguardsremain. Reverseomittedcasej2,4a<=b usesacceptedallstrip. Draftb<3aconditionnotadmitted. Endpoints inherited.",
+    "nextcone": "2a<=b<=3a correctedH/I andfivepositivechartrecords remaincandidateonly, noacceptedsourceadapter/gap/assembly; no rootprooforrefutation."
+  },
+  "new_modules": [
+    {
+      "module": "MarkovResidualLowMD11",
+      "sha256": "82e29e21bf8c61dab837d6fab6ff059f032ae031b202a4ca2ab6c70a8e0ebbbe",
+      "accepted": true,
+      "imports": [
+        "MarkovStripAllMD11",
+        "MarkovResidualFullMCE8"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "InteriorCore63LowMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_interior_lowMD11"
+        }
+      ],
+      "theorem_statements": [
+        "theorem root_iff_interior_lowMD11 : Conjecture63 ↔ InteriorCore63LowMD11"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovResidualMD11",
+      "sha256": "22656da257eb9a1c8a3323c1b1e04048b9dc38078e506c3b33ed7c261f82b7c5",
+      "accepted": false,
+      "imports": [
+        "MarkovStripMiddleAllMD11",
+        "MarkovResidualFullMCE8"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "InteriorCore63MD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_interiorMD11"
+        }
+      ],
+      "theorem_statements": [
+        "theorem root_iff_interiorMD11 : Conjecture63 ↔ InteriorCore63MD11"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripAllMD11",
+      "sha256": "b01dda06fb6bf5819719b110c4aca55207b635d479358a405253f3a151208b0b",
+      "accepted": true,
+      "imports": [
+        "MarkovStripLCMD11",
+        "MarkovStripCoefficientsMD11",
+        "MarkovStripAllMB9D"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_strip_four_scaledMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_interiorMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_allMD11"
+        }
+      ],
+      "theorem_statements": [
+        "theorem source_strip_four_scaledMD11 (path : List Bool) (k l : ℕ)\n (hb : 9 ≤ (frame path).mid.b) (hs : 4*(frame path).mid.a ≤ (frame path).mid.b)\n (hbl : (frame path).mid.b=k+l+2) (hl : 3 ≤ l) :\n 24*((k:ℝ)+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+l-5)*(k+l-6)*\n (coeff (frame path).mid.p ((frame path).mid.a+k) 4:ℝ)=\n ((k+l).choose k:ℝ)*l*(l-1)*(l-2)*stripIMD11 (frame path).mid.a k l",
+        "theorem source_strip_interiorMD11 (path : List Bool) (k l : ℕ)\n (ha : 2 ≤ (frame path).mid.a) (hb : 9 ≤ (frame path).mid.b)\n (hs : 4*(frame path).mid.a ≤ (frame path).mid.b)\n (hbl : (frame path).mid.b=k+l+2) (hl : 3 ≤ l) :\n coeff (frame path).mid.p ((frame path).mid.a+k) 2*\n coeff (frame path).mid.p ((frame path).mid.a+k) 4 ≤\n coeff (frame path).mid.p ((frame path).mid.a+k) 3^2",
+        "theorem source_strip_allMD11 (path : List Bool)\n (hs : 4*(frame path).mid.a ≤ (frame path).mid.b) (i : ℕ) :\n coeff (frame path).mid.p i 2*coeff (frame path).mid.p i 4 ≤ coeff (frame path).mid.p i 3^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripChooseMD11",
+      "sha256": "873047a49498f4ccb5fb7acc18d94453dc6dbc31fbfa2fb38d4a5070eb7d38ea",
+      "accepted": true,
+      "imports": [
+        "MarkovStripCoefficientsMB9D"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "choose_fourMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "coeff_fourMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "quartic_fallingMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "quartic_allMD11"
+        }
+      ],
+      "theorem_statements": [
+        "theorem choose_fourMD11 (n : ℕ) :\n 24*(n.choose 4 : ℝ)=(n:ℝ)*(n-1)*(n-2)*(n-3)",
+        "theorem coeff_fourMD11 (i j : ℕ) :\n ((i:ℝ)+j)*(i+j-1)*(i+j-2)*(i+j-3)*\n ((1+(X:ℝ[X]))^(i+j-4)*X^4).coeff i=\n (i:ℝ)*(i-1)*(i-2)*(i-3)*((i+j).choose i:ℝ)",
+        "theorem quartic_fallingMD11 (i j : ℕ) (hj : 1 ≤ j) (hd : 4 ≤ i+j)\n (A B C D E : ℝ) :\n ((i:ℝ)+j)*(i+j-1)*(i+j-2)*(i+j-3)*\n (((1+(X:ℝ[X]))^(i+j-4)*(Polynomial.C A+Polynomial.C B*X+\n   Polynomial.C C*X^2+Polynomial.C D*X^3+Polynomial.C E*X^4)).coeff i)=\n ((i+j).choose i:ℝ)*(A*j*(j-1)*(j-2)*(j-3)+B*i*j*(j-1)*(j-2)+\n   C*i*(i-1)*j*(j-1)+D*i*(i-1)*(i-2)*j+E*i*(i-1)*(i-2)*(i-3))",
+        "theorem quartic_allMD11 (i j : ℕ) (hd : 4 ≤ i+j)\n (A B C D E : ℝ) :\n ((i:ℝ)+j)*(i+j-1)*(i+j-2)*(i+j-3)*\n (((1+(X:ℝ[X]))^(i+j-4)*(Polynomial.C A+Polynomial.C B*X+\n   Polynomial.C C*X^2+Polynomial.C D*X^3+Polynomial.C E*X^4)).coeff i)=\n ((i+j).choose i:ℝ)*(A*j*(j-1)*(j-2)*(j-3)+B*i*j*(j-1)*(j-2)+\n   C*i*(i-1)*j*(j-1)+D*i*(i-1)*(i-2)*j+E*i*(i-1)*(i-2)*(i-3))"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripCoefficientsMD11",
+      "sha256": "a6ecf85da11510d066bb99975ab2f9bb8abad5bbfc9f2cf999d9f115d2bc340d",
+      "accepted": true,
+      "imports": [
+        "MarkovStripChooseMD11",
+        "MarkovStripSourceMD11"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "strip_quartic_scaledMD11"
+        }
+      ],
+      "theorem_statements": [
+        "theorem strip_quartic_scaledMD11 (k l : ℕ) (hl : 3 ≤ l) (hN : 7 ≤ k+l) (a : ℝ) :\n ((k:ℝ)+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+l-5)*(k+l-6)*\n (((1+(X:ℝ[X]))^(k+l-7)*stripQuarticMD11 a (k+l+2)).coeff k)=\n ((k+l).choose k:ℝ)*l*(l-1)*(l-2)*stripIMD11 a k l"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripGapMD11",
+      "sha256": "999cadf15cf8c5c1fdbbfa9d7c3a67e93c0656cfb16eb26a8100265fae36de5f",
+      "accepted": true,
+      "imports": [
+        "MarkovStripGapMB9D",
+        "MarkovHorizontalFourthSeedM511"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "stripQuarticMD11"
+        },
+        {
+          "kind": "def",
+          "name": "stripIMD11"
+        },
+        {
+          "kind": "def",
+          "name": "stripGapMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_largeMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_threeMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_fourMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_fiveMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_sixMD11"
+        }
+      ],
+      "theorem_statements": [
+        "theorem strip_largeMD11 (a k l : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ stripGapMD11 (a+1) k (l+7)",
+        "theorem strip_threeMD11 (a k l : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ stripGapMD11 (a+1) (k+4) 3",
+        "theorem strip_fourMD11 (a k l : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ stripGapMD11 (a+1) (k+3) 4",
+        "theorem strip_fiveMD11 (a k l : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ stripGapMD11 (a+1) (k+2) 5",
+        "theorem strip_sixMD11 (a k l : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ stripGapMD11 (a+1) (k+1) 6"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripLCMD11",
+      "sha256": "8df14ce5de7569c0fe39402bdb3f331a651430e27bb2c1124296bedd14243a7f",
+      "accepted": true,
+      "imports": [
+        "MarkovStripGapMD11"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "strip_gap_nonnegMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_gap_transferMD11"
+        }
+      ],
+      "theorem_statements": [
+        "theorem strip_gap_nonnegMD11 (a k l : ℕ) (ha : 1 ≤ a) (hl : 3 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ stripGapMD11 a k l",
+        "theorem strip_gap_transferMD11 (a k l C c₂ c₃ c₄ : ℝ)\n (hl : 3 ≤ l) (hN : 7 ≤ k+l)\n (h₂ : 2*(k+l)*(k+l-1)*(k+l-2)*c₂=C*l*stripJMB9D a k l)\n (h₃ : 6*(k+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*c₃=C*l*(l-1)*stripHMB9D a k l)\n (h₄ : 24*(k+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+l-5)*(k+l-6)*c₄=\n   C*l*(l-1)*(l-2)*stripIMD11 a k l)\n (hg : 0 ≤ stripGapMD11 a k l) : c₂*c₄ ≤ c₃^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripMiddleAllMD11",
+      "sha256": "b59c83cc2f523a1e58474b580c4697ea94a98ee2b5848ac78f947332c3297c51",
+      "accepted": false,
+      "imports": [
+        "MarkovStripAllMD11",
+        "MarkovStripMiddleCoefficientsMD11",
+        "MarkovStripMiddleLCMD11",
+        "MarkovSmallHorizontal2_7M9E1",
+        "MarkovUnique098"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "small_strip_2_7MD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_middle_interiorMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_thirdconeMD11"
+        }
+      ],
+      "theorem_statements": [
+        "theorem small_strip_2_7MD11 (i : ℕ) (hi : i ≤ 8) :\n coeff (frame [false,false,true]).mid.p i 2*coeff (frame [false,false,true]).mid.p i 4 ≤\n coeff (frame [false,false,true]).mid.p i 3^2",
+        "theorem source_middle_interiorMD11 (path : List Bool) (k l : ℕ)\n (ha : 2 ≤ (frame path).mid.a) (hb : 9 ≤ (frame path).mid.b)\n (hs : 3*(frame path).mid.a ≤ (frame path).mid.b)\n (hu : (frame path).mid.b ≤ 4*(frame path).mid.a)\n (hbl : (frame path).mid.b=k+l+2) (hl : 3 ≤ l) :\n coeff (frame path).mid.p ((frame path).mid.a+k) 2*\n coeff (frame path).mid.p ((frame path).mid.a+k) 4 ≤\n coeff (frame path).mid.p ((frame path).mid.a+k) 3^2",
+        "theorem source_strip_thirdconeMD11 (path : List Bool)\n (hs : 3*(frame path).mid.a ≤ (frame path).mid.b) (i : ℕ) :\n coeff (frame path).mid.p i 2*coeff (frame path).mid.p i 4 ≤ coeff (frame path).mid.p i 3^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripMiddleChooseMD11",
+      "sha256": "f6925b49f6a833931e7029e4206ad309007efadcd2f87890cec7813d2734ab01",
+      "accepted": true,
+      "imports": [
+        "MarkovStripChooseMCE8"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "strip_choose_sevenMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_choose_correctionMD11"
+        }
+      ],
+      "theorem_statements": [
+        "theorem strip_choose_sevenMD11 (n k : ℕ) (hn : 7 ≤ n) :\n (n:ℝ)*(n-1)*(n-2)*(n-3)*(n-4)*(n-5)*(n-6)*((n-7).choose k:ℝ)=\n (n.choose k:ℝ)*((n:ℝ)-k)*(n-k-1)*(n-k-2)*(n-k-3)*(n-k-4)*(n-k-5)*(n-k-6)",
+        "theorem strip_choose_correctionMD11 (k l : ℕ) (hN : 7 ≤ k+l) :\n ((k:ℝ)+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+l-5)*(k+l-6)*(k+1)*\n ((k+l-7).choose (k+1):ℝ)=\n ((k+l).choose k:ℝ)*l*(l-1)*(l-2)*(l-3)*(l-4)*(l-5)*(l-6)*(l-7)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripMiddleCoefficientsMD11",
+      "sha256": "310bc4fd7ff79815e7d9951cf9a5b74bcf5a765d799fe2da37767a3472f7d1ef",
+      "accepted": false,
+      "imports": [
+        "MarkovStripMiddleChooseMD11",
+        "MarkovStripMiddleSourceMD11",
+        "MarkovStripCoefficientsMD11",
+        "MarkovStripMiddleGapMD11"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_middle_four_scaledMD11"
+        }
+      ],
+      "theorem_statements": [
+        "theorem source_middle_four_scaledMD11 (path : List Bool) (k l : ℕ)\n (hb : 9 ≤ (frame path).mid.b) (hs : 3*(frame path).mid.a ≤ (frame path).mid.b)\n (hu : (frame path).mid.b ≤ 4*(frame path).mid.a)\n (hbl : (frame path).mid.b=k+l+2) (hl : 3 ≤ l) :\n 24*((k:ℝ)+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+l-5)*(k+l-6)*(k+1)*\n (coeff (frame path).mid.p ((frame path).mid.a+k) 4:ℝ)=\n ((k+l).choose k:ℝ)*l*(l-1)*(l-2)*\n stripMiddleIMD11 (frame path).mid.a k l (4*(frame path).mid.a-(frame path).mid.b:ℕ)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripMiddleGapMD11",
+      "sha256": "7ec5d85bcb5762885e71977557c5fd36d3ef51cb1a37fb3d12954bd6cd7de217",
+      "accepted": false,
+      "imports": [
+        "MarkovStripGapMD11"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "stripMiddleIMD11"
+        },
+        {
+          "kind": "def",
+          "name": "stripMiddleGapMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "stripMiddle_largeMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "stripMiddle_threeMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "stripMiddle_fourMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "stripMiddle_fiveMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "stripMiddle_sixMD11"
+        }
+      ],
+      "theorem_statements": [
+        "theorem stripMiddle_largeMD11 (k l t : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (ht : 0 ≤ t) :\n 0 ≤ stripMiddleGapMD11 ((k+(l+7)+2+t)/4) k (l+7) t",
+        "theorem stripMiddle_threeMD11 (k l t : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (ht : 0 ≤ t) :\n 0 ≤ stripMiddleGapMD11 (((k+4)+3+2+t)/4) (k+4) 3 t",
+        "theorem stripMiddle_fourMD11 (k l t : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (ht : 0 ≤ t) :\n 0 ≤ stripMiddleGapMD11 (((k+3)+4+2+t)/4) (k+3) 4 t",
+        "theorem stripMiddle_fiveMD11 (k l t : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (ht : 0 ≤ t) :\n 0 ≤ stripMiddleGapMD11 (((k+2)+5+2+t)/4) (k+2) 5 t",
+        "theorem stripMiddle_sixMD11 (k l t : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (ht : 0 ≤ t) :\n 0 ≤ stripMiddleGapMD11 (((k+1)+6+2+t)/4) (k+1) 6 t"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripMiddleLCMD11",
+      "sha256": "88da360ecd8cdda29bef8811b5cf2c10bdf5a7522b864c250ca133c18a866e5b",
+      "accepted": false,
+      "imports": [
+        "MarkovStripMiddleGapMD11"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "strip_middle_gap_nonnegMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_middle_transferMD11"
+        }
+      ],
+      "theorem_statements": [
+        "theorem strip_middle_gap_nonnegMD11 (a k l t : ℕ)\n (he : 4*a=k+l+2+t) (hl : 3 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ stripMiddleGapMD11 a k l t",
+        "theorem strip_middle_transferMD11 (a k l t C c₂ c₃ c₄ : ℝ)\n (hk : 0 ≤ k) (hl : 3 ≤ l) (hN : 7 ≤ k+l)\n (h₂ : 2*(k+l)*(k+l-1)*(k+l-2)*c₂=C*l*stripJMB9D a k l)\n (h₃ : 6*(k+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*c₃=C*l*(l-1)*stripHMB9D a k l)\n (h₄ : 24*(k+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+l-5)*(k+l-6)*(k+1)*c₄=\n   C*l*(l-1)*(l-2)*stripMiddleIMD11 a k l t)\n (hg : 0 ≤ stripMiddleGapMD11 a k l t) : c₂*c₄ ≤ c₃^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripMiddleSourceMD11",
+      "sha256": "b2156086cab87302dc0ca3c1f4bbbe1a1695ef906abb641cd7d6564f6865316a",
+      "accepted": true,
+      "imports": [
+        "MarkovStripSourceMD11"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "strip_middle_seedMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_middle_fourMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_middle_four_coeffMD11"
+        }
+      ],
+      "theorem_statements": [
+        "theorem strip_middle_seedMD11 (a b : ℕ) (hs : 3*a ≤ b) (hu : b ≤ 4*a) :\n (h4sourceSeedM511 a b : ℝ[X])=\n X^2*(C (96*(4*a-b:ℕ):ℝ)+X*stripQuarticMD11 (a:ℝ) b)",
+        "theorem source_strip_middle_fourMD11 (path : List Bool) (hb : 9 ≤ (frame path).mid.b)\n (hs : 3*(frame path).mid.a ≤ (frame path).mid.b)\n (hu : (frame path).mid.b ≤ 4*(frame path).mid.a) :\n 24*((Bivariate.swap (frame path).mid.p).coeff 4).map (Int.castRingHom ℝ)=\n X^((frame path).mid.a-1)*(1+X)^((frame path).mid.b-9)*\n (C (96*(4*(frame path).mid.a-(frame path).mid.b:ℕ):ℝ)+\n   X*stripQuarticMD11 ((frame path).mid.a:ℝ) (frame path).mid.b)",
+        "theorem strip_middle_four_coeffMD11 (path : List Bool) (hb : 9 ≤ (frame path).mid.b)\n (hs : 3*(frame path).mid.a ≤ (frame path).mid.b)\n (hu : (frame path).mid.b ≤ 4*(frame path).mid.a) (k : ℕ) :\n 24*(coeff (frame path).mid.p ((frame path).mid.a+k) 4:ℝ)=\n ((1+(X:ℝ[X]))^((frame path).mid.b-9)*\n stripQuarticMD11 ((frame path).mid.a:ℝ) (frame path).mid.b).coeff k+\n 96*(4*(frame path).mid.a-(frame path).mid.b:ℕ)*\n (((frame path).mid.b-9).choose (k+1):ℝ)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripSourceMD11",
+      "sha256": "e48e7e5a9f9fc283e5ba8ea5b3c45b06a29ffb4cdf51307ab063d269497ad983",
+      "accepted": true,
+      "imports": [
+        "MarkovStripGapMD11",
+        "MarkovHorizontalFourthSourceM511",
+        "MarkovStripSourceMB9D"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "strip_four_seedMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_fourMD11"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_four_coeffMD11"
+        }
+      ],
+      "theorem_statements": [
+        "theorem strip_four_seedMD11 (a b : ℕ) (hs : 4*a ≤ b) :\n (h4sourceSeedM511 a b : ℝ[X])=X^3*stripQuarticMD11 (a:ℝ) b",
+        "theorem source_strip_fourMD11 (path : List Bool) (hb : 9 ≤ (frame path).mid.b)\n (hs : 4*(frame path).mid.a ≤ (frame path).mid.b) :\n 24*((Bivariate.swap (frame path).mid.p).coeff 4).map (Int.castRingHom ℝ)=\n X^(frame path).mid.a*(1+X)^((frame path).mid.b-9)*\n stripQuarticMD11 ((frame path).mid.a:ℝ) (frame path).mid.b",
+        "theorem strip_four_coeffMD11 (path : List Bool) (hb : 9 ≤ (frame path).mid.b)\n (hs : 4*(frame path).mid.a ≤ (frame path).mid.b) (k : ℕ) :\n 24*(coeff (frame path).mid.p ((frame path).mid.a+k) 4:ℝ)=\n ((1+(X:ℝ[X]))^((frame path).mid.b-9)*\n stripQuarticMD11 ((frame path).mid.a:ℝ) (frame path).mid.b).coeff k"
+      ],
+      "raw_forbidden_flags": []
+    }
+  ],
+  "accepted_counts": {
+    "def": 4,
+    "theorem": 24
+  },
+  "excluded_unbuilt_counts": {
+    "def": 3,
+    "theorem": 12
+  },
+  "per_module_counts": {
+    "MarkovResidualLowMD11": {
+      "def": 1,
+      "theorem": 1
+    },
+    "MarkovResidualMD11": {
+      "def": 1,
+      "theorem": 1
+    },
+    "MarkovStripAllMD11": {
+      "theorem": 3
+    },
+    "MarkovStripChooseMD11": {
+      "theorem": 4
+    },
+    "MarkovStripCoefficientsMD11": {
+      "theorem": 1
+    },
+    "MarkovStripGapMD11": {
+      "def": 3,
+      "theorem": 5
+    },
+    "MarkovStripLCMD11": {
+      "theorem": 2
+    },
+    "MarkovStripMiddleAllMD11": {
+      "theorem": 3
+    },
+    "MarkovStripMiddleChooseMD11": {
+      "theorem": 2
+    },
+    "MarkovStripMiddleCoefficientsMD11": {
+      "theorem": 1
+    },
+    "MarkovStripMiddleGapMD11": {
+      "def": 2,
+      "theorem": 5
+    },
+    "MarkovStripMiddleLCMD11": {
+      "theorem": 2
+    },
+    "MarkovStripMiddleSourceMD11": {
+      "theorem": 3
+    },
+    "MarkovStripSourceMD11": {
+      "theorem": 3
+    }
+  },
+  "accepted_certificates": [
+    {
+      "name": "strip_largeMD11",
+      "statement": "(a k l : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ stripGapMD11 (a+1) k (l+7)",
+      "body": "unfold stripGapMD11 stripIMD11 stripJMB9D stripHMB9D unfold h4c3M511 h4c4M511 h4c5M511 h4c6M511 h4c7M511 ring_nf positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "name": "strip_threeMD11",
+      "statement": "(a k l : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ stripGapMD11 (a+1) (k+4) 3",
+      "body": "unfold stripGapMD11 stripIMD11 stripJMB9D stripHMB9D unfold h4c3M511 h4c4M511 h4c5M511 h4c6M511 h4c7M511 ring_nf positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "name": "strip_fourMD11",
+      "statement": "(a k l : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ stripGapMD11 (a+1) (k+3) 4",
+      "body": "unfold stripGapMD11 stripIMD11 stripJMB9D stripHMB9D unfold h4c3M511 h4c4M511 h4c5M511 h4c6M511 h4c7M511 ring_nf positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "name": "strip_fiveMD11",
+      "statement": "(a k l : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ stripGapMD11 (a+1) (k+2) 5",
+      "body": "unfold stripGapMD11 stripIMD11 stripJMB9D stripHMB9D unfold h4c3M511 h4c4M511 h4c5M511 h4c6M511 h4c7M511 ring_nf positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "name": "strip_sixMD11",
+      "statement": "(a k l : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ stripGapMD11 (a+1) (k+1) 6",
+      "body": "unfold stripGapMD11 stripIMD11 stripJMB9D stripHMB9D unfold h4c3M511 h4c4M511 h4c5M511 h4c6M511 h4c7M511 ring_nf positivity",
+      "expansion_recomputed": false
+    }
+  ],
+  "low_residual_exact_added_j2_implication": true,
+  "excluded_residual_exact_below3a_draft": true,
+  "pending_final_gap_form": "five explicit4096factoredinteger identities; latestsource unsuccessful, notaccepted"
+}

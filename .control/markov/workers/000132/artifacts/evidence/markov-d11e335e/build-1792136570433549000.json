@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovStripCoefficientsMD11.lean:24:1: error: 'change' tactic failed, pattern\n  (\u2191k + \u2191l - 3) * (\u2191k + \u2191l - 3 - 1) * (\u2191k + \u2191l - 3 - 2) * (\u2191k + \u2191l - 3 - 3) *\n      ((1 + X) ^ (k + l - 7) * stripQuarticMD11 a (\u2191k + \u2191l + 2)).coeff k =\n    ?m.466\nis not definitionally equal to target\n  (\u2191k + (\u2191l - 3)) * (\u2191k + (\u2191l - 3) - 1) * (\u2191k + (\u2191l - 3) - 2) * (\u2191k + (\u2191l - 3) - 3) *\n      ((1 + X) ^ (k + l - 7) *\n            (C (h4c3M511 a (\u2191k + \u2191l + 2) 0 0 0 0 0 0) + C (h4c4M511 a (\u2191k + \u2191l + 2) 0 0 0 0 0 0) * X +\n                  C (h4c5M511 a (\u2191k + \u2191l + 2) 0 0 0 0 0 0) * X ^ 2 +\n                C (h4c6M511 a (\u2191k + \u2191l + 2) 0 0 0 0 0 0) * X ^ 3 +\n              C (h4c7M511 a (\u2191k + \u2191l + 2) 0 0 0 0 0 0) * X ^ 4)).coeff\n        k =\n    \u2191((k + l - 3).choose k) *\n      (h4c3M511 a (\u2191k + \u2191l + 2) 0 0 0 0 0 0 * (\u2191l - 3) * (\u2191l - 3 - 1) * (\u2191l - 3 - 2) * (\u2191l - 3 - 3) +\n              h4c4M511 a (\u2191k + \u2191l + 2) 0 0 0 0 0 0 * \u2191k * (\u2191l - 3) * (\u2191l - 3 - 1) * (\u2191l - 3 - 2) +\n            h4c5M511 a (\u2191k + \u2191l + 2) 0 0 0 0 0 0 * \u2191k * (\u2191k - 1) * (\u2191l - 3) * (\u2191l - 3 - 1) +\n          h4c6M511 a (\u2191k + \u2191l + 2) 0 0 0 0 0 0 * \u2191k * (\u2191k - 1) * (\u2191k - 2) * (\u2191l - 3) +\n        h4c7M511 a (\u2191k + \u2191l + 2) 0 0 0 0 0 0 * \u2191k * (\u2191k - 1) * (\u2191k - 2) * (\u2191k - 3))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovStripCoefficientsMD11": "5d9205a895d6e5b7c6e456de132e05db4feeb6610acb86776ae0518a99b9f808"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-d11e335e/MarkovStripCoefficientsMD11.olean",
+    "/Users/sasha/math_gkm/research/MarkovStripCoefficientsMD11.lean"
+  ],
+  "seconds": 62.460644167033024,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
