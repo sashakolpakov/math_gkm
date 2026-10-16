@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTwoArithmeticM679.lean:33:22: error(lean.unknownIdentifier): Unknown constant `Polynomial.coeff_X_mul'`\n/Users/sasha/math_gkm/research/MarkovTwoArithmeticM679.lean:44:15: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ?a * (?b * ?c)\nin the target expression\n  (2 ^ (r - (i - (r + e))) * (X + 1) ^ (r - (i - (r + e))) * \u2191(r.choose (i - (r + e)))).coeff j =\n    \u2191(2 ^ (r - (i - (r + e))) * r.choose (i - (r + e)) * (r - (i - (r + e))).choose j)\n\ncase pos\nr e i j : \u2115\nh\u271d : r + e \u2264 i\n\u22a2 (2 ^ (r - (i - (r + e))) * (X + 1) ^ (r - (i - (r + e))) * \u2191(r.choose (i - (r + e)))).coeff j =\n    \u2191(2 ^ (r - (i - (r + e))) * r.choose (i - (r + e)) * (r - (i - (r + e))).choose j)\n/Users/sasha/math_gkm/research/MarkovTwoArithmeticM679.lean:74:3: error: unsolved goals\ncase neg\nq i j : \u2115\nhi : i = 0\nh\u271d\u00b9 : j = 2 * q + 1\nh\u271d : \u00acj = 2 * q + 2\n\u22a2 (X ^ (2 * q + 1) * (X + 1)).coeff j = 1\n/Users/sasha/math_gkm/research/MarkovTwoArithmeticM679.lean:71:1: error: unsolved goals\ncase pos\nq i j : \u2115\nhi : i = 0\nh\u271d\u00b9 : \u00acj = 2 * q + 1\nh\u271d : j = 2 * q + 2\n\u22a2 (X ^ (2 * q + 1) * (X + 1)).coeff j = \u2191(0 + 1)\n\ncase neg\nq i j : \u2115\nhi : i = 0\nh\u271d\u00b9 : \u00acj = 2 * q + 1\nh\u271d : \u00acj = 2 * q + 2\n\u22a2 (X ^ (2 * q + 1) * (X + 1)).coeff j = \u2191(0 + 0)\n\ncase neg\nq i j : \u2115\nhi : \u00aci = 0\n\u22a2 Polynomial.coeff 0 j = \u21910\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTwoArithmeticM679": "7960c30e4a48f6018301a64a6d2e5522d14c8e207b61becb92b606256be95bd9"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-6799c386/MarkovTwoArithmeticM679.olean",
+    "/Users/sasha/math_gkm/research/MarkovTwoArithmeticM679.lean"
+  ],
+  "seconds": 17.68750841700239,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

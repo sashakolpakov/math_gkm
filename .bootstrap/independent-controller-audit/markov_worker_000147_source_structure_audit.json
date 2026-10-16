@@ -1,0 +1,444 @@
+{
+  "worker": 147,
+  "request": "6799c3863d3d4155ab0184f7674d4702",
+  "created_at_utc": "2026-10-16T15:55:19.815724+00:00",
+  "scope": "Archive-first static source/declaration/hash and finite input-index domain audit. No project program, proof/checker/experiment execution, mathematical-value recomputation or active148 inspection.",
+  "new_modules": [
+    {
+      "module": "MarkovGeometricM679",
+      "path": "research/MarkovGeometricM679.lean",
+      "sha256": "b8eff70eac82af66b34db1eb8ca6431fec091be38353499bcaeedbdc9910c08b",
+      "current_sha256": "b8eff70eac82af66b34db1eb8ca6431fec091be38353499bcaeedbdc9910c08b",
+      "bytes": 2021,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "geoM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "geo_inverseM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "geo_pow_coeffM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "geometric_unfoldM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "finite_series_coeffM679"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovTwoSeriesMEC6"
+      ],
+      "theorem_statements": [
+        "theorem geo_inverseM679 {R : Type*} [CommRing R] (a : R) :\n geoM679 a*(1-PowerSeries.C a*PowerSeries.X)=1",
+        "theorem geo_pow_coeffM679 {R : Type*} [CommRing R] (a : R) (m n : ℕ) :\n PowerSeries.coeff n (geoM679 a^(m+1))=\n   a^n*((m+n).choose m:R)",
+        "theorem geometric_unfoldM679 {R : Type*} [CommRing R] (f g h : R)\n (he : (1-f)*g=h) (n : ℕ) :\n g=(∑ r∈range n, f^r*h)+f^n*g",
+        "theorem finite_series_coeffM679 {R : Type*} [CommRing R]\n (f g h : PowerSeries R) (he : (1-PowerSeries.X*f)*g=h) (q : ℕ) :\n PowerSeries.coeff q g=\n   ∑ r∈range (q+1), PowerSeries.coeff (q-r) (f^r*h)"
+      ],
+      "definitions": [
+        "def geoM679 {R : Type*} [CommRing R] (a : R) : PowerSeries R :=\n PowerSeries.mk (a^·)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovPositiveKernelM679",
+      "path": "research/MarkovPositiveKernelM679.lean",
+      "sha256": "7f072526b511dcd5a73b252ab2f387a58ab917fc8571fe5772edc7e3e3d4bf06",
+      "current_sha256": "7f072526b511dcd5a73b252ab2f387a58ab917fc8571fe5772edc7e3e3d4bf06",
+      "bytes": 2473,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "risingM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "geo_power_coeffM679"
+        },
+        {
+          "kind": "def",
+          "name": "posKernelM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "positive_kernel_coeffM679"
+        },
+        {
+          "kind": "def",
+          "name": "shiftKernelM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "shifted_kernel_coeffM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "pos_kernel_mapM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "shift_kernel_mapM679"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovGeometricM679"
+      ],
+      "theorem_statements": [
+        "theorem geo_power_coeffM679 {R : Type*} [CommRing R] (v : R) (m n : ℕ) :\n PowerSeries.coeff n (geoM679 v^m)=v^n*(risingM679 m n:R)",
+        "theorem positive_kernel_coeffM679 {R : Type*} [CommRing R] (v : R) (m l s n : ℕ) :\n PowerSeries.coeff n (geoM679 (1:R)^m*geoM679 v^l*geoM679 (v^2)^s)=\n posKernelM679 v m l s n",
+        "theorem shifted_kernel_coeffM679 {R : Type*} [CommRing R] (v : R) (m l s n : ℕ) :\n PowerSeries.coeff n ((1+PowerSeries.C v*PowerSeries.X)*\n   (geoM679 (1:R)^m*geoM679 v^l*geoM679 (v^2)^s))=\n shiftKernelM679 v m l s n",
+        "theorem pos_kernel_mapM679 {R T : Type*} [CommRing R] [CommRing T]\n (f : R →+* T) (v : R) (m l s n : ℕ) :\n f (posKernelM679 v m l s n)=posKernelM679 (f v) m l s n",
+        "theorem shift_kernel_mapM679 {R T : Type*} [CommRing R] [CommRing T]\n (f : R →+* T) (v : R) (m l s n : ℕ) :\n f (shiftKernelM679 v m l s n)=shiftKernelM679 (f v) m l s n"
+      ],
+      "definitions": [
+        "def risingM679 : ℕ → ℕ → ℕ\n | 0,n => if n=0 then 1 else 0\n | m+1,n => (m+n).choose m",
+        "def posKernelM679 {R : Type*} [CommRing R] (v : R) (m l s n : ℕ) : R :=\n ∑ ac∈antidiagonal n, ∑ ab∈antidiagonal ac.1,\n   (risingM679 m ab.1:R)*(risingM679 l ab.2:R)*(risingM679 s ac.2:R)*\n     v^(ab.2+2*ac.2)",
+        "def shiftKernelM679 {R : Type*} [CommRing R] (v : R) (m l s n : ℕ) : R :=\n posKernelM679 v m l s n+\n   if n=0 then 0 else v*posKernelM679 v m l s (n-1)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovTwoPositiveM679",
+      "path": "research/MarkovTwoPositiveM679.lean",
+      "sha256": "58e98aa78d0a910be5487cfb88699bbc53e46b5030977ad8894b30c0ed341bbf",
+      "current_sha256": "58e98aa78d0a910be5487cfb88699bbc53e46b5030977ad8894b30c0ed341bbf",
+      "bytes": 3676,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "positive_resolvent_algebraM679"
+        },
+        {
+          "kind": "def",
+          "name": "twoStepM679"
+        },
+        {
+          "kind": "def",
+          "name": "twoSeedM679"
+        },
+        {
+          "kind": "def",
+          "name": "twoTailM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_positive_resolventM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_positive_finiteM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_positive_finiteM679"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovGeometricM679"
+      ],
+      "theorem_statements": [
+        "theorem positive_resolvent_algebraM679 {R : Type*} [CommRing R]\n (u v t g k0 k1 k2 : R)\n (h0 : k0*(1-t)=1) (h1 : k1*(1-v*t)=1) (h2 : k2*(1-v^2*t)=1)\n (hg : (1-v*t)*((1-t)*(1-v^2*t)-u*t*(2*(v+1)+u))*g=\n   (u+v)^2+v-v*((u+v+1)^2+2*u)*t+v^2*(v+1)*t^2) :\n (1-t*(u*(2*(v+1)+u)*k0*k2))*(g-v*(v+1)*k2)=\n   2*u*v*(1+v*t)*k1*k2^2+u^2*(1+v*t)*k0*k2^2",
+        "theorem two_positive_resolventM679 :\n (1-PowerSeries.X*twoStepM679)*twoTailM679=twoSeedM679",
+        "theorem two_positive_finiteM679 (q : ℕ) :\n twoPolyMEC6 q=V^(2*q+1)*(V+1)+\n   ∑ r∈range (q+1), PowerSeries.coeff (q-r) (twoStepM679^r*twoSeedM679)",
+        "theorem source_two_positive_finiteM679 (path : List Bool) (ha : (frame path).mid.a=2) :\n ∃ q : ℕ, 1≤q ∧ (frame path).mid.b=2*q+1 ∧\n (frame path).mid.p=V^(2*q+1)*(V+1)+\n   ∑ r∈range (q+1), PowerSeries.coeff (q-r) (twoStepM679^r*twoSeedM679)"
+      ],
+      "definitions": [
+        "def twoStepM679 : PowerSeries BiPoly :=\n PowerSeries.C (U*(2*(V+1)+U))*geoM679 (1:BiPoly)*geoM679 (V^2)",
+        "def twoSeedM679 : PowerSeries BiPoly :=\n PowerSeries.C (2*U*V)*(1+PowerSeries.C V*PowerSeries.X)*geoM679 V*geoM679 (V^2)^2+\n PowerSeries.C (U^2)*(1+PowerSeries.C V*PowerSeries.X)*geoM679 (1:BiPoly)*geoM679 (V^2)^2",
+        "def twoTailM679 : PowerSeries BiPoly :=\n twoSeriesMEC6-PowerSeries.C (V*(V+1))*geoM679 (V^2)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovTwoKernelM679",
+      "path": "research/MarkovTwoKernelM679.lean",
+      "sha256": "ed398bfb49696bd8890e205c963d5d228520f9588b58c2362bb7a426ebfa6b36",
+      "current_sha256": "ed398bfb49696bd8890e205c963d5d228520f9588b58c2362bb7a426ebfa6b36",
+      "bytes": 2334,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "two_term_splitM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_term_coeffM679"
+        },
+        {
+          "kind": "def",
+          "name": "twoExplicitM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_explicit_formulaM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_explicitM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "pos_kernel_nonnegM679"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovTwoPositiveM679",
+        "MarkovPositiveKernelM679"
+      ],
+      "theorem_statements": [
+        "theorem two_term_splitM679 (r : ℕ) :\n twoStepM679^r*twoSeedM679=\n PowerSeries.C (2*U*V*(U*(2*(V+1)+U))^r)*\n   ((1+PowerSeries.C V*PowerSeries.X)*\n     (geoM679 (1:BiPoly)^r*geoM679 V^1*geoM679 (V^2)^(r+2)))+\n PowerSeries.C (U^2*(U*(2*(V+1)+U))^r)*\n   ((1+PowerSeries.C V*PowerSeries.X)*\n     (geoM679 (1:BiPoly)^(r+1)*geoM679 V^0*geoM679 (V^2)^(r+2)))",
+        "theorem two_term_coeffM679 (r n : ℕ) :\n PowerSeries.coeff n (twoStepM679^r*twoSeedM679)=\n 2*U*V*(U*(2*(V+1)+U))^r*shiftKernelM679 V r 1 (r+2) n+\n U^2*(U*(2*(V+1)+U))^r*shiftKernelM679 V (r+1) 0 (r+2) n",
+        "theorem two_explicit_formulaM679 (q : ℕ) : twoPolyMEC6 q=twoExplicitM679 q",
+        "theorem source_two_explicitM679 (path : List Bool) (ha : (frame path).mid.a=2) :\n ∃ q : ℕ, 1≤q ∧ (frame path).mid.b=2*q+1 ∧\n   (frame path).mid.p=twoExplicitM679 q",
+        "theorem pos_kernel_nonnegM679 (m l s n : ℕ) :\n PolyNonneg16 (posKernelM679 V m l s n)"
+      ],
+      "definitions": [
+        "def twoExplicitM679 (q : ℕ) : BiPoly :=\n V^(2*q+1)*(V+1)+∑ r∈range (q+1),\n   (2*U*V*(U*(2*(V+1)+U))^r*shiftKernelM679 V r 1 (r+2) (q-r)+\n   U^2*(U*(2*(V+1)+U))^r*shiftKernelM679 V (r+1) 0 (r+2) (q-r))"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovTwoColumnM679",
+      "path": "research/MarkovTwoColumnM679.lean",
+      "sha256": "daa2f36e264deb0bdb462524d1f29baaadf598c147c1060391f33781988e6503",
+      "current_sha256": "daa2f36e264deb0bdb462524d1f29baaadf598c147c1060391f33781988e6503",
+      "bytes": 2612,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "columnTermM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "column_term_coeffM679"
+        },
+        {
+          "kind": "def",
+          "name": "twoColumnM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_column_formulaM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_column_formulaM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_raw_formulaM679"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovTwoKernelM679"
+      ],
+      "theorem_statements": [
+        "theorem column_term_coeffM679 (r e i : ℕ) :\n (U^e*(U*(2*(V+1)+U))^r).coeff i=columnTermM679 r e i",
+        "theorem two_column_formulaM679 (q i : ℕ) :\n (twoPolyMEC6 q).coeff i=twoColumnM679 q i",
+        "theorem source_two_column_formulaM679 (path : List Bool) (ha : (frame path).mid.a=2) :\n ∃ q : ℕ, 1≤q ∧ (frame path).mid.b=2*q+1 ∧\n   ∀ i, ((frame path).mid.p).coeff i=twoColumnM679 q i",
+        "theorem source_two_raw_formulaM679 (path : List Bool) (ha : (frame path).mid.a=2) :\n ∃ q : ℕ, 1≤q ∧ (frame path).mid.b=2*q+1 ∧\n   ∀ i j, coeff (frame path).mid.p i j=(twoColumnM679 q i).coeff j"
+      ],
+      "definitions": [
+        "def columnTermM679 (r e i : ℕ) : Polynomial ℤ :=\n if r+e ≤ i then (2*(X+1))^(r-(i-(r+e)))*(r.choose (i-(r+e)):Polynomial ℤ) else 0",
+        "def twoColumnM679 (q i : ℕ) : Polynomial ℤ :=\n (if i=0 then X^(2*q+1)*(X+1) else 0)+\n ∑ r∈range (q+1),\n   (2*X*columnTermM679 r 1 i*shiftKernelM679 X r 1 (r+2) (q-r)+\n   columnTermM679 r 2 i*shiftKernelM679 X (r+1) 0 (r+2) (q-r))"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovTwoArithmeticM679",
+      "path": "research/MarkovTwoArithmeticM679.lean",
+      "sha256": "a5174dfd79350f24a9d56201a37cae6a904b8e15b8638c5240049ceacc92bc33",
+      "current_sha256": "a5174dfd79350f24a9d56201a37cae6a904b8e15b8638c5240049ceacc92bc33",
+      "bytes": 4082,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "kernelCoeffM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_coeff_formulaM679"
+        },
+        {
+          "kind": "def",
+          "name": "shiftedCoeffM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "shifted_coeff_formulaM679"
+        },
+        {
+          "kind": "def",
+          "name": "termCoeffM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "term_coeff_formulaM679"
+        },
+        {
+          "kind": "def",
+          "name": "pairCoeffM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_coeff_formulaM679"
+        },
+        {
+          "kind": "def",
+          "name": "rawTwoM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "raw_two_formulaM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_arithmeticM679"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovTwoColumnM679"
+      ],
+      "theorem_statements": [
+        "theorem kernel_coeff_formulaM679 (m l s n j : ℕ) :\n (posKernelM679 (X:Polynomial ℤ) m l s n).coeff j=(kernelCoeffM679 m l s n j:ℤ)",
+        "theorem shifted_coeff_formulaM679 (m l s n j : ℕ) :\n (shiftKernelM679 (X:Polynomial ℤ) m l s n).coeff j=(shiftedCoeffM679 m l s n j:ℤ)",
+        "theorem term_coeff_formulaM679 (r e i j : ℕ) :\n (columnTermM679 r e i).coeff j=(termCoeffM679 r e i j:ℤ)",
+        "theorem pair_coeff_formulaM679 (q r e i j : ℕ) :\n (columnTermM679 r e i*\n   shiftKernelM679 (X:Polynomial ℤ) (if e=1 then r else r+1)\n    (if e=1 then 1 else 0) (r+2) (q-r)).coeff j=(pairCoeffM679 q r e i j:ℤ)",
+        "theorem raw_two_formulaM679 (q i j : ℕ) :\n (twoColumnM679 q i).coeff j=(rawTwoM679 q i j:ℤ)",
+        "theorem source_two_arithmeticM679 (path : List Bool) (ha : (frame path).mid.a=2) :\n ∃ q : ℕ, 1≤q ∧ (frame path).mid.b=2*q+1 ∧\n   ∀ i j, coeff (frame path).mid.p i j=(rawTwoM679 q i j:ℤ)"
+      ],
+      "definitions": [
+        "def kernelCoeffM679 (m l s n j : ℕ) : ℕ :=\n ∑ ac∈antidiagonal n, ∑ ab∈antidiagonal ac.1,\n   if j=ab.2+2*ac.2 then risingM679 m ab.1*risingM679 l ab.2*risingM679 s ac.2 else 0",
+        "def shiftedCoeffM679 (m l s n j : ℕ) : ℕ :=\n kernelCoeffM679 m l s n j+\n   if n=0 ∨ j=0 then 0 else kernelCoeffM679 m l s (n-1) (j-1)",
+        "def termCoeffM679 (r e i j : ℕ) : ℕ :=\n if r+e ≤ i then\n   2^(r-(i-(r+e)))*r.choose (i-(r+e))*(r-(i-(r+e))).choose j else 0",
+        "def pairCoeffM679 (q r e i j : ℕ) : ℕ :=\n ∑ ab∈antidiagonal j, termCoeffM679 r e i ab.1*\n   shiftedCoeffM679 (if e=1 then r else r+1) (if e=1 then 1 else 0) (r+2) (q-r) ab.2",
+        "def rawTwoM679 (q i j : ℕ) : ℕ :=\n (if i=0 then (if j=2*q+1 then 1 else 0)+(if j=2*q+2 then 1 else 0) else 0)+\n ∑ r∈range (q+1),\n   ((if j=0 then 0 else 2*pairCoeffM679 q r 1 i (j-1))+pairCoeffM679 q r 2 i j)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovTwoReductionM679",
+      "path": "research/MarkovTwoReductionM679.lean",
+      "sha256": "8b30121f53613945cc1cd8477b6aa882e3c18ccaf50d038e38f3a9c057dd33ee",
+      "current_sha256": "8b30121f53613945cc1cd8477b6aa882e3c18ccaf50d038e38f3a9c057dd33ee",
+      "bytes": 2187,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "two_family_coeffM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_horizontal_arithmeticM679"
+        },
+        {
+          "kind": "def",
+          "name": "TwoRemainingM679"
+        },
+        {
+          "kind": "def",
+          "name": "OtherSourcesM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_remaining_iffM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_two_arithmeticM679"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovTwoArithmeticM679",
+        "MarkovSourceReduction3af"
+      ],
+      "theorem_statements": [
+        "theorem two_family_coeffM679 (q i j : ℕ) :\n coeff (twoFamily3af q) i j=(rawTwoM679 q i j:ℤ)",
+        "theorem two_horizontal_arithmeticM679 (q : ℕ) (hq : 1≤q) (i j : ℕ) :\n rawTwoM679 q i j*rawTwoM679 q (i+2) j ≤ rawTwoM679 q (i+1) j^2",
+        "theorem two_remaining_iffM679 :\n (∀ q : ℕ, 1≤q → GlobalLC18 (twoFamily3af q)) ↔ TwoRemainingM679",
+        "theorem root_iff_two_arithmeticM679 :\n Conjecture63 ↔ TwoRemainingM679 ∧ OtherSourcesM679"
+      ],
+      "definitions": [
+        "def TwoRemainingM679 : Prop := ∀ q : ℕ, 1≤q →\n (∀ i j, rawTwoM679 q i j*rawTwoM679 q i (j+2) ≤ rawTwoM679 q i (j+1)^2) ∧\n (∀ i j, rawTwoM679 q i (j+2)*rawTwoM679 q (i+2) j ≤ rawTwoM679 q (i+1) (j+1)^2)",
+        "def OtherSourcesM679 : Prop :=\n ∀ path : List Bool, 3≤(frame path).mid.a → GlobalLC18 (frame path).mid.p"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovColumnObstructionM679",
+      "path": "research/MarkovColumnObstructionM679.lean",
+      "sha256": "24caf573621d74e903b712a2275404d90b25a749fd9203a083ebff01e757b624",
+      "current_sha256": "24caf573621d74e903b712a2275404d90b25a749fd9203a083ebff01e757b624",
+      "bytes": 1776,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "columnGroupM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "column_group_exampleM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "column_group_not_lcM679"
+        },
+        {
+          "kind": "theorem",
+          "name": "column_obstruction_sourceM679"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovTwoColumnM679"
+      ],
+      "theorem_statements": [
+        "theorem column_group_exampleM679 :\n columnGroupM679 3 3 1=2*X+4*X^2+10*X^3+12*X^4+12*X^5",
+        "theorem column_group_not_lcM679 :\n (columnGroupM679 3 3 1).coeff 2^2 <\n   (columnGroupM679 3 3 1).coeff 1*(columnGroupM679 3 3 1).coeff 3",
+        "theorem column_obstruction_sourceM679 :\n let m := (frame (lowerPathM58E 2 1)).mid\n m.a=2 ∧ m.b=7 ∧\n InPolygon m.a m.b 3 1 ∧ InPolygon m.a m.b 3 2 ∧ InPolygon m.a m.b 3 3 ∧\n coeff m.p 3 1=28 ∧ coeff m.p 3 2=68 ∧ coeff m.p 3 3=108 ∧\n coeff m.p 3 1*coeff m.p 3 3 ≤ coeff m.p 3 2^2"
+      ],
+      "definitions": [
+        "def columnGroupM679 (q i r : ℕ) : Polynomial ℤ :=\n 2*X*columnTermM679 r 1 i*shiftKernelM679 X r 1 (r+2) (q-r)+\n if r=0 then 0 else columnTermM679 (r-1) 2 i*\n   shiftKernelM679 X r 0 (r+1) (q-(r-1))"
+      ],
+      "forbidden_raw_tokens": []
+    }
+  ],
+  "counts": {
+    "def": 18,
+    "theorem": 35
+  },
+  "theorem_statement_extraction": "Complete header to proof assignment including inner let binders; definitions retain bodies.",
+  "source_scope": "Every Boolean source path with mid.a=2 admits one natural q>=1 with mid.b=2q+1 and all-natural i,j raw coefficient exactly the integer cast of rawTwoM679 q i j. No polygon, support, sign, row, column or formula premise. q0 identities are auxiliary, excluded from actual-source/root quantifiers.",
+  "formal_series_scope": "G=mk(twoPoly q) over BiPoly; X here is a third formal variable. Generic finite unfolding (1-X*f)*g=h yields coefficient q as the sum r0..q of coefficient(q-r)(f^r*h); remainder has X^(q+1) and vanishes at q. No analytic convergence, infinite-sum rearrangement or nonzero denominator assumption.",
+  "resolvent_scope": "Generic positive_resolvent_algebraM679 is for any CommRing with three explicit inverse identities and the old denominator equation; arbitrary values are not asserted positive. Instantiation uses formal geo inverses and source-linked 146 equation. The tail subtracts baseline V*(V+1)*geo(V^2); baseline coefficient is V^(2q+1)*(V+1).",
+  "kernel_scope": "R(0,n)=indicator(n=0), R(m+1,n)=choose(m+n,m). Nested natural antidiagonals encode a+b+c=n and V-degree b+2c. J_n=K_n plus V*K_(n-1) only when n!=0. All exponents and zero cases are exact, no division. Natural R and actual V monomials give proved pos_kernel_nonneg; generic coefficient identities alone do not assert ordered-ring positivity.",
+  "column_scope": "E(r,e,i) is zero unless r+e<=i. Otherwise k=i-(r+e), E=(2(X+1))^(r-k)*choose(r,k). k>r yields choose=0 despite truncated exponent. The coefficient theorem uses coeff_X_add_C_pow, including out-of-support k. Columns sum r0..q: 2X*E(r,1,i)*J(X;r,1,r+2,q-r) plus E(r,2,i)*J(X;r+1,0,r+2,q-r). First column baseline appears only at i0.",
+  "arithmetic_scope": "kernelCoeff is a natural sum with equality j=b+2c. shiftedCoeff adds kernel(n-1,j-1) only when both n and j are nonzero. termCoeff casts exactly E coefficients using guarded k and choose(r-k,j). pairCoeff convolves via antidiagonal j; e1 selects (m,l)=(r,1), otherwise (r+1,0), with generic natural q-r truncation but actual finite sum r<=q. rawTwo includes first-column indicators j=2q+1 or 2q+2, plus 2*pair(e1,j-1) only when j>0 and pair(e2,j). No scalar normalization or discarded zeros.",
+  "root_scope": "Conjecture63 iff TwoRemainingM679 AND OtherSourcesM679. TwoRemaining quantifies q>=1 and ALL natural i,j, with V products c(i,j)c(i,j+2)<=c(i,j+1)^2 and D products c(i,j+2)c(i+2,j)<=c(i+1,j+1)^2. OtherSources quantifies every Boolean path with a>=3 and GlobalLC18 (all H,V,D and all natural indices). Both propositions unproved. H for a2 is inherited 146 and transported by exact casts, not a new LC region.",
+  "root_guard_bridge": "Named old root reduction treats a1 and endpoint slopes, classifies every actual a2 path as replicate n false followed by true with q=n+1, and retains all a>=3 paths. GlobalLC18 is equivalent to original polygon-guarded weak LC for actual sources because coefficients outside the polygon vanish and an in-polygon outer pair has in-polygon midpoint. Exact original root and natural-zero guards are not replaced by a support assumption.",
+  "obstruction_scope": "columnGroup(q,i,r)=A_r plus B_(r-1) only if r!=0. Specific group q3,i3,r1 has coefficients [2,4,10] at j1,2,3 and formally fails LC. Actual lowerPath(2,1), a2,b7, same V positions (3,1),(3,2),(3,3) are polygon-valid and raw coefficients [28,68,108] satisfy LC. Generic group definition alone is not a proved all-r reindex/sum grouping identity; no root refutation or general source failure follows.",
+  "library_fit": "Mathlib mk_one_pow_eq_mk_choose_add has arbitrary CommRing and natural d; rescale coefficient multiplies a^n; Polynomial.coeff_X_add_C_pow includes zero coefficients outside k<=n. The zero-power kernel case is proved separately. Exact named source/object files pinned; imported body trust retained.",
+  "compiled_only_diagnostic": {
+    "path": "research/MarkovDebugM679.lean",
+    "sha256": "0ea457fe5765240b1dc3ffa0ccf17afae39a7fba9052ae203ba1018d0cc5cd03",
+    "current_match": true,
+    "anonymous_examples": 1,
+    "source": "import MarkovGeometricM679\nnamespace MathGKM.Markov\nnoncomputable section\nset_option maxHeartbeats 100000\nattribute [local irreducible] U V geoM679 twoSeriesMEC6\nexample : geoM679 (V^2)*(1-(PowerSeries.C V)^2*PowerSeries.X)=1 := by\n have h := geo_inverseM679 (V^2)\n rw [map_pow] at h\n exact h\nend\nend MathGKM.Markov\n",
+    "scope": "Successful compiled diagnostic anonymous geo-inverse example. Unselected, no named declaration inventory or selected replay/explicit axiom print; not a ninth accepted mathematical module and not proof-free."
+  },
+  "pending_scope": "TwoRemaining, OtherSources and full root remain unproved. No general vertical/diagonal sign or LC preservation of positive sums follows from the positive formula. Finite failed pair/regroup strategies are not new hypotheses or root refutations.",
+  "mathematical_values_recomputed": false
+}

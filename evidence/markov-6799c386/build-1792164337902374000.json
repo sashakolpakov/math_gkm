@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTwoPositiveM679.lean:57:30: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (3000000) has been reached\n\nNote: Use `set_option maxHeartbeats <num>` to set the limit.\n\nHint: Additional diagnostic information may be available using the `set_option diagnostics true` command.\n/Users/sasha/math_gkm/research/MarkovTwoPositiveM679.lean:55:1: error: (deterministic) timeout at `isDefEq`, maximum number of heartbeats (3000000) has been reached\n\nNote: Use `set_option maxHeartbeats <num>` to set the limit.\n\nHint: Additional diagnostic information may be available using the `set_option diagnostics true` command.\n/Users/sasha/math_gkm/research/MarkovTwoPositiveM679.lean:54:22: warning: This simp argument is unused:\n  map_sub\n\nHint: Omit it from the simp argument list.\n  simp only [\u0335S\u0335,\u0335m\u0335a\u0335p\u0335_\u0335a\u0335d\u0335d\u0335,\u0335m\u0335a\u0335p\u0335_\u0335s\u0335u\u0335b\u0335,\u0335m\u0335a\u0335p\u0335_\u0335m\u0335u\u0335l\u0335,\u0335m\u0335a\u0335p\u0335_\u0335p\u0335o\u0335w\u0335,\u0335m\u0335a\u0335p\u0335_\u0335o\u0335n\u0335e\u0335,\u0335m\u0335a\u0335p\u0335_\u0335o\u0335f\u0335N\u0335a\u0335t\u0335]\u0335[\u0332S\u0332,\u0332 \u0332m\u0332a\u0332p\u0332_\u0332a\u0332d\u0332d\u0332,\u0332 \u0332m\u0332a\u0332p\u0332_\u0332m\u0332u\u0332l\u0332,\u0332 \u0332m\u0332a\u0332p\u0332_\u0332p\u0332o\u0332w\u0332,\u0332 \u0332m\u0332a\u0332p\u0332_\u0332o\u0332n\u0332e\u0332,\u0332 \u0332m\u0332a\u0332p\u0332_\u0332o\u0332f\u0332N\u0332a\u0332t\u0332]\u0332 at hg\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovTwoPositiveM679.lean:71:27: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ?a ^ (?m * ?n)\nin the target expression\n  V * (V + 1) * (V ^ 1 * V) ^ q + \u2211 r \u2208 range (q + 1), (PowerSeries.coeff (q - r)) (twoStepM679 ^ r * twoSeedM679) =\n    V ^ (2 * q + 1) * (V + 1) + \u2211 r \u2208 range (q + 1), (PowerSeries.coeff (q - r)) (twoStepM679 ^ r * twoSeedM679)\n\nq : \u2115\nh :\n  twoPolyMEC6 q - V * (V + 1) * (V ^ 2) ^ q =\n    \u2211 r \u2208 range (q + 1), (PowerSeries.coeff (q - r)) (twoStepM679 ^ r * twoSeedM679)\n\u22a2 V * (V + 1) * (V ^ 1 * V) ^ q + \u2211 r \u2208 range (q + 1), (PowerSeries.coeff (q - r)) (twoStepM679 ^ r * twoSeedM679) =\n    V ^ (2 * q + 1) * (V + 1) + \u2211 r \u2208 range (q + 1), (PowerSeries.coeff (q - r)) (twoStepM679 ^ r * twoSeedM679)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTwoPositiveM679": "55936a6ad285f806a8ed897cdfbe3f0da0c8aa126c1c8e627cca08abc6aa6f77"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-6799c386/MarkovTwoPositiveM679.olean",
+    "/Users/sasha/math_gkm/research/MarkovTwoPositiveM679.lean"
+  ],
+  "seconds": 77.54945270798635,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

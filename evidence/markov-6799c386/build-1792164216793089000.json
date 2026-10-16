@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTwoPositiveM679.lean:31:40: error: unsolved goals\nR : Type u_1\ninst\u271d : CommRing R\nu v t g k0 k1 k2 : R\nh0 : k0 * (1 - t) = 1\nh1 : k1 * (1 - v * t) = 1\nh2 : k2 * (1 - v ^ 2 * t) = 1\nhg :\n  (1 - v * t) * ((1 - t) * (1 - v ^ 2 * t) - u * t * (2 * (v + 1) + u)) * g =\n    (u + v) ^ 2 + v - v * ((u + v + 1) ^ 2 + 2 * u) * t + v ^ 2 * (v + 1) * t ^ 2\nD : R := (1 - v * t) * ((1 - t) * (1 - v ^ 2 * t) - u * t * (2 * (v + 1) + u))\nhs : D * ((1 - v ^ 2 * t) * g - v * (v + 1)) = u * (1 + v * t) * (2 * v * (1 - t) + u * (1 - v * t))\nhd : k0 * k1 * k2 ^ 2 * D = k2 * (1 - t * (u * (2 * (v + 1) + u) * k0 * k2))\n\u22a2 (1 - t * (u * (2 * (v + 1) + u) * k0 * k2)) * (g - v * (v + 1) * k2) =\n    (1 - t * (u * (2 * (v + 1) + u) * k0 * k2)) * (1 * g - v * (v + 1) * k2)\n/Users/sasha/math_gkm/research/MarkovTwoPositiveM679.lean:56:30: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (3000000) has been reached\n\nNote: Use `set_option maxHeartbeats <num>` to set the limit.\n\nHint: Additional diagnostic information may be available using the `set_option diagnostics true` command.\n/Users/sasha/math_gkm/research/MarkovTwoPositiveM679.lean:54:1: error: (deterministic) timeout at `isDefEq`, maximum number of heartbeats (3000000) has been reached\n\nNote: Use `set_option maxHeartbeats <num>` to set the limit.\n\nHint: Additional diagnostic information may be available using the `set_option diagnostics true` command.\n/Users/sasha/math_gkm/research/MarkovTwoPositiveM679.lean:53:22: warning: This simp argument is unused:\n  map_sub\n\nHint: Omit it from the simp argument list.\n  simp only [\u0335S\u0335,\u0335m\u0335a\u0335p\u0335_\u0335a\u0335d\u0335d\u0335,\u0335m\u0335a\u0335p\u0335_\u0335s\u0335u\u0335b\u0335,\u0335m\u0335a\u0335p\u0335_\u0335m\u0335u\u0335l\u0335,\u0335m\u0335a\u0335p\u0335_\u0335p\u0335o\u0335w\u0335,\u0335m\u0335a\u0335p\u0335_\u0335o\u0335n\u0335e\u0335,\u0335m\u0335a\u0335p\u0335_\u0335o\u0335f\u0335N\u0335a\u0335t\u0335]\u0335[\u0332S\u0332,\u0332 \u0332m\u0332a\u0332p\u0332_\u0332a\u0332d\u0332d\u0332,\u0332 \u0332m\u0332a\u0332p\u0332_\u0332m\u0332u\u0332l\u0332,\u0332 \u0332m\u0332a\u0332p\u0332_\u0332p\u0332o\u0332w\u0332,\u0332 \u0332m\u0332a\u0332p\u0332_\u0332o\u0332n\u0332e\u0332,\u0332 \u0332m\u0332a\u0332p\u0332_\u0332o\u0332f\u0332N\u0332a\u0332t\u0332]\u0332 at hg\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovTwoPositiveM679.lean:70:18: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ?a ^ (?m * ?n)\nin the target expression\n  V * (V + 1) * (V ^ 2) ^ q + \u2211 r \u2208 range (q + 1), (PowerSeries.coeff (q - r)) (twoStepM679 ^ r * twoSeedM679) =\n    V ^ (2 * q + 1) * (V + 1) + \u2211 r \u2208 range (q + 1), (PowerSeries.coeff (q - r)) (twoStepM679 ^ r * twoSeedM679)\n\nq : \u2115\nh :\n  twoPolyMEC6 q - V * (V + 1) * (V ^ 2) ^ q =\n    \u2211 r \u2208 range (q + 1), (PowerSeries.coeff (q - r)) (twoStepM679 ^ r * twoSeedM679)\n\u22a2 V * (V + 1) * (V ^ 2) ^ q + \u2211 r \u2208 range (q + 1), (PowerSeries.coeff (q - r)) (twoStepM679 ^ r * twoSeedM679) =\n    V ^ (2 * q + 1) * (V + 1) + \u2211 r \u2208 range (q + 1), (PowerSeries.coeff (q - r)) (twoStepM679 ^ r * twoSeedM679)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTwoPositiveM679": "af1ec1bdcc4436c48cee82a5557a2d29af8b62e4b5493060a6d38430aa19370d"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-6799c386/MarkovTwoPositiveM679.olean",
+    "/Users/sasha/math_gkm/research/MarkovTwoPositiveM679.lean"
+  ],
+  "seconds": 87.2862448329688,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
