@@ -1,0 +1,60 @@
+{
+  "workers": {
+    "118": {
+      "log": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 203, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Users/sasha/math_gkm/machinery/worker.py\", line 235, in <module>\n    main()\n    ~~~~^^\n  File \"/Users/sasha/math_gkm/machinery/worker.py\", line 231, in main\n    execute(args.directory)\n    ~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/Users/sasha/math_gkm/machinery/worker.py\", line 124, in execute\n    target.write_bytes((ROOT/name).read_bytes())\n    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py\", line 797, in write_bytes\n    return f.write(view)\n           ~~~~~~~^^^^^^\nOSError: [Errno 28] No space left on device\n",
+      "log_sha256": "7644dc037eeecf91c9bf940a489ad9b04e03856a2beafb9c6aa448a7cdb59733",
+      "checked": 3783,
+      "changes": {},
+      "files": [
+        "before.json",
+        "request.json",
+        "reconciliation.json",
+        "watchdog.json",
+        "watchdog.log",
+        "prompt.txt"
+      ]
+    },
+    "119": {
+      "log": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 203, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Users/sasha/math_gkm/machinery/worker.py\", line 235, in <module>\n    main()\n    ~~~~^^\n  File \"/Users/sasha/math_gkm/machinery/worker.py\", line 231, in main\n    execute(args.directory)\n    ~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/Users/sasha/math_gkm/machinery/worker.py\", line 124, in execute\n    target.write_bytes((ROOT/name).read_bytes())\n    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py\", line 797, in write_bytes\n    return f.write(view)\n           ~~~~~~~^^^^^^\nOSError: [Errno 28] No space left on device\n",
+      "log_sha256": "7644dc037eeecf91c9bf940a489ad9b04e03856a2beafb9c6aa448a7cdb59733",
+      "checked": 3783,
+      "changes": {},
+      "files": [
+        "before.json",
+        "request.json",
+        "reconciliation.json",
+        "watchdog.json",
+        "watchdog.log",
+        "prompt.txt"
+      ]
+    }
+  },
+  "inherited": {
+    "RESUME.json": {
+      "expected": "9c4cda71331349bd2b18e040157b07b013cdb0e393bc77160f651666c1132df7",
+      "actual": "9c4cda71331349bd2b18e040157b07b013cdb0e393bc77160f651666c1132df7"
+    },
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": {
+      "expected": "c43cd8a52bef2073f028bafcb8a793b8d2208f7924ba318257b7acfbcee45c1d",
+      "actual": "c43cd8a52bef2073f028bafcb8a793b8d2208f7924ba318257b7acfbcee45c1d"
+    },
+    "evidence/independent-markov/markov_residual_scope_audit.md": {
+      "expected": "6cb707622a6c57fb2b8ac5167b302b5c21daafe5ac332b223b137407db874e35",
+      "actual": "6cb707622a6c57fb2b8ac5167b302b5c21daafe5ac332b223b137407db874e35"
+    },
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": {
+      "expected": "63a5d6b9fd6b89dfdc92c0382c165c9c6868313ea1598250c41ae0562cd7df8a",
+      "actual": "63a5d6b9fd6b89dfdc92c0382c165c9c6868313ea1598250c41ae0562cd7df8a"
+    },
+    "evidence/markov/research-run/state.json": {
+      "expected": "37c095598ce39fad509297b6f74b4293594b3ecdc2f69524722f41023ec50b8d",
+      "actual": "37c095598ce39fad509297b6f74b4293594b3ecdc2f69524722f41023ec50b8d"
+    },
+    "requests/markov-next.json": {
+      "expected": "b2c014a6a6a2dca6a4d28a42fcc1356e66858709bfb861cd29b361a20154b755",
+      "actual": "b2c014a6a6a2dca6a4d28a42fcc1356e66858709bfb861cd29b361a20154b755"
+    }
+  },
+  "prior_modules": 28,
+  "finding": "Both interrupted workers failed during snapshot copying with ENOSPC, before a model research event log was created. No research/source text changes detected against their before manifests. No failed side effect replayed."
+}

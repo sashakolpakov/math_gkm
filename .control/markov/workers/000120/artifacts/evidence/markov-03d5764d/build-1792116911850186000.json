@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovThirdLowSourceM03.lean:61:32: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  f \u2265 0\n  e \u2265 0\n  e - f \u2265 0\n  d \u2265 1\n  c \u2265 0\n  c \u2265 1\n  c + d \u2265 7\n  b \u2265 0\n  b + c \u2265 0\n  a \u2265 0\n  3*a - 2*c - 2*d \u2265 4\nwhere\n a := \u2191(frame (List.replicate n false ++ true :: rest)).mid.b % \u2191(frame (List.replicate n false ++ true :: rest)).mid.a\n b := \u2191(frame rest).mid.b * \u2191(n + 1)\n c := \u2191((frame rest).mid.b - (frame rest).mid.a)\n d := \u2191(frame rest).mid.a\n e := \u2191?m.167\n f := \u2191?m.168\n",
+  "stderr": "",
+  "modules": {
+    "MarkovThirdLowSourceM03": "bf1ba02b5c9a3c40cbb9e5e2fec3204f29aaac68ccc7ddf430b876aae6074919"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-03d5764d/MarkovThirdLowSourceM03.olean",
+    "/Users/sasha/math_gkm/research/MarkovThirdLowSourceM03.lean"
+  ],
+  "seconds": 6.216078750032466,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

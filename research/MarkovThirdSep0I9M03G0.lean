@@ -1,0 +1,30 @@
+import MarkovThirdSep0I9M03Defs
+namespace MathGKM.Markov
+noncomputable section
+set_option maxHeartbeats 15000000
+set_option maxRecDepth 32768
+set_option linter.unusedVariables false
+set_option linter.unusedSimpArgs false
+theorem sSep0I9g00M03 (u v : ℤ) (hu : 0 ≤ u) (hv : 0 ≤ v) : 0 ≤ (sSep0I9b00M03 u v)*(sSep0I9b00M03 u v)-((sSep0I9a00M03 u v)*(sSep0I9c00M03 u v)) := by
+ simp only [sSep0I9a00M03,sSep0I9a01M03,sSep0I9a02M03,sSep0I9a03M03,sSep0I9a10M03,sSep0I9a11M03,sSep0I9a12M03,sSep0I9a20M03,sSep0I9a21M03,sSep0I9a30M03,sSep0I9b00M03,sSep0I9b01M03,sSep0I9b02M03,sSep0I9b03M03,sSep0I9b10M03,sSep0I9b11M03,sSep0I9b12M03,sSep0I9b20M03,sSep0I9b21M03,sSep0I9b30M03,sSep0I9c00M03,sSep0I9c01M03,sSep0I9c02M03,sSep0I9c03M03,sSep0I9c10M03,sSep0I9c11M03,sSep0I9c12M03,sSep0I9c20M03,sSep0I9c21M03,sSep0I9c30M03]
+ ring_nf <;> positivity
+theorem sSep0I9g01M03 (u v : ℤ) (hu : 0 ≤ u) (hv : 0 ≤ v) : 0 ≤ (sSep0I9b00M03 u v)*(sSep0I9b01M03 u v)+(sSep0I9b01M03 u v)*(sSep0I9b00M03 u v)-((sSep0I9a00M03 u v)*(sSep0I9c01M03 u v)+(sSep0I9a01M03 u v)*(sSep0I9c00M03 u v)) := by
+ simp only [sSep0I9a00M03,sSep0I9a01M03,sSep0I9a02M03,sSep0I9a03M03,sSep0I9a10M03,sSep0I9a11M03,sSep0I9a12M03,sSep0I9a20M03,sSep0I9a21M03,sSep0I9a30M03,sSep0I9b00M03,sSep0I9b01M03,sSep0I9b02M03,sSep0I9b03M03,sSep0I9b10M03,sSep0I9b11M03,sSep0I9b12M03,sSep0I9b20M03,sSep0I9b21M03,sSep0I9b30M03,sSep0I9c00M03,sSep0I9c01M03,sSep0I9c02M03,sSep0I9c03M03,sSep0I9c10M03,sSep0I9c11M03,sSep0I9c12M03,sSep0I9c20M03,sSep0I9c21M03,sSep0I9c30M03]
+ ring_nf <;> positivity
+theorem sSep0I9g02M03 (u v : ℤ) (hu : 0 ≤ u) (hv : 0 ≤ v) : 0 ≤ (sSep0I9b00M03 u v)*(sSep0I9b02M03 u v)+(sSep0I9b01M03 u v)*(sSep0I9b01M03 u v)+(sSep0I9b02M03 u v)*(sSep0I9b00M03 u v)-((sSep0I9a00M03 u v)*(sSep0I9c02M03 u v)+(sSep0I9a01M03 u v)*(sSep0I9c01M03 u v)+(sSep0I9a02M03 u v)*(sSep0I9c00M03 u v)) := by
+ simp only [sSep0I9a00M03,sSep0I9a01M03,sSep0I9a02M03,sSep0I9a03M03,sSep0I9a10M03,sSep0I9a11M03,sSep0I9a12M03,sSep0I9a20M03,sSep0I9a21M03,sSep0I9a30M03,sSep0I9b00M03,sSep0I9b01M03,sSep0I9b02M03,sSep0I9b03M03,sSep0I9b10M03,sSep0I9b11M03,sSep0I9b12M03,sSep0I9b20M03,sSep0I9b21M03,sSep0I9b30M03,sSep0I9c00M03,sSep0I9c01M03,sSep0I9c02M03,sSep0I9c03M03,sSep0I9c10M03,sSep0I9c11M03,sSep0I9c12M03,sSep0I9c20M03,sSep0I9c21M03,sSep0I9c30M03]
+ ring_nf <;> positivity
+theorem sSep0I9g03M03 (u v : ℤ) (hu : 0 ≤ u) (hv : 0 ≤ v) : 0 ≤ (sSep0I9b00M03 u v)*(sSep0I9b03M03 u v)+(sSep0I9b01M03 u v)*(sSep0I9b02M03 u v)+(sSep0I9b02M03 u v)*(sSep0I9b01M03 u v)+(sSep0I9b03M03 u v)*(sSep0I9b00M03 u v)-((sSep0I9a00M03 u v)*(sSep0I9c03M03 u v)+(sSep0I9a01M03 u v)*(sSep0I9c02M03 u v)+(sSep0I9a02M03 u v)*(sSep0I9c01M03 u v)+(sSep0I9a03M03 u v)*(sSep0I9c00M03 u v)) := by
+ simp only [sSep0I9a00M03,sSep0I9a01M03,sSep0I9a02M03,sSep0I9a03M03,sSep0I9a10M03,sSep0I9a11M03,sSep0I9a12M03,sSep0I9a20M03,sSep0I9a21M03,sSep0I9a30M03,sSep0I9b00M03,sSep0I9b01M03,sSep0I9b02M03,sSep0I9b03M03,sSep0I9b10M03,sSep0I9b11M03,sSep0I9b12M03,sSep0I9b20M03,sSep0I9b21M03,sSep0I9b30M03,sSep0I9c00M03,sSep0I9c01M03,sSep0I9c02M03,sSep0I9c03M03,sSep0I9c10M03,sSep0I9c11M03,sSep0I9c12M03,sSep0I9c20M03,sSep0I9c21M03,sSep0I9c30M03]
+ ring_nf <;> positivity
+theorem sSep0I9g04M03 (u v : ℤ) (hu : 0 ≤ u) (hv : 0 ≤ v) : 0 ≤ (sSep0I9b01M03 u v)*(sSep0I9b03M03 u v)+(sSep0I9b02M03 u v)*(sSep0I9b02M03 u v)+(sSep0I9b03M03 u v)*(sSep0I9b01M03 u v)-((sSep0I9a01M03 u v)*(sSep0I9c03M03 u v)+(sSep0I9a02M03 u v)*(sSep0I9c02M03 u v)+(sSep0I9a03M03 u v)*(sSep0I9c01M03 u v)) := by
+ simp only [sSep0I9a00M03,sSep0I9a01M03,sSep0I9a02M03,sSep0I9a03M03,sSep0I9a10M03,sSep0I9a11M03,sSep0I9a12M03,sSep0I9a20M03,sSep0I9a21M03,sSep0I9a30M03,sSep0I9b00M03,sSep0I9b01M03,sSep0I9b02M03,sSep0I9b03M03,sSep0I9b10M03,sSep0I9b11M03,sSep0I9b12M03,sSep0I9b20M03,sSep0I9b21M03,sSep0I9b30M03,sSep0I9c00M03,sSep0I9c01M03,sSep0I9c02M03,sSep0I9c03M03,sSep0I9c10M03,sSep0I9c11M03,sSep0I9c12M03,sSep0I9c20M03,sSep0I9c21M03,sSep0I9c30M03]
+ ring_nf <;> positivity
+theorem sSep0I9g05M03 (u v : ℤ) (hu : 0 ≤ u) (hv : 0 ≤ v) : 0 ≤ (sSep0I9b02M03 u v)*(sSep0I9b03M03 u v)+(sSep0I9b03M03 u v)*(sSep0I9b02M03 u v)-((sSep0I9a02M03 u v)*(sSep0I9c03M03 u v)+(sSep0I9a03M03 u v)*(sSep0I9c02M03 u v)) := by
+ simp only [sSep0I9a00M03,sSep0I9a01M03,sSep0I9a02M03,sSep0I9a03M03,sSep0I9a10M03,sSep0I9a11M03,sSep0I9a12M03,sSep0I9a20M03,sSep0I9a21M03,sSep0I9a30M03,sSep0I9b00M03,sSep0I9b01M03,sSep0I9b02M03,sSep0I9b03M03,sSep0I9b10M03,sSep0I9b11M03,sSep0I9b12M03,sSep0I9b20M03,sSep0I9b21M03,sSep0I9b30M03,sSep0I9c00M03,sSep0I9c01M03,sSep0I9c02M03,sSep0I9c03M03,sSep0I9c10M03,sSep0I9c11M03,sSep0I9c12M03,sSep0I9c20M03,sSep0I9c21M03,sSep0I9c30M03]
+ ring_nf <;> positivity
+theorem sSep0I9g06M03 (u v : ℤ) (hu : 0 ≤ u) (hv : 0 ≤ v) : 0 ≤ (sSep0I9b03M03 u v)*(sSep0I9b03M03 u v)-((sSep0I9a03M03 u v)*(sSep0I9c03M03 u v)) := by
+ simp only [sSep0I9a00M03,sSep0I9a01M03,sSep0I9a02M03,sSep0I9a03M03,sSep0I9a10M03,sSep0I9a11M03,sSep0I9a12M03,sSep0I9a20M03,sSep0I9a21M03,sSep0I9a30M03,sSep0I9b00M03,sSep0I9b01M03,sSep0I9b02M03,sSep0I9b03M03,sSep0I9b10M03,sSep0I9b11M03,sSep0I9b12M03,sSep0I9b20M03,sSep0I9b21M03,sSep0I9b30M03,sSep0I9c00M03,sSep0I9c01M03,sSep0I9c02M03,sSep0I9c03M03,sSep0I9c10M03,sSep0I9c11M03,sSep0I9c12M03,sSep0I9c20M03,sSep0I9c21M03,sSep0I9c30M03]
+ ring_nf <;> positivity
+end
+end MathGKM.Markov

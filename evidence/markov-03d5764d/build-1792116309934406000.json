@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovThirdBoundsTransportM03.lean:42:5: error: mod_cast has type\n  (120 : \u2124) * (vThirdSeedMEA X n rest).coeff k =\n    vEM115 \u2191(frame rest).mid.b \u2191(frame rest).mid.a \u2191(2 * (frame rest).mid.a - (frame rest).mid.b)\n      \u2191(min ((frame rest).mid.b - (frame rest).mid.a) (3 * (frame rest).mid.a - (frame rest).mid.b))\n      \u2191(3 * (frame rest).mid.a - 2 * (frame rest).mid.b) \u2191(n + 1) \u2191k\nbut is expected to have type\n  (120 : \u211d) * (Int.castRingHom \u211d) ((vThirdSeedMEA X n rest).coeff k) = \u2191(vEM115 (\u2191a) (\u2191b) (\u2191c) (\u2191d) (\u2191e) q \u2191k)\n/Users/sasha/math_gkm/research/MarkovThirdBoundsTransportM03.lean:62:5: error: mod_cast has type\n  (0 : \u2124) \u2264 (vThirdSeedMEA X n rest).coeff k\nbut is expected to have type\n  (0 : \u211d) \u2264 (Int.castRingHom \u211d) ((vThirdSeedMEA X n rest).coeff k)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovThirdBoundsTransportM03": "6738f13dad13d3d9ef09f3c4f3c06be976204d16e37ed07ae47a0c84a7b40f4f"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-03d5764d/MarkovThirdBoundsTransportM03.olean",
+    "/Users/sasha/math_gkm/research/MarkovThirdBoundsTransportM03.lean"
+  ],
+  "seconds": 9.80084987502778,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

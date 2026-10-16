@@ -1,0 +1,498 @@
+{
+  "worker": 120,
+  "accepted_theorem_headers": {
+    "cubic_lcM03": "theorem cubic_lcM03 (x y : \u2124) (a00 a01 a02 a03 a10 a11 a12 a20 a21 a30 b00 b01 b02 b03 b10 b11 b12 b20 b21 b30 c00 c01 c02 c03 c10 c11 c12 c20 c21 c30 : \u2124)\n (hx : 0 \u2264 x) (hy : 0 \u2264 y)\n (h00 : 0 \u2264 b00*b00-(a00*c00))\n (h01 : 0 \u2264 b00*b01+b01*b00-(a00*c01+a01*c00))\n (h02 : 0 \u2264 b00*b02+b01*b01+b02*b00-(a00*c02+a01*c01+a02*c00))\n (h03 : 0 \u2264 b00*b03+b01*b02+b02*b01+b03*b00-(a00*c03+a01*c02+a02*c01+a03*c00))\n (h04 : 0 \u2264 b01*b03+b02*b02+b03*b01-(a01*c03+a02*c02+a03*c01))\n (h05 : 0 \u2264 b02*b03+b03*b02-(a02*c03+a03*c02))\n (h06 : 0 \u2264 b03*b03-(a03*c03))\n (h10 : 0 \u2264 b00*b10+b10*b00-(a00*c10+a10*c00))\n (h11 : 0 \u2264 b00*b11+b01*b10+b10*b01+b11*b00-(a00*c11+a01*c10+a10*c01+a11*c00))\n (h12 : 0 \u2264 b00*b12+b01*b11+b02*b10+b10*b02+b11*b01+b12*b00-(a00*c12+a01*c11+a02*c10+a10*c02+a11*c01+a12*c00))\n (h13 : 0 \u2264 b01*b12+b02*b11+b03*b10+b10*b03+b11*b02+b12*b01-(a01*c12+a02*c11+a03*c10+a10*c03+a11*c02+a12*c01))\n (h14 : 0 \u2264 b02*b12+b03*b11+b11*b03+b12*b02-(a02*c12+a03*c11+a11*c03+a12*c02))\n (h15 : 0 \u2264 b03*b12+b12*b03-(a03*c12+a12*c03))\n (h20 : 0 \u2264 b00*b20+b10*b10+b20*b00-(a00*c20+a10*c10+a20*c00))\n (h21 : 0 \u2264 b00*b21+b01*b20+b10*b11+b11*b10+b20*b01+b21*b00-(a00*c21+a01*c20+a10*c11+a11*c10+a20*c01+a21*c00))\n (h22 : 0 \u2264 b01*b21+b02*b20+b10*b12+b11*b11+b12*b10+b20*b02+b21*b01-(a01*c21+a02*c20+a10*c12+a11*c11+a12*c10+a20*c02+a21*c01))\n (h23 : 0 \u2264 b02*b21+b03*b20+b11*b12+b12*b11+b20*b03+b21*b02-(a02*c21+a03*c20+a11*c12+a12*c11+a20*c03+a21*c02))\n (h24 : 0 \u2264 b03*b21+b12*b12+b21*b03-(a03*c21+a12*c12+a21*c03))\n (h30 : 0 \u2264 b00*b30+b10*b20+b20*b10+b30*b00-(a00*c30+a10*c20+a20*c10+a30*c00))\n (h31 : 0 \u2264 b01*b30+b10*b21+b11*b20+b20*b11+b21*b10+b30*b01-(a01*c30+a10*c21+a11*c20+a20*c11+a21*c10+a30*c01))\n (h32 : 0 \u2264 b02*b30+b11*b21+b12*b20+b20*b12+b21*b11+b30*b02-(a02*c30+a11*c21+a12*c20+a20*c12+a21*c11+a30*c02))\n (h33 : 0 \u2264 b03*b30+b12*b21+b21*b12+b30*b03-(a03*c30+a12*c21+a21*c12+a30*c03))\n (h40 : 0 \u2264 b10*b30+b20*b20+b30*b10-(a10*c30+a20*c20+a30*c10))\n (h41 : 0 \u2264 b11*b30+b20*b21+b21*b20+b30*b11-(a11*c30+a20*c21+a21*c20+a30*c11))\n (h42 : 0 \u2264 b12*b30+b21*b21+b30*b12-(a12*c30+a21*c21+a30*c12))\n (h50 : 0 \u2264 b20*b30+b30*b20-(a20*c30+a30*c20))\n (h51 : 0 \u2264 b21*b30+b30*b21-(a21*c30+a30*c21))\n (h60 : 0 \u2264 b30*b30-(a30*c30))\n : cubicM03 a00 a01 a02 a03 a10 a11 a12 a20 a21 a30 x y * cubicM03 c00 c01 c02 c03 c10 c11 c12 c20 c21 c30 x y \u2264 (cubicM03 b00 b01 b02 b03 b10 b11 b12 b20 b21 b30 x y)^2",
+    "root_iff_interiorLowM03": "theorem root_iff_interiorLowM03 : Conjecture63 \u2194 InteriorCore63LowM03",
+    "vAllchart_low_0_4M03": "theorem vAllchart_low_0_4M03 (x y : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) :\n vAllBoundsM115 (7+y+3*x) (1+x) (0) (0) (0)",
+    "vAll_low_0_4_first1M03": "theorem vAll_low_0_4_first1M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (1-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (1+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (1)^2 \u2227\n 0 \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (1)",
+    "vAll_low_0_4_cross2_2M03": "theorem vAll_low_0_4_cross2_2M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (12+2*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (12+2*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (12+2*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (12+2*u)",
+    "vAll_low_0_4_cross2_3M03": "theorem vAll_low_0_4_cross2_3M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (13+2*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (13+2*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (13+2*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (13+2*u)",
+    "vAll_low_0_4_cross2_4M03": "theorem vAll_low_0_4_cross2_4M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (14+2*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (14+2*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (14+2*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (14+2*u)",
+    "vAll_low_0_4_cross2_5M03": "theorem vAll_low_0_4_cross2_5M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (15+2*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (15+2*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (15+2*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (15+2*u)",
+    "vAll_low_0_4_mid2M03": "theorem vAll_low_0_4_mid2M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (16+2*v+3*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (16+2*v+3*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (16+2*v+3*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (16+2*v+3*u)",
+    "vAll_low_0_4_tail2M03": "theorem vAll_low_0_4_tail2M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (17+3*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (17+3*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (17+3*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (17+3*u)",
+    "vAll_low_0_4_tail3M03": "theorem vAll_low_0_4_tail3M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (18+3*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (18+3*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (18+3*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (18+3*u)",
+    "vAll_low_0_4_tail4M03": "theorem vAll_low_0_4_tail4M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (19+3*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (19+3*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (19+3*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (19+3*u)",
+    "vAll_low_0_4_tail5M03": "theorem vAll_low_0_4_tail5M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (20+3*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (20+3*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (20+3*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (20+3*u)",
+    "vAll_low_0_4_tail6M03": "theorem vAll_low_0_4_tail6M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (21+3*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (21+3*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (21+3*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (21+3*u)",
+    "vAll_low_0_4_first2M03": "theorem vAll_low_0_4_first2M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (2-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (2+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (2)^2 \u2227\n 0 \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (2)",
+    "vAll_low_0_4_first3M03": "theorem vAll_low_0_4_first3M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (3-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (3+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (3)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (3)",
+    "vAll_low_0_4_first4M03": "theorem vAll_low_0_4_first4M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (4-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (4+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (4)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (4)",
+    "vAll_low_0_4_lowM03": "theorem vAll_low_0_4_lowM03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (5+u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (5+u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (5+u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (5+u)",
+    "vAll_low_0_4_cross1_1M03": "theorem vAll_low_0_4_cross1_1M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (6+u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (6+u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (6+u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (6+u)",
+    "vAll_low_0_4_cross1_2M03": "theorem vAll_low_0_4_cross1_2M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (7+u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (7+u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (7+u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (7+u)",
+    "vAll_low_0_4_cross1_3M03": "theorem vAll_low_0_4_cross1_3M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (8+u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (8+u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (8+u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (8+u)",
+    "vAll_low_0_4_cross1_4M03": "theorem vAll_low_0_4_cross1_4M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (9+u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (9+u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (9+u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (9+u)",
+    "vAll_low_0_4_mid1M03": "theorem vAll_low_0_4_mid1M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (4+v+u) (9+v+2*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (4+v+u) (9+v+2*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (4+v+u) (9+v+2*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (4+v+u) (9+v+2*u)",
+    "vThird_seed_cross_of_boundsM03": "theorem vThird_seed_cross_of_boundsM03 (n : \u2115) (rest : List Bool)\n (ha : 7 \u2264 (frame rest).mid.b)\n (hb : vAllBoundsM115 (frame rest).mid.b (frame rest).mid.a\n   (2*(frame rest).mid.a-(frame rest).mid.b:\u2115)\n   (min ((frame rest).mid.b-(frame rest).mid.a)\n     (3*(frame rest).mid.a-(frame rest).mid.b):\u2115)\n   (3*(frame rest).mid.a-2*(frame rest).mid.b:\u2115)) :\n CrossLC (CoeffSeq ((vThirdSeedMEA (X:\u2124[X]) n rest).map (Int.castRingHom \u211d)))",
+    "vertical_third_of_boundsM03": "theorem vertical_third_of_boundsM03 (n : \u2115) (rest : List Bool)\n (ha : 7 \u2264 (frame rest).mid.b)\n (hb : vAllBoundsM115 (frame rest).mid.b (frame rest).mid.a\n   (2*(frame rest).mid.a-(frame rest).mid.b:\u2115)\n   (min ((frame rest).mid.b-(frame rest).mid.a)\n     (3*(frame rest).mid.a-(frame rest).mid.b):\u2115)\n   (3*(frame rest).mid.a-2*(frame rest).mid.b:\u2115)) (j : \u2115) :\n let path := List.replicate n false++true::rest\n coeff (frame path).mid.p 3 j*coeff (frame path).mid.p 3 (j+2) \u2264\n coeff (frame path).mid.p 3 (j+1)^2",
+    "vAllbounds_lowM03": "theorem vAllbounds_lowM03 (a b : \u2115) (ha : 1 \u2264 a) (hb : 3*a+4 \u2264 b) :\n vAllBoundsM115 b a (2*a-b:\u2115) (min (b-a) (3*a-b):\u2115) (3*a-2*b:\u2115)",
+    "vThird_seed_cross_lowM03": "theorem vThird_seed_cross_lowM03 (n : \u2115) (rest : List Bool)\n (ha : 7 \u2264 (frame rest).mid.b)\n (hc : 3*(frame rest).mid.a+4 \u2264 (frame rest).mid.b) :\n CrossLC (CoeffSeq ((vThirdSeedMEA (X:\u2124[X]) n rest).map (Int.castRingHom \u211d)))",
+    "vertical_third_all_run_lowM03": "theorem vertical_third_all_run_lowM03 (n : \u2115) (rest : List Bool)\n (ha : 7 \u2264 (frame rest).mid.b)\n (hc : 3*(frame rest).mid.a+4 \u2264 (frame rest).mid.b) (j : \u2115) :\n let path := List.replicate n false++true::rest\n coeff (frame path).mid.p 3 j*coeff (frame path).mid.p 3 (j+2) \u2264\n coeff (frame path).mid.p 3 (j+1)^2",
+    "vertical_third_remainderM03": "theorem vertical_third_remainderM03 (path : List Bool)\n (ha : 7 \u2264 (frame path).mid.a)\n (hr : 2*(frame path).mid.a+4 \u2264 3*((frame path).mid.b % (frame path).mid.a))\n (j : \u2115) :\n coeff (frame path).mid.p 3 j*coeff (frame path).mid.p 3 (j+2) \u2264\n coeff (frame path).mid.p 3 (j+1)^2",
+    "vertical_third_regionM03": "theorem vertical_third_regionM03 (path : List Bool)\n (ha : 7 \u2264 (frame path).mid.a)\n (hr : (frame path).mid.b < 5*(frame path).mid.a \u2228\n       2*(frame path).mid.a+4 \u2264 3*((frame path).mid.b % (frame path).mid.a))\n (j : \u2115) :\n coeff (frame path).mid.p 3 j*coeff (frame path).mid.p 3 (j+2) \u2264\n coeff (frame path).mid.p 3 (j+1)^2",
+    "sSep0I14e0M03": "theorem sSep0I14e0M03 (x y u v : \u2124) : v3mid2M115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) ((16+2*v+3*u)-1)=cubicM03 (sSep0I14a00M03 u v) (sSep0I14a01M03 u v) (sSep0I14a02M03 u v) (sSep0I14a03M03 u v) (sSep0I14a10M03 u v) (sSep0I14a11M03 u v) (sSep0I14a12M03 u v) (sSep0I14a20M03 u v) (sSep0I14a21M03 u v) (sSep0I14a30M03 u v) x y",
+    "sSep0I14e1M03": "theorem sSep0I14e1M03 (x y u v : \u2124) : v3mid2M115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) ((16+2*v+3*u))=cubicM03 (sSep0I14b00M03 u v) (sSep0I14b01M03 u v) (sSep0I14b02M03 u v) (sSep0I14b03M03 u v) (sSep0I14b10M03 u v) (sSep0I14b11M03 u v) (sSep0I14b12M03 u v) (sSep0I14b20M03 u v) (sSep0I14b21M03 u v) (sSep0I14b30M03 u v) x y",
+    "sSep0I14e2M03": "theorem sSep0I14e2M03 (x y u v : \u2124) : v3mid2M115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) ((16+2*v+3*u)+1)=cubicM03 (sSep0I14c00M03 u v) (sSep0I14c01M03 u v) (sSep0I14c02M03 u v) (sSep0I14c03M03 u v) (sSep0I14c10M03 u v) (sSep0I14c11M03 u v) (sSep0I14c12M03 u v) (sSep0I14c20M03 u v) (sSep0I14c21M03 u v) (sSep0I14c30M03 u v) x y",
+    "sSep0I14FinalM03": "theorem sSep0I14FinalM03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (16+2*v+3*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (16+2*v+3*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (16+2*v+3*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (16+2*v+3*u)",
+    "sSep0I14g00M03": "theorem sSep0I14g00M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b00M03 u v)*(sSep0I14b00M03 u v)-((sSep0I14a00M03 u v)*(sSep0I14c00M03 u v))",
+    "sSep0I14g01M03": "theorem sSep0I14g01M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b00M03 u v)*(sSep0I14b01M03 u v)+(sSep0I14b01M03 u v)*(sSep0I14b00M03 u v)-((sSep0I14a00M03 u v)*(sSep0I14c01M03 u v)+(sSep0I14a01M03 u v)*(sSep0I14c00M03 u v))",
+    "sSep0I14g02M03": "theorem sSep0I14g02M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b00M03 u v)*(sSep0I14b02M03 u v)+(sSep0I14b01M03 u v)*(sSep0I14b01M03 u v)+(sSep0I14b02M03 u v)*(sSep0I14b00M03 u v)-((sSep0I14a00M03 u v)*(sSep0I14c02M03 u v)+(sSep0I14a01M03 u v)*(sSep0I14c01M03 u v)+(sSep0I14a02M03 u v)*(sSep0I14c00M03 u v))",
+    "sSep0I14g03M03": "theorem sSep0I14g03M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b00M03 u v)*(sSep0I14b03M03 u v)+(sSep0I14b01M03 u v)*(sSep0I14b02M03 u v)+(sSep0I14b02M03 u v)*(sSep0I14b01M03 u v)+(sSep0I14b03M03 u v)*(sSep0I14b00M03 u v)-((sSep0I14a00M03 u v)*(sSep0I14c03M03 u v)+(sSep0I14a01M03 u v)*(sSep0I14c02M03 u v)+(sSep0I14a02M03 u v)*(sSep0I14c01M03 u v)+(sSep0I14a03M03 u v)*(sSep0I14c00M03 u v))",
+    "sSep0I14g04M03": "theorem sSep0I14g04M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b01M03 u v)*(sSep0I14b03M03 u v)+(sSep0I14b02M03 u v)*(sSep0I14b02M03 u v)+(sSep0I14b03M03 u v)*(sSep0I14b01M03 u v)-((sSep0I14a01M03 u v)*(sSep0I14c03M03 u v)+(sSep0I14a02M03 u v)*(sSep0I14c02M03 u v)+(sSep0I14a03M03 u v)*(sSep0I14c01M03 u v))",
+    "sSep0I14g05M03": "theorem sSep0I14g05M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b02M03 u v)*(sSep0I14b03M03 u v)+(sSep0I14b03M03 u v)*(sSep0I14b02M03 u v)-((sSep0I14a02M03 u v)*(sSep0I14c03M03 u v)+(sSep0I14a03M03 u v)*(sSep0I14c02M03 u v))",
+    "sSep0I14g06M03": "theorem sSep0I14g06M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b03M03 u v)*(sSep0I14b03M03 u v)-((sSep0I14a03M03 u v)*(sSep0I14c03M03 u v))",
+    "sSep0I14g10M03": "theorem sSep0I14g10M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b00M03 u v)*(sSep0I14b10M03 u v)+(sSep0I14b10M03 u v)*(sSep0I14b00M03 u v)-((sSep0I14a00M03 u v)*(sSep0I14c10M03 u v)+(sSep0I14a10M03 u v)*(sSep0I14c00M03 u v))",
+    "sSep0I14g11M03": "theorem sSep0I14g11M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b00M03 u v)*(sSep0I14b11M03 u v)+(sSep0I14b01M03 u v)*(sSep0I14b10M03 u v)+(sSep0I14b10M03 u v)*(sSep0I14b01M03 u v)+(sSep0I14b11M03 u v)*(sSep0I14b00M03 u v)-((sSep0I14a00M03 u v)*(sSep0I14c11M03 u v)+(sSep0I14a01M03 u v)*(sSep0I14c10M03 u v)+(sSep0I14a10M03 u v)*(sSep0I14c01M03 u v)+(sSep0I14a11M03 u v)*(sSep0I14c00M03 u v))",
+    "sSep0I14g12M03": "theorem sSep0I14g12M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b00M03 u v)*(sSep0I14b12M03 u v)+(sSep0I14b01M03 u v)*(sSep0I14b11M03 u v)+(sSep0I14b02M03 u v)*(sSep0I14b10M03 u v)+(sSep0I14b10M03 u v)*(sSep0I14b02M03 u v)+(sSep0I14b11M03 u v)*(sSep0I14b01M03 u v)+(sSep0I14b12M03 u v)*(sSep0I14b00M03 u v)-((sSep0I14a00M03 u v)*(sSep0I14c12M03 u v)+(sSep0I14a01M03 u v)*(sSep0I14c11M03 u v)+(sSep0I14a02M03 u v)*(sSep0I14c10M03 u v)+(sSep0I14a10M03 u v)*(sSep0I14c02M03 u v)+(sSep0I14a11M03 u v)*(sSep0I14c01M03 u v)+(sSep0I14a12M03 u v)*(sSep0I14c00M03 u v))",
+    "sSep0I14g13M03": "theorem sSep0I14g13M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b01M03 u v)*(sSep0I14b12M03 u v)+(sSep0I14b02M03 u v)*(sSep0I14b11M03 u v)+(sSep0I14b03M03 u v)*(sSep0I14b10M03 u v)+(sSep0I14b10M03 u v)*(sSep0I14b03M03 u v)+(sSep0I14b11M03 u v)*(sSep0I14b02M03 u v)+(sSep0I14b12M03 u v)*(sSep0I14b01M03 u v)-((sSep0I14a01M03 u v)*(sSep0I14c12M03 u v)+(sSep0I14a02M03 u v)*(sSep0I14c11M03 u v)+(sSep0I14a03M03 u v)*(sSep0I14c10M03 u v)+(sSep0I14a10M03 u v)*(sSep0I14c03M03 u v)+(sSep0I14a11M03 u v)*(sSep0I14c02M03 u v)+(sSep0I14a12M03 u v)*(sSep0I14c01M03 u v))",
+    "sSep0I14g14M03": "theorem sSep0I14g14M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b02M03 u v)*(sSep0I14b12M03 u v)+(sSep0I14b03M03 u v)*(sSep0I14b11M03 u v)+(sSep0I14b11M03 u v)*(sSep0I14b03M03 u v)+(sSep0I14b12M03 u v)*(sSep0I14b02M03 u v)-((sSep0I14a02M03 u v)*(sSep0I14c12M03 u v)+(sSep0I14a03M03 u v)*(sSep0I14c11M03 u v)+(sSep0I14a11M03 u v)*(sSep0I14c03M03 u v)+(sSep0I14a12M03 u v)*(sSep0I14c02M03 u v))",
+    "sSep0I14g15M03": "theorem sSep0I14g15M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b03M03 u v)*(sSep0I14b12M03 u v)+(sSep0I14b12M03 u v)*(sSep0I14b03M03 u v)-((sSep0I14a03M03 u v)*(sSep0I14c12M03 u v)+(sSep0I14a12M03 u v)*(sSep0I14c03M03 u v))",
+    "sSep0I14g20M03": "theorem sSep0I14g20M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b00M03 u v)*(sSep0I14b20M03 u v)+(sSep0I14b10M03 u v)*(sSep0I14b10M03 u v)+(sSep0I14b20M03 u v)*(sSep0I14b00M03 u v)-((sSep0I14a00M03 u v)*(sSep0I14c20M03 u v)+(sSep0I14a10M03 u v)*(sSep0I14c10M03 u v)+(sSep0I14a20M03 u v)*(sSep0I14c00M03 u v))",
+    "sSep0I14g21M03": "theorem sSep0I14g21M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b00M03 u v)*(sSep0I14b21M03 u v)+(sSep0I14b01M03 u v)*(sSep0I14b20M03 u v)+(sSep0I14b10M03 u v)*(sSep0I14b11M03 u v)+(sSep0I14b11M03 u v)*(sSep0I14b10M03 u v)+(sSep0I14b20M03 u v)*(sSep0I14b01M03 u v)+(sSep0I14b21M03 u v)*(sSep0I14b00M03 u v)-((sSep0I14a00M03 u v)*(sSep0I14c21M03 u v)+(sSep0I14a01M03 u v)*(sSep0I14c20M03 u v)+(sSep0I14a10M03 u v)*(sSep0I14c11M03 u v)+(sSep0I14a11M03 u v)*(sSep0I14c10M03 u v)+(sSep0I14a20M03 u v)*(sSep0I14c01M03 u v)+(sSep0I14a21M03 u v)*(sSep0I14c00M03 u v))",
+    "sSep0I14g22M03": "theorem sSep0I14g22M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b01M03 u v)*(sSep0I14b21M03 u v)+(sSep0I14b02M03 u v)*(sSep0I14b20M03 u v)+(sSep0I14b10M03 u v)*(sSep0I14b12M03 u v)+(sSep0I14b11M03 u v)*(sSep0I14b11M03 u v)+(sSep0I14b12M03 u v)*(sSep0I14b10M03 u v)+(sSep0I14b20M03 u v)*(sSep0I14b02M03 u v)+(sSep0I14b21M03 u v)*(sSep0I14b01M03 u v)-((sSep0I14a01M03 u v)*(sSep0I14c21M03 u v)+(sSep0I14a02M03 u v)*(sSep0I14c20M03 u v)+(sSep0I14a10M03 u v)*(sSep0I14c12M03 u v)+(sSep0I14a11M03 u v)*(sSep0I14c11M03 u v)+(sSep0I14a12M03 u v)*(sSep0I14c10M03 u v)+(sSep0I14a20M03 u v)*(sSep0I14c02M03 u v)+(sSep0I14a21M03 u v)*(sSep0I14c01M03 u v))",
+    "sSep0I14g23M03": "theorem sSep0I14g23M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b02M03 u v)*(sSep0I14b21M03 u v)+(sSep0I14b03M03 u v)*(sSep0I14b20M03 u v)+(sSep0I14b11M03 u v)*(sSep0I14b12M03 u v)+(sSep0I14b12M03 u v)*(sSep0I14b11M03 u v)+(sSep0I14b20M03 u v)*(sSep0I14b03M03 u v)+(sSep0I14b21M03 u v)*(sSep0I14b02M03 u v)-((sSep0I14a02M03 u v)*(sSep0I14c21M03 u v)+(sSep0I14a03M03 u v)*(sSep0I14c20M03 u v)+(sSep0I14a11M03 u v)*(sSep0I14c12M03 u v)+(sSep0I14a12M03 u v)*(sSep0I14c11M03 u v)+(sSep0I14a20M03 u v)*(sSep0I14c03M03 u v)+(sSep0I14a21M03 u v)*(sSep0I14c02M03 u v))",
+    "sSep0I14g24M03": "theorem sSep0I14g24M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b03M03 u v)*(sSep0I14b21M03 u v)+(sSep0I14b12M03 u v)*(sSep0I14b12M03 u v)+(sSep0I14b21M03 u v)*(sSep0I14b03M03 u v)-((sSep0I14a03M03 u v)*(sSep0I14c21M03 u v)+(sSep0I14a12M03 u v)*(sSep0I14c12M03 u v)+(sSep0I14a21M03 u v)*(sSep0I14c03M03 u v))",
+    "sSep0I14g30M03": "theorem sSep0I14g30M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b00M03 u v)*(sSep0I14b30M03 u v)+(sSep0I14b10M03 u v)*(sSep0I14b20M03 u v)+(sSep0I14b20M03 u v)*(sSep0I14b10M03 u v)+(sSep0I14b30M03 u v)*(sSep0I14b00M03 u v)-((sSep0I14a00M03 u v)*(sSep0I14c30M03 u v)+(sSep0I14a10M03 u v)*(sSep0I14c20M03 u v)+(sSep0I14a20M03 u v)*(sSep0I14c10M03 u v)+(sSep0I14a30M03 u v)*(sSep0I14c00M03 u v))",
+    "sSep0I14g31M03": "theorem sSep0I14g31M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b01M03 u v)*(sSep0I14b30M03 u v)+(sSep0I14b10M03 u v)*(sSep0I14b21M03 u v)+(sSep0I14b11M03 u v)*(sSep0I14b20M03 u v)+(sSep0I14b20M03 u v)*(sSep0I14b11M03 u v)+(sSep0I14b21M03 u v)*(sSep0I14b10M03 u v)+(sSep0I14b30M03 u v)*(sSep0I14b01M03 u v)-((sSep0I14a01M03 u v)*(sSep0I14c30M03 u v)+(sSep0I14a10M03 u v)*(sSep0I14c21M03 u v)+(sSep0I14a11M03 u v)*(sSep0I14c20M03 u v)+(sSep0I14a20M03 u v)*(sSep0I14c11M03 u v)+(sSep0I14a21M03 u v)*(sSep0I14c10M03 u v)+(sSep0I14a30M03 u v)*(sSep0I14c01M03 u v))",
+    "sSep0I14g32M03": "theorem sSep0I14g32M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b02M03 u v)*(sSep0I14b30M03 u v)+(sSep0I14b11M03 u v)*(sSep0I14b21M03 u v)+(sSep0I14b12M03 u v)*(sSep0I14b20M03 u v)+(sSep0I14b20M03 u v)*(sSep0I14b12M03 u v)+(sSep0I14b21M03 u v)*(sSep0I14b11M03 u v)+(sSep0I14b30M03 u v)*(sSep0I14b02M03 u v)-((sSep0I14a02M03 u v)*(sSep0I14c30M03 u v)+(sSep0I14a11M03 u v)*(sSep0I14c21M03 u v)+(sSep0I14a12M03 u v)*(sSep0I14c20M03 u v)+(sSep0I14a20M03 u v)*(sSep0I14c12M03 u v)+(sSep0I14a21M03 u v)*(sSep0I14c11M03 u v)+(sSep0I14a30M03 u v)*(sSep0I14c02M03 u v))",
+    "sSep0I14g33M03": "theorem sSep0I14g33M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b03M03 u v)*(sSep0I14b30M03 u v)+(sSep0I14b12M03 u v)*(sSep0I14b21M03 u v)+(sSep0I14b21M03 u v)*(sSep0I14b12M03 u v)+(sSep0I14b30M03 u v)*(sSep0I14b03M03 u v)-((sSep0I14a03M03 u v)*(sSep0I14c30M03 u v)+(sSep0I14a12M03 u v)*(sSep0I14c21M03 u v)+(sSep0I14a21M03 u v)*(sSep0I14c12M03 u v)+(sSep0I14a30M03 u v)*(sSep0I14c03M03 u v))",
+    "sSep0I14g40M03": "theorem sSep0I14g40M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b10M03 u v)*(sSep0I14b30M03 u v)+(sSep0I14b20M03 u v)*(sSep0I14b20M03 u v)+(sSep0I14b30M03 u v)*(sSep0I14b10M03 u v)-((sSep0I14a10M03 u v)*(sSep0I14c30M03 u v)+(sSep0I14a20M03 u v)*(sSep0I14c20M03 u v)+(sSep0I14a30M03 u v)*(sSep0I14c10M03 u v))",
+    "sSep0I14g41M03": "theorem sSep0I14g41M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b11M03 u v)*(sSep0I14b30M03 u v)+(sSep0I14b20M03 u v)*(sSep0I14b21M03 u v)+(sSep0I14b21M03 u v)*(sSep0I14b20M03 u v)+(sSep0I14b30M03 u v)*(sSep0I14b11M03 u v)-((sSep0I14a11M03 u v)*(sSep0I14c30M03 u v)+(sSep0I14a20M03 u v)*(sSep0I14c21M03 u v)+(sSep0I14a21M03 u v)*(sSep0I14c20M03 u v)+(sSep0I14a30M03 u v)*(sSep0I14c11M03 u v))",
+    "sSep0I14g42M03": "theorem sSep0I14g42M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b12M03 u v)*(sSep0I14b30M03 u v)+(sSep0I14b21M03 u v)*(sSep0I14b21M03 u v)+(sSep0I14b30M03 u v)*(sSep0I14b12M03 u v)-((sSep0I14a12M03 u v)*(sSep0I14c30M03 u v)+(sSep0I14a21M03 u v)*(sSep0I14c21M03 u v)+(sSep0I14a30M03 u v)*(sSep0I14c12M03 u v))",
+    "sSep0I14g50M03": "theorem sSep0I14g50M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b20M03 u v)*(sSep0I14b30M03 u v)+(sSep0I14b30M03 u v)*(sSep0I14b20M03 u v)-((sSep0I14a20M03 u v)*(sSep0I14c30M03 u v)+(sSep0I14a30M03 u v)*(sSep0I14c20M03 u v))",
+    "sSep0I14g51M03": "theorem sSep0I14g51M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b21M03 u v)*(sSep0I14b30M03 u v)+(sSep0I14b30M03 u v)*(sSep0I14b21M03 u v)-((sSep0I14a21M03 u v)*(sSep0I14c30M03 u v)+(sSep0I14a30M03 u v)*(sSep0I14c21M03 u v))",
+    "sSep0I14g60M03": "theorem sSep0I14g60M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I14b30M03 u v)*(sSep0I14b30M03 u v)-((sSep0I14a30M03 u v)*(sSep0I14c30M03 u v))",
+    "sSep0I9e0M03": "theorem sSep0I9e0M03 (x y u v : \u2124) : v3mid1M115 (7+y+3*x) (1+x) (0) (0) (0) (4+v+u) ((9+v+2*u)-1)=cubicM03 (sSep0I9a00M03 u v) (sSep0I9a01M03 u v) (sSep0I9a02M03 u v) (sSep0I9a03M03 u v) (sSep0I9a10M03 u v) (sSep0I9a11M03 u v) (sSep0I9a12M03 u v) (sSep0I9a20M03 u v) (sSep0I9a21M03 u v) (sSep0I9a30M03 u v) x y",
+    "sSep0I9e1M03": "theorem sSep0I9e1M03 (x y u v : \u2124) : v3mid1M115 (7+y+3*x) (1+x) (0) (0) (0) (4+v+u) ((9+v+2*u))=cubicM03 (sSep0I9b00M03 u v) (sSep0I9b01M03 u v) (sSep0I9b02M03 u v) (sSep0I9b03M03 u v) (sSep0I9b10M03 u v) (sSep0I9b11M03 u v) (sSep0I9b12M03 u v) (sSep0I9b20M03 u v) (sSep0I9b21M03 u v) (sSep0I9b30M03 u v) x y",
+    "sSep0I9e2M03": "theorem sSep0I9e2M03 (x y u v : \u2124) : v3mid1M115 (7+y+3*x) (1+x) (0) (0) (0) (4+v+u) ((9+v+2*u)+1)=cubicM03 (sSep0I9c00M03 u v) (sSep0I9c01M03 u v) (sSep0I9c02M03 u v) (sSep0I9c03M03 u v) (sSep0I9c10M03 u v) (sSep0I9c11M03 u v) (sSep0I9c12M03 u v) (sSep0I9c20M03 u v) (sSep0I9c21M03 u v) (sSep0I9c30M03 u v) x y",
+    "sSep0I9FinalM03": "theorem sSep0I9FinalM03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (4+v+u) (9+v+2*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (4+v+u) (9+v+2*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (4+v+u) (9+v+2*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (4+v+u) (9+v+2*u)",
+    "sSep0I9g00M03": "theorem sSep0I9g00M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b00M03 u v)*(sSep0I9b00M03 u v)-((sSep0I9a00M03 u v)*(sSep0I9c00M03 u v))",
+    "sSep0I9g01M03": "theorem sSep0I9g01M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b00M03 u v)*(sSep0I9b01M03 u v)+(sSep0I9b01M03 u v)*(sSep0I9b00M03 u v)-((sSep0I9a00M03 u v)*(sSep0I9c01M03 u v)+(sSep0I9a01M03 u v)*(sSep0I9c00M03 u v))",
+    "sSep0I9g02M03": "theorem sSep0I9g02M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b00M03 u v)*(sSep0I9b02M03 u v)+(sSep0I9b01M03 u v)*(sSep0I9b01M03 u v)+(sSep0I9b02M03 u v)*(sSep0I9b00M03 u v)-((sSep0I9a00M03 u v)*(sSep0I9c02M03 u v)+(sSep0I9a01M03 u v)*(sSep0I9c01M03 u v)+(sSep0I9a02M03 u v)*(sSep0I9c00M03 u v))",
+    "sSep0I9g03M03": "theorem sSep0I9g03M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b00M03 u v)*(sSep0I9b03M03 u v)+(sSep0I9b01M03 u v)*(sSep0I9b02M03 u v)+(sSep0I9b02M03 u v)*(sSep0I9b01M03 u v)+(sSep0I9b03M03 u v)*(sSep0I9b00M03 u v)-((sSep0I9a00M03 u v)*(sSep0I9c03M03 u v)+(sSep0I9a01M03 u v)*(sSep0I9c02M03 u v)+(sSep0I9a02M03 u v)*(sSep0I9c01M03 u v)+(sSep0I9a03M03 u v)*(sSep0I9c00M03 u v))",
+    "sSep0I9g04M03": "theorem sSep0I9g04M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b01M03 u v)*(sSep0I9b03M03 u v)+(sSep0I9b02M03 u v)*(sSep0I9b02M03 u v)+(sSep0I9b03M03 u v)*(sSep0I9b01M03 u v)-((sSep0I9a01M03 u v)*(sSep0I9c03M03 u v)+(sSep0I9a02M03 u v)*(sSep0I9c02M03 u v)+(sSep0I9a03M03 u v)*(sSep0I9c01M03 u v))",
+    "sSep0I9g05M03": "theorem sSep0I9g05M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b02M03 u v)*(sSep0I9b03M03 u v)+(sSep0I9b03M03 u v)*(sSep0I9b02M03 u v)-((sSep0I9a02M03 u v)*(sSep0I9c03M03 u v)+(sSep0I9a03M03 u v)*(sSep0I9c02M03 u v))",
+    "sSep0I9g06M03": "theorem sSep0I9g06M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b03M03 u v)*(sSep0I9b03M03 u v)-((sSep0I9a03M03 u v)*(sSep0I9c03M03 u v))",
+    "sSep0I9g10M03": "theorem sSep0I9g10M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b00M03 u v)*(sSep0I9b10M03 u v)+(sSep0I9b10M03 u v)*(sSep0I9b00M03 u v)-((sSep0I9a00M03 u v)*(sSep0I9c10M03 u v)+(sSep0I9a10M03 u v)*(sSep0I9c00M03 u v))",
+    "sSep0I9g11M03": "theorem sSep0I9g11M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b00M03 u v)*(sSep0I9b11M03 u v)+(sSep0I9b01M03 u v)*(sSep0I9b10M03 u v)+(sSep0I9b10M03 u v)*(sSep0I9b01M03 u v)+(sSep0I9b11M03 u v)*(sSep0I9b00M03 u v)-((sSep0I9a00M03 u v)*(sSep0I9c11M03 u v)+(sSep0I9a01M03 u v)*(sSep0I9c10M03 u v)+(sSep0I9a10M03 u v)*(sSep0I9c01M03 u v)+(sSep0I9a11M03 u v)*(sSep0I9c00M03 u v))",
+    "sSep0I9g12M03": "theorem sSep0I9g12M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b00M03 u v)*(sSep0I9b12M03 u v)+(sSep0I9b01M03 u v)*(sSep0I9b11M03 u v)+(sSep0I9b02M03 u v)*(sSep0I9b10M03 u v)+(sSep0I9b10M03 u v)*(sSep0I9b02M03 u v)+(sSep0I9b11M03 u v)*(sSep0I9b01M03 u v)+(sSep0I9b12M03 u v)*(sSep0I9b00M03 u v)-((sSep0I9a00M03 u v)*(sSep0I9c12M03 u v)+(sSep0I9a01M03 u v)*(sSep0I9c11M03 u v)+(sSep0I9a02M03 u v)*(sSep0I9c10M03 u v)+(sSep0I9a10M03 u v)*(sSep0I9c02M03 u v)+(sSep0I9a11M03 u v)*(sSep0I9c01M03 u v)+(sSep0I9a12M03 u v)*(sSep0I9c00M03 u v))",
+    "sSep0I9g13M03": "theorem sSep0I9g13M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b01M03 u v)*(sSep0I9b12M03 u v)+(sSep0I9b02M03 u v)*(sSep0I9b11M03 u v)+(sSep0I9b03M03 u v)*(sSep0I9b10M03 u v)+(sSep0I9b10M03 u v)*(sSep0I9b03M03 u v)+(sSep0I9b11M03 u v)*(sSep0I9b02M03 u v)+(sSep0I9b12M03 u v)*(sSep0I9b01M03 u v)-((sSep0I9a01M03 u v)*(sSep0I9c12M03 u v)+(sSep0I9a02M03 u v)*(sSep0I9c11M03 u v)+(sSep0I9a03M03 u v)*(sSep0I9c10M03 u v)+(sSep0I9a10M03 u v)*(sSep0I9c03M03 u v)+(sSep0I9a11M03 u v)*(sSep0I9c02M03 u v)+(sSep0I9a12M03 u v)*(sSep0I9c01M03 u v))",
+    "sSep0I9g14M03": "theorem sSep0I9g14M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b02M03 u v)*(sSep0I9b12M03 u v)+(sSep0I9b03M03 u v)*(sSep0I9b11M03 u v)+(sSep0I9b11M03 u v)*(sSep0I9b03M03 u v)+(sSep0I9b12M03 u v)*(sSep0I9b02M03 u v)-((sSep0I9a02M03 u v)*(sSep0I9c12M03 u v)+(sSep0I9a03M03 u v)*(sSep0I9c11M03 u v)+(sSep0I9a11M03 u v)*(sSep0I9c03M03 u v)+(sSep0I9a12M03 u v)*(sSep0I9c02M03 u v))",
+    "sSep0I9g15M03": "theorem sSep0I9g15M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b03M03 u v)*(sSep0I9b12M03 u v)+(sSep0I9b12M03 u v)*(sSep0I9b03M03 u v)-((sSep0I9a03M03 u v)*(sSep0I9c12M03 u v)+(sSep0I9a12M03 u v)*(sSep0I9c03M03 u v))",
+    "sSep0I9g20M03": "theorem sSep0I9g20M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b00M03 u v)*(sSep0I9b20M03 u v)+(sSep0I9b10M03 u v)*(sSep0I9b10M03 u v)+(sSep0I9b20M03 u v)*(sSep0I9b00M03 u v)-((sSep0I9a00M03 u v)*(sSep0I9c20M03 u v)+(sSep0I9a10M03 u v)*(sSep0I9c10M03 u v)+(sSep0I9a20M03 u v)*(sSep0I9c00M03 u v))",
+    "sSep0I9g21M03": "theorem sSep0I9g21M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b00M03 u v)*(sSep0I9b21M03 u v)+(sSep0I9b01M03 u v)*(sSep0I9b20M03 u v)+(sSep0I9b10M03 u v)*(sSep0I9b11M03 u v)+(sSep0I9b11M03 u v)*(sSep0I9b10M03 u v)+(sSep0I9b20M03 u v)*(sSep0I9b01M03 u v)+(sSep0I9b21M03 u v)*(sSep0I9b00M03 u v)-((sSep0I9a00M03 u v)*(sSep0I9c21M03 u v)+(sSep0I9a01M03 u v)*(sSep0I9c20M03 u v)+(sSep0I9a10M03 u v)*(sSep0I9c11M03 u v)+(sSep0I9a11M03 u v)*(sSep0I9c10M03 u v)+(sSep0I9a20M03 u v)*(sSep0I9c01M03 u v)+(sSep0I9a21M03 u v)*(sSep0I9c00M03 u v))",
+    "sSep0I9g22M03": "theorem sSep0I9g22M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b01M03 u v)*(sSep0I9b21M03 u v)+(sSep0I9b02M03 u v)*(sSep0I9b20M03 u v)+(sSep0I9b10M03 u v)*(sSep0I9b12M03 u v)+(sSep0I9b11M03 u v)*(sSep0I9b11M03 u v)+(sSep0I9b12M03 u v)*(sSep0I9b10M03 u v)+(sSep0I9b20M03 u v)*(sSep0I9b02M03 u v)+(sSep0I9b21M03 u v)*(sSep0I9b01M03 u v)-((sSep0I9a01M03 u v)*(sSep0I9c21M03 u v)+(sSep0I9a02M03 u v)*(sSep0I9c20M03 u v)+(sSep0I9a10M03 u v)*(sSep0I9c12M03 u v)+(sSep0I9a11M03 u v)*(sSep0I9c11M03 u v)+(sSep0I9a12M03 u v)*(sSep0I9c10M03 u v)+(sSep0I9a20M03 u v)*(sSep0I9c02M03 u v)+(sSep0I9a21M03 u v)*(sSep0I9c01M03 u v))",
+    "sSep0I9g23M03": "theorem sSep0I9g23M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b02M03 u v)*(sSep0I9b21M03 u v)+(sSep0I9b03M03 u v)*(sSep0I9b20M03 u v)+(sSep0I9b11M03 u v)*(sSep0I9b12M03 u v)+(sSep0I9b12M03 u v)*(sSep0I9b11M03 u v)+(sSep0I9b20M03 u v)*(sSep0I9b03M03 u v)+(sSep0I9b21M03 u v)*(sSep0I9b02M03 u v)-((sSep0I9a02M03 u v)*(sSep0I9c21M03 u v)+(sSep0I9a03M03 u v)*(sSep0I9c20M03 u v)+(sSep0I9a11M03 u v)*(sSep0I9c12M03 u v)+(sSep0I9a12M03 u v)*(sSep0I9c11M03 u v)+(sSep0I9a20M03 u v)*(sSep0I9c03M03 u v)+(sSep0I9a21M03 u v)*(sSep0I9c02M03 u v))",
+    "sSep0I9g24M03": "theorem sSep0I9g24M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b03M03 u v)*(sSep0I9b21M03 u v)+(sSep0I9b12M03 u v)*(sSep0I9b12M03 u v)+(sSep0I9b21M03 u v)*(sSep0I9b03M03 u v)-((sSep0I9a03M03 u v)*(sSep0I9c21M03 u v)+(sSep0I9a12M03 u v)*(sSep0I9c12M03 u v)+(sSep0I9a21M03 u v)*(sSep0I9c03M03 u v))",
+    "sSep0I9g30M03": "theorem sSep0I9g30M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b00M03 u v)*(sSep0I9b30M03 u v)+(sSep0I9b10M03 u v)*(sSep0I9b20M03 u v)+(sSep0I9b20M03 u v)*(sSep0I9b10M03 u v)+(sSep0I9b30M03 u v)*(sSep0I9b00M03 u v)-((sSep0I9a00M03 u v)*(sSep0I9c30M03 u v)+(sSep0I9a10M03 u v)*(sSep0I9c20M03 u v)+(sSep0I9a20M03 u v)*(sSep0I9c10M03 u v)+(sSep0I9a30M03 u v)*(sSep0I9c00M03 u v))",
+    "sSep0I9g31M03": "theorem sSep0I9g31M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b01M03 u v)*(sSep0I9b30M03 u v)+(sSep0I9b10M03 u v)*(sSep0I9b21M03 u v)+(sSep0I9b11M03 u v)*(sSep0I9b20M03 u v)+(sSep0I9b20M03 u v)*(sSep0I9b11M03 u v)+(sSep0I9b21M03 u v)*(sSep0I9b10M03 u v)+(sSep0I9b30M03 u v)*(sSep0I9b01M03 u v)-((sSep0I9a01M03 u v)*(sSep0I9c30M03 u v)+(sSep0I9a10M03 u v)*(sSep0I9c21M03 u v)+(sSep0I9a11M03 u v)*(sSep0I9c20M03 u v)+(sSep0I9a20M03 u v)*(sSep0I9c11M03 u v)+(sSep0I9a21M03 u v)*(sSep0I9c10M03 u v)+(sSep0I9a30M03 u v)*(sSep0I9c01M03 u v))",
+    "sSep0I9g32M03": "theorem sSep0I9g32M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b02M03 u v)*(sSep0I9b30M03 u v)+(sSep0I9b11M03 u v)*(sSep0I9b21M03 u v)+(sSep0I9b12M03 u v)*(sSep0I9b20M03 u v)+(sSep0I9b20M03 u v)*(sSep0I9b12M03 u v)+(sSep0I9b21M03 u v)*(sSep0I9b11M03 u v)+(sSep0I9b30M03 u v)*(sSep0I9b02M03 u v)-((sSep0I9a02M03 u v)*(sSep0I9c30M03 u v)+(sSep0I9a11M03 u v)*(sSep0I9c21M03 u v)+(sSep0I9a12M03 u v)*(sSep0I9c20M03 u v)+(sSep0I9a20M03 u v)*(sSep0I9c12M03 u v)+(sSep0I9a21M03 u v)*(sSep0I9c11M03 u v)+(sSep0I9a30M03 u v)*(sSep0I9c02M03 u v))",
+    "sSep0I9g33M03": "theorem sSep0I9g33M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b03M03 u v)*(sSep0I9b30M03 u v)+(sSep0I9b12M03 u v)*(sSep0I9b21M03 u v)+(sSep0I9b21M03 u v)*(sSep0I9b12M03 u v)+(sSep0I9b30M03 u v)*(sSep0I9b03M03 u v)-((sSep0I9a03M03 u v)*(sSep0I9c30M03 u v)+(sSep0I9a12M03 u v)*(sSep0I9c21M03 u v)+(sSep0I9a21M03 u v)*(sSep0I9c12M03 u v)+(sSep0I9a30M03 u v)*(sSep0I9c03M03 u v))",
+    "sSep0I9g40M03": "theorem sSep0I9g40M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b10M03 u v)*(sSep0I9b30M03 u v)+(sSep0I9b20M03 u v)*(sSep0I9b20M03 u v)+(sSep0I9b30M03 u v)*(sSep0I9b10M03 u v)-((sSep0I9a10M03 u v)*(sSep0I9c30M03 u v)+(sSep0I9a20M03 u v)*(sSep0I9c20M03 u v)+(sSep0I9a30M03 u v)*(sSep0I9c10M03 u v))",
+    "sSep0I9g41M03": "theorem sSep0I9g41M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b11M03 u v)*(sSep0I9b30M03 u v)+(sSep0I9b20M03 u v)*(sSep0I9b21M03 u v)+(sSep0I9b21M03 u v)*(sSep0I9b20M03 u v)+(sSep0I9b30M03 u v)*(sSep0I9b11M03 u v)-((sSep0I9a11M03 u v)*(sSep0I9c30M03 u v)+(sSep0I9a20M03 u v)*(sSep0I9c21M03 u v)+(sSep0I9a21M03 u v)*(sSep0I9c20M03 u v)+(sSep0I9a30M03 u v)*(sSep0I9c11M03 u v))",
+    "sSep0I9g42M03": "theorem sSep0I9g42M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b12M03 u v)*(sSep0I9b30M03 u v)+(sSep0I9b21M03 u v)*(sSep0I9b21M03 u v)+(sSep0I9b30M03 u v)*(sSep0I9b12M03 u v)-((sSep0I9a12M03 u v)*(sSep0I9c30M03 u v)+(sSep0I9a21M03 u v)*(sSep0I9c21M03 u v)+(sSep0I9a30M03 u v)*(sSep0I9c12M03 u v))",
+    "sSep0I9g50M03": "theorem sSep0I9g50M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b20M03 u v)*(sSep0I9b30M03 u v)+(sSep0I9b30M03 u v)*(sSep0I9b20M03 u v)-((sSep0I9a20M03 u v)*(sSep0I9c30M03 u v)+(sSep0I9a30M03 u v)*(sSep0I9c20M03 u v))",
+    "sSep0I9g51M03": "theorem sSep0I9g51M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b21M03 u v)*(sSep0I9b30M03 u v)+(sSep0I9b30M03 u v)*(sSep0I9b21M03 u v)-((sSep0I9a21M03 u v)*(sSep0I9c30M03 u v)+(sSep0I9a30M03 u v)*(sSep0I9c21M03 u v))",
+    "sSep0I9g60M03": "theorem sSep0I9g60M03 (u v : \u2124) (hu : 0 \u2264 u) (hv : 0 \u2264 v) : 0 \u2264 (sSep0I9b30M03 u v)*(sSep0I9b30M03 u v)-((sSep0I9a30M03 u v)*(sSep0I9c30M03 u v))"
+  },
+  "inventory": {
+    "modules": 43,
+    "theorems": 94,
+    "definitions": 62,
+    "definition_only_modules": [
+      "MarkovThirdSep0I14M03Defs",
+      "MarkovThirdSep0I9M03Defs"
+    ],
+    "unaccepted_math_modules": 276,
+    "unaccepted_theorem_headers": 296
+  },
+  "low_chart": "Integer x,y>=0; source counts (7+y+3x,1+x,0,0,0); no claim for all source cones.",
+  "fixed_region_parts": [
+    {
+      "part": 0,
+      "theorem": "vAll_low_0_4_first1M03",
+      "header": "theorem vAll_low_0_4_first1M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (1-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (1+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (1)^2 \u2227\n 0 \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (1)",
+      "proof_schema": "three inherited E-region rewrites, adjacent-gap sub_nonneg, expanded ring_nf/positivity and center positivity",
+      "region_rewrites": [
+        "vE_zeroM115",
+        "vE_first2M115",
+        "vE_first1M115"
+      ],
+      "ring_nf_positivity_occurrences": 2
+    },
+    {
+      "part": 1,
+      "theorem": "vAll_low_0_4_first2M03",
+      "header": "theorem vAll_low_0_4_first2M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (2-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (2+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (2)^2 \u2227\n 0 \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (2)",
+      "proof_schema": "three inherited E-region rewrites, adjacent-gap sub_nonneg, expanded ring_nf/positivity and center positivity",
+      "region_rewrites": [
+        "vE_first1M115",
+        "vE_lowM115",
+        "vE_first2M115"
+      ],
+      "ring_nf_positivity_occurrences": 2
+    },
+    {
+      "part": 2,
+      "theorem": "vAll_low_0_4_first3M03",
+      "header": "theorem vAll_low_0_4_first3M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (3-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (3+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (3)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (3)",
+      "proof_schema": "three inherited E-region rewrites, adjacent-gap sub_nonneg, expanded ring_nf/positivity and center positivity",
+      "region_rewrites": [
+        "vE_first2M115",
+        "vE_lowM115",
+        "vE_lowM115"
+      ],
+      "ring_nf_positivity_occurrences": 2
+    },
+    {
+      "part": 3,
+      "theorem": "vAll_low_0_4_first4M03",
+      "header": "theorem vAll_low_0_4_first4M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (4-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (4+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (4)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (4)",
+      "proof_schema": "three inherited E-region rewrites, adjacent-gap sub_nonneg, expanded ring_nf/positivity and center positivity",
+      "region_rewrites": [
+        "vE_lowM115",
+        "vE_lowM115",
+        "vE_lowM115"
+      ],
+      "ring_nf_positivity_occurrences": 2
+    },
+    {
+      "part": 4,
+      "theorem": "vAll_low_0_4_lowM03",
+      "header": "theorem vAll_low_0_4_lowM03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (5+u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (5+u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (5+u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (5+u)",
+      "proof_schema": "three inherited E-region rewrites, adjacent-gap sub_nonneg, expanded ring_nf/positivity and center positivity",
+      "region_rewrites": [
+        "vE_lowM115",
+        "vE_lowM115",
+        "vE_lowM115"
+      ],
+      "ring_nf_positivity_occurrences": 2
+    },
+    {
+      "part": 5,
+      "theorem": "vAll_low_0_4_cross1_1M03",
+      "header": "theorem vAll_low_0_4_cross1_1M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (6+u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (6+u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (6+u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (6+u)",
+      "proof_schema": "three inherited E-region rewrites, adjacent-gap sub_nonneg, expanded ring_nf/positivity and center positivity",
+      "region_rewrites": [
+        "vE_lowM115",
+        "vE_bridge12M115",
+        "vE_lowM115"
+      ],
+      "ring_nf_positivity_occurrences": 2
+    },
+    {
+      "part": 6,
+      "theorem": "vAll_low_0_4_cross1_2M03",
+      "header": "theorem vAll_low_0_4_cross1_2M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (7+u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (7+u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (7+u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (7+u)",
+      "proof_schema": "three inherited E-region rewrites, adjacent-gap sub_nonneg, expanded ring_nf/positivity and center positivity",
+      "region_rewrites": [
+        "vE_lowM115",
+        "vE_bridge13M115",
+        "vE_bridge12M115"
+      ],
+      "ring_nf_positivity_occurrences": 2
+    },
+    {
+      "part": 7,
+      "theorem": "vAll_low_0_4_cross1_3M03",
+      "header": "theorem vAll_low_0_4_cross1_3M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (8+u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (8+u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (8+u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (8+u)",
+      "proof_schema": "three inherited E-region rewrites, adjacent-gap sub_nonneg, expanded ring_nf/positivity and center positivity",
+      "region_rewrites": [
+        "vE_bridge12M115",
+        "vE_mid1M115",
+        "vE_bridge13M115"
+      ],
+      "ring_nf_positivity_occurrences": 2
+    },
+    {
+      "part": 8,
+      "theorem": "vAll_low_0_4_cross1_4M03",
+      "header": "theorem vAll_low_0_4_cross1_4M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (9+u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (9+u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (9+u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (9+u)",
+      "proof_schema": "three inherited E-region rewrites, adjacent-gap sub_nonneg, expanded ring_nf/positivity and center positivity",
+      "region_rewrites": [
+        "vE_bridge13M115",
+        "vE_mid1M115",
+        "vE_mid1M115"
+      ],
+      "ring_nf_positivity_occurrences": 2
+    },
+    {
+      "part": 9,
+      "theorem": "vAll_low_0_4_mid1M03",
+      "header": "theorem vAll_low_0_4_mid1M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (4+v+u) (9+v+2*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (4+v+u) (9+v+2*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (4+v+u) (9+v+2*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (4+v+u) (9+v+2*u)",
+      "proof_schema": "checked alias of separated cubic certificate",
+      "region_rewrites": [],
+      "ring_nf_positivity_occurrences": 0
+    },
+    {
+      "part": 10,
+      "theorem": "vAll_low_0_4_cross2_2M03",
+      "header": "theorem vAll_low_0_4_cross2_2M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (12+2*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (12+2*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (12+2*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (12+2*u)",
+      "proof_schema": "three inherited E-region rewrites, adjacent-gap sub_nonneg, expanded ring_nf/positivity and center positivity",
+      "region_rewrites": [
+        "vE_mid1M115",
+        "vE_bridge23M115",
+        "vE_mid1M115"
+      ],
+      "ring_nf_positivity_occurrences": 2
+    },
+    {
+      "part": 11,
+      "theorem": "vAll_low_0_4_cross2_3M03",
+      "header": "theorem vAll_low_0_4_cross2_3M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (13+2*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (13+2*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (13+2*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (13+2*u)",
+      "proof_schema": "three inherited E-region rewrites, adjacent-gap sub_nonneg, expanded ring_nf/positivity and center positivity",
+      "region_rewrites": [
+        "vE_mid1M115",
+        "vE_bridge24M115",
+        "vE_bridge23M115"
+      ],
+      "ring_nf_positivity_occurrences": 2
+    },
+    {
+      "part": 12,
+      "theorem": "vAll_low_0_4_cross2_4M03",
+      "header": "theorem vAll_low_0_4_cross2_4M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (14+2*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (14+2*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (14+2*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (14+2*u)",
+      "proof_schema": "three inherited E-region rewrites, adjacent-gap sub_nonneg, expanded ring_nf/positivity and center positivity",
+      "region_rewrites": [
+        "vE_bridge23M115",
+        "vE_mid2M115",
+        "vE_bridge24M115"
+      ],
+      "ring_nf_positivity_occurrences": 2
+    },
+    {
+      "part": 13,
+      "theorem": "vAll_low_0_4_cross2_5M03",
+      "header": "theorem vAll_low_0_4_cross2_5M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (15+2*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (15+2*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (15+2*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (15+2*u)",
+      "proof_schema": "three inherited E-region rewrites, adjacent-gap sub_nonneg, expanded ring_nf/positivity and center positivity",
+      "region_rewrites": [
+        "vE_bridge24M115",
+        "vE_mid2M115",
+        "vE_mid2M115"
+      ],
+      "ring_nf_positivity_occurrences": 2
+    },
+    {
+      "part": 14,
+      "theorem": "vAll_low_0_4_mid2M03",
+      "header": "theorem vAll_low_0_4_mid2M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (16+2*v+3*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (16+2*v+3*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (16+2*v+3*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+v+u) (16+2*v+3*u)",
+      "proof_schema": "checked alias of separated cubic certificate",
+      "region_rewrites": [],
+      "ring_nf_positivity_occurrences": 0
+    },
+    {
+      "part": 15,
+      "theorem": "vAll_low_0_4_tail2M03",
+      "header": "theorem vAll_low_0_4_tail2M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (17+3*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (17+3*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (17+3*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (17+3*u)",
+      "proof_schema": "three inherited E-region rewrites, adjacent-gap sub_nonneg, expanded ring_nf/positivity and center positivity",
+      "region_rewrites": [
+        "vE_mid2M115",
+        "vE_tail3M115",
+        "vE_mid2M115"
+      ],
+      "ring_nf_positivity_occurrences": 2
+    },
+    {
+      "part": 16,
+      "theorem": "vAll_low_0_4_tail3M03",
+      "header": "theorem vAll_low_0_4_tail3M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (18+3*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (18+3*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (18+3*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (18+3*u)",
+      "proof_schema": "three inherited E-region rewrites, adjacent-gap sub_nonneg, expanded ring_nf/positivity and center positivity",
+      "region_rewrites": [
+        "vE_mid2M115",
+        "vE_tail4M115",
+        "vE_tail3M115"
+      ],
+      "ring_nf_positivity_occurrences": 2
+    },
+    {
+      "part": 17,
+      "theorem": "vAll_low_0_4_tail4M03",
+      "header": "theorem vAll_low_0_4_tail4M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (19+3*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (19+3*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (19+3*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (19+3*u)",
+      "proof_schema": "three inherited E-region rewrites, adjacent-gap sub_nonneg, expanded ring_nf/positivity and center positivity",
+      "region_rewrites": [
+        "vE_tail3M115",
+        "vE_tail5M115",
+        "vE_tail4M115"
+      ],
+      "ring_nf_positivity_occurrences": 2
+    },
+    {
+      "part": 18,
+      "theorem": "vAll_low_0_4_tail5M03",
+      "header": "theorem vAll_low_0_4_tail5M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (20+3*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (20+3*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (20+3*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (20+3*u)",
+      "proof_schema": "three inherited E-region rewrites, adjacent-gap sub_nonneg, expanded ring_nf/positivity and center positivity",
+      "region_rewrites": [
+        "vE_tail4M115",
+        "vE_tail6M115",
+        "vE_tail5M115"
+      ],
+      "ring_nf_positivity_occurrences": 2
+    },
+    {
+      "part": 19,
+      "theorem": "vAll_low_0_4_tail6M03",
+      "header": "theorem vAll_low_0_4_tail6M03 (x y u v : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) (hu : 0 \u2264 u) (hv : 0 \u2264 v) :\n vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (21+3*u-1)*vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (21+3*u+1) \u2264 vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (21+3*u)^2 \u2227\n 0 < vEM115 (7+y+3*x) (1+x) (0) (0) (0) (5+u) (21+3*u)",
+      "proof_schema": "three inherited E-region rewrites, adjacent-gap sub_nonneg, expanded ring_nf/positivity and center positivity",
+      "region_rewrites": [
+        "vE_tail5M115",
+        "vE_pastM115",
+        "vE_tail6M115"
+      ],
+      "ring_nf_positivity_occurrences": 2
+    }
+  ],
+  "separated_middle_certificates": [
+    {
+      "part": 9,
+      "integer_parameters": "x,y,u,v >= 0",
+      "q": "4+v+u",
+      "center": "9+v+2*u",
+      "definitions": 30,
+      "coefficient_identities": [
+        "sSep0I9e0M03",
+        "sSep0I9e1M03",
+        "sSep0I9e2M03"
+      ],
+      "gap_coefficient_certificates": [
+        "sSep0I9g00M03",
+        "sSep0I9g01M03",
+        "sSep0I9g02M03",
+        "sSep0I9g03M03",
+        "sSep0I9g04M03",
+        "sSep0I9g05M03",
+        "sSep0I9g06M03",
+        "sSep0I9g10M03",
+        "sSep0I9g11M03",
+        "sSep0I9g12M03",
+        "sSep0I9g13M03",
+        "sSep0I9g14M03",
+        "sSep0I9g15M03",
+        "sSep0I9g20M03",
+        "sSep0I9g21M03",
+        "sSep0I9g22M03",
+        "sSep0I9g23M03",
+        "sSep0I9g24M03",
+        "sSep0I9g30M03",
+        "sSep0I9g31M03",
+        "sSep0I9g32M03",
+        "sSep0I9g33M03",
+        "sSep0I9g40M03",
+        "sSep0I9g41M03",
+        "sSep0I9g42M03",
+        "sSep0I9g50M03",
+        "sSep0I9g51M03",
+        "sSep0I9g60M03"
+      ],
+      "all_gap_certificates_used_in_final": true,
+      "center_strict_positivity_proved_separately": true
+    },
+    {
+      "part": 14,
+      "integer_parameters": "x,y,u,v >= 0",
+      "q": "5+v+u",
+      "center": "16+2*v+3*u",
+      "definitions": 30,
+      "coefficient_identities": [
+        "sSep0I14e0M03",
+        "sSep0I14e1M03",
+        "sSep0I14e2M03"
+      ],
+      "gap_coefficient_certificates": [
+        "sSep0I14g00M03",
+        "sSep0I14g01M03",
+        "sSep0I14g02M03",
+        "sSep0I14g03M03",
+        "sSep0I14g04M03",
+        "sSep0I14g05M03",
+        "sSep0I14g06M03",
+        "sSep0I14g10M03",
+        "sSep0I14g11M03",
+        "sSep0I14g12M03",
+        "sSep0I14g13M03",
+        "sSep0I14g14M03",
+        "sSep0I14g15M03",
+        "sSep0I14g20M03",
+        "sSep0I14g21M03",
+        "sSep0I14g22M03",
+        "sSep0I14g23M03",
+        "sSep0I14g24M03",
+        "sSep0I14g30M03",
+        "sSep0I14g31M03",
+        "sSep0I14g32M03",
+        "sSep0I14g33M03",
+        "sSep0I14g40M03",
+        "sSep0I14g41M03",
+        "sSep0I14g42M03",
+        "sSep0I14g50M03",
+        "sSep0I14g51M03",
+        "sSep0I14g60M03"
+      ],
+      "all_gap_certificates_used_in_final": true,
+      "center_strict_positivity_proved_separately": true
+    }
+  ],
+  "cubic_certificate": {
+    "domain": "integers",
+    "cubic_monomials": 10,
+    "gap_coefficient_conditions": 28,
+    "gap_degree": 6,
+    "proof": "explicit gap expansion by ring; positivity from 28 supplied inequalities and x,y>=0; no coefficient-positivity premise silently assumed"
+  },
+  "assembly": {
+    "q": "all integers q>=5",
+    "adjacent_centers": "all integer j; j<=1 and j>=3q+6 use exterior-zero formulas",
+    "strict_support": "3<=j<=3q+6",
+    "pieces": [
+      "2",
+      "3",
+      "4",
+      "5..q",
+      "q+1",
+      "q+2",
+      "q+3",
+      "q+4",
+      "q+5..2q+1",
+      "2q+2",
+      "2q+3",
+      "2q+4",
+      "2q+5",
+      "2q+6..3q+1",
+      "3q+2",
+      "3q+3",
+      "3q+4",
+      "3q+5",
+      "3q+6 support endpoint"
+    ],
+    "smallest_q_boundaries": "At q=5 first middle interval is10..11 (two indices), second is16..16 (one). Their nonnegative u,v substitutions meet all neighboring integer endpoints without gaps."
+  },
+  "source_bridge": {
+    "predecessor": "L=denominator,T=numerator,1<=T<L",
+    "low_condition": "3T+4<=L",
+    "current": "a=L,r=L-T,b=a(n+1)+r, b mod a=r",
+    "current_condition": "a>=7 and 2a+4<=3(b mod a)",
+    "all_natural_n": true,
+    "all_natural_j": true,
+    "raw_indices": [
+      [
+        3,
+        "j"
+      ],
+      [
+        3,
+        "j+1"
+      ],
+      [
+        3,
+        "j+2"
+      ]
+    ],
+    "actual_seed_nonnegative": "inherited theorem with L>=7",
+    "support": "negative and outside[1,3q+6] zeros; prefix helper establishes interval support from strict3..N and adjacent gaps",
+    "uniform_factors": [
+      120,
+      6
+    ]
+  },
+  "root": "Exact Conjecture63 iff InteriorCore63LowM03; i=3 remaining condition a<=6 or (5a<=b and 3(b mod a)<2a+4); H,D original residual unchanged."
+}
