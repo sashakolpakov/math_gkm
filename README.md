@@ -1,34 +1,80 @@
-# math_gkm: machine-led construction
+# math_gkm: mathematical research with explicit proof boundaries
 
-Machine-authored by Codex/Astra from the fixed [mission](MISSION.md) and
-[design](docs/DESIGN.md). Current status: Agoh's substantial exercise is complete
-and independently reviewed; Markov Conjecture 6.3 has checked universal partial
-results and exact experiments, and remains open. The proved self-change instance
-concerns the explicitly defined Lean transition system; it does not certify
-every edit of the actual Python/Codex researcher.
+`math_gkm` is a machine-authored mathematical research experiment in the
+**Gödel–Kolmogorov Machine (GKM)** lineage. A general LLM researcher chooses
+representations, reads literature, runs experiments and develops Lean proofs;
+retained records and independent review distinguish what was proposed, executed,
+compiled, replayed and actually proved. The fixed [mission](MISSION.md) and
+[design](docs/DESIGN.md) govern the project.
 
-Read the current [Agoh account](docs/round2/AGOH.md),
-[Markov account](docs/round2/MARKOV.md), and [checkpoint](RESUME.json).
-Reproduce the Markov mathematics with:
+**Research status, through completed worker 158 (16 October 2026):** the Agoh
+exercise is complete. For Markov polynomials, all three raw-coefficient
+log-concavity directions are proved at all natural indices for every
+numerator-two source. Numerator-three results remain partial, and **full
+Conjecture 6.3 is open**. See the dated [research status and exact scope](docs/RESEARCH_STATUS.md).
 
-```sh
-/opt/homebrew/bin/python3 evidence/markov/reproduce.py
+## The three ideas behind the name and architecture
+
+| Idea | What is present here | Boundary |
+| --- | --- | --- |
+| **Gödel machine** | A checked Lean model compares a guarded engine change with the entire incumbent continuation, including later searches and installations. | This does not certify arbitrary Python, LLM or operating-system edits. The live research controller is experimental. |
+| **Kolmogorov perspective** | Description, dependency and reuse evidence can be audited separately from mathematical success. | True Kolmogorov complexity is uncomputable. Complexity is audit-only: no curiosity reward, action-selection score or theorem-count objective. |
+| **Gluing / cofibrant construction** | Lean proves a pushout universal property for types, a concrete glued-state equivalence, and conditional conservative attachment/transport theorems. | No model category, cofibration structure or automatic conservative linker for dependent Lean modules is implemented. |
+
+Read [Gödel machines, complexity and the actual research loop](docs/GKM.md) and
+[gluing: mathematics, witnesses and implementation limits](docs/GLUING.md).
+These pages separate proved interfaces from the broader design vocabulary.
+
+```mermaid
+flowchart LR
+    C[Fixed problem contract] --> P[LLM researcher]
+    H[Retained observations and failures] --> P
+    P --> T[Literature, experiments, representations, Lean]
+    T --> H
+    T --> V[Proof checks and scope review]
+    V --> H
+    V --> R[Exact root check and independent source audit]
+    R --> D[Resolution only if both pass]
 ```
 
-Run the bounded build, separate kernel replay, adversarial gate tests and broker
-example using the supplied dependencies:
+The proposer has general research actions within its granted tools and resource
+limits. The supervisor supplies the problem and reviews evidence, rather than
+supplying a proof recipe. Ordinary exploration does not require a proof that each
+next action is optimal. A theorem about a mathematical claim, a proof of a model
+switch, and permission to edit the host controller are three different things.
 
-```sh
-/opt/homebrew/bin/python3 -u -m machinery.check
-```
+## Reading the repository
 
-Do not use Lake in this environment: its metadata validation attempted to refresh
-a read-only dependency. The wrapper invokes pinned Lean directly with explicit
-library paths, workspace-local temporary files and the required Git environment.
-It performs no package update, cache download, shell networking or external LLM call.
+- [Current research scope](docs/RESEARCH_STATUS.md), with exact source links and
+  evidence limits; [Agoh account](docs/round2/AGOH.md) for the completed exercise.
+- [Construction mathematics](docs/CONSTRUCTION_MATHEMATICS.md) for the precise
+  continuation theorem and counterexamples to missing assumptions.
+- [Controller](docs/CONTROLLER.md) for live transport, durable recovery, resource
+  accounting and the independent completion boundary.
+- [Original construction checkpoint](docs/CONSTRUCTION.md),
+  [initial Markov account](docs/round2/MARKOV.md) and
+  [attempt log](docs/ATTEMPTS.md) for historical stages. Their dated status
+  statements are not the current frontier.
+- [Checkpoint](RESUME.json), `research/` sources, `evidence/` receipts and
+  controller-retained worker records for provenance. A file's existence or a
+  worker's successful exit does not alone establish mathematical acceptance.
 
-Read [the construction audit](docs/CONSTRUCTION.md) for its historical theorem meanings,
-implementation limits and remaining obligations, [the attempt log](docs/ATTEMPTS.md)
-for failures, and [RESUME.json](RESUME.json) for the next checkpoint. Validation
-records are in `evidence/`; compiled objects and experimental profiles are in
-`.scratch/`. The supervisor owns Git versioning and independent acceptance.
+The historical bootstrap checks are described in the construction/controller
+pages. With the supplied pinned dependencies, `python3 -m machinery.check`
+runs bounded construction checks, and `python3 evidence/markov/reproduce.py`
+reproduces the initial Markov experiments. Neither command validates the entire
+later campaign. Compiled `.olean` caches and `.lake` dependencies are
+intentionally untracked. A public clone needs the compatible pinned Lean/Mathlib
+setup; retained commands also contain environment-specific library paths. There
+is no advertised one-command fresh rebuild of every later research result.
+Consult the recorded commands and import/validation scope for a particular result.
+No build or experiment is needed merely to read these documents.
+
+## Public evidence provenance
+
+The [public repository](https://github.com/sashakolpakov/math_gkm) exports a
+filtered history: one expired publisher-PDF URL query was removed from a
+historical worker58 trace. The original local history is retained. Historical
+audit hashes identify those original local records; the redacted trace is a
+derivative record, not hash-identical evidence. No Lean source was changed by
+this filtering, and it adds no mathematical or verification claim.
