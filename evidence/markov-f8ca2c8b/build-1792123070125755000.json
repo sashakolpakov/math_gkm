@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovThirdThreeSourceMF8.lean:22:29: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b \u2265 0\n  a \u2265 0\n  3*a - b \u2265 -4\nwhere\n a := \u2191n\n b := \u2191(frame (List.replicate n false ++ [true, false])).mid.b\n/Users/sasha/math_gkm/research/MarkovThirdThreeSourceMF8.lean:22:29: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b \u2265 0\n  a \u2265 0\n  3*a - b \u2265 -3\nwhere\n a := \u2191n\n b := \u2191(frame (List.replicate n false ++ [true, true])).mid.b\n",
+  "stderr": "",
+  "modules": {
+    "MarkovThirdThreeSourceMF8": "adef9e6e67ea1d2e09572b04080bcba2297b65842acfff898e188fbde4609455"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-f8ca2c8b/MarkovThirdThreeSourceMF8.olean",
+    "/Users/sasha/math_gkm/research/MarkovThirdThreeSourceMF8.lean"
+  ],
+  "seconds": 7.037924624979496,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

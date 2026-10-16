@@ -1,0 +1,36 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovThirdShortMomentMF8\ncollected MarkovThirdTwoIntegralMF8\nreplay union of 2 modules over 4 inherited imports\nisolation checked for 7 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovThirdShortMomentMF8": "cbec32532bb6fc8eb49ae704251075e14c68112d31aa1c039d5ce0b3dfa325ae",
+    "MarkovThirdTwoIntegralMF8": "02a00393ff55db73024a9b1c025d44ba1153293b08596b6daa0155e7c8777437"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedMF8.lean",
+    "MarkovThirdShortMomentMF8",
+    "MarkovThirdTwoIntegralMF8"
+  ],
+  "seconds": 17.798648249998223,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "185105cf4cc81eee162257865eebe5476a46e8110fbe03aed2e6c5ed80cc0e58",
+  "declared_names": {
+    "MarkovThirdShortMomentMF8": [
+      "hsource_three_momentsMF8",
+      "vertical_three_momentMF8"
+    ],
+    "MarkovThirdTwoIntegralMF8": [
+      "vDJMF8",
+      "vDJstepMF8",
+      "vDJclosedMF8",
+      "vTwoWordMF8",
+      "vertical_two_third_residualMF8"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed MF8; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

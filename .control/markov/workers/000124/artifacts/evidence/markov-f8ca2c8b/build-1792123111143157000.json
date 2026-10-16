@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovThirdThreeSourceMF8.lean:21:41: error: Tactic `decide` failed for proposition\n  (frame [false]).mid.b = 3\nbecause its `Decidable` instance\n  instDecidableEqNat (frame [false]).mid.b 3\ndid not reduce to `isTrue` or `isFalse`.\n\nAfter unfolding the instances `instDecidableEqNat` and `Nat.decEq`, reduction got stuck at the `Decidable` instance\n  match h : (frame [false]).mid.b.beq 3 with\n  | true => isTrue \u22ef\n  | false => isFalse \u22ef\n/Users/sasha/math_gkm/research/MarkovThirdThreeSourceMF8.lean:22:39: error: Tactic `decide` failed for proposition\n  (frame [false]).mid.a = 1\nbecause its `Decidable` instance\n  instDecidableEqNat (frame [false]).mid.a 1\ndid not reduce to `isTrue` or `isFalse`.\n\nAfter unfolding the instances `instDecidableEqNat` and `Nat.decEq`, reduction got stuck at the `Decidable` instance\n  match h : (frame [false]).mid.a.beq 1 with\n  | true => isTrue \u22ef\n  | false => isFalse \u22ef\n/Users/sasha/math_gkm/research/MarkovThirdThreeSourceMF8.lean:24:5: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  a \u2265 0\nwhere\n a := \u2191n\n/Users/sasha/math_gkm/research/MarkovThirdThreeSourceMF8.lean:25:40: error: Tactic `decide` failed for proposition\n  (frame [true]).mid.b = 3\nbecause its `Decidable` instance\n  instDecidableEqNat (frame [true]).mid.b 3\ndid not reduce to `isTrue` or `isFalse`.\n\nAfter unfolding the instances `instDecidableEqNat` and `Nat.decEq`, reduction got stuck at the `Decidable` instance\n  match h : (frame [true]).mid.b.beq 3 with\n  | true => isTrue \u22ef\n  | false => isFalse \u22ef\n/Users/sasha/math_gkm/research/MarkovThirdThreeSourceMF8.lean:26:38: error: Tactic `decide` failed for proposition\n  (frame [true]).mid.a = 2\nbecause its `Decidable` instance\n  instDecidableEqNat (frame [true]).mid.a 2\ndid not reduce to `isTrue` or `isFalse`.\n\nAfter unfolding the instances `instDecidableEqNat` and `Nat.decEq`, reduction got stuck at the `Decidable` instance\n  match h : (frame [true]).mid.a.beq 2 with\n  | true => isTrue \u22ef\n  | false => isFalse \u22ef\n/Users/sasha/math_gkm/research/MarkovThirdThreeSourceMF8.lean:28:5: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  0 \u2264 b \u2264 1\n  a \u2265 0\nwhere\n a := \u2191n\n b := \u2191(if true = true then 2 else 1)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovThirdThreeSourceMF8": "f8827e02d660af58becefcb4923243e20235f1bdadee89b91a641158de328ef2"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-f8ca2c8b/MarkovThirdThreeSourceMF8.olean",
+    "/Users/sasha/math_gkm/research/MarkovThirdThreeSourceMF8.lean"
+  ],
+  "seconds": 6.319710625044536,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

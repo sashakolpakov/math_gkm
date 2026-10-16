@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovThirdShortMomentMF8.lean:48:1: error: 'change' tactic failed, pattern\n  6 * T.coeff 3 = D ^ 3 + 3 * D * K + L + 6 * c\nis not definitionally equal to target\n  6 * (tr16 (projProduct6905 (List.map (vGeneralProjMDE6 x n) (sourceWord28 [r])))).coeff 3 =\n    hsourceMomentM13D (fun p x_1 x_2 => (vGeneralProjMDE6 x n p).d.coeff 1) [r] ^ 3 +\n          3 * hsourceMomentM13D (fun p x_1 x_2 => (vGeneralProjMDE6 x n p).d.coeff 1) [r] *\n            hsourceMomentM13D\n              (fun p q s => hlocalKM13D (vGeneralProjMDE6 x n p) (vGeneralProjMDE6 x n q) (vGeneralProjMDE6 x n s))\n              [r] +\n        hsourceMomentM13D\n          (fun p q s => hlocalLM13D (vGeneralProjMDE6 x n p) (vGeneralProjMDE6 x n q) (vGeneralProjMDE6 x n s)) [r] +\n      6 * (vGeneralProjMDE6 x n false).a.coeff 1 * (vGeneralProjMDE6 x n r).a.coeff 1 *\n        (vGeneralProjMDE6 x n true).a.coeff 1\n",
+  "stderr": "",
+  "modules": {
+    "MarkovThirdShortMomentMF8": "771f4426f0ea03a71b98fd641f96b5cecdc01f928f635f88723015e08a6821c0"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-f8ca2c8b/MarkovThirdShortMomentMF8.olean",
+    "/Users/sasha/math_gkm/research/MarkovThirdShortMomentMF8.lean"
+  ],
+  "seconds": 28.46965454198653,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

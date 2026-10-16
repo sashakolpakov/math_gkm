@@ -1,0 +1,33 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovThirdSupport31MF8\ncollected MarkovThirdSupport32MF8\nreplay union of 2 modules over 3 inherited imports\nisolation checked for 4 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovThirdSupport31MF8": "c41e09ab30e685789324217d06dd59f944ee42644f9a8316420fd43b59357535",
+    "MarkovThirdSupport32MF8": "12a1377e50e6e69a0cf90edea73ac94d105d101ce8e47b0202f025b23f15c4e5"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedMF8.lean",
+    "MarkovThirdSupport31MF8",
+    "MarkovThirdSupport32MF8"
+  ],
+  "seconds": 11.825881625001784,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "185105cf4cc81eee162257865eebe5476a46e8110fbe03aed2e6c5ed80cc0e58",
+  "declared_names": {
+    "MarkovThirdSupport31MF8": [
+      "sThird31zeroMF8",
+      "sThird31pastMF8"
+    ],
+    "MarkovThirdSupport32MF8": [
+      "sThird32zeroMF8",
+      "sThird32pastMF8"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed MF8; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

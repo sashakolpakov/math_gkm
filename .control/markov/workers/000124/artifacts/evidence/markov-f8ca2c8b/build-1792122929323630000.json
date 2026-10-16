@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovThirdShortMomentMF8.lean:49:3: error: Type mismatch: After simplification, term\n  h3\n has type\n  6 * (tr16 (projProduct6905 (List.map (vGeneralProjMDE6 x n) (sourceWord28 [r])))).coeff 3 =\n    hsourceMomentM13D (fun p x_1 x_2 => (vGeneralProjMDE6 x n p).d.coeff 1) [r] ^ 3 +\n          3 *\n            (hsourceMomentM13D (fun p x_1 x_2 => (vGeneralProjMDE6 x n p).d.coeff 1) [r] *\n              hsourceMomentM13D\n                (fun p q s => hlocalKM13D (vGeneralProjMDE6 x n p) (vGeneralProjMDE6 x n q) (vGeneralProjMDE6 x n s))\n                [r]) +\n        hsourceMomentM13D\n          (fun p q s => hlocalLM13D (vGeneralProjMDE6 x n p) (vGeneralProjMDE6 x n q) (vGeneralProjMDE6 x n s)) [r] +\n      6 *\n        ((vGeneralProjMDE6 x n false).a.coeff 1 *\n          ((vGeneralProjMDE6 x n r).a.coeff 1 * (vGeneralProjMDE6 x n true).a.coeff 1))\nbut is expected to have type\n  6 * T.coeff 3 = D ^ 3 + 3 * (D * K) + L + 6 * c\n/Users/sasha/math_gkm/research/MarkovThirdShortMomentMF8.lean:72:3: error: ring failed, ring expressions not equal\nn : \u2115\nr : Bool\nx : \u211d\nhx : x \u2260 0\npath : List Bool := \u22ef\nD : \u211d := \u22ef\nK : \u211d := \u22ef\nL : \u211d := \u22ef\nT : \u211d[X] := \u22ef\nE : \u211d[X] := \u22ef\nz : \u211d := \u22ef\nc : \u211d := \u22ef\nh3 :\n  6 * (tr16 (projProduct6905 (List.map (vGeneralProjMDE6 x n) (sourceWord28 [r])))).coeff 3 =\n    hsourceMomentM13D (fun p x_1 x_2 => (vGeneralProjMDE6 x n p).d.coeff 1) [r] ^ 3 +\n          3 * hsourceMomentM13D (fun p x_1 x_2 => (vGeneralProjMDE6 x n p).d.coeff 1) [r] *\n            hsourceMomentM13D\n              (fun p q s => hlocalKM13D (vGeneralProjMDE6 x n p) (vGeneralProjMDE6 x n q) (vGeneralProjMDE6 x n s))\n              [r] +\n        hsourceMomentM13D\n          (fun p q s => hlocalLM13D (vGeneralProjMDE6 x n p) (vGeneralProjMDE6 x n q) (vGeneralProjMDE6 x n s)) [r] +\n      6 * (vGeneralProjMDE6 x n false).a.coeff 1 * (vGeneralProjMDE6 x n r).a.coeff 1 *\n        (vGeneralProjMDE6 x n true).a.coeff 1\nh0 : T.coeff 0 = 1\nh1 : T.coeff 1 = D\nh2 : 2 * T.coeff 2 = D ^ 2 + K\nh3' : 6 * T.coeff 3 = D ^ 3 + 3 * D * K + L + 6 * c\nhc : z * c = 1\nht : C z * T = (1 + C (x + 1) * X) * E\ne0 : z = E.coeff 0\ne1 : z * D = E.coeff 1 + (x * E.coeff 0 + E.coeff 0)\ne2 : z * T.coeff 2 = E.coeff 2 + (x * E.coeff 1 + E.coeff 1)\ne3 : z * T.coeff 3 = E.coeff 3 + (x * E.coeff 2 + E.coeff 2)\n\u22a2 -12 +\n      x ^ (frame path).mid.b * (vGeneralProjMDE6 x n false).a.coeff 1 * (vGeneralProjMDE6 x n r).a.coeff 1 *\n          (vGeneralProjMDE6 x n true).a.coeff 1 *\n        12 =\n    0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovThirdShortMomentMF8": "3855804ff74ca1af77fda9ca664af5a8f14b3a05d0e34c41773582fed9110960"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-f8ca2c8b/MarkovThirdShortMomentMF8.olean",
+    "/Users/sasha/math_gkm/research/MarkovThirdShortMomentMF8.lean"
+  ],
+  "seconds": 10.021120999997947,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

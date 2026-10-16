@@ -1,0 +1,35 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovThirdThreeSourceMF8\ncollected MarkovThirdTwoSourceMF8\nreplay union of 2 modules over 4 inherited imports\nisolation checked for 6 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovThirdThreeSourceMF8": "3f4a65ef5c79633702f4687dfae58ffd9f1d4dcf8f2efc39e5a7e389ca2d80d7",
+    "MarkovThirdTwoSourceMF8": "b6b403b1a63b682dee671388ee3e32f5899823f8ebc1a3e3a6cd2d450f04f63a"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedMF8.lean",
+    "MarkovThirdThreeSourceMF8",
+    "MarkovThirdTwoSourceMF8"
+  ],
+  "seconds": 17.577430542034563,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "185105cf4cc81eee162257865eebe5476a46e8110fbe03aed2e6c5ed80cc0e58",
+  "declared_names": {
+    "MarkovThirdThreeSourceMF8": [
+      "vertical_three_residualMF8",
+      "vertical_three_clearedMF8"
+    ],
+    "MarkovThirdTwoSourceMF8": [
+      "vTwoCorrectionMF8",
+      "vTwoSparseMF8",
+      "vTwoCorrection_sparseMF8",
+      "vertical_two_third_clearedMF8"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed MF8; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}
