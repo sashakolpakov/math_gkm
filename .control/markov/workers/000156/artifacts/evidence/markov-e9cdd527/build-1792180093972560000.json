@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovLowerDomainME9C.lean:10:1: error: Tactic `decide` failed for proposition\n  lowerKernelME9C 4 3 0 = -29\nbecause its `Decidable` instance\n  (lowerKernelME9C 4 3 0).instDecidableEq (-29)\ndid not reduce to `isTrue` or `isFalse`.\n\nAfter unfolding the instances `Int.decEq` and `Int.instDecidableEq`, reduction got stuck at the `Decidable` instance\n  match lowerKernelME9C 4 3 0, -29 with\n  | Int.ofNat a, Int.ofNat b =>\n    match decEq a b with\n    | isTrue h => isTrue \u22ef\n    | isFalse h => isFalse \u22ef\n  | Int.ofNat a, Int.negSucc a_1 => isFalse \u22ef\n  | Int.negSucc a, Int.ofNat a_1 => isFalse \u22ef\n  | Int.negSucc a, Int.negSucc b =>\n    match decEq a b with\n    | isTrue h => isTrue \u22ef\n    | isFalse h => isFalse \u22ef\n",
+  "stderr": "",
+  "modules": {
+    "MarkovLowerDomainME9C": "1590b1f78a2c33a6d3abdf4083f6819f6984e4bb650538cd56cb6fda864040ff"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-e9cdd527/MarkovLowerDomainME9C.olean",
+    "/Users/sasha/math_gkm/research/MarkovLowerDomainME9C.lean"
+  ],
+  "seconds": 60.93496362504084,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovLowDifferenceME9C.lean:17:60: error: unexpected token ')'; expected term\n/Users/sasha/math_gkm/research/MarkovLowDifferenceME9C.lean:17:53: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  LT (n - j - 1)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovLowDifferenceME9C.lean:17:53: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  HSub \u2115 \u2115 (Type ?u.65)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovLowDifferenceME9C.lean:17:45: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  c \u2265 0\n  b \u2265 0\n  a \u2265 0\n  a - b \u2265 1\n  a - b - c \u2264 0\nwhere\n a := \u2191n\n b := \u2191j\n c := \u2191i\n/Users/sasha/math_gkm/research/MarkovLowDifferenceME9C.lean:60:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  choosePolyM0D3 \u2191?n ?k\nin the target expression\n  \u2191((0 + 3 + j).choose (0 + 3)) = deltaThreeME9C \u2191j\n\nn j : \u2115\nhj : j < n\n\u22a2 \u2191((0 + 3 + j).choose (0 + 3)) = deltaThreeME9C \u2191j\n/Users/sasha/math_gkm/research/MarkovLowDifferenceME9C.lean:69:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  choosePolyM0D3 \u2191?n ?k\nin the target expression\n  \u2191(n - j - 1) * \u2191((1 + 3 + j).choose (1 + 3)) = deltaFourME9C \u2191n \u2191j\n\nn j : \u2115\nhj : j < n\n\u22a2 \u2191(n - j - 1) * \u2191((1 + 3 + j).choose (1 + 3)) = deltaFourME9C \u2191n \u2191j\n",
+  "stderr": "",
+  "modules": {
+    "MarkovLowDifferenceME9C": "3b563a3593e3eddf7e0f14e790f8d75c06f96879628c6f1948330274b7f75b28"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-e9cdd527/MarkovLowDifferenceME9C.olean",
+    "/Users/sasha/math_gkm/research/MarkovLowDifferenceME9C.lean"
+  ],
+  "seconds": 64.30504991702037,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

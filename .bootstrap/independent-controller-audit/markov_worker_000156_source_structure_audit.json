@@ -1,0 +1,619 @@
+{
+  "worker": 156,
+  "request": "e9cdd527ea604fdcb514caecc8cc9944",
+  "created_at_utc": "2026-10-16T20:13:19.281921+00:00",
+  "historical_status": "TIMEOUT/return0/null report. Partial validation; full root open.",
+  "scope": "Completed156 archive and explicit named inherited/current counterparts only. Static parsing, hashes and input-index counts. No project/proof/checker/replay/experiment/finalizer/generator execution, mathematical-value recomputation, project edit, proposer contact or research help. Active157 excluded. Earlier seals remain final.",
+  "new_modules": [
+    {
+      "module": "MarkovLowDifferenceME9C",
+      "path": "research/MarkovLowDifferenceME9C.lean",
+      "bytes": 2858,
+      "sha256": "59fe100078d8cac6c32e151b2bc12015ea2aec796b7845552e34a390c2eb5060",
+      "current_sha256": "59fe100078d8cac6c32e151b2bc12015ea2aec796b7845552e34a390c2eb5060",
+      "status": "compiled and early replay passed; no theorem-print coverage",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fib_raw_extendedME9C"
+        },
+        {
+          "kind": "def",
+          "name": "fibDeltaME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_delta_axisME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_delta_oneME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_delta_twoME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_delta_highME9C"
+        },
+        {
+          "kind": "def",
+          "name": "deltaThreeME9C"
+        },
+        {
+          "kind": "def",
+          "name": "deltaFourME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_delta_threeME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_delta_fourME9C"
+        }
+      ],
+      "object_path": "evidence/markov-e9cdd527/MarkovLowDifferenceME9C.olean",
+      "object_sha256": "cb439890ff4ab3989602017a609e57093b11dcd7f346b25550796690a4f6fdba",
+      "successful_final_build": "build-1792179269040875000.json",
+      "successful_final_build_sha256": "e87dd784eaf78ea45f995644780d141c1b4e97edde1adae1e23125769c5d59ca",
+      "early_replay_selected": true,
+      "full_validation_accepted": false,
+      "imports": [
+        "MarkovThreeForceM96A",
+        "MarkovBinomialTableM295"
+      ],
+      "theorem_statements": [
+        "theorem fib_raw_extendedME9C (n i j : ℕ) (hj : j < n) :\n fibRawM9E2 n (i+1) j=((n-j-1).choose i:ℤ)*((i+1+j).choose (i+1):ℤ)",
+        "theorem fib_delta_axisME9C (n j : ℕ) (hj : j < n) : fibDeltaME9C n 0 j=0",
+        "theorem fib_delta_oneME9C (n j : ℕ) (hj : j < n) : fibDeltaME9C n 1 j=0",
+        "theorem fib_delta_twoME9C (n j : ℕ) (hj : j < n) : fibDeltaME9C n 2 j=0",
+        "theorem fib_delta_highME9C (n i j : ℕ) (hj : j < n) :\n fibDeltaME9C n (i+3) j=((n-j-1).choose i:ℤ)*((i+3+j).choose (i+3):ℤ)",
+        "theorem fib_delta_threeME9C (n j : ℕ) (hj : j < n) :\n (fibDeltaME9C n 3 j:ℚ)=deltaThreeME9C j",
+        "theorem fib_delta_fourME9C (n j : ℕ) (hj : j < n) :\n (fibDeltaME9C n 4 j:ℚ)=deltaFourME9C n j"
+      ],
+      "definitions": [
+        "def fibDeltaME9C (n i j : ℕ) : ℤ :=\n fibRawM9E2 (n+2) i j-2*fibRawM9E2 (n+1) i j+fibRawM9E2 n i j",
+        "def deltaThreeME9C (x : ℚ) : ℚ := (x+1)*(x+2)*(x+3)/6",
+        "def deltaFourME9C (n x : ℚ) : ℚ := (n-x-1)*(x+1)*(x+2)*(x+3)*(x+4)/24"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLowForceME9C",
+      "path": "research/MarkovLowForceME9C.lean",
+      "bytes": 3491,
+      "sha256": "b86dc8737920bde4842b76ff65ae6f65b0298b66ba280e1efa8ea674ec044558",
+      "current_sha256": "b86dc8737920bde4842b76ff65ae6f65b0298b66ba280e1efa8ea674ec044558",
+      "status": "compiled and early replay passed; no theorem-print coverage",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "sourceNME9C"
+        },
+        {
+          "kind": "def",
+          "name": "lowForceThreeME9C"
+        },
+        {
+          "kind": "def",
+          "name": "lowForceFourME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_n_gtME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "low_force_baseME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "low_force_threeME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "low_force_fourME9C"
+        }
+      ],
+      "object_path": "evidence/markov-e9cdd527/MarkovLowForceME9C.olean",
+      "object_sha256": "63bf7345febeb953406ed43d2456c18ee4d9cf7d0af920b63432fcc2363dccb7",
+      "successful_final_build": "build-1792179305193532000.json",
+      "successful_final_build_sha256": "8fa7d0bf1e7e3398d58c52c41c091d7ee1052b09fcfea5db971ba288e4195d8e",
+      "early_replay_selected": true,
+      "full_validation_accepted": false,
+      "imports": [
+        "MarkovLowDifferenceME9C"
+      ],
+      "theorem_statements": [
+        "theorem source_n_gtME9C (q j : ℕ) (r : Bool) (hj : j ≤ q) : j < sourceNME9C q r",
+        "theorem low_force_baseME9C (q i j : ℕ) (r : Bool) (hj : j ≤ q) :\n threeForceM96A q r i j=\n addSRawM9E2 (addSRawM9E2 (fibDeltaME9C (sourceNME9C q r))) i j",
+        "theorem low_force_threeME9C (q j : ℕ) (r : Bool) (hj : j ≤ q) :\n (threeForceM96A q r 3 j:ℚ)=lowForceThreeME9C j",
+        "theorem low_force_fourME9C (q j : ℕ) (r : Bool) (hj : j ≤ q) :\n (threeForceM96A q r 4 j:ℚ)=lowForceFourME9C (sourceNME9C q r) j"
+      ],
+      "definitions": [
+        "def sourceNME9C (q : ℕ) (r : Bool) : ℕ := 3*q+(if r then 1 else 2)",
+        "def lowForceThreeME9C (x : ℚ) : ℚ :=\n deltaThreeME9C x+2*deltaThreeME9C (x-1)+deltaThreeME9C (x-2)",
+        "def lowForceFourME9C (n x : ℚ) : ℚ :=\n deltaFourME9C n x+2*deltaFourME9C n (x-1)+deltaFourME9C n (x-2)+\n 2*deltaThreeME9C x+2*deltaThreeME9C (x-1)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLowSolutionsME9C",
+      "path": "research/MarkovLowSolutionsME9C.lean",
+      "bytes": 1657,
+      "sha256": "ccfb6206bec15586a9e0f18b0fa86a2f05d3eb8c487e1bd8fd7e5dc648a53dba",
+      "current_sha256": "ccfb6206bec15586a9e0f18b0fa86a2f05d3eb8c487e1bd8fd7e5dc648a53dba",
+      "status": "compiled and early replay passed; no theorem-print coverage",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "lowThreeME9C"
+        },
+        {
+          "kind": "def",
+          "name": "lowFourME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "low_three_equationME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "low_four_equationME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "low_four_candidateME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_difference_uniqueME9C"
+        }
+      ],
+      "object_path": "evidence/markov-e9cdd527/MarkovLowSolutionsME9C.olean",
+      "object_sha256": "9c82073eca30f8b7b6a5d616aa23304c8c4030aac03ee1e34fdcfc53d4e3a763",
+      "successful_final_build": "build-1792179322022078000.json",
+      "successful_final_build_sha256": "ec5517be4849f1dbc327f704a822731d6a1a97640590d28692c4eb89c95b6d20",
+      "early_replay_selected": true,
+      "full_validation_accepted": false,
+      "imports": [
+        "MarkovLowerCandidateM96A",
+        "MarkovLowForceME9C"
+      ],
+      "theorem_statements": [
+        "theorem low_three_equationME9C (x : ℚ) :\n lowThreeME9C (x+2)-2*lowThreeME9C (x+1)+lowThreeME9C x=\n lowForceThreeME9C (x+2)",
+        "theorem low_four_equationME9C (n x : ℚ) :\n lowFourME9C n (x+2)-2*lowFourME9C n (x+1)+lowFourME9C n x=\n lowForceFourME9C n (x+2)-2*lowThreeME9C (x+2)-2*lowThreeME9C (x+1)",
+        "theorem low_four_candidateME9C (q x : ℚ) (r : Bool) :\n lowFourME9C (3*q+(if r then 1 else 2)) x=\n lowerCandidateM96A q x (if r then 0 else 1)",
+        "theorem second_difference_uniqueME9C (q : ℕ) (f g : ℕ → ℚ)\n (h0 : f 0=g 0) (h1 : 1 ≤ q → f 1=g 1)\n (hs : ∀ j, j+2 ≤ q → f (j+2)-2*f (j+1)+f j=g (j+2)-2*g (j+1)+g j) :\n ∀ j, j ≤ q → f j=g j"
+      ],
+      "definitions": [
+        "def lowThreeME9C (x : ℚ) : ℚ := (x+1)*(x+2)*(x+3)*(x^2+4*x+5)/30",
+        "def lowFourME9C (n x : ℚ) : ℚ :=\n (x+1)*(x+2)*(x+3)*(x+4)*\n (7*(n-1)*(2*x^2+10*x+15)-x*(18*x^2+100*x+155))/2520"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLowSourceME9C",
+      "path": "research/MarkovLowSourceME9C.lean",
+      "bytes": 4681,
+      "sha256": "4e35ca73891fb3a33462cdafb372b4375d6047e3706a158e363c7861ba07f5c5",
+      "current_sha256": "4e35ca73891fb3a33462cdafb372b4375d6047e3706a158e363c7861ba07f5c5",
+      "status": "compiled and early replay passed; no theorem-print coverage",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_three_low_zeroME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "raw_disc_zeroME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "raw_disc_oneME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "raw_disc_stepME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_low_threeME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_low_fourME9C"
+        }
+      ],
+      "object_path": "evidence/markov-e9cdd527/MarkovLowSourceME9C.olean",
+      "object_sha256": "81383ed886913ed85b85bec9c36f38ba6072e2850c74d4f0cf7753058714a090",
+      "successful_final_build": "build-1792179353807777000.json",
+      "successful_final_build_sha256": "5fdb110929883f66bd368c49a6c11b36789cd46f6d8083e739dcb098320be997",
+      "early_replay_selected": true,
+      "full_validation_accepted": false,
+      "imports": [
+        "MarkovLowSolutionsME9C"
+      ],
+      "theorem_statements": [
+        "theorem source_three_low_zeroME9C (q i j : ℕ) (r : Bool)\n (hq : 1 ≤ q) (hi : i ≤ 2) (hj : j ≤ q) : threeRawM9E2 q r i j=0",
+        "theorem raw_disc_zeroME9C (q i : ℕ) (r : Bool) :\n (threeRawM9E2 q r (i+2) 0:ℚ)+2*(threeRawM9E2 q r (i+1) 0:ℚ)+\n (threeRawM9E2 q r i 0:ℚ)=(threeForceM96A q r (i+2) 0:ℚ)",
+        "theorem raw_disc_oneME9C (q i : ℕ) (r : Bool) :\n (threeRawM9E2 q r (i+2) 1:ℚ)+2*(threeRawM9E2 q r (i+1) 1:ℚ)-\n 2*(threeRawM9E2 q r (i+2) 0:ℚ)+(threeRawM9E2 q r i 1:ℚ)+\n 2*(threeRawM9E2 q r (i+1) 0:ℚ)=(threeForceM96A q r (i+2) 1:ℚ)",
+        "theorem raw_disc_stepME9C (q i j : ℕ) (r : Bool) :\n (threeRawM9E2 q r (i+2) (j+2):ℚ)+2*(threeRawM9E2 q r (i+1) (j+2):ℚ)-\n 2*(threeRawM9E2 q r (i+2) (j+1):ℚ)+(threeRawM9E2 q r i (j+2):ℚ)+\n 2*(threeRawM9E2 q r (i+1) (j+1):ℚ)+(threeRawM9E2 q r (i+2) j:ℚ)=\n (threeForceM96A q r (i+2) (j+2):ℚ)",
+        "theorem source_low_threeME9C (q : ℕ) (r : Bool) (hq : 1 ≤ q) :\n ∀ j, j ≤ q → (threeRawM9E2 q r 3 j:ℚ)=lowThreeME9C j",
+        "theorem source_low_fourME9C (q : ℕ) (r : Bool) (hq : 1 ≤ q) :\n ∀ j, j ≤ q → (threeRawM9E2 q r 4 j:ℚ)=lowFourME9C (sourceNME9C q r) j"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLowLCME9C",
+      "path": "research/MarkovLowLCME9C.lean",
+      "bytes": 2495,
+      "sha256": "bcdfc943ad64972bdd8bb2149928901141afa4c9bd9135a9150596e2fd20e888",
+      "current_sha256": "bcdfc943ad64972bdd8bb2149928901141afa4c9bd9135a9150596e2fd20e888",
+      "status": "compiled and early replay passed; no theorem-print coverage",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_low_four_candidateME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_candidate_strictME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_low_four_strictME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_low_four_verticalME9C"
+        }
+      ],
+      "object_path": "evidence/markov-e9cdd527/MarkovLowLCME9C.olean",
+      "object_sha256": "b3500273646cd399d5a149736c4ccdc404acf6b98a5589a9236a494e29c5a4bd",
+      "successful_final_build": "build-1792179417532012000.json",
+      "successful_final_build_sha256": "a640ad0a74936d5d7b5426d24e61bf44f80e21fe79f112fac2e617d848b894e4",
+      "early_replay_selected": true,
+      "full_validation_accepted": false,
+      "imports": [
+        "MarkovLowSourceME9C"
+      ],
+      "theorem_statements": [
+        "theorem source_low_four_candidateME9C (q j : ℕ) (r : Bool)\n (hq : 1 ≤ q) (hj : j ≤ q) :\n (threeRawM9E2 q r 4 j:ℚ)=lowerCandidateM96A q j (if r then 0 else 1)",
+        "theorem lower_candidate_strictME9C (q x c : ℚ)\n (hx : 0 ≤ x) (hq : x+2 ≤ q) (hc : 0 ≤ c) :\n lowerCandidateM96A q x c*lowerCandidateM96A q (x+2) c <\n lowerCandidateM96A q (x+1) c^2",
+        "theorem three_low_four_strictME9C (q j : ℕ) (r : Bool) (hj : j+2 ≤ q) :\n threeRawM9E2 q r 4 j*threeRawM9E2 q r 4 (j+2) < threeRawM9E2 q r 4 (j+1)^2",
+        "theorem source_low_four_verticalME9C (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1 ≤ q ∧ (frame path).mid.b=sourceNME9C q r ∧\n   (∀ j, j ≤ q → (coeff (frame path).mid.p 4 j:ℚ)=\n     lowerCandidateM96A q j (if r then 0 else 1)) ∧\n   (∀ j, j+2 ≤ q → coeff (frame path).mid.p 4 j*coeff (frame path).mid.p 4 (j+2) <\n     coeff (frame path).mid.p 4 (j+1)^2)"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLowResidualME9C",
+      "path": "research/MarkovLowResidualME9C.lean",
+      "bytes": 2192,
+      "sha256": "c6176b7729767b5f7c642551bde355bbc57fb74dfb57c8452241da39e792d7ff",
+      "current_sha256": "c6176b7729767b5f7c642551bde355bbc57fb74dfb57c8452241da39e792d7ff",
+      "status": "compiled and early replay passed; no theorem-print coverage",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "ThreeRemainingME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_remaining_iffME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_remainingME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "low_gain_unboundedME9C"
+        }
+      ],
+      "object_path": "evidence/markov-e9cdd527/MarkovLowResidualME9C.olean",
+      "object_sha256": "96cba09832dd007a8b1acabc6d811b9d0cb78f7f84a705bc53fe18d185508e2e",
+      "successful_final_build": "build-1792179591717345000.json",
+      "successful_final_build_sha256": "f71e5a3ede114c9e416ea24c3df23160c40c2b0f3df756e705c5033621c46707",
+      "early_replay_selected": true,
+      "full_validation_accepted": false,
+      "imports": [
+        "MarkovLowLCME9C"
+      ],
+      "theorem_statements": [
+        "theorem three_remaining_iffME9C : ThreeRawLCM9E2 ↔ ThreeRemainingME9C",
+        "theorem root_iff_remainingME9C : Conjecture63 ↔ ThreeRemainingME9C ∧ OtherFourM9E2",
+        "theorem low_gain_unboundedME9C (j : ℕ) (r : Bool) :\n let path := threePathM9E2 (j+1) r\n (frame path).mid.a=3 ∧\n (frame path).mid.b=sourceNME9C (j+2) r ∧\n InPolygon (frame path).mid.a (frame path).mid.b 4 j ∧\n InPolygon (frame path).mid.a (frame path).mid.b 4 (j+1) ∧\n InPolygon (frame path).mid.a (frame path).mid.b 4 (j+2) ∧\n coeff (frame path).mid.p 4 j*coeff (frame path).mid.p 4 (j+2) <\n coeff (frame path).mid.p 4 (j+1)^2"
+      ],
+      "definitions": [
+        "def ThreeRemainingME9C : Prop := ∀ q : ℕ, 1 ≤ q → ∀ r,\n (∀ i j, threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤\n   threeRawM9E2 q r (i+1) j^2) ∧\n (∀ i j, (i≠4 ∨ q<j+2) →\n   threeRawM9E2 q r i j*threeRawM9E2 q r i (j+2) ≤ threeRawM9E2 q r i (j+1)^2) ∧\n (∀ i j, threeRawM9E2 q r i (j+2)*threeRawM9E2 q r (i+2) j ≤\n   threeRawM9E2 q r (i+1) (j+1)^2)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLowLimitME9C",
+      "path": "research/MarkovLowLimitME9C.lean",
+      "bytes": 1288,
+      "sha256": "abe90d1555d1f165a49ba4763a0b1412710a30798f1aa472babad3437d93fab4",
+      "current_sha256": "abe90d1555d1f165a49ba4763a0b1412710a30798f1aa472babad3437d93fab4",
+      "status": "compiled and early replay passed; no theorem-print coverage",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "lower_extension_failureME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_limit_valid_sourceME9C"
+        }
+      ],
+      "object_path": "evidence/markov-e9cdd527/MarkovLowLimitME9C.olean",
+      "object_sha256": "f26db16ddee696f6a25fc4981b2dcecc1c0177923d7b9840e67e0bf915f23c35",
+      "successful_final_build": "build-1792179486424862000.json",
+      "successful_final_build_sha256": "3ad0ac65b871cdaa5003841567aa3b2ef4fa3740238f794ebf9d5071a2e828d6",
+      "early_replay_selected": true,
+      "full_validation_accepted": false,
+      "imports": [
+        "MarkovLowSourceME9C"
+      ],
+      "theorem_statements": [
+        "theorem lower_extension_failureME9C :\n coeff (frame [true,true]).mid.p 4 2=15 ∧ lowerCandidateM96A 1 2 0=7 ∧\n (coeff (frame [true,true]).mid.p 4 2:ℚ)≠lowerCandidateM96A 1 2 0",
+        "theorem lower_limit_valid_sourceME9C :\n (frame [true,true]).mid.a=3 ∧ (frame [true,true]).mid.b=4 ∧\n InPolygon 3 4 4 0 ∧ InPolygon 3 4 4 1 ∧ InPolygon 3 4 4 2 ∧\n coeff (frame [true,true]).mid.p 4 0=3 ∧\n coeff (frame [true,true]).mid.p 4 1=14 ∧\n coeff (frame [true,true]).mid.p 4 2=15 ∧\n coeff (frame [true,true]).mid.p 4 0*coeff (frame [true,true]).mid.p 4 2 <\n coeff (frame [true,true]).mid.p 4 1^2"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLowKernelLimitME9C",
+      "path": "research/MarkovLowKernelLimitME9C.lean",
+      "bytes": 1542,
+      "sha256": "60788f30ac61824fc18173ee532fb4ad976f02ac54bdb421e1133f280f987553",
+      "current_sha256": "60788f30ac61824fc18173ee532fb4ad976f02ac54bdb421e1133f280f987553",
+      "status": "compiled only; no successful replay or theorem-print coverage",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "lowerNaiveKernelME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_naive_minorME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_naive_tp2_falseME9C"
+        }
+      ],
+      "object_path": "evidence/markov-e9cdd527/MarkovLowKernelLimitME9C.olean",
+      "object_sha256": "f359a2ac5c700b1345cd866bbed0466995ccf0b72ffb22bf255b3f3da4a12fc3",
+      "successful_final_build": "build-1792179727164674000.json",
+      "successful_final_build_sha256": "2b57db06be2ceaf6f5a25c32c9d6174473de940b40c1e432d43a21e4ceccf534",
+      "early_replay_selected": false,
+      "full_validation_accepted": false,
+      "imports": [
+        "MarkovLowLCME9C"
+      ],
+      "theorem_statements": [
+        "theorem lower_naive_minorME9C (d : ℕ) (r : Bool) (hd : 1 ≤ d) :\n lowerNaiveKernelME9C r 4 0 d*lowerNaiveKernelME9C r 4 1 (d+1)-\n lowerNaiveKernelME9C r 4 1 d*lowerNaiveKernelME9C r 4 0 (d+1)= -42",
+        "theorem lower_naive_tp2_falseME9C (r : Bool) :\n ¬(∀ j d, 1 ≤ j+d →\n lowerNaiveKernelME9C r 4 (j+1) d*lowerNaiveKernelME9C r 4 j (d+1) ≤\n lowerNaiveKernelME9C r 4 j d*lowerNaiveKernelME9C r 4 (j+1) (d+1))"
+      ],
+      "definitions": [
+        "def lowerNaiveKernelME9C (r : Bool) (i j d : ℕ) : ℤ := threeRawM9E2 (j+d) r i j"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLowerUniformME9C",
+      "path": "research/MarkovLowerUniformME9C.lean",
+      "bytes": 2650,
+      "sha256": "fbcc68434f306ab0255906f96e49ce7883d4a9d9186bb250fd361ac3a1e8cd2b",
+      "current_sha256": "fbcc68434f306ab0255906f96e49ce7883d4a9d9186bb250fd361ac3a1e8cd2b",
+      "status": "compiled only; no successful replay or theorem-print coverage",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "lowerForceME9C"
+        },
+        {
+          "kind": "def",
+          "name": "lowerRawME9C"
+        },
+        {
+          "kind": "def",
+          "name": "lowerKernelME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "disc_lower_uniqueME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_raw_equationME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_region_formulaME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_kernelME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_formulaME9C"
+        }
+      ],
+      "object_path": "evidence/markov-e9cdd527/MarkovLowerUniformME9C.olean",
+      "object_sha256": "aef25a0d9ed91783acaf16b1ea9139cf251d1c03cd5c1c3d990673c496418628",
+      "successful_final_build": "build-1792180035188353000.json",
+      "successful_final_build_sha256": "8c5699f13ed1056b5818d8340f2a5fb164db2f81002749b2b761be55dcc10377",
+      "early_replay_selected": false,
+      "full_validation_accepted": false,
+      "imports": [
+        "MarkovLowSourceME9C",
+        "MarkovThreeSolverM96A"
+      ],
+      "theorem_statements": [
+        "theorem disc_lower_uniqueME9C (q : ℕ) (f g : ℕ → ℕ → ℤ)\n (heq : ∀ i j, j ≤ q → discriminantActionM96A f i j=discriminantActionM96A g i j) :\n ∀ i j, j ≤ q → f i j=g i j",
+        "theorem lower_raw_equationME9C (n i j : ℕ) :\n discriminantActionM96A (lowerRawME9C n) i j=lowerForceME9C n i j",
+        "theorem lower_region_formulaME9C (q : ℕ) (r : Bool) :\n ∀ i j, j ≤ q → lowerRawME9C (sourceNME9C q r) i j=threeRawM9E2 q r i j",
+        "theorem source_lower_kernelME9C (q i j k : ℕ) (r : Bool)\n (hj : j ≤ q) (hn : i+j+k=sourceNME9C q r+2) :\n threeRawM9E2 q r i j=lowerKernelME9C i j k",
+        "theorem source_lower_formulaME9C (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1 ≤ q ∧ (frame path).mid.b=sourceNME9C q r ∧\n   ∀ i j, j ≤ q → coeff (frame path).mid.p i j=lowerRawME9C (sourceNME9C q r) i j"
+      ],
+      "definitions": [
+        "def lowerForceME9C (n : ℕ) : ℕ → ℕ → ℤ :=\n addSRawM9E2 (addSRawM9E2 (fibDeltaME9C n))",
+        "def lowerRawME9C (n : ℕ) : ℕ → ℕ → ℤ := solveDiscM96A (lowerForceME9C n)",
+        "def lowerKernelME9C (i j k : ℕ) : ℤ := lowerRawME9C (i+j+k-2) i j\n\nattribute [local irreducible] lowerRawME9C lowerForceME9C threeRawM9E2"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLowerShapeME9C",
+      "path": "research/MarkovLowerShapeME9C.lean",
+      "bytes": 2925,
+      "sha256": "30d0e22002186460b7e7a59a32299c59e2b3c7480b5ad19f8c2eff0047a30654",
+      "current_sha256": "30d0e22002186460b7e7a59a32299c59e2b3c7480b5ad19f8c2eff0047a30654",
+      "status": "compiled only; no successful replay or theorem-print coverage",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "LowerShapeME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_antidiagonal_of_shapeME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_raw_degreeME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_vertical_of_shapeME9C"
+        }
+      ],
+      "object_path": "evidence/markov-e9cdd527/MarkovLowerShapeME9C.olean",
+      "object_sha256": "e069ee24ef11389dec54e834f41411b55f08afe33e9eb54dcab87811f68b110a",
+      "successful_final_build": "build-1792180092513572000.json",
+      "successful_final_build_sha256": "f1f8a49e63c9385a19ba02d03c9757629594cbb4e3411ddb8707a3e804c6bf7e",
+      "early_replay_selected": false,
+      "full_validation_accepted": false,
+      "imports": [
+        "MarkovLowerUniformME9C",
+        "MarkovKernelShapeM4F4"
+      ],
+      "theorem_statements": [
+        "theorem lower_antidiagonal_of_shapeME9C (i j k : ℕ) (h : LowerShapeME9C i)\n (hk : 2*j+7 ≤ i+k) :\n lowerKernelME9C i j (k+2)*lowerKernelME9C i (j+2) k ≤\n lowerKernelME9C i (j+1) (k+1)^2",
+        "theorem three_raw_degreeME9C (q i j : ℕ) (r : Bool) (hq : 1 ≤ q)\n (hij : sourceNME9C q r+2 < i+j) : threeRawM9E2 q r i j=0",
+        "theorem source_lower_vertical_of_shapeME9C\n (hs : ∀ i : ℕ, 3 ≤ i → LowerShapeME9C i)\n (q i j : ℕ) (r : Bool) (hj : j+2 ≤ q) :\n threeRawM9E2 q r i j*threeRawM9E2 q r i (j+2) ≤ threeRawM9E2 q r i (j+1)^2"
+      ],
+      "definitions": [
+        "def LowerShapeME9C (i : ℕ) : Prop :=\n (∀ j k, 2*j+3 ≤ i+k → 0 < lowerKernelME9C i j k) ∧\n (∀ j k, 2*j+7 ≤ i+k → lowerKernelME9C i j k*lowerKernelME9C i (j+2) k ≤\n   lowerKernelME9C i (j+1) k^2) ∧\n (∀ j k, 2*j+3 ≤ i+k → lowerKernelME9C i j k*lowerKernelME9C i j (k+2) ≤\n   lowerKernelME9C i j (k+1)^2) ∧\n (∀ j k, 2*j+5 ≤ i+k → lowerKernelME9C i (j+1) k*lowerKernelME9C i j (k+1) ≤\n   lowerKernelME9C i j k*lowerKernelME9C i (j+1) (k+1))"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLowerReductionME9C",
+      "path": "research/MarkovLowerReductionME9C.lean",
+      "bytes": 1663,
+      "sha256": "bae0445dd919a365a60f9bd59e643f812af347a70755cfcf9cb2bdc85627dce7",
+      "current_sha256": "bae0445dd919a365a60f9bd59e643f812af347a70755cfcf9cb2bdc85627dce7",
+      "status": "compiled only; no successful replay or theorem-print coverage",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "LowerVerticalThreeME9C"
+        },
+        {
+          "kind": "def",
+          "name": "OutsideLowerThreeME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_lower_regionsME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_of_lower_shapeME9C"
+        }
+      ],
+      "object_path": "evidence/markov-e9cdd527/MarkovLowerReductionME9C.olean",
+      "object_sha256": "efecfd77e262969c03e6674213ed5e2f7e706f89dd71f4273a62c86486a35c0b",
+      "successful_final_build": "build-1792180210005568000.json",
+      "successful_final_build_sha256": "6618026894f7f65972231900bc4c12763e7709939089fecf3c54f027c09f8902",
+      "early_replay_selected": false,
+      "full_validation_accepted": false,
+      "imports": [
+        "MarkovLowerShapeME9C"
+      ],
+      "theorem_statements": [
+        "theorem root_iff_lower_regionsME9C :\n Conjecture63 ↔ LowerVerticalThreeME9C ∧ OutsideLowerThreeME9C ∧ OtherFourM9E2",
+        "theorem root_of_lower_shapeME9C\n (hs : ∀ i : ℕ, 3 ≤ i → LowerShapeME9C i)\n (ho : OutsideLowerThreeME9C) (h4 : OtherFourM9E2) : Conjecture63"
+      ],
+      "definitions": [
+        "def LowerVerticalThreeME9C : Prop := ∀ q : ℕ, 1 ≤ q → ∀ r i j, j+2 ≤ q →\n threeRawM9E2 q r i j*threeRawM9E2 q r i (j+2) ≤ threeRawM9E2 q r i (j+1)^2",
+        "def OutsideLowerThreeME9C : Prop := ∀ q : ℕ, 1 ≤ q → ∀ r,\n (∀ i j, threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2) ∧\n (∀ i j, q < j+2 → threeRawM9E2 q r i j*threeRawM9E2 q r i (j+2) ≤\n   threeRawM9E2 q r i (j+1)^2) ∧\n (∀ i j, threeRawM9E2 q r i (j+2)*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) (j+1)^2)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLowerDomainME9C",
+      "path": "research/MarkovLowerDomainME9C.lean",
+      "bytes": 6246,
+      "sha256": "02e659ad725126aeafcb8ede952eaf04296ba1a5b0c4fabc0abaa141cf973cbe",
+      "current_sha256": "02e659ad725126aeafcb8ede952eaf04296ba1a5b0c4fabc0abaa141cf973cbe",
+      "status": "compiled only; no successful replay or theorem-print coverage",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "lower_kernel_outside_negativeME9C"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_kernel_outside_sourceME9C"
+        }
+      ],
+      "object_path": "evidence/markov-e9cdd527/MarkovLowerDomainME9C.olean",
+      "object_sha256": "5cdef9794b5e94713e234742b663a9f661c2245ce0714a94a97db260b13a4440",
+      "successful_final_build": "build-1792180465671613000.json",
+      "successful_final_build_sha256": "deae56bea0724115e258bd1befb9616959d1d382ee2c16d622ae8034f23b898e",
+      "early_replay_selected": false,
+      "full_validation_accepted": false,
+      "imports": [
+        "MarkovLowerUniformME9C"
+      ],
+      "theorem_statements": [
+        "theorem lower_kernel_outside_negativeME9C : lowerKernelME9C 4 3 0= -29",
+        "theorem lower_kernel_outside_sourceME9C :\n InPolygon 3 5 4 3 ∧ coeff (frame [true,false]).mid.p 4 3=35 ∧\n lowerKernelME9C 4 3 0= -29 ∧ ¬(2*3+3 ≤ 4+0)"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    }
+  ],
+  "compiled_counts": {
+    "theorem": 44,
+    "def": 16
+  },
+  "replayed_counts": {
+    "theorem": 30,
+    "def": 9
+  },
+  "fully_accepted_counts": {},
+  "printed_theorem_closures": 0,
+  "source_scope": "Every actual numerator3 path has q>=1,b=3q+1 true or3q+2 false. LowSource equalities at i3/i4 hold for all naturalj<=q includingj=q; no extra formula/shape premise. Actualsource adapter maintains exactlabels. q0 is algebraic only.",
+  "difference_scope": "For j<n, positive-column fibRaw formula is extended through zero upper tail via choose_eq_zero; no assumptioni+j<=n. Second n difference zero incolumns0,1,2; at i+3 equals C(n-j-1,i)C(i+3+j,i+3). Natural subtraction/casts guarded byj<n. Rational polynomial binomial substitutions are exact, not coefficient normalization.",
+  "forcing_scope": "Atj<=q the shifted4U V^(q+1) correction vanishes byguard. S-shift expansion gives column3/4 forcing, separately treatingj0,j1 andj+2. Outsidepolygon givesi<=2 zeros at allj<=q foractualq>=1. Finiteinterval second-difference uniqueness withinitialj0 andj1 proves both sourceformulas.",
+  "strict_lc_scope": "Inherited lowerCandidate is exactly rawcolumn4 inrange. Positive34-termgap andpositiveprefactor strengthen rational LC tostrict underx>=0,q>=x+2,c>=0. All3rawidentities apply atj,j+1,j+2 whenj+2<=q; exact rational-to-integer cast yieldsstrict rawV. q1 noadmissiblestart; q>=2 anynaturalj<=q-2, bothresidues,no denominatorbound. Sourcecoefficients retainzeros in allgeneral identities, no divisionby rawentry.",
+  "root_scope": "ThreeRemaining retains every H/D and V wheneveri!=4 ORq<j+2; exactiff usesnewstrictLC onlyexcludedregion. OtherFour unchanged. Originalpolygon/zeros/endpoints inherited. Unboundedwitness q=j+2,paththreePath(j+1,r) proves all3polygonmembers andstrictgap for everyj; no theorem excludes allprevioussufficientcriteria.",
+  "uniform_scope": "lowerForce(n)=Sshift twice fibDelta, lowerRaw solves signeddiscriminant, lowerKernel(i,j,k)=lowerRaw(i+j+k-2,i,j). Restricteduniqueness over allcolumns,j<=q yieldslowerRaw(sourceN)=threeRaw forallq/r,i,jinrange; no shapeassumption. Sourceadapterq>=1. Kernelidentity requiresi+j+k=sourceN+2 before natural subtraction.",
+  "shape_scope": "LowerShape(i) requiresstrictpositivity at2j+3<=i+k; rowLC at2j+7<=i+k; columnLC at2j+3<=i+k; minor at2j+5<=i+k. These premises remainunproved. Importedminor_diagonal_glue usespositivepivot tocancel its square. SourceV mapped tokernelantidiagonal(j,k+2),(j+1,k+1),(j+2,k), withk=n-i-j onlywheni+j<=n. Smalli<=2 anddegree-taili+j>n handledbyactualzero before reparameterization. Uniformhs all i>=3 implieslowerV startsj+2<=q, notrootalone.",
+  "conditional_residual_scope": "Exactrootiff LowerVerticalThree AND OutsideLowerThree AND OtherFour; all3unproved. OutsideLower retains allH/D andVq<j+2. Shape sufficient onlyforfirstconjunct, never claimed equivalent tofullroot or discharged.",
+  "obstructions_scope": "Compiled+earlyreplayed actual3/4 coefficient(4,2)=15 versuscandidate7; rawV[3,14,15]polygonvalid andstrictLC. Compiled-onlynaiveminor=-42 forallnatural d>=1,bothr; fourentries span3sourcesq=d,d+1,d+2, noonesourceLCrefutation. Compiled-onlyoutsidewedgeK4(3,0)=-29 versusactual3/5raw(4,3)=35, polygonvalid; j3>q1 andwedgefails. These do not refute originalconjecture.",
+  "domain_certificate_scope": "20savedliteral lowerRaw5i j values, i0..4,j0..3; generator template andeachordereddependencyblock matchfinalsource tokens. Noauditvaluecomputation. Finaltablecompiled afterrejections, but no successfulreplay/axiomcoverage.",
+  "validation_scope": "12compiled44theorems16defs. Sevenfinalsources30theorems9defs successfullyreplayed; five14theorems7defs compiledonly. All44unprinted;0fullyaccepted. Final12replay andAudit timedout, nofinalizer/deliveredreport. Historicaltimeout preserved.",
+  "mathematical_values_recomputed": false
+}
