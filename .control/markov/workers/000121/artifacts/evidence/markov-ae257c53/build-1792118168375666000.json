@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovThirdSmallBridge41MAE2.lean:30:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  vJ0M115 4 3 2 1 1 (\u2191n + 1) X\nin the target expression\n  (1 - X) ^ 6 * vThirdSeedMEA X n rest =\n    vJ0M115 4 3 2 (\u2191(if True then 1 else 5)) 1 (\u2191n + 1) X +\n          X ^ (n + 1) * vJ1M115 4 3 2 (\u2191(if True then 1 else 5)) 1 (\u2191n + 1) X +\n        X ^ (2 * (n + 1)) * vJ2M115 4 3 2 (\u2191(if True then 1 else 5)) 1 (\u2191n + 1) X +\n      X ^ (3 * (n + 1)) * vJ3M115 4 3 2 (\u2191(if True then 1 else 5)) 1 (\u2191n + 1) X\n\nn : \u2115\nrest : List Bool\nhn : 1 \u2264 n\nha : (frame rest).mid.a = 3\nhb : (frame rest).mid.b = 4\npath : List Bool := List.replicate n false ++ true :: rest\nhi : (frame path).mid.a = 4\nhf :\n  6 * (1 + X) ^ 3 * Polynomial.coeff (frame path).mid.p 3 =\n    X ^ ((frame path).mid.b - 3 * (n + 2)) * vThirdSeedMEA X n rest\nhs :\n  (1 - X) ^ 6 * vThirdSeedMEA X n rest =\n    vJ0M115 4 3 2 (\u2191(if True then 1 else 5)) 1 (\u2191n + 1) X +\n          X ^ (n + 1) * vJ1M115 4 3 2 (\u2191(if True then 1 else 5)) 1 (\u2191n + 1) X +\n        X ^ (2 * (n + 1)) * vJ2M115 4 3 2 (\u2191(if True then 1 else 5)) 1 (\u2191n + 1) X +\n      X ^ (3 * (n + 1)) * vJ3M115 4 3 2 (\u2191(if True then 1 else 5)) 1 (\u2191n + 1) X\n\u22a2 (1 - X) ^ 6 * (6 * Polynomial.coeff (frame (List.replicate n false ++ true :: rest)).mid.p 3) =\n    X ^ ((frame (List.replicate n false ++ true :: rest)).mid.b - 3 * (n + 2)) *\n      (sThird41J0MAE2 (\u2191n + 1) X + X ^ (n + 1) * sThird41J1MAE2 (\u2191n + 1) X +\n          X ^ (2 * (n + 1)) * sThird41J2MAE2 (\u2191n + 1) X +\n        X ^ (3 * (n + 1)) * sThird41J3MAE2 (\u2191n + 1) X)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovThirdSmallBridge41MAE2": "d70f2df9a7a2d1639999fa4b5bde6b64cd579e432cdd1f035874f4e078568317"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ae257c53/MarkovThirdSmallBridge41MAE2.olean",
+    "/Users/sasha/math_gkm/research/MarkovThirdSmallBridge41MAE2.lean"
+  ],
+  "seconds": 15.415425541985314,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

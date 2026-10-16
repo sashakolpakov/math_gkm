@@ -1,0 +1,1056 @@
+{
+  "worker": 121,
+  "inventory": {
+    "math_sources": 533,
+    "compiled_modules": 235,
+    "selected_replayed_modules": 23,
+    "selected_theorems": 62,
+    "selected_definitions": 34,
+    "axiom_audited_modules": 167,
+    "unbuilt_modules": 298,
+    "compiled_unreplayed_modules": 212
+  },
+  "selected_theorem_headers": {
+    "root_iff_interiorHalfMAE2": "theorem root_iff_interiorHalfMAE2 : Conjecture63 \u2194 InteriorCore63HalfMAE2",
+    "root_iff_interiorLowMAE2": "theorem root_iff_interiorLowMAE2 : Conjecture63 \u2194 InteriorCore63LowMAE2",
+    "vHalfNat_midlow_0_4MAE2": "theorem vHalfNat_midlow_0_4MAE2 (x y : \u2115) (hx : 0\u2264x) (hy : 4\u2264y) :\n vAllBoundsM115 (3*(x:\u2124)+2*y) ((x:\u2124)+y) 0 y 0",
+    "vHalfNat_midlow_1_2MAE2": "theorem vHalfNat_midlow_1_2MAE2 (x y : \u2115) (hx : 1\u2264x) (hy : 2\u2264y) :\n vAllBoundsM115 (3*(x:\u2124)+2*y) ((x:\u2124)+y) 0 y 0",
+    "vHalfNat_midlow_2_1MAE2": "theorem vHalfNat_midlow_2_1MAE2 (x y : \u2115) (hx : 2\u2264x) (hy : 1\u2264y) :\n vAllBoundsM115 (3*(x:\u2124)+2*y) ((x:\u2124)+y) 0 y 0",
+    "vHalfNat_midlowMAE2": "theorem vHalfNat_midlowMAE2 (x y : \u2115) (hb : 7\u22643*x+2*y) (hy : 1\u2264y) :\n vAllBoundsM115 (3*(x:\u2124)+2*y) ((x:\u2124)+y) 0 y 0",
+    "vAllbounds_halfMAE2": "theorem vAllbounds_halfMAE2 (a b : \u2115) (ha : 1\u2264a) (hb : 7\u2264b) (hc : 2*a\u2264b) :\n vAllBoundsM115 b a (2*a-b:\u2115) (min (b-a) (3*a-b):\u2115) (3*a-2*b:\u2115)",
+    "vThird_seed_cross_halfMAE2": "theorem vThird_seed_cross_halfMAE2 (n : \u2115) (rest : List Bool)\n (ha : 7 \u2264 (frame rest).mid.b)\n (hc : 2*(frame rest).mid.a \u2264 (frame rest).mid.b) :\n CrossLC (CoeffSeq ((vThirdSeedMEA (X:\u2124[X]) n rest).map (Int.castRingHom \u211d)))",
+    "vertical_third_all_run_halfMAE2": "theorem vertical_third_all_run_halfMAE2 (n : \u2115) (rest : List Bool)\n (ha : 7 \u2264 (frame rest).mid.b)\n (hc : 2*(frame rest).mid.a \u2264 (frame rest).mid.b) (j : \u2115) :\n let path := List.replicate n false++true::rest\n coeff (frame path).mid.p 3 j*coeff (frame path).mid.p 3 (j+2) \u2264\n coeff (frame path).mid.p 3 (j+1)^2",
+    "vertical_third_half_remainderMAE2": "theorem vertical_third_half_remainderMAE2 (path : List Bool)\n (ha : 7 \u2264 (frame path).mid.a)\n (hr : (frame path).mid.a \u2264 2*((frame path).mid.b % (frame path).mid.a))\n (j : \u2115) :\n coeff (frame path).mid.p 3 j*coeff (frame path).mid.p 3 (j+2) \u2264\n coeff (frame path).mid.p 3 (j+1)^2",
+    "vertical_third_half_regionMAE2": "theorem vertical_third_half_regionMAE2 (path : List Bool)\n (ha : 7 \u2264 (frame path).mid.a)\n (hr : (frame path).mid.b < 5*(frame path).mid.a \u2228\n       (frame path).mid.a \u2264 2*((frame path).mid.b % (frame path).mid.a))\n (j : \u2115) :\n coeff (frame path).mid.p 3 j*coeff (frame path).mid.p 3 (j+2) \u2264\n coeff (frame path).mid.p 3 (j+1)^2",
+    "vLowNat_low_0_4MAE2": "theorem vLowNat_low_0_4MAE2 (x y : \u2115) (hx : 0\u2264x) (hy : 4\u2264y) :\n vAllBoundsM115 (3*((x:\u2124)+1)+y) ((x:\u2124)+1) 0 0 0",
+    "vLowNat_low_1_1MAE2": "theorem vLowNat_low_1_1MAE2 (x y : \u2115) (hx : 1\u2264x) (hy : 1\u2264y) :\n vAllBoundsM115 (3*((x:\u2124)+1)+y) ((x:\u2124)+1) 0 0 0",
+    "vLowNat_low_2_0MAE2": "theorem vLowNat_low_2_0MAE2 (x y : \u2115) (hx : 2\u2264x) (hy : 0\u2264y) :\n vAllBoundsM115 (3*((x:\u2124)+1)+y) ((x:\u2124)+1) 0 0 0",
+    "vLowNat_lowMAE2": "theorem vLowNat_lowMAE2 (x y : \u2115) (hb : 7\u22643*(x+1)+y) :\n vAllBoundsM115 (3*((x:\u2124)+1)+y) ((x:\u2124)+1) 0 0 0",
+    "vAllbounds_lowMAE2": "theorem vAllbounds_lowMAE2 (a b : \u2115) (ha : 1\u2264a) (hb : 7\u2264b) (hc : 3*a\u2264b) :\n vAllBoundsM115 b a (2*a-b:\u2115) (min (b-a) (3*a-b):\u2115) (3*a-2*b:\u2115)",
+    "vThird_seed_cross_lowMAE2": "theorem vThird_seed_cross_lowMAE2 (n : \u2115) (rest : List Bool)\n (ha : 7 \u2264 (frame rest).mid.b)\n (hc : 3*(frame rest).mid.a \u2264 (frame rest).mid.b) :\n CrossLC (CoeffSeq ((vThirdSeedMEA (X:\u2124[X]) n rest).map (Int.castRingHom \u211d)))",
+    "vertical_third_all_run_lowMAE2": "theorem vertical_third_all_run_lowMAE2 (n : \u2115) (rest : List Bool)\n (ha : 7 \u2264 (frame rest).mid.b)\n (hc : 3*(frame rest).mid.a \u2264 (frame rest).mid.b) (j : \u2115) :\n let path := List.replicate n false++true::rest\n coeff (frame path).mid.p 3 j*coeff (frame path).mid.p 3 (j+2) \u2264\n coeff (frame path).mid.p 3 (j+1)^2",
+    "vertical_third_remainderMAE2": "theorem vertical_third_remainderMAE2 (path : List Bool)\n (ha : 7 \u2264 (frame path).mid.a)\n (hr : 2*(frame path).mid.a \u2264 3*((frame path).mid.b % (frame path).mid.a))\n (j : \u2115) :\n coeff (frame path).mid.p 3 j*coeff (frame path).mid.p 3 (j+2) \u2264\n coeff (frame path).mid.p 3 (j+1)^2",
+    "vertical_third_regionMAE2": "theorem vertical_third_regionMAE2 (path : List Bool)\n (ha : 7 \u2264 (frame path).mid.a)\n (hr : (frame path).mid.b < 5*(frame path).mid.a \u2228\n       2*(frame path).mid.a \u2264 3*((frame path).mid.b % (frame path).mid.a))\n (j : \u2115) :\n coeff (frame path).mid.p 3 j*coeff (frame path).mid.p 3 (j+2) \u2264\n coeff (frame path).mid.p 3 (j+1)^2",
+    "sThird41block0MAE2": "theorem sThird41block0MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^3*sThird41J0MAE2 q x=vJ0M115 4 3 2 1 1 q x",
+    "sThird41block1MAE2": "theorem sThird41block1MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^3*sThird41J1MAE2 q x=vJ1M115 4 3 2 1 1 q x",
+    "sThird41block2MAE2": "theorem sThird41block2MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^3*sThird41J2MAE2 q x=vJ2M115 4 3 2 1 1 q x",
+    "sThird41block3MAE2": "theorem sThird41block3MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^3*sThird41J3MAE2 q x=vJ3M115 4 3 2 1 1 q x",
+    "sThird43block0MAE2": "theorem sThird43block0MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^3*sThird43J0MAE2 q x=vJ0M115 4 1 0 0 0 q x",
+    "sThird43block1MAE2": "theorem sThird43block1MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^3*sThird43J1MAE2 q x=vJ1M115 4 1 0 0 0 q x",
+    "sThird43block2MAE2": "theorem sThird43block2MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^3*sThird43J2MAE2 q x=vJ2M115 4 1 0 0 0 q x",
+    "sThird43block3MAE2": "theorem sThird43block3MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^3*sThird43J3MAE2 q x=vJ3M115 4 1 0 0 0 q x",
+    "sThird51block0MAE2": "theorem sThird51block0MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^2*sThird51J0MAE2 q x=vJ0M115 5 4 3 1 2 q x",
+    "sThird51block1MAE2": "theorem sThird51block1MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^2*sThird51J1MAE2 q x=vJ1M115 5 4 3 1 2 q x",
+    "sThird51block2MAE2": "theorem sThird51block2MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^2*sThird51J2MAE2 q x=vJ2M115 5 4 3 1 2 q x",
+    "sThird51block3MAE2": "theorem sThird51block3MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^2*sThird51J3MAE2 q x=vJ3M115 5 4 3 1 2 q x",
+    "sThird52block0MAE2": "theorem sThird52block0MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^2*sThird52J0MAE2 q x=vJ0M115 5 3 1 2 0 q x",
+    "sThird52block1MAE2": "theorem sThird52block1MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^2*sThird52J1MAE2 q x=vJ1M115 5 3 1 2 0 q x",
+    "sThird52block2MAE2": "theorem sThird52block2MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^2*sThird52J2MAE2 q x=vJ2M115 5 3 1 2 0 q x",
+    "sThird52block3MAE2": "theorem sThird52block3MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^2*sThird52J3MAE2 q x=vJ3M115 5 3 1 2 0 q x",
+    "sThird53block0MAE2": "theorem sThird53block0MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^2*sThird53J0MAE2 q x=vJ0M115 5 2 0 1 0 q x",
+    "sThird53block1MAE2": "theorem sThird53block1MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^2*sThird53J1MAE2 q x=vJ1M115 5 2 0 1 0 q x",
+    "sThird53block2MAE2": "theorem sThird53block2MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^2*sThird53J2MAE2 q x=vJ2M115 5 2 0 1 0 q x",
+    "sThird53block3MAE2": "theorem sThird53block3MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^2*sThird53J3MAE2 q x=vJ3M115 5 2 0 1 0 q x",
+    "sThird54block0MAE2": "theorem sThird54block0MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^2*sThird54J0MAE2 q x=vJ0M115 5 1 0 0 0 q x",
+    "sThird54block1MAE2": "theorem sThird54block1MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^2*sThird54J1MAE2 q x=vJ1M115 5 1 0 0 0 q x",
+    "sThird54block2MAE2": "theorem sThird54block2MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^2*sThird54J2MAE2 q x=vJ2M115 5 1 0 0 0 q x",
+    "sThird54block3MAE2": "theorem sThird54block3MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^2*sThird54J3MAE2 q x=vJ3M115 5 1 0 0 0 q x",
+    "sThird61block0MAE2": "theorem sThird61block0MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^1*sThird61J0MAE2 q x=vJ0M115 6 5 4 1 3 q x",
+    "sThird61block1MAE2": "theorem sThird61block1MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^1*sThird61J1MAE2 q x=vJ1M115 6 5 4 1 3 q x",
+    "sThird61block2MAE2": "theorem sThird61block2MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^1*sThird61J2MAE2 q x=vJ2M115 6 5 4 1 3 q x",
+    "sThird61block3MAE2": "theorem sThird61block3MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^1*sThird61J3MAE2 q x=vJ3M115 6 5 4 1 3 q x",
+    "sThird65block0MAE2": "theorem sThird65block0MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^1*sThird65J0MAE2 q x=vJ0M115 6 1 0 0 0 q x",
+    "sThird65block1MAE2": "theorem sThird65block1MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^1*sThird65J1MAE2 q x=vJ1M115 6 1 0 0 0 q x",
+    "sThird65block2MAE2": "theorem sThird65block2MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^1*sThird65J2MAE2 q x=vJ2M115 6 1 0 0 0 q x",
+    "sThird65block3MAE2": "theorem sThird65block3MAE2 {R : Type*} [CommRing R] (q x : R) :\n (1+x)^1*sThird65J3MAE2 q x=vJ3M115 6 1 0 0 0 q x",
+    "sThird41sourceMAE2": "theorem sThird41sourceMAE2 (n : \u2115) (rest : List Bool) (hn : 1\u2264n)\n (ha : (frame rest).mid.a=3) (hb : (frame rest).mid.b=4) :\n let path := List.replicate n false++true::rest\n (1-X)^6*(6*((frame path).mid.p).coeff 3)=\n X^((frame path).mid.b-3*(n+2))*(sThird41J0MAE2 (n+1:\u2124[X]) X+\n   X^(1*(n+1))*sThird41J1MAE2 (n+1:\u2124[X]) X+\n   X^(2*(n+1))*sThird41J2MAE2 (n+1:\u2124[X]) X+\n   X^(3*(n+1))*sThird41J3MAE2 (n+1:\u2124[X]) X)",
+    "sThird43sourceMAE2": "theorem sThird43sourceMAE2 (n : \u2115) (rest : List Bool) (hn : 1\u2264n)\n (ha : (frame rest).mid.a=1) (hb : (frame rest).mid.b=4) :\n let path := List.replicate n false++true::rest\n (1-X)^6*(6*((frame path).mid.p).coeff 3)=\n X^((frame path).mid.b-3*(n+2))*(sThird43J0MAE2 (n+1:\u2124[X]) X+\n   X^(1*(n+1))*sThird43J1MAE2 (n+1:\u2124[X]) X+\n   X^(2*(n+1))*sThird43J2MAE2 (n+1:\u2124[X]) X+\n   X^(3*(n+1))*sThird43J3MAE2 (n+1:\u2124[X]) X)",
+    "sThird51sourceMAE2": "theorem sThird51sourceMAE2 (n : \u2115) (rest : List Bool) (hn : 1\u2264n)\n (ha : (frame rest).mid.a=4) (hb : (frame rest).mid.b=5) :\n let path := List.replicate n false++true::rest\n (1-X)^6*(6*((frame path).mid.p).coeff 3)=\n X^((frame path).mid.b-3*(n+2))*(sThird51J0MAE2 (n+1:\u2124[X]) X+\n   X^(1*(n+1))*sThird51J1MAE2 (n+1:\u2124[X]) X+\n   X^(2*(n+1))*sThird51J2MAE2 (n+1:\u2124[X]) X+\n   X^(3*(n+1))*sThird51J3MAE2 (n+1:\u2124[X]) X)",
+    "sThird52sourceMAE2": "theorem sThird52sourceMAE2 (n : \u2115) (rest : List Bool) (hn : 1\u2264n)\n (ha : (frame rest).mid.a=3) (hb : (frame rest).mid.b=5) :\n let path := List.replicate n false++true::rest\n (1-X)^6*(6*((frame path).mid.p).coeff 3)=\n X^((frame path).mid.b-3*(n+2))*(sThird52J0MAE2 (n+1:\u2124[X]) X+\n   X^(1*(n+1))*sThird52J1MAE2 (n+1:\u2124[X]) X+\n   X^(2*(n+1))*sThird52J2MAE2 (n+1:\u2124[X]) X+\n   X^(3*(n+1))*sThird52J3MAE2 (n+1:\u2124[X]) X)",
+    "sThird53sourceMAE2": "theorem sThird53sourceMAE2 (n : \u2115) (rest : List Bool) (hn : 1\u2264n)\n (ha : (frame rest).mid.a=2) (hb : (frame rest).mid.b=5) :\n let path := List.replicate n false++true::rest\n (1-X)^6*(6*((frame path).mid.p).coeff 3)=\n X^((frame path).mid.b-3*(n+2))*(sThird53J0MAE2 (n+1:\u2124[X]) X+\n   X^(1*(n+1))*sThird53J1MAE2 (n+1:\u2124[X]) X+\n   X^(2*(n+1))*sThird53J2MAE2 (n+1:\u2124[X]) X+\n   X^(3*(n+1))*sThird53J3MAE2 (n+1:\u2124[X]) X)",
+    "sThird54sourceMAE2": "theorem sThird54sourceMAE2 (n : \u2115) (rest : List Bool) (hn : 1\u2264n)\n (ha : (frame rest).mid.a=1) (hb : (frame rest).mid.b=5) :\n let path := List.replicate n false++true::rest\n (1-X)^6*(6*((frame path).mid.p).coeff 3)=\n X^((frame path).mid.b-3*(n+2))*(sThird54J0MAE2 (n+1:\u2124[X]) X+\n   X^(1*(n+1))*sThird54J1MAE2 (n+1:\u2124[X]) X+\n   X^(2*(n+1))*sThird54J2MAE2 (n+1:\u2124[X]) X+\n   X^(3*(n+1))*sThird54J3MAE2 (n+1:\u2124[X]) X)",
+    "sThird61sourceMAE2": "theorem sThird61sourceMAE2 (n : \u2115) (rest : List Bool) (hn : 1\u2264n)\n (ha : (frame rest).mid.a=5) (hb : (frame rest).mid.b=6) :\n let path := List.replicate n false++true::rest\n (1-X)^6*(6*((frame path).mid.p).coeff 3)=\n X^((frame path).mid.b-3*(n+2))*(sThird61J0MAE2 (n+1:\u2124[X]) X+\n   X^(1*(n+1))*sThird61J1MAE2 (n+1:\u2124[X]) X+\n   X^(2*(n+1))*sThird61J2MAE2 (n+1:\u2124[X]) X+\n   X^(3*(n+1))*sThird61J3MAE2 (n+1:\u2124[X]) X)",
+    "sThird65sourceMAE2": "theorem sThird65sourceMAE2 (n : \u2115) (rest : List Bool) (hn : 1\u2264n)\n (ha : (frame rest).mid.a=1) (hb : (frame rest).mid.b=6) :\n let path := List.replicate n false++true::rest\n (1-X)^6*(6*((frame path).mid.p).coeff 3)=\n X^((frame path).mid.b-3*(n+2))*(sThird65J0MAE2 (n+1:\u2124[X]) X+\n   X^(1*(n+1))*sThird65J1MAE2 (n+1:\u2124[X]) X+\n   X^(2*(n+1))*sThird65J2MAE2 (n+1:\u2124[X]) X+\n   X^(3*(n+1))*sThird65J3MAE2 (n+1:\u2124[X]) X)",
+    "vertical_third_seed_factor_smallMAE2": "theorem vertical_third_seed_factor_smallMAE2 (n : \u2115) (rest : List Bool)\n (ha : 4 \u2264 (frame rest).mid.b) (hn : 1 \u2264 n) :\n let path := List.replicate n false++true::rest\n 6*vresidualM9E1 path 3=X^((frame path).mid.b-3*(n+2))*vThirdSeedMEA (X:\u2124[X]) n rest",
+    "vertical_third_small_clearedMAE2": "theorem vertical_third_small_clearedMAE2 (n : \u2115) (rest : List Bool)\n (ha : 4 \u2264 (frame rest).mid.b) (hb : (frame rest).mid.b \u2264 7) (hn : 1 \u2264 n) :\n let path := List.replicate n false++true::rest\n 6*(1+X)^(7-(frame path).mid.a)*((frame path).mid.p).coeff 3=\n X^((frame path).mid.b-3*(n+2))*vThirdSeedMEA (X:\u2124[X]) n rest"
+  },
+  "five_new_halfcone_certificate_families": [
+    {
+      "chart": "low_1_1",
+      "chart_id": 1,
+      "module": "MarkovThirdAlllow_1_1MAE2",
+      "header": "theorem vAllchart_low_1_1MAE2 (x y : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) :\n vAllBoundsM115 (7+y+3*x) (2+x) (0) (0) (0)",
+      "assembly_body_exact120_after_name_retag": true,
+      "parts": [
+        {
+          "module": "MarkovThirdAlllow_1_1Part0MAE2",
+          "theorem": "vAll_low_1_1_first1MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_1_1Part1MAE2",
+          "theorem": "vAll_low_1_1_first2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_1_1Part2MAE2",
+          "theorem": "vAll_low_1_1_first3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_1_1Part3MAE2",
+          "theorem": "vAll_low_1_1_first4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_1_1Part4MAE2",
+          "theorem": "vAll_low_1_1_lowMAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_1_1Part5MAE2",
+          "theorem": "vAll_low_1_1_cross1_1MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_1_1Part6MAE2",
+          "theorem": "vAll_low_1_1_cross1_2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_1_1Part7MAE2",
+          "theorem": "vAll_low_1_1_cross1_3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_1_1Part8MAE2",
+          "theorem": "vAll_low_1_1_cross1_4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_1_1Part9MAE2",
+          "theorem": "vAll_low_1_1_mid1MAE2",
+          "ordinary_body_exact120_match": false,
+          "separated_alias": true
+        },
+        {
+          "module": "MarkovThirdAlllow_1_1Part10MAE2",
+          "theorem": "vAll_low_1_1_cross2_2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_1_1Part11MAE2",
+          "theorem": "vAll_low_1_1_cross2_3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_1_1Part12MAE2",
+          "theorem": "vAll_low_1_1_cross2_4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_1_1Part13MAE2",
+          "theorem": "vAll_low_1_1_cross2_5MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_1_1Part14MAE2",
+          "theorem": "vAll_low_1_1_mid2MAE2",
+          "ordinary_body_exact120_match": false,
+          "separated_alias": true
+        },
+        {
+          "module": "MarkovThirdAlllow_1_1Part15MAE2",
+          "theorem": "vAll_low_1_1_tail2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_1_1Part16MAE2",
+          "theorem": "vAll_low_1_1_tail3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_1_1Part17MAE2",
+          "theorem": "vAll_low_1_1_tail4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_1_1Part18MAE2",
+          "theorem": "vAll_low_1_1_tail5MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_1_1Part19MAE2",
+          "theorem": "vAll_low_1_1_tail6MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        }
+      ],
+      "separated": [
+        {
+          "part": 9,
+          "modules": [
+            "MarkovThirdSep1I9MAE2Defs",
+            "MarkovThirdSep1I9MAE2E0",
+            "MarkovThirdSep1I9MAE2E1",
+            "MarkovThirdSep1I9MAE2E2",
+            "MarkovThirdSep1I9MAE2G0",
+            "MarkovThirdSep1I9MAE2G1",
+            "MarkovThirdSep1I9MAE2G2",
+            "MarkovThirdSep1I9MAE2G3",
+            "MarkovThirdSep1I9MAE2Final"
+          ],
+          "definitions": 30,
+          "coefficient_identities": 3,
+          "gap_coefficient_certificates": 28,
+          "final_supplies_all28": true,
+          "status": "compiled dependencies; separate replay status retained in validation/method audit"
+        },
+        {
+          "part": 14,
+          "modules": [
+            "MarkovThirdSep1I14MAE2Defs",
+            "MarkovThirdSep1I14MAE2E0",
+            "MarkovThirdSep1I14MAE2E1",
+            "MarkovThirdSep1I14MAE2E2",
+            "MarkovThirdSep1I14MAE2G0",
+            "MarkovThirdSep1I14MAE2G1",
+            "MarkovThirdSep1I14MAE2G2",
+            "MarkovThirdSep1I14MAE2G3",
+            "MarkovThirdSep1I14MAE2Final"
+          ],
+          "definitions": 30,
+          "coefficient_identities": 3,
+          "gap_coefficient_certificates": 28,
+          "final_supplies_all28": true,
+          "status": "compiled dependencies; separate replay status retained in validation/method audit"
+        }
+      ],
+      "modules": 39,
+      "theorems": 85,
+      "definitions": 60
+    },
+    {
+      "chart": "low_2_0",
+      "chart_id": 2,
+      "module": "MarkovThirdAlllow_2_0MAE2",
+      "header": "theorem vAllchart_low_2_0MAE2 (x y : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) :\n vAllBoundsM115 (9+y+3*x) (3+x) (0) (0) (0)",
+      "assembly_body_exact120_after_name_retag": true,
+      "parts": [
+        {
+          "module": "MarkovThirdAlllow_2_0Part0MAE2",
+          "theorem": "vAll_low_2_0_first1MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_2_0Part1MAE2",
+          "theorem": "vAll_low_2_0_first2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_2_0Part2MAE2",
+          "theorem": "vAll_low_2_0_first3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_2_0Part3MAE2",
+          "theorem": "vAll_low_2_0_first4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_2_0Part4MAE2",
+          "theorem": "vAll_low_2_0_lowMAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_2_0Part5MAE2",
+          "theorem": "vAll_low_2_0_cross1_1MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_2_0Part6MAE2",
+          "theorem": "vAll_low_2_0_cross1_2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_2_0Part7MAE2",
+          "theorem": "vAll_low_2_0_cross1_3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_2_0Part8MAE2",
+          "theorem": "vAll_low_2_0_cross1_4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_2_0Part9MAE2",
+          "theorem": "vAll_low_2_0_mid1MAE2",
+          "ordinary_body_exact120_match": false,
+          "separated_alias": true
+        },
+        {
+          "module": "MarkovThirdAlllow_2_0Part10MAE2",
+          "theorem": "vAll_low_2_0_cross2_2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_2_0Part11MAE2",
+          "theorem": "vAll_low_2_0_cross2_3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_2_0Part12MAE2",
+          "theorem": "vAll_low_2_0_cross2_4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_2_0Part13MAE2",
+          "theorem": "vAll_low_2_0_cross2_5MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_2_0Part14MAE2",
+          "theorem": "vAll_low_2_0_mid2MAE2",
+          "ordinary_body_exact120_match": false,
+          "separated_alias": true
+        },
+        {
+          "module": "MarkovThirdAlllow_2_0Part15MAE2",
+          "theorem": "vAll_low_2_0_tail2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_2_0Part16MAE2",
+          "theorem": "vAll_low_2_0_tail3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_2_0Part17MAE2",
+          "theorem": "vAll_low_2_0_tail4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_2_0Part18MAE2",
+          "theorem": "vAll_low_2_0_tail5MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAlllow_2_0Part19MAE2",
+          "theorem": "vAll_low_2_0_tail6MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        }
+      ],
+      "separated": [
+        {
+          "part": 9,
+          "modules": [
+            "MarkovThirdSep2I9MAE2Defs",
+            "MarkovThirdSep2I9MAE2E0",
+            "MarkovThirdSep2I9MAE2E1",
+            "MarkovThirdSep2I9MAE2E2",
+            "MarkovThirdSep2I9MAE2G0",
+            "MarkovThirdSep2I9MAE2G1",
+            "MarkovThirdSep2I9MAE2G2",
+            "MarkovThirdSep2I9MAE2G3",
+            "MarkovThirdSep2I9MAE2Final"
+          ],
+          "definitions": 30,
+          "coefficient_identities": 3,
+          "gap_coefficient_certificates": 28,
+          "final_supplies_all28": true,
+          "status": "compiled dependencies; separate replay status retained in validation/method audit"
+        },
+        {
+          "part": 14,
+          "modules": [
+            "MarkovThirdSep2I14MAE2Defs",
+            "MarkovThirdSep2I14MAE2E0",
+            "MarkovThirdSep2I14MAE2E1",
+            "MarkovThirdSep2I14MAE2E2",
+            "MarkovThirdSep2I14MAE2G0",
+            "MarkovThirdSep2I14MAE2G1",
+            "MarkovThirdSep2I14MAE2G2",
+            "MarkovThirdSep2I14MAE2G3",
+            "MarkovThirdSep2I14MAE2Final"
+          ],
+          "definitions": 30,
+          "coefficient_identities": 3,
+          "gap_coefficient_certificates": 28,
+          "final_supplies_all28": true,
+          "status": "compiled dependencies; separate replay status retained in validation/method audit"
+        }
+      ],
+      "modules": 39,
+      "theorems": 85,
+      "definitions": 60
+    },
+    {
+      "chart": "midlow_0_4",
+      "chart_id": 3,
+      "module": "MarkovThirdAllmidlow_0_4MAE2",
+      "header": "theorem vAllchart_midlow_0_4MAE2 (x y : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) :\n vAllBoundsM115 (8+2*y+3*x) (4+y+x) (0) (4+y) (0)",
+      "assembly_body_exact120_after_name_retag": true,
+      "parts": [
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part0MAE2",
+          "theorem": "vAll_midlow_0_4_first1MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part1MAE2",
+          "theorem": "vAll_midlow_0_4_first2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part2MAE2",
+          "theorem": "vAll_midlow_0_4_first3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part3MAE2",
+          "theorem": "vAll_midlow_0_4_first4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part4MAE2",
+          "theorem": "vAll_midlow_0_4_lowMAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part5MAE2",
+          "theorem": "vAll_midlow_0_4_cross1_1MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part6MAE2",
+          "theorem": "vAll_midlow_0_4_cross1_2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part7MAE2",
+          "theorem": "vAll_midlow_0_4_cross1_3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part8MAE2",
+          "theorem": "vAll_midlow_0_4_cross1_4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part9MAE2",
+          "theorem": "vAll_midlow_0_4_mid1MAE2",
+          "ordinary_body_exact120_match": false,
+          "separated_alias": true
+        },
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part10MAE2",
+          "theorem": "vAll_midlow_0_4_cross2_2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part11MAE2",
+          "theorem": "vAll_midlow_0_4_cross2_3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part12MAE2",
+          "theorem": "vAll_midlow_0_4_cross2_4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part13MAE2",
+          "theorem": "vAll_midlow_0_4_cross2_5MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part14MAE2",
+          "theorem": "vAll_midlow_0_4_mid2MAE2",
+          "ordinary_body_exact120_match": false,
+          "separated_alias": true
+        },
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part15MAE2",
+          "theorem": "vAll_midlow_0_4_tail2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part16MAE2",
+          "theorem": "vAll_midlow_0_4_tail3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part17MAE2",
+          "theorem": "vAll_midlow_0_4_tail4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part18MAE2",
+          "theorem": "vAll_midlow_0_4_tail5MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_0_4Part19MAE2",
+          "theorem": "vAll_midlow_0_4_tail6MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        }
+      ],
+      "separated": [
+        {
+          "part": 9,
+          "modules": [
+            "MarkovThirdSep3I9MAE2Defs",
+            "MarkovThirdSep3I9MAE2E0",
+            "MarkovThirdSep3I9MAE2E1",
+            "MarkovThirdSep3I9MAE2E2",
+            "MarkovThirdSep3I9MAE2G0",
+            "MarkovThirdSep3I9MAE2G1",
+            "MarkovThirdSep3I9MAE2G2",
+            "MarkovThirdSep3I9MAE2G3",
+            "MarkovThirdSep3I9MAE2Final"
+          ],
+          "definitions": 30,
+          "coefficient_identities": 3,
+          "gap_coefficient_certificates": 28,
+          "final_supplies_all28": true,
+          "status": "compiled dependencies; separate replay status retained in validation/method audit"
+        },
+        {
+          "part": 14,
+          "modules": [
+            "MarkovThirdSep3I14MAE2Defs",
+            "MarkovThirdSep3I14MAE2E0",
+            "MarkovThirdSep3I14MAE2E1",
+            "MarkovThirdSep3I14MAE2E2",
+            "MarkovThirdSep3I14MAE2G0",
+            "MarkovThirdSep3I14MAE2G1",
+            "MarkovThirdSep3I14MAE2G2",
+            "MarkovThirdSep3I14MAE2G3",
+            "MarkovThirdSep3I14MAE2Final"
+          ],
+          "definitions": 30,
+          "coefficient_identities": 3,
+          "gap_coefficient_certificates": 28,
+          "final_supplies_all28": true,
+          "status": "compiled dependencies; separate replay status retained in validation/method audit"
+        }
+      ],
+      "modules": 39,
+      "theorems": 85,
+      "definitions": 60
+    },
+    {
+      "chart": "midlow_1_2",
+      "chart_id": 5,
+      "module": "MarkovThirdAllmidlow_1_2MAE2",
+      "header": "theorem vAllchart_midlow_1_2MAE2 (x y : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) :\n vAllBoundsM115 (7+2*y+3*x) (3+y+x) (0) (2+y) (0)",
+      "assembly_body_exact120_after_name_retag": true,
+      "parts": [
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part0MAE2",
+          "theorem": "vAll_midlow_1_2_first1MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part1MAE2",
+          "theorem": "vAll_midlow_1_2_first2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part2MAE2",
+          "theorem": "vAll_midlow_1_2_first3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part3MAE2",
+          "theorem": "vAll_midlow_1_2_first4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part4MAE2",
+          "theorem": "vAll_midlow_1_2_lowMAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part5MAE2",
+          "theorem": "vAll_midlow_1_2_cross1_1MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part6MAE2",
+          "theorem": "vAll_midlow_1_2_cross1_2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part7MAE2",
+          "theorem": "vAll_midlow_1_2_cross1_3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part8MAE2",
+          "theorem": "vAll_midlow_1_2_cross1_4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part9MAE2",
+          "theorem": "vAll_midlow_1_2_mid1MAE2",
+          "ordinary_body_exact120_match": false,
+          "separated_alias": true
+        },
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part10MAE2",
+          "theorem": "vAll_midlow_1_2_cross2_2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part11MAE2",
+          "theorem": "vAll_midlow_1_2_cross2_3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part12MAE2",
+          "theorem": "vAll_midlow_1_2_cross2_4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part13MAE2",
+          "theorem": "vAll_midlow_1_2_cross2_5MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part14MAE2",
+          "theorem": "vAll_midlow_1_2_mid2MAE2",
+          "ordinary_body_exact120_match": false,
+          "separated_alias": true
+        },
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part15MAE2",
+          "theorem": "vAll_midlow_1_2_tail2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part16MAE2",
+          "theorem": "vAll_midlow_1_2_tail3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part17MAE2",
+          "theorem": "vAll_midlow_1_2_tail4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part18MAE2",
+          "theorem": "vAll_midlow_1_2_tail5MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_1_2Part19MAE2",
+          "theorem": "vAll_midlow_1_2_tail6MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        }
+      ],
+      "separated": [
+        {
+          "part": 9,
+          "modules": [
+            "MarkovThirdSep5I9MAE2Defs",
+            "MarkovThirdSep5I9MAE2E0",
+            "MarkovThirdSep5I9MAE2E1",
+            "MarkovThirdSep5I9MAE2E2",
+            "MarkovThirdSep5I9MAE2G0",
+            "MarkovThirdSep5I9MAE2G1",
+            "MarkovThirdSep5I9MAE2G2",
+            "MarkovThirdSep5I9MAE2G3",
+            "MarkovThirdSep5I9MAE2Final"
+          ],
+          "definitions": 30,
+          "coefficient_identities": 3,
+          "gap_coefficient_certificates": 28,
+          "final_supplies_all28": true,
+          "status": "compiled dependencies; separate replay status retained in validation/method audit"
+        },
+        {
+          "part": 14,
+          "modules": [
+            "MarkovThirdSep5I14MAE2Defs",
+            "MarkovThirdSep5I14MAE2E0",
+            "MarkovThirdSep5I14MAE2E1",
+            "MarkovThirdSep5I14MAE2E2",
+            "MarkovThirdSep5I14MAE2G0",
+            "MarkovThirdSep5I14MAE2G1",
+            "MarkovThirdSep5I14MAE2G2",
+            "MarkovThirdSep5I14MAE2G3",
+            "MarkovThirdSep5I14MAE2Final"
+          ],
+          "definitions": 30,
+          "coefficient_identities": 3,
+          "gap_coefficient_certificates": 28,
+          "final_supplies_all28": true,
+          "status": "compiled dependencies; separate replay status retained in validation/method audit"
+        }
+      ],
+      "modules": 39,
+      "theorems": 85,
+      "definitions": 60
+    },
+    {
+      "chart": "midlow_2_1",
+      "chart_id": 7,
+      "module": "MarkovThirdAllmidlow_2_1MAE2",
+      "header": "theorem vAllchart_midlow_2_1MAE2 (x y : \u2124) (hx : 0 \u2264 x) (hy : 0 \u2264 y) :\n vAllBoundsM115 (8+2*y+3*x) (3+y+x) (0) (1+y) (0)",
+      "assembly_body_exact120_after_name_retag": true,
+      "parts": [
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part0MAE2",
+          "theorem": "vAll_midlow_2_1_first1MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part1MAE2",
+          "theorem": "vAll_midlow_2_1_first2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part2MAE2",
+          "theorem": "vAll_midlow_2_1_first3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part3MAE2",
+          "theorem": "vAll_midlow_2_1_first4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part4MAE2",
+          "theorem": "vAll_midlow_2_1_lowMAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part5MAE2",
+          "theorem": "vAll_midlow_2_1_cross1_1MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part6MAE2",
+          "theorem": "vAll_midlow_2_1_cross1_2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part7MAE2",
+          "theorem": "vAll_midlow_2_1_cross1_3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part8MAE2",
+          "theorem": "vAll_midlow_2_1_cross1_4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part9MAE2",
+          "theorem": "vAll_midlow_2_1_mid1MAE2",
+          "ordinary_body_exact120_match": false,
+          "separated_alias": true
+        },
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part10MAE2",
+          "theorem": "vAll_midlow_2_1_cross2_2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part11MAE2",
+          "theorem": "vAll_midlow_2_1_cross2_3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part12MAE2",
+          "theorem": "vAll_midlow_2_1_cross2_4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part13MAE2",
+          "theorem": "vAll_midlow_2_1_cross2_5MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part14MAE2",
+          "theorem": "vAll_midlow_2_1_mid2MAE2",
+          "ordinary_body_exact120_match": false,
+          "separated_alias": true
+        },
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part15MAE2",
+          "theorem": "vAll_midlow_2_1_tail2MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part16MAE2",
+          "theorem": "vAll_midlow_2_1_tail3MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part17MAE2",
+          "theorem": "vAll_midlow_2_1_tail4MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part18MAE2",
+          "theorem": "vAll_midlow_2_1_tail5MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        },
+        {
+          "module": "MarkovThirdAllmidlow_2_1Part19MAE2",
+          "theorem": "vAll_midlow_2_1_tail6MAE2",
+          "ordinary_body_exact120_match": true,
+          "separated_alias": false
+        }
+      ],
+      "separated": [
+        {
+          "part": 9,
+          "modules": [
+            "MarkovThirdSep7I9MAE2Defs",
+            "MarkovThirdSep7I9MAE2E0",
+            "MarkovThirdSep7I9MAE2E1",
+            "MarkovThirdSep7I9MAE2E2",
+            "MarkovThirdSep7I9MAE2G0",
+            "MarkovThirdSep7I9MAE2G1",
+            "MarkovThirdSep7I9MAE2G2",
+            "MarkovThirdSep7I9MAE2G3",
+            "MarkovThirdSep7I9MAE2Final"
+          ],
+          "definitions": 30,
+          "coefficient_identities": 3,
+          "gap_coefficient_certificates": 28,
+          "final_supplies_all28": true,
+          "status": "compiled dependencies; separate replay status retained in validation/method audit"
+        },
+        {
+          "part": 14,
+          "modules": [
+            "MarkovThirdSep7I14MAE2Defs",
+            "MarkovThirdSep7I14MAE2E0",
+            "MarkovThirdSep7I14MAE2E1",
+            "MarkovThirdSep7I14MAE2E2",
+            "MarkovThirdSep7I14MAE2G0",
+            "MarkovThirdSep7I14MAE2G1",
+            "MarkovThirdSep7I14MAE2G2",
+            "MarkovThirdSep7I14MAE2G3",
+            "MarkovThirdSep7I14MAE2Final"
+          ],
+          "definitions": 30,
+          "coefficient_identities": 3,
+          "gap_coefficient_certificates": 28,
+          "final_supplies_all28": true,
+          "status": "compiled dependencies; separate replay status retained in validation/method audit"
+        }
+      ],
+      "modules": 39,
+      "theorems": 85,
+      "definitions": 60
+    }
+  ],
+  "new_halfcone_certificate_total": {
+    "modules": 195,
+    "theorems": 425,
+    "definitions": 300,
+    "ordinary_parts": 90,
+    "separated_aliases": 10,
+    "separated_packages": 10,
+    "gap_coefficient_certificates": 280,
+    "coefficient_identities": 30,
+    "assembly_proofs": 5
+  },
+  "source_regions": {
+    "low": "L>=7,T>=1,3T<=L; x=T-1,y=L-3T; corners(0,4),(1,1),(2,0)",
+    "middle": "2T<=L<3T; x=L-2T>=0,y=3T-L>=1; L=3x+2y,T=x+y; corners(0,4),(1,2),(2,1)",
+    "actual": "a=L,r=L-T,b=a(n+1)+r, b mod a=r",
+    "half_raw": "a>=7,a<=2(b mod a), every natural j, all natural n",
+    "intermediate_low_raw": "a>=7,2a<=3(b mod a)",
+    "prior_fourrun_union": "b<5a retained"
+  },
+  "small_source": {
+    "residual_factor": "L>=4,n>=1;6R3=X^(b-3(n+2))*N3",
+    "cleared_raw": "4<=L<=7,n>=1;6(1+X)^(7-a)[u^3]P=X^(b-3(n+2))*N3",
+    "eight_families": [
+      {
+        "a": 4,
+        "r": 1,
+        "predecessor_numerator": 3,
+        "predecessor_denominator": 4,
+        "quotient_power": 3,
+        "block_ring_identities": 4,
+        "source_bridge_n_min": 1,
+        "source_bridge_header": "theorem sThird41sourceMAE2 (n : \u2115) (rest : List Bool) (hn : 1\u2264n)\n (ha : (frame rest).mid.a=3) (hb : (frame rest).mid.b=4) :\n let path := List.replicate n false++true::rest\n (1-X)^6*(6*((frame path).mid.p).coeff 3)=\n X^((frame path).mid.b-3*(n+2))*(sThird41J0MAE2 (n+1:\u2124[X]) X+\n   X^(1*(n+1))*sThird41J1MAE2 (n+1:\u2124[X]) X+\n   X^(2*(n+1))*sThird41J2MAE2 (n+1:\u2124[X]) X+\n   X^(3*(n+1))*sThird41J3MAE2 (n+1:\u2124[X]) X)",
+        "log_concavity_status": "not proved by these identities"
+      },
+      {
+        "a": 4,
+        "r": 3,
+        "predecessor_numerator": 1,
+        "predecessor_denominator": 4,
+        "quotient_power": 3,
+        "block_ring_identities": 4,
+        "source_bridge_n_min": 1,
+        "source_bridge_header": "theorem sThird43sourceMAE2 (n : \u2115) (rest : List Bool) (hn : 1\u2264n)\n (ha : (frame rest).mid.a=1) (hb : (frame rest).mid.b=4) :\n let path := List.replicate n false++true::rest\n (1-X)^6*(6*((frame path).mid.p).coeff 3)=\n X^((frame path).mid.b-3*(n+2))*(sThird43J0MAE2 (n+1:\u2124[X]) X+\n   X^(1*(n+1))*sThird43J1MAE2 (n+1:\u2124[X]) X+\n   X^(2*(n+1))*sThird43J2MAE2 (n+1:\u2124[X]) X+\n   X^(3*(n+1))*sThird43J3MAE2 (n+1:\u2124[X]) X)",
+        "log_concavity_status": "not proved by these identities"
+      },
+      {
+        "a": 5,
+        "r": 1,
+        "predecessor_numerator": 4,
+        "predecessor_denominator": 5,
+        "quotient_power": 2,
+        "block_ring_identities": 4,
+        "source_bridge_n_min": 1,
+        "source_bridge_header": "theorem sThird51sourceMAE2 (n : \u2115) (rest : List Bool) (hn : 1\u2264n)\n (ha : (frame rest).mid.a=4) (hb : (frame rest).mid.b=5) :\n let path := List.replicate n false++true::rest\n (1-X)^6*(6*((frame path).mid.p).coeff 3)=\n X^((frame path).mid.b-3*(n+2))*(sThird51J0MAE2 (n+1:\u2124[X]) X+\n   X^(1*(n+1))*sThird51J1MAE2 (n+1:\u2124[X]) X+\n   X^(2*(n+1))*sThird51J2MAE2 (n+1:\u2124[X]) X+\n   X^(3*(n+1))*sThird51J3MAE2 (n+1:\u2124[X]) X)",
+        "log_concavity_status": "not proved by these identities"
+      },
+      {
+        "a": 5,
+        "r": 2,
+        "predecessor_numerator": 3,
+        "predecessor_denominator": 5,
+        "quotient_power": 2,
+        "block_ring_identities": 4,
+        "source_bridge_n_min": 1,
+        "source_bridge_header": "theorem sThird52sourceMAE2 (n : \u2115) (rest : List Bool) (hn : 1\u2264n)\n (ha : (frame rest).mid.a=3) (hb : (frame rest).mid.b=5) :\n let path := List.replicate n false++true::rest\n (1-X)^6*(6*((frame path).mid.p).coeff 3)=\n X^((frame path).mid.b-3*(n+2))*(sThird52J0MAE2 (n+1:\u2124[X]) X+\n   X^(1*(n+1))*sThird52J1MAE2 (n+1:\u2124[X]) X+\n   X^(2*(n+1))*sThird52J2MAE2 (n+1:\u2124[X]) X+\n   X^(3*(n+1))*sThird52J3MAE2 (n+1:\u2124[X]) X)",
+        "log_concavity_status": "not proved by these identities"
+      },
+      {
+        "a": 5,
+        "r": 3,
+        "predecessor_numerator": 2,
+        "predecessor_denominator": 5,
+        "quotient_power": 2,
+        "block_ring_identities": 4,
+        "source_bridge_n_min": 1,
+        "source_bridge_header": "theorem sThird53sourceMAE2 (n : \u2115) (rest : List Bool) (hn : 1\u2264n)\n (ha : (frame rest).mid.a=2) (hb : (frame rest).mid.b=5) :\n let path := List.replicate n false++true::rest\n (1-X)^6*(6*((frame path).mid.p).coeff 3)=\n X^((frame path).mid.b-3*(n+2))*(sThird53J0MAE2 (n+1:\u2124[X]) X+\n   X^(1*(n+1))*sThird53J1MAE2 (n+1:\u2124[X]) X+\n   X^(2*(n+1))*sThird53J2MAE2 (n+1:\u2124[X]) X+\n   X^(3*(n+1))*sThird53J3MAE2 (n+1:\u2124[X]) X)",
+        "log_concavity_status": "not proved by these identities"
+      },
+      {
+        "a": 5,
+        "r": 4,
+        "predecessor_numerator": 1,
+        "predecessor_denominator": 5,
+        "quotient_power": 2,
+        "block_ring_identities": 4,
+        "source_bridge_n_min": 1,
+        "source_bridge_header": "theorem sThird54sourceMAE2 (n : \u2115) (rest : List Bool) (hn : 1\u2264n)\n (ha : (frame rest).mid.a=1) (hb : (frame rest).mid.b=5) :\n let path := List.replicate n false++true::rest\n (1-X)^6*(6*((frame path).mid.p).coeff 3)=\n X^((frame path).mid.b-3*(n+2))*(sThird54J0MAE2 (n+1:\u2124[X]) X+\n   X^(1*(n+1))*sThird54J1MAE2 (n+1:\u2124[X]) X+\n   X^(2*(n+1))*sThird54J2MAE2 (n+1:\u2124[X]) X+\n   X^(3*(n+1))*sThird54J3MAE2 (n+1:\u2124[X]) X)",
+        "log_concavity_status": "not proved by these identities"
+      },
+      {
+        "a": 6,
+        "r": 1,
+        "predecessor_numerator": 5,
+        "predecessor_denominator": 6,
+        "quotient_power": 1,
+        "block_ring_identities": 4,
+        "source_bridge_n_min": 1,
+        "source_bridge_header": "theorem sThird61sourceMAE2 (n : \u2115) (rest : List Bool) (hn : 1\u2264n)\n (ha : (frame rest).mid.a=5) (hb : (frame rest).mid.b=6) :\n let path := List.replicate n false++true::rest\n (1-X)^6*(6*((frame path).mid.p).coeff 3)=\n X^((frame path).mid.b-3*(n+2))*(sThird61J0MAE2 (n+1:\u2124[X]) X+\n   X^(1*(n+1))*sThird61J1MAE2 (n+1:\u2124[X]) X+\n   X^(2*(n+1))*sThird61J2MAE2 (n+1:\u2124[X]) X+\n   X^(3*(n+1))*sThird61J3MAE2 (n+1:\u2124[X]) X)",
+        "log_concavity_status": "not proved by these identities"
+      },
+      {
+        "a": 6,
+        "r": 5,
+        "predecessor_numerator": 1,
+        "predecessor_denominator": 6,
+        "quotient_power": 1,
+        "block_ring_identities": 4,
+        "source_bridge_n_min": 1,
+        "source_bridge_header": "theorem sThird65sourceMAE2 (n : \u2115) (rest : List Bool) (hn : 1\u2264n)\n (ha : (frame rest).mid.a=1) (hb : (frame rest).mid.b=6) :\n let path := List.replicate n false++true::rest\n (1-X)^6*(6*((frame path).mid.p).coeff 3)=\n X^((frame path).mid.b-3*(n+2))*(sThird65J0MAE2 (n+1:\u2124[X]) X+\n   X^(1*(n+1))*sThird65J1MAE2 (n+1:\u2124[X]) X+\n   X^(2*(n+1))*sThird65J2MAE2 (n+1:\u2124[X]) X+\n   X^(3*(n+1))*sThird65J3MAE2 (n+1:\u2124[X]) X)",
+        "log_concavity_status": "not proved by these identities"
+      }
+    ],
+    "all_small_lc": "unproved",
+    "a2_a3_corrections": "not supplied",
+    "n0": "not included in these source adapters"
+  },
+  "root": "Conjecture63 iff InteriorCore63HalfMAE2; originalH/Dguards and endpoints inherited; V i3 implies a<=6 or(5a<=b and2(b mod a)<a). Root/residual unproved."
+}

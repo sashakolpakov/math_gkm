@@ -1,0 +1,63 @@
+{
+  "inherited": {
+    "RESUME.json": {
+      "expected": "9c4cda71331349bd2b18e040157b07b013cdb0e393bc77160f651666c1132df7",
+      "actual": "9c4cda71331349bd2b18e040157b07b013cdb0e393bc77160f651666c1132df7"
+    },
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": {
+      "expected": "c43cd8a52bef2073f028bafcb8a793b8d2208f7924ba318257b7acfbcee45c1d",
+      "actual": "c43cd8a52bef2073f028bafcb8a793b8d2208f7924ba318257b7acfbcee45c1d"
+    },
+    "evidence/independent-markov/markov_residual_scope_audit.md": {
+      "expected": "6cb707622a6c57fb2b8ac5167b302b5c21daafe5ac332b223b137407db874e35",
+      "actual": "6cb707622a6c57fb2b8ac5167b302b5c21daafe5ac332b223b137407db874e35"
+    },
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": {
+      "expected": "63a5d6b9fd6b89dfdc92c0382c165c9c6868313ea1598250c41ae0562cd7df8a",
+      "actual": "63a5d6b9fd6b89dfdc92c0382c165c9c6868313ea1598250c41ae0562cd7df8a"
+    },
+    "evidence/markov/research-run/state.json": {
+      "expected": "37c095598ce39fad509297b6f74b4293594b3ecdc2f69524722f41023ec50b8d",
+      "actual": "37c095598ce39fad509297b6f74b4293594b3ecdc2f69524722f41023ec50b8d"
+    },
+    "requests/markov-next.json": {
+      "expected": "b2c014a6a6a2dca6a4d28a42fcc1356e66858709bfb861cd29b361a20154b755",
+      "actual": "b2c014a6a6a2dca6a4d28a42fcc1356e66858709bfb861cd29b361a20154b755"
+    }
+  },
+  "prior_modules": 43,
+  "interrupted_logs": {
+    "118": {
+      "sha256": "7644dc037eeecf91c9bf940a489ad9b04e03856a2beafb9c6aa448a7cdb59733",
+      "text": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 203, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Users/sasha/math_gkm/machinery/worker.py\", line 235, in <module>\n    main()\n    ~~~~^^\n  File \"/Users/sasha/math_gkm/machinery/worker.py\", line 231, in main\n    execute(args.directory)\n    ~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/Users/sasha/math_gkm/machinery/worker.py\", line 124, in execute\n    target.write_bytes((ROOT/name).read_bytes())\n    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py\", line 797, in write_bytes\n    return f.write(view)\n           ~~~~~~~^^^^^^\nOSError: [Errno 28] No space left on device\n"
+    },
+    "119": {
+      "sha256": "7644dc037eeecf91c9bf940a489ad9b04e03856a2beafb9c6aa448a7cdb59733",
+      "text": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 203, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Users/sasha/math_gkm/machinery/worker.py\", line 235, in <module>\n    main()\n    ~~~~^^\n  File \"/Users/sasha/math_gkm/machinery/worker.py\", line 231, in main\n    execute(args.directory)\n    ~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/Users/sasha/math_gkm/machinery/worker.py\", line 124, in execute\n    target.write_bytes((ROOT/name).read_bytes())\n    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py\", line 797, in write_bytes\n    return f.write(view)\n           ~~~~~~~^^^^^^\nOSError: [Errno 28] No space left on device\n"
+    }
+  },
+  "prior_reconciliation": "Both interrupted workers failed during snapshot copying with ENOSPC, before a model research event log was created. No research/source text changes detected against their before manifests. No failed side effect replayed.",
+  "last_report": {
+    "actions": [
+      "Reconciled both interrupted workers: 3,783 unchanged source/research files each; their logs show snapshot-copying failures. Evidence: evidence/markov-03d5764d/reconciliation.json.",
+      "Compiled and kernel-replayed 43 mathematical modules; audited 94 theorem closures. Evidence: evidence/markov-03d5764d/validation.json.",
+      "Verified 492 artifact hashes, 2,797 unchanged prior inputs, and pinned root/contract hashes. Evidence: evidence/markov-03d5764d/final-check.json and last-verification.json."
+    ],
+    "agenda": [
+      "Extend third-column log-concavity to the remaining source cones using the modular certificates: research/markov-03d5764d-next.md.",
+      "Resolve small-numerator third columns, higher horizontal rows, remaining vertical columns, and deeper diagonals.",
+      "Discharge every source-correspondence obligation before claiming exact-root completion."
+    ],
+    "completion": null,
+    "observations": [
+      "Proved raw third-column log-concavity for every source path with a\u22657 and 2a+4\u22643(b mod a), at every natural starting index, retaining zeros and without a denominator bound: vertical_third_remainderM03 in research/MarkovThirdLowSourceM03.lean.",
+      "Proved Conjecture63 \u2194 InteriorCore63LowM03. This exact residual remains unproved: research/MarkovResidualLowM03.lean.",
+      "Proved reusable cubic coefficient certificates and conditional all-run seed transport. The separated middle-chamber proofs passed after larger attempts timed out.",
+      "Finite experiments passed 29,615 coefficient comparisons and 29,475 adjacent inequalities across 70 fractions, retaining 21,804 zeros. Experiments are not proofs: evidence/markov-03d5764d/experiments.json.",
+      "All audited closures use permitted axioms. Inherited compiled imports were reused; no whole-source rebuild or independent completion audit occurred. Seven rejected builds and capability limitations were retained. All foreground executions ended. Scope: research/markov-03d5764d-correspondence.md."
+    ],
+    "request_id": "03d5764d3c1945eba3e1fffb38c57904",
+    "summary": "Proved an unbounded-run third-column region and its exact root reduction. Full pinned Conjecture63 remains unresolved."
+  },
+  "finding": "Worker 120 completed; interrupted workers 118/119 had snapshot failures already reconciled. No snapshot side effect replayed."
+}
