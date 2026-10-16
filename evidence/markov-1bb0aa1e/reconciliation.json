@@ -1,0 +1,159 @@
+{
+  "request_id": "1bb0aa1ee066482294f620401d001bf2",
+  "inherited_bindings": {
+    "RESUME.json": true,
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": true,
+    "evidence/independent-markov/markov_residual_scope_audit.md": true,
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": true,
+    "evidence/markov/research-run/state.json": true,
+    "requests/markov-next.json": true
+  },
+  "interrupted": {
+    "events_sha256": "f26a2c44e1c582df45136f91eb1a4106cde5ef09afb0641e8c6f1ec1fb9ea788",
+    "event_count": 219,
+    "last_events": [
+      {
+        "type": "item.started",
+        "item": {
+          "id": "item_113",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc \"env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 -c 'from pathlib import Path;import json,hashlib;p=Path(\\\"evidence/markov-e9cdd527\\\");b=json.loads((p/\\\"before.json\\\").read_text());bad=[f for f,h in b.items() if hashlib.sha256(Path(f).read_bytes()).hexdigest()\"'!=h];print({\"snapshotted_inputs\":len(b),\"changed\":bad})'\"'\"",
+          "aggregated_output": "",
+          "exit_code": null,
+          "status": "in_progress"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_113",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc \"env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 -c 'from pathlib import Path;import json,hashlib;p=Path(\\\"evidence/markov-e9cdd527\\\");b=json.loads((p/\\\"before.json\\\").read_text());bad=[f for f,h in b.items() if hashlib.sha256(Path(f).read_bytes()).hexdigest()\"'!=h];print({\"snapshotted_inputs\":len(b),\"changed\":bad})'\"'\"",
+          "aggregated_output": "{'snapshotted_inputs': 6531, 'changed': []}\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_114",
+          "type": "agent_message",
+          "text": "The unchanged-input check passed for all 6,531 snapshotted files. All twelve selected modules compiled; their combined replay and axiom audit are still running under bounded timeouts. I\u2019ll report those outcomes exactly and keep completion null.\n"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_110",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/audit_e9cdd527.py'",
+          "aggregated_output": "{\"receipt\": \"evidence/markov-e9cdd527/build-1792180597571888000.json\", \"returncode\": null, \"timeout\": true, \"seconds\": 100.37072212499334, \"stdout\": \"None\"}\nTraceback (most recent call last):\n  File \"/Users/sasha/math_gkm/research/audit_e9cdd527.py\", line 16, in <module>\n    assert match or empty,n\n           ^^^^^^^^^^^^^^\nAssertionError: fib_raw_extendedME9C\n",
+          "exit_code": 1,
+          "status": "failed"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_109",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/validate_e9cdd527.py replay 100 MarkovLowDifferenceME9C MarkovLowForceME9C MarkovLowSolutionsME9C MarkovLowSourceME9C MarkovLowLCME9C MarkovLowResidualME9C MarkovLowLimitME9C MarkovLowKernelLimitME9C MarkovLowerUniformME9C MarkovLowerShapeME9C MarkovLowerReductionME9C MarkovLowerDomainME9C'",
+          "aggregated_output": "{\"receipt\": \"evidence/markov-e9cdd527/replay-1792180597567945000.json\", \"returncode\": null, \"timeout\": true, \"seconds\": 100.48190745798638, \"stdout\": \"None\"}\n",
+          "exit_code": 1,
+          "status": "failed"
+        }
+      }
+    ]
+  },
+  "interrupted_successful_builds": [
+    {
+      "receipt": "evidence/markov-e9cdd527/build-1792179145686128000.json",
+      "sources_match": {
+        "MarkovLowDifferenceME9C": false
+      }
+    },
+    {
+      "receipt": "evidence/markov-e9cdd527/build-1792179269040875000.json",
+      "sources_match": {
+        "MarkovLowDifferenceME9C": true
+      }
+    },
+    {
+      "receipt": "evidence/markov-e9cdd527/build-1792179305193532000.json",
+      "sources_match": {
+        "MarkovLowForceME9C": true
+      }
+    },
+    {
+      "receipt": "evidence/markov-e9cdd527/build-1792179322022078000.json",
+      "sources_match": {
+        "MarkovLowSolutionsME9C": true
+      }
+    },
+    {
+      "receipt": "evidence/markov-e9cdd527/build-1792179353807777000.json",
+      "sources_match": {
+        "MarkovLowSourceME9C": true
+      }
+    },
+    {
+      "receipt": "evidence/markov-e9cdd527/build-1792179417532012000.json",
+      "sources_match": {
+        "MarkovLowLCME9C": true
+      }
+    },
+    {
+      "receipt": "evidence/markov-e9cdd527/build-1792179486424862000.json",
+      "sources_match": {
+        "MarkovLowLimitME9C": true
+      }
+    },
+    {
+      "receipt": "evidence/markov-e9cdd527/build-1792179591717345000.json",
+      "sources_match": {
+        "MarkovLowResidualME9C": true
+      }
+    },
+    {
+      "receipt": "evidence/markov-e9cdd527/build-1792179727164674000.json",
+      "sources_match": {
+        "MarkovLowKernelLimitME9C": true
+      }
+    },
+    {
+      "receipt": "evidence/markov-e9cdd527/build-1792180035188353000.json",
+      "sources_match": {
+        "MarkovLowerUniformME9C": true
+      }
+    },
+    {
+      "receipt": "evidence/markov-e9cdd527/build-1792180092513572000.json",
+      "sources_match": {
+        "MarkovLowerShapeME9C": true
+      }
+    },
+    {
+      "receipt": "evidence/markov-e9cdd527/build-1792180210005568000.json",
+      "sources_match": {
+        "MarkovLowerReductionME9C": true
+      }
+    },
+    {
+      "receipt": "evidence/markov-e9cdd527/build-1792180465671613000.json",
+      "sources_match": {
+        "MarkovLowerDomainME9C": true
+      }
+    }
+  ],
+  "reconciliation": "Worker 156 left twelve built modules and a successful seven-module replay. Its final twelve-module replay and axiom audit both timed out at 100 seconds. No validation.json or final manifest exists. Existing source is preserved; renewed checks write only this run\u2019s unique paths. No predecessor mutation is replayed.",
+  "capabilities": {
+    "scratch": "Denied by higher-priority policy; not accessed. Unique research/evidence paths substitute.",
+    "sage": null,
+    "gap": "/opt/homebrew/bin/gap",
+    "initial_search": "Hidden rg enumeration emitted denied .git/.scratch errors; no contents read; restricted explicit directories thereafter.",
+    "heredoc": "zsh could not create temporary heredoc file; use apply_patch and Python files instead."
+  },
+  "root_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+  "contract_sha256": "6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc"
+}

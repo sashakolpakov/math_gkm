@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTailCorrectionM1BB.lean:38:54: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  q - 1 + 1\nin the target expression\n  \u2191((q - 1).succ.choose i.succ) = \u2191(q.choose (i + 1))\n\nq : \u2115\nr : Bool\nhq : 1 \u2264 q\nhf : \u2200 (n k : \u2115), 0 < n \u2192 fibRawM9E2 n (k + 1) 0 = \u2191((n - 1).choose k)\ni : \u2115\n\u22a2 \u2191((q - 1).succ.choose i.succ) = \u2191(q.choose (i + 1))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTailCorrectionM1BB": "2d3115130f433c578b72c90a72f1e6ca4fd07e1c216aa2d78726f404e6419ec6"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-1bb0aa1e/MarkovTailCorrectionM1BB.olean",
+    "/Users/sasha/math_gkm/research/MarkovTailCorrectionM1BB.lean"
+  ],
+  "seconds": 60.613698499975726,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTailBinomialM1BB.lean:40:5: error: linarith failed to find a contradiction\ncase h.succ.zero.h1\nn : \u2115\nc : \u2124\nf : \u2115 \u2192 \u2124\nh0 : f 0 = 0\nh1 : f 1 = 0\nhs : \u2200 (i : \u2115), f (i + 2) + 2 * f (i + 1) + f i = c * \u2191((n + 2).choose i)\nih : \u2200 m < 0 + 1, f (m + 2) = c * \u2191(n.choose m)\nha : f (0 + 2) = c\nhh : f 3 + 2 * c + 0 = c * (\u2191n + 2)\na\u271d : f (0 + 1 + 2) < c * \u2191(n.choose (0 + 1))\n\u22a2 False\nfailed\n/Users/sasha/math_gkm/research/MarkovTailBinomialM1BB.lean:84:57: error: unexpected token '+'; expected term\n/Users/sasha/math_gkm/research/MarkovTailBinomialM1BB.lean:84:9: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  if True then ?t else ?e\nin the target expression\n  firstDiffM1BB 1 true (i + 1 + 1 + 2) = 8 * (-1) ^ (i + 1 + 1)\n\ncase h.succ.succ\ni : \u2115\nih : \u2200 m < i + 1 + 1, firstDiffM1BB 1 true (m + 2) = 8 * (-1) ^ m\nha : firstDiffM1BB 1 true (i + 2) = 8 * (-1) ^ i\nhb : firstDiffM1BB 1 true (i + 1 + 2) = 8 * (-1) ^ (i + 1)\nhh :\n  firstDiffM1BB 1 true (i + 2 + 2) + 2 * firstDiffM1BB 1 true (i + 2 + 1) + firstDiffM1BB 1 true (i + 2) =\n    if true = true then 8 * \u2191(Nat.choose 1 (i + 2)) else 4 * \u2191((1 + 1).choose (i + 2))\n\u22a2 firstDiffM1BB 1 true (i + 1 + 1 + 2) = 8 * (-1) ^ (i + 1 + 1)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTailBinomialM1BB": "ed99d72f6be609d46be544bb74c11d51d3fb98510eebcc2414c526aebff23270"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-1bb0aa1e/MarkovTailBinomialM1BB.olean",
+    "/Users/sasha/math_gkm/research/MarkovTailBinomialM1BB.lean"
+  ],
+  "seconds": 38.227457082946785,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

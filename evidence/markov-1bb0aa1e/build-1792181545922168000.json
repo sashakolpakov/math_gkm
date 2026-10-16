@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTailBinomialM1BB.lean:85:9: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  if True then ?t else ?e\nin the target expression\n  firstDiffM1BB 1 true (i + 2 + 2) + 2 * firstDiffM1BB 1 true (i + 2 + 1) + firstDiffM1BB 1 true (i + 2) =\n    if true = true then 8 * \u2191(Nat.choose 1 (i + 2)) else 4 * \u2191((1 + 1).choose (i + 2))\n\ncase h.succ.succ\ni : \u2115\nih : \u2200 m < i + 1 + 1, firstDiffM1BB 1 true (m + 2) = 8 * (-1) ^ m\nha : firstDiffM1BB 1 true (i + 2) = 8 * (-1) ^ i\nhb : firstDiffM1BB 1 true (i + 1 + 2) = 8 * (-1) ^ (i + 1)\nhh :\n  firstDiffM1BB 1 true (i + 2 + 2) + 2 * firstDiffM1BB 1 true (i + 2 + 1) + firstDiffM1BB 1 true (i + 2) =\n    if true = true then 8 * \u2191(Nat.choose 1 (i + 2)) else 4 * \u2191((1 + 1).choose (i + 2))\n\u22a2 firstDiffM1BB 1 true (i + 1 + 1 + 2) = 8 * (-1) ^ (i + 1 + 1)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTailBinomialM1BB": "82b64ae7c95286fe237f6d44a63eae2f804d154c0410342d03a39e120b7491ed"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-1bb0aa1e/MarkovTailBinomialM1BB.olean",
+    "/Users/sasha/math_gkm/research/MarkovTailBinomialM1BB.lean"
+  ],
+  "seconds": 96.0643118750304,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

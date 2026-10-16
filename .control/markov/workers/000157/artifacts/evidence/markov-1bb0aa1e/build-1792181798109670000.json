@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovFirstRowM1BB.lean:21:66: warning: This simp argument is unused:\n  Nat.add_sub_cancel\n\nHint: Omit it from the simp argument list.\n  simp only [\u0335f\u0335i\u0335r\u0335s\u0335t\u0335C\u0335o\u0335r\u0335r\u0335e\u0335c\u0335t\u0335i\u0335o\u0335n\u0335M\u03351\u0335B\u0335B\u0335,\u0335s\u0335h\u0335o\u0335w\u0335[\u0332f\u0332i\u0332r\u0332s\u0332t\u0332C\u0332o\u0332r\u0332r\u0332e\u0332c\u0332t\u0332i\u0332o\u0332n\u0332M\u03321\u0332B\u0332B\u0332,\u0332 \u0332s\u0332h\u0332o\u0332w\u0332 2 \u2264 i\u0335+\u03351\u0335+\u03351\u0335i\u0332 \u0332+\u0332 \u03321\u0332 \u0332+\u0332 \u03321\u0332 by o\u0335m\u0335e\u0335g\u0335a\u0335,\u0335i\u0335f\u0335_\u0335t\u0335r\u0335u\u0335e\u0335,\u0335N\u0335a\u0335t\u0335.\u0335a\u0335d\u0335d\u0335_\u0335s\u0335u\u0335b\u0335_\u0335c\u0335a\u0335n\u0335c\u0335e\u0335l\u0335]\u0335o\u0332m\u0332e\u0332g\u0332a\u0332,\u0332 \u0332i\u0332f\u0332_\u0332t\u0332r\u0332u\u0332e\u0332]\u0332\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovFirstRowM1BB.lean:57:1: error: Tactic `decide` failed for proposition\n  (3 * 4 \u2264 4 * 3 + 3 * 0 \u2227 3 + 0 \u2264 3 + 4 - 1) \u2227\n    (3 * 4 \u2264 4 * 3 + 3 * 1 \u2227 3 + 1 \u2264 3 + 4 - 1) \u2227\n      (3 * 4 \u2264 4 * 3 + 3 * 2 \u2227 3 + 2 \u2264 3 + 4 - 1) \u2227\n        threeRawM9E2 1 true 3 0 = 1 \u2227\n          threeRawM9E2 1 true 3 1 = 8 \u2227\n            threeRawM9E2 1 true 3 2 = 26 \u2227\n              threeRawM9E2 1 true 3 0 * threeRawM9E2 1 true 3 2 < threeRawM9E2 1 true 3 1 ^ 2\nbecause its `Decidable` instance\n  instDecidableAnd\ndid not reduce to `isTrue` or `isFalse`.\n\nAfter unfolding the instances `instDecidableAnd`, `instDecidableEqBool`, `Bool.decEq`, `Int.decEq`, `Int.instDecidableEq`, and `Nat.decLe`, reduction got stuck at the `Decidable` instance\n  match threeRawM9E2 1 true 3 0, 1 with\n  | Int.ofNat a, Int.ofNat b =>\n    match decEq a b with\n    | isTrue h => isTrue \u22ef\n    | isFalse h => isFalse \u22ef\n  | Int.ofNat a, Int.negSucc a_1 => isFalse \u22ef\n  | Int.negSucc a, Int.ofNat a_1 => isFalse \u22ef\n  | Int.negSucc a, Int.negSucc b =>\n    match decEq a b with\n    | isTrue h => isTrue \u22ef\n    | isFalse h => isFalse \u22ef\n",
+  "stderr": "",
+  "modules": {
+    "MarkovFirstRowM1BB": "6e5dc28140de667c5a7a812a46a0c26c18e236f638cd8ba358584be36d4a28f7"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-1bb0aa1e/MarkovFirstRowM1BB.olean",
+    "/Users/sasha/math_gkm/research/MarkovFirstRowM1BB.lean"
+  ],
+  "seconds": 68.71642537496518,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

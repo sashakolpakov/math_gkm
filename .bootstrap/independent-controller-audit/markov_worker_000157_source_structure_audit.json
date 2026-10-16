@@ -1,0 +1,471 @@
+{
+  "worker": 157,
+  "request": "1bb0aa1ee066482294f620401d001bf2",
+  "created_at_utc": "2026-10-16T20:35:29.441439+00:00",
+  "historical_status": "Completed/return0/delivered report; full root open. Worker156 historical timeout unchanged.",
+  "scope": "Closed157 archive and explicit named inherited/current counterparts only. Static parsing, hashes and input-index counts, no project/proof/checker/replay/experiment/finalizer/generator execution or mathematical-value computation. No project edit, proposer contact or research help. Active158 excluded; earlier seals final.",
+  "new_modules": [
+    {
+      "module": "MarkovFirstForceM1BB",
+      "path": "research/MarkovFirstForceM1BB.lean",
+      "bytes": 2885,
+      "sha256": "75c6c6aac47048024ffddfb7a4d7823da5eb22fa45569ffaef50d315433cfc5d",
+      "current_sha256": "75c6c6aac47048024ffddfb7a4d7823da5eb22fa45569ffaef50d315433cfc5d",
+      "status": "compiled, joint replay passed, all theorem closures printed in worker157",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "lower_force_twoM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_force_threeM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_force_fourM1BB"
+        }
+      ],
+      "object_path": "evidence/markov-1bb0aa1e/MarkovFirstForceM1BB.olean",
+      "object_sha256": "01dc3d89b974cf7948e5efd45a0e18f0dba219ecb756a0a3159a0199881afb9c",
+      "successful_final_build": "build-1792181163371230000.json",
+      "successful_final_build_sha256": "da8614aba7741ad09ecf3ef1a5761c6e2c06d59e9d7f3c97e833eaba47557f06",
+      "imports": [
+        "MarkovLowerUniformME9C"
+      ],
+      "theorem_statements": [
+        "theorem lower_force_twoM1BB (n j : ℕ) (hj : j < n) : lowerForceME9C n 2 j=0",
+        "theorem lower_force_threeM1BB (n j : ℕ) (hj : j < n) :\n (lowerForceME9C n 3 j:ℚ)=lowForceThreeME9C j",
+        "theorem lower_force_fourM1BB (n j : ℕ) (hj : j < n) :\n (lowerForceME9C n 4 j:ℚ)=lowForceFourME9C (n) j"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovTailCorrectionM1BB",
+      "path": "research/MarkovTailCorrectionM1BB.lean",
+      "bytes": 3532,
+      "sha256": "61931d91e3b86a3cb22606d8e363c4d78b989ef9db878926062fc65a1c943ae3",
+      "current_sha256": "61931d91e3b86a3cb22606d8e363c4d78b989ef9db878926062fc65a1c943ae3",
+      "status": "compiled, joint replay passed, all theorem closures printed in worker157",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "firstGainM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_forceM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_gain_zeroM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_gain_oneM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_gain_binomialM1BB"
+        },
+        {
+          "kind": "def",
+          "name": "firstDiffM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_diff_equationM1BB"
+        }
+      ],
+      "object_path": "evidence/markov-1bb0aa1e/MarkovTailCorrectionM1BB.olean",
+      "object_sha256": "5a8a83340632e89be12b77fe7c28283949314a2620a6ed83507a4d3cfbbf01d9",
+      "successful_final_build": "build-1792181405084525000.json",
+      "successful_final_build_sha256": "354144a6a6f0324766d9b27b3d67435e0c469595dac0023e683ef29e9ba6dd2d",
+      "imports": [
+        "MarkovFirstForceM1BB"
+      ],
+      "theorem_statements": [
+        "theorem first_forceM1BB (q i : ℕ) (r : Bool) :\n threeForceM96A q r i (q+1)=lowerForceME9C (sourceNME9C q r) i (q+1)+firstGainM1BB q r i",
+        "theorem first_gain_zeroM1BB (q : ℕ) (r : Bool) : firstGainM1BB q r 0=0",
+        "theorem first_gain_oneM1BB (q : ℕ) (r : Bool) (hq : 1 ≤ q) : firstGainM1BB q r 1=0",
+        "theorem first_gain_binomialM1BB (q i : ℕ) (r : Bool) (hq : 1 ≤ q) :\n firstGainM1BB q r (i+2)=if r then 8*(q.choose i:ℤ) else 4*((q+1).choose i:ℤ)",
+        "theorem first_diff_equationM1BB (q i : ℕ) (r : Bool) :\n firstDiffM1BB q r i+2*(if 1 ≤ i then firstDiffM1BB q r (i-1) else 0)+\n (if 2 ≤ i then firstDiffM1BB q r (i-2) else 0)=firstGainM1BB q r i"
+      ],
+      "definitions": [
+        "def firstGainM1BB (q : ℕ) (r : Bool) (i : ℕ) : ℤ :=\n 4 * shiftRawM9E2 1 0\n   (if r then (fun a b => addSRawM9E2 (fibRawM9E2 q) a b+fibRawM9E2 (q+1) a b)\n   else (fun a b => shiftRawM9E2 0 1 (fibRawM9E2 q) a b+addSRawM9E2 (fibRawM9E2 (q+1)) a b)) i 0",
+        "def firstDiffM1BB (q : ℕ) (r : Bool) (i : ℕ) : ℤ :=\n threeRawM9E2 q r i (q+1)-lowerRawME9C (sourceNME9C q r) i (q+1)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovTailSourceM1BB",
+      "path": "research/MarkovTailSourceM1BB.lean",
+      "bytes": 4712,
+      "sha256": "78d113dde292021af08d5512f900eb6216c3dd43709d6195e5e70989662e8dbd",
+      "current_sha256": "78d113dde292021af08d5512f900eb6216c3dd43709d6195e5e70989662e8dbd",
+      "status": "compiled, joint replay passed, all theorem closures printed in worker157",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "tailTwoM1BB"
+        },
+        {
+          "kind": "def",
+          "name": "tailThreeM1BB"
+        },
+        {
+          "kind": "def",
+          "name": "tailFourM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_gain_twoM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_gain_threeM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_gain_fourM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_first_small_zeroM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_first_twoM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_first_threeM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_first_fourM1BB"
+        }
+      ],
+      "object_path": "evidence/markov-1bb0aa1e/MarkovTailSourceM1BB.olean",
+      "object_sha256": "2c587f7ea7e84dd5a1ef219fe6b06e28b4bff01bf59081798b1aace8544e7bbd",
+      "successful_final_build": "build-1792181491254620000.json",
+      "successful_final_build_sha256": "ffbdb045e0dc348b2f0f9f7d6c32791ac267642a006e58cb7a8cd93d260e1358",
+      "imports": [
+        "MarkovTailCorrectionM1BB"
+      ],
+      "theorem_statements": [
+        "theorem first_gain_twoM1BB (q : ℕ) (r : Bool) (hq : 1 ≤ q) :\n (firstGainM1BB q r 2:ℚ)=tailTwoM1BB r",
+        "theorem first_gain_threeM1BB (q : ℕ) (r : Bool) (hq : 1 ≤ q) :\n (firstGainM1BB q r 3:ℚ)=tailThreeM1BB q r+2*tailTwoM1BB r",
+        "theorem first_gain_fourM1BB (q : ℕ) (r : Bool) (hq : 1 ≤ q) :\n (firstGainM1BB q r 4:ℚ)=tailFourM1BB q r+2*tailThreeM1BB q r+tailTwoM1BB r",
+        "theorem source_first_small_zeroM1BB (q i : ℕ) (r : Bool) (hq : 1 ≤ q) (hi : i ≤ 1) :\n threeRawM9E2 q r i (q+1)=0",
+        "theorem source_first_twoM1BB (k : ℕ) (r : Bool) :\n (threeRawM9E2 (k+1) r 2 (k+2):ℚ)=tailTwoM1BB r",
+        "theorem source_first_threeM1BB (k : ℕ) (r : Bool) :\n (threeRawM9E2 (k+1) r 3 (k+2):ℚ)=lowThreeME9C (k+2)+tailThreeM1BB (k+1) r",
+        "theorem source_first_fourM1BB (k : ℕ) (r : Bool) :\n (threeRawM9E2 (k+1) r 4 (k+2):ℚ)=\n   lowFourME9C (sourceNME9C (k+1) r) (k+2)+tailFourM1BB (k+1) r"
+      ],
+      "definitions": [
+        "def tailTwoM1BB (r : Bool) : ℚ := if r then 8 else 4",
+        "def tailThreeM1BB (q : ℚ) (r : Bool) : ℚ := if r then 8*(q-2) else 4*(q-1)",
+        "def tailFourM1BB (q : ℚ) (r : Bool) : ℚ := if r then 4*(q-2)*(q-3) else 2*(q-1)*(q-2)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovTailBinomialM1BB",
+      "path": "research/MarkovTailBinomialM1BB.lean",
+      "bytes": 3716,
+      "sha256": "9c3f178f941f380bc693fa1704fd876cd304c7503e820c15af283be34c1dc476",
+      "current_sha256": "9c3f178f941f380bc693fa1704fd876cd304c7503e820c15af283be34c1dc476",
+      "status": "compiled, joint replay passed, all theorem closures printed in worker157",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "first_diff_zeroM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_diff_oneM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_diff_stepM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "binomial_second_solveM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_diff_trueM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_diff_falseM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_diff_exceptionalM1BB"
+        }
+      ],
+      "object_path": "evidence/markov-1bb0aa1e/MarkovTailBinomialM1BB.olean",
+      "object_sha256": "79929af05516f211c6a1f6cc7880d3ca9a0c7077caad7a9f023fc668ea201a04",
+      "successful_final_build": "build-1792181667682334000.json",
+      "successful_final_build_sha256": "4083124c9170d3a4d44e0aa5d03326059467ea3fe1bb51371d20738a2a30816b",
+      "imports": [
+        "MarkovTailCorrectionM1BB"
+      ],
+      "theorem_statements": [
+        "theorem first_diff_zeroM1BB (q : ℕ) (r : Bool) : firstDiffM1BB q r 0=0",
+        "theorem first_diff_oneM1BB (q : ℕ) (r : Bool) (hq : 1 ≤ q) : firstDiffM1BB q r 1=0",
+        "theorem first_diff_stepM1BB (q i : ℕ) (r : Bool) (hq : 1 ≤ q) :\n firstDiffM1BB q r (i+2)+2*firstDiffM1BB q r (i+1)+firstDiffM1BB q r i=\n if r then 8*(q.choose i:ℤ) else 4*((q+1).choose i:ℤ)",
+        "theorem binomial_second_solveM1BB (n : ℕ) (c : ℤ) (f : ℕ → ℤ)\n (h0 : f 0=0) (h1 : f 1=0)\n (hs : ∀ i, f (i+2)+2*f (i+1)+f i=c*((n+2).choose i:ℤ)) :\n ∀ i, f (i+2)=c*(n.choose i:ℤ)",
+        "theorem first_diff_trueM1BB (t i : ℕ) :\n firstDiffM1BB (t+2) true (i+2)=8*(t.choose i:ℤ)",
+        "theorem first_diff_falseM1BB (t i : ℕ) :\n firstDiffM1BB (t+1) false (i+2)=4*(t.choose i:ℤ)",
+        "theorem first_diff_exceptionalM1BB (i : ℕ) :\n firstDiffM1BB 1 true (i+2)=8*(-1:ℤ)^i"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCrossCertificateM1BB",
+      "path": "research/MarkovCrossCertificateM1BB.lean",
+      "bytes": 3287,
+      "sha256": "065a3387014f700897da133f69eee179b83b0136247dda9c2c18d089f9ffee28",
+      "current_sha256": "065a3387014f700897da133f69eee179b83b0136247dda9c2c18d089f9ffee28",
+      "status": "compiled, joint replay passed, all theorem closures printed in worker157",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "crossGap3FM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_identity3FM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_positive3FM1BB"
+        },
+        {
+          "kind": "def",
+          "name": "crossGap3TM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_identity3TM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_positive3TM1BB"
+        },
+        {
+          "kind": "def",
+          "name": "crossGap4FM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_identity4FM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_positive4FM1BB"
+        },
+        {
+          "kind": "def",
+          "name": "crossGap4TM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_identity4TM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_positive4TM1BB"
+        },
+        {
+          "kind": "def",
+          "name": "lowThreeGapM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "low_three_strictM1BB"
+        }
+      ],
+      "object_path": "evidence/markov-1bb0aa1e/MarkovCrossCertificateM1BB.olean",
+      "object_sha256": "35a59e1ae60fa6e7cad25f42d1ae2c8e9aef0fa2d5f946c89da0b5b0dcec285a",
+      "successful_final_build": "build-1792181551863091000.json",
+      "successful_final_build_sha256": "0fd5137607eaa858d511d3516d2a29b3a440345b12b35304de3716b0697d56e3",
+      "imports": [
+        "MarkovTailSourceM1BB"
+      ],
+      "theorem_statements": [
+        "theorem cross_identity3FM1BB (x : ℚ) :\n lowThreeME9C (x+1)^2-lowThreeME9C (x)*(lowThreeME9C (x+2)+tailThreeM1BB (x+1) false)=crossGap3FM1BB x",
+        "theorem cross_positive3FM1BB (x : ℚ) (hx : 0 ≤ x) : 0 < crossGap3FM1BB x",
+        "theorem cross_identity3TM1BB (x : ℚ) :\n lowThreeME9C (x+1)^2-lowThreeME9C (x)*(lowThreeME9C (x+2)+tailThreeM1BB (x+1) true)=crossGap3TM1BB x",
+        "theorem cross_positive3TM1BB (x : ℚ) (hx : 0 ≤ x) : 0 < crossGap3TM1BB x",
+        "theorem cross_identity4FM1BB (x : ℚ) :\n lowFourME9C (3*(x+1)+2) (x+1)^2-lowFourME9C (3*(x+1)+2) (x)*(lowFourME9C (3*(x+1)+2) (x+2)+tailFourM1BB (x+1) false)=crossGap4FM1BB x",
+        "theorem cross_positive4FM1BB (x : ℚ) (hx : 0 ≤ x) : 0 < crossGap4FM1BB x",
+        "theorem cross_identity4TM1BB (x : ℚ) :\n lowFourME9C (3*(x+1)+1) (x+1)^2-lowFourME9C (3*(x+1)+1) (x)*(lowFourME9C (3*(x+1)+1) (x+2)+tailFourM1BB (x+1) true)=crossGap4TM1BB x",
+        "theorem cross_positive4TM1BB (x : ℚ) (hx : 0 ≤ x) : 0 < crossGap4TM1BB x",
+        "theorem low_three_strictM1BB (x : ℚ) (hx : 0 ≤ x) :\n lowThreeME9C x*lowThreeME9C (x+2)<lowThreeME9C (x+1)^2"
+      ],
+      "definitions": [
+        "def crossGap3FM1BB (x : ℚ) : ℚ := (5400 + 14274 * x + 16299 * x^2 + 10656 * x^3 + 4444 * x^4 + 1236 * x^5 + 226 * x^6 + 24 * x^7 + 1 * x^8) / 180",
+        "def crossGap3TM1BB (x : ℚ) : ℚ := (6840 + 17346 * x + 18243 * x^2 + 10656 * x^3 + 3964 * x^4 + 1044 * x^5 + 202 * x^6 + 24 * x^7 + 1 * x^8) / 180",
+        "def crossGap4FM1BB (x : ℚ) : ℚ := (99489600 + 420611040 * x + 798719844 * x^2 + 904261132 * x^3 + 682815445 * x^4 + 363801660 * x^5 + 140681802 * x^6 + 39851676 * x^7 + 8207025 * x^8 + 1195700 * x^9 + 116504 * x^10 + 6792 * x^11 + 180 * x^12) / 302400",
+        "def crossGap4TM1BB (x : ℚ) : ℚ := (45662400 + 228797280 * x + 493764156 * x^2 + 613517760 * x^3 + 495381625 * x^4 + 277455480 * x^5 + 111810078 * x^6 + 32951340 * x^7 + 7079145 * x^8 + 1078740 * x^9 + 109616 * x^10 + 6600 * x^11 + 180 * x^12) / 302400",
+        "def lowThreeGapM1BB (x : ℚ) : ℚ := (5400 + 14994 * x + 18195 * x^2 + 12576 * x^3 + 5404 * x^4 + 1476 * x^5 + 250 * x^6 + 24 * x^7 + 1 * x^8) / 180"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCrossingLCM1BB",
+      "path": "research/MarkovCrossingLCM1BB.lean",
+      "bytes": 2975,
+      "sha256": "3aa836496862b013cbd24ca91e6ba219218e05d20b5692cbfdd4f9f5614a1ee1",
+      "current_sha256": "3aa836496862b013cbd24ca91e6ba219218e05d20b5692cbfdd4f9f5614a1ee1",
+      "status": "compiled, joint replay passed, all theorem closures printed in worker157",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "three_cross_threeM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_cross_fourM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_low_threeM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_low_tail_verticalM1BB"
+        }
+      ],
+      "object_path": "evidence/markov-1bb0aa1e/MarkovCrossingLCM1BB.olean",
+      "object_sha256": "91d2d5dcfe84d7c2d24020cc10f9a0c3a3e9aaf2a37ab5cef77089a39b9fac17",
+      "successful_final_build": "build-1792181667682144000.json",
+      "successful_final_build_sha256": "a3ea0556b6711283fcdac835f53768647eaed2bfcb3333ffd434239977619e33",
+      "imports": [
+        "MarkovCrossCertificateM1BB",
+        "MarkovLowLCME9C"
+      ],
+      "theorem_statements": [
+        "theorem three_cross_threeM1BB (k : ℕ) (r : Bool) :\n threeRawM9E2 (k+1) r 3 k*threeRawM9E2 (k+1) r 3 (k+2)<\n threeRawM9E2 (k+1) r 3 (k+1)^2",
+        "theorem three_cross_fourM1BB (k : ℕ) (r : Bool) :\n threeRawM9E2 (k+1) r 4 k*threeRawM9E2 (k+1) r 4 (k+2)<\n threeRawM9E2 (k+1) r 4 (k+1)^2",
+        "theorem three_low_threeM1BB (q j : ℕ) (r : Bool) (hj : j+2 ≤ q) :\n threeRawM9E2 q r 3 j*threeRawM9E2 q r 3 (j+2)<threeRawM9E2 q r 3 (j+1)^2",
+        "theorem three_low_tail_verticalM1BB (q i j : ℕ) (r : Bool)\n (hi : i=3 ∨ i=4) (hj : j+1 ≤ q) :\n threeRawM9E2 q r i j*threeRawM9E2 q r i (j+2)<threeRawM9E2 q r i (j+1)^2"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovResidualM1BB",
+      "path": "research/MarkovResidualM1BB.lean",
+      "bytes": 2075,
+      "sha256": "6cddfed02de01826d78dc20ba293a5bbac74832de3306361e5b8c63708ebf2c4",
+      "current_sha256": "6cddfed02de01826d78dc20ba293a5bbac74832de3306361e5b8c63708ebf2c4",
+      "status": "compiled, joint replay passed, all theorem closures printed in worker157",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "ThreeRemainingM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_remaining_iffM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_remainingM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "crossing_gain_unboundedM1BB"
+        }
+      ],
+      "object_path": "evidence/markov-1bb0aa1e/MarkovResidualM1BB.olean",
+      "object_sha256": "e89d789aaaedc98a95ea87135eb3b709f14d9da28ad5db38c5b2350a9a3b3a0f",
+      "successful_final_build": "build-1792181798109679000.json",
+      "successful_final_build_sha256": "ca8c8bc027a0cebe28f3e2bb8c3e9418888f9e8af35f0b7afd42dac0a28717f7",
+      "imports": [
+        "MarkovCrossingLCM1BB"
+      ],
+      "theorem_statements": [
+        "theorem three_remaining_iffM1BB : ThreeRawLCM9E2 ↔ ThreeRemainingM1BB",
+        "theorem root_iff_remainingM1BB : Conjecture63 ↔ ThreeRemainingM1BB ∧ OtherFourM9E2",
+        "theorem crossing_gain_unboundedM1BB (j i : ℕ) (r : Bool) (hi : i=3 ∨ i=4) :\n let path := threePathM9E2 j r\n (frame path).mid.a=3 ∧\n (frame path).mid.b=sourceNME9C (j+1) r ∧\n InPolygon (frame path).mid.a (frame path).mid.b i j ∧\n InPolygon (frame path).mid.a (frame path).mid.b i (j+1) ∧\n InPolygon (frame path).mid.a (frame path).mid.b i (j+2) ∧\n coeff (frame path).mid.p i j*coeff (frame path).mid.p i (j+2)<\n coeff (frame path).mid.p i (j+1)^2"
+      ],
+      "definitions": [
+        "def ThreeRemainingM1BB : Prop := ∀ q : ℕ, 1 ≤ q → ∀ r,\n (∀ i j, threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2) ∧\n (∀ i j, ¬((i=3 ∨ i=4) ∧ j+1 ≤ q) →\n   threeRawM9E2 q r i j*threeRawM9E2 q r i (j+2) ≤ threeRawM9E2 q r i (j+1)^2) ∧\n (∀ i j, threeRawM9E2 q r i (j+2)*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) (j+1)^2)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovFirstRowM1BB",
+      "path": "research/MarkovFirstRowM1BB.lean",
+      "bytes": 2544,
+      "sha256": "a084d18bc57d86ebb3da47b87033976a0d6e0188fe9d6bff2bcad0f858251149",
+      "current_sha256": "a084d18bc57d86ebb3da47b87033976a0d6e0188fe9d6bff2bcad0f858251149",
+      "status": "compiled, joint replay passed, all theorem closures printed in worker157",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "firstCorrectionM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_diff_formulaM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_row_sourceM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_first_rowM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "exceptional_correction_negativeM1BB"
+        },
+        {
+          "kind": "theorem",
+          "name": "exceptional_source_not_refutedM1BB"
+        }
+      ],
+      "object_path": "evidence/markov-1bb0aa1e/MarkovFirstRowM1BB.olean",
+      "object_sha256": "e483c02249d5cd3994303f9e7cea8c8f56745034239917b942e2eb152d72d489",
+      "successful_final_build": "build-1792181883565625000.json",
+      "successful_final_build_sha256": "92421a9279a2bd7c61250cc3bcf7a912d9698fead93bed6f307f2e98a7454e8f",
+      "imports": [
+        "MarkovTailBinomialM1BB"
+      ],
+      "theorem_statements": [
+        "theorem first_diff_formulaM1BB (q i : ℕ) (r : Bool) (hq : 1 ≤ q) :\n firstDiffM1BB q r i=firstCorrectionM1BB q r i",
+        "theorem first_row_sourceM1BB (q i : ℕ) (r : Bool) (hq : 1 ≤ q) :\n threeRawM9E2 q r i (q+1)=lowerRawME9C (sourceNME9C q r) i (q+1)+firstCorrectionM1BB q r i",
+        "theorem source_first_rowM1BB (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1 ≤ q ∧ (frame path).mid.b=sourceNME9C q r ∧\n   ∀ i, coeff (frame path).mid.p i (q+1)=\n     lowerRawME9C (sourceNME9C q r) i (q+1)+firstCorrectionM1BB q r i",
+        "theorem exceptional_correction_negativeM1BB : firstCorrectionM1BB 1 true 3= -8",
+        "theorem exceptional_source_not_refutedM1BB :\n InPolygon 3 4 3 0 ∧ InPolygon 3 4 3 1 ∧ InPolygon 3 4 3 2 ∧\n coeff (frame [true,true]).mid.p 3 0=1 ∧\n coeff (frame [true,true]).mid.p 3 1=8 ∧\n coeff (frame [true,true]).mid.p 3 2=26 ∧\n coeff (frame [true,true]).mid.p 3 0*coeff (frame [true,true]).mid.p 3 2 <\n coeff (frame [true,true]).mid.p 3 1^2"
+      ],
+      "definitions": [
+        "def firstCorrectionM1BB (q : ℕ) (r : Bool) (i : ℕ) : ℤ :=\n if 2 ≤ i then\n   if r then\n     if q=1 then 8*(-1:ℤ)^(i-2) else 8*((q-2).choose (i-2):ℤ)\n   else 4*((q-1).choose (i-2):ℤ)\n else 0"
+      ],
+      "forbidden_tokens": []
+    }
+  ],
+  "accepted_counts": {
+    "theorem": 43,
+    "def": 12
+  },
+  "source_scope": "Everyactuala3source is true3/(3q+1) orfalse3/(3q+2),q>=1 by inheritedexhaustiveclassification. Completefirstcorrection identity allnaturali, lowerRaw+signedcorrection atj=q+1. No extraformulashape/support premise.",
+  "first_force_scope": "FirstForce extends lowerforcing identities to anynaturalj<n. FirstGain is exact source-minuslowerforcing atrowq+1. Columns0zeroallq,1zeroq>=1; atcolumni+2 it is8C(q,i)true or4C(q+1,i)false. Positive-row shifts cancel by inheritedlowerregionidentity withguards; firstDiff recurrence f(i)+2f(i-1)+f(i-2)=gain retainsif1<=i/2<=i.",
+  "correction_scope": "Foractualq>=1,correction0ati<2; trueq>=2 gives8C(q-2,i-2),falsegives4C(q-1,i-2). Trueq1 gives8(-1)^(i-2). Naturalsubtractions guardedbyi>=2 andqcases. Genericsecond-solver allowsarbitraryintegerc, allindices; binomialtailszero retained. Exceptionalalternatingauxiliarytail cancels lowerRaw beyondfiniteactualsupport, notnegative sourcecoefficients.",
+  "low_column_scope": "Firstrowactuali<=1zero provedfromoriginalpolygon. i2=8/4,i3=lowThree(q+1)+8(q-2)/4(q-1),i4=lowFour(n,q+1)+4(q-2)(q-3)/2(q-1)(q-2),with rationalcasts. Proofthroughguardedrawdiscriminant usingq=k+1 includesq1. No negative-natural-power extension and no divisionbyrawcoefficient.",
+  "strict_lc_scope": "Four exact rationalgapcertificates atx=q-1>=0 covercrossingcolumns3/4 andbothresidues; strictpositiveconstant plusnonnegativepowers. Separate lowThreegap yieldsstrictinnercolumn3. Innercolumn4 reuses156. Naturalcase split j+2<=q versusq=j+1 yieldsrawVstrict fori3/4,j+1<=q; casts exact, no rescaling orpositive-entrypremise.",
+  "root_scope": "ThreeRemaining retains allH,D andVoutside((i=3 ori=4)ANDj+1<=q). Exactiff retains OtherFourunchanged,originalpolygon/zeros/endpoints throughinheritedrootbridge. Bothconjunctsunproved. No generalLowershape/band/nextrowproof. UnboundedpaththreePath(j,r) givesq=j+1 forallj andbothcolumns/residues,all3originalpolygonmembers; outsideimmediate156removedregion,notassertedoutsideeveryoldercriterion.",
+  "auxiliary_scope": "Exceptionalcorrection1true3=-8 whileactual3/4rawVcolumn3[1,8,26]polygonvalidandstrictLC. Finitecubicresidual3/10row3[104,394,510,220]negative-discriminantclaim is auxiliary,unformalized andnotrecomputed; no rawrootrefutation.",
+  "recovery_scope": "All12unchanged156modules newlyjointreplayed in157;42+2explicitprintscoverall44theorems. Former5compiledonly nowreplayed,all12formerlyunprinted nowprinted. No fresh156sourcecompile,backdating, orold212recovery.",
+  "mathematical_values_recomputed": false
+}

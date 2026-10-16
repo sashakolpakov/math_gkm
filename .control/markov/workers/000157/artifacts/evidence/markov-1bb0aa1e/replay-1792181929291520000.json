@@ -1,0 +1,108 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovFirstForceM1BB\ncollected MarkovTailCorrectionM1BB\ncollected MarkovTailSourceM1BB\ncollected MarkovTailBinomialM1BB\ncollected MarkovCrossCertificateM1BB\ncollected MarkovCrossingLCM1BB\ncollected MarkovResidualM1BB\ncollected MarkovFirstRowM1BB\nreplay union of 8 modules over 3 inherited imports\nisolation checked for 55 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovFirstForceM1BB": "75c6c6aac47048024ffddfb7a4d7823da5eb22fa45569ffaef50d315433cfc5d",
+    "MarkovTailCorrectionM1BB": "61931d91e3b86a3cb22606d8e363c4d78b989ef9db878926062fc65a1c943ae3",
+    "MarkovTailSourceM1BB": "78d113dde292021af08d5512f900eb6216c3dd43709d6195e5e70989662e8dbd",
+    "MarkovTailBinomialM1BB": "9c3f178f941f380bc693fa1704fd876cd304c7503e820c15af283be34c1dc476",
+    "MarkovCrossCertificateM1BB": "065a3387014f700897da133f69eee179b83b0136247dda9c2c18d089f9ffee28",
+    "MarkovCrossingLCM1BB": "3aa836496862b013cbd24ca91e6ba219218e05d20b5692cbfdd4f9f5614a1ee1",
+    "MarkovResidualM1BB": "6cddfed02de01826d78dc20ba293a5bbac74832de3306361e5b8c63708ebf2c4",
+    "MarkovFirstRowM1BB": "a084d18bc57d86ebb3da47b87033976a0d6e0188fe9d6bff2bcad0f858251149"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM1BB.lean",
+    "MarkovFirstForceM1BB",
+    "MarkovTailCorrectionM1BB",
+    "MarkovTailSourceM1BB",
+    "MarkovTailBinomialM1BB",
+    "MarkovCrossCertificateM1BB",
+    "MarkovCrossingLCM1BB",
+    "MarkovResidualM1BB",
+    "MarkovFirstRowM1BB"
+  ],
+  "seconds": 50.61613824998494,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "61baad3c11a181801c3a30f623de790942313c32a325d6f7fa03fc46273cf564",
+  "declared_names": {
+    "MarkovFirstForceM1BB": [
+      "lower_force_twoM1BB",
+      "lower_force_threeM1BB",
+      "lower_force_fourM1BB"
+    ],
+    "MarkovTailCorrectionM1BB": [
+      "firstGainM1BB",
+      "first_forceM1BB",
+      "first_gain_zeroM1BB",
+      "first_gain_oneM1BB",
+      "first_gain_binomialM1BB",
+      "firstDiffM1BB",
+      "first_diff_equationM1BB"
+    ],
+    "MarkovTailSourceM1BB": [
+      "tailTwoM1BB",
+      "tailThreeM1BB",
+      "tailFourM1BB",
+      "first_gain_twoM1BB",
+      "first_gain_threeM1BB",
+      "first_gain_fourM1BB",
+      "source_first_small_zeroM1BB",
+      "source_first_twoM1BB",
+      "source_first_threeM1BB",
+      "source_first_fourM1BB"
+    ],
+    "MarkovTailBinomialM1BB": [
+      "first_diff_zeroM1BB",
+      "first_diff_oneM1BB",
+      "first_diff_stepM1BB",
+      "binomial_second_solveM1BB",
+      "first_diff_trueM1BB",
+      "first_diff_falseM1BB",
+      "first_diff_exceptionalM1BB"
+    ],
+    "MarkovCrossCertificateM1BB": [
+      "crossGap3FM1BB",
+      "cross_identity3FM1BB",
+      "cross_positive3FM1BB",
+      "crossGap3TM1BB",
+      "cross_identity3TM1BB",
+      "cross_positive3TM1BB",
+      "crossGap4FM1BB",
+      "cross_identity4FM1BB",
+      "cross_positive4FM1BB",
+      "crossGap4TM1BB",
+      "cross_identity4TM1BB",
+      "cross_positive4TM1BB",
+      "lowThreeGapM1BB",
+      "low_three_strictM1BB"
+    ],
+    "MarkovCrossingLCM1BB": [
+      "three_cross_threeM1BB",
+      "three_cross_fourM1BB",
+      "three_low_threeM1BB",
+      "three_low_tail_verticalM1BB"
+    ],
+    "MarkovResidualM1BB": [
+      "ThreeRemainingM1BB",
+      "three_remaining_iffM1BB",
+      "root_iff_remainingM1BB",
+      "crossing_gain_unboundedM1BB"
+    ],
+    "MarkovFirstRowM1BB": [
+      "firstCorrectionM1BB",
+      "first_diff_formulaM1BB",
+      "first_row_sourceM1BB",
+      "source_first_rowM1BB",
+      "exceptional_correction_negativeM1BB",
+      "exceptional_source_not_refutedM1BB"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed M1BB; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}
