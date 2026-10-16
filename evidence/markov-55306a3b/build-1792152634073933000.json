@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovOptimalCenterM553.lean:29:3: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovOptimalCenterM553.lean:39:56: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ?a * 0\nin the target expression\n  0 * (\u2191k + 2 - \u2191r) = 0\n\nP : \u211d[X]\nn : \u2115\nk : \u2124\nhp : \u2200 (r : \u2115), 0 \u2264 P.coeff r\nhw : massM37B P n k = 0\nhz : \u2200 r \u2208 P.support, weightM37B P n k r = 0\nr : \u2115\nhr : r \u2208 P.support\n\u22a2 0 * (\u2191k + 2 - \u2191r) = 0\n/Users/sasha/math_gkm/research/MarkovOptimalCenterM553.lean:40:56: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ?a * 0\nin the target expression\n  0 * (\u2191k + 2 - \u2191r) ^ 2 = 0\n\nP : \u211d[X]\nn : \u2115\nk : \u2124\nhp : \u2200 (r : \u2115), 0 \u2264 P.coeff r\nhw : massM37B P n k = 0\nhz : \u2200 r \u2208 P.support, weightM37B P n k r = 0\nr : \u2115\nhr : r \u2208 P.support\n\u22a2 0 * (\u2191k + 2 - \u2191r) ^ 2 = 0\n/Users/sasha/math_gkm/research/MarkovOptimalCenterM553.lean:44:1: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Matroid ?m.10) 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Matroid ?m.10\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovOptimalCenterM553.lean:44:4: error: Function expected at\n  omentGapM37B\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  P\n\nHint: The identifier `omentGapM37B` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n/Users/sasha/math_gkm/research/MarkovOptimalCenterM553.lean:49:14: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Matroid ?m.33) 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Matroid ?m.33\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovOptimalCenterM553.lean:49:17: error(lean.unknownIdentifier): Unknown identifier `assM37B`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovOptimalCenterM553": "2e5096fd97c57492004b376953c65fffa9131bca001d71f169cbbe0f5d351ff8"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-55306a3b/MarkovOptimalCenterM553.olean",
+    "/Users/sasha/math_gkm/research/MarkovOptimalCenterM553.lean"
+  ],
+  "seconds": 27.017792291997466,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSourceLinearValueM553.lean:20:1: error: Type mismatch: After simplification, term\n  h\n has type\n  @Eq \u211d (linearMomentM553 (map (Int.castRingHom \u211d) P) n (\u2191k) C)\n    (tripleLinearM553 (\u2191n + 2) ((Int.castRingHom \u211d) (((1 + X) ^ n * P).coeff k))\n      ((Int.castRingHom \u211d) (((1 + X) ^ n * P).coeff (k + 1))) ((Int.castRingHom \u211d) (((1 + X) ^ n * P).coeff (k + 2))) C)\nbut is expected to have type\n  @Eq \u211d (linearMomentM553 (map (Int.castRingHom \u211d) P) n (\u2191k) C)\n    (tripleLinearM553 (\u2191n + 2) (\u2191(((1 + X) ^ n * P).coeff k)) (\u2191(((1 + X) ^ n * P).coeff (k + 1)))\n      (\u2191(((1 + X) ^ n * P).coeff (k + 2))) C)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSourceLinearValueM553": "d5d01242d0b8339ad56ed6b4008f31f83861e7f78ed3da95b594334ac1c8bb20"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-55306a3b/MarkovSourceLinearValueM553.olean",
+    "/Users/sasha/math_gkm/research/MarkovSourceLinearValueM553.lean"
+  ],
+  "seconds": 26.77855637500761,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

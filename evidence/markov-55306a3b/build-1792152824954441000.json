@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSourceCenterWitnessM553.lean:80:1: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Matroid ?m.2) 2\nnumerals are polymorphic in Lean, but the numeral `2` cannot be used in a context where the expected type is\n  Matroid ?m.2\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovSourceCenterWitnessM553.lean:80:4: error(lean.unknownIdentifier): Unknown constant `Matroid.a`\n\nNote: Inferred this name from the expected resulting type of `.a`:\n  Matroid ?m.2\n/Users/sasha/math_gkm/research/MarkovSourceCenterWitnessM553.lean:80:16: error(lean.unknownIdentifier): Unknown constant `Nat.a`\n\nNote: Inferred this name from the expected resulting type of `.a`:\n  \u2115\n/Users/sasha/math_gkm/research/MarkovSourceCenterWitnessM553.lean:80:9: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  HAdd \u2115 \u2115 (Matroid ?m.55)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovSourceCenterWitnessM553.lean:80:16: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  HSub \u2115 \u2115 (Matroid ?m.55)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovSourceCenterWitnessM553.lean:83:37: error: unsolved goals\n\u22a2 sorry () \u2264m sorry () \u2227 7 + 4 \u2264m sorry () + 11 - 1\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSourceCenterWitnessM553": "ec94e00ee0369189a73028d506581ecb553751b294db5a35d7e253239d994dc9"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-55306a3b/MarkovSourceCenterWitnessM553.olean",
+    "/Users/sasha/math_gkm/research/MarkovSourceCenterWitnessM553.lean"
+  ],
+  "seconds": 41.975986291014124,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,92 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovMomentSlackM553\ncollected MarkovLinearCenterM553\ncollected MarkovSourceLinearM553\ncollected MarkovSourceLinearValueM553\ncollected MarkovOptimalCenterM553\ncollected MarkovSourceGridM553\ncollected MarkovSourceCenterWitnessM553\nreplay union of 7 modules over 6 inherited imports\nisolation checked for 43 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMomentSlackM553": "0a6823583eb38d608ffb863499ed7d4354c7af0bbc2b18e27996d5f240ece185",
+    "MarkovLinearCenterM553": "518139948ec6dcbd6ee61fdec3777475f019fb36f5947aec4bee385758545d53",
+    "MarkovSourceLinearM553": "b02a12a15ace51793960a35adecee298282054871fd5a6a1437a65d0cc4e534a",
+    "MarkovSourceLinearValueM553": "55da8b0c7be448ff216e87686f842e6d215948c5e3c26641119e5f6a1475772d",
+    "MarkovOptimalCenterM553": "ce85323836ad9c21cf8724a85a4c8e016556aa372070e57f6adcf283f8565b76",
+    "MarkovSourceGridM553": "e09bed459f46dbdb2b67aa0655ce1645c78ca1199702a7585db6e3486819ff1e",
+    "MarkovSourceCenterWitnessM553": "e087c7457a90471ef1afe0fae84c9416f28ce06b862be1932ab269006324c5a1"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM553.lean",
+    "MarkovMomentSlackM553",
+    "MarkovLinearCenterM553",
+    "MarkovSourceLinearM553",
+    "MarkovSourceLinearValueM553",
+    "MarkovOptimalCenterM553",
+    "MarkovSourceGridM553",
+    "MarkovSourceCenterWitnessM553"
+  ],
+  "seconds": 27.834308874967974,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "a9bd072aed0530a3d9e431872579d0554d34db801ca0a6ebb396a0c79be20845",
+  "declared_names": {
+    "MarkovMomentSlackM553": [
+      "slackM553",
+      "slack_identityM553",
+      "moment_slack_identityM553",
+      "moment_slack_squareM553",
+      "moment_slack_nonnegM553",
+      "linearMomentM553",
+      "linearMoment_slackM553",
+      "linearMoment_sumM553",
+      "linearMoment_nonnegM553",
+      "binomial_linearMoment_lcM553"
+    ],
+    "MarkovLinearCenterM553": [
+      "moments_from_tripleM553",
+      "tripleLinearM553",
+      "linearMoment_tripleM553",
+      "zero_smoothing_centerM553",
+      "grid_gap_negativeM553",
+      "integer_grid_negativeM553"
+    ],
+    "MarkovSourceLinearM553": [
+      "source_horizontal_linearM553",
+      "source_vertical_linearM553",
+      "source_diagonal_linearM553"
+    ],
+    "MarkovSourceLinearValueM553": [
+      "integer_linearMoment_tripleM553",
+      "source_horizontal_linear_valueM553"
+    ],
+    "MarkovOptimalCenterM553": [
+      "optimalCenterM553",
+      "linear_square_identityM553",
+      "optimal_linear_identityM553",
+      "zero_mass_momentsM553",
+      "moment_iff_optimal_linearM553"
+    ],
+    "MarkovSourceGridM553": [
+      "gridPathM553",
+      "choose_two_scaledM553",
+      "choose_three_scaledM553",
+      "grid_source_tripleM553",
+      "grid_source_growthM553",
+      "grid_source_polygonM553",
+      "source_fixed_grid_failureM553",
+      "source_fixed_grid_moment_failureM553",
+      "source_grid_scopeM553"
+    ],
+    "MarkovSourceCenterWitnessM553": [
+      "centerPathM553",
+      "center_source_coefficientsM553",
+      "center_source_labelsM553",
+      "center_source_linear_valueM553",
+      "center_source_rationalM553",
+      "center_source_integer_failureM553",
+      "center_source_valid_rawM553",
+      "center_source_residual_guardsM553"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed M553; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}
