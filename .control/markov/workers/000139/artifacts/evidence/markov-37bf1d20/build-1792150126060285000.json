@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBinomialAllM37B.lean:31:64: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  c \u2265 0\n  b \u2265 0\n  b - c \u2265 1\n  a \u2265 0\nwhere\n a := \u2191k\n b := \u2191((n + 1).choose (k + 1)) * \u2191(k + 1)\n c := \u2191(k + 1) * \u2191((n + 1).choose (k + 1))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBinomialAllM37B": "29bd321f7f0d616f19c3bad470deefd1a8d729e8fa42075e708f1cadea54a9ed"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-37bf1d20/MarkovBinomialAllM37B.olean",
+    "/Users/sasha/math_gkm/research/MarkovBinomialAllM37B.lean"
+  ],
+  "seconds": 6.954117999994196,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

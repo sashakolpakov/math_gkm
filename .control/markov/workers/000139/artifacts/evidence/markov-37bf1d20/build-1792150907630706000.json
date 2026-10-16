@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSharpWitnessM37B.lean:60:74: error: unsolved goals\nt : \u2115\nht : 1 \u2264 t\nn : \u2115 := 6 * t ^ 2 + 2 * t - 1\npath : List Bool := List.replicate n true ++ [false, false]\ni : \u2115 := 18 * t ^ 2 + 3 * t - 2\nj : \u2115 := i\nhtt : t \u2264 t ^ 2\nhn : n + 1 = 6 * t ^ 2 + 2 * t\nhi : i + 2 = 18 * t ^ 2 + 3 * t\nha : (frame path).mid.a = 3 * n + 1\nhb : (frame path).mid.b = 3 * n + 4\nheq : i + j + 2 + 6 * t = (frame path).mid.a + (frame path).mid.b - 1\nhr : 2 * (6 * t) \u2264 (frame path).mid.a + (frame path).mid.b - 1\neH : (frame path).mid.a + (frame path).mid.b - 1 - 2 * (6 * t) + 2 = 36 * t ^ 2\neN : (frame path).mid.a + (frame path).mid.b - 1 - 2 * (6 * t) + 2 = (6 * t) ^ 2\nhri : 6 * t \u2264 i\neA : i - 6 * t + 2 + 3 * t = 18 * t ^ 2\nhab : (frame path).mid.a \u2264 (frame path).mid.b\nhlo : (frame path).mid.b \u2264 i + j + 2\nhhigh : i + j + 2 \u2264 (frame path).mid.a + (frame path).mid.b - 1\neni : \u2191((frame path).mid.a + (frame path).mid.b - 1 - 2 * (6 * t)) = 36 * \u2191t ^ 2 - 2\neir : \u2191i = 18 * \u2191t ^ 2 + 3 * \u2191t - 2\n\u22a2 \u2191t ^ 2 * 36 - \u2191t ^ 4 * 2592 + \u2191t ^ 6 * 46656 \u2264 \u2191t ^ 2 * 36 - \u2191t ^ 4 * 2592 + \u2191t ^ 6 * 46656\n/Users/sasha/math_gkm/research/MarkovSharpWitnessM37B.lean:91:3: error: linarith failed to find a contradiction\nt : \u2115\nht : 1 \u2264 t\nn : \u2115 := 6 * t ^ 2 + 2 * t - 1\npath : List Bool := List.replicate n true ++ [false, false]\ni : \u2115 := 18 * t ^ 2 + 3 * t - 2\nj : \u2115 := i\nhtt : t \u2264 t ^ 2\nhn : n + 1 = 6 * t ^ 2 + 2 * t\nhi : i + 2 = 18 * t ^ 2 + 3 * t\nha : (frame path).mid.a = 3 * n + 1\nhb : (frame path).mid.b = 3 * n + 4\nheq : i + j + 2 + 6 * t = (frame path).mid.a + (frame path).mid.b - 1\nhr : 2 * (6 * t) \u2264 (frame path).mid.a + (frame path).mid.b - 1\neH : (frame path).mid.a + (frame path).mid.b - 1 - 2 * (6 * t) + 2 = 36 * t ^ 2\neN : (frame path).mid.a + (frame path).mid.b - 1 - 2 * (6 * t) + 2 = (6 * t) ^ 2\nhri : 6 * t \u2264 i\neA : i - 6 * t + 2 + 3 * t = 18 * t ^ 2\nhab : (frame path).mid.a \u2264 (frame path).mid.b\nhlo : (frame path).mid.b \u2264 i + j + 2\nhhigh : i + j + 2 \u2264 (frame path).mid.a + (frame path).mid.b - 1\nhs : DiagonalSharpM37B (frame path).mid.a (frame path).mid.b i j\nhold : \u00acDiagonalMiddleMF1E (frame path).mid.a (frame path).mid.b i j\nhv : \u00acDiagonalVarianceMAC3 (frame path).mid.a (frame path).mid.b i j\nhe\u271d : i + j + 2 + 6 * t = (frame path).mid.a + (frame path).mid.b - 1\nh1 : 6 * t \u2264 i\nh2 : 6 * t \u2264 j\nhg : 6 * t * (6 * t - 1) * (36 * t ^ 2) \u2264 2 * (i - 6 * t + 2) * (i - 6 * t + 2)\nhe : 6 * t - 1 + 1 = 6 * t\n\u22a2 False\nfailed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSharpWitnessM37B": "7db885f2ab540d65df6d26ca26c2cc1f77ab218bb735b9e4f6397309cbf9557c"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-37bf1d20/MarkovSharpWitnessM37B.olean",
+    "/Users/sasha/math_gkm/research/MarkovSharpWitnessM37B.lean"
+  ],
+  "seconds": 28.969441499968525,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

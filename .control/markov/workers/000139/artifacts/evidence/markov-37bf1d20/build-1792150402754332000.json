@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovMomentAllM37B.lean:99:1: error: Type mismatch: After simplification, term\n  h\n has type\n  ((if \u2191k + 2 < 0 then 0\n      else\n        if \u2191k < 0 then 0\n        else\n          ((1 + X) ^ n * map (Int.castRingHom \u211d) P).coeff k *\n            ((1 + X) ^ n * map (Int.castRingHom \u211d) P).coeff (\u2191k + 2).toNat) \u2264\n      if \u2191k + 1 < 0 then 0 else ((1 + X) ^ n * map (Int.castRingHom \u211d) P).coeff (k + 1) ^ 2) \u2194\n    0 \u2264 momentGapM37B (map (Int.castRingHom \u211d) P) n \u2191k\nbut is expected to have type\n  ((1 + X) ^ n * P).coeff k * ((1 + X) ^ n * P).coeff (k + 2) \u2264 ((1 + X) ^ n * P).coeff (k + 1) ^ 2 \u2194\n    0 \u2264 momentGapM37B (map (Int.castRingHom \u211d) P) n \u2191k\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMomentAllM37B": "0dbdfeb9cb7ef982c1209973018dd8f38256b9f97c4d91d45dfa14f78f1ac8bc"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-37bf1d20/MarkovMomentAllM37B.olean",
+    "/Users/sasha/math_gkm/research/MarkovMomentAllM37B.lean"
+  ],
+  "seconds": 19.562126540986355,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

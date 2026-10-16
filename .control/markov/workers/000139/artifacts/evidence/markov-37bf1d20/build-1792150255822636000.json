@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovMomentAllM37B.lean:63:1: error: `dsimp` made no progress\n/Users/sasha/math_gkm/research/MarkovMomentAllM37B.lean:76:34: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Matroid ?m.75) 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Matroid ?m.75\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovMomentAllM37B.lean:76:37: error: Function expected at\n  omentGapM37B\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  P\n\nHint: The identifier `omentGapM37B` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n/Users/sasha/math_gkm/research/MarkovMomentAllM37B.lean:93:1: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Matroid ?m.84) 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Matroid ?m.84\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovMomentAllM37B.lean:93:4: error: Function expected at\n  omentGapM37B\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  (P.map (Int.castRingHom \u211d))\n\nHint: The identifier `omentGapM37B` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n/Users/sasha/math_gkm/research/MarkovMomentAllM37B.lean:96:11: error(lean.unknownIdentifier): Unknown identifier `moment_lc_iffM37B`\n/Users/sasha/math_gkm/research/MarkovMomentAllM37B.lean:93:52: error: unsolved goals\nx\u271d : Sort u_1\nomentGapM37B : x\u271d\nP : \u2124[X]\nn k : \u2115\nhe : (1 + X) ^ n * map (Int.castRingHom \u211d) P = map (Int.castRingHom \u211d) ((1 + X) ^ n * P)\n\u22a2 ((1 + X) ^ n * P).coeff k * ((1 + X) ^ n * P).coeff (k + 2) \u2264 ((1 + X) ^ n * P).coeff (k + 1) ^ 2 \u2194 sorry \u2264m sorry\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMomentAllM37B": "e526ce59db06b511bb90304fcdd951120e96b92435a88a723e98af9993d330ef"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-37bf1d20/MarkovMomentAllM37B.olean",
+    "/Users/sasha/math_gkm/research/MarkovMomentAllM37B.lean"
+  ],
+  "seconds": 25.44094495801255,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovMomentAllM37B.lean:63:1: error: `dsimp` made no progress\n/Users/sasha/math_gkm/research/MarkovMomentAllM37B.lean:100:44: error(lean.unknownIdentifier): Unknown constant `Int.toNat_ofNat`\n/Users/sasha/math_gkm/research/MarkovMomentAllM37B.lean:101:3: error(lean.unknownIdentifier): Unknown constant `Int.castRingHom_apply`\n/Users/sasha/math_gkm/research/MarkovMomentAllM37B.lean:98:1: error: Type mismatch: After simplification, term\n  h\n has type\n  (Int.castRingHom \u211d) (((1 + X) ^ n * P).coeff k) * (Int.castRingHom \u211d) (((1 + X) ^ n * P).coeff (\u2191k + 2).toNat) \u2264\n      (Int.castRingHom \u211d) (((1 + X) ^ n * P).coeff (\u2191k + 1).toNat) ^ 2 \u2194\n    0 \u2264 momentGapM37B (map (Int.castRingHom \u211d) P) n \u2191k\nbut is expected to have type\n  ((1 + X) ^ n * P).coeff k * ((1 + X) ^ n * P).coeff (k + 2) \u2264 ((1 + X) ^ n * P).coeff (k + 1) ^ 2 \u2194\n    0 \u2264 momentGapM37B (map (Int.castRingHom \u211d) P) n \u2191k\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMomentAllM37B": "be7625b958d6e8f5bd3c399d3ddd1d80ac51d9e6c22386abcc48e4ea5c98bc49"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-37bf1d20/MarkovMomentAllM37B.olean",
+    "/Users/sasha/math_gkm/research/MarkovMomentAllM37B.lean"
+  ],
+  "seconds": 27.70090674998937,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

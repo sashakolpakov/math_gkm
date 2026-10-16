@@ -1,0 +1,387 @@
+{
+  "worker": 139,
+  "request": "37bf1d20e23d45ac82d81edbb57c3fd5",
+  "created_at_utc": "2026-10-16T12:05:42.780670+00:00",
+  "scope": "Completed archive-first static parsing/hashes/input-domain counts only. No project code or mathematical coefficient/binomial/moment/gap/recurrence computation.",
+  "new_modules": [
+    {
+      "module": "MarkovBinomialAllM37B",
+      "path": "research/MarkovBinomialAllM37B.lean",
+      "sha256": "0015621b6ab671ea35832e34a61faf3944de3ae2c80b3d17f9e371fb49b5bcda",
+      "current_sha256": "0015621b6ab671ea35832e34a61faf3944de3ae2c80b3d17f9e371fb49b5bcda",
+      "bytes": 4379,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "zchooseM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "zchoose_natM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "zchoose_negM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "zchoose_raiseM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "zchoose_keepM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "zchoose_threeM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "zchoose_coeffM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "coeffSeq_monomial_mulM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "coeffSeq_mul_sumM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "binomial_coeff_allM37B"
+        }
+      ],
+      "validation_source_and_theorem_names_match": true,
+      "imports": [
+        "MarkovBinomialVarianceMAC3",
+        "MathGKM.MarkovLogConcavity"
+      ],
+      "theorem_statements": [
+        "theorem zchoose_natM37B (n k : ℕ) : zchooseM37B n k = n.choose k",
+        "theorem zchoose_negM37B (n : ℕ) (k : ℤ) (hk : k<0) : zchooseM37B n k=0",
+        "theorem zchoose_raiseM37B (n : ℕ) (k : ℤ) :\n (k:ℝ)*zchooseM37B (n+1) k = (n+1:ℝ)*zchooseM37B n (k-1)",
+        "theorem zchoose_keepM37B (n : ℕ) (k : ℤ) :\n ((n+1:ℝ)-(k:ℝ))*zchooseM37B (n+1) k = (n+1:ℝ)*zchooseM37B n k",
+        "theorem zchoose_threeM37B (n : ℕ) (k : ℤ) :\n zchooseM37B (n+2) k*(k:ℝ)*((k:ℝ)-1) =\n   (n+1:ℝ)*(n+2)*zchooseM37B n (k-2) ∧\n zchooseM37B (n+2) k*(k:ℝ)*((n+2:ℝ)-(k:ℝ)) =\n   (n+1:ℝ)*(n+2)*zchooseM37B n (k-1) ∧\n zchooseM37B (n+2) k*((n+2:ℝ)-(k:ℝ))*((n+2:ℝ)-(k:ℝ)-1) =\n   (n+1:ℝ)*(n+2)*zchooseM37B n k",
+        "theorem zchoose_coeffM37B (n : ℕ) (k : ℤ) :\n zchooseM37B n k=CoeffSeq ((1+X)^n) k",
+        "theorem coeffSeq_monomial_mulM37B (P : ℝ[X]) (r : ℕ) (c : ℝ) (k : ℤ) :\n CoeffSeq (C c*X^r*P) k=c*CoeffSeq P (k-r)",
+        "theorem coeffSeq_mul_sumM37B (P Q : ℝ[X]) (k : ℤ) :\n CoeffSeq (Q*P) k = ∑ r∈P.support, P.coeff r*CoeffSeq Q (k-r)",
+        "theorem binomial_coeff_allM37B (P : ℝ[X]) (n : ℕ) (k : ℤ) :\n CoeffSeq ((1+X)^n*P) k = ∑ r∈P.support, P.coeff r*zchooseM37B n (k-r)"
+      ],
+      "definitions": [
+        "def zchooseM37B (n : ℕ) (k : ℤ) : ℝ :=\n if k < 0 then 0 else (n.choose k.toNat : ℝ)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovMomentAllM37B",
+      "path": "research/MarkovMomentAllM37B.lean",
+      "sha256": "0ad6829ba974db864790a5be0b146bbc8ea68aeaf6c604e487b070862f03771f",
+      "current_sha256": "0ad6829ba974db864790a5be0b146bbc8ea68aeaf6c604e487b070862f03771f",
+      "bytes": 4083,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "weightM37B"
+        },
+        {
+          "kind": "def",
+          "name": "massM37B"
+        },
+        {
+          "kind": "def",
+          "name": "firstM37B"
+        },
+        {
+          "kind": "def",
+          "name": "secondM37B"
+        },
+        {
+          "kind": "def",
+          "name": "momentGapM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "moment_reconstruct_allM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "moment_gap_identityM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "moment_lc_iffM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "integer_moment_lc_iffM37B"
+        }
+      ],
+      "validation_source_and_theorem_names_match": true,
+      "imports": [
+        "MarkovBinomialAllM37B"
+      ],
+      "theorem_statements": [
+        "theorem moment_reconstruct_allM37B (P : ℝ[X]) (n : ℕ) (k : ℤ) :\n let W := massM37B P n k\n let U := firstM37B P n k\n let V := secondM37B P n k\n let D : ℝ := (n+1)*(n+2)\n V-U = D*CoeffSeq ((1+X)^n*P) k ∧\n (n+2)*U-V = D*CoeffSeq ((1+X)^n*P) (k+1) ∧\n (n+2)*(n+1)*W-(2*(n+2)-1)*U+V = D*CoeffSeq ((1+X)^n*P) (k+2)",
+        "theorem moment_gap_identityM37B (P : ℝ[X]) (n : ℕ) (k : ℤ) :\n ((n+1:ℝ)*(n+2))^2 *\n   (CoeffSeq ((1+X)^n*P) (k+1)^2 -\n    CoeffSeq ((1+X)^n*P) k*CoeffSeq ((1+X)^n*P) (k+2)) =\n (n+1:ℝ)*momentGapM37B P n k",
+        "theorem moment_lc_iffM37B (P : ℝ[X]) (n : ℕ) (k : ℤ) :\n CoeffSeq ((1+X)^n*P) k*CoeffSeq ((1+X)^n*P) (k+2) ≤\n   CoeffSeq ((1+X)^n*P) (k+1)^2 ↔ 0 ≤ momentGapM37B P n k",
+        "theorem integer_moment_lc_iffM37B (P : ℤ[X]) (n k : ℕ) :\n (((1+X)^n*P):ℤ[X]).coeff k * (((1+X)^n*P):ℤ[X]).coeff (k+2) ≤\n   (((1+X)^n*P):ℤ[X]).coeff (k+1)^2 ↔\n 0 ≤ momentGapM37B (P.map (Int.castRingHom ℝ)) n k"
+      ],
+      "definitions": [
+        "def weightM37B (P : ℝ[X]) (n : ℕ) (k : ℤ) (r : ℕ) : ℝ :=\n P.coeff r*zchooseM37B (n+2) (k+2-r)",
+        "def massM37B (P : ℝ[X]) (n : ℕ) (k : ℤ) : ℝ :=\n ∑ r∈P.support, weightM37B P n k r",
+        "def firstM37B (P : ℝ[X]) (n : ℕ) (k : ℤ) : ℝ :=\n ∑ r∈P.support, weightM37B P n k r*((k:ℝ)+2-r)",
+        "def secondM37B (P : ℝ[X]) (n : ℕ) (k : ℤ) : ℝ :=\n ∑ r∈P.support, weightM37B P n k r*((k:ℝ)+2-r)^2",
+        "def momentGapM37B (P : ℝ[X]) (n : ℕ) (k : ℤ) : ℝ :=\n let W := massM37B P n k\n let U := firstM37B P n k\n let V := secondM37B P n k\n U*((n+2)*W-U)-(n+2)*(W*V-U^2)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovMomentSupportM37B",
+      "path": "research/MarkovMomentSupportM37B.lean",
+      "sha256": "0d06b9ae5a32e65c792a1032663c998d1ba46da72c9db7671b065d1b9fbb9914",
+      "current_sha256": "0d06b9ae5a32e65c792a1032663c998d1ba46da72c9db7671b065d1b9fbb9914",
+      "bytes": 2989,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "support_moment_gapM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_nonnegM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "binomial_lc_supportM37B"
+        }
+      ],
+      "validation_source_and_theorem_names_match": true,
+      "imports": [
+        "MarkovMomentAllM37B"
+      ],
+      "theorem_statements": [
+        "theorem support_moment_gapM37B {ι : Type*} (s : Finset ι) (q x : ι → ℝ)\n (A B H : ℝ) (hH : 1 < H)\n (hq : ∀ r∈s, 0 ≤ q r)\n (hx : ∀ r∈s, q r≠0 → A ≤ x r ∧ x r ≤ B)\n (hd : H*(A+B-1)^2 ≤ 4*(H-1)*A*B) :\n let W := ∑ r∈s, q r\n let U := ∑ r∈s, q r*x r\n let V := ∑ r∈s, q r*x r^2\n H*(W*V-U^2) ≤ U*(H*W-U)",
+        "theorem weight_nonnegM37B (P : ℝ[X]) (n : ℕ) (k : ℤ)\n (hp : ∀ r, 0 ≤ P.coeff r) (r : ℕ) : 0 ≤ weightM37B P n k r",
+        "theorem binomial_lc_supportM37B (P : ℝ[X]) (n : ℕ) (k : ℤ) (A B : ℝ)\n (hp : ∀ r, 0 ≤ P.coeff r)\n (hx : ∀ r∈P.support, weightM37B P n k r≠0 →\n   A ≤ (k:ℝ)+2-r ∧ (k:ℝ)+2-r ≤ B)\n (hd : (n+2:ℝ)*(A+B-1)^2 ≤ 4*(n+1)*A*B) :\n CoeffSeq ((1+X)^n*P) k*CoeffSeq ((1+X)^n*P) (k+2) ≤\n CoeffSeq ((1+X)^n*P) (k+1)^2"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovSharpRegionM37B",
+      "path": "research/MarkovSharpRegionM37B.lean",
+      "sha256": "414e97f125159613a0329d6e03c5f28d439abc4f49dde55be2b09d54e89cb7ed",
+      "current_sha256": "414e97f125159613a0329d6e03c5f28d439abc4f49dde55be2b09d54e89cb7ed",
+      "bytes": 1809,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "SharpRegionM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "binomial_sharp_lcM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "integer_binomial_sharp_lcM37B"
+        }
+      ],
+      "validation_source_and_theorem_names_match": true,
+      "imports": [
+        "MarkovMomentSupportM37B"
+      ],
+      "theorem_statements": [
+        "theorem binomial_sharp_lcM37B (P : ℝ[X]) (n : ℕ) (k : ℤ) (lo hi : ℕ)\n (hP : P.natDegree ≤ hi) (hpos : ∀ r, 0 ≤ P.coeff r)\n (hlow : ∀ r<lo, P.coeff r=0) (h : SharpRegionM37B n k lo hi) :\n CoeffSeq ((1+X)^n*P) k*CoeffSeq ((1+X)^n*P) (k+2) ≤\n CoeffSeq ((1+X)^n*P) (k+1)^2",
+        "theorem integer_binomial_sharp_lcM37B (P : ℤ[X]) (n k lo hi : ℕ)\n (hP : P.natDegree ≤ hi) (hpos : ∀ r, 0 ≤ P.coeff r)\n (hlow : ∀ r<lo, P.coeff r=0) (h : SharpRegionM37B n k lo hi) :\n (((1+X)^n*P):ℤ[X]).coeff k * (((1+X)^n*P):ℤ[X]).coeff (k+2) ≤\n (((1+X)^n*P):ℤ[X]).coeff (k+1)^2"
+      ],
+      "definitions": [
+        "def SharpRegionM37B (n : ℕ) (k : ℤ) (lo hi : ℕ) : Prop :=\n (n+2:ℝ)*((k:ℝ)*2-hi-lo+3)^2 ≤\n   4*(n+1)*((k:ℝ)-hi+2)*((k:ℝ)-lo+2)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovSourceMomentM37B",
+      "path": "research/MarkovSourceMomentM37B.lean",
+      "sha256": "1a9488d13e6223b8ed0d47fcd8281f7564ce169fa9aeec1e4552022a89a91c13",
+      "current_sha256": "1a9488d13e6223b8ed0d47fcd8281f7564ce169fa9aeec1e4552022a89a91c13",
+      "bytes": 2259,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_horizontal_moment_iffM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_vertical_moment_iffM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_diagonal_moment_iffM37B"
+        }
+      ],
+      "validation_source_and_theorem_names_match": true,
+      "imports": [
+        "MarkovMomentAllM37B",
+        "MarkovSourceVarianceMAC3"
+      ],
+      "theorem_statements": [
+        "theorem source_horizontal_moment_iffM37B (path : List Bool) (i j : ℕ)\n (hb : 2*j+1 ≤ (frame path).mid.b) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n   coeff (frame path).mid.p (i+1) j^2 ↔\n 0 ≤ momentGapM37B\n   ((hresidualM511 (X:ℤ[X]) (sourceWord28 path) j).map (Int.castRingHom ℝ))\n   ((frame path).mid.b-2*j-1) i",
+        "theorem source_vertical_moment_iffM37B (path : List Bool) (i j : ℕ)\n (ha : 2*i+1 ≤ (frame path).mid.a) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p i (j+2) ≤\n   coeff (frame path).mid.p i (j+1)^2 ↔\n 0 ≤ momentGapM37B ((vresidualM9E1 path i).map (Int.castRingHom ℝ))\n   ((frame path).mid.a-2*i-1) j",
+        "theorem source_diagonal_moment_iffM37B (path : List Bool) (r i j : ℕ)\n (hd : i+j+2+r=(frame path).mid.a+(frame path).mid.b-1)\n (hr : 2*r ≤ (frame path).mid.a+(frame path).mid.b-1) :\n coeff (frame path).mid.p i (j+2)*coeff (frame path).mid.p (i+2) j ≤\n   coeff (frame path).mid.p (i+1) (j+1)^2 ↔\n 0 ≤ momentGapM37B ((quotientSlice774 path r).map (Int.castRingHom ℝ))\n   ((frame path).mid.a+(frame path).mid.b-1-2*r) i"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovSourceSharpM37B",
+      "path": "research/MarkovSourceSharpM37B.lean",
+      "sha256": "3c704b69bab1f668e202f9cb37eb527587fe4d089eb000f5e81de268e61374b4",
+      "current_sha256": "3c704b69bab1f668e202f9cb37eb527587fe4d089eb000f5e81de268e61374b4",
+      "bytes": 3259,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "HorizontalSharpM37B"
+        },
+        {
+          "kind": "def",
+          "name": "VerticalSharpM37B"
+        },
+        {
+          "kind": "def",
+          "name": "DiagonalSharpM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_horizontal_sharpM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_vertical_sharpM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_diagonal_sharpM37B"
+        }
+      ],
+      "validation_source_and_theorem_names_match": true,
+      "imports": [
+        "MarkovSharpRegionM37B",
+        "MarkovSourceVarianceMAC3"
+      ],
+      "theorem_statements": [
+        "theorem source_horizontal_sharpM37B (path : List Bool) (i j : ℕ)\n (h : HorizontalSharpM37B (frame path).mid.a (frame path).mid.b i j) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) j^2",
+        "theorem source_vertical_sharpM37B (path : List Bool) (i j : ℕ)\n (h : VerticalSharpM37B (frame path).mid.a (frame path).mid.b i j) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p i (j+2) ≤\n coeff (frame path).mid.p i (j+1)^2",
+        "theorem source_diagonal_sharpM37B (path : List Bool) (i j : ℕ)\n (h : DiagonalSharpM37B (frame path).mid.a (frame path).mid.b i j) :\n coeff (frame path).mid.p i (j+2)*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) (j+1)^2"
+      ],
+      "definitions": [
+        "def HorizontalSharpM37B (a b i j : ℕ) : Prop :=\n 2*j+1 ≤ b ∧ SharpRegionM37B (b-2*j-1) i (a-a*j/b) (a+j)",
+        "def VerticalSharpM37B (a b i j : ℕ) : Prop :=\n 2*i+1 ≤ a ∧ SharpRegionM37B (a-2*i-1) j (b-b*i/a) (b+i)",
+        "def DiagonalSharpM37B (a b i j : ℕ) : Prop :=\n ∃ r, i+j+2+r=a+b-1 ∧ 2*r ≤ a+b-1 ∧\n   SharpRegionM37B (a+b-1-2*r) i 0 r"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovResidualM37B",
+      "path": "research/MarkovResidualM37B.lean",
+      "sha256": "047a93cfdf122603aac6c94cc2fd3c6acc8cea2f640ec81309dd7665bc1e81cd",
+      "current_sha256": "047a93cfdf122603aac6c94cc2fd3c6acc8cea2f640ec81309dd7665bc1e81cd",
+      "bytes": 2702,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "InteriorCore63M37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_interiorM37B"
+        }
+      ],
+      "validation_source_and_theorem_names_match": true,
+      "imports": [
+        "MarkovResidualMAC3",
+        "MarkovSourceSharpM37B"
+      ],
+      "theorem_statements": [
+        "theorem root_iff_interiorM37B : Conjecture63 ↔ InteriorCore63M37B"
+      ],
+      "definitions": [
+        "def InteriorCore63M37B : Prop := ∀ path : List Bool,\n let m := (frame path).mid\n 2 ≤ m.a →\n (∀ i j, InPolygon m.a m.b i j → InPolygon m.a m.b (i+1) j →\n   InPolygon m.a m.b (i+2) j → i+j+4 ≤ m.a+m.b-1 → 5 ≤ j →\n   ¬HorizontalMiddleMF1E m.a m.b i j →\n   ¬(HorizontalRegionMAC3 m.a m.b i j ∨ HorizontalVarianceMAC3 m.a m.b i j) →\n   ¬HorizontalSharpM37B m.a m.b i j →\n   coeff m.p i j*coeff m.p (i+2) j ≤ coeff m.p (i+1) j^2) ∧\n (∀ i j, InPolygon m.a m.b i j → InPolygon m.a m.b i (j+1) →\n   InPolygon m.a m.b i (j+2) → i+j+4 ≤ m.a+m.b-1 → 4 ≤ i → 3 ≤ j →\n   ¬VerticalMiddleMF1E m.a m.b i j →\n   ¬(VerticalRegionMAC3 m.a m.b i j ∨ VerticalVarianceMAC3 m.a m.b i j) →\n   ¬VerticalSharpM37B m.a m.b i j →\n   coeff m.p i j*coeff m.p i (j+2) ≤ coeff m.p i (j+1)^2) ∧\n (∀ i j, InPolygon m.a m.b i (j+2) → InPolygon m.a m.b (i+1) (j+1) →\n   InPolygon m.a m.b (i+2) j → i+j+8 ≤ m.a+m.b-1 → m.a+5 ≤ i+j+2 →\n   m.a+2 ≤ m.b → ¬DiagonalMiddleMF1E m.a m.b i j →\n   ¬(DiagonalRegionMAC3 m.a m.b i j ∨ DiagonalVarianceMAC3 m.a m.b i j) →\n   ¬DiagonalSharpM37B m.a m.b i j →\n   coeff m.p i (j+2)*coeff m.p (i+2) j ≤ coeff m.p (i+1) (j+1)^2)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovSharpWitnessM37B",
+      "path": "research/MarkovSharpWitnessM37B.lean",
+      "sha256": "6afa7aca313250a8a14a3564effb98b21ab3d6e442953046a2ba632c7de71590",
+      "current_sha256": "6afa7aca313250a8a14a3564effb98b21ab3d6e442953046a2ba632c7de71590",
+      "bytes": 4773,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "right_left_left_labelsM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "unbounded_sharp_onlyM37B"
+        }
+      ],
+      "validation_source_and_theorem_names_match": true,
+      "imports": [
+        "MarkovSourceSharpM37B",
+        "MarkovInteriorWitnessMF1E"
+      ],
+      "theorem_statements": [
+        "theorem right_left_left_labelsM37B (n : ℕ) :\n (frame (List.replicate n true++[false,false])).mid.a=3*n+1 ∧\n (frame (List.replicate n true++[false,false])).mid.b=3*n+4",
+        "theorem unbounded_sharp_onlyM37B (t : ℕ) (ht : 1  ≤  t) :\n ∃ (path : List Bool) (i j : ℕ),\n   let m := (frame path).mid\n   2  ≤  m.a ∧ m.a+2  ≤  m.b ∧\n   i+j+2+6*t=m.a+m.b-1 ∧ i+j+8  ≤  m.a+m.b-1 ∧ m.a+5  ≤  i+j+2 ∧\n   InPolygon m.a m.b i (j+2) ∧ InPolygon m.a m.b (i+1) (j+1) ∧\n   InPolygon m.a m.b (i+2) j ∧\n   ¬DiagonalMiddleMF1E m.a m.b i j ∧ ¬DiagonalRegionMAC3 m.a m.b i j ∧\n   ¬DiagonalVarianceMAC3 m.a m.b i j ∧ DiagonalSharpM37B m.a m.b i j ∧\n   coeff m.p i (j+2)*coeff m.p (i+2) j  ≤  coeff m.p (i+1) (j+1)^2"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovSupportObstructionM37B",
+      "path": "research/MarkovSupportObstructionM37B.lean",
+      "sha256": "e0e2a3fe40c3b02f3bdc282d16260eec8f8125214e6b270762faa000f0982176",
+      "current_sha256": "e0e2a3fe40c3b02f3bdc282d16260eec8f8125214e6b270762faa000f0982176",
+      "bytes": 1234,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "symmetric_two_point_gapM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "symmetric_two_point_iffM37B"
+        },
+        {
+          "kind": "theorem",
+          "name": "generic_support_counterexampleM37B"
+        }
+      ],
+      "validation_source_and_theorem_names_match": true,
+      "imports": [
+        "MarkovMomentSupportM37B"
+      ],
+      "theorem_statements": [
+        "theorem symmetric_two_point_gapM37B (H w : ℝ) :\n let A := (H-w)/2\n let B := (H+w)/2\n let W := (2:ℝ)\n let U := A+B\n let V := A^2+B^2\n U*(H*W-U)-H*(W*V-U^2)=H*(H-w^2)",
+        "theorem symmetric_two_point_iffM37B (H w : ℝ) (hH : 0 < H) :\n let A := (H-w)/2\n let B := (H+w)/2\n H*(2*(A^2+B^2)-(A+B)^2) ≤ (A+B)*(2*H-(A+B)) ↔ w^2 ≤ H",
+        "theorem generic_support_counterexampleM37B :\n let Q : ℝ[X] := (1+X)^12*(1+X^4)\n Q.coeff 8^2 < Q.coeff 7*Q.coeff 9"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    }
+  ],
+  "counts": {
+    "def": 11,
+    "theorem": 30
+  },
+  "theorem_statement_extraction": "Whole header through actual := by proof delimiter; internal let assignments retained.",
+  "exact_residual_guard_additions": true,
+  "generic_scope": "Real polynomial signed seeds, allintegerk,naturaln; integer-polynomial namedcorollary andactualsource starts natural. Identity/iff isnotgeneral sign.",
+  "sharp_scope": "Nonnegativeweights/seeds required; bounds onlyatnonzeroweights; H>1; noA>=0,B<=H,overlap orlo<=hi assumption. SharpRegion subtraction isreal.",
+  "witness_scope": "forall natural t>=1 atdepth6t withallpriorresidual/polygonguards andnegations ofall3olderexistentialcriteria; varyingactualsources.",
+  "obstruction_scope": "Symmetric2pointidentity/iff andauxiliarypolyLCfailure only; noformalnot-any-source exclusion orrootcounterexample.",
+  "math_identities_recomputed": false
+}

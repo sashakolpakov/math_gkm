@@ -1,0 +1,201 @@
+{
+  "request_id": "37bf1d20e23d45ac82d81edbb57c3fd5",
+  "inherited": {
+    "RESUME.json": true,
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": true,
+    "evidence/independent-markov/markov_residual_scope_audit.md": true,
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": true,
+    "evidence/markov/research-run/state.json": true,
+    "requests/markov-next.json": true
+  },
+  "ac3d4ab9": {
+    "count": 78,
+    "mismatches": []
+  },
+  "f1e4fe3b": {
+    "count": 86,
+    "mismatches": []
+  },
+  "000136": {
+    "events_sha256": "b29b5423e1203d73d0f59a9fc5ef02e037479b8b5b0aa421078ccddfdfc061b0",
+    "events_count": 220,
+    "last_events": [
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_112",
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "/Users/sasha/math_gkm/research/markov-f1e4fe3b-checkpoint.md",
+              "kind": "update"
+            },
+            {
+              "path": "/Users/sasha/math_gkm/research/markov-f1e4fe3b-mathematics.md",
+              "kind": "update"
+            },
+            {
+              "path": "/Users/sasha/math_gkm/research/markov-f1e4fe3b-operational.md",
+              "kind": "update"
+            }
+          ],
+          "status": "completed"
+        }
+      },
+      {
+        "type": "item.started",
+        "item": {
+          "id": "item_113",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc '/opt/homebrew/bin/python3 research/finalize_f1e4fe3b.py'",
+          "aggregated_output": "",
+          "exit_code": null,
+          "status": "in_progress"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_113",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc '/opt/homebrew/bin/python3 research/finalize_f1e4fe3b.py'",
+          "aggregated_output": "{\"request_id\": \"f1e4fe3b99d84d70bd218f29dcffcb3c\", \"compiled_replayed_audited_modules\": 5, \"audited_theorem_closures\": 20, \"excluded\": {}, \"unchanged_prior_inputs\": 5985, \"inherited_manifest_counts\": {\"f25b03a1\": 101, \"5703599b\": 180, \"81f80b2d\": 246}, \"unsuccessful_receipts\": 10, \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\", \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\", \"stop_file_present\": false, \"completion\": null}\nVerified artifacts 86\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      }
+    ],
+    "receipt": {
+      "classification": "live_gpt-6-astra_experimental_research",
+      "elapsed_seconds": 1883.721794128418,
+      "evidence": "bounded_worker_observation",
+      "finished": 1792145508.985246,
+      "mathematical_resolution": false,
+      "outcome": "timeout",
+      "price": null,
+      "price_note": "No provider invoice available; no invented monetary cost.",
+      "report": null,
+      "request_id": "f1e4fe3b99d84d70bd218f29dcffcb3c",
+      "returncode": 0,
+      "started": 1792143625.2634518,
+      "transport": "live",
+      "usage": []
+    },
+    "change_count": 88,
+    "change_mismatches": []
+  },
+  "000137": {
+    "events_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "events_count": 0,
+    "last_events": [],
+    "receipt": {
+      "classification": "live_gpt-6-astra_experimental_research",
+      "elapsed_seconds": 33.91727423667908,
+      "evidence": "bounded_worker_observation",
+      "finished": 1792145642.4184,
+      "mathematical_resolution": false,
+      "outcome": "stopped",
+      "price": null,
+      "price_note": "No provider invoice available; no invented monetary cost.",
+      "report": null,
+      "request_id": "ccbcf72971154826931caaa3e92fad30",
+      "returncode": -15,
+      "started": 1792145608.5011258,
+      "transport": "live",
+      "usage": []
+    },
+    "change_count": 0,
+    "change_mismatches": []
+  },
+  "000138": {
+    "events_sha256": "e9045b0626308dc7ee30a4b7cd24b5facaa8f3e64eb4bd2799c9e436f5777046",
+    "events_count": 152,
+    "last_events": [
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_78",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc \"/opt/homebrew/bin/python3 -c 'import json; from pathlib import Path; p=Path(\\\"evidence/markov-ac3d4ab9\\\"); print((p/\\\"report.json\\\").read_text()); print((p/\\\"last-verification.json\\\").read_text())'\"",
+          "aggregated_output": "{\n  \"request_id\": \"ac3d4ab98366433dacc719574d5ff03e\",\n  \"summary\": \"Proved broader raw log-concavity regions in all three directions using a weighted-variance criterion and exact polygon support. Full pinned Conjecture63 remains unresolved.\",\n  \"actions\": [\n    \"Reconciled interrupted workers 136 and 137; verified 187 inherited manifest artifacts and all recorded worker-change hashes: evidence/markov-ac3d4ab9/reconciliation.json.\",\n    \"Compiled and jointly kernel-replayed seven mathematical modules; audited 26 theorem closures: evidence/markov-ac3d4ab9/validation.json.\",\n    \"Verified 6007 unchanged prior inputs and pinned root/contract hashes: evidence/markov-ac3d4ab9/final-check.json. Artifact bindings: manifest.json and last-verification.json.\"\n  ],\n  \"observations\": [\n    \"Proved raw LC for arbitrary nonnegative binomial mixtures under an asymmetric pair criterion or a weighted-variance criterion, retaining zeros and non-LC seeds: research/MarkovBinomialGapMAC3.lean and research/MarkovBinomialVarianceMAC3.lean.\",\n    \"Proved exact polygon-derived lower residual support and connected both criteria to actual source coefficients in all three directions: research/MarkovSourceRegionMAC3.lean and research/MarkovSourceVarianceMAC3.lean.\",\n    \"Proved Conjecture63 iff InteriorCore63MAC3. The complement remains unproved: research/MarkovResidualMAC3.lean.\",\n    \"For every s>=5, constructed an actual source triple at depth 2s satisfying the variance criterion but neither the prior margin nor the pair criterion, with all residual and polygon guards: research/MarkovVarianceWitnessMAC3.lean.\",\n    \"Finite checks passed 241 source comparisons, 3570 residual-support checks, 1908 source triples (1474 newly covered), and 44536 generic triples including 4487 zero triples: evidence/markov-ac3d4ab9/experiments.json. Experiments are not proofs.\",\n    \"A proposed all-index moment adapter passed 473464 finite identities, including endpoints and zeros; it remains unformalized: evidence/markov-ac3d4ab9/moment-experiments.json.\",\n    \"All audited closures use permitted axioms. Inherited compiled imports were reused; no whole-source rebuild or independent completion audit occurred: research/markov-ac3d4ab9-correspondence.md.\",\n    \"Preserved 3 unsuccessful build receipts and capability limitations: research/markov-ac3d4ab9-operational.md.\"\n  ],\n  \"agenda\": [\n    \"Investigate source-specific weighted-moment bounds and the proposed all-index binomial adapter, keeping endpoint and reverse-factor gaps explicit: research/markov-ac3d4ab9-next.md.\",\n    \"Retain every unresolved clause of research/MarkovResidualMAC3.lean.\",\n    \"Discharge all source-correspondence obligations before claiming exact-root completion.\"\n  ],\n  \"completion\": null\n}\n\n{\n  \"verified_artifacts\": 78,\n  \"manifest_sha256\": \"91434e669638171e7c46e72b63e1b4b3801d2875c98377e8e088365185e5f7ba\",\n  \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\",\n  \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\"\n}\n\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_79",
+          "type": "agent_message",
+          "text": "{\n  \"actions\": [\n    \"Reconciled interrupted workers and verified 187 inherited artifacts: evidence/markov-ac3d4ab9/reconciliation.json.\",\n    \"Compiled and jointly kernel-replayed seven mathematical modules; audited 26 theorem closures: evidence/markov-ac3d4ab9/validation.json.\",\n    \"Verified 78 artifact hashes, 6007 unchanged prior inputs, and pinned root/contract hashes: evidence/markov-ac3d4ab9/final-check.json and last-verification.json.\"\n  ],\n  \"agenda\": [\n    \"Investigate source-specific weighted-moment bounds and the proposed all-index adapter: research/markov-ac3d4ab9-next.md.\",\n    \"Retain every unresolved clause in research/MarkovResidualMAC3.lean.\",\n    \"Discharge every source-correspondence obligation before claiming exact-root completion.\"\n  ],\n  \"completion\": null,\n  \"observations\": [\n    \"Proved binomial-mixture log-concavity criteria using mixed gaps and weighted variance, retaining zeros: research/MarkovBinomialGapMAC3.lean and research/MarkovBinomialVarianceMAC3.lean.\",\n    \"Proved exact polygon-derived residual support and connected both criteria to actual source coefficients in all three directions: research/MarkovSourceRegionMAC3.lean and research/MarkovSourceVarianceMAC3.lean.\",\n    \"Proved Conjecture63 \u2194 InteriorCore63MAC3. The residual remains unproved: research/MarkovResidualMAC3.lean.\",\n    \"Constructed an actual-source witness at every depth 2s for s\u22655 satisfying the variance criterion but neither earlier criterion: research/MarkovVarianceWitnessMAC3.lean.\",\n    \"Finite checks passed 241 source comparisons, 3570 support checks, 1908 source triples, and 44536 generic triples including 4487 zero triples. Experiments are not proofs: evidence/markov-ac3d4ab9/experiments.json.\",\n    \"The proposed all-index moment adapter passed 473464 finite identities but remains unformalized: evidence/markov-ac3d4ab9/moment-experiments.json.\",\n    \"All audited closures use permitted axioms. Inherited compiled imports were reused; no whole-source rebuild or independent completion audit occurred: research/markov-ac3d4ab9-correspondence.md.\",\n    \"Preserved three unsuccessful build receipts and recorded capability restrictions. All foreground executions ended: research/markov-ac3d4ab9-operational.md.\"\n  ],\n  \"request_id\": \"ac3d4ab98366433dacc719574d5ff03e\",\n  \"summary\": \"Proved broader raw log-concavity regions in all three directions using weighted variance and exact polygon support. Full pinned Conjecture63 remains unresolved.\"\n}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 3690210,
+          "cached_input_tokens": 3414528,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 42666,
+          "reasoning_output_tokens": 12774
+        }
+      }
+    ],
+    "receipt": {
+      "classification": "live_gpt-6-astra_experimental_research",
+      "elapsed_seconds": 1497.3628458976746,
+      "evidence": "bounded_worker_observation",
+      "finished": 1792149849.143008,
+      "mathematical_resolution": false,
+      "outcome": "completed",
+      "price": null,
+      "price_note": "No provider invoice available; no invented monetary cost.",
+      "report": {
+        "actions": [
+          "Reconciled interrupted workers and verified 187 inherited artifacts: evidence/markov-ac3d4ab9/reconciliation.json.",
+          "Compiled and jointly kernel-replayed seven mathematical modules; audited 26 theorem closures: evidence/markov-ac3d4ab9/validation.json.",
+          "Verified 78 artifact hashes, 6007 unchanged prior inputs, and pinned root/contract hashes: evidence/markov-ac3d4ab9/final-check.json and last-verification.json."
+        ],
+        "agenda": [
+          "Investigate source-specific weighted-moment bounds and the proposed all-index adapter: research/markov-ac3d4ab9-next.md.",
+          "Retain every unresolved clause in research/MarkovResidualMAC3.lean.",
+          "Discharge every source-correspondence obligation before claiming exact-root completion."
+        ],
+        "completion": null,
+        "observations": [
+          "Proved binomial-mixture log-concavity criteria using mixed gaps and weighted variance, retaining zeros: research/MarkovBinomialGapMAC3.lean and research/MarkovBinomialVarianceMAC3.lean.",
+          "Proved exact polygon-derived residual support and connected both criteria to actual source coefficients in all three directions: research/MarkovSourceRegionMAC3.lean and research/MarkovSourceVarianceMAC3.lean.",
+          "Proved Conjecture63 \u2194 InteriorCore63MAC3. The residual remains unproved: research/MarkovResidualMAC3.lean.",
+          "Constructed an actual-source witness at every depth 2s for s\u22655 satisfying the variance criterion but neither earlier criterion: research/MarkovVarianceWitnessMAC3.lean.",
+          "Finite checks passed 241 source comparisons, 3570 support checks, 1908 source triples, and 44536 generic triples including 4487 zero triples. Experiments are not proofs: evidence/markov-ac3d4ab9/experiments.json.",
+          "The proposed all-index moment adapter passed 473464 finite identities but remains unformalized: evidence/markov-ac3d4ab9/moment-experiments.json.",
+          "All audited closures use permitted axioms. Inherited compiled imports were reused; no whole-source rebuild or independent completion audit occurred: research/markov-ac3d4ab9-correspondence.md.",
+          "Preserved three unsuccessful build receipts and recorded capability restrictions. All foreground executions ended: research/markov-ac3d4ab9-operational.md."
+        ],
+        "request_id": "ac3d4ab98366433dacc719574d5ff03e",
+        "summary": "Proved broader raw log-concavity regions in all three directions using weighted variance and exact polygon support. Full pinned Conjecture63 remains unresolved."
+      },
+      "request_id": "ac3d4ab98366433dacc719574d5ff03e",
+      "returncode": 0,
+      "started": 1792148351.780162,
+      "transport": "live",
+      "usage": [
+        {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 3414528,
+          "input_tokens": 3690210,
+          "output_tokens": 42666,
+          "reasoning_output_tokens": 12774
+        }
+      ]
+    },
+    "change_count": 80,
+    "change_mismatches": []
+  },
+  "reconciliation": "Worker 136 final artifacts are inherited after outer timeout; worker 137 stopped with no events or changes; worker 138 completed. Hashes and final raw events inspected. No prior mutation replayed.",
+  "capabilities": {
+    "scratch": "denied by higher-priority policy; never accessed; durable evidence paths used",
+    "sage": null,
+    "gap": "/opt/homebrew/bin/gap"
+  }
+}

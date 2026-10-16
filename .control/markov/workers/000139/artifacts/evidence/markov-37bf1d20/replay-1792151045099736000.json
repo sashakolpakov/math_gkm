@@ -1,0 +1,98 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovBinomialAllM37B\ncollected MarkovMomentAllM37B\ncollected MarkovMomentSupportM37B\ncollected MarkovSharpRegionM37B\ncollected MarkovSourceMomentM37B\ncollected MarkovSourceSharpM37B\ncollected MarkovResidualM37B\ncollected MarkovSharpWitnessM37B\ncollected MarkovSupportObstructionM37B\nreplay union of 9 modules over 6 inherited imports\nisolation checked for 41 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBinomialAllM37B": "0015621b6ab671ea35832e34a61faf3944de3ae2c80b3d17f9e371fb49b5bcda",
+    "MarkovMomentAllM37B": "0ad6829ba974db864790a5be0b146bbc8ea68aeaf6c604e487b070862f03771f",
+    "MarkovMomentSupportM37B": "0d06b9ae5a32e65c792a1032663c998d1ba46da72c9db7671b065d1b9fbb9914",
+    "MarkovSharpRegionM37B": "414e97f125159613a0329d6e03c5f28d439abc4f49dde55be2b09d54e89cb7ed",
+    "MarkovSourceMomentM37B": "1a9488d13e6223b8ed0d47fcd8281f7564ce169fa9aeec1e4552022a89a91c13",
+    "MarkovSourceSharpM37B": "3c704b69bab1f668e202f9cb37eb527587fe4d089eb000f5e81de268e61374b4",
+    "MarkovResidualM37B": "047a93cfdf122603aac6c94cc2fd3c6acc8cea2f640ec81309dd7665bc1e81cd",
+    "MarkovSharpWitnessM37B": "6afa7aca313250a8a14a3564effb98b21ab3d6e442953046a2ba632c7de71590",
+    "MarkovSupportObstructionM37B": "e0e2a3fe40c3b02f3bdc282d16260eec8f8125214e6b270762faa000f0982176"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM37B.lean",
+    "MarkovBinomialAllM37B",
+    "MarkovMomentAllM37B",
+    "MarkovMomentSupportM37B",
+    "MarkovSharpRegionM37B",
+    "MarkovSourceMomentM37B",
+    "MarkovSourceSharpM37B",
+    "MarkovResidualM37B",
+    "MarkovSharpWitnessM37B",
+    "MarkovSupportObstructionM37B"
+  ],
+  "seconds": 37.37231737503316,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "50a3beb6cabbf8ae5003f10bd5556075e382c3ef97ef22015780b907d621f517",
+  "declared_names": {
+    "MarkovBinomialAllM37B": [
+      "zchooseM37B",
+      "zchoose_natM37B",
+      "zchoose_negM37B",
+      "zchoose_raiseM37B",
+      "zchoose_keepM37B",
+      "zchoose_threeM37B",
+      "zchoose_coeffM37B",
+      "coeffSeq_monomial_mulM37B",
+      "coeffSeq_mul_sumM37B",
+      "binomial_coeff_allM37B"
+    ],
+    "MarkovMomentAllM37B": [
+      "weightM37B",
+      "massM37B",
+      "firstM37B",
+      "secondM37B",
+      "momentGapM37B",
+      "moment_reconstruct_allM37B",
+      "moment_gap_identityM37B",
+      "moment_lc_iffM37B",
+      "integer_moment_lc_iffM37B"
+    ],
+    "MarkovMomentSupportM37B": [
+      "support_moment_gapM37B",
+      "weight_nonnegM37B",
+      "binomial_lc_supportM37B"
+    ],
+    "MarkovSharpRegionM37B": [
+      "SharpRegionM37B",
+      "binomial_sharp_lcM37B",
+      "integer_binomial_sharp_lcM37B"
+    ],
+    "MarkovSourceMomentM37B": [
+      "source_horizontal_moment_iffM37B",
+      "source_vertical_moment_iffM37B",
+      "source_diagonal_moment_iffM37B"
+    ],
+    "MarkovSourceSharpM37B": [
+      "HorizontalSharpM37B",
+      "VerticalSharpM37B",
+      "DiagonalSharpM37B",
+      "source_horizontal_sharpM37B",
+      "source_vertical_sharpM37B",
+      "source_diagonal_sharpM37B"
+    ],
+    "MarkovResidualM37B": [
+      "InteriorCore63M37B",
+      "root_iff_interiorM37B"
+    ],
+    "MarkovSharpWitnessM37B": [
+      "right_left_left_labelsM37B",
+      "unbounded_sharp_onlyM37B"
+    ],
+    "MarkovSupportObstructionM37B": [
+      "symmetric_two_point_gapM37B",
+      "symmetric_two_point_iffM37B",
+      "generic_support_counterexampleM37B"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed M37B; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}
