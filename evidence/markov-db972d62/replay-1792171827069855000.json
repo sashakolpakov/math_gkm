@@ -1,0 +1,122 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovKernelGeneralMDB9\ncollected MarkovKernelSequencesMDB9\ncollected MarkovKernelProofMDB9\ncollected MarkovTwoVerticalMDB9\ncollected MarkovKernelObstructionMDB9\ncollected MarkovResidualMDB9\ncollected MarkovVerticalGainMDB9\ncollected MarkovDiagonalShapeMDB9\ncollected MarkovReducedObstructionMDB9\nreplay union of 9 modules over 6 inherited imports\nisolation checked for 65 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovKernelGeneralMDB9": "cfcf8e25a87832bf37c700fc1a20c2819a6b3462484619b67b1d5e546a1ea7d4",
+    "MarkovKernelSequencesMDB9": "a6d305ce46cffe45d0cce5350b6ee72c815f3fd4e2a71030eb8a4e8c55ce12b0",
+    "MarkovKernelProofMDB9": "7708c4a186d2acdefdfb253d684c0bb300a78a327687918711dcca0b85f02732",
+    "MarkovTwoVerticalMDB9": "e6fe6ca46868c7672770ae8d7659d77b37d93bac2a92c73e1b61a6b4c502bfdb",
+    "MarkovKernelObstructionMDB9": "7c6933cdfb0857b746b9565e3af7c7c5ab9129a7b70f7d00af272fa36bffa805",
+    "MarkovResidualMDB9": "0a1412d2d33e140d4484b22a739824d1362783c681eaff60f92843c464d8de06",
+    "MarkovVerticalGainMDB9": "72b07d0e7b90735d2046325559f49d0633b59daaf68a06c4e9a70ef84df8b5b8",
+    "MarkovDiagonalShapeMDB9": "3709d9af41f7dfd86b169f5a20b8fdfe18de413676436c3da948eedbf126a14c",
+    "MarkovReducedObstructionMDB9": "4ae0a624cec397d2aa6ad581852c334f1b2dd727a11abfd969c5fac7bf1c9756"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedMDB9.lean",
+    "MarkovKernelGeneralMDB9",
+    "MarkovKernelSequencesMDB9",
+    "MarkovKernelProofMDB9",
+    "MarkovTwoVerticalMDB9",
+    "MarkovKernelObstructionMDB9",
+    "MarkovResidualMDB9",
+    "MarkovVerticalGainMDB9",
+    "MarkovDiagonalShapeMDB9",
+    "MarkovReducedObstructionMDB9"
+  ],
+  "seconds": 18.13406120799482,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "085da1c8039619fe78af8612c4b3d5c6590c5a71ec844e7e5e07ebf1a7f3fe99",
+  "declared_names": {
+    "MarkovKernelGeneralMDB9": [
+      "seqPolyMDB9",
+      "seqPoly_coeffMDB9",
+      "seqPoly_seqMDB9",
+      "crossLC_cutMDB9",
+      "seqPoly_crossMDB9",
+      "seqPoly_nonnegMDB9",
+      "diagSumMDB9",
+      "diagSum_extendMDB9",
+      "diagSum_swapMDB9",
+      "diagSum_as_coeffMDB9",
+      "diagSum_rowMDB9",
+      "diagSum_minorMDB9"
+    ],
+    "MarkovKernelSequencesMDB9": [
+      "nbSeqMDB9",
+      "nbSeq_nonnegMDB9",
+      "nbSeq_zeroMDB9",
+      "nbSeq_natMDB9",
+      "nbSeq_polyMDB9",
+      "nbSeq_crossMDB9",
+      "chooseSeqMDB9",
+      "chooseSeq_crossMDB9",
+      "chooseSeq_nonnegMDB9",
+      "chooseSeq_zeroMDB9",
+      "chooseSeq_natMDB9",
+      "weightSeqMDB9",
+      "weight_nonnegMDB9",
+      "weight_zeroMDB9",
+      "weight_crossMDB9"
+    ],
+    "MarkovKernelProofMDB9": [
+      "two_kernel_diagSumMDB9",
+      "kernel_shapeMDB9",
+      "source_two_vertical_ge_fourMDB9",
+      "root_iff_other_verticalMDB9"
+    ],
+    "MarkovTwoVerticalMDB9": [
+      "source_two_vertical_ge_threeMDB9",
+      "source_two_vertical_allMDB9"
+    ],
+    "MarkovKernelObstructionMDB9": [
+      "kernelTermMDB9",
+      "kernel_diagonal_shift_failureMDB9",
+      "kernel_obstruction_source_valuesMDB9",
+      "kernel_obstruction_source_polygonMDB9",
+      "kernel_obstruction_source_lcMDB9"
+    ],
+    "MarkovResidualMDB9": [
+      "TwoDiagonalMDB9",
+      "two_vertical_arithmeticMDB9",
+      "two_remaining_iff_diagonalMDB9",
+      "root_iff_two_diagonalMDB9",
+      "SmallTwoDiagonalMDB9",
+      "KernelDiagonalMDB9",
+      "source_two_diagonal_of_kernelMDB9",
+      "kernel_diagonal_of_rootMDB9",
+      "root_iff_kernel_diagonalMDB9"
+    ],
+    "MarkovVerticalGainMDB9": [
+      "vertical_previous_guardsMDB9",
+      "vertical_gain_rawMDB9"
+    ],
+    "MarkovDiagonalShapeMDB9": [
+      "reducedKernelMDB9",
+      "reduced_kernel_sumMDB9",
+      "reduced_kernel_posMDB9",
+      "reduced_kernel_rowMDB9",
+      "ReducedShapeMDB9",
+      "reduced_antidiagonal_of_shapeMDB9",
+      "kernel_diagonal_of_reduced_shapeMDB9",
+      "root_of_reduced_shapeMDB9",
+      "ReducedDiagonalMDB9",
+      "kernel_iff_reduced_diagonalMDB9",
+      "root_iff_reduced_diagonalMDB9"
+    ],
+    "MarkovReducedObstructionMDB9": [
+      "parameterWeightMDB9",
+      "parameter_weight_nonnegMDB9",
+      "parameter_weight_crossMDB9",
+      "parameter_shape_counterexampleMDB9",
+      "actual_weight_small_gapMDB9"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed MDB9; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

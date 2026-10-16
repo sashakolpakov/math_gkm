@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovDiagonalShapeMDB9.lean:58:15: error: Application type mismatch: The argument\n  m\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  Type ?u.4\nof sort `Type (?u.4 + 1)` in the application\n  @PrincipalSeg m\n/Users/sasha/math_gkm/research/MarkovDiagonalShapeMDB9.lean:58:18: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  Neg (Type ?u.3)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovDiagonalShapeMDB9.lean:58:19: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Type ?u.3) 2\nnumerals are polymorphic in Lean, but the numeral `2` cannot be used in a context where the expected type is\n  Type ?u.3\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovDiagonalShapeMDB9.lean:63:38: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  e \u2265 1\n  c - d \u2265 0\n  b \u2265 0\n  a \u2265 0\n  a - 2*b \u2264 -2\n  a - e \u2264 -1\nwhere\n a := \u2191m\n b := \u2191hpar.choose\n c := twoKernelM4F4 (i - 2 + 1 + 2) (j + 1) (m - (i - 2) + (i - 2 + 1)) ^ 2\n d := twoKernelM4F4 (i - 2 + 2) (j + 2) (m - (i - 2) + (i - 2)) *\n  twoKernelM4F4 (i - 2 + 2 + 2) j (m - (i - 2) + (i - 2 + 2))\n e := \u2191(i - 2)\n/Users/sasha/math_gkm/research/MarkovDiagonalShapeMDB9.lean:63:38: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  e \u2265 1\n  c - d \u2265 0\n  b \u2265 0\n  a \u2265 0\n  a - 2*b \u2264 -2\n  a - e \u2264 -1\nwhere\n a := \u2191m\n b := \u2191hpar.choose\n c := twoKernelM4F4 (i - 2 + 1 + 2) (j + 1) (m - (i - 2) + (i - 2 + 1)) ^ 2\n d := twoKernelM4F4 (i - 2 + 2) (j + 2) (m - (i - 2) + (i - 2)) *\n  twoKernelM4F4 (i - 2 + 2 + 2) j (m - (i - 2) + (i - 2 + 2))\n e := \u2191(i - 2)\n/Users/sasha/math_gkm/research/MarkovDiagonalShapeMDB9.lean:63:38: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  e \u2265 1\n  c - d \u2265 0\n  b \u2265 0\n  a \u2265 0\n  a - 2*b \u2264 -2\n  a - e \u2264 -1\nwhere\n a := \u2191m\n b := \u2191hpar.choose\n c := twoKernelM4F4 (i - 2 + 1 + 2) (j + 1) (m - (i - 2) + (i - 2 + 1)) ^ 2\n d := twoKernelM4F4 (i - 2 + 2) (j + 2) (m - (i - 2) + (i - 2)) *\n  twoKernelM4F4 (i - 2 + 2 + 2) j (m - (i - 2) + (i - 2 + 2))\n e := \u2191(i - 2)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovDiagonalShapeMDB9": "d63e9cb33f1a75190214c2cd681721e016a17aa93e1862b478d8271541f350fc"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-db972d62/MarkovDiagonalShapeMDB9.olean",
+    "/Users/sasha/math_gkm/research/MarkovDiagonalShapeMDB9.lean"
+  ],
+  "seconds": 36.63820383400889,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

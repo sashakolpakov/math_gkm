@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovKernelProofMDB9.lean:21:15: error: unexpected token 'in'; expected term\n/Users/sasha/math_gkm/research/MarkovKernelProofMDB9.lean:21:12: error: Application type mismatch: The argument\n  k\nhas type\n  \u2115\nbut is expected to have type\n  Matroid ?m.59\nin the application\n  Matroid.IsStrictMinor k\n/Users/sasha/math_gkm/research/MarkovKernelProofMDB9.lean:10:94: error: unsolved goals\ncase hk'\ni j m k : \u2115\nhk : k \u2208 range (min j m)\n\u22a2 sorry <m sorry\n\ncase e_a\ni j m k : \u2115\nhk : k \u2208 range (min j m)\nhk' : sorry <m sorry\n\u22a2 2 * (\u2191((j - (k + 1) + i).choose i) * \u2191((m - (k + 1)).choose (i - 2))) =\n    (if \u2191(k + 1) < 0 then 0 else if \u2191(k + 1) = 0 then 1 else 2) * nbSeqMDB9 i (\u2191j - \u2191(k + 1)) *\n      chooseSeqMDB9 (i - 2) (\u2191m - \u2191(k + 1))\n/Users/sasha/math_gkm/research/MarkovKernelProofMDB9.lean:57:20: error: unexpected token ')'; expected term\n",
+  "stderr": "",
+  "modules": {
+    "MarkovKernelProofMDB9": "e705fb69976bbb74368352d0d8a8608b5a283daddabcb588557990c01cc18ab3"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-db972d62/MarkovKernelProofMDB9.olean",
+    "/Users/sasha/math_gkm/research/MarkovKernelProofMDB9.lean"
+  ],
+  "seconds": 14.536952624970581,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

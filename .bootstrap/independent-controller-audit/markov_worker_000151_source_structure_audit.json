@@ -1,0 +1,517 @@
+{
+  "worker": 151,
+  "request": "db972d62445f4aceac3b243e0cba0855",
+  "created_at_utc": "2026-10-16T17:50:11.620138+00:00",
+  "scope": "Archive-first static completed-source/declaration/hash and input-index count audit. No project program/proof/checker/replay/experiment execution, mathematical-value recomputation, project changes or research assistance. Explicit named completed/inherited paths only; active152 not inspected.",
+  "new_modules": [
+    {
+      "module": "MarkovKernelGeneralMDB9",
+      "path": "research/MarkovKernelGeneralMDB9.lean",
+      "sha256": "cfcf8e25a87832bf37c700fc1a20c2819a6b3462484619b67b1d5e546a1ea7d4",
+      "current_sha256": "cfcf8e25a87832bf37c700fc1a20c2819a6b3462484619b67b1d5e546a1ea7d4",
+      "bytes": 5742,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "seqPolyMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "seqPoly_coeffMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "seqPoly_seqMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "crossLC_cutMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "seqPoly_crossMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "seqPoly_nonnegMDB9"
+        },
+        {
+          "kind": "def",
+          "name": "diagSumMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "diagSum_extendMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "diagSum_swapMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "diagSum_as_coeffMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "diagSum_rowMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "diagSum_minorMDB9"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovWindowLC6d34"
+      ],
+      "theorem_statements": [
+        "theorem seqPoly_coeffMDB9 (f : ℤ → ℝ) (N k : ℕ) :\n (seqPolyMDB9 f N).coeff k=if k≤N then f k else 0",
+        "theorem seqPoly_seqMDB9 (f : ℤ → ℝ) (N : ℕ)\n (hz : ∀ k, k<0 → f k=0) (k : ℤ) :\n CoeffSeq (seqPolyMDB9 f N) k=if k≤N then f k else 0",
+        "theorem crossLC_cutMDB9 {f : ℤ → ℝ} (hf : CrossLC f)\n (hn : ∀ k, 0≤f k) (N : ℤ) : CrossLC (fun k => if k≤N then f k else 0)",
+        "theorem seqPoly_crossMDB9 {f : ℤ → ℝ} (hf : CrossLC f)\n (hn : ∀ k, 0≤f k) (hz : ∀ k, k<0 → f k=0) (N : ℕ) :\n CrossLC (CoeffSeq (seqPolyMDB9 f N))",
+        "theorem seqPoly_nonnegMDB9 {f : ℤ → ℝ} (hn : ∀ k, 0≤f k) (N k : ℕ) :\n 0≤(seqPolyMDB9 f N).coeff k",
+        "theorem diagSum_extendMDB9 (f g w : ℤ → ℝ)\n (hfz : ∀ k, k<0 → f k=0) (hgz : ∀ k, k<0 → g k=0)\n (j m N : ℕ) (hN : min j m<N) :\n diagSumMDB9 f g w j m=∑ k ∈ range N,w k*f ((j:ℤ)-k)*g ((m:ℤ)-k)",
+        "theorem diagSum_swapMDB9 (f g w : ℤ → ℝ) (j m : ℕ) :\n diagSumMDB9 f g w j m=diagSumMDB9 g f w m j",
+        "theorem diagSum_as_coeffMDB9 (f g w : ℤ → ℝ)\n (hfz : ∀ k, k<0 → f k=0) (hgz : ∀ k, k<0 → g k=0)\n (j m N : ℕ) (hj : j≤N) :\n diagSumMDB9 f g w j m=\n (seqPolyMDB9 (fun k => w k*g ((m:ℤ)-k)) m * seqPolyMDB9 f N).coeff j",
+        "theorem diagSum_rowMDB9 (f g w : ℤ → ℝ)\n (hf : CrossLC f) (hg : CrossLC g) (hw : CrossLC w)\n (hfn : ∀ k, 0≤f k) (hgn : ∀ k, 0≤g k) (hwn : ∀ k, 0≤w k)\n (hfz : ∀ k, k<0 → f k=0) (hgz : ∀ k, k<0 → g k=0)\n (hwz : ∀ k, k<0 → w k=0) (j m : ℕ) :\n diagSumMDB9 f g w j m*diagSumMDB9 f g w (j+2) m≤diagSumMDB9 f g w (j+1) m^2",
+        "theorem diagSum_minorMDB9 (f g w : ℤ → ℝ)\n (hf : CrossLC f) (hg : CrossLC g) (hwn : ∀ k, 0≤w k)\n (hfz : ∀ k, k<0 → f k=0) (hgz : ∀ k, k<0 → g k=0) (j m : ℕ) :\n diagSumMDB9 f g w (j+1) m*diagSumMDB9 f g w j (m+1)≤\n diagSumMDB9 f g w j m*diagSumMDB9 f g w (j+1) (m+1)"
+      ],
+      "definitions": [
+        "def seqPolyMDB9 (f : ℤ → ℝ) (N : ℕ) : ℝ[X] :=\n ∑ k ∈ range (N+1), monomial k (f k)",
+        "def diagSumMDB9 (f g w : ℤ → ℝ) (j m : ℕ) : ℝ :=\n ∑ k ∈ range (min j m+1), w k*f ((j:ℤ)-k)*g ((m:ℤ)-k)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovKernelSequencesMDB9",
+      "path": "research/MarkovKernelSequencesMDB9.lean",
+      "sha256": "a6d305ce46cffe45d0cce5350b6ee72c815f3fd4e2a71030eb8a4e8c55ce12b0",
+      "current_sha256": "a6d305ce46cffe45d0cce5350b6ee72c815f3fd4e2a71030eb8a4e8c55ce12b0",
+      "bytes": 2691,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "nbSeqMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "nbSeq_nonnegMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "nbSeq_zeroMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "nbSeq_natMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "nbSeq_polyMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "nbSeq_crossMDB9"
+        },
+        {
+          "kind": "def",
+          "name": "chooseSeqMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "chooseSeq_crossMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "chooseSeq_nonnegMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "chooseSeq_zeroMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "chooseSeq_natMDB9"
+        },
+        {
+          "kind": "def",
+          "name": "weightSeqMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_nonnegMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_zeroMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_crossMDB9"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovKernelGeneralMDB9"
+      ],
+      "theorem_statements": [
+        "theorem nbSeq_nonnegMDB9 (s : ℕ) (k : ℤ) : 0≤nbSeqMDB9 s k",
+        "theorem nbSeq_zeroMDB9 (s : ℕ) (k : ℤ) (hk : k<0) : nbSeqMDB9 s k=0",
+        "theorem nbSeq_natMDB9 (s k : ℕ) : nbSeqMDB9 s k=((k+s).choose s:ℝ)",
+        "theorem nbSeq_polyMDB9 (s N : ℕ) (k : ℤ) (hk : k≤N) :\n CoeffSeq (nbPoly6d34 s N) k=nbSeqMDB9 s k",
+        "theorem nbSeq_crossMDB9 (s : ℕ) : CrossLC (nbSeqMDB9 s)",
+        "theorem chooseSeq_crossMDB9 (r : ℕ) : CrossLC (chooseSeqMDB9 r)",
+        "theorem chooseSeq_nonnegMDB9 (r : ℕ) (k : ℤ) : 0≤chooseSeqMDB9 r k",
+        "theorem chooseSeq_zeroMDB9 (r : ℕ) (k : ℤ) (hk : k<0) : chooseSeqMDB9 r k=0",
+        "theorem chooseSeq_natMDB9 (r k : ℕ) : chooseSeqMDB9 r k=(k.choose r:ℝ)",
+        "theorem weight_nonnegMDB9 (k : ℤ) : 0≤weightSeqMDB9 k",
+        "theorem weight_zeroMDB9 (k : ℤ) (hk : k<0) : weightSeqMDB9 k=0",
+        "theorem weight_crossMDB9 : CrossLC weightSeqMDB9"
+      ],
+      "definitions": [
+        "def nbSeqMDB9 (s : ℕ) (k : ℤ) : ℝ :=\n if k<0 then 0 else ((k.toNat+s).choose s:ℝ)",
+        "def chooseSeqMDB9 (r : ℕ) (k : ℤ) : ℝ := nbSeqMDB9 r (k-r)",
+        "def weightSeqMDB9 (k : ℤ) : ℝ := if k<0 then 0 else if k=0 then 1 else 2"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovKernelProofMDB9",
+      "path": "research/MarkovKernelProofMDB9.lean",
+      "sha256": "7708c4a186d2acdefdfb253d684c0bb300a78a327687918711dcca0b85f02732",
+      "current_sha256": "7708c4a186d2acdefdfb253d684c0bb300a78a327687918711dcca0b85f02732",
+      "bytes": 2741,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "two_kernel_diagSumMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_shapeMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_vertical_ge_fourMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_other_verticalMDB9"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovKernelSequencesMDB9",
+        "MarkovKernelShapeM4F4"
+      ],
+      "theorem_statements": [
+        "theorem two_kernel_diagSumMDB9 (i j m : ℕ) :\n (twoKernelM4F4 i j m:ℝ)=diagSumMDB9 (nbSeqMDB9 i) (chooseSeqMDB9 (i-2)) weightSeqMDB9 j m",
+        "theorem kernel_shapeMDB9 (i : ℕ) : KernelShapeM4F4 i",
+        "theorem source_two_vertical_ge_fourMDB9 (path : List Bool) (ha : (frame path).mid.a=2)\n (i j : ℕ) (hi : 4 ≤ i) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p i (j+2)≤\n coeff (frame path).mid.p i (j+1)^2",
+        "theorem root_iff_other_verticalMDB9 : Conjecture63 ↔ OtherVerticalCoreM0D3"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovTwoVerticalMDB9",
+      "path": "research/MarkovTwoVerticalMDB9.lean",
+      "sha256": "e6fe6ca46868c7672770ae8d7659d77b37d93bac2a92c73e1b61a6b4c502bfdb",
+      "current_sha256": "e6fe6ca46868c7672770ae8d7659d77b37d93bac2a92c73e1b61a6b4c502bfdb",
+      "bytes": 1303,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_two_vertical_ge_threeMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_vertical_allMDB9"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovKernelProofMDB9",
+        "MarkovVerticalTwoAllMEA"
+      ],
+      "theorem_statements": [
+        "theorem source_two_vertical_ge_threeMDB9 (path : List Bool) (ha : (frame path).mid.a=2)\n (i j : ℕ) (hi : 3 ≤ i) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p i (j+2)≤\n coeff (frame path).mid.p i (j+1)^2",
+        "theorem source_two_vertical_allMDB9 (path : List Bool) (ha : (frame path).mid.a=2)\n (i j : ℕ) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p i (j+2)≤\n coeff (frame path).mid.p i (j+1)^2"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovKernelObstructionMDB9",
+      "path": "research/MarkovKernelObstructionMDB9.lean",
+      "sha256": "7c6933cdfb0857b746b9565e3af7c7c5ab9129a7b70f7d00af272fa36bffa805",
+      "current_sha256": "7c6933cdfb0857b746b9565e3af7c7c5ab9129a7b70f7d00af272fa36bffa805",
+      "bytes": 1727,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "kernelTermMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_diagonal_shift_failureMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_obstruction_source_valuesMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_obstruction_source_polygonMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_obstruction_source_lcMDB9"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovKernelProofMDB9"
+      ],
+      "theorem_statements": [
+        "theorem kernel_diagonal_shift_failureMDB9 (s : ℕ) :\n kernelTermMDB9 3 2 2 1*kernelTermMDB9 5 0 4 0 >\n kernelTermMDB9 4 1 3 (min 1 (0+s))*kernelTermMDB9 4 1 3 (max (1-s) 0)",
+        "theorem kernel_obstruction_source_valuesMDB9 :\n let p := (frame (twoPath3af 1)).mid.p\n coeff p 3 2=28 ∧ coeff p 4 1=17 ∧ coeff p 5 0=4",
+        "theorem kernel_obstruction_source_polygonMDB9 :\n let m := (frame (twoPath3af 1)).mid\n m.a=2 ∧ m.b=5 ∧ InPolygon m.a m.b 3 2 ∧\n InPolygon m.a m.b 4 1 ∧ InPolygon m.a m.b 5 0",
+        "theorem kernel_obstruction_source_lcMDB9 :\n let p := (frame (twoPath3af 1)).mid.p\n coeff p 3 2*coeff p 5 0 ≤ coeff p 4 1^2"
+      ],
+      "definitions": [
+        "def kernelTermMDB9 (i j m k : ℕ) : ℤ :=\n if k ≤ min j m then (if k=0 then 1 else 2)*\n   ((j-k+i).choose i:ℤ)*((m-k).choose (i-2):ℤ) else 0"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovResidualMDB9",
+      "path": "research/MarkovResidualMDB9.lean",
+      "sha256": "0a1412d2d33e140d4484b22a739824d1362783c681eaff60f92843c464d8de06",
+      "current_sha256": "0a1412d2d33e140d4484b22a739824d1362783c681eaff60f92843c464d8de06",
+      "bytes": 3955,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "TwoDiagonalMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_vertical_arithmeticMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_remaining_iff_diagonalMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_two_diagonalMDB9"
+        },
+        {
+          "kind": "def",
+          "name": "SmallTwoDiagonalMDB9"
+        },
+        {
+          "kind": "def",
+          "name": "KernelDiagonalMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_diagonal_of_kernelMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_diagonal_of_rootMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_kernel_diagonalMDB9"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovTwoVerticalMDB9",
+        "MarkovTwoReductionM679"
+      ],
+      "theorem_statements": [
+        "theorem two_vertical_arithmeticMDB9 (q : ℕ) (hq : 1 ≤ q) (i j : ℕ) :\n rawTwoM679 q i j*rawTwoM679 q i (j+2) ≤ rawTwoM679 q i (j+1)^2",
+        "theorem two_remaining_iff_diagonalMDB9 : TwoRemainingM679 ↔ TwoDiagonalMDB9",
+        "theorem root_iff_two_diagonalMDB9 : Conjecture63 ↔ TwoDiagonalMDB9 ∧ OtherSourcesM679",
+        "theorem source_two_diagonal_of_kernelMDB9 (h : KernelDiagonalMDB9)\n (path : List Bool) (ha : (frame path).mid.a=2) (i j : ℕ) (hi : 3 ≤ i) :\n coeff (frame path).mid.p i (j+2)*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) (j+1)^2",
+        "theorem kernel_diagonal_of_rootMDB9 (h : Conjecture63) : KernelDiagonalMDB9",
+        "theorem root_iff_kernel_diagonalMDB9 :\n Conjecture63 ↔ KernelDiagonalMDB9 ∧ SmallTwoDiagonalMDB9 ∧ OtherSourcesM679"
+      ],
+      "definitions": [
+        "def TwoDiagonalMDB9 : Prop := ∀ q : ℕ, 1 ≤ q → ∀ i j : ℕ,\n rawTwoM679 q i (j+2)*rawTwoM679 q (i+2) j ≤ rawTwoM679 q (i+1) (j+1)^2",
+        "def SmallTwoDiagonalMDB9 : Prop := ∀ path : List Bool, (frame path).mid.a=2 →\n ∀ i j : ℕ, i ≤ 2 → coeff (frame path).mid.p i (j+2)*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) (j+1)^2",
+        "def KernelDiagonalMDB9 : Prop := ∀ i j m : ℕ, 3 ≤ i →\n (∃ q : ℕ, j+m+2=2*q) →\n twoKernelM4F4 i (j+2) m*twoKernelM4F4 (i+2) j (m+2) ≤\n twoKernelM4F4 (i+1) (j+1) (m+1)^2"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovVerticalGainMDB9",
+      "path": "research/MarkovVerticalGainMDB9.lean",
+      "sha256": "72b07d0e7b90735d2046325559f49d0633b59daaf68a06c4e9a70ef84df8b5b8",
+      "current_sha256": "72b07d0e7b90735d2046325559f49d0633b59daaf68a06c4e9a70ef84df8b5b8",
+      "bytes": 1533,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "vertical_previous_guardsMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_gain_rawMDB9"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovTwoVerticalMDB9",
+        "MarkovResidualM295"
+      ],
+      "theorem_statements": [
+        "theorem vertical_previous_guardsMDB9 (n : ℕ) :\n let m := (frame (twoPath3af (2*n+20))).mid\n 2 ≤ m.a ∧ InPolygon m.a m.b (n+9) (2*n+21) ∧\n InPolygon m.a m.b (n+9) (2*n+22) ∧ InPolygon m.a m.b (n+9) (2*n+23) ∧\n (n+9)+(2*n+21)+4 ≤ m.a+m.b-1 ∧ 4 ≤ n+9 ∧ 3 ≤ 2*n+21 ∧\n ¬VerticalMiddleMF1E m.a m.b (n+9) (2*n+21) ∧\n ¬(VerticalRegionMAC3 m.a m.b (n+9) (2*n+21) ∨\n   VerticalVarianceMAC3 m.a m.b (n+9) (2*n+21)) ∧\n ¬VerticalSharpM37B m.a m.b (n+9) (2*n+21) ∧\n ¬(m.a=2 ∧ n+9=4) ∧ ¬(m.a=2 ∧ n+9=8)",
+        "theorem vertical_gain_rawMDB9 (n : ℕ) :\n let p := (frame (twoPath3af (2*n+20))).mid.p\n coeff p (n+9) (2*n+21)*coeff p (n+9) (2*n+23)≤coeff p (n+9) (2*n+22)^2"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovDiagonalShapeMDB9",
+      "path": "research/MarkovDiagonalShapeMDB9.lean",
+      "sha256": "3709d9af41f7dfd86b169f5a20b8fdfe18de413676436c3da948eedbf126a14c",
+      "current_sha256": "3709d9af41f7dfd86b169f5a20b8fdfe18de413676436c3da948eedbf126a14c",
+      "bytes": 3910,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "reducedKernelMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "reduced_kernel_sumMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "reduced_kernel_posMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "reduced_kernel_rowMDB9"
+        },
+        {
+          "kind": "def",
+          "name": "ReducedShapeMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "reduced_antidiagonal_of_shapeMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_diagonal_of_reduced_shapeMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_of_reduced_shapeMDB9"
+        },
+        {
+          "kind": "def",
+          "name": "ReducedDiagonalMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_iff_reduced_diagonalMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_reduced_diagonalMDB9"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovResidualMDB9"
+      ],
+      "theorem_statements": [
+        "theorem reduced_kernel_sumMDB9 (n j r : ℕ) :\n (reducedKernelMDB9 n j r:ℝ)=\n diagSumMDB9 (nbSeqMDB9 (n+2)) (nbSeqMDB9 n) weightSeqMDB9 j r",
+        "theorem reduced_kernel_posMDB9 (n j r : ℕ) : 0<reducedKernelMDB9 n j r",
+        "theorem reduced_kernel_rowMDB9 (n j r : ℕ) :\n reducedKernelMDB9 n j r*reducedKernelMDB9 n (j+2) r ≤\n reducedKernelMDB9 n (j+1) r^2",
+        "theorem reduced_antidiagonal_of_shapeMDB9 (h : ReducedShapeMDB9)\n (n j r : ℕ) (hn : 1 ≤ n) :\n reducedKernelMDB9 n (j+2) r*reducedKernelMDB9 (n+2) j r ≤\n reducedKernelMDB9 (n+1) (j+1) r^2",
+        "theorem kernel_diagonal_of_reduced_shapeMDB9 (h : ReducedShapeMDB9) : KernelDiagonalMDB9",
+        "theorem root_of_reduced_shapeMDB9 (h : ReducedShapeMDB9)\n (hs : SmallTwoDiagonalMDB9) (ho : OtherSourcesM679) : Conjecture63",
+        "theorem kernel_iff_reduced_diagonalMDB9 : KernelDiagonalMDB9 ↔ ReducedDiagonalMDB9",
+        "theorem root_iff_reduced_diagonalMDB9 :\n Conjecture63 ↔ ReducedDiagonalMDB9 ∧ SmallTwoDiagonalMDB9 ∧ OtherSourcesM679"
+      ],
+      "definitions": [
+        "def reducedKernelMDB9 (n j r : ℕ) : ℤ := twoKernelM4F4 (n+2) j (r+n)",
+        "def ReducedShapeMDB9 : Prop :=\n (∀ n j r : ℕ, 1 ≤ n →\n   reducedKernelMDB9 n j r*reducedKernelMDB9 (n+2) j r ≤ reducedKernelMDB9 (n+1) j r^2) ∧\n (∀ n j r : ℕ, 1 ≤ n →\n   reducedKernelMDB9 (n+1) j r*reducedKernelMDB9 n (j+1) r ≤\n   reducedKernelMDB9 n j r*reducedKernelMDB9 (n+1) (j+1) r)",
+        "def ReducedDiagonalMDB9 : Prop := ∀ n j r : ℕ, 1 ≤ n →\n (∃ q : ℕ, n+j+r+2=2*q) →\n reducedKernelMDB9 n (j+2) r*reducedKernelMDB9 (n+2) j r ≤\n reducedKernelMDB9 (n+1) (j+1) r^2"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovReducedObstructionMDB9",
+      "path": "research/MarkovReducedObstructionMDB9.lean",
+      "sha256": "4ae0a624cec397d2aa6ad581852c334f1b2dd727a11abfd969c5fac7bf1c9756",
+      "current_sha256": "4ae0a624cec397d2aa6ad581852c334f1b2dd727a11abfd969c5fac7bf1c9756",
+      "bytes": 1662,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "parameterWeightMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "parameter_weight_nonnegMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "parameter_weight_crossMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "parameter_shape_counterexampleMDB9"
+        },
+        {
+          "kind": "theorem",
+          "name": "actual_weight_small_gapMDB9"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovDiagonalShapeMDB9"
+      ],
+      "theorem_statements": [
+        "theorem parameter_weight_nonnegMDB9 (t : ℝ) (ht : 1 ≤ t) (k : ℤ) :\n 0 ≤ parameterWeightMDB9 t k",
+        "theorem parameter_weight_crossMDB9 (t : ℝ) (ht : 1 ≤ t) : CrossLC (parameterWeightMDB9 t)",
+        "theorem parameter_shape_counterexampleMDB9 :\n let H := fun n => diagSumMDB9 (nbSeqMDB9 (n+2)) (nbSeqMDB9 n) (parameterWeightMDB9 17) 1 1\n H 2^2 < H 1*H 3",
+        "theorem actual_weight_small_gapMDB9 :\n reducedKernelMDB9 1 1 1*reducedKernelMDB9 3 1 1 ≤ reducedKernelMDB9 2 1 1^2"
+      ],
+      "definitions": [
+        "def parameterWeightMDB9 (t : ℝ) (k : ℤ) : ℝ :=\n if k<0 then 0 else if k=0 then 1 else t"
+      ],
+      "forbidden_tokens": []
+    }
+  ],
+  "counts": {
+    "def": 13,
+    "theorem": 52
+  },
+  "general_sequence_scope": "CrossLC f means every integer i<=j satisfies f(i)f(j+1)<=f(i+1)f(j). Finite seqPoly realizes nonnegative-index coefficients through N and zero above; negative coefficient sequence is zero. Upper truncation preserves CrossLC with nonnegativity; no infinite-series convergence or hidden interval-support assumption.",
+  "convolution_scope": "diagSum(f,g,w;j,m) sums k=0..min(j,m). All three sequences CrossLC, nonnegative and zero on negative indices imply row LC. w(k)g(m-k) uses reversal/product CrossLC, finite cutoff m, while f truncates at j+2. Three exact coefficient equalities and inherited finite polynomial convolution give the desired triple. Swap f/g gives column LC. Added terms vanish when either j-k or m-k is negative.",
+  "minor_scope": "Adjacent determinant nonnegativity requires CrossLC f and g, nonnegative w and lower zero extensions of f/g. It does not additionally require CrossLC w or f/g nonnegativity. All four sums extend to common finite j+m+3. The exact determinant identity has pairs a<b; each Toeplitz minor has the proper sign, the first weighted by w(a)w(b)>=0. No division or positivity cancellation occurs in this determinant step.",
+  "sequence_scope": "nbSeq_s(k)=0 for k<0 and C(k+s,s) otherwise. Its CrossLC follows finite nbPoly at N=(j+1).toNat with all four integer indices bounded, including negative j. chooseSeq_r(k)=nbSeq_r(k-r) has natural value C(k,r), including zero for k<r. w is zero at negative k,1 at0,2 at positive k. Each is nonnegative/CrossLC with all natural parameters, including0.",
+  "kernel_shape_scope": "twoKernelM4F4 equals the real diagSum of nbSeq_i, chooseSeq_(i-2),w for all natural i,j,m; splitting k0 and reindexing k+1 retains natural subtraction guards. Integer-real casts are injective and multiplicative, with no coefficient normalization. kernel_shapeMDB9 proves all three prior shape conditions for every natural i, including natural i-2 at i0/1.",
+  "source_scope": "Every actual finite path with mid.a=2 and every natural i,j satisfies raw coeff(i,j)*coeff(i,j+2)<=coeff(i,j+1)^2. Actual classification supplies q>=1,b=2q+1. For i>=3, exact source kernel rewrites apply if j+2<=2q; otherwise the last raw coefficient is zero. Inherited vertical_first_threeMEA separately covers i<=2. No denominator, path-length, ratio, support positivity or polygon premise remains.",
+  "direction_and_zeros": "K_i(j,m+2),K_i(j+1,m+1),K_i(j+2,m) with m=2q-j-2 is source VERTICAL at fixed i. The inherited antidiagonal glue splits m<i-2, where an extreme is zero, otherwise cancels only a strictly positive square. All raw zero tails and j2>2q are retained, not filtered.",
+  "root_scope": "root_iff_other_verticalMDB9: Conjecture63 iff inherited OtherVerticalCoreM0D3. Compared with latest InteriorCore63M295, H/D clauses are literally unchanged, and the V exceptions a2/i4 and a2/i8 become a!=2. Existing polygon, depth, strip and mixture/variance/sharp exclusions remain. Endpoints0/1,1/1 remain in root and inherited exact reductions. Other core is unproved.",
+  "arithmetic_root_scope": "TwoDiagonalMDB9 quantifies q>=1 and all natural i,j for rawTwo(q,i,j+2)*rawTwo(q,i+2,j)<=rawTwo(q,i+1,j+1)^2, with no zero/polygon filter. Canonical twoPath(q-1) realizes every such q; actual coefficient equality and injective Nat/Int casts transfer vertical LC. Exact root iff TwoDiagonal AND OtherSourcesM679, the latter all three GlobalLC directions for every actual numerator>=3.",
+  "kernel_diagonal_scope": "KernelDiagonal quantifies natural i,j,m with i>=3 and existential natural q satisfying j+m+2=2q. Its triple is K_i(j+2,m),K_(i+1)(j+1,m+1),K_(i+2)(j,m+2). q>=1 follows from parity equation, not an omitted premise. Forward source adapter splits j2<=2q versus zero extreme; reverse uses an actual canonical path and inherited global/weak equivalence. Exact root additionally retains SmallTwoDiagonal (all actuala2 paths,allj,i<=2) and OtherSources.",
+  "reduced_scope": "H(n,j,r)=K_(n+2)(j,r+n). Exact real finite sum is diagSum(nbSeq_(n+2),nbSeq_n,w;j,r), with both sides extended to j+r+n+1 and integer shift identity. H>0 for all natural n,j,r, and row j LC is proved. Remaining source diagonal keeps r fixed: H(n,j+2,r)*H(n+2,j,r)<=H(n+1,j+1,r)^2.",
+  "reduced_equivalence": "ReducedDiagonal retains n>=1 and existential natural q with n+j+r+2=2q. Kernel↔reduced conversion uses i=n+2,m=r+n; reverse splits m<i-2 (zero first extreme), else n=i-2,r=m-(i-2) with guarded natural subtraction. Exact root iff ReducedDiagonal AND SmallTwoDiagonal AND OtherSources. No parity or small-column obligations are dropped.",
+  "conditional_reduced_shape": "ReducedShape has two UNPROVED universal assertions for n>=1/allj,r: LC in n at fixed j,r, and nonnegative adjacent(n,j) minor. Proved j-LC and H positivity allow the inherited scalar glue, yielding diagonal LC. This sufficient condition has no parity restriction and is not claimed equivalent to the exact residual. root_of_reduced_shape still assumes SmallTwoDiagonal and OtherSources.",
+  "gain_scope": "For every natural n, actual path twoPath3af(2n+20) and raw vertical start(i,j)=(n+9,2n+21) satisfy every old InteriorCore63M295 V guard, including all three polygons, depth/strip conditions, failures of every earlier mixture/variance/sharp criterion, and exclusions of columns4/8. vertical_gain_raw proves the triple. Columns and denominators are unbounded; no gain for other numerators is claimed.",
+  "obstruction_scope": "For every natural min/max shift s, the direct kernel summand comparison fails at fixed i3,j0,m2,k1,l0. The formal actual2/5 path has raw diagonal [28,17,4], all three polygon guards, and LC. Failure is of that summand certificate, not source LC. The weight17 family is nonnegative/CrossLC but fails n-LC at j=r1,n1/2/3; actual weight2 small triple passes. Weight17 has no actual-source correspondence.",
+  "finite_limits": "Generic kernel diagonal tests include both parities. Symmetrized failure j0,m3 has odd parity and is auxiliary; reduced term/minor failures occur at n0, outside the formal n>=1 shape premises. These finite failures do not refute the exact residual. Full aggregate signs beyond the proved vertical direction remain unproved.",
+  "mathematical_values_recomputed": false
+}

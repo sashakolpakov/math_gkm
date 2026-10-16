@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovKernelSequencesMDB9.lean:36:1: error: Type mismatch: After simplification, term\n  crossLC_shift (nbSeq_crossMDB9 r) (-\u2191r)\n has type\n  CrossLC fun k => nbSeqMDB9 r (k + -\u2191r)\nbut is expected to have type\n  CrossLC (chooseSeqMDB9 r)\n/Users/sasha/math_gkm/research/MarkovKernelSequencesMDB9.lean:45:1: error: unsolved goals\ncase pos\nr k : \u2115\nh : r \u2264 k\n\u22a2 (k - r + r).choose r = k.choose r\n/Users/sasha/math_gkm/research/MarkovKernelSequencesMDB9.lean:46:5: warning: This simp argument is unused:\n  show ((k : \u2124) - r).toNat + r = k by omega\n\nHint: Omit it from the simp argument list.\n  simp [\u0335c\u0335h\u0335o\u0335o\u0335s\u0335e\u0335S\u0335e\u0335q\u0335M\u0335D\u0335B\u03359\u0335,\u0335n\u0335b\u0335S\u0335e\u0335q\u0335M\u0335D\u0335B\u03359\u0335,\u0335s\u0335h\u0335o\u0335w\u0335 \u0335\u00ac\u0335(\u0335k\u0335:\u0335\u2124\u0335)\u0335-\u0335r\u0335<\u03350\u0335 \u0335b\u0335y\u0335 \u0335o\u0335m\u0335e\u0335g\u0335a\u0335,\u0335[\u0332c\u0332h\u0332o\u0332o\u0332s\u0332e\u0332S\u0332e\u0332q\u0332M\u0332D\u0332B\u03329\u0332,\u0332 \u0332n\u0332b\u0332S\u0332e\u0332q\u0332M\u0332D\u0332B\u03329\u0332,\u0332 show (\u0335(\u0335k\u0335:\u0335\u2124\u0335)\u0335-\u0335r\u0335)\u0335.\u0335t\u0335o\u0335N\u0335a\u0335t\u0335+\u0335r\u0335=\u0335k\u0335\u00ac\u0332(\u0332k\u0332 \u0332:\u0332 \u0332\u2124\u0332)\u0332 \u0332-\u0332 \u0332r\u0332 \u0332<\u0332 \u03320\u0332 by omega]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovKernelSequencesMDB9.lean:67:26: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovKernelSequencesMDB9": "f42bdc5843de77c4e138b9a0ac1d1fe595ab8b8d327bb3cc9ddecca86358e4c5"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-db972d62/MarkovKernelSequencesMDB9.olean",
+    "/Users/sasha/math_gkm/research/MarkovKernelSequencesMDB9.lean"
+  ],
+  "seconds": 60.943480041984,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

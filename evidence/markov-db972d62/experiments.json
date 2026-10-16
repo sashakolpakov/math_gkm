@@ -1,0 +1,84 @@
+{
+  "status": "finite exact computation only",
+  "source_comparisons": 20,
+  "coefficients": 118800,
+  "zeros": 33175,
+  "vertical_triples": 130680,
+  "vertical_zero_triples": 42850,
+  "diagonal_triples": 130680,
+  "diagonal_zero_triples": 42610,
+  "failures": [],
+  "examples": [
+    {
+      "q": 2,
+      "i": 9,
+      "j": 2,
+      "values": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "q": 10,
+      "i": 9,
+      "j": 10,
+      "values": [
+        14997840,
+        7621848,
+        2687360
+      ]
+    },
+    {
+      "q": 30,
+      "i": 9,
+      "j": 30,
+      "values": [
+        1598780001218400,
+        1572214749837660,
+        1515544954221600
+      ]
+    },
+    {
+      "q": 60,
+      "i": 9,
+      "j": 60,
+      "values": [
+        158359949504586498240,
+        160440564178503923508,
+        161754559411225399560
+      ]
+    }
+  ],
+  "source_bounds": {
+    "q": [
+      1,
+      60
+    ],
+    "i": [
+      0,
+      32
+    ],
+    "j": "0..2*q+4; zero tails retained"
+  },
+  "shape_tests": 129960,
+  "kernel_diagonal_tests": 43320,
+  "kernel_bounds": {
+    "i": [
+      3,
+      32
+    ],
+    "j_m": [
+      0,
+      37
+    ],
+    "diagonal_parity": "both parities checked; only even j+m+2 is source-linked"
+  },
+  "seconds": 7.017164249962661,
+  "hashes": {
+    "research/experiments_db972d62.py": "3566927e2af7490eb5aa3eb49dbb54d0f4c1022a78dd624c029e9c8497829af3",
+    "research/probe_db972d62.py": "852fbfdc5cbe9bcafa237c2982fd56a8f2430498a1e858267537631ce23989ef",
+    "research/experiment_interior_f1e4fe3b.py": "3b644e428a0cbc5441efd1f68f06ed6ad63c3b669a4cd967ae740d083bd242f1",
+    "evidence/markov/scan.py": "72b5422d0c77a5d9ac6582adbc24500fbcfc40680f66b7baacb466e53619e40a"
+  }
+}
