@@ -1,0 +1,693 @@
+{
+  "worker": 131,
+  "request": "ce882be3be764bbea0eaabd905e3bf18",
+  "created_at_utc": "2026-10-16T07:41:23.745714+00:00",
+  "scope": {
+    "conclusion": "source_strip_fullMCE8: forall generated path, forall i:Nat, coeff P i1*coeff P i3<=coeff P i2^2; all slopes, no denominator/numerator bound, all zeros; no remaining formula/gap/statistic premise.",
+    "second_source": "b>=5:2R2=X^(a-1)(1+X)^(b-5)[8q+X*Q2], q=Nat.sub(2a,b); exact inherited s=2q. Extract at k+1+(a-1)=a+k after map and swap.",
+    "third_source": "a>=2,b>=7:6R3=X^(a-2)(1+X)^(b-7)h3seed(a,b,q,t,u), q=(2a-b)+,t=min(b-a,(3a-b)+),u=(3a-2b)+. Actual source formula; extract at k+2+(a-2)=a+k. No new matrix/trace correspondence proof.",
+    "general_normalization": "N=k+l=b-2,C=choose(N,k). Nc1=CT;2N(N-1)(N-2)(k+1)c2=ClJ;6N(N-1)(N-2)(N-3)(N-4)(k+1)(k+2)c3=Cl(l-1)H; correctedJ/H definitions retained in parsed source. Shifted binomial identities require N>=5, handle k0 and zeros without division.",
+    "general_transfer": "12[N(N-1)(N-2)]^2(N-3)(N-4)(k+1)^2(k+2)(c2^2-c1c3)=C^2*l*G. k>=0,l>=2,N>=5 make common scalar positive. No division by C/coefficient, C arbitrary real; final integer cast.",
+    "middle": "2a<=b<=3a implies q=u0,t=3a-b,seed=X*(24t+XQ3). a=(b+t)/3, Hmid=(k+1)H0+24t(l-2)(l-3)(l-4)(l-5); sourcefactor X^(a-1), coefficient indexk+1. Fourcharts and common scalar withone(k+1). Low b>=3a inherited, a1 inherited; smallmiddle handled via i<=3 andtop/zero branches.",
+    "half": "b<=2a and3a<=2b: t=b-a,u0,q=2a-b; a=(b+q)/2,t=(b-q)/2. Nonnegative free q; equality3a=2b inthisbranch; b=2a alsoallowed abstractly.",
+    "high": "b<=2a and2b<3a: t=b-a,u=3a-2b,q=2a-b; a=(2b+u)/3,q=(b+2u)/3,t=(b-u)/3. Certificates also allow u0. Actual a<=b used to justify natural cast identities.",
+    "chart_coverage": "All three families cover k>=0,l>=2,N>=5 using (K,L+5),(K+3,2),(K+2,3),(K+1,4). Nonnegative real parameters include0. Fixed-l Half/High lemmas retain unused nonnegative l parameter instantiated0. No strict chart/upper-q/u bounds required; exact actual statistics supplied separately.",
+    "zero_support": "i<a gives c1=0 by raw polygon containment atj1; i+3>a+b-1 givesc3zero. Otherwise k=i-a,l=b-2-k givesl>=2 and hbl. k0 and l2 equality retained. Full theorem firstdispatches2a<=b toaccepted all-low; complementaryhigha>=2 then zeros,b>=7orallsixsmallcases.",
+    "small": "Six reducedfractionsa>=2,b<=6, exactpathuniqueness and inherited literal swapped polynomials. Eachfinite theorem checksall0<=i<=a+b-1; full theorem usesonlyremaininginterior afterzero branches. a1 inherited source_one_global6, actualb>=2. Endpoints0/1,1/1 through root equivalence.",
+    "root": "Full residual exactly priorMAA6 with vertical j>=1 replacedbyj>=2, allthreepolygon guards and otherH/V/Dconditions preserved. Reverseuses unconditional source_strip_fullMCE8 whenj1. IntermediateMCE8 residualadds(2<=j or b<2a), selectedseparatelybutnot importedbyfullroot. Bothresiduals unproved.",
+    "candidate": "Nextj2 algebra andfiniteonly; no newacceptednextstripLean adapter/LC claim. No rootproof/refutation."
+  },
+  "new_modules": [
+    {
+      "module": "MarkovResidualFullMCE8",
+      "sha256": "5ef08e1a18cdb25463b362dc9831730f8947e3de5b4b1cf17a20256c387d4a96",
+      "imports": [
+        "MarkovStripFullMCE8",
+        "MarkovResidualMAA6"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "InteriorCore63FullMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_interior_fullMCE8"
+        }
+      ],
+      "theorem_statements": [
+        "theorem root_iff_interior_fullMCE8 : Conjecture63 ↔ InteriorCore63FullMCE8"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovResidualMCE8",
+      "sha256": "0e118a0532d0af87ceb01e1db1c3e6da42764d179a5d19b0d0462801bd4e7f52",
+      "imports": [
+        "MarkovStripAllMCE8",
+        "MarkovResidualMAA6"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "InteriorCore63MCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_interiorMCE8"
+        }
+      ],
+      "theorem_statements": [
+        "theorem root_iff_interiorMCE8 : Conjecture63 ↔ InteriorCore63MCE8"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripAllMCE8",
+      "sha256": "7315f51a7854ea6ef4a37dc919180c6b47166ee7df260474b4e8a20c0c5b1f94",
+      "imports": [
+        "MarkovStripLCMCE8",
+        "MarkovStripCoefficientsMCE8",
+        "MarkovResidualMF8",
+        "MarkovStripAllMB9D",
+        "MarkovFibonacciLC6ade"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_strip_scaledMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_interiorMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_lowMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_all_lowMCE8"
+        }
+      ],
+      "theorem_statements": [
+        "theorem source_strip_scaledMCE8 (path : List Bool) (k l : ℕ)\n (ha : 2 ≤ (frame path).mid.a) (hb : 7 ≤ (frame path).mid.b)\n (hs : 2*(frame path).mid.a ≤ (frame path).mid.b)\n (hbl : (frame path).mid.b=k+l+2) (hl : 2 ≤ l) :\n (((k:ℝ)+l)*(coeff (frame path).mid.p ((frame path).mid.a+k) 1:ℝ)=\n   ((k+l).choose k:ℝ)*stripTMB9D (frame path).mid.a k l) ∧\n (2*((k:ℝ)+l)*(k+l-1)*(k+l-2)*(coeff (frame path).mid.p ((frame path).mid.a+k) 2:ℝ)=\n   ((k+l).choose k:ℝ)*l*stripJMB9D (frame path).mid.a k l) ∧\n (6*((k:ℝ)+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+1)*(coeff (frame path).mid.p ((frame path).mid.a+k) 3:ℝ)=\n   ((k+l).choose k:ℝ)*l*(l-1)*stripHMCE8 (frame path).mid.a k l (3*(frame path).mid.a-(frame path).mid.b:ℕ))",
+        "theorem source_strip_interiorMCE8 (path : List Bool) (k l : ℕ)\n (ha : 2 ≤ (frame path).mid.a) (hb : 7 ≤ (frame path).mid.b)\n (hs : 2*(frame path).mid.a ≤ (frame path).mid.b)\n (hu : (frame path).mid.b ≤ 3*(frame path).mid.a)\n (hbl : (frame path).mid.b=k+l+2) (hl : 2 ≤ l) :\n coeff (frame path).mid.p ((frame path).mid.a+k) 1*\n coeff (frame path).mid.p ((frame path).mid.a+k) 3 ≤\n coeff (frame path).mid.p ((frame path).mid.a+k) 2^2",
+        "theorem source_strip_lowMCE8 (path : List Bool) (ha : 2 ≤ (frame path).mid.a)\n (hb : 7 ≤ (frame path).mid.b) (hs : 2*(frame path).mid.a ≤ (frame path).mid.b)\n (hu : (frame path).mid.b ≤ 3*(frame path).mid.a) (i : ℕ) :\n coeff (frame path).mid.p i 1*coeff (frame path).mid.p i 3 ≤ coeff (frame path).mid.p i 2^2",
+        "theorem source_strip_all_lowMCE8 (path : List Bool)\n (hs : 2*(frame path).mid.a ≤ (frame path).mid.b) (i : ℕ) :\n coeff (frame path).mid.p i 1*coeff (frame path).mid.p i 3 ≤ coeff (frame path).mid.p i 2^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripChooseMCE8",
+      "sha256": "d7a9b099522be61f8b784e86b800e40d27ec4b80cc4613053752da131d9f80c3",
+      "imports": [
+        "MarkovStripCoefficientsMB9D",
+        "MarkovBinomialRatios6a40"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "strip_choose_fiveMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_choose_correctionMCE8"
+        }
+      ],
+      "theorem_statements": [
+        "theorem strip_choose_fiveMCE8 (n k : ℕ) (hn : 5 ≤ n) :\n (n:ℝ)*(n-1)*(n-2)*(n-3)*(n-4)*((n-5).choose k:ℝ)=\n (n.choose k:ℝ)*((n:ℝ)-k)*(n-k-1)*(n-k-2)*(n-k-3)*(n-k-4)",
+        "theorem strip_choose_correctionMCE8 (k l : ℕ) (hN : 5 ≤ k+l) :\n ((k:ℝ)+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+1)*\n ((k+l-5).choose (k+1):ℝ)=\n ((k+l).choose k:ℝ)*l*(l-1)*(l-2)*(l-3)*(l-4)*(l-5)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripCoefficientsMCE8",
+      "sha256": "4f5cf86568f90d9d47fbce892af691e3809492899a1156e9dd9c7a0b856dfc50",
+      "imports": [
+        "MarkovStripSourceMCE8",
+        "MarkovStripChooseMCE8",
+        "MarkovStripGapMCE8"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "strip_seed_scaledMCE8"
+        }
+      ],
+      "theorem_statements": [
+        "theorem strip_seed_scaledMCE8 (k l : ℕ) (hl : 2 ≤ l) (hN : 5 ≤ k+l) (a t : ℝ) :\n ((k:ℝ)+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+1)*\n (((1+(X:ℝ[X]))^(k+l-5)*stripSeedMCE8 a (k+l+2) t).coeff (k+1))=\n ((k+l).choose k:ℝ)*l*(l-1)*stripHMCE8 a k l t"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripFullMCE8",
+      "sha256": "0112149d41f82801ae2d4b3fcdb8acdb226021f0c5a14a333be34743d47c14a2",
+      "imports": [
+        "MarkovStripGeneralLCMCE8",
+        "MarkovStripGeneralCoefficientsMCE8",
+        "MarkovStripSmallMCE8",
+        "MarkovStripAllMCE8"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_strip_general_scaledMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_high_interiorMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_fullMCE8"
+        }
+      ],
+      "theorem_statements": [
+        "theorem source_strip_general_scaledMCE8 (path : List Bool) (k l : ℕ)\n (ha : 2 ≤ (frame path).mid.a) (hb : 7 ≤ (frame path).mid.b)\n (hbl : (frame path).mid.b=k+l+2) (hl : 2 ≤ l) :\n (((k:ℝ)+l)*(coeff (frame path).mid.p ((frame path).mid.a+k) 1:ℝ)=\n   ((k+l).choose k:ℝ)*stripTMB9D (frame path).mid.a k l) ∧\n (2*((k:ℝ)+l)*(k+l-1)*(k+l-2)*(k+1)*(coeff (frame path).mid.p ((frame path).mid.a+k) 2:ℝ)=\n   ((k+l).choose k:ℝ)*l*stripGeneralJMCE8 (frame path).mid.a k l (2*(frame path).mid.a-(frame path).mid.b:ℕ)) ∧\n (6*((k:ℝ)+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+1)*(k+2)*(coeff (frame path).mid.p ((frame path).mid.a+k) 3:ℝ)=\n   ((k+l).choose k:ℝ)*l*(l-1)*stripGeneralHMCE8 (frame path).mid.a k l (2*(frame path).mid.a-(frame path).mid.b:ℕ) (min ((frame path).mid.b-(frame path).mid.a) (3*(frame path).mid.a-(frame path).mid.b):ℕ) (3*(frame path).mid.a-2*(frame path).mid.b:ℕ))",
+        "theorem source_strip_high_interiorMCE8 (path : List Bool) (k l : ℕ)\n (ha : 2 ≤ (frame path).mid.a) (hb : 7 ≤ (frame path).mid.b)\n (hs : (frame path).mid.b ≤ 2*(frame path).mid.a)\n (hbl : (frame path).mid.b=k+l+2) (hl : 2 ≤ l) :\n coeff (frame path).mid.p ((frame path).mid.a+k) 1*\n coeff (frame path).mid.p ((frame path).mid.a+k) 3 ≤\n coeff (frame path).mid.p ((frame path).mid.a+k) 2^2",
+        "theorem source_strip_fullMCE8 (path : List Bool) (i : ℕ) :\n coeff (frame path).mid.p i 1*coeff (frame path).mid.p i 3 ≤ coeff (frame path).mid.p i 2^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripGapMCE8",
+      "sha256": "d89115f7efc9ed2904f71106624e7e750923c91d0ef443dbf8d09d04880c9580",
+      "imports": [
+        "MarkovStripLCMB9D"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "stripHMCE8"
+        },
+        {
+          "kind": "def",
+          "name": "stripGapMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_largeMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_twoMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_threeMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_fourMCE8"
+        }
+      ],
+      "theorem_statements": [
+        "theorem strip_largeMCE8 (k l t : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (ht : 0 ≤ t) :\n 0 ≤ stripGapMCE8 ((k+(l+5)+2+t)/3) k (l+5) t",
+        "theorem strip_twoMCE8 (k t : ℝ) (hk : 0 ≤ k) (ht : 0 ≤ t) :\n 0 ≤ stripGapMCE8 (((k+3)+2+2+t)/3) (k+3) 2 t",
+        "theorem strip_threeMCE8 (k t : ℝ) (hk : 0 ≤ k) (ht : 0 ≤ t) :\n 0 ≤ stripGapMCE8 (((k+2)+3+2+t)/3) (k+2) 3 t",
+        "theorem strip_fourMCE8 (k t : ℝ) (hk : 0 ≤ k) (ht : 0 ≤ t) :\n 0 ≤ stripGapMCE8 (((k+1)+4+2+t)/3) (k+1) 4 t"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripGeneralChooseMCE8",
+      "sha256": "fdec9fd0aa98c458381fe9f5e60cd144092090893080032f7c6d1b1ce621d995",
+      "imports": [
+        "MarkovStripChooseMCE8"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "strip_choose_correction_twoMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_choose_correction_threeMCE8"
+        }
+      ],
+      "theorem_statements": [
+        "theorem strip_choose_correction_twoMCE8 (k l : ℕ) (hN : 5 ≤ k+l) :\n ((k:ℝ)+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+1)*(k+2)*\n ((k+l-5).choose (k+2):ℝ)=\n ((k+l).choose k:ℝ)*l*(l-1)*(l-2)*(l-3)*(l-4)*(l-5)*(l-6)",
+        "theorem strip_choose_correction_threeMCE8 (k l : ℕ) (hN : 3 ≤ k+l) :\n ((k:ℝ)+l)*(k+l-1)*(k+l-2)*(k+1)*((k+l-3).choose (k+1):ℝ)=\n ((k+l).choose k:ℝ)*l*(l-1)*(l-2)*(l-3)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripGeneralCoefficientsMCE8",
+      "sha256": "68b6955556b758b7e33f1003cee1afa0fb7463845fe1d8671fd51c0d4c4040e1",
+      "imports": [
+        "MarkovStripGeneralSourceMCE8",
+        "MarkovStripGeneralChooseMCE8",
+        "MarkovStripGeneralGapMCE8"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "strip_second_scaledMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_third_scaledMCE8"
+        }
+      ],
+      "theorem_statements": [
+        "theorem strip_second_scaledMCE8 (k l : ℕ) (hl : 2 ≤ l) (hN : 5 ≤ k+l) (a q : ℝ) :\n ((k:ℝ)+l)*(k+l-1)*(k+l-2)*(k+1)*\n (((1+(X:ℝ[X]))^(k+l-3)*stripSecondSeedMCE8 a (k+l+2) q).coeff (k+1))=\n ((k+l).choose k:ℝ)*l*stripGeneralJMCE8 a k l q",
+        "theorem strip_third_scaledMCE8 (k l : ℕ) (hl : 2 ≤ l) (hN : 5 ≤ k+l) (a q t u : ℝ) :\n ((k:ℝ)+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+1)*(k+2)*\n (((1+(X:ℝ[X]))^(k+l-5)*h3seedM13D a (k+l+2) q t u).coeff (k+2))=\n ((k+l).choose k:ℝ)*l*(l-1)*stripGeneralHMCE8 a k l q t u"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripGeneralGapMCE8",
+      "sha256": "c8769ac64640245af90021e39fa4332a1b9991b16596ac626cddb37ed2831199",
+      "imports": [
+        "MarkovStripGapMB9D"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "stripGeneralJMCE8"
+        },
+        {
+          "kind": "def",
+          "name": "stripGeneralHMCE8"
+        },
+        {
+          "kind": "def",
+          "name": "stripGeneralGapMCE8"
+        }
+      ],
+      "theorem_statements": [],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripGeneralLCMCE8",
+      "sha256": "504d3ab2a54a2f6453c42c229cdad753065ebae9561db24635c889b4e1ac212b",
+      "imports": [
+        "MarkovStripHalfGapMCE8",
+        "MarkovStripHighGapMCE8"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "stripHalf_nonnegMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "stripHigh_nonnegMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_general_gap_nonnegMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_general_transferMCE8"
+        }
+      ],
+      "theorem_statements": [
+        "theorem stripHalf_nonnegMCE8 (k l : ℕ) (q : ℝ) (hl : 2 ≤ l) (hN : 5 ≤ k+l) (hv : 0 ≤ q) :\n 0 ≤ stripGeneralGapMCE8 ((((k:ℝ)+l+2)+q)/2) k l q ((((k:ℝ)+l+2)-q)/2) 0",
+        "theorem stripHigh_nonnegMCE8 (k l : ℕ) (u : ℝ) (hl : 2 ≤ l) (hN : 5 ≤ k+l) (hv : 0 ≤ u) :\n 0 ≤ stripGeneralGapMCE8 ((2*((k:ℝ)+l+2)+u)/3) k l ((((k:ℝ)+l+2)+2*u)/3) ((((k:ℝ)+l+2)-u)/3) u",
+        "theorem strip_general_gap_nonnegMCE8 (a b k l : ℕ) (hab : a ≤ b) (hs : b ≤ 2*a)\n (hbl : b=k+l+2) (hl : 2 ≤ l) (hN : 5 ≤ k+l) :\n 0 ≤ stripGeneralGapMCE8 a k l (2*a-b:ℕ) (min (b-a) (3*a-b):ℕ) (3*a-2*b:ℕ)",
+        "theorem strip_general_transferMCE8 (a k l q t u C c₁ c₂ c₃ : ℝ)\n (hk : 0 ≤ k) (hl : 2 ≤ l) (hN : 5 ≤ k+l)\n (h₁ : (k+l)*c₁=C*stripTMB9D a k l)\n (h₂ : 2*(k+l)*(k+l-1)*(k+l-2)*(k+1)*c₂=C*l*stripGeneralJMCE8 a k l q)\n (h₃ : 6*(k+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+1)*(k+2)*c₃=C*l*(l-1)*stripGeneralHMCE8 a k l q t u)\n (hg : 0 ≤ stripGeneralGapMCE8 a k l q t u) : c₁*c₃ ≤ c₂^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripGeneralSourceMCE8",
+      "sha256": "0600eb0e823881a388f6e461068d680a5fc0a11116730d872f61e54448663178",
+      "imports": [
+        "MarkovStripSourceMB9D"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "stripSecondSeedMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_second_generalMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_second_general_coeffMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_third_general_coeffMCE8"
+        }
+      ],
+      "theorem_statements": [
+        "theorem source_second_generalMCE8 (path : List Bool) (hb : 5 ≤ (frame path).mid.b) :\n 2*(Bivariate.swap (frame path).mid.p).coeff 2=\n X^((frame path).mid.a-1)*(1+X)^((frame path).mid.b-5)*\n stripSecondSeedMCE8 ((frame path).mid.a:ℤ) (frame path).mid.b (2*(frame path).mid.a-(frame path).mid.b:ℕ)",
+        "theorem strip_second_general_coeffMCE8 (path : List Bool) (hb : 5 ≤ (frame path).mid.b) (k : ℕ) :\n 2*(coeff (frame path).mid.p ((frame path).mid.a+k) 2:ℝ)=\n ((1+(X:ℝ[X]))^((frame path).mid.b-5)*stripSecondSeedMCE8 ((frame path).mid.a:ℝ)\n (frame path).mid.b (2*(frame path).mid.a-(frame path).mid.b:ℕ)).coeff (k+1)",
+        "theorem strip_third_general_coeffMCE8 (path : List Bool) (ha : 2 ≤ (frame path).mid.a)\n (hb : 7 ≤ (frame path).mid.b) (k : ℕ) :\n 6*(coeff (frame path).mid.p ((frame path).mid.a+k) 3:ℝ)=\n ((1+(X:ℝ[X]))^((frame path).mid.b-7)*h3seedM13D ((frame path).mid.a:ℝ) (frame path).mid.b\n (2*(frame path).mid.a-(frame path).mid.b:ℕ)\n (min ((frame path).mid.b-(frame path).mid.a) (3*(frame path).mid.a-(frame path).mid.b):ℕ)\n (3*(frame path).mid.a-2*(frame path).mid.b:ℕ)).coeff (k+2)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripHalfGapMCE8",
+      "sha256": "decbcc61734d41a48176f2a4661237cec6976e3ec0be41cba33fa2f201009431",
+      "imports": [
+        "MarkovStripGeneralGapMCE8"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "stripHalf_largeMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "stripHalf_twoMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "stripHalf_threeMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "stripHalf_fourMCE8"
+        }
+      ],
+      "theorem_statements": [
+        "theorem stripHalf_largeMCE8 (k l q : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (hv : 0 ≤ q) :\n 0 ≤ stripGeneralGapMCE8 (((k+(l+5)+2)+q)/2) k (l+5) q (((k+(l+5)+2)-q)/2) 0",
+        "theorem stripHalf_twoMCE8 (k l q : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (hv : 0 ≤ q) :\n 0 ≤ stripGeneralGapMCE8 ((((k+3)+2+2)+q)/2) (k+3) 2 q ((((k+3)+2+2)-q)/2) 0",
+        "theorem stripHalf_threeMCE8 (k l q : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (hv : 0 ≤ q) :\n 0 ≤ stripGeneralGapMCE8 ((((k+2)+3+2)+q)/2) (k+2) 3 q ((((k+2)+3+2)-q)/2) 0",
+        "theorem stripHalf_fourMCE8 (k l q : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (hv : 0 ≤ q) :\n 0 ≤ stripGeneralGapMCE8 ((((k+1)+4+2)+q)/2) (k+1) 4 q ((((k+1)+4+2)-q)/2) 0"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripHighGapMCE8",
+      "sha256": "3d45103e13696e378c81b26e286b8d4875796e735eb11c0f9bb71597d7481431",
+      "imports": [
+        "MarkovStripGeneralGapMCE8"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "stripHigh_largeMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "stripHigh_twoMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "stripHigh_threeMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "stripHigh_fourMCE8"
+        }
+      ],
+      "theorem_statements": [
+        "theorem stripHigh_largeMCE8 (k l u : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (hv : 0 ≤ u) :\n 0 ≤ stripGeneralGapMCE8 ((2*(k+(l+5)+2)+u)/3) k (l+5) (((k+(l+5)+2)+2*u)/3) (((k+(l+5)+2)-u)/3) u",
+        "theorem stripHigh_twoMCE8 (k l u : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (hv : 0 ≤ u) :\n 0 ≤ stripGeneralGapMCE8 ((2*((k+3)+2+2)+u)/3) (k+3) 2 ((((k+3)+2+2)+2*u)/3) ((((k+3)+2+2)-u)/3) u",
+        "theorem stripHigh_threeMCE8 (k l u : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (hv : 0 ≤ u) :\n 0 ≤ stripGeneralGapMCE8 ((2*((k+2)+3+2)+u)/3) (k+2) 3 ((((k+2)+3+2)+2*u)/3) ((((k+2)+3+2)-u)/3) u",
+        "theorem stripHigh_fourMCE8 (k l u : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (hv : 0 ≤ u) :\n 0 ≤ stripGeneralGapMCE8 ((2*((k+1)+4+2)+u)/3) (k+1) 4 ((((k+1)+4+2)+2*u)/3) ((((k+1)+4+2)-u)/3) u"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripLCMCE8",
+      "sha256": "de306c40bbae12af0f2e2785d372a9d4b3fdcc8d8ca771eaceefad94f9c9c4de",
+      "imports": [
+        "MarkovStripGapMCE8"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "strip_gap_nonnegMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_gap_transferMCE8"
+        }
+      ],
+      "theorem_statements": [
+        "theorem strip_gap_nonnegMCE8 (a k l t : ℕ) (hl : 2 ≤ l) (hN : 5 ≤ k+l)\n (he : 3*a=k+l+2+t) : 0 ≤ stripGapMCE8 a k l t",
+        "theorem strip_gap_transferMCE8 (a k l t C c₁ c₂ c₃ : ℝ)\n (hk : 0 ≤ k) (hl : 2 ≤ l) (hN : 5 ≤ k+l)\n (h₁ : (k+l)*c₁=C*stripTMB9D a k l)\n (h₂ : 2*(k+l)*(k+l-1)*(k+l-2)*c₂=C*l*stripJMB9D a k l)\n (h₃ : 6*(k+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+1)*c₃=C*l*(l-1)*stripHMCE8 a k l t)\n (hg : 0 ≤ stripGapMCE8 a k l t) : c₁*c₃ ≤ c₂^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripSmallMCE8",
+      "sha256": "5e405ec2c2ed492164ae2a24c7b6734fb48ad8afecd360e8fcc7caff6c7550b0",
+      "imports": [
+        "MarkovSmallHorizontal2_3M9E1",
+        "MarkovSmallHorizontal2_5M9E1",
+        "MarkovSmallHorizontal3_4M9E1",
+        "MarkovSmallHorizontal3_5M9E1",
+        "MarkovSmallHorizontal4_5M9E1",
+        "MarkovSmallHorizontal5_6M9E1",
+        "MarkovUnique098"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "small_strip_2_3MCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "small_strip_2_5MCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "small_strip_3_4MCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "small_strip_3_5MCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "small_strip_4_5MCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "small_strip_5_6MCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_smallMCE8"
+        }
+      ],
+      "theorem_statements": [
+        "theorem small_strip_2_3MCE8 (i : ℕ) (hi : i ≤ 4) :\n coeff (frame [true]).mid.p i 1*coeff (frame [true]).mid.p i 3 ≤ coeff (frame [true]).mid.p i 2^2",
+        "theorem small_strip_2_5MCE8 (i : ℕ) (hi : i ≤ 6) :\n coeff (frame [false,true]).mid.p i 1*coeff (frame [false,true]).mid.p i 3 ≤ coeff (frame [false,true]).mid.p i 2^2",
+        "theorem small_strip_3_4MCE8 (i : ℕ) (hi : i ≤ 6) :\n coeff (frame [true,true]).mid.p i 1*coeff (frame [true,true]).mid.p i 3 ≤ coeff (frame [true,true]).mid.p i 2^2",
+        "theorem small_strip_3_5MCE8 (i : ℕ) (hi : i ≤ 7) :\n coeff (frame [true,false]).mid.p i 1*coeff (frame [true,false]).mid.p i 3 ≤ coeff (frame [true,false]).mid.p i 2^2",
+        "theorem small_strip_4_5MCE8 (i : ℕ) (hi : i ≤ 8) :\n coeff (frame [true,true,true]).mid.p i 1*coeff (frame [true,true,true]).mid.p i 3 ≤ coeff (frame [true,true,true]).mid.p i 2^2",
+        "theorem small_strip_5_6MCE8 (i : ℕ) (hi : i ≤ 10) :\n coeff (frame [true,true,true,true]).mid.p i 1*coeff (frame [true,true,true,true]).mid.p i 3 ≤ coeff (frame [true,true,true,true]).mid.p i 2^2",
+        "theorem source_strip_smallMCE8 (path : List Bool) (ha : 2 ≤ (frame path).mid.a)\n (hb : (frame path).mid.b ≤ 6) (i : ℕ) (hi : i ≤ (frame path).mid.a+(frame path).mid.b-1) :\n coeff (frame path).mid.p i 1*coeff (frame path).mid.p i 3 ≤ coeff (frame path).mid.p i 2^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripSourceMCE8",
+      "sha256": "969e561a95909d8a83fd27632fe4a865f8c92220b1d5678c971345bb58a79bef",
+      "imports": [
+        "MarkovStripCoefficientsMB9D"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "stripSeedMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_threeMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_seed_mapMCE8"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_three_coeffMCE8"
+        }
+      ],
+      "theorem_statements": [
+        "theorem source_strip_threeMCE8 (path : List Bool) (ha : 2 ≤ (frame path).mid.a)\n (hb : 7 ≤ (frame path).mid.b) (hs : 2*(frame path).mid.a ≤ (frame path).mid.b) :\n 6*(Bivariate.swap (frame path).mid.p).coeff 3=\n X^((frame path).mid.a-1)*(1+X)^((frame path).mid.b-7)*\n stripSeedMCE8 ((frame path).mid.a:ℤ) (frame path).mid.b (3*(frame path).mid.a-(frame path).mid.b:ℕ)",
+        "theorem strip_seed_mapMCE8 (a b t : ℤ) :\n (stripSeedMCE8 a b t).map (Int.castRingHom ℝ)=stripSeedMCE8 (a:ℝ) b t",
+        "theorem strip_three_coeffMCE8 (path : List Bool) (ha : 2 ≤ (frame path).mid.a)\n (hb : 7 ≤ (frame path).mid.b) (hs : 2*(frame path).mid.a ≤ (frame path).mid.b) (k : ℕ) :\n 6*(coeff (frame path).mid.p ((frame path).mid.a+k) 3:ℝ)=\n ((1+(X:ℝ[X]))^((frame path).mid.b-7)*\n stripSeedMCE8 ((frame path).mid.a:ℝ) (frame path).mid.b (3*(frame path).mid.a-(frame path).mid.b:ℕ)).coeff (k+1)"
+      ],
+      "raw_forbidden_flags": []
+    }
+  ],
+  "accepted_counts": {
+    "def": 9,
+    "theorem": 47
+  },
+  "per_module_counts": {
+    "MarkovResidualFullMCE8": {
+      "def": 1,
+      "theorem": 1
+    },
+    "MarkovResidualMCE8": {
+      "def": 1,
+      "theorem": 1
+    },
+    "MarkovStripAllMCE8": {
+      "theorem": 4
+    },
+    "MarkovStripChooseMCE8": {
+      "theorem": 2
+    },
+    "MarkovStripCoefficientsMCE8": {
+      "theorem": 1
+    },
+    "MarkovStripFullMCE8": {
+      "theorem": 3
+    },
+    "MarkovStripGapMCE8": {
+      "def": 2,
+      "theorem": 4
+    },
+    "MarkovStripGeneralChooseMCE8": {
+      "theorem": 2
+    },
+    "MarkovStripGeneralCoefficientsMCE8": {
+      "theorem": 2
+    },
+    "MarkovStripGeneralGapMCE8": {
+      "def": 3
+    },
+    "MarkovStripGeneralLCMCE8": {
+      "theorem": 4
+    },
+    "MarkovStripGeneralSourceMCE8": {
+      "def": 1,
+      "theorem": 3
+    },
+    "MarkovStripHalfGapMCE8": {
+      "theorem": 4
+    },
+    "MarkovStripHighGapMCE8": {
+      "theorem": 4
+    },
+    "MarkovStripLCMCE8": {
+      "theorem": 2
+    },
+    "MarkovStripSmallMCE8": {
+      "theorem": 7
+    },
+    "MarkovStripSourceMCE8": {
+      "def": 1,
+      "theorem": 3
+    }
+  },
+  "certificates": [
+    {
+      "module": "MarkovStripGapMCE8",
+      "name": "strip_largeMCE8",
+      "statement": "(k l t : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (ht : 0 ≤ t) :\n 0 ≤ stripGapMCE8 ((k+(l+5)+2+t)/3) k (l+5) t",
+      "body": "unfold stripGapMCE8 stripHMCE8 stripTMB9D stripJMB9D stripHMB9D ring_nf positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovStripGapMCE8",
+      "name": "strip_twoMCE8",
+      "statement": "(k t : ℝ) (hk : 0 ≤ k) (ht : 0 ≤ t) :\n 0 ≤ stripGapMCE8 (((k+3)+2+2+t)/3) (k+3) 2 t",
+      "body": "unfold stripGapMCE8 stripHMCE8 stripTMB9D stripJMB9D stripHMB9D ring_nf positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovStripGapMCE8",
+      "name": "strip_threeMCE8",
+      "statement": "(k t : ℝ) (hk : 0 ≤ k) (ht : 0 ≤ t) :\n 0 ≤ stripGapMCE8 (((k+2)+3+2+t)/3) (k+2) 3 t",
+      "body": "unfold stripGapMCE8 stripHMCE8 stripTMB9D stripJMB9D stripHMB9D ring_nf positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovStripGapMCE8",
+      "name": "strip_fourMCE8",
+      "statement": "(k t : ℝ) (hk : 0 ≤ k) (ht : 0 ≤ t) :\n 0 ≤ stripGapMCE8 (((k+1)+4+2+t)/3) (k+1) 4 t",
+      "body": "unfold stripGapMCE8 stripHMCE8 stripTMB9D stripJMB9D stripHMB9D ring_nf positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovStripHalfGapMCE8",
+      "name": "stripHalf_largeMCE8",
+      "statement": "(k l q : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (hv : 0 ≤ q) :\n 0 ≤ stripGeneralGapMCE8 (((k+(l+5)+2)+q)/2) k (l+5) q (((k+(l+5)+2)-q)/2) 0",
+      "body": "unfold stripGeneralGapMCE8 stripGeneralJMCE8 stripGeneralHMCE8 stripTMB9D stripJMB9D stripHMB9D ring_nf positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovStripHalfGapMCE8",
+      "name": "stripHalf_twoMCE8",
+      "statement": "(k l q : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (hv : 0 ≤ q) :\n 0 ≤ stripGeneralGapMCE8 ((((k+3)+2+2)+q)/2) (k+3) 2 q ((((k+3)+2+2)-q)/2) 0",
+      "body": "unfold stripGeneralGapMCE8 stripGeneralJMCE8 stripGeneralHMCE8 stripTMB9D stripJMB9D stripHMB9D ring_nf positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovStripHalfGapMCE8",
+      "name": "stripHalf_threeMCE8",
+      "statement": "(k l q : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (hv : 0 ≤ q) :\n 0 ≤ stripGeneralGapMCE8 ((((k+2)+3+2)+q)/2) (k+2) 3 q ((((k+2)+3+2)-q)/2) 0",
+      "body": "unfold stripGeneralGapMCE8 stripGeneralJMCE8 stripGeneralHMCE8 stripTMB9D stripJMB9D stripHMB9D ring_nf positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovStripHalfGapMCE8",
+      "name": "stripHalf_fourMCE8",
+      "statement": "(k l q : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (hv : 0 ≤ q) :\n 0 ≤ stripGeneralGapMCE8 ((((k+1)+4+2)+q)/2) (k+1) 4 q ((((k+1)+4+2)-q)/2) 0",
+      "body": "unfold stripGeneralGapMCE8 stripGeneralJMCE8 stripGeneralHMCE8 stripTMB9D stripJMB9D stripHMB9D ring_nf positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovStripHighGapMCE8",
+      "name": "stripHigh_largeMCE8",
+      "statement": "(k l u : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (hv : 0 ≤ u) :\n 0 ≤ stripGeneralGapMCE8 ((2*(k+(l+5)+2)+u)/3) k (l+5) (((k+(l+5)+2)+2*u)/3) (((k+(l+5)+2)-u)/3) u",
+      "body": "unfold stripGeneralGapMCE8 stripGeneralJMCE8 stripGeneralHMCE8 stripTMB9D stripJMB9D stripHMB9D ring_nf positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovStripHighGapMCE8",
+      "name": "stripHigh_twoMCE8",
+      "statement": "(k l u : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (hv : 0 ≤ u) :\n 0 ≤ stripGeneralGapMCE8 ((2*((k+3)+2+2)+u)/3) (k+3) 2 ((((k+3)+2+2)+2*u)/3) ((((k+3)+2+2)-u)/3) u",
+      "body": "unfold stripGeneralGapMCE8 stripGeneralJMCE8 stripGeneralHMCE8 stripTMB9D stripJMB9D stripHMB9D ring_nf positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovStripHighGapMCE8",
+      "name": "stripHigh_threeMCE8",
+      "statement": "(k l u : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (hv : 0 ≤ u) :\n 0 ≤ stripGeneralGapMCE8 ((2*((k+2)+3+2)+u)/3) (k+2) 3 ((((k+2)+3+2)+2*u)/3) ((((k+2)+3+2)-u)/3) u",
+      "body": "unfold stripGeneralGapMCE8 stripGeneralJMCE8 stripGeneralHMCE8 stripTMB9D stripJMB9D stripHMB9D ring_nf positivity",
+      "expansion_recomputed": false
+    },
+    {
+      "module": "MarkovStripHighGapMCE8",
+      "name": "stripHigh_fourMCE8",
+      "statement": "(k l u : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) (hv : 0 ≤ u) :\n 0 ≤ stripGeneralGapMCE8 ((2*((k+1)+4+2)+u)/3) (k+1) 4 ((((k+1)+4+2)+2*u)/3) ((((k+1)+4+2)-u)/3) u",
+      "body": "unfold stripGeneralGapMCE8 stripGeneralJMCE8 stripGeneralHMCE8 stripTMB9D stripJMB9D stripHMB9D ring_nf positivity",
+      "expansion_recomputed": false
+    }
+  ],
+  "full_residual_exact_j1_to_j2": true,
+  "intermediate_residual_exact_added_disjunction": true,
+  "small_reduced_labels": [
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      5,
+      6
+    ]
+  ]
+}

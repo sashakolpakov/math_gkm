@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovStripGeneralSourceMCE8.lean:16:110: error: unsolved goals\npath : List Bool\nhb : 5 \u2264 (frame path).mid.b\nn m s : \u2115\nhn : n + 2 = (frame path).mid.b\nhm : m + 1 = (frame path).mid.a\nhn3 : 3 \u2264 n\nhstat : s = 2 * (2 * (frame path).mid.a - (frame path).mid.b)\nhe : 2 * (Bivariate.swap (frame path).mid.p).coeff 2 = X ^ m * (X + 1) ^ (n - 3) * secondExpr8934 X \u2191n \u2191m \u2191s\nhf :\n  secondExpr8934 X \u2191n \u2191m \u2191s =\n    stripSecondSeedMCE8 \u2191(frame path).mid.a \u2191(frame path).mid.b \u2191(2 * (frame path).mid.a - (frame path).mid.b)\n\u22a2 X ^ ((frame path).mid.a - 1) * (X + 1) ^ ((frame path).mid.b - 5) *\n      stripSecondSeedMCE8 \u2191(frame path).mid.a \u2191(frame path).mid.b \u2191(2 * (frame path).mid.a - (frame path).mid.b) =\n    X ^ ((frame path).mid.a - 1) * (1 + X) ^ ((frame path).mid.b - 5) *\n      stripSecondSeedMCE8 \u2191(frame path).mid.a \u2191(frame path).mid.b \u2191(2 * (frame path).mid.a - (frame path).mid.b)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovStripGeneralSourceMCE8": "806d98d056e4e7aae64a58b5bd67c01210373c55278779be305cf76c5e012abb"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ce882be3/MarkovStripGeneralSourceMCE8.olean",
+    "/Users/sasha/math_gkm/research/MarkovStripGeneralSourceMCE8.lean"
+  ],
+  "seconds": 26.020412000012584,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

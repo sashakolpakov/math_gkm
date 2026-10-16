@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovStripAllMCE8.lean:101:65: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  c \u2265 0\n  b \u2265 4\n  b - c \u2264 -4\n  a \u2265 2\n  -5 \u2264 a - c \u2264 1\n  2*a - c \u2264 0\n  3*a - c \u2264 1\n  4*a - c \u2265 2\nwhere\n a := \u2191(frame path).mid.a\n b := \u2191i\n c := \u2191((frame path).mid.a + (frame path).mid.b - 1)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovStripAllMCE8": "9042aeafb9e0636fb0103429e5ba9420540c79df794e37cc5f469e8e7615ae24"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ce882be3/MarkovStripAllMCE8.olean",
+    "/Users/sasha/math_gkm/research/MarkovStripAllMCE8.lean"
+  ],
+  "seconds": 58.51740416599205,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

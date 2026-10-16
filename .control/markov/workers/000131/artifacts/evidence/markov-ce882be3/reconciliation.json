@@ -1,0 +1,95 @@
+{
+  "request_id": "ce882be3be764bbea0eaabd905e3bf18",
+  "inherited": {
+    "RESUME.json": true,
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": true,
+    "evidence/independent-markov/markov_residual_scope_audit.md": true,
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": true,
+    "evidence/markov/research-run/state.json": true,
+    "requests/markov-next.json": true
+  },
+  "b9d0d341": {
+    "checked": 87,
+    "mismatches": []
+  },
+  "263d8c71": {
+    "checked": 218,
+    "mismatches": []
+  },
+  "000128": {
+    "sha256": "33a4bebc8aad19653af64794e27896b7ef7007170bc0697995741820b7e7f91c",
+    "count": 281,
+    "last_events": [
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_144",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc '/opt/homebrew/bin/python3 research/finalize_263d8c71.py'",
+          "aggregated_output": "{\"request_id\": \"263d8c71d1e34c09988ae5004b76a354\", \"compiled_and_replayed_mathematical_modules\": 26, \"audited_theorem_closures\": 85, \"unchanged_prior_inputs\": 5651, \"changed_prior_inputs\": [], \"rechecked_inherited_artifacts\": {\"f52ba141\": 112, \"ae257c53\": 1353}, \"unsuccessful_build_receipts\": 24, \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\", \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\", \"stop_file_present\": false, \"completion\": null, \"scope\": \"New-source compilation and isolated kernel replay over inherited compiled imports; no fresh whole-source rebuild or independent completion audit.\"}\nVerified artifacts 218\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      },
+      {
+        "type": "item.started",
+        "item": {
+          "id": "item_145",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc 'cat evidence/markov-263d8c71/last-verification.json'",
+          "aggregated_output": "",
+          "exit_code": null,
+          "status": "in_progress"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_145",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc 'cat evidence/markov-263d8c71/last-verification.json'",
+          "aggregated_output": "{\n  \"verified_artifacts\": 218,\n  \"manifest_sha256\": \"3f2f953aa5865af431426605981d29cd2b18e58ff6c744eaa4bb060e05887325\",\n  \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\",\n  \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\",\n  \"stop_file_present\": false\n}\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      }
+    ]
+  },
+  "000130": {
+    "sha256": "7263243cb130a04ffa56ec98aa152162f5055735d79dcec53c00950d11cc1b85",
+    "count": 214,
+    "last_events": [
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_109",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc \"cat evidence/markov-b9d0d341/last-verification.json; /opt/homebrew/bin/python3 -c 'import json;print(json.load(open(\\\"evidence/markov-b9d0d341/replay-1792134213161847000.json\\\"))[\\\"stdout\\\"])'\"",
+          "aggregated_output": "{\n  \"verified_artifacts\": 87,\n  \"manifest_sha256\": \"cc619f77503517813fd3c93894de2348f2eae4cd6a48366ef5d05eee8d8ff203\",\n  \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\",\n  \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\",\n  \"stop_file_present\": false\n}\ncollected MarkovStripGapMB9D\ncollected MarkovStripSourceMB9D\ncollected MarkovStripCoefficientsMB9D\ncollected MarkovStripLCMB9D\ncollected MarkovStripAllMB9D\ncollected MarkovResidualMB9D\nreplay union of 6 modules over 6 inherited imports\nisolation checked for 28 mathematical constants\nreplay union passed\n\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_110",
+          "type": "agent_message",
+          "text": "{\n  \"actions\": [\n    \"Reconciled interrupted-worker effects and verified 295 inherited artifacts: evidence/markov-b9d0d341/reconciliation.json.\",\n    \"Compiled and kernel-replayed six mathematical modules; audited 21 theorem closures: evidence/markov-b9d0d341/validation.json.\",\n    \"Verified 87 artifact hashes, 5,731 unchanged prior inputs, and pinned root/contract hashes: evidence/markov-b9d0d341/final-check.json and last-verification.json.\"\n  ],\n  \"agenda\": [\n    \"Investigate extension to 2a\u2264b\u22643a using the candidate certificates in research/markov-b9d0d341-next.md; source adapters and Lean proofs remain pending.\",\n    \"Retain every unresolved region in research/MarkovResidualMB9D.lean.\",\n    \"Discharge all source-correspondence obligations before claiming exact-root completion.\"\n  ],\n  \"completion\": null,\n  \"observations\": [\n    \"Proved A[i,1]\u00b7A[i,3] \u2264 A[i,2]\u00b2 for every source path with 3a\u2264b and every natural i, retaining zeros: source_strip_all_lowMB9D in research/MarkovStripAllMB9D.lean.\",\n    \"Proved Conjecture63 \u2194 InteriorCore63MB9D. The residual remains unproved: research/MarkovResidualMB9D.lean.\",\n    \"Exact finite checks passed 489 source-polynomial comparisons, 39,209 scaled coefficient identities, and 21,621 strip inequalities, including 9,977 zero-containing triples. These are experiments, not proofs: evidence/markov-b9d0d341/strip-experiments.json.\",\n    \"All audited closures use permitted axioms. Inherited compiled imports were reused; no whole-source rebuild or independent completion audit occurred: research/markov-b9d0d341-correspondence.md.\",\n    \"Preserved 12 unsuccessful build receipts and capability limitations. All foreground executions ended: research/markov-b9d0d341-operational.md.\"\n  ],\n  \"request_id\": \"b9d0d3410a1644b6b35ab712bbfc87f7\",\n  \"summary\": \"Proved the raw vertical strip starting at j=1 for every source path with 3a\u2264b. Full pinned Conjecture63 remains unresolved.\"\n}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 7703729,
+          "cached_input_tokens": 7528960,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 39099,
+          "reasoning_output_tokens": 13127
+        }
+      }
+    ]
+  },
+  "reconciliation": "Worker 130 completed. Worker 128 effects already reconciled by 129/130; raw final events and manifest checked again, no side effects replayed. Excluded earlier drafts remain excluded.",
+  "scratch": "Higher-priority policy denies access; unique research/evidence files used without accessing scratch."
+}
