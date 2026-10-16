@@ -1,0 +1,33 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovSourceInteriorMF1E\nreplay union of 1 modules over 3 inherited imports\nisolation checked for 8 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSourceInteriorMF1E": "c6a7f454c50431e217bc5104b7ff9cc02e9cfdc1539bd92fd5385c8370394d0e"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedMF1E.lean",
+    "MarkovSourceInteriorMF1E"
+  ],
+  "seconds": 37.18927299999632,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "6e3ef3db74ddf2c127a2403a45604f89b2a4208de2bcb7ba058eaf571ec1940c",
+  "declared_names": {
+    "MarkovSourceInteriorMF1E": [
+      "coeff_le_smoothedMF1E",
+      "horizontal_residual_lowerMF1E",
+      "vertical_residual_lowerMF1E",
+      "HorizontalMiddleMF1E",
+      "source_horizontal_middleMF1E",
+      "VerticalMiddleMF1E",
+      "source_vertical_middleMF1E",
+      "source_diagonal_middleMF1E"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed MF1E; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

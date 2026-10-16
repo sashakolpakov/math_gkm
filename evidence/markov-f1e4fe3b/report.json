@@ -1,0 +1,24 @@
+{
+  "request_id": "f1e4fe3b99d84d70bd218f29dcffcb3c",
+  "summary": "Proved unbounded middle regions of raw coefficient log-concavity in all three directions. Full pinned Conjecture63 remains unresolved.",
+  "actions": [
+    "Reconciled workers 133--135 and verified 527 inherited artifacts: evidence/markov-f1e4fe3b/reconciliation.json.",
+    "Compiled and kernel-replayed 5 mathematical modules; audited 20 theorem closures: evidence/markov-f1e4fe3b/validation.json.",
+    "Verified 5985 unchanged prior inputs and pinned root/contract hashes: evidence/markov-f1e4fe3b/final-check.json. New artifact bindings: manifest.json and last-verification.json."
+  ],
+  "observations": [
+    "Proved a uniform interior LC theorem for binomial smoothing of any nonnegative finite seed, allowing internal zeros and non-LC seeds: research/MarkovBinomialInteriorMF1E.lean.",
+    "Connected the criterion to actual source horizontal, vertical and diagonal raw coefficients. At diagonal depth r, both offsets at least r+r\u00b2 suffice: research/MarkovSourceInteriorMF1E.lean.",
+    "Proved Conjecture63 iff InteriorCore63MF1E, retaining the unproved complement of these regions and all inherited guards: research/MarkovResidualMF1E.lean.",
+    "Constructed an actual-source middle-region witness at every diagonal depth r>=6, with all old residual and polygon guards: research/MarkovInteriorWitnessMF1E.lean.",
+    "Finite experiments passed 179 source-polynomial comparisons, 350 newly covered source triples and 2,069 generic-seed triples, including 130 zero triples. Experiments are not proofs: evidence/markov-f1e4fe3b/interior-experiments.json.",
+    "Only permitted axioms occur in audited closures. Inherited compiled imports were reused; no whole-source rebuild or independent completion audit occurred: research/markov-f1e4fe3b-correspondence.md.",
+    "Preserved 10 unsuccessful build receipts, including timeouts, and recorded capability restrictions: research/markov-f1e4fe3b-operational.md."
+  ],
+  "agenda": [
+    "Investigate sharper polygon-derived residual support and source-specific control of mixed terms near the remaining edges: research/markov-f1e4fe3b-next.md.",
+    "Retain every unresolved clause of research/MarkovResidualMF1E.lean; middle-region coverage is not full-source resolution.",
+    "Discharge all source-correspondence obligations before claiming exact-root completion."
+  ],
+  "completion": null
+}

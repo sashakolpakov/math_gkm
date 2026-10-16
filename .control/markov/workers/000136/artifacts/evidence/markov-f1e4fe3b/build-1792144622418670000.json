@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSourceInteriorMF1E.lean:18:29: error: Application type mismatch: The argument\n  k\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  Set.IsPWO ?m.77\nof sort `Prop` in the application\n  Finset.antidiagonal k\n/Users/sasha/math_gkm/research/MarkovSourceInteriorMF1E.lean:20:4: error: unsolved goals\nP : \u2124[X]\nn k : \u2115\nhP : \u2200 (r : \u2115), 0 \u2264 P.coeff r\n\u22a2 (0, k) \u2208 sorry ()\n/Users/sasha/math_gkm/research/MarkovSourceInteriorMF1E.lean:58:1: error: 'change' tactic failed, pattern\n  coeff (frame path).mid.p r k \u2265 ?m.137\nis not definitionally equal to target\n  (vresidualM9E1 path r).coeff k \u2264 (Polynomial.coeff (frame path).mid.p r).coeff k\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSourceInteriorMF1E": "c982c7dcb0da0cc73456bc86732653aa716da6fb4cf711907ceb8787a8a22da5"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-f1e4fe3b/MarkovSourceInteriorMF1E.olean",
+    "/Users/sasha/math_gkm/research/MarkovSourceInteriorMF1E.lean"
+  ],
+  "seconds": 102.16391541698249,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

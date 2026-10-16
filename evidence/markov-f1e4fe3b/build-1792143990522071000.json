@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBinomialMixedMF1E.lean:16:1: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Matroid ?m.22) 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Matroid ?m.22\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovBinomialMixedMF1E.lean:16:4: error: Function expected at\n  ixedNumeratorMF1E\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  a\n\nHint: The identifier `ixedNumeratorMF1E` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n/Users/sasha/math_gkm/research/MarkovBinomialMixedMF1E.lean:33:21: error: unexpected token ')'; expected term\n/Users/sasha/math_gkm/research/MarkovBinomialMixedMF1E.lean:55:1: error: mod_cast has type\n  n.choose (k + 1) * (k + 1) = n.choose k * (n - k)\nbut is expected to have type\n  \u2191(n.choose (k + 1) * (k + 1)) = \u2191(n.choose k) * Int.subNatNat n k\n/Users/sasha/math_gkm/research/MarkovBinomialMixedMF1E.lean:63:7: error(lean.unknownIdentifier): Unknown identifier `mixed_tripleMF1E`\n/Users/sasha/math_gkm/research/MarkovBinomialMixedMF1E.lean:64:1: error: No goals to be solved\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBinomialMixedMF1E": "d3ace5508146f3e1a573144be83aa7d6eeb36737e2f868963dfd148801ea97d6"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-f1e4fe3b/MarkovBinomialMixedMF1E.olean",
+    "/Users/sasha/math_gkm/research/MarkovBinomialMixedMF1E.lean"
+  ],
+  "seconds": 85.30015795800136,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

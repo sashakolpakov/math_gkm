@@ -1,0 +1,268 @@
+{
+  "worker": 136,
+  "request": "f1e4fe3b99d84d70bd218f29dcffcb3c",
+  "created_at_utc": "2026-10-16T10:25:31.872595+00:00",
+  "historical_status": "TIMEOUT/nullreport; saved validation/finalization do not upgrade controller outcome",
+  "scope": {
+    "mixed_real": "Real t>=0,a>=t²,b>=t²; translated numerator displayed as polynomial with nonnegative numeric literals,+,*,natural powers andx=a-t²,y=b-t²>=0. Ordinaryringidentity saved, not recomputed. Mixed-triple lemma hasL,M,R,l,m,r arbitraryreal butM,m>=0 andfouradjacentmultiplicativeequations. Clearpositive(a+2)(b+2)(a+t+2)(b+t+2); do notdivideM,m orsourcecoefficients.",
+    "binomial_pair": "Natural a,b,t witha,b>=t²,n=a+b+t+2; fourchoose recurrences retain n-k inside naturalcast until justified. Interval versionuseslo<=r<=s<=hi,a=k-s,b=n-(k-r+2),t=s-r andprovesallnat subtraction shifts; unorderedversion splitsr<=s orreverse.",
+    "mixture": "Generic finite_mixture_lc requires allorderedpaircrossinequalities, no furtherindividualsignpremise. Summingorderedpairs yields2timesdesiredrawgap. PolynomialtheoremrequiresP realnonnegativecoefficients,degree<=hi,coeffr=0 belowlo,hi+(hi-lo)^2<=k,k+2+(hi-lo)^2<=n+lo. Natranges; noexplicitlo<=hi, reversedintervalcanonlysupportzero. NonLCseeds/internalzeros/zeropolynomialallowed; signedseedsnotcovered. Coefficientsumrequiresdegreebound<=k, suppliedbyfirstmargin. Integercastversionpreservesliteralrawproducts.",
+    "smoothing_lower": "coeff_le_smoothed forintegerPnonnegativecoeffs picks(0,k)termfromconvolutionwithchoose(n,0)=1. Combinedwithactualrawoutsidepolygonzero andresidualnonnegative, forcesseedlowerzero. No reverseLCcancellation.",
+    "horizontal": "HorizontalMiddle(a,b,i,j):2j+1<=b,lo=(a-j)+,hi=a+j,w=hi-lo,n=b-2j-1;hi+w²<=i,i+2+w²<=n+lo. Actualsourcehresidualdegree/positivity/factorization andnewlowerboundprovided; literal(i,j),(i+1,j),(i+2,j) withswap_coeff46. Noassumptionj<=a orseedLC.",
+    "vertical": "VerticalMiddle(a,b,i,j):existsnaturalc,2i+1<=a,b<=ca,lo=(b-ci)+,hi=b+i,w=hi-lo,n=a-2i-1;hi+w²<=j,j+2+w²<=n+lo. Actualvresidualdegree/positivity/factor andlowerboundprovided; literal(i,j),(i,j+1),(i,j+2). c notfixedtoceil intheorem; truncationandfactorizationrangesretained.",
+    "diagonal": "Actualsource,naturalr,i,j,totalD=a+b-1; i+j+2+r=D andr+r²<=i,j. Theseimply2r<=D. IntegralquotientSlice774 seeddegree<=r,nonnegative,lo0;rawslice=(1+X)^(D-2r)seed. Exactdiagonal_raw_coeff_on16 identifies(i,j+2),(i+1,j+1),(i+2,j),includingnaturalsmall/endpoints,withoutscale. Generalrnotboundedorfixed; no residualLCpremise.",
+    "residual": "Conjecture63 iffInteriorCore63MF1E exactpriorMF25plusnegatedHorizontalMiddle,VerticalMiddle,DiagonalMiddle antecedents. All3polygon guards,Hj5,Vi4j3,total+4,Dtotal+8,a5<=i+j2,a2<=b,sourcea2androotendpointsretain. Complementunproved,notrootcompletion.",
+    "witness": "forallr>=6 existsactualpathtrue^(r²+r+1)++[false], n=r²+r+1,labels a=2n+1,b=2n+3,i=r²+r,j=3r²+2r+5. IncludesalloldDresidualguards,threepolygonpoints,newMiddleandrawinequality. Showscoverageat everyunboundeddepth acrossvaryingsources,notonefixedsourceinfinitelymanydepths. Doesnotassertstrictpositivityofcoefficients orstrictLC.",
+    "diagnostic": "SmoothProbe1theorem samebodyasaccepted coeff_le_smoothed aftername/whitespace; itsown50stimeout/noobject/replay/prints remainunvalidated. Actualacceptedhelperbelongsdifferentmodule. Noextraacceptedbacklogiscreatedfromthisdiagnostic.",
+    "historical": "Worker136TIMEOUT/nullreport unchanged despitefinishedsavedmathematicalchecks/finalizer. No136structuredfinalreport inferredfromindexedreportdraft;137stoppedrecordsseparate, noauthority/restartinference."
+  },
+  "new_modules": [
+    {
+      "module": "MarkovBinomialInteriorMF1E",
+      "sha256": "f3e71c88e67273d249557ba9206743db5fbba6767e2c965c047738472a8c0eb1",
+      "status": "compiled/replayed/axiom-printed final mathematics",
+      "imports": [
+        "MarkovBinomialMixedMF1E"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "binomial_mixed_interval_orderedMF1E"
+        },
+        {
+          "kind": "theorem",
+          "name": "binomial_mixed_intervalMF1E"
+        },
+        {
+          "kind": "theorem",
+          "name": "finite_mixture_lcMF1E"
+        },
+        {
+          "kind": "theorem",
+          "name": "binomial_coeff_sumMF1E"
+        },
+        {
+          "kind": "theorem",
+          "name": "binomial_interior_lcMF1E"
+        },
+        {
+          "kind": "theorem",
+          "name": "integer_binomial_interior_lcMF1E"
+        }
+      ],
+      "theorem_statements": [
+        "theorem binomial_mixed_interval_orderedMF1E (n k lo hi r s : ℕ)\n (hr : lo ≤ r) (hrs : r ≤ s) (hs : s ≤ hi)\n (hk : hi+(hi-lo)^2 ≤ k) (hn : k+2+(hi-lo)^2 ≤ n+lo) :\n (n.choose (k-r):ℝ)*(n.choose (k+2-s):ℝ)+\n (n.choose (k-s):ℝ)*(n.choose (k+2-r):ℝ) ≤ 2*(n.choose (k+1-r):ℝ)*(n.choose (k+1-s):ℝ)",
+        "theorem binomial_mixed_intervalMF1E (n k lo hi r s : ℕ)\n (hr : lo ≤ r) (hr' : r ≤ hi) (hs : lo ≤ s) (hs' : s ≤ hi)\n (hk : hi+(hi-lo)^2 ≤ k) (hn : k+2+(hi-lo)^2 ≤ n+lo) :\n (n.choose (k-r):ℝ)*(n.choose (k+2-s):ℝ)+\n (n.choose (k-s):ℝ)*(n.choose (k+2-r):ℝ) ≤ 2*(n.choose (k+1-r):ℝ)*(n.choose (k+1-s):ℝ)",
+        "theorem finite_mixture_lcMF1E {ι : Type*} (S : Finset ι) (L M R : ι → ℝ)\n (h : ∀ r∈S, ∀ s∈S, L r*R s+L s*R r ≤ 2*M r*M s) :\n (∑ r∈S, L r)*(∑ r∈S, R r) ≤ (∑ r∈S, M r)^2",
+        "theorem binomial_coeff_sumMF1E (P : ℝ[X]) (n k d : ℕ)\n (hP : P.natDegree ≤ d) (hk : d ≤ k) :\n (((1+X)^n*P):ℝ[X]).coeff k=\n ∑ r∈Finset.range (d+1), P.coeff r*(n.choose (k-r):ℝ)",
+        "theorem binomial_interior_lcMF1E (P : ℝ[X]) (n k lo hi : ℕ)\n (hP : P.natDegree ≤ hi) (hpos : ∀ r, 0 ≤ P.coeff r)\n (hlow : ∀ r<lo, P.coeff r=0)\n (hk : hi+(hi-lo)^2 ≤ k) (hn : k+2+(hi-lo)^2 ≤ n+lo) :\n (((1+X)^n*P):ℝ[X]).coeff k * (((1+X)^n*P):ℝ[X]).coeff (k+2) ≤ (((1+X)^n*P):ℝ[X]).coeff (k+1)^2",
+        "theorem integer_binomial_interior_lcMF1E (P : ℤ[X]) (n k lo hi : ℕ)\n (hP : P.natDegree ≤ hi) (hpos : ∀ r, 0 ≤ P.coeff r)\n (hlow : ∀ r<lo, P.coeff r=0)\n (hk : hi+(hi-lo)^2 ≤ k) (hn : k+2+(hi-lo)^2 ≤ n+lo) :\n (((1+X)^n*P):ℤ[X]).coeff k * (((1+X)^n*P):ℤ[X]).coeff (k+2) ≤ (((1+X)^n*P):ℤ[X]).coeff (k+1)^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovBinomialMixedMF1E",
+      "sha256": "c8a693ab8be5276cbbdf91637637ecb8977ef131179d1e1c5a848a2c22940988",
+      "status": "compiled/replayed/axiom-printed final mathematics",
+      "imports": [
+        "Mathlib"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "mixedNumeratorMF1E"
+        },
+        {
+          "kind": "theorem",
+          "name": "mixed_numerator_nonnegMF1E"
+        },
+        {
+          "kind": "theorem",
+          "name": "mixed_tripleMF1E"
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_stepMF1E"
+        },
+        {
+          "kind": "theorem",
+          "name": "binomial_mixedMF1E"
+        }
+      ],
+      "theorem_statements": [
+        "theorem mixed_numerator_nonnegMF1E (a b t : ℝ)\n (ht : 0 ≤ t) (ha : t^2 ≤ a) (hb : t^2 ≤ b) :\n 0 ≤ mixedNumeratorMF1E a b t",
+        "theorem mixed_tripleMF1E (a b t L M R l m r : ℝ)\n (ht : 0 ≤ t) (ha : t^2 ≤ a) (hb : t^2 ≤ b)\n (hM : 0 ≤ M) (hm : 0 ≤ m)\n (hL : L*(b+2)=(a+t+1)*M)\n (hR : R*(a+t+2)=(b+1)*M)\n (hl : l*(b+t+2)=(a+1)*m)\n (hr : r*(a+2)=(b+t+1)*m) :\n L*r+l*R ≤ 2*M*m",
+        "theorem choose_stepMF1E (n k : ℕ) :\n (n.choose (k+1):ℝ)*(k+1)=(n.choose k:ℝ)*((n-k:ℕ):ℝ)",
+        "theorem binomial_mixedMF1E (a b t : ℕ) (ha : t^2 ≤ a) (hb : t^2 ≤ b) :\n let n := a+b+t+2\n (n.choose (a+t):ℝ)*(n.choose (a+2):ℝ)+\n (n.choose a:ℝ)*(n.choose (a+t+2):ℝ) ≤ 2*(n.choose (a+t+1):ℝ)*(n.choose (a+1):ℝ)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovInteriorWitnessMF1E",
+      "sha256": "8c2864c5d9dd04930912c7c33d9d7a0254ba284f9bab55490051935b15c6a4c2",
+      "status": "compiled/replayed/axiom-printed final mathematics",
+      "imports": [
+        "MarkovResidualMF1E",
+        "MarkovRightJetsF650"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "right_left_labelsMF1E"
+        },
+        {
+          "kind": "theorem",
+          "name": "polygon_of_totalMF1E"
+        },
+        {
+          "kind": "theorem",
+          "name": "unbounded_diagonal_regionMF1E"
+        }
+      ],
+      "theorem_statements": [
+        "theorem right_left_labelsMF1E (n : ℕ) :\n (frame (List.replicate n true++[false])).mid.a=2*n+1 ∧\n (frame (List.replicate n true++[false])).mid.b=2*n+3",
+        "theorem polygon_of_totalMF1E (a b i j : ℕ)\n (hab : a ≤ b) (hlo : b ≤ i+j) (hhi : i+j ≤ a+b-1) :\n InPolygon a b i j",
+        "theorem unbounded_diagonal_regionMF1E (r : ℕ) (hr : 6 ≤ r) :\n ∃ (path : List Bool) (i j : ℕ),\n   let m := (frame path).mid\n   2 ≤ m.a ∧ m.a+2 ≤ m.b ∧\n   i+j+2+r=m.a+m.b-1 ∧ i+j+8 ≤ m.a+m.b-1 ∧ m.a+5 ≤ i+j+2 ∧\n   InPolygon m.a m.b i (j+2) ∧ InPolygon m.a m.b (i+1) (j+1) ∧\n   InPolygon m.a m.b (i+2) j ∧ DiagonalMiddleMF1E m.a m.b i j ∧\n   coeff m.p i (j+2)*coeff m.p (i+2) j ≤ coeff m.p (i+1) (j+1)^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovResidualMF1E",
+      "sha256": "43dedcda4d64d3304005f3311c4830399cb6604e975c0a114c0583b09013761c",
+      "status": "compiled/replayed/axiom-printed final mathematics",
+      "imports": [
+        "MarkovSourceInteriorMF1E",
+        "MarkovResidualMF25"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "DiagonalMiddleMF1E"
+        },
+        {
+          "kind": "def",
+          "name": "InteriorCore63MF1E"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_interiorMF1E"
+        }
+      ],
+      "theorem_statements": [
+        "theorem root_iff_interiorMF1E : Conjecture63 ↔ InteriorCore63MF1E"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovSmoothProbeMF1E",
+      "sha256": "d77428ee22fef0d9d67e4212bdfa506752ced316ef795690682d2b91508ccd4a",
+      "status": "diagnostic timed-out build; no object, replay or axiom print",
+      "imports": [
+        "Mathlib"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "smooth_probeMF1E"
+        }
+      ],
+      "theorem_statements": [
+        "theorem smooth_probeMF1E (P : ℤ[X]) (n k : ℕ)\n (hP : ∀ r, 0 ≤ P.coeff r) :\n P.coeff k ≤ (((1+X)^n*P):ℤ[X]).coeff k"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovSourceInteriorMF1E",
+      "sha256": "c6a7f454c50431e217bc5104b7ff9cc02e9cfdc1539bd92fd5385c8370394d0e",
+      "status": "compiled/replayed/axiom-printed final mathematics",
+      "imports": [
+        "MarkovBinomialInteriorMF1E",
+        "MarkovResidualEndpointsMEA423"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "coeff_le_smoothedMF1E"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_residual_lowerMF1E"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_residual_lowerMF1E"
+        },
+        {
+          "kind": "def",
+          "name": "HorizontalMiddleMF1E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_horizontal_middleMF1E"
+        },
+        {
+          "kind": "def",
+          "name": "VerticalMiddleMF1E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_vertical_middleMF1E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_diagonal_middleMF1E"
+        }
+      ],
+      "theorem_statements": [
+        "theorem coeff_le_smoothedMF1E (P : ℤ[X]) (n k : ℕ)\n (hP : ∀ r, 0 ≤ P.coeff r) :\n P.coeff k ≤ (((1+X)^n*P):ℤ[X]).coeff k",
+        "theorem horizontal_residual_lowerMF1E (path : List Bool) (r k : ℕ)\n (hb : 2*r+1 ≤ (frame path).mid.b) (hk : k<(frame path).mid.a-r) :\n (hresidualM511 (X:ℤ[X]) (sourceWord28 path) r).coeff k=0",
+        "theorem vertical_residual_lowerMF1E (path : List Bool) (c r k : ℕ)\n (ha : 2*r+1 ≤ (frame path).mid.a)\n (hslope : (frame path).mid.b ≤ c*(frame path).mid.a)\n (hk : k<(frame path).mid.b-c*r) :\n (vresidualM9E1 path r).coeff k=0",
+        "theorem source_horizontal_middleMF1E (path : List Bool) (i j : ℕ)\n (h : HorizontalMiddleMF1E (frame path).mid.a (frame path).mid.b i j) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤ coeff (frame path).mid.p (i+1) j^2",
+        "theorem source_vertical_middleMF1E (path : List Bool) (i j : ℕ)\n (h : VerticalMiddleMF1E (frame path).mid.a (frame path).mid.b i j) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p i (j+2) ≤ coeff (frame path).mid.p i (j+1)^2",
+        "theorem source_diagonal_middleMF1E (path : List Bool) (r i j : ℕ)\n (hd : i+j+2+r=(frame path).mid.a+(frame path).mid.b-1)\n (hi : r+r^2 ≤ i) (hj : r+r^2 ≤ j) :\n coeff (frame path).mid.p i (j+2)*coeff (frame path).mid.p (i+2) j ≤ coeff (frame path).mid.p (i+1) (j+1)^2"
+      ],
+      "raw_forbidden_flags": []
+    }
+  ],
+  "counts": {
+    "accepted": {
+      "theorem": 20,
+      "def": 5
+    },
+    "diagnostic": {
+      "theorem": 1
+    },
+    "all": {
+      "theorem": 21,
+      "def": 5
+    }
+  },
+  "per_module_counts": {
+    "MarkovBinomialInteriorMF1E": {
+      "theorem": 6
+    },
+    "MarkovBinomialMixedMF1E": {
+      "def": 1,
+      "theorem": 4
+    },
+    "MarkovInteriorWitnessMF1E": {
+      "theorem": 3
+    },
+    "MarkovResidualMF1E": {
+      "def": 2,
+      "theorem": 1
+    },
+    "MarkovSmoothProbeMF1E": {
+      "theorem": 1
+    },
+    "MarkovSourceInteriorMF1E": {
+      "theorem": 6,
+      "def": 2
+    }
+  },
+  "exact_residual_guard_additions": true,
+  "mixed_rhs_nonnegative_literal_grammar": true,
+  "mixed_rhs": "\n   24+20*t+35*t^2+16*t^3+11*t^4+2*t^5+\n   (x+y)*(20+11*t+17*t^2+4*t^3+2*t^4)+\n   (x^2+y^2)*(4+t+t^2)+x*y*(14+4*t+6*t^2)+\n   2*x*y^2+2*x^2*y",
+  "mixed_identity_recomputed": false,
+  "diagnostic_body_matches_accepted_helper_after_name_whitespace": true
+}

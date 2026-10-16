@@ -1,0 +1,81 @@
+{
+  "request_id": "f1e4fe3b99d84d70bd218f29dcffcb3c",
+  "modules": {
+    "MarkovBinomialMixedMF1E": {
+      "source": "research/MarkovBinomialMixedMF1E.lean",
+      "source_sha256": "c8a693ab8be5276cbbdf91637637ecb8977ef131179d1e1c5a848a2c22940988",
+      "olean_sha256": "33cacf71c048ab31c033c72c4493ee74b89783be54cab8b81dea75a7d1b0d3c1",
+      "build": "evidence/markov-f1e4fe3b/build-1792144443970798000.json",
+      "replay": "evidence/markov-f1e4fe3b/replay-1792144548356348000.json",
+      "axiom_audit": "evidence/markov-f1e4fe3b/axioms-1792145097577217000.json",
+      "theorems": [
+        "mixed_numerator_nonnegMF1E",
+        "mixed_tripleMF1E",
+        "choose_stepMF1E",
+        "binomial_mixedMF1E"
+      ]
+    },
+    "MarkovBinomialInteriorMF1E": {
+      "source": "research/MarkovBinomialInteriorMF1E.lean",
+      "source_sha256": "f3e71c88e67273d249557ba9206743db5fbba6767e2c965c047738472a8c0eb1",
+      "olean_sha256": "6d8bc3efe911efbe039e065a5f4fb2b040068529e7e1c5ef3524b2ac863638e3",
+      "build": "evidence/markov-f1e4fe3b/build-1792144565443491000.json",
+      "replay": "evidence/markov-f1e4fe3b/replay-1792144623247177000.json",
+      "axiom_audit": "evidence/markov-f1e4fe3b/axioms-1792145097577217000.json",
+      "theorems": [
+        "binomial_mixed_interval_orderedMF1E",
+        "binomial_mixed_intervalMF1E",
+        "finite_mixture_lcMF1E",
+        "binomial_coeff_sumMF1E",
+        "binomial_interior_lcMF1E",
+        "integer_binomial_interior_lcMF1E"
+      ]
+    },
+    "MarkovSourceInteriorMF1E": {
+      "source": "research/MarkovSourceInteriorMF1E.lean",
+      "source_sha256": "c6a7f454c50431e217bc5104b7ff9cc02e9cfdc1539bd92fd5385c8370394d0e",
+      "olean_sha256": "8487ea55fe0548eeb7da32d6853ddcb295f9acd0fc28ba640cb69ecec52bf545",
+      "build": "evidence/markov-f1e4fe3b/build-1792145073782425000.json",
+      "replay": "evidence/markov-f1e4fe3b/replay-1792145118092463000.json",
+      "axiom_audit": "evidence/markov-f1e4fe3b/axioms-1792145218676092000.json",
+      "theorems": [
+        "coeff_le_smoothedMF1E",
+        "horizontal_residual_lowerMF1E",
+        "vertical_residual_lowerMF1E",
+        "source_horizontal_middleMF1E",
+        "source_vertical_middleMF1E",
+        "source_diagonal_middleMF1E"
+      ]
+    },
+    "MarkovResidualMF1E": {
+      "source": "research/MarkovResidualMF1E.lean",
+      "source_sha256": "43dedcda4d64d3304005f3311c4830399cb6604e975c0a114c0583b09013761c",
+      "olean_sha256": "91397b897b865cb48da34e4552b5400204b045ef3ff2340e64d0863c2d7b1480",
+      "build": "evidence/markov-f1e4fe3b/build-1792145183299857000.json",
+      "replay": "evidence/markov-f1e4fe3b/replay-1792145229786568000.json",
+      "axiom_audit": "evidence/markov-f1e4fe3b/axioms-1792145362351287000.json",
+      "theorems": [
+        "root_iff_interiorMF1E"
+      ]
+    },
+    "MarkovInteriorWitnessMF1E": {
+      "source": "research/MarkovInteriorWitnessMF1E.lean",
+      "source_sha256": "8c2864c5d9dd04930912c7c33d9d7a0254ba284f9bab55490051935b15c6a4c2",
+      "olean_sha256": "319c285451b56f8c31c9a155a4c86737c869ac94fe4eddffe60937797a5529ee",
+      "build": "evidence/markov-f1e4fe3b/build-1792145289793468000.json",
+      "replay": "evidence/markov-f1e4fe3b/replay-1792145327561205000.json",
+      "axiom_audit": "evidence/markov-f1e4fe3b/axioms-1792145362351287000.json",
+      "theorems": [
+        "right_left_labelsMF1E",
+        "polygon_of_totalMF1E",
+        "unbounded_diagonal_regionMF1E"
+      ]
+    }
+  },
+  "excluded": {},
+  "diagnostic_sources": [
+    "research/MarkovSmoothProbeMF1E.lean"
+  ],
+  "completion": null,
+  "scope": "New mathematical sources compiled and separately replayed over inherited compiled imports; no fresh whole-source rebuild or independent source/English completion audit. The standalone smooth probe duplicates a helper for build diagnosis and is not included in the admitted mathematical inventory."
+}

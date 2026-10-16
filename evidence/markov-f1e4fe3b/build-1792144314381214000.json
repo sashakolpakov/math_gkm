@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBinomialInteriorMF1E.lean:10:23: error: unexpected token ')'; expected term\n/Users/sasha/math_gkm/research/MarkovBinomialInteriorMF1E.lean:33:36: error: unexpected token ')'; expected term\n/Users/sasha/math_gkm/research/MarkovBinomialInteriorMF1E.lean:89:11: error(lean.unknownIdentifier): Unknown identifier `binomial_mixed_intervalMF1E`\n/Users/sasha/math_gkm/research/MarkovBinomialInteriorMF1E.lean:77:37: error: unsolved goals\ncase neg\nP : \u211d[X]\nn k lo hi : \u2115\nhP : P.natDegree \u2264 hi\nhpos : \u2200 (r : \u2115), 0 \u2264 P.coeff r\nhlow : \u2200 r < lo, P.coeff r = 0\nhk : hi + (hi - lo) ^ 2 \u2264 k\nhn : k + 2 + (hi - lo) ^ 2 \u2264 n + lo\nr : \u2115\nhr : r \u2208 Finset.range (hi + 1)\ns : \u2115\nhs : s \u2208 Finset.range (hi + 1)\nhrl : \u00acr < lo\nhsl : \u00acs < lo\nhr' : r \u2264 hi\nhs' : s \u2264 hi\n\u22a2 P.coeff r * \u2191(n.choose (k - r)) * (P.coeff s * \u2191(n.choose (k + 2 - s))) +\n      P.coeff s * \u2191(n.choose (k - s)) * (P.coeff r * \u2191(n.choose (k + 2 - r))) \u2264\n    2 * (P.coeff r * \u2191(n.choose (k + 1 - r))) * (P.coeff s * \u2191(n.choose (k + 1 - s)))\n/Users/sasha/math_gkm/research/MarkovBinomialInteriorMF1E.lean:106:1: error: Type mismatch: After simplification, term\n  h\n has type\n  (Int.castRingHom \u211d) (((1 + X) ^ n * P).coeff k) * (Int.castRingHom \u211d) (((1 + X) ^ n * P).coeff (k + 2)) \u2264\n    (Int.castRingHom \u211d) (((1 + X) ^ n * P).coeff (k + 1)) ^ 2\nbut is expected to have type\n  ((1 + X) ^ n * P).coeff k * ((1 + X) ^ n * P).coeff (k + 2) \u2264 ((1 + X) ^ n * P).coeff (k + 1) ^ 2\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBinomialInteriorMF1E": "d2ef39fbcd4de281d0f8f88d99b94388ea0eccf50c9621437bfa1ec6037b796e"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-f1e4fe3b/MarkovBinomialInteriorMF1E.olean",
+    "/Users/sasha/math_gkm/research/MarkovBinomialInteriorMF1E.lean"
+  ],
+  "seconds": 79.9339175420464,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

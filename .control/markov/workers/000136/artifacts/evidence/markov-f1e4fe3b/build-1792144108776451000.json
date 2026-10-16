@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBinomialMixedMF1E.lean:48:11: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Matroid ?m.448) 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Matroid ?m.448\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovBinomialMixedMF1E.lean:48:14: error(lean.unknownIdentifier): Unknown identifier `ixedNumeratorMF1E`\n/Users/sasha/math_gkm/research/MarkovBinomialMixedMF1E.lean:48:14: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  HMul \u211d \u211d (Matroid ?m.448)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovBinomialMixedMF1E.lean:38:20: error: unsolved goals\na b t L M R l m r : \u211d\nht : 0 \u2264 t\nha : t ^ 2 \u2264 a\nhb : t ^ 2 \u2264 b\nhM : 0 \u2264 M\nhm : 0 \u2264 m\nhL : L * (b + 2) = (a + t + 1) * M\nhR : R * (a + t + 2) = (b + 1) * M\nhl : l * (b + t + 2) = (a + 1) * m\nhr : r * (a + 2) = (b + t + 1) * m\nha0 : 0 \u2264 a\nhb0 : 0 \u2264 b\nhp : 0 < (a + 2) * (b + 2) * (a + t + 2) * (b + t + 2)\nhe1 : L * (b + 2) * (r * (a + 2)) = (a + t + 1) * M * ((b + t + 1) * m)\nhe2 : l * (b + t + 2) * (R * (a + t + 2)) = (a + 1) * m * ((b + 1) * M)\nhe : (a + 2) * (b + 2) * (a + t + 2) * (b + t + 2) * (2 * M * m - (L * r + l * R)) = mixedNumeratorMF1E a b t * M * m\n\u22a2 L * r + l * R \u2264 2 * M * m\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBinomialMixedMF1E": "2ed60ddd69980bd4b18c540543b69f64a865347a1b32c132efd6b7e911bfadd2"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-f1e4fe3b/MarkovBinomialMixedMF1E.olean",
+    "/Users/sasha/math_gkm/research/MarkovBinomialMixedMF1E.lean"
+  ],
+  "seconds": 21.08624812500784,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
