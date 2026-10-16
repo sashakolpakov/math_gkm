@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCentralFormulaM6E1.lean:47:71: error: unexpected token ')'; expected term\n/Users/sasha/math_gkm/research/MarkovCentralFormulaM6E1.lean:46:3: error: unsolved goals\ncase pos\nn i : \u2115\nhi : 2 \u2264 i\nhl : 0 \u2208 range (i + 1)\nhl' : 0 < i + 1\n\u22a2 \u2211 x \u2208 range (n + 1), coeff (fib6 (n + 1)) 0 x * coeff (fib6 (n + 1)) i (n - x) =\n    \u2191((i - 1).choose 0) * \u2191((i - 1).choose i) * \u2191((n + i + 1).choose (2 * i - 1))\n/Users/sasha/math_gkm/research/MarkovCentralFormulaM6E1.lean:43:75: error: unsolved goals\ncase neg\nn i : \u2115\nhi : 2 \u2264 i\nl : \u2115\nhl : l \u2208 range (i + 1)\nhl' : l < i + 1\nh0 : \u00acl = 0\n\u22a2 \u2211 t \u2208 range (n + 1), coeff (fib6 (n + 1)) l t * coeff (fib6 (n + 1)) (i - l) (n - t) =\n    \u2191((i - 1).choose l) * \u2191((i - 1).choose (i - l)) * \u2191((n + i + 1).choose (2 * i - 1))\n/Users/sasha/math_gkm/research/MarkovCentralFormulaM6E1.lean:39:56: error: unsolved goals\nn i : \u2115\nhi : 2 \u2264 i\nhe :\n  \u2200 l \u2208 range (i + 1),\n    \u2211 t \u2208 range (n + 1), coeff (fib6 (n + 1)) l t * coeff (fib6 (n + 1)) (i - l) (n - t) =\n      \u2191((i - 1).choose l) * \u2191((i - 1).choose (i - l)) * \u2191((n + i + 1).choose (2 * i - 1))\n\u22a2 \u2211 y \u2208 range (i + 1), \u2211 x \u2208 range (n + 1), coeff (fib6 (n + 1)) y x * coeff (fib6 (n + 1)) (i - y) (n - x) =\n    \u2191((2 * i - 2).choose (i - 2)) * \u2191((n + i + 1).choose (2 * i - 1))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCentralFormulaM6E1": "73bcfc2e88d98fc4b4b1af206a3378790109bb48c4bd49fc0c506d3cf29b147b"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-6e1369de/MarkovCentralFormulaM6E1.olean",
+    "/Users/sasha/math_gkm/research/MarkovCentralFormulaM6E1.lean"
+  ],
+  "seconds": 47.804345957993064,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

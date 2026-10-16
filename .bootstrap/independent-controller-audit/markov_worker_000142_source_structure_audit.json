@@ -1,0 +1,359 @@
+{
+  "worker": 142,
+  "request": "6e1369de81764210b3799e9af43f1bb5",
+  "created_at_utc": "2026-10-16T13:25:33.770568+00:00",
+  "scope": "Archive-first static reading, declaration parsing, hashes and finite input/index-domain counts only. No project execution or mathematical-value recomputation; no active successor inspection.",
+  "new_modules": [
+    {
+      "module": "MarkovCentralBinomialM6E1",
+      "path": "research/MarkovCentralBinomialM6E1.lean",
+      "sha256": "a4e4fcf376a81995bf02057bad39e41f164be33afa3bf52d60cdb33802ebf767",
+      "current_sha256": "a4e4fcf376a81995bf02057bad39e41f164be33afa3bf52d60cdb33802ebf767",
+      "bytes": 2621,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "hockeyM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "binconvM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_productM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "shifted_binconvM6E1"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MathGKM.Markov"
+      ],
+      "theorem_statements": [
+        "theorem hockeyM6E1 (n k : ℕ) :\n (∑ t ∈ range (n+1), t.choose k)=(n+1).choose (k+1)",
+        "theorem binconvM6E1 (n r s : ℕ) :\n (∑ t ∈ range (n+1), t.choose r*(n-t).choose s)=(n+1).choose (r+s+1)",
+        "theorem choose_productM6E1 (t l b : ℕ) :\n (t+l).choose l*t.choose b=(t+l).choose (l+b)*(l+b).choose l",
+        "theorem shifted_binconvM6E1 (n l b r s : ℕ) (hl : l ≤ r) (hb : b ≤ s) :\n (∑ t ∈ range (n+1), (t+l).choose r*(n-t+b).choose s)=\n (n+l+b+1).choose (r+s+1)"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovFibGlobalM6E1",
+      "path": "research/MarkovFibGlobalM6E1.lean",
+      "sha256": "d03ad2eda1f6962e5416e6ac25ee1baa5a160ed15c10b64415f9a99909eb0fc5",
+      "current_sha256": "d03ad2eda1f6962e5416e6ac25ee1baa5a160ed15c10b64415f9a99909eb0fc5",
+      "bytes": 730,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fib_globalM6E1"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovCentralSquareM3A1"
+      ],
+      "theorem_statements": [
+        "theorem fib_globalM6E1 (n l t : ℕ) (hl : 1≤l) (ht : t<n) :\n coeff (fib6 n) l t=((n-t-1).choose (l-1):ℤ)*((t+l).choose l:ℤ)"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovCentralFormulaM6E1",
+      "path": "research/MarkovCentralFormulaM6E1.lean",
+      "sha256": "94a089ddcf48734d3247e78a7140ccda2efdeef8f170cc607982a48cfbfcbf66",
+      "current_sha256": "94a089ddcf48734d3247e78a7140ccda2efdeef8f170cc607982a48cfbfcbf66",
+      "bytes": 3034,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "central_pairM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_square_formulaM6E1"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovFibGlobalM6E1",
+        "MarkovCentralBinomialM6E1"
+      ],
+      "theorem_statements": [
+        "theorem central_pairM6E1 (n l b : ℕ) (hl : 1≤l) (hb : 1≤b) :\n (∑ t ∈ range (n+1), coeff (fib6 (n+1)) l t*coeff (fib6 (n+1)) b (n-t))=\n ((l+b-1).choose l:ℤ)*((l+b-1).choose b:ℤ)*\n   ((n+l+b+1).choose (2*(l+b)-1):ℤ)",
+        "theorem central_square_formulaM6E1 (n i : ℕ) (hi : 2 ≤ i) :\n coeff (fib6 (n+1)^2) i n=\n ((2*i-2).choose (i-2):ℤ)*((n+i+1).choose (2*i-1):ℤ)"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovCentralValuesM6E1",
+      "path": "research/MarkovCentralValuesM6E1.lean",
+      "sha256": "f37c6b9bade8b6540701b07a2e75c0f70b03082b887a468f0ac79aa13ff480d2",
+      "current_sha256": "f37c6b9bade8b6540701b07a2e75c0f70b03082b887a468f0ac79aa13ff480d2",
+      "bytes": 2814,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "centralValM6E1"
+        },
+        {
+          "kind": "def",
+          "name": "centralAuxM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_nonnegM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_zeroM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_scaledM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_aux_stepM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_stepM6E1"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovCentralBinomialM6E1"
+      ],
+      "theorem_statements": [
+        "theorem central_nonnegM6E1 (q k : ℕ) : 0 ≤ centralValM6E1 q k",
+        "theorem central_zeroM6E1 (q k : ℕ) (hk : q<k) : centralValM6E1 q k=0",
+        "theorem central_scaledM6E1 (q k : ℕ) (hk : k ≤ q) :\n (2*(k:ℤ)+3)*centralValM6E1 q k=(2*(q:ℤ)+3)*centralAuxM6E1 q k",
+        "theorem central_aux_stepM6E1 (q k : ℕ) (hk : k ≤ q) :\n ((k:ℤ)+1)*(k+3)*centralAuxM6E1 q (k+1)=\n ((q:ℤ)+k+3)*(q-k)*centralAuxM6E1 q k",
+        "theorem central_stepM6E1 (q k : ℕ) (hk : k+1 ≤ q) :\n (2*(k:ℤ)+5)*(k+1)*(k+3)*centralValM6E1 q (k+1)=\n ((q:ℤ)+k+3)*(q-k)*(2*k+3)*centralValM6E1 q k"
+      ],
+      "definitions": [
+        "def centralValM6E1 (q k : ℕ) : ℤ :=\n ((2*k+2).choose k:ℤ)*\n (((q+k+3).choose (2*k+3):ℤ)+((q+k+2).choose (2*k+3):ℤ))",
+        "def centralAuxM6E1 (q k : ℕ) : ℤ :=\n ((q+k+2).choose k:ℤ)*((q+2).choose (k+2):ℤ)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovCentralLCM6E1",
+      "path": "research/MarkovCentralLCM6E1.lean",
+      "sha256": "f0ceb1a8ad485d13cc1050430ea311465a6fa9f936c986e27b81683ffdd6800d",
+      "current_sha256": "f0ceb1a8ad485d13cc1050430ea311465a6fa9f936c986e27b81683ffdd6800d",
+      "bytes": 2331,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "centralAM6E1"
+        },
+        {
+          "kind": "def",
+          "name": "centralBM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_ratio_gapM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_gapM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_lcM6E1"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovCentralValuesM6E1"
+      ],
+      "theorem_statements": [
+        "theorem central_ratio_gapM6E1 (k r : ℤ) (hk : 0 ≤ k) (hr : 0 ≤ r) :\n 0 ≤ centralBM6E1 (k+2+r) k*centralAM6E1 (k+1)-\n   centralBM6E1 (k+2+r) (k+1)*centralAM6E1 k",
+        "theorem central_gapM6E1 (q k L M R : ℤ)\n (h0 : centralAM6E1 k*M=centralBM6E1 q k*L)\n (h1 : centralAM6E1 (k+1)*R=centralBM6E1 q (k+1)*M) :\n centralAM6E1 k*centralAM6E1 (k+1)*(M^2-L*R)=\n (centralBM6E1 q k*centralAM6E1 (k+1)-centralBM6E1 q (k+1)*centralAM6E1 k)*L*M",
+        "theorem central_lcM6E1 (q k : ℕ) :\n centralValM6E1 q k*centralValM6E1 q (k+2) ≤ centralValM6E1 q (k+1)^2"
+      ],
+      "definitions": [
+        "def centralAM6E1 (k : ℤ) : ℤ := (2*k+5)*(k+1)*(k+3)",
+        "def centralBM6E1 (q k : ℤ) : ℤ := (q+k+3)*(q-k)*(2*k+3)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovSourceRowM6E1",
+      "path": "research/MarkovSourceRowM6E1.lean",
+      "sha256": "495340b3da563190f9477ce5a21c108a6fb84cf70921fb9b7872295421707e88",
+      "current_sha256": "495340b3da563190f9477ce5a21c108a6fb84cf70921fb9b7872295421707e88",
+      "bytes": 2985,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "central_square_lowM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_two_formulaM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_two_lowM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_two_fullM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_rowM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_row_formulaM6E1"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovCentralFormulaM6E1",
+        "MarkovCentralLCM6E1",
+        "MarkovSquares3556"
+      ],
+      "theorem_statements": [
+        "theorem central_square_lowM6E1 (n i : ℕ) (hi : i ≤ 1) :\n coeff (fib6 (n+1)^2) i n=0",
+        "theorem central_two_formulaM6E1 (q k : ℕ) :\n coeff (fib6 (q+2)^2+V*fib6 (q+1)^2) (k+2) (q+1)=centralValM6E1 (q+1) k",
+        "theorem central_two_lowM6E1 (q i : ℕ) (hi : i ≤ 1) :\n coeff (fib6 (q+2)^2+V*fib6 (q+1)^2) i (q+1)=0",
+        "theorem central_two_fullM6E1 (q i : ℕ) :\n let P := fib6 (q+2)^2+V*fib6 (q+1)^2\n coeff P i (q+1)*coeff P (i+2) (q+1) ≤ coeff P (i+1) (q+1)^2",
+        "theorem source_two_rowM6E1 (path : List Bool) (j i : ℕ)\n (ha : (frame path).mid.a=2) (hb : (frame path).mid.b=2*j+1) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n   coeff (frame path).mid.p (i+1) j^2",
+        "theorem source_two_row_formulaM6E1 (path : List Bool) (j k : ℕ)\n (ha : (frame path).mid.a=2) (hb : (frame path).mid.b=2*j+1) :\n coeff (frame path).mid.p (k+2) j=centralValM6E1 j k"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovCentralSupportM6E1",
+      "path": "research/MarkovCentralSupportM6E1.lean",
+      "sha256": "c5e6d4d6a782bfd0c70ebfed72cb902029a65680c112ae171c6b43f7eb797275",
+      "current_sha256": "c5e6d4d6a782bfd0c70ebfed72cb902029a65680c112ae171c6b43f7eb797275",
+      "bytes": 2580,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "central_positiveM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_polygonM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_row_lowM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_row_supportM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_row_zeroM6E1"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovSourceRowM6E1"
+      ],
+      "theorem_statements": [
+        "theorem central_positiveM6E1 (q k : ℕ) :\n 0 < centralValM6E1 q k ↔ k ≤ q",
+        "theorem central_polygonM6E1 (q i : ℕ) :\n InPolygon 2 (2*q+1) i q ↔ 2 ≤ i ∧ i ≤ q+2",
+        "theorem source_two_row_lowM6E1 (path : List Bool) (j i : ℕ)\n (ha : (frame path).mid.a=2) (hb : (frame path).mid.b=2*j+1) (hi : i ≤ 1) :\n coeff (frame path).mid.p i j=0",
+        "theorem source_two_row_supportM6E1 (path : List Bool) (j i : ℕ)\n (ha : (frame path).mid.a=2) (hb : (frame path).mid.b=2*j+1) :\n 0 < coeff (frame path).mid.p i j ↔ InPolygon (frame path).mid.a (frame path).mid.b i j",
+        "theorem source_two_row_zeroM6E1 (path : List Bool) (j i : ℕ)\n (ha : (frame path).mid.a=2) (hb : (frame path).mid.b=2*j+1)\n (hout : ¬InPolygon (frame path).mid.a (frame path).mid.b i j) :\n coeff (frame path).mid.p i j=0"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovResidualM6E1",
+      "path": "research/MarkovResidualM6E1.lean",
+      "sha256": "fc3c0799de0c2c2bb5bbd48bee002cd306b8ad520fc62849ff67165863ed5fc6",
+      "current_sha256": "fc3c0799de0c2c2bb5bbd48bee002cd306b8ad520fc62849ff67165863ed5fc6",
+      "bytes": 2221,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "InteriorCore63M6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_interiorM6E1"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovResidualM3A1",
+        "MarkovSourceRowM6E1"
+      ],
+      "theorem_statements": [
+        "theorem root_iff_interiorM6E1 : Conjecture63 ↔ InteriorCore63M6E1"
+      ],
+      "definitions": [
+        "def InteriorCore63M6E1 : Prop := ∀ path : List Bool,\n let m := (frame path).mid\n 2 ≤ m.a →\n (∀ i j, InPolygon m.a m.b i j → InPolygon m.a m.b (i+1) j →\n   InPolygon m.a m.b (i+2) j → i+j+4 ≤ m.a+m.b-1 → 5 ≤ j →\n   ¬HorizontalMiddleMF1E m.a m.b i j →\n   ¬(HorizontalRegionMAC3 m.a m.b i j ∨ HorizontalVarianceMAC3 m.a m.b i j) →\n   ¬HorizontalSharpM37B m.a m.b i j →\n   ¬(m.a=2 ∧ m.b=2*j+1) →\n   coeff m.p i j*coeff m.p (i+2) j ≤ coeff m.p (i+1) j^2) ∧\n (∀ i j, InPolygon m.a m.b i j → InPolygon m.a m.b i (j+1) →\n   InPolygon m.a m.b i (j+2) → i+j+4 ≤ m.a+m.b-1 → 4 ≤ i → 3 ≤ j →\n   ¬VerticalMiddleMF1E m.a m.b i j →\n   ¬(VerticalRegionMAC3 m.a m.b i j ∨ VerticalVarianceMAC3 m.a m.b i j) →\n   ¬VerticalSharpM37B m.a m.b i j →\n   coeff m.p i j*coeff m.p i (j+2) ≤ coeff m.p i (j+1)^2) ∧\n (∀ i j, InPolygon m.a m.b i (j+2) → InPolygon m.a m.b (i+1) (j+1) →\n   InPolygon m.a m.b (i+2) j → i+j+8 ≤ m.a+m.b-1 → m.a+5 ≤ i+j+2 →\n   m.a+2 ≤ m.b → ¬DiagonalMiddleMF1E m.a m.b i j →\n   ¬(DiagonalRegionMAC3 m.a m.b i j ∨ DiagonalVarianceMAC3 m.a m.b i j) →\n   ¬DiagonalSharpM37B m.a m.b i j →\n   coeff m.p i (j+2)*coeff m.p (i+2) j ≤ coeff m.p (i+1) (j+1)^2)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovCentralGainM6E1",
+      "path": "research/MarkovCentralGainM6E1.lean",
+      "sha256": "3c91e372d4229cdee809c3a0f250bb5eadfcc6cdded5b9f3d6ec0b994775d164",
+      "current_sha256": "3c91e372d4229cdee809c3a0f250bb5eadfcc6cdded5b9f3d6ec0b994775d164",
+      "bytes": 1641,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "central_previous_guardsM6E1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_gain_rawM6E1"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovCentralSupportM6E1",
+        "MarkovCentralWitnessM3A1"
+      ],
+      "theorem_statements": [
+        "theorem central_previous_guardsM6E1 (n : ℕ) :\n let m := (frame (centralPathM3A1 n)).mid\n 2 ≤ m.a ∧ InPolygon m.a m.b 3 (n+5) ∧ InPolygon m.a m.b 4 (n+5) ∧\n InPolygon m.a m.b 5 (n+5) ∧ 3+(n+5)+4 ≤ m.a+m.b-1 ∧ 5 ≤ n+5 ∧\n ¬HorizontalMiddleMF1E m.a m.b 3 (n+5) ∧\n ¬(HorizontalRegionMAC3 m.a m.b 3 (n+5) ∨\n   HorizontalVarianceMAC3 m.a m.b 3 (n+5)) ∧\n ¬HorizontalSharpM37B m.a m.b 3 (n+5) ∧\n ¬(m.a=2 ∧ (3:ℕ)=2 ∧ m.b=2*(n+5)+1)",
+        "theorem central_gain_rawM6E1 (n : ℕ) :\n let p := (frame (centralPathM3A1 n)).mid.p\n coeff p 3 (n+5)*coeff p 5 (n+5) ≤ coeff p 4 (n+5)^2"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    }
+  ],
+  "counts": {
+    "theorem": 29,
+    "def": 5
+  },
+  "theorem_statement_extraction": "Whole theorem header through proof assignment, retaining inner let binders.",
+  "exact_residual_comparison": {
+    "prior": "InteriorCore63M3A1",
+    "current": "InteriorCore63M6E1",
+    "sole_change": "Horizontal exclusion drops i=2 from m.a=2 and i=2 and m.b=2*j+1.",
+    "exact_transformed_old_definition_equals_new": true,
+    "vertical_diagonal_clauses_unchanged": true
+  },
+  "source_scope": "Every actual source path, natural j and natural starting i, with a=2 and b=2*j+1. Inherited actual-source classification derives j>=1. No finite bounds, formula assumption, sign premise or coefficient normalization.",
+  "formula_scope": "For every k>=0, raw A(k+2,j)=centralVal(j,k); columns0,1 are proved zero. New global Fibonacci identity covers l>=1,t<n including total-degree zero range. All finite convolution shifts include explicit zero tails.",
+  "support_scope": "For every actual central row, positive raw coefficients iff original polygon iff 2<=i<=j+2. Coefficients outside are zero. Generic centralVal positivity iff k<=q holds for all natural q,k; actual j=0 is excluded by source classification.",
+  "scaling_scope": "Scaled binomial identities and consecutive cross-multiplied recurrences yield exact raw-gap identity. Cancellation uses positive A(k)A(k+1), never a coefficient or unknown mass. Interior k+2<=q handled by nonnegative polynomial certificate; exterior R=0; low i<=1 has L=0.",
+  "gain_scope": "Literal inherited centralPath(n)=false^(n+4) followed by true, row n+5>=5, starts3,4,5; all old residual/polygon guards and negations, including negation of worker141 start2 family, are formal. Extends coverage beyond141 without proving every other numerator-two row/direction.",
+  "root_scope": "New root_iff_interiorM6E1 is in accepted validation inventory. InteriorCore63M6E1 and full Conjecture63 remain unproved.",
+  "candidate_scope": "Lower-row offset formula is prose and finite identities only, j=q-d with0<=d<q. Additional finite reindexing/zero-tail proofs and a sign/LC argument remain open. No general numerator-two WeakLC conclusion.",
+  "mathematical_values_recomputed": false
+}

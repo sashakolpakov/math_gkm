@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCentralBinomialM6E1.lean:19:8: error: unsolved goals\ncase zero.succ.succ\nn\u271d\u00b9 n\u271d : \u2115\n\u22a2 0 = Nat.choose 1 (n\u271d\u00b9 + (1 + (n\u271d + 2)))\n/Users/sasha/math_gkm/research/MarkovCentralBinomialM6E1.lean:62:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  (l + (n + 1) + b).choose (r + s + 1)\nin the target expression\n  \u2211 t \u2208 range (n + 1), (t + l).choose r * (n - t + b).choose s = (n + l + b + 1).choose (r + s + 1)\n\nn l b r s : \u2115\nhl : l \u2264 r\nhb : b \u2264 s\nf : \u2115 \u2192 \u2115 := fun t => t.choose r * (n + l + b - t).choose s\nhfull : \u2211 x \u2208 range (n + 1), f (l + x) = (l + (n + 1) + b).choose (r + s + 1)\nhn : n + l + b + 1 = l + (n + 1) + b\nhzero : \u2211 t \u2208 range l, f t = 0\nhtail : \u2211 t \u2208 range b, f (l + (n + 1) + t) = 0\n\u22a2 \u2211 t \u2208 range (n + 1), (t + l).choose r * (n - t + b).choose s = (n + l + b + 1).choose (r + s + 1)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCentralBinomialM6E1": "5df8cb3bb6af408393c1886f8034f89021939cba6a4637730d0ddb26dea41a26"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-6e1369de/MarkovCentralBinomialM6E1.olean",
+    "/Users/sasha/math_gkm/research/MarkovCentralBinomialM6E1.lean"
+  ],
+  "seconds": 7.9495163329993375,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

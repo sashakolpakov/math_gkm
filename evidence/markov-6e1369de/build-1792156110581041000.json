@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "central ratio polynomial identity checked\n/Users/sasha/math_gkm/research/MarkovCentralLCM6E1.lean:21:1: warning: 'trace \"central ratio polynomial identity checked\"' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\nMathGKM.Markov.central_ratio_gapM6E1 (k r : \u2124) (hk : 0 \u2264 k) (hr : 0 \u2264 r) :\n  0 \u2264 centralBM6E1 (k + 2 + r) k * centralAM6E1 (k + 1) - centralBM6E1 (k + 2 + r) (k + 1) * centralAM6E1 k\nMathGKM.Markov.central_gapM6E1 (q k L M R : \u2124) (h0 : centralAM6E1 k * M = centralBM6E1 q k * L)\n  (h1 : centralAM6E1 (k + 1) * R = centralBM6E1 q (k + 1) * M) :\n  centralAM6E1 k * centralAM6E1 (k + 1) * (M ^ 2 - L * R) =\n    (centralBM6E1 q k * centralAM6E1 (k + 1) - centralBM6E1 q (k + 1) * centralAM6E1 k) * L * M\n/Users/sasha/math_gkm/research/MarkovCentralLCM6E1.lean:49:11: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (300000) has been reached\n\nNote: Use `set_option maxHeartbeats <num>` to set the limit.\n\nHint: Additional diagnostic information may be available using the `set_option diagnostics true` command.\n/Users/sasha/math_gkm/research/MarkovCentralLCM6E1.lean:52:3: error: (deterministic) timeout at `\u00abtactic execution\u00bb`, maximum number of heartbeats (300000) has been reached\n\nNote: Use `set_option maxHeartbeats <num>` to set the limit.\n\nHint: Additional diagnostic information may be available using the `set_option diagnostics true` command.\n/Users/sasha/math_gkm/research/MarkovCentralLCM6E1.lean:36:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (300000) has been reached\n\nNote: Use `set_option maxHeartbeats <num>` to set the limit.\n\nHint: Additional diagnostic information may be available using the `set_option diagnostics true` command.\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCentralLCM6E1": "0a92ab6b61a32ff738d9a0d9912b295304df2935b7c3d524f671aff68410faf7"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-6e1369de/MarkovCentralLCM6E1.olean",
+    "/Users/sasha/math_gkm/research/MarkovCentralLCM6E1.lean"
+  ],
+  "seconds": 42.82227150001563,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

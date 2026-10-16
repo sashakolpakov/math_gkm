@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovFibGlobalM6E1.lean:14:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  l - 1 + 1 + t\nin the target expression\n  coeff (fib6 n) l t = \u2191((n - t - 1).choose (l - 1)) * \u2191((l + t).choose t)\n\ncase pos\nn l t : \u2115\nhl : 1 \u2264 l\nht : t < n\nhs : l + t \u2264 n\nhe : l - 1 + 1 + t + (n - l - t) = n\nh : coeff (fib6 n) l t = \u2191((n - t - 1).choose (l - 1)) * \u2191((l + t).choose t)\n\u22a2 coeff (fib6 n) l t = \u2191((n - t - 1).choose (l - 1)) * \u2191((t + l).choose l)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovFibGlobalM6E1": "ce079a9377fd00b3c7aeefefb2cc01524a6afe3c30b6a120e49a20b5f852a0d9"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-6e1369de/MarkovFibGlobalM6E1.olean",
+    "/Users/sasha/math_gkm/research/MarkovFibGlobalM6E1.lean"
+  ],
+  "seconds": 19.993872292048763,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

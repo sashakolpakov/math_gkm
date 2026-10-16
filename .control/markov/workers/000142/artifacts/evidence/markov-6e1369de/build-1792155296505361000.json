@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCentralBinomialM6E1.lean:11:8: error: unsolved goals\ncase zero.succ\nn\u271d : \u2115\n\u22a2 0 = Nat.choose 1 (n\u271d + 1 + 1)\n/Users/sasha/math_gkm/research/MarkovCentralBinomialM6E1.lean:14:3: error: Type mismatch\n  Eq.symm (Nat.choose_succ_succ' (n + 1) k)\nhas type\n  (n + 1).choose k + (n + 1).choose (k + 1) = (n + 1 + 1).choose (k + 1)\nbut is expected to have type\n  (n + 1).choose (k + 1) + (n + 1).choose k = (n + 1 + 1).choose (k + 1)\n/Users/sasha/math_gkm/research/MarkovCentralBinomialM6E1.lean:19:8: error: unsolved goals\ncase zero.zero.succ\nn\u271d : \u2115\n\u22a2 0 = Nat.choose 1 (n\u271d + 1 + 1)\n\ncase zero.succ.zero\nn\u271d : \u2115\n\u22a2 0 = Nat.choose 1 (n\u271d + 1 + 1)\n\ncase zero.succ.succ\nn\u271d\u00b9 n\u271d : \u2115\n\u22a2 0 = Nat.choose 1 (n\u271d\u00b9 + 1 + (n\u271d + 1) + 1)\n/Users/sasha/math_gkm/research/MarkovCentralBinomialM6E1.lean:25:9: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2211 j \u2208 range (n + 1 + 1), j.choose s\nin the target expression\n  \u2211 x \u2208 range (n + 1 + 1), (n + 1 - x).choose s = (n + 1 + 1).choose (s + 1)\n\ncase succ.zero\nn : \u2115\nih : \u2200 (r s : \u2115), \u2211 t \u2208 range (n + 1), t.choose r * (n - t).choose s = (n + 1).choose (r + s + 1)\ns : \u2115\n\u22a2 \u2211 x \u2208 range (n + 1 + 1), (n + 1 - x).choose s = (n + 1 + 1).choose (s + 1)\n/Users/sasha/math_gkm/research/MarkovCentralBinomialM6E1.lean:35:5: error: Type mismatch: After simplification, term\n  Eq.symm (Nat.choose_succ_succ' (n + 1) (r + s + 1))\n has type\n  (n + 1).choose (r + (s + 1)) + (n + 1).choose (r + (s + 2)) = (n + 2).choose (r + (s + 2))\nbut is expected to have type\n  (n + 1).choose (r + (s + 1)) + (n + 1).choose (r + (1 + (s + 1))) = (n + 2).choose (r + (1 + (s + 1)))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCentralBinomialM6E1": "9500861410557e66c91d3b1208c037a9fc9933bcad7da6244906b7ed5d5fd483"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-6e1369de/MarkovCentralBinomialM6E1.olean",
+    "/Users/sasha/math_gkm/research/MarkovCentralBinomialM6E1.lean"
+  ],
+  "seconds": 39.939477875013836,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
