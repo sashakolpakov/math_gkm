@@ -1,0 +1,7 @@
+{
+  "initial_finalization": "AssertionError: ['research/markov-7e2e958e-checkpoint.md']",
+  "subsequent_read": "last-verification.json absent because finalization had stopped at the assertion",
+  "cause": "The current worker created its initial checkpoint and setup script before setup took the before.json snapshot. The checkpoint was intentionally updated during this run.",
+  "resolution": "Retain before.json unchanged. Separately report the two explicitly named current-run-owned files and compare every other snapshot path unchanged. No inherited input is exempted.",
+  "mathematical_result": false
+}

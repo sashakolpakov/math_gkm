@@ -1,0 +1,233 @@
+{
+  "raw_events_sha256": "f26a2c44e1c582df45136f91eb1a4106cde5ef09afb0641e8c6f1ec1fb9ea788",
+  "event_count": 219,
+  "last_events": [
+    {
+      "type": "item.started",
+      "item": {
+        "id": "item_113",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc \"env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 -c 'from pathlib import Path;import json,hashlib;p=Path(\\\"evidence/markov-e9cdd527\\\");b=json.loads((p/\\\"before.json\\\").read_text());bad=[f for f,h in b.items() if hashlib.sha256(Path(f).read_bytes()).hexdigest()\"'!=h];print({\"snapshotted_inputs\":len(b),\"changed\":bad})'\"'\"",
+        "aggregated_output": "",
+        "exit_code": null,
+        "status": "in_progress"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_113",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc \"env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 -c 'from pathlib import Path;import json,hashlib;p=Path(\\\"evidence/markov-e9cdd527\\\");b=json.loads((p/\\\"before.json\\\").read_text());bad=[f for f,h in b.items() if hashlib.sha256(Path(f).read_bytes()).hexdigest()\"'!=h];print({\"snapshotted_inputs\":len(b),\"changed\":bad})'\"'\"",
+        "aggregated_output": "{'snapshotted_inputs': 6531, 'changed': []}\n",
+        "exit_code": 0,
+        "status": "completed"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_114",
+        "type": "agent_message",
+        "text": "The unchanged-input check passed for all 6,531 snapshotted files. All twelve selected modules compiled; their combined replay and axiom audit are still running under bounded timeouts. I\u2019ll report those outcomes exactly and keep completion null.\n"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_110",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/audit_e9cdd527.py'",
+        "aggregated_output": "{\"receipt\": \"evidence/markov-e9cdd527/build-1792180597571888000.json\", \"returncode\": null, \"timeout\": true, \"seconds\": 100.37072212499334, \"stdout\": \"None\"}\nTraceback (most recent call last):\n  File \"/Users/sasha/math_gkm/research/audit_e9cdd527.py\", line 16, in <module>\n    assert match or empty,n\n           ^^^^^^^^^^^^^^\nAssertionError: fib_raw_extendedME9C\n",
+        "exit_code": 1,
+        "status": "failed"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_109",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/validate_e9cdd527.py replay 100 MarkovLowDifferenceME9C MarkovLowForceME9C MarkovLowSolutionsME9C MarkovLowSourceME9C MarkovLowLCME9C MarkovLowResidualME9C MarkovLowLimitME9C MarkovLowKernelLimitME9C MarkovLowerUniformME9C MarkovLowerShapeME9C MarkovLowerReductionME9C MarkovLowerDomainME9C'",
+        "aggregated_output": "{\"receipt\": \"evidence/markov-e9cdd527/replay-1792180597567945000.json\", \"returncode\": null, \"timeout\": true, \"seconds\": 100.48190745798638, \"stdout\": \"None\"}\n",
+        "exit_code": 1,
+        "status": "failed"
+      }
+    }
+  ],
+  "subsequent_validation": {
+    "request_id": "1bb0aa1ee066482294f620401d001bf2",
+    "new_modules": [
+      "MarkovFirstForceM1BB",
+      "MarkovTailCorrectionM1BB",
+      "MarkovTailSourceM1BB",
+      "MarkovTailBinomialM1BB",
+      "MarkovCrossCertificateM1BB",
+      "MarkovCrossingLCM1BB",
+      "MarkovResidualM1BB",
+      "MarkovFirstRowM1BB"
+    ],
+    "reconciled_inherited_modules": [
+      "MarkovLowDifferenceME9C",
+      "MarkovLowForceME9C",
+      "MarkovLowSolutionsME9C",
+      "MarkovLowSourceME9C",
+      "MarkovLowLCME9C",
+      "MarkovLowResidualME9C",
+      "MarkovLowLimitME9C",
+      "MarkovLowKernelLimitME9C",
+      "MarkovLowerUniformME9C",
+      "MarkovLowerShapeME9C",
+      "MarkovLowerReductionME9C",
+      "MarkovLowerDomainME9C"
+    ],
+    "source_sha256": {
+      "MarkovFirstForceM1BB": "75c6c6aac47048024ffddfb7a4d7823da5eb22fa45569ffaef50d315433cfc5d",
+      "MarkovTailCorrectionM1BB": "61931d91e3b86a3cb22606d8e363c4d78b989ef9db878926062fc65a1c943ae3",
+      "MarkovTailSourceM1BB": "78d113dde292021af08d5512f900eb6216c3dd43709d6195e5e70989662e8dbd",
+      "MarkovTailBinomialM1BB": "9c3f178f941f380bc693fa1704fd876cd304c7503e820c15af283be34c1dc476",
+      "MarkovCrossCertificateM1BB": "065a3387014f700897da133f69eee179b83b0136247dda9c2c18d089f9ffee28",
+      "MarkovCrossingLCM1BB": "3aa836496862b013cbd24ca91e6ba219218e05d20b5692cbfdd4f9f5614a1ee1",
+      "MarkovResidualM1BB": "6cddfed02de01826d78dc20ba293a5bbac74832de3306361e5b8c63708ebf2c4",
+      "MarkovFirstRowM1BB": "a084d18bc57d86ebb3da47b87033976a0d6e0188fe9d6bff2bcad0f858251149",
+      "MarkovLowDifferenceME9C": "59fe100078d8cac6c32e151b2bc12015ea2aec796b7845552e34a390c2eb5060",
+      "MarkovLowForceME9C": "b86dc8737920bde4842b76ff65ae6f65b0298b66ba280e1efa8ea674ec044558",
+      "MarkovLowSolutionsME9C": "ccfb6206bec15586a9e0f18b0fa86a2f05d3eb8c487e1bd8fd7e5dc648a53dba",
+      "MarkovLowSourceME9C": "4e35ca73891fb3a33462cdafb372b4375d6047e3706a158e363c7861ba07f5c5",
+      "MarkovLowLCME9C": "bcdfc943ad64972bdd8bb2149928901141afa4c9bd9135a9150596e2fd20e888",
+      "MarkovLowResidualME9C": "c6176b7729767b5f7c642551bde355bbc57fb74dfb57c8452241da39e792d7ff",
+      "MarkovLowLimitME9C": "abe90d1555d1f165a49ba4763a0b1412710a30798f1aa472babad3437d93fab4",
+      "MarkovLowKernelLimitME9C": "60788f30ac61824fc18173ee532fb4ad976f02ac54bdb421e1133f280f987553",
+      "MarkovLowerUniformME9C": "fbcc68434f306ab0255906f96e49ce7883d4a9d9186bb250fd361ac3a1e8cd2b",
+      "MarkovLowerShapeME9C": "30d0e22002186460b7e7a59a32299c59e2b3c7480b5ad19f8c2eff0047a30654",
+      "MarkovLowerReductionME9C": "bae0445dd919a365a60f9bd59e643f812af347a70755cfcf9cb2bdc85627dce7",
+      "MarkovLowerDomainME9C": "02e659ad725126aeafcb8ede952eaf04296ba1a5b0c4fabc0abaa141cf973cbe"
+    },
+    "successful_new_builds": {
+      "MarkovFirstForceM1BB": {
+        "path": "evidence/markov-1bb0aa1e/build-1792181163371230000.json",
+        "sha256": "da8614aba7741ad09ecf3ef1a5761c6e2c06d59e9d7f3c97e833eaba47557f06"
+      },
+      "MarkovTailCorrectionM1BB": {
+        "path": "evidence/markov-1bb0aa1e/build-1792181405084525000.json",
+        "sha256": "354144a6a6f0324766d9b27b3d67435e0c469595dac0023e683ef29e9ba6dd2d"
+      },
+      "MarkovTailSourceM1BB": {
+        "path": "evidence/markov-1bb0aa1e/build-1792181491254620000.json",
+        "sha256": "ffbdb045e0dc348b2f0f9f7d6c32791ac267642a006e58cb7a8cd93d260e1358"
+      },
+      "MarkovTailBinomialM1BB": {
+        "path": "evidence/markov-1bb0aa1e/build-1792181667682334000.json",
+        "sha256": "4083124c9170d3a4d44e0aa5d03326059467ea3fe1bb51371d20738a2a30816b"
+      },
+      "MarkovCrossCertificateM1BB": {
+        "path": "evidence/markov-1bb0aa1e/build-1792181551863091000.json",
+        "sha256": "0fd5137607eaa858d511d3516d2a29b3a440345b12b35304de3716b0697d56e3"
+      },
+      "MarkovCrossingLCM1BB": {
+        "path": "evidence/markov-1bb0aa1e/build-1792181667682144000.json",
+        "sha256": "a3ea0556b6711283fcdac835f53768647eaed2bfcb3333ffd434239977619e33"
+      },
+      "MarkovResidualM1BB": {
+        "path": "evidence/markov-1bb0aa1e/build-1792181798109679000.json",
+        "sha256": "ca8c8bc027a0cebe28f3e2bb8c3e9418888f9e8af35f0b7afd42dac0a28717f7"
+      },
+      "MarkovFirstRowM1BB": {
+        "path": "evidence/markov-1bb0aa1e/build-1792181883565625000.json",
+        "sha256": "92421a9279a2bd7c61250cc3bcf7a912d9698fead93bed6f307f2e98a7454e8f"
+      }
+    },
+    "joint_replays": [
+      {
+        "path": "evidence/markov-1bb0aa1e/replay-1792180985973566000.json",
+        "sha256": "730cc2df5800d6b099b1871dd6aab6224784773ffc76d49e1241c9cd560ef064"
+      },
+      {
+        "path": "evidence/markov-1bb0aa1e/replay-1792181929291520000.json",
+        "sha256": "df029497db8e7bc70dffcad17c71cde584b977db57dc64b195bf68baf3192f46"
+      }
+    ],
+    "axiom_audits": [
+      {
+        "path": "evidence/markov-1bb0aa1e/axioms-1792181983580356000.json",
+        "sha256": "305c7b14bc9c648a54c7a5ede960c47dab1775dac6508876df813e0c2a51ff00"
+      },
+      {
+        "path": "evidence/markov-1bb0aa1e/axioms-1792181455793814000.json",
+        "sha256": "000736b1243a4a31e77f4b5be0e40c0f42ffa6c1a02d0143e783493e5575ba4c"
+      },
+      {
+        "path": "evidence/markov-1bb0aa1e/axioms-1792181070153115000.json",
+        "sha256": "bb8d4475ae38a09eb33ae2e93f249572c3aa7fd01426f4d11ea6489c2e31bb35"
+      }
+    ],
+    "new_theorems": 43,
+    "inherited_theorems": 44,
+    "compiled_hashes": {
+      "MarkovFirstForceM1BB": {
+        "evidence/markov-1bb0aa1e/MarkovFirstForceM1BB.olean": "01dc3d89b974cf7948e5efd45a0e18f0dba219ecb756a0a3159a0199881afb9c"
+      },
+      "MarkovTailCorrectionM1BB": {
+        "evidence/markov-1bb0aa1e/MarkovTailCorrectionM1BB.olean": "5a8a83340632e89be12b77fe7c28283949314a2620a6ed83507a4d3cfbbf01d9"
+      },
+      "MarkovTailSourceM1BB": {
+        "evidence/markov-1bb0aa1e/MarkovTailSourceM1BB.olean": "2c587f7ea7e84dd5a1ef219fe6b06e28b4bff01bf59081798b1aace8544e7bbd"
+      },
+      "MarkovTailBinomialM1BB": {
+        "evidence/markov-1bb0aa1e/MarkovTailBinomialM1BB.olean": "79929af05516f211c6a1f6cc7880d3ca9a0c7077caad7a9f023fc668ea201a04"
+      },
+      "MarkovCrossCertificateM1BB": {
+        "evidence/markov-1bb0aa1e/MarkovCrossCertificateM1BB.olean": "35a59e1ae60fa6e7cad25f42d1ae2c8e9aef0fa2d5f946c89da0b5b0dcec285a"
+      },
+      "MarkovCrossingLCM1BB": {
+        "evidence/markov-1bb0aa1e/MarkovCrossingLCM1BB.olean": "91d2d5dcfe84d7c2d24020cc10f9a0c3a3e9aaf2a37ab5cef77089a39b9fac17"
+      },
+      "MarkovResidualM1BB": {
+        "evidence/markov-1bb0aa1e/MarkovResidualM1BB.olean": "e89d789aaaedc98a95ea87135eb3b709f14d9da28ad5db38c5b2350a9a3b3a0f"
+      },
+      "MarkovFirstRowM1BB": {
+        "evidence/markov-1bb0aa1e/MarkovFirstRowM1BB.olean": "e483c02249d5cd3994303f9e7cea8c8f56745034239917b942e2eb152d72d489"
+      },
+      "MarkovLowDifferenceME9C": {
+        "evidence/markov-e9cdd527/MarkovLowDifferenceME9C.olean": "cb439890ff4ab3989602017a609e57093b11dcd7f346b25550796690a4f6fdba"
+      },
+      "MarkovLowForceME9C": {
+        "evidence/markov-e9cdd527/MarkovLowForceME9C.olean": "63bf7345febeb953406ed43d2456c18ee4d9cf7d0af920b63432fcc2363dccb7"
+      },
+      "MarkovLowSolutionsME9C": {
+        "evidence/markov-e9cdd527/MarkovLowSolutionsME9C.olean": "9c82073eca30f8b7b6a5d616aa23304c8c4030aac03ee1e34fdcfc53d4e3a763"
+      },
+      "MarkovLowSourceME9C": {
+        "evidence/markov-e9cdd527/MarkovLowSourceME9C.olean": "81383ed886913ed85b85bec9c36f38ba6072e2850c74d4f0cf7753058714a090"
+      },
+      "MarkovLowLCME9C": {
+        "evidence/markov-e9cdd527/MarkovLowLCME9C.olean": "b3500273646cd399d5a149736c4ccdc404acf6b98a5589a9236a494e29c5a4bd"
+      },
+      "MarkovLowResidualME9C": {
+        "evidence/markov-e9cdd527/MarkovLowResidualME9C.olean": "96cba09832dd007a8b1acabc6d811b9d0cb78f7f84a705bc53fe18d185508e2e"
+      },
+      "MarkovLowLimitME9C": {
+        "evidence/markov-e9cdd527/MarkovLowLimitME9C.olean": "f26db16ddee696f6a25fc4981b2dcecc1c0177923d7b9840e67e0bf915f23c35"
+      },
+      "MarkovLowKernelLimitME9C": {
+        "evidence/markov-e9cdd527/MarkovLowKernelLimitME9C.olean": "f359a2ac5c700b1345cd866bbed0466995ccf0b72ffb22bf255b3f3da4a12fc3"
+      },
+      "MarkovLowerUniformME9C": {
+        "evidence/markov-e9cdd527/MarkovLowerUniformME9C.olean": "aef25a0d9ed91783acaf16b1ea9139cf251d1c03cd5c1c3d990673c496418628"
+      },
+      "MarkovLowerShapeME9C": {
+        "evidence/markov-e9cdd527/MarkovLowerShapeME9C.olean": "e069ee24ef11389dec54e834f41411b55f08afe33e9eb54dcab87811f68b110a"
+      },
+      "MarkovLowerReductionME9C": {
+        "evidence/markov-e9cdd527/MarkovLowerReductionME9C.olean": "efecfd77e262969c03e6674213ed5e2f7e706f89dd71f4273a62c86486a35c0b"
+      },
+      "MarkovLowerDomainME9C": {
+        "evidence/markov-e9cdd527/MarkovLowerDomainME9C.olean": "5cdef9794b5e94713e234742b663a9f661c2245ce0714a94a97db260b13a4440"
+      }
+    },
+    "permitted_axioms_only": true,
+    "completion": null,
+    "limits": "Inherited compiled imports reused. Old sources were previously compiled and are now jointly replayed and audited; new sources freshly compiled. Not a fresh whole-source rebuild or independent source/English completion audit."
+  },
+  "reconciliation": "Inspected actual raw terminal events: input check completed, audit and replay both timed out. Subsequent worker 157 revalidated the twelve modules. No old execution or mutation replayed. Current predecessor 161 completed and its manifest has been verified."
+}

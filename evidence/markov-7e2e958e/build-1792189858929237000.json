@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovQShapeM7E2.lean:20:7: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2191(j + 1) - (\u2191k + 1)\nin the target expression\n  qWeightM7E2 (\u2191(j + 1) - \u2191(k + 1)) * qBinM7E2 (t + 1) (k + 1) =\n    qWeightM7E2 (\u2191(j + 1) - \u2191(k + 1)) * qBinM7E2 t (k + 1) + qWeightM7E2 (\u2191j - \u2191k) * qBinM7E2 (t + 1) k\n\ncase succ\nj t k : \u2115\n\u22a2 qWeightM7E2 (\u2191(j + 1) - \u2191(k + 1)) * qBinM7E2 (t + 1) (k + 1) =\n    qWeightM7E2 (\u2191(j + 1) - \u2191(k + 1)) * qBinM7E2 t (k + 1) + qWeightM7E2 (\u2191j - \u2191k) * qBinM7E2 (t + 1) k\n/Users/sasha/math_gkm/research/MarkovQShapeM7E2.lean:43:7: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2211 k \u2208 range (j + 1), X ^ (k + 1) * qPolyM7E2 (j + 1 - (k + 1)) t\nin the target expression\n  qPolyM7E2 (j + 1) t + X * (\u2211 k \u2208 range j, X ^ (k + 1) * qPolyM7E2 (j - (k + 1)) t + qPolyM7E2 j t) =\n    \u2211 k \u2208 range (j + 1 + 1), X ^ k * qPolyM7E2 (j + 1 - k) t\n\ncase succ\nt j : \u2115\nih : qPolyM7E2 j (t + 1) = \u2211 k \u2208 range (j + 1), X ^ k * qPolyM7E2 (j - k) t\nhe :\n  \u2211 k \u2208 range (j + 1), X ^ (k + 1) * qPolyM7E2 (j + 1 - (k + 1)) t =\n    X * \u2211 k \u2208 range (j + 1), X ^ k * qPolyM7E2 (j - k) t\n\u22a2 qPolyM7E2 (j + 1) t + X * (\u2211 k \u2208 range j, X ^ (k + 1) * qPolyM7E2 (j - (k + 1)) t + qPolyM7E2 j t) =\n    \u2211 k \u2208 range (j + 1 + 1), X ^ k * qPolyM7E2 (j + 1 - k) t\n",
+  "stderr": "",
+  "modules": {
+    "MarkovQShapeM7E2": "93ee529b7a244f35b87f60c12719da9a4d0db9c4cfbec3b92c201ea294c65d17"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-7e2e958e/MarkovQShapeM7E2.olean",
+    "/Users/sasha/math_gkm/research/MarkovQShapeM7E2.lean"
+  ],
+  "seconds": 85.076930042007,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

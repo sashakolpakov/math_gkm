@@ -1,0 +1,530 @@
+{
+  "worker": 162,
+  "request": "7e2e958e791546e6988c1db8eaecb1c3",
+  "created_at_utc": "2026-10-16T22:53:24.379819+00:00",
+  "historical_status": "Completed / return0 / delivered report; full root remains open.",
+  "scope": "Closed162 archive and explicit named inherited/current counterparts only. Static parsing, hashing, literal comparisons and input-index/domain counts. No project/compiler/proof/checker/replay/finalizer/experiment execution, mathematical-value recomputation, project edits, proposer contact or research assistance. Active163 unexamined. Earlier sealed observations remain final.",
+  "new_modules": [
+    {
+      "module": "MarkovQKernelM7E2",
+      "path": "research/MarkovQKernelM7E2.lean",
+      "bytes": 3601,
+      "sha256": "d3ab50f3283140c20e05bb8bcd4d3779856cf80b98bbf709e9266ec61c9df7a9",
+      "current_sha256": "d3ab50f3283140c20e05bb8bcd4d3779856cf80b98bbf709e9266ec61c9df7a9",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in162.",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "qWeightM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_weight_nonnegM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_weight_crossM7E2"
+        },
+        {
+          "kind": "def",
+          "name": "qBinM7E2"
+        },
+        {
+          "kind": "def",
+          "name": "qCoeffM7E2"
+        },
+        {
+          "kind": "def",
+          "name": "qPolyM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_poly_coeffM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_bin_stepM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_bin_minorM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_weight_minorM7E2"
+        }
+      ],
+      "object_path": "evidence/markov-7e2e958e/MarkovQKernelM7E2.olean",
+      "object_sha256": "01ba253ca43c462ce49e885887160a1b5fd5a9a49bcacee68c12e22d150efc25",
+      "successful_final_build": "build-1792189725186490000.json",
+      "successful_final_build_sha256": "1a43f8c8c10febfc4db86edd9da7b6a7fd9db45bc27f95ccac93245b69a30ac6",
+      "imports": [
+        "MarkovWindowLC6d34",
+        "MarkovBinomialLiftMAE9"
+      ],
+      "theorem_statements": [
+        "theorem q_weight_nonnegM7E2 (k : ℤ) : 0 ≤ qWeightM7E2 k",
+        "theorem q_weight_crossM7E2 : CrossLC qWeightM7E2",
+        "theorem q_poly_coeffM7E2 (j t s : ℕ) : (qPolyM7E2 j t).coeff s=qCoeffM7E2 j t s",
+        "theorem q_bin_stepM7E2 (t s : ℕ) :\n qBinM7E2 (t+1) s*(t+4)=qBinM7E2 t s*(t+s+4)",
+        "theorem q_bin_minorM7E2 (t a b : ℕ) (hab : a ≤ b) :\n 0 ≤ qBinM7E2 (t+1) b*qBinM7E2 t a-qBinM7E2 (t+1) a*qBinM7E2 t b",
+        "theorem q_weight_minorM7E2 (n m a b : ℕ) (hmn : m ≤ n) (hab : a ≤ b) :\n 0 ≤ qWeightM7E2 ((n:ℤ)-b)*qWeightM7E2 ((m:ℤ)-a)-\n   qWeightM7E2 ((n:ℤ)-a)*qWeightM7E2 ((m:ℤ)-b)"
+      ],
+      "definitions": [
+        "def qWeightM7E2 (k : ℤ) : ℝ := if k<0 then 0 else if k=0 then 1 else 4*k",
+        "def qBinM7E2 (t s : ℕ) : ℝ := ((t+s+3).choose s:ℝ)",
+        "def qCoeffM7E2 (j t s : ℕ) : ℝ := qWeightM7E2 ((j:ℤ)-s)*qBinM7E2 t s",
+        "def qPolyM7E2 (j t : ℕ) : Polynomial ℝ :=\n ∑ s ∈ range (j+1), monomial s (qCoeffM7E2 j t s)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovQMinorM7E2",
+      "path": "research/MarkovQMinorM7E2.lean",
+      "bytes": 2162,
+      "sha256": "2036583c113dcca351de38af076b545680f9ba1e8f495dd6f5fdd7374ff23986",
+      "current_sha256": "2036583c113dcca351de38af076b545680f9ba1e8f495dd6f5fdd7374ff23986",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in162.",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "qMinorM7E2"
+        },
+        {
+          "kind": "def",
+          "name": "qMinorTermM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_minor_pairM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_minor_coeffM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_minor_nonnegM7E2"
+        }
+      ],
+      "object_path": "evidence/markov-7e2e958e/MarkovQMinorM7E2.olean",
+      "object_sha256": "772b1b84c366b894e1e0e0928bccfaceef403ad87a9acf38707565d1b961c5a6",
+      "successful_final_build": "build-1792189793866653000.json",
+      "successful_final_build_sha256": "78a7c56c0a72f0fdd3193e713fb9b5b46ff9732b37981aab2a8b64e97e393ad6",
+      "imports": [
+        "MarkovQKernelM7E2"
+      ],
+      "theorem_statements": [
+        "theorem q_minor_pairM7E2 (n m t a b : ℕ) (hmn : m ≤ n) :\n 0 ≤ qMinorTermM7E2 n m t a b+qMinorTermM7E2 n m t b a",
+        "theorem q_minor_coeffM7E2 (n m t k : ℕ) :\n (qMinorM7E2 n m t).coeff k=\n ∑ a ∈ range (k+1), qMinorTermM7E2 n m t a (k-a)",
+        "theorem q_minor_nonnegM7E2 (n m t k : ℕ) (hmn : m ≤ n) :\n 0 ≤ (qMinorM7E2 n m t).coeff k"
+      ],
+      "definitions": [
+        "def qMinorM7E2 (n m t : ℕ) : Polynomial ℝ :=\n qPolyM7E2 n (t+1)*qPolyM7E2 m t-qPolyM7E2 n t*qPolyM7E2 m (t+1)",
+        "def qMinorTermM7E2 (n m t a b : ℕ) : ℝ :=\n qWeightM7E2 ((n:ℤ)-a)*qWeightM7E2 ((m:ℤ)-b)*\n (qBinM7E2 (t+1) a*qBinM7E2 t b-qBinM7E2 t a*qBinM7E2 (t+1) b)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovQShapeM7E2",
+      "path": "research/MarkovQShapeM7E2.lean",
+      "bytes": 2522,
+      "sha256": "772fe6cd8492d5edd48d3e26c9b2de23a282a04bdc419643544f201595313f57",
+      "current_sha256": "772fe6cd8492d5edd48d3e26c9b2de23a282a04bdc419643544f201595313f57",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in162.",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "q_poly_zeroM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_poly_pascalM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_poly_prefixM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_gap_sumM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_gap_nonnegM7E2"
+        }
+      ],
+      "object_path": "evidence/markov-7e2e958e/MarkovQShapeM7E2.olean",
+      "object_sha256": "4c5c74d2effa94878a2406feb4d5df52a35630d7362d1f012b3e8ac2bd6c82e7",
+      "successful_final_build": "build-1792189954982614000.json",
+      "successful_final_build_sha256": "ef18ef70725cd36c1658626733aea89455b9bcdccc12f9d2c727b1e484f0f2ec",
+      "imports": [
+        "MarkovQMinorM7E2"
+      ],
+      "theorem_statements": [
+        "theorem q_poly_zeroM7E2 (t : ℕ) : qPolyM7E2 0 t=1",
+        "theorem q_poly_pascalM7E2 (j t : ℕ) :\n qPolyM7E2 (j+1) (t+1)=qPolyM7E2 (j+1) t+X*qPolyM7E2 j (t+1)",
+        "theorem q_poly_prefixM7E2 (j t : ℕ) :\n qPolyM7E2 j (t+1)=∑ k ∈ range (j+1), X^k*qPolyM7E2 (j-k) t",
+        "theorem q_gap_sumM7E2 (j t : ℕ) :\n qPolyM7E2 j (t+1)^2-qPolyM7E2 j t*qPolyM7E2 j (t+2)=\n ∑ k ∈ range (j+1), X^k*qMinorM7E2 j (j-k) t",
+        "theorem q_gap_nonnegM7E2 (j t k : ℕ) :\n 0 ≤ (qPolyM7E2 j (t+1)^2-qPolyM7E2 j t*qPolyM7E2 j (t+2)).coeff k"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovQSourceM7E2",
+      "path": "research/MarkovQSourceM7E2.lean",
+      "bytes": 3207,
+      "sha256": "28a9d6234ed2991a42cae52e9d267338c64e8eee3f6548a758e4bee6a3e067fd",
+      "current_sha256": "28a9d6234ed2991a42cae52e9d267338c64e8eee3f6548a758e4bee6a3e067fd",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in162.",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "q_comp_liftM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_poly_degreeM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_comp_degreeM7E2"
+        },
+        {
+          "kind": "def",
+          "name": "ePolyM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "e_poly_coeffM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "e_poly_tailM7E2"
+        }
+      ],
+      "object_path": "evidence/markov-7e2e958e/MarkovQSourceM7E2.olean",
+      "object_sha256": "754d8abbc646e15c329a0702a3f17338d19ba7b4016ebbc73940810a6cc627dc",
+      "successful_final_build": "build-1792190090687040000.json",
+      "successful_final_build_sha256": "40959a53ec73c05b19023f3adcb004222fbb08fdee12e30ceb977796fe38d255",
+      "imports": [
+        "MarkovQShapeM7E2"
+      ],
+      "theorem_statements": [
+        "theorem q_comp_liftM7E2 (j t m : ℕ) :\n ((qPolyM7E2 j t).comp (X+1)).coeff m=(liftTermMAE9 j t m:ℝ)",
+        "theorem q_poly_degreeM7E2 (j t : ℕ) : (qPolyM7E2 j t).natDegree ≤ j",
+        "theorem q_comp_degreeM7E2 (j t : ℕ) : ((qPolyM7E2 j t).comp (X+1)).natDegree ≤ j",
+        "theorem e_poly_coeffM7E2 (j t k : ℕ) (hk : k ≤ j) :\n (ePolyM7E2 j t).coeff k=(liftTermMAE9 j t (j-k):ℝ)",
+        "theorem e_poly_tailM7E2 (j t k : ℕ) (hk : j < k) : (ePolyM7E2 j t).coeff k=0"
+      ],
+      "definitions": [
+        "def ePolyM7E2 (j t : ℕ) : Polynomial ℝ :=\n Polynomial.reflect j ((qPolyM7E2 j t).comp (X+1))"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovExtendedShapeM7E2",
+      "path": "research/MarkovExtendedShapeM7E2.lean",
+      "bytes": 1414,
+      "sha256": "ab068555d0b3592e595f7c593459c24929f73826e9ceae3345522aac3053c3cf",
+      "current_sha256": "ab068555d0b3592e595f7c593459c24929f73826e9ceae3345522aac3053c3cf",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in162.",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "comp_positiveM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "e_gap_identityM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "e_gap_nonnegM7E2"
+        }
+      ],
+      "object_path": "evidence/markov-7e2e958e/MarkovExtendedShapeM7E2.olean",
+      "object_sha256": "21e06c9aa97451a6036beb81805f61416d173a4f9b1908e84c1edec4f68d269b",
+      "successful_final_build": "build-1792190160453132000.json",
+      "successful_final_build_sha256": "51fdbefff5ef51668df17aef3f9b19ec0c22e9f4a31250c47a73408cfc9dc24f",
+      "imports": [
+        "MarkovQSourceM7E2"
+      ],
+      "theorem_statements": [
+        "theorem comp_positiveM7E2 (p : Polynomial ℝ) (hp : ∀ k, 0 ≤ p.coeff k) (k : ℕ) :\n 0 ≤ (p.comp (X+1)).coeff k",
+        "theorem e_gap_identityM7E2 (j t : ℕ) :\n ePolyM7E2 j (t+1)^2-ePolyM7E2 j t*ePolyM7E2 j (t+2)=\n Polynomial.reflect (j+j)\n   ((qPolyM7E2 j (t+1)^2-qPolyM7E2 j t*qPolyM7E2 j (t+2)).comp (X+1))",
+        "theorem e_gap_nonnegM7E2 (j t k : ℕ) :\n 0 ≤ (ePolyM7E2 j (t+1)^2-ePolyM7E2 j t*ePolyM7E2 j (t+2)).coeff k"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLiftPolynomialM7E2",
+      "path": "research/MarkovLiftPolynomialM7E2.lean",
+      "bytes": 2521,
+      "sha256": "bb161ed369e4ab0b292f0c21a3769c9fb7cc262a3e2188b00ec1eb6b28cbe259",
+      "current_sha256": "bb161ed369e4ab0b292f0c21a3769c9fb7cc262a3e2188b00ec1eb6b28cbe259",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in162.",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "liftPolyM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_poly_coeffM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_term_tailM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_poly_shiftM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_poly_gap_identityM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_poly_gap_nonnegM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lift_polyM7E2"
+        }
+      ],
+      "object_path": "evidence/markov-7e2e958e/MarkovLiftPolynomialM7E2.olean",
+      "object_sha256": "cdb67d8e8a13e6f890b609952067070535a89a701b45531990a28a6df9cc186a",
+      "successful_final_build": "build-1792190210406494000.json",
+      "successful_final_build_sha256": "774d09cfa766b9bd1475b92e1907bddcd5e06dc65fada1aa726a3bbc00cd0950",
+      "imports": [
+        "MarkovExtendedShapeM7E2",
+        "MarkovLiftSupportMAE9"
+      ],
+      "theorem_statements": [
+        "theorem lift_poly_coeffM7E2 (j t r : ℕ) :\n (liftPolyM7E2 j t).coeff r=(reverseLiftMAE9 j t r:ℝ)",
+        "theorem lift_term_tailM7E2 (j t m : ℕ) (hm : j < m) : liftTermMAE9 j t m=0",
+        "theorem lift_poly_shiftM7E2 (j t : ℕ) (hjt : j ≤ t) :\n liftPolyM7E2 j t=X^(t-j)*ePolyM7E2 j t",
+        "theorem lift_poly_gap_identityM7E2 (j t : ℕ) (hjt : j ≤ t) :\n liftPolyM7E2 j (t+1)^2-liftPolyM7E2 j t*liftPolyM7E2 j (t+2)=\n X^(2*(t-j)+2)*(ePolyM7E2 j (t+1)^2-ePolyM7E2 j t*ePolyM7E2 j (t+2))",
+        "theorem lift_poly_gap_nonnegM7E2 (j t k : ℕ) (hjt : j ≤ t) :\n 0 ≤ (liftPolyM7E2 j (t+1)^2-liftPolyM7E2 j t*liftPolyM7E2 j (t+2)).coeff k",
+        "theorem source_lift_polyM7E2 (q j t : ℕ) (r : Bool) (hj : j ≤ q) :\n (threeRawM9E2 q r (t+3) j:ℝ)=\n ∑ k ∈ range (t+1), ((sourceNME9C q r-2*j-1).choose k:ℝ)*\n   (liftPolyM7E2 j t).coeff k"
+      ],
+      "definitions": [
+        "def liftPolyM7E2 (j t : ℕ) : Polynomial ℝ :=\n ∑ r ∈ range (t+1), monomial r (liftTermMAE9 j t (t-r):ℝ)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLiftCutM7E2",
+      "path": "research/MarkovLiftCutM7E2.lean",
+      "bytes": 2825,
+      "sha256": "6386e464eec371a2e6a8f26f8a1bbf9a88b8bf0cc310abf598fa21e0100d8a58",
+      "current_sha256": "6386e464eec371a2e6a8f26f8a1bbf9a88b8bf0cc310abf598fa21e0100d8a58",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in162.",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "liftCutM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_cut_coeffM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_cut_noneM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_cut_zeroM7E2"
+        },
+        {
+          "kind": "def",
+          "name": "liftCutGapM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_cut_highM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_cut_tailM7E2"
+        },
+        {
+          "kind": "def",
+          "name": "LiftLCPositiveM7E2"
+        },
+        {
+          "kind": "def",
+          "name": "LiftBoundaryM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_positive_iff_boundaryM7E2"
+        }
+      ],
+      "object_path": "evidence/markov-7e2e958e/MarkovLiftCutM7E2.olean",
+      "object_sha256": "5a27f337cd1e972e336a00ebe1c2c03078520b08b641eb2bb57daba42d277431",
+      "successful_final_build": "build-1792190458067426000.json",
+      "successful_final_build_sha256": "7abfc82a2d0cb6cc53623a5f6ce798680c0db036bcde53d92e5d59114b6c250b",
+      "imports": [
+        "MarkovLiftPolynomialM7E2"
+      ],
+      "theorem_statements": [
+        "theorem lift_cut_coeffM7E2 (j t h k : ℕ) :\n (liftCutM7E2 j t h).coeff k=if h ≤ k then (liftPolyM7E2 j t).coeff k else 0",
+        "theorem lift_cut_noneM7E2 (j t h : ℕ) (ht : j+h ≤ t) :\n liftCutM7E2 j t h=liftPolyM7E2 j t",
+        "theorem lift_cut_zeroM7E2 (j t h : ℕ) (ht : t<h) : liftCutM7E2 j t h=0",
+        "theorem lift_cut_highM7E2 (j t h k : ℕ) (ht : t<h) :\n 0 ≤ (liftCutGapM7E2 j t h).coeff k",
+        "theorem lift_cut_tailM7E2 (j t h k : ℕ) (ht : j+h ≤ t) :\n 0 ≤ (liftCutGapM7E2 j t h).coeff k",
+        "theorem lift_positive_iff_boundaryM7E2 : LiftLCPositiveM7E2 ↔ LiftBoundaryM7E2"
+      ],
+      "definitions": [
+        "def liftCutM7E2 (j t h : ℕ) : Polynomial ℝ :=\n ∑ r ∈ range (t+1), monomial r (if h ≤ r then (reverseLiftMAE9 j t r:ℝ) else 0)",
+        "def liftCutGapM7E2 (j t h : ℕ) : Polynomial ℝ :=\n liftCutM7E2 j (t+1) h^2-liftCutM7E2 j t h*liftCutM7E2 j (t+2) h",
+        "def LiftLCPositiveM7E2 : Prop := ∀ j t h k, 0 ≤ (liftCutGapM7E2 j t h).coeff k",
+        "def LiftBoundaryM7E2 : Prop := ∀ j t h k, h ≤ t → t<j+h →\n 0 ≤ (liftCutGapM7E2 j t h).coeff k"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovTruncationObstructionM7E2",
+      "path": "research/MarkovTruncationObstructionM7E2.lean",
+      "bytes": 2156,
+      "sha256": "4bbf981147d1a82bcb2b8e084c2545d3909dd5c75226df94e3fb752f12da725b",
+      "current_sha256": "4bbf981147d1a82bcb2b8e084c2545d3909dd5c75226df94e3fb752f12da725b",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in162.",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "truncE0M7E2"
+        },
+        {
+          "kind": "def",
+          "name": "truncE1M7E2"
+        },
+        {
+          "kind": "def",
+          "name": "truncE2M7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "trunc_each_crossM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "trunc_full_gapM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "trunc_full_gap_nonnegM7E2"
+        },
+        {
+          "kind": "def",
+          "name": "truncA0M7E2"
+        },
+        {
+          "kind": "def",
+          "name": "truncA1M7E2"
+        },
+        {
+          "kind": "def",
+          "name": "truncA2M7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "trunc_actual_cutM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "trunc_cut_gapM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "trunc_cut_failureM7E2"
+        }
+      ],
+      "object_path": "evidence/markov-7e2e958e/MarkovTruncationObstructionM7E2.olean",
+      "object_sha256": "3445aec070adbfff8e675be8965b901612f5d041ed3af4152e99e628f1413463",
+      "successful_final_build": "build-1792190161797420000.json",
+      "successful_final_build_sha256": "015b6ec65d73b6326483f2cc75afbbbee68fe279bb6abc0b23e8ba3cfd99bcf4",
+      "imports": [
+        "MarkovQKernelM7E2"
+      ],
+      "theorem_statements": [
+        "theorem trunc_each_crossM7E2 :\n CrossLC (CoeffSeq truncE0M7E2) ∧ CrossLC (CoeffSeq truncE1M7E2) ∧\n CrossLC (CoeffSeq truncE2M7E2)",
+        "theorem trunc_full_gapM7E2 :\n truncE1M7E2^2-truncE0M7E2*truncE2M7E2=Quadratic 4 4 1",
+        "theorem trunc_full_gap_nonnegM7E2 (k : ℕ) :\n 0 ≤ (truncE1M7E2^2-truncE0M7E2*truncE2M7E2).coeff k",
+        "theorem trunc_actual_cutM7E2 :\n truncE0M7E2=1+X+X^2*truncA0M7E2 ∧\n truncE1M7E2=3+X*truncA1M7E2 ∧ truncE2M7E2=truncA2M7E2",
+        "theorem trunc_cut_gapM7E2 :\n truncA1M7E2^2-truncA0M7E2*truncA2M7E2=X-1",
+        "theorem trunc_cut_failureM7E2 :\n (truncA1M7E2^2-truncA0M7E2*truncA2M7E2).coeff 0<0"
+      ],
+      "definitions": [
+        "def truncE0M7E2 : Polynomial ℝ := Quadratic 1 1 1",
+        "def truncE1M7E2 : Polynomial ℝ := Quadratic 3 2 1",
+        "def truncE2M7E2 : Polynomial ℝ := Quadratic 5 3 1",
+        "def truncA0M7E2 : Polynomial ℝ := 1",
+        "def truncA1M7E2 : Polynomial ℝ := 2+X",
+        "def truncA2M7E2 : Polynomial ℝ := 5+3*X+X^2"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovKernelStepM7E2",
+      "path": "research/MarkovKernelStepM7E2.lean",
+      "bytes": 1642,
+      "sha256": "8eadc0f244514e1bde903aaf46e886dc4824037ad122832dc930da3a4dc7763f",
+      "current_sha256": "8eadc0f244514e1bde903aaf46e886dc4824037ad122832dc930da3a4dc7763f",
+      "status": "Compiled final source, joint isolated replay passed, all explicit theorem closures printed in162.",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "lift_weight_reverseM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_weight_stepM7E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_diagonal_stepM7E2"
+        }
+      ],
+      "object_path": "evidence/markov-7e2e958e/MarkovKernelStepM7E2.olean",
+      "object_sha256": "1e1175359f2bb9018daf3df4bd2b68f73dccb8a5a7b3f2d20c2a54edbd4b7d24",
+      "successful_final_build": "build-1792190631016421000.json",
+      "successful_final_build_sha256": "cc788ae3829736eeb6ca32286971b1167b5d75644c780e44769c89742e46f76f",
+      "imports": [
+        "MarkovLiftRatioMAE9"
+      ],
+      "theorem_statements": [
+        "theorem lift_weight_reverseM7E2 (j t r : ℚ) :\n liftWeightMAE9 j t (t-r)=\n r^2+(4*j+7)*r+4*j^2+16*j+2*t+20",
+        "theorem lift_weight_stepM7E2 (j t m : ℚ) :\n liftWeightMAE9 j (t+1) (m+1)=liftWeightMAE9 j t m+2",
+        "theorem lift_diagonal_stepM7E2 (j t m : ℕ) (hm : m+1 ≤ j) :\n (liftTermMAE9 j (t+1) (m+1):ℚ)*(t+4)*(m+1)*\n   liftDenMAE9 (t+1) (m+1)*liftWeightMAE9 j t m=\n (liftTermMAE9 j t m:ℚ)*(t+j+4)*(j-m)*liftDenMAE9 t m*\n   (liftWeightMAE9 j t m+2)"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    }
+  ],
+  "pending_modules": [],
+  "accepted_counts": {
+    "def": 18,
+    "theorem": 43
+  },
+  "source_scope": "Inherited actual numerator3 classification q>=1,rBool,n3q+1 or3q+2. New raw bridge everyt>=0,j<=q only; q0 generic formula is not added actual-source coverage. Original polynomial/source/homogeneity conventions unchanged.",
+  "weight_scope": "c(k)=0 fornegativeintegerk,c0=1,cpositivek=4k. Nonnegative and full integer CrossLC are proved explicitly, includingnegative/zero cases, not inferred from adjacent scan. Binomial B_t(s)=C(t+s+3,s).",
+  "minor_scope": "Q(j,t)=sum_s0..j c(j-s)B_t(s)X^s, exactallnaturalcoefficientformula with cnegativezero. Foralln,m,t,k withm<=n, coefficient ofQ(n,t+1)Q(m,t)-Q(n,t)Q(m,t+1) is nonnegative. Pairing a,b andb,a gives product ofweightbalancedminor andorderedbinomialminor; fullsumreflection countscentralpair twice safely. t+4positive cancels, no sourcecoefficient division.",
+  "parameter_scope": "Exact Pascal/prefix identities yield Q(j,t+1)^2-Q(j,t)Q(j,t+2)=sum_k0..j X^k qMinor(j,j-k,t). Allnaturalj,t,coefficientk, includingzero tails. This is coefficientwise adjacent-parameterLC, not assertedall-pairparameterCrossLC or coefficient-sequenceCrossLC forQ/E.",
+  "bridge_scope": "Allnaturalj,t,m: coeff_m Q(j,t)(1+X)=L(j,t,m). Finitebinomial product+weightedchoose proof coversm>j zero cases. Q andcompositiondegree<=j. E(j,t)=reflect_j(composition), coeffk=L(j,t,j-k) fork<=j,zerofork>j. reflect leavesindices>j fixed; explicitdegreebound is essential.",
+  "reversal_scope": "Generic compositionwithX+1preservesnonnegativecoefficients. reflect_mul requiresbothdegreebounds; givesEgap=reflect_2j(Qgapcomp(X+1)). Coefficientnonnegativity allnaturalindices follows. This formalizes the polynomial realization of complete reversedkernel, not a formal signedLaurentseries theorem.",
+  "triangle_scope": "A(j,t)=sum_r0..t L(j,t,t-r)X^r. Exactcoefficients equalguardedreverseLift. Ifj<=t, A=X^(t-j)E andgapA=X^(2(t-j)+2)gapE; coefficientwiseLCprovedinthisrange,zerotailsincluded. No extension toj>t withouttruncationargument.",
+  "source_bridge_scope": "Rawthree(q,r,t+3,j) casttoReal equals sum_k0..t C(n-2j-1,k) coeff_k A(j,t), j<=q. Binomialweightingnot evaluationat1/notnormalization. No theorem turns the provedA/Egaps into rawsourceLC; no newly proved conditionalroot sufficiency ofLiftLCPositive.",
+  "cut_scope": "Cut A^[h]keepscoeffindices>=h exactly. t<hmakesleftpolynomialzero; middle-squarecoefficients nonnegative via nonnegativekernel. j+h<=tmakesallthreecutsunchangedandtailgap applies. Exactauxiliaryiff LiftLCPositive iff LiftBoundary with h<=t<j+h, allnaturalj,t,h,k; boundaryunprovedandunbounded inh. Not an iff withroot.",
+  "step_scope": "Weight identitiesallrationalj,t,r or m; clearedkernelrecurrence allnaturalswithm+1<=j, combinesguardedscaledidentitiesandchoose steps. Fixedr=t-m, but no decreasingratio or normalized-pairmonotonicity theorem.",
+  "obstruction_scope": "Formal3quadratic auxiliaryE0=[1,1,1],E1=[3,2,1],E2=[5,3,1], eachfullintegerCoeffSeqCrossLC. Fullparametergap4+4X+X² nonnegative. Explicitdecompositions show varying shift/discard givingA0=1,A1=2+X,A2=5+3X+X²; gapX-1negativeconstant. Noactualsource/polygonidentification.",
+  "root_scope": "InheritedMAE9andOtherFourresidual unchanged/open. No new unconditionalrawstrip,completea3direction,rootproof/refutation,or correction-rowextension. Alloriginalpolygon/zeros/endpoints/largernumerators/directions retained.",
+  "finite_only_scope": "Normalizedpairmonotonicity,threefirstboundarypolynomialsanduntransposedmidpointsource-rangewitness remainfinite. The3/73witnessfails anauxiliarymidpoint andsavedrawgappositive/polygonvalid; noLean sourcecountercertificate.",
+  "mathematical_values_recomputed": false
+}
