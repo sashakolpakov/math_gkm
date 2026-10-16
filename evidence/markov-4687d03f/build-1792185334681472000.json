@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovRowDifferenceM468.lean:14:8: error: unsolved goals\ncase e'_3\nN : \u2115\nh :\n  rowJMFFD (N + 1 + 2) 1 + 2 * (X + 1) * 1 + 2 * (1 - X) * 1 + 1 =\n    rowJMFFD (N + 1 + 1) 1 + 2 * (X + 1) * 1 + 2 * (1 - X) * 1 + (X + 1) * 1\n\u22a2 X * \u2211 x \u2208 range 1, rowHMFFD (2 + N + x) x = X\n/Users/sasha/math_gkm/research/MarkovRowDifferenceM468.lean:16:27: warning: This simp argument is unused:\n  Finset.sum_range_one\n\nHint: Omit it from the simp argument list.\n  simp only [\u0335N\u0335a\u0335t\u0335.\u0335a\u0335d\u0335d\u0335_\u0335z\u0335e\u0335r\u0335o\u0335,\u0335F\u0335i\u0335n\u0335s\u0335e\u0335t\u0335.\u0335s\u0335u\u0335m\u0335_\u0335r\u0335a\u0335n\u0335g\u0335e\u0335_\u0335o\u0335n\u0335e\u0335,\u0335r\u0335o\u0335w\u0335H\u0335M\u0335F\u0335F\u0335D\u0335,\u0335r\u0335o\u0335w\u0335J\u0335_\u0335z\u0335e\u0335r\u0335o\u0335M\u03354\u03356\u03358\u0335]\u0335[\u0332N\u0332a\u0332t\u0332.\u0332a\u0332d\u0332d\u0332_\u0332z\u0332e\u0332r\u0332o\u0332,\u0332 \u0332r\u0332o\u0332w\u0332H\u0332M\u0332F\u0332F\u0332D\u0332,\u0332 \u0332r\u0332o\u0332w\u0332J\u0332_\u0332z\u0332e\u0332r\u0332o\u0332M\u03324\u03326\u03328\u0332]\u0332 at h \u22a2\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovRowDifferenceM468.lean:44:8: error: Invalid `\u27e8...\u27e9` notation: The expected type\n  \u2200 (i j : \u2124),\n    i \u2264 j \u2192\n      (fun k => f k + g k) i * (fun k => f k + g k) (j + 1) \u2264 (fun k => f k + g k) (i + 1) * (fun k => f k + g k) j\nis not an inductive type\n\nNote: This notation can only be used when the expected type is an inductive type with a single constructor\n/Users/sasha/math_gkm/research/MarkovRowDifferenceM468.lean:45:7: error: No goals to be solved\n/Users/sasha/math_gkm/research/MarkovRowDifferenceM468.lean:60:39: error: Application type mismatch: The argument\n  ih\nhas type\n  2 * j + 1 \u2264 2 * j + 1 + d \u2192 CrossLC (CoeffSeq (Polynomial.map (Int.castRingHom \u211d) (rowHMFFD (2 * j + 1 + d) j)))\nbut is expected to have type\n  CrossLC ?m.102\nin the application\n  crossLC_sum_mixedM468 ?m.102 ?m.103 ih\n/Users/sasha/math_gkm/research/MarkovRowDifferenceM468.lean:61:3: error: Type mismatch: After simplification, term\n  h\n has type\n  CrossLC fun k => CoeffSeq (Polynomial.map (Int.castRingHom \u211d) (rowHMFFD (2 * j + 1 + d + 1) j)) k\nbut is expected to have type\n  CrossLC (CoeffSeq (Polynomial.map (Int.castRingHom \u211d) (rowHMFFD (2 * j + 1 + (d + 1)) j)))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovRowDifferenceM468": "8caeade8da6bfba5ff190b737f5f5a32b55dfe0c42341219d792ac717059498e"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-4687d03f/MarkovRowDifferenceM468.olean",
+    "/Users/sasha/math_gkm/research/MarkovRowDifferenceM468.lean"
+  ],
+  "seconds": 9.178211459016893,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

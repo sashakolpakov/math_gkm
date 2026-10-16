@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovRowCoeffM468.lean:31:9: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  (j - s).choose (j - s - (j - k))\nin the target expression\n  (j + 3).choose (j - s) * (j - s).choose (j - k) = (j + 3).choose (j - k) * (j + 3 - (j - k)).choose (j - s - (j - k))\n\nn j k : \u2115\nhk : k \u2264 j\nhv : \u2191((n - j - 1 + k + 3).choose k) = \u2211 s \u2208 range (k + 1), \u2191((n - j - 1).choose s) * \u2191((k + 3).choose (k - s))\ns : \u2115\nhs : s \u2208 range (k + 1)\nhsk : s \u2264 k\nh :\n  (j + 3).choose (j - s) * (j - s).choose (j - k) = (j + 3).choose (j - k) * (j + 3 - (j - k)).choose (j - s - (j - k))\n\u22a2 \u2191((j + 3).choose (j - s)) * \u2191((j - s).choose (k - s)) = \u2191((j + 3).choose (j - k)) * \u2191((k + 3).choose (k - s))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovRowCoeffM468": "76a23cb133b4da60d9e5f15929caaa4a90bde84ab124ab674218e1fd11acf779"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-4687d03f/MarkovRowCoeffM468.olean",
+    "/Users/sasha/math_gkm/research/MarkovRowCoeffM468.lean"
+  ],
+  "seconds": 39.36706520797452,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

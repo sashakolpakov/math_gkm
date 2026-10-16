@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovResolventSourceM468.lean:51:3: error: Type mismatch\n  h (N + j + 1) j (Decidable.byContradiction fun a => resolvent_shape_iffM468._proof_1_1 N j hj a)\nhas type\n  CrossLC (CoeffSeq (Polynomial.map (Int.castRingHom \u211d) (rowHMFFD (N + j + 1) j)))\nbut is expected to have type\n  CrossLC (CoeffSeq (Polynomial.map (Int.castRingHom \u211d) ((PowerSeries.coeff j) (rowHSeriesM468 N))))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovResolventSourceM468": "da76dbed65bef726ac428bac4de3882dbc3fc3a365d01a98bf673e01082ef815"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-4687d03f/MarkovResolventSourceM468.olean",
+    "/Users/sasha/math_gkm/research/MarkovResolventSourceM468.lean"
+  ],
+  "seconds": 61.14839058299549,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

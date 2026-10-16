@@ -1,0 +1,582 @@
+{
+  "worker": 159,
+  "request": "4687d03ffe8948abad1b235a519bed69",
+  "created_at_utc": "2026-10-16T21:34:33.118675+00:00",
+  "historical_status": "Completed / return0 / delivered report; full root open; prior timeout and recovery history unchanged.",
+  "scope": "Closed159 archive and explicit named inherited/current counterparts only. Static parsing, hashes, literal comparisons and input-index counts; no project/proof/checker/replay/experiment/finalizer/generator execution or mathematical-value computation. No project edits, deletion, proposer contact or research assistance. Active160 excluded; prior seals final.",
+  "new_modules": [
+    {
+      "module": "MarkovRowCoeffM468",
+      "path": "research/MarkovRowCoeffM468.lean",
+      "bytes": 3151,
+      "sha256": "14fc6955b5b2de67e72b4a88d49046ba6996a3036127e92f6aa2b22c507018b7",
+      "current_sha256": "14fc6955b5b2de67e72b4a88d49046ba6996a3036127e92f6aa2b22c507018b7",
+      "status": "compiled, joint replay passed, every theorem closure printed in159",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "rowJ_coeffM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowJ_coeff_tailM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowJ_coeff_allM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowJ_parameterM468"
+        }
+      ],
+      "object_path": "evidence/markov-4687d03f/MarkovRowCoeffM468.olean",
+      "object_sha256": "69201654d579cf19303eaa5ca1a380520cc2868af0c4866d8d8170533dbb484f",
+      "successful_final_build": "build-1792184285822672000.json",
+      "successful_final_build_sha256": "eef40148d43f26ed9d9db71d580f794c5dde981688073092b202652d504b40ff",
+      "imports": [
+        "MarkovRowDegreeMFFD"
+      ],
+      "theorem_statements": [
+        "theorem rowJ_coeffM468 (n j k : ℕ) (hk : k ≤ j) :\n (rowJMFFD n j).coeff k =\n ((j+3).choose (j-k):ℤ)*((n-j-1+k+3).choose k:ℤ)",
+        "theorem rowJ_coeff_tailM468 (n j k : ℕ) (hk : j<k) : (rowJMFFD n j).coeff k=0",
+        "theorem rowJ_coeff_allM468 (n j k : ℕ) :\n (rowJMFFD n j).coeff k =\n ((j+3).choose (k+3):ℤ)*((n-j-1+k+3).choose k:ℤ)",
+        "theorem rowJ_parameterM468 (n j : ℕ) (hn : j+1 ≤ n) :\n rowJMFFD (n+2) (j+1)+rowJMFFD n j =\n rowJMFFD (n+1) (j+1)+(X+1)*rowJMFFD (n+1) j"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovRowParameterM468",
+      "path": "research/MarkovRowParameterM468.lean",
+      "bytes": 1187,
+      "sha256": "99a0ad693dff8ecde4879ac268e2df68a1950c5a958151781c7e9251ac9ab0bc",
+      "current_sha256": "99a0ad693dff8ecde4879ac268e2df68a1950c5a958151781c7e9251ac9ab0bc",
+      "status": "compiled, joint replay passed, every theorem closure printed in159",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "rowJ_zeroM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowH_parameterM468"
+        }
+      ],
+      "object_path": "evidence/markov-4687d03f/MarkovRowParameterM468.olean",
+      "object_sha256": "3c434d28d059eba9b4de703c49ceed4787bcf933083f285e00098cf88a931da5",
+      "successful_final_build": "build-1792184369964960000.json",
+      "successful_final_build_sha256": "8024c62b450bd08d379ed1f3bee8bc4bc92c6d111ffeaf1616390719a4073a08",
+      "imports": [
+        "MarkovRowCoeffM468"
+      ],
+      "theorem_statements": [
+        "theorem rowJ_zeroM468 (n : ℕ) : rowJMFFD n 0=1",
+        "theorem rowH_parameterM468 (n j : ℕ) (hn : j+1 ≤ n) :\n rowHMFFD (n+2) (j+1)+rowHMFFD n j =\n rowHMFFD (n+1) (j+1)+(X+1)*rowHMFFD (n+1) j"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovRowSeriesM468",
+      "path": "research/MarkovRowSeriesM468.lean",
+      "bytes": 3212,
+      "sha256": "0e17fb686c066f646586d4f815d25dae0b823a9c56cb3586f4f514054e599cb0",
+      "current_sha256": "0e17fb686c066f646586d4f815d25dae0b823a9c56cb3586f4f514054e599cb0",
+      "status": "compiled, joint replay passed, every theorem closure printed in159",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "rowJSeriesM468"
+        },
+        {
+          "kind": "def",
+          "name": "rowHSeriesM468"
+        },
+        {
+          "kind": "def",
+          "name": "rowAM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowJ_series_shiftM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowH_series_shiftM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowJ_initialM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowJ_series_baseM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowJ_resolventM468"
+        }
+      ],
+      "object_path": "evidence/markov-4687d03f/MarkovRowSeriesM468.olean",
+      "object_sha256": "a6102c2e494c9f96f5a0ec8ca585e0938f138be1fce3c293aff90794f52d2e5c",
+      "successful_final_build": "build-1792184546692814000.json",
+      "successful_final_build_sha256": "c97405d909fe5c3e233760ddf76a0b51563b3a27589207a248f05d8c15de8def",
+      "imports": [
+        "MarkovRowParameterM468"
+      ],
+      "theorem_statements": [
+        "theorem rowJ_series_shiftM468 (N : ℕ) :\n rowAM468*rowJSeriesM468 (N+1)=(1-X)*rowJSeriesM468 N",
+        "theorem rowH_series_shiftM468 (N : ℕ) :\n rowAM468*rowHSeriesM468 (N+1)=(1-X)*rowHSeriesM468 N",
+        "theorem rowJ_initialM468 (j : ℕ) :\n rowJMFFD (j+1) j=Polynomial.C ((j+3).choose 3:ℤ)*(Polynomial.X+1)^j",
+        "theorem rowJ_series_baseM468 : rowAM468^4*rowJSeriesM468 0=1",
+        "theorem rowJ_resolventM468 (N : ℕ) :\n rowAM468^(N+4)*rowJSeriesM468 N=(1-X)^N"
+      ],
+      "definitions": [
+        "def rowJSeriesM468 (N : ℕ) : PowerSeries (Polynomial ℤ) :=\n mk (fun j => rowJMFFD (N+j+1) j)",
+        "def rowHSeriesM468 (N : ℕ) : PowerSeries (Polynomial ℤ) :=\n mk (fun j => rowHMFFD (N+j+1) j)",
+        "def rowAM468 : PowerSeries (Polynomial ℤ) := 1-C (Polynomial.X+1)*X"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovRowResolventM468",
+      "path": "research/MarkovRowResolventM468.lean",
+      "bytes": 3284,
+      "sha256": "e8b824c4b611d918fc356bf8f83730a727db74c21256ba8f150df3673d7e80f8",
+      "current_sha256": "e8b824c4b611d918fc356bf8f83730a727db74c21256ba8f150df3673d7e80f8",
+      "status": "compiled, joint replay passed, every theorem closure printed in159",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "rowH_series_equationM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowH_clearedM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowH_resolventM468"
+        }
+      ],
+      "object_path": "evidence/markov-4687d03f/MarkovRowResolventM468.olean",
+      "object_sha256": "37f610970d8d88ab2cb6ebd135cc9bf3b52c08847e7452ee333e5065bed08ef0",
+      "successful_final_build": "build-1792184902146728000.json",
+      "successful_final_build_sha256": "cf5e9a31801e935eee91d08d2bdbc5c76787ae2d90c8a38a517529281bf836c9",
+      "imports": [
+        "MarkovRowSeriesM468"
+      ],
+      "theorem_statements": [
+        "theorem rowH_series_equationM468 (N : ℕ) :\n rowHSeriesM468 N-2*C (1-Polynomial.X)*X*rowHSeriesM468 (N+1)+\n   C (Polynomial.X+1)^2*X^2*rowHSeriesM468 (N+2)=\n rowJSeriesM468 N+2*C (Polynomial.X+1)*X*rowJSeriesM468 (N+1)+\n   C (Polynomial.X+1)^2*X^2*rowJSeriesM468 (N+2)",
+        "theorem rowH_clearedM468 (N : ℕ) :\n (1-2*X+C (Polynomial.X+1)*X^2)^2*rowHSeriesM468 N=\n (1-C (Polynomial.X+1)*X^2)^2*rowJSeriesM468 N",
+        "theorem rowH_resolventM468 (N : ℕ) :\n rowAM468^(N+4)*(1-2*X+C (Polynomial.X+1)*X^2)^2*rowHSeriesM468 N=\n (1-X)^N*(1-C (Polynomial.X+1)*X^2)^2"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovResolventSourceM468",
+      "path": "research/MarkovResolventSourceM468.lean",
+      "bytes": 2635,
+      "sha256": "20bd60cf3f05d1f9d11e1ab0f1e4dfa158b81c02ef916acb45eecd401f710543",
+      "current_sha256": "20bd60cf3f05d1f9d11e1ab0f1e4dfa158b81c02ef916acb45eecd401f710543",
+      "status": "compiled, joint replay passed, every theorem closure printed in159",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "rowDenomM468"
+        },
+        {
+          "kind": "def",
+          "name": "rowNumerM468"
+        },
+        {
+          "kind": "def",
+          "name": "rowResolventM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowDenom_unitM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowResolvent_eqM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowResolvent_uniqueM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowResolvent_coeffM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_resolventM468"
+        },
+        {
+          "kind": "def",
+          "name": "ResolventShapeM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "resolvent_shape_iffM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_horizontal_of_resolventM468"
+        }
+      ],
+      "object_path": "evidence/markov-4687d03f/MarkovResolventSourceM468.olean",
+      "object_sha256": "67d4144aa1d1df925e27923845215a7edced6553236b4fe46f3f86213037f202",
+      "successful_final_build": "build-1792185058036673000.json",
+      "successful_final_build_sha256": "15dae91f954952e6c9c60e884b93fb9d3563017d6f003a922dca16fbd1941543",
+      "imports": [
+        "MarkovRowResolventM468",
+        "MarkovRowTransferMFFD"
+      ],
+      "theorem_statements": [
+        "theorem rowDenom_unitM468 (N : ℕ) : constantCoeff (rowDenomM468 N)=1",
+        "theorem rowResolvent_eqM468 (N : ℕ) : rowResolventM468 N=rowHSeriesM468 N",
+        "theorem rowResolvent_uniqueM468 (N : ℕ) (F : PowerSeries (Polynomial ℤ))\n (h : rowDenomM468 N*F=rowNumerM468 N) : F=rowResolventM468 N",
+        "theorem rowResolvent_coeffM468 (n j : ℕ) (hn : j+1 ≤ n) :\n PowerSeries.coeff j (rowResolventM468 (n-j-1))=rowHMFFD n j",
+        "theorem source_lower_resolventM468 (q i j : ℕ) (r : Bool) (hj : j ≤ q) :\n threeRawM9E2 q r i j=\n   (Polynomial.X^3*((Polynomial.X+1)^(sourceNME9C q r-2*j-1)*\n   PowerSeries.coeff j (rowResolventM468 (sourceNME9C q r-j-1)))).coeff i",
+        "theorem resolvent_shape_iffM468 : LowerRowShapeMFFD ↔ ResolventShapeM468",
+        "theorem source_lower_horizontal_of_resolventM468 (h : ResolventShapeM468)\n (q i j : ℕ) (r : Bool) (hj : j ≤ q) :\n threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2"
+      ],
+      "definitions": [
+        "def rowDenomM468 (N : ℕ) : PowerSeries (Polynomial ℤ) :=\n rowAM468^(N+4)*(1-2*X+C (Polynomial.X+1)*X^2)^2",
+        "def rowNumerM468 (N : ℕ) : PowerSeries (Polynomial ℤ) :=\n (1-X)^N*(1-C (Polynomial.X+1)*X^2)^2",
+        "def rowResolventM468 (N : ℕ) : PowerSeries (Polynomial ℤ) :=\n invOfUnit (rowDenomM468 N) 1*rowNumerM468 N",
+        "def ResolventShapeM468 : Prop := ∀ N j : ℕ, j ≤ N →\n CrossLC (CoeffSeq ((PowerSeries.coeff j (rowResolventM468 N)).map (Int.castRingHom ℝ)))"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovFivePolynomialM468",
+      "path": "research/MarkovFivePolynomialM468.lean",
+      "bytes": 1976,
+      "sha256": "fbdd1c15f01ec0a9aff76ffab52102910e5deb2676bd2ad6133245dddf1f8ebb",
+      "current_sha256": "fbdd1c15f01ec0a9aff76ffab52102910e5deb2676bd2ad6133245dddf1f8ebb",
+      "status": "compiled, joint replay passed, every theorem closure printed in159",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "deltaFiveM468"
+        },
+        {
+          "kind": "def",
+          "name": "lowForceFiveM468"
+        },
+        {
+          "kind": "def",
+          "name": "lowFiveM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "low_five_equationM468"
+        },
+        {
+          "kind": "def",
+          "name": "firstHorizontalGapM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_horizontal_identityM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_horizontal_nonnegM468"
+        }
+      ],
+      "object_path": "evidence/markov-4687d03f/MarkovFivePolynomialM468.olean",
+      "object_sha256": "3878a1b8c9b7b948e1d364a6ea9c3de2a22ae7adc38cb43b9c70045381b4d8cb",
+      "successful_final_build": "build-1792184888104203000.json",
+      "successful_final_build_sha256": "2e8aa12780e4024f931cb5eb66f9c2ad8593940254a5cd7af3c8dd1a1580cb24",
+      "imports": [
+        "MarkovLowSolutionsME9C"
+      ],
+      "theorem_statements": [
+        "theorem low_five_equationM468 (n x : ℚ) :\n lowFiveM468 n (x+2)-2*lowFiveM468 n (x+1)+lowFiveM468 n x=\n lowForceFiveM468 n (x+2)-2*lowFourME9C n (x+2)-2*lowFourME9C n (x+1)-lowThreeME9C (x+2)",
+        "theorem first_horizontal_identityM468 (d x : ℚ) :\n lowFourME9C (3*x+1+d) x^2-lowThreeME9C x*lowFiveM468 (3*x+1+d) x=firstHorizontalGapM468 d x",
+        "theorem first_horizontal_nonnegM468 (d x : ℚ) (hd : 0 ≤ d) (hx : 0 ≤ x) :\n 0 ≤ firstHorizontalGapM468 d x"
+      ],
+      "definitions": [
+        "def deltaFiveM468 (n x : ℚ) : ℚ := (n-x-1)*(n-x-2)*(x+1)*(x+2)*(x+3)*(x+4)*(x+5)/240",
+        "def lowForceFiveM468 (n x : ℚ) : ℚ :=\n deltaFiveM468 n x+2*deltaFiveM468 n (x-1)+deltaFiveM468 n (x-2)+\n 2*deltaFourME9C n x+2*deltaFourME9C n (x-1)+deltaThreeME9C x",
+        "def lowFiveM468 (n x : ℚ) : ℚ := (x+1)*(x+2)*(x+3)*(x+4)*(x+5)*(12*n^2*x^2+72*n^2*x+126*n^2-30*n*x^3-234*n*x^2-576*n*x-378*n+19*x^4+183*x^3+596*x^2+714*x+252)/30240",
+        "def firstHorizontalGapM468 (d x : ℚ) : ℚ := (112*d^2*x^12+3276*d^2*x^11+43778*d^2*x^10+353430*d^2*x^9+1919211*d^2*x^8+7378938*d^2*x^7+20569304*d^2*x^6+41806170*d^2*x^5+61330927*d^2*x^4+63139986*d^2*x^3+43144668*d^2*x^2+17501400*d^2*x+3175200*d^2+378*d*x^13+10976*d*x^12+145992*d*x^11+1177162*d*x^10+6412854*d*x^9+24881178*d*x^8+70547526*d*x^7+147457366*d*x^6+226069368*d*x^5+249408446*d*x^4+190756482*d*x^3+94622472*d*x^2+26800200*d*x+3175200*d+317*x^14+9128*x^13+120666*x^12+969556*x^11+5280436*x^10+20563284*x^9+58811098*x^8+124780348*x^7+195797847*x^6+223551188*x^5+179700836*x^4+95822496*x^3+30218400*x^2+4233600*x)/6350400"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovFiveForceM468",
+      "path": "research/MarkovFiveForceM468.lean",
+      "bytes": 1974,
+      "sha256": "1eaa0d4036a99dd10ebd227aebc87c03089233884cb11f6cac6ff0f5b8896b07",
+      "current_sha256": "1eaa0d4036a99dd10ebd227aebc87c03089233884cb11f6cac6ff0f5b8896b07",
+      "status": "compiled, joint replay passed, every theorem closure printed in159",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fib_delta_fiveM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "low_force_fiveM468"
+        }
+      ],
+      "object_path": "evidence/markov-4687d03f/MarkovFiveForceM468.olean",
+      "object_sha256": "98f79b6b2298b87769099299d40fcf51f9f9623ecadd501b6e4ef80f81c852de",
+      "successful_final_build": "build-1792184948940139000.json",
+      "successful_final_build_sha256": "35f60d20fd429e210e47d335f870bcd72d8fb75ce6cf05b10e70e0852bb79d18",
+      "imports": [
+        "MarkovFivePolynomialM468"
+      ],
+      "theorem_statements": [
+        "theorem fib_delta_fiveM468 (n j : ℕ) (hj : j < n) :\n (fibDeltaME9C n 5 j:ℚ)=deltaFiveM468 n j",
+        "theorem low_force_fiveM468 (q j : ℕ) (r : Bool) (hj : j ≤ q) :\n (threeForceM96A q r 5 j:ℚ)=lowForceFiveM468 (sourceNME9C q r) j"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovFiveSourceM468",
+      "path": "research/MarkovFiveSourceM468.lean",
+      "bytes": 2481,
+      "sha256": "77672ed7232dae1a9a5578fe9a989485c8ae36789c6163969d0ef9374da99565",
+      "current_sha256": "77672ed7232dae1a9a5578fe9a989485c8ae36789c6163969d0ef9374da99565",
+      "status": "compiled, joint replay passed, every theorem closure printed in159",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_low_fiveM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_first_horizontalM468"
+        }
+      ],
+      "object_path": "evidence/markov-4687d03f/MarkovFiveSourceM468.olean",
+      "object_sha256": "885594cb4cb6c86f0839396b6b1ec8f4cb6d25261370a73b62eef046beee0453",
+      "successful_final_build": "build-1792185056862761000.json",
+      "successful_final_build_sha256": "b45a24af003616dfef2b6dab9bae45a7d5aa85749cea187c8d4f1d9138d9d869",
+      "imports": [
+        "MarkovFiveForceM468",
+        "MarkovLowSourceME9C"
+      ],
+      "theorem_statements": [
+        "theorem source_low_fiveM468 (q : ℕ) (r : Bool) (hq : 1 ≤ q) :\n ∀ j, j ≤ q → (threeRawM9E2 q r 5 j:ℚ)=lowFiveM468 (sourceNME9C q r) j",
+        "theorem source_first_horizontalM468 (q j : ℕ) (r : Bool) (hq : 1 ≤ q) (hj : j ≤ q) :\n threeRawM9E2 q r 3 j*threeRawM9E2 q r 5 j ≤ threeRawM9E2 q r 4 j^2"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovFiveShapeM468",
+      "path": "research/MarkovFiveShapeM468.lean",
+      "bytes": 1888,
+      "sha256": "0c2b870e01241e7201eca6b173275f0e8188f8d60d4b4aa7d6ff7660f98d09e9",
+      "current_sha256": "0c2b870e01241e7201eca6b173275f0e8188f8d60d4b4aa7d6ff7660f98d09e9",
+      "status": "compiled, joint replay passed, every theorem closure printed in159",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "verticalFiveGapM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "verticalFive_identityM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "verticalFive_positiveM468"
+        },
+        {
+          "kind": "def",
+          "name": "diagonalFirstGapM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "diagonalFirst_identityM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "diagonalFirst_positiveM468"
+        }
+      ],
+      "object_path": "evidence/markov-4687d03f/MarkovFiveShapeM468.olean",
+      "object_sha256": "327ea5a63cff90c81ab7891f629c3bbb8456fa49c9b146bc95b1b2d1f9ccdf58",
+      "successful_final_build": "build-1792185185316078000.json",
+      "successful_final_build_sha256": "d0d82b47340641d49629468d42e2be58f9ef5f01378cb6f8230425c8189826dc",
+      "imports": [
+        "MarkovFivePolynomialM468"
+      ],
+      "theorem_statements": [
+        "theorem verticalFive_identityM468 (d x : ℚ) :\n lowFiveM468 (3*x+7+d) (x+1)^2-lowFiveM468 (3*x+7+d) x*lowFiveM468 (3*x+7+d) (x+2)=verticalFiveGapM468 d x",
+        "theorem verticalFive_positiveM468 (d x : ℚ) (hd : 0 ≤ d) (hx : 0 ≤ x) :\n 0 < verticalFiveGapM468 d x",
+        "theorem diagonalFirst_identityM468 (d x : ℚ) :\n lowFourME9C (3*x+7+d) (x+1)^2-lowThreeME9C (x+2)*lowFiveM468 (3*x+7+d) x=diagonalFirstGapM468 d x",
+        "theorem diagonalFirst_positiveM468 (d x : ℚ) (hd : 0 ≤ d) (hx : 0 ≤ x) :\n 0 < diagonalFirstGapM468 d x"
+      ],
+      "definitions": [
+        "def verticalFiveGapM468 (d x : ℚ) : ℚ := (x+2)*(x+3)*(x+3)*(x+4)*(x+4)*(x+5)*(x+5)*(x+6)*(336*d^4*x^4+5376*d^4*x^3+31920*d^4*x^2+83328*d^4*x+82908*d^4+2352*d^3*x^5+42336*d^3*x^4+301728*d^3*x^3+1066464*d^3*x^2+1891344*d^3*x+1351224*d^3+6336*d^2*x^6+127368*d^2*x^5+1060452*d^2*x^4+4691376*d^2*x^3+11692980*d^2*x^2+15572088*d^2*x+8610084*d^2+7760*d*x^7+172928*d*x^6+1648496*d*x^5+8728724*d*x^4+27784904*d*x^3+53108996*d*x^2+56189448*d*x+25207560*d+3627*x^8+88904*x^7+954506*x^6+5867708*x^5+22597391*x^4+55724588*x^3+85597772*x^2+74503632*x+27984096)/304819200",
+        "def diagonalFirstGapM468 (d x : ℚ) : ℚ := (x+2)*(x+3)*(x+3)*(x+4)*(x+4)*(x+5)*(x+5)*(112*d^2*x^5+1876*d^2*x^4+12866*d^2*x^3+44870*d^2*x^2+79191*d^2*x+56448*d^2+378*d*x^6+7112*d*x^5+57092*d*x^4+249130*d*x^3+621964*d*x^2+843024*d*x+485982*d+317*x^7+6612*x^6+60532*x^5+314012*x^4+995535*x^3+1931416*x^2+2129253*x+1032822)/6350400"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovFiveDirectionsM468",
+      "path": "research/MarkovFiveDirectionsM468.lean",
+      "bytes": 2464,
+      "sha256": "54940de6cbffc3f3355d07ceb26637dd1af7eb91360a419bda63e0b4fb6e3d7d",
+      "current_sha256": "54940de6cbffc3f3355d07ceb26637dd1af7eb91360a419bda63e0b4fb6e3d7d",
+      "status": "compiled, joint replay passed, every theorem closure printed in159",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_five_verticalM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_first_diagonalM468"
+        }
+      ],
+      "object_path": "evidence/markov-4687d03f/MarkovFiveDirectionsM468.olean",
+      "object_sha256": "a346e9f784eaa3d2daa6dd9ed0b58d9f594c48e4b0f43b6b898e8a27dc84a557",
+      "successful_final_build": "build-1792185265153621000.json",
+      "successful_final_build_sha256": "97acde002efc994fdfff44169d81339999f456da8f687c868737037e42437eab",
+      "imports": [
+        "MarkovFiveSourceM468",
+        "MarkovFiveShapeM468"
+      ],
+      "theorem_statements": [
+        "theorem source_five_verticalM468 (q j : ℕ) (r : Bool) (hj : j+2 ≤ q) :\n threeRawM9E2 q r 5 j*threeRawM9E2 q r 5 (j+2) < threeRawM9E2 q r 5 (j+1)^2",
+        "theorem source_first_diagonalM468 (q j : ℕ) (r : Bool) (hj : j+2 ≤ q) :\n threeRawM9E2 q r 3 (j+2)*threeRawM9E2 q r 5 j < threeRawM9E2 q r 4 (j+1)^2"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovResidualM468",
+      "path": "research/MarkovResidualM468.lean",
+      "bytes": 2917,
+      "sha256": "af4116ee56efec8e642e83b04e1770bc8aedca4b41a564b4fb5610a165526d45",
+      "current_sha256": "af4116ee56efec8e642e83b04e1770bc8aedca4b41a564b4fb5610a165526d45",
+      "status": "compiled, joint replay passed, every theorem closure printed in159",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "ThreeRemainingM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_remaining_iffM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_remainingM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_horizontal_polygonM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "five_vertical_polygonM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_diagonal_polygonM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_first_horizontal_pathM468"
+        }
+      ],
+      "object_path": "evidence/markov-4687d03f/MarkovResidualM468.olean",
+      "object_sha256": "b4a2f140604ad893c37f5ec69e80ea7d553348a699490fc256b9b140d9d70b91",
+      "successful_final_build": "build-1792185353835422000.json",
+      "successful_final_build_sha256": "1df576d7a7c819f6a4d52aea06813547108a3b7e6036ec8ea24f7c73d6122d9d",
+      "imports": [
+        "MarkovFiveDirectionsM468",
+        "MarkovResidualMFFD"
+      ],
+      "theorem_statements": [
+        "theorem three_remaining_iffM468 : ThreeRemainingMFFD ↔ ThreeRemainingM468",
+        "theorem root_iff_remainingM468 : Conjecture63 ↔ ThreeRemainingM468 ∧ OtherFourM9E2",
+        "theorem first_horizontal_polygonM468 (q j : ℕ) (r : Bool) (hq : 1 ≤ q) (hj : j ≤ q) :\n InPolygon 3 (sourceNME9C q r) 3 j ∧ InPolygon 3 (sourceNME9C q r) 4 j ∧\n InPolygon 3 (sourceNME9C q r) 5 j",
+        "theorem five_vertical_polygonM468 (q j : ℕ) (r : Bool) (hj : j+2 ≤ q) :\n InPolygon 3 (sourceNME9C q r) 5 j ∧ InPolygon 3 (sourceNME9C q r) 5 (j+1) ∧\n InPolygon 3 (sourceNME9C q r) 5 (j+2)",
+        "theorem first_diagonal_polygonM468 (q j : ℕ) (r : Bool) (hj : j+2 ≤ q) :\n InPolygon 3 (sourceNME9C q r) 3 (j+2) ∧ InPolygon 3 (sourceNME9C q r) 4 (j+1) ∧\n InPolygon 3 (sourceNME9C q r) 5 j",
+        "theorem source_first_horizontal_pathM468 (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1 ≤ q ∧ (frame path).mid.b=sourceNME9C q r ∧\n   ∀ j, j ≤ q → coeff (frame path).mid.p 3 j*coeff (frame path).mid.p 5 j ≤\n     coeff (frame path).mid.p 4 j^2"
+      ],
+      "definitions": [
+        "def ThreeRemainingM468 : Prop := ∀ q : ℕ, 1 ≤ q → ∀ r,\n (∀ i j, ¬(j=5 ∨ (i=3 ∧ j ≤ q)) →\n   threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2) ∧\n (∀ i j, ¬(((i=3 ∨ i=4) ∧ j+1 ≤ q) ∨ (i=5 ∧ j+2 ≤ q)) →\n   threeRawM9E2 q r i j*threeRawM9E2 q r i (j+2) ≤ threeRawM9E2 q r i (j+1)^2) ∧\n (∀ i j, ¬(i=3 ∧ j+2 ≤ q) → threeRawM9E2 q r i (j+2)*threeRawM9E2 q r (i+2) j ≤\n   threeRawM9E2 q r (i+1) (j+1)^2)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovRowDifferenceM468",
+      "path": "research/MarkovRowDifferenceM468.lean",
+      "bytes": 2482,
+      "sha256": "4043e260e100386d630a499b13958a06a0dac48b5f98877d574cdd3662e8994f",
+      "current_sha256": "4043e260e100386d630a499b13958a06a0dac48b5f98877d574cdd3662e8994f",
+      "status": "compiled, joint replay passed, every theorem closure printed in159",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "rowH_difference_sumM468"
+        },
+        {
+          "kind": "def",
+          "name": "RowDifferenceM468"
+        },
+        {
+          "kind": "def",
+          "name": "RowDifferenceShapeM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "crossLC_sum_mixedM468"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_shape_of_differenceM468"
+        }
+      ],
+      "object_path": "evidence/markov-4687d03f/MarkovRowDifferenceM468.olean",
+      "object_sha256": "bc2ca3bed498cafda8162405c4e7535750262de52e39d2409ded07ed9529bbd1",
+      "successful_final_build": "build-1792185375399241000.json",
+      "successful_final_build_sha256": "7a1153cd934f19416229c43385dc086db8f86102b54630325dba2d5435fd6949",
+      "imports": [
+        "MarkovRowParameterM468",
+        "MarkovRowTransferMFFD"
+      ],
+      "theorem_statements": [
+        "theorem rowH_difference_sumM468 (N j : ℕ) :\n rowHMFFD (N+j+3) (j+1)-rowHMFFD (N+j+2) (j+1)=\n X*∑ s ∈ range (j+1), rowHMFFD (N+s+2) s",
+        "theorem crossLC_sum_mixedM468 (f g : ℤ → ℝ) (hf : CrossLC f) (hg : CrossLC g)\n (hm : ∀ i k : ℤ, i ≤ k → f i*g (k+1)+g i*f (k+1) ≤\n   f (i+1)*g k+g (i+1)*f k) : CrossLC (fun k => f k+g k)",
+        "theorem lower_shape_of_differenceM468\n (hb : ∀ j : ℕ, CrossLC (CoeffSeq ((rowHMFFD (2*j+1) j).map (Int.castRingHom ℝ))))\n (hd : RowDifferenceShapeM468) : LowerRowShapeMFFD"
+      ],
+      "definitions": [
+        "def RowDifferenceM468 (n j : ℕ) : ℤ → ℝ :=\n fun k => CoeffSeq ((rowHMFFD (n+1) j).map (Int.castRingHom ℝ)) k-\n   CoeffSeq ((rowHMFFD n j).map (Int.castRingHom ℝ)) k",
+        "def RowDifferenceShapeM468 : Prop := ∀ n j : ℕ, 2*j+1 ≤ n →\n CrossLC (RowDifferenceM468 n j) ∧\n ∀ i k : ℤ, i ≤ k →\n   CoeffSeq ((rowHMFFD n j).map (Int.castRingHom ℝ)) i*RowDifferenceM468 n j (k+1)+\n   RowDifferenceM468 n j i*CoeffSeq ((rowHMFFD n j).map (Int.castRingHom ℝ)) (k+1) ≤\n   CoeffSeq ((rowHMFFD n j).map (Int.castRingHom ℝ)) (i+1)*RowDifferenceM468 n j k+\n   RowDifferenceM468 n j (i+1)*CoeffSeq ((rowHMFFD n j).map (Int.castRingHom ℝ)) k"
+      ],
+      "forbidden_tokens": []
+    }
+  ],
+  "accepted_counts": {
+    "theorem": 43,
+    "def": 16
+  },
+  "source_scope": "Actual a3 paths are exhaustively q>=1,true3/(3q+1),false3/(3q+2); inherited source_three_raw identifies all literal integer coefficients. No upper q bound, arbitrary-word replacement or normalization.",
+  "forcing_scope": "rowJ_coeff_all for every natural n,j,k uses C(j+3,k+3) C(n-j-1+k+3,k), retaining natural subtraction and k>j zeros. n unrestricted here. Parameter recurrence for J and H requires j+1<=n.",
+  "series_scope": "Formal power series in t over coefficient ring Z[u], F_N=sum_j H_j(N+j+1,u)t^j. Parameter identities all natural N; J base uses d3 binomial generating series/rescale. Signed row recurrence gives exact cleared resolvent (1-(1+u)t)^(N+4)*(1-2t+(1+u)t²)^2*F_N=(1-t)^N*(1-(1+u)t²)^2. Zero/one/successor coefficients explicit.",
+  "resolvent_scope": "Denominator has constant coefficient1 in Z[u]; invOfUnit with unit1 gives unique formal series. No analytic convergence/evaluation or division by source coefficient. [t^j] resolvent(n-j-1)=H_j(n) only j+1<=n. Actual source lower bridge j<=q gives all natural i, with exact u³(1+u)^(n-2j-1) multiplier and zeros. Euler-substitution six-term coefficient formula remains unproved.",
+  "shape_scope": "LowerRowShapeMFFD iff ResolventShapeM468, latter all natural N,j with j<=N and zero-extended CrossLC. Both are unproved. Conditional source smoothing remains lower-row H only, not a complete direction.",
+  "column_scope": "lowFive rational polynomial equals raw column5 every actual q>=1,j<=q. Exact source forcing atcolumn5 uses fib_delta_high n2j withj<n; j0/1/2+ split handles guarded negative-shift boundaries. Exact discriminant source identities and inherited columns3/4 plus second-difference uniqueness prove formula, not interpolation.",
+  "inequality_scope": "H across(3,j),(4,j),(5,j),q>=1,j<=q, nonstrict. V at(5,j),(5,j+1),(5,j+2) and D at(3,j+2),(4,j+1),(5,j),j+2<=q, strict. Rationalgap certificates use nonnegative x=j and d=n-3j-1 forH, d=n-3j-7 forVD. Source substitutions and exact casts remove auxiliary hypotheses. No zero removal/cancellation by coefficients. All polygon memberships proved separately.",
+  "difference_scope": "All natural N,j: H_(j+1)(N+j+3)-H_(j+1)(N+j+2)=u*sum_s0..j H_s(N+s+2). Positive multipliers do not prove positivity of signed residual summands. Conditional shape induction assumes all minimal-denominator H_j(2j+1) CrossLC and RowDifferenceShape, which includes difference CrossLC and mixed-cross inequalities for every pair of integer indices i<=k in2j+1<=n. No nonnegativity conjunct in CrossLC and no hidden adjacent-only replacement; both premises unproved.",
+  "root_scope": "Exact residual removes H atj5 or(i3 andj<=q), V at(i3/4 andj+1<=q) or(i5 andj+2<=q), D at(i3 andj+2<=q); retains all remaining natural starts, original polygon/zeros/endpoints via inherited equivalence, and OtherFour a>=4. Both unproved. Unbounded polygon-valid source families; H j5 overlaps old result, no claim every triple evades all older criteria.",
+  "obstruction_scope": "Saved H2(7)=[34,68,36] gives failure after binomial normalization [34,34,36]; even when residual belongs toactual3/7lowerrow, normalized residual is not raw source. No source/root counterexample or formally checked obstruction theorem claimed.",
+  "mathematical_values_recomputed": false
+}

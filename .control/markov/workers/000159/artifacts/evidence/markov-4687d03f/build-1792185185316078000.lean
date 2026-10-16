@@ -1,0 +1,25 @@
+import MarkovFivePolynomialM468
+/-! Machine-authored 4687d03f. Polynomial certificates for two further raw gaps. -/
+namespace MathGKM.Markov
+noncomputable section
+set_option maxHeartbeats 6000000
+def verticalFiveGapM468 (d x : ℚ) : ℚ := (x+2)*(x+3)*(x+3)*(x+4)*(x+4)*(x+5)*(x+5)*(x+6)*(336*d^4*x^4+5376*d^4*x^3+31920*d^4*x^2+83328*d^4*x+82908*d^4+2352*d^3*x^5+42336*d^3*x^4+301728*d^3*x^3+1066464*d^3*x^2+1891344*d^3*x+1351224*d^3+6336*d^2*x^6+127368*d^2*x^5+1060452*d^2*x^4+4691376*d^2*x^3+11692980*d^2*x^2+15572088*d^2*x+8610084*d^2+7760*d*x^7+172928*d*x^6+1648496*d*x^5+8728724*d*x^4+27784904*d*x^3+53108996*d*x^2+56189448*d*x+25207560*d+3627*x^8+88904*x^7+954506*x^6+5867708*x^5+22597391*x^4+55724588*x^3+85597772*x^2+74503632*x+27984096)/304819200
+theorem verticalFive_identityM468 (d x : ℚ) :
+ lowFiveM468 (3*x+7+d) (x+1)^2-lowFiveM468 (3*x+7+d) x*lowFiveM468 (3*x+7+d) (x+2)=verticalFiveGapM468 d x := by
+ simp only [lowFiveM468,lowFourME9C,lowThreeME9C,verticalFiveGapM468]
+ ring
+theorem verticalFive_positiveM468 (d x : ℚ) (hd : 0 ≤ d) (hx : 0 ≤ x) :
+ 0 < verticalFiveGapM468 d x := by
+ unfold verticalFiveGapM468
+ positivity
+def diagonalFirstGapM468 (d x : ℚ) : ℚ := (x+2)*(x+3)*(x+3)*(x+4)*(x+4)*(x+5)*(x+5)*(112*d^2*x^5+1876*d^2*x^4+12866*d^2*x^3+44870*d^2*x^2+79191*d^2*x+56448*d^2+378*d*x^6+7112*d*x^5+57092*d*x^4+249130*d*x^3+621964*d*x^2+843024*d*x+485982*d+317*x^7+6612*x^6+60532*x^5+314012*x^4+995535*x^3+1931416*x^2+2129253*x+1032822)/6350400
+theorem diagonalFirst_identityM468 (d x : ℚ) :
+ lowFourME9C (3*x+7+d) (x+1)^2-lowThreeME9C (x+2)*lowFiveM468 (3*x+7+d) x=diagonalFirstGapM468 d x := by
+ simp only [lowFiveM468,lowFourME9C,lowThreeME9C,diagonalFirstGapM468]
+ ring
+theorem diagonalFirst_positiveM468 (d x : ℚ) (hd : 0 ≤ d) (hx : 0 ≤ x) :
+ 0 < diagonalFirstGapM468 d x := by
+ unfold diagonalFirstGapM468
+ positivity
+end
+end MathGKM.Markov
