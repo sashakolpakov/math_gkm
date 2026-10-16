@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovPositiveRowsMDAB.lean:27:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  (C ?m.137 * ?p).coeff ?m.138\nin the target expression\n  (\u2191j - \u2191s) * (\u2191((s + 3).choose (k + 3)) * \u2191((d + s + k + 3).choose k)) =\n    (\u2191j - \u2191s) * \u2191((s + 3).choose (k + 3)) * \u2191((d + s + k + 3).choose k)\n\ncase e_a.e_a\nd j k s : \u2115\nhs : s \u2208 range j\n\u22a2 (\u2191j - \u2191s) * (\u2191((s + 3).choose (k + 3)) * \u2191((d + s + k + 3).choose k)) =\n    (\u2191j - \u2191s) * \u2191((s + 3).choose (k + 3)) * \u2191((d + s + k + 3).choose k)\n/Users/sasha/math_gkm/research/MarkovPositiveRowsMDAB.lean:69:3: error: mod_cast has type\n  (j + a).choose b + (j + a).choose b.succ = (j + a).succ.choose b.succ\nbut is expected to have type\n  (j + a).choose (b + 1) + (j + a).choose b = (j + a + 1).choose (b + 1)\n/Users/sasha/math_gkm/research/MarkovPositiveRowsMDAB.lean:88:36: error: mod_cast has type\n  (j + a).choose b + (j + a).choose b.succ = (j + a).succ.choose b.succ\nbut is expected to have type\n  (j + a).choose (b + 1) + (j + a).choose b = (j + a + 1).choose (b + 1)\n/Users/sasha/math_gkm/research/MarkovPositiveRowsMDAB.lean:90:36: error: mod_cast has type\n  (j + a + 1).choose (b + 1) + (j + a + 1).choose (b + 1).succ = (j + a + 1).succ.choose (b + 1).succ\nbut is expected to have type\n  (j + a + 1).choose (b + 2) + (j + a + 1).choose (b + 1) = (j + a + 2).choose (b + 2)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovPositiveRowsMDAB": "beeee5ec97b05ed8b8fb264fef233103bb26e7ef6c2e1768b1f5779794f14081"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-daba8bcf/MarkovPositiveRowsMDAB.olean",
+    "/Users/sasha/math_gkm/research/MarkovPositiveRowsMDAB.lean"
+  ],
+  "seconds": 71.54705708299298,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,515 @@
+{
+  "worker": 160,
+  "request": "daba8bcf97ae4038b0d8ea8a63d4a71e",
+  "created_at_utc": "2026-10-16T21:57:42.232181+00:00",
+  "historical_status": "Completed / return0 / delivered report; full root open. Pending KernelLimit excluded.",
+  "scope": "Closed160 archive and exact named inherited/current counterparts. Static parsing, hashing, literal comparison and input-index counts only. No project/proof/compiler/checker/replay/experiment/finalizer execution or mathematical-value recomputation; no edits, proposer contact or research assistance. Active161 and separate documentation edits excluded. Prior seals remain final.",
+  "new_modules": [
+    {
+      "module": "MarkovDiagonalRowsMDAB",
+      "path": "research/MarkovDiagonalRowsMDAB.lean",
+      "bytes": 3989,
+      "sha256": "88cf528e972331dc2363cda31e0a4457bdfcd94006f4ee22a2ac5e9667d8e8d8",
+      "current_sha256": "88cf528e972331dc2363cda31e0a4457bdfcd94006f4ee22a2ac5e9667d8e8d8",
+      "status": "compiled, joint replay passed, every explicit theorem closure printed in160",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "row_diagonal_operatorMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowH_diagonal_equationMDAB"
+        },
+        {
+          "kind": "def",
+          "name": "diagonalJMDAB"
+        },
+        {
+          "kind": "def",
+          "name": "diagonalHMDAB"
+        },
+        {
+          "kind": "def",
+          "name": "doublePrefixMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "doublePrefix_stepMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "doublePrefix_secondMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "diagonalH_positive_sumMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowH_positive_sumMDAB"
+        }
+      ],
+      "object_path": "evidence/markov-daba8bcf/MarkovDiagonalRowsMDAB.olean",
+      "object_sha256": "7a60b6e75c737a2bbfa036c87b1e24407ecfa94bd22ce315b947c3f6d25b0d24",
+      "successful_final_build": "build-1792186052991872000.json",
+      "successful_final_build_sha256": "d84ffc96c3577d0fa0d63b7bb8a39bc5842647b276f3a2f35cba8b058f2e608c",
+      "imports": [
+        "MarkovRowParameterM468"
+      ],
+      "theorem_statements": [
+        "theorem row_diagonal_operatorMDAB (F : ℕ → ℕ → Polynomial ℤ) (n j : ℕ)\n (h0 : F (n+2) (j+1)+F n j=F (n+1) (j+1)+(X+1)*F (n+1) j)\n (h1 : F (n+3) (j+1)+F (n+1) j=F (n+2) (j+1)+(X+1)*F (n+2) j)\n (h2 : F (n+3) (j+2)+F (n+1) (j+1)=F (n+2) (j+2)+(X+1)*F (n+2) (j+1))\n (h3 : F (n+4) (j+2)+F (n+2) (j+1)=F (n+3) (j+2)+(X+1)*F (n+3) (j+1)) :\n F (n+4) (j+2)+2*F (n+2) (j+1)+F n j=\n F (n+2) (j+2)+2*(X+1)*F (n+2) (j+1)+(X+1)^2*F (n+2) j",
+        "theorem rowH_diagonal_equationMDAB (n j : ℕ) (hn : j+1 ≤ n) :\n rowHMFFD (n+4) (j+2)-2*rowHMFFD (n+2) (j+1)+rowHMFFD n j=\n rowJMFFD (n+4) (j+2)+2*rowJMFFD (n+2) (j+1)+rowJMFFD n j",
+        "theorem doublePrefix_stepMDAB (F : ℕ → Polynomial ℤ) (j : ℕ) :\n doublePrefixMDAB F (j+1)=doublePrefixMDAB F j+∑ s ∈ range (j+1), F s",
+        "theorem doublePrefix_secondMDAB (F : ℕ → Polynomial ℤ) (j : ℕ) :\n doublePrefixMDAB F (j+2)-2*doublePrefixMDAB F (j+1)+doublePrefixMDAB F j=F (j+1)",
+        "theorem diagonalH_positive_sumMDAB (d j : ℕ) :\n diagonalHMDAB d j=diagonalJMDAB d j+4*doublePrefixMDAB (diagonalJMDAB d) j",
+        "theorem rowH_positive_sumMDAB (n j : ℕ) (hn : 2*j+1 ≤ n) :\n rowHMFFD n j= rowJMFFD n j+\n   4*∑ s ∈ range j, C (j-s:ℤ)*rowJMFFD (n-2*j+2*s) s"
+      ],
+      "definitions": [
+        "def diagonalJMDAB (d j : ℕ) : Polynomial ℤ := rowJMFFD (2*j+1+d) j",
+        "def diagonalHMDAB (d j : ℕ) : Polynomial ℤ := rowHMFFD (2*j+1+d) j",
+        "def doublePrefixMDAB (F : ℕ → Polynomial ℤ) (j : ℕ) : Polynomial ℤ :=\n ∑ s ∈ range j, C (j-s:ℤ)*F s"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovPositiveRowsMDAB",
+      "path": "research/MarkovPositiveRowsMDAB.lean",
+      "bytes": 5330,
+      "sha256": "158380c21dd73bca24b75673eb1936e23bdfd1c60dfc334a22d1334480378cee",
+      "current_sha256": "158380c21dd73bca24b75673eb1936e23bdfd1c60dfc334a22d1334480378cee",
+      "status": "compiled, joint replay passed, every explicit theorem closure printed in160",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "diagonalJ_coeffMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "diagonalH_coeffMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "diagonalH_coeff_nonnegMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "diagonalH_coeff_posMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowH_coeff_nonnegMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowH_coeff_posMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "prefix_chooseMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_chooseMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "diagonalJ_min_coeffMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowH_min_coeffMDAB"
+        }
+      ],
+      "object_path": "evidence/markov-daba8bcf/MarkovPositiveRowsMDAB.olean",
+      "object_sha256": "d24c68f30097eeb0f64713638a817d009976e045f4f6e76ed5bf4736d546a0cb",
+      "successful_final_build": "build-1792186306620035000.json",
+      "successful_final_build_sha256": "b7e572b66774a6b28437dff095f33d0b22dd5ddc68a251ad124dec6c07390eea",
+      "imports": [
+        "MarkovDiagonalRowsMDAB"
+      ],
+      "theorem_statements": [
+        "theorem diagonalJ_coeffMDAB (d j k : ℕ) :\n (diagonalJMDAB d j).coeff k=\n ((j+3).choose (k+3):ℤ)*((d+j+k+3).choose k:ℤ)",
+        "theorem diagonalH_coeffMDAB (d j k : ℕ) :\n (diagonalHMDAB d j).coeff k=\n ((j+3).choose (k+3):ℤ)*((d+j+k+3).choose k:ℤ)+\n 4*∑ s ∈ range j, ((j:ℤ)-s)*((s+3).choose (k+3):ℤ)*((d+s+k+3).choose k:ℤ)",
+        "theorem diagonalH_coeff_nonnegMDAB (d j k : ℕ) : 0 ≤ (diagonalHMDAB d j).coeff k",
+        "theorem diagonalH_coeff_posMDAB (d j k : ℕ) (hk : k ≤ j) :\n 0 < (diagonalHMDAB d j).coeff k",
+        "theorem rowH_coeff_nonnegMDAB (n j k : ℕ) (hn : 2*j+1 ≤ n) :\n 0 ≤ (rowHMFFD n j).coeff k",
+        "theorem rowH_coeff_posMDAB (n j k : ℕ) (hn : 2*j+1 ≤ n) (hk : k ≤ j) :\n 0 < (rowHMFFD n j).coeff k",
+        "theorem prefix_chooseMDAB (a b j : ℕ) (hab : a ≤ b) :\n (∑ s ∈ range j, ((s+a).choose b:ℤ))=((j+a).choose (b+1):ℤ)",
+        "theorem weighted_chooseMDAB (a b j : ℕ) (hab : a ≤ b) :\n (∑ s ∈ range j, ((j:ℤ)-s)*((s+a).choose b:ℤ))=\n ((j+a+1).choose (b+2):ℤ)",
+        "theorem diagonalJ_min_coeffMDAB (j k : ℕ) :\n (diagonalJMDAB 0 j).coeff k=\n ((2*k+3).choose k:ℤ)*((j+k+3).choose (2*k+3):ℤ)",
+        "theorem rowH_min_coeffMDAB (j k : ℕ) :\n (rowHMFFD (2*j+1) j).coeff k=\n ((2*k+3).choose k:ℤ)*\n   (((j+k+3).choose (2*k+3):ℤ)+4*((j+k+4).choose (2*k+5):ℤ))"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovMinimalRatioMDAB",
+      "path": "research/MarkovMinimalRatioMDAB.lean",
+      "bytes": 1631,
+      "sha256": "e3e02176956b324fc0fbe23212b51c80081568582e168a1357d003570292cfc2",
+      "current_sha256": "e3e02176956b324fc0fbe23212b51c80081568582e168a1357d003570292cfc2",
+      "status": "compiled, joint replay passed, every explicit theorem closure printed in160",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "minBaseMDAB"
+        },
+        {
+          "kind": "def",
+          "name": "minDenMDAB"
+        },
+        {
+          "kind": "def",
+          "name": "minWeightMDAB"
+        },
+        {
+          "kind": "def",
+          "name": "minNumerMDAB"
+        },
+        {
+          "kind": "def",
+          "name": "minRatioDenMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "minBase_stepMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "min_ratio_decreasingMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "min_ratio_den_posMDAB"
+        }
+      ],
+      "object_path": "evidence/markov-daba8bcf/MarkovMinimalRatioMDAB.olean",
+      "object_sha256": "1e61052d2828ac243f336938149ef43492cbfa240fc28bc26768017900818253",
+      "successful_final_build": "build-1792186150083057000.json",
+      "successful_final_build_sha256": "e0161fae7d25e10cab1e29ce61374305e9ffc3d7f6b0992130b6df5601e0368b",
+      "imports": [
+        "MarkovAdjacent67c3"
+      ],
+      "theorem_statements": [
+        "theorem minBase_stepMDAB (j k : ℕ) (hk : k ≤ j) :\n minBaseMDAB j (k+1)*(k+1)*(k+4)=\n minBaseMDAB j k*(j+k+4)*(j-k)",
+        "theorem min_ratio_decreasingMDAB (k s : ℚ) (hk : 0 ≤ k) (hs : 0 ≤ s) :\n minNumerMDAB (k+s+2) (k+1)*minRatioDenMDAB (k+s+2) k ≤\n minNumerMDAB (k+s+2) k*minRatioDenMDAB (k+s+2) (k+1)",
+        "theorem min_ratio_den_posMDAB (j k : ℚ) (hj : 0 ≤ j) (hk : 0 ≤ k) :\n 0 < minRatioDenMDAB j k"
+      ],
+      "definitions": [
+        "def minBaseMDAB (j k : ℕ) : ℚ :=\n ((j+3).choose (k+3):ℚ)*((j+k+3).choose k:ℚ)",
+        "def minDenMDAB (k : ℚ) : ℚ := (2*k+4)*(2*k+5)",
+        "def minWeightMDAB (j k : ℚ) : ℚ := 4*j^2+16*j+2*k+20",
+        "def minNumerMDAB (j k : ℚ) : ℚ :=\n (j+k+4)*(j-k)*minWeightMDAB j (k+1)*minDenMDAB k",
+        "def minRatioDenMDAB (j k : ℚ) : ℚ :=\n (k+1)*(k+4)*minWeightMDAB j k*minDenMDAB (k+1)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovMinimalShapeMDAB",
+      "path": "research/MarkovMinimalShapeMDAB.lean",
+      "bytes": 4815,
+      "sha256": "e1723a676bae438efba12bd52bc5409af3c9d4f8b954c85f30d57b7f36c9feef",
+      "current_sha256": "e1723a676bae438efba12bd52bc5409af3c9d4f8b954c85f30d57b7f36c9feef",
+      "status": "compiled, joint replay passed, every explicit theorem closure printed in160",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "minCoeffMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_raise_twoMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "minCoeff_scaledMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "minCoeff_stepMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "minCoeff_adjacentMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "minimal_row_crossMDAB"
+        }
+      ],
+      "object_path": "evidence/markov-daba8bcf/MarkovMinimalShapeMDAB.olean",
+      "object_sha256": "9e127d54672b2bd19c40253f7800e09b5e757600a21628dac03d95dc4033df17",
+      "successful_final_build": "build-1792186549337049000.json",
+      "successful_final_build_sha256": "48a6cffc1d9629bfac9290eba84cab9ad82ada40f48d8e449866b0b3bf02ed95",
+      "imports": [
+        "MarkovPositiveRowsMDAB",
+        "MarkovMinimalRatioMDAB",
+        "MarkovCross774"
+      ],
+      "theorem_statements": [
+        "theorem choose_raise_twoMDAB (m b : ℕ) (hb : b ≤ m) :\n ((m+1).choose (b+2):ℚ)*(b+1)*(b+2)=\n (m.choose b:ℚ)*(m-b)*(m+1)",
+        "theorem minCoeff_scaledMDAB (j k : ℕ) (hk : k ≤ j) :\n minCoeffMDAB j k*minDenMDAB k=minWeightMDAB j k*minBaseMDAB j k",
+        "theorem minCoeff_stepMDAB (j k : ℕ) (hk : k+1 ≤ j) :\n minCoeffMDAB j (k+1)*minRatioDenMDAB j k=\n minCoeffMDAB j k*minNumerMDAB j k",
+        "theorem minCoeff_adjacentMDAB (j k : ℕ) (hk : k+2 ≤ j) :\n minCoeffMDAB j k*minCoeffMDAB j (k+2) ≤ minCoeffMDAB j (k+1)^2",
+        "theorem minimal_row_crossMDAB (j : ℕ) :\n CrossLC (CoeffSeq ((rowHMFFD (2*j+1) j).map (Int.castRingHom ℝ)))"
+      ],
+      "definitions": [
+        "def minCoeffMDAB (j k : ℕ) : ℚ := ((rowHMFFD (2*j+1) j).coeff k:ℚ)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovDifferencePositiveMDAB",
+      "path": "research/MarkovDifferencePositiveMDAB.lean",
+      "bytes": 2767,
+      "sha256": "a4af56ea7bf50003df1be6454bb2b36b18710c5f05eabb4cfe0a6168ffd50497",
+      "current_sha256": "a4af56ea7bf50003df1be6454bb2b36b18710c5f05eabb4cfe0a6168ffd50497",
+      "status": "compiled, joint replay passed, every explicit theorem closure printed in160",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "rowH_difference_nonnegMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowH_difference_posMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowH_difference_constantMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowDifference_nonnegMDAB"
+        }
+      ],
+      "object_path": "evidence/markov-daba8bcf/MarkovDifferencePositiveMDAB.olean",
+      "object_sha256": "631269092e3beb132d1c132dc904bf52f823cb387eaff635a8f4721c94535d5e",
+      "successful_final_build": "build-1792186483195835000.json",
+      "successful_final_build_sha256": "df16e2914d544e949e1f331706340ca0ec4d14a1375f5813c524f32f845eef77",
+      "imports": [
+        "MarkovPositiveRowsMDAB",
+        "MarkovRowDifferenceM468"
+      ],
+      "theorem_statements": [
+        "theorem rowH_difference_nonnegMDAB (n j k : ℕ) (hn : 2*j+1 ≤ n) :\n (rowHMFFD n j).coeff k ≤ (rowHMFFD (n+1) j).coeff k",
+        "theorem rowH_difference_posMDAB (n j k : ℕ) (hn : 2*j+1 ≤ n)\n (hk0 : 1 ≤ k) (hkj : k ≤ j) :\n (rowHMFFD n j).coeff k < (rowHMFFD (n+1) j).coeff k",
+        "theorem rowH_difference_constantMDAB (n j : ℕ) (hn : 2*j+1 ≤ n) :\n (rowHMFFD (n+1) j).coeff 0=(rowHMFFD n j).coeff 0",
+        "theorem rowDifference_nonnegMDAB (n j : ℕ) (hn : 2*j+1 ≤ n) (k : ℤ) :\n 0 ≤ RowDifferenceM468 n j k"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovPositiveSourceMDAB",
+      "path": "research/MarkovPositiveSourceMDAB.lean",
+      "bytes": 4325,
+      "sha256": "7775df8ae703427aea6191ca6263c4c7efef087c325d30ab5ea381e119dac54d",
+      "current_sha256": "7775df8ae703427aea6191ca6263c4c7efef087c325d30ab5ea381e119dac54d",
+      "status": "compiled, joint replay passed, every explicit theorem closure printed in160",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "lower_row_positive_coeffMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_positive_coeffMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_low_zeroMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_positiveMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_positive_pathMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_polygon_posMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_tail_zeroMDAB"
+        }
+      ],
+      "object_path": "evidence/markov-daba8bcf/MarkovPositiveSourceMDAB.olean",
+      "object_sha256": "fc190a7376ef9b0868980c89663c8a6911ec41534f8c5fbe6ae9999f1fa53d54",
+      "successful_final_build": "build-1792186516483509000.json",
+      "successful_final_build_sha256": "b3cd680fa4583ca8fcdbab28e2cec586ed5fa508e557d37ec8d782c3241da420",
+      "imports": [
+        "MarkovPositiveRowsMDAB"
+      ],
+      "theorem_statements": [
+        "theorem lower_row_positive_coeffMDAB (n j t : ℕ) (hn : 2*j+1 ≤ n) :\n (lowerRowMFFD n j).coeff (t+3)=\n ((n-j-1).choose t:ℤ)*((t+j+3).choose j:ℤ)+\n 4*∑ s ∈ range j, ((j:ℤ)-s)*((n-2*j+s-1).choose t:ℤ)*((t+s+3).choose s:ℤ)",
+        "theorem source_lower_positive_coeffMDAB (q j t : ℕ) (r : Bool) (hj : j ≤ q) :\n threeRawM9E2 q r (t+3) j=\n ((sourceNME9C q r-j-1).choose t:ℤ)*((t+j+3).choose j:ℤ)+\n 4*∑ s ∈ range j, ((j:ℤ)-s)*((sourceNME9C q r-2*j+s-1).choose t:ℤ)*\n   ((t+s+3).choose s:ℤ)",
+        "theorem source_lower_low_zeroMDAB (q i j : ℕ) (r : Bool) (hj : j ≤ q) (hi : i<3) :\n threeRawM9E2 q r i j=0",
+        "theorem source_lower_positiveMDAB (q j t : ℕ) (r : Bool) (hj : j ≤ q)\n (ht : t+j+1 ≤ sourceNME9C q r) : 0 < threeRawM9E2 q r (t+3) j",
+        "theorem source_lower_positive_pathMDAB (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1 ≤ q ∧ (frame path).mid.b=sourceNME9C q r ∧\n ∀ j t, j ≤ q → t+j+1 ≤ sourceNME9C q r → 0 < coeff (frame path).mid.p (t+3) j",
+        "theorem source_lower_polygon_posMDAB (q i j : ℕ) (r : Bool) (hj : j ≤ q)\n (hp : InPolygon 3 (sourceNME9C q r) i j) : 0 < threeRawM9E2 q r i j",
+        "theorem source_lower_tail_zeroMDAB (q j t : ℕ) (r : Bool) (hj : j ≤ q)\n (ht : sourceNME9C q r < t+j+1) : threeRawM9E2 q r (t+3) j=0"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovGapRouteMDAB",
+      "path": "research/MarkovGapRouteMDAB.lean",
+      "bytes": 3813,
+      "sha256": "a3f1bde0fa76c7f8b1ac174b969e5aea84188fca3c86f46dce7b8201fda00e7a",
+      "current_sha256": "a3f1bde0fa76c7f8b1ac174b969e5aea84188fca3c86f46dce7b8201fda00e7a",
+      "status": "compiled, joint replay passed, every explicit theorem closure printed in160",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "rowGapMDAB"
+        },
+        {
+          "kind": "def",
+          "name": "RowGapMonotoneMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_shape_of_difference_onlyMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_shape_of_gap_monotoneMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_horizontal_of_gapMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_horizontal_of_differenceMDAB"
+        }
+      ],
+      "object_path": "evidence/markov-daba8bcf/MarkovGapRouteMDAB.olean",
+      "object_sha256": "a1cf32807e89aae28db70ac23d2122b77985bba50e53252191a6f9d214de7475",
+      "successful_final_build": "build-1792186737866393000.json",
+      "successful_final_build_sha256": "902234ca940493b598b6f46d7e4f3ecaf51084f7ae2df924970cb3fd920a2514",
+      "imports": [
+        "MarkovMinimalShapeMDAB",
+        "MarkovDifferencePositiveMDAB",
+        "MarkovResolventSourceM468"
+      ],
+      "theorem_statements": [
+        "theorem lower_shape_of_difference_onlyMDAB (hd : RowDifferenceShapeM468) : LowerRowShapeMFFD",
+        "theorem lower_shape_of_gap_monotoneMDAB (hg : RowGapMonotoneMDAB) : LowerRowShapeMFFD",
+        "theorem source_lower_horizontal_of_gapMDAB (hg : RowGapMonotoneMDAB)\n (q i j : ℕ) (r : Bool) (hj : j ≤ q) :\n threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2",
+        "theorem source_lower_horizontal_of_differenceMDAB (hd : RowDifferenceShapeM468)\n (q i j : ℕ) (r : Bool) (hj : j ≤ q) :\n threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2"
+      ],
+      "definitions": [
+        "def rowGapMDAB (n j k : ℕ) : ℤ :=\n (rowHMFFD n j).coeff (k+1)^2-(rowHMFFD n j).coeff k*(rowHMFFD n j).coeff (k+2)",
+        "def RowGapMonotoneMDAB : Prop := ∀ n j k : ℕ, 2*j+1 ≤ n → k+2 ≤ j →\n rowGapMDAB n j k ≤ rowGapMDAB (n+1) j k"
+      ],
+      "forbidden_tokens": []
+    }
+  ],
+  "pending_modules": [
+    {
+      "module": "MarkovKernelLimitMDAB",
+      "path": "research/MarkovKernelLimitMDAB.lean",
+      "sha256": "779f5cdb5a03f58253ef912013646250c5e89fb2eb1e2c2b1c6f5216b69b7e8a",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "reverseKernelMDAB"
+        },
+        {
+          "kind": "def",
+          "name": "kernelMixtureMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverseKernel_coeffMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "geometric_weights_lcMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_small_valuesMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_mixture_gapMDAB"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_mixture_failureMDAB"
+        }
+      ],
+      "theorem_statements": [
+        "theorem reverseKernel_coeffMDAB (j d l r : ℕ) (hr : r ≤ l) (hl : l ≤ j) :\n reverseKernelMDAB j d l r=(diagonalJMDAB d (j-r)).coeff (j-l)",
+        "theorem geometric_weights_lcMDAB (q : ℤ) (k : ℕ) : q^k*q^(k+2)=(q^(k+1))^2",
+        "theorem kernel_small_valuesMDAB (q : ℤ) :\n kernelMixtureMDAB 8 0 0 q=75582 ∧\n kernelMixtureMDAB 8 0 1 q=350064+19448*q ∧\n kernelMixtureMDAB 8 0 2 q=680680+80080*q+5005*q^2",
+        "theorem kernel_mixture_gapMDAB (q : ℤ) :\n kernelMixtureMDAB 8 0 1 q^2-\n kernelMixtureMDAB 8 0 0 q*kernelMixtureMDAB 8 0 2 q=\n 71097648336+7563482784*q-63206*q^2",
+        "theorem kernel_mixture_failureMDAB :\n kernelMixtureMDAB 8 0 1 1000000^2 <\n kernelMixtureMDAB 8 0 0 1000000*kernelMixtureMDAB 8 0 2 1000000"
+      ],
+      "definitions": [
+        "def reverseKernelMDAB (j d l r : ℕ) : ℤ :=\n ((j-r+3).choose (j-l+3):ℤ)*((d+2*j-r-l+3).choose (j-l):ℤ)",
+        "def kernelMixtureMDAB (j d l : ℕ) (q : ℤ) : ℤ :=\n ∑ r ∈ range (l+1), q^r*reverseKernelMDAB j d l r"
+      ],
+      "forbidden_tokens": [],
+      "attempts": [
+        {
+          "receipt": "build-1792186952952769000.json",
+          "receipt_sha256": "b569288e295b6e074d0d0d7685d0fa2973d4c68dd335010c2e87348e681f9cd6",
+          "snapshot_sha256": "6ae4f35ef4159a022e13a82147ded0b3dfd9b3b5f4587bca91941726d289b202",
+          "returncode": null,
+          "timeout": true,
+          "keys": [
+            "timeout",
+            "stdout",
+            "stderr",
+            "modules",
+            "mode",
+            "command",
+            "seconds",
+            "limits"
+          ]
+        },
+        {
+          "receipt": "build-1792187096795609000.json",
+          "receipt_sha256": "3b40f33fe9c8953daab94e42b89e2bce3822263db5b9a63dc8b519dbd7072a9e",
+          "snapshot_sha256": "779f5cdb5a03f58253ef912013646250c5e89fb2eb1e2c2b1c6f5216b69b7e8a",
+          "returncode": null,
+          "timeout": true,
+          "keys": [
+            "timeout",
+            "stdout",
+            "stderr",
+            "modules",
+            "mode",
+            "command",
+            "seconds",
+            "limits"
+          ]
+        }
+      ],
+      "status": "Two timed-out candidate builds; no accepted compilation, selected replay or theorem-closure print. No mathematical credit."
+    }
+  ],
+  "accepted_counts": {
+    "theorem": 39,
+    "def": 11
+  },
+  "source_scope": "Every actual numerator3 path has q>=1 and residue r with n=3q+1 or3q+2. Generic source-row identities allow q0 but actual classification restricts q>=1. All new raw formulas/positivity require j<=q; correction rows excluded.",
+  "positive_identity_scope": "All n,j natural with2j+1<=n: H_j(n)=J_j(n)+4sum_s<j (j-s)J_s(n-2j+2s). Derived from four parameter shifts, signed recurrence, diagonal second difference and explicit j0/j1 bases. No Euler/Lagrange substitution premise.",
+  "coefficient_scope": "For all natural d,j,k, coefficient H_j(2j+1+d)=C(j+3,k+3)C(d+j+k+3,k)+4sum_s<j(j-s)C(s+3,k+3)C(d+s+k+3,k). Nonnegative allk, strictly positive k<=j, zero k>j by inherited degree. Minimal binomial formula allj,k including zeros uses weighted hockey-stick and choose multiplication.",
+  "minimal_shape_scope": "Every naturalj: CrossLC of real zero extension of integer H_j(2j+1). Positive rational ratio denominators; scaled coefficient identities guard k<=j, ratio step k+1<=j, adjacent k+2<=j. Certificate atj=k+s+2, k,s>=0. Strict interval support0..j and negative/upper zeros furnish nonnegativity and interval premise of Cross774, so all integer pairs are covered. It is an auxiliary minimal residual, not every actual source lower row.",
+  "difference_scope": "For2j+1<=n all natural coefficients nondecrease with n; strict for1<=k<=j, coefficient0 unchanged. Integer-index RowDifference nonnegative, negative and upper tails zero. No difference CrossLC or mixed-cross theorem.",
+  "raw_scope": "For every lower source rowj<=q andt>=0: raw(t+3,j)=C(n-j-1,t)C(t+j+3,j)+4sum_s<j(j-s)C(n-2j+s-1,t)C(t+s+3,s). Restores same (1+u)^(n-2j-1) factor to each shiftedJ; no normalization. i<3 zero, t+j+1<=n positive, larger t zero. Polygon lower bound forcesi>=3 and upperboundgivesthepositiveinterval. Path wrapper explicitly uses exhaustive classification.",
+  "conditional_scope": "Minimal CrossLC discharges159 base premise: RowDifferenceShape alone suffices for LowerRowShape. Alternatively RowGapMonotone requires every n,j,k with2j+1<=n andk+2<=j to have nondecreasing adjacent gap. Induction in n and exact support give LowerRowShape and conditional all-natural-i lower-source H. Both hypotheses unproved; coefficient monotonicity does not imply gap monotonicity.",
+  "root_scope": "No new unconditional raw LC region or exact root residual is asserted. Inherited root iff ThreeRemainingM468 and OtherFourM9E2 unchanged, retaining original polygon, natural zeros, endpoints, correction bands, V/D and larger numerators. Full root open.",
+  "obstruction_scope": "KernelLimit five theorem/two definition candidate has two timeouts, no accepted object/replay/print. Reversed-kernel geometric weights q^r differ from source weights c0=1,cr=4r. Its j8,d0,q1000000 candidate is distinct from finite base2 mixture failures atj55+. d0 forpositivej is outside actual lower source slackd>=j. Negative coefficient tests and auxiliary mixtures are not actual raw source counterexamples.",
+  "mathematical_values_recomputed": false
+}

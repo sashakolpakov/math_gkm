@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovMinimalShapeMDAB.lean:28:3: error: mod_cast has type\n  (j + 3).choose (k + 3) * (j + k + 3).choose k = (2 * k + 3).choose k * (j + k + 3).choose (2 * k + 3)\nbut is expected to have type\n  minBaseMDAB j k = \u2191((2 * k + 3).choose k * (j + k + 3).choose (2 * k + 3))\n/Users/sasha/math_gkm/research/MarkovMinimalShapeMDAB.lean:52:3: error: mod_cast has type\n  (0 : \u2124) \u2264 (rowHMFFD (2 * j + 1) j).coeff s\nbut is expected to have type\n  (0 : \u211a) \u2264 minCoeffMDAB j s\n/Users/sasha/math_gkm/research/MarkovMinimalShapeMDAB.lean:62:54: error: No goals to be solved\n/Users/sasha/math_gkm/research/MarkovMinimalShapeMDAB.lean:62:4: error: unsolved goals\nj k : \u2115\nhk : k + 2 \u2264 j\nhn : \u2200 (s : \u2115), 0 \u2264 minCoeffMDAB j s\nh :\n  minNumerMDAB (\u2191j) (\u2191k + 1) * minRatioDenMDAB \u2191j \u2191k \u2264 minNumerMDAB \u2191j \u2191k * minRatioDenMDAB (\u2191j) (\u2191k + 1) \u2192\n    minCoeffMDAB j k * minCoeffMDAB j (k + 2) \u2264 minCoeffMDAB j (k + 1) * minCoeffMDAB j (k + 1)\nhq : \u2191k + 2 \u2264 \u2191j\n\u22a2 0 \u2264 \u2191j - \u2191k - 2\n/Users/sasha/math_gkm/research/MarkovMinimalShapeMDAB.lean:80:3: error: mod_cast has type\n  (0 : \u2124) < (rowHMFFD (2 * j + 1) j).coeff k.toNat\nbut is expected to have type\n  (0 : \u211d) < (Int.castRingHom \u211d) ((rowHMFFD (2 * j + 1) j).coeff k.toNat)\n/Users/sasha/math_gkm/research/MarkovMinimalShapeMDAB.lean:98:58: error: mod_cast has type\n  minCoeffMDAB j (k - 1).toNat * minCoeffMDAB j ((k - 1).toNat + 2) \u2264 minCoeffMDAB j ((k - 1).toNat + 1) ^ 2\nbut is expected to have type\n  (rowHMFFD (2 * j + 1) j).coeff (k - 1).toNat * (rowHMFFD (2 * j + 1) j).coeff ((k - 1).toNat + 2) \u2264\n    (rowHMFFD (2 * j + 1) j).coeff ((k - 1).toNat + 1) ^ 2\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMinimalShapeMDAB": "d671d515cdb21eced86b558f0a1ca1f9579febccf91d8251b8d7a8a74d2eaa7c"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-daba8bcf/MarkovMinimalShapeMDAB.olean",
+    "/Users/sasha/math_gkm/research/MarkovMinimalShapeMDAB.lean"
+  ],
+  "seconds": 77.06833050004207,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
