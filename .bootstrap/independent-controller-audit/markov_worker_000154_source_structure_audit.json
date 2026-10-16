@@ -1,0 +1,595 @@
+{
+  "worker": 154,
+  "request": "9e205206685d4a9cbba612509f4cc95e",
+  "created_at_utc": "2026-10-16T19:06:31.005674+00:00",
+  "historical_status": "completed/return0/structured report, full root unresolved",
+  "scope": "Static archive-first completed154 and explicit named inherited/current counterparts only. No project code/proof/checker/replay/experiment/finalizer execution, mathematical-value recomputation, project edits or research assistance. Active155 excluded; earlier observation windows and153timeout remain final.",
+  "new_modules": [
+    {
+      "module": "MarkovThreeSourceM9E2",
+      "path": "research/MarkovThreeSourceM9E2.lean",
+      "bytes": 3863,
+      "sha256": "45d1d5a04819ebe11b4d0eaa57e0daffb54c660f138c3022fd287a5e06bd4c09",
+      "current_sha256": "45d1d5a04819ebe11b4d0eaa57e0daffb54c660f138c3022fd287a5e06bd4c09",
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "threePathM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_three_pathM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "threeCubicM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "threePolyM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_path_labelsM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_path_polynomialM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_three_cubicM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "ThreeGoalM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "OtherFourM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_three_and_fourM9E2"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovTwoCompleteM8F7",
+        "MarkovThirdAllMF8"
+      ],
+      "theorem_statements": [
+        "theorem source_three_pathM9E2 (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ n r, path=threePathM9E2 n r",
+        "theorem three_path_labelsM9E2 (n : ℕ) (r : Bool) :\n (frame (threePathM9E2 n r)).mid.a=3 ∧\n (frame (threePathM9E2 n r)).mid.b=3*(n+1)+(if r then 1 else 2)",
+        "theorem three_path_polynomialM9E2 (n : ℕ) (r : Bool) :\n (frame (threePathM9E2 n r)).mid.p=threePolyM9E2 (n+1) r",
+        "theorem source_three_cubicM9E2 (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1≤q ∧ (frame path).mid.b=3*q+(if r then 1 else 2) ∧\n   (frame path).mid.p=threePolyM9E2 q r",
+        "theorem root_iff_three_and_fourM9E2 : Conjecture63 ↔ ThreeGoalM9E2 ∧ OtherFourM9E2"
+      ],
+      "definitions_and_abbreviation": [
+        "def threePathM9E2 (n : ℕ) (r : Bool) : List Bool :=\n List.replicate n false ++ [true,r]",
+        "def threeCubicM9E2 {R : Type*} [CommRing R] (s v x y : R) (r : Bool) : R :=\n if r then x^3+v*x*y^2+s*v*y^3 else s*x^3+v*x^2*y+v^2*y^3",
+        "def threePolyM9E2 (q : ℕ) (r : Bool) : BiPoly :=\n threeCubicM9E2 S V (fib6 (q+1)) (fib6 q) r",
+        "def ThreeGoalM9E2 : Prop := ∀ q : ℕ, 1≤q → ∀ r, GlobalLC18 (threePolyM9E2 q r)",
+        "def OtherFourM9E2 : Prop := ∀ path : List Bool, 4≤(frame path).mid.a →\n GlobalLC18 (frame path).mid.p"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCubicRecurrenceM9E2",
+      "path": "research/MarkovCubicRecurrenceM9E2.lean",
+      "bytes": 1588,
+      "sha256": "ff4665b8d9946c4220a6321b868c2ab6f0f8c32ebe868e9c470681a8e765fcc0",
+      "current_sha256": "ff4665b8d9946c4220a6321b868c2ab6f0f8c32ebe868e9c470681a8e765fcc0",
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "cubicOrbitM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "cubeTraceM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "cubeSecondM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "cubic_orbit_recM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "cube_denominator_factorM9E2"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MathGKM.Markov"
+      ],
+      "theorem_statements": [
+        "theorem cubic_orbit_recM9E2 {R : Type*} [CommRing R]\n (f : ℕ → R) (s v c0 c1 c2 c3 : R)\n (h : ∀ n, f (n+2)=s*f (n+1)-v*f n) (n : ℕ) :\n cubicOrbitM9E2 f c0 c1 c2 c3 (n+4)=\n cubeTraceM9E2 s v*cubicOrbitM9E2 f c0 c1 c2 c3 (n+3)-\n cubeSecondM9E2 s v*cubicOrbitM9E2 f c0 c1 c2 c3 (n+2)+\n v^3*cubeTraceM9E2 s v*cubicOrbitM9E2 f c0 c1 c2 c3 (n+1)-\n v^6*cubicOrbitM9E2 f c0 c1 c2 c3 n",
+        "theorem cube_denominator_factorM9E2 {R : Type*} [CommRing R] (s v t : R) :\n 1-cubeTraceM9E2 s v*t+cubeSecondM9E2 s v*t^2-\n   v^3*cubeTraceM9E2 s v*t^3+v^6*t^4=\n (1-v*s*t+v^3*t^2)*(1-(s^3-3*v*s)*t+v^3*t^2)"
+      ],
+      "definitions_and_abbreviation": [
+        "def cubicOrbitM9E2 {R : Type*} [CommRing R] (f : ℕ → R)\n (c0 c1 c2 c3 : R) (n : ℕ) : R :=\n c0*f (n+1)^3+c1*f (n+1)^2*f n+c2*f (n+1)*f n^2+c3*f n^3",
+        "def cubeTraceM9E2 {R : Type*} [CommRing R] (s v : R) : R := s^3-2*v*s",
+        "def cubeSecondM9E2 {R : Type*} [CommRing R] (s v : R) : R :=\n v*s^4-3*v^2*s^2+2*v^3"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThreeSeriesM9E2",
+      "path": "research/MarkovThreeSeriesM9E2.lean",
+      "bytes": 3397,
+      "sha256": "bf1efc88322b26c2a2846fc339ee9f72070b7dbc18f583af2df1a11d33936a70",
+      "current_sha256": "bf1efc88322b26c2a2846fc339ee9f72070b7dbc18f583af2df1a11d33936a70",
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "three_poly_recM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "threeSeriesM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "threeDenomM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "threeNumerM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_series_equationM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_denominator_factorM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_three_seriesM9E2"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovThreeSourceM9E2",
+        "MarkovCubicRecurrenceM9E2"
+      ],
+      "theorem_statements": [
+        "theorem three_poly_recM9E2 (q : ℕ) (r : Bool) :\n threePolyM9E2 (q+4) r=cubeTraceM9E2 S V*threePolyM9E2 (q+3) r-\n cubeSecondM9E2 S V*threePolyM9E2 (q+2) r+\n V^3*cubeTraceM9E2 S V*threePolyM9E2 (q+1) r-V^6*threePolyM9E2 q r",
+        "theorem three_series_equationM9E2 (r : Bool) :\n threeDenomM9E2*threeSeriesM9E2 r=threeNumerM9E2 r",
+        "theorem three_denominator_factorM9E2 : threeDenomM9E2=\n ((1-C V*X)*(1-C (V^2)*X)-C (U*V)*X)*\n ((1-X)*(1-C (V^3)*X)-C (U*(3*(V^2+V+1)+3*U*(V+1)+U^2))*X)",
+        "theorem source_three_seriesM9E2 (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1≤q ∧ (frame path).mid.b=3*q+(if r then 1 else 2) ∧\n   (frame path).mid.p=PowerSeries.coeff q (threeSeriesM9E2 r)"
+      ],
+      "definitions_and_abbreviation": [
+        "def threeSeriesM9E2 (r : Bool) : PowerSeries BiPoly := mk (fun q => threePolyM9E2 q r)",
+        "def threeDenomM9E2 : PowerSeries BiPoly :=\n 1-C (cubeTraceM9E2 S V)*X+C (cubeSecondM9E2 S V)*X^2-\n C (V^3*cubeTraceM9E2 S V)*X^3+C (V^6)*X^4",
+        "def threeNumerM9E2 (r : Bool) : PowerSeries BiPoly :=\n C (threePolyM9E2 0 r)+\n C (threePolyM9E2 1 r-cubeTraceM9E2 S V*threePolyM9E2 0 r)*X+\n C (threePolyM9E2 2 r-cubeTraceM9E2 S V*threePolyM9E2 1 r+\n    cubeSecondM9E2 S V*threePolyM9E2 0 r)*X^2+\n C (threePolyM9E2 3 r-cubeTraceM9E2 S V*threePolyM9E2 2 r+\n    cubeSecondM9E2 S V*threePolyM9E2 1 r-\n    V^3*cubeTraceM9E2 S V*threePolyM9E2 0 r)*X^3"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovQuadraticKernelM9E2",
+      "path": "research/MarkovQuadraticKernelM9E2.lean",
+      "bytes": 3604,
+      "sha256": "a39428fd411f33c7b75c0aaa09724be1e7de8626206db84284b2e03db7dcae74",
+      "current_sha256": "a39428fd411f33c7b75c0aaa09724be1e7de8626206db84284b2e03db7dcae74",
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "quadDenomM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "quadInverseM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "quad_inverseM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "quad_resolventM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "twoGeoCoeffM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_geo_coeffM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "quadCoeffM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "quad_coeffM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_geo_nonnegM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "quad_coeff_nonnegM9E2"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovGeometricM679"
+      ],
+      "theorem_statements": [
+        "theorem quad_inverseM9E2 {R : Type*} [CommRing R] (a b c : R) :\n quadDenomM9E2 a b c*quadInverseM9E2 a b c=1",
+        "theorem quad_resolventM9E2 {R : Type*} [CommRing R] (a b c : R) :\n (1-X*(C c*geoM679 a*geoM679 b))*quadInverseM9E2 a b c=\n geoM679 a*geoM679 b",
+        "theorem two_geo_coeffM9E2 {R : Type*} [CommRing R] (a b : R) (m n : ℕ) :\n PowerSeries.coeff n (geoM679 a^(m+1)*geoM679 b^(m+1))=twoGeoCoeffM9E2 a b m n",
+        "theorem quad_coeffM9E2 {R : Type*} [CommRing R] (a b c : R) (n : ℕ) :\n PowerSeries.coeff n (quadInverseM9E2 a b c)=quadCoeffM9E2 a b c n",
+        "theorem two_geo_nonnegM9E2 (a b : BiPoly) (ha : PolyNonneg16 a)\n (hb : PolyNonneg16 b) (m n : ℕ) : PolyNonneg16 (twoGeoCoeffM9E2 a b m n)",
+        "theorem quad_coeff_nonnegM9E2 (a b c : BiPoly) (ha : PolyNonneg16 a)\n (hb : PolyNonneg16 b) (hc : PolyNonneg16 c) (n : ℕ) :\n PolyNonneg16 (quadCoeffM9E2 a b c n)"
+      ],
+      "definitions_and_abbreviation": [
+        "def quadDenomM9E2 {R : Type*} [CommRing R] (a b c : R) : PowerSeries R :=\n (1-C a*X)*(1-C b*X)-C c*X",
+        "def quadInverseM9E2 {R : Type*} [CommRing R] (a b c : R) : PowerSeries R :=\n invOfUnit (quadDenomM9E2 a b c) 1",
+        "def twoGeoCoeffM9E2 {R : Type*} [CommRing R] (a b : R) (m n : ℕ) : R :=\n ∑ k∈range (n+1), a^k*b^(n-k)*((m+k).choose m:R)*((m+(n-k)).choose m:R)",
+        "def quadCoeffM9E2 {R : Type*} [CommRing R] (a b c : R) (n : ℕ) : R :=\n ∑ m∈range (n+1), c^m*twoGeoCoeffM9E2 a b m (n-m)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThreeTransferM9E2",
+      "path": "research/MarkovThreeTransferM9E2.lean",
+      "bytes": 4049,
+      "sha256": "8a13ca95e1855c114f617a648a86eb4ab9fbcb520567ee1258c4d98031941500",
+      "current_sha256": "8a13ca95e1855c114f617a648a86eb4ab9fbcb520567ee1258c4d98031941500",
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "abbrev",
+          "name": "FourM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "fibPairM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "cubeVecM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "cubeStepM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "cubeStateM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "cube_step_pairM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "cube_state_pairM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_pair_firstM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_pair_secondM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "threeOutputM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_positive_transferM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "cubeFirstM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "cubeSecondStepM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "cubeThirdM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "cube_step_splitM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_three_transferM9E2"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovThreeSourceM9E2"
+      ],
+      "theorem_statements": [
+        "theorem cube_step_pairM9E2 {R : Type*} [CommRing R] (u v x y : R) :\n cubeStepM9E2 u v (cubeVecM9E2 x y)=cubeVecM9E2 ((u+v)*x+y) (u*x+y)",
+        "theorem cube_state_pairM9E2 {R : Type*} [CommRing R] (u v : R) (n : ℕ) :\n cubeStateM9E2 u v n=cubeVecM9E2 (fibPairM9E2 u v n).1 (fibPairM9E2 u v n).2",
+        "theorem fib_pair_firstM9E2 (n : ℕ) : (fibPairM9E2 U V n).1=fib6 n",
+        "theorem fib_pair_secondM9E2 (n : ℕ) :\n (fibPairM9E2 U V n).2=fib6 (n+1)-(U+V)*fib6 n",
+        "theorem three_positive_transferM9E2 (q : ℕ) (r : Bool) :\n threePolyM9E2 q r=threeOutputM9E2 U V r (cubeStateM9E2 U V q)",
+        "theorem cube_step_splitM9E2 {R : Type*} [CommRing R] (u v : R) (z : FourM9E2 R) :\n cubeStepM9E2 u v z=cubeStepM9E2 0 v z+u • cubeFirstM9E2 v z+\n   u^2 • cubeSecondStepM9E2 v z+u^3 • cubeThirdM9E2 z",
+        "theorem source_three_transferM9E2 (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1≤q ∧ (frame path).mid.b=3*q+(if r then 1 else 2) ∧\n   (frame path).mid.p=threeOutputM9E2 U V r (cubeStateM9E2 U V q)"
+      ],
+      "definitions_and_abbreviation": [
+        "abbrev FourM9E2 (R : Type*) := R × R × R × R",
+        "def fibPairM9E2 {R : Type*} [CommRing R] (u v : R) : ℕ → R × R\n | 0 => (1,0)\n | n+1 => let z := fibPairM9E2 u v n\n          ((u+v)*z.1+z.2,u*z.1+z.2)",
+        "def cubeVecM9E2 {R : Type*} [CommRing R] (x y : R) : FourM9E2 R :=\n (x^3,x^2*y,x*y^2,y^3)",
+        "def cubeStepM9E2 {R : Type*} [CommRing R] (u v : R) (z : FourM9E2 R) : FourM9E2 R :=\n ((u+v)^3*z.1+3*(u+v)^2*z.2.1+3*(u+v)*z.2.2.1+z.2.2.2,\n  u*(u+v)^2*z.1+((u+v)^2+2*u*(u+v))*z.2.1+(2*(u+v)+u)*z.2.2.1+z.2.2.2,\n  u^2*(u+v)*z.1+(2*u*(u+v)+u^2)*z.2.1+((u+v)+2*u)*z.2.2.1+z.2.2.2,\n  u^3*z.1+3*u^2*z.2.1+3*u*z.2.2.1+z.2.2.2)",
+        "def cubeStateM9E2 {R : Type*} [CommRing R] (u v : R) : ℕ → FourM9E2 R\n | 0 => (1,0,0,0)\n | n+1 => cubeStepM9E2 u v (cubeStateM9E2 u v n)",
+        "def threeOutputM9E2 {R : Type*} [CommRing R] (u v : R) (r : Bool) (z : FourM9E2 R) : R :=\n if r then\n ((u+v)^3+v*(2*(u+v)+1))*z.1+(3*(u+v)^2+v)*z.2.1+\n   3*(u+v)*z.2.2.1+z.2.2.2\n else\n ((u+v+1)*(u+v)^3+v*(u+v)^2+v^2)*z.1+\n (3*(u+v+1)*(u+v)^2+2*v*(u+v))*z.2.1+\n (3*(u+v+1)*(u+v)+v)*z.2.2.1+(u+v+1)*z.2.2.2",
+        "def cubeFirstM9E2 {R : Type*} [CommRing R] (v : R) (z : FourM9E2 R) : FourM9E2 R :=\n (3*v^2*z.1+6*v*z.2.1+3*z.2.2.1,\n  v^2*z.1+4*v*z.2.1+3*z.2.2.1,2*v*z.2.1+3*z.2.2.1,3*z.2.2.1)",
+        "def cubeSecondStepM9E2 {R : Type*} [CommRing R] (v : R) (z : FourM9E2 R) : FourM9E2 R :=\n (3*v*z.1+3*z.2.1,2*v*z.1+3*z.2.1,v*z.1+3*z.2.1,3*z.2.1)",
+        "def cubeThirdM9E2 {R : Type*} [CommRing R] (z : FourM9E2 R) : FourM9E2 R :=\n (z.1,z.1,z.1,z.1)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThreeKernelM9E2",
+      "path": "research/MarkovThreeKernelM9E2.lean",
+      "bytes": 4194,
+      "sha256": "0fe078b0833a5624c3debdc570a73cf85b80e29e396e454ce36197db487c0a09",
+      "current_sha256": "0fe078b0833a5624c3debdc570a73cf85b80e29e396e454ce36197db487c0a09",
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "threePerturbM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "threeInverseM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "threeKernelM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_denominator_inverseM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_inverse_coeffM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_series_solutionM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "threeExplicitM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_explicit_formulaM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_kernel_nonnegM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_three_explicitM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "ThreeKernelLCM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_three_kernelM9E2"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovThreeSeriesM9E2",
+        "MarkovQuadraticKernelM9E2"
+      ],
+      "theorem_statements": [
+        "theorem three_denominator_inverseM9E2 : threeDenomM9E2*threeInverseM9E2=1",
+        "theorem three_inverse_coeffM9E2 (q : ℕ) :\n PowerSeries.coeff q threeInverseM9E2=threeKernelM9E2 q",
+        "theorem three_series_solutionM9E2 (r : Bool) :\n threeSeriesM9E2 r=threeNumerM9E2 r*threeInverseM9E2",
+        "theorem three_explicit_formulaM9E2 (q : ℕ) (r : Bool) :\n threePolyM9E2 q r=threeExplicitM9E2 q r",
+        "theorem three_kernel_nonnegM9E2 (q : ℕ) : PolyNonneg16 (threeKernelM9E2 q)",
+        "theorem source_three_explicitM9E2 (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1≤q ∧ (frame path).mid.b=3*q+(if r then 1 else 2) ∧\n   ∀ i j, coeff (frame path).mid.p i j=coeff (threeExplicitM9E2 q r) i j",
+        "theorem root_iff_three_kernelM9E2 : Conjecture63 ↔ ThreeKernelLCM9E2 ∧ OtherFourM9E2"
+      ],
+      "definitions_and_abbreviation": [
+        "def threePerturbM9E2 : BiPoly := U*(3*(V^2+V+1)+3*U*(V+1)+U^2)",
+        "def threeInverseM9E2 : PowerSeries BiPoly :=\n quadInverseM9E2 V (V^2) (U*V)*quadInverseM9E2 1 (V^3) threePerturbM9E2",
+        "def threeKernelM9E2 (q : ℕ) : BiPoly :=\n ∑ k∈range (q+1),quadCoeffM9E2 V (V^2) (U*V) k*\n   quadCoeffM9E2 1 (V^3) threePerturbM9E2 (q-k)",
+        "def threeExplicitM9E2 (q : ℕ) (r : Bool) : BiPoly :=\n ∑ k∈range (q+1),PowerSeries.coeff k (threeNumerM9E2 r)*threeKernelM9E2 (q-k)",
+        "def ThreeKernelLCM9E2 : Prop := ∀ q : ℕ, 1≤q → ∀ r,\n GlobalLC18 (threeExplicitM9E2 q r)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThreeRawM9E2",
+      "path": "research/MarkovThreeRawM9E2.lean",
+      "bytes": 4730,
+      "sha256": "bfe76047c74ff39107238e49a0238f7d574a5058882edd8e74f5e43ee715f71b",
+      "current_sha256": "bfe76047c74ff39107238e49a0238f7d574a5058882edd8e74f5e43ee715f71b",
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "fibRawM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_raw_formulaM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "biConvM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "coeff_productM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "threeProductRawM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_product_rawM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "shiftRawM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "coeff_monomial_productM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "addSRawM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "coeff_S_productM9E2"
+        },
+        {
+          "kind": "def",
+          "name": "threeRawM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_raw_formulaM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_three_rawM9E2"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovThreeSourceM9E2"
+      ],
+      "theorem_statements": [
+        "theorem fib_raw_formulaM9E2 (n i j : ℕ) : coeff (fib6 n) i j=fibRawM9E2 n i j",
+        "theorem coeff_productM9E2 (P Q : BiPoly) (i j : ℕ) :\n coeff (P*Q) i j=biConvM9E2 (coeff P) (coeff Q) i j",
+        "theorem three_product_rawM9E2 (a b c i j : ℕ) :\n coeff (fib6 a*fib6 b*fib6 c) i j=threeProductRawM9E2 a b c i j",
+        "theorem coeff_monomial_productM9E2 (a b : ℕ) (P : BiPoly) (i j : ℕ) :\n coeff (U^a*V^b*P) i j=shiftRawM9E2 a b (coeff P) i j",
+        "theorem coeff_S_productM9E2 (P : BiPoly) (i j : ℕ) :\n coeff (S*P) i j=addSRawM9E2 (coeff P) i j",
+        "theorem three_raw_formulaM9E2 (q : ℕ) (r : Bool) (i j : ℕ) :\n coeff (threePolyM9E2 q r) i j=threeRawM9E2 q r i j",
+        "theorem source_three_rawM9E2 (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1≤q ∧ (frame path).mid.b=3*q+(if r then 1 else 2) ∧\n   ∀ i j, coeff (frame path).mid.p i j=threeRawM9E2 q r i j"
+      ],
+      "definitions_and_abbreviation": [
+        "def fibRawM9E2 (n i j : ℕ) : ℤ :=\n if i=0 then (if j=n then 1 else 0) else\n if i+j≤n then ((n-j-1).choose (i-1):ℤ)*((i+j).choose j:ℤ) else 0",
+        "def biConvM9E2 (f g : ℕ → ℕ → ℤ) (i j : ℕ) : ℤ :=\n ∑ a∈range (i+1), ∑ b∈range (j+1), f a b*g (i-a) (j-b)",
+        "def threeProductRawM9E2 (a b c : ℕ) : ℕ → ℕ → ℤ :=\n biConvM9E2 (biConvM9E2 (fibRawM9E2 a) (fibRawM9E2 b)) (fibRawM9E2 c)",
+        "def shiftRawM9E2 (a b : ℕ) (f : ℕ → ℕ → ℤ) (i j : ℕ) : ℤ :=\n if a ≤ i ∧ b ≤ j then f (i-a) (j-b) else 0",
+        "def addSRawM9E2 (f : ℕ → ℕ → ℤ) (i j : ℕ) : ℤ :=\n shiftRawM9E2 1 0 f i j+shiftRawM9E2 0 1 f i j+f i j",
+        "def threeRawM9E2 (q : ℕ) (r : Bool) (i j : ℕ) : ℤ :=\n if r then\n threeProductRawM9E2 (q+1) (q+1) (q+1) i j+\n shiftRawM9E2 0 1 (threeProductRawM9E2 (q+1) q q) i j+\n addSRawM9E2 (shiftRawM9E2 0 1 (threeProductRawM9E2 q q q)) i j\n else\n addSRawM9E2 (threeProductRawM9E2 (q+1) (q+1) (q+1)) i j+\n shiftRawM9E2 0 1 (threeProductRawM9E2 (q+1) (q+1) q) i j+\n shiftRawM9E2 0 2 (threeProductRawM9E2 q q q) i j"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThreeArithmeticM9E2",
+      "path": "research/MarkovThreeArithmeticM9E2.lean",
+      "bytes": 740,
+      "sha256": "4edd87d090f2d76b80c2a24bc222776432473289ee31600a3821f3934f546ee8",
+      "current_sha256": "4edd87d090f2d76b80c2a24bc222776432473289ee31600a3821f3934f546ee8",
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "ThreeRawLCM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_three_arithmeticM9E2"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovThreeRawM9E2"
+      ],
+      "theorem_statements": [
+        "theorem root_iff_three_arithmeticM9E2 : Conjecture63 ↔ ThreeRawLCM9E2 ∧ OtherFourM9E2"
+      ],
+      "definitions_and_abbreviation": [
+        "def ThreeRawLCM9E2 : Prop := ∀ q : ℕ, 1≤q → ∀ r,\n (∀ i j, threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤\n   threeRawM9E2 q r (i+1) j^2) ∧\n (∀ i j, threeRawM9E2 q r i j*threeRawM9E2 q r i (j+2) ≤\n   threeRawM9E2 q r i (j+1)^2) ∧\n (∀ i j, threeRawM9E2 q r i (j+2)*threeRawM9E2 q r (i+2) j ≤\n   threeRawM9E2 q r (i+1) (j+1)^2)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThreeObstructionM9E2",
+      "path": "research/MarkovThreeObstructionM9E2.lean",
+      "bytes": 1728,
+      "sha256": "04bb8bd88ecf2c3521a7f7492633f7bf051d9d3189d5b805c680d13d8d673322",
+      "current_sha256": "04bb8bd88ecf2c3521a7f7492633f7bf051d9d3189d5b805c680d13d8d673322",
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "three_five_valuesM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_five_valid_lcM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_mixed_valuesM9E2"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_mixed_failureM9E2"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovThreeRawM9E2"
+      ],
+      "theorem_statements": [
+        "theorem three_five_valuesM9E2 :\n coeff (frame [true,false]).mid.p 0 5=1 ∧\n coeff (frame [true,false]).mid.p 1 5=14 ∧\n coeff (frame [true,false]).mid.p 2 5=21",
+        "theorem three_five_valid_lcM9E2 :\n InPolygon 3 5 0 5 ∧ InPolygon 3 5 1 5 ∧ InPolygon 3 5 2 5 ∧\n coeff (frame [true,false]).mid.p 0 5*coeff (frame [true,false]).mid.p 2 5 ≤\n coeff (frame [true,false]).mid.p 1 5^2",
+        "theorem three_mixed_valuesM9E2 :\n addSRawM9E2 (threeProductRawM9E2 2 2 2) 0 5=0 ∧\n addSRawM9E2 (threeProductRawM9E2 2 2 2) 1 5=9 ∧\n addSRawM9E2 (threeProductRawM9E2 2 2 2) 2 5=21 ∧\n shiftRawM9E2 0 2 (threeProductRawM9E2 1 1 1) 0 5=1 ∧\n shiftRawM9E2 0 2 (threeProductRawM9E2 1 1 1) 1 5=0 ∧\n shiftRawM9E2 0 2 (threeProductRawM9E2 1 1 1) 2 5=0",
+        "theorem three_mixed_failureM9E2 :\n let f := addSRawM9E2 (threeProductRawM9E2 2 2 2)\n let g := shiftRawM9E2 0 2 (threeProductRawM9E2 1 1 1)\n 2*f 1 5*g 1 5 < f 0 5*g 2 5+g 0 5*f 2 5"
+      ],
+      "definitions_and_abbreviation": [],
+      "forbidden_tokens": []
+    }
+  ],
+  "accepted_counts": {
+    "def": 35,
+    "theorem": 43,
+    "abbrev": 1
+  },
+  "source_classification": "For every actual frame path with a=3, split_first_true rules out pure false spinea1. Remaining rest has b3 and reduced a1 or2; path injectivity identifies [false] or[true]. Thus path=false^n++[true,r]. q=n+1>=1, true label3/(3q+1),false3/(3q+2). Conversely every q>=1/r constructed. No denominator cap, ratio or additional shape hypothesis. q0 is an auxiliary algebraic extension only.",
+  "cubic_scope": "x=fib6(q+1),y=fib6(q); true=x^3+V*x*y^2+S*V*y^3; false=S*x^3+V*x^2*y+V^2*y^3. Actual source equality follows from protected frame recurrence/spine and inherited exact Cassini identity, not a conjectural correction. No scale/division/normalization. Positive means visible nonnegative polynomial construction; no new separate general PolyNonneg theorem for the cubic or transfer is counted.",
+  "raw_scope": "fibRaw(n,i,j) at i0 equals indicator j=n; at i>0 and i+j<=n uses integercast C(n-j-1,i-1)C(i+j,j), else0. Guard justifies natural subtractions includingn0. biConv rectangular ranges0..i,0..j exactly polynomial productcoeff by two antidiagonal reindexes. threeProduct is doubleconvolution; shift(a,b) checks both lowerbounds before subtraction; addS=shift10+shift01+identity. Cubic branches map exactly, every naturalq/i/j andzero tails, no positivity premise or discarded boundary. Source adapter restricts q>=1 only.",
+  "transfer_scope": "Generic CommRing identity: fibPair0=(1,0), next=((u+v)f+g,u*f+g). first=fib6q; second=fib6(q+1)-(U+V)fib6q, not asserted to be fib6(q-1). cubeState0=(1,0,0,0); cubeStep realizes cubeVec(f,g). Displayed step/output entries are syntactically nonnegative polynomial combinations; identity has no orderedring premise and is not an LC theorem. Udegree split0,1,2,3 exact and source adapterq>=1.",
+  "recurrence_series_scope": "Generic cubicOrbit in consecutivef with explicit recurrence premise yields order4 identity; source instantiates inheritedfib_rec6. e1=S^3-2VS,e2=VS^4-3V^2S^2+2V^3,e3=V^3e1,e4=V^6. Formal series q0onward includes auxiliaryq0. D*G=N, N explicit initialdegree3 using valuesq0..3; q0..3 separately handled andq>=4recurrence. Dfactor exact. Formal power series, no analytic convergence/evaluation or rationalfunction informaldivision.",
+  "quadratic_kernel_scope": "quadDenom=(1-Ca X)(1-Cb X)-Cc X; invOfUnit with unit1, constantcoeff proof supplied. GenericCommRing finitecoef=sum m0..n c^m sum k0..n-m a^k b^(n-m-k) C(m+k,m)C(n-k,m). Inherited finite_series_coeff drops tail by degree and usesrangebound before natural subtraction. Nonnegativecoeff theorems require PolyNonneg16(a,b,c); special threePerturb,U,Vpowers meet them explicitly.",
+  "signed_seed_scope": "threeKernel convolution twoquadratic inverses nonnegative for everyq. Source explicit=sum k0..q coeff_k(N_r)*K_(q-k), exact. N_r is signed and no PolyNonneg seed statement or LC summation theorem is proved. Inversekernel vertical[1,1,2] remains experiment and removed failed build theorem, not accepted formalresult nor rootrefutation.",
+  "root_scope": "ThreeGoal iff sourcea3 allGlobalLC, ThreeRawLC literalallnaturalH/V/D, ThreeKernelLC of signedseedconvolution; each exactrootiff with OtherFour(allpaths a>=4 GlobalLC). Bothconjuncts unproved. Inherited152 rootiffOtherSources(a>=3) preserves numerator1/2, endpoints0/1and1/1. global_iff_weak uses actual outsidepolygonzeros, originalguards ab<=bi+aj andi+j<=a+b-1 unchanged. Directions H(i,j),(i1,j),(i2,j),V(i,j),(i,j1),(i,j2),D(i,j2),(i1,j1),(i2,j). No sourceLC gain from representation alone.",
+  "obstruction_scope": "Accepted sourcepath[true,false]=threePath0false labels3/5; rawHvalues1,14,21 at(0,5),(1,5),(2,5), allthreepolygonguards and LC formally checked. First/third cubic summands have0,9,21 and1,0,0, mixedcomparisonstrictfails. Middle summand retained in source; pairwisesummandfailure does not refute rawLC. These exact constants read from accepted source, never auditorcomputed.",
+  "excluded_version_scope": "Timedout obstruction snapshot includes two extra kernel boundary/verticalfailure declarations and four surviving source/mixed statements; final replaced numericproofs by ordinary decide and removed kernel declarations. No receipt for oldbytes upgraded by same names in final. Timedoutkernelassembly later changed/rebuilt; allfinal9modulesaccepted, no pendingfinalmodule.",
+  "literature_scope": "Read worker retained source observations only; no auditor web search or externaltheorem premise. GAP factorization is a recorded symbolic experiment, not imported Lean theorem.",
+  "mathematical_values_recomputed": false,
+  "static_parser_refinement": "Before sealing, theorem-header extraction changed to the proof delimiter := by, preserving internal let assignments. Only three_mixed_failureM9E2 required this header repair; exact statement supplied from already-read completed source. No project reread or mathematical computation."
+}

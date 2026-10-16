@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovThreeRawM9E2.lean:41:55: error: unsolved goals\nP Q : BiPoly\ni j a : \u2115\nha : a \u2208 range i.succ\n\u22a2 \u2211 k \u2208 range j.succ,\n      (Polynomial.coeff P (a, i - a).1).coeff (k, j - k).1 * (Polynomial.coeff Q (a, i - a).2).coeff (k, j - k).2 =\n    \u2211 b \u2208 range (j + 1), coeff P a b * coeff Q (i - a) (j - b)\n/Users/sasha/math_gkm/research/MarkovThreeRawM9E2.lean:59:7: error: unexpected token '\u2227'; expected term\n/Users/sasha/math_gkm/research/MarkovThreeRawM9E2.lean:68:15: error: Application type mismatch: The argument\n  a\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  Type ?u.63\nof sort `Type (?u.63 + 1)` in the application\n  @InitialSeg a\n/Users/sasha/math_gkm/research/MarkovThreeRawM9E2.lean:69:1: error: invalid occurrence of `\u00b7` notation, it must be surrounded by parentheses (e.g. `(\u00b7 + 1)`)\n/Users/sasha/math_gkm/research/MarkovThreeRawM9E2.lean:70:1: error: unsolved goals\ncase pos\na b : \u2115\nP : BiPoly\ni j : \u2115\nhe : U ^ a * V ^ b * P = X ^ a * (C (X ^ b) * P)\nhi : sorry\n\u22a2 (if a \u2264 i then X ^ b * Polynomial.coeff P (i - a) else 0).coeff j = sorry ()\n/Users/sasha/math_gkm/research/MarkovThreeRawM9E2.lean:62:57: error: unsolved goals\ncase neg\na b : \u2115\nP : BiPoly\ni j : \u2115\nhe : U ^ a * V ^ b * P = X ^ a * (C (X ^ b) * P)\nhi : \u00acsorry\n\u22a2 (if a \u2264 i then X ^ b * Polynomial.coeff P (i - a) else 0).coeff j = sorry\n/Users/sasha/math_gkm/research/MarkovThreeRawM9E2.lean:70:9: warning: This simp argument is unused:\n  hi\n\nHint: Omit it from the simp argument list.\n  simp \u0335[\u0335h\u0335i\u0335]\u0335\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovThreeRawM9E2.lean:101:17: warning: declaration uses `sorry`\n/Users/sasha/math_gkm/research/MarkovThreeRawM9E2.lean:91:8: warning: declaration uses `sorry`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovThreeRawM9E2": "e49f2559eb5c9dbc7b7ef378d6fc39eef1529378a972bddf0cd3e3f5d42fc264"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-9e205206/MarkovThreeRawM9E2.olean",
+    "/Users/sasha/math_gkm/research/MarkovThreeRawM9E2.lean"
+  ],
+  "seconds": 28.669094584009144,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

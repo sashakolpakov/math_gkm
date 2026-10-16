@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovThreeRawM9E2.lean:70:1: error: unsolved goals\ncase pos\na b : \u2115\nP : BiPoly\ni j : \u2115\nhe : U ^ a * V ^ b * P = X ^ a * (C (X ^ b) * P)\nhi : a \u2264 i\n\u22a2 (if b \u2264 j then (Polynomial.coeff P (i - a)).coeff (j - b) else 0) =\n    if a \u2264 i \u2227 b \u2264 j then coeff P (i - a) (j - b) else 0\n/Users/sasha/math_gkm/research/MarkovThreeRawM9E2.lean:70:24: warning: This simp argument is unused:\n  true_and\n\nHint: Omit it from the simp argument list.\n  simp only [if_pos hi,t\u0335r\u0335u\u0335e\u0335_\u0335a\u0335n\u0335d\u0335,\u0335 \u0332Polynomial.coeff_X_pow_mul']\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovThreeRawM9E2": "aae61a79b17956569a315b707c66e1dae8cf15a7442e82c0cf12079cc1bce2f3"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-9e205206/MarkovThreeRawM9E2.olean",
+    "/Users/sasha/math_gkm/research/MarkovThreeRawM9E2.lean"
+  ],
+  "seconds": 13.089368875022046,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

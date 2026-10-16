@@ -1,0 +1,89 @@
+{
+  "request_id": "9e205206685d4a9cbba612509f4cc95e",
+  "inherited": {
+    "RESUME.json": true,
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": true,
+    "evidence/independent-markov/markov_residual_scope_audit.md": true,
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": true,
+    "evidence/markov/research-run/state.json": true,
+    "requests/markov-next.json": true
+  },
+  "latest_manifest": {
+    "count": 108,
+    "mismatches": []
+  },
+  "interrupted": {
+    "events_sha256": "b0ecf8b4b489816a42291704d14cfaf1ebfff6785a8d092076be0e809c63fa0b",
+    "events_count": 253,
+    "last_events": [
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_126",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc '/opt/homebrew/bin/python3 research/validate_a24fe23d.py replay 45 MarkovPellRatioMA24 MarkovPellOrderMA24 MarkovPellRowMA24 MarkovPellHalfMA24 MarkovPellParameterMA24 MarkovPellDiagonalStepMA24 MarkovPellReverseTwoMA24 MarkovPellShiftObstructionMA24 MarkovPellMidpointReductionMA24 MarkovPellBandMA24'",
+          "aggregated_output": "{\"receipt\": \"evidence/markov-a24fe23d/replay-1792175217089511000.json\", \"returncode\": 0, \"timeout\": false, \"seconds\": 29.4127783330041, \"stdout\": \"\"}\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_125",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc '/opt/homebrew/bin/python3 research/audit_a24fe23d.py'",
+          "aggregated_output": "{\"receipt\": \"evidence/markov-a24fe23d/build-1792175215907280000.json\", \"returncode\": 0, \"timeout\": false, \"seconds\": 30.880567665968556, \"stdout\": \"\"}\n{\"audit\": \"MarkovAudit1792175215907119000MA24\", \"closures\": 30, \"permitted\": true}\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      },
+      {
+        "type": "item.started",
+        "item": {
+          "id": "item_129",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc '/opt/homebrew/bin/python3 research/finalize_a24fe23d.py'",
+          "aggregated_output": "",
+          "exit_code": null,
+          "status": "in_progress"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_129",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc '/opt/homebrew/bin/python3 research/finalize_a24fe23d.py'",
+          "aggregated_output": "{\"validation\": \"local builds, joint isolated kernel replay and explicit axiom closure audit passed\", \"modules\": 10, \"theorem_closures\": 30, \"final_check\": {\"snapshot_count\": 6438, \"inherited_input_count\": 6437, \"changed_inherited_inputs\": [], \"self_owned_initial_paths\": [\"research/setup_a24fe23d.py\"], \"changed_self_owned\": [], \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\", \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\", \"stop_present\": false, \"unsuccessful_builds\": 12, \"completion\": null}, \"artifacts\": 108}\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      }
+    ],
+    "receipt": {
+      "classification": "live_gpt-6-astra_experimental_research",
+      "elapsed_seconds": 1847.2906019687653,
+      "evidence": "bounded_worker_observation",
+      "finished": 1792175313.136317,
+      "mathematical_resolution": false,
+      "outcome": "timeout",
+      "price": null,
+      "price_note": "No provider invoice available; no invented monetary cost.",
+      "report": null,
+      "request_id": "a24fe23da04d441088b5fe10c2c4681e",
+      "returncode": 0,
+      "started": 1792173465.845715,
+      "transport": "live",
+      "usage": []
+    },
+    "change_count": 110,
+    "change_mismatches": []
+  },
+  "reconciliation": "Worker 153 timed out after successful finalizer; validation and 108-artifact manifest exist. Its ten accepted modules are distinguished from three unaccepted drafts. No side effect replayed. Earlier midpoint failure already present in MarkovPellObstructions9a72; latest worker rediscovered it.",
+  "capabilities": {
+    "scratch": "Denied by higher-priority policy; no access attempted; unique research/evidence paths used.",
+    "sage": null,
+    "gap": "/opt/homebrew/bin/gap"
+  }
+}
