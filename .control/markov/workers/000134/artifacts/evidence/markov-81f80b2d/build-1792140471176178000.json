@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovHighCone1ExpandM81F.lean:8:18: error: Tactic `unfold` failed to unfold `highHM81F` in\n  9 *\n      (8 * (2 * ((2 * (k + l + 2) + q) / 3) - (k + l + 2)) * l * (l - 1) * (l - 2) +\n            (9 * ((2 * (k + l + 2) + q) / 3) ^ 2 - 5 * ((2 * (k + l + 2) + q) / 3) + 2) * k * l * (l - 1) +\n          (6 * ((2 * (k + l + 2) + q) / 3) ^ 2 + 6 * ((2 * (k + l + 2) + q) / 3) * (k + l + 2) -\n                    16 * ((2 * (k + l + 2) + q) / 3) +\n                  4) *\n                k *\n              (k - 1) *\n            l +\n        ((2 * (k + l + 2) + q) / 3 + k + l + 1) * ((2 * (k + l + 2) + q) / 3 + k + l) * k * (k - 1) * (k - 2)) =\n    c1j0M81F k l + c1j1M81F k l * q ^ 1 + c1j2M81F k l * q ^ 2\n/Users/sasha/math_gkm/research/MarkovHighCone1ExpandM81F.lean:11:8: error: Tactic `unfold` failed to unfold `highJM81F` in\n  27 *\n      highHM81F ((2 * (k + l + 2) + q) / 3) k l (2 * ((2 * (k + l + 2) + q) / 3) - (k + l + 2))\n        (k + l + 2 - (2 * (k + l + 2) + q) / 3) q =\n    c1h0M81F k l + c1h1M81F k l * q ^ 1 + c1h2M81F k l * q ^ 2 + c1h3M81F k l * q ^ 3\n/Users/sasha/math_gkm/research/MarkovHighCone1ExpandM81F.lean:14:8: error: Tactic `unfold` failed to unfold `highJM81F` in\n  81 *\n      highIM81F ((2 * (k + l + 2) + q) / 3) k l (2 * ((2 * (k + l + 2) + q) / 3) - (k + l + 2))\n        (k + l + 2 - (2 * (k + l + 2) + q) / 3) q 0 (k + l + 2 - (2 * (k + l + 2) + q) / 3) 0 =\n    c1i0M81F k l + c1i1M81F k l * q ^ 1 + c1i2M81F k l * q ^ 2 + c1i3M81F k l * q ^ 3 + c1i4M81F k l * q ^ 4\n",
+  "stderr": "",
+  "modules": {
+    "MarkovHighCone1ExpandM81F": "42829b4887cfa6793473eb52e9bbfdf8d843568bb05d08b83445ffb218e5f006"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-81f80b2d/MarkovHighCone1ExpandM81F.olean",
+    "/Users/sasha/math_gkm/research/MarkovHighCone1ExpandM81F.lean"
+  ],
+  "seconds": 59.058554415998515,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

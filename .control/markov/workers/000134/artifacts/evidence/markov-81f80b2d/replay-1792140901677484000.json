@@ -1,0 +1,72 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovFallingM81F\ncollected MarkovFallingSeed3M81F\ncollected MarkovFallingSeed5M81F\ncollected MarkovFallingSeed7M81F\ncollected MarkovHighDefsM81F\ncollected MarkovHighSourceM81F\ncollected MarkovHighScalingM81F\ncollected MarkovHighTransferM81F\nreplay union of 8 modules over 6 inherited imports\nisolation checked for 19 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovFallingM81F": "9191f674e2748e9351997a13ebfe72e565337197775e0fd86f4a14dab71d6678",
+    "MarkovFallingSeed3M81F": "883582a3c4fb8192a09bd7d3cdb5faba67231f3f6b4ebd8bbcbf18aa34b43ed3",
+    "MarkovFallingSeed5M81F": "0eddd2d4ba40c9428980c46c18285bf55f1968dc1effc9cd3d1c3e6e8c964718",
+    "MarkovFallingSeed7M81F": "7d9ec915f248e6b68390631115a5614cc8fcea7896ce0efc046fda171edd188f",
+    "MarkovHighDefsM81F": "12365df58a56dac6df14b0b5d5316a8c4939098bd7097f4f30a194d0207f8a55",
+    "MarkovHighSourceM81F": "1ac6537dfcff3fd2211d7f393af90ff5b143efa3848723cc6323be0320a1d004",
+    "MarkovHighScalingM81F": "78fed7a0ef48795d0687d352ef9193bb5865d39a85064e31c535bcecea19b6a2",
+    "MarkovHighTransferM81F": "104d2a15b49647bc80cc13d8828d2ef6b37df9b425963cde2ec9b57fb83c408e"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM81F.lean",
+    "MarkovFallingM81F",
+    "MarkovFallingSeed3M81F",
+    "MarkovFallingSeed5M81F",
+    "MarkovFallingSeed7M81F",
+    "MarkovHighDefsM81F",
+    "MarkovHighSourceM81F",
+    "MarkovHighScalingM81F",
+    "MarkovHighTransferM81F"
+  ],
+  "seconds": 81.32298195798649,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "1e10c9e3856b15a87fc742608fc736945764af682bb6d3157c97c3dfcd834f2d",
+  "declared_names": {
+    "MarkovFallingM81F": [
+      "fallM81F",
+      "fall_zeroM81F",
+      "fall_succM81F",
+      "falling_chooseM81F",
+      "falling_monomialM81F"
+    ],
+    "MarkovFallingSeed3M81F": [
+      "falling_seed3M81F"
+    ],
+    "MarkovFallingSeed5M81F": [
+      "falling_seed5M81F"
+    ],
+    "MarkovFallingSeed7M81F": [
+      "falling_seed7M81F"
+    ],
+    "MarkovHighDefsM81F": [
+      "highJM81F",
+      "highHM81F",
+      "highIM81F",
+      "highGapM81F"
+    ],
+    "MarkovHighSourceM81F": [
+      "high_second_coeffM81F",
+      "high_third_coeffM81F",
+      "high_fourth_coeffM81F"
+    ],
+    "MarkovHighScalingM81F": [
+      "high_seed2_scaledM81F",
+      "high_seed3_scaledM81F",
+      "high_seed4_scaledM81F"
+    ],
+    "MarkovHighTransferM81F": [
+      "high_transferM81F"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed M81F; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

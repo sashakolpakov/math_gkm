@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovHighSourceM81F.lean:23:67: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  c \u2265 0\n  b \u2265 0\n  a \u2265 5\nwhere\n a := \u2191(frame path).mid.b\n b := \u2191k\n c := \u2191((frame path).mid.a - 1)\n/Users/sasha/math_gkm/research/MarkovHighSourceM81F.lean:23:1: error: Type mismatch: After simplification, term\n  hc\n has type\n  2 * \u2191(coeff (frame path).mid.p (k + ((frame path).mid.a - 1)) 2) =\n    ((1 + X) ^ ((frame path).mid.b - 5) *\n          stripSecondSeedMCE8 \u2191(frame path).mid.a \u2191(frame path).mid.b\n            \u2191(2 * (frame path).mid.a - (frame path).mid.b)).coeff\n      k\nbut is expected to have type\n  2 * \u2191(coeff (frame path).mid.p ((frame path).mid.a - 1 + k) 2) =\n    ((1 + X) ^ ((frame path).mid.b - 5) *\n          stripSecondSeedMCE8 \u2191(frame path).mid.a \u2191(frame path).mid.b\n            \u2191(2 * (frame path).mid.a - (frame path).mid.b)).coeff\n      k\n/Users/sasha/math_gkm/research/MarkovHighSourceM81F.lean:40:69: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  c \u2265 0\n  b \u2265 0\n  a \u2265 7\nwhere\n a := \u2191(frame path).mid.b\n b := \u2191k\n c := \u2191((frame path).mid.a - 2)\n/Users/sasha/math_gkm/research/MarkovHighSourceM81F.lean:40:1: error: Type mismatch: After simplification, term\n  hc\n has type\n  6 * \u2191(coeff (frame path).mid.p (k + 1 + ((frame path).mid.a - 2)) 3) =\n    ((1 + X) ^ ((frame path).mid.b - 7) *\n          h3seedM13D \u2191(frame path).mid.a \u2191(frame path).mid.b \u2191(2 * (frame path).mid.a - (frame path).mid.b)\n            \u2191(min ((frame path).mid.b - (frame path).mid.a) (3 * (frame path).mid.a - (frame path).mid.b))\n            \u2191(3 * (frame path).mid.a - 2 * (frame path).mid.b)).coeff\n      (k + 1)\nbut is expected to have type\n  6 * \u2191(coeff (frame path).mid.p ((frame path).mid.a - 1 + k) 3) =\n    ((1 + X) ^ ((frame path).mid.b - 7) *\n          h3seedM13D \u2191(frame path).mid.a \u2191(frame path).mid.b \u2191(2 * (frame path).mid.a - (frame path).mid.b)\n            \u2191(min ((frame path).mid.b - (frame path).mid.a) (3 * (frame path).mid.a - (frame path).mid.b))\n            \u2191(3 * (frame path).mid.a - 2 * (frame path).mid.b)).coeff\n      (k + 1)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovHighSourceM81F": "53dada8e1889912dc68dfa8c042923f12c6b1f6bdc9fcd5d3841d03a5d631c87"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-81f80b2d/MarkovHighSourceM81F.olean",
+    "/Users/sasha/math_gkm/research/MarkovHighSourceM81F.lean"
+  ],
+  "seconds": 30.1941250829841,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,4403 @@
+{
+  "worker": 134,
+  "request": "81f80b2ddbc44c6e86d8079cfc7a8e81",
+  "created_at_utc": "2026-10-16T09:23:36.810937+00:00",
+  "historical_status": "TIMEOUT/nullreport, partial validation; no upgrade from finalizer or successor",
+  "scope": {
+    "unbounded_identity": "falling_monomialM81F: naturalk,l,d,r withr<=d,d<=k+l;F_d(k+l)*coeff((1+X)^(k+l-d)X^r,k)=choose(k+l,k)F_r(k)F_(d-r)(l). r>k usescoefficientzeroanddescFactorialzero;d-r>l useschoosezero;factorialcancellationonlyafterguards. dnotboundedby7;noLCconclusion. Falling_choosehelperaddsr<=k.",
+    "seed_instances": "Degree3/5/7linearcoefficientidentities forarbitraryreal c_r, withdegree<=k+l; no coefficientpositivity. Applicationsshift(k,l)to(k+1,l-1),(k+2,l-2)andretainl>=2,N>=7. bc_lower6multiplicativebinomialsteps avoiddivision.",
+    "source_indices": "i=a-1+k;secondidentitya>=1actual,b>=5,coefficientk;thirdactuala>=2,b>=7,coefficientk+1;fourthactuala>=3,b>=9,coefficientk+2. Usesexistingrowformulas,swapandInt->Realmap,guardednaturalmonomialshifts. Unlike133cancellation,thisfourthidentityexplicitlyrequiresa>=3.",
+    "scaling": "Allthree source_high*_scaled shareactuala>=3,b>=9,b=k+l+2,l>=2,naturalk,l,NOslopehypothesis. N=k+l,C=chooseNk;2F3(N)c2=CJ;6F5(N)(k+1)c3=ClH;24F7(N)(k+1)(k+2)c4=Cl(l-1)I. Statistics remainactualnaturals q=(2a-b)+,t=min(b-a,(3a-b)+),u=(3a-2b)+,h4v/h4w/h4z.",
+    "gap_transfer": "G=4(N-5)(N-6)(k+2)lH²-3(N-3)(N-4)(k+1)(l-1)JI. Abstractrealtransferconditionalon three coefficientidentitiesANDG>=0,k>=0,l>=2,N>=7. Positiveclearing144F5(N)^2(N-5)(N-6)(k+1)^2(k+2),RHS=C²lG. NoCpositiveorcoefficientdivision. Formula/conditionaltransferisnotunconditionalsourceLC.",
+    "cone_formulas": "Withb=k+l+2,conesusea=(b+Q)/2,(2b+Q)/3,(3b+Q)/4. Statisticsrespectively(Q,b-a,0,0,Q,0);(2a-b,b-a,Q,0,b-a,0);(2a-b,b-a,3a-2b,0,b-a,Q). Qindependentreal>=0 inpolynomialgaptheorems,notactualsourcewithoutbridge.",
+    "cone_charts": "J/H/I scaledbydenominator²/³/⁴;gap64/729/4096. SevenQcoefficients,11charts each: k=K+1,l=L+9;k0,l=L+9;l2..8,k=K+max(7-l,1);k0,l7or8. RealK,Lnonnegative; coversnaturalk0,l2,N7includingk0,l2endpoints.231charttheorems,18literalzeroRHS. Allcompiled/printed butnotselectedreplayed. Cone0/1assembliescompiled/printedunreplayed;Cone2assemblycompiledonlyexcluded.",
+    "source_bridge_unbuilt": "HighGapdraftintendsallnaturala<=b<=2a,b=k+l+2,l2,N7,split3a<=2b then4a<=3b,usingQ=2a-b,3a-2b,4a-3b. Naturalsubtraction/min/h4statsidentificationdraftonly; no acceptedbridge orsourceconeLCinferredfromcharttheorems.",
+    "small_sources": "HighSmallcompiled/replayed/printed:10literal sources2/3,3/4,3/5,4/5,4/7,5/6,5/7,5/8,6/7,7/8;raw(i,2),(i,3),(i,4) at0<=i<=a+b-1. source_high_small requiresactuala>=2,b<=8,b<2a,i<=d,usescoprimefiniteclassification/pathinjectivity. Thisacceptedtheoremstillhasupperindexguard; noall-natural extrapolationispartofit.",
+    "all_source_unbuilt": "HighAlldraftproposescombine133b>=2a withb<2a,lowerzeroi<a-1,upperzeroi4>d,thenk=i-(a-1),l=b-2-k>=2,b9=>a3andnewconditionalinterior;smallb<=8callsHighSmall. Sourceinterioranduniversalassemblybothunbuilt; no newunconditionalslope region admitted.",
+    "residual_unbuilt": "DraftInteriorCore63M81FexactpriorHalfM570withverticalj>=2plus(j2->b<2a)replacedbyj>=3;otherHj5,V i4,total+4,Dtotal+8,a5<=i+j2,a2<=b,allthreepolygonandendpoints unchanged. Draftiffunbuilt. LastvalidatedrootreductionremainsHalfM570.",
+    "status": "43newmath299theoremheaders66defs;39compiled/printed287thm65defs,only16selectedreplayed40thm65defs;23listedunreplayed247thm;Cone2Gapcompiledexcluded8thm;3unbuilt4thm1def. ControllerTIMEOUT/nullreport unchanged."
+  },
+  "new_modules": [
+    {
+      "module": "MarkovFallingM81F",
+      "sha256": "9191f674e2748e9351997a13ebfe72e565337197775e0fd86f4a14dab71d6678",
+      "classification": "compiled and axiom-audited; selected replay passed",
+      "imports": [
+        "Mathlib"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "fallM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "fall_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "fall_succM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "falling_chooseM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "falling_monomialM81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem fall_zeroM81F (x : ℝ) : fallM81F x 0=1",
+        "theorem fall_succM81F (x : ℝ) (d : ℕ) :\n fallM81F x (d+1)=fallM81F x d*(x-d) := descPochhammer_succ_eval d x\n\ntheorem falling_chooseM81F (k l d r : ℕ) (hr : r ≤ d) (hkr : r ≤ k)\n (hd : d ≤ k+l) :\n (k+l).descFactorial d * (k+l-d).choose (k-r) =\n (k+l).choose k * k.descFactorial r * l.descFactorial (d-r)",
+        "theorem falling_monomialM81F (k l d r : ℕ) (hr : r ≤ d) (hd : d ≤ k+l) :\n fallM81F (k+l) d * (((1+(X:ℝ[X]))^(k+l-d)*X^r).coeff k) =\n ((k+l).choose k:ℝ)*fallM81F k r*fallM81F l (d-r)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovFallingSeed3M81F",
+      "sha256": "883582a3c4fb8192a09bd7d3cdb5faba67231f3f6b4ebd8bbcbf18aa34b43ed3",
+      "classification": "compiled and axiom-audited; selected replay passed",
+      "imports": [
+        "MarkovFallingM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "falling_seed3M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem falling_seed3M81F (k l : ℕ) (hd : 3 ≤ k+l) (c0 c1 c2 c3 : ℝ) :\n ((k:ℝ)+l)*((k:ℝ)+l-1)*((k:ℝ)+l-2)*(((1+(X:ℝ[X]))^(k+l-3)*(C c0*X^0+C c1*X^1+C c2*X^2+C c3*X^3)).coeff k)=\n ((k+l).choose k:ℝ)*(c0*1*(l)*(l-1)*(l-2)+c1*(k)*(l)*(l-1)+c2*(k)*(k-1)*(l)+c3*(k)*(k-1)*(k-2)*1)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovFallingSeed5M81F",
+      "sha256": "0eddd2d4ba40c9428980c46c18285bf55f1968dc1effc9cd3d1c3e6e8c964718",
+      "classification": "compiled and axiom-audited; selected replay passed",
+      "imports": [
+        "MarkovFallingM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "falling_seed5M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem falling_seed5M81F (k l : ℕ) (hd : 5 ≤ k+l) (c0 c1 c2 c3 c4 c5 : ℝ) :\n ((k:ℝ)+l)*((k:ℝ)+l-1)*((k:ℝ)+l-2)*((k:ℝ)+l-3)*((k:ℝ)+l-4)*(((1+(X:ℝ[X]))^(k+l-5)*(C c0*X^0+C c1*X^1+C c2*X^2+C c3*X^3+C c4*X^4+C c5*X^5)).coeff k)=\n ((k+l).choose k:ℝ)*(c0*1*(l)*(l-1)*(l-2)*(l-3)*(l-4)+c1*(k)*(l)*(l-1)*(l-2)*(l-3)+c2*(k)*(k-1)*(l)*(l-1)*(l-2)+c3*(k)*(k-1)*(k-2)*(l)*(l-1)+c4*(k)*(k-1)*(k-2)*(k-3)*(l)+c5*(k)*(k-1)*(k-2)*(k-3)*(k-4)*1)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovFallingSeed7M81F",
+      "sha256": "7d9ec915f248e6b68390631115a5614cc8fcea7896ce0efc046fda171edd188f",
+      "classification": "compiled and axiom-audited; selected replay passed",
+      "imports": [
+        "MarkovFallingM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "falling_seed7M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem falling_seed7M81F (k l : ℕ) (hd : 7 ≤ k+l) (c0 c1 c2 c3 c4 c5 c6 c7 : ℝ) :\n ((k:ℝ)+l)*((k:ℝ)+l-1)*((k:ℝ)+l-2)*((k:ℝ)+l-3)*((k:ℝ)+l-4)*((k:ℝ)+l-5)*((k:ℝ)+l-6)*(((1+(X:ℝ[X]))^(k+l-7)*(C c0*X^0+C c1*X^1+C c2*X^2+C c3*X^3+C c4*X^4+C c5*X^5+C c6*X^6+C c7*X^7)).coeff k)=\n ((k+l).choose k:ℝ)*(c0*1*(l)*(l-1)*(l-2)*(l-3)*(l-4)*(l-5)*(l-6)+c1*(k)*(l)*(l-1)*(l-2)*(l-3)*(l-4)*(l-5)+c2*(k)*(k-1)*(l)*(l-1)*(l-2)*(l-3)*(l-4)+c3*(k)*(k-1)*(k-2)*(l)*(l-1)*(l-2)*(l-3)+c4*(k)*(k-1)*(k-2)*(k-3)*(l)*(l-1)*(l-2)+c5*(k)*(k-1)*(k-2)*(k-3)*(k-4)*(l)*(l-1)+c6*(k)*(k-1)*(k-2)*(k-3)*(k-4)*(k-5)*(l)+c7*(k)*(k-1)*(k-2)*(k-3)*(k-4)*(k-5)*(k-6)*1)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighAllM81F",
+      "sha256": "f7e0472407b61080a8655c23aed751c44a4098098b0d9ad9a52d8c715e469a0d",
+      "classification": "unbuilt excluded draft",
+      "imports": [
+        "MarkovHighCoefficientsM81F",
+        "MarkovHighGapM81F",
+        "MarkovHighTransferM81F",
+        "MarkovHighSmallM81F",
+        "MarkovNextAllM570"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_high_interiorM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_fullM81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem source_high_interiorM81F (path : List Bool) (k l : ℕ)\n (ha : 3 ≤ (frame path).mid.a) (hb : 9 ≤ (frame path).mid.b) (hs : (frame path).mid.b ≤ 2*(frame path).mid.a)\n (hbl : (frame path).mid.b=k+l+2) (hl : 2 ≤ l) :\n coeff (frame path).mid.p ((frame path).mid.a-1+k) 2*coeff (frame path).mid.p ((frame path).mid.a-1+k) 4 ≤\n coeff (frame path).mid.p ((frame path).mid.a-1+k) 3^2",
+        "theorem source_strip_fullM81F (path : List Bool) (i : ℕ) :\n coeff (frame path).mid.p i 2*coeff (frame path).mid.p i 4 ≤ coeff (frame path).mid.p i 3^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCoefficientsM81F",
+      "sha256": "fa6fedc8db15d3bb4718579463018de3f705b10de8bd911d96d2e574f4710c35",
+      "classification": "compiled and axiom-audited; selected replay passed",
+      "imports": [
+        "MarkovHighSourceM81F",
+        "MarkovHighScalingM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_high2_scaledM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_high3_scaledM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_high4_scaledM81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem source_high2_scaledM81F (path : List Bool) (k l : ℕ)\n (ha : 3 ≤ (frame path).mid.a) (hb : 9 ≤ (frame path).mid.b) (hbl : (frame path).mid.b=k+l+2) (hl : 2 ≤ l) :\n 2*((k:ℝ)+l)*((k:ℝ)+l-1)*((k:ℝ)+l-2)*(coeff (frame path).mid.p ((frame path).mid.a-1+k) 2:ℝ)=\n ((k+l).choose k:ℝ)*highJM81F (frame path).mid.a k l (2*(frame path).mid.a-(frame path).mid.b:ℕ)",
+        "theorem source_high3_scaledM81F (path : List Bool) (k l : ℕ)\n (ha : 3 ≤ (frame path).mid.a) (hb : 9 ≤ (frame path).mid.b) (hbl : (frame path).mid.b=k+l+2) (hl : 2 ≤ l) :\n 6*((k:ℝ)+l)*((k:ℝ)+l-1)*((k:ℝ)+l-2)*((k:ℝ)+l-3)*((k:ℝ)+l-4)*(k+1)*(coeff (frame path).mid.p ((frame path).mid.a-1+k) 3:ℝ)=\n ((k+l).choose k:ℝ)*l*highHM81F (frame path).mid.a k l (2*(frame path).mid.a-(frame path).mid.b:ℕ) (min ((frame path).mid.b-(frame path).mid.a) (3*(frame path).mid.a-(frame path).mid.b):ℕ) (3*(frame path).mid.a-2*(frame path).mid.b:ℕ)",
+        "theorem source_high4_scaledM81F (path : List Bool) (k l : ℕ)\n (ha : 3 ≤ (frame path).mid.a) (hb : 9 ≤ (frame path).mid.b) (hbl : (frame path).mid.b=k+l+2) (hl : 2 ≤ l) :\n 24*((k:ℝ)+l)*((k:ℝ)+l-1)*((k:ℝ)+l-2)*((k:ℝ)+l-3)*((k:ℝ)+l-4)*((k:ℝ)+l-5)*((k:ℝ)+l-6)*(k+1)*(k+2)*(coeff (frame path).mid.p ((frame path).mid.a-1+k) 4:ℝ)=\n ((k+l).choose k:ℝ)*l*(l-1)*highIM81F (frame path).mid.a k l (2*(frame path).mid.a-(frame path).mid.b:ℕ) (min ((frame path).mid.b-(frame path).mid.a) (3*(frame path).mid.a-(frame path).mid.b):ℕ) (3*(frame path).mid.a-2*(frame path).mid.b:ℕ) (h4vM511 (frame path).mid.a (frame path).mid.b) (h4wM511 (frame path).mid.a (frame path).mid.b) (h4zM511 (frame path).mid.a (frame path).mid.b)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone0Cert0M81F",
+      "sha256": "b3ed9c0b47283b49cb3a7f0a169a1b24e79c7d78f0c5882347089cd4cb2f9246",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone0DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high0_0_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_0_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_0_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_0_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_0_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_0_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_0_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_0_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_0_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_0_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_0_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high0_0_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g0M81F (k+1) (l+9)",
+        "theorem high0_0_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g0M81F (0) (l+9)",
+        "theorem high0_0_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g0M81F (k+5) (2)",
+        "theorem high0_0_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g0M81F (k+4) (3)",
+        "theorem high0_0_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g0M81F (k+3) (4)",
+        "theorem high0_0_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g0M81F (k+2) (5)",
+        "theorem high0_0_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g0M81F (k+1) (6)",
+        "theorem high0_0_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g0M81F (k+1) (7)",
+        "theorem high0_0_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g0M81F (k+1) (8)",
+        "theorem high0_0_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g0M81F (0) (7)",
+        "theorem high0_0_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g0M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone0Cert1M81F",
+      "sha256": "27d160f91cbb32064bc4b7d59bc57d9d4ebfe602a459ca59f87d007efb073565",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone0DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high0_1_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_1_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_1_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_1_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_1_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_1_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_1_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_1_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_1_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_1_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_1_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high0_1_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g1M81F (k+1) (l+9)",
+        "theorem high0_1_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g1M81F (0) (l+9)",
+        "theorem high0_1_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g1M81F (k+5) (2)",
+        "theorem high0_1_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g1M81F (k+4) (3)",
+        "theorem high0_1_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g1M81F (k+3) (4)",
+        "theorem high0_1_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g1M81F (k+2) (5)",
+        "theorem high0_1_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g1M81F (k+1) (6)",
+        "theorem high0_1_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g1M81F (k+1) (7)",
+        "theorem high0_1_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g1M81F (k+1) (8)",
+        "theorem high0_1_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g1M81F (0) (7)",
+        "theorem high0_1_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g1M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone0Cert2M81F",
+      "sha256": "1d8178bc7806e26188c0e934665251dcfd769fa6e442464e7ee0984873186567",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone0DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high0_2_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_2_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_2_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_2_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_2_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_2_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_2_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_2_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_2_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_2_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_2_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high0_2_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g2M81F (k+1) (l+9)",
+        "theorem high0_2_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g2M81F (0) (l+9)",
+        "theorem high0_2_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g2M81F (k+5) (2)",
+        "theorem high0_2_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g2M81F (k+4) (3)",
+        "theorem high0_2_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g2M81F (k+3) (4)",
+        "theorem high0_2_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g2M81F (k+2) (5)",
+        "theorem high0_2_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g2M81F (k+1) (6)",
+        "theorem high0_2_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g2M81F (k+1) (7)",
+        "theorem high0_2_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g2M81F (k+1) (8)",
+        "theorem high0_2_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g2M81F (0) (7)",
+        "theorem high0_2_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g2M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone0Cert3M81F",
+      "sha256": "401dd738cb7dd38c4e412f48937fa72b131cbfb4d41934d4452b6caec1901ec0",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone0DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high0_3_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_3_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_3_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_3_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_3_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_3_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_3_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_3_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_3_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_3_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_3_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high0_3_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g3M81F (k+1) (l+9)",
+        "theorem high0_3_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g3M81F (0) (l+9)",
+        "theorem high0_3_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g3M81F (k+5) (2)",
+        "theorem high0_3_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g3M81F (k+4) (3)",
+        "theorem high0_3_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g3M81F (k+3) (4)",
+        "theorem high0_3_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g3M81F (k+2) (5)",
+        "theorem high0_3_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g3M81F (k+1) (6)",
+        "theorem high0_3_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g3M81F (k+1) (7)",
+        "theorem high0_3_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g3M81F (k+1) (8)",
+        "theorem high0_3_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g3M81F (0) (7)",
+        "theorem high0_3_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g3M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone0Cert4M81F",
+      "sha256": "6baf25f7224235dbf8d9371d8d9aae758530e60f174c53a1dcfb07a4ca03f8bc",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone0DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high0_4_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_4_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_4_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_4_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_4_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_4_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_4_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_4_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_4_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_4_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_4_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high0_4_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g4M81F (k+1) (l+9)",
+        "theorem high0_4_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g4M81F (0) (l+9)",
+        "theorem high0_4_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g4M81F (k+5) (2)",
+        "theorem high0_4_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g4M81F (k+4) (3)",
+        "theorem high0_4_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g4M81F (k+3) (4)",
+        "theorem high0_4_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g4M81F (k+2) (5)",
+        "theorem high0_4_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g4M81F (k+1) (6)",
+        "theorem high0_4_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g4M81F (k+1) (7)",
+        "theorem high0_4_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g4M81F (k+1) (8)",
+        "theorem high0_4_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g4M81F (0) (7)",
+        "theorem high0_4_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g4M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone0Cert5M81F",
+      "sha256": "c8a2217d0ab1b1fac5274aa66b34dffaf8975cd52bdee34a13307c553d9de2e6",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone0DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high0_5_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_5_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_5_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_5_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_5_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_5_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_5_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_5_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_5_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_5_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_5_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high0_5_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g5M81F (k+1) (l+9)",
+        "theorem high0_5_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g5M81F (0) (l+9)",
+        "theorem high0_5_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g5M81F (k+5) (2)",
+        "theorem high0_5_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g5M81F (k+4) (3)",
+        "theorem high0_5_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g5M81F (k+3) (4)",
+        "theorem high0_5_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g5M81F (k+2) (5)",
+        "theorem high0_5_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g5M81F (k+1) (6)",
+        "theorem high0_5_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g5M81F (k+1) (7)",
+        "theorem high0_5_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g5M81F (k+1) (8)",
+        "theorem high0_5_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g5M81F (0) (7)",
+        "theorem high0_5_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g5M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone0Cert6M81F",
+      "sha256": "8071e13c9b4d2b2a50802c885159981d76e9d96dd74f975fe67a9b1d2d7905dc",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone0DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high0_6_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_6_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_6_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_6_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_6_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_6_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_6_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_6_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_6_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_6_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high0_6_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high0_6_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g6M81F (k+1) (l+9)",
+        "theorem high0_6_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g6M81F (0) (l+9)",
+        "theorem high0_6_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g6M81F (k+5) (2)",
+        "theorem high0_6_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g6M81F (k+4) (3)",
+        "theorem high0_6_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g6M81F (k+3) (4)",
+        "theorem high0_6_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g6M81F (k+2) (5)",
+        "theorem high0_6_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g6M81F (k+1) (6)",
+        "theorem high0_6_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g6M81F (k+1) (7)",
+        "theorem high0_6_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g6M81F (k+1) (8)",
+        "theorem high0_6_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g6M81F (0) (7)",
+        "theorem high0_6_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c0g6M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone0DefsM81F",
+      "sha256": "f2ceb7afcbd9a44cacf4ba6232566758c93743fc8d7565f139d03d2f04514661",
+      "classification": "compiled and axiom-audited; selected replay passed",
+      "imports": [
+        "MarkovHighDefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "highCone0M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c0j0M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c0j1M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c0j2M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c0h0M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c0h1M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c0h2M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c0h3M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c0i0M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c0i1M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c0i2M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c0i3M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c0i4M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c0g0M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c0g1M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c0g2M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c0g3M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c0g4M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c0g5M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c0g6M81F"
+        }
+      ],
+      "theorem_statements": [],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone0ExpandM81F",
+      "sha256": "4b65e9a658ab8d0ed11ad9feb98e7a1db56cbc146c06620c15ef9d22e11e8a27",
+      "classification": "compiled and axiom-audited; selected replay passed",
+      "imports": [
+        "MarkovHighCone0DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "c0j_expandM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "c0h_expandM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "c0i_expandM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_expand0M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem c0j_expandM81F (k l q : ℝ) : 4*(highJM81F ((k+l+2+q)/2) k l (q))=c0j0M81F k l+c0j1M81F k l*q^1+c0j2M81F k l*q^2",
+        "theorem c0h_expandM81F (k l q : ℝ) : 8*(highHM81F ((k+l+2+q)/2) k l (q) (k+l+2-(k+l+2+q)/2) (0))=c0h0M81F k l+c0h1M81F k l*q^1+c0h2M81F k l*q^2+c0h3M81F k l*q^3",
+        "theorem c0i_expandM81F (k l q : ℝ) : 16*(highIM81F ((k+l+2+q)/2) k l (q) (k+l+2-(k+l+2+q)/2) (0) (0) (q) (0))=c0i0M81F k l+c0i1M81F k l*q^1+c0i2M81F k l*q^2+c0i3M81F k l*q^3+c0i4M81F k l*q^4",
+        "theorem high_expand0M81F (k l q : ℝ) :\n 64*highCone0M81F k l q=c0g0M81F k l+c0g1M81F k l*q^1+c0g2M81F k l*q^2+c0g3M81F k l*q^3+c0g4M81F k l*q^4+c0g5M81F k l*q^5+c0g6M81F k l*q^6"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone0GapM81F",
+      "sha256": "026bac806f297076f92612b863508417d725d9a3e6841fd60a7c56f21e6cb292",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone0Cert0M81F",
+        "MarkovHighCone0Cert1M81F",
+        "MarkovHighCone0Cert2M81F",
+        "MarkovHighCone0Cert3M81F",
+        "MarkovHighCone0Cert4M81F",
+        "MarkovHighCone0Cert5M81F",
+        "MarkovHighCone0Cert6M81F",
+        "MarkovHighCone0ExpandM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high_coefficient0_0M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_coefficient0_1M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_coefficient0_2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_coefficient0_3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_coefficient0_4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_coefficient0_5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_coefficient0_6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_cone0_nonnegM81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high_coefficient0_0M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c0g0M81F k l",
+        "theorem high_coefficient0_1M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c0g1M81F k l",
+        "theorem high_coefficient0_2M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c0g2M81F k l",
+        "theorem high_coefficient0_3M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c0g3M81F k l",
+        "theorem high_coefficient0_4M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c0g4M81F k l",
+        "theorem high_coefficient0_5M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c0g5M81F k l",
+        "theorem high_coefficient0_6M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c0g6M81F k l",
+        "theorem high_cone0_nonnegM81F (k l : ℕ) (q : ℝ)\n (hl : 2 ≤ l) (hN : 7 ≤ k+l) (hq : 0 ≤ q) : 0 ≤ highCone0M81F k l q"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone1Cert0M81F",
+      "sha256": "ced8cbbdfb0412a425b4ba35108b276459ed621ce97b0f9f1c30b6d3de5c129c",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone1DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high1_0_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_0_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_0_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_0_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_0_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_0_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_0_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_0_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_0_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_0_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_0_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high1_0_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g0M81F (k+1) (l+9)",
+        "theorem high1_0_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g0M81F (0) (l+9)",
+        "theorem high1_0_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g0M81F (k+5) (2)",
+        "theorem high1_0_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g0M81F (k+4) (3)",
+        "theorem high1_0_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g0M81F (k+3) (4)",
+        "theorem high1_0_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g0M81F (k+2) (5)",
+        "theorem high1_0_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g0M81F (k+1) (6)",
+        "theorem high1_0_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g0M81F (k+1) (7)",
+        "theorem high1_0_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g0M81F (k+1) (8)",
+        "theorem high1_0_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g0M81F (0) (7)",
+        "theorem high1_0_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g0M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone1Cert1M81F",
+      "sha256": "b335dc3f77671a9306c34c5b884aba46c926e1d608233f9efe6ce0142d3f53e7",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone1DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high1_1_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_1_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_1_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_1_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_1_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_1_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_1_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_1_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_1_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_1_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_1_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high1_1_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g1M81F (k+1) (l+9)",
+        "theorem high1_1_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g1M81F (0) (l+9)",
+        "theorem high1_1_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g1M81F (k+5) (2)",
+        "theorem high1_1_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g1M81F (k+4) (3)",
+        "theorem high1_1_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g1M81F (k+3) (4)",
+        "theorem high1_1_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g1M81F (k+2) (5)",
+        "theorem high1_1_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g1M81F (k+1) (6)",
+        "theorem high1_1_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g1M81F (k+1) (7)",
+        "theorem high1_1_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g1M81F (k+1) (8)",
+        "theorem high1_1_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g1M81F (0) (7)",
+        "theorem high1_1_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g1M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone1Cert2M81F",
+      "sha256": "b80ad98ed503046017b63f6f9feb21d9e3babc9399c39553b4586d085a83ba90",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone1DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high1_2_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_2_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_2_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_2_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_2_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_2_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_2_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_2_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_2_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_2_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_2_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high1_2_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g2M81F (k+1) (l+9)",
+        "theorem high1_2_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g2M81F (0) (l+9)",
+        "theorem high1_2_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g2M81F (k+5) (2)",
+        "theorem high1_2_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g2M81F (k+4) (3)",
+        "theorem high1_2_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g2M81F (k+3) (4)",
+        "theorem high1_2_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g2M81F (k+2) (5)",
+        "theorem high1_2_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g2M81F (k+1) (6)",
+        "theorem high1_2_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g2M81F (k+1) (7)",
+        "theorem high1_2_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g2M81F (k+1) (8)",
+        "theorem high1_2_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g2M81F (0) (7)",
+        "theorem high1_2_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g2M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone1Cert3M81F",
+      "sha256": "76b6764ece84224aee7aacffcb8ddd181313e5cdf1b191a8173d08db7c031ed6",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone1DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high1_3_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_3_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_3_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_3_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_3_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_3_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_3_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_3_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_3_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_3_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_3_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high1_3_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g3M81F (k+1) (l+9)",
+        "theorem high1_3_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g3M81F (0) (l+9)",
+        "theorem high1_3_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g3M81F (k+5) (2)",
+        "theorem high1_3_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g3M81F (k+4) (3)",
+        "theorem high1_3_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g3M81F (k+3) (4)",
+        "theorem high1_3_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g3M81F (k+2) (5)",
+        "theorem high1_3_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g3M81F (k+1) (6)",
+        "theorem high1_3_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g3M81F (k+1) (7)",
+        "theorem high1_3_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g3M81F (k+1) (8)",
+        "theorem high1_3_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g3M81F (0) (7)",
+        "theorem high1_3_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g3M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone1Cert4M81F",
+      "sha256": "db8cabfe8dc4e4ce0d529aa46ea8519e92b4b4e5a857a5f7cfc9d3fb6290c313",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone1DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high1_4_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_4_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_4_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_4_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_4_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_4_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_4_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_4_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_4_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_4_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_4_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high1_4_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g4M81F (k+1) (l+9)",
+        "theorem high1_4_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g4M81F (0) (l+9)",
+        "theorem high1_4_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g4M81F (k+5) (2)",
+        "theorem high1_4_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g4M81F (k+4) (3)",
+        "theorem high1_4_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g4M81F (k+3) (4)",
+        "theorem high1_4_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g4M81F (k+2) (5)",
+        "theorem high1_4_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g4M81F (k+1) (6)",
+        "theorem high1_4_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g4M81F (k+1) (7)",
+        "theorem high1_4_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g4M81F (k+1) (8)",
+        "theorem high1_4_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g4M81F (0) (7)",
+        "theorem high1_4_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g4M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone1Cert5M81F",
+      "sha256": "1ff32cab5caa779a2e2e816359c86440a2773b2d17d5357b053e23f0c07ce913",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone1DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high1_5_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_5_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_5_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_5_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_5_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_5_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_5_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_5_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_5_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_5_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_5_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high1_5_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g5M81F (k+1) (l+9)",
+        "theorem high1_5_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g5M81F (0) (l+9)",
+        "theorem high1_5_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g5M81F (k+5) (2)",
+        "theorem high1_5_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g5M81F (k+4) (3)",
+        "theorem high1_5_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g5M81F (k+3) (4)",
+        "theorem high1_5_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g5M81F (k+2) (5)",
+        "theorem high1_5_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g5M81F (k+1) (6)",
+        "theorem high1_5_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g5M81F (k+1) (7)",
+        "theorem high1_5_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g5M81F (k+1) (8)",
+        "theorem high1_5_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g5M81F (0) (7)",
+        "theorem high1_5_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g5M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone1Cert6M81F",
+      "sha256": "03945d11027530ddf4edc863aeafff830319d1c406c9a2219daa63d356326487",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone1DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high1_6_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_6_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_6_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_6_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_6_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_6_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_6_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_6_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_6_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_6_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high1_6_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high1_6_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g6M81F (k+1) (l+9)",
+        "theorem high1_6_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g6M81F (0) (l+9)",
+        "theorem high1_6_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g6M81F (k+5) (2)",
+        "theorem high1_6_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g6M81F (k+4) (3)",
+        "theorem high1_6_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g6M81F (k+3) (4)",
+        "theorem high1_6_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g6M81F (k+2) (5)",
+        "theorem high1_6_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g6M81F (k+1) (6)",
+        "theorem high1_6_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g6M81F (k+1) (7)",
+        "theorem high1_6_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g6M81F (k+1) (8)",
+        "theorem high1_6_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g6M81F (0) (7)",
+        "theorem high1_6_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c1g6M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone1DefsM81F",
+      "sha256": "c947f059db75f41abefe65b53b066161299f5b7d8b209f90a0b60b72d411f89f",
+      "classification": "compiled and axiom-audited; selected replay passed",
+      "imports": [
+        "MarkovHighDefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "highCone1M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c1j0M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c1j1M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c1j2M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c1h0M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c1h1M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c1h2M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c1h3M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c1i0M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c1i1M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c1i2M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c1i3M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c1i4M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c1g0M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c1g1M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c1g2M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c1g3M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c1g4M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c1g5M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c1g6M81F"
+        }
+      ],
+      "theorem_statements": [],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone1ExpandM81F",
+      "sha256": "95e173fd57dffff8d10f7bb6769f2c6470e32e42185fa30d3765e0c301a0453a",
+      "classification": "compiled and axiom-audited; selected replay passed",
+      "imports": [
+        "MarkovHighCone1DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "c1j_expandM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "c1h_expandM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "c1i_expandM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_expand1M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem c1j_expandM81F (k l q : ℝ) : 9*(highJM81F ((2*(k+l+2)+q)/3) k l (2*((2*(k+l+2)+q)/3)-(k+l+2)))=c1j0M81F k l+c1j1M81F k l*q^1+c1j2M81F k l*q^2",
+        "theorem c1h_expandM81F (k l q : ℝ) : 27*(highHM81F ((2*(k+l+2)+q)/3) k l (2*((2*(k+l+2)+q)/3)-(k+l+2)) (k+l+2-(2*(k+l+2)+q)/3) (q))=c1h0M81F k l+c1h1M81F k l*q^1+c1h2M81F k l*q^2+c1h3M81F k l*q^3",
+        "theorem c1i_expandM81F (k l q : ℝ) : 81*(highIM81F ((2*(k+l+2)+q)/3) k l (2*((2*(k+l+2)+q)/3)-(k+l+2)) (k+l+2-(2*(k+l+2)+q)/3) (q) (0) (k+l+2-(2*(k+l+2)+q)/3) (0))=c1i0M81F k l+c1i1M81F k l*q^1+c1i2M81F k l*q^2+c1i3M81F k l*q^3+c1i4M81F k l*q^4",
+        "theorem high_expand1M81F (k l q : ℝ) :\n 729*highCone1M81F k l q=c1g0M81F k l+c1g1M81F k l*q^1+c1g2M81F k l*q^2+c1g3M81F k l*q^3+c1g4M81F k l*q^4+c1g5M81F k l*q^5+c1g6M81F k l*q^6"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone1GapM81F",
+      "sha256": "e42e3a672faed76aa77ea942ac9a67d1fa1534698dd71e705ddd465a73827392",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone1Cert0M81F",
+        "MarkovHighCone1Cert1M81F",
+        "MarkovHighCone1Cert2M81F",
+        "MarkovHighCone1Cert3M81F",
+        "MarkovHighCone1Cert4M81F",
+        "MarkovHighCone1Cert5M81F",
+        "MarkovHighCone1Cert6M81F",
+        "MarkovHighCone1ExpandM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high_coefficient1_0M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_coefficient1_1M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_coefficient1_2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_coefficient1_3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_coefficient1_4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_coefficient1_5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_coefficient1_6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_cone1_nonnegM81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high_coefficient1_0M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c1g0M81F k l",
+        "theorem high_coefficient1_1M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c1g1M81F k l",
+        "theorem high_coefficient1_2M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c1g2M81F k l",
+        "theorem high_coefficient1_3M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c1g3M81F k l",
+        "theorem high_coefficient1_4M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c1g4M81F k l",
+        "theorem high_coefficient1_5M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c1g5M81F k l",
+        "theorem high_coefficient1_6M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c1g6M81F k l",
+        "theorem high_cone1_nonnegM81F (k l : ℕ) (q : ℝ)\n (hl : 2 ≤ l) (hN : 7 ≤ k+l) (hq : 0 ≤ q) : 0 ≤ highCone1M81F k l q"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone2Cert0M81F",
+      "sha256": "1d165ba9e7c31863386630cc83eb3e6e4d33e41694db419e146e0252bf793046",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone2DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high2_0_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_0_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_0_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_0_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_0_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_0_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_0_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_0_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_0_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_0_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_0_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high2_0_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g0M81F (k+1) (l+9)",
+        "theorem high2_0_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g0M81F (0) (l+9)",
+        "theorem high2_0_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g0M81F (k+5) (2)",
+        "theorem high2_0_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g0M81F (k+4) (3)",
+        "theorem high2_0_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g0M81F (k+3) (4)",
+        "theorem high2_0_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g0M81F (k+2) (5)",
+        "theorem high2_0_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g0M81F (k+1) (6)",
+        "theorem high2_0_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g0M81F (k+1) (7)",
+        "theorem high2_0_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g0M81F (k+1) (8)",
+        "theorem high2_0_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g0M81F (0) (7)",
+        "theorem high2_0_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g0M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone2Cert1M81F",
+      "sha256": "6f3d4b610a1986df435125b81f5530cfbc28dcafc3211488506917bab3935120",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone2DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high2_1_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_1_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_1_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_1_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_1_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_1_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_1_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_1_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_1_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_1_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_1_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high2_1_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g1M81F (k+1) (l+9)",
+        "theorem high2_1_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g1M81F (0) (l+9)",
+        "theorem high2_1_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g1M81F (k+5) (2)",
+        "theorem high2_1_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g1M81F (k+4) (3)",
+        "theorem high2_1_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g1M81F (k+3) (4)",
+        "theorem high2_1_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g1M81F (k+2) (5)",
+        "theorem high2_1_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g1M81F (k+1) (6)",
+        "theorem high2_1_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g1M81F (k+1) (7)",
+        "theorem high2_1_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g1M81F (k+1) (8)",
+        "theorem high2_1_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g1M81F (0) (7)",
+        "theorem high2_1_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g1M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone2Cert2M81F",
+      "sha256": "ebb67d9cd58d6f1131d91ac8b484f38e95fb83672bb589caf60a01ec3b67617b",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone2DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high2_2_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_2_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_2_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_2_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_2_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_2_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_2_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_2_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_2_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_2_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_2_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high2_2_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g2M81F (k+1) (l+9)",
+        "theorem high2_2_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g2M81F (0) (l+9)",
+        "theorem high2_2_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g2M81F (k+5) (2)",
+        "theorem high2_2_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g2M81F (k+4) (3)",
+        "theorem high2_2_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g2M81F (k+3) (4)",
+        "theorem high2_2_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g2M81F (k+2) (5)",
+        "theorem high2_2_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g2M81F (k+1) (6)",
+        "theorem high2_2_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g2M81F (k+1) (7)",
+        "theorem high2_2_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g2M81F (k+1) (8)",
+        "theorem high2_2_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g2M81F (0) (7)",
+        "theorem high2_2_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g2M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone2Cert3M81F",
+      "sha256": "2d6932a3886c955cc54b3847ea7bc60748a146f9ebf4e8a0b0162de1be71f661",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone2DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high2_3_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_3_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_3_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_3_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_3_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_3_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_3_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_3_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_3_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_3_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_3_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high2_3_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g3M81F (k+1) (l+9)",
+        "theorem high2_3_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g3M81F (0) (l+9)",
+        "theorem high2_3_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g3M81F (k+5) (2)",
+        "theorem high2_3_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g3M81F (k+4) (3)",
+        "theorem high2_3_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g3M81F (k+3) (4)",
+        "theorem high2_3_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g3M81F (k+2) (5)",
+        "theorem high2_3_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g3M81F (k+1) (6)",
+        "theorem high2_3_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g3M81F (k+1) (7)",
+        "theorem high2_3_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g3M81F (k+1) (8)",
+        "theorem high2_3_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g3M81F (0) (7)",
+        "theorem high2_3_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g3M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone2Cert4M81F",
+      "sha256": "76596907b1a35bca95b0c404cc08def55cce577b5c09084397bc6ec038fdcdac",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone2DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high2_4_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_4_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_4_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_4_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_4_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_4_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_4_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_4_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_4_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_4_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_4_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high2_4_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g4M81F (k+1) (l+9)",
+        "theorem high2_4_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g4M81F (0) (l+9)",
+        "theorem high2_4_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g4M81F (k+5) (2)",
+        "theorem high2_4_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g4M81F (k+4) (3)",
+        "theorem high2_4_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g4M81F (k+3) (4)",
+        "theorem high2_4_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g4M81F (k+2) (5)",
+        "theorem high2_4_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g4M81F (k+1) (6)",
+        "theorem high2_4_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g4M81F (k+1) (7)",
+        "theorem high2_4_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g4M81F (k+1) (8)",
+        "theorem high2_4_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g4M81F (0) (7)",
+        "theorem high2_4_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g4M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone2Cert5M81F",
+      "sha256": "37729eb1738e65b897d154aacf5c82d6c80f486c8ce319896f0b72d739e1fd46",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone2DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high2_5_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_5_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_5_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_5_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_5_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_5_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_5_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_5_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_5_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_5_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_5_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high2_5_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g5M81F (k+1) (l+9)",
+        "theorem high2_5_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g5M81F (0) (l+9)",
+        "theorem high2_5_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g5M81F (k+5) (2)",
+        "theorem high2_5_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g5M81F (k+4) (3)",
+        "theorem high2_5_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g5M81F (k+3) (4)",
+        "theorem high2_5_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g5M81F (k+2) (5)",
+        "theorem high2_5_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g5M81F (k+1) (6)",
+        "theorem high2_5_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g5M81F (k+1) (7)",
+        "theorem high2_5_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g5M81F (k+1) (8)",
+        "theorem high2_5_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g5M81F (0) (7)",
+        "theorem high2_5_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g5M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone2Cert6M81F",
+      "sha256": "4506a34aa4f7bf7b21bb77b65536e87684b83eccfd6d7b0905b82934ae259662",
+      "classification": "compiled and axiom-audited; no successful selected replay",
+      "imports": [
+        "MarkovHighCone2DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high2_6_largeM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_6_zeroM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_6_s2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_6_s3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_6_s4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_6_s5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_6_s6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_6_s7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_6_s8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_6_z7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high2_6_z8M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high2_6_largeM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g6M81F (k+1) (l+9)",
+        "theorem high2_6_zeroM81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g6M81F (0) (l+9)",
+        "theorem high2_6_s2M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g6M81F (k+5) (2)",
+        "theorem high2_6_s3M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g6M81F (k+4) (3)",
+        "theorem high2_6_s4M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g6M81F (k+3) (4)",
+        "theorem high2_6_s5M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g6M81F (k+2) (5)",
+        "theorem high2_6_s6M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g6M81F (k+1) (6)",
+        "theorem high2_6_s7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g6M81F (k+1) (7)",
+        "theorem high2_6_s8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g6M81F (k+1) (8)",
+        "theorem high2_6_z7M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g6M81F (0) (7)",
+        "theorem high2_6_z8M81F (k l : ℝ) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ c2g6M81F (0) (8)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone2DefsM81F",
+      "sha256": "d379dc049803239bd92412ebeda3c7ccab0d3a7b1e183fd7539f66dd8fbe552c",
+      "classification": "compiled and axiom-audited; selected replay passed",
+      "imports": [
+        "MarkovHighDefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "highCone2M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c2j0M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c2j1M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c2j2M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c2h0M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c2h1M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c2h2M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c2h3M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c2i0M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c2i1M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c2i2M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c2i3M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c2i4M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c2g0M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c2g1M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c2g2M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c2g3M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c2g4M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c2g5M81F"
+        },
+        {
+          "kind": "def",
+          "name": "c2g6M81F"
+        }
+      ],
+      "theorem_statements": [],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone2ExpandM81F",
+      "sha256": "5dde861bb340223c7f9a3b83a3abf0df3bd4ba14edbc03047525b10504787d65",
+      "classification": "compiled and axiom-audited; selected replay passed",
+      "imports": [
+        "MarkovHighCone2DefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "c2j_expandM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "c2h_expandM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "c2i_expandM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_expand2M81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem c2j_expandM81F (k l q : ℝ) : 16*(highJM81F ((3*(k+l+2)+q)/4) k l (2*((3*(k+l+2)+q)/4)-(k+l+2)))=c2j0M81F k l+c2j1M81F k l*q^1+c2j2M81F k l*q^2",
+        "theorem c2h_expandM81F (k l q : ℝ) : 64*(highHM81F ((3*(k+l+2)+q)/4) k l (2*((3*(k+l+2)+q)/4)-(k+l+2)) (k+l+2-(3*(k+l+2)+q)/4) (3*((3*(k+l+2)+q)/4)-2*(k+l+2)))=c2h0M81F k l+c2h1M81F k l*q^1+c2h2M81F k l*q^2+c2h3M81F k l*q^3",
+        "theorem c2i_expandM81F (k l q : ℝ) : 256*(highIM81F ((3*(k+l+2)+q)/4) k l (2*((3*(k+l+2)+q)/4)-(k+l+2)) (k+l+2-(3*(k+l+2)+q)/4) (3*((3*(k+l+2)+q)/4)-2*(k+l+2)) (0) (k+l+2-(3*(k+l+2)+q)/4) (q))=c2i0M81F k l+c2i1M81F k l*q^1+c2i2M81F k l*q^2+c2i3M81F k l*q^3+c2i4M81F k l*q^4",
+        "theorem high_expand2M81F (k l q : ℝ) :\n 4096*highCone2M81F k l q=c2g0M81F k l+c2g1M81F k l*q^1+c2g2M81F k l*q^2+c2g3M81F k l*q^3+c2g4M81F k l*q^4+c2g5M81F k l*q^5+c2g6M81F k l*q^6"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighCone2GapM81F",
+      "sha256": "3911de50d5b8383548d2cf9ad19be8f355a3cba9e2bfba9347dbdd8d248b2106",
+      "classification": "compiled only; excluded, no axiom audit or selected replay",
+      "imports": [
+        "MarkovHighCone2Cert0M81F",
+        "MarkovHighCone2Cert1M81F",
+        "MarkovHighCone2Cert2M81F",
+        "MarkovHighCone2Cert3M81F",
+        "MarkovHighCone2Cert4M81F",
+        "MarkovHighCone2Cert5M81F",
+        "MarkovHighCone2Cert6M81F",
+        "MarkovHighCone2ExpandM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high_coefficient2_0M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_coefficient2_1M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_coefficient2_2M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_coefficient2_3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_coefficient2_4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_coefficient2_5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_coefficient2_6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_cone2_nonnegM81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high_coefficient2_0M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c2g0M81F k l",
+        "theorem high_coefficient2_1M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c2g1M81F k l",
+        "theorem high_coefficient2_2M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c2g2M81F k l",
+        "theorem high_coefficient2_3M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c2g3M81F k l",
+        "theorem high_coefficient2_4M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c2g4M81F k l",
+        "theorem high_coefficient2_5M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c2g5M81F k l",
+        "theorem high_coefficient2_6M81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ c2g6M81F k l",
+        "theorem high_cone2_nonnegM81F (k l : ℕ) (q : ℝ)\n (hl : 2 ≤ l) (hN : 7 ≤ k+l) (hq : 0 ≤ q) : 0 ≤ highCone2M81F k l q"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighDefsM81F",
+      "sha256": "12365df58a56dac6df14b0b5d5316a8c4939098bd7097f4f30a194d0207f8a55",
+      "classification": "compiled and axiom-audited; selected replay passed",
+      "imports": [
+        "MarkovHorizontalFourthSeedM511"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "highJM81F"
+        },
+        {
+          "kind": "def",
+          "name": "highHM81F"
+        },
+        {
+          "kind": "def",
+          "name": "highIM81F"
+        },
+        {
+          "kind": "def",
+          "name": "highGapM81F"
+        }
+      ],
+      "theorem_statements": [],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighGapM81F",
+      "sha256": "54909fdc9f89135b36044252fd3fbab9f333b8d5562e0bee04bd349fb7fbb883",
+      "classification": "unbuilt excluded draft",
+      "imports": [
+        "MarkovHighCone0GapM81F",
+        "MarkovHighCone1GapM81F",
+        "MarkovHighCone2GapM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high_source_gapM81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high_source_gapM81F (a b k l : ℕ) (hab : a ≤ b) (hs : b ≤ 2*a)\n (hbl : b=k+l+2) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ highGapM81F a k l (2*a-b:ℕ) (min (b-a) (3*a-b):ℕ) (3*a-2*b:ℕ)\n   (h4vM511 a b) (h4wM511 a b) (h4zM511 a b)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighScalingM81F",
+      "sha256": "78fed7a0ef48795d0687d352ef9193bb5865d39a85064e31c535bcecea19b6a2",
+      "classification": "compiled and axiom-audited; selected replay passed",
+      "imports": [
+        "MarkovHighDefsM81F",
+        "MarkovFallingSeed3M81F",
+        "MarkovFallingSeed5M81F",
+        "MarkovFallingSeed7M81F",
+        "MarkovStripGeneralSourceMCE8",
+        "MarkovBinomialRatios6a40"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high_seed2_scaledM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_seed3_scaledM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_seed4_scaledM81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high_seed2_scaledM81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) (a q : ℝ) :\n ((k:ℝ)+l)*((k:ℝ)+l-1)*((k:ℝ)+l-2)*(((1+(X:ℝ[X]))^(k+l-3)*stripSecondSeedMCE8 a (k+l+2) q).coeff (k+0))=\n ((k+l).choose k:ℝ)*highJM81F a k l q",
+        "theorem high_seed3_scaledM81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) (a q t u : ℝ) :\n ((k:ℝ)+l)*((k:ℝ)+l-1)*((k:ℝ)+l-2)*((k:ℝ)+l-3)*((k:ℝ)+l-4)*(k+1)*(((1+(X:ℝ[X]))^(k+l-5)*h3seedM13D a (k+l+2) q t u).coeff (k+1))=\n ((k+l).choose k:ℝ)*l*highHM81F a k l q t u",
+        "theorem high_seed4_scaledM81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) (a q t u v w z : ℝ) :\n ((k:ℝ)+l)*((k:ℝ)+l-1)*((k:ℝ)+l-2)*((k:ℝ)+l-3)*((k:ℝ)+l-4)*((k:ℝ)+l-5)*((k:ℝ)+l-6)*(k+1)*(k+2)*(((1+(X:ℝ[X]))^(k+l-7)*h4seedM511 a (k+l+2) q t u v w z).coeff (k+2))=\n ((k+l).choose k:ℝ)*l*(l-1)*highIM81F a k l q t u v w z"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighSmallM81F",
+      "sha256": "772b7dbb2107099d19abf45a0adb1cda073b2688c24ad94d9ea2c3d4c21992f7",
+      "classification": "compiled and axiom-audited; selected replay passed",
+      "imports": [
+        "MarkovSmallHorizontal2_3M9E1",
+        "MarkovSmallHorizontal3_4M9E1",
+        "MarkovSmallHorizontal3_5M9E1",
+        "MarkovSmallHorizontal4_5M9E1",
+        "MarkovSmallHorizontal4_7M9E1",
+        "MarkovSmallHorizontal5_6M9E1",
+        "MarkovSmallHorizontal5_7M9E1",
+        "MarkovSmallHorizontal5_8M9E1",
+        "MarkovSmallHorizontal6_7M9E1",
+        "MarkovSmallHorizontal7_8M9E1",
+        "MarkovUnique098"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high_small_2_3M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_small_3_4M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_small_3_5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_small_4_5M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_small_4_7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_small_5_6M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_small_5_7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_small_5_8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_small_6_7M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_small_7_8M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_high_smallM81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high_small_2_3M81F (i : ℕ) (hi : i ≤ 4) :\n coeff (frame [true]).mid.p i 2*coeff (frame [true]).mid.p i 4 ≤ coeff (frame [true]).mid.p i 3^2",
+        "theorem high_small_3_4M81F (i : ℕ) (hi : i ≤ 6) :\n coeff (frame [true,true]).mid.p i 2*coeff (frame [true,true]).mid.p i 4 ≤ coeff (frame [true,true]).mid.p i 3^2",
+        "theorem high_small_3_5M81F (i : ℕ) (hi : i ≤ 7) :\n coeff (frame [true,false]).mid.p i 2*coeff (frame [true,false]).mid.p i 4 ≤ coeff (frame [true,false]).mid.p i 3^2",
+        "theorem high_small_4_5M81F (i : ℕ) (hi : i ≤ 8) :\n coeff (frame [true,true,true]).mid.p i 2*coeff (frame [true,true,true]).mid.p i 4 ≤ coeff (frame [true,true,true]).mid.p i 3^2",
+        "theorem high_small_4_7M81F (i : ℕ) (hi : i ≤ 10) :\n coeff (frame [true,false,false]).mid.p i 2*coeff (frame [true,false,false]).mid.p i 4 ≤ coeff (frame [true,false,false]).mid.p i 3^2",
+        "theorem high_small_5_6M81F (i : ℕ) (hi : i ≤ 10) :\n coeff (frame [true,true,true,true]).mid.p i 2*coeff (frame [true,true,true,true]).mid.p i 4 ≤ coeff (frame [true,true,true,true]).mid.p i 3^2",
+        "theorem high_small_5_7M81F (i : ℕ) (hi : i ≤ 11) :\n coeff (frame [true,true,false]).mid.p i 2*coeff (frame [true,true,false]).mid.p i 4 ≤ coeff (frame [true,true,false]).mid.p i 3^2",
+        "theorem high_small_5_8M81F (i : ℕ) (hi : i ≤ 12) :\n coeff (frame [true,false,true]).mid.p i 2*coeff (frame [true,false,true]).mid.p i 4 ≤ coeff (frame [true,false,true]).mid.p i 3^2",
+        "theorem high_small_6_7M81F (i : ℕ) (hi : i ≤ 12) :\n coeff (frame [true,true,true,true,true]).mid.p i 2*coeff (frame [true,true,true,true,true]).mid.p i 4 ≤ coeff (frame [true,true,true,true,true]).mid.p i 3^2",
+        "theorem high_small_7_8M81F (i : ℕ) (hi : i ≤ 14) :\n coeff (frame [true,true,true,true,true,true]).mid.p i 2*coeff (frame [true,true,true,true,true,true]).mid.p i 4 ≤ coeff (frame [true,true,true,true,true,true]).mid.p i 3^2",
+        "theorem source_high_smallM81F (path : List Bool) (ha : 2 ≤ (frame path).mid.a)\n (hb : (frame path).mid.b ≤ 8) (hs : (frame path).mid.b < 2*(frame path).mid.a)\n (i : ℕ) (hi : i ≤ (frame path).mid.a+(frame path).mid.b-1) :\n coeff (frame path).mid.p i 2*coeff (frame path).mid.p i 4 ≤ coeff (frame path).mid.p i 3^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighSourceM81F",
+      "sha256": "1ac6537dfcff3fd2211d7f393af90ff5b143efa3848723cc6323be0320a1d004",
+      "classification": "compiled and axiom-audited; selected replay passed",
+      "imports": [
+        "MarkovStripGeneralSourceMCE8",
+        "MarkovHorizontalFourthSourceM511"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high_second_coeffM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_third_coeffM81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "high_fourth_coeffM81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high_second_coeffM81F (path : List Bool) (hb : 5 ≤ (frame path).mid.b) (k : ℕ) :\n 2*(coeff (frame path).mid.p ((frame path).mid.a-1+k) 2:ℝ)=\n ((1+(X:ℝ[X]))^((frame path).mid.b-5)*stripSecondSeedMCE8 ((frame path).mid.a:ℝ)\n (frame path).mid.b (2*(frame path).mid.a-(frame path).mid.b:ℕ)).coeff k",
+        "theorem high_third_coeffM81F (path : List Bool) (ha : 2 ≤ (frame path).mid.a)\n (hb : 7 ≤ (frame path).mid.b) (k : ℕ) :\n 6*(coeff (frame path).mid.p ((frame path).mid.a-1+k) 3:ℝ)=\n ((1+(X:ℝ[X]))^((frame path).mid.b-7)*h3seedM13D ((frame path).mid.a:ℝ) (frame path).mid.b\n (2*(frame path).mid.a-(frame path).mid.b:ℕ)\n (min ((frame path).mid.b-(frame path).mid.a) (3*(frame path).mid.a-(frame path).mid.b):ℕ)\n (3*(frame path).mid.a-2*(frame path).mid.b:ℕ)).coeff (k+1)",
+        "theorem high_fourth_coeffM81F (path : List Bool) (ha : 3 ≤ (frame path).mid.a)\n (hb : 9 ≤ (frame path).mid.b) (k : ℕ) :\n 24*(coeff (frame path).mid.p ((frame path).mid.a-1+k) 4:ℝ)=\n ((1+(X:ℝ[X]))^((frame path).mid.b-9)*h4sourceSeedM511\n (frame path).mid.a (frame path).mid.b).coeff (k+2)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHighTransferM81F",
+      "sha256": "104d2a15b49647bc80cc13d8828d2ef6b37df9b425963cde2ec9b57fb83c408e",
+      "classification": "compiled and axiom-audited; selected replay passed",
+      "imports": [
+        "MarkovHighDefsM81F"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "high_transferM81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem high_transferM81F (a k l q t u v w z C c₂ c₃ c₄ : ℝ)\n (hk : 0 ≤ k) (hl : 2 ≤ l) (hN : 7 ≤ k+l)\n (h₂ : 2*(k+l)*(k+l-1)*(k+l-2)*c₂=C*highJM81F a k l q)\n (h₃ : 6*(k+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+1)*c₃=C*l*highHM81F a k l q t u)\n (h₄ : 24*(k+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(k+l-5)*(k+l-6)*(k+1)*(k+2)*c₄=\n   C*l*(l-1)*highIM81F a k l q t u v w z)\n (hg : 0 ≤ highGapM81F a k l q t u v w z) : c₂*c₄ ≤ c₃^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovResidualM81F",
+      "sha256": "7c45c6a4a24745ea808880e6854c7c9d257ce1c2feaa1b977c5b00fd612fb4b7",
+      "classification": "unbuilt excluded draft",
+      "imports": [
+        "MarkovHighAllM81F",
+        "MarkovResidualHalfM570"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "InteriorCore63M81F"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_interiorM81F"
+        }
+      ],
+      "theorem_statements": [
+        "theorem root_iff_interiorM81F : Conjecture63 ↔ InteriorCore63M81F"
+      ],
+      "raw_forbidden_flags": []
+    }
+  ],
+  "counts": {
+    "all": {
+      "def": 66,
+      "theorem": 299
+    },
+    "listed_compiled_printed": {
+      "def": 65,
+      "theorem": 287
+    },
+    "selected_replayed": {
+      "def": 65,
+      "theorem": 40
+    },
+    "listed_unreplayed": {
+      "theorem": 247
+    },
+    "compiled_excluded": {
+      "theorem": 8
+    },
+    "unbuilt": {
+      "theorem": 4,
+      "def": 1
+    }
+  },
+  "per_module_counts": {
+    "MarkovFallingM81F": {
+      "def": 1,
+      "theorem": 4
+    },
+    "MarkovFallingSeed3M81F": {
+      "theorem": 1
+    },
+    "MarkovFallingSeed5M81F": {
+      "theorem": 1
+    },
+    "MarkovFallingSeed7M81F": {
+      "theorem": 1
+    },
+    "MarkovHighAllM81F": {
+      "theorem": 2
+    },
+    "MarkovHighCoefficientsM81F": {
+      "theorem": 3
+    },
+    "MarkovHighCone0Cert0M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone0Cert1M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone0Cert2M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone0Cert3M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone0Cert4M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone0Cert5M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone0Cert6M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone0DefsM81F": {
+      "def": 20
+    },
+    "MarkovHighCone0ExpandM81F": {
+      "theorem": 4
+    },
+    "MarkovHighCone0GapM81F": {
+      "theorem": 8
+    },
+    "MarkovHighCone1Cert0M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone1Cert1M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone1Cert2M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone1Cert3M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone1Cert4M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone1Cert5M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone1Cert6M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone1DefsM81F": {
+      "def": 20
+    },
+    "MarkovHighCone1ExpandM81F": {
+      "theorem": 4
+    },
+    "MarkovHighCone1GapM81F": {
+      "theorem": 8
+    },
+    "MarkovHighCone2Cert0M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone2Cert1M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone2Cert2M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone2Cert3M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone2Cert4M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone2Cert5M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone2Cert6M81F": {
+      "theorem": 11
+    },
+    "MarkovHighCone2DefsM81F": {
+      "def": 20
+    },
+    "MarkovHighCone2ExpandM81F": {
+      "theorem": 4
+    },
+    "MarkovHighCone2GapM81F": {
+      "theorem": 8
+    },
+    "MarkovHighDefsM81F": {
+      "def": 4
+    },
+    "MarkovHighGapM81F": {
+      "theorem": 1
+    },
+    "MarkovHighScalingM81F": {
+      "theorem": 3
+    },
+    "MarkovHighSmallM81F": {
+      "theorem": 11
+    },
+    "MarkovHighSourceM81F": {
+      "theorem": 3
+    },
+    "MarkovHighTransferM81F": {
+      "theorem": 1
+    },
+    "MarkovResidualM81F": {
+      "def": 1,
+      "theorem": 1
+    }
+  },
+  "certificate_charts": [
+    {
+      "module": "MarkovHighCone0Cert0M81F",
+      "theorem": "high0_0_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 215,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert0M81F",
+      "theorem": "high0_0_zeroM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert0M81F",
+      "theorem": "high0_0_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert0M81F",
+      "theorem": "high0_0_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert0M81F",
+      "theorem": "high0_0_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert0M81F",
+      "theorem": "high0_0_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert0M81F",
+      "theorem": "high0_0_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert0M81F",
+      "theorem": "high0_0_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert0M81F",
+      "theorem": "high0_0_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert0M81F",
+      "theorem": "high0_0_z7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert0M81F",
+      "theorem": "high0_0_z8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert1M81F",
+      "theorem": "high0_1_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 194,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert1M81F",
+      "theorem": "high0_1_zeroM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert1M81F",
+      "theorem": "high0_1_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert1M81F",
+      "theorem": "high0_1_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert1M81F",
+      "theorem": "high0_1_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert1M81F",
+      "theorem": "high0_1_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert1M81F",
+      "theorem": "high0_1_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert1M81F",
+      "theorem": "high0_1_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert1M81F",
+      "theorem": "high0_1_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert1M81F",
+      "theorem": "high0_1_z7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert1M81F",
+      "theorem": "high0_1_z8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert2M81F",
+      "theorem": "high0_2_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 174,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert2M81F",
+      "theorem": "high0_2_zeroM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert2M81F",
+      "theorem": "high0_2_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert2M81F",
+      "theorem": "high0_2_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert2M81F",
+      "theorem": "high0_2_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert2M81F",
+      "theorem": "high0_2_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert2M81F",
+      "theorem": "high0_2_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert2M81F",
+      "theorem": "high0_2_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert2M81F",
+      "theorem": "high0_2_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert2M81F",
+      "theorem": "high0_2_z7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert2M81F",
+      "theorem": "high0_2_z8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert3M81F",
+      "theorem": "high0_3_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 155,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert3M81F",
+      "theorem": "high0_3_zeroM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 13,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert3M81F",
+      "theorem": "high0_3_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert3M81F",
+      "theorem": "high0_3_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert3M81F",
+      "theorem": "high0_3_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert3M81F",
+      "theorem": "high0_3_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert3M81F",
+      "theorem": "high0_3_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert3M81F",
+      "theorem": "high0_3_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert3M81F",
+      "theorem": "high0_3_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert3M81F",
+      "theorem": "high0_3_z7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert3M81F",
+      "theorem": "high0_3_z8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert4M81F",
+      "theorem": "high0_4_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 137,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert4M81F",
+      "theorem": "high0_4_zeroM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 12,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert4M81F",
+      "theorem": "high0_4_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert4M81F",
+      "theorem": "high0_4_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert4M81F",
+      "theorem": "high0_4_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert4M81F",
+      "theorem": "high0_4_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert4M81F",
+      "theorem": "high0_4_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert4M81F",
+      "theorem": "high0_4_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert4M81F",
+      "theorem": "high0_4_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert4M81F",
+      "theorem": "high0_4_z7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert4M81F",
+      "theorem": "high0_4_z8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert5M81F",
+      "theorem": "high0_5_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 120,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert5M81F",
+      "theorem": "high0_5_zeroM81F",
+      "rhs_zero": true,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert5M81F",
+      "theorem": "high0_5_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert5M81F",
+      "theorem": "high0_5_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert5M81F",
+      "theorem": "high0_5_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert5M81F",
+      "theorem": "high0_5_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert5M81F",
+      "theorem": "high0_5_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert5M81F",
+      "theorem": "high0_5_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert5M81F",
+      "theorem": "high0_5_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert5M81F",
+      "theorem": "high0_5_z7M81F",
+      "rhs_zero": true,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert5M81F",
+      "theorem": "high0_5_z8M81F",
+      "rhs_zero": true,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert6M81F",
+      "theorem": "high0_6_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 104,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert6M81F",
+      "theorem": "high0_6_zeroM81F",
+      "rhs_zero": true,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert6M81F",
+      "theorem": "high0_6_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert6M81F",
+      "theorem": "high0_6_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert6M81F",
+      "theorem": "high0_6_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert6M81F",
+      "theorem": "high0_6_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert6M81F",
+      "theorem": "high0_6_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert6M81F",
+      "theorem": "high0_6_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert6M81F",
+      "theorem": "high0_6_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert6M81F",
+      "theorem": "high0_6_z7M81F",
+      "rhs_zero": true,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone0Cert6M81F",
+      "theorem": "high0_6_z8M81F",
+      "rhs_zero": true,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert0M81F",
+      "theorem": "high1_0_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 215,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert0M81F",
+      "theorem": "high1_0_zeroM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert0M81F",
+      "theorem": "high1_0_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert0M81F",
+      "theorem": "high1_0_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert0M81F",
+      "theorem": "high1_0_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert0M81F",
+      "theorem": "high1_0_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert0M81F",
+      "theorem": "high1_0_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert0M81F",
+      "theorem": "high1_0_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert0M81F",
+      "theorem": "high1_0_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert0M81F",
+      "theorem": "high1_0_z7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert0M81F",
+      "theorem": "high1_0_z8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert1M81F",
+      "theorem": "high1_1_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 194,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert1M81F",
+      "theorem": "high1_1_zeroM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert1M81F",
+      "theorem": "high1_1_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert1M81F",
+      "theorem": "high1_1_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert1M81F",
+      "theorem": "high1_1_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert1M81F",
+      "theorem": "high1_1_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert1M81F",
+      "theorem": "high1_1_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert1M81F",
+      "theorem": "high1_1_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert1M81F",
+      "theorem": "high1_1_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert1M81F",
+      "theorem": "high1_1_z7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert1M81F",
+      "theorem": "high1_1_z8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert2M81F",
+      "theorem": "high1_2_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 174,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert2M81F",
+      "theorem": "high1_2_zeroM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert2M81F",
+      "theorem": "high1_2_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert2M81F",
+      "theorem": "high1_2_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert2M81F",
+      "theorem": "high1_2_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert2M81F",
+      "theorem": "high1_2_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert2M81F",
+      "theorem": "high1_2_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert2M81F",
+      "theorem": "high1_2_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert2M81F",
+      "theorem": "high1_2_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert2M81F",
+      "theorem": "high1_2_z7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert2M81F",
+      "theorem": "high1_2_z8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert3M81F",
+      "theorem": "high1_3_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 155,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert3M81F",
+      "theorem": "high1_3_zeroM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 13,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert3M81F",
+      "theorem": "high1_3_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert3M81F",
+      "theorem": "high1_3_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert3M81F",
+      "theorem": "high1_3_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert3M81F",
+      "theorem": "high1_3_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert3M81F",
+      "theorem": "high1_3_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert3M81F",
+      "theorem": "high1_3_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert3M81F",
+      "theorem": "high1_3_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert3M81F",
+      "theorem": "high1_3_z7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert3M81F",
+      "theorem": "high1_3_z8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert4M81F",
+      "theorem": "high1_4_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 137,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert4M81F",
+      "theorem": "high1_4_zeroM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 12,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert4M81F",
+      "theorem": "high1_4_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert4M81F",
+      "theorem": "high1_4_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert4M81F",
+      "theorem": "high1_4_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert4M81F",
+      "theorem": "high1_4_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert4M81F",
+      "theorem": "high1_4_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert4M81F",
+      "theorem": "high1_4_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert4M81F",
+      "theorem": "high1_4_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert4M81F",
+      "theorem": "high1_4_z7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert4M81F",
+      "theorem": "high1_4_z8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert5M81F",
+      "theorem": "high1_5_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 120,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert5M81F",
+      "theorem": "high1_5_zeroM81F",
+      "rhs_zero": true,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert5M81F",
+      "theorem": "high1_5_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert5M81F",
+      "theorem": "high1_5_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert5M81F",
+      "theorem": "high1_5_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert5M81F",
+      "theorem": "high1_5_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert5M81F",
+      "theorem": "high1_5_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert5M81F",
+      "theorem": "high1_5_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert5M81F",
+      "theorem": "high1_5_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert5M81F",
+      "theorem": "high1_5_z7M81F",
+      "rhs_zero": true,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert5M81F",
+      "theorem": "high1_5_z8M81F",
+      "rhs_zero": true,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert6M81F",
+      "theorem": "high1_6_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 104,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert6M81F",
+      "theorem": "high1_6_zeroM81F",
+      "rhs_zero": true,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert6M81F",
+      "theorem": "high1_6_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert6M81F",
+      "theorem": "high1_6_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert6M81F",
+      "theorem": "high1_6_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert6M81F",
+      "theorem": "high1_6_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert6M81F",
+      "theorem": "high1_6_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert6M81F",
+      "theorem": "high1_6_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert6M81F",
+      "theorem": "high1_6_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert6M81F",
+      "theorem": "high1_6_z7M81F",
+      "rhs_zero": true,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone1Cert6M81F",
+      "theorem": "high1_6_z8M81F",
+      "rhs_zero": true,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert0M81F",
+      "theorem": "high2_0_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 215,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert0M81F",
+      "theorem": "high2_0_zeroM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert0M81F",
+      "theorem": "high2_0_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert0M81F",
+      "theorem": "high2_0_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert0M81F",
+      "theorem": "high2_0_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert0M81F",
+      "theorem": "high2_0_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert0M81F",
+      "theorem": "high2_0_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert0M81F",
+      "theorem": "high2_0_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert0M81F",
+      "theorem": "high2_0_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 20,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert0M81F",
+      "theorem": "high2_0_z7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert0M81F",
+      "theorem": "high2_0_z8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert1M81F",
+      "theorem": "high2_1_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 194,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert1M81F",
+      "theorem": "high2_1_zeroM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert1M81F",
+      "theorem": "high2_1_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert1M81F",
+      "theorem": "high2_1_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert1M81F",
+      "theorem": "high2_1_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert1M81F",
+      "theorem": "high2_1_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert1M81F",
+      "theorem": "high2_1_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert1M81F",
+      "theorem": "high2_1_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert1M81F",
+      "theorem": "high2_1_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 19,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert1M81F",
+      "theorem": "high2_1_z7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert1M81F",
+      "theorem": "high2_1_z8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert2M81F",
+      "theorem": "high2_2_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 174,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert2M81F",
+      "theorem": "high2_2_zeroM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert2M81F",
+      "theorem": "high2_2_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert2M81F",
+      "theorem": "high2_2_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert2M81F",
+      "theorem": "high2_2_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert2M81F",
+      "theorem": "high2_2_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert2M81F",
+      "theorem": "high2_2_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert2M81F",
+      "theorem": "high2_2_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert2M81F",
+      "theorem": "high2_2_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 18,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert2M81F",
+      "theorem": "high2_2_z7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert2M81F",
+      "theorem": "high2_2_z8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert3M81F",
+      "theorem": "high2_3_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 155,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert3M81F",
+      "theorem": "high2_3_zeroM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 13,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert3M81F",
+      "theorem": "high2_3_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert3M81F",
+      "theorem": "high2_3_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert3M81F",
+      "theorem": "high2_3_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert3M81F",
+      "theorem": "high2_3_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert3M81F",
+      "theorem": "high2_3_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert3M81F",
+      "theorem": "high2_3_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert3M81F",
+      "theorem": "high2_3_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 17,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert3M81F",
+      "theorem": "high2_3_z7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert3M81F",
+      "theorem": "high2_3_z8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert4M81F",
+      "theorem": "high2_4_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 137,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert4M81F",
+      "theorem": "high2_4_zeroM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 12,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert4M81F",
+      "theorem": "high2_4_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert4M81F",
+      "theorem": "high2_4_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert4M81F",
+      "theorem": "high2_4_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert4M81F",
+      "theorem": "high2_4_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert4M81F",
+      "theorem": "high2_4_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert4M81F",
+      "theorem": "high2_4_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert4M81F",
+      "theorem": "high2_4_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 16,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert4M81F",
+      "theorem": "high2_4_z7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert4M81F",
+      "theorem": "high2_4_z8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert5M81F",
+      "theorem": "high2_5_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 120,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert5M81F",
+      "theorem": "high2_5_zeroM81F",
+      "rhs_zero": true,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert5M81F",
+      "theorem": "high2_5_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert5M81F",
+      "theorem": "high2_5_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert5M81F",
+      "theorem": "high2_5_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert5M81F",
+      "theorem": "high2_5_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert5M81F",
+      "theorem": "high2_5_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert5M81F",
+      "theorem": "high2_5_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert5M81F",
+      "theorem": "high2_5_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 15,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert5M81F",
+      "theorem": "high2_5_z7M81F",
+      "rhs_zero": true,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert5M81F",
+      "theorem": "high2_5_z8M81F",
+      "rhs_zero": true,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert6M81F",
+      "theorem": "high2_6_largeM81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 104,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert6M81F",
+      "theorem": "high2_6_zeroM81F",
+      "rhs_zero": true,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert6M81F",
+      "theorem": "high2_6_s2M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert6M81F",
+      "theorem": "high2_6_s3M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert6M81F",
+      "theorem": "high2_6_s4M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert6M81F",
+      "theorem": "high2_6_s5M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert6M81F",
+      "theorem": "high2_6_s6M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert6M81F",
+      "theorem": "high2_6_s7M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert6M81F",
+      "theorem": "high2_6_s8M81F",
+      "rhs_zero": false,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 14,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert6M81F",
+      "theorem": "high2_6_z7M81F",
+      "rhs_zero": true,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    },
+    {
+      "module": "MarkovHighCone2Cert6M81F",
+      "theorem": "high2_6_z8M81F",
+      "rhs_zero": true,
+      "rhs_nonnegative_literal_grammar": true,
+      "literal_count": 1,
+      "identity_recomputed": false
+    }
+  ],
+  "chart_labels": [
+    "large",
+    "zero",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s7",
+    "s8",
+    "z7",
+    "z8"
+  ],
+  "coefficient_cover_bodies_identical_after_name_normalization": true,
+  "normalized_cover_body": "theorem COEFFM81F (k l : ℕ) (hl : 2 ≤ l) (hN : 7 ≤ k+l) :\n 0 ≤ G k l := by\n by_cases hk : k=0\n · subst k\n   by_cases h9 : 9 ≤ l\n   · have h := CERT_zeroM81F 0 ((l:ℝ)-9) (by norm_num) (sub_nonneg.mpr (by exact_mod_cast h9))\n     convert h using 1 <;> congr 1 <;> ring\n   have hh : 7 ≤ l := by omega\n   interval_cases l\n   · simpa only [Nat.cast_zero,Nat.cast_ofNat] using CERT_z7M81F 0 0 (by norm_num) (by norm_num)\n   · simpa only [Nat.cast_zero,Nat.cast_ofNat] using CERT_z8M81F 0 0 (by norm_num) (by norm_num)\n have hk1 : 1 ≤ k := by omega\n by_cases h9 : 9 ≤ l\n · have h := CERT_largeM81F ((k:ℝ)-1) ((l:ℝ)-9)\n     (sub_nonneg.mpr (by exact_mod_cast hk1)) (sub_nonneg.mpr (by exact_mod_cast h9))\n   convert h using 1 <;> congr 1 <;> ring\n have hl8 : l ≤ 8 := by omega\n interval_cases l\n · have hks : (5:ℝ) ≤ k := by exact_mod_cast (show 5 ≤ k by omega)\n   have h := CERT_s2M81F ((k:ℝ)-5) 0 (by linarith) (by norm_num)\n   convert h using 1 <;> congr 1 <;> ring\n · have hks : (4:ℝ) ≤ k := by exact_mod_cast (show 4 ≤ k by omega)\n   have h := CERT_s3M81F ((k:ℝ)-4) 0 (by linarith) (by norm_num)\n   convert h using 1 <;> congr 1 <;> ring\n · have hks : (3:ℝ) ≤ k := by exact_mod_cast (show 3 ≤ k by omega)\n   have h := CERT_s4M81F ((k:ℝ)-3) 0 (by linarith) (by norm_num)\n   convert h using 1 <;> congr 1 <;> ring\n · have hks : (2:ℝ) ≤ k := by exact_mod_cast (show 2 ≤ k by omega)\n   have h := CERT_s5M81F ((k:ℝ)-2) 0 (by linarith) (by norm_num)\n   convert h using 1 <;> congr 1 <;> ring\n · have hks : (1:ℝ) ≤ k := by exact_mod_cast (show 1 ≤ k by omega)\n   have h := CERT_s6M81F ((k:ℝ)-1) 0 (by linarith) (by norm_num)\n   convert h using 1 <;> congr 1 <;> ring\n · have hks : (1:ℝ) ≤ k := by exact_mod_cast (show 1 ≤ k by omega)\n   have h := CERT_s7M81F ((k:ℝ)-1) 0 (by linarith) (by norm_num)\n   convert h using 1 <;> congr 1 <;> ring\n · have hks : (1:ℝ) ≤ k := by exact_mod_cast (show 1 ≤ k by omega)\n   have h := CERT_s8M81F ((k:ℝ)-1) 0 (by linarith) (by norm_num)\n   convert h using 1 <;> congr 1 <;> ring",
+  "unbuilt_residual_exact_j2_removal": true
+}

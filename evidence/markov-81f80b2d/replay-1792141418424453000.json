@@ -1,0 +1,43 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovHighCoefficientsM81F\ncollected MarkovHighSmallM81F\nreplay union of 2 modules over 14 inherited imports\nisolation checked for 14 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovHighCoefficientsM81F": "fa6fedc8db15d3bb4718579463018de3f705b10de8bd911d96d2e574f4710c35",
+    "MarkovHighSmallM81F": "772b7dbb2107099d19abf45a0adb1cda073b2688c24ad94d9ea2c3d4c21992f7"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM81F.lean",
+    "MarkovHighCoefficientsM81F",
+    "MarkovHighSmallM81F"
+  ],
+  "seconds": 43.892423458979465,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "1e10c9e3856b15a87fc742608fc736945764af682bb6d3157c97c3dfcd834f2d",
+  "declared_names": {
+    "MarkovHighCoefficientsM81F": [
+      "source_high2_scaledM81F",
+      "source_high3_scaledM81F",
+      "source_high4_scaledM81F"
+    ],
+    "MarkovHighSmallM81F": [
+      "high_small_2_3M81F",
+      "high_small_3_4M81F",
+      "high_small_3_5M81F",
+      "high_small_4_5M81F",
+      "high_small_4_7M81F",
+      "high_small_5_6M81F",
+      "high_small_5_7M81F",
+      "high_small_5_8M81F",
+      "high_small_6_7M81F",
+      "high_small_7_8M81F",
+      "source_high_smallM81F"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed M81F; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

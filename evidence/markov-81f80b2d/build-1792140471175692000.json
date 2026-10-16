@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovHighCone0ExpandM81F.lean:8:18: error: Tactic `unfold` failed to unfold `highHM81F` in\n  4 *\n      (8 * q * l * (l - 1) * (l - 2) +\n            (9 * ((k + l + 2 + q) / 2) ^ 2 - 5 * ((k + l + 2 + q) / 2) + 2) * k * l * (l - 1) +\n          (6 * ((k + l + 2 + q) / 2) ^ 2 + 6 * ((k + l + 2 + q) / 2) * (k + l + 2) - 16 * ((k + l + 2 + q) / 2) + 4) *\n                k *\n              (k - 1) *\n            l +\n        ((k + l + 2 + q) / 2 + k + l + 1) * ((k + l + 2 + q) / 2 + k + l) * k * (k - 1) * (k - 2)) =\n    c0j0M81F k l + c0j1M81F k l * q ^ 1 + c0j2M81F k l * q ^ 2\n/Users/sasha/math_gkm/research/MarkovHighCone0ExpandM81F.lean:11:8: error: Tactic `unfold` failed to unfold `highJM81F` in\n  8 * highHM81F ((k + l + 2 + q) / 2) k l q (k + l + 2 - (k + l + 2 + q) / 2) 0 =\n    c0h0M81F k l + c0h1M81F k l * q ^ 1 + c0h2M81F k l * q ^ 2 + c0h3M81F k l * q ^ 3\n/Users/sasha/math_gkm/research/MarkovHighCone0ExpandM81F.lean:14:8: error: Tactic `unfold` failed to unfold `highJM81F` in\n  16 * highIM81F ((k + l + 2 + q) / 2) k l q (k + l + 2 - (k + l + 2 + q) / 2) 0 0 q 0 =\n    c0i0M81F k l + c0i1M81F k l * q ^ 1 + c0i2M81F k l * q ^ 2 + c0i3M81F k l * q ^ 3 + c0i4M81F k l * q ^ 4\n",
+  "stderr": "",
+  "modules": {
+    "MarkovHighCone0ExpandM81F": "d0cc195965b7e4f30e3d3270b1776f16d2942e011ea3cc9c721da8ef2e04ad24"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-81f80b2d/MarkovHighCone0ExpandM81F.olean",
+    "/Users/sasha/math_gkm/research/MarkovHighCone0ExpandM81F.lean"
+  ],
+  "seconds": 59.173508207954,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovHighCoefficientsM81F.lean:19:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ((1 + X) ^ (k + l - 3) *\n        stripSecondSeedMCE8 (\u2191(frame path).mid.a) (\u2191k + \u2191l + 2) \u2191(2 * (frame path).mid.a - (k + l + 2))).coeff\n    k\nin the target expression\n  (\u2191k + \u2191l) * (\u2191k + \u2191l - 1) * (\u2191k + \u2191l - 2) *\n      ((1 + X) ^ (k + l - 3) *\n            stripSecondSeedMCE8 (\u2191(frame path).mid.a) (\u2191k + \u2191l + 2) \u2191(2 * (frame path).mid.a - (k + l + 2))).coeff\n        (k + 0) =\n    \u2191((k + l).choose k) * highJM81F \u2191(frame path).mid.a \u2191k \u2191l \u2191(2 * (frame path).mid.a - (k + l + 2))\n\npath : List Bool\nk l : \u2115\nha : 3 \u2264 (frame path).mid.a\nhb : 9 \u2264 (frame path).mid.b\nhbl : (frame path).mid.b = k + l + 2\nhl : 2 \u2264 l\nhc :\n  2 * \u2191(coeff (frame path).mid.p ((frame path).mid.a - 1 + k) 2) =\n    ((1 + X) ^ (k + l - 3) *\n          stripSecondSeedMCE8 (\u2191(frame path).mid.a) (\u2191k + \u2191l + 2) \u2191(2 * (frame path).mid.a - (k + l + 2))).coeff\n      k\nh :\n  (\u2191k + \u2191l) * (\u2191k + \u2191l - 1) * (\u2191k + \u2191l - 2) *\n      ((1 + X) ^ (k + l - 3) *\n            stripSecondSeedMCE8 (\u2191(frame path).mid.a) (\u2191k + \u2191l + 2) \u2191(2 * (frame path).mid.a - (k + l + 2))).coeff\n        (k + 0) =\n    \u2191((k + l).choose k) * highJM81F \u2191(frame path).mid.a \u2191k \u2191l \u2191(2 * (frame path).mid.a - (k + l + 2))\n\u22a2 2 * (\u2191k + \u2191l) * (\u2191k + \u2191l - 1) * (\u2191k + \u2191l - 2) * \u2191(coeff (frame path).mid.p ((frame path).mid.a - 1 + k) 2) =\n    \u2191((k + l).choose k) * highJM81F \u2191(frame path).mid.a \u2191k \u2191l \u2191(2 * (frame path).mid.a - (frame path).mid.b)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovHighCoefficientsM81F": "b54152711061910e05226df7e7a92a06abea48709266950194e5d33c7b6936ae"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-81f80b2d/MarkovHighCoefficientsM81F.olean",
+    "/Users/sasha/math_gkm/research/MarkovHighCoefficientsM81F.lean"
+  ],
+  "seconds": 50.208178790984675,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

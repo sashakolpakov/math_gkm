@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovFallingM81F.lean:34:46: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  e \u2265 0\n  c \u2265 0\n  c - e \u2264 -1\n  b \u2265 0\n  a \u2265 0\n  a - b \u2264 0\n  a - b - c + e \u2264 0\n  a + e \u2265 0\nwhere\n a := \u2191r\n b := \u2191k\n c := \u2191l\n e := \u2191(d - r)\n/Users/sasha/math_gkm/research/MarkovFallingM81F.lean:33:1: error: unsolved goals\ncase neg\nk l d r : \u2115\nhr : r \u2264 d\nhkr : r \u2264 k\nhd : d \u2264 k + l\nhl : \u00acd - r \u2264 l\n\u22a2 ((k + l).choose k = 0 \u2228 k < r) \u2228 l < d - r\n/Users/sasha/math_gkm/research/MarkovFallingM81F.lean:47:48: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  e \u2265 0\n  c \u2265 0\n  b \u2265 0\n  b - c \u2265 1\n  a \u2265 0\n  a - b \u2265 0\n  a - c - e \u2264 0\nwhere\n a := \u2191d\n b := \u2191r\n c := \u2191k\n e := \u2191l\n/Users/sasha/math_gkm/research/MarkovFallingM81F.lean:47:1: error: unsolved goals\ncase neg\nk l d r : \u2115\nhr : r \u2264 d\nhd : d \u2264 k + l\nhf : \u2200 (n m : \u2115), fallM81F (\u2191n) m = \u2191(n.descFactorial m)\nhk : \u00acr \u2264 k\n\u22a2 ((k + l).choose k = 0 \u2228 k < r) \u2228 l < d - r\n",
+  "stderr": "",
+  "modules": {
+    "MarkovFallingM81F": "c5b65e4feddf87e3db93dbd45251b1adfe8dc09d20dc0c2406b481c6f8f71f8b"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-81f80b2d/MarkovFallingM81F.olean",
+    "/Users/sasha/math_gkm/research/MarkovFallingM81F.lean"
+  ],
+  "seconds": 67.42604924994521,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
