@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovVerticalTraceMDE6.lean:25:1: error: ring failed, ring expressions not equal\nw : List Bool\nh :\n  mm16 (hmapM13D vsubM9E1 (rawWord80 w)) (vrightM9E1 X) =\n    hscaleM13D (C (X + 1) ^ List.count true w) (mm16 (vrightM9E1 X) (vKwordM9E1 X w))\nhz : C (X + 1) \u2260 0\nha : vsubM9E1 (rawWord80 w).a = (C X + 1) ^ List.count true w * ((vKwordM9E1 X w).a + -1 * (vKwordM9E1 X w).c)\nhc : vsubM9E1 (rawWord80 w).c = (C X + 1) ^ List.count true w * ((C X + 1) * (vKwordM9E1 X w).c)\nhd :\n  vsubM9E1 (rawWord80 w).c * -1 + vsubM9E1 (rawWord80 w).d * (C X + 1) =\n    (C X + 1) ^ List.count true w * ((C X + 1) * (vKwordM9E1 X w).d)\n\u22a2 C X * vsubM9E1 (rawWord80 w).a - C X * (vKwordM9E1 X w).a * (1 + C X) ^ List.count true w +\n                  C X * (vKwordM9E1 X w).c * (1 + C X) ^ List.count true w +\n                vsubM9E1 (rawWord80 w).a -\n              vsubM9E1 (rawWord80 w).a * C (X + 1) +\n            C (X + 1) * (vKwordM9E1 X w).a * (1 + C X) ^ List.count true w -\n          C (X + 1) * (vKwordM9E1 X w).c * (1 + C X) ^ List.count true w -\n        (vKwordM9E1 X w).a * (1 + C X) ^ List.count true w +\n      (vKwordM9E1 X w).c * (1 + C X) ^ List.count true w =\n    0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovVerticalTraceMDE6": "245a87b5efa81d731b3cb902298492aaa50509a73d0579428f2032de03ef1a3e"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-de6168c6/MarkovVerticalTraceMDE6.olean",
+    "/Users/sasha/math_gkm/research/MarkovVerticalTraceMDE6.lean"
+  ],
+  "seconds": 25.568409458035603,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

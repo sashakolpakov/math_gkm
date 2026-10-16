@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovVerticalJetRecurrenceMDE6.lean:50:75: error: Application type mismatch: The argument\n  h1\nhas type\n  (vKwordM9E1 X (runBlock025 (n + 1 + 1))).a.coeff 1 =\n    X * (vKwordM9E1 X (runBlock025 (n + 1))).a.coeff 1 + 1 * (vKwordM9E1 X (runBlock025 (n + 1))).a.coeff 1 +\n        (X + 1) ^ 2 * X ^ (n + 1 + 1) -\n      X * (vKwordM9E1 X (runBlock025 n)).a.coeff 1\nbut is expected to have type\n  (vKwordM9E1 X (runBlock025 (n + 2))).a.coeff 1 =\n    X * (vKwordM9E1 X (runBlock025 (n + 1))).a.coeff 1 + (vKwordM9E1 X (runBlock025 (n + 1))).a.coeff 1 +\n        (X + 1) ^ 2 * X ^ (n + 2) -\n      X * (vKwordM9E1 X (runBlock025 n)).a.coeff 1\nin the application\n  And.intro h1\n/Users/sasha/math_gkm/research/MarkovVerticalJetRecurrenceMDE6.lean:50:78: error: Application type mismatch: The argument\n  h2\nhas type\n  (vKwordM9E1 X (runBlock025 (n + 1 + 1))).a.coeff 2 =\n    X * (vKwordM9E1 X (runBlock025 (n + 1))).a.coeff 2 + 1 * (vKwordM9E1 X (runBlock025 (n + 1))).a.coeff 2 +\n        (X + 1) ^ 2 * (vKwordM9E1 X (runBlock025 (n + 1))).a.coeff 1 -\n      X * (vKwordM9E1 X (runBlock025 n)).a.coeff 2\nbut is expected to have type\n  (vKwordM9E1 X (runBlock025 (n + 2))).a.coeff 2 =\n    X * (vKwordM9E1 X (runBlock025 (n + 1))).a.coeff 2 + (vKwordM9E1 X (runBlock025 (n + 1))).a.coeff 2 +\n        (X + 1) ^ 2 * (vKwordM9E1 X (runBlock025 (n + 1))).a.coeff 1 -\n      X * (vKwordM9E1 X (runBlock025 n)).a.coeff 2\nin the application\n  And.intro h2\n/Users/sasha/math_gkm/research/MarkovVerticalJetRecurrenceMDE6.lean:62:3: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovVerticalJetRecurrenceMDE6": "cf13fba3055624bbd3ce7942f5457c81ecbcaf7c74673ba5517d70a48f38570d"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-de6168c6/MarkovVerticalJetRecurrenceMDE6.olean",
+    "/Users/sasha/math_gkm/research/MarkovVerticalJetRecurrenceMDE6.lean"
+  ],
+  "seconds": 30.66867437498877,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

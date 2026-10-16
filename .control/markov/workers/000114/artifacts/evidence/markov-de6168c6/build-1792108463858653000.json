@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovVerticalBlockWordMDE6.lean:24:53: error: unsolved goals\nn : \u2115\nrest : List Bool\nxy : List Bool \u00d7 List Bool := List.foldl wordPairStep774 ([true], [false]) rest\nhw :\n  List.foldl wordPairStep774 ([false], [true]) (List.replicate n false ++ true :: rest) =\n    (blockSub025 n xy.1, blockSub025 n xy.2)\nhm :\n  (List.map not (List.foldl wordPairStep774 ([false], [true]) rest).1,\n      List.map not (List.foldl wordPairStep774 ([false], [true]) rest).2) =\n    xy\nhz : xy.1 ++ xy.2 = List.map not (sourceWord28 rest)\n\u22a2 blockSub025 n (List.map not (sourceWord28 rest)) =\n    blockSub025 n\n      (List.map not\n        (have xy := List.foldl wordPairStep774 ([false], [true]) rest;\n        xy.1 ++ xy.2))\n/Users/sasha/math_gkm/research/MarkovVerticalBlockWordMDE6.lean:50:37: warning: This simp argument is unused:\n  List.count_cons\n\nHint: Omit it from the simp argument list.\n  simp [\u0335L\u0335i\u0335s\u0335t\u0335.\u0335c\u0335o\u0335u\u0335n\u0335t\u0335_\u0335c\u0335o\u0335n\u0335s\u0335]\u0335 \u0335at *\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovVerticalBlockWordMDE6": "8c0f494b2189040cee9d53d949a32eeec057ac87d381dbf0af77705c9a8a6a31"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-de6168c6/MarkovVerticalBlockWordMDE6.olean",
+    "/Users/sasha/math_gkm/research/MarkovVerticalBlockWordMDE6.lean"
+  ],
+  "seconds": 33.83420187496813,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

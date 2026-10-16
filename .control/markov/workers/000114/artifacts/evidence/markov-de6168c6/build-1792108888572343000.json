@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovVerticalSecondSourceMDE6.lean:43:3: error: ring failed, ring expressions not equal\nrest : List Bool\nha : 4 \u2264 (frame rest).mid.b\nx : \u211d\nhx : 0 < x\na : \u2115 := \u22ef\nb : \u2115 := \u22ef\nr : \u2115 := \u22ef\nq : \u2115 := \u22ef\nt : \u2115 := \u22ef\nu : \u2115 := \u22ef\nD : \u211d := \u22ef\nK : \u211d := \u22ef\nT : \u211d[X] := \u22ef\nE : \u211d[X] := \u22ef\nz : \u211d := \u22ef\nhx0 : x \u2260 0\nh0 : T.coeff 0 = 1\nh1 : T.coeff 1 = D\nh2 : 2 * T.coeff 2 = D ^ 2 + K\nht : C z * T = (1 + C (x + 1) * X) * E\ne0 : z = E.coeff 0\ne1 : z * D = E.coeff 1 + (x * E.coeff 0 + E.coeff 0)\ne2 : z * T.coeff 2 = E.coeff 2 + (x * E.coeff 1 + E.coeff 1)\n\u22a2 E.coeff 2 * 4 - x * x ^ (frame (true :: rest)).mid.b * 8 + x * x ^ (frame (true :: rest)).mid.b * D * 4 -\n              x ^ 2 * x ^ (frame (true :: rest)).mid.b * 4 -\n            x ^ (frame (true :: rest)).mid.b * 4 +\n          x ^ (frame (true :: rest)).mid.b * D * 4 -\n        x ^ (frame (true :: rest)).mid.b * D ^ 2 * 2 -\n      x ^ (frame (true :: rest)).mid.b * K * 2 =\n    0\n/Users/sasha/math_gkm/research/MarkovVerticalSecondSourceMDE6.lean:120:1: error: 'change' tactic failed, pattern\n  2 * \u2191(coeff (frame (true :: rest)).mid.p 2 j) * (2 * \u2191(coeff (frame (true :: rest)).mid.p 2 (j + 2))) \u2264\n    (2 * \u2191(coeff (frame (true :: rest)).mid.p 2 (j + 1))) ^ 2\nis not definitionally equal to target\n  2 * (Int.castRingHom \u211d) ((Polynomial.coeff (frame (true :: rest)).mid.p 2).coeff j) *\n      (2 * (Int.castRingHom \u211d) ((Polynomial.coeff (frame (true :: rest)).mid.p 2).coeff (j + 2))) \u2264\n    (2 * (Int.castRingHom \u211d) ((Polynomial.coeff (frame (true :: rest)).mid.p 2).coeff (j + 1))) ^ 2\n",
+  "stderr": "",
+  "modules": {
+    "MarkovVerticalSecondSourceMDE6": "a71cb11cad0589a617ed2bba91a0fb939b6465289fff05e02a34e6b218c40f89"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-de6168c6/MarkovVerticalSecondSourceMDE6.olean",
+    "/Users/sasha/math_gkm/research/MarkovVerticalSecondSourceMDE6.lean"
+  ],
+  "seconds": 3.1754358749603853,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

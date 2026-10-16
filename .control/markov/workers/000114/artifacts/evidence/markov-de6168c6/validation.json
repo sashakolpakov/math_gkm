@@ -1,0 +1,753 @@
+{
+  "modules": {
+    "MarkovVerticalBlockWordMDE6": {
+      "source": "research/MarkovVerticalBlockWordMDE6.lean",
+      "sha256": "715b72d55634bfc28dc0edc11206b8d198dfb0a3559bcf4721394ab0d09daac3",
+      "build": "evidence/markov-de6168c6/build-1792108549637411000.json",
+      "declarations": [
+        "wordPair_mapMDE6",
+        "source_vertical_blocksMDE6",
+        "count_notMDE6",
+        "source_vertical_indicesMDE6"
+      ],
+      "olean_sha256": "21d891458e3bc584cb642c0b98e9acbcee8be2630e2fc21ca5e286572dfaee5d",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109294703469000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovVerticalSecondSeedMDE6": {
+      "source": "research/MarkovVerticalSecondSeedMDE6.lean",
+      "sha256": "70bad32b586e758aa44d371ca10504bf55deb188cf030f598cb8288bb8ff5bf7",
+      "build": "evidence/markov-de6168c6/build-1792108605305431000.json",
+      "declarations": [
+        "v2lowMDE6",
+        "v2highMDE6",
+        "v2goodMDE6",
+        "v2seed_crossMDE6"
+      ],
+      "olean_sha256": "759c6856a260c59c9b17821a7aa23ab407047d75dad271faa3c16bc056172267",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109294703469000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovVerticalTraceMDE6": {
+      "source": "research/MarkovVerticalTraceMDE6.lean",
+      "sha256": "67fdacc82adb96c5f41cf9d5883c7abe770a386e1174758ded60a7f9109ee33b",
+      "build": "evidence/markov-de6168c6/build-1792108701665260000.json",
+      "declarations": [
+        "vword_traceMDE6",
+        "vsource_traceMDE6",
+        "vKword_appendMDE6",
+        "vKword_blockMDE6",
+        "vswap_mulMDE6",
+        "vswap_traceMDE6",
+        "vEval_wordMDE6",
+        "vEval_coeffMDE6",
+        "vsource_trace_evalMDE6"
+      ],
+      "olean_sha256": "da7a19c81eb64590f9281697c59119bf37376a70c99d3fc7bdfac31f56d68b74",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109294703469000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovVerticalProjectionMDE6": {
+      "source": "research/MarkovVerticalProjectionMDE6.lean",
+      "sha256": "d7a8a03fa5b2a7f16cf840043bcff3669a199aed9770830971f70a3c76253f9a",
+      "build": "evidence/markov-de6168c6/build-1792108822112117000.json",
+      "declarations": [
+        "vproj_shapeMDE6",
+        "vproj_letterMDE6",
+        "vproj_wordMDE6",
+        "vproj_source_traceMDE6"
+      ],
+      "olean_sha256": "590a638e7c3ac461263cfae4bbeed8cce2c50e40c192ae8dcfcceef0da2e33b8",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109294703469000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovVerticalMomentsMDE6": {
+      "source": "research/MarkovVerticalMomentsMDE6.lean",
+      "sha256": "2dc3d49a3e2d837fbd466aeadeb05739b75a3d49f05c7dce38f20b79017b6677",
+      "build": "evidence/markov-de6168c6/build-1792108856326424000.json",
+      "declarations": [
+        "vproj_jetsMDE6",
+        "vmoment_seedMDE6",
+        "vsource_momentsMDE6"
+      ],
+      "olean_sha256": "7d8bbce74253f9f76bd774bc07559c2221cdd17d99d8709aa33d68cd40c89ba9",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109294703469000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovVerticalSecondSourceMDE6": {
+      "source": "research/MarkovVerticalSecondSourceMDE6.lean",
+      "sha256": "26f45eac873d6196670b3ce7678c6bcbbd10ee47f015f57ff681c4d781387606",
+      "build": "evidence/markov-de6168c6/build-1792108923400364000.json",
+      "declarations": [
+        "vsecond_evalMDE6",
+        "vertical_second_formulaMDE6",
+        "vertical_second_right_rawMDE6"
+      ],
+      "olean_sha256": "6c5ef870af503ae0504eb2e80a84870c8249d4ea4a44461ed7cc24ac6e08724a",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109294703469000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovSmallVertical3_5MDE6": {
+      "source": "research/MarkovSmallVertical3_5MDE6.lean",
+      "sha256": "e01c276c0d9e3117f1e46ca29de3c99236b92c400c724381b381200d87bd7554",
+      "build": "evidence/markov-de6168c6/build-1792108982985131000.json",
+      "declarations": [
+        "small_vpoly_3_5MDE6",
+        "small_vcol_3_5MDE6",
+        "small_vlc_3_5MDE6"
+      ],
+      "olean_sha256": "2a0cd1bc17845bd022cce98a2add7d80683e11d06d5ef499e38f6e24f2fb0db9",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109294703469000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovSmallVertical3_4MDE6": {
+      "source": "research/MarkovSmallVertical3_4MDE6.lean",
+      "sha256": "81425a65528e618c221f4b2241db47a0aafd39c4fbfe9c292af9318b7bdfff02",
+      "build": "evidence/markov-de6168c6/build-1792108982985132000.json",
+      "declarations": [
+        "small_vpoly_3_4MDE6",
+        "small_vcol_3_4MDE6",
+        "small_vlc_3_4MDE6"
+      ],
+      "olean_sha256": "00b496a6db058686297f7c8b6b0e35862376bab895b234d6e4f3ff0f45bb1548",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109294703469000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovSmallVertical4_7MDE6": {
+      "source": "research/MarkovSmallVertical4_7MDE6.lean",
+      "sha256": "bf9465df0d57885890640b6bbdc22c6809ac0a41f0f7599fc47db6e6abb38e80",
+      "build": "evidence/markov-de6168c6/build-1792108982987579000.json",
+      "declarations": [
+        "small_vpoly_4_7MDE6",
+        "small_vcol_4_7MDE6",
+        "small_vlc_4_7MDE6"
+      ],
+      "olean_sha256": "11c5cd729f343fc27059d823f905d18a37c79aa7f25cfe563986ace9f5978873",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109294703469000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovSmallVertical2_3MDE6": {
+      "source": "research/MarkovSmallVertical2_3MDE6.lean",
+      "sha256": "7458e7566bc6e90471220b0c9d7faea5e578ef18b952121093384178d8225684",
+      "build": "evidence/markov-de6168c6/build-1792108982988845000.json",
+      "declarations": [
+        "small_vpoly_2_3MDE6",
+        "small_vcol_2_3MDE6",
+        "small_vlc_2_3MDE6"
+      ],
+      "olean_sha256": "6c1f404b9a8fcde12045fc50ca16bfbbd954f9e1dafbceebdf92ceae0406a798",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109294703469000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovSmallVertical4_5MDE6": {
+      "source": "research/MarkovSmallVertical4_5MDE6.lean",
+      "sha256": "edd54d9a5ba0745374fb01d7c1caedaf931fad74e7b3efdfc2dbe7acb7e56112",
+      "build": "evidence/markov-de6168c6/build-1792108982989088000.json",
+      "declarations": [
+        "small_vpoly_4_5MDE6",
+        "small_vcol_4_5MDE6",
+        "small_vlc_4_5MDE6"
+      ],
+      "olean_sha256": "d87f51519924e02a432056824b714fb86ae01c35ffb0ac68403aa2309f1dd4cf",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109294703469000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovVerticalGeneralProjectionMDE6": {
+      "source": "research/MarkovVerticalGeneralProjectionMDE6.lean",
+      "sha256": "565fe5e02b07c5f39c4882a2db560c95c4a2583734427409e9be11111b15f11f",
+      "build": "evidence/markov-de6168c6/build-1792109023784440000.json",
+      "declarations": [
+        "vRun_zeroMDE6",
+        "vGeneral_shapeMDE6",
+        "vGeneral_letterMDE6",
+        "vGeneral_wordMDE6",
+        "vGeneral_source_traceMDE6"
+      ],
+      "olean_sha256": "3d787b1b3923ea4b04ca05f3b6b3337aa94ecf3be885d9867929aa345ff4c51a",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109294703469000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovVerticalSecondRightMDE6": {
+      "source": "research/MarkovVerticalSecondRightMDE6.lean",
+      "sha256": "500171ee55ac3f247fbd1682001facc722143f87807b14061ca068604168ed23",
+      "build": "evidence/markov-de6168c6/build-1792109055673757000.json",
+      "declarations": [
+        "small_vertical_rightMDE6",
+        "vertical_second_right_allMDE6",
+        "source_left_spine_indicesMDE6",
+        "source_right_of_ratioMDE6",
+        "vertical_second_near_oneMDE6"
+      ],
+      "olean_sha256": "ef7611a30d3f08e653a957acdcd96937adbd9c0888a83d6970cc9330288c4a6c",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109294703469000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovVerticalGeneralMomentMDE6": {
+      "source": "research/MarkovVerticalGeneralMomentMDE6.lean",
+      "sha256": "91e865491ba0da617612a0f02409fa27c2f665ef6f4f535d04a9f75d07b02985",
+      "build": "evidence/markov-de6168c6/build-1792109095355086000.json",
+      "declarations": [
+        "vertical_second_general_momentMDE6",
+        "vertical_second_raw_momentMDE6"
+      ],
+      "olean_sha256": "e838b8dbd80c3eba30e2d06b3d118e9f3f1ab0b953ea603e5454d0d7db12b759",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109294703469000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovResidualMDE6": {
+      "source": "research/MarkovResidualMDE6.lean",
+      "sha256": "4f8bf4f948efe912c9f11811536aa711051162e80f4a61c4a1b1e364eed5b3d9",
+      "build": "evidence/markov-de6168c6/build-1792109143050791000.json",
+      "declarations": [
+        "root_iff_interiorMDE6"
+      ],
+      "olean_sha256": "90ed0b91efcebe66c938d68af14e97ca3ee48e2d8a4751f632852e65dabf6fda",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109294703469000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovVerticalRunJetsMDE6": {
+      "source": "research/MarkovVerticalRunJetsMDE6.lean",
+      "sha256": "f20928e8ccfb060bb67f7b3ef34b3de2b0135fb068a82984468741489b137ba1",
+      "build": "evidence/markov-de6168c6/build-1792109250365144000.json",
+      "declarations": [
+        "vRun_stepMDE6",
+        "vRun_symMDE6",
+        "vRun_firstMDE6",
+        "vF_stepMDE6",
+        "vGeneral_jetsMDE6"
+      ],
+      "olean_sha256": "d8195eb4db91f19cad030d84688a0d0c416fe467fded3073f84eea24780e9161",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109294703469000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovVerticalCandidateBridgeMDE6": {
+      "source": "research/MarkovVerticalCandidateBridgeMDE6.lean",
+      "sha256": "3e41557014537db5f2b67b9f6c98115756d086d49fae0da06d9720f6dfefdb82",
+      "build": "evidence/markov-de6168c6/build-1792109463268530000.json",
+      "declarations": [
+        "vbinary_momentsMDE6",
+        "vGeneral_DK_explicitMDE6",
+        "vertical_second_candidate_bridgeMDE6"
+      ],
+      "olean_sha256": "3814fe5b81b045fbb5c5267059230a7afc7b9867cf197e424c4212f105430ace",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109950326516000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovVerticalClearedSeedMDE6": {
+      "source": "research/MarkovVerticalClearedSeedMDE6.lean",
+      "sha256": "5276f3870be7edffb912b619b5e671ea6086bf7cfa7db0107641d68393cc13f7",
+      "build": "evidence/markov-de6168c6/build-1792109511258350000.json",
+      "declarations": [
+        "vNscalarMDE6",
+        "vRun_eval_aMDE6",
+        "vRun_eval_bMDE6",
+        "vNseed_evalMDE6"
+      ],
+      "olean_sha256": "fe501576f2060b75dd94eac60fe438a72ef0792688453dfe04cc15210b957eba",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109950326516000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovVerticalAllRunFactorMDE6": {
+      "source": "research/MarkovVerticalAllRunFactorMDE6.lean",
+      "sha256": "4d9ea518caaa4ae41008835c0334d539395ac43ab8a45b8b77782729baf92135",
+      "build": "evidence/markov-de6168c6/build-1792109568548912000.json",
+      "declarations": [
+        "vSecond_residual_factorMDE6",
+        "vertical_second_all_run_factorMDE6",
+        "vertical_second_source_factorMDE6"
+      ],
+      "olean_sha256": "1ece9b28f036172d88d1f9161b74a2caa3d45733212dfb8e719ec1aea6126fda",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109950326516000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovVerticalJetRecurrenceMDE6": {
+      "source": "research/MarkovVerticalJetRecurrenceMDE6.lean",
+      "sha256": "6ca152bd0418fd1f049b8120ee91e745b67b4b89e6ffc6d91f771c00aba7ed70",
+      "build": "evidence/markov-de6168c6/build-1792109690742039000.json",
+      "declarations": [
+        "vPolyRun_stepMDE6",
+        "vPolyRun_zeroMDE6",
+        "vKa_cayleyMDE6",
+        "vJet_recurrencesMDE6",
+        "vJet_initialMDE6"
+      ],
+      "olean_sha256": "0b24d5c3d5b3c62fefd410835e76d731c770a3fd31088c309a92df3be2d58fcb",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109950326516000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovVerticalJetClosedMDE6": {
+      "source": "research/MarkovVerticalJetClosedMDE6.lean",
+      "sha256": "548cccbc7e0e23f121ce9fedc6f667eb1611c2751ecaf74c8b773a774ae28e76",
+      "build": "evidence/markov-de6168c6/build-1792109795473325000.json",
+      "declarations": [
+        "vJet_closedMDE6"
+      ],
+      "olean_sha256": "56ef7744ae273a91b027a92c26aec0ba0c7e090502dc30806f3aaa8a6d8b5ffb",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109950326516000.json"
+      ],
+      "kernel_replay_passed": true
+    },
+    "MarkovVerticalSeedTransportMDE6": {
+      "source": "research/MarkovVerticalSeedTransportMDE6.lean",
+      "sha256": "5680c4058b772009276e6c7c5eee0222c686125757820533f2608da5ca2f23f3",
+      "build": "evidence/markov-de6168c6/build-1792109913035063000.json",
+      "declarations": [
+        "vertical_second_of_seedMDE6"
+      ],
+      "olean_sha256": "23993f982cc5072eab9ba51fc90bac24753e633b5212e2dae0756bed57d599d8",
+      "axiom_audit_complete": true,
+      "replays": [
+        "evidence/markov-de6168c6/replay-1792109950326516000.json"
+      ],
+      "kernel_replay_passed": true
+    }
+  },
+  "axioms": {
+    "wordPair_mapMDE6": [
+      "propext"
+    ],
+    "source_vertical_blocksMDE6": [
+      "propext",
+      "Quot.sound"
+    ],
+    "count_notMDE6": [
+      "propext",
+      "Quot.sound"
+    ],
+    "source_vertical_indicesMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "v2lowMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "v2highMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "v2goodMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "v2seed_crossMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vword_traceMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vsource_traceMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vKword_appendMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vKword_blockMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vswap_mulMDE6": [
+      "propext"
+    ],
+    "vswap_traceMDE6": [
+      "propext"
+    ],
+    "vEval_wordMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vEval_coeffMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vsource_trace_evalMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vproj_shapeMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vproj_letterMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vproj_wordMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vproj_source_traceMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vproj_jetsMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vmoment_seedMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vsource_momentsMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vsecond_evalMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vertical_second_formulaMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vertical_second_right_rawMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "small_vpoly_3_5MDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "small_vcol_3_5MDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "small_vlc_3_5MDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "small_vpoly_3_4MDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "small_vcol_3_4MDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "small_vlc_3_4MDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "small_vpoly_4_7MDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "small_vcol_4_7MDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "small_vlc_4_7MDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "small_vpoly_2_3MDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "small_vcol_2_3MDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "small_vlc_2_3MDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "small_vpoly_4_5MDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "small_vcol_4_5MDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "small_vlc_4_5MDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vRun_zeroMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vGeneral_shapeMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vGeneral_letterMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vGeneral_wordMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vGeneral_source_traceMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "small_vertical_rightMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vertical_second_right_allMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "source_left_spine_indicesMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "source_right_of_ratioMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vertical_second_near_oneMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vertical_second_general_momentMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vertical_second_raw_momentMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "root_iff_interiorMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vRun_stepMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vRun_symMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vRun_firstMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vF_stepMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vGeneral_jetsMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vbinary_momentsMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vGeneral_DK_explicitMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vertical_second_candidate_bridgeMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vNscalarMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vRun_eval_aMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vRun_eval_bMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vNseed_evalMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vSecond_residual_factorMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vertical_second_all_run_factorMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vertical_second_source_factorMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vPolyRun_stepMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vPolyRun_zeroMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vKa_cayleyMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vJet_recurrencesMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vJet_initialMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vJet_closedMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "vertical_second_of_seedMDE6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "audits": [
+    "evidence/markov-de6168c6/build-1792109285907613000.json",
+    "evidence/markov-de6168c6/build-1792109949175607000.json"
+  ],
+  "pending": [],
+  "limits": "Inherited compiled imports reused. No fresh whole-source rebuild or independent completion audit. Full pinned root unresolved.",
+  "completion": null
+}

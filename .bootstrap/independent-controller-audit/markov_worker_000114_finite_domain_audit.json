@@ -1,0 +1,198 @@
+{
+  "worker": 114,
+  "method": "Integer loop-bound/guard/polygon-envelope enumeration and saved metadata only; no research scripts imported/executed, no coefficient/matrix/quotient/gap or symbolic polynomial calculations. Seed lengths recounted using integer array lengths only.",
+  "files": {
+    "research/experiment_vertical_de6168c6.py": {
+      "archive_sha256": "262bebc8ab3bf690bbd98ac4b01cb8f2f172952353960b6a2a95458bf648656d",
+      "current_sha256": "262bebc8ab3bf690bbd98ac4b01cb8f2f172952353960b6a2a95458bf648656d"
+    },
+    "research/experiment_allrun_de6168c6.py": {
+      "archive_sha256": "23e26954a11c43eb518c93cad5285d56be52c0172d9786453a709b3b29a9275a",
+      "current_sha256": "23e26954a11c43eb518c93cad5285d56be52c0172d9786453a709b3b29a9275a"
+    },
+    "research/sparse_vertical_de6168c6.py": {
+      "archive_sha256": "b986621bc9388263a870e49ae0ffde2d13625360dc0dc597d3bb111301f6a7ce",
+      "current_sha256": "b986621bc9388263a870e49ae0ffde2d13625360dc0dc597d3bb111301f6a7ce"
+    },
+    "research/generate_small_vertical_de6168c6.py": {
+      "archive_sha256": "c679c3243771581527aba2b6e4e879607378c8886b30bdeecf6c1724a6335ce3",
+      "current_sha256": "c679c3243771581527aba2b6e4e879607378c8886b30bdeecf6c1724a6335ce3"
+    },
+    "evidence/markov-de6168c6/vertical-second-experiments.json": {
+      "archive_sha256": "d88e3ce09385658be951127b35ab4eb5ef0b70f8d77c1fcf0018b3fe2aedb349",
+      "current_sha256": "d88e3ce09385658be951127b35ab4eb5ef0b70f8d77c1fcf0018b3fe2aedb349"
+    },
+    "evidence/markov-de6168c6/all-run-experiments.json": {
+      "archive_sha256": "e90e3cc470f163b3268b5a2be239d8903c1db84fa592f836f3e715b45c166abb",
+      "current_sha256": "e90e3cc470f163b3268b5a2be239d8903c1db84fa592f836f3e715b45c166abb"
+    },
+    "evidence/markov-de6168c6/sparse-candidate.json": {
+      "archive_sha256": "a1413e75d3bec8b281e90486380877466f3ee3e09d7c486322e0edffad8486d5",
+      "current_sha256": "a1413e75d3bec8b281e90486380877466f3ee3e09d7c486322e0edffad8486d5"
+    }
+  },
+  "near_one": {
+    "domain": "a=5..80, r=1..a-1, b=a+r, gcd(a,b)=1",
+    "recount": {
+      "fractions": 1960,
+      "coefficient_identities": 269310,
+      "polygon_valid_inequalities": 102432,
+      "retained_raw_zeros": 162958
+    },
+    "receipt_metadata": {
+      "status": "Finite exact experiment; not a universal proof",
+      "a_range": [
+        5,
+        80
+      ],
+      "fractions": 1960,
+      "coefficient_identities": 269310,
+      "polygon_valid_inequalities": 102432,
+      "retained_raw_zeros": 162958,
+      "failures": [],
+      "seconds": 2.63827949995175
+    },
+    "saved_case_labels_match_domain": true,
+    "raw_vector_length": "a+b+3 (j=0..a+b+2)",
+    "coefficient_test": "2*raw equals v^(b-3)(1+v)^(a-5) times the six-term seed, including padded zeros",
+    "seed_adjacent_test_count": 7840,
+    "raw_adjacent_start_guard": "ab<=2b+aj and j+4<=a+b-1; equivalent to all three original polygon guards for vertical column i=2",
+    "zero_recount_limit": "Polygon-exterior count matches saved zeros; values and possible interior zeros were not regenerated."
+  },
+  "all_run": {
+    "domain": "n=0..19 (q=n+1=1..20), a=5..17, r=1..a-1, gcd(a,r)=1, b=a(n+1)+r",
+    "recount": {
+      "fractions": 1800,
+      "coefficient_identities": 262160,
+      "polygon_valid_inequalities": 53860,
+      "retained_zeros": 218060
+    },
+    "receipt_metadata": {
+      "status": "Finite exact recurrence and coefficient comparisons, not proof of general seed LC",
+      "q_range": [
+        1,
+        20
+      ],
+      "a_range": [
+        5,
+        17
+      ],
+      "fractions": 1800,
+      "coefficient_identities": 262160,
+      "polygon_valid_inequalities": 53860,
+      "retained_zeros": 218060,
+      "failures": [],
+      "seconds": 2.8135004159994423
+    },
+    "saved_case_labels_match_domain": true,
+    "pairs_per_n": {
+      "0": 90,
+      "1": 90,
+      "2": 90,
+      "3": 90,
+      "4": 90,
+      "5": 90,
+      "6": 90,
+      "7": 90,
+      "8": 90,
+      "9": 90,
+      "10": 90,
+      "11": 90,
+      "12": 90,
+      "13": 90,
+      "14": 90,
+      "15": 90,
+      "16": 90,
+      "17": 90,
+      "18": 90,
+      "19": 90
+    },
+    "raw_vector_length": "a+b+4 (j=0..a+b+3)",
+    "coefficient_vector_length": "after a-5 divisions, b+9; twice quotient compared with shifted N",
+    "minimum_offset": 2,
+    "seed_allocated_lengths": {
+      "0": 7,
+      "1": 9,
+      "2": 11,
+      "3": 13,
+      "4": 15,
+      "5": 17,
+      "6": 19,
+      "7": 21,
+      "8": 23,
+      "9": 25,
+      "10": 27,
+      "11": 29,
+      "12": 31,
+      "13": 33,
+      "14": 35,
+      "15": 37,
+      "16": 39,
+      "17": 41,
+      "18": 43,
+      "19": 45
+    },
+    "seed_adjacent_test_count": 43200,
+    "raw_adjacent_start_guard": "ab<=2b+aj and j+4<=a+b-1, all three original polygon guards",
+    "zero_recount_limit": "Polygon-exterior count matches saved zeros, no value rerun.",
+    "scope": "Finite N nonnegativity and adjacent tests are asserted in saved script; not a universal N CrossLC theorem."
+  },
+  "combined": {
+    "coefficient_identities": 531470,
+    "polygon_valid_inequalities": 156292,
+    "seed_adjacent_tests": 51040,
+    "fraction_occurrences": 3760,
+    "overlap_fractions": 90,
+    "distinct_fraction_labels": 3670,
+    "qualification": "Summed counts are recorded test occurrences, not deduplicated identities or fraction labels."
+  },
+  "sparse_candidate": {
+    "receipt_metadata": {
+      "status": "Exact symbolic candidate for sparse numerator; not a Lean sparse identity or LC proof",
+      "variables": [
+        "a",
+        "r",
+        "s",
+        "q",
+        "v",
+        "t"
+      ],
+      "substitution": "q=n+1, t=v^q; (1-v)^4*Nseed = H0+t*H1+t^2*H2",
+      "degrees": [
+        5,
+        6,
+        8
+      ],
+      "seconds": 0.0025404589832760394
+    },
+    "saved_block_metadata": [
+      {
+        "term_count": 17,
+        "max_v_degree": 5,
+        "t_exponents": [
+          0
+        ]
+      },
+      {
+        "term_count": 31,
+        "max_v_degree": 6,
+        "t_exponents": [
+          0
+        ]
+      },
+      {
+        "term_count": 63,
+        "max_v_degree": 8,
+        "t_exponents": [
+          0
+        ]
+      }
+    ],
+    "status": "Symbolic expansion with q independent and t subsequently v^q. Input closed jet identities accepted; expanded (1-v)^4 N=H0+tH1+t²H2 and general LC not accepted Lean theorems. No symbolic computation rerun."
+  },
+  "small_kernel_proofs": {
+    "cases": 5,
+    "bounded_adjacent_instances": 40,
+    "distinction": "Literal expansions verified in retained accepted Lean modules and assembled exhaustively. These are not treated as sampled experimental evidence."
+  }
+}
