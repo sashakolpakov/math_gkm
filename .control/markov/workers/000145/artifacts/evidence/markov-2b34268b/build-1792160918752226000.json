@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovUpperKernelM2B3.lean:40:1: error: unsolved goals\ncase h\u2080\nN d i : \u2115\nhi : 2 \u2264 i\nf : \u2115\nhf : f \u2208 range (i + 1)\nhn : f \u2260 i\nhf' : f < i + 1\n\u22a2 ((d + f - 1).choose f = 0 \u2228 (i - 1 - f).choose (i - f) = 0) \u2228 (N + i - f + 1).choose (2 * i - 1 - f) = 0\n/Users/sasha/math_gkm/research/MarkovUpperKernelM2B3.lean:53:1: error: unsolved goals\ncase h\u2080\nN d i : \u2115\nhi : 2 \u2264 i\ne : \u2115\nhe : e \u2208 range (i + 1)\nhn : e \u2260 i\nhe' : e < i + 1\n\u22a2 ((d + e - 1).choose e = 0 \u2228 (i - 1 - e).choose (i - e) = 0) \u2228 (N + i - e + 1).choose (2 * i - 1 - e) = 0\n/Users/sasha/math_gkm/research/MarkovUpperKernelM2B3.lean:73:3: error: Type mismatch\n  Eq.symm (upper_kernel_edge_revM2B3 N d i hi)\nhas type\n  \u2191((d + i - 1).choose i) * \u2191((N + 1).choose (i - 1)) =\n    \u2211 e \u2208 range (i + 1), \u2211 f \u2208 range (i - i + 1), upperKernelM2B3 N d i i e f\nbut is expected to have type\n  \u2191((d + i - 1).choose i) * \u2191((N + 1).choose (i - 1)) =\n    \u2211 e \u2208 range (i + 1), \u2211 f \u2208 range (0 + 1), upperKernelM2B3 N d i i e f\n/Users/sasha/math_gkm/research/MarkovUpperKernelM2B3.lean:84:3: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  i - l - 1 - f\nin the target expression\n  \u2191((d + e - 1).choose e) * \u2191((d + f - 1).choose f) * \u2191((i - 1 - e).choose (l - e)) *\n        \u2191((i - 1 - f).choose (i - l - f)) *\n      \u2191((N + i - e - f + 1).choose (2 * i - 1 - e - f)) =\n    \u2191((d + e - 1).choose e) * \u2191((d + f - 1).choose f) * \u2191((i - 1 - e).choose (l - e)) *\n        \u2191((i - 1 - f).choose (i - l - f)) *\n      \u2191((N + i - e - f + 1).choose (2 * i - 1 - e - f))\n\ncase neg\nN d i l : \u2115\nhd : 1 \u2264 d\nhi : 2 \u2264 i\nhl : l \u2264 i\nh0 : \u00acl = 0\nh1 : \u00acl = i\ne : \u2115\nhe : e \u2208 range (l + 1)\nf : \u2115\nhf : f \u2208 range (i - l + 1)\nhe' : e < l + 1\nhf' : f < i - l + 1\n\u22a2 \u2191((d + e - 1).choose e) * \u2191((d + f - 1).choose f) * \u2191((i - 1 - e).choose (l - e)) *\n        \u2191((i - 1 - f).choose (i - l - f)) *\n      \u2191((N + i - e - f + 1).choose (2 * i - 1 - e - f)) =\n    \u2191((d + e - 1).choose e) * \u2191((d + f - 1).choose f) * \u2191((i - 1 - e).choose (l - e)) *\n        \u2191((i - 1 - f).choose (i - l - f)) *\n      \u2191((N + i - e - f + 1).choose (2 * i - 1 - e - f))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovUpperKernelM2B3": "fd052ad442bc54a4ed453e47d27661742a39d1de3e55dca1191e04d715b893d5"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-2b34268b/MarkovUpperKernelM2B3.olean",
+    "/Users/sasha/math_gkm/research/MarkovUpperKernelM2B3.lean"
+  ],
+  "seconds": 25.953120500023942,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

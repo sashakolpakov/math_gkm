@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovUpperSumM2B3.lean:20:16: error: unexpected token ':='; expected term\n/Users/sasha/math_gkm/research/MarkovUpperSumM2B3.lean:16:40: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  c \u2265 0\n  b \u2265 0\n  b \u2264 0\n  a \u2265 0\n  a - c \u2264 -1\n  a + b \u2265 2\n  a + b - c \u2264 -1\nwhere\n a := \u2191e\n b := \u2191f\n c := \u2191l\n/Users/sasha/math_gkm/research/MarkovUpperSumM2B3.lean:20:13: error: Application type mismatch: The argument\n  e\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  Type ?u.102\nof sort `Type (?u.102 + 1)` in the application\n  @PrincipalSeg e\n/Users/sasha/math_gkm/research/MarkovUpperSumM2B3.lean:20:1: error: unsolved goals\ncase he\ni e f : \u2115\nhi : 2 \u2264 i\nhef : e + f \u2264 i\nheq : \u00ace + f = i\n\u22a2 PrincipalSeg (fun x1 x2 => sorry) fun x1 x2 => sorry\n\ncase neg\ni e f : \u2115\nhi : 2 \u2264 i\nhef : e + f \u2264 i\nheq : \u00ace + f = i\nhe : PrincipalSeg (fun x1 x2 => sorry) fun x1 x2 => sorry\n\u22a2 (\u2211 l \u2208 range (i + 1),\n      if e \u2264 l \u2227 f \u2264 i - l then \u2191((i - 1 - e).choose (l - e)) * \u2191((i - 1 - f).choose (i - l - f)) else 0) =\n    \u2191((2 * i - 2 - e - f).choose (i - e - f))\n/Users/sasha/math_gkm/research/MarkovUpperSumM2B3.lean:85:28: error: unexpected token '+'; expected term\n/Users/sasha/math_gkm/research/MarkovUpperSumM2B3.lean:85:25: error: Application type mismatch: The argument\n  e\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  Type ?u.223\nof sort `Type (?u.223 + 1)` in the application\n  @PrincipalSeg e\n/Users/sasha/math_gkm/research/MarkovUpperSumM2B3.lean:77:62: error: unsolved goals\ncase hz\nN d i : \u2115\nhd : 1 \u2264 d\nhi : 2 \u2264 i\nF : \u2115 \u2192 \u2115 \u2192 \u2124 :=\n  fun e f =>\n    if e + f \u2264 i then\n      \u2191((d + e - 1).choose e) * \u2191((d + f - 1).choose f) * \u2191((2 * i - 2 - e - f).choose (i - e - f)) *\n        \u2191((N + i - e - f + 1).choose (2 * i - 1 - e - f))\n    else 0\ne f : \u2115\nhe : PrincipalSeg (fun x1 x2 => sorry) fun x1 x2 => sorry\n\u22a2 ?m.281 e f he\n\nN d i : \u2115\nhd : 1 \u2264 d\nhi : 2 \u2264 i\nF : \u2115 \u2192 \u2115 \u2192 \u2124 :=\n  fun e f =>\n    if e + f \u2264 i then\n      \u2191((d + e - 1).choose e) * \u2191((d + f - 1).choose f) * \u2191((2 * i - 2 - e - f).choose (i - e - f)) *\n        \u2191((N + i - e - f + 1).choose (2 * i - 1 - e - f))\n    else 0\nhz : (e f : \u2115) \u2192 (he : PrincipalSeg (fun x1 x2 => sorry) fun x1 x2 => sorry) \u2192 ?m.281 e f he\n\u22a2 \u2211 e \u2208 range (i + 1), \u2211 f \u2208 range (i + 1), F e f =\n    \u2211 h \u2208 range (i + 1),\n      \u2191((2 * d + h - 1).choose h) * \u2191((2 * i - 2 - h).choose (i - h)) * \u2191((N + i - h + 1).choose (2 * i - 1 - h))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovUpperSumM2B3": "f415e2e3d904c190c43a22c6b5cb7114204679753100162933d939be211eee90"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-2b34268b/MarkovUpperSumM2B3.olean",
+    "/Users/sasha/math_gkm/research/MarkovUpperSumM2B3.lean"
+  ],
+  "seconds": 6.014694583020173,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

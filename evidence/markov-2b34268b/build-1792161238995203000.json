@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSourceUpperM2B3.lean:31:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2211 t \u2208 range (N + 2 * d + 1), coeff (fib6 (N + d + 1)) 0 t * coeff (fib6 (N + d + 1)) 1 (N + 2 * d - t)\nin the target expression\n  \u2211 x \u2208 range (N + 2 * d), coeff (fib6 (N + d + 1)) 0 x * coeff (fib6 (N + d + 1)) 1 (N + 2 * d - x) +\n        coeff (fib6 (N + d + 1)) 0 (N + 2 * d) * coeff (fib6 (N + d + 1)) 1 0 +\n      (\u2211 x \u2208 range (N + 2 * d), coeff (fib6 (N + d + 1)) 1 x * coeff (fib6 (N + d + 1)) 0 (N + 2 * d - x) +\n        coeff (fib6 (N + d + 1)) 1 (N + 2 * d) * coeff (fib6 (N + d + 1)) 0 0) =\n    2 * \u2191d\n\nN d : \u2115\nhd : 1 \u2264 d\n\u22a2 \u2211 x \u2208 range (N + 2 * d), coeff (fib6 (N + d + 1)) 0 x * coeff (fib6 (N + d + 1)) 1 (N + 2 * d - x) +\n        coeff (fib6 (N + d + 1)) 0 (N + 2 * d) * coeff (fib6 (N + d + 1)) 1 0 +\n      (\u2211 x \u2208 range (N + 2 * d), coeff (fib6 (N + d + 1)) 1 x * coeff (fib6 (N + d + 1)) 0 (N + 2 * d - x) +\n        coeff (fib6 (N + d + 1)) 1 (N + 2 * d) * coeff (fib6 (N + d + 1)) 0 0) =\n    2 * \u2191d\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSourceUpperM2B3": "34e0d8d02d3d5dedb31356a531bfe1319b7c3a282ec226ca85722fe90a290193"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-2b34268b/MarkovSourceUpperM2B3.olean",
+    "/Users/sasha/math_gkm/research/MarkovSourceUpperM2B3.lean"
+  ],
+  "seconds": 7.694005375029519,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

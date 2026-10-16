@@ -1,0 +1,559 @@
+{
+  "worker": 145,
+  "request": "2b34268bc69f47e9a04cd494ac77bc26",
+  "created_at_utc": "2026-10-16T15:05:09.905613+00:00",
+  "scope": "Archive-first static reading, declarations, hashes and input/index-domain counts only. No project code or coefficient/binomial/polynomial/matrix/recurrence/moment/gap recomputation. Active146 excluded.",
+  "new_modules": [
+    {
+      "module": "MarkovUpperBinomialM2B3",
+      "path": "research/MarkovUpperBinomialM2B3.lean",
+      "sha256": "4f463f6db9f592003b736cd127a769c9cc0bf0ea4b5ca19f5310f876c1c35ac6",
+      "current_sha256": "4f463f6db9f592003b736cd127a769c9cc0bf0ea4b5ca19f5310f876c1c35ac6",
+      "bytes": 1315,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "rising_vandermondeM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "rising_doubleM2B3"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovCentralBinomialM6E1"
+      ],
+      "theorem_statements": [
+        "theorem rising_vandermondeM2B3 (d r l : ℕ) (hd : 1 ≤ d) :\n ((r+d+l).choose l:ℤ)=∑ e∈range (l+1),\n ((d+e-1).choose e:ℤ)*((r+l-e).choose (l-e):ℤ)",
+        "theorem rising_doubleM2B3 (d h : ℕ) (hd : 1 ≤ d) :\n (∑ e∈range (h+1), ((d+e-1).choose e:ℤ)*\n   ((d+(h-e)-1).choose (h-e):ℤ))=((2*d+h-1).choose h:ℤ)"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovUpperPairM2B3",
+      "path": "research/MarkovUpperPairM2B3.lean",
+      "sha256": "730e58d7fd5666bbeed574dc0382fa6a1731bc17daa20394e53d0e27efff3977",
+      "current_sha256": "730e58d7fd5666bbeed574dc0382fa6a1731bc17daa20394e53d0e27efff3977",
+      "bytes": 2818,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "upper_pair_termM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_pair_shiftedM2B3"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovUpperBinomialM2B3",
+        "MarkovSquareObstructionMAF6"
+      ],
+      "theorem_statements": [
+        "theorem upper_pair_termM2B3 (N d l b t : ℕ)\n (hd : 1≤d) (hl : 1≤l) (hb : 1≤b) (ht : t≤N) :\n coeff (fib6 (N+d+1)) l (t+d)*coeff (fib6 (N+d+1)) b (N+d-t)=\n ∑ e∈range (l+1), ∑ f∈range (b+1),\n ((d+e-1).choose e:ℤ)*((d+f-1).choose f:ℤ)*\n ((l+b-1-e).choose (l-e):ℤ)*((l+b-1-f).choose (b-f):ℤ)*\n ((t+l-e).choose (l+b-1-e):ℤ)*((N-t+b-f).choose (l+b-1-f):ℤ)",
+        "theorem upper_pair_shiftedM2B3 (N d l b : ℕ)\n (hd : 1≤d) (hl : 1≤l) (hb : 1≤b) :\n (∑ t∈range (N+1), coeff (fib6 (N+d+1)) l (t+d)*\n   coeff (fib6 (N+d+1)) b (N+d-t))=\n ∑ e∈range (l+1), ∑ f∈range (b+1),\n ((d+e-1).choose e:ℤ)*((d+f-1).choose f:ℤ)*\n ((l+b-1-e).choose (l-e):ℤ)*((l+b-1-f).choose (b-f):ℤ)*\n ((N+l+b-e-f+1).choose (2*(l+b)-1-e-f):ℤ)"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovUpperStripM2B3",
+      "path": "research/MarkovUpperStripM2B3.lean",
+      "sha256": "1fd56b9b30090a3b76a39462eeebc009aee83ffbf34738f149aac7ce09ff2106",
+      "current_sha256": "1fd56b9b30090a3b76a39462eeebc009aee83ffbf34738f149aac7ce09ff2106",
+      "bytes": 2647,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "upper_pair_stripM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_edgeM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_edge_revM2B3"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovUpperPairM2B3"
+      ],
+      "theorem_statements": [
+        "theorem upper_pair_stripM2B3 (N d l b : ℕ) (hl : 1 ≤ l) (hb : 1 ≤ b) :\n (∑ t∈range (N+2*d+1), coeff (fib6 (N+d+1)) l t*\n    coeff (fib6 (N+d+1)) b (N+2*d-t))=\n ∑ t∈range (N+1), coeff (fib6 (N+d+1)) l (t+d)*\n    coeff (fib6 (N+d+1)) b (N+d-t)",
+        "theorem upper_edgeM2B3 (N d i : ℕ) (hd : 1 ≤ d) (hi : 1 ≤ i) :\n (∑ t∈range (N+2*d+1), coeff (fib6 (N+d+1)) 0 t*\n    coeff (fib6 (N+d+1)) i (N+2*d-t))=\n ((d+i-1).choose i:ℤ)*((N+1).choose (i-1):ℤ)",
+        "theorem upper_edge_revM2B3 (N d i : ℕ) (hd : 1 ≤ d) (hi : 1 ≤ i) :\n (∑ t∈range (N+2*d+1), coeff (fib6 (N+d+1)) i t*\n    coeff (fib6 (N+d+1)) 0 (N+2*d-t))=\n ((d+i-1).choose i:ℤ)*((N+1).choose (i-1):ℤ)"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovUpperKernelM2B3",
+      "path": "research/MarkovUpperKernelM2B3.lean",
+      "sha256": "bb55360f3f85e91bd14ceb6865260ece0e7d90a3c96bbf45fb9f821d769ade0a",
+      "current_sha256": "bb55360f3f85e91bd14ceb6865260ece0e7d90a3c96bbf45fb9f821d769ade0a",
+      "bytes": 3886,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "upperKernelM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_kernel_extendM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_kernel_edgeM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_kernel_edge_revM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_pair_fullM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_square_tripleM2B3"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovUpperStripM2B3"
+      ],
+      "theorem_statements": [
+        "theorem upper_kernel_extendM2B3 (N d i l : ℕ) (hl : l ≤ i) :\n (∑ e∈range (l+1), ∑ f∈range (i-l+1), upperKernelM2B3 N d i l e f)=\n ∑ e∈range (i+1), ∑ f∈range (i+1), upperKernelM2B3 N d i l e f",
+        "theorem upper_kernel_edgeM2B3 (N d i : ℕ) (hi : 2 ≤ i) :\n (∑ e∈range (0+1), ∑ f∈range (i-0+1), upperKernelM2B3 N d i 0 e f)=\n ((d+i-1).choose i:ℤ)*((N+1).choose (i-1):ℤ)",
+        "theorem upper_kernel_edge_revM2B3 (N d i : ℕ) (hi : 2 ≤ i) :\n (∑ e∈range (i+1), ∑ f∈range (i-i+1), upperKernelM2B3 N d i i e f)=\n ((d+i-1).choose i:ℤ)*((N+1).choose (i-1):ℤ)",
+        "theorem upper_pair_fullM2B3 (N d i l : ℕ) (hd : 1 ≤ d) (hi : 2 ≤ i) (hl : l ≤ i) :\n (∑ t∈range (N+2*d+1), coeff (fib6 (N+d+1)) l t*\n    coeff (fib6 (N+d+1)) (i-l) (N+2*d-t))=\n ∑ e∈range (i+1), ∑ f∈range (i+1), upperKernelM2B3 N d i l e f",
+        "theorem upper_square_tripleM2B3 (N d i : ℕ) (hd : 1 ≤ d) (hi : 2 ≤ i) :\n coeff (fib6 (N+d+1)^2) i (N+2*d)=\n ∑ e∈range (i+1), ∑ f∈range (i+1), ∑ l∈range (i+1),\n upperKernelM2B3 N d i l e f"
+      ],
+      "definitions": [
+        "def upperKernelM2B3 (N d i l e f : ℕ) : ℤ :=\n if e ≤ l ∧ f ≤ i-l then\n ((d+e-1).choose e:ℤ)*((d+f-1).choose f:ℤ)*\n ((i-1-e).choose (l-e):ℤ)*((i-1-f).choose (i-l-f):ℤ)*\n ((N+i-e-f+1).choose (2*i-1-e-f):ℤ)\n else 0"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovUpperSumM2B3",
+      "path": "research/MarkovUpperSumM2B3.lean",
+      "sha256": "6d48e4232e70249c250a9c3c274f4a7dff10bf17c5bfa1c238c53ea454379482",
+      "current_sha256": "6d48e4232e70249c250a9c3c274f4a7dff10bf17c5bfa1c238c53ea454379482",
+      "bytes": 4113,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "guarded_chooseM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_kernel_sumM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_square_formulaM2B3"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovUpperKernelM2B3"
+      ],
+      "theorem_statements": [
+        "theorem guarded_chooseM2B3 (i e f : ℕ) (hi : 2 ≤ i) (hef : e+f ≤ i) :\n (∑ l∈range (i+1), if e ≤ l ∧ f ≤ i-l then\n   ((i-1-e).choose (l-e):ℤ)*((i-1-f).choose (i-l-f):ℤ) else 0)=\n ((2*i-2-e-f).choose (i-e-f):ℤ)",
+        "theorem upper_kernel_sumM2B3 (N d i e f : ℕ) (hi : 2 ≤ i) :\n (∑ l∈range (i+1), upperKernelM2B3 N d i l e f)=\n if e+f ≤ i then\n ((d+e-1).choose e:ℤ)*((d+f-1).choose f:ℤ)*\n ((2*i-2-e-f).choose (i-e-f):ℤ)*\n ((N+i-e-f+1).choose (2*i-1-e-f):ℤ) else 0",
+        "theorem upper_square_formulaM2B3 (N d i : ℕ) (hd : 1 ≤ d) (hi : 2 ≤ i) :\n coeff (fib6 (N+d+1)^2) i (N+2*d)=\n ∑ h∈range (i+1), ((2*d+h-1).choose h:ℤ)*\n ((2*i-2-h).choose (i-h):ℤ)*((N+i-h+1).choose (2*i-1-h):ℤ)"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovSourceUpperM2B3",
+      "path": "research/MarkovSourceUpperM2B3.lean",
+      "sha256": "b1172621113783e0889078465afb76e891a80e031610a345dde4953476f9e588",
+      "current_sha256": "b1172621113783e0889078465afb76e891a80e031610a345dde4953476f9e588",
+      "bytes": 2567,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "upperValM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_val_nonnegM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_square_zeroM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_square_oneM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_two_formulaM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_upper_formulaM2B3"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovUpperSumM2B3"
+      ],
+      "theorem_statements": [
+        "theorem upper_val_nonnegM2B3 (N d i : ℕ) : 0 ≤ upperValM2B3 N d i",
+        "theorem upper_square_zeroM2B3 (N d : ℕ) :\n coeff (fib6 (N+d+1)^2) 0 (N+2*d)=0",
+        "theorem upper_square_oneM2B3 (N d : ℕ) (hd : 1 ≤ d) :\n coeff (fib6 (N+d+1)^2) 1 (N+2*d)=2*(d:ℤ)",
+        "theorem upper_two_formulaM2B3 (N d i : ℕ) (hN : 1 ≤ N) (hd : 1 ≤ d) :\n coeff (fib6 (N+d+1)^2+V*fib6 (N+d)^2) i (N+2*d)=upperValM2B3 N d i",
+        "theorem source_two_upper_formulaM2B3 (path : List Bool) (N d i : ℕ)\n (hN : 1 ≤ N) (hd : 1 ≤ d) (ha : (frame path).mid.a=2)\n (hb : (frame path).mid.b=2*(N+d)+1) :\n coeff (frame path).mid.p i (N+2*d)=upperValM2B3 N d i"
+      ],
+      "definitions": [
+        "def upperValM2B3 (N d i : ℕ) : ℤ :=\n if i=0 then 0 else ∑ h∈range (i+1), ((2*d+h-1).choose h:ℤ)*\n ((2*i-2-h).choose (i-h):ℤ)*\n (((N+i-h+1).choose (2*i-1-h):ℤ)+((N+i-h).choose (2*i-1-h):ℤ))"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovUpperSupportM2B3",
+      "path": "research/MarkovUpperSupportM2B3.lean",
+      "sha256": "f2a12aff8246f41b08b60a000ee262041f41131a796595c889c50970b7ef23c1",
+      "current_sha256": "f2a12aff8246f41b08b60a000ee262041f41131a796595c889c50970b7ef23c1",
+      "bytes": 2423,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "upper_val_zeroM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_val_posM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_val_supportM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_polygonM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_upper_supportM2B3"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovSourceUpperM2B3"
+      ],
+      "theorem_statements": [
+        "theorem upper_val_zeroM2B3 (N d i : ℕ) (hi : i=0 ∨ N+2 < i) :\n upperValM2B3 N d i=0",
+        "theorem upper_val_posM2B3 (N d i : ℕ) (hd : 1 ≤ d) (hi : 1 ≤ i) (hN : i ≤ N+2) :\n 0 < upperValM2B3 N d i",
+        "theorem upper_val_supportM2B3 (N d i : ℕ) (hd : 1 ≤ d) :\n 0 < upperValM2B3 N d i ↔ 1 ≤ i ∧ i ≤ N+2",
+        "theorem upper_polygonM2B3 (N d i : ℕ) (hN : 1 ≤ N) (hd : 1 ≤ d) :\n InPolygon 2 (2*(N+d)+1) i (N+2*d) ↔ 1 ≤ i ∧ i ≤ N+2",
+        "theorem source_upper_supportM2B3 (path : List Bool) (N d i : ℕ)\n (hN : 1 ≤ N) (hd : 1 ≤ d) (ha : (frame path).mid.a=2)\n (hb : (frame path).mid.b=2*(N+d)+1) :\n 0 < coeff (frame path).mid.p i (N+2*d) ↔\n InPolygon (frame path).mid.a (frame path).mid.b i (N+2*d)"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovUpperReductionM2B3",
+      "path": "research/MarkovUpperReductionM2B3.lean",
+      "sha256": "d82d9bd33d80df68aeda04b335903ac99f43a68d413bb9cba360299c8a4f6787",
+      "current_sha256": "d82d9bd33d80df68aeda04b335903ac99f43a68d413bb9cba360299c8a4f6787",
+      "bytes": 3328,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "UpperBinomialLCM2B3"
+        },
+        {
+          "kind": "def",
+          "name": "NumeratorTwoHorizontalM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_zero_columnM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "numerator_two_horizontal_iffM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_implies_upperM2B3"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovUpperSupportM2B3"
+      ],
+      "theorem_statements": [
+        "theorem source_two_zero_columnM2B3 (path : List Bool) (q j : ℕ)\n (ha : (frame path).mid.a=2) (hb : (frame path).mid.b=2*q+1) (hj : j ≤ 2*q) :\n coeff (frame path).mid.p 0 j=0",
+        "theorem numerator_two_horizontal_iffM2B3 :\n NumeratorTwoHorizontalM2B3 ↔ UpperBinomialLCM2B3",
+        "theorem root_implies_upperM2B3 (h : Conjecture63) : UpperBinomialLCM2B3"
+      ],
+      "definitions": [
+        "def UpperBinomialLCM2B3 : Prop := ∀ N d i : ℕ, 1 ≤ N → 1 ≤ d →\n upperValM2B3 N d i*upperValM2B3 N d (i+2) ≤ upperValM2B3 N d (i+1)^2",
+        "def NumeratorTwoHorizontalM2B3 : Prop := ∀ path : List Bool,\n (frame path).mid.a=2 → ∀ i j,\n InPolygon (frame path).mid.a (frame path).mid.b i j →\n InPolygon (frame path).mid.a (frame path).mid.b (i+1) j →\n InPolygon (frame path).mid.a (frame path).mid.b (i+2) j →\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) j^2"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovUpperCertificateM2B3",
+      "path": "research/MarkovUpperCertificateM2B3.lean",
+      "sha256": "82697014fa8b7f86569faed40503bd5972553e0e36a7a00f2be95fc4c2d86b0c",
+      "current_sha256": "82697014fa8b7f86569faed40503bd5972553e0e36a7a00f2be95fc4c2d86b0c",
+      "bytes": 2561,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "upperTermM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_term_nonnegM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_term_highM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_term_sumM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_lc_of_shiftedM2B3"
+        },
+        {
+          "kind": "def",
+          "name": "UpperShiftedM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_shifted_implies_horizontalM2B3"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovUpperReductionM2B3"
+      ],
+      "theorem_statements": [
+        "theorem upper_term_nonnegM2B3 (N d i h : ℕ) : 0 ≤ upperTermM2B3 N d i h",
+        "theorem upper_term_highM2B3 (N d i h : ℕ) (hh : i < h) : upperTermM2B3 N d i h=0",
+        "theorem upper_term_sumM2B3 (N d i n : ℕ) (hi : i ≤ n) :\n (∑ h∈range (n+1),upperTermM2B3 N d i h)=upperValM2B3 N d i",
+        "theorem upper_lc_of_shiftedM2B3 (N d i : ℕ)\n (h : ∀ x y, upperTermM2B3 N d i x*upperTermM2B3 N d (i+2) y ≤\n   upperTermM2B3 N d (i+1) (min (x+1) y)*\n   upperTermM2B3 N d (i+1) (max (x+1) y-1)) :\n upperValM2B3 N d i*upperValM2B3 N d (i+2) ≤ upperValM2B3 N d (i+1)^2",
+        "theorem upper_shifted_implies_horizontalM2B3 (h : UpperShiftedM2B3) :\n NumeratorTwoHorizontalM2B3"
+      ],
+      "definitions": [
+        "def upperTermM2B3 (N d i h : ℕ) : ℤ :=\n if i=0 ∨ i < h then 0 else\n ((2*d+h-1).choose h:ℤ)*((2*i-2-h).choose (i-h):ℤ)*\n (((N+i-h+1).choose (2*i-1-h):ℤ)+((N+i-h).choose (2*i-1-h):ℤ))",
+        "def UpperShiftedM2B3 : Prop := ∀ N d i x y : ℕ, 1 ≤ N → 1 ≤ d →\n upperTermM2B3 N d i x*upperTermM2B3 N d (i+2) y ≤\n upperTermM2B3 N d (i+1) (min (x+1) y)*\n upperTermM2B3 N d (i+1) (max (x+1) y-1)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovUpperCoreM2B3",
+      "path": "research/MarkovUpperCoreM2B3.lean",
+      "sha256": "ed5fed6c451bb2f745420d7bf6c974c7d87fe71fe253625c00c5dffb71ba0927",
+      "current_sha256": "ed5fed6c451bb2f745420d7bf6c974c7d87fe71fe253625c00c5dffb71ba0927",
+      "bytes": 4279,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "upperCoreM2B3"
+        },
+        {
+          "kind": "def",
+          "name": "upperAuxM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_core_scaledM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_aux_stepM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_aux_diagonalM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_core_stepM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_core_diagonalM2B3"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovUpperCertificateM2B3"
+      ],
+      "theorem_statements": [
+        "theorem upper_core_scaledM2B3 (N i h : ℕ) (hi : 2 ≤ i) (hh : h ≤ i) (hN : i ≤ N+2) :\n (2*(i:ℤ)-1-h)*upperCoreM2B3 N i h=(2*(N:ℤ)+3-h)*upperAuxM2B3 N i h",
+        "theorem upper_aux_stepM2B3 (N i h : ℕ) (hi : 2 ≤ i) (hh : h ≤ i) (hN : i ≤ N+2) :\n ((i:ℤ)-h+1)*(i-1)*upperAuxM2B3 N (i+1) h=\n ((N:ℤ)+i-h+1)*(N-i+2)*upperAuxM2B3 N i h",
+        "theorem upper_aux_diagonalM2B3 (N i h : ℕ) (hi : 2 ≤ i) (hh : h ≤ i) (hN : i ≤ N+2) :\n ((i:ℤ)-1)*upperAuxM2B3 N (i+1) (h+1)=\n ((N:ℤ)-i+2)*upperAuxM2B3 N i h",
+        "theorem upper_core_stepM2B3 (N i h : ℕ) (hi : 2 ≤ i) (hh : h ≤ i) (hN : i+1 ≤ N+2) :\n ((i:ℤ)-h+1)*(i-1)*(2*i+1-h)*upperCoreM2B3 N (i+1) h=\n ((N:ℤ)+i-h+1)*(N-i+2)*(2*i-1-h)*upperCoreM2B3 N i h",
+        "theorem upper_core_diagonalM2B3 (N i h : ℕ) (hi : 2 ≤ i) (hh : h ≤ i) (hN : i+1 ≤ N+2) :\n ((i:ℤ)-1)*(2*i-h)*(2*N+3-h)*upperCoreM2B3 N (i+1) (h+1)=\n ((N:ℤ)-i+2)*(2*i-1-h)*(2*N+2-h)*upperCoreM2B3 N i h"
+      ],
+      "definitions": [
+        "def upperCoreM2B3 (N i h : ℕ) : ℤ :=\n ((2*i-2-h).choose (i-h):ℤ)*\n (((N+i-h+1).choose (2*i-1-h):ℤ)+((N+i-h).choose (2*i-1-h):ℤ))",
+        "def upperAuxM2B3 (N i h : ℕ) : ℤ :=\n ((N+i-h).choose (i-h):ℤ)*(N.choose (i-2):ℤ)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovUpperScalarM2B3",
+      "path": "research/MarkovUpperScalarM2B3.lean",
+      "sha256": "ae00a2a505ea6514836fedd3d92af4dbe3bcb94a20f6f3bbe4d611333789f6bc",
+      "current_sha256": "ae00a2a505ea6514836fedd3d92af4dbe3bcb94a20f6f3bbe4d611333789f6bc",
+      "bytes": 13228,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "upperHNumM2B3"
+        },
+        {
+          "kind": "def",
+          "name": "upperHDenM2B3"
+        },
+        {
+          "kind": "def",
+          "name": "upperDNumM2B3"
+        },
+        {
+          "kind": "def",
+          "name": "upperDDenM2B3"
+        },
+        {
+          "kind": "def",
+          "name": "upperHGapM2B3"
+        },
+        {
+          "kind": "def",
+          "name": "upperDGapM2B3"
+        },
+        {
+          "kind": "def",
+          "name": "upperLGapM2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_horizontal0M2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_diagonal0M2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_horizontal1M2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_diagonal1M2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_horizontal2M2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_diagonal2M2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_horizontal3M2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_diagonal3M2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_horizontal4M2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_diagonal4M2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_horizontal5M2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_diagonal5M2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_local0M2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_local1M2B3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_local2M2B3"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MathGKM.Markov"
+      ],
+      "theorem_statements": [
+        "theorem upper_horizontal0M2B3 (k p r t : ℤ)\n (hk : 0 ≤ k) (hp : 0 ≤ p) (hr : 0 ≤ r) (ht : 0 ≤ t) :\n 0 ≤ upperHGapM2B3 ((k+2)+(p)+(r)+t) ((k+2)+(p)+(r)) ((k+2)+(p)) (k+2)",
+        "theorem upper_diagonal0M2B3 (k p r t : ℤ)\n (hk : 0 ≤ k) (hp : 0 ≤ p) (hr : 0 ≤ r) (ht : 0 ≤ t) :\n 0 ≤ upperDGapM2B3 ((k+2)+(p)+(r)+t) ((k+2)+(p)+(r)) (k+2) ((k+2)+(p)+1)",
+        "theorem upper_horizontal1M2B3 (k p r t : ℤ)\n (hk : 0 ≤ k) (hp : 0 ≤ p) (hr : 0 ≤ r) (ht : 0 ≤ t) :\n 0 ≤ upperHGapM2B3 ((1)+(p+1)+(r)+t) ((1)+(p+1)+(r)) ((1)+(p+1)) (1)",
+        "theorem upper_diagonal1M2B3 (k p r t : ℤ)\n (hk : 0 ≤ k) (hp : 0 ≤ p) (hr : 0 ≤ r) (ht : 0 ≤ t) :\n 0 ≤ upperDGapM2B3 ((1)+(p+1)+(r)+t) ((1)+(p+1)+(r)) (1) ((1)+(p+1)+1)",
+        "theorem upper_horizontal2M2B3 (k p r t : ℤ)\n (hk : 0 ≤ k) (hp : 0 ≤ p) (hr : 0 ≤ r) (ht : 0 ≤ t) :\n 0 ≤ upperHGapM2B3 ((1)+(0)+(r+1)+t) ((1)+(0)+(r+1)) ((1)+(0)) (1)",
+        "theorem upper_diagonal2M2B3 (k p r t : ℤ)\n (hk : 0 ≤ k) (hp : 0 ≤ p) (hr : 0 ≤ r) (ht : 0 ≤ t) :\n 0 ≤ upperDGapM2B3 ((1)+(0)+(r+1)+t) ((1)+(0)+(r+1)) (1) ((1)+(0)+1)",
+        "theorem upper_horizontal3M2B3 (k p r t : ℤ)\n (hk : 0 ≤ k) (hp : 0 ≤ p) (hr : 0 ≤ r) (ht : 0 ≤ t) :\n 0 ≤ upperHGapM2B3 ((0)+(p+2)+(r)+t) ((0)+(p+2)+(r)) ((0)+(p+2)) (0)",
+        "theorem upper_diagonal3M2B3 (k p r t : ℤ)\n (hk : 0 ≤ k) (hp : 0 ≤ p) (hr : 0 ≤ r) (ht : 0 ≤ t) :\n 0 ≤ upperDGapM2B3 ((0)+(p+2)+(r)+t) ((0)+(p+2)+(r)) (0) ((0)+(p+2)+1)",
+        "theorem upper_horizontal4M2B3 (k p r t : ℤ)\n (hk : 0 ≤ k) (hp : 0 ≤ p) (hr : 0 ≤ r) (ht : 0 ≤ t) :\n 0 ≤ upperHGapM2B3 ((0)+(1)+(r+1)+t) ((0)+(1)+(r+1)) ((0)+(1)) (0)",
+        "theorem upper_diagonal4M2B3 (k p r t : ℤ)\n (hk : 0 ≤ k) (hp : 0 ≤ p) (hr : 0 ≤ r) (ht : 0 ≤ t) :\n 0 ≤ upperDGapM2B3 ((0)+(1)+(r+1)+t) ((0)+(1)+(r+1)) (0) ((0)+(1)+1)",
+        "theorem upper_horizontal5M2B3 (k p r t : ℤ)\n (hk : 0 ≤ k) (hp : 0 ≤ p) (hr : 0 ≤ r) (ht : 0 ≤ t) :\n 0 ≤ upperHGapM2B3 ((0)+(0)+(r+2)+t) ((0)+(0)+(r+2)) ((0)+(0)) (0)",
+        "theorem upper_diagonal5M2B3 (k p r t : ℤ)\n (hk : 0 ≤ k) (hp : 0 ≤ p) (hr : 0 ≤ r) (ht : 0 ≤ t) :\n 0 ≤ upperDGapM2B3 ((0)+(0)+(r+2)+t) ((0)+(0)+(r+2)) (0) ((0)+(0)+1)",
+        "theorem upper_local0M2B3 (k p r t : ℤ)\n (hk : 0 ≤ k) (hp : 0 ≤ p) (hr : 0 ≤ r) (ht : 0 ≤ t) :\n 0 ≤ upperLGapM2B3 ((k+2)+(r)+t) ((k+2)+(r)) (k+2)",
+        "theorem upper_local1M2B3 (k p r t : ℤ)\n (hk : 0 ≤ k) (hp : 0 ≤ p) (hr : 0 ≤ r) (ht : 0 ≤ t) :\n 0 ≤ upperLGapM2B3 ((1)+(r+1)+t) ((1)+(r+1)) (1)",
+        "theorem upper_local2M2B3 (k p r t : ℤ)\n (hk : 0 ≤ k) (hp : 0 ≤ p) (hr : 0 ≤ r) (ht : 0 ≤ t) :\n 0 ≤ upperLGapM2B3 ((0)+(r+2)+t) ((0)+(r+2)) (0)"
+      ],
+      "definitions": [
+        "def upperHNumM2B3 (N i h : ℤ) : ℤ := (N+i-h+1)*(N-i+2)*(2*i-1-h)",
+        "def upperHDenM2B3 (i h : ℤ) : ℤ := (i-h+1)*(i-1)*(2*i+1-h)",
+        "def upperDNumM2B3 (N i h : ℤ) : ℤ := (N-i+2)*(2*i-1-h)*(2*N+2-h)",
+        "def upperDDenM2B3 (N i h : ℤ) : ℤ := (i-1)*(2*i-h)*(2*N+3-h)",
+        "def upperHGapM2B3 (N i h k : ℤ) : ℤ :=\n upperHNumM2B3 N i h*upperHDenM2B3 (i+1) k-upperHNumM2B3 N (i+1) k*upperHDenM2B3 i h",
+        "def upperDGapM2B3 (N i h k : ℤ) : ℤ :=\n upperDNumM2B3 N i h*upperDDenM2B3 N (i+1) k-upperDNumM2B3 N (i+1) k*upperDDenM2B3 N i h",
+        "def upperLGapM2B3 (N i h : ℤ) : ℤ :=\n upperHNumM2B3 N i h*upperHDenM2B3 (i+1) (h+1)-upperHNumM2B3 N (i+1) (h+1)*upperHDenM2B3 i h"
+      ],
+      "forbidden_raw_tokens": []
+    }
+  ],
+  "counts": {
+    "theorem": 53,
+    "def": 15
+  },
+  "theorem_statement_extraction": "Whole theorem header through proof assignment, retaining inner let binders.",
+  "source_scope": "For every actual source with a=2,b=2*(N+d)+1, all natural i and N,d>=1, row j=N+2*d has exact raw coefficient upperVal. Thus q=N+d and q<j<2q; q>=2 is implied for this open upper strip. Actual numerator-two classification itself has q>=1.",
+  "first_column": "upperVal i0 is explicitly zero. The i1 term includes deliberate Nat truncation 2*i-2-h=0 at i=h=1; square one-column theorem gives2*d and source proof handles the two contributions separately, yielding4*d. i>=2 square formula is not applied at i1.",
+  "finite_sum_scope": "Positive l/b convolution is restricted to t=d..N+d using proved zero strips. l0/li original allocations are nonzero and matched exactly to guarded-kernel corner terms, not added again. e/f extensions guarded; e+f=i treated as a single surviving allocation, e+f<i by Vandermonde; triangular reindex and rising convolution preserve all endpoints.",
+  "support_scope": "upperVal nonnegative for all natural parameters. For d>=1 its positive support is exactly1<=i<=N+2; zero at i0 or i>N+2. Source/polygon correspondence additionally N>=1. Positive witness is summand h=i.",
+  "subproblem_scope": "NumeratorTwoHorizontal (every actual a2 path and every original polygon-guarded H triple) iff UpperBinomialLC (N,d>=1,all natural starts). Neither side is proved. Forward uses explicit lowerPath N d and zero neighbors outside support. Reverse: j<=q uses inherited lower-half theorem; j>=2q and rightmost polygon bound force candidate i0,j2q handled by zero-column theorem; open interval uses N=2q-j,d=j-q with guarded Nat equalities.",
+  "root_scope": "Only root_implies_upper; no new full-root iff/residual. MAF6 source and all original H/V/D polygon/zero/endpoint/reverse-factor conditions unchanged. Full root open.",
+  "conditional_sum": "upperTerm zero for i0 or h>i, nonnegative otherwise. Finite range enlarged to common n=i+2 using explicit zero tails; inherited shifted_sumMAF6 applies conditionally to all x,y shifted pair inequality. UpperShifted is a defined unproved hypothesis; its implication to fulla2H is proved, not the hypothesis.",
+  "core_scope": "Scaled identity and auxiliary recurrences require i>=2,h<=i,i<=N+2; core step/diagonal use stronger i+1<=N+2. All are exact integer identities, no coefficient cancellation or universal positivity/ratio inference. Exceptional i1 comparisons remain outside these identities.",
+  "scalar_scope": "Fifteen scalar sign theorems: six horizontal and six diagonal shifted charts represent the intended a+b+c>=2 region, and three local shifted charts represent a+c>=2. Chart parameters k,p,r (including unused formal parameters) are arbitrary nonnegative integers; no extra sum lower bound is imposed on those chart parameters. All formal integer parameters are nonnegative. No formal chart-union assembly into a core/summand theorem is present. Twelve H/D certificates are unchanged; the local definition and three proof bodies are corrected from H-versus-D to H-versus-next-H. Only final bindings establish final statements.",
+  "pending_scope": "No universal UpperShifted, upper-row LC or entire numerator-two horizontal LC theorem. Support-to-ratio transfer, denominator positivity, rising weights and exceptional first-column comparisons are stated unresolved by the worker; audit supplies none.",
+  "experiment_scope": "Wrong formula/proposed summand variants and wrong comparison certificate retained distinctly. Their finite failures are not source/root failures; negative expansion coefficients are not themselves a negative polynomial value.",
+  "mathematical_values_recomputed": false
+}

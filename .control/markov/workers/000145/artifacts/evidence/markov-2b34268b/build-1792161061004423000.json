@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovUpperSumM2B3.lean:38:34: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  d \u2265 1\n  c \u2265 0\n  c - d \u2265 1\n  b \u2265 0\n  b - c + d \u2264 -1\n  b \u2264 0\n  b + d \u2265 1\n  a \u2265 0\n  a + d \u2265 1\n  a + b + d \u2265 2\nwhere\n a := \u2191e\n b := \u2191f\n c := \u2191l\n d := \u2191(i - (e + f))\n/Users/sasha/math_gkm/research/MarkovUpperSumM2B3.lean:33:37: error: unsolved goals\ni e f : \u2115\nhi : 2 \u2264 i\nhef : e + f \u2264 i\nheq : \u00ace + f = i\nhe : e < i\nhf : f < i\nF : \u2115 \u2192 \u2124 := fun l => if e \u2264 l \u2227 f \u2264 i - l then \u2191((i - 1 - e).choose (l - e)) * \u2191((i - 1 - f).choose (i - l - f)) else 0\nhz : \u2211 l \u2208 range e, F l = 0\nl : \u2115\nhl : l \u2208 range (i - e + 1)\nhn : i - e - f + 1 \u2264 l\n\u22a2 f \u2264 i - (e + l) \u2192 (i - 1 - e).choose l = 0 \u2228 (i - 1 - f).choose (i - (e + l) - f) = 0\n/Users/sasha/math_gkm/research/MarkovUpperSumM2B3.lean:14:31: warning: This simp argument is unused:\n  show i - e - (i - e) = 0 by omega\n\nHint: Omit it from the simp argument list.\n  simp [show f\u0335=\u0335i\u0335-\u0335e\u0335f\u0332 \u0332=\u0332 \u0332i\u0332 \u0332-\u0332 \u0332e\u0332 by o\u0335m\u0335e\u0335g\u0335a\u0335,\u0335s\u0335h\u0335o\u0335w\u0335 \u0335i\u0335-\u0335e\u0335-\u0335(\u0335i\u0335-\u0335e\u0335)\u0335=\u03350\u0335 \u0335b\u0335y\u0335 \u0335omega]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovUpperSumM2B3": "88f987273e07fce909ffc075e7ef31e78af70aed7f6d3cfcfc841e5c5a57d0f2"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-2b34268b/MarkovUpperSumM2B3.olean",
+    "/Users/sasha/math_gkm/research/MarkovUpperSumM2B3.lean"
+  ],
+  "seconds": 23.585047125001438,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

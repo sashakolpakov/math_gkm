@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovUpperBinomialM2B3.lean:33:1: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  i \u2265 0\n  g \u2265 0\n  g - i \u2265 1\n  f \u2265 0\n  c \u2265 0\n  c - f \u2265 0\n  b \u2265 0\n  a \u2265 1\nwhere\n a := \u2191d\n b := \u2211 e \u2208 range (h + 1), \u2191((d + e - 1).choose e) * \u2191((d - 1 + h - e).choose (h - e))\n c := \u2191h\n f := \u2191e\n g := \u2191((d - 1 + h - e).choose (h - e))\n i := \u2191((d + (h - e) - 1).choose (h - e))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovUpperBinomialM2B3": "c064aa453513bf709697836dcbe6db5cb18e6235da3cdd8037da7a337793e356"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-2b34268b/MarkovUpperBinomialM2B3.olean",
+    "/Users/sasha/math_gkm/research/MarkovUpperBinomialM2B3.lean"
+  ],
+  "seconds": 25.364716625015717,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
