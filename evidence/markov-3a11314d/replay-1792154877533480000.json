@@ -1,0 +1,86 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovFibLowM3A1\ncollected MarkovCentralSumsM3A1\ncollected MarkovCentralSquareM3A1\ncollected MarkovSourceCentralM3A1\ncollected MarkovCentralLinearM3A1\ncollected MarkovResidualM3A1\ncollected MarkovCentralWitnessM3A1\nreplay union of 7 modules over 7 inherited imports\nisolation checked for 37 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovFibLowM3A1": "caa72f106497790f7da6ebd663689f593512d2265c8e06a8f9a56b87792db1b8",
+    "MarkovCentralSumsM3A1": "6de019da59b3dd19f06e68ef63899d90e76503098657f9cdc0fd0e0321880785",
+    "MarkovCentralSquareM3A1": "19992a45a8abf0020b115d2451dbab7a1315ba0273b72bf308ced436f3dcacf3",
+    "MarkovSourceCentralM3A1": "267c2d765463659923d49eda7f7ee3ed0e82af5f7923af89273736fc541db087",
+    "MarkovCentralLinearM3A1": "374390f794dd340981f42076fc736b68b56dc1bf50eb3bc15a4a38bb3cc0152d",
+    "MarkovResidualM3A1": "465acaf72491c61c045e28421db5fa4c15ebb0c8f86de3856d878a6fe5008f42",
+    "MarkovCentralWitnessM3A1": "aa6d458f7e45dbb04af9214fc60f1c5e0fea58fc8236885df45df29c2fc2d159"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM3A1.lean",
+    "MarkovFibLowM3A1",
+    "MarkovCentralSumsM3A1",
+    "MarkovCentralSquareM3A1",
+    "MarkovSourceCentralM3A1",
+    "MarkovCentralLinearM3A1",
+    "MarkovResidualM3A1",
+    "MarkovCentralWitnessM3A1"
+  ],
+  "seconds": 41.46661141701043,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "fe0c17597f3328aea11af6ec247b066e4dfbb39e72ffe914bb2f0685c1073633",
+  "declared_names": {
+    "MarkovFibLowM3A1": [
+      "fib_low_oneM3A1",
+      "fib_low_twoM3A1",
+      "fib_low_threeM3A1"
+    ],
+    "MarkovCentralSumsM3A1": [
+      "centralTerm2M3A1",
+      "centralAnti2M3A1",
+      "central_delta2M3A1",
+      "central_sum2M3A1",
+      "centralTerm3M3A1",
+      "centralAnti3M3A1",
+      "central_delta3M3A1",
+      "central_sum3M3A1",
+      "centralTerm4M3A1",
+      "centralAnti4M3A1",
+      "central_delta4M3A1",
+      "central_sum4M3A1"
+    ],
+    "MarkovCentralSquareM3A1": [
+      "bicoeff_mulM3A1",
+      "fib_low_zeroM3A1",
+      "central_square_sum2M3A1",
+      "central_square_sum3M3A1",
+      "central_square_sum4M3A1",
+      "central_square_valuesM3A1"
+    ],
+    "MarkovSourceCentralM3A1": [
+      "central_two_valuesM3A1",
+      "central_gap_identityM3A1",
+      "central_two_lcM3A1",
+      "source_two_centralM3A1",
+      "source_two_central_polygonM3A1"
+    ],
+    "MarkovCentralLinearM3A1": [
+      "centralCenterM3A1",
+      "central_linear_identityM3A1",
+      "central_linear_nonnegM3A1",
+      "central_two_linearM3A1",
+      "source_two_central_linearM3A1"
+    ],
+    "MarkovResidualM3A1": [
+      "InteriorCore63M3A1",
+      "root_iff_interiorM3A1"
+    ],
+    "MarkovCentralWitnessM3A1": [
+      "centralPathM3A1",
+      "central_path_labelsM3A1",
+      "central_previous_guardsM3A1",
+      "central_family_rawM3A1"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed M3A1; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

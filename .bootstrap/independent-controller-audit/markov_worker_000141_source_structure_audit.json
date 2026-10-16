@@ -1,0 +1,341 @@
+{
+  "worker": 141,
+  "request": "3a11314d099d45f1bab6c685fa152e7b",
+  "created_at_utc": "2026-10-16T13:04:25.017832+00:00",
+  "scope": "Archive-first static reading, hashes, declarations and input/index-domain counts only. No project execution or coefficient, binomial, polynomial, moment, gap, recurrence or matrix recomputation. Active142 excluded.",
+  "new_modules": [
+    {
+      "module": "MarkovFibLowM3A1",
+      "path": "research/MarkovFibLowM3A1.lean",
+      "sha256": "caa72f106497790f7da6ebd663689f593512d2265c8e06a8f9a56b87792db1b8",
+      "current_sha256": "caa72f106497790f7da6ebd663689f593512d2265c8e06a8f9a56b87792db1b8",
+      "bytes": 2659,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fib_low_oneM3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_low_twoM3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_low_threeM3A1"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovFibonacciFormula6ade",
+        "MarkovFibJets3556"
+      ],
+      "theorem_statements": [
+        "theorem fib_low_oneM3A1 (n j : ℕ) (hj : j<n) :\n coeff (fib6 n) 1 j=(j:ℤ)+1",
+        "theorem fib_low_twoM3A1 (n j : ℕ) (hj : j<n) :\n 2*coeff (fib6 n) 2 j=((n:ℤ)-j-1)*(j+1)*(j+2)",
+        "theorem fib_low_threeM3A1 (n j : ℕ) (hj : j<n) :\n 12*coeff (fib6 n) 3 j=\n ((n:ℤ)-j-1)*(n-j-2)*(j+1)*(j+2)*(j+3)"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovCentralSumsM3A1",
+      "path": "research/MarkovCentralSumsM3A1.lean",
+      "sha256": "6de019da59b3dd19f06e68ef63899d90e76503098657f9cdc0fd0e0321880785",
+      "current_sha256": "6de019da59b3dd19f06e68ef63899d90e76503098657f9cdc0fd0e0321880785",
+      "bytes": 3099,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "centralTerm2M3A1"
+        },
+        {
+          "kind": "def",
+          "name": "centralAnti2M3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_delta2M3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_sum2M3A1"
+        },
+        {
+          "kind": "def",
+          "name": "centralTerm3M3A1"
+        },
+        {
+          "kind": "def",
+          "name": "centralAnti3M3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_delta3M3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_sum3M3A1"
+        },
+        {
+          "kind": "def",
+          "name": "centralTerm4M3A1"
+        },
+        {
+          "kind": "def",
+          "name": "centralAnti4M3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_delta4M3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_sum4M3A1"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MathGKM.Markov"
+      ],
+      "theorem_statements": [
+        "theorem central_delta2M3A1 (N t : ℤ) :\n centralAnti2M3A1 N (t+1)-centralAnti2M3A1 N t=6*centralTerm2M3A1 N t",
+        "theorem central_sum2M3A1 (n : ℕ) :\n 6*(∑ t∈Finset.range (n+1), centralTerm2M3A1 (n+1) t)=\n ((n:ℤ)+1)*((n:ℤ)+2)*((n:ℤ)+3)",
+        "theorem central_delta3M3A1 (N t : ℤ) :\n centralAnti3M3A1 N (t+1)-centralAnti3M3A1 N t=15*centralTerm3M3A1 N t",
+        "theorem central_sum3M3A1 (n : ℕ) :\n 15*(∑ t∈Finset.range (n+1), centralTerm3M3A1 (n+1) t)=\n (n:ℤ)*((n:ℤ)+1)*((n:ℤ)+2)*((n:ℤ)+3)*((n:ℤ)+4)",
+        "theorem central_delta4M3A1 (N t : ℤ) :\n centralAnti4M3A1 N (t+1)-centralAnti4M3A1 N t=28*centralTerm4M3A1 N t",
+        "theorem central_sum4M3A1 (n : ℕ) :\n 28*(∑ t∈Finset.range (n+1), centralTerm4M3A1 (n+1) t)=\n (n:ℤ)*((n:ℤ)-1)*((n:ℤ)+1)*((n:ℤ)+2)*((n:ℤ)+3)*((n:ℤ)+4)*((n:ℤ)+5)"
+      ],
+      "definitions": [
+        "def centralTerm2M3A1 (N t : ℤ) : ℤ :=\n -1*t - 1*t^2 + 1*N + 1*N*t",
+        "def centralAnti2M3A1 (N t : ℤ) : ℤ :=\n 2*t - 2*t^3 + 3*N*t + 3*N*t^2",
+        "def centralTerm3M3A1 (N t : ℤ) : ℤ :=\n 2*t + 4*t^2 + 4*t^3 + 2*t^4 - 2*N - 6*N*t - 8*N*t^2 - 4*N*t^3 + 2*N^2 + 4*N^2*t + 2*N^2*t^2",
+        "def centralAnti3M3A1 (N t : ℤ) : ℤ :=\n -6*t + 6*t^5 - 5*N*t - 10*N*t^3 - 15*N*t^4 + 5*N^2*t + 15*N^2*t^2 + 10*N^2*t^3",
+        "def centralTerm4M3A1 (N t : ℤ) : ℤ :=\n -12*t - 32*t^2 - 45*t^3 - 35*t^4 - 15*t^5 - 5*t^6 + 12*N + 50*N*t + 93*N*t^2 + 85*N*t^3 + 45*N*t^4 + 15*N*t^5 - 18*N^2 - 54*N^2*t - 66*N^2*t^2 - 45*N^2*t^3 - 15*N^2*t^4 + 6*N^3 + 16*N^3*t + 15*N^3*t^2 + 5*N^3*t^3",
+        "def centralAnti4M3A1 (N t : ℤ) : ℤ :=\n 48*t + 28*t^3 - 56*t^5 - 20*t^7 + 28*N*t - 42*N*t^2 + 98*N*t^3 + 140*N*t^4 + 42*N*t^5 + 70*N*t^6 - 42*N^2*t - 147*N^2*t^2 - 126*N^2*t^3 - 105*N^2*t^4 - 84*N^2*t^5 + 14*N^3*t + 49*N^3*t^2 + 70*N^3*t^3 + 35*N^3*t^4"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovCentralSquareM3A1",
+      "path": "research/MarkovCentralSquareM3A1.lean",
+      "sha256": "19992a45a8abf0020b115d2451dbab7a1315ba0273b72bf308ced436f3dcacf3",
+      "current_sha256": "19992a45a8abf0020b115d2451dbab7a1315ba0273b72bf308ced436f3dcacf3",
+      "bytes": 3362,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "bicoeff_mulM3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_low_zeroM3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_square_sum2M3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_square_sum3M3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_square_sum4M3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_square_valuesM3A1"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovFibLowM3A1",
+        "MarkovCentralSumsM3A1"
+      ],
+      "theorem_statements": [
+        "theorem bicoeff_mulM3A1 (P Q : BiPoly) (i j : ℕ) :\n coeff (P*Q) i j=∑ t∈Finset.range (j+1), ∑ s∈Finset.range (i+1),\n   coeff P s t*coeff Q (i-s) (j-t)",
+        "theorem fib_low_zeroM3A1 (n j : ℕ) (hj : j<n) :\n coeff (fib6 n) 0 j=0",
+        "theorem central_square_sum2M3A1 (n : ℕ) :\n coeff (fib6 (n+1)^2) 2 n=\n ∑ t∈Finset.range (n+1), centralTerm2M3A1 (n+1) t",
+        "theorem central_square_sum3M3A1 (n : ℕ) :\n 2*coeff (fib6 (n+1)^2) 3 n=\n ∑ t∈Finset.range (n+1), centralTerm3M3A1 (n+1) t",
+        "theorem central_square_sum4M3A1 (n : ℕ) :\n 12*coeff (fib6 (n+1)^2) 4 n=\n ∑ t∈Finset.range (n+1), centralTerm4M3A1 (n+1) t",
+        "theorem central_square_valuesM3A1 (n : ℕ) :\n 6*coeff (fib6 (n+1)^2) 2 n=((n:ℤ)+1)*(n+2)*(n+3) ∧\n 30*coeff (fib6 (n+1)^2) 3 n=(n:ℤ)*(n+1)*(n+2)*(n+3)*(n+4) ∧\n 336*coeff (fib6 (n+1)^2) 4 n=(n:ℤ)*(n-1)*(n+1)*(n+2)*(n+3)*(n+4)*(n+5)"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovSourceCentralM3A1",
+      "path": "research/MarkovSourceCentralM3A1.lean",
+      "sha256": "267c2d765463659923d49eda7f7ee3ed0e82af5f7923af89273736fc541db087",
+      "current_sha256": "267c2d765463659923d49eda7f7ee3ed0e82af5f7923af89273736fc541db087",
+      "bytes": 2897,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "central_two_valuesM3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_gap_identityM3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_two_lcM3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_centralM3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_central_polygonM3A1"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovCentralSquareM3A1",
+        "MarkovSquares3556"
+      ],
+      "theorem_statements": [
+        "theorem central_two_valuesM3A1 (q : ℕ) :\n let P := fib6 (q+2)^2+V*fib6 (q+1)^2\n let z : ℤ := q+1\n 6*coeff P 2 (q+1)=(z+1)*(z+2)*(2*z+3) ∧\n 30*coeff P 3 (q+1)=z*(z+1)*(z+2)*(z+3)*(2*z+3) ∧\n 336*coeff P 4 (q+1)=z*(z-1)*(z+1)*(z+2)*(z+3)*(z+4)*(2*z+3)",
+        "theorem central_gap_identityM3A1 (z L M R : ℤ)\n (hL : 6*L=(z+1)*(z+2)*(2*z+3))\n (hM : 30*M=z*(z+1)*(z+2)*(z+3)*(2*z+3))\n (hR : 336*R=z*(z-1)*(z+1)*(z+2)*(z+3)*(z+4)*(2*z+3)) :\n 1400*(M^2-L*R)=L^2*z*(z+3)*(31*z^2+93*z+100)",
+        "theorem central_two_lcM3A1 (q : ℕ) :\n let P := fib6 (q+2)^2+V*fib6 (q+1)^2\n coeff P 2 (q+1)*coeff P 4 (q+1)≤coeff P 3 (q+1)^2",
+        "theorem source_two_centralM3A1 (path : List Bool) (j : ℕ)\n (ha : (frame path).mid.a=2) (hb : (frame path).mid.b=2*j+1) :\n coeff (frame path).mid.p 2 j*coeff (frame path).mid.p 4 j≤\n   coeff (frame path).mid.p 3 j^2",
+        "theorem source_two_central_polygonM3A1 (path : List Bool) (j : ℕ)\n (ha : (frame path).mid.a=2) (hb : (frame path).mid.b=2*j+1) (hj : 2≤j) :\n InPolygon (frame path).mid.a (frame path).mid.b 2 j ∧\n InPolygon (frame path).mid.a (frame path).mid.b 3 j ∧\n InPolygon (frame path).mid.a (frame path).mid.b 4 j"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovCentralLinearM3A1",
+      "path": "research/MarkovCentralLinearM3A1.lean",
+      "sha256": "374390f794dd340981f42076fc736b68b56dc1bf50eb3bc15a4a38bb3cc0152d",
+      "current_sha256": "374390f794dd340981f42076fc736b68b56dc1bf50eb3bc15a4a38bb3cc0152d",
+      "bytes": 3112,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "centralCenterM3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_linear_identityM3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_linear_nonnegM3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_two_linearM3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_central_linearM3A1"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovSourceCentralM3A1",
+        "MarkovSourceLinearValueM553"
+      ],
+      "theorem_statements": [
+        "theorem central_linear_identityM3A1 (z L M R : ℝ) (hz : 0≤z)\n (hm : 5*M=z*(z+3)*L) (hr : 56*R=z*(z-1)*(z+3)*(z+4)*L) :\n 7*(z^2+3*z+5)^2*tripleLinearM553 2 L M R (centralCenterM3A1 z)=\n L*z*(z+3)*(31*z^2+93*z+100)",
+        "theorem central_linear_nonnegM3A1 (z L M R : ℝ) (hz : 0≤z) (hL : 0≤L)\n (hm : 5*M=z*(z+3)*L) (hr : 56*R=z*(z-1)*(z+3)*(z+4)*L) :\n 0≤tripleLinearM553 2 L M R (centralCenterM3A1 z)",
+        "theorem central_two_linearM3A1 (q : ℕ) :\n let P := fib6 (q+2)^2+V*fib6 (q+1)^2\n 0≤tripleLinearM553 2 (coeff P 2 (q+1)) (coeff P 3 (q+1))\n   (coeff P 4 (q+1)) (centralCenterM3A1 (q+1))",
+        "theorem source_two_central_linearM3A1 (path : List Bool) (j : ℕ)\n (ha : (frame path).mid.a=2) (hb : (frame path).mid.b=2*j+1) :\n 0≤linearMomentM553\n   ((hresidualM511 (X:ℤ[X]) (sourceWord28 path) j).map (Int.castRingHom ℝ))\n   0 2 (centralCenterM3A1 j)"
+      ],
+      "definitions": [
+        "def centralCenterM3A1 (z : ℝ) : ℝ := 1+10/(z^2+3*z+5)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovResidualM3A1",
+      "path": "research/MarkovResidualM3A1.lean",
+      "sha256": "465acaf72491c61c045e28421db5fa4c15ebb0c8f86de3856d878a6fe5008f42",
+      "current_sha256": "465acaf72491c61c045e28421db5fa4c15ebb0c8f86de3856d878a6fe5008f42",
+      "bytes": 2153,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "InteriorCore63M3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_interiorM3A1"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovResidualM37B",
+        "MarkovSourceCentralM3A1"
+      ],
+      "theorem_statements": [
+        "theorem root_iff_interiorM3A1 : Conjecture63 ↔ InteriorCore63M3A1"
+      ],
+      "definitions": [
+        "def InteriorCore63M3A1 : Prop := ∀ path : List Bool,\n let m := (frame path).mid\n 2 ≤ m.a →\n (∀ i j, InPolygon m.a m.b i j → InPolygon m.a m.b (i+1) j →\n   InPolygon m.a m.b (i+2) j → i+j+4 ≤ m.a+m.b-1 → 5 ≤ j →\n   ¬HorizontalMiddleMF1E m.a m.b i j →\n   ¬(HorizontalRegionMAC3 m.a m.b i j ∨ HorizontalVarianceMAC3 m.a m.b i j) →\n   ¬HorizontalSharpM37B m.a m.b i j →\n   ¬(m.a=2 ∧ i=2 ∧ m.b=2*j+1) →\n   coeff m.p i j*coeff m.p (i+2) j ≤ coeff m.p (i+1) j^2) ∧\n (∀ i j, InPolygon m.a m.b i j → InPolygon m.a m.b i (j+1) →\n   InPolygon m.a m.b i (j+2) → i+j+4 ≤ m.a+m.b-1 → 4 ≤ i → 3 ≤ j →\n   ¬VerticalMiddleMF1E m.a m.b i j →\n   ¬(VerticalRegionMAC3 m.a m.b i j ∨ VerticalVarianceMAC3 m.a m.b i j) →\n   ¬VerticalSharpM37B m.a m.b i j →\n   coeff m.p i j*coeff m.p i (j+2) ≤ coeff m.p i (j+1)^2) ∧\n (∀ i j, InPolygon m.a m.b i (j+2) → InPolygon m.a m.b (i+1) (j+1) →\n   InPolygon m.a m.b (i+2) j → i+j+8 ≤ m.a+m.b-1 → m.a+5 ≤ i+j+2 →\n   m.a+2 ≤ m.b → ¬DiagonalMiddleMF1E m.a m.b i j →\n   ¬(DiagonalRegionMAC3 m.a m.b i j ∨ DiagonalVarianceMAC3 m.a m.b i j) →\n   ¬DiagonalSharpM37B m.a m.b i j →\n   coeff m.p i (j+2)*coeff m.p (i+2) j ≤ coeff m.p (i+1) (j+1)^2)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovCentralWitnessM3A1",
+      "path": "research/MarkovCentralWitnessM3A1.lean",
+      "sha256": "aa6d458f7e45dbb04af9214fc60f1c5e0fea58fc8236885df45df29c2fc2d159",
+      "current_sha256": "aa6d458f7e45dbb04af9214fc60f1c5e0fea58fc8236885df45df29c2fc2d159",
+      "bytes": 1820,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "centralPathM3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_path_labelsM3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_previous_guardsM3A1"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_family_rawM3A1"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovResidualM3A1"
+      ],
+      "theorem_statements": [
+        "theorem central_path_labelsM3A1 (n : ℕ) :\n (frame (centralPathM3A1 n)).mid.a=2 ∧\n (frame (centralPathM3A1 n)).mid.b=2*(n+5)+1",
+        "theorem central_previous_guardsM3A1 (n : ℕ) :\n let m := (frame (centralPathM3A1 n)).mid\n 2 ≤ m.a ∧ InPolygon m.a m.b 2 (n+5) ∧ InPolygon m.a m.b 3 (n+5) ∧\n InPolygon m.a m.b 4 (n+5) ∧ 2+(n+5)+4 ≤ m.a+m.b-1 ∧ 5 ≤ n+5 ∧\n ¬HorizontalMiddleMF1E m.a m.b 2 (n+5) ∧\n ¬(HorizontalRegionMAC3 m.a m.b 2 (n+5) ∨\n   HorizontalVarianceMAC3 m.a m.b 2 (n+5)) ∧\n ¬HorizontalSharpM37B m.a m.b 2 (n+5)",
+        "theorem central_family_rawM3A1 (n : ℕ) :\n let p := (frame (centralPathM3A1 n)).mid.p\n coeff p 2 (n+5)*coeff p 4 (n+5)≤coeff p 3 (n+5)^2"
+      ],
+      "definitions": [
+        "def centralPathM3A1 (n : ℕ) : List Bool := List.replicate (n+4) false++[true]"
+      ],
+      "forbidden_raw_tokens": []
+    }
+  ],
+  "counts": {
+    "theorem": 28,
+    "def": 9
+  },
+  "theorem_statement_extraction": "Whole theorem header through proof assignment, retaining inner let binders.",
+  "exact_residual_comparison": {
+    "prior": "InteriorCore63M37B",
+    "current": "InteriorCore63M3A1",
+    "only_added_antecedent": "not (m.a = 2 and i = 2 and m.b = 2*j+1)",
+    "old_definition_recovered_by_single_line_removal": true,
+    "vertical_diagonal_clauses_unchanged": true
+  },
+  "source_scope": "All actual paths with numerator2 and denominator2*j+1; source classification supplies j>=1. One horizontal triple at starts2,3,4 in rowj. No coefficient formula, positivity or gap premise in source theorem.",
+  "zero_polygon_scope": "Raw theorem includes j=1 and right coefficient zero. Three polygon memberships separately proved when j>=2. Old-residual witnesses have j=n+5>=5.",
+  "scaling_scope": "Different factors6,30,336 establish coefficient identities; gap1400*(M^2-L*R) has nonnegative RHS. No unequal rescaling is treated as LC-preserving, and no coefficient or mass is divided out.",
+  "center_scope": "Exact center1+10/(j^2+3*j+5) proves actual n=0/k=2 linear certificate. Generic real lemma requires z>=0, L>=0 and two explicit coefficient relations; actual source discharges them.",
+  "root_scope": "New root_iff_interiorM3A1 is in accepted validation inventory. The new residual InteriorCore63M3A1 and Conjecture63 remain unproved.",
+  "full_row_status": "Ordinary prose derivation and finite candidate checks only. No accepted general-column coefficient formula, ratio monotonicity theorem or all-start central-row source LC theorem.",
+  "generator_status": "Antidifference and residual generators read only. Actual final Lean delta identities, telescoping and coefficient bridges supply proof; generator computation/interpolation is not an axiom.",
+  "mathematical_values_recomputed": false
+}

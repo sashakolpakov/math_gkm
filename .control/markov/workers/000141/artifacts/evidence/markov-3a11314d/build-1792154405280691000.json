@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCentralLinearM3A1.lean:21:1: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovCentralLinearM3A1.lean:44:57: error: mod_cast has type\n  336 * coeff (fib6 (q + 2) ^ 2 + V * fib6 (q + 1) ^ 2) 4 (q + 1) =\n    \u2191(q + 1) * Int.subNatNat (q + 1) 1 * \u2191(q + 1 + 1) * \u2191(q + 1 + 2) * \u2191(q + 1 + 3) * \u2191(q + 1 + 4) * \u2191(2 * (q + 1) + 3)\nbut is expected to have type\n  336 * coeff (fib6 (q + 2) ^ 2 + V * fib6 (q + 1) ^ 2) 4 (q + 1) =\n    \u2191((q + 1) * q * (q + 2) * (q + 3) * (q + 4) * (q + 5) * (2 * (q + 1) + 3))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCentralLinearM3A1": "e334bf72d603e50590dc5009bfe53805ff70a36470e069cb5f04a32c1f00166a"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-3a11314d/MarkovCentralLinearM3A1.olean",
+    "/Users/sasha/math_gkm/research/MarkovCentralLinearM3A1.lean"
+  ],
+  "seconds": 34.353143832995556,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

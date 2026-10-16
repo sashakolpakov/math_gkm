@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCentralWitnessM3A1.lean:13:1: error: omega could not prove the goal:\nNo usable constraints found. You may need to unfold definitions so `omega` can see linear arithmetic facts about `Nat` and `Int`, which may also involve multiplication, division, and modular remainder by constants.\n/Users/sasha/math_gkm/research/MarkovCentralWitnessM3A1.lean:12:20: warning: This simp argument is unused:\n  Bool.true_eq\n\nHint: Omit it from the simp argument list.\n  simp only [\u0335a\u0335d\u0335v\u0335a\u0335n\u0335c\u0335e\u0335,\u0335B\u0335o\u0335o\u0335l\u0335.\u0335t\u0335r\u0335u\u0335e\u0335_\u0335e\u0335q\u0335,\u0335i\u0335f\u0335_\u0335t\u0335r\u0335u\u0335e\u0335]\u0335[\u0332a\u0332d\u0332v\u0332a\u0332n\u0332c\u0332e\u0332,\u0332 \u0332i\u0332f\u0332_\u0332t\u0332r\u0332u\u0332e\u0332]\u0332\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovCentralWitnessM3A1.lean:17:1: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Matroid ?m.2) 2\nnumerals are polymorphic in Lean, but the numeral `2` cannot be used in a context where the expected type is\n  Matroid ?m.2\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovCentralWitnessM3A1.lean:17:4: error(lean.unknownIdentifier): Unknown constant `Matroid.a`\n\nNote: Inferred this name from the expected resulting type of `.a`:\n  Matroid ?m.2\n/Users/sasha/math_gkm/research/MarkovCentralWitnessM3A1.lean:18:40: error(lean.unknownIdentifier): Unknown constant `Nat.a`\n\nNote: Inferred this name from the expected resulting type of `.a`:\n  \u2115\n/Users/sasha/math_gkm/research/MarkovCentralWitnessM3A1.lean:18:29: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  HAdd \u2115 \u2115 (Matroid ?m.103)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovCentralWitnessM3A1.lean:18:40: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  HSub \u2115 \u2115 (Matroid ?m.103)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovCentralWitnessM3A1.lean:26:12: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  a \u2265 0\nwhere\n a := \u2191n\n/Users/sasha/math_gkm/research/MarkovCentralWitnessM3A1.lean:26:30: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  a \u2265 0\nwhere\n a := \u2191n\n/Users/sasha/math_gkm/research/MarkovCentralWitnessM3A1.lean:35:3: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  a \u2265 0\nwhere\n a := \u2191n\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCentralWitnessM3A1": "9441fe7bc01c93a698edef0256df50338c367ac649d02c1a2395a093e5960e84"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-3a11314d/MarkovCentralWitnessM3A1.olean",
+    "/Users/sasha/math_gkm/research/MarkovCentralWitnessM3A1.lean"
+  ],
+  "seconds": 16.92007074999856,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

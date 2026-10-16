@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovFibLowM3A1.lean:12:1: error: Type mismatch: After simplification, term\n  h\n has type\n  coeff (fib6 n) 1 j = \u2191((1 + j).choose j)\nbut is expected to have type\n  coeff (fib6 n) 1 j = \u2191j + 1\n/Users/sasha/math_gkm/research/MarkovFibLowM3A1.lean:21:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  (j + 2).choose (j + 2 - j)\nin the target expression\n  2 * (\u2191(n - j - 1) * \u2191((j + 2).choose j)) = (\u2191n - \u2191j - 1) * (\u2191j + 1) * (\u2191j + 2)\n\ncase pos\nn j : \u2115\nhj : j < n\nhs : j + 2 \u2264 n\nh : coeff (fib6 n) (1 + 1) j = \u2191((1 + (n - j - 2)).choose 1) * \u2191((1 + 1 + j).choose j)\nhe : 1 + (n - j - 2) = n - j - 1\n\u22a2 2 * (\u2191(n - j - 1) * \u2191((j + 2).choose j)) = (\u2191n - \u2191j - 1) * (\u2191j + 1) * (\u2191j + 2)\n/Users/sasha/math_gkm/research/MarkovFibLowM3A1.lean:44:34: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  (j + 3).choose (j + 3 - j)\nin the target expression\n  12 * (\u2191((n - j - 1).choose 2) * \u2191((j + 3).choose j)) = (\u2191n - \u2191j - 1) * (\u2191n - \u2191j - 2) * (\u2191j + 1) * (\u2191j + 2) * (\u2191j + 3)\n\ncase pos\nn j : \u2115\nhj : j < n\nhs : j + 3 \u2264 n\nh : coeff (fib6 n) (2 + 1) j = \u2191((2 + (n - j - 3)).choose 2) * \u2191((2 + 1 + j).choose j)\nhe : 2 + (n - j - 3) = n - j - 1\n\u22a2 12 * (\u2191((n - j - 1).choose 2) * \u2191((j + 3).choose j)) = (\u2191n - \u2191j - 1) * (\u2191n - \u2191j - 2) * (\u2191j + 1) * (\u2191j + 2) * (\u2191j + 3)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovFibLowM3A1": "369bbc323549608496fd3163e0cc1003a4e090338230402600b3cb6c04315b8d"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-3a11314d/MarkovFibLowM3A1.olean",
+    "/Users/sasha/math_gkm/research/MarkovFibLowM3A1.lean"
+  ],
+  "seconds": 36.95680524996715,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
