@@ -1,0 +1,565 @@
+{
+  "worker": 150,
+  "request": "4f4ac079ee56466da7d21ce9055918ab",
+  "created_at_utc": "2026-10-16T17:20:45.392225+00:00",
+  "scope": "Archive-first static completed-source/declaration/hash and input-index domain audit. No project program/proof/checker/replay/experiment execution, mathematical-value recomputation, project changes or proposer assistance. Explicit named completed/inherited counterparts only; active151 not inspected.",
+  "new_modules": [
+    {
+      "module": "MarkovNewtonFiniteM4F4",
+      "path": "research/MarkovNewtonFiniteM4F4.lean",
+      "sha256": "194513ea80e5b4e173aef5cbb3d67a93a02b25fa508690e72af360e73faaaf07",
+      "current_sha256": "194513ea80e5b4e173aef5cbb3d67a93a02b25fa508690e72af360e73faaaf07",
+      "bytes": 5734,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "PolyBoundM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "poly_constM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "poly_addM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "poly_subM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "poly_mulM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "poly_monoM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "poly_sumM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "poly_affineM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "poly_chooseM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "diff_nat_castM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "diff_int_castM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "diff_vanishM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "diff_swapM4F4"
+        },
+        {
+          "kind": "def",
+          "name": "SeparateBoundM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "newton_outsideM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "newton_finite_iffM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "newton_finite_nonnegM4F4"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovNewtonM295"
+      ],
+      "theorem_statements": [
+        "theorem poly_constM4F4 (a : ℚ) (n : ℕ) : PolyBoundM4F4 (fun _ => a) n",
+        "theorem poly_addM4F4 {f g : ℚ → ℚ} {n : ℕ}\n (hf : PolyBoundM4F4 f n) (hg : PolyBoundM4F4 g n) :\n PolyBoundM4F4 (fun x => f x+g x) n",
+        "theorem poly_subM4F4 {f g : ℚ → ℚ} {n : ℕ}\n (hf : PolyBoundM4F4 f n) (hg : PolyBoundM4F4 g n) :\n PolyBoundM4F4 (fun x => f x-g x) n",
+        "theorem poly_mulM4F4 {f g : ℚ → ℚ} {m n : ℕ}\n (hf : PolyBoundM4F4 f m) (hg : PolyBoundM4F4 g n) :\n PolyBoundM4F4 (fun x => f x*g x) (m+n)",
+        "theorem poly_monoM4F4 {f : ℚ → ℚ} {m n : ℕ}\n (hf : PolyBoundM4F4 f m) (hm : m ≤ n) : PolyBoundM4F4 f n",
+        "theorem poly_sumM4F4 {ι : Type*} (s : Finset ι) (f : ι → ℚ → ℚ) (n : ℕ)\n (h : ∀ k∈s, PolyBoundM4F4 (f k) n) : PolyBoundM4F4 (fun x => ∑ k∈s, f k x) n",
+        "theorem poly_affineM4F4 {f : ℚ → ℚ} {n : ℕ}\n (hf : PolyBoundM4F4 f n) (a b : ℚ) :\n PolyBoundM4F4 (fun x => f (a*x+b)) n",
+        "theorem poly_chooseM4F4 (k : ℕ) : PolyBoundM4F4 (fun x => choosePolyM0D3 x k) k",
+        "theorem diff_nat_castM4F4 (f : ℚ → ℚ) (r x : ℕ) :\n (fwdDiff 1)^[r] (fun n : ℕ => f n) x=(fwdDiff (1:ℚ))^[r] f x",
+        "theorem diff_int_castM4F4 (f : ℕ → ℤ) (r x : ℕ) :\n (((fwdDiff 1)^[r] f x : ℤ):ℚ)=(fwdDiff 1)^[r] (fun n => (f n:ℚ)) x",
+        "theorem diff_vanishM4F4 {f : ℕ → ℤ} {F : ℚ → ℚ} {n r : ℕ}\n (h : PolyBoundM4F4 F n) (he : ∀ x : ℕ, (f x:ℚ)=F x) (hr : n<r) :\n (fwdDiff 1)^[r] f=0",
+        "theorem diff_swapM4F4 (f : ℕ → ℕ → ℤ) (r s x y : ℕ) :\n (fwdDiff 1)^[s] (fun b => (fwdDiff 1)^[r] (fun a => f a b) x) y=\n (fwdDiff 1)^[r] (fun a => (fwdDiff 1)^[s] (f a) y) x",
+        "theorem newton_outsideM4F4 {f : ℕ → ℕ → ℤ} {m n r s : ℕ}\n (h : SeparateBoundM4F4 f m n) (ho : m<r ∨ n<s) : newtonCoeffM295 f r s=0",
+        "theorem newton_finite_iffM4F4 {f : ℕ → ℕ → ℤ} {m n : ℕ}\n (h : SeparateBoundM4F4 f m n) :\n (∀ r s, 0≤newtonCoeffM295 f r s) ↔\n (∀ r ≤ m, ∀ s ≤ n, 0≤newtonCoeffM295 f r s)",
+        "theorem newton_finite_nonnegM4F4 {f : ℕ → ℕ → ℤ} {m n : ℕ}\n (h : SeparateBoundM4F4 f m n)\n (hp : ∀ r ≤ m, ∀ s ≤ n, 0≤newtonCoeffM295 f r s) (x y : ℕ) : 0≤f x y"
+      ],
+      "definitions": [
+        "def PolyBoundM4F4 (f : ℚ → ℚ) (n : ℕ) : Prop :=\n ∃ P : Polynomial ℚ, P.natDegree ≤ n ∧ ∀ x, P.eval x=f x",
+        "def SeparateBoundM4F4 (f : ℕ → ℕ → ℤ) (m n : ℕ) : Prop :=\n (∀ y : ℕ, ∃ F : ℚ → ℚ, PolyBoundM4F4 F m ∧ ∀ x : ℕ, (f x y:ℚ)=F x) ∧\n (∀ x : ℕ, ∃ F : ℚ → ℚ, PolyBoundM4F4 F n ∧ ∀ y : ℕ, (f x y:ℚ)=F y)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovRegionDegreeM4F4",
+      "path": "research/MarkovRegionDegreeM4F4.lean",
+      "sha256": "79d8c9506494b0386a97ac459e767afd509374a55732850ff80231f37f6cab90",
+      "current_sha256": "79d8c9506494b0386a97ac459e767afd509374a55732850ff80231f37f6cab90",
+      "bytes": 3101,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "poly_leftM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "poly_rightM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "poly_squareM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "poly_choose_affineM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_x_degreeM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_y_degreeM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_x_degreeM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_y_degreeM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_x_affineM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_y_affineM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_x_affineM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_y_affineM4F4"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovNewtonFiniteM4F4",
+        "MarkovVerticalPolyM0D3"
+      ],
+      "theorem_statements": [
+        "theorem poly_leftM4F4 {f : ℚ → ℚ} {n : ℕ} (hf : PolyBoundM4F4 f n) (a : ℚ) :\n PolyBoundM4F4 (fun x => a*f x) n",
+        "theorem poly_rightM4F4 {f : ℚ → ℚ} {n : ℕ} (hf : PolyBoundM4F4 f n) (a : ℚ) :\n PolyBoundM4F4 (fun x => f x*a) n",
+        "theorem poly_squareM4F4 {f : ℚ → ℚ} {n : ℕ} (hf : PolyBoundM4F4 f n) :\n PolyBoundM4F4 (fun x => f x^2) (2*n)",
+        "theorem poly_choose_affineM4F4 (a b : ℚ) (k n : ℕ) (hk : k≤n) :\n PolyBoundM4F4 (fun x => choosePolyM0D3 (a*x+b) k) n",
+        "theorem lower_x_degreeM4F4 (i : ℕ) (y : ℚ) :\n PolyBoundM4F4 (fun x => lowerPolynomialM0D3 i x y) (2*i)",
+        "theorem lower_y_degreeM4F4 (i : ℕ) (x : ℚ) :\n PolyBoundM4F4 (fun y => lowerPolynomialM0D3 i x y) i",
+        "theorem upper_x_degreeM4F4 (i : ℕ) (y : ℚ) :\n PolyBoundM4F4 (fun x => upperPolynomialM0D3 i x y) (2*i)",
+        "theorem upper_y_degreeM4F4 (i : ℕ) (x : ℚ) :\n PolyBoundM4F4 (fun y => upperPolynomialM0D3 i x y) i",
+        "theorem lower_x_affineM4F4 (i : ℕ) (y a b : ℚ) :\n PolyBoundM4F4 (fun x => lowerPolynomialM0D3 i (a*x+b) y) (2*i)",
+        "theorem lower_y_affineM4F4 (i : ℕ) (x a b : ℚ) :\n PolyBoundM4F4 (fun y => lowerPolynomialM0D3 i x (a*y+b)) i",
+        "theorem upper_x_affineM4F4 (i : ℕ) (y a b : ℚ) :\n PolyBoundM4F4 (fun x => upperPolynomialM0D3 i (a*x+b) y) (2*i)",
+        "theorem upper_y_affineM4F4 (i : ℕ) (x a b : ℚ) :\n PolyBoundM4F4 (fun y => upperPolynomialM0D3 i x (a*y+b)) i"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovGapDegreeM4F4",
+      "path": "research/MarkovGapDegreeM4F4.lean",
+      "sha256": "3e681975cafcdbfb050bd2bf7b1b8c25a4a2ab910ee468a5d1de36032e5d92a6",
+      "current_sha256": "3e681975cafcdbfb050bd2bf7b1b8c25a4a2ab910ee468a5d1de36032e5d92a6",
+      "bytes": 6775,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "poly_gapM4F4"
+        },
+        {
+          "kind": "def",
+          "name": "lowerRatGapM4F4"
+        },
+        {
+          "kind": "def",
+          "name": "upperRatGapM4F4"
+        },
+        {
+          "kind": "def",
+          "name": "crossOneRatGapM4F4"
+        },
+        {
+          "kind": "def",
+          "name": "crossTwoRatGapM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_gap_castM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_gap_castM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_one_gap_castM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_two_gap_castM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_gap_x_degreeM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_gap_y_degreeM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_gap_x_degreeM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_gap_y_degreeM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_one_gap_x_degreeM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_two_gap_x_degreeM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "separate_of_rationalM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_gap_boundM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_gap_boundM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_one_gap_boundM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_two_gap_boundM4F4"
+        },
+        {
+          "kind": "def",
+          "name": "FiniteNewtonVerticalM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "finite_newton_vertical_iffM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_of_finite_newtonM4F4"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovRegionDegreeM4F4",
+        "MarkovNewtonRemainingM295"
+      ],
+      "theorem_statements": [
+        "theorem poly_gapM4F4 {f g h : ℚ → ℚ} {n : ℕ}\n (hf : PolyBoundM4F4 f n) (hg : PolyBoundM4F4 g n) (hh : PolyBoundM4F4 h n) :\n PolyBoundM4F4 (fun x => f x^2-g x*h x) (2*n)",
+        "theorem lower_gap_castM4F4 (i x y : ℕ) :\n (lowerGapM295 i x y:ℚ)=lowerRatGapM4F4 i x y",
+        "theorem upper_gap_castM4F4 (i x y : ℕ) (hi : 1 ≤ i) :\n (upperGapM295 i x y:ℚ)=upperRatGapM4F4 i x y",
+        "theorem cross_one_gap_castM4F4 (i x y : ℕ) (hi : 1 ≤ i) :\n (crossOneGapM295 i x y:ℚ)=crossOneRatGapM4F4 i x y",
+        "theorem cross_two_gap_castM4F4 (i x y : ℕ) (hi : 1 ≤ i) :\n (crossTwoGapM295 i x y:ℚ)=crossTwoRatGapM4F4 i x y",
+        "theorem lower_gap_x_degreeM4F4 (i : ℕ) (y : ℚ) :\n PolyBoundM4F4 (fun x => lowerRatGapM4F4 i x y) (4*i)",
+        "theorem lower_gap_y_degreeM4F4 (i : ℕ) (x : ℚ) :\n PolyBoundM4F4 (fun y => lowerRatGapM4F4 i x y) (2*i)",
+        "theorem upper_gap_x_degreeM4F4 (i : ℕ) (y : ℚ) :\n PolyBoundM4F4 (fun x => upperRatGapM4F4 i x y) (4*i)",
+        "theorem upper_gap_y_degreeM4F4 (i : ℕ) (x : ℚ) :\n PolyBoundM4F4 (fun y => upperRatGapM4F4 i x y) (2*i)",
+        "theorem cross_one_gap_x_degreeM4F4 (i : ℕ) (y : ℚ) :\n PolyBoundM4F4 (fun x => crossOneRatGapM4F4 i x y) (4*i)",
+        "theorem cross_two_gap_x_degreeM4F4 (i : ℕ) (y : ℚ) :\n PolyBoundM4F4 (fun x => crossTwoRatGapM4F4 i x y) (4*i)",
+        "theorem separate_of_rationalM4F4 {f : ℕ → ℕ → ℤ} (F : ℚ → ℚ → ℚ) (m n : ℕ)\n (he : ∀ x y : ℕ, (f x y:ℚ)=F x y)\n (hx : ∀ y, PolyBoundM4F4 (fun x => F x y) m)\n (hy : ∀ x, PolyBoundM4F4 (F x) n) : SeparateBoundM4F4 f m n",
+        "theorem lower_gap_boundM4F4 (i : ℕ) : SeparateBoundM4F4 (lowerGapM295 i) (4*i) (2*i)",
+        "theorem upper_gap_boundM4F4 (i : ℕ) (hi : 1 ≤ i) :\n SeparateBoundM4F4 (upperGapM295 i) (4*i) (2*i)",
+        "theorem cross_one_gap_boundM4F4 (i : ℕ) (hi : 1 ≤ i) :\n SeparateBoundM4F4 (crossOneGapM295 i) (4*i) 0",
+        "theorem cross_two_gap_boundM4F4 (i : ℕ) (hi : 1 ≤ i) :\n SeparateBoundM4F4 (crossTwoGapM295 i) (4*i) 0",
+        "theorem finite_newton_vertical_iffM4F4 (i : ℕ) (hi : 1 ≤ i) :\n FiniteNewtonVerticalM4F4 i ↔ NewtonVerticalM295 i",
+        "theorem root_of_finite_newtonM4F4\n (hn : ∀ i : ℕ, 5 ≤ i → i ≠ 8 → FiniteNewtonVerticalM4F4 i)\n (ho : OtherVerticalCoreM0D3) : Conjecture63"
+      ],
+      "definitions": [
+        "def lowerRatGapM4F4 (i : ℕ) (x y : ℚ) : ℚ :=\n lowerPolynomialM0D3 i (x+1) (y+1)^2-\n lowerPolynomialM0D3 i x (y+2)*lowerPolynomialM0D3 i (x+2) y",
+        "def upperRatGapM4F4 (i : ℕ) (x y : ℚ) : ℚ :=\n upperPolynomialM0D3 i (x+(i-2:ℕ)+1) (y+2)^2-\n upperPolynomialM0D3 i (x+(i-2:ℕ)+2) (y+1)*\n upperPolynomialM0D3 i (x+(i-2:ℕ)) (y+3)",
+        "def crossOneRatGapM4F4 (i : ℕ) (x _y : ℚ) : ℚ :=\n lowerPolynomialM0D3 i (x+(i-1:ℕ)) 0^2-\n lowerPolynomialM0D3 i (x+(i-2:ℕ)) 1*upperPolynomialM0D3 i (x+(i-2:ℕ)) 1",
+        "def crossTwoRatGapM4F4 (i : ℕ) (x _y : ℚ) : ℚ :=\n upperPolynomialM0D3 i (x+(i-1:ℕ)) 1^2-\n lowerPolynomialM0D3 i (x+i) 0*upperPolynomialM0D3 i (x+(i-2:ℕ)) 2",
+        "def FiniteNewtonVerticalM4F4 (i : ℕ) : Prop :=\n (∀ r ≤ 4*i, ∀ s ≤ 2*i, 0 ≤ newtonCoeffM295 (lowerGapM295 i) r s) ∧\n (∀ r ≤ 4*i, ∀ s ≤ 2*i, 0 ≤ newtonCoeffM295 (upperGapM295 i) r s) ∧\n (∀ r ≤ 4*i, 0 ≤ newtonCoeffM295 (crossOneGapM295 i) r 0) ∧\n (∀ r ≤ 4*i, 0 ≤ newtonCoeffM295 (crossTwoGapM295 i) r 0)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovLowerDifferenceM4F4",
+      "path": "research/MarkovLowerDifferenceM4F4.lean",
+      "sha256": "aa7378382ed733ff9d9f2f617cf48d799b6b257eef37ee7be9ab1e60b23f3257",
+      "current_sha256": "aa7378382ed733ff9d9f2f617cf48d799b6b257eef37ee7be9ab1e60b23f3257",
+      "bytes": 3544,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "lowerBaseM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_core_differenceM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_differenceM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_initialM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_prefixM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_lower_prefixM4F4"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovOffsetTermM58E"
+      ],
+      "theorem_statements": [
+        "theorem lower_core_differenceM4F4 (i j h : ℕ) (hh : h+2 ≤ i) :\n lowerCoreM58E (j+1) i h-lowerCoreM58E j i h=\n ((j+i+1).choose i:ℤ)*((j+1).choose (i-2-h):ℤ)+\n ((j+i).choose i:ℤ)*(j.choose (i-2-h):ℤ)",
+        "theorem lower_differenceM4F4 (i j d : ℕ) (hi : 2 ≤ i) :\n lowerValM58E (j+1) d i-lowerValM58E j d i=\n lowerBaseM4F4 i (j+1) d+lowerBaseM4F4 i j d",
+        "theorem lower_initialM4F4 (i d : ℕ) (hi : 2 ≤ i) :\n lowerValM58E 0 d i=lowerBaseM4F4 i 0 d",
+        "theorem lower_prefixM4F4 (i j d : ℕ) (hi : 2 ≤ i) :\n lowerValM58E j d i=lowerBaseM4F4 i j d+2*∑ t∈range j, lowerBaseM4F4 i t d",
+        "theorem source_two_lower_prefixM4F4 (path : List Bool) (i j d : ℕ)\n (ha : (frame path).mid.a=2) (hb : (frame path).mid.b=2*(j+d)+1) (hi : 2 ≤ i) :\n coeff (frame path).mid.p i j=\n lowerBaseM4F4 i j d+2*∑ t∈range j, lowerBaseM4F4 i t d"
+      ],
+      "definitions": [
+        "def lowerBaseM4F4 (i j d : ℕ) : ℤ :=\n ((j+i).choose i:ℤ)*((j+2*d).choose (i-2):ℤ)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovUpperDifferenceM4F4",
+      "path": "research/MarkovUpperDifferenceM4F4.lean",
+      "sha256": "f6d56dcc4b9680ab66e211b0023e20a32f42283add0a5f3f23bc356fb0e09673",
+      "current_sha256": "f6d56dcc4b9680ab66e211b0023e20a32f42283add0a5f3f23bc356fb0e09673",
+      "bytes": 5351,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "rising_chooseM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "rising_convolutionM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "rising_choose_convolutionM4F4"
+        },
+        {
+          "kind": "def",
+          "name": "upperBaseM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_core_differenceM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_differenceM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_initialM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_prefixM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_upper_prefixM4F4"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovLowerDifferenceM4F4",
+        "MarkovUpperCoreM2B3",
+        "MarkovPositiveKernelM679"
+      ],
+      "theorem_statements": [
+        "theorem rising_chooseM4F4 (m n : ℕ) (hm : 1 ≤ m) :\n risingM679 m n=(m+n-1).choose n",
+        "theorem rising_convolutionM4F4 (a b k : ℕ) :\n (∑ h∈range (k+1), (risingM679 a h:ℤ)*(risingM679 b (k-h):ℤ))=\n (risingM679 (a+b) k:ℤ)",
+        "theorem rising_choose_convolutionM4F4 (N d i : ℕ) (hd : 1 ≤ d) :\n (∑ h∈range (i+1), ((2*d+h-1).choose h:ℤ)*((N+i-h).choose (i-h):ℤ))=\n ((N+i+2*d).choose i:ℤ)",
+        "theorem upper_core_differenceM4F4 (i N h : ℕ) (hi : 2 ≤ i) (hh : h ≤ i) :\n upperCoreM2B3 (N+1) i h-upperCoreM2B3 N i h=\n ((N+i-h+1).choose (i-h):ℤ)*((N+1).choose (i-2):ℤ)+\n ((N+i-h).choose (i-h):ℤ)*(N.choose (i-2):ℤ)",
+        "theorem upper_differenceM4F4 (i N d : ℕ) (hi : 2 ≤ i) (hd : 1 ≤ d) :\n upperValM2B3 (N+1) d i-upperValM2B3 N d i=\n upperBaseM4F4 i (N+1) d+upperBaseM4F4 i N d",
+        "theorem upper_initialM4F4 (i d : ℕ) (hi : 2 ≤ i) (hd : 1 ≤ d) :\n upperValM2B3 0 d i=upperBaseM4F4 i 0 d",
+        "theorem upper_prefixM4F4 (i N d : ℕ) (hi : 2 ≤ i) (hd : 1 ≤ d) :\n upperValM2B3 N d i=upperBaseM4F4 i N d+2*∑ t∈range N, upperBaseM4F4 i t d",
+        "theorem source_two_upper_prefixM4F4 (path : List Bool) (i N d : ℕ)\n (hi : 2 ≤ i) (hN : 1 ≤ N) (hd : 1 ≤ d)\n (ha : (frame path).mid.a=2) (hb : (frame path).mid.b=2*(N+d)+1) :\n coeff (frame path).mid.p i (N+2*d)=\n upperBaseM4F4 i N d+2*∑ t∈range N, upperBaseM4F4 i t d"
+      ],
+      "definitions": [
+        "def upperBaseM4F4 (i N d : ℕ) : ℤ :=\n ((N+2*d+i).choose i:ℤ)*(N.choose (i-2):ℤ)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovTwoKernelM4F4",
+      "path": "research/MarkovTwoKernelM4F4.lean",
+      "sha256": "0b0e0b42a12e7db886859380d648b744b5547fbfa26aa0b67b42d167db819319",
+      "current_sha256": "0b0e0b42a12e7db886859380d648b744b5547fbfa26aa0b67b42d167db819319",
+      "bytes": 4427,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "twoKernelM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_kernel_nonnegM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_kernelM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_kernelM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_kernel_zeroM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_kernel_posM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_kernelM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_kernel_outsideM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_vertical_of_kernelM4F4"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovUpperDifferenceM4F4",
+        "MarkovVerticalRegionsM0D3"
+      ],
+      "theorem_statements": [
+        "theorem two_kernel_nonnegM4F4 (i j m : ℕ) : 0 ≤ twoKernelM4F4 i j m",
+        "theorem lower_kernelM4F4 (i j d : ℕ) (hi : 2 ≤ i) :\n lowerValM58E j d i=twoKernelM4F4 i j (j+2*d)",
+        "theorem upper_kernelM4F4 (i N d : ℕ) (hi : 2 ≤ i) (hd : 1 ≤ d) :\n upperValM2B3 N d i=twoKernelM4F4 i (N+2*d) N",
+        "theorem two_kernel_zeroM4F4 (i j m : ℕ) (hm : m < i-2) : twoKernelM4F4 i j m=0",
+        "theorem two_kernel_posM4F4 (i j m : ℕ) (hm : i-2 ≤ m) : 0 < twoKernelM4F4 i j m",
+        "theorem source_two_kernelM4F4 (path : List Bool) (q i j : ℕ)\n (ha : (frame path).mid.a=2) (hb : (frame path).mid.b=2*q+1)\n (hi : 3 ≤ i) (hj : j ≤ 2*q) :\n coeff (frame path).mid.p i j=twoKernelM4F4 i j (2*q-j)",
+        "theorem source_two_kernel_outsideM4F4 (path : List Bool) (q i j : ℕ)\n (ha : (frame path).mid.a=2) (hb : (frame path).mid.b=2*q+1)\n (hi : 3 ≤ i) (hj : 2*q < j) : coeff (frame path).mid.p i j=0",
+        "theorem source_two_vertical_of_kernelM4F4 (i : ℕ) (hi : 4 ≤ i)\n (hk : ∀ j m, twoKernelM4F4 i j (m+2)*twoKernelM4F4 i (j+2) m ≤\n   twoKernelM4F4 i (j+1) (m+1)^2)\n (path : List Bool) (ha : (frame path).mid.a=2) (j : ℕ) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p i (j+2) ≤\n coeff (frame path).mid.p i (j+1)^2"
+      ],
+      "definitions": [
+        "def twoKernelM4F4 (i j m : ℕ) : ℤ :=\n ((j+i).choose i:ℤ)*(m.choose (i-2):ℤ)+\n 2*∑ k∈range (min j m), ((j-(k+1)+i).choose i:ℤ)*((m-(k+1)).choose (i-2):ℤ)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovKernelShapeM4F4",
+      "path": "research/MarkovKernelShapeM4F4.lean",
+      "sha256": "eeef4bb9ac2294f3c10b522c90a643f545c3df9e97bf3224d2b4a351ac7fd8b4",
+      "current_sha256": "eeef4bb9ac2294f3c10b522c90a643f545c3df9e97bf3224d2b4a351ac7fd8b4",
+      "bytes": 2630,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "minor_diagonal_glueM4F4"
+        },
+        {
+          "kind": "def",
+          "name": "KernelShapeM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_antidiagonal_of_shapeM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_vertical_of_shapeM4F4"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_of_uniform_kernel_shapeM4F4"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovTwoKernelM4F4",
+        "MarkovUniformVerticalM0D3"
+      ],
+      "theorem_statements": [
+        "theorem minor_diagonal_glueM4F4 (a b c e f z : ℤ)\n (hb : 0 ≤ b) (hc : 0 < c) (he : 0 ≤ e) (hf : 0 ≤ f) (hz : 0 ≤ z)\n (hrow : a*c ≤ b^2) (hcol : z*c ≤ f^2) (hminor : b*f ≤ e*c) : a*z ≤ e^2",
+        "theorem kernel_antidiagonal_of_shapeM4F4 (i : ℕ) (h : KernelShapeM4F4 i) (j m : ℕ) :\n twoKernelM4F4 i j (m+2)*twoKernelM4F4 i (j+2) m ≤\n twoKernelM4F4 i (j+1) (m+1)^2",
+        "theorem source_two_vertical_of_shapeM4F4 (i : ℕ) (hi : 4 ≤ i)\n (h : KernelShapeM4F4 i) (path : List Bool) (ha : (frame path).mid.a=2) (j : ℕ) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p i (j+2) ≤\n coeff (frame path).mid.p i (j+1)^2",
+        "theorem root_of_uniform_kernel_shapeM4F4\n (hs : ∀ i : ℕ, 5 ≤ i → KernelShapeM4F4 i)\n (ho : OtherVerticalCoreM0D3) : Conjecture63"
+      ],
+      "definitions": [
+        "def KernelShapeM4F4 (i : ℕ) : Prop :=\n (∀ j m, twoKernelM4F4 i j m*twoKernelM4F4 i (j+2) m ≤ twoKernelM4F4 i (j+1) m^2) ∧\n (∀ j m, twoKernelM4F4 i j m*twoKernelM4F4 i j (m+2) ≤ twoKernelM4F4 i j (m+1)^2) ∧\n (∀ j m, twoKernelM4F4 i (j+1) m*twoKernelM4F4 i j (m+1) ≤\n   twoKernelM4F4 i j m*twoKernelM4F4 i (j+1) (m+1))"
+      ],
+      "forbidden_raw_tokens": []
+    }
+  ],
+  "counts": {
+    "def": 11,
+    "theorem": 70
+  },
+  "lower_prefix_scope": "For i>=2 and all natural j,d, L_i(j,d)=B(i,j,d)+2 sum_{t<j}B(i,t,d), B=C(j+i,i)C(j+2d,i-2). No support or nonzero premise. First difference uses h+2<=i inside h<i-1; Pascal and choose-product identities collapse via inherited exact Vandermonde. Initial j=0 retains only h=i-2. Induction proves all j. Actual-source adapter requires a=2,b=2(j+d)+1.",
+  "upper_prefix_scope": "For i>=2,d>=1 and every natural N, U_i(N,d)=D(i,N,d)+2 sum_{t<N}D(i,t,d), D=C(N+2d+i,i)C(N,i-2). First difference uses h<=i in sum h<=i. Rising convolution follows coefficients of geo(1)^(a+b), including exponent zero in general rising lemma; conversion to ordinary choose uses positive exponent. Initial N=0 splits i=2 (three h cases) versus i>2 (zero). Actual-source upper-prefix adapter separately retains N>=1,d>=1,a2,b=2(N+d)+1.",
+  "kernel_definition": "For all natural i,j,m, K_i(j,m)=C(j+i,i)C(m,i-2)+2 sum_{k<min(j,m)} C(j-(k+1)+i,i)C(m-(k+1),i-2). Each subtraction in the sum has k+1<=j,m. Python weighted sum k=0..min(j,m) is the same index convention after separating k0 and shifting k+1, with no negative arguments on stated domains.",
+  "kernel_prefix_bridge": "Finite sum reflection proves L_i(j,d)=K_i(j,j+2d) for i>=2; U_i(N,d)=K_i(N+2d,N) for i>=2,d>=1,N any natural. Natural subtractions are justified by k<j or k<N. No coefficient rescaling, cancellation, sign premise or arbitrary-word substitution.",
+  "source_scope": "Every actual source path with a=2,b=2q+1, i>=3 and j<=2q has raw coeff(i,j)=K_i(j,2q-j). For j>2q it is zero. Classification supplies q>=1, but source identity header need not assume it independently. Lower j<=q uses d=q-j; upper j>q uses N=2q-j,d=j-q when N>=1; exceptional N0 means j=2q and both raw coefficient and kernel are zero using i>=3. Formal identity does not claim i2 at this edge.",
+  "kernel_support": "All natural i,j,m: K>=0. If m<i-2 then K=0; if i-2<=m then K>0 by the positive initial summand. Together these characterize zero/positive support, retaining natural i-2 for i0/1. No j restriction or hidden interval assumption.",
+  "shape_scope": "KernelShape(i) assumes all natural row LC, column LC and adjacent determinant K(j,m)K(j+1,m+1)-K(j+1,m)K(j,m+1)>=0. These three universal assertions remain unproved. Scalar glue requires b,e,f,z>=0 and c>0, with ac<=b²,zc<=f²,bf<=ec; multiplies inequalities and cancels c² only when positive. Kernel application splits m<i-2, giving last endpoint zero, versus support where c=K(j+2,m+2)>0. No zero coefficient is canceled.",
+  "direction_map": "Kernel anti-diagonal triple (j,m+2),(j+1,m+1),(j+2,m) maps with m=2q-j-2 to raw source (i,j),(i,j+1),(i,j+2): VERTICAL, not original source constant-i+j diagonal. Source adapters explicitly require i>=4; if j+2>2q the last coefficient is zero. Both region crossings and tail starts are included.",
+  "kernel_root_scope": "For every i>=5 KernelShape(i), together with unchanged OtherVerticalCoreM0D3, implies Conjecture63 through inherited exact region/source equivalence. This formal shape premise includes i8, unlike the finite-Newton premise. It is sufficient only, not an iff or a proved sign condition. Remaining source H/D and other numerators stay explicit.",
+  "newton_cutoff_scope": "PolyBound(F,n) means a rational polynomial with natDegree<=n evaluates to F at every rational x. SeparateBound(f,m,n) supplies such a polynomial for each fixed natural coordinate, agreeing with integer f under casts. Unit differences commute; Nat->Q and Int->Q difference casts agree. Polynomial forward differences vanish above natDegree. Therefore mixed coefficient at0 vanishes when r>m or s>n, giving an exact equivalence of universal coefficient nonnegativity and rectangle0..m by0..n. No joint polynomial, convergence or sign assertion is assumed.",
+  "coefficient_degree_scope": "For all natural i and rational fixed other coordinate, lower/upper coefficient-polynomial x-degree<=2i and y-degree<=i. Finite sum, affine composition, products and Nat-subtracted choose indices preserve these upper bounds. Constants/zero polynomials use natDegree bounds safely. No claim that these bounds are exact minimal degrees or that rational extensions are nonnegative.",
+  "gap_degree_scope": "Exact lower integer-gap casts hold all natural i,x,y; upper/crossing casts require i>=1 and use upper-polynomial positive d offsets. Rational gap shifts retain casts of NATURAL i-1/i-2, not rational i-1/i-2. Separate bounds: lower/upper (4i,2i), crossings (4i,0). These preserve the precise inherited gap definitions and their zero values.",
+  "finite_condition_scope": "For i>=1, FiniteNewtonVertical(i) iff NewtonVerticalM295(i). It checks r<=4i,s<=2i for lower/upper and r<=4i,s=0 for each crossing; all other mixed differences are formally zero. Sign values inside remain unproved. Conditional root assumes this finite predicate for every unbounded i>=5 except8 AND OtherVerticalCoreM0D3. It is not a fixed finite table proving the root.",
+  "residual_scope": "MarkovResidualM295 unchanged byte for byte; no new unconditional source LC region, residual exclusion or root iff in150. Earlier polygon/raw indices/natural zeros/endpoints and source correspondence remain inherited. All root implications retain explicit unproved premises.",
+  "prose_limits": "Prefix-derivation prose presents an i>=2 common-source candidate and convolution/Toeplitz/Cauchy-Binet plan. Final formal source adapter is i>=3; kernel shape/convolution positivity bridges remain unproved. Remaining-obligations wording is conditional on final inventory, not evidence of pending compiled declarations. No research strategy supplied by this audit.",
+  "continuation_scope": "Saved finite continuation mismatch55 versus47 at i2,N2,d1 and candidate correction independent ofN remain experiments. No formal continuation/correction identity or raw-source LC counterexample. Rational continuation can be signed; unrelated to unconditional natural-value identities.",
+  "mathematical_values_recomputed": false
+}

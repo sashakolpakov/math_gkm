@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovUpperDifferenceM4F4.lean:95:7: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2191((2 + 2 * d).choose 2)\nin the target expression\n  \u2211 x \u2208 range 3, \u2191((2 * d + x - 1).choose x) * (\u2191((2 - x + 1).choose (3 - x)) + \u2191((2 - x).choose (3 - x))) =\n    \u2191((2 * d + 2).choose 2)\n\ncase pos\nd : \u2115\nhd : 1 \u2264 d\nhi : 2 \u2264 2\nht : \u2211 x \u2208 range 3, \u2191((2 * d + x - 1).choose x) = \u2191((2 + 2 * d).choose 2)\n\u22a2 \u2211 x \u2208 range 3, \u2191((2 * d + x - 1).choose x) * (\u2191((2 - x + 1).choose (3 - x)) + \u2191((2 - x).choose (3 - x))) =\n    \u2191((2 * d + 2).choose 2)\n/Users/sasha/math_gkm/research/MarkovUpperDifferenceM4F4.lean:100:44: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Type ?u.35) 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Type ?u.35\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovUpperDifferenceM4F4.lean:100:47: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  Neg (Type ?u.34)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovUpperDifferenceM4F4.lean:100:48: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Type ?u.34) 2\nnumerals are polymorphic in Lean, but the numeral `2` cannot be used in a context where the expected type is\n  Type ?u.34\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovUpperDifferenceM4F4.lean:100:36: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b \u2265 1\n  a \u2265 3\nwhere\n a := \u2191i\n b := \u2191d\n",
+  "stderr": "",
+  "modules": {
+    "MarkovUpperDifferenceM4F4": "5762e70a60bcc8617a3d466bdf62900cdd84ea8821f9da84f9a9a905a542d954"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-4f4ac079/MarkovUpperDifferenceM4F4.olean",
+    "/Users/sasha/math_gkm/research/MarkovUpperDifferenceM4F4.lean"
+  ],
+  "seconds": 32.810149875003844,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

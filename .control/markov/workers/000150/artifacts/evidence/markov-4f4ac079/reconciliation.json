@@ -1,0 +1,163 @@
+{
+  "request_id": "4f4ac079ee56466da7d21ce9055918ab",
+  "inherited": {
+    "RESUME.json": true,
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": true,
+    "evidence/independent-markov/markov_residual_scope_audit.md": true,
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": true,
+    "evidence/markov/research-run/state.json": true,
+    "requests/markov-next.json": true
+  },
+  "latest_manifest": {
+    "count": 125,
+    "mismatches": []
+  },
+  "000136": {
+    "events_sha256": "b29b5423e1203d73d0f59a9fc5ef02e037479b8b5b0aa421078ccddfdfc061b0",
+    "events_count": 220,
+    "last_events": [
+      {
+        "type": "item.started",
+        "item": {
+          "id": "item_113",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc '/opt/homebrew/bin/python3 research/finalize_f1e4fe3b.py'",
+          "aggregated_output": "",
+          "exit_code": null,
+          "status": "in_progress"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_113",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc '/opt/homebrew/bin/python3 research/finalize_f1e4fe3b.py'",
+          "aggregated_output": "{\"request_id\": \"f1e4fe3b99d84d70bd218f29dcffcb3c\", \"compiled_replayed_audited_modules\": 5, \"audited_theorem_closures\": 20, \"excluded\": {}, \"unchanged_prior_inputs\": 5985, \"inherited_manifest_counts\": {\"f25b03a1\": 101, \"5703599b\": 180, \"81f80b2d\": 246}, \"unsuccessful_receipts\": 10, \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\", \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\", \"stop_file_present\": false, \"completion\": null}\nVerified artifacts 86\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      }
+    ],
+    "receipt": {
+      "classification": "live_gpt-6-astra_experimental_research",
+      "elapsed_seconds": 1883.721794128418,
+      "evidence": "bounded_worker_observation",
+      "finished": 1792145508.985246,
+      "mathematical_resolution": false,
+      "outcome": "timeout",
+      "price": null,
+      "price_note": "No provider invoice available; no invented monetary cost.",
+      "report": null,
+      "request_id": "f1e4fe3b99d84d70bd218f29dcffcb3c",
+      "returncode": 0,
+      "started": 1792143625.2634518,
+      "transport": "live",
+      "usage": []
+    },
+    "change_count": 88,
+    "change_mismatches": []
+  },
+  "000137": {
+    "events_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "events_count": 0,
+    "last_events": [],
+    "receipt": {
+      "classification": "live_gpt-6-astra_experimental_research",
+      "elapsed_seconds": 33.91727423667908,
+      "evidence": "bounded_worker_observation",
+      "finished": 1792145642.4184,
+      "mathematical_resolution": false,
+      "outcome": "stopped",
+      "price": null,
+      "price_note": "No provider invoice available; no invented monetary cost.",
+      "report": null,
+      "request_id": "ccbcf72971154826931caaa3e92fad30",
+      "returncode": -15,
+      "started": 1792145608.5011258,
+      "transport": "live",
+      "usage": []
+    },
+    "change_count": 0,
+    "change_mismatches": []
+  },
+  "000149": {
+    "events_sha256": "cce6c4e446bb165f3188363ad9a53d70cd5efd9a901bcc862759b51672bf334f",
+    "events_count": 211,
+    "last_events": [
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_110",
+          "type": "agent_message",
+          "text": "{\n  \"actions\": [\n    \"Reconciled inherited bindings and interrupted-worker effects: evidence/markov-29509309/reconciliation.json.\",\n    \"Compiled and jointly kernel-replayed 16 modules; audited 61 theorem closures: evidence/markov-29509309/validation.json.\",\n    \"Verified 125 artifacts, 6,312 unchanged inherited inputs, and pinned root/contract hashes: evidence/markov-29509309/last-verification.json.\"\n  ],\n  \"agenda\": [\n    \"Investigate the remaining uniform Newton sign condition using research/markov-29509309-next.md.\",\n    \"Preserve every unresolved clause in research/MarkovResidualM295.lean.\",\n    \"Discharge every source-correspondence obligation before claiming root completion.\"\n  ],\n  \"completion\": null,\n  \"observations\": [\n    \"Proved raw vertical log-concavity at column i=8 for every numerator-two source and every natural row, retaining zeros: research/MarkovEightVerticalM295.lean.\",\n    \"The lower-region proof uses an exhaustive natural zero/successor split and a checked Newton certificate: research/MarkovEightLowerM295.lean.\",\n    \"Proved a general discrete Newton expansion and conditional root implication. The uniform sign premise remains unproved: research/MarkovNewtonM295.lean and research/MarkovNewtonRemainingM295.lean.\",\n    \"Proved an exact residual equivalence and an unbounded newly covered source family: research/MarkovResidualM295.lean and research/MarkovEightGainM295.lean.\",\n    \"Proved a fixed-shift summand obstruction; its actual 2/5 source triple [4,16,28] satisfies raw log-concavity: research/MarkovNewtonObstructionM295.lean.\",\n    \"Finite checks passed 4,010 coefficient identities, 4,320 triples including 735 zero-containing triples, and 2,624 Newton expansion checks. These are experiments: evidence/markov-29509309/source-experiments.json.\",\n    \"All audited closures use permitted axioms. Inherited compiled imports were reused; no whole-source rebuild or independent completion audit occurred. Seven unsuccessful builds and capability limitations are preserved: research/markov-29509309-operational.md.\"\n  ],\n  \"request_id\": \"295093095f844a1189c05bb526265c75\",\n  \"summary\": \"Proved the complete eighth vertical column for every numerator-two source using discrete certificates. Full pinned Conjecture63 remains unresolved.\"\n}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 7978150,
+          "cached_input_tokens": 7796608,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 43883,
+          "reasoning_output_tokens": 16794
+        }
+      }
+    ],
+    "receipt": {
+      "classification": "live_gpt-6-astra_experimental_research",
+      "elapsed_seconds": 1759.5598928928375,
+      "evidence": "bounded_worker_observation",
+      "finished": 1792168732.633024,
+      "mathematical_resolution": false,
+      "outcome": "completed",
+      "price": null,
+      "price_note": "No provider invoice available; no invented monetary cost.",
+      "report": {
+        "actions": [
+          "Reconciled inherited bindings and interrupted-worker effects: evidence/markov-29509309/reconciliation.json.",
+          "Compiled and jointly kernel-replayed 16 modules; audited 61 theorem closures: evidence/markov-29509309/validation.json.",
+          "Verified 125 artifacts, 6,312 unchanged inherited inputs, and pinned root/contract hashes: evidence/markov-29509309/last-verification.json."
+        ],
+        "agenda": [
+          "Investigate the remaining uniform Newton sign condition using research/markov-29509309-next.md.",
+          "Preserve every unresolved clause in research/MarkovResidualM295.lean.",
+          "Discharge every source-correspondence obligation before claiming root completion."
+        ],
+        "completion": null,
+        "observations": [
+          "Proved raw vertical log-concavity at column i=8 for every numerator-two source and every natural row, retaining zeros: research/MarkovEightVerticalM295.lean.",
+          "The lower-region proof uses an exhaustive natural zero/successor split and a checked Newton certificate: research/MarkovEightLowerM295.lean.",
+          "Proved a general discrete Newton expansion and conditional root implication. The uniform sign premise remains unproved: research/MarkovNewtonM295.lean and research/MarkovNewtonRemainingM295.lean.",
+          "Proved an exact residual equivalence and an unbounded newly covered source family: research/MarkovResidualM295.lean and research/MarkovEightGainM295.lean.",
+          "Proved a fixed-shift summand obstruction; its actual 2/5 source triple [4,16,28] satisfies raw log-concavity: research/MarkovNewtonObstructionM295.lean.",
+          "Finite checks passed 4,010 coefficient identities, 4,320 triples including 735 zero-containing triples, and 2,624 Newton expansion checks. These are experiments: evidence/markov-29509309/source-experiments.json.",
+          "All audited closures use permitted axioms. Inherited compiled imports were reused; no whole-source rebuild or independent completion audit occurred. Seven unsuccessful builds and capability limitations are preserved: research/markov-29509309-operational.md."
+        ],
+        "request_id": "295093095f844a1189c05bb526265c75",
+        "summary": "Proved the complete eighth vertical column for every numerator-two source using discrete certificates. Full pinned Conjecture63 remains unresolved."
+      },
+      "request_id": "295093095f844a1189c05bb526265c75",
+      "returncode": 0,
+      "started": 1792166973.073131,
+      "transport": "live",
+      "usage": [
+        {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 7796608,
+          "input_tokens": 7978150,
+          "output_tokens": 43883,
+          "reasoning_output_tokens": 16794
+        }
+      ]
+    },
+    "change_count": 127,
+    "change_mismatches": []
+  },
+  "reconciliation": "Read interrupted workers 136/137 and completed predecessor149 raw event tails and compared their effects. No previous execution replayed.",
+  "capabilities": {
+    "scratch": "Higher-priority policy denies access; durable unique research/evidence files used instead.",
+    "sage": null,
+    "gap": "/opt/homebrew/bin/gap"
+  }
+}
