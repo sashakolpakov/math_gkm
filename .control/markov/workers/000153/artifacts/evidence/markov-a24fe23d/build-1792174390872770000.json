@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovPellHalfMA24.lean:17:23: error: failed to prove positivity/nonnegativity/nonzeroness\n/Users/sasha/math_gkm/research/MarkovPellHalfMA24.lean:27:42: error: Application type mismatch: The argument\n  ih\nhas type\n  q \u2264 q + d \u2192\n    pellTermMA24 a j s q * pellTermMA24 a j (s + 1) (q + d) \u2264 pellTermMA24 a j s (q + d) * pellTermMA24 a j (s + 1) q\nbut is expected to have type\n  ?m.220 \u2264 ?m.221\nin the application\n  mul_le_mul_of_nonneg_right ih\n/Users/sasha/math_gkm/research/MarkovPellHalfMA24.lean:38:1: error: mod_cast has type\n  horizontalTerm9a72 a j q s * horizontalTerm9a72 a j q (s + 2) \u2264 horizontalTerm9a72 a j q (s + 1) ^ 2\nbut is expected to have type\n  pellTermMA24 a j s q * pellTermMA24 a j (s + 2) q \u2264 pellTermMA24 a j (s + 1) q ^ 2\n",
+  "stderr": "",
+  "modules": {
+    "MarkovPellHalfMA24": "af078922906e6998184262f9cca86e292c9dbc2e096408b0611e5422614aff64"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-a24fe23d/MarkovPellHalfMA24.olean",
+    "/Users/sasha/math_gkm/research/MarkovPellHalfMA24.lean"
+  ],
+  "seconds": 30.051837833947502,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovPellRatioMA24.lean:21:7: error(lean.unknownIdentifier): Unknown identifier `mul_pos_iff_of_nonneg_left`\n/Users/sasha/math_gkm/research/MarkovPellRatioMA24.lean:63:1: error: Type mismatch: After simplification, term\n  have this := hp;\n  this\n has type\n  (\u2191a - \u2191q - 1 + 1) * \u2191((a - (q + 1)).choose (s + 1)) * (\u2191((s + (q + 1)).choose (q + 1)) * (\u2191q + 1)) *\n      (\u2191((2 * s + 2).choose (j - (q + 1))) * (2 * \u2191s + 2 - (\u2191j - \u2191q - 1))) =\n    (\u2191a - \u2191q - 1 + 1 - (\u2191s + 1)) * \u2191((a - q).choose (s + 1)) * ((\u2191s + \u2191q + 1) * \u2191((s + q).choose q)) *\n      (\u2191((2 * s + 2).choose (j - q)) * (\u2191j - \u2191q - 1 + 1))\nbut is expected to have type\n  (\u2191a - \u2191q) * (\u2191q + 1) * (2 * \u2191s + 3 - \u2191j + \u2191q) *\n      (\u2191((a - (q + 1)).choose (s + 1)) * \u2191((s + (q + 1)).choose (q + 1)) * \u2191((2 * s + 2).choose (j - (q + 1)))) =\n    (\u2191a - \u2191q - \u2191s - 1) * (\u2191s + \u2191q + 1) * (\u2191j - \u2191q) *\n      (\u2191((a - q).choose (s + 1)) * \u2191((s + q).choose q) * \u2191((2 * s + 2).choose (j - q)))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovPellRatioMA24": "2212b9f8beb849b2fd90f684cbd5e163aa692c346472e9ab9576782e5d289a4a"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-a24fe23d/MarkovPellRatioMA24.olean",
+    "/Users/sasha/math_gkm/research/MarkovPellRatioMA24.lean"
+  ],
+  "seconds": 7.926963832986075,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

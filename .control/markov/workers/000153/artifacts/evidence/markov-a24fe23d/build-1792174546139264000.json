@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovPellDiagonalStepMA24.lean:24:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2191(a - (q + 1))\nin the target expression\n  \u2191(a - q) * \u2191((a - (q + 1)).choose (s + 1)) = \u2191((a - q).choose (s + 1 + 1)) * (\u2191s + 1 + 1)\n\na j s q : \u2115\nha : s + q + 2 \u2264 a\nhq : q + 1 \u2264 j\nhj : j \u2264 2 * s + 3 + q\nea : a - (q + 1) + 1 = a - q\nej : j - (q + 1) + 1 = j - q\nh0 : \u2191(a - q) * \u2191((a - (q + 1)).choose (s + 1)) = \u2191((a - q).choose (s + 1 + 1)) * (\u2191s + 1 + 1)\n\u22a2 (\u2191s + 1) * (2 * \u2191s + 4 - \u2191j + \u2191q) * (\u2191j - \u2191q) * pellTermMA24 a j (s + 1) q =\n    2 * (2 * \u2191s + 3) * (\u2191a - \u2191q) * (\u2191q + 1) * pellTermMA24 a j s (q + 1)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovPellDiagonalStepMA24": "38039ad484e468bc96cdb8069fddf387925c3bfd0b784b711d5b49876ec38a87"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-a24fe23d/MarkovPellDiagonalStepMA24.olean",
+    "/Users/sasha/math_gkm/research/MarkovPellDiagonalStepMA24.lean"
+  ],
+  "seconds": 28.042439125012606,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

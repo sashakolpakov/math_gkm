@@ -1,0 +1,517 @@
+{
+  "worker": 153,
+  "request": "a24fe23da04d441088b5fe10c2c4681e",
+  "created_at_utc": "2026-10-16T18:35:54.795673+00:00",
+  "historical_status": "timeout/return0/null report; partial, unchanged by successful saved finalizer",
+  "scope": "Archive-first static completed-material audit with exact named inherited/current counterparts. No project program,proof,checker,replay,experiment,generator,finalizer execution or mathematical-value recomputation; no project edits or research assistance. Active154 not inspected; prior seals final.",
+  "new_modules": [
+    {
+      "module": "MarkovPellRatioMA24",
+      "path": "research/MarkovPellRatioMA24.lean",
+      "sha256": "5025e2d2d5a14f7efb684dd01330d983a644e4d13e5fd46145797e81dedf8818",
+      "current_sha256": "5025e2d2d5a14f7efb684dd01330d983a644e4d13e5fd46145797e81dedf8818",
+      "bytes": 3427,
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pellTermMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_term_nonnegMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_term_posMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_down_topMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_term_q_stepMA24"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovPellHorizontalSum9a72"
+      ],
+      "theorem_statements": [
+        "theorem pell_term_nonnegMA24 (a j s q : ℕ) : 0 ≤ pellTermMA24 a j s q",
+        "theorem pell_term_posMA24 (a j s q : ℕ) :\n 0 < pellTermMA24 a j s q ↔ s+q+1 ≤ a ∧ q ≤ j ∧ j ≤ 2*s+2+q",
+        "theorem choose_down_topMA24 (n k : ℕ) (hk : k ≤ n) :\n ((n:ℝ)+1-k)*((n+1).choose k:ℝ)=((n:ℝ)+1)*(n.choose k:ℝ)",
+        "theorem pell_term_q_stepMA24 (a j s q : ℕ)\n (ha : s+q+2 ≤ a) (hq : q+1 ≤ j) (hj : j ≤ 2*s+2+q) :\n ((a:ℝ)-q)*(q+1)*(2*s+3-j+q)*pellTermMA24 a j s (q+1)=\n ((a:ℝ)-q-s-1)*(s+q+1)*(j-q)*pellTermMA24 a j s q"
+      ],
+      "definitions": [
+        "def pellTermMA24 (a j s q : ℕ) : ℝ := (horizontalTerm9a72 a j q s : ℝ)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovPellOrderMA24",
+      "path": "research/MarkovPellOrderMA24.lean",
+      "sha256": "ce5433b9bb1be7f6a6d6256d1f6d99f03dd0ba144899e96c540a77a896d3b779",
+      "current_sha256": "ce5433b9bb1be7f6a6d6256d1f6d99f03dd0ba144899e96c540a77a896d3b779",
+      "bytes": 3041,
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "pell_rr2_interiorMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_rr2MA24"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovPellRatioMA24"
+      ],
+      "theorem_statements": [
+        "theorem pell_rr2_interiorMA24 (a j s q : ℕ)\n (ha : s+q+3 ≤ a) (hq : q+1 ≤ j) (hj : j ≤ 2*s+2+q) :\n pellTermMA24 a j s q*pellTermMA24 a j (s+1) (q+1) ≤\n pellTermMA24 a j s (q+1)*pellTermMA24 a j (s+1) q",
+        "theorem pell_rr2MA24 (a j s q : ℕ) :\n pellTermMA24 a j s q*pellTermMA24 a j (s+1) (q+1) ≤\n pellTermMA24 a j s (q+1)*pellTermMA24 a j (s+1) q"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovPellRowMA24",
+      "path": "research/MarkovPellRowMA24.lean",
+      "sha256": "fd0678f5dfbb906b5e0f7658efe3bf8a05685df87ea1b0b4149bf25b02cdd770",
+      "current_sha256": "fd0678f5dfbb906b5e0f7658efe3bf8a05685df87ea1b0b4149bf25b02cdd770",
+      "bytes": 2934,
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pellSeqMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_seq_nonnegMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_seq_crossMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_seq_natMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_row_inwardMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_row_midpointMA24"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovPellRatioMA24",
+        "MarkovKernelSequencesMDB9"
+      ],
+      "theorem_statements": [
+        "theorem pell_seq_nonnegMA24 (a j s : ℕ) (q : ℤ) : 0 ≤ pellSeqMA24 a j s q",
+        "theorem pell_seq_crossMA24 (a j s : ℕ) : CrossLC (pellSeqMA24 a j s)",
+        "theorem pell_seq_natMA24 (a j s q : ℕ) : pellSeqMA24 a j s q=pellTermMA24 a j s q",
+        "theorem pell_row_inwardMA24 (a j s q r : ℕ) (hqr : q ≤ r) :\n pellTermMA24 a j s q*pellTermMA24 a j s (r+1) ≤\n pellTermMA24 a j s (q+1)*pellTermMA24 a j s r",
+        "theorem pell_row_midpointMA24 (a j s q r : ℕ) :\n pellTermMA24 a j s q*pellTermMA24 a j s r ≤\n pellTermMA24 a j s ((q+r)/2)*pellTermMA24 a j s ((q+r+1)/2)"
+      ],
+      "definitions": [
+        "def pellSeqMA24 (a j s : ℕ) (q : ℤ) : ℝ :=\n chooseSeqMDB9 (s+1) ((a:ℤ)-q)*nbSeqMDB9 s q*\n   CoeffSeq ((1+X:ℝ[X])^(2*s+2)) ((j:ℤ)-q)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovPellHalfMA24",
+      "path": "research/MarkovPellHalfMA24.lean",
+      "sha256": "e81185a94355dbb36b1a00d2109eb615a191c77aadf2a178b00ac3c3ac97e466",
+      "current_sha256": "e81185a94355dbb36b1a00d2109eb615a191c77aadf2a178b00ac3c3ac97e466",
+      "bytes": 3549,
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "pell_order_globalMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_parameter_lcMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_ordered_productMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_half_midpointMA24"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovPellOrderMA24",
+        "MarkovPellRowMA24"
+      ],
+      "theorem_statements": [
+        "theorem pell_order_globalMA24 (a j s q r : ℕ) (hqr : q ≤ r) :\n pellTermMA24 a j s q*pellTermMA24 a j (s+1) r ≤\n pellTermMA24 a j s r*pellTermMA24 a j (s+1) q",
+        "theorem pell_parameter_lcMA24 (a j s q : ℕ) :\n pellTermMA24 a j s q*pellTermMA24 a j (s+2) q ≤ pellTermMA24 a j (s+1) q^2",
+        "theorem pell_ordered_productMA24 (a j s q r : ℕ) (hqr : q ≤ r) :\n pellTermMA24 a j s q*pellTermMA24 a j (s+2) r ≤\n pellTermMA24 a j (s+1) q*pellTermMA24 a j (s+1) r",
+        "theorem pell_half_midpointMA24 (a j s q r : ℕ) (hqr : q ≤ r) :\n pellTermMA24 a j s q*pellTermMA24 a j (s+2) r ≤\n pellTermMA24 a j (s+1) ((q+r)/2)*pellTermMA24 a j (s+1) ((q+r+1)/2)"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovPellParameterMA24",
+      "path": "research/MarkovPellParameterMA24.lean",
+      "sha256": "05c65382b5094d31c6a07071e85d9db4148ae2601fed31682fc0d7612a46fec8",
+      "current_sha256": "05c65382b5094d31c6a07071e85d9db4148ae2601fed31682fc0d7612a46fec8",
+      "bytes": 3987,
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "choose_up_twoMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_parameter_stepMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_reverse_oneMA24"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovPellRatioMA24"
+      ],
+      "theorem_statements": [
+        "theorem choose_up_twoMA24 (n k : ℕ) (hk : k ≤ n) :\n ((n:ℝ)+2-k)*(n+1-k)*((n+2).choose k:ℝ)=\n ((n:ℝ)+2)*(n+1)*(n.choose k:ℝ)",
+        "theorem pell_parameter_stepMA24 (a j s q : ℕ)\n (ha : s+q+1 ≤ a) (hq : q ≤ j) (hj : j ≤ 2*s+2+q) :\n ((s:ℝ)+1)*(2*s+3-j+q)*(2*s+4-j+q)*pellTermMA24 a j (s+1) q=\n 2*(2*(s:ℝ)+3)*(a-q-s-1)*(s+q+1)*pellTermMA24 a j s q",
+        "theorem pell_reverse_oneMA24 (a j s q : ℕ) :\n pellTermMA24 a j s (q+1)*pellTermMA24 a j (s+2) q ≤\n pellTermMA24 a j (s+1) q*pellTermMA24 a j (s+1) (q+1)"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovPellDiagonalStepMA24",
+      "path": "research/MarkovPellDiagonalStepMA24.lean",
+      "sha256": "cc5e980528b27329e58af296fd186d91460be3bba0c07f02dc81847695ad1a55",
+      "current_sha256": "cc5e980528b27329e58af296fd186d91460be3bba0c07f02dc81847695ad1a55",
+      "bytes": 1845,
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "choose_up_diagMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_diagonal_stepMA24"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovPellParameterMA24"
+      ],
+      "theorem_statements": [
+        "theorem choose_up_diagMA24 (n k : ℕ) (hk : k ≤ n) :\n ((k:ℝ)+1)*(n+1-k)*((n+2).choose (k+1):ℝ)=\n ((n:ℝ)+2)*(n+1)*(n.choose k:ℝ)",
+        "theorem pell_diagonal_stepMA24 (a j s q : ℕ)\n (ha : s+q+2 ≤ a) (hq : q+1 ≤ j) (hj : j ≤ 2*s+3+q) :\n ((s:ℝ)+1)*(2*s+4-j+q)*(j-q)*pellTermMA24 a j (s+1) q=\n 2*(2*(s:ℝ)+3)*(a-q)*(q+1)*pellTermMA24 a j s (q+1)"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovPellReverseTwoMA24",
+      "path": "research/MarkovPellReverseTwoMA24.lean",
+      "sha256": "8d41579084c2620c5145f1ab26df8c0d3d5bfe180d602f9e4ca26b202495472a",
+      "current_sha256": "8d41579084c2620c5145f1ab26df8c0d3d5bfe180d602f9e4ca26b202495472a",
+      "bytes": 3053,
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "pell_reverse_twoMA24"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovPellDiagonalStepMA24"
+      ],
+      "theorem_statements": [
+        "theorem pell_reverse_twoMA24 (a j s q : ℕ) :\n pellTermMA24 a j s (q+2)*pellTermMA24 a j (s+2) q ≤\n pellTermMA24 a j (s+1) (q+1)^2"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovPellShiftObstructionMA24",
+      "path": "research/MarkovPellShiftObstructionMA24.lean",
+      "sha256": "9c9ac7a28d0db9641ca48f9b24042445038a71ec70eb17d8dbe5cde64b2c23b1",
+      "current_sha256": "9c9ac7a28d0db9641ca48f9b24042445038a71ec70eb17d8dbe5cde64b2c23b1",
+      "bytes": 1727,
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "pell_no_shiftMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_five_six_rawMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_five_six_validMA24"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovPellRatioMA24"
+      ],
+      "theorem_statements": [
+        "theorem pell_no_shiftMA24 (c : ℕ) :\n ∃ q r : ℕ, pellTermMA24 5 6 1 (min q (r+c))*\n   pellTermMA24 5 6 1 (max q (r+c)-c) <\n   pellTermMA24 5 6 0 q*pellTermMA24 5 6 2 r",
+        "theorem pell_five_six_rawMA24 :\n coeff (frame (List.replicate 4 true)).mid.p 0 6=1 ∧\n coeff (frame (List.replicate 4 true)).mid.p 1 6=25 ∧\n coeff (frame (List.replicate 4 true)).mid.p 2 6=172",
+        "theorem pell_five_six_validMA24 :\n (frame (List.replicate 4 true)).mid.a=5 ∧\n (frame (List.replicate 4 true)).mid.b=6 ∧\n InPolygon 5 6 0 6 ∧ InPolygon 5 6 1 6 ∧ InPolygon 5 6 2 6 ∧\n coeff (frame (List.replicate 4 true)).mid.p 0 6*\n   coeff (frame (List.replicate 4 true)).mid.p 2 6 ≤\n   coeff (frame (List.replicate 4 true)).mid.p 1 6^2"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovPellMidpointReductionMA24",
+      "path": "research/MarkovPellMidpointReductionMA24.lean",
+      "sha256": "0143a66061fb38efe67557c97960b6426b3cd1292035766d187044308b38115d",
+      "current_sha256": "0143a66061fb38efe67557c97960b6426b3cd1292035766d187044308b38115d",
+      "bytes": 3149,
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "FiniteMidpointSumMA24"
+        },
+        {
+          "kind": "def",
+          "name": "PellReverseMidpointMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_midpoint_of_reverseMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_sum_lc_conditionalMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_pell_horizontal_conditionalMA24"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovPellHalfMA24",
+        "MarkovPellReverseTwoMA24"
+      ],
+      "theorem_statements": [
+        "theorem pell_midpoint_of_reverseMA24 (h : PellReverseMidpointMA24) (a j s q r : ℕ) :\n pellTermMA24 a j s q*pellTermMA24 a j (s+2) r ≤\n pellTermMA24 a j (s+1) ((q+r)/2)*pellTermMA24 a j (s+1) ((q+r+1)/2)",
+        "theorem pell_sum_lc_conditionalMA24 (hsum : FiniteMidpointSumMA24)\n (hrev : PellReverseMidpointMA24) (a j s N : ℕ) :\n (∑ q ∈ range (N+1),pellTermMA24 a j s q)*\n (∑ q ∈ range (N+1),pellTermMA24 a j (s+2) q) ≤\n (∑ q ∈ range (N+1),pellTermMA24 a j (s+1) q)^2",
+        "theorem source_pell_horizontal_conditionalMA24 (hsum : FiniteMidpointSumMA24)\n (hrev : PellReverseMidpointMA24) (path : List Bool)\n (hb : (frame path).mid.b=(frame path).mid.a+1) (i j : ℕ)\n (h0 : InPolygon (frame path).mid.a (frame path).mid.b i j)\n (h2 : InPolygon (frame path).mid.a (frame path).mid.b (i+2) j) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) j^2"
+      ],
+      "definitions": [
+        "def FiniteMidpointSumMA24 : Prop := ∀ (N : ℕ) (f g h : ℕ → ℝ),\n (∀ q, 0 ≤ f q) → (∀ q, 0 ≤ g q) → (∀ q, 0 ≤ h q) →\n (∀ q r, q ≤ N → r ≤ N → f q*g r ≤ h ((q+r)/2)*h ((q+r+1)/2)) →\n (∑ q ∈ range (N+1), f q)*(∑ q ∈ range (N+1), g q) ≤ (∑ q ∈ range (N+1), h q)^2",
+        "def PellReverseMidpointMA24 : Prop := ∀ a j s q r : ℕ, r+3 ≤ q →\n pellTermMA24 a j s q*pellTermMA24 a j (s+2) r ≤\n pellTermMA24 a j (s+1) ((q+r)/2)*pellTermMA24 a j (s+1) ((q+r+1)/2)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovPellBandMA24",
+      "path": "research/MarkovPellBandMA24.lean",
+      "sha256": "3015ae04d08637884d0eaa0a8ad8832adf483655e23a6224ae8e2d367e91793f",
+      "current_sha256": "3015ae04d08637884d0eaa0a8ad8832adf483655e23a6224ae8e2d367e91793f",
+      "bytes": 1667,
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "pell_midpoint_bandMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_gap_three_failureMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "not_pell_reverse_midpointMA24"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovPellMidpointReductionMA24"
+      ],
+      "theorem_statements": [
+        "theorem pell_midpoint_bandMA24 (a j s q r : ℕ) (hqr : q ≤ r+2) :\n pellTermMA24 a j s q*pellTermMA24 a j (s+2) r ≤\n pellTermMA24 a j (s+1) ((q+r)/2)*pellTermMA24 a j (s+1) ((q+r+1)/2)",
+        "theorem pell_gap_three_failureMA24 :\n pellTermMA24 22 25 3 17*pellTermMA24 22 25 3 18 <\n pellTermMA24 22 25 2 19*pellTermMA24 22 25 4 16",
+        "theorem not_pell_reverse_midpointMA24 : ¬PellReverseMidpointMA24"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovPellMidpointObstructionMA24",
+      "path": "research/MarkovPellMidpointObstructionMA24.lean",
+      "sha256": "e989ee83fa17ff4966af518b9b772e419f823f574c061a049092a852489809f4",
+      "current_sha256": "e989ee83fa17ff4966af518b9b772e419f823f574c061a049092a852489809f4",
+      "bytes": 4016,
+      "status": "final_source_timed_out",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "pell_choose_swapMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_uniform_termsMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_uniform_gapMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_uniform_midpoint_failureMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_first_midpoint_failureMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_twenty_two_rawMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_twenty_two_validMA24"
+        }
+      ],
+      "final_validation_source_matches": false,
+      "imports": [
+        "MarkovPellRatioMA24",
+        "MarkovNextBinomial7955"
+      ],
+      "theorem_statements": [
+        "theorem pell_choose_swapMA24 (s q : ℕ) : (s+q).choose q=(s+q).choose s",
+        "theorem pell_uniform_termsMA24 (n : ℕ) :\n pellTermMA24 (n+23) (n+25) 1 (n+21)=(n:ℝ)+22 ∧\n pellTermMA24 (n+23) (n+25) 3 (n+18)=40*((n+21).choose 3:ℝ) ∧\n pellTermMA24 (n+23) (n+25) 2 (n+19)=4*((n+21).choose 2:ℝ) ∧\n pellTermMA24 (n+23) (n+25) 2 (n+20)=6*((n+22).choose 2:ℝ)",
+        "theorem pell_uniform_gapMA24 (n : ℕ) :\n 3*(pellTermMA24 (n+23) (n+25) 1 (n+21)*pellTermMA24 (n+23) (n+25) 3 (n+18)-\n   pellTermMA24 (n+23) (n+25) 2 (n+19)*pellTermMA24 (n+23) (n+25) 2 (n+20))=\n 2*((n:ℝ)+22)*(n+21)*(n+20)*(n+1)",
+        "theorem pell_uniform_midpoint_failureMA24 (n : ℕ) :\n pellTermMA24 (n+23) (n+25) 2 (n+19)*pellTermMA24 (n+23) (n+25) 2 (n+20) <\n pellTermMA24 (n+23) (n+25) 1 (n+21)*pellTermMA24 (n+23) (n+25) 3 (n+18)",
+        "theorem pell_first_midpoint_failureMA24 :\n pellTermMA24 22 25 3 17*pellTermMA24 22 25 3 18=60648000 ∧\n pellTermMA24 22 25 2 19*pellTermMA24 22 25 4 16=61047000",
+        "theorem pell_twenty_two_rawMA24 :\n coeff (frame (List.replicate 21 true)).mid.p 0 25=210 ∧\n coeff (frame (List.replicate 21 true)).mid.p 1 25=16340 ∧\n coeff (frame (List.replicate 21 true)).mid.p 2 25=641421",
+        "theorem pell_twenty_two_validMA24 :\n (frame (List.replicate 21 true)).mid.a=22 ∧\n (frame (List.replicate 21 true)).mid.b=23 ∧\n InPolygon 22 23 0 25 ∧ InPolygon 22 23 1 25 ∧ InPolygon 22 23 2 25 ∧\n coeff (frame (List.replicate 21 true)).mid.p 0 25*\n   coeff (frame (List.replicate 21 true)).mid.p 2 25 ≤\n   coeff (frame (List.replicate 21 true)).mid.p 1 25^2"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovPellUniformObstructionMA24",
+      "path": "research/MarkovPellUniformObstructionMA24.lean",
+      "sha256": "0748eb8cf729072b77352eb6e4c4a9a64243a77f5d99e9c899520328348bc8c0",
+      "current_sha256": "0748eb8cf729072b77352eb6e4c4a9a64243a77f5d99e9c899520328348bc8c0",
+      "bytes": 2713,
+      "status": "final_source_timed_out",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "pell_choose_swapMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_uniform_termsMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_uniform_gapMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_uniform_midpoint_failureMA24"
+        }
+      ],
+      "final_validation_source_matches": false,
+      "imports": [
+        "MarkovPellRatioMA24",
+        "MarkovNextBinomial7955"
+      ],
+      "theorem_statements": [
+        "theorem pell_choose_swapMA24 (s q : ℕ) : (s+q).choose q=(s+q).choose s",
+        "theorem pell_uniform_termsMA24 (n : ℕ) :\n pellTermMA24 (n+23) (n+25) 1 (n+21)=(n:ℝ)+22 ∧\n pellTermMA24 (n+23) (n+25) 3 (n+18)=40*((n+21).choose 3:ℝ) ∧\n pellTermMA24 (n+23) (n+25) 2 (n+19)=4*((n+21).choose 2:ℝ) ∧\n pellTermMA24 (n+23) (n+25) 2 (n+20)=6*((n+22).choose 2:ℝ)",
+        "theorem pell_uniform_gapMA24 (n : ℕ) :\n 3*(pellTermMA24 (n+23) (n+25) 1 (n+21)*pellTermMA24 (n+23) (n+25) 3 (n+18)-\n   pellTermMA24 (n+23) (n+25) 2 (n+19)*pellTermMA24 (n+23) (n+25) 2 (n+20))=\n 2*((n:ℝ)+22)*(n+21)*(n+20)*(n+1)",
+        "theorem pell_uniform_midpoint_failureMA24 (n : ℕ) :\n pellTermMA24 (n+23) (n+25) 2 (n+19)*pellTermMA24 (n+23) (n+25) 2 (n+20) <\n pellTermMA24 (n+23) (n+25) 1 (n+21)*pellTermMA24 (n+23) (n+25) 3 (n+18)"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovPellSharpMA24",
+      "path": "research/MarkovPellSharpMA24.lean",
+      "sha256": "c5fbdb0ec8222997d200b70a86723686b7f0e9cc83e0a9dc9f49bd766df1ef6d",
+      "current_sha256": "c5fbdb0ec8222997d200b70a86723686b7f0e9cc83e0a9dc9f49bd766df1ef6d",
+      "bytes": 1504,
+      "status": "no_build_attempt",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "pell_midpoint_bandMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "not_pell_reverse_midpointMA24"
+        },
+        {
+          "kind": "theorem",
+          "name": "pell_gap_three_unboundedMA24"
+        }
+      ],
+      "final_validation_source_matches": false,
+      "imports": [
+        "MarkovPellMidpointReductionMA24",
+        "MarkovPellUniformObstructionMA24"
+      ],
+      "theorem_statements": [
+        "theorem pell_midpoint_bandMA24 (a j s q r : ℕ) (hqr : q ≤ r+2) :\n pellTermMA24 a j s q*pellTermMA24 a j (s+2) r ≤\n pellTermMA24 a j (s+1) ((q+r)/2)*pellTermMA24 a j (s+1) ((q+r+1)/2)",
+        "theorem not_pell_reverse_midpointMA24 : ¬PellReverseMidpointMA24",
+        "theorem pell_gap_three_unboundedMA24 (B : ℕ) :\n ∃ a j s q r : ℕ, B<a ∧ q=r+3 ∧\n pellTermMA24 a j (s+1) ((q+r)/2)*pellTermMA24 a j (s+1) ((q+r+1)/2) <\n pellTermMA24 a j s q*pellTermMA24 a j (s+2) r"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    }
+  ],
+  "accepted_counts": {
+    "def": 4,
+    "theorem": 30
+  },
+  "pending_lexical_counts": {
+    "theorem": 14
+  },
+  "index_scope": "pellTerm(a,j,s,q) is the real cast of horizontalTerm9a72(a,j,q,s). Paper/experiment parameter k=s+1. It equals C(a-q,k) C(k+q-1,q) C(2k,j-q), with explicit q<=j guard and natural binomial zero extension. It is not a raw coefficient by itself. The module name DiagonalStep refers to summand parameter/q movement, not the root diagonal direction.",
+  "support_scope": "All natural a,j,s,q: term>=0, and term>0 iff s+q+1<=a, q<=j, j<=2s+2+q. q>a yields natural a-q=0 and positive lower choose index, hence zero. No positive summand or zero coefficient is discarded in universal comparisons.",
+  "q_ratio_scope": "The equation is denominator-cleared under s+q+2<=a, q+1<=j, j<=2s+2+q. Its coefficients are ordinary real differences, derived from natural subtraction only after bound checks. It asserts equality after multiplication, not a quotient valid at every zero boundary. A subsequent interior order step cancels only a proven positive product.",
+  "order_scope": "pell_rr2 states H_s(q)H_(s+1)(q+1)<=H_s(q+1)H_(s+1)(q), all natural indices. Zero extreme cases split first. Interior support gives a strictly positive clearing scale; the exact residual gap equals A(j+q-1)+(B+1)(E+1)>=0. pell_order_global extends q<=r by induction, still for adjacent s,s+1; its intermediate H_s(q+d) is proven positive before cancellation. Prose reverse total positivity must not be read as a separately stated arbitrary-s/t minor theorem.",
+  "row_scope": "pellSeq on integer q is a product of reversed chooseSeq, nbSeq and reversed binomial CoeffSeq. Each factor has CrossLC, the required nonnegativity and zero extension. Natural q equality splits q<=j,q<=a; all negative and excessive indices are retained as zeros. CrossLC gives inward products and floor/ceil midpoint inequality for a fixed s at all q,r.",
+  "half_scope": "Parameter LC H_s(q)H_(s+2)(q)<=H_(s+1)(q)^2 is inherited exactly. Global adjacent-s order and parameter LC yield the ordered product for q<=r, with zero extremes split and positive middle term justified by support. Fixed-row midpoint balancing gives the universal q<=r half.",
+  "parameter_step_scope": "The cleared s-step equality assumes s+q+1<=a,q<=j,j<=2s+2+q, including the vanishing upper boundary. It cancels only scalar s+2>0. Reverse-one midpoint case splits zero extremes, uses two guarded recurrences and an explicit nonnegative polynomial gap; the remaining scale is strictly positive.",
+  "diagonal_step_scope": "The cleared diagonal s/q step assumes s+q+2<=a,q+1<=j,j<=2s+3+q, and cancels only s+2. It is an auxiliary ratio identity, not raw root-D coverage.",
+  "reverse_two_scope": "For H_s(q+2)H_(s+2)(q)<=H_(s+1)(q+1)^2, zero extremes split first. Positive supports give A=a-q>=s+3, D=j-q>=2,E=2s+2-D>=-2. The exact scalar comparison Y<=X follows from a nonnegative product and square; denominator factors and the final d1*n0 scale are proven strictly positive. No formula or gap premise remains. This is valid for all natural parameters, even when some other summands vanish.",
+  "band_scope": "Band combines q<=r and q=r+1,r+2 with exact natural floor/ceil identities. All natural a,j,s,q,r with q<=r+2 are covered, no source or support-positivity restriction. The next gap has an accepted strict summand failure at(a,j,s,q,r)=(22,25,2,19,16), whose midpoint parameters are17,18. It formally proves not PellReverseMidpointMA24.",
+  "conditional_sum_scope": "FiniteMidpointSumMA24 is an explicit UNPROVED proposition over nonnegative natural-index real f,g,h and common finite range0..N. Its premise contains every q,r<=N, hence floor/ceil targets remain in range. PellReverseMidpointMA24 requires the q>=r+3 remainder and is now formally FALSE. The accepted conditional sum and source adapter retain BOTH propositions as arguments; they assert no unconditional summed LC. No external discrete Prekopa-Leindler result was added as an axiom. The conditional route is diagnostic, not a remaining viable root obligation.",
+  "source_bridge_scope": "Inherited source_near_one_path650 classifies every actual b=a+1 path as replicate n true, with a=n+1,b=n+2. The fixed raw-sum identity requires s<=n and i+j=n+s+2 and sums q0..n+1; extra terms vanish exactly. New source_pell_horizontal_conditional assumes hsum,hrev,actual b=a+1 and endpoint polygons at(i,j),(i+2,j). j=0 uses the inherited raw boundary theorem. For j>0 polygon lower/upper bounds yield s=i+j-(n+2),s+2<=n. The three exact sums have s,s+1,s+2, common N=n+1. Injective Int/Real casts transfer without normalization. Middle polygon is not an extra formal premise; no claim of unconditional full H follows.",
+  "root_scope": "No new Conjecture63 iff or complete raw direction is proved. The inherited OtherSourcesM679 residual and numerator2 completion stay unchanged. The Pell raw diagonal was already proved by source_near_one_diagonal0618 under original polygon guards; remaining Pell H/V and other larger numerators are not closed here. All root H/V/D indices and separate endpoint clauses remain unchanged.",
+  "shift_obstruction_scope": "For every natural shift c, fixed Pell parameters a5,j6,s0 have a failed min(q,r+c),max(q,r+c)-c summand comparison; c<=1 uses(q,r)=(4,0), c>=2 uses(4,2). Thus even a parameter-dependent constant natural shift cannot work at this fixed input. This formal theorem covers that orientation/natural shifts; both orientations and negative shifts occur only in finite probes. Actual replicate4true has labels5/6, raw triple[1,25,172] at(0,6),(1,6),(2,6), all three polygon guards and raw H LC, independently formalized. No raw refutation.",
+  "unvalidated_scope": "MidpointObstruction (7 theorem occurrences) and UniformObstruction (4) have final-source timeout receipts, no successful compiled/replayed/printed credit. Sharp (3) has no build and imports unaccepted UniformObstruction. Its two names shared with accepted Band do not validate its bytes or its unbounded theorem. Four pending names recur in both obstruction drafts; lexical total44 theorem occurrences across13 math files comprises38 distinct names,30 accepted plus8 additional distinct pending names. No partial compiler elaboration or name match is treated as proof.",
+  "unbounded_claim_scope": "The n+23 family, four binomial-value formulas and positive gap identity are prose/unvalidated drafts, not accepted universal results. Different pending linear_combination coefficients remain rejected versions without mathematical repair or algebra recomputation. The a22/23 raw triple is documented in prose and unaccepted draft; no completed command output explicitly records641421,60648000 or61047000. The finite source scan covers those positions and records no raw failures, but does not print that triple; exact displayed values are not independently recomputed or promoted to a Lean theorem.",
+  "literature_scope": "Only retained worker literature notes were read; no auditor web search or external theorem validation. The notes themselves label the summation theorem unformalized and its application premise false.",
+  "mathematical_values_recomputed": false
+}

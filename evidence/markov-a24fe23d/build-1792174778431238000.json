@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovPellReverseTwoMA24.lean:36:59: error: No goals to be solved\n/Users/sasha/math_gkm/research/MarkovPellReverseTwoMA24.lean:36:21: error: unsolved goals\na j s q : \u2115\nhz0 : \u00acpellTermMA24 a j s (q + 2) = 0\nhz1 : \u00acpellTermMA24 a j (s + 2) q = 0\nhp0 : s + (q + 2) + 1 \u2264 a \u2227 q + 2 \u2264 j \u2227 j \u2264 2 * s + 2 + (q + 2)\nhp1 : s + 2 + q + 1 \u2264 a \u2227 q \u2264 j \u2227 j \u2264 2 * (s + 2) + 2 + q\nh0 :\n  (\u2191s + 1) * (2 * \u2191s + 4 - \u2191j + (\u2191q + 1)) * (\u2191j - (\u2191q + 1)) * pellTermMA24 a j (s + 1) (q + 1) =\n    2 * (2 * \u2191s + 3) * (\u2191a - (\u2191q + 1)) * (\u2191q + 1 + 1) * pellTermMA24 a j s (q + 2)\nh1 :\n  (\u2191s + 1 + 1) * (2 * (\u2191s + 1) + 4 - \u2191j + \u2191q) * (\u2191j - \u2191q) * pellTermMA24 a j (s + 1 + 1) q =\n    2 * (2 * (\u2191s + 1) + 3) * (\u2191a - \u2191q) * (\u2191q + 1) * pellTermMA24 a j (s + 1) (q + 1)\nA : \u211d := \u2191a - \u2191q\nD : \u211d := \u2191j - \u2191q\nE : \u211d := 2 * \u2191s + 2 - D\nX : \u211d := (E + 4) * D * (A - 1)\nY : \u211d := (E + 3) * (D - 1) * A\nhA : \u2191s + 3 \u2264 A\nhD : 2 \u2264 D\nhE : -2 \u2264 E\nthis : 0 \u2264 \u2191s\n\u22a2 0 < A\n/Users/sasha/math_gkm/research/MarkovPellReverseTwoMA24.lean:37:61: error: No goals to be solved\n/Users/sasha/math_gkm/research/MarkovPellReverseTwoMA24.lean:37:23: error: unsolved goals\na j s q : \u2115\nhz0 : \u00acpellTermMA24 a j s (q + 2) = 0\nhz1 : \u00acpellTermMA24 a j (s + 2) q = 0\nhp0 : s + (q + 2) + 1 \u2264 a \u2227 q + 2 \u2264 j \u2227 j \u2264 2 * s + 2 + (q + 2)\nhp1 : s + 2 + q + 1 \u2264 a \u2227 q \u2264 j \u2227 j \u2264 2 * (s + 2) + 2 + q\nh0 :\n  (\u2191s + 1) * (2 * \u2191s + 4 - \u2191j + (\u2191q + 1)) * (\u2191j - (\u2191q + 1)) * pellTermMA24 a j (s + 1) (q + 1) =\n    2 * (2 * \u2191s + 3) * (\u2191a - (\u2191q + 1)) * (\u2191q + 1 + 1) * pellTermMA24 a j s (q + 2)\nh1 :\n  (\u2191s + 1 + 1) * (2 * (\u2191s + 1) + 4 - \u2191j + \u2191q) * (\u2191j - \u2191q) * pellTermMA24 a j (s + 1 + 1) q =\n    2 * (2 * (\u2191s + 1) + 3) * (\u2191a - \u2191q) * (\u2191q + 1) * pellTermMA24 a j (s + 1) (q + 1)\nA : \u211d := \u2191a - \u2191q\nD : \u211d := \u2191j - \u2191q\nE : \u211d := 2 * \u2191s + 2 - D\nX : \u211d := (E + 4) * D * (A - 1)\nY : \u211d := (E + 3) * (D - 1) * A\nhA : \u2191s + 3 \u2264 A\nhD : 2 \u2264 D\nhE : -2 \u2264 E\nhA0 : 0 < A\nthis : 0 \u2264 \u2191s\n\u22a2 0 < A - 1\n",
+  "stderr": "",
+  "modules": {
+    "MarkovPellReverseTwoMA24": "368f800e2b7552ec017aceb1ffd4d57cec70027b0e02fe98753f9b32cdc0f596"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-a24fe23d/MarkovPellReverseTwoMA24.olean",
+    "/Users/sasha/math_gkm/research/MarkovPellReverseTwoMA24.lean"
+  ],
+  "seconds": 13.617431040969677,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
