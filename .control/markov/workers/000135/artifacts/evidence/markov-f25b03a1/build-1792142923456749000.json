@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSourceFallingMF25.lean:24:34: error(lean.unknownIdentifier): Unknown constant `Int.castRingHom_apply`\n/Users/sasha/math_gkm/research/MarkovSourceFallingMF25.lean:24:1: error: Type mismatch: After simplification, term\n  h\n has type\n  (\u2200 (i : \u2115),\n      (Int.castRingHom \u211d) (((1 + X) ^ (n - d) * P).coeff i) *\n          (Int.castRingHom \u211d) (((1 + X) ^ (n - d) * P).coeff (i + 2)) \u2264\n        (Int.castRingHom \u211d) (((1 + X) ^ (n - d) * P).coeff (i + 1)) ^ 2) \u2194\n    \u2200 (i j : \u2115), n = i + j + 2 \u2192 0 \u2264 fallingGapMF25 (map (Int.castRingHom \u211d) P) d i j\nbut is expected to have type\n  (\u2200 (i : \u2115),\n      ((1 + X) ^ (n - d) * P).coeff i * ((1 + X) ^ (n - d) * P).coeff (i + 2) \u2264\n        ((1 + X) ^ (n - d) * P).coeff (i + 1) ^ 2) \u2194\n    \u2200 (i j : \u2115), n = i + j + 2 \u2192 0 \u2264 fallingGapMF25 (map (Int.castRingHom \u211d) P) d i j\n/Users/sasha/math_gkm/research/MarkovSourceFallingMF25.lean:60:1: error: Type mismatch\n  h\nhas type\n  (\u2200 (i : \u2115),\n      (Polynomial.coeff (frame path).mid.p r).coeff i * (Polynomial.coeff (frame path).mid.p r).coeff (i + 2) \u2264\n        (Polynomial.coeff (frame path).mid.p r).coeff (i + 1) ^ 2) \u2194\n    \u2200 (i j : \u2115),\n      (frame path).mid.a + (frame path).mid.b - 1 - r = i + j + 2 \u2192\n        0 \u2264 fallingGapMF25 (map (Int.castRingHom \u211d) (vresidualM9E1 path r)) (r + (frame path).mid.b) i j\nbut is expected to have type\n  (\u2200 (j : \u2115),\n      coeff (frame path).mid.p r j * coeff (frame path).mid.p r (j + 2) \u2264 coeff (frame path).mid.p r (j + 1) ^ 2) \u2194\n    \u2200 (i j : \u2115),\n      (frame path).mid.a + (frame path).mid.b - 1 - r = i + j + 2 \u2192\n        0 \u2264 fallingGapMF25 (map (Int.castRingHom \u211d) (vresidualM9E1 path r)) (r + (frame path).mid.b) i j\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSourceFallingMF25": "d115f1ccd8fae983b86052d2f74bf379d02e29dc460cd8aae25b31e4f331d467"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-f25b03a1/MarkovSourceFallingMF25.olean",
+    "/Users/sasha/math_gkm/research/MarkovSourceFallingMF25.lean"
+  ],
+  "seconds": 93.52891362499213,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,44 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovHighCone2GapMF25\ncollected MarkovHighGapMF25\ncollected MarkovHighAllMF25\nreplay union of 3 modules over 15 inherited imports\nisolation checked for 11 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovHighCone2GapMF25": "1e46edf0bde6f0b2ad0825cbd912d15b038f193cf3aa4861b1e045415e14ace2",
+    "MarkovHighGapMF25": "ecadd60cc977f5fb99d54cb182bbe36a7b36fdcce0548effc34ad43c76ce06ee",
+    "MarkovHighAllMF25": "4e561e804d3abd05ad96490788b4b208779256ad7c823174bc14fc2af580f7be"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedMF25.lean",
+    "MarkovHighCone2GapMF25",
+    "MarkovHighGapMF25",
+    "MarkovHighAllMF25"
+  ],
+  "seconds": 86.73239195800852,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "c97a99d6166bdd1c0cbfc98caf05d7ebb7bc1be71b9ad0c2036a767e3350f443",
+  "declared_names": {
+    "MarkovHighCone2GapMF25": [
+      "high_coefficient2_0MF25",
+      "high_coefficient2_1MF25",
+      "high_coefficient2_2MF25",
+      "high_coefficient2_3MF25",
+      "high_coefficient2_4MF25",
+      "high_coefficient2_5MF25",
+      "high_coefficient2_6MF25",
+      "high_cone2_nonnegMF25"
+    ],
+    "MarkovHighGapMF25": [
+      "high_source_gapMF25"
+    ],
+    "MarkovHighAllMF25": [
+      "source_high_interiorMF25",
+      "source_strip_fullMF25"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed MF25; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

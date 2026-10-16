@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovFallingGapMF25.lean:74:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2191i + 1 + (\u2191j + 1)\nin the target expression\n  fallM81F (\u2191i + \u21911 + (\u2191j + \u21911)) d * ((1 + X) ^ (i + j + 2 - d) * P).coeff (i + 1) =\n    \u2191((i + j + 2).choose (i + 1)) * fallingKernelMF25 P d (i + 1) (j + 1)\n\nP : \u211d[X]\nd i j : \u2115\nhP : P.natDegree \u2264 d\nhd : d \u2264 i + j + 2\nh0 :\n  fallM81F (\u2191i + \u2191j + 2) d * ((1 + X) ^ (i + j + 2 - d) * P).coeff i =\n    \u2191((i + j + 2).choose i) * fallingKernelMF25 P d i (j + 2)\nh1 :\n  fallM81F (\u2191i + \u21911 + (\u2191j + \u21911)) d * ((1 + X) ^ (i + j + 2 - d) * P).coeff (i + 1) =\n    \u2191((i + j + 2).choose (i + 1)) * fallingKernelMF25 P d (i + 1) (j + 1)\nh2 :\n  fallM81F (\u2191i + 2 + \u2191j) d * ((1 + X) ^ (i + j + 2 - d) * P).coeff (i + 2) =\n    \u2191((i + j + 2).choose (i + 2)) * fallingKernelMF25 P d (i + 2) j\n\u22a2 (\u2191i + 2) * (\u2191j + 2) * fallM81F (\u2191i + \u2191j + 2) d ^ 2 *\n      (((1 + X) ^ (i + j + 2 - d) * P).coeff (i + 1) ^ 2 -\n        ((1 + X) ^ (i + j + 2 - d) * P).coeff i * ((1 + X) ^ (i + j + 2 - d) * P).coeff (i + 2)) =\n    \u2191((i + j + 2).choose (i + 1)) ^ 2 * fallingGapMF25 P d i j\n",
+  "stderr": "",
+  "modules": {
+    "MarkovFallingGapMF25": "9f5ea0406f756e39520cb00eed9626d661581a9d220e965cdbb5bd9991dbf083"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-f25b03a1/MarkovFallingGapMF25.olean",
+    "/Users/sasha/math_gkm/research/MarkovFallingGapMF25.lean"
+  ],
+  "seconds": 53.5187755409861,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
