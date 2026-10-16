@@ -1,0 +1,122 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovRowBinomialMFFD\ncollected MarkovRowOperatorsMFFD\ncollected MarkovRowRecurrenceMFFD\ncollected MarkovRowRationalMFFD\ncollected MarkovFifthShapeMFFD\ncollected MarkovFifthIdentityMFFD\ncollected MarkovRowTransferMFFD\ncollected MarkovFifthSmallMFFD\ncollected MarkovFifthSourceMFFD\ncollected MarkovResidualMFFD\ncollected MarkovRowDegreeMFFD\nreplay union of 11 modules over 7 inherited imports\nisolation checked for 57 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovRowBinomialMFFD": "a7dc3079fc7ab7f40f4ca409ad3f2d23923ab6c279ea254c54ade01985498131",
+    "MarkovRowOperatorsMFFD": "f847e5ec43034cab803dc27eb2a8fec8189efa362a2fe0735811329525ffa71d",
+    "MarkovRowRecurrenceMFFD": "c3678f22886e0cfb9da3f3ca8c8a4ed3549e1b24f574d4df397058aded9bbf9d",
+    "MarkovRowRationalMFFD": "e7d3f01c763de62f2b863df2db77521269f0dadd1c2ec5a0bfb9556d0c4a5688",
+    "MarkovFifthShapeMFFD": "1a6350745cd7a21d8928403f41e011a3aeb9dc147b59ae734781617675c5cf12",
+    "MarkovFifthIdentityMFFD": "edcaa5d08b6ba3be997244dd5c4fde71e84d5c7300f399617deef2d81ffa0002",
+    "MarkovRowTransferMFFD": "ba8054aa6ceae840e500a42179d7a54e9e2114a729bc656bbc92f5994acd938b",
+    "MarkovFifthSmallMFFD": "7230dc241a731c784637c8e2cd1cf0bfe1ebdd23e9b272e163cc05d3635f1aab",
+    "MarkovFifthSourceMFFD": "0d9fdfffd4872a4d003859d1f24dbecf2801d0ef7a9109b80d520b053706b7de",
+    "MarkovResidualMFFD": "64a5cbd0d8aaa0c4926deaf3db605333d4ee53e6b8933cefe52ecec3a1621ea5",
+    "MarkovRowDegreeMFFD": "6fc54cd951df67f1cadd9105145bdf9cd42207d2325d9f7a10bd4e4a3a2a0db0"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedMFFD.lean",
+    "MarkovRowBinomialMFFD",
+    "MarkovRowOperatorsMFFD",
+    "MarkovRowRecurrenceMFFD",
+    "MarkovRowRationalMFFD",
+    "MarkovFifthShapeMFFD",
+    "MarkovFifthIdentityMFFD",
+    "MarkovRowTransferMFFD",
+    "MarkovFifthSmallMFFD",
+    "MarkovFifthSourceMFFD",
+    "MarkovResidualMFFD",
+    "MarkovRowDegreeMFFD"
+  ],
+  "seconds": 56.55808504205197,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "54c76b2e019480f23d4dc9dd2d6cbeef9acd9a5b31a9fea142ebd29d50a55e45",
+  "declared_names": {
+    "MarkovRowBinomialMFFD": [
+      "rowJMFFD",
+      "weighted_binomial_coeffMFFD",
+      "rowJ_factor_coeffMFFD",
+      "delta_row_coeffMFFD"
+    ],
+    "MarkovRowOperatorsMFFD": [
+      "rowCoeffsMFFD",
+      "rowShiftMFFD",
+      "rowSMFFD",
+      "rowDiscMFFD",
+      "row_shift_coeffMFFD",
+      "row_S_coeffMFFD",
+      "row_disc_coeffMFFD",
+      "row_S_twice_coeffMFFD",
+      "row_disc_zeroMFFD",
+      "row_disc_oneMFFD",
+      "row_disc_succMFFD",
+      "row_S_twice_zeroMFFD",
+      "row_S_twice_oneMFFD",
+      "row_S_twice_succMFFD",
+      "raw_S_localMFFD"
+    ],
+    "MarkovRowRecurrenceMFFD": [
+      "rowHMFFD",
+      "deltaRowMFFD",
+      "lowerRowMFFD",
+      "lower_row_equationMFFD",
+      "lower_row_raw_equationMFFD",
+      "lower_row_formulaMFFD",
+      "source_lower_rowMFFD",
+      "source_lower_row_pathMFFD"
+    ],
+    "MarkovRowRationalMFFD": [
+      "rowJQMFFD",
+      "rowHQMFFD",
+      "rowJ_mapMFFD",
+      "rowH_mapMFFD"
+    ],
+    "MarkovFifthShapeMFFD": [
+      "fifthCoeffMFFD",
+      "fifthPolyMFFD",
+      "fifth_coeffMFFD",
+      "fifth_mapMFFD",
+      "fifth_positiveMFFD",
+      "fifth_zeroMFFD",
+      "fifth_adjacentMFFD",
+      "fifth_crossMFFD"
+    ],
+    "MarkovFifthIdentityMFFD": [
+      "fifth_residual_rationalMFFD",
+      "fifth_residual_mapMFFD"
+    ],
+    "MarkovRowTransferMFFD": [
+      "lower_row_crossMFFD",
+      "source_horizontal_of_row_crossMFFD",
+      "LowerRowShapeMFFD",
+      "source_lower_horizontal_of_shapeMFFD"
+    ],
+    "MarkovFifthSmallMFFD": [
+      "fifth_small_boundedMFFD",
+      "fifth_small_allMFFD"
+    ],
+    "MarkovFifthSourceMFFD": [
+      "fifth_residual_crossMFFD",
+      "three_horizontal_fifthMFFD",
+      "source_three_horizontal_fifthMFFD"
+    ],
+    "MarkovResidualMFFD": [
+      "ThreeRemainingMFFD",
+      "three_remaining_iffMFFD",
+      "root_iff_remainingMFFD",
+      "fifth_gain_polygonMFFD"
+    ],
+    "MarkovRowDegreeMFFD": [
+      "rowJ_degreeMFFD",
+      "rowH_degreeMFFD",
+      "rowH_tailMFFD"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed MFFD; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

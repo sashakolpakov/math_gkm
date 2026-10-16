@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovRowBinomialMFFD.lean:17:5: warning: `Polynomial.finset_sum_coeff` has been deprecated: Use `Polynomial.finsetSum_coeff` instead\n/Users/sasha/math_gkm/research/MarkovRowBinomialMFFD.lean:32:3: error: ring failed, ring expressions not equal\nN c j t : \u2115\nhv : \u2191((t + c).choose j) = \u2211 s \u2208 range (j + 1), \u2191(t.choose s) * \u2191(c.choose (j - s))\ns : \u2115\nhs : s \u2208 range (j + 1)\nhst : s \u2264 t\nhe : \u2191(N.choose t) * \u2191(t.choose s) = \u2191(N.choose s) * \u2191((N - s).choose (t - s))\n\u22a2 \u2191(c.choose (j - s)) * \u2191(N.choose s) * \u2191((N - s).choose (t - s)) * 2 -\n      \u2191(c.choose (j - s)) * \u2191(N.choose t) * \u2191(t.choose s) * 2 =\n    0\n/Users/sasha/math_gkm/research/MarkovRowBinomialMFFD.lean:46:26: error: Type mismatch: After simplification, term\n  hs\n has type\n  s < j + 1\nbut is expected to have type\n  s \u2264 j\n",
+  "stderr": "",
+  "modules": {
+    "MarkovRowBinomialMFFD": "1fec632e03798c98463e4f756af74c599bec975953f3e6747db79fe54385530e"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ffd747f5/MarkovRowBinomialMFFD.olean",
+    "/Users/sasha/math_gkm/research/MarkovRowBinomialMFFD.lean"
+  ],
+  "seconds": 53.73698325001169,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

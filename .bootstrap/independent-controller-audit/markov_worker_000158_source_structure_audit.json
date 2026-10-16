@@ -1,0 +1,584 @@
+{
+  "worker": 158,
+  "request": "ffd747f5c7a147069d5bfcaffb3e60e8",
+  "created_at_utc": "2026-10-16T21:06:09.188144+00:00",
+  "historical_status": "Completed / return 0 / delivered report. Full root open; worker156 historical timeout unchanged.",
+  "scope": "Closed158 archive and explicit named inherited/current counterparts only. Static parsing, hashes and input-index counts; no project/proof/checker/replay/experiment/finalizer/generator execution or mathematical-value computation. No project edits, proposer contact or research help. Active159 excluded; earlier seals final.",
+  "new_modules": [
+    {
+      "module": "MarkovRowBinomialMFFD",
+      "path": "research/MarkovRowBinomialMFFD.lean",
+      "bytes": 2754,
+      "sha256": "a7dc3079fc7ab7f40f4ca409ad3f2d23923ab6c279ea254c54ade01985498131",
+      "current_sha256": "a7dc3079fc7ab7f40f4ca409ad3f2d23923ab6c279ea254c54ade01985498131",
+      "status": "compiled, joint replay passed, every theorem closure printed in worker158",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "rowJMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_binomial_coeffMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowJ_factor_coeffMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "delta_row_coeffMFFD"
+        }
+      ],
+      "object_path": "evidence/markov-ffd747f5/MarkovRowBinomialMFFD.olean",
+      "object_sha256": "d46ff63a414dcde7dee9ba277661b8fc81f15f0f8e6d17182bd06905bfdec9a7",
+      "successful_final_build": "build-1792182767572323000.json",
+      "successful_final_build_sha256": "1a7cf2742437e98700f0c15e970915895f06b67d6c1840513bd6cdf1b6965db2",
+      "imports": [
+        "MarkovLowerUniformME9C"
+      ],
+      "theorem_statements": [
+        "theorem weighted_binomial_coeffMFFD (N c j t : ℕ) :\n (∑ s ∈ range (j+1), C ((c.choose (j-s):ℤ)*(N.choose s:ℤ))*\n   X^s*(X+1)^(N-s)).coeff t =\n (N.choose t:ℤ)*((t+c).choose j:ℤ)",
+        "theorem rowJ_factor_coeffMFFD (n j t : ℕ) (hn : 2*j+1 ≤ n) :\n ((X+1)^(n-2*j-1)*rowJMFFD n j).coeff t=\n ((n-j-1).choose t:ℤ)*((t+j+3).choose j:ℤ)",
+        "theorem delta_row_coeffMFFD (n j i : ℕ) (hn : 2*j+1 ≤ n) :\n (X^3*((X+1)^(n-2*j-1)*rowJMFFD n j)).coeff i=fibDeltaME9C n i j"
+      ],
+      "definitions": [
+        "def rowJMFFD (n j : ℕ) : Polynomial ℤ :=\n ∑ s ∈ range (j+1), C (((j+3).choose (j-s):ℤ)*((n-j-1).choose s:ℤ))*\n   X^s*(X+1)^(j-s)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovRowOperatorsMFFD",
+      "path": "research/MarkovRowOperatorsMFFD.lean",
+      "bytes": 3255,
+      "sha256": "f847e5ec43034cab803dc27eb2a8fec8189efa362a2fe0735811329525ffa71d",
+      "current_sha256": "f847e5ec43034cab803dc27eb2a8fec8189efa362a2fe0735811329525ffa71d",
+      "status": "compiled, joint replay passed, every theorem closure printed in worker158",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "rowCoeffsMFFD"
+        },
+        {
+          "kind": "def",
+          "name": "rowShiftMFFD"
+        },
+        {
+          "kind": "def",
+          "name": "rowSMFFD"
+        },
+        {
+          "kind": "def",
+          "name": "rowDiscMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "row_shift_coeffMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "row_S_coeffMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "row_disc_coeffMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "row_S_twice_coeffMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "row_disc_zeroMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "row_disc_oneMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "row_disc_succMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "row_S_twice_zeroMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "row_S_twice_oneMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "row_S_twice_succMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "raw_S_localMFFD"
+        }
+      ],
+      "object_path": "evidence/markov-ffd747f5/MarkovRowOperatorsMFFD.olean",
+      "object_sha256": "0b55b480462d1e64f48a281f4d94b1b3284b9b44a595de885dbb90793674efbf",
+      "successful_final_build": "build-1792182830794145000.json",
+      "successful_final_build_sha256": "402112a67a9dc167bb64098c280adc269968484f535d12f3c40d2cf6362a6b16",
+      "imports": [
+        "MarkovLowerUniformME9C"
+      ],
+      "theorem_statements": [
+        "theorem row_shift_coeffMFFD (a b i j : ℕ) (f : ℕ → Polynomial ℤ) :\n (rowShiftMFFD a b f j).coeff i=shiftRawM9E2 a b (rowCoeffsMFFD f) i j",
+        "theorem row_S_coeffMFFD (f : ℕ → Polynomial ℤ) (i j : ℕ) :\n (rowSMFFD f j).coeff i=addSRawM9E2 (rowCoeffsMFFD f) i j",
+        "theorem row_disc_coeffMFFD (f : ℕ → Polynomial ℤ) (i j : ℕ) :\n (rowDiscMFFD f j).coeff i=discriminantActionM96A (rowCoeffsMFFD f) i j",
+        "theorem row_S_twice_coeffMFFD (f : ℕ → Polynomial ℤ) (i j : ℕ) :\n (rowSMFFD (rowSMFFD f) j).coeff i=\n addSRawM9E2 (addSRawM9E2 (rowCoeffsMFFD f)) i j",
+        "theorem row_disc_zeroMFFD (f : ℕ → Polynomial ℤ) : rowDiscMFFD f 0=(X+1)^2*f 0",
+        "theorem row_disc_oneMFFD (f : ℕ → Polynomial ℤ) :\n rowDiscMFFD f 1=(X+1)^2*f 1+2*(X-1)*f 0",
+        "theorem row_disc_succMFFD (f : ℕ → Polynomial ℤ) (j : ℕ) :\n rowDiscMFFD f (j+2)=(X+1)^2*f (j+2)+2*(X-1)*f (j+1)+f j",
+        "theorem row_S_twice_zeroMFFD (f : ℕ → Polynomial ℤ) :\n rowSMFFD (rowSMFFD f) 0=(X+1)^2*f 0",
+        "theorem row_S_twice_oneMFFD (f : ℕ → Polynomial ℤ) :\n rowSMFFD (rowSMFFD f) 1=(X+1)^2*f 1+2*(X+1)*f 0",
+        "theorem row_S_twice_succMFFD (f : ℕ → Polynomial ℤ) (j : ℕ) :\n rowSMFFD (rowSMFFD f) (j+2)=(X+1)^2*f (j+2)+2*(X+1)*f (j+1)+f j",
+        "theorem raw_S_localMFFD (q : ℕ) (f g : ℕ → ℕ → ℤ)\n (h : ∀ i j, j ≤ q → f i j=g i j) :\n ∀ i j, j ≤ q → addSRawM9E2 f i j=addSRawM9E2 g i j"
+      ],
+      "definitions": [
+        "def rowCoeffsMFFD (f : ℕ → Polynomial ℤ) (i j : ℕ) : ℤ := (f j).coeff i",
+        "def rowShiftMFFD (a b : ℕ) (f : ℕ → Polynomial ℤ) (j : ℕ) : Polynomial ℤ :=\n if b ≤ j then X^a*f (j-b) else 0",
+        "def rowSMFFD (f : ℕ → Polynomial ℤ) (j : ℕ) : Polynomial ℤ :=\n rowShiftMFFD 1 0 f j+rowShiftMFFD 0 1 f j+f j",
+        "def rowDiscMFFD (f : ℕ → Polynomial ℤ) (j : ℕ) : Polynomial ℤ :=\n f j+2*rowShiftMFFD 1 0 f j-2*rowShiftMFFD 0 1 f j+\n rowShiftMFFD 2 0 f j+2*rowShiftMFFD 1 1 f j+rowShiftMFFD 0 2 f j"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovRowRecurrenceMFFD",
+      "path": "research/MarkovRowRecurrenceMFFD.lean",
+      "bytes": 2926,
+      "sha256": "c3678f22886e0cfb9da3f3ca8c8a4ed3549e1b24f574d4df397058aded9bbf9d",
+      "current_sha256": "c3678f22886e0cfb9da3f3ca8c8a4ed3549e1b24f574d4df397058aded9bbf9d",
+      "status": "compiled, joint replay passed, every theorem closure printed in worker158",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "rowHMFFD"
+        },
+        {
+          "kind": "def",
+          "name": "deltaRowMFFD"
+        },
+        {
+          "kind": "def",
+          "name": "lowerRowMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_row_equationMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_row_raw_equationMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_row_formulaMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_rowMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_row_pathMFFD"
+        }
+      ],
+      "object_path": "evidence/markov-ffd747f5/MarkovRowRecurrenceMFFD.olean",
+      "object_sha256": "44ac610d5b9d8bb9afb6a7744a7cd24827e496ba20a43a373d2320235aa58966",
+      "successful_final_build": "build-1792182920844031000.json",
+      "successful_final_build_sha256": "c565ba647cf6eb1ba520c88097f83aa33788a6a648be948e850aaec3ff0f344e",
+      "imports": [
+        "MarkovRowBinomialMFFD",
+        "MarkovRowOperatorsMFFD"
+      ],
+      "theorem_statements": [
+        "theorem lower_row_equationMFFD (n j : ℕ) (hn : 2*j+1 ≤ n) :\n rowDiscMFFD (lowerRowMFFD n) j=rowSMFFD (rowSMFFD (deltaRowMFFD n)) j",
+        "theorem lower_row_raw_equationMFFD (n q : ℕ) (hn : 2*q+1 ≤ n) :\n ∀ i j, j ≤ q → discriminantActionM96A (rowCoeffsMFFD (lowerRowMFFD n)) i j=\n lowerForceME9C n i j",
+        "theorem lower_row_formulaMFFD (n q : ℕ) (hn : 2*q+1 ≤ n) :\n ∀ i j, j ≤ q → (lowerRowMFFD n j).coeff i=lowerRawME9C n i j",
+        "theorem source_lower_rowMFFD (q i j : ℕ) (r : Bool) (hj : j ≤ q) :\n threeRawM9E2 q r i j=(lowerRowMFFD (sourceNME9C q r) j).coeff i",
+        "theorem source_lower_row_pathMFFD (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1 ≤ q ∧ (frame path).mid.b=sourceNME9C q r ∧\n ∀ i j, j ≤ q → coeff (frame path).mid.p i j=\n   (X^3*((X+1)^(sourceNME9C q r-2*j-1)*rowHMFFD (sourceNME9C q r) j)).coeff i"
+      ],
+      "definitions": [
+        "def rowHMFFD (n : ℕ) : ℕ → Polynomial ℤ\n | 0 => rowJMFFD n 0\n | 1 => rowJMFFD n 1+2*(X+1)*rowJMFFD n 0+2*(1-X)*rowHMFFD n 0\n | j+2 => rowJMFFD n (j+2)+2*(X+1)*rowJMFFD n (j+1)+(X+1)^2*rowJMFFD n j+\n   2*(1-X)*rowHMFFD n (j+1)-(X+1)^2*rowHMFFD n j",
+        "def deltaRowMFFD (n j : ℕ) : Polynomial ℤ := X^3*((X+1)^(n-2*j-1)*rowJMFFD n j)",
+        "def lowerRowMFFD (n j : ℕ) : Polynomial ℤ := X^3*((X+1)^(n-2*j-1)*rowHMFFD n j)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovRowRationalMFFD",
+      "path": "research/MarkovRowRationalMFFD.lean",
+      "bytes": 2040,
+      "sha256": "e7d3f01c763de62f2b863df2db77521269f0dadd1c2ec5a0bfb9556d0c4a5688",
+      "current_sha256": "e7d3f01c763de62f2b863df2db77521269f0dadd1c2ec5a0bfb9556d0c4a5688",
+      "status": "compiled, joint replay passed, every theorem closure printed in worker158",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "rowJQMFFD"
+        },
+        {
+          "kind": "def",
+          "name": "rowHQMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowJ_mapMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowH_mapMFFD"
+        }
+      ],
+      "object_path": "evidence/markov-ffd747f5/MarkovRowRationalMFFD.olean",
+      "object_sha256": "2fb0c38c4a40d49810c4acfb2ec6e11b87deb4126cd80d8b8701174f81c39779",
+      "successful_final_build": "build-1792183206336315000.json",
+      "successful_final_build_sha256": "dd48a2f0d66565af18239775cf362072fc9e8dfbff53107933c9b9c99d5be38f",
+      "imports": [
+        "MarkovRowRecurrenceMFFD",
+        "MarkovBinomialTableM295"
+      ],
+      "theorem_statements": [
+        "theorem rowJ_mapMFFD (n j : ℕ) (hn : j+1 ≤ n) :\n (rowJMFFD n j).map (Int.castRingHom ℚ)=rowJQMFFD n j",
+        "theorem rowH_mapMFFD (n j : ℕ) (hn : j+1 ≤ n) :\n (rowHMFFD n j).map (Int.castRingHom ℚ)=rowHQMFFD n j"
+      ],
+      "definitions": [
+        "def rowJQMFFD (n : ℚ) (j : ℕ) : Polynomial ℚ :=\n ∑ s ∈ range (j+1), C (((j+3).choose (j-s):ℚ)*choosePolyM0D3 (n-j-1) s)*\n   X^s*(X+1)^(j-s)",
+        "def rowHQMFFD (n : ℚ) : ℕ → Polynomial ℚ\n | 0 => rowJQMFFD n 0\n | 1 => rowJQMFFD n 1+2*(X+1)*rowJQMFFD n 0+2*(1-X)*rowHQMFFD n 0\n | j+2 => rowJQMFFD n (j+2)+2*(X+1)*rowJQMFFD n (j+1)+(X+1)^2*rowJQMFFD n j+\n   2*(1-X)*rowHQMFFD n (j+1)-(X+1)^2*rowHQMFFD n j"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovFifthShapeMFFD",
+      "path": "research/MarkovFifthShapeMFFD.lean",
+      "bytes": 3364,
+      "sha256": "1a6350745cd7a21d8928403f41e011a3aeb9dc147b59ae734781617675c5cf12",
+      "current_sha256": "1a6350745cd7a21d8928403f41e011a3aeb9dc147b59ae734781617675c5cf12",
+      "status": "compiled, joint replay passed, every theorem closure printed in worker158",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "fifthCoeffMFFD"
+        },
+        {
+          "kind": "def",
+          "name": "fifthPolyMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "fifth_coeffMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "fifth_mapMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "fifth_positiveMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "fifth_zeroMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "fifth_adjacentMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "fifth_crossMFFD"
+        }
+      ],
+      "object_path": "evidence/markov-ffd747f5/MarkovFifthShapeMFFD.olean",
+      "object_sha256": "1ca1105f8c82ff51f8def9b497d2810f7be40f9256cbdb6ab757e9bbd4620abc",
+      "successful_final_build": "build-1792183166881983000.json",
+      "successful_final_build_sha256": "cd62d2110d3c0fdea328bac65b8774139fd0564f2ba4bed1a38cd8d5ae235430",
+      "imports": [
+        "MarkovCross774"
+      ],
+      "theorem_statements": [
+        "theorem fifth_coeffMFFD {R : Type*} [Field R] (d : R) (k : ℕ) :\n (fifthPolyMFFD d).coeff k=fifthCoeffMFFD d k",
+        "theorem fifth_mapMFFD (d : ℚ) :\n (fifthPolyMFFD d).map (Rat.castHom ℝ)=fifthPolyMFFD (d:ℝ)",
+        "theorem fifth_positiveMFFD (d : ℝ) (hd : 0 ≤ d) (k : ℕ) (hk : k ≤ 5) :\n 0 < fifthCoeffMFFD d k",
+        "theorem fifth_zeroMFFD {R : Type*} [Field R] (d : R) (k : ℕ) (hk : 5 < k) :\n fifthCoeffMFFD d k=0",
+        "theorem fifth_adjacentMFFD (d : ℝ) (hd : 0 ≤ d) (k : ℕ) (hk : k ≤ 3) :\n fifthCoeffMFFD d k*fifthCoeffMFFD d (k+2) ≤ fifthCoeffMFFD d (k+1)^2",
+        "theorem fifth_crossMFFD (d : ℝ) (hd : 0 ≤ d) :\n CrossLC (CoeffSeq (fifthPolyMFFD d))"
+      ],
+      "definitions": [
+        "def fifthCoeffMFFD {R : Type*} [Field R] (d : R) : ℕ → R\n | 0 => 560\n | 1 => 3030+406*d\n | 2 => 7140+1684*d+100*d^2\n | 3 => 8652+(8338/3)*d+298*d^2+(32/3)*d^3\n | 4 => 5280+(6269/3)*d+(619/2)*d^2+(61/3)*d^3+d^4/2\n | 5 => 1287+(11899/20)*d+(2629/24)*d^2+(241/24)*d^3+(11/24)*d^4+d^5/120\n | _ => 0",
+        "def fifthPolyMFFD {R : Type*} [Field R] (d : R) : Polynomial R :=\n C (fifthCoeffMFFD d 0)*X^0+C (fifthCoeffMFFD d 1)*X^1+\n C (fifthCoeffMFFD d 2)*X^2+C (fifthCoeffMFFD d 3)*X^3+\n C (fifthCoeffMFFD d 4)*X^4+C (fifthCoeffMFFD d 5)*X^5"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovFifthIdentityMFFD",
+      "path": "research/MarkovFifthIdentityMFFD.lean",
+      "bytes": 1187,
+      "sha256": "edcaa5d08b6ba3be997244dd5c4fde71e84d5c7300f399617deef2d81ffa0002",
+      "current_sha256": "edcaa5d08b6ba3be997244dd5c4fde71e84d5c7300f399617deef2d81ffa0002",
+      "status": "compiled, joint replay passed, every theorem closure printed in worker158",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fifth_residual_rationalMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "fifth_residual_mapMFFD"
+        }
+      ],
+      "object_path": "evidence/markov-ffd747f5/MarkovFifthIdentityMFFD.olean",
+      "object_sha256": "5b8a614e133c21dbafa94ca5451b9401aae4741cea7303a4b6e894dd2d04fb1f",
+      "successful_final_build": "build-1792183402157729000.json",
+      "successful_final_build_sha256": "20088856cb1c3a484991f75ac776a6af111bcd62dea806a567db6ebbe6343eb5",
+      "imports": [
+        "MarkovRowRationalMFFD",
+        "MarkovFifthShapeMFFD"
+      ],
+      "theorem_statements": [
+        "theorem fifth_residual_rationalMFFD (d : ℚ) :\n rowHQMFFD (11+d) 5=fifthPolyMFFD d",
+        "theorem fifth_residual_mapMFFD (n : ℕ) (hn : 11 ≤ n) :\n (rowHMFFD n 5).map (Int.castRingHom ℝ)=fifthPolyMFFD ((n:ℝ)-11)"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovRowTransferMFFD",
+      "path": "research/MarkovRowTransferMFFD.lean",
+      "bytes": 1957,
+      "sha256": "ba8054aa6ceae840e500a42179d7a54e9e2114a729bc656bbc92f5994acd938b",
+      "current_sha256": "ba8054aa6ceae840e500a42179d7a54e9e2114a729bc656bbc92f5994acd938b",
+      "status": "compiled, joint replay passed, every theorem closure printed in worker158",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "lower_row_crossMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_horizontal_of_row_crossMFFD"
+        },
+        {
+          "kind": "def",
+          "name": "LowerRowShapeMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_horizontal_of_shapeMFFD"
+        }
+      ],
+      "object_path": "evidence/markov-ffd747f5/MarkovRowTransferMFFD.olean",
+      "object_sha256": "16f01515c0f4cc7e21a1e395ad4159f8a7ec4e25ac65d952b0470f43a9b0e935",
+      "successful_final_build": "build-1792183428028193000.json",
+      "successful_final_build_sha256": "6edc84bb3b2adfb7c1e5cdc29aaa7de95af7a40fd4af0e2a5b915d84c25f1b98",
+      "imports": [
+        "MarkovRowRecurrenceMFFD",
+        "MarkovHorizontalLCB46"
+      ],
+      "theorem_statements": [
+        "theorem lower_row_crossMFFD (n j : ℕ)\n (h : CrossLC (CoeffSeq ((rowHMFFD n j).map (Int.castRingHom ℝ)))) :\n CrossLC (CoeffSeq ((lowerRowMFFD n j).map (Int.castRingHom ℝ)))",
+        "theorem source_horizontal_of_row_crossMFFD (q j : ℕ) (r : Bool) (hj : j ≤ q)\n (h : CrossLC (CoeffSeq ((rowHMFFD (sourceNME9C q r) j).map (Int.castRingHom ℝ))))\n (i : ℕ) :\n threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2",
+        "theorem source_lower_horizontal_of_shapeMFFD (h : LowerRowShapeMFFD)\n (q i j : ℕ) (r : Bool) (hj : j ≤ q) :\n threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2"
+      ],
+      "definitions": [
+        "def LowerRowShapeMFFD : Prop := ∀ n j : ℕ, 2*j+1 ≤ n →\n CrossLC (CoeffSeq ((rowHMFFD n j).map (Int.castRingHom ℝ)))"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovFifthSmallMFFD",
+      "path": "research/MarkovFifthSmallMFFD.lean",
+      "bytes": 941,
+      "sha256": "7230dc241a731c784637c8e2cd1cf0bfe1ebdd23e9b272e163cc05d3635f1aab",
+      "current_sha256": "7230dc241a731c784637c8e2cd1cf0bfe1ebdd23e9b272e163cc05d3635f1aab",
+      "status": "compiled, joint replay passed, every theorem closure printed in worker158",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fifth_small_boundedMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "fifth_small_allMFFD"
+        }
+      ],
+      "object_path": "evidence/markov-ffd747f5/MarkovFifthSmallMFFD.olean",
+      "object_sha256": "37ab4281155b5d3d722e79969cf6208f1dec1b21b894cdeee90feb151a94cce2",
+      "successful_final_build": "build-1792183485100034000.json",
+      "successful_final_build_sha256": "33e55459ac415ae8c1045c388f5f8d10e9f674e562d5103f2d94b40641746df1",
+      "imports": [
+        "MarkovLowerShapeME9C"
+      ],
+      "theorem_statements": [
+        "theorem fifth_small_boundedMFFD (q i : ℕ) (r : Bool)\n (hq : 1 ≤ q) (hq4 : q ≤ 4) (hi : i ≤ 11) :\n threeRawM9E2 q r i 5*threeRawM9E2 q r (i+2) 5 ≤ threeRawM9E2 q r (i+1) 5^2",
+        "theorem fifth_small_allMFFD (q i : ℕ) (r : Bool) (hq : 1 ≤ q) (hq4 : q ≤ 4) :\n threeRawM9E2 q r i 5*threeRawM9E2 q r (i+2) 5 ≤ threeRawM9E2 q r (i+1) 5^2"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovFifthSourceMFFD",
+      "path": "research/MarkovFifthSourceMFFD.lean",
+      "bytes": 1317,
+      "sha256": "0d9fdfffd4872a4d003859d1f24dbecf2801d0ef7a9109b80d520b053706b7de",
+      "current_sha256": "0d9fdfffd4872a4d003859d1f24dbecf2801d0ef7a9109b80d520b053706b7de",
+      "status": "compiled, joint replay passed, every theorem closure printed in worker158",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fifth_residual_crossMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_horizontal_fifthMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_three_horizontal_fifthMFFD"
+        }
+      ],
+      "object_path": "evidence/markov-ffd747f5/MarkovFifthSourceMFFD.olean",
+      "object_sha256": "e0f0d20e20509a2418e55ae6c9ee7ffd65fede36441f27dc4436d20c1af5ff44",
+      "successful_final_build": "build-1792183612919655000.json",
+      "successful_final_build_sha256": "91ff88cd7ebcd7969cdbc91e84c379b70965ca95b16d55f5c2b3683239d7ff6c",
+      "imports": [
+        "MarkovFifthIdentityMFFD",
+        "MarkovRowTransferMFFD",
+        "MarkovFifthSmallMFFD"
+      ],
+      "theorem_statements": [
+        "theorem fifth_residual_crossMFFD (n : ℕ) (hn : 11 ≤ n) :\n CrossLC (CoeffSeq ((rowHMFFD n 5).map (Int.castRingHom ℝ)))",
+        "theorem three_horizontal_fifthMFFD (q i : ℕ) (r : Bool) (hq : 1 ≤ q) :\n threeRawM9E2 q r i 5*threeRawM9E2 q r (i+2) 5 ≤ threeRawM9E2 q r (i+1) 5^2",
+        "theorem source_three_horizontal_fifthMFFD (path : List Bool)\n (ha : (frame path).mid.a=3) (i : ℕ) :\n coeff (frame path).mid.p i 5*coeff (frame path).mid.p (i+2) 5 ≤\n coeff (frame path).mid.p (i+1) 5^2"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovResidualMFFD",
+      "path": "research/MarkovResidualMFFD.lean",
+      "bytes": 1410,
+      "sha256": "64a5cbd0d8aaa0c4926deaf3db605333d4ee53e6b8933cefe52ecec3a1621ea5",
+      "current_sha256": "64a5cbd0d8aaa0c4926deaf3db605333d4ee53e6b8933cefe52ecec3a1621ea5",
+      "status": "compiled, joint replay passed, every theorem closure printed in worker158",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "ThreeRemainingMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_remaining_iffMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_remainingMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "fifth_gain_polygonMFFD"
+        }
+      ],
+      "object_path": "evidence/markov-ffd747f5/MarkovResidualMFFD.olean",
+      "object_sha256": "d98d5b28d59e8caae50efc0fff58878f16b95861de515810496e06c50fbb37e4",
+      "successful_final_build": "build-1792183644491775000.json",
+      "successful_final_build_sha256": "6edae740552d68d9b424eb90c3b2871b800a73a9e4808533dcb65e15e9e44942",
+      "imports": [
+        "MarkovFifthSourceMFFD",
+        "MarkovResidualM1BB"
+      ],
+      "theorem_statements": [
+        "theorem three_remaining_iffMFFD : ThreeRemainingM1BB ↔ ThreeRemainingMFFD",
+        "theorem root_iff_remainingMFFD : Conjecture63 ↔ ThreeRemainingMFFD ∧ OtherFourM9E2",
+        "theorem fifth_gain_polygonMFFD (q : ℕ) (r : Bool) (hq : 5 ≤ q) :\n InPolygon 3 (sourceNME9C q r) 3 5 ∧\n InPolygon 3 (sourceNME9C q r) 4 5 ∧\n InPolygon 3 (sourceNME9C q r) 5 5"
+      ],
+      "definitions": [
+        "def ThreeRemainingMFFD : Prop := ∀ q : ℕ, 1 ≤ q → ∀ r,\n (∀ i j, j≠5 → threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤\n   threeRawM9E2 q r (i+1) j^2) ∧\n (∀ i j, ¬((i=3 ∨ i=4) ∧ j+1 ≤ q) →\n   threeRawM9E2 q r i j*threeRawM9E2 q r i (j+2) ≤ threeRawM9E2 q r i (j+1)^2) ∧\n (∀ i j, threeRawM9E2 q r i (j+2)*threeRawM9E2 q r (i+2) j ≤\n   threeRawM9E2 q r (i+1) (j+1)^2)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovRowDegreeMFFD",
+      "path": "research/MarkovRowDegreeMFFD.lean",
+      "bytes": 1254,
+      "sha256": "6fc54cd951df67f1cadd9105145bdf9cd42207d2325d9f7a10bd4e4a3a2a0db0",
+      "current_sha256": "6fc54cd951df67f1cadd9105145bdf9cd42207d2325d9f7a10bd4e4a3a2a0db0",
+      "status": "compiled, joint replay passed, every theorem closure printed in worker158",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "rowJ_degreeMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowH_degreeMFFD"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowH_tailMFFD"
+        }
+      ],
+      "object_path": "evidence/markov-ffd747f5/MarkovRowDegreeMFFD.olean",
+      "object_sha256": "4991edcec9012bcef1d6b45e356aace403707ef81ff0f0d0f293b2ef855c786d",
+      "successful_final_build": "build-1792183690752471000.json",
+      "successful_final_build_sha256": "916f99dd8b49c7d91d54a34a7c52bdc09de151198762142c95d0c048e2924188",
+      "imports": [
+        "MarkovRowRecurrenceMFFD"
+      ],
+      "theorem_statements": [
+        "theorem rowJ_degreeMFFD (n j : ℕ) : (rowJMFFD n j).natDegree ≤ j",
+        "theorem rowH_degreeMFFD (n j : ℕ) : (rowHMFFD n j).natDegree ≤ j",
+        "theorem rowH_tailMFFD (n j k : ℕ) (hk : j<k) : (rowHMFFD n j).coeff k=0"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    }
+  ],
+  "accepted_counts": {
+    "def": 14,
+    "theorem": 43
+  },
+  "unused_candidate": {
+    "path": "evidence/markov-ffd747f5/unused-small-rows-candidate.lean",
+    "sha256": "4b63123fb40715ddc3dc7e19b775e1b0b44c2d8ce2513c5959fb63fa884725e7",
+    "bytes": 11104,
+    "physical_lines": 202,
+    "declarations": [
+      "fifth_small_poly1FMFFD",
+      "fifth_small_row1FMFFD",
+      "fifth_small_poly1TMFFD",
+      "fifth_small_row1TMFFD",
+      "fifth_small_poly2FMFFD",
+      "fifth_small_row2FMFFD",
+      "fifth_small_poly2TMFFD",
+      "fifth_small_row2TMFFD",
+      "fifth_small_poly3FMFFD",
+      "fifth_small_row3FMFFD",
+      "fifth_small_poly3TMFFD",
+      "fifth_small_row3TMFFD",
+      "fifth_small_poly4FMFFD",
+      "fifth_small_row4FMFFD",
+      "fifth_small_poly4TMFFD",
+      "fifth_small_row4TMFFD"
+    ],
+    "status": "unused uncompiled generated candidate; not selected, replayed or axiom-printed",
+    "generator_event": 195,
+    "rename_event": 209,
+    "original_path": "research/MarkovFifthSmallRowsMFFD.lean",
+    "original_path_present_at_observation": false,
+    "generator_reported_list_items": 106,
+    "qualification": "Generator prints len(lines), not physical newline count: list items contain embedded newlines. No candidate proof or value recomputed."
+  },
+  "source_scope": "Every actual numerator3 path is threePath(q-1,r), q>=1; true gives b=3q+1 and false b=3q+2. source_three_rawM9E2 identifies the literal integer coefficients for every natural i,j.",
+  "factorization_scope": "For actual j<=q, raw coefficient equals [u^i] u^3(1+u)^(n-2j-1) H_j(n,u). All natural i; no unknown formula, positivity or shape premise. Generic lower-row equality requires 2q+1<=n and j<=q. Signed H recurrence is not a positivity theorem.",
+  "binomial_scope": "Weighted coefficient identity unconditional in natural N,c,j,t, with all natural-zero binomial cases retained. rowJ factor uses2j+1<=n to justify exponent arithmetic. delta-row source forcing treats i0/1/2 separately and shifts i+3. Guarded row operators match bivariate shifts exactly; triangular uniqueness inherited.",
+  "degree_scope": "natDegree(rowJ n j)<=j and natDegree(rowH n j)<=j for every natural n,j; coefficient k>j zero. No exact positive interval or general residual nonnegativity claimed. Integer-to-rational map requires j+1<=n.",
+  "fifth_scope": "Generic H5 maps to explicit six-term polynomial for n>=11, d=n-11>=0. Rational identity holds all rational d; positivity/CrossLC only real d>=0. Positive coefficients at0..5, zero elsewhere,4 adjacent inequalities plus interval support yield CrossLC. Binomial smoothing and u^3 shift retain zeros. Actual source transfer needs q>=5, not merely n>=11.",
+  "small_scope": "q1..4, both residues, i0..11 discharged with ordinary decide in Lean. All i>11 handled by inherited actual source total-degree zero theorem on first factor and square nonnegativity. Includes q1 and correction/upper rows; unused alternative source-polynomial candidate is not used.",
+  "raw_scope": "For every path with a=3 and every natural i: coeff(i,5)*coeff(i+2,5)<=coeff(i+1,5)^2. No polygon, positive coefficient, run length, finite denominator bound, formula or shape premise. Integer coefficients and casts exact; no division/rescaling.",
+  "root_scope": "Exact iff removes only j5 from the H clause of ThreeRemainingM1BB; retains every other H row, V outside((i=3 or i=4) and j+1<=q), all D, and OtherFour for paths a>=4. Original raw polygon/zero/endpoints inherited. Both residual conjuncts unproved. fifth_gain_polygon shows positions(3,5),(4,5),(5,5) valid for both unbounded q>=5. Gain beyond immediate157H residual; no assertion of exclusion from every earlier sufficient criterion.",
+  "open_scope": "LowerRowShapeMFFD assumes CrossLC for all natural n,j with2j+1<=n; it is unproved. Conditional smoothing would cover only actual lower rows. Proposed rational/Euler resolvent and alternating six-monomial coefficient formula remain prose/finite only. Negative saved coefficients outside intended shape domain do not concern admissible lower source rows or refute raw LC.",
+  "mathematical_values_recomputed": false
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovRowRationalMFFD.lean:28:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2191((n - j - 1).choose s)\nin the target expression\n  Polynomial.map (Int.castRingHom \u211a) \u2191((j + 3).choose (j - s)) *\n          Polynomial.map (Int.castRingHom \u211a) \u2191((n - j - 1).choose s) *\n        X ^ s *\n      (X + 1) ^ (j - s) =\n    \u2191((j + 3).choose (j - s)) * C (choosePolyM0D3 (\u2191n - \u2191j - 1) s) * X ^ s * (X + 1) ^ (j - s)\n\nn j : \u2115\nhn : j + 1 \u2264 n\ns : \u2115\nhs : s \u2208 range (j + 1)\n\u22a2 Polynomial.map (Int.castRingHom \u211a) \u2191((j + 3).choose (j - s)) *\n          Polynomial.map (Int.castRingHom \u211a) \u2191((n - j - 1).choose s) *\n        X ^ s *\n      (X + 1) ^ (j - s) =\n    \u2191((j + 3).choose (j - s)) * C (choosePolyM0D3 (\u2191n - \u2191j - 1) s) * X ^ s * (X + 1) ^ (j - s)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovRowRationalMFFD": "5ba5b45b086dabdc9da72303cb54035892c610d33a4457ae5bc06ff95f057d6c"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ffd747f5/MarkovRowRationalMFFD.olean",
+    "/Users/sasha/math_gkm/research/MarkovRowRationalMFFD.lean"
+  ],
+  "seconds": 14.69674445799319,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

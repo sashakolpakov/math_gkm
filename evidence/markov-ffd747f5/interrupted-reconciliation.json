@@ -1,0 +1,48 @@
+{
+  "raw_events_sha256": "f26a2c44e1c582df45136f91eb1a4106cde5ef09afb0641e8c6f1ec1fb9ea788",
+  "event_count": 219,
+  "last_four_events": [
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_113",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc \"env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 -c 'from pathlib import Path;import json,hashlib;p=Path(\\\"evidence/markov-e9cdd527\\\");b=json.loads((p/\\\"before.json\\\").read_text());bad=[f for f,h in b.items() if hashlib.sha256(Path(f).read_bytes()).hexdigest()\"'!=h];print({\"snapshotted_inputs\":len(b),\"changed\":bad})'\"'\"",
+        "aggregated_output": "{'snapshotted_inputs': 6531, 'changed': []}\n",
+        "exit_code": 0,
+        "status": "completed"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_114",
+        "type": "agent_message",
+        "text": "The unchanged-input check passed for all 6,531 snapshotted files. All twelve selected modules compiled; their combined replay and axiom audit are still running under bounded timeouts. I\u2019ll report those outcomes exactly and keep completion null.\n"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_110",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/audit_e9cdd527.py'",
+        "aggregated_output": "{\"receipt\": \"evidence/markov-e9cdd527/build-1792180597571888000.json\", \"returncode\": null, \"timeout\": true, \"seconds\": 100.37072212499334, \"stdout\": \"None\"}\nTraceback (most recent call last):\n  File \"/Users/sasha/math_gkm/research/audit_e9cdd527.py\", line 16, in <module>\n    assert match or empty,n\n           ^^^^^^^^^^^^^^\nAssertionError: fib_raw_extendedME9C\n",
+        "exit_code": 1,
+        "status": "failed"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_109",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/validate_e9cdd527.py replay 100 MarkovLowDifferenceME9C MarkovLowForceME9C MarkovLowSolutionsME9C MarkovLowSourceME9C MarkovLowLCME9C MarkovLowResidualME9C MarkovLowLimitME9C MarkovLowKernelLimitME9C MarkovLowerUniformME9C MarkovLowerShapeME9C MarkovLowerReductionME9C MarkovLowerDomainME9C'",
+        "aggregated_output": "{\"receipt\": \"evidence/markov-e9cdd527/replay-1792180597567945000.json\", \"returncode\": null, \"timeout\": true, \"seconds\": 100.48190745798638, \"stdout\": \"None\"}\n",
+        "exit_code": 1,
+        "status": "failed"
+      }
+    }
+  ],
+  "reconciliation": "Read raw final events: twelve modules built; final combined replay and axiom audit timed out, earlier source-input check passed. Worker 157 subsequently replayed/audited those twelve modules; its hash-verified receipts remain unchanged. No interrupted mutation is replayed; this run pursues the new lower-row factorization."
+}
