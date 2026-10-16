@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovWordConjugacyM10D.lean:18:77: error: unsolved goals\ncase false.fst\nz : BiPoly \u00d7 BiPoly\n\u22a2 Bivariate.swap (C X) * Bivariate.swap z.1 + Bivariate.swap (C X) * Bivariate.swap X * Bivariate.swap z.2 =\n    Bivariate.swap z.1 * X + Bivariate.swap z.2 * X * C X\n\ncase false.snd\nz : BiPoly \u00d7 BiPoly\n\u22a2 Bivariate.swap X = C X \u2228 z.2 = 0\n\ncase true.fst\nz : BiPoly \u00d7 BiPoly\n\u22a2 Bivariate.swap (C X) * Bivariate.swap z.1 + Bivariate.swap (C X) * Bivariate.swap X * Bivariate.swap z.2 +\n      Bivariate.swap z.1 =\n    Bivariate.swap z.1 + Bivariate.swap z.1 * X + Bivariate.swap z.2 * X * C X\n\ncase true.snd\nz : BiPoly \u00d7 BiPoly\n\u22a2 Bivariate.swap X = C X \u2228 z.2 = 0\n/Users/sasha/math_gkm/research/MarkovWordConjugacyM10D.lean:44:3: error: Type mismatch: After simplification, term\n  pairScale_initialM10D\n has type\n  PairScaleM10D 0 (X, 1) (X * (C X + 1), 1)\nbut is expected to have type\n  PairScaleM10D 0 (Bivariate.swap (C X), 1) (X * (C X + 1), 1)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovWordConjugacyM10D": "2e5d520b0b967fa438a478bee212850c42d0881d558eb5f1df555a0d7a51d695"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-10d15751/MarkovWordConjugacyM10D.olean",
+    "/Users/sasha/math_gkm/research/MarkovWordConjugacyM10D.lean"
+  ],
+  "seconds": 4.461006917001214,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

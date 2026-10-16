@@ -1,0 +1,382 @@
+{
+  "worker": 126,
+  "request": "10d1575180b64743bae4589161aa0716",
+  "created_at_utc": "2026-10-16T05:24:39.084152+00:00",
+  "scope": {
+    "integral_substitution": "rowScale U=U*(V+1)^2; rowScale V=V; after raw-coordinate swap.",
+    "generic_pair_hypothesis": "PairScale k raw res requires phi(raw.Q)=h^(k+1)res.F and phi(raw.P)=h^k res.H.",
+    "all_word_range": "Every Boolean tail w after initial false; k=w.length; raw gas pair uses expand80(false::w), residual pair uses original false::w.",
+    "all_source_identity": "For every path and natural j: h^(2j)*horizontal raw slice=h^(b-1)*horizontal residual.",
+    "both_factorization_ranges": "Low2j<=k gives raw=h^(k-2j)residual; highk<=2j gives residual=h^(2j-k)raw. Both include equality and zero rows.",
+    "auxiliary_prefix_failure": "For all n>=9, path false^(n+1)++[true] has labels2/(2n+5), prefixlengthn+4, Frow2 coefficients[2,5,n+4] atinnerindices1,2,3 and strict reversedLC.",
+    "raw_prefix_failure": "W=[A,B,B,B,B,B,A,B,B], count7,length9, rawWord.b at(4,4),(5,3),(6,2)=[10,14,20], allInPolygon7 9, strict reversedLC.",
+    "source_exclusion": "badPrefix_not_sourceM10D proves W is no sourceWord28 path.",
+    "formal_negation": "Negation of all-source-prefix WeakLC(counttrue,length,rawWord.b), not negation ofConjecture63.",
+    "actual_sources": "Actual7/9 atsamepoints[4,12,20] satisfiesLC; enclosingactual11/13 haszeros outsideits polygon.",
+    "new_raw_lc_region": false,
+    "new_root_equivalence": false,
+    "root_refuted": false,
+    "inherited_root_equivalence": "Conjecture63 iff InteriorCore63MF8"
+  },
+  "new_modules": [
+    {
+      "module": "MarkovPrefixObstructionM10D",
+      "sha256": "08d43551c17f8d726abd447cc71ead414a56d6c7032b1fcfea399bd34f7b37c2",
+      "imports": [
+        "MarkovAtomicSupportMEA423",
+        "MarkovVerticalBlockWordMDE6"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "hstateM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "hstate_nilM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "hstate_appendM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "hstate_run_lowM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "hstate_run_BA_rowM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "hstate_run_BA_tripleM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "hstate_run_BA_failureM10D"
+        }
+      ],
+      "theorem_statements": [
+        "theorem hstate_nilM10D : hstateM10D []=(1,0)",
+        "theorem hstate_appendM10D (w : List Bool) (r : Bool) :\n hstateM10D (w++[r])=hstepMEA423 (hstateM10D w) r",
+        "theorem hstate_run_lowM10D (n : ℕ) :\n let z := hstateM10D (List.replicate (n+2) false)\n z.1.coeff 0=0 ∧ z.2.coeff 0=1 ∧\n z.1.coeff 1=X ∧ z.2.coeff 1=1+(n+1:ℤ[X])*X",
+        "theorem hstate_run_BA_rowM10D (n : ℕ) :\n ((hstateM10D (List.replicate (n+2) false++[true,false])).1).coeff 2=\n 2*X+5*X^2+(n+4:ℤ[X])*X^3",
+        "theorem hstate_run_BA_tripleM10D (n : ℕ) :\n let f := (hstateM10D (List.replicate (n+2) false++[true,false])).1\n coeff f 2 1=2 ∧ coeff f 2 2=5 ∧ coeff f 2 3=(n:ℤ)+4",
+        "theorem hstate_run_BA_failureM10D (n : ℕ) (hn : 9≤n) :\n let f := (hstateM10D (List.replicate (n+2) false++[true,false])).1\n coeff f 2 2^2 < coeff f 2 1*coeff f 2 3"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovPrefixScopeM10D",
+      "sha256": "5681c4c9d8920c9310f59725f58a7771697b6424e116dbd9f8f75f14ab616052",
+      "imports": [
+        "MarkovRawPrefixM10D"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_seven_nine_tripleM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_seven_nine_validM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_eleven_thirteen_zeroM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "prefix_weakLC_failureM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "universal_source_prefix_failureM10D"
+        }
+      ],
+      "theorem_statements": [
+        "theorem source_seven_nine_tripleM10D :\n let p := (frame [true,true,true,false]).mid.p\n coeff p 4 4=4 ∧ coeff p 5 3=12 ∧ coeff p 6 2=20",
+        "theorem source_seven_nine_validM10D :\n let m := (frame [true,true,true,false]).mid\n m.a=7 ∧ m.b=9 ∧ InPolygon m.a m.b 4 4 ∧ InPolygon m.a m.b 5 3 ∧\n InPolygon m.a m.b 6 2 ∧ coeff m.p 4 4*coeff m.p 6 2≤coeff m.p 5 3^2",
+        "theorem source_eleven_thirteen_zeroM10D :\n let p := (frame containingPathM10D).mid.p\n coeff p 4 4=0 ∧ coeff p 5 3=0 ∧ coeff p 6 2=0",
+        "theorem prefix_weakLC_failureM10D : ¬WeakLC 7 9 (rawWord80 badPrefixM10D).b",
+        "theorem universal_source_prefix_failureM10D :\n ¬(∀ (path : List Bool) (n : ℕ),\n   let w := (sourceWord28 path).take n\n   WeakLC (w.count true) w.length (rawWord80 w).b)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovRawConjugacyM10D",
+      "sha256": "3a1ac3d54f12934fe62d47e0308a16e6ba48a8520efced6254f86e2c83e27ac4",
+      "imports": [
+        "MarkovAtomicSupportMEA423"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "rowScaleM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowScale_UM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowScale_VM10D"
+        },
+        {
+          "kind": "def",
+          "name": "rawRowAM10D"
+        },
+        {
+          "kind": "def",
+          "name": "rawRowCM10D"
+        },
+        {
+          "kind": "def",
+          "name": "PairScaleM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "pairScale_initialM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "pairScale_AM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "pairScale_CM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowScale_coeffM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "pairScale_coeffM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "pairScale_highM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "pairScale_lowM10D"
+        }
+      ],
+      "theorem_statements": [
+        "theorem rowScale_UM10D : rowScaleM10D U=U*(V+1)^2",
+        "theorem rowScale_VM10D : rowScaleM10D V=V",
+        "theorem pairScale_initialM10D : PairScaleM10D 0 (U,1) (U*(V+1),1)",
+        "theorem pairScale_AM10D {k : ℕ} {p z : BiPoly × BiPoly}\n (hz : PairScaleM10D k p z) :\n PairScaleM10D (k+1) (rawRowAM10D p) (atomicAMEA423 z)",
+        "theorem pairScale_CM10D {k : ℕ} {p z : BiPoly × BiPoly}\n (hz : PairScaleM10D k p z) :\n PairScaleM10D k (rawRowCM10D p) (atomicCMEA423 z)",
+        "theorem rowScale_coeffM10D (p : BiPoly) (j : ℕ) :\n (rowScaleM10D p).coeff j=(X+1)^(2*j)*p.coeff j",
+        "theorem pairScale_coeffM10D {k : ℕ} {p z : BiPoly × BiPoly}\n (hz : PairScaleM10D k p z) (j : ℕ) :\n (X+1)^(2*j)*p.1.coeff j=(X+1)^(k+1)*z.1.coeff j ∧\n (X+1)^(2*j)*p.2.coeff j=(X+1)^k*z.2.coeff j",
+        "theorem pairScale_highM10D {k : ℕ} {p z : BiPoly × BiPoly}\n (hz : PairScaleM10D k p z) (j : ℕ) (hj : k≤2*j) :\n z.2.coeff j=(X+1)^(2*j-k)*p.2.coeff j",
+        "theorem pairScale_lowM10D {k : ℕ} {p z : BiPoly × BiPoly}\n (hz : PairScaleM10D k p z) (j : ℕ) (hj : 2*j≤k) :\n p.2.coeff j=(X+1)^(k-2*j)*z.2.coeff j"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovRawPrefixM10D",
+      "sha256": "9e2d0040be6e5f23539cc3ba0265d4f1413a7f2b09eeffedb929cc350e62626b",
+      "imports": [
+        "MarkovMechanical3eda",
+        "MarkovSupport725"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "rawAtomicM10D"
+        },
+        {
+          "kind": "def",
+          "name": "rawPairM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "rawPair_appendM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "rawPair_matrixM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "rawPair_sourceM10D"
+        },
+        {
+          "kind": "def",
+          "name": "badPrefixM10D"
+        },
+        {
+          "kind": "def",
+          "name": "containingPathM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "badPrefix_sourceM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "badPrefix_countsM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "badPrefix_not_sourceM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "badPrefix_tripleM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "badPrefix_valid_failureM10D"
+        }
+      ],
+      "theorem_statements": [
+        "theorem rawPair_appendM10D (w : List Bool) (r : Bool) :\n rawPairM10D (w++[r])=rawAtomicM10D (rawPairM10D w) r",
+        "theorem rawPair_matrixM10D (w : List Bool) :\n rawPairM10D w=((gasWord80 U V (1:BiPoly) w).a,(gasWord80 U V (1:BiPoly) w).b)",
+        "theorem rawPair_sourceM10D (path : List Bool) :\n (rawPairM10D (expand80 (sourceWord28 path))).2=(frame path).mid.p",
+        "theorem badPrefix_sourceM10D :\n (sourceWord28 containingPathM10D).take 9=badPrefixM10D ∧\n (frame containingPathM10D).mid.a=11 ∧ (frame containingPathM10D).mid.b=13",
+        "theorem badPrefix_countsM10D : badPrefixM10D.count true=7 ∧ badPrefixM10D.length=9",
+        "theorem badPrefix_not_sourceM10D (path : List Bool) : sourceWord28 path≠badPrefixM10D",
+        "theorem badPrefix_tripleM10D :\n coeff (rawPairM10D (expand80 badPrefixM10D)).2 4 4=10 ∧\n coeff (rawPairM10D (expand80 badPrefixM10D)).2 5 3=14 ∧\n coeff (rawPairM10D (expand80 badPrefixM10D)).2 6 2=20",
+        "theorem badPrefix_valid_failureM10D :\n InPolygon 7 9 4 4 ∧ InPolygon 7 9 5 3 ∧ InPolygon 7 9 6 2 ∧\n coeff (rawWord80 badPrefixM10D).b 5 3^2 <\n coeff (rawWord80 badPrefixM10D).b 4 4*coeff (rawWord80 badPrefixM10D).b 6 2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovSourceConjugacyM10D",
+      "sha256": "f836516b140bd71fa3525276911984cbc4b98e131149a10b97a0da8ba0f4cdb8",
+      "imports": [
+        "MarkovWordConjugacyM10D"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_raw_residual_clearedM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_raw_high_quotientM10D"
+        }
+      ],
+      "theorem_statements": [
+        "theorem source_raw_residual_clearedM10D (path : List Bool) (j : ℕ) :\n (X+1)^(2*j)*(Bivariate.swap (frame path).mid.p).coeff j=\n (X+1)^((frame path).mid.b-1)*hresidualM511 (X:ℤ[X]) (sourceWord28 path) j",
+        "theorem source_raw_high_quotientM10D (path : List Bool) (j : ℕ)\n (hj : (frame path).mid.b≤2*j+1) :\n hresidualM511 (X:ℤ[X]) (sourceWord28 path) j=\n (X+1)^(2*j+1-(frame path).mid.b)*(Bivariate.swap (frame path).mid.p).coeff j"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovSourcePrefixM10D",
+      "sha256": "d6714202b85bf484efe81f6534fb4ffed7a49b4ae783f6bf042682ad42513d61",
+      "imports": [
+        "MarkovPrefixObstructionM10D"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_two_wordM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_prefixM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_prefix_takeM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "actual_source_prefix_F_failureM10D"
+        }
+      ],
+      "theorem_statements": [
+        "theorem source_two_wordM10D (n : ℕ) :\n sourceWord28 (List.replicate n false++[true])=\n runBlock025 (n+1)++runBlock025 n",
+        "theorem source_two_prefixM10D (n : ℕ) :\n sourceWord28 (List.replicate (n+1) false++[true])=\n (List.replicate (n+2) false++[true,false])++(List.replicate n false++[true])",
+        "theorem source_two_prefix_takeM10D (n : ℕ) :\n (sourceWord28 (List.replicate (n+1) false++[true])).take (n+4)=\n List.replicate (n+2) false++[true,false]",
+        "theorem actual_source_prefix_F_failureM10D (n : ℕ) (hn : 9≤n) :\n let path := List.replicate (n+1) false++[true]\n let f := (hstateM10D ((sourceWord28 path).take (n+4))).1\n (frame path).mid.a=2 ∧ (frame path).mid.b=2*n+5 ∧\n coeff f 2 2^2 < coeff f 2 1*coeff f 2 3"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovWordConjugacyM10D",
+      "sha256": "bd1480cdf5594262b6dd0ab03506323d144a1bb03927e36a71a4ee2abc87e9ec",
+      "imports": [
+        "MarkovRawConjugacyM10D",
+        "MarkovRawPrefixM10D",
+        "MarkovPrefixObstructionM10D"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "swapPairM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap_rawAtomicM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap_raw_word_stepM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "word_pairScaleM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "raw_word_clearedM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "raw_word_highM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "raw_word_lowM10D"
+        }
+      ],
+      "theorem_statements": [
+        "theorem swap_rawAtomicM10D (z : BiPoly × BiPoly) (r : Bool) :\n swapPairM10D (rawAtomicM10D z r)=\n if r then rawRowCM10D (swapPairM10D z) else rawRowAM10D (swapPairM10D z)",
+        "theorem swap_raw_word_stepM10D (w : List Bool) (r : Bool) :\n swapPairM10D (rawPairM10D (expand80 (w++[r])))=\n if r then rawRowCM10D (rawRowAM10D (swapPairM10D (rawPairM10D (expand80 w))))\n else rawRowAM10D (swapPairM10D (rawPairM10D (expand80 w)))",
+        "theorem word_pairScaleM10D (w : List Bool) :\n PairScaleM10D w.length (swapPairM10D (rawPairM10D (expand80 (false::w))))\n   (hstateM10D (false::w))",
+        "theorem raw_word_clearedM10D (w : List Bool) (j : ℕ) :\n (X+1)^(2*j)*(Bivariate.swap (rawWord80 (false::w)).b).coeff j=\n (X+1)^w.length*(hstateM10D (false::w)).2.coeff j",
+        "theorem raw_word_highM10D (w : List Bool) (j : ℕ) (hj : w.length≤2*j) :\n (hstateM10D (false::w)).2.coeff j=\n (X+1)^(2*j-w.length)*(Bivariate.swap (rawWord80 (false::w)).b).coeff j",
+        "theorem raw_word_lowM10D (w : List Bool) (j : ℕ) (hj : 2*j≤w.length) :\n (Bivariate.swap (rawWord80 (false::w)).b).coeff j=\n (X+1)^(w.length-2*j)*(hstateM10D (false::w)).2.coeff j"
+      ],
+      "raw_forbidden_flags": []
+    }
+  ],
+  "new_counts": {
+    "def": 10,
+    "theorem": 40
+  },
+  "per_module_counts": {
+    "MarkovPrefixObstructionM10D": {
+      "def": 1,
+      "theorem": 6
+    },
+    "MarkovPrefixScopeM10D": {
+      "theorem": 5
+    },
+    "MarkovRawConjugacyM10D": {
+      "def": 4,
+      "theorem": 9
+    },
+    "MarkovRawPrefixM10D": {
+      "def": 4,
+      "theorem": 8
+    },
+    "MarkovSourceConjugacyM10D": {
+      "theorem": 2
+    },
+    "MarkovSourcePrefixM10D": {
+      "theorem": 4
+    },
+    "MarkovWordConjugacyM10D": {
+      "def": 1,
+      "theorem": 6
+    }
+  }
+}

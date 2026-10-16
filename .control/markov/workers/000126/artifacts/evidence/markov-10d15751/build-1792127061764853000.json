@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSourcePrefixM10D.lean:12:20: warning: This simp argument is unused:\n  wordPairStep774\n\nHint: Omit it from the simp argument list.\n  simp [\u0335s\u0335o\u0335u\u0335r\u0335c\u0335e\u0335W\u0335o\u0335r\u0335d\u03352\u03358\u0335,\u0335w\u0335o\u0335r\u0335d\u0335P\u0335a\u0335i\u0335r\u0335S\u0335t\u0335e\u0335p\u03357\u03357\u03354\u0335,\u0335b\u0335l\u0335o\u0335c\u0335k\u0335S\u0335u\u0335b\u03350\u03352\u03355\u0335]\u0335[\u0332s\u0332o\u0332u\u0332r\u0332c\u0332e\u0332W\u0332o\u0332r\u0332d\u03322\u03328\u0332,\u0332 \u0332b\u0332l\u0332o\u0332c\u0332k\u0332S\u0332u\u0332b\u03320\u03322\u03325\u0332]\u0332\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovSourcePrefixM10D.lean:24:77: error: No goals to be solved\n/Users/sasha/math_gkm/research/MarkovSourcePrefixM10D.lean:36:8: error: Application type mismatch: The argument\n  hi.left\nhas type\n  (advance\n          (List.foldl advance\n            { lo := { a := 0, b := 1, p := 1 }, mid := { a := 1, b := 2, p := (U + V) ^ 2 + U },\n              hi := { a := 1, b := 1, p := U + V } }\n            (List.replicate (n + 1) false))\n          true).mid.a =\n    2\nbut is expected to have type\n  (frame (List.replicate (n + 1) false ++ [true])).mid.a = 2\nin the application\n  And.intro hi.left\n/Users/sasha/math_gkm/research/MarkovSourcePrefixM10D.lean:36:16: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b \u2265 0\n  a \u2265 9\n  a \u2265 -2\n  2*a - b \u2265 -4\nwhere\n a := \u2191n\n b := \u2191(frame (List.replicate (n + 1) false ++ [true])).mid.b\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSourcePrefixM10D": "0ddb0a08e97239649f65a4632bf5b5b6b38c637eca845cab525d0f7ba3c4c0c7"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-10d15751/MarkovSourcePrefixM10D.olean",
+    "/Users/sasha/math_gkm/research/MarkovSourcePrefixM10D.lean"
+  ],
+  "seconds": 4.011930500040762,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

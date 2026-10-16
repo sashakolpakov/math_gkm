@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovRawConjugacyM10D.lean:62:14: error: Tactic `rfl` failed: The left-hand side\n  a * (X + 1) ^ (2 * j)\nis not definitionally equal to the right-hand side\n  (X + 1) ^ (2 * j) * a\n\ncase pos\nj : \u2115\na : \u2124[X]\nhe : (X * (C X + 1) ^ 2) ^ j = C ((X + 1) ^ (2 * j)) * X ^ j\nh\u271d : j = j\n\u22a2 a * (X + 1) ^ (2 * j) = (X + 1) ^ (2 * j) * a\n/Users/sasha/math_gkm/research/MarkovRawConjugacyM10D.lean:63:3: error: unsolved goals\ncase neg\nj n : \u2115\na : \u2124[X]\nhe : (X * (C X + 1) ^ 2) ^ n = C ((X + 1) ^ (2 * n)) * X ^ n\nhn : j = n\nh\u271d : \u00acn = j\n\u22a2 a = 0 \u2228 X + 1 = 0 \u2227 \u00acn = 0\n/Users/sasha/math_gkm/research/MarkovRawConjugacyM10D.lean:53:16: error: unsolved goals\ncase pos\nj n : \u2115\na : \u2124[X]\nhe : (X * (C X + 1) ^ 2) ^ n = C ((X + 1) ^ (2 * n)) * X ^ n\nhn : \u00acj = n\nh\u271d : n = j\n\u22a2 0 = (X + 1) ^ (2 * j) * a\n\ncase neg\nj n : \u2115\na : \u2124[X]\nhe : (X * (C X + 1) ^ 2) ^ n = C ((X + 1) ^ (2 * n)) * X ^ n\nhn : \u00acj = n\nh\u271d : \u00acn = j\n\u22a2 0 = (X + 1) ^ (2 * j) * 0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovRawConjugacyM10D": "2daff8f4586107102435f171edec988a68e535cd0b228bb8cea438bcde6bea87"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-10d15751/MarkovRawConjugacyM10D.olean",
+    "/Users/sasha/math_gkm/research/MarkovRawConjugacyM10D.lean"
+  ],
+  "seconds": 19.922144083015155,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

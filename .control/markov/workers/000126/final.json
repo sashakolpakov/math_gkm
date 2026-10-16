@@ -1,0 +1,24 @@
+{
+  "actions": [
+    "Reconciled 97 latest artifacts and 1,355 interrupted-worker artifacts: evidence/markov-10d15751/reconciliation.json.",
+    "Compiled and kernel-replayed seven mathematical modules; audited 40 theorem closures: evidence/markov-10d15751/validation.json.",
+    "Executed exact recurrence and prefix experiments, retaining zeros: evidence/markov-10d15751/raw-prefix-scope-experiments.json.",
+    "Verified 93 artifact hashes, 5,415 unchanged prior inputs, and pinned root/contract hashes: evidence/markov-10d15751/final-check.json and last-verification.json."
+  ],
+  "agenda": [
+    "Investigate aggregated gap inequalities using the integral raw pair recurrence; individual mixed terms can be negative.",
+    "Avoid the refuted prefix invariants. See research/markov-10d15751-next.md.",
+    "Retain every unresolved region in research/MarkovResidualMF8.lean and discharge all correspondence obligations before root closure."
+  ],
+  "completion": null,
+  "observations": [
+    "Proved integral raw/residual conjugacy and an all-path source adapter, including both factorization ranges: research/MarkovWordConjugacyM10D.lean and research/MarkovSourceConjugacyM10D.lean. No new source LC region was proved.",
+    "Proved auxiliary F-prefix failure for every source 2/(2n+5), n≥9, with triple [2,5,n+4]: research/MarkovSourcePrefixM10D.lean.",
+    "Proved a polygon-valid raw-prefix failure [10,14,20], and proved that prefix is not any source word. The actual 7/9 triple [4,12,20] satisfies LC. This refutes a prefix enlargement, not Conjecture63: research/MarkovRawPrefixM10D.lean and research/MarkovPrefixScopeM10D.lean.",
+    "The zero-inclusive prefix scan made 11,447,217 comparisons and found 257 diagonal failures, none at completed source words. These experiments are not proofs.",
+    "All audited closures use permitted axioms. Compiled imports were reused; no whole-source rebuild or independent completion audit occurred. Scope: research/markov-10d15751-correspondence.md.",
+    "Preserved eight unsuccessful build receipts and a corrected axiom-parser rejection. Scratch was policy-denied and Sage unavailable. All foreground executions ended: research/markov-10d15751-operational.md."
+  ],
+  "request_id": "10d1575180b64743bae4589161aa0716",
+  "summary": "Proved an integral raw/residual bridge and refuted two proposed prefix invariants. Full pinned Conjecture63 remains unresolved."
+}

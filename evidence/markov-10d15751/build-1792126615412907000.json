@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovPrefixObstructionM10D.lean:30:8: error: unsolved goals\ncase zero\nh : hstateM10D [false] = hstepMEA423 (1, 0) false\n\u22a2 Polynomial.coeff (hstateM10D (List.replicate 2 false)).2 0 = 1 \u2227\n    Polynomial.coeff (hstateM10D (List.replicate 2 false)).1 1 = X \u2227\n      Polynomial.coeff (hstateM10D (List.replicate 2 false)).2 1 = 1 + X\n/Users/sasha/math_gkm/research/MarkovPrefixObstructionM10D.lean:48:11: error: Application type mismatch: The argument\n  rfl\nhas type\n  ?m.235 = ?m.235\nbut is expected to have type\n  True\nin the application\n  And.intro rfl\n/Users/sasha/math_gkm/research/MarkovPrefixObstructionM10D.lean:48:23: error: unsolved goals\nn : \u2115\nhe : List.replicate (n + 1 + 2) false = List.replicate (n + 2) false ++ [false]\nh0 : Polynomial.coeff (hstateM10D (List.replicate (n + 2) false)).1 0 = 0\ng0 : Polynomial.coeff (hstateM10D (List.replicate (n + 2) false)).2 0 = 1\nh1 : Polynomial.coeff (hstateM10D (List.replicate (n + 2) false)).1 1 = X\ng1 : Polynomial.coeff (hstateM10D (List.replicate (n + 2) false)).2 1 = 1 + (\u2191n + 1) * X\n\u22a2 X + 1 = 0 \u2228 Polynomial.coeff (hstateM10D (List.replicate (n + 2) false)).1 0 = 0\n/Users/sasha/math_gkm/research/MarkovPrefixObstructionM10D.lean:59:1: error: `dsimp` made no progress\n/Users/sasha/math_gkm/research/MarkovPrefixObstructionM10D.lean:71:56: error: unsolved goals\nn : \u2115\n\u22a2 ((\u2191n + 4) * X ^ 3).coeff 1 = 0 \u2227\n    2 * X.coeff 2 + 5 + ((\u2191n + 4) * X ^ 3).coeff 2 = 5 \u2227 2 * X.coeff 3 + ((\u2191n + 4) * X ^ 3).coeff 3 = \u2191n + 4\n/Users/sasha/math_gkm/research/MarkovPrefixObstructionM10D.lean:85:1: error: `dsimp` made no progress\n",
+  "stderr": "",
+  "modules": {
+    "MarkovPrefixObstructionM10D": "12a491170f0a90d8def33bd11fd66b67e3ede32fff90f9f78104e3a0b00673f2"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-10d15751/MarkovPrefixObstructionM10D.olean",
+    "/Users/sasha/math_gkm/research/MarkovPrefixObstructionM10D.lean"
+  ],
+  "seconds": 31.1089780839975,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovPrefixObstructionM10D.lean:30:8: error: unsolved goals\ncase zero\nh : hstateM10D [false] = hstepMEA423 (1, 0) false\n\u22a2 X + 1 = 1 + X\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovPrefixObstructionM10D.lean:55:29: error: unsolved goals\nn : \u2115\nhe : List.replicate (n + 2) false ++ [true, false] = List.replicate (n + 2) false ++ [true] ++ [false]\nh0 : Polynomial.coeff (hstateM10D (List.replicate (n + 2) false)).1 0 = 0\ng0 : Polynomial.coeff (hstateM10D (List.replicate (n + 2) false)).2 0 = 1\nh1 : Polynomial.coeff (hstateM10D (List.replicate (n + 2) false)).1 1 = X\ng1 : Polynomial.coeff (hstateM10D (List.replicate (n + 2) false)).2 1 = 1 + (\u2191n + 1) * X\n\u22a2 X *\n                      Polynomial.coeff\n                        (C X * (hstateM10D (List.replicate (2 + n) false)).1 * 2 +\n                            C X ^ 2 * (hstateM10D (List.replicate (2 + n) false)).1 +\n                          (hstateM10D (List.replicate (2 + n) false)).1)\n                        0 *\n                    2 +\n                  X *\n                    Polynomial.coeff\n                      (C X * (hstateM10D (List.replicate (2 + n) false)).2 * 2 +\n                        C X ^ 2 * (hstateM10D (List.replicate (2 + n) false)).2)\n                      0 +\n                X *\n                  Polynomial.coeff\n                    (C X * (hstateM10D (List.replicate (2 + n) false)).2 +\n                      C X ^ 2 * (hstateM10D (List.replicate (2 + n) false)).2)\n                    0 +\n              X ^ 2 +\n            X ^ 3 * 2 +\n          X ^ 3 * \u2191n +\n        Polynomial.coeff\n          (C X * (hstateM10D (List.replicate (2 + n) false)).1 * 2 +\n              C X ^ 2 * (hstateM10D (List.replicate (2 + n) false)).1 +\n            (hstateM10D (List.replicate (2 + n) false)).1)\n          0 +\n      Polynomial.coeff\n        (C X * (hstateM10D (List.replicate (2 + n) false)).2 * 2 +\n          C X ^ 2 * (hstateM10D (List.replicate (2 + n) false)).2)\n        0 =\n    X * 2 + X ^ 2 * 5 + X ^ 3 * 4 + X ^ 3 * \u2191n\n/Users/sasha/math_gkm/research/MarkovPrefixObstructionM10D.lean:71:56: error: unsolved goals\nn : \u2115\n\u22a2 ((\u2191n + 4) * X ^ 3).coeff 1 = 0 \u2227 ((\u2191n + 4) * X ^ 3).coeff 2 = 0 \u2227 ((\u2191n + 4) * X ^ 3).coeff 3 = \u2191n + 4\n",
+  "stderr": "",
+  "modules": {
+    "MarkovPrefixObstructionM10D": "0f687787238e8d8d164cd1921ebebb33f864421f48654b21707363dd76719122"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-10d15751/MarkovPrefixObstructionM10D.olean",
+    "/Users/sasha/math_gkm/research/MarkovPrefixObstructionM10D.lean"
+  ],
+  "seconds": 19.056535792013165,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

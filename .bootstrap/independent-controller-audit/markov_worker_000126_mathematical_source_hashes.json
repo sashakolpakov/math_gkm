@@ -1,0 +1,767 @@
+{
+  "worker": 126,
+  "request": "10d1575180b64743bae4589161aa0716",
+  "created_at_utc": "2026-10-16T05:24:39.084152+00:00",
+  "scope": "Completed-source parsing, hashes and integer index/domain/word-prefix counts only. No project code, coefficients, matrices, recurrences, inequalities/gaps, proof/checker/replay or experiment execution.",
+  "new_math": [
+    {
+      "module": "MarkovPrefixObstructionM10D",
+      "path": "research/MarkovPrefixObstructionM10D.lean",
+      "archive_sha256": "08d43551c17f8d726abd447cc71ead414a56d6c7032b1fcfea399bd34f7b37c2",
+      "current_sha256": "08d43551c17f8d726abd447cc71ead414a56d6c7032b1fcfea399bd34f7b37c2",
+      "bytes": 3858,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "hstateM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "hstate_nilM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "hstate_appendM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "hstate_run_lowM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "hstate_run_BA_rowM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "hstate_run_BA_tripleM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "hstate_run_BA_failureM10D"
+        }
+      ]
+    },
+    {
+      "module": "MarkovPrefixScopeM10D",
+      "path": "research/MarkovPrefixScopeM10D.lean",
+      "archive_sha256": "5681c4c9d8920c9310f59725f58a7771697b6424e116dbd9f8f75f14ab616052",
+      "current_sha256": "5681c4c9d8920c9310f59725f58a7771697b6424e116dbd9f8f75f14ab616052",
+      "bytes": 2248,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_seven_nine_tripleM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_seven_nine_validM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_eleven_thirteen_zeroM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "prefix_weakLC_failureM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "universal_source_prefix_failureM10D"
+        }
+      ]
+    },
+    {
+      "module": "MarkovRawConjugacyM10D",
+      "path": "research/MarkovRawConjugacyM10D.lean",
+      "archive_sha256": "3a1ac3d54f12934fe62d47e0308a16e6ba48a8520efced6254f86e2c83e27ac4",
+      "current_sha256": "3a1ac3d54f12934fe62d47e0308a16e6ba48a8520efced6254f86e2c83e27ac4",
+      "bytes": 3694,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "rowScaleM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowScale_UM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowScale_VM10D"
+        },
+        {
+          "kind": "def",
+          "name": "rawRowAM10D"
+        },
+        {
+          "kind": "def",
+          "name": "rawRowCM10D"
+        },
+        {
+          "kind": "def",
+          "name": "PairScaleM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "pairScale_initialM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "pairScale_AM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "pairScale_CM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "rowScale_coeffM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "pairScale_coeffM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "pairScale_highM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "pairScale_lowM10D"
+        }
+      ]
+    },
+    {
+      "module": "MarkovRawPrefixM10D",
+      "path": "research/MarkovRawPrefixM10D.lean",
+      "archive_sha256": "9e2d0040be6e5f23539cc3ba0265d4f1413a7f2b09eeffedb929cc350e62626b",
+      "current_sha256": "9e2d0040be6e5f23539cc3ba0265d4f1413a7f2b09eeffedb929cc350e62626b",
+      "bytes": 3012,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "rawAtomicM10D"
+        },
+        {
+          "kind": "def",
+          "name": "rawPairM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "rawPair_appendM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "rawPair_matrixM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "rawPair_sourceM10D"
+        },
+        {
+          "kind": "def",
+          "name": "badPrefixM10D"
+        },
+        {
+          "kind": "def",
+          "name": "containingPathM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "badPrefix_sourceM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "badPrefix_countsM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "badPrefix_not_sourceM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "badPrefix_tripleM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "badPrefix_valid_failureM10D"
+        }
+      ]
+    },
+    {
+      "module": "MarkovSourceConjugacyM10D",
+      "path": "research/MarkovSourceConjugacyM10D.lean",
+      "archive_sha256": "f836516b140bd71fa3525276911984cbc4b98e131149a10b97a0da8ba0f4cdb8",
+      "current_sha256": "f836516b140bd71fa3525276911984cbc4b98e131149a10b97a0da8ba0f4cdb8",
+      "bytes": 1539,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_raw_residual_clearedM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_raw_high_quotientM10D"
+        }
+      ]
+    },
+    {
+      "module": "MarkovSourcePrefixM10D",
+      "path": "research/MarkovSourcePrefixM10D.lean",
+      "archive_sha256": "d6714202b85bf484efe81f6534fb4ffed7a49b4ae783f6bf042682ad42513d61",
+      "current_sha256": "d6714202b85bf484efe81f6534fb4ffed7a49b4ae783f6bf042682ad42513d61",
+      "bytes": 1598,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_two_wordM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_prefixM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_prefix_takeM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "actual_source_prefix_F_failureM10D"
+        }
+      ]
+    },
+    {
+      "module": "MarkovWordConjugacyM10D",
+      "path": "research/MarkovWordConjugacyM10D.lean",
+      "archive_sha256": "bd1480cdf5594262b6dd0ab03506323d144a1bb03927e36a71a4ee2abc87e9ec",
+      "current_sha256": "bd1480cdf5594262b6dd0ab03506323d144a1bb03927e36a71a4ee2abc87e9ec",
+      "bytes": 3325,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "swapPairM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap_rawAtomicM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap_raw_word_stepM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "word_pairScaleM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "raw_word_clearedM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "raw_word_highM10D"
+        },
+        {
+          "kind": "theorem",
+          "name": "raw_word_lowM10D"
+        }
+      ]
+    }
+  ],
+  "named_inherited": [
+    {
+      "module": "MarkovAtomicSupportMEA423",
+      "path": "research/MarkovAtomicSupportMEA423.lean",
+      "sha256": "4139e85b48c5b7bdc105b4f23d8717449bf51b30bb66b40b5c47bed866c67741",
+      "previously_bound_sha256": "4139e85b48c5b7bdc105b4f23d8717449bf51b30bb66b40b5c47bed866c67741",
+      "current_graph_member": true,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "hgood_lower_addMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "outer_VMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "outer_smoothMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "coeff_smooth_posMEA423"
+        },
+        {
+          "kind": "def",
+          "name": "PairGoodMEA423"
+        },
+        {
+          "kind": "def",
+          "name": "hmixMEA423"
+        },
+        {
+          "kind": "def",
+          "name": "atomicAMEA423"
+        },
+        {
+          "kind": "def",
+          "name": "atomicCMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_sum_topMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_mix_goodMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_initialMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_step_AMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_step_CMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "atomic_BMEA423"
+        }
+      ],
+      "note": "Exact named completed counterpart; not rebuilt or replayed."
+    },
+    {
+      "module": "MarkovHorizontalAllOrderM511",
+      "path": "research/MarkovHorizontalAllOrderM511.lean",
+      "sha256": "459e663cc8c4c7e809610730d18df63b3e6600c8604cb579631a4946cc58caf1",
+      "previously_bound_sha256": "459e663cc8c4c7e809610730d18df63b3e6600c8604cb579631a4946cc58caf1",
+      "current_graph_member": true,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "horizontal_all_order_clearedM511"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_all_order_factorM511"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_binomial_dvdM511"
+        }
+      ],
+      "note": "Exact named completed counterpart; not rebuilt or replayed."
+    },
+    {
+      "module": "MarkovHorizontalPairMEA423",
+      "path": "research/MarkovHorizontalPairMEA423.lean",
+      "sha256": "9efd1b8bed6bf64dc4db497e60baa9713ee64857c8dd3ac643b6847382f3c0fe",
+      "previously_bound_sha256": "9efd1b8bed6bf64dc4db497e60baa9713ee64857c8dd3ac643b6847382f3c0fe",
+      "current_graph_member": true,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "hpairMEA423"
+        },
+        {
+          "kind": "def",
+          "name": "hstepMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "hpair_mulMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "hgood_stepMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "hpair_word_goodMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_residual_goodMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_residual_filledMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_residual_boundMEA423"
+        }
+      ],
+      "note": "Exact named completed counterpart; not rebuilt or replayed."
+    },
+    {
+      "module": "MarkovMechanical3eda",
+      "path": "research/MarkovMechanical3eda.lean",
+      "sha256": "de355dfd7b2611c5db374ed1be35c99f4eb9afd57fa851963eb14410a78d3f29",
+      "previously_bound_sha256": "de355dfd7b2611c5db374ed1be35c99f4eb9afd57fa851963eb14410a78d3f29",
+      "current_graph_member": true,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_word_exact3eda"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_take_floor3eda"
+        }
+      ],
+      "note": "Exact named completed counterpart; not rebuilt or replayed."
+    },
+    {
+      "module": "MarkovPalindrome28b1",
+      "path": "research/MarkovPalindrome28b1.lean",
+      "sha256": "d110c5a1bae5c7457cea27ba844ec34f587b4df13a1666ea5a727fe9987ea2e8",
+      "previously_bound_sha256": "d110c5a1bae5c7457cea27ba844ec34f587b4df13a1666ea5a727fe9987ea2e8",
+      "current_graph_member": true,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "subst28"
+        },
+        {
+          "kind": "theorem",
+          "name": "subst_append28"
+        },
+        {
+          "kind": "theorem",
+          "name": "subst_fold28"
+        },
+        {
+          "kind": "def",
+          "name": "sourceWord28"
+        },
+        {
+          "kind": "theorem",
+          "name": "sourceWord_cons28"
+        },
+        {
+          "kind": "def",
+          "name": "central28"
+        },
+        {
+          "kind": "theorem",
+          "name": "sourceWord_central28"
+        },
+        {
+          "kind": "theorem",
+          "name": "left_palindrome28"
+        },
+        {
+          "kind": "theorem",
+          "name": "right_palindrome28"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_palindrome28"
+        },
+        {
+          "kind": "theorem",
+          "name": "expand_subst28"
+        },
+        {
+          "kind": "def",
+          "name": "gasCore28"
+        },
+        {
+          "kind": "theorem",
+          "name": "gasCore_palindrome28"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_gas_exact28"
+        }
+      ],
+      "note": "Exact named completed counterpart; not rebuilt or replayed."
+    },
+    {
+      "module": "MarkovPolygonWord28b1",
+      "path": "research/MarkovPolygonWord28b1.lean",
+      "sha256": "a8c4a4bccdaad70a22d77daa0cf73824c19aed99b9e7a42bd2d9aa5fff7803ad",
+      "previously_bound_sha256": "a8c4a4bccdaad70a22d77daa0cf73824c19aed99b9e7a42bd2d9aa5fff7803ad",
+      "current_graph_member": true,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "WordLower28"
+        },
+        {
+          "kind": "theorem",
+          "name": "polygon_prefix_floor28"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_word_lower28"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_word_counts28"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_prefix_floor28"
+        }
+      ],
+      "note": "Exact named completed counterpart; not rebuilt or replayed."
+    },
+    {
+      "module": "MarkovResidualMF8",
+      "path": "research/MarkovResidualMF8.lean",
+      "sha256": "3a34a6aaa931d2e8a8f57f829919c11eba841c34c33062df4fa493e00b6a30a8",
+      "previously_bound_sha256": "3a34a6aaa931d2e8a8f57f829919c11eba841c34c33062df4fa493e00b6a30a8",
+      "current_graph_member": false,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "InteriorCore63MF8"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_interiorMF8"
+        }
+      ],
+      "note": "Exact named completed counterpart; not rebuilt or replayed."
+    },
+    {
+      "module": "MarkovSupport725",
+      "path": "research/MarkovSupport725.lean",
+      "sha256": "73c9e6610e6ded76930e997bd7f503d777c9541cfcd9e0e0c9c2095b966835cf",
+      "previously_bound_sha256": "73c9e6610e6ded76930e997bd7f503d777c9541cfcd9e0e0c9c2095b966835cf",
+      "current_graph_member": true,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "Filled725"
+        },
+        {
+          "kind": "def",
+          "name": "Top725"
+        },
+        {
+          "kind": "theorem",
+          "name": "filled_one725"
+        },
+        {
+          "kind": "theorem",
+          "name": "filled_U725"
+        },
+        {
+          "kind": "theorem",
+          "name": "filled_V725"
+        },
+        {
+          "kind": "theorem",
+          "name": "filled_add725"
+        },
+        {
+          "kind": "theorem",
+          "name": "filled_add_lower725"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_add725"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mix725"
+        },
+        {
+          "kind": "def",
+          "name": "fgWord725"
+        },
+        {
+          "kind": "theorem",
+          "name": "fg_good725"
+        },
+        {
+          "kind": "theorem",
+          "name": "fg_matrix725"
+        },
+        {
+          "kind": "theorem",
+          "name": "gas_fg725"
+        },
+        {
+          "kind": "theorem",
+          "name": "gas_filled725"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_filled725"
+        }
+      ],
+      "note": "Exact named completed counterpart; not rebuilt or replayed."
+    },
+    {
+      "module": "MarkovVerticalBlockWordMDE6",
+      "path": "research/MarkovVerticalBlockWordMDE6.lean",
+      "sha256": "715b72d55634bfc28dc0edc11206b8d198dfb0a3559bcf4721394ab0d09daac3",
+      "previously_bound_sha256": "715b72d55634bfc28dc0edc11206b8d198dfb0a3559bcf4721394ab0d09daac3",
+      "current_graph_member": true,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "wordPair_mapMDE6"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_vertical_blocksMDE6"
+        },
+        {
+          "kind": "theorem",
+          "name": "count_notMDE6"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_vertical_indicesMDE6"
+        }
+      ],
+      "note": "Exact named completed counterpart; not rebuilt or replayed."
+    },
+    {
+      "module": "MathGKM.Markov",
+      "path": "MathGKM/Markov.lean",
+      "sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "previously_bound_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "current_graph_member": true,
+      "declarations": [
+        {
+          "kind": "abbrev",
+          "name": "BiPoly"
+        },
+        {
+          "kind": "def",
+          "name": "U"
+        },
+        {
+          "kind": "def",
+          "name": "V"
+        },
+        {
+          "kind": "def",
+          "name": "S"
+        },
+        {
+          "kind": "def",
+          "name": "coeff"
+        },
+        {
+          "kind": "def",
+          "name": "initial"
+        },
+        {
+          "kind": "def",
+          "name": "advance"
+        },
+        {
+          "kind": "def",
+          "name": "frame"
+        },
+        {
+          "kind": "def",
+          "name": "InPolygon"
+        },
+        {
+          "kind": "def",
+          "name": "WeakLC"
+        },
+        {
+          "kind": "def",
+          "name": "Conjecture63"
+        }
+      ],
+      "note": "Exact named completed counterpart; not rebuilt or replayed."
+    }
+  ],
+  "documents": [
+    {
+      "path": "research/markov-10d15751-mathematics.md",
+      "archive_sha256": "19bff3da7b5cf6255074be586d12ee1137e5bdb3bb1858866906be59826d24a4",
+      "current_sha256": "19bff3da7b5cf6255074be586d12ee1137e5bdb3bb1858866906be59826d24a4"
+    },
+    {
+      "path": "research/markov-10d15751-correspondence.md",
+      "archive_sha256": "5f6bc4be5a94ad33c43dfb6959aea46ca52c6ebeac9efd7a9cd1d808cff12115",
+      "current_sha256": "5f6bc4be5a94ad33c43dfb6959aea46ca52c6ebeac9efd7a9cd1d808cff12115"
+    },
+    {
+      "path": "research/probe_grouped_10d15751.py",
+      "archive_sha256": "d0b842e12c359058523ede9e5eddbcfc1db91c265e86d103921f578a318dcff1",
+      "current_sha256": "d0b842e12c359058523ede9e5eddbcfc1db91c265e86d103921f578a318dcff1"
+    },
+    {
+      "path": "research/probe_truncated_10d15751.py",
+      "archive_sha256": "2669a662cd8539c0c3fd473363140d726fd2d70f9f82c59bd671ad39080400b9",
+      "current_sha256": "2669a662cd8539c0c3fd473363140d726fd2d70f9f82c59bd671ad39080400b9"
+    },
+    {
+      "path": "research/probe_raw_prefix_10d15751.py",
+      "archive_sha256": "e37a7880755e8ce7c101f42e202dd3b8edb28a82155872ae568516b7f8a36f6c",
+      "current_sha256": "e37a7880755e8ce7c101f42e202dd3b8edb28a82155872ae568516b7f8a36f6c"
+    },
+    {
+      "path": "research/probe_raw_prefix_zero_10d15751.py",
+      "archive_sha256": "cd4f7a72156920dcfdab92a22815e5c16f80953daee61acea4b917d4cb0f398f",
+      "current_sha256": "cd4f7a72156920dcfdab92a22815e5c16f80953daee61acea4b917d4cb0f398f"
+    },
+    {
+      "path": "research/probe_raw_prefix_scope_10d15751.py",
+      "archive_sha256": "dcdd7d6523bd15984a69dcc80b9240bd041a13fc48e427ed1a1ed22861ed0f3d",
+      "current_sha256": "dcdd7d6523bd15984a69dcc80b9240bd041a13fc48e427ed1a1ed22861ed0f3d"
+    },
+    {
+      "path": "research/probe_raw_cone_10d15751.py",
+      "archive_sha256": "6beceee04aaa1c44c64caaf07b5a3402f39ccedb83d00b7d1511769749ddae10",
+      "current_sha256": "6beceee04aaa1c44c64caaf07b5a3402f39ccedb83d00b7d1511769749ddae10"
+    },
+    {
+      "path": "evidence/markov-10d15751/grouped-experiments.json",
+      "archive_sha256": "9d9a5a8cab758c78198abe7d0a34ec5e95773a3b7d821d8b3a7e020ba3d8983b",
+      "current_sha256": "9d9a5a8cab758c78198abe7d0a34ec5e95773a3b7d821d8b3a7e020ba3d8983b"
+    },
+    {
+      "path": "evidence/markov-10d15751/truncated-experiments.json",
+      "archive_sha256": "71466958fdb276286bcb98f0f04b9ebbcd2280fb881c3949499412b2208edfe8",
+      "current_sha256": "71466958fdb276286bcb98f0f04b9ebbcd2280fb881c3949499412b2208edfe8"
+    },
+    {
+      "path": "evidence/markov-10d15751/raw-prefix-experiments.json",
+      "archive_sha256": "7dfddbf45bcfdfdcb1f76b8135d52b8e9a1cd29f56f110ac94d8f8ac19e4faa5",
+      "current_sha256": "7dfddbf45bcfdfdcb1f76b8135d52b8e9a1cd29f56f110ac94d8f8ac19e4faa5"
+    },
+    {
+      "path": "evidence/markov-10d15751/raw-prefix-zero-experiments.json",
+      "archive_sha256": "d48e5fb3b226a05fae4d7a02a67fdc0e824294a1c7db5f39c52900e98a99c48e",
+      "current_sha256": "d48e5fb3b226a05fae4d7a02a67fdc0e824294a1c7db5f39c52900e98a99c48e"
+    },
+    {
+      "path": "evidence/markov-10d15751/raw-prefix-scope-experiments.json",
+      "archive_sha256": "e47995aafd54ed2d8088503d58e74295831ebf5aa4f6a4a677d1446b84d480e6",
+      "current_sha256": "e47995aafd54ed2d8088503d58e74295831ebf5aa4f6a4a677d1446b84d480e6"
+    },
+    {
+      "path": "evidence/markov-10d15751/raw-cone-experiments.json",
+      "archive_sha256": "3cbe93866d405d151ddec0c32ed2351e40cf89e784af8301fedfec3d6ed2c884",
+      "current_sha256": "3cbe93866d405d151ddec0c32ed2351e40cf89e784af8301fedfec3d6ed2c884"
+    }
+  ],
+  "counts": {
+    "def": 10,
+    "theorem": 40
+  },
+  "experiment_helper": {
+    "path": "research/experiment_8833.py",
+    "sha256": "2dffc322d2fa37292349ef2ea279270daad2468dbfdf89e03db7ea5694970a93",
+    "read_previously_not_executed": true
+  },
+  "all_new_and_named_inherited_match": true
+}

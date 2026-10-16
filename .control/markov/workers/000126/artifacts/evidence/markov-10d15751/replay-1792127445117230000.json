@@ -1,0 +1,49 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovPrefixScopeM10D\ncollected MarkovSourcePrefixM10D\ncollected MarkovWordConjugacyM10D\nreplay union of 3 modules over 4 inherited imports\nisolation checked for 16 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovPrefixScopeM10D": "5681c4c9d8920c9310f59725f58a7771697b6424e116dbd9f8f75f14ab616052",
+    "MarkovSourcePrefixM10D": "d6714202b85bf484efe81f6534fb4ffed7a49b4ae783f6bf042682ad42513d61",
+    "MarkovWordConjugacyM10D": "bd1480cdf5594262b6dd0ab03506323d144a1bb03927e36a71a4ee2abc87e9ec"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM10D.lean",
+    "MarkovPrefixScopeM10D",
+    "MarkovSourcePrefixM10D",
+    "MarkovWordConjugacyM10D"
+  ],
+  "seconds": 7.055363291001413,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "94d6a3742375fe41f21f27bff33cfb318b9cf5c9a740ebaed447c93a1635b049",
+  "declared_names": {
+    "MarkovPrefixScopeM10D": [
+      "source_seven_nine_tripleM10D",
+      "source_seven_nine_validM10D",
+      "source_eleven_thirteen_zeroM10D",
+      "prefix_weakLC_failureM10D",
+      "universal_source_prefix_failureM10D"
+    ],
+    "MarkovSourcePrefixM10D": [
+      "source_two_wordM10D",
+      "source_two_prefixM10D",
+      "source_two_prefix_takeM10D",
+      "actual_source_prefix_F_failureM10D"
+    ],
+    "MarkovWordConjugacyM10D": [
+      "swapPairM10D",
+      "swap_rawAtomicM10D",
+      "swap_raw_word_stepM10D",
+      "word_pairScaleM10D",
+      "raw_word_clearedM10D",
+      "raw_word_highM10D",
+      "raw_word_lowM10D"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed M10D; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

@@ -1,0 +1,65 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovPrefixObstructionM10D\ncollected MarkovRawConjugacyM10D\ncollected MarkovRawPrefixM10D\nreplay union of 3 modules over 5 inherited imports\nisolation checked for 32 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovPrefixObstructionM10D": "08d43551c17f8d726abd447cc71ead414a56d6c7032b1fcfea399bd34f7b37c2",
+    "MarkovRawConjugacyM10D": "3a1ac3d54f12934fe62d47e0308a16e6ba48a8520efced6254f86e2c83e27ac4",
+    "MarkovRawPrefixM10D": "9e2d0040be6e5f23539cc3ba0265d4f1413a7f2b09eeffedb929cc350e62626b"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM10D.lean",
+    "MarkovPrefixObstructionM10D",
+    "MarkovRawConjugacyM10D",
+    "MarkovRawPrefixM10D"
+  ],
+  "seconds": 7.0552906669909135,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "94d6a3742375fe41f21f27bff33cfb318b9cf5c9a740ebaed447c93a1635b049",
+  "declared_names": {
+    "MarkovPrefixObstructionM10D": [
+      "hstateM10D",
+      "hstate_nilM10D",
+      "hstate_appendM10D",
+      "hstate_run_lowM10D",
+      "hstate_run_BA_rowM10D",
+      "hstate_run_BA_tripleM10D",
+      "hstate_run_BA_failureM10D"
+    ],
+    "MarkovRawConjugacyM10D": [
+      "rowScaleM10D",
+      "rowScale_UM10D",
+      "rowScale_VM10D",
+      "rawRowAM10D",
+      "rawRowCM10D",
+      "PairScaleM10D",
+      "pairScale_initialM10D",
+      "pairScale_AM10D",
+      "pairScale_CM10D",
+      "rowScale_coeffM10D",
+      "pairScale_coeffM10D",
+      "pairScale_highM10D",
+      "pairScale_lowM10D"
+    ],
+    "MarkovRawPrefixM10D": [
+      "rawAtomicM10D",
+      "rawPairM10D",
+      "rawPair_appendM10D",
+      "rawPair_matrixM10D",
+      "rawPair_sourceM10D",
+      "badPrefixM10D",
+      "containingPathM10D",
+      "badPrefix_sourceM10D",
+      "badPrefix_countsM10D",
+      "badPrefix_not_sourceM10D",
+      "badPrefix_tripleM10D",
+      "badPrefix_valid_failureM10D"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed M10D; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}
