@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovNewtonM295.lean:16:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  f \u2191n\nin the target expression\n  0 \u2264 f n\n\nf : \u2115 \u2192 \u2124\nh : \u2200 (r : \u2115), 0 \u2264 (fwdDiff 1)^[r] f 0\nn : \u2115\nhe : f \u2191n = \u2211 x \u2208 range (n + 1), \u2191(n.choose x) * (fwdDiff 1)^[x] f 0\n\u22a2 0 \u2264 f n\n/Users/sasha/math_gkm/research/MarkovNewtonM295.lean:24:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  f (\u2191x) y\nin the target expression\n  f x y = \u2211 r \u2208 range (x + 1), \u2211 s \u2208 range (y + 1), \u2191(x.choose r) * \u2191(y.choose s) * newtonCoeffM295 f r s\n\nf : \u2115 \u2192 \u2115 \u2192 \u2124\nx y : \u2115\nhx : f (\u2191x) y = \u2211 x_1 \u2208 range (x + 1), \u2191(x.choose x_1) * (fwdDiff 1)^[x_1] (fun t => f t y) 0\n\u22a2 f x y = \u2211 r \u2208 range (x + 1), \u2211 s \u2208 range (y + 1), \u2191(x.choose r) * \u2191(y.choose s) * newtonCoeffM295 f r s\n/Users/sasha/math_gkm/research/MarkovNewtonM295.lean:37:5: error: Invalid rewrite argument: The pattern to be substituted is a metavariable (`?f ?x ?y`) in this equality\n  ?f ?x ?y =\n    \u2211 r \u2208 range (?x + 1), \u2211 s \u2208 range (?y + 1), \u2191(Nat.choose ?x r) * \u2191(Nat.choose ?y s) * newtonCoeffM295 ?f r s\n",
+  "stderr": "",
+  "modules": {
+    "MarkovNewtonM295": "4b006bf3b87c4aac1bca57e22c63cb10341bf0f4c9832964e2ee9f94fae55038"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-29509309/MarkovNewtonM295.olean",
+    "/Users/sasha/math_gkm/research/MarkovNewtonM295.lean"
+  ],
+  "seconds": 21.715171584044583,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
