@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovParameterShapeM8F7.lean:54:1: error: Type mismatch\n  kernel_shift_minorM8F7 a b j r\nhas type\n  kernelM8F7 (a + 1) (b + 1) j r * kernelM8F7 a b (j + 1) r \u2264 kernelM8F7 a b j r * kernelM8F7 (a + 1) (b + 1) (j + 1) r\nbut is expected to have type\n  kernelM8F7 (a + 1) (b + 1) j r * kernelM8F7 a b (j + 1) r \u2264 kernelM8F7 (a + 1) (b + 1) (j + 1) r * kernelM8F7 a b j r\n/Users/sasha/math_gkm/research/MarkovParameterShapeM8F7.lean:89:5: warning: This simp argument is unused:\n  show n + 2 + 2 = (n + 2) + 2 by rfl\n\nHint: Omit it from the simp argument list.\n  simp only [\u0335k\u0335e\u0335r\u0335n\u0335e\u0335l\u0335M\u03358\u0335F\u03357\u0335,\u0335\u2190\u0335r\u0335e\u0335d\u0335u\u0335c\u0335e\u0335d\u0335_\u0335k\u0335e\u0335r\u0335n\u0335e\u0335l\u0335_\u0335s\u0335u\u0335m\u0335M\u0335D\u0335B\u03359\u0335,\u0335\n  \u0335 \u0335 \u0335 \u0335 \u0335 \u0335s\u0335h\u0335o\u0335w\u0335 \u0335n\u0335+\u03352\u0335+\u03352\u0335=\u0335(\u0335n\u0335+\u03352\u0335)\u0335+\u03352\u0335 \u0335b\u0335y\u0335 \u0335r\u0335f\u0335l\u0335]\u0335[\u0332k\u0332e\u0332r\u0332n\u0332e\u0332l\u0332M\u03328\u0332F\u03327\u0332,\u0332 \u0332\u2190\u0332 \u0332r\u0332e\u0332d\u0332u\u0332c\u0332e\u0332d\u0332_\u0332k\u0332e\u0332r\u0332n\u0332e\u0332l\u0332_\u0332s\u0332u\u0332m\u0332M\u0332D\u0332B\u03329\u0332]\u0332 at h\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovParameterShapeM8F7.lean:102:48: error: unexpected token ')'; expected term\n",
+  "stderr": "",
+  "modules": {
+    "MarkovParameterShapeM8F7": "a6c895731393800f0b84c442b1a187db02134d8a5023643e88c88b0dc6f58871"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-8f77f493/MarkovParameterShapeM8F7.olean",
+    "/Users/sasha/math_gkm/research/MarkovParameterShapeM8F7.lean"
+  ],
+  "seconds": 12.322888499998953,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

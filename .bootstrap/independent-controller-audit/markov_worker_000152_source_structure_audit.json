@@ -1,0 +1,589 @@
+{
+  "worker": 152,
+  "request": "8f77f49334284c7b8a1caedbade68c5c",
+  "created_at_utc": "2026-10-16T18:08:07.091764+00:00",
+  "scope": "Archive-first static completed-source/declaration/hash and input-index count audit. No project program/proof/checker/replay/experiment/generator execution, mathematical-value recomputation, project changes or research assistance. Explicit named completed/inherited paths only; active153 not inspected.",
+  "new_modules": [
+    {
+      "module": "MarkovPrefixM8F7",
+      "path": "research/MarkovPrefixM8F7.lean",
+      "sha256": "0228bbb3271f0a1533b88f41d149d06b063109a4b9fc7f8276e3d30efccfdb68",
+      "current_sha256": "0228bbb3271f0a1533b88f41d149d06b063109a4b9fc7f8276e3d30efccfdb68",
+      "bytes": 4320,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "convolutionM8F7"
+        },
+        {
+          "kind": "def",
+          "name": "prefixM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "convolution_seriesM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "convolution_commM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "convolution_assocM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "prefix_convolutionM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "convolution_prefixM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "prefix_of_convolutionM8F7"
+        },
+        {
+          "kind": "def",
+          "name": "nbNatM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "nb_prefixM8F7"
+        },
+        {
+          "kind": "def",
+          "name": "weightNatM8F7"
+        },
+        {
+          "kind": "def",
+          "name": "weightedReverseM8F7"
+        },
+        {
+          "kind": "def",
+          "name": "kernelM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_convolutionM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_swapM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_prefixM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_rectangleM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_positiveM8F7"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovDiagonalShapeMDB9"
+      ],
+      "theorem_statements": [
+        "theorem convolution_seriesM8F7 (f g : ℕ → ℝ) (j : ℕ) :\n convolutionM8F7 f g j=PowerSeries.coeff j (PowerSeries.mk f*PowerSeries.mk g)",
+        "theorem convolution_commM8F7 (f g : ℕ → ℝ) : convolutionM8F7 f g=convolutionM8F7 g f",
+        "theorem convolution_assocM8F7 (f g h : ℕ → ℝ) :\n convolutionM8F7 (convolutionM8F7 f g) h=convolutionM8F7 f (convolutionM8F7 g h)",
+        "theorem prefix_convolutionM8F7 (f : ℕ → ℝ) : prefixM8F7 f=convolutionM8F7 f (fun _ => 1)",
+        "theorem convolution_prefixM8F7 (f g : ℕ → ℝ) :\n convolutionM8F7 (prefixM8F7 f) g=convolutionM8F7 f (prefixM8F7 g)",
+        "theorem prefix_of_convolutionM8F7 (f g : ℕ → ℝ) :\n prefixM8F7 (convolutionM8F7 f g)=convolutionM8F7 f (prefixM8F7 g)",
+        "theorem nb_prefixM8F7 (s : ℕ) : prefixM8F7 (nbNatM8F7 s)=nbNatM8F7 (s+1)",
+        "theorem kernel_convolutionM8F7 (a b j r : ℕ) :\n kernelM8F7 a b j r=convolutionM8F7 (weightedReverseM8F7 b r) (nbNatM8F7 a) j",
+        "theorem kernel_swapM8F7 (a b j r : ℕ) : kernelM8F7 a b j r=kernelM8F7 b a r j",
+        "theorem kernel_prefixM8F7 (a b j r : ℕ) :\n (∑ k ∈ range (j+1),kernelM8F7 a b k r)=kernelM8F7 (a+1) b j r",
+        "theorem kernel_rectangleM8F7 (a b j r : ℕ) :\n (∑ k ∈ range (j+1),∑ l ∈ range (r+1),kernelM8F7 a b k l)=\n kernelM8F7 (a+1) (b+1) j r",
+        "theorem kernel_positiveM8F7 (a b j r : ℕ) : 0<kernelM8F7 a b j r"
+      ],
+      "definitions": [
+        "def convolutionM8F7 (f g : ℕ → ℝ) (j : ℕ) : ℝ :=\n ∑ k ∈ range (j+1), f k*g (j-k)",
+        "def prefixM8F7 (f : ℕ → ℝ) (j : ℕ) : ℝ := ∑ k ∈ range (j+1), f k",
+        "def nbNatM8F7 (s k : ℕ) : ℝ := ((k+s).choose s:ℝ)",
+        "def weightNatM8F7 (k : ℕ) : ℝ := if k=0 then 1 else 2",
+        "def weightedReverseM8F7 (b r k : ℕ) : ℝ :=\n if k≤r then weightNatM8F7 k*nbNatM8F7 b (r-k) else 0",
+        "def kernelM8F7 (a b j r : ℕ) : ℝ :=\n diagSumMDB9 (nbSeqMDB9 a) (nbSeqMDB9 b) weightSeqMDB9 j r"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovWeightOrderM8F7",
+      "path": "research/MarkovWeightOrderM8F7.lean",
+      "sha256": "763e57d480b50bff21c7b18fd48839a685a5352e89e07ac94e8ec8593e10fa18",
+      "current_sha256": "763e57d480b50bff21c7b18fd48839a685a5352e89e07ac94e8ec8593e10fa18",
+      "bytes": 4283,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "weighted_nonnegM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "prefix_nonnegM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "prefix_monoM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_tail_antitoneM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_initial_scalarM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_prefix_firstM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_prefix_orderM8F7"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovPrefixM8F7"
+      ],
+      "theorem_statements": [
+        "theorem weighted_nonnegM8F7 (b r k : ℕ) : 0≤weightedReverseM8F7 b r k",
+        "theorem prefix_nonnegM8F7 {f : ℕ → ℝ} (hf : ∀ k,0≤f k) (k : ℕ) :\n 0≤prefixM8F7 f k",
+        "theorem prefix_monoM8F7 {f : ℕ → ℝ} (hf : ∀ k,0≤f k) : Monotone (prefixM8F7 f)",
+        "theorem weighted_tail_antitoneM8F7 (b r x y : ℕ) (hx : 1≤x) (hxy : x≤y) :\n weightedReverseM8F7 b r y≤weightedReverseM8F7 b r x",
+        "theorem weight_initial_scalarM8F7 (b u : ℕ) :\n 2*nbNatM8F7 b u*nbNatM8F7 (b+1) (u+1)≤\n nbNatM8F7 b (u+1)*(nbNatM8F7 (b+1) (u+1)+2*nbNatM8F7 (b+1) u)",
+        "theorem weighted_prefix_firstM8F7 (b r : ℕ) :\n weightedReverseM8F7 b r 1*prefixM8F7 (weightedReverseM8F7 (b+1) r) 0≤\n weightedReverseM8F7 b r 0*prefixM8F7 (weightedReverseM8F7 (b+1) r) 1",
+        "theorem weighted_prefix_orderM8F7 (b r x y : ℕ) (hxy : x<y) :\n 0≤weightedReverseM8F7 b r x*prefixM8F7 (weightedReverseM8F7 (b+1) r) y-\n   weightedReverseM8F7 b r y*prefixM8F7 (weightedReverseM8F7 (b+1) r) x"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovParameterShapeM8F7",
+      "path": "research/MarkovParameterShapeM8F7.lean",
+      "sha256": "bf082d1a085ca478a9b0cc90647b9b5d9bd02f669b5fcdd4f8ce22668622bef7",
+      "current_sha256": "bf082d1a085ca478a9b0cc90647b9b5d9bd02f669b5fcdd4f8ce22668622bef7",
+      "bytes": 4579,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "convolution_nb_extendM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_shift_convolutionM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_shift_minorM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_shift_ratio_rowM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_shift_ratio_columnM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_parameter_lcM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "reduced_shapeM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_diagonalM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_diagonal_ge_threeM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_small_and_otherM8F7"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovWeightOrderM8F7"
+      ],
+      "theorem_statements": [
+        "theorem convolution_nb_extendM8F7 (f : ℕ → ℝ) (a j N : ℕ) (hN : j<N) :\n convolutionM8F7 f (nbNatM8F7 a) j=\n ∑ k ∈ range N, f k*nbSeqMDB9 a ((j:ℤ)-k)",
+        "theorem kernel_shift_convolutionM8F7 (a b j r : ℕ) :\n kernelM8F7 (a+1) (b+1) j r=\n convolutionM8F7 (prefixM8F7 (weightedReverseM8F7 (b+1) r)) (nbNatM8F7 a) j",
+        "theorem kernel_shift_minorM8F7 (a b j r : ℕ) :\n kernelM8F7 (a+1) (b+1) j r*kernelM8F7 a b (j+1) r≤\n kernelM8F7 a b j r*kernelM8F7 (a+1) (b+1) (j+1) r",
+        "theorem kernel_shift_ratio_rowM8F7 (a b r : ℕ) :\n Monotone (fun j => kernelM8F7 (a+1) (b+1) j r/kernelM8F7 a b j r)",
+        "theorem kernel_shift_ratio_columnM8F7 (a b j : ℕ) :\n Monotone (fun r => kernelM8F7 (a+1) (b+1) j r/kernelM8F7 a b j r)",
+        "theorem kernel_parameter_lcM8F7 (a b j r : ℕ) :\n kernelM8F7 a b j r*kernelM8F7 (a+2) (b+2) j r≤\n kernelM8F7 (a+1) (b+1) j r^2",
+        "theorem reduced_shapeM8F7 : ReducedShapeMDB9",
+        "theorem kernel_diagonalM8F7 : KernelDiagonalMDB9",
+        "theorem source_two_diagonal_ge_threeM8F7 (path : List Bool)\n (ha : (frame path).mid.a=2) (i j : ℕ) (hi : 3 ≤ i) :\n coeff (frame path).mid.p i (j+2)*coeff (frame path).mid.p (i+2) j≤\n coeff (frame path).mid.p (i+1) (j+1)^2",
+        "theorem root_iff_small_and_otherM8F7 :\n Conjecture63 ↔ SmallTwoDiagonalMDB9 ∧ OtherSourcesM679"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovSmallCertificateM8F7",
+      "path": "research/MarkovSmallCertificateM8F7.lean",
+      "sha256": "461da03f734e96468f99cf7a3c5a8284dceb9e99257919e4b77811ff2a0ba268",
+      "current_sha256": "461da03f734e96468f99cf7a3c5a8284dceb9e99257919e4b77811ff2a0ba268",
+      "bytes": 2810,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "smallGapupperM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "small_gap_upperM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "small_gap_upper_nonnegM8F7"
+        },
+        {
+          "kind": "def",
+          "name": "smallGapcross0M8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "small_gap_cross0M8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "small_gap_cross0_nonnegM8F7"
+        },
+        {
+          "kind": "def",
+          "name": "smallGapcross1M8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "small_gap_cross1M8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "small_gap_cross1_nonnegM8F7"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovVerticalPolyM0D3"
+      ],
+      "theorem_statements": [
+        "theorem small_gap_upperM8F7 (x y : ℚ) :\n upperPolynomialM0D3 2 (x+2) (y+2)^2 - upperPolynomialM0D3 1 (x+1) (y+3)*upperPolynomialM0D3 3 (x+3) (y+1)=smallGapupperM8F7 x y",
+        "theorem small_gap_upper_nonnegM8F7 (x y : ℚ) (hx : 0 ≤ x) (hy : 0 ≤ y) :\n 0 ≤ upperPolynomialM0D3 2 (x+2) (y+2)^2 - upperPolynomialM0D3 1 (x+1) (y+3)*upperPolynomialM0D3 3 (x+3) (y+1)",
+        "theorem small_gap_cross0M8F7 (x : ℚ) :\n upperPolynomialM0D3 2 (x+2) 1^2 - upperPolynomialM0D3 1 (x+1) 2*lowerPolynomialM0D3 3 (x+3) 0=smallGapcross0M8F7 x",
+        "theorem small_gap_cross0_nonnegM8F7 (x : ℚ) (hx : 0 ≤ x) :\n 0 ≤ upperPolynomialM0D3 2 (x+2) 1^2 - upperPolynomialM0D3 1 (x+1) 2*lowerPolynomialM0D3 3 (x+3) 0",
+        "theorem small_gap_cross1M8F7 (x : ℚ) :\n lowerPolynomialM0D3 2 (x+2) 0^2 - upperPolynomialM0D3 1 (x+1) 1*lowerPolynomialM0D3 3 (x+1) 1=smallGapcross1M8F7 x",
+        "theorem small_gap_cross1_nonnegM8F7 (x : ℚ) (hx : 0 ≤ x) :\n 0 ≤ lowerPolynomialM0D3 2 (x+2) 0^2 - upperPolynomialM0D3 1 (x+1) 1*lowerPolynomialM0D3 3 (x+1) 1"
+      ],
+      "definitions": [
+        "def smallGapupperM8F7 (x y : ℚ) : ℚ := (\n   1048320 +\n   1287360 * y +\n   593460 * y^2 +\n   121680 * y^3 +\n   9360 * y^4 +\n   1271184 * x +\n   1460628 * x * y +\n   629400 * x * y^2 +\n   120480 * x * y^3 +\n   8640 * x * y^4 +\n   554885 * x^2 +\n   557460 * x^2 * y +\n   206400 * x^2 * y^2 +\n   33120 * x^2 * y^3 +\n   1920 * x^2 * y^4 +\n   113250 * x^3 +\n   87720 * x^3 * y +\n   22560 * x^3 * y^2 +\n   1920 * x^3 * y^3 +\n   12545 * x^4 +\n   6480 * x^4 * y +\n   840 * x^4 * y^2 +\n   756 * x^5 +\n   192 * x^5 * y +\n   20 * x^6\n  ) / 180",
+        "def smallGapcross0M8F7 (x : ℚ) : ℚ := (\n   242100 +\n   328116 * x +\n   172625 * x^2 +\n   46170 * x^3 +\n   6905 * x^4 +\n   564 * x^5 +\n   20 * x^6\n  ) / 180",
+        "def smallGapcross1M8F7 (x : ℚ) : ℚ := (\n   23760 +\n   41928 * x +\n   31325 * x^2 +\n   12690 * x^3 +\n   2945 * x^4 +\n   372 * x^5 +\n   20 * x^6\n  ) / 180"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovSecondDiagonalM8F7",
+      "path": "research/MarkovSecondDiagonalM8F7.lean",
+      "sha256": "a211ec48a2fc22936ae3e68347ea1453b62302bee96a2a6d4b4a8f57ba36d8fd",
+      "current_sha256": "a211ec48a2fc22936ae3e68347ea1453b62302bee96a2a6d4b4a8f57ba36d8fd",
+      "bytes": 3178,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "reduced_parameter_allM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "reduced_minor_allM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "reduced_diagonal_allM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_kernel_secondM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_diagonal_secondM8F7"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovParameterShapeM8F7"
+      ],
+      "theorem_statements": [
+        "theorem reduced_parameter_allM8F7 (n j r : ℕ) :\n reducedKernelMDB9 n j r*reducedKernelMDB9 (n+2) j r≤reducedKernelMDB9 (n+1) j r^2",
+        "theorem reduced_minor_allM8F7 (n j r : ℕ) :\n reducedKernelMDB9 (n+1) j r*reducedKernelMDB9 n (j+1) r≤\n reducedKernelMDB9 n j r*reducedKernelMDB9 (n+1) (j+1) r",
+        "theorem reduced_diagonal_allM8F7 (n j r : ℕ) :\n reducedKernelMDB9 n (j+2) r*reducedKernelMDB9 (n+2) j r≤\n reducedKernelMDB9 (n+1) (j+1) r^2",
+        "theorem source_two_kernel_secondM8F7 (path : List Bool) (q j : ℕ)\n (ha : (frame path).mid.a=2) (hb : (frame path).mid.b=2*q+1) (hj : j≤2*q) :\n coeff (frame path).mid.p 2 j=twoKernelM4F4 2 j (2*q-j)",
+        "theorem source_two_diagonal_secondM8F7 (path : List Bool)\n (ha : (frame path).mid.a=2) (j : ℕ) :\n coeff (frame path).mid.p 2 (j+2)*coeff (frame path).mid.p 4 j≤\n coeff (frame path).mid.p 3 (j+1)^2"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovSmallArithmeticM8F7",
+      "path": "research/MarkovSmallArithmeticM8F7.lean",
+      "sha256": "cfb1f05978bc8dd30a49b08494703037ff7e95e307265ea2cdd61d2f42f43fde",
+      "current_sha256": "cfb1f05978bc8dd30a49b08494703037ff7e95e307265ea2cdd61d2f42f43fde",
+      "bytes": 2406,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "small_upper_arithmeticM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "small_cross0_arithmeticM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "small_cross1_arithmeticM8F7"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovSmallCertificateM8F7"
+      ],
+      "theorem_statements": [
+        "theorem small_upper_arithmeticM8F7 (N d : ℕ) (hN : 3≤N) (hd : 1≤d) :\n upperValM2B3 (N-2) (d+2) 1*upperValM2B3 N d 3≤\n upperValM2B3 (N-1) (d+1) 2^2",
+        "theorem small_cross0_arithmeticM8F7 (q : ℕ) (hq : 3≤q) :\n upperValM2B3 (q-2) 2 1*lowerValM58E q 0 3≤upperValM2B3 (q-1) 1 2^2",
+        "theorem small_cross1_arithmeticM8F7 (q : ℕ) (hq : 2≤q) :\n upperValM2B3 (q-1) 1 1*lowerValM58E (q-1) 1 3≤lowerValM58E q 0 2^2"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovSmallDiagonalM8F7",
+      "path": "research/MarkovSmallDiagonalM8F7.lean",
+      "sha256": "9aefed5814b65ae9afa06e2271145e537c2637d64f8f8c172ab530194353b260",
+      "current_sha256": "9aefed5814b65ae9afa06e2271145e537c2637d64f8f8c172ab530194353b260",
+      "bytes": 3292,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_two_diagonal_zeroM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_diagonal_oneM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "small_two_diagonalM8F7"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovSmallArithmeticM8F7",
+        "MarkovSecondDiagonalM8F7"
+      ],
+      "theorem_statements": [
+        "theorem source_two_diagonal_zeroM8F7 (path : List Bool)\n (ha : (frame path).mid.a=2) (j : ℕ) :\n coeff (frame path).mid.p 0 (j+2)*coeff (frame path).mid.p 2 j≤\n coeff (frame path).mid.p 1 (j+1)^2",
+        "theorem source_two_diagonal_oneM8F7 (path : List Bool)\n (ha : (frame path).mid.a=2) (j : ℕ) :\n coeff (frame path).mid.p 1 (j+2)*coeff (frame path).mid.p 3 j≤\n coeff (frame path).mid.p 2 (j+1)^2",
+        "theorem small_two_diagonalM8F7 : SmallTwoDiagonalMDB9"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovTwoCompleteM8F7",
+      "path": "research/MarkovTwoCompleteM8F7.lean",
+      "sha256": "535b147a95c1e244967df23b1d9f67ac94f466224d4e6da0c2f5a61b411e9a68",
+      "current_sha256": "535b147a95c1e244967df23b1d9f67ac94f466224d4e6da0c2f5a61b411e9a68",
+      "bytes": 2029,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_two_diagonal_allM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_globalM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_weakM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_family_globalM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_diagonal_arithmeticM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_other_sourcesM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "unbounded_two_sourcesM8F7"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovSmallDiagonalM8F7"
+      ],
+      "theorem_statements": [
+        "theorem source_two_diagonal_allM8F7 (path : List Bool)\n (ha : (frame path).mid.a=2) (i j : ℕ) :\n coeff (frame path).mid.p i (j+2)*coeff (frame path).mid.p (i+2) j≤\n coeff (frame path).mid.p (i+1) (j+1)^2",
+        "theorem source_two_globalM8F7 (path : List Bool) (ha : (frame path).mid.a=2) :\n GlobalLC18 (frame path).mid.p",
+        "theorem source_two_weakM8F7 (path : List Bool) (ha : (frame path).mid.a=2) :\n WeakLC (frame path).mid.a (frame path).mid.b (frame path).mid.p",
+        "theorem two_family_globalM8F7 (q : ℕ) (hq : 1≤q) : GlobalLC18 (twoFamily3af q)",
+        "theorem two_diagonal_arithmeticM8F7 : TwoDiagonalMDB9",
+        "theorem root_iff_other_sourcesM8F7 : Conjecture63 ↔ OtherSourcesM679",
+        "theorem unbounded_two_sourcesM8F7 (B : ℕ) :\n ∃ path : List Bool, (frame path).mid.a=2 ∧ B<(frame path).mid.b ∧\n   GlobalLC18 (frame path).mid.p"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovWeightLimitM8F7",
+      "path": "research/MarkovWeightLimitM8F7.lean",
+      "sha256": "c4a588c7412fc6b9b3aeb47ee33781fe355031fba7775a3a62a31d54863347a2",
+      "current_sha256": "c4a588c7412fc6b9b3aeb47ee33781fe355031fba7775a3a62a31d54863347a2",
+      "bytes": 1574,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "variableWeightM8F7"
+        },
+        {
+          "kind": "def",
+          "name": "variableKernelM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "variable_minor_gapM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_two_sharpM8F7"
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_three_failureM8F7"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovPrefixM8F7"
+      ],
+      "theorem_statements": [
+        "theorem variable_minor_gapM8F7 (t : ℝ) (a b : ℕ) :\n variableKernelM8F7 t a b 0 1*variableKernelM8F7 t (a+1) (b+1) 1 1-\n variableKernelM8F7 t (a+1) (b+1) 0 1*variableKernelM8F7 t a b 1 1=\n ((b:ℝ)+1)*((b:ℝ)+2)-t",
+        "theorem weight_two_sharpM8F7 (t : ℝ) (a : ℕ) :\n variableKernelM8F7 t (a+1) 1 0 1*variableKernelM8F7 t a 0 1 1≤\n variableKernelM8F7 t a 0 0 1*variableKernelM8F7 t (a+1) 1 1 1 ↔ t≤2",
+        "theorem weight_three_failureM8F7 :\n variableKernelM8F7 3 2 0 0 1*variableKernelM8F7 3 3 1 1 1<\n variableKernelM8F7 3 3 1 0 1*variableKernelM8F7 3 2 0 1 1"
+      ],
+      "definitions": [
+        "def variableWeightM8F7 (t : ℝ) (k : ℤ) : ℝ := if k<0 then 0 else if k=0 then 1 else t",
+        "def variableKernelM8F7 (t : ℝ) (a b j r : ℕ) : ℝ :=\n diagSumMDB9 (nbSeqMDB9 a) (nbSeqMDB9 b) (variableWeightM8F7 t) j r"
+      ],
+      "forbidden_tokens": []
+    }
+  ],
+  "counts": {
+    "def": 11,
+    "theorem": 56
+  },
+  "prefix_scope": "Natural convolution and inclusive prefixes are exact finite sums, encoded by formal power series coefficient identities without analytic convergence. nbNat(s,k)=C(k+s,s); Nat.sum_range_add_choose gives its prefix nbNat(s+1). The weight is1 at0 and2 afterwards. Kernel K(a,b,j,r) equals conv(weightedReverse(b,r),nbNat(a)); zero extensions justify extra indices. Swapping a/b and j/r gives rectangle prefix K(a+1,b+1)=sum_{x<=j,y<=r} K(a,b,x,y). Every K is strictly positive through its k0 term, for all natural a,b,j,r.",
+  "weight_order_scope": "The weighted reverse B is nonnegative and antitone only on its positive-index tail; the exceptional0/1 comparison is separately proved using binomial recurrences and an exact positive-scale polynomial identity. Scale(b+1)(u+b+1)>0 includes b,u=0. Prefix monotonicity and the tail comparison give B_b(x)*prefixB_(b+1)(y)-B_b(y)*prefixB_(b+1)(x)>=0 for all x<y. No unproved weight or seed CrossLC assumption is imported into this new step.",
+  "parameter_minor_scope": "A finite convolution determinant with ordered B/prefixB minors and nb Toeplitz minors proves K(a+1,b+1,j,r)*K(a,b,j+1,r)<=K(a,b,j,r)*K(a+1,b+1,j+1,r). Common finite extensions vanish beyond their exact natural bounds. Divisions are solely by already strictly positive K. Thus Kshift/K is monotone in j and, by swap, in r.",
+  "parameter_lc_scope": "Compare the ratio at every point of the finite rectangle x<=j,y<=r, clear positive denominators, sum cross-products and apply rectangle-prefix identities. This yields K(a,b,j,r)*K(a+2,b+2,j,r)<=K(a+1,b+1,j,r)^2 for all natural parameters. Both formerly conditional ReducedShape assertions are proved; H(n,j,r)=K(n+2,n,j,r) is positive and has parameter LC, adjacent minor and diagonal LC for all n>=0. The old n>=1/parity source reduction is a specialization, not an omitted hypothesis.",
+  "ge_three_source_scope": "The inherited exact kernel/reduced representation converts all i>=3 source diagonal triples, retaining the natural q parity equation in the intermediate exact equivalence. Cases beyond support are zero. Every actual path of numerator2 is covered; no ratio, denominator upper bound, run count or path length remains.",
+  "second_column_scope": "The new source_two_kernel_second statement adds i=2 for j<=2q. Lower rows use j,d=q-j; upper rows use N=2q-j,d=j-q with N,d>=1. The endpoint N=0,j=2q is NOT zero: top_raw_coeff1998 gives C(2q+2,2), matched by K(2,0,j,0). For diagonal start i=2 and j+2<=2q, use this column2 identity plus old columns3/4 and reduced diagonal n=0. Otherwise the first extreme coefficient at(2,j+2) is outside polygon and zero.",
+  "small_certificate_scope": "Three rational positive-coefficient polynomials have denominator180 and literal term counts25,7,7. Their exact upper/crossing gap identities are independently proved by Lean norm_num/ring and nonnegativity by positivity. Literal signs/counts alone do not establish identities. All natural-to-rational casts are injective; the arithmetic lemmas guard N>=3,d>=1, q>=3 for crossing0 and q>=2 for crossing1 before natural subtraction/reindexing.",
+  "helper_correction_scope": "Inherited Python U had been used in its i>=2 scope; at i=1 its signed integer negative-upper guard omitted the h=1 term present in Lean natural subtraction. Final local generator overrides U(i=1,N,d)=4*d, leaving the inherited helper unchanged. The rejected initial certificate and accepted corrected certificate are separate source snapshots. Both generation summaries say25/7/7 with no negative terms, so these summaries alone cannot distinguish correctness. Old generator bytes are not separately retained; correction is recorded in saved edit events and final generator. No auditor polynomial recomputation.",
+  "small_zero_column_scope": "At start i=0, if the first extreme(0,j+2) is in polygon, exact source inequalities force it into the already proved first six top diagonals; choose r=2q-j. Otherwise that extreme is zero. All natural j and every actual q>=1 are retained.",
+  "small_first_column_scope": "At start i=1, split first extreme in polygon versus zero. Inside, q<=j+1 and j<=2q-1. If2q<=j+6, first_six_raw05ef applies with r=2q-j-1<=5. Otherwise q>=3 and the exhaustive remaining cases are j+1=q (crossing1), j=q (crossing0), and j>q (upper N=2q-j>=3,d=j-q>=1). All three raw coefficient identities use their guarded source domains. Small denominators fall into top/zero cases. No endpoint, zero or polygon case is silently removed.",
+  "complete_source_scope": "source_two_diagonal_allM8F7 proves coeff(i,j+2)*coeff(i+2,j)<=coeff(i+1,j+1)^2 for every actual finite path with numerator2 and all natural i,j, by i<=2 versus i>=3. source_two_globalM8F7 combines inherited raw H and V with this D. These are all-natural-index inequalities, stronger than merely testing triples within polygon; natural zero tails remain.",
+  "source_correspondence": "Actual numerator2 classification has q>=1 and b=2q+1. Canonical twoPath(q-1) represents every q, and its exact polynomial identity yields twoFamily global LC. Injective Nat/Int casts yield the arithmetic TwoDiagonal predicate. source_two_weak transfers through the exact raw-outside-polygon/global-weak equivalence; no normalization factor or residual seed is substituted for the raw polynomial.",
+  "root_scope": "root_iff_other_sourcesM8F7 is exactly Conjecture63 iff OtherSourcesM679, whose unchanged body requires GlobalLC18 of every actual path with numerator>=3. Endpoint0/1, endpoint1/1 and numerator1 were handled by inherited exact root reductions, not dropped. Numerator2 H/V were proved146/151 and D is now closed. OtherSources remains unproved; old finer residual exclusions still exist and are not erased by this broader equivalent residual.",
+  "unbounded_scope": "For every natural B, twoPath(B) has numerator2, denominator>B and GlobalLC18. No finite denominator or path-length cap appears. This is complete numerator2 coverage in all three directions, not completion of the full conjecture.",
+  "weight_obstruction_scope": "For arbitrary real t and natural a,b, variable-weight adjacent minor at j=0,r=1 equals (b+1)(b+2)-t. At b=0 the stated minor inequality is equivalent to t<=2; weight3 gives a concrete failure. This changes the auxiliary weight away from the actual source weight2 and has no actual-source bridge. It is not a root refutation or a claim that the full variable-weight family is characterized by this single minor.",
+  "mathlib_fit": "Nat.sum_range_add_choose(n,k) sums(i+k).choose(k) for i in range(n+1), exactly the inclusive prefix used. Nat.choose_le_choose(c,h:a<=b) is monotonicity of the upper choose index with lower c fixed, exactly the positive-tail comparison. These are inherited library statements, not newly replayed library bodies.",
+  "certificate_literal_inventory": [
+    {
+      "name": "smallGapupperM8F7",
+      "literal_term_count": 25,
+      "denominator_literal": "180",
+      "terms": [
+        "1048320",
+        "1287360 * y",
+        "593460 * y^2",
+        "121680 * y^3",
+        "9360 * y^4",
+        "1271184 * x",
+        "1460628 * x * y",
+        "629400 * x * y^2",
+        "120480 * x * y^3",
+        "8640 * x * y^4",
+        "554885 * x^2",
+        "557460 * x^2 * y",
+        "206400 * x^2 * y^2",
+        "33120 * x^2 * y^3",
+        "1920 * x^2 * y^4",
+        "113250 * x^3",
+        "87720 * x^3 * y",
+        "22560 * x^3 * y^2",
+        "1920 * x^3 * y^3",
+        "12545 * x^4",
+        "6480 * x^4 * y",
+        "840 * x^4 * y^2",
+        "756 * x^5",
+        "192 * x^5 * y",
+        "20 * x^6"
+      ],
+      "positive_literal_coefficients": true,
+      "symbolic_identity_or_values_recomputed": false
+    },
+    {
+      "name": "smallGapcross0M8F7",
+      "literal_term_count": 7,
+      "denominator_literal": "180",
+      "terms": [
+        "242100",
+        "328116 * x",
+        "172625 * x^2",
+        "46170 * x^3",
+        "6905 * x^4",
+        "564 * x^5",
+        "20 * x^6"
+      ],
+      "positive_literal_coefficients": true,
+      "symbolic_identity_or_values_recomputed": false
+    },
+    {
+      "name": "smallGapcross1M8F7",
+      "literal_term_count": 7,
+      "denominator_literal": "180",
+      "terms": [
+        "23760",
+        "41928 * x",
+        "31325 * x^2",
+        "12690 * x^3",
+        "2945 * x^4",
+        "372 * x^5",
+        "20 * x^6"
+      ],
+      "positive_literal_coefficients": true,
+      "symbolic_identity_or_values_recomputed": false
+    }
+  ],
+  "mathematical_values_recomputed": false
+}

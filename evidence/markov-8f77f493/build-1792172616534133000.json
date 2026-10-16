@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovWeightOrderM8F7.lean:39:75: error: Type mismatch: After simplification, term\n  h\n has type\n  (u + b).choose b * (u + b + 1) = (u + b + 1).choose b * (u + b + 1 - b)\nbut is expected to have type\n  (u + b).choose b * (u + b + 1) = (u + b + 1).choose b * (u + 1)\n/Users/sasha/math_gkm/research/MarkovWeightOrderM8F7.lean:42:13: warning: `Nat.succ_mul_choose_eq` has been deprecated: Use `Nat.add_one_mul_choose_eq` instead\n/Users/sasha/math_gkm/research/MarkovWeightOrderM8F7.lean:45:3: error: Type mismatch: After simplification, term\n  Eq.symm h'\n has type\n  \u2191((b + (u + 2)).choose (b + 1)) * (\u2191b + 1) = \u2191((b + (u + 1)).choose b) * (\u2191b + (\u2191u + 2))\nbut is expected to have type\n  \u2191((b + (u + 2)).choose (b + 1)) * (\u2191b + 1) = \u2191((b + (u + 1)).choose b) * (\u2191u + \u2191b + 2)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovWeightOrderM8F7": "38db170cbfde7f6968ef4ad37d9b0c33c78e48ce36a211926eee7ae9bc217149"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-8f77f493/MarkovWeightOrderM8F7.olean",
+    "/Users/sasha/math_gkm/research/MarkovWeightOrderM8F7.lean"
+  ],
+  "seconds": 25.445787000004202,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

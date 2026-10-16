@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovPrefixM8F7.lean:94:3: error: Tactic `apply` failed: could not unify the conclusion of `@single_le_sum`\n  ?f ?a \u2264 \u2211 x \u2208 ?s, ?f x\nwith the goal\n  weightSeqMDB9 0 * nbSeqMDB9 a \u2191j * nbSeqMDB9 b \u2191r \u2264\n    \u2211 k \u2208 range (min j r + 1), weightSeqMDB9 \u2191k * nbSeqMDB9 a (\u2191j - \u2191k) * nbSeqMDB9 b (\u2191r - \u2191k)\n\nNote: The full type of `@single_le_sum` is\n  \u2200 {\u03b9 : Type ?u.39} {N : Type ?u.38} [inst : AddCommMonoid N] [inst_1 : Preorder N] {f : \u03b9 \u2192 N} {s : Finset \u03b9}\n    [AddLeftMono N], (\u2200 i \u2208 s, 0 \u2264 f i) \u2192 \u2200 {a : \u03b9}, a \u2208 s \u2192 f a \u2264 \u2211 x \u2208 s, f x\n\ncase hbc\na b j r : \u2115\n\u22a2 weightSeqMDB9 0 * nbSeqMDB9 a \u2191j * nbSeqMDB9 b \u2191r \u2264\n    \u2211 k \u2208 range (min j r + 1), weightSeqMDB9 \u2191k * nbSeqMDB9 a (\u2191j - \u2191k) * nbSeqMDB9 b (\u2191r - \u2191k)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovPrefixM8F7": "f56ccf9dced34f1320fefe77625f2523f36374033f2dd423c6ac626a1f6f1cff"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-8f77f493/MarkovPrefixM8F7.olean",
+    "/Users/sasha/math_gkm/research/MarkovPrefixM8F7.lean"
+  ],
+  "seconds": 63.03974712500349,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
