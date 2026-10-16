@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovStripCoefficientsMB9D.lean:35:5: error: linarith failed to find a contradiction\ncase succ.h1\nl : \u2115\nA B : \u211d\nk : \u2115\nhN : 1 \u2264 k + 1 + l\nh0 : (\u2191(k + 1) + \u2191l) * ((1 + X) ^ (k + 1 + l - 1)).coeff (k + 1) = \u2191((k + 1 + l).choose (k + 1)) * \u2191l\nh : (k + 1 + l).choose (k + 1) * (k + 1) = (k + 1 + l) * (k + 1 + l - 1).choose k\nhR : \u2191((k + 1 + l).choose (k + 1)) * (\u2191k + 1) = (\u2191k + 1 + \u2191l) * \u2191((k + 1 + l - 1).choose k)\na\u271d : (\u2191(k + 1) + \u2191l) * \u2191((k + 1 + l - 1).choose k) < \u2191((k + 1 + l).choose (k + 1)) * \u2191(k + 1)\n\u22a2 False\nfailed\n/Users/sasha/math_gkm/research/MarkovStripCoefficientsMB9D.lean:83:8: error: Tactic `unfold` failed to unfold `stripHMB9D` in\n  (\u2191k + (\u2191l - 2)) * (\u2191k + (\u2191l - 2) - 1) * (\u2191k + (\u2191l - 2) - 2) *\n      ((1 + X) ^ (k + l - 5) *\n            CubicPoly5a7 (h3c2M13D a (\u2191k + \u2191l + 2) 0) (h3c3M13D a (\u2191k + \u2191l + 2)) (h3c4M13D a (\u2191k + \u2191l + 2))\n              (h3c5M13D a (\u2191k + \u2191l + 2))).coeff\n        k =\n    \u2191((k + l - 2).choose k) *\n      (h3c2M13D a (\u2191k + \u2191l + 2) 0 * (\u2191l - 2) * (\u2191l - 2 - 1) * (\u2191l - 2 - 2) +\n            h3c3M13D a (\u2191k + \u2191l + 2) * \u2191k * (\u2191l - 2) * (\u2191l - 2 - 1) +\n          h3c4M13D a (\u2191k + \u2191l + 2) * \u2191k * (\u2191k - 1) * (\u2191l - 2) +\n        h3c5M13D a (\u2191k + \u2191l + 2) * \u2191k * (\u2191k - 1) * (\u2191k - 2))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovStripCoefficientsMB9D": "b9882c6c0e257a5d42c4262627b32ea26823b7fd61f756e0ab1921431f0918aa"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-b9d0d341/MarkovStripCoefficientsMB9D.olean",
+    "/Users/sasha/math_gkm/research/MarkovStripCoefficientsMB9D.lean"
+  ],
+  "seconds": 45.284567125025205,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

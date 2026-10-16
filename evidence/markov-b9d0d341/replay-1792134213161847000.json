@@ -1,0 +1,73 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovStripGapMB9D\ncollected MarkovStripSourceMB9D\ncollected MarkovStripCoefficientsMB9D\ncollected MarkovStripLCMB9D\ncollected MarkovStripAllMB9D\ncollected MarkovResidualMB9D\nreplay union of 6 modules over 6 inherited imports\nisolation checked for 28 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovStripGapMB9D": "4d55d1d2ee59060fdf6b01f648e8b0e3938cf807d1d171cf10c21c9c60c7cab5",
+    "MarkovStripSourceMB9D": "3cebfd735e5da16eeac402796840fc9dea4a5bca845d12d98e4b3b93e5b2d3ae",
+    "MarkovStripCoefficientsMB9D": "0bf847714b1fc656e99a6f4d2f3513fd016927a879341a7c5586936df905ee4f",
+    "MarkovStripLCMB9D": "42ef3b925a7b3d939b4df94ba25f5c87f670a822cef78ccabe9dd08b584a0f6a",
+    "MarkovStripAllMB9D": "67d770cb1ca5100b44d838510dd46eb8b63b4193e9acd662c75e4451df3f1136",
+    "MarkovResidualMB9D": "f88c26a99115152c9c7b4372ca0dd09a65c694c0d36ec5578d64ce95a562198a"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedMB9D.lean",
+    "MarkovStripGapMB9D",
+    "MarkovStripSourceMB9D",
+    "MarkovStripCoefficientsMB9D",
+    "MarkovStripLCMB9D",
+    "MarkovStripAllMB9D",
+    "MarkovResidualMB9D"
+  ],
+  "seconds": 35.47266941698035,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "d9c6c97830cf639c343b2b7225b1143cc507fb1dd7fd36dd3d64fabaa4ec8414",
+  "declared_names": {
+    "MarkovStripGapMB9D": [
+      "stripTMB9D",
+      "stripJMB9D",
+      "stripHMB9D",
+      "stripGapMB9D",
+      "strip_largeMB9D",
+      "strip_twoMB9D",
+      "strip_threeMB9D",
+      "strip_fourMB9D"
+    ],
+    "MarkovStripSourceMB9D": [
+      "stripQuadMB9D",
+      "stripCubicMB9D",
+      "source_strip_twoMB9D",
+      "source_strip_threeMB9D",
+      "strip_quad_mapMB9D",
+      "strip_cubic_mapMB9D",
+      "strip_two_coeffMB9D",
+      "strip_three_coeffMB9D"
+    ],
+    "MarkovStripCoefficientsMB9D": [
+      "strip_choose_downMB9D",
+      "strip_linear_scaledMB9D",
+      "strip_quad_scaledMB9D",
+      "strip_cubic_scaledMB9D"
+    ],
+    "MarkovStripLCMB9D": [
+      "strip_gap_nonnegMB9D",
+      "strip_gap_transferMB9D"
+    ],
+    "MarkovStripAllMB9D": [
+      "source_strip_scaledMB9D",
+      "source_strip_interiorMB9D",
+      "source_strip_lowMB9D",
+      "source_strip_all_lowMB9D"
+    ],
+    "MarkovResidualMB9D": [
+      "InteriorCore63MB9D",
+      "root_iff_interiorMB9D"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed MB9D; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

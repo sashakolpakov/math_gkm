@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovStripSourceMB9D.lean:77:26: error(lean.unknownIdentifier): Unknown constant `Int.castRingHom_apply`\n/Users/sasha/math_gkm/research/MarkovStripSourceMB9D.lean:77:1: error: Type mismatch: After simplification, term\n  hc\n has type\n  @Eq \u211d (2 * (Int.castRingHom \u211d) (coeff (frame path).mid.p (k + (frame path).mid.a) 2))\n    (((1 + X) ^ ((frame path).mid.b - 5) * stripQuadMB9D \u2191(frame path).mid.a \u2191(frame path).mid.b).coeff k)\nbut is expected to have type\n  @Eq \u211d (2 * \u2191(coeff (frame path).mid.p (k + (frame path).mid.a) 2))\n    (((1 + X) ^ ((frame path).mid.b - 5) * stripQuadMB9D \u2191(frame path).mid.a \u2191(frame path).mid.b).coeff k)\n/Users/sasha/math_gkm/research/MarkovStripSourceMB9D.lean:91:26: error(lean.unknownIdentifier): Unknown constant `Int.castRingHom_apply`\n/Users/sasha/math_gkm/research/MarkovStripSourceMB9D.lean:91:1: error: Type mismatch: After simplification, term\n  hc\n has type\n  @Eq \u211d (6 * (Int.castRingHom \u211d) (coeff (frame path).mid.p (k + (frame path).mid.a) 3))\n    (((1 + X) ^ ((frame path).mid.b - 7) * stripCubicMB9D \u2191(frame path).mid.a \u2191(frame path).mid.b).coeff k)\nbut is expected to have type\n  @Eq \u211d (6 * \u2191(coeff (frame path).mid.p (k + (frame path).mid.a) 3))\n    (((1 + X) ^ ((frame path).mid.b - 7) * stripCubicMB9D \u2191(frame path).mid.a \u2191(frame path).mid.b).coeff k)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovStripSourceMB9D": "6dcf1ebb8e11f822f987d1ced24b0bb96a6814300f2fa676d4fccdd677839fbc"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-b9d0d341/MarkovStripSourceMB9D.olean",
+    "/Users/sasha/math_gkm/research/MarkovStripSourceMB9D.lean"
+  ],
+  "seconds": 42.02919583400944,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

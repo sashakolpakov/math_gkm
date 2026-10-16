@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovStripAllMB9D.lean:70:56: error: unexpected token '+'; expected term\n/Users/sasha/math_gkm/research/MarkovStripAllMB9D.lean:70:15: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  LT ((frame path).mid.a + (frame path).mid.b - 1)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovStripAllMB9D.lean:70:15: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  HSub \u2115 \u2115 (Type ?u.56)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovStripAllMB9D.lean:60:95: error: unsolved goals\ncase pos\npath : List Bool\nha : 2 \u2264 (frame path).mid.a\nhb : 7 \u2264 (frame path).mid.b\nhs : 3 * (frame path).mid.a \u2264 (frame path).mid.b\ni : \u2115\nha0 : 0 < (frame path).mid.a\nhab : (frame path).mid.a < (frame path).mid.b\nhcop : (frame path).mid.a.Coprime (frame path).mid.b\nhi : \u00aci < (frame path).mid.a\nht : sorry\n\u22a2 coeff (frame path).mid.p i 1 * coeff (frame path).mid.p i 3 \u2264 coeff (frame path).mid.p i 2 ^ 2\n\ncase neg\npath : List Bool\nha : 2 \u2264 (frame path).mid.a\nhb : 7 \u2264 (frame path).mid.b\nhs : 3 * (frame path).mid.a \u2264 (frame path).mid.b\ni : \u2115\nha0 : 0 < (frame path).mid.a\nhab : (frame path).mid.a < (frame path).mid.b\nhcop : (frame path).mid.a.Coprime (frame path).mid.b\nhi : \u00aci < (frame path).mid.a\nht : \u00acsorry\n\u22a2 coeff (frame path).mid.p i 1 * coeff (frame path).mid.p i 3 \u2264 coeff (frame path).mid.p i 2 ^ 2\n",
+  "stderr": "",
+  "modules": {
+    "MarkovStripAllMB9D": "0fddd16d24af9b48afa6a63d805b34c55c4ae78ee8e844fe2715e6bc082e8e79"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-b9d0d341/MarkovStripAllMB9D.olean",
+    "/Users/sasha/math_gkm/research/MarkovStripAllMB9D.lean"
+  ],
+  "seconds": 12.880208167014644,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

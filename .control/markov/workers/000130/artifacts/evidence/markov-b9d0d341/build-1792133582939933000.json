@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "MathGKM.Markov.source_strip_twoMB9D (path : List Bool) (hb : 5 \u2264 (frame path).mid.b)\n  (hs : 2 * (frame path).mid.a \u2264 (frame path).mid.b) :\n  2 * (Bivariate.swap (frame path).mid.p).coeff 2 =\n    X ^ (frame path).mid.a * (1 + X) ^ ((frame path).mid.b - 5) * stripQuadMB9D \u2191(frame path).mid.a \u2191(frame path).mid.b\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovStripSourceMB9D.lean:48:68: error: unsolved goals\npath : List Bool\nha : 2 \u2264 (frame path).mid.a\nhb : 7 \u2264 (frame path).mid.b\nhs : 3 * (frame path).mid.a \u2264 (frame path).mid.b\nh :\n  6 * (Bivariate.swap (frame path).mid.p).coeff 3 =\n    X ^ ((frame path).mid.a - 2) * (1 + X) ^ ((frame path).mid.b - 7) *\n      h3seedM13D \u2191(frame path).mid.a \u2191(frame path).mid.b \u21910 \u21910 \u21910\nhq : 2 * (frame path).mid.a - (frame path).mid.b = 0\nht : 3 * (frame path).mid.a - (frame path).mid.b = 0\nhu : 3 * (frame path).mid.a - 2 * (frame path).mid.b = 0\na b : \u2124\n\u22a2 C 0 + C 0 * X + X ^ 2 * C (h3c2M13D a b 0) + X ^ 3 * C (h3c3M13D a b) + X ^ 4 * C (h3c4M13D a b) +\n      X ^ 5 * C (h3c5M13D a b) =\n    X ^ 2 * C (h3c2M13D a b 0) + X ^ 3 * C (h3c3M13D a b) + X ^ 4 * C (h3c4M13D a b) + X ^ 5 * C (h3c5M13D a b)\nMathGKM.Markov.source_strip_threeMB9D (path : List Bool) (ha : 2 \u2264 (frame path).mid.a) (hb : 7 \u2264 (frame path).mid.b)\n  (hs : 3 * (frame path).mid.a \u2264 (frame path).mid.b) :\n  6 * (Bivariate.swap (frame path).mid.p).coeff 3 =\n    X ^ (frame path).mid.a * (1 + X) ^ ((frame path).mid.b - 7) * stripCubicMB9D \u2191(frame path).mid.a \u2191(frame path).mid.b\n/Users/sasha/math_gkm/research/MarkovStripSourceMB9D.lean:72:1: error: Type mismatch: After simplification, term\n  hc\n [Error pretty printing: (deterministic) timeout at `isDefEq`, maximum number of heartbeats (300000) has been reached\n\nNote: Use `set_option maxHeartbeats <num>` to set the limit.(invalid MessageData.lazy, missing context)]\nMathGKM.Markov.strip_two_coeffMB9D (path : List Bool) (hb : 5 \u2264 (frame path).mid.b)\n  (hs : 2 * (frame path).mid.a \u2264 (frame path).mid.b) (k : \u2115) :\n  2 * \u2191(coeff (frame path).mid.p ((frame path).mid.a + k) 2) =\n    ((1 + X) ^ ((frame path).mid.b - 5) * stripQuadMB9D \u2191(frame path).mid.a \u2191(frame path).mid.b).coeff k\n/Users/sasha/math_gkm/research/MarkovStripSourceMB9D.lean:89:1: error: (deterministic) timeout at `isDefEq`, maximum number of heartbeats (300000) has been reached\n\nNote: Use `set_option maxHeartbeats <num>` to set the limit.\n\nHint: Additional diagnostic information may be available using the `set_option diagnostics true` command.\n",
+  "stderr": "",
+  "modules": {
+    "MarkovStripSourceMB9D": "c91b1b01a1cc912f6ae5f4c1d0174c443299e1358a402d3be8e185e1a3d971e2"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-b9d0d341/MarkovStripSourceMB9D.olean",
+    "/Users/sasha/math_gkm/research/MarkovStripSourceMB9D.lean"
+  ],
+  "seconds": 110.90868625004077,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,350 @@
+{
+  "worker": 130,
+  "request": "b9d0d3410a1644b6b35ab712bbfc87f7",
+  "created_at_utc": "2026-10-16T07:23:12.539876+00:00",
+  "scope": {
+    "conclusion": "forall path, 3*a<=b -> forall i:Nat, raw coeff i1*coeff i3<=coeff i2^2; literal vertical (i,1),(i,2),(i,3); zeros retained; no denominator upper bound.",
+    "source_parameters": "frame_reduced supplies1<=a<b andcoprime. For a1 use source_one_global6. For a>=2,3a<=b forcesb>=6; onlyb<7possibility2/6contradictscoprime. Thus formulasusea>=2,b>=7 but finaltheoremdoesnotassumethese.",
+    "second_formula": "b>=5,2a<=b: exactstat2max(2a-b,0)=0; cubic secondExpr factorsX*stripQuad; combineX^(a-1)*X=X^a withoutnegativeexponent.",
+    "third_formula": "a>=2,b>=7,3a<=b: allnatural q=2a-b,t=min(b-a,3a-b),u=3a-2b vanish; h3seed becomesX^2*stripCubic; combineX^(a-2)*X^2=X^a. Derived source formula, no remaining formula assumption.",
+    "maps_indices": "Integral identities scaled2/6; Int.castRingHom maps andswap_coeff46 restore coeff(a+k,r) at k+a; no horizontal/vertical swap confusion.",
+    "normalization": "N=k+l=b-2,C=choose(N,k);Nc1=CT;2N(N-1)(N-2)c2=ClJ;6N(N-1)(N-2)(N-3)(N-4)c3=Cl(l-1)H. Binomial downshift and falling identities, k0included.",
+    "gap_domain": "Natural a>=1,k>=0,l>=2,N>=5; no ratio condition on abstractgap. Fourrealcharts: (A+1,K,L+5),(A+1,K+3,2),(A+1,K+2,3),(A+1,K+1,4), nonnegativevariablesincludingzero. Finalring_nf/positivity bodies, exploratorytermcountsnotformalexpandedsource.",
+    "transfer": "12[N(N-1)(N-2)]^2(N-3)(N-4)(c2^2-c1c3)=C^2*l*G; positivecommonscalar, no divisionbyC orcoeff; no Cpositivitypremise needed; finalcasttointeger.",
+    "zeros": "i<a gives c1=0 via polygoncontainment atj1 and a<b (actualcode), not coefficientpositivity; i+3>d gives c3=0; remainingk=i-a,l=b-2-k satisfy l>=2. Topdegree equality and k0 retained.",
+    "root": "Conjecture63 iff InteriorCore63MB9D, exactoldresidualplus(2<=j or b<3a)inverticalclause; originalj>=1,i>=4,total/polygon guards allretained. Reverseuses source_strip_low witha>=2,b>=7derived fromresidualconditions. Endpoints inherited. Residual unproved.",
+    "diagnostics": "Compiled-only StripTwoProbe1theorem2defs duplicates acceptedSource prefix exactlyafterwhitespacenormalization butisnotselected/printed/imported. Declaration-free Probe #checkonly. Neitheraddsacceptedcoverage.",
+    "middle": "18savedpositivecoefficientcharts atq=u0,a=(k+l+2+t)/3 scale81 arecandidatealgebraonly; sourceadapter, Leanidentities/chartcoverage notaccepted. No extension to2a<=b<=3a inferred.",
+    "full_root_proved": false,
+    "root_refuted": false
+  },
+  "new_modules": [
+    {
+      "module": "MarkovProbeMB9D",
+      "sha256": "a1c696adc4b07dfc26f6404d8388f80998c1ed88096f29973cffb5ad19376a91",
+      "accepted": false,
+      "classification": "declaration-free diagnostic",
+      "imports": [
+        "MarkovBottomCoefficientsMAA6",
+        "MarkovHorizontalThirdSourceM13D"
+      ],
+      "declarations": [],
+      "theorem_statements": [],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovResidualMB9D",
+      "sha256": "f88c26a99115152c9c7b4372ca0dd09a65c694c0d36ec5578d64ce95a562198a",
+      "accepted": true,
+      "classification": "accepted mathematical",
+      "imports": [
+        "MarkovStripAllMB9D",
+        "MarkovResidualMAA6"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "InteriorCore63MB9D"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_interiorMB9D"
+        }
+      ],
+      "theorem_statements": [
+        "theorem root_iff_interiorMB9D : Conjecture63 ↔ InteriorCore63MB9D"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripAllMB9D",
+      "sha256": "67d770cb1ca5100b44d838510dd46eb8b63b4193e9acd662c75e4451df3f1136",
+      "accepted": true,
+      "classification": "accepted mathematical",
+      "imports": [
+        "MarkovStripLCMB9D",
+        "MarkovStripCoefficientsMB9D",
+        "MarkovFibonacciLC6ade"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_strip_scaledMB9D"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_interiorMB9D"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_lowMB9D"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_all_lowMB9D"
+        }
+      ],
+      "theorem_statements": [
+        "theorem source_strip_scaledMB9D (path : List Bool) (k l : ℕ)\n (ha : 2 ≤ (frame path).mid.a) (hb : 7 ≤ (frame path).mid.b)\n (hs : 3*(frame path).mid.a ≤ (frame path).mid.b)\n (hbl : (frame path).mid.b=k+l+2) (hl : 2 ≤ l) :\n (((k:ℝ)+l)*(coeff (frame path).mid.p ((frame path).mid.a+k) 1:ℝ)=\n   ((k+l).choose k:ℝ)*stripTMB9D (frame path).mid.a k l) ∧\n (2*((k:ℝ)+l)*(k+l-1)*(k+l-2)*(coeff (frame path).mid.p ((frame path).mid.a+k) 2:ℝ)=\n   ((k+l).choose k:ℝ)*l*stripJMB9D (frame path).mid.a k l) ∧\n (6*((k:ℝ)+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*(coeff (frame path).mid.p ((frame path).mid.a+k) 3:ℝ)=\n   ((k+l).choose k:ℝ)*l*(l-1)*stripHMB9D (frame path).mid.a k l)",
+        "theorem source_strip_interiorMB9D (path : List Bool) (k l : ℕ)\n (ha : 2 ≤ (frame path).mid.a) (hb : 7 ≤ (frame path).mid.b)\n (hs : 3*(frame path).mid.a ≤ (frame path).mid.b)\n (hbl : (frame path).mid.b=k+l+2) (hl : 2 ≤ l) :\n coeff (frame path).mid.p ((frame path).mid.a+k) 1*\n coeff (frame path).mid.p ((frame path).mid.a+k) 3 ≤\n coeff (frame path).mid.p ((frame path).mid.a+k) 2^2",
+        "theorem source_strip_lowMB9D (path : List Bool) (ha : 2 ≤ (frame path).mid.a)\n (hb : 7 ≤ (frame path).mid.b) (hs : 3*(frame path).mid.a ≤ (frame path).mid.b) (i : ℕ) :\n coeff (frame path).mid.p i 1*coeff (frame path).mid.p i 3 ≤ coeff (frame path).mid.p i 2^2",
+        "theorem source_strip_all_lowMB9D (path : List Bool)\n (hs : 3*(frame path).mid.a ≤ (frame path).mid.b) (i : ℕ) :\n coeff (frame path).mid.p i 1*coeff (frame path).mid.p i 3 ≤ coeff (frame path).mid.p i 2^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripCoefficientsMB9D",
+      "sha256": "0bf847714b1fc656e99a6f4d2f3513fd016927a879341a7c5586936df905ee4f",
+      "accepted": true,
+      "classification": "accepted mathematical",
+      "imports": [
+        "MarkovStripSourceMB9D",
+        "MarkovStripGapMB9D"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "strip_choose_downMB9D"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_linear_scaledMB9D"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_quad_scaledMB9D"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_cubic_scaledMB9D"
+        }
+      ],
+      "theorem_statements": [
+        "theorem strip_choose_downMB9D (k l : ℕ) (hN : 1 ≤ k+l) :\n ((k:ℝ)+l)*((k+l-1).choose k:ℝ)=((k+l).choose k:ℝ)*l",
+        "theorem strip_linear_scaledMB9D (k l : ℕ) (hN : 1 ≤ k+l) (A B : ℝ) :\n ((k:ℝ)+l)*(linearRow77 (k+l-1) A B).coeff k=\n ((k+l).choose k:ℝ)*(A*l+B*k)",
+        "theorem strip_quad_scaledMB9D (k l : ℕ) (hl : 2 ≤ l) (hN : 5 ≤ k+l) (a : ℝ) :\n ((k:ℝ)+l)*(k+l-1)*(k+l-2)*\n (((1+(X:ℝ[X]))^(k+l-3)*stripQuadMB9D a (k+l+2)).coeff k)=\n ((k+l).choose k:ℝ)*l*stripJMB9D a k l",
+        "theorem strip_cubic_scaledMB9D (k l : ℕ) (hl : 2 ≤ l) (hN : 5 ≤ k+l) (a : ℝ) :\n ((k:ℝ)+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*\n (((1+(X:ℝ[X]))^(k+l-5)*stripCubicMB9D a (k+l+2)).coeff k)=\n ((k+l).choose k:ℝ)*l*(l-1)*stripHMB9D a k l"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripGapMB9D",
+      "sha256": "4d55d1d2ee59060fdf6b01f648e8b0e3938cf807d1d171cf10c21c9c60c7cab5",
+      "accepted": true,
+      "classification": "accepted mathematical",
+      "imports": [
+        "MathGKM.Markov"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "stripTMB9D"
+        },
+        {
+          "kind": "def",
+          "name": "stripJMB9D"
+        },
+        {
+          "kind": "def",
+          "name": "stripHMB9D"
+        },
+        {
+          "kind": "def",
+          "name": "stripGapMB9D"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_largeMB9D"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_twoMB9D"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_threeMB9D"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_fourMB9D"
+        }
+      ],
+      "theorem_statements": [
+        "theorem strip_largeMB9D (a k l : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ stripGapMB9D (a+1) k (l+5)",
+        "theorem strip_twoMB9D (a k l : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ stripGapMB9D (a+1) (k+3) 2",
+        "theorem strip_threeMB9D (a k l : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ stripGapMB9D (a+1) (k+2) 3",
+        "theorem strip_fourMB9D (a k l : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ stripGapMB9D (a+1) (k+1) 4"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripLCMB9D",
+      "sha256": "42ef3b925a7b3d939b4df94ba25f5c87f670a822cef78ccabe9dd08b584a0f6a",
+      "accepted": true,
+      "classification": "accepted mathematical",
+      "imports": [
+        "MarkovStripGapMB9D"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "strip_gap_nonnegMB9D"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_gap_transferMB9D"
+        }
+      ],
+      "theorem_statements": [
+        "theorem strip_gap_nonnegMB9D (a k l : ℕ) (ha : 1 ≤ a) (hl : 2 ≤ l) (hN : 5 ≤ k+l) :\n 0 ≤ stripGapMB9D a k l",
+        "theorem strip_gap_transferMB9D (a k l C c₁ c₂ c₃ : ℝ)\n (hk : 0 ≤ k) (hl : 2 ≤ l) (hN : 5 ≤ k+l)\n (h₁ : (k+l)*c₁=C*stripTMB9D a k l)\n (h₂ : 2*(k+l)*(k+l-1)*(k+l-2)*c₂=C*l*stripJMB9D a k l)\n (h₃ : 6*(k+l)*(k+l-1)*(k+l-2)*(k+l-3)*(k+l-4)*c₃=C*l*(l-1)*stripHMB9D a k l)\n (hg : 0 ≤ stripGapMB9D a k l) : c₁*c₃ ≤ c₂^2"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripSourceMB9D",
+      "sha256": "3cebfd735e5da16eeac402796840fc9dea4a5bca845d12d98e4b3b93e5b2d3ae",
+      "accepted": true,
+      "classification": "accepted mathematical",
+      "imports": [
+        "MarkovBottomCoefficientsMAA6",
+        "MarkovHorizontalThirdSourceM13D"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "stripQuadMB9D"
+        },
+        {
+          "kind": "def",
+          "name": "stripCubicMB9D"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_twoMB9D"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_threeMB9D"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_quad_mapMB9D"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_cubic_mapMB9D"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_two_coeffMB9D"
+        },
+        {
+          "kind": "theorem",
+          "name": "strip_three_coeffMB9D"
+        }
+      ],
+      "theorem_statements": [
+        "theorem source_strip_twoMB9D (path : List Bool) (hb : 5 ≤ (frame path).mid.b)\n (hs : 2*(frame path).mid.a ≤ (frame path).mid.b) :\n 2*(Bivariate.swap (frame path).mid.p).coeff 2=\n X^(frame path).mid.a*(1+X)^((frame path).mid.b-5)*\n stripQuadMB9D ((frame path).mid.a:ℤ) (frame path).mid.b",
+        "theorem source_strip_threeMB9D (path : List Bool) (ha : 2 ≤ (frame path).mid.a)\n (hb : 7 ≤ (frame path).mid.b) (hs : 3*(frame path).mid.a ≤ (frame path).mid.b) :\n 6*(Bivariate.swap (frame path).mid.p).coeff 3=\n X^(frame path).mid.a*(1+X)^((frame path).mid.b-7)*\n stripCubicMB9D ((frame path).mid.a:ℤ) (frame path).mid.b",
+        "theorem strip_quad_mapMB9D (a b : ℤ) :\n (stripQuadMB9D a b).map (Int.castRingHom ℝ)=stripQuadMB9D (a:ℝ) b",
+        "theorem strip_cubic_mapMB9D (a b : ℤ) :\n (stripCubicMB9D a b).map (Int.castRingHom ℝ)=stripCubicMB9D (a:ℝ) b",
+        "theorem strip_two_coeffMB9D (path : List Bool) (hb : 5 ≤ (frame path).mid.b)\n (hs : 2*(frame path).mid.a ≤ (frame path).mid.b) (k : ℕ) :\n 2*(coeff (frame path).mid.p ((frame path).mid.a+k) 2:ℝ)=\n ((1+(X:ℝ[X]))^((frame path).mid.b-5)*\n stripQuadMB9D ((frame path).mid.a:ℝ) (frame path).mid.b).coeff k",
+        "theorem strip_three_coeffMB9D (path : List Bool) (ha : 2 ≤ (frame path).mid.a)\n (hb : 7 ≤ (frame path).mid.b) (hs : 3*(frame path).mid.a ≤ (frame path).mid.b) (k : ℕ) :\n 6*(coeff (frame path).mid.p ((frame path).mid.a+k) 3:ℝ)=\n ((1+(X:ℝ[X]))^((frame path).mid.b-7)*\n stripCubicMB9D ((frame path).mid.a:ℝ) (frame path).mid.b).coeff k"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovStripTwoProbeMB9D",
+      "sha256": "a117bd073ecc46e5cd81642a64691c37ecba81ccecd020f8ac75bbaf1f84c1f2",
+      "accepted": false,
+      "classification": "compiled-only mathematical diagnostic",
+      "imports": [
+        "MarkovBottomCoefficientsMAA6",
+        "MarkovHorizontalThirdSourceM13D"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "stripQuadMB9D"
+        },
+        {
+          "kind": "def",
+          "name": "stripCubicMB9D"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_strip_twoMB9D"
+        }
+      ],
+      "theorem_statements": [
+        "theorem source_strip_twoMB9D (path : List Bool) (hb : 5 ≤ (frame path).mid.b)\n (hs : 2*(frame path).mid.a ≤ (frame path).mid.b) :\n 2*(Bivariate.swap (frame path).mid.p).coeff 2=\n X^(frame path).mid.a*(1+X)^((frame path).mid.b-5)*\n stripQuadMB9D ((frame path).mid.a:ℤ) (frame path).mid.b"
+      ],
+      "raw_forbidden_flags": []
+    }
+  ],
+  "accepted_counts": {
+    "def": 7,
+    "theorem": 21
+  },
+  "compiled_only_probe_counts": {
+    "def": 2,
+    "theorem": 1
+  },
+  "per_module_counts": {
+    "MarkovProbeMB9D": {},
+    "MarkovResidualMB9D": {
+      "def": 1,
+      "theorem": 1
+    },
+    "MarkovStripAllMB9D": {
+      "theorem": 4
+    },
+    "MarkovStripCoefficientsMB9D": {
+      "theorem": 4
+    },
+    "MarkovStripGapMB9D": {
+      "def": 4,
+      "theorem": 4
+    },
+    "MarkovStripLCMB9D": {
+      "theorem": 2
+    },
+    "MarkovStripSourceMB9D": {
+      "def": 2,
+      "theorem": 6
+    },
+    "MarkovStripTwoProbeMB9D": {
+      "def": 2,
+      "theorem": 1
+    }
+  },
+  "certificates": [
+    {
+      "name": "strip_largeMB9D",
+      "statement": "(a k l : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ stripGapMB9D (a+1) k (l+5)",
+      "body": "unfold stripGapMB9D stripTMB9D stripJMB9D stripHMB9D ring_nf positivity",
+      "no_expansion_recomputed": true
+    },
+    {
+      "name": "strip_twoMB9D",
+      "statement": "(a k l : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ stripGapMB9D (a+1) (k+3) 2",
+      "body": "unfold stripGapMB9D stripTMB9D stripJMB9D stripHMB9D ring_nf positivity",
+      "no_expansion_recomputed": true
+    },
+    {
+      "name": "strip_threeMB9D",
+      "statement": "(a k l : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ stripGapMB9D (a+1) (k+2) 3",
+      "body": "unfold stripGapMB9D stripTMB9D stripJMB9D stripHMB9D ring_nf positivity",
+      "no_expansion_recomputed": true
+    },
+    {
+      "name": "strip_fourMB9D",
+      "statement": "(a k l : ℝ) (ha : 0 ≤ a) (hk : 0 ≤ k) (hl : 0 ≤ l) :\n 0 ≤ stripGapMB9D (a+1) (k+1) 4",
+      "body": "unfold stripGapMB9D stripTMB9D stripJMB9D stripHMB9D ring_nf positivity",
+      "no_expansion_recomputed": true
+    }
+  ],
+  "exact_residual_diff_only_vertical_disjunction": true,
+  "diagnostic_prefix_matches_accepted_source": true
+}
