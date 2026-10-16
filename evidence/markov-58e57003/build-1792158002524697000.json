@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovOffsetTermM58E.lean:36:7: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  r + 1\nin the target expression\n  \u2191((j + i).succ.choose r.succ) = \u2191((j + i).choose r) + \u2191((j + i).choose r.succ)\n\nj i h : \u2115\nhh : h + 2 \u2264 i\nhj : i \u2264 j + h + 2\nr : \u2115 := 2 * i - 2 - h\nhr : i \u2264 r\nhrn : r \u2264 j + i\nhre : r + 1 = 2 * i - 1 - h\nhrz : \u2191r = 2 * \u2191i - 2 - \u2191h\nhc : \u2191((j + i).choose (2 * i - 1 - h)) * (\u2191r + 1) = \u2191((j + i).choose r) * (\u2191(j + i) - \u2191r)\nhp : \u2191((j + i).succ.choose r.succ) = \u2191((j + i).choose r) + \u2191((j + i).choose r.succ)\nhm : (j + i).choose r * r.choose i = (j + i).choose i * j.choose (i - 2 - h)\nhmz : \u2191((j + i).choose r) * \u2191(r.choose i) = \u2191((j + i).choose i) * \u2191(j.choose (i - 2 - h))\n\u22a2 (2 * \u2191i - 1 - \u2191h) * (\u2191((j + i + 1).choose (2 * i - 1 - h)) + \u2191((j + i).choose (2 * i - 1 - h))) =\n    (2 * \u2191j + 3 + \u2191h) * \u2191((j + i).choose r)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovOffsetTermM58E": "f8ec7db543d927ccbab500cf01051a538d2c82b40a24207886b6427d0853cf1a"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-58e57003/MarkovOffsetTermM58E.olean",
+    "/Users/sasha/math_gkm/research/MarkovOffsetTermM58E.lean"
+  ],
+  "seconds": 5.088418458006345,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

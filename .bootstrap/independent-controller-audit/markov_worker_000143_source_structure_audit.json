@@ -1,0 +1,400 @@
+{
+  "worker": 143,
+  "request": "58e5700333bc4922a9949ab13f9bac6f",
+  "created_at_utc": "2026-10-16T14:05:09.546854+00:00",
+  "scope": "Archive-first static reading, declarations, hashes and input/index-domain counts only. No project code or coefficient/binomial/polynomial/matrix/recurrence/moment/gap recomputation. Active144 excluded.",
+  "new_modules": [
+    {
+      "module": "MarkovOffsetPairM58E",
+      "path": "research/MarkovOffsetPairM58E.lean",
+      "sha256": "2e0ac6defc5c48a2482aba176529a7893f25ea7219d6077f41631ee35cc659f3",
+      "current_sha256": "2e0ac6defc5c48a2482aba176529a7893f25ea7219d6077f41631ee35cc659f3",
+      "bytes": 2725,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "choose_add_sumM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "offset_pair_termM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "offset_pairM58E"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovFibGlobalM6E1",
+        "MarkovCentralBinomialM6E1"
+      ],
+      "theorem_statements": [
+        "theorem choose_add_sumM58E (n d k : ℕ) :\n ((n+d).choose k:ℤ)=∑ e∈range (k+1), (d.choose e:ℤ)*(n.choose (k-e):ℤ)",
+        "theorem offset_pair_termM58E (j d l b t : ℕ)\n (hl : 1≤l) (hb : 1≤b) (ht : t≤j) :\n coeff (fib6 (j+d+1)) l t*coeff (fib6 (j+d+1)) b (j-t)=\n ∑ e∈range l, ∑ f∈range b,\n  (d.choose e:ℤ)*(d.choose f:ℤ)*\n  ((l+b-1-f).choose l:ℤ)*((l+b-1-e).choose b:ℤ)*\n  ((t+l).choose (l+b-1-f):ℤ)*((j-t+b).choose (l+b-1-e):ℤ)",
+        "theorem offset_pairM58E (j d l b : ℕ) (hl : 1≤l) (hb : 1≤b) :\n (∑ t∈range (j+1), coeff (fib6 (j+d+1)) l t*coeff (fib6 (j+d+1)) b (j-t))=\n ∑ e∈range l, ∑ f∈range b,\n  (d.choose e:ℤ)*(d.choose f:ℤ)*\n  ((l+b-1-f).choose l:ℤ)*((l+b-1-e).choose b:ℤ)*\n  ((j+l+b+1).choose (2*(l+b)-1-e-f):ℤ)"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovOffsetSquareM58E",
+      "path": "research/MarkovOffsetSquareM58E.lean",
+      "sha256": "0a9bd6ccee840521b4b08929f95a73e62556617cb7607f997b9ea44351d2fd98",
+      "current_sha256": "0a9bd6ccee840521b4b08929f95a73e62556617cb7607f997b9ea44351d2fd98",
+      "bytes": 4139,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "offsetKernelM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "offset_kernel_zeroM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "offset_pair_extendedM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "offset_kernel_sumM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "offset_square_doubleM58E"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovOffsetPairM58E"
+      ],
+      "theorem_statements": [
+        "theorem offset_kernel_zeroM58E (j d i e f l : ℕ)\n (hl : l ≤ i) (he : e < i) (hf : f < i) (h : l ≤ e ∨ i-l ≤ f) :\n offsetKernelM58E j d i e f l=0",
+        "theorem offset_pair_extendedM58E (j d i l : ℕ) (hi : 2 ≤ i) (hl : l ≤ i) :\n (∑ t∈range (j+1), coeff (fib6 (j+d+1)) l t*coeff (fib6 (j+d+1)) (i-l) (j-t))=\n ∑ e∈range i, ∑ f∈range i, offsetKernelM58E j d i e f l",
+        "theorem offset_kernel_sumM58E (j d i e f : ℕ) (hi : 2 ≤ i) (he : e < i) (hf : f < i) :\n (∑ l∈range (i+1), offsetKernelM58E j d i e f l)=\n (d.choose e:ℤ)*(d.choose f:ℤ)*((2*i-2-e-f).choose i:ℤ)*\n ((j+i+1).choose (2*i-1-e-f):ℤ)",
+        "theorem offset_square_doubleM58E (j d i : ℕ) (hi : 2 ≤ i) :\n coeff (fib6 (j+d+1)^2) i j=\n ∑ e∈range i, ∑ f∈range i,\n (d.choose e:ℤ)*(d.choose f:ℤ)*((2*i-2-e-f).choose i:ℤ)*\n ((j+i+1).choose (2*i-1-e-f):ℤ)"
+      ],
+      "definitions": [
+        "def offsetKernelM58E (j d i e f l : ℕ) : ℤ :=\n (d.choose e:ℤ)*(d.choose f:ℤ)*\n ((i-1-f).choose l:ℤ)*((i-1-e).choose (i-l):ℤ)*\n ((j+i+1).choose (2*i-1-e-f):ℤ)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovOffsetFormulaM58E",
+      "path": "research/MarkovOffsetFormulaM58E.lean",
+      "sha256": "ce2651d4d31f2586f92acd21dc35f8b0eac272295d79fb73a1e48d30bc5a47e3",
+      "current_sha256": "ce2651d4d31f2586f92acd21dc35f8b0eac272295d79fb73a1e48d30bc5a47e3",
+      "bytes": 2461,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "triangle_sumM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "offset_square_formulaM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "offset_square_lowM58E"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovOffsetSquareM58E"
+      ],
+      "theorem_statements": [
+        "theorem triangle_sumM58E (F : ℕ → ℕ → ℤ) (n : ℕ)\n (hz : ∀ e f, e < n → f < n → n ≤ e+f → F e f=0) :\n (∑ e∈range n, ∑ f∈range n, F e f)=\n ∑ h∈range n, ∑ e∈range (h+1), F e (h-e)",
+        "theorem offset_square_formulaM58E (j d i : ℕ) (hi : 2 ≤ i) :\n coeff (fib6 (j+d+1)^2) i j=\n ∑ h∈range (i-1), ((2*d).choose h:ℤ)*((2*i-2-h).choose i:ℤ)*\n ((j+i+1).choose (2*i-1-h):ℤ)",
+        "theorem offset_square_lowM58E (j d i : ℕ) (hi : i ≤ 1) :\n coeff (fib6 (j+d+1)^2) i j=0"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovSourceOffsetM58E",
+      "path": "research/MarkovSourceOffsetM58E.lean",
+      "sha256": "43abe853eff08a48238a47800c3f5c3d8deb764258e04bce8f1af35653f5693a",
+      "current_sha256": "43abe853eff08a48238a47800c3f5c3d8deb764258e04bce8f1af35653f5693a",
+      "bytes": 2343,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "lowerValM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_nonnegM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_lowM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_two_formulaM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_lower_formulaM58E"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovOffsetFormulaM58E",
+        "MarkovSquares3556"
+      ],
+      "theorem_statements": [
+        "theorem lower_nonnegM58E (j d i : ℕ) : 0 ≤ lowerValM58E j d i",
+        "theorem lower_lowM58E (j d i : ℕ) (hi : i ≤ 1) : lowerValM58E j d i=0",
+        "theorem lower_two_formulaM58E (j d i : ℕ) :\n coeff (fib6 (j+d+1)^2+V*fib6 (j+d)^2) i j=lowerValM58E j d i",
+        "theorem source_two_lower_formulaM58E (path : List Bool) (j d i : ℕ)\n (ha : (frame path).mid.a=2) (hb : (frame path).mid.b=2*(j+d)+1) :\n coeff (frame path).mid.p i j=lowerValM58E j d i"
+      ],
+      "definitions": [
+        "def lowerValM58E (j d i : ℕ) : ℤ :=\n ∑ h∈range (i-1), ((2*d).choose h:ℤ)*((2*i-2-h).choose i:ℤ)*\n  (((j+i+1).choose (2*i-1-h):ℤ)+((j+i).choose (2*i-1-h):ℤ))"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovOffsetSupportM58E",
+      "path": "research/MarkovOffsetSupportM58E.lean",
+      "sha256": "c00f77063274271f637f3da3218cef8d373c32fe5828e69e4f8c6713727b779a",
+      "current_sha256": "c00f77063274271f637f3da3218cef8d373c32fe5828e69e4f8c6713727b779a",
+      "bytes": 2526,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "lower_highM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_positiveM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_polygonM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_lower_supportM58E"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovSourceOffsetM58E"
+      ],
+      "theorem_statements": [
+        "theorem lower_highM58E (j d i : ℕ) (hi : j+2*d+2 < i) : lowerValM58E j d i=0",
+        "theorem lower_positiveM58E (j d i : ℕ) :\n 0 < lowerValM58E j d i ↔ 2 ≤ i ∧ i ≤ j+2*d+2",
+        "theorem lower_polygonM58E (j d i : ℕ) :\n InPolygon 2 (2*(j+d)+1) i j ↔ 2 ≤ i ∧ i ≤ j+2*d+2",
+        "theorem source_two_lower_supportM58E (path : List Bool) (j d i : ℕ)\n (ha : (frame path).mid.a=2) (hb : (frame path).mid.b=2*(j+d)+1) :\n 0 < coeff (frame path).mid.p i j ↔ InPolygon (frame path).mid.a (frame path).mid.b i j"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovOffsetReductionM58E",
+      "path": "research/MarkovOffsetReductionM58E.lean",
+      "sha256": "23ac582b232d18e56363ea43e378401cac40f2ea91cf969107fde5514a82d5b0",
+      "current_sha256": "23ac582b232d18e56363ea43e378401cac40f2ea91cf969107fde5514a82d5b0",
+      "bytes": 2342,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "LowerSourceLCM58E"
+        },
+        {
+          "kind": "def",
+          "name": "LowerBinomialLCM58E"
+        },
+        {
+          "kind": "def",
+          "name": "lowerPathM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_path_labelsM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_source_iffM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_implies_lowerM58E"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovOffsetSupportM58E"
+      ],
+      "theorem_statements": [
+        "theorem lower_path_labelsM58E (j d : ℕ) (hq : 1 ≤ j+d) :\n (frame (lowerPathM58E j d)).mid.a=2 ∧\n (frame (lowerPathM58E j d)).mid.b=2*(j+d)+1",
+        "theorem lower_source_iffM58E : LowerSourceLCM58E ↔ LowerBinomialLCM58E",
+        "theorem root_implies_lowerM58E (h : Conjecture63) : LowerBinomialLCM58E"
+      ],
+      "definitions": [
+        "def LowerSourceLCM58E : Prop := ∀ (path : List Bool) (j d i : ℕ),\n (frame path).mid.a=2 → (frame path).mid.b=2*(j+d)+1 →\n InPolygon (frame path).mid.a (frame path).mid.b i j →\n InPolygon (frame path).mid.a (frame path).mid.b (i+1) j →\n InPolygon (frame path).mid.a (frame path).mid.b (i+2) j →\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) j^2",
+        "def LowerBinomialLCM58E : Prop := ∀ j d i : ℕ, 1 ≤ j+d →\n lowerValM58E j d i*lowerValM58E j d (i+2) ≤ lowerValM58E j d (i+1)^2",
+        "def lowerPathM58E (j d : ℕ) : List Bool := List.replicate (j+d-1) false++[true]"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovOffsetTermM58E",
+      "path": "research/MarkovOffsetTermM58E.lean",
+      "sha256": "9f6eddd2fa04502ef908605774ba9798a65e2f81a97031d7c624468f8a92ae24",
+      "current_sha256": "9f6eddd2fa04502ef908605774ba9798a65e2f81a97031d7c624468f8a92ae24",
+      "bytes": 2728,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "lowerCoreM58E"
+        },
+        {
+          "kind": "def",
+          "name": "lowerAuxM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_core_nonnegM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_core_scaledM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_aux_diagonalM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_core_diagonalM58E"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovSourceOffsetM58E"
+      ],
+      "theorem_statements": [
+        "theorem lower_core_nonnegM58E (j i h : ℕ) : 0 ≤ lowerCoreM58E j i h",
+        "theorem lower_core_scaledM58E (j i h : ℕ) (hh : h+2 ≤ i) (hj : i ≤ j+h+2) :\n (2*(i:ℤ)-1-h)*lowerCoreM58E j i h=(2*(j:ℤ)+3+h)*lowerAuxM58E j i h",
+        "theorem lower_aux_diagonalM58E (j i h : ℕ) (hh : h+2 ≤ i) :\n ((i:ℤ)+1)*lowerAuxM58E j (i+1) (h+1)=\n ((j:ℤ)+i+1)*lowerAuxM58E j i h",
+        "theorem lower_core_diagonalM58E (j i h : ℕ) (hh : h+2 ≤ i) (hj : i ≤ j+h+2) :\n ((i:ℤ)+1)*(2*i-h)*(2*j+3+h)*lowerCoreM58E j (i+1) (h+1)=\n ((j:ℤ)+i+1)*(2*i-1-h)*(2*j+4+h)*lowerCoreM58E j i h"
+      ],
+      "definitions": [
+        "def lowerCoreM58E (j i h : ℕ) : ℤ :=\n ((2*i-2-h).choose i:ℤ)*\n (((j+i+1).choose (2*i-1-h):ℤ)+((j+i).choose (2*i-1-h):ℤ))",
+        "def lowerAuxM58E (j i h : ℕ) : ℤ :=\n ((j+i).choose i:ℤ)*(j.choose (i-2-h):ℤ)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovOffsetMixedM58E",
+      "path": "research/MarkovOffsetMixedM58E.lean",
+      "sha256": "bf39a4ae521d078ed09a0f706b0655a213f2c95a93ae72e2ee4d129661042f27",
+      "current_sha256": "bf39a4ae521d078ed09a0f706b0655a213f2c95a93ae72e2ee4d129661042f27",
+      "bytes": 2786,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "lowerMixedGapM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_mixed_gapM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_mixed_transferM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_core_mixedM58E"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovOffsetTermM58E"
+      ],
+      "theorem_statements": [
+        "theorem lower_mixed_gapM58E (h k t : ℤ) (hh : 0 ≤ h) (hk : 0 ≤ k)\n (ht : 1 ≤ t) (hj : 2 ≤ k+t) :\n 0 ≤ lowerMixedGapM58E (k+t) (k+h+2) h",
+        "theorem lower_mixed_transferM58E (j i h L M N R : ℤ)\n (h0 : (i+1)*(2*i-h)*(2*j+3+h)*N=(j+i+1)*(2*i-1-h)*(2*j+4+h)*L)\n (h1 : (i+2)*(2*i+2-h)*(2*j+3+h)*R=(j+i+2)*(2*i+1-h)*(2*j+4+h)*M) :\n ((i+1)*(2*i-h)*(2*j+3+h))*((i+2)*(2*i+2-h)*(2*j+3+h))*(M*N-L*R)=\n (2*j+3+h)*(2*j+4+h)*lowerMixedGapM58E j i h*L*M",
+        "theorem lower_core_mixedM58E (j i h : ℕ) (hj : 2 ≤ j)\n (hh : h+2 ≤ i) (hi : i ≤ j+h+1) :\n lowerCoreM58E j i h*lowerCoreM58E j (i+2) (h+1) ≤\n lowerCoreM58E j (i+1) h*lowerCoreM58E j (i+1) (h+1)"
+      ],
+      "definitions": [
+        "def lowerMixedGapM58E (j i h : ℤ) : ℤ :=\n (j+i+1)*(i+2)*(2*i-1-h)*(2*i+2-h)-\n (j+i+2)*(i+1)*(2*i+1-h)*(2*i-h)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovOffsetObstructionM58E",
+      "path": "research/MarkovOffsetObstructionM58E.lean",
+      "sha256": "6d759b55c939f85d9401238780422a8a001dcaea7f83ccfe23e222f9e0aebc1c",
+      "current_sha256": "6d759b55c939f85d9401238780422a8a001dcaea7f83ccfe23e222f9e0aebc1c",
+      "bytes": 3073,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "lowerTermM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_term_nonnegM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_term_localM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_term_midpoint_gapM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_term_midpoint_failsM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_term_mixed_failsM58E"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_obstruction_sourceM58E"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovOffsetReductionM58E",
+        "MarkovOffsetMixedM58E"
+      ],
+      "theorem_statements": [
+        "theorem lower_term_nonnegM58E (j d i h : ℕ) : 0 ≤ lowerTermM58E j d i h",
+        "theorem lower_term_localM58E (j d i h : ℕ) (hj : 2 ≤ j) :\n lowerTermM58E j d i h*lowerTermM58E j d (i+2) (h+1) ≤\n lowerTermM58E j d (i+1) h*lowerTermM58E j d (i+1) (h+1)",
+        "theorem lower_term_midpoint_gapM58E (d : ℕ) :\n lowerTermM58E 1 d 2 0*lowerTermM58E 1 d 4 1-\n lowerTermM58E 1 d 3 0*lowerTermM58E 1 d 3 1=2*d",
+        "theorem lower_term_midpoint_failsM58E (d : ℕ) (hd : 1 ≤ d) :\n lowerTermM58E 1 d 3 0*lowerTermM58E 1 d 3 1 <\n lowerTermM58E 1 d 2 0*lowerTermM58E 1 d 4 1",
+        "theorem lower_term_mixed_failsM58E :\n 2*lowerTermM58E 1 1 3 0*lowerTermM58E 1 1 3 2 <\n lowerTermM58E 1 1 2 0*lowerTermM58E 1 1 4 2+\n lowerTermM58E 1 1 2 2*lowerTermM58E 1 1 4 0",
+        "theorem lower_obstruction_sourceM58E :\n let m := (frame (lowerPathM58E 1 1)).mid\n m.a=2 ∧ m.b=5 ∧ InPolygon m.a m.b 2 1 ∧\n InPolygon m.a m.b 3 1 ∧ InPolygon m.a m.b 4 1 ∧\n coeff m.p 2 1=5 ∧ coeff m.p 3 1=16 ∧ coeff m.p 4 1=17 ∧\n coeff m.p 2 1*coeff m.p 4 1 ≤ coeff m.p 3 1^2"
+      ],
+      "definitions": [
+        "def lowerTermM58E (j d i h : ℕ) : ℤ :=\n if h < i-1 then ((2*d).choose h:ℤ)*lowerCoreM58E j i h else 0"
+      ],
+      "forbidden_raw_tokens": []
+    }
+  ],
+  "counts": {
+    "theorem": 34,
+    "def": 9
+  },
+  "theorem_statement_extraction": "Whole theorem header through proof assignment, retaining inner let binders.",
+  "source_scope": "All actual paths with a=2,b=2*(j+d)+1 for natural j,d,i; source classification derives j+d>=1. Exactly lower rows0<=j<=q for q=j+d. Formula is ordinary integer raw coefficient, including j0 and i0,1 zeros.",
+  "finite_sum_scope": "Double index extensions e<l,f<b to e,f<i have explicit kernel-zero proofs, including l0/l=i. Triangle reindex uses e+f>=i zeros, then h=i-1 is removed as zero. No natural-underflow summand is silently added.",
+  "support_scope": "Positive lowerVal exactly2<=i<=j+2*d+2, equal to original polygon section. Low/high zeros explicit. Positive witness h=i-j-2 is natural and all choose support bounds proved.",
+  "subproblem_scope": "LowerSourceLC polygon-restricted actual lower-H family iff LowerBinomialLC all natural i with j+d>=1. Explicit lowerPath yields labels; low/right zeros recover all-index statement. Both LC propositions remain unproved.",
+  "root_scope": "No new root equivalence or residual. root_implies_lower points only from Conjecture63 to the proper lower subproblem. Previously validated root_iff_interiorM6E1 and unchanged residual persist; residual/root remain unproved.",
+  "scaled_term_scope": "Exact core identity requires h+2<=i<=j+h+2. Diagonal recurrence and mixed transfer cancel only strictly positive polynomial factors, not coefficients or masses; binomial weights multiplied as nonnegative factors.",
+  "local_midpoint_scope": "Unconditional lower_term_local for every natural d,i,h when j>=2 proves only adjacent h,h+1 comparison, with explicit zero branches. Arbitrary h,k floor/ceiling midpoint and separate summation/sign bridge remain unproved.",
+  "obstruction_scope": "At j1,i2,h0,k1, exact reversed summand gap2*d for all natural d, strictly positive d>=1. A different synchronized mixed certificate also fails at d1. Actual2/5 polygon-valid raw triple5,16,17 passes; no source/root refutation.",
+  "literature_scope": "Worker records a prospective floor/ceiling summation theorem. No external statement was searched, proved, imported as an axiom or supplied as research help by this audit.",
+  "mathematical_values_recomputed": false
+}

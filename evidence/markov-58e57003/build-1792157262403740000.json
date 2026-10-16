@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovOffsetPairM58E.lean:32:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ?a * \u2211 i \u2208 ?s, ?f i\nin the target expression\n  \u2191(d.choose e) * \u2191((j - t).choose (l - 1 - e)) * \u2191((t + l).choose l) *\n      ((\u2211 e \u2208 range b, \u2191(d.choose e) * \u2191(t.choose (b - 1 - e))) * \u2191((j - t + b).choose b)) =\n    \u2211 f \u2208 range b,\n      \u2191(d.choose e) * \u2191(d.choose f) * \u2191((l + b - 1 - f).choose l) * \u2191((l + b - 1 - e).choose b) *\n          \u2191((t + l).choose (l + b - 1 - f)) *\n        \u2191((j - t + b).choose (l + b - 1 - e))\n\nj d l b t : \u2115\nhl : 1 \u2264 l\nhb : 1 \u2264 b\nht : t \u2264 j\ne : \u2115\nhe : e \u2208 range l\n\u22a2 \u2191(d.choose e) * \u2191((j - t).choose (l - 1 - e)) * \u2191((t + l).choose l) *\n      ((\u2211 e \u2208 range b, \u2191(d.choose e) * \u2191(t.choose (b - 1 - e))) * \u2191((j - t + b).choose b)) =\n    \u2211 f \u2208 range b,\n      \u2191(d.choose e) * \u2191(d.choose f) * \u2191((l + b - 1 - f).choose l) * \u2191((l + b - 1 - e).choose b) *\n          \u2191((t + l).choose (l + b - 1 - f)) *\n        \u2191((j - t + b).choose (l + b - 1 - e))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovOffsetPairM58E": "5c7a4290811c9cdaa1019a0a812d551e3ff4c79f9139a5d69d99e086caf10c00"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-58e57003/MarkovOffsetPairM58E.olean",
+    "/Users/sasha/math_gkm/research/MarkovOffsetPairM58E.lean"
+  ],
+  "seconds": 3.772578332980629,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovOffsetTermM58E.lean:30:56: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  g \u2265 0\n  f \u2265 0\n  e \u2265 0\n  e - f \u2265 1\n  e - f + g \u2265 0\n  e \u2265 0\n  e + g \u2265 -2\n  e + f + g \u2265 -2\n  d \u2265 0\n  c \u2265 0\n  b \u2265 0\n  b + c \u2265 0\n  a \u2265 0\n  a - f \u2265 0\nwhere\n a := \u2191j\n b := \u2191((j + i).choose r)\n c := \u2191((j + i).choose r.succ)\n d := \u2191((j + i).choose i) * \u2191(j.choose (r - i))\n e := \u2191(i - (2 + ?m.250))\n f := \u2191(2 * i - (2 + (h\u271d + i)))\n g := \u2191?m.250\n/Users/sasha/math_gkm/research/MarkovOffsetTermM58E.lean:30:36: error: Application type mismatch: The argument\n  h\nhas type\n  \u2191((j + i).choose (r + 1)) * (\u2191r + 1) = \u2191((j + i).choose r) * (\u2191(j + i) - \u2191r)\nof sort `Prop` but is expected to have type\n  \u2115\nof sort `Type` in the application\n  i - 2 - h\n/Users/sasha/math_gkm/research/MarkovOffsetTermM58E.lean:53:1: error: `simp` made no progress\n",
+  "stderr": "",
+  "modules": {
+    "MarkovOffsetTermM58E": "60ee98523a228984aa9a71e616df27a1550db0599cef08bb4014c85cd1f74904"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-58e57003/MarkovOffsetTermM58E.olean",
+    "/Users/sasha/math_gkm/research/MarkovOffsetTermM58E.lean"
+  ],
+  "seconds": 3.9878349589998834,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovOffsetFormulaM58E.lean:52:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  2 * i - 2 - (i - 1)\nin the target expression\n  \u2211 x \u2208 range (i - 1),\n        \u2191((2 * d).choose x) * \u2191((2 * (i - 1 + 1) - 2 - x).choose (i - 1 + 1)) *\n          \u2191((j + (i - 1 + 1) + 1).choose (2 * (i - 1 + 1) - 1 - x)) +\n      \u2191((2 * d).choose (i - 1)) * \u2191((2 * (i - 1 + 1) - 2 - (i - 1)).choose (i - 1 + 1)) *\n        \u2191((j + (i - 1 + 1) + 1).choose (2 * (i - 1 + 1) - 1 - (i - 1))) =\n    \u2211 h \u2208 range (i - 1), \u2191((2 * d).choose h) * \u2191((2 * i - 2 - h).choose i) * \u2191((j + i + 1).choose (2 * i - 1 - h))\n\nj d i : \u2115\nhi : 2 \u2264 i\nF : \u2115 \u2192 \u2115 \u2192 \u2124 :=\n  fun e f => \u2191(d.choose e) * \u2191(d.choose f) * \u2191((2 * i - 2 - e - f).choose i) * \u2191((j + i + 1).choose (2 * i - 1 - e - f))\nhz : \u2200 (e f : \u2115), e < i \u2192 f < i \u2192 i \u2264 e + f \u2192 F e f = 0\nhe :\n  \u2200 h \u2208 range i,\n    \u2211 e \u2208 range (h + 1), F e (h - e) =\n      \u2191((2 * d).choose h) * \u2191((2 * i - 2 - h).choose i) * \u2191((j + i + 1).choose (2 * i - 1 - h))\n\u22a2 \u2211 x \u2208 range (i - 1),\n        \u2191((2 * d).choose x) * \u2191((2 * (i - 1 + 1) - 2 - x).choose (i - 1 + 1)) *\n          \u2191((j + (i - 1 + 1) + 1).choose (2 * (i - 1 + 1) - 1 - x)) +\n      \u2191((2 * d).choose (i - 1)) * \u2191((2 * (i - 1 + 1) - 2 - (i - 1)).choose (i - 1 + 1)) *\n        \u2191((j + (i - 1 + 1) + 1).choose (2 * (i - 1 + 1) - 1 - (i - 1))) =\n    \u2211 h \u2208 range (i - 1), \u2191((2 * d).choose h) * \u2191((2 * i - 2 - h).choose i) * \u2191((j + i + 1).choose (2 * i - 1 - h))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovOffsetFormulaM58E": "c648ee4b2db23691ee26b7e59e68922cc96b1f3b15ae27e80ec87f30019fc2c7"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-58e57003/MarkovOffsetFormulaM58E.olean",
+    "/Users/sasha/math_gkm/research/MarkovOffsetFormulaM58E.lean"
+  ],
+  "seconds": 22.863450041040778,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

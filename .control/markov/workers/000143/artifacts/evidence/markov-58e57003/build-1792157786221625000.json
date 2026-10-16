@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovOffsetSupportM58E.lean:44:38: error: failed to synthesize\n  Zero ?m.347\n\nHint: Additional diagnostic information may be available using the `set_option diagnostics true` command.\n/Users/sasha/math_gkm/research/MarkovOffsetSupportM58E.lean:44:3: error: Type mismatch\n  single_le_sum (fun x x_1 => ?m.355) (mem_range.mpr hh)\nhas type\n  ?m.350 h \u2264 \u2211 x \u2208 range (i - 1), ?m.350 x\nbut is expected to have type\n  \u2191((2 * d).choose h) * \u2191((2 * i - 2 - h).choose i) *\n      (\u2191((j + i + 1).choose (2 * i - 1 - h)) + \u2191((j + i).choose (2 * i - 1 - h))) \u2264\n    \u2211 h \u2208 range (i - 1),\n      \u2191((2 * d).choose h) * \u2191((2 * i - 2 - h).choose i) *\n        (\u2191((j + i + 1).choose (2 * i - 1 - h)) + \u2191((j + i).choose (2 * i - 1 - h)))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovOffsetSupportM58E": "f7466fa24b3e2b1fe02207668268fcb4ef5c883517a83bcf65464b1182a92ed6"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-58e57003/MarkovOffsetSupportM58E.olean",
+    "/Users/sasha/math_gkm/research/MarkovOffsetSupportM58E.lean"
+  ],
+  "seconds": 3.9899032909888774,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

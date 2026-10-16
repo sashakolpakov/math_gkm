@@ -1,0 +1,100 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovOffsetPairM58E\ncollected MarkovOffsetSquareM58E\ncollected MarkovOffsetFormulaM58E\ncollected MarkovSourceOffsetM58E\ncollected MarkovOffsetSupportM58E\ncollected MarkovOffsetReductionM58E\ncollected MarkovOffsetTermM58E\ncollected MarkovOffsetMixedM58E\ncollected MarkovOffsetObstructionM58E\nreplay union of 9 modules over 4 inherited imports\nisolation checked for 43 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovOffsetPairM58E": "2e0ac6defc5c48a2482aba176529a7893f25ea7219d6077f41631ee35cc659f3",
+    "MarkovOffsetSquareM58E": "0a9bd6ccee840521b4b08929f95a73e62556617cb7607f997b9ea44351d2fd98",
+    "MarkovOffsetFormulaM58E": "ce2651d4d31f2586f92acd21dc35f8b0eac272295d79fb73a1e48d30bc5a47e3",
+    "MarkovSourceOffsetM58E": "43abe853eff08a48238a47800c3f5c3d8deb764258e04bce8f1af35653f5693a",
+    "MarkovOffsetSupportM58E": "c00f77063274271f637f3da3218cef8d373c32fe5828e69e4f8c6713727b779a",
+    "MarkovOffsetReductionM58E": "23ac582b232d18e56363ea43e378401cac40f2ea91cf969107fde5514a82d5b0",
+    "MarkovOffsetTermM58E": "9f6eddd2fa04502ef908605774ba9798a65e2f81a97031d7c624468f8a92ae24",
+    "MarkovOffsetMixedM58E": "bf39a4ae521d078ed09a0f706b0655a213f2c95a93ae72e2ee4d129661042f27",
+    "MarkovOffsetObstructionM58E": "6d759b55c939f85d9401238780422a8a001dcaea7f83ccfe23e222f9e0aebc1c"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM58E.lean",
+    "MarkovOffsetPairM58E",
+    "MarkovOffsetSquareM58E",
+    "MarkovOffsetFormulaM58E",
+    "MarkovSourceOffsetM58E",
+    "MarkovOffsetSupportM58E",
+    "MarkovOffsetReductionM58E",
+    "MarkovOffsetTermM58E",
+    "MarkovOffsetMixedM58E",
+    "MarkovOffsetObstructionM58E"
+  ],
+  "seconds": 5.9250655000214465,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "30bdb33b389de3533536041b40aacb445d8f4a9f28549728a88fa58266755608",
+  "declared_names": {
+    "MarkovOffsetPairM58E": [
+      "choose_add_sumM58E",
+      "offset_pair_termM58E",
+      "offset_pairM58E"
+    ],
+    "MarkovOffsetSquareM58E": [
+      "offsetKernelM58E",
+      "offset_kernel_zeroM58E",
+      "offset_pair_extendedM58E",
+      "offset_kernel_sumM58E",
+      "offset_square_doubleM58E"
+    ],
+    "MarkovOffsetFormulaM58E": [
+      "triangle_sumM58E",
+      "offset_square_formulaM58E",
+      "offset_square_lowM58E"
+    ],
+    "MarkovSourceOffsetM58E": [
+      "lowerValM58E",
+      "lower_nonnegM58E",
+      "lower_lowM58E",
+      "lower_two_formulaM58E",
+      "source_two_lower_formulaM58E"
+    ],
+    "MarkovOffsetSupportM58E": [
+      "lower_highM58E",
+      "lower_positiveM58E",
+      "lower_polygonM58E",
+      "source_two_lower_supportM58E"
+    ],
+    "MarkovOffsetReductionM58E": [
+      "LowerSourceLCM58E",
+      "LowerBinomialLCM58E",
+      "lowerPathM58E",
+      "lower_path_labelsM58E",
+      "lower_source_iffM58E",
+      "root_implies_lowerM58E"
+    ],
+    "MarkovOffsetTermM58E": [
+      "lowerCoreM58E",
+      "lowerAuxM58E",
+      "lower_core_nonnegM58E",
+      "lower_core_scaledM58E",
+      "lower_aux_diagonalM58E",
+      "lower_core_diagonalM58E"
+    ],
+    "MarkovOffsetMixedM58E": [
+      "lowerMixedGapM58E",
+      "lower_mixed_gapM58E",
+      "lower_mixed_transferM58E",
+      "lower_core_mixedM58E"
+    ],
+    "MarkovOffsetObstructionM58E": [
+      "lowerTermM58E",
+      "lower_term_nonnegM58E",
+      "lower_term_localM58E",
+      "lower_term_midpoint_gapM58E",
+      "lower_term_midpoint_failsM58E",
+      "lower_term_mixed_failsM58E",
+      "lower_obstruction_sourceM58E"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed M58E; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}
