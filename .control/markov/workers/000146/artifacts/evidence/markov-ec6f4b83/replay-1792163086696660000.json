@@ -1,0 +1,89 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovUpperRatiosMEC6\ncollected MarkovUpperCrossMEC6\ncollected MarkovUpperWeightsMEC6\ncollected MarkovUpperFirstMEC6\ncollected MarkovUpperGlobalMEC6\ncollected MarkovResidualMEC6\ncollected MarkovUpperGainMEC6\ncollected MarkovDirectionObstructionMEC6\nreplay union of 8 modules over 4 inherited imports\nisolation checked for 36 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovUpperRatiosMEC6": "417015e300755401b44ba88f561a0a3bf697027caf727461712644783ddf3ffa",
+    "MarkovUpperCrossMEC6": "2251e9f097d6800e426cc76065044ce2f53579d1dbf1961bbde470898954f7e7",
+    "MarkovUpperWeightsMEC6": "392510bde7a1140c7076aa6bf591b8e93e806b51dfc92555cf88394854ebef93",
+    "MarkovUpperFirstMEC6": "f1cec5abf3d16b2d31c1c6eb045dc9a806efcfa495ce26dcbc1505e5fd13ae5a",
+    "MarkovUpperGlobalMEC6": "7087be9f55330fd4fd1a4d004cc4237357697f02472f6667fe1b3eafb7cc3841",
+    "MarkovResidualMEC6": "b15cf33dd1e4bca4a71002fa1b4c4348e5aeb8c72b041b64a253dd5281eeb768",
+    "MarkovUpperGainMEC6": "37907a61a099d50ef4e9fa0f2a3966d06005d110e56471d97c2654c761447917",
+    "MarkovDirectionObstructionMEC6": "f7acf9a2fb671a58af5ff88482e11c50f4b0e86923641d8104aa72f4c5da8110"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedMEC6.lean",
+    "MarkovUpperRatiosMEC6",
+    "MarkovUpperCrossMEC6",
+    "MarkovUpperWeightsMEC6",
+    "MarkovUpperFirstMEC6",
+    "MarkovUpperGlobalMEC6",
+    "MarkovResidualMEC6",
+    "MarkovUpperGainMEC6",
+    "MarkovDirectionObstructionMEC6"
+  ],
+  "seconds": 5.365441583038773,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "6524252e169f9fde2bdb4894007678fced15b085c44072c21290eeb3e3400952",
+  "declared_names": {
+    "MarkovUpperRatiosMEC6": [
+      "upper_horizontal_regionsMEC6",
+      "upper_diagonal_regionsMEC6",
+      "upper_HgapMEC6",
+      "upper_DgapMEC6",
+      "upper_LgapMEC6",
+      "ratio_crossMEC6"
+    ],
+    "MarkovUpperCrossMEC6": [
+      "upper_core_nonnegMEC6",
+      "upper_Hden_posMEC6",
+      "upper_Dden_posMEC6",
+      "upper_core_HstepMEC6",
+      "upper_core_DstepMEC6",
+      "upper_core_orderedMEC6",
+      "upper_core_localMEC6",
+      "upper_core_separatedMEC6"
+    ],
+    "MarkovUpperWeightsMEC6": [
+      "rising_inwardMEC6",
+      "upper_weight_inwardMEC6",
+      "upper_term_coreMEC6",
+      "upper_term_supportMEC6"
+    ],
+    "MarkovUpperFirstMEC6": [
+      "choose_rise_twoMEC6",
+      "choose_rise_threeMEC6",
+      "upper_core_twoMEC6",
+      "upper_core_threeMEC6",
+      "upper_core_firstMEC6"
+    ],
+    "MarkovUpperGlobalMEC6": [
+      "upper_core_shiftedMEC6",
+      "upper_weight_shiftedMEC6",
+      "upper_term_shiftedMEC6",
+      "upper_binomial_lcMEC6",
+      "numerator_two_horizontalMEC6",
+      "source_two_horizontal_allMEC6"
+    ],
+    "MarkovResidualMEC6": [
+      "InteriorCore63MEC6",
+      "root_iff_interiorMEC6"
+    ],
+    "MarkovUpperGainMEC6": [
+      "upper_previous_guardsMEC6",
+      "upper_gain_rawMEC6"
+    ],
+    "MarkovDirectionObstructionMEC6": [
+      "upper_vertical_shift_failsMEC6",
+      "upper_diagonal_shift_failsMEC6",
+      "direction_obstruction_sourceMEC6"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed MEC6; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

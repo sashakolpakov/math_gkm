@@ -1,0 +1,412 @@
+{
+  "worker": 146,
+  "request": "ec6f4b83e32c444bb048bd75468b418d",
+  "created_at_utc": "2026-10-16T15:27:21.379294+00:00",
+  "scope": "Archive-first static source/declaration/hash and finite input-index domain audit. No project program or proof/checker/experiment execution, mathematical-value recomputation or active147 inspection.",
+  "new_modules": [
+    {
+      "module": "MarkovUpperRatiosMEC6",
+      "path": "research/MarkovUpperRatiosMEC6.lean",
+      "sha256": "417015e300755401b44ba88f561a0a3bf697027caf727461712644783ddf3ffa",
+      "current_sha256": "417015e300755401b44ba88f561a0a3bf697027caf727461712644783ddf3ffa",
+      "bytes": 4569,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "upper_horizontal_regionsMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_diagonal_regionsMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_HgapMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_DgapMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_LgapMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "ratio_crossMEC6"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovUpperScalarM2B3"
+      ],
+      "theorem_statements": [
+        "theorem upper_horizontal_regionsMEC6 (k p r t : ℤ)\n (hk : 0 ≤ k) (hp : 0 ≤ p) (hr : 0 ≤ r) (ht : 0 ≤ t)\n (hi : 2 ≤ k+p+r) : 0 ≤ upperHGapM2B3 (k+p+r+t) (k+p+r) (k+p) k",
+        "theorem upper_diagonal_regionsMEC6 (k p r t : ℤ)\n (hk : 0 ≤ k) (hp : 0 ≤ p) (hr : 0 ≤ r) (ht : 0 ≤ t)\n (hi : 2 ≤ k+p+r) : 0 ≤ upperDGapM2B3 (k+p+r+t) (k+p+r) k (k+p+1)",
+        "theorem upper_HgapMEC6 (N i h k : ℤ) (hi : 2 ≤ i) (hk : 0 ≤ k)\n (hkh : k ≤ h) (hh : h ≤ i) (hN : i ≤ N) : 0 ≤ upperHGapM2B3 N i h k",
+        "theorem upper_DgapMEC6 (N i h k : ℤ) (hi : 2 ≤ i) (hh : 0 ≤ h)\n (hhk : h+1 ≤ k) (hk : k ≤ i+1) (hN : i ≤ N) : 0 ≤ upperDGapM2B3 N i h k",
+        "theorem upper_LgapMEC6 (N i h : ℤ) (hi : 2 ≤ i) (hh : 0 ≤ h)\n (hhi : h ≤ i) (hN : i ≤ N) : 0 ≤ upperLGapM2B3 N i h",
+        "theorem ratio_crossMEC6 (a b c d n₁ n₂ d₁ d₂ : ℤ)\n (ha : 0 ≤ a) (hc : 0 ≤ c) (hd₁ : 0 < d₁) (hd₂ : 0 < d₂)\n (h₁ : d₁*b=n₁*a) (h₂ : d₂*d=n₂*c) (hg : n₂*d₁ ≤ n₁*d₂) :\n a*d ≤ b*c"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovUpperCrossMEC6",
+      "path": "research/MarkovUpperCrossMEC6.lean",
+      "sha256": "2251e9f097d6800e426cc76065044ce2f53579d1dbf1961bbde470898954f7e7",
+      "current_sha256": "2251e9f097d6800e426cc76065044ce2f53579d1dbf1961bbde470898954f7e7",
+      "bytes": 3593,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "upper_core_nonnegMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_Hden_posMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_Dden_posMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_core_HstepMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_core_DstepMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_core_orderedMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_core_localMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_core_separatedMEC6"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovUpperRatiosMEC6",
+        "MarkovUpperCoreM2B3"
+      ],
+      "theorem_statements": [
+        "theorem upper_core_nonnegMEC6 (N i h : ℕ) : 0 ≤ upperCoreM2B3 N i h",
+        "theorem upper_Hden_posMEC6 (i h : ℤ) (hi : 2 ≤ i) (hh : h ≤ i) :\n 0 < upperHDenM2B3 i h",
+        "theorem upper_Dden_posMEC6 (N i h : ℤ) (hi : 2 ≤ i) (hh : h ≤ i) (hN : i ≤ N+1) :\n 0 < upperDDenM2B3 N i h",
+        "theorem upper_core_HstepMEC6 (N i h : ℕ) (hi : 2 ≤ i) (hh : h ≤ i) (hN : i+1 ≤ N+2) :\n upperHDenM2B3 i h*upperCoreM2B3 N (i+1) h =\n upperHNumM2B3 N i h*upperCoreM2B3 N i h",
+        "theorem upper_core_DstepMEC6 (N i h : ℕ) (hi : 2 ≤ i) (hh : h ≤ i) (hN : i+1 ≤ N+2) :\n upperDDenM2B3 N i h*upperCoreM2B3 N (i+1) (h+1) =\n upperDNumM2B3 N i h*upperCoreM2B3 N i h",
+        "theorem upper_core_orderedMEC6 (N i h k : ℕ) (hi : 2 ≤ i)\n (hk : k ≤ h) (hh : h ≤ i) (hN : i ≤ N) :\n upperCoreM2B3 N i h*upperCoreM2B3 N (i+2) k ≤\n upperCoreM2B3 N (i+1) h*upperCoreM2B3 N (i+1) k",
+        "theorem upper_core_localMEC6 (N i h : ℕ) (hi : 2 ≤ i)\n (hh : h ≤ i) (hN : i ≤ N) :\n upperCoreM2B3 N i h*upperCoreM2B3 N (i+2) (h+1) ≤\n upperCoreM2B3 N (i+1) h*upperCoreM2B3 N (i+1) (h+1)",
+        "theorem upper_core_separatedMEC6 (N i h k : ℕ) (hi : 2 ≤ i)\n (hh : h ≤ i) (hk : h+2 ≤ k) (hki : k ≤ i+2) (hN : i ≤ N) :\n upperCoreM2B3 N i h*upperCoreM2B3 N (i+2) k ≤\n upperCoreM2B3 N (i+1) (h+1)*upperCoreM2B3 N (i+1) (k-1)"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovUpperWeightsMEC6",
+      "path": "research/MarkovUpperWeightsMEC6.lean",
+      "sha256": "392510bde7a1140c7076aa6bf591b8e93e806b51dfc92555cf88394854ebef93",
+      "current_sha256": "392510bde7a1140c7076aa6bf591b8e93e806b51dfc92555cf88394854ebef93",
+      "bytes": 2267,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "rising_inwardMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_weight_inwardMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_term_coreMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_term_supportMEC6"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovUpperCrossMEC6"
+      ],
+      "theorem_statements": [
+        "theorem rising_inwardMEC6 (s h k : ℕ) (hk : h < k) :\n ((s+h).choose h:ℤ)*((s+k).choose k:ℤ) ≤\n ((s+(h+1)).choose (h+1):ℤ)*((s+(k-1)).choose (k-1):ℤ)",
+        "theorem upper_weight_inwardMEC6 (d h k : ℕ) (hd : 1 ≤ d) (hk : h < k) :\n ((2*d+h-1).choose h:ℤ)*((2*d+k-1).choose k:ℤ) ≤\n ((2*d+(h+1)-1).choose (h+1):ℤ)*((2*d+(k-1)-1).choose (k-1):ℤ)",
+        "theorem upper_term_coreMEC6 (N d i h : ℕ) (hi : 1 ≤ i) (hh : h ≤ i) :\n upperTermM2B3 N d i h=((2*d+h-1).choose h:ℤ)*upperCoreM2B3 N i h",
+        "theorem upper_term_supportMEC6 (N d i h : ℕ) (hn : upperTermM2B3 N d i h ≠ 0) :\n 1 ≤ i ∧ h ≤ i ∧ i ≤ N+2"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovUpperFirstMEC6",
+      "path": "research/MarkovUpperFirstMEC6.lean",
+      "sha256": "f1cec5abf3d16b2d31c1c6eb045dc9a806efcfa495ce26dcbc1505e5fd13ae5a",
+      "current_sha256": "f1cec5abf3d16b2d31c1c6eb045dc9a806efcfa495ce26dcbc1505e5fd13ae5a",
+      "bytes": 3307,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "choose_rise_twoMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_rise_threeMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_core_twoMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_core_threeMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_core_firstMEC6"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovUpperWeightsMEC6"
+      ],
+      "theorem_statements": [
+        "theorem choose_rise_twoMEC6 (N : ℕ) :\n 2*((N+2).choose 2:ℤ)=((N:ℤ)+2)*(N+1)",
+        "theorem choose_rise_threeMEC6 (N : ℕ) :\n 6*((N+3).choose 3:ℤ)=((N:ℤ)+3)*(N+2)*(N+1)",
+        "theorem upper_core_twoMEC6 (N : ℕ) :\n 6*upperCoreM2B3 N 2 0=(2*(N:ℤ)+3)*(N+2)*(N+1) ∧\n upperCoreM2B3 N 2 1=((N:ℤ)+1)^2 ∧\n upperCoreM2B3 N 2 2=2*(N:ℤ)+1",
+        "theorem upper_core_threeMEC6 (N : ℕ) (hN : 1 ≤ N) :\n 30*upperCoreM2B3 N 3 0=(2*(N:ℤ)+3)*(N+3)*(N+2)*(N+1)*N ∧\n 4*upperCoreM2B3 N 3 1=((N:ℤ)+1)^2*(N+2)*N ∧\n 3*upperCoreM2B3 N 3 2=(2*(N:ℤ)+1)*(N+1)*N ∧\n upperCoreM2B3 N 3 3=(N:ℤ)^2",
+        "theorem upper_core_firstMEC6 (N k : ℕ) (hN : 1 ≤ N) (hk : k ≤ 3) :\n 2*upperCoreM2B3 N 3 k ≤\n upperCoreM2B3 N 2 (min 2 k)*upperCoreM2B3 N 2 (max 2 k-1)"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovUpperGlobalMEC6",
+      "path": "research/MarkovUpperGlobalMEC6.lean",
+      "sha256": "7087be9f55330fd4fd1a4d004cc4237357697f02472f6667fe1b3eafb7cc3841",
+      "current_sha256": "7087be9f55330fd4fd1a4d004cc4237357697f02472f6667fe1b3eafb7cc3841",
+      "bytes": 4488,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "upper_core_shiftedMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_weight_shiftedMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_term_shiftedMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_binomial_lcMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "numerator_two_horizontalMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_horizontal_allMEC6"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovUpperFirstMEC6"
+      ],
+      "theorem_statements": [
+        "theorem upper_core_shiftedMEC6 (N i h k : ℕ) (hN : 1 ≤ N) (hi : 1 ≤ i)\n (hh : h ≤ i) (hk : k ≤ i+2) (hiN : i ≤ N) :\n upperCoreM2B3 N i h*upperCoreM2B3 N (i+2) k ≤\n upperCoreM2B3 N (i+1) (min (h+1) k)*\n upperCoreM2B3 N (i+1) (max (h+1) k-1)",
+        "theorem upper_weight_shiftedMEC6 (d h k : ℕ) (hd : 1 ≤ d) :\n ((2*d+h-1).choose h:ℤ)*((2*d+k-1).choose k:ℤ) ≤\n ((2*d+min (h+1) k-1).choose (min (h+1) k):ℤ)*\n ((2*d+(max (h+1) k-1)-1).choose (max (h+1) k-1):ℤ)",
+        "theorem upper_term_shiftedMEC6 : UpperShiftedM2B3",
+        "theorem upper_binomial_lcMEC6 : UpperBinomialLCM2B3",
+        "theorem numerator_two_horizontalMEC6 : NumeratorTwoHorizontalM2B3",
+        "theorem source_two_horizontal_allMEC6 (path : List Bool)\n (ha : (frame path).mid.a=2) (i j : ℕ) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) j^2"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovResidualMEC6",
+      "path": "research/MarkovResidualMEC6.lean",
+      "sha256": "b15cf33dd1e4bca4a71002fa1b4c4348e5aeb8c72b041b64a253dd5281eeb768",
+      "current_sha256": "b15cf33dd1e4bca4a71002fa1b4c4348e5aeb8c72b041b64a253dd5281eeb768",
+      "bytes": 2187,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "InteriorCore63MEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_interiorMEC6"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovResidualMAF6",
+        "MarkovUpperGlobalMEC6"
+      ],
+      "theorem_statements": [
+        "theorem root_iff_interiorMEC6 : Conjecture63 ↔ InteriorCore63MEC6"
+      ],
+      "definitions": [
+        "def InteriorCore63MEC6 : Prop := ∀ path : List Bool,\n let m := (frame path).mid\n 2 ≤ m.a →\n (∀ i j, InPolygon m.a m.b i j → InPolygon m.a m.b (i+1) j →\n   InPolygon m.a m.b (i+2) j → i+j+4 ≤ m.a+m.b-1 → 5 ≤ j →\n   ¬HorizontalMiddleMF1E m.a m.b i j →\n   ¬(HorizontalRegionMAC3 m.a m.b i j ∨ HorizontalVarianceMAC3 m.a m.b i j) →\n   ¬HorizontalSharpM37B m.a m.b i j → m.a≠2 →\n   coeff m.p i j*coeff m.p (i+2) j ≤ coeff m.p (i+1) j^2) ∧\n (∀ i j, InPolygon m.a m.b i j → InPolygon m.a m.b i (j+1) →\n   InPolygon m.a m.b i (j+2) → i+j+4 ≤ m.a+m.b-1 → 4 ≤ i → 3 ≤ j →\n   ¬VerticalMiddleMF1E m.a m.b i j →\n   ¬(VerticalRegionMAC3 m.a m.b i j ∨ VerticalVarianceMAC3 m.a m.b i j) →\n   ¬VerticalSharpM37B m.a m.b i j →\n   coeff m.p i j*coeff m.p i (j+2) ≤ coeff m.p i (j+1)^2) ∧\n (∀ i j, InPolygon m.a m.b i (j+2) → InPolygon m.a m.b (i+1) (j+1) →\n   InPolygon m.a m.b (i+2) j → i+j+8 ≤ m.a+m.b-1 → m.a+5 ≤ i+j+2 →\n   m.a+2 ≤ m.b → ¬DiagonalMiddleMF1E m.a m.b i j →\n   ¬(DiagonalRegionMAC3 m.a m.b i j ∨ DiagonalVarianceMAC3 m.a m.b i j) →\n   ¬DiagonalSharpM37B m.a m.b i j →\n   coeff m.p i (j+2)*coeff m.p (i+2) j ≤ coeff m.p (i+1) (j+1)^2)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovUpperGainMEC6",
+      "path": "research/MarkovUpperGainMEC6.lean",
+      "sha256": "37907a61a099d50ef4e9fa0f2a3966d06005d110e56471d97c2654c761447917",
+      "current_sha256": "37907a61a099d50ef4e9fa0f2a3966d06005d110e56471d97c2654c761447917",
+      "bytes": 1563,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "upper_previous_guardsMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_gain_rawMEC6"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovResidualMEC6"
+      ],
+      "theorem_statements": [
+        "theorem upper_previous_guardsMEC6 (n : ℕ) :\n let m := (frame (lowerPathM58E (n+5) 1)).mid\n 2 ≤ m.a ∧ InPolygon m.a m.b 3 (n+7) ∧ InPolygon m.a m.b 4 (n+7) ∧\n InPolygon m.a m.b 5 (n+7) ∧ 3+(n+7)+4 ≤ m.a+m.b-1 ∧ 5 ≤ n+7 ∧\n ¬HorizontalMiddleMF1E m.a m.b 3 (n+7) ∧\n ¬(HorizontalRegionMAC3 m.a m.b 3 (n+7) ∨ HorizontalVarianceMAC3 m.a m.b 3 (n+7)) ∧\n ¬HorizontalSharpM37B m.a m.b 3 (n+7) ∧\n ¬(m.a=2 ∧ 2*(n+7)+1 ≤ m.b)",
+        "theorem upper_gain_rawMEC6 (n : ℕ) :\n let p := (frame (lowerPathM58E (n+5) 1)).mid.p\n coeff p 3 (n+7)*coeff p 5 (n+7) ≤ coeff p 4 (n+7)^2"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovDirectionObstructionMEC6",
+      "path": "research/MarkovDirectionObstructionMEC6.lean",
+      "sha256": "f7acf9a2fb671a58af5ff88482e11c50f4b0e86923641d8104aa72f4c5da8110",
+      "current_sha256": "f7acf9a2fb671a58af5ff88482e11c50f4b0e86923641d8104aa72f4c5da8110",
+      "bytes": 2147,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "upper_vertical_shift_failsMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_diagonal_shift_failsMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "direction_obstruction_sourceMEC6"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovUpperGlobalMEC6"
+      ],
+      "theorem_statements": [
+        "theorem upper_vertical_shift_failsMEC6 (s : ℕ) :\n upperTermM2B3 2 2 2 (min s 1)*upperTermM2B3 2 2 2 (max s 1-s) <\n upperTermM2B3 3 1 2 0*upperTermM2B3 1 3 2 1",
+        "theorem upper_diagonal_shift_failsMEC6 (s : ℕ) :\n upperTermM2B3 2 2 2 (min (1+s) 0)*upperTermM2B3 2 2 2 (max (1+s) 0-s) <\n upperTermM2B3 1 3 1 1*upperTermM2B3 3 1 3 0",
+        "theorem direction_obstruction_sourceMEC6 :\n let m := (frame (lowerPathM58E 3 1)).mid\n m.a=2 ∧ m.b=9 ∧\n InPolygon m.a m.b 2 5 ∧ InPolygon m.a m.b 2 6 ∧ InPolygon m.a m.b 2 7 ∧\n InPolygon m.a m.b 1 7 ∧ InPolygon m.a m.b 3 5 ∧\n coeff m.p 2 5=83 ∧ coeff m.p 2 6=100 ∧ coeff m.p 2 7=92 ∧\n coeff m.p 1 7=12 ∧ coeff m.p 3 5=348 ∧\n coeff m.p 2 5*coeff m.p 2 7 ≤ coeff m.p 2 6^2 ∧\n coeff m.p 1 7*coeff m.p 3 5 ≤ coeff m.p 2 6^2"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovTwoSeriesMEC6",
+      "path": "research/MarkovTwoSeriesMEC6.lean",
+      "sha256": "8ebbc7c8d487ebd5a97fb82f79222e9624e2c04be874105df8fbcaa143d11902",
+      "current_sha256": "8ebbc7c8d487ebd5a97fb82f79222e9624e2c04be874105df8fbcaa143d11902",
+      "bytes": 3820,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "twoPolyMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_square_recMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_poly_recMEC6"
+        },
+        {
+          "kind": "def",
+          "name": "twoSeriesMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_series_coeffMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_seriesMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_poly_initialMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_series_equationMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_series_denominatorMEC6"
+        },
+        {
+          "kind": "theorem",
+          "name": "two_positive_split_identityMEC6"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovUpperGlobalMEC6"
+      ],
+      "theorem_statements": [
+        "theorem fib_square_recMEC6 (q : ℕ) :\n fib6 (q+3)^2=(S^2-V)*fib6 (q+2)^2-V*(S^2-V)*fib6 (q+1)^2+V^3*fib6 q^2",
+        "theorem two_poly_recMEC6 (q : ℕ) :\n twoPolyMEC6 (q+3)=(S^2-V)*twoPolyMEC6 (q+2)-\n   V*(S^2-V)*twoPolyMEC6 (q+1)+V^3*twoPolyMEC6 q",
+        "theorem two_series_coeffMEC6 (q : ℕ) :\n PowerSeries.coeff q twoSeriesMEC6=twoPolyMEC6 q",
+        "theorem source_two_seriesMEC6 (path : List Bool) (ha : (frame path).mid.a=2) :\n ∃ q : ℕ, 1 ≤ q ∧ (frame path).mid.b=2*q+1 ∧\n   (frame path).mid.p=PowerSeries.coeff q twoSeriesMEC6",
+        "theorem two_poly_initialMEC6 :\n twoPolyMEC6 0=(U+V)^2+V ∧\n twoPolyMEC6 1-(S^2-V)*twoPolyMEC6 0= -V*(S^2+2*U) ∧\n twoPolyMEC6 2-(S^2-V)*twoPolyMEC6 1+V*(S^2-V)*twoPolyMEC6 0=V^2*(V+1)",
+        "theorem two_series_equationMEC6 :\n twoSeriesMEC6-\n   PowerSeries.C (S^2-V)*(PowerSeries.X*twoSeriesMEC6)+\n   PowerSeries.C (V*(S^2-V))*(PowerSeries.X^2*twoSeriesMEC6)-\n   PowerSeries.C (V^3)*(PowerSeries.X^3*twoSeriesMEC6)=\n PowerSeries.C ((U+V)^2+V)-PowerSeries.C (V*(S^2+2*U))*PowerSeries.X+\n   PowerSeries.C (V^2*(V+1))*PowerSeries.X^2",
+        "theorem two_series_denominatorMEC6 :\n (1-PowerSeries.C V*PowerSeries.X)*\n ((1-PowerSeries.X)*(1-PowerSeries.C (V^2)*PowerSeries.X)-\n   PowerSeries.C U*PowerSeries.X*PowerSeries.C (2*(V+1)+U))*twoSeriesMEC6 =\n PowerSeries.C ((U+V)^2+V)-PowerSeries.C (V*(S^2+2*U))*PowerSeries.X+\n   PowerSeries.C (V^2*(V+1))*PowerSeries.X^2",
+        "theorem two_positive_split_identityMEC6 {R : Type*} [CommRing R] (u v t : R) :\n (1-v^2*t)*((u+v)^2+v-v*((u+v+1)^2+2*u)*t+v^2*(v+1)*t^2)-\n   v*(v+1)*(1-v*t)*((1-t)*(1-v^2*t)-u*t*(2*(v+1)+u))=\n u*(1+v*t)*(2*v*(1-t)+u*(1-v*t))"
+      ],
+      "definitions": [
+        "def twoPolyMEC6 (q : ℕ) : BiPoly := fib6 (q+1)^2+V*fib6 q^2",
+        "def twoSeriesMEC6 : PowerSeries BiPoly := PowerSeries.mk twoPolyMEC6"
+      ],
+      "forbidden_raw_tokens": []
+    }
+  ],
+  "counts": {
+    "theorem": 43,
+    "def": 3
+  },
+  "theorem_statement_extraction": "Complete header to proof assignment including inner let binders; alias proof token handled explicitly.",
+  "source_scope": "All Boolean source paths with mid.a=2, every natural i,j, raw H triple(i,j),(i+1,j),(i+2,j). No denominator, row, column, formula, support or sign premise. Polygon-only theorem is first closed via inherited upper/lower source reduction; outside-polygon neighbors are zero and midpoint lies in polygon when both neighbors do.",
+  "scalar_scope": "Six horizontal and six diagonal145 charts are glued for nonnegative integer k,p,r,t with k+p+r>=2; guarded H, D and corrected local gap signs follow. Final corrected145 scalar source is pinned, with no old semantic version credit.",
+  "core_scope": "For i>=2, support-derived i<=N and ordered/local/separated index guards provide positive H/D denominator factors. ratio_cross multiplies by strictly positive d1*d2 and uses only nonnegative a,c; it never divides by or assumes nonzero coefficients. Exact scaled identities and casts preserve natural subtraction guards.",
+  "first_column": "i1 is separate: h0 core0 and h1 core2; k0..3 uses exact scaled two/three-column formulas with N>=1. No i>=2 recurrence is applied at i1. Nonzero outer summands force supported indices and i<=N; zero products are discharged first.",
+  "weights_scope": "Rising inward inequality for natural s and h<k uses positive(h+1)*k and nonnegative s*(k-h-1), with d>=1 enabling s=2d-1 substitution. Ordered k<=h merely exchanges weights. All coefficient zeros retained.",
+  "global_scope": "UpperShiftedM2B3 now proved universally for N,d>=1 and all natural i,h,k. Cases k<=h, k=h+1, k>=h+2 combine core and weight inequalities. Inherited shifted_sum finite bridge yields UpperBinomialLC and entire numerator-two H subproblem; all-natural-index source theorem follows.",
+  "root_scope": "Exact Conjecture63 iff InteriorCore63MEC6; only H exclusion changes from not(a=2 and 2j+1<=b) to a!=2. All other H/V/D guards, literal indices, endpoint handling and reverse-factor ranges inherited unchanged. Residual and full root remain unproved.",
+  "gain_scope": "For every natural n, lowerPath(n+5,1) is actuala2,b=2(n+6)+1 with rown+7 and columns3/4/5. Every previous MAF6 polygon/residual guard and negation of lower-half condition is proved, then raw LC. Unbounded strict source coverage; not only finite examples.",
+  "obstruction_scope": "For every natural fixed shift s, specified min/max summand comparisons fail in V and D. Vertical witness N3,d1,i2,h0,k1; diagonal N1,d3,i1,h1,k0. All target witness indices remain nonnegative for arbitrarys. Exact source lowerPath(3,1),a2,b9, polygon V(2,5),(2,6),(2,7) with83,100,92 and D(1,7),(2,6),(3,5) with12,100,348 both formally satisfy raw LC. No universal obstruction to different or adaptive certificates, no root refutation.",
+  "series_scope": "Pq=fib(q+1)^2+V*fib(q)^2 and G=PowerSeries.mk P over BiPoly, third formal variable recordsq. Actuala2 source bridge hasq>=1; q0 auxiliary. Order-three recurrence, three initial identities, coefficientwise formal equation and factored denominator multiplication proved. Generic split identity is for every CommRing, not an ordered positivity statement. No analytic convergence or division, no formal positive coefficient expansion or vertical/diagonal sign theorem.",
+  "pending_scope": "Positive column expansion/rational geometric-series extraction and its general sign remain prose/finite only. No additional theorem source claims them; full root and new residual remain open.",
+  "mathematical_values_recomputed": false
+}

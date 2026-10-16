@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovDirectionObstructionMEC6.lean:12:1: error: unsolved goals\ncase pos\n\u22a2 (\u2191(Nat.choose 5 3) + 4) * (4 * (\u2191(Nat.choose 4 2) + 3)) < (\u2191(Nat.choose 6 3) + \u2191(Nat.choose 5 3)) * 24\n/Users/sasha/math_gkm/research/MarkovDirectionObstructionMEC6.lean:14:1: error: unsolved goals\ncase neg\ns : \u2115\nhs : \u00acs = 0\n\u22a2 4 * (\u2191(Nat.choose 4 2) + 3) * (\u2191(Nat.choose 5 3) + 4) < (\u2191(Nat.choose 6 3) + \u2191(Nat.choose 5 3)) * 24\n/Users/sasha/math_gkm/research/MarkovDirectionObstructionMEC6.lean:19:48: error: unsolved goals\ns : \u2115\n\u22a2 (\u2191(Nat.choose 5 3) + 4) * (4 * (\u2191(Nat.choose 4 2) + 3)) < 12 * (4 * (\u2191(Nat.choose 7 5) + 6))\n/Users/sasha/math_gkm/research/MarkovDirectionObstructionMEC6.lean:32:50: error: unsolved goals\nha : (frame (lowerPathM58E 3 1)).mid.a = 2\nhb : (frame (lowerPathM58E 3 1)).mid.b = 2 * (3 + 1) + 1\nh25 :\n  coeff (frame (lowerPathM58E 3 1)).mid.p 2 5 =\n    \u2191(Nat.choose 6 3) + \u2191(Nat.choose 5 3) + 2 * (\u2191(Nat.choose 5 2) + \u2191(Nat.choose 4 2)) + 21\nh26 :\n  coeff (frame (lowerPathM58E 3 1)).mid.p 2 6 =\n    \u2191(Nat.choose 5 3) + 4 + 4 * (\u2191(Nat.choose 4 2) + 3) + \u2191(Nat.choose 5 2) * 5\nh27 : coeff (frame (lowerPathM58E 3 1)).mid.p 2 7 = 29 + \u2191(Nat.choose 7 2) * 3\nh17 : coeff (frame (lowerPathM58E 3 1)).mid.p 1 7 = 12\nh35 :\n  coeff (frame (lowerPathM58E 3 1)).mid.p 3 5 =\n    4 * (\u2191(Nat.choose 7 5) + 6) + 6 * (\u2191(Nat.choose 6 4) + 5) + 6 * (\u2191(Nat.choose 5 3) + 4) +\n      4 * (\u2191(Nat.choose 4 2) + 3)\n\u22a2 \u2191(Nat.choose 6 3) + \u2191(Nat.choose 5 3) + 2 * (\u2191(Nat.choose 5 2) + \u2191(Nat.choose 4 2)) + 21 = 83 \u2227\n    \u2191(Nat.choose 5 3) + 4 + 4 * (\u2191(Nat.choose 4 2) + 3) + \u2191(Nat.choose 5 2) * 5 = 100 \u2227\n      29 + \u2191(Nat.choose 7 2) * 3 = 92 \u2227\n        4 * (\u2191(Nat.choose 7 5) + 6) + 6 * (\u2191(Nat.choose 6 4) + 5) + 6 * (\u2191(Nat.choose 5 3) + 4) +\n              4 * (\u2191(Nat.choose 4 2) + 3) =\n            348 \u2227\n          (\u2191(Nat.choose 6 3) + \u2191(Nat.choose 5 3) + 2 * (\u2191(Nat.choose 5 2) + \u2191(Nat.choose 4 2)) + 21) *\n                (29 + \u2191(Nat.choose 7 2) * 3) \u2264\n              (\u2191(Nat.choose 5 3) + 4 + 4 * (\u2191(Nat.choose 4 2) + 3) + \u2191(Nat.choose 5 2) * 5) ^ 2 \u2227\n            12 *\n                (4 * (\u2191(Nat.choose 7 5) + 6) + 6 * (\u2191(Nat.choose 6 4) + 5) + 6 * (\u2191(Nat.choose 5 3) + 4) +\n                  4 * (\u2191(Nat.choose 4 2) + 3)) \u2264\n              (\u2191(Nat.choose 5 3) + 4 + 4 * (\u2191(Nat.choose 4 2) + 3) + \u2191(Nat.choose 5 2) * 5) ^ 2\n",
+  "stderr": "",
+  "modules": {
+    "MarkovDirectionObstructionMEC6": "778d91fd22eb172c64fee426c4e7758488d46a83c564cf0a78ad76b4ad1d6421"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ec6f4b83/MarkovDirectionObstructionMEC6.olean",
+    "/Users/sasha/math_gkm/research/MarkovDirectionObstructionMEC6.lean"
+  ],
+  "seconds": 4.2687584580271505,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

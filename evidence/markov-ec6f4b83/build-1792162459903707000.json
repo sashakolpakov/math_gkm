@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovUpperWeightsMEC6.lean:15:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2191(k - 1)\nin the target expression\n  (\u2191s + \u2191k) * \u2191((s + (k - 1)).choose (k - 1)) = \u2191((s + k).choose k) * \u2191k\n\ns h k : \u2115\nhk : h < k\nh0 : (\u2191s + (\u2191h + 1)) * \u2191((s + h).choose h) = \u2191((s + (h + 1)).choose (h + 1)) * (\u2191h + 1)\nh1 : (\u2191s + \u2191k) * \u2191((s + (k - 1)).choose (k - 1)) = \u2191((s + k).choose k) * \u2191k\n\u22a2 \u2191((s + h).choose h) * \u2191((s + k).choose k) \u2264 \u2191((s + (h + 1)).choose (h + 1)) * \u2191((s + (k - 1)).choose (k - 1))\n/Users/sasha/math_gkm/research/MarkovUpperWeightsMEC6.lean:35:15: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  f \u2265 0\n  e \u2265 0\n  e - f \u2265 1\n  c \u2265 0\n  b \u2265 0\n  b - c \u2265 1\n  a \u2265 1\nwhere\n a := \u2191d\n b := \u2191k\n c := \u2191h\n e := \u2191((2 * d - 1 + h).choose h)\n f := \u2191((2 * d + h - 1).choose h)\n/Users/sasha/math_gkm/research/MarkovUpperWeightsMEC6.lean:35:15: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  f \u2265 0\n  e \u2265 0\n  e - f \u2265 1\n  c \u2265 0\n  b \u2265 0\n  b - c \u2265 1\n  a \u2265 1\nwhere\n a := \u2191d\n b := \u2191k\n c := \u2191h\n e := \u2191((2 * d - 1 + k).choose k)\n f := \u2191((2 * d + k - 1).choose k)\n/Users/sasha/math_gkm/research/MarkovUpperWeightsMEC6.lean:35:15: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  f \u2265 0\n  e \u2265 0\n  e - f \u2265 1\n  c \u2265 0\n  b \u2265 0\n  b - c \u2265 1\n  a \u2265 1\nwhere\n a := \u2191d\n b := \u2191k\n c := \u2191h\n e := \u2191((2 * d - 1 + (h + 1)).choose (h + 1))\n f := \u2191((2 * d + (h + 1) - 1).choose (h + 1))\n/Users/sasha/math_gkm/research/MarkovUpperWeightsMEC6.lean:35:15: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  f \u2265 0\n  e \u2265 0\n  e - f \u2265 1\n  c \u2265 0\n  b \u2265 0\n  b - c \u2265 1\n  a \u2265 1\nwhere\n a := \u2191d\n b := \u2191k\n c := \u2191h\n e := \u2191((2 * d - 1 + (k - 1)).choose (k - 1))\n f := \u2191((2 * d + (k - 1) - 1).choose (k - 1))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovUpperWeightsMEC6": "ba003f28a1f4dd9e4e1534f733e657396fa12dbb17bfe41c58e3935a22006d2d"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ec6f4b83/MarkovUpperWeightsMEC6.olean",
+    "/Users/sasha/math_gkm/research/MarkovUpperWeightsMEC6.lean"
+  ],
+  "seconds": 4.717956458975095,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
