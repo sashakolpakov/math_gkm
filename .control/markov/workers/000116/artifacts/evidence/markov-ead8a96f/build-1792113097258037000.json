@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovThirdTransportMEA.lean:21:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  (X ^ ((frame (List.replicate n false ++ true :: rest)).mid.b - 3 * (n + 2)) * vThirdSeedMEA X n rest).coeff (j + m)\nin the target expression\n  0 \u2264 (vThirdSeedMEA X n rest).coeff j\n\nn : \u2115\nrest : List Bool\nha : 7 \u2264 (frame rest).mid.b\nj : \u2115\npath : List Bool := List.replicate n false ++ true :: rest\nm : \u2115 := (frame path).mid.b - 3 * (n + 2)\nhf :\n  6 * vresidualM9E1 (List.replicate n false ++ true :: rest) 3 =\n    X ^ ((frame (List.replicate n false ++ true :: rest)).mid.b - 3 * (n + 2)) * vThirdSeedMEA X n rest\nhc :\n  6 * (vresidualM9E1 (List.replicate n false ++ true :: rest) 3).coeff (j + m) =\n    (X ^ ((frame (List.replicate n false ++ true :: rest)).mid.b - 3 * (n + 2)) * vThirdSeedMEA X n rest).coeff (j + m)\n\u22a2 0 \u2264 (vThirdSeedMEA X n rest).coeff j\n",
+  "stderr": "",
+  "modules": {
+    "MarkovThirdTransportMEA": "cd3f6e07c37d04e3d1f919ba7cf02c8e35279bae142fc17a30c7d5f767691130"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ead8a96f/MarkovThirdTransportMEA.olean",
+    "/Users/sasha/math_gkm/research/MarkovThirdTransportMEA.lean"
+  ],
+  "seconds": 5.374637667031493,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

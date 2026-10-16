@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTwoMomentMEA.lean:56:5: error: 'change' tactic failed, pattern\n  (frame path).mid.b = 2 * (n + 1) + (2 - 1)\nis not definitionally equal to target\n  (frame (List.replicate n false ++ [true])).mid.b = (frame []).mid.b * (n + 1) + ((frame []).mid.b - (frame []).mid.a)\n/Users/sasha/math_gkm/research/MarkovTwoMomentMEA.lean:93:3: error: 'change' tactic failed, pattern\n  (frame (List.replicate n false ++ [true])).mid.b = 2 * (n + 1) + (2 - 1)\nis not definitionally equal to target\n  (frame (List.replicate n false ++ [true])).mid.b = (frame []).mid.b * (n + 1) + ((frame []).mid.b - (frame []).mid.a)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTwoMomentMEA": "ecfa4c461623f189102b55ffdb437981cac9326a67f3acbc65ea3125b4f9c4b2"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ead8a96f/MarkovTwoMomentMEA.olean",
+    "/Users/sasha/math_gkm/research/MarkovTwoMomentMEA.lean"
+  ],
+  "seconds": 10.2797563750064,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

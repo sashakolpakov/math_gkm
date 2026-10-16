@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTwoSourceMEA.lean:27:1: error: ring failed, ring expressions not equal\nn : \u2115\nx : \u211d\nhx : x \u2208 Set.Ioi 0\nhv :\n  2 * eval\u2082 (Int.castRingHom \u211d) x (vresidualM9E1 (List.replicate n false ++ [true]) 2) =\n    x ^ (2 * n + 3) * vSecondMomentMDE6 x n 2 1 0 + 2\nhs : x * x ^ (2 * n + 3) * vSecondMomentMDE6 x n 2 1 0 = eval\u2082 (Int.castRingHom \u211d) x (vNseedMDE6 n 2 1 0)\nhp : x ^ (2 * n + 4) = x * x ^ (2 * n + 3)\n\u22a2 x ^ 4 * x ^ (n * 2) * vSecondMomentMDE6 x n 2 1 0 * 2 - eval\u2082 (Int.castRingHom \u211d) x (vNseedMDE6 n 2 1 0) * 2 = 0\n/Users/sasha/math_gkm/research/MarkovTwoSourceMEA.lean:84:61: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovTwoSourceMEA.lean:84:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovTwoSourceMEA.lean:84:85: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTwoSourceMEA": "2e350048890e2e8fbc0ae391f0af668012ea8d4cf86315b98b26ddc054ef6872"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ead8a96f/MarkovTwoSourceMEA.olean",
+    "/Users/sasha/math_gkm/research/MarkovTwoSourceMEA.lean"
+  ],
+  "seconds": 16.30774499999825,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
