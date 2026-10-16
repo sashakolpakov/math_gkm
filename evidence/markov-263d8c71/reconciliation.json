@@ -1,0 +1,109 @@
+{
+  "provenance": "Live research request 263d8c71d1e34c09988ae5004b76a354",
+  "errors": [],
+  "inherited": {
+    "RESUME.json": true,
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": true,
+    "evidence/independent-markov/markov_residual_scope_audit.md": true,
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": true,
+    "evidence/markov/research-run/state.json": true,
+    "requests/markov-next.json": true
+  },
+  "f52ba141": {
+    "checked": 112,
+    "mismatches": []
+  },
+  "ae257c53": {
+    "checked": 1353,
+    "mismatches": []
+  },
+  "000121": {
+    "raw_log_sha256": "cca8bfd2725a4af05d8d9996176344b35db3ed92b1fa25f830a384224af19918",
+    "event_count": 228,
+    "last_events": [
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_118",
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "/Users/sasha/math_gkm/research/markov-ae257c53-checkpoint.md",
+              "kind": "update"
+            },
+            {
+              "path": "/Users/sasha/math_gkm/research/markov-ae257c53-operational.md",
+              "kind": "update"
+            }
+          ],
+          "status": "completed"
+        }
+      },
+      {
+        "type": "item.started",
+        "item": {
+          "id": "item_119",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/finalize_ae257c53.py'",
+          "aggregated_output": "",
+          "exit_code": null,
+          "status": "in_progress"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_119",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/finalize_ae257c53.py'",
+          "aggregated_output": "{\"request_id\": \"ae257c53f22a4da2970651c23916380a\", \"compiled_modules\": 235, \"validated_modules\": 23, \"validated_theorem_closures\": 62, \"axiom_audited_modules\": 167, \"unchanged_prior_inputs\": 4104, \"failures\": [], \"nonzero_build_receipts\": 12, \"replay_timeouts\": 3, \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\", \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\", \"stop_file_present\": false, \"scope\": \"Local ordinary Lean builds; listed source modules replayed over compiled imports. Dependency-wide replay was not completed. No whole-source rebuild or independent completion audit.\", \"completion\": null}\nVerified artifacts 1353\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      }
+    ]
+  },
+  "000127": {
+    "raw_log_sha256": "449ba89aecd957b105105775ce1f338f61f019f22389f726fdfcabe38e988782",
+    "event_count": 219,
+    "last_events": [
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_111",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc 'cat evidence/markov-f52ba141/last-verification.json; cat evidence/markov-f52ba141/final-check.json'",
+          "aggregated_output": "{\n  \"verified_artifacts\": 112,\n  \"manifest_sha256\": \"95e7a0909d7e63f197560c4cbb223c9bf2042ee54a6a70defaf7b7623119c7c1\",\n  \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\",\n  \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\",\n  \"stop_file_present\": false\n}\n{\n  \"request_id\": \"f52ba1417d354fe7831df8391636160f\",\n  \"compiled_and_replayed_mathematical_modules\": 13,\n  \"audited_theorem_closures\": 44,\n  \"unchanged_prior_inputs\": 5610,\n  \"changed_prior_inputs\": [],\n  \"rechecked_inherited_artifacts\": {\n    \"10d15751\": 93,\n    \"ae257c53\": 1353\n  },\n  \"unsuccessful_build_receipts\": 6,\n  \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\",\n  \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\",\n  \"stop_file_present\": false,\n  \"completion\": null,\n  \"scope\": \"New-source compilation and isolated kernel replay over inherited compiled imports; no fresh whole-source rebuild or independent completion audit.\"\n}\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_112",
+          "type": "agent_message",
+          "text": "{\n  \"actions\": [\n    \"Reconciled 93 latest artifacts and 1,353 interrupted-worker artifacts: evidence/markov-f52ba141/reconciliation.json.\",\n    \"Compiled and kernel-replayed 13 mathematical modules; audited 44 theorem closures: evidence/markov-f52ba141/validation.json.\",\n    \"Verified 112 artifact hashes, 5,610 unchanged prior inputs, and pinned root/contract hashes: evidence/markov-f52ba141/final-check.json and last-verification.json.\"\n  ],\n  \"agenda\": [\n    \"Investigate direct raw-gap certificates for higher rows, allowing non-log-concave residual seeds.\",\n    \"Consider the tested terminal-A continuation documented in research/markov-f52ba141-next.md; its universal Lean bridge remains pending.\",\n    \"Retain every unresolved region in research/MarkovResidualMF8.lean and discharge all correspondence obligations before root closure.\"\n  ],\n  \"completion\": null,\n  \"observations\": [\n    \"Proved raw second-horizontal-row log-concavity for every A\u2013core\u2013B word and every natural starting index, retaining zeros: raw_word_second_allMF52 in research/MarkovSecondWordMF52.lean. This enlarges the proved word family but removes no new source residual region.\",\n    \"Proved an infinite family whose unsmoothed cubic fails LC while its raw second row satisfies LC; formally excluded those words from the source family: research/MarkovSmoothingRescueMF52.lean.\",\n    \"Full-degree experiments tested 2,347 enlarged words and 1,290,238 comparisons per grouped-gap predicate without failure. Directed components can fail. These are experiments, not proofs: evidence/markov-f52ba141/full-aggregate-experiments.json and directed-experiments.json.\",\n    \"All audited closures use permitted axioms. Inherited compiled imports were reused; no whole-source rebuild or independent completion audit occurred: research/markov-f52ba141-correspondence.md.\",\n    \"Preserved six rejected builds and capability failures, including denied scratch access and unavailable SymPy. All foreground executions ended: research/markov-f52ba141-operational.md.\"\n  ],\n  \"request_id\": \"f52ba1417d354fe7831df8391636160f\",\n  \"summary\": \"Proved an unbounded enlarged-family raw second-row theorem using binomial-smoothing compensation. Full pinned Conjecture63 remains unresolved.\"\n}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 7099300,
+          "cached_input_tokens": 6915328,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 42775,
+          "reasoning_output_tokens": 14725
+        }
+      }
+    ]
+  },
+  "reconciliation": "Latest worker completed. Interrupted worker 121 finalized many artifacts before timeout; surviving manifest checked. No inherited side effects replayed.",
+  "capabilities": {
+    "scratch": "Denied by higher-priority policy; not accessed. Unique research/evidence files used.",
+    "inherited_capabilities_not_retried": [
+      "zsh heredoc temporary-file denial",
+      "Sage/SymPy unavailable in preceding workers"
+    ]
+  }
+}

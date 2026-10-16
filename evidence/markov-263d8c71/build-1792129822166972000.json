@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovTerminalAllM263.lean:15:46: error: unsolved goals\ncase false\nn m t : \u2115\n\u22a2 \u2191t * 4 + \u2191m * X * 7 + \u2191m * X ^ 2 * \u2191n * 6 + \u2191m ^ 2 * X * 9 + \u2191m ^ 2 * X ^ 2 * 6 + X * 2 + X ^ 2 * \u2191n * 4 =\n    \u2191t * C 4 + \u2191m * X * C 7 + \u2191m * X ^ 2 * \u2191n * C 6 + \u2191m ^ 2 * X * C 9 + \u2191m ^ 2 * X ^ 2 * C 6 + X * C 2 +\n      X ^ 2 * \u2191n * C 4\n\ncase true\nn m t : \u2115\n\u22a2 \u2191t * 4 + \u2191m * X * 7 + \u2191m * X ^ 2 * \u2191n * 6 + \u2191m ^ 2 * X * 9 + \u2191m ^ 2 * X ^ 2 * 6 - X * 2 + X ^ 2 * \u2191n * 4 =\n    \u2191t * C 4 + \u2191m * X * C 7 + \u2191m * X ^ 2 * \u2191n * C 6 + \u2191m ^ 2 * X * C 9 + \u2191m ^ 2 * X ^ 2 * C 6 - X * C 4 + X * C 2 +\n      X ^ 2 * \u2191n * C 4\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTerminalAllM263": "30237b0a0c2e906e03c29fc5e64e948b75a275635a7688973180ccb95056497b"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-263d8c71/MarkovTerminalAllM263.olean",
+    "/Users/sasha/math_gkm/research/MarkovTerminalAllM263.lean"
+  ],
+  "seconds": 16.150833083956968,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

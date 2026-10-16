@@ -1,0 +1,8 @@
+import MarkovAtomicObstructionM263
+import MarkovSourcePrefixSecondM263
+#print axioms MathGKM.Markov.expanded_no_adjacent_CM263
+#print axioms MathGKM.Markov.badAtomic_not_expandedM263
+#print axioms MathGKM.Markov.badAtomic_not_sourceM263
+#print axioms MathGKM.Markov.badAtomic_tripleM263
+#print axioms MathGKM.Markov.badAtomic_horizontal_failureM263
+#print axioms MathGKM.Markov.source_prefix_secondM263

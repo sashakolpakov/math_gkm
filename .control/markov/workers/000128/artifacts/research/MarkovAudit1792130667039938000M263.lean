@@ -1,0 +1,3 @@
+import MarkovMixtureScopeM263
+#print axioms MathGKM.Markov.mixture_triple_polygon_scopeM263
+#print axioms MathGKM.Markov.mixture_not_endpointsM263
