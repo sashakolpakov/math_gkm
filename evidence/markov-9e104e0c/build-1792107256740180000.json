@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovHorizontalFourthTwoM9E1.lean:25:36: error: mod_cast has type\n  9 \u2264 b\nbut is expected to have type\n  0 \u2264 b - 9\n/Users/sasha/math_gkm/research/MarkovHorizontalFourthTwoM9E1.lean:82:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  X ^ (frame path).mid.a * (1 + X) ^ ((frame path).mid.b - 9) * h4sourceSeedM511 (frame path).mid.a (frame path).mid.b\nin the target expression\n  CrossLC\n    (CoeffSeq\n      (X ^ (frame path).mid.a *\n        ((1 + X) ^ ((frame path).mid.b - 9) * h4sourceSeedM511 (frame path).mid.a (frame path).mid.b)))\n\npath : List Bool\nha : (frame path).mid.a = 2\nhb : 9 \u2264 (frame path).mid.b\ni : \u2115\nh : CrossLC (CoeffSeq (h4sourceSeedM511 (frame path).mid.a (frame path).mid.b))\nhs : CrossLC (CoeffSeq ((1 + X) ^ ((frame path).mid.b - 9) * h4sourceSeedM511 (frame path).mid.a (frame path).mid.b))\nht :\n  CrossLC\n    (CoeffSeq\n      (X ^ (frame path).mid.a *\n        ((1 + X) ^ ((frame path).mid.b - 9) * h4sourceSeedM511 (frame path).mid.a (frame path).mid.b)))\nhm :\n  24 * (X ^ 3 * map (Int.castRingHom \u211d) ((Bivariate.swap (frame path).mid.p).coeff 4)) =\n    X ^ (frame path).mid.a * (1 + X) ^ ((frame path).mid.b - 9) * h4sourceSeedM511 (frame path).mid.a (frame path).mid.b\n\u22a2 coeff (frame path).mid.p i 4 * coeff (frame path).mid.p (i + 2) 4 \u2264 coeff (frame path).mid.p (i + 1) 4 ^ 2\n",
+  "stderr": "",
+  "modules": {
+    "MarkovHorizontalFourthTwoM9E1": "2d1370056abcab049c46f1661e9b6e2a739cc0082d118551ad64fa582ba2fa92"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-9e104e0c/MarkovHorizontalFourthTwoM9E1.olean",
+    "/Users/sasha/math_gkm/research/MarkovHorizontalFourthTwoM9E1.lean"
+  ],
+  "seconds": 30.39832054200815,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,17 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovResidualM9E1.lean:29:9: error: Invalid `\u27e8...\u27e9` notation: The expected type\n  2 \u2264 m\u271d.a \u2192\n    (\u2200 (i j : \u2115),\n        InPolygon m\u271d.a m\u271d.b i j \u2192\n          InPolygon m\u271d.a m\u271d.b (i + 1) j \u2192\n            InPolygon m\u271d.a m\u271d.b (i + 2) j \u2192\n              i + j + 4 \u2264 m\u271d.a + m\u271d.b - 1 \u2192 5 \u2264 j \u2192 coeff m\u271d.p i j * coeff m\u271d.p (i + 2) j \u2264 coeff m\u271d.p (i + 1) j ^ 2) \u2227\n      (\u2200 (i j : \u2115),\n          InPolygon m\u271d.a m\u271d.b i j \u2192\n            InPolygon m\u271d.a m\u271d.b i (j + 1) \u2192\n              InPolygon m\u271d.a m\u271d.b i (j + 2) \u2192\n                i + j + 4 \u2264 m\u271d.a + m\u271d.b - 1 \u2192\n                  2 \u2264 i \u2192 coeff m\u271d.p i j * coeff m\u271d.p i (j + 2) \u2264 coeff m\u271d.p i (j + 1) ^ 2) \u2227\n        \u2200 (i j : \u2115),\n          InPolygon m\u271d.a m\u271d.b i (j + 2) \u2192\n            InPolygon m\u271d.a m\u271d.b (i + 1) (j + 1) \u2192\n              InPolygon m\u271d.a m\u271d.b (i + 2) j \u2192\n                i + j + 8 \u2264 m\u271d.a + m\u271d.b - 1 \u2192\n                  m\u271d.a + 5 \u2264 i + j + 2 \u2192\n                    m\u271d.a + 2 \u2264 m\u271d.b \u2192 coeff m\u271d.p i (j + 2) * coeff m\u271d.p (i + 2) j \u2264 coeff m\u271d.p (i + 1) (j + 1) ^ 2\nis not an inductive type\n\nNote: This notation can only be used when the expected type is an inductive type with a single constructor\n",
+  "stderr": "",
+  "modules": {
+    "MarkovResidualM9E1": "a53552c2572d86ebe759568b7084d24185e12b01c866fd649a78c5431673aa76"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-9e104e0c/MarkovResidualM9E1.olean",
+    "/Users/sasha/math_gkm/research/MarkovResidualM9E1.lean"
+  ],
+  "seconds": 33.88945837499341,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

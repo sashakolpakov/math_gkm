@@ -1,0 +1,635 @@
+{
+  "worker": 113,
+  "method": "Static theorem-header and proof-marker extraction plus integer-domain enumeration; not Lean execution or proof reconstruction.",
+  "modules": {
+    "MarkovHorizontalFourAllM9E1": {
+      "sha256": "307adc386a3a2ebdd50fc5d27472acc0d74e3b703ef4910ac3fc27d6b487185b",
+      "theorem_headers": {
+        "small_horizontal_allM9E1": "theorem small_horizontal_allM9E1 (path : List Bool) (ha : 2 ≤ (frame path).mid.a)\n (hb : (frame path).mid.b ≤ 8) (i j : ℕ) (hj : j=3 ∨ j=4) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) j^2",
+        "horizontal_third_allM9E1": "theorem horizontal_third_allM9E1 (path : List Bool) (i : ℕ) :\n coeff (frame path).mid.p i 3*coeff (frame path).mid.p (i+2) 3 ≤\n coeff (frame path).mid.p (i+1) 3^2",
+        "horizontal_fourth_allM9E1": "theorem horizontal_fourth_allM9E1 (path : List Bool) (i : ℕ) :\n coeff (frame path).mid.p i 4*coeff (frame path).mid.p (i+2) 4 ≤\n coeff (frame path).mid.p (i+1) 4^2",
+        "horizontal_first_fiveM9E1": "theorem horizontal_first_fiveM9E1 (path : List Bool) (i j : ℕ) (hj : j ≤ 4) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) j^2"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    },
+    "MarkovHorizontalFourthTwoM9E1": {
+      "sha256": "e57d53c708ec60431d746ace0fbf3d6861d78ced3e5f4f5b8f6e6ff1b2f3f67f",
+      "theorem_headers": {
+        "h4two_goodM9E1": "theorem h4two_goodM9E1 (x : ℝ) (hx : 0 ≤ x) :\n H4GoodM511 2 (9+x) 0 0 0 0 0 0",
+        "h4two_crossM9E1": "theorem h4two_crossM9E1 (b : ℕ) (hb : 9 ≤ b) :\n CrossLC (CoeffSeq (h4sourceSeedM511 2 b : ℝ[X]))",
+        "horizontal_fourth_shiftedM9E1": "theorem horizontal_fourth_shiftedM9E1 (path : List Bool)\n (hb : 9 ≤ (frame path).mid.b) :\n 24*X^3*((Bivariate.swap (frame path).mid.p).coeff 4).map (Int.castRingHom ℝ)=\n X^((frame path).mid.a)*(1+X)^((frame path).mid.b-9)*\n   h4sourceSeedM511 (frame path).mid.a (frame path).mid.b",
+        "horizontal_fourth_twoM9E1": "theorem horizontal_fourth_twoM9E1 (path : List Bool)\n (ha : (frame path).mid.a=2) (hb : 9 ≤ (frame path).mid.b) (i : ℕ) :\n coeff (frame path).mid.p i 4*coeff (frame path).mid.p (i+2) 4 ≤\n coeff (frame path).mid.p (i+1) 4^2"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    },
+    "MarkovResidualM9E1": {
+      "sha256": "22ffb91b4b6fc77eb2b524bffeda32886aaa9040356d26e7ae967716f0760c92",
+      "theorem_headers": {
+        "root_iff_interiorM9E1": "theorem root_iff_interiorM9E1 : Conjecture63 ↔ InteriorCore63M9E1"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    },
+    "MarkovSmallHorizontal2_3M9E1": {
+      "sha256": "756f2634f5cf5af474dba8bc1b9e1dbddd46a20be0a01ca5e5e797e96cc8f27a",
+      "theorem_headers": {
+        "small_poly_2_3M9E1": "theorem small_poly_2_3M9E1 : Bivariate.swap (frame [true]).mid.p=\n C (1*X^2+2*X^3+1*X^4)*X^0 +\n C (5*X^2+4*X^3)*X^1 +\n C (4*X^1+6*X^2)*X^2 +\n C (1*X^0+4*X^1)*X^3 +\n C (1*X^0)*X^4",
+        "small_row_2_3_3M9E1": "theorem small_row_2_3_3M9E1 : (Bivariate.swap (frame [true]).mid.p).coeff 3=\n 1*X^0+4*X^1",
+        "small_lc_2_3_3M9E1": "theorem small_lc_2_3_3M9E1 (i : ℕ) (hi : i ≤ 4) :\n coeff (frame [true]).mid.p i 3*coeff (frame [true]).mid.p (i+2) 3 ≤\n coeff (frame [true]).mid.p (i+1) 3^2",
+        "small_row_2_3_4M9E1": "theorem small_row_2_3_4M9E1 : (Bivariate.swap (frame [true]).mid.p).coeff 4=\n 1*X^0",
+        "small_lc_2_3_4M9E1": "theorem small_lc_2_3_4M9E1 (i : ℕ) (hi : i ≤ 4) :\n coeff (frame [true]).mid.p i 4*coeff (frame [true]).mid.p (i+2) 4 ≤\n coeff (frame [true]).mid.p (i+1) 4^2"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    },
+    "MarkovSmallHorizontal2_5M9E1": {
+      "sha256": "a6cedc0037b4f9c3ea33c9b3f2f9a5892b3b70d2a3c52f8f3d7ab03f0074d442",
+      "theorem_headers": {
+        "small_poly_2_5M9E1": "theorem small_poly_2_5M9E1 : Bivariate.swap (frame [false,true]).mid.p=\n C (1*X^2+4*X^3+6*X^4+4*X^5+1*X^6)*X^0 +\n C (5*X^2+16*X^3+17*X^4+6*X^5)*X^1 +\n C (14*X^2+28*X^3+15*X^4)*X^2 +\n C (4*X^1+22*X^2+20*X^3)*X^3 +\n C (8*X^1+15*X^2)*X^4 +\n C (1*X^0+6*X^1)*X^5 +\n C (1*X^0)*X^6",
+        "small_row_2_5_3M9E1": "theorem small_row_2_5_3M9E1 : (Bivariate.swap (frame [false,true]).mid.p).coeff 3=\n 4*X^1+22*X^2+20*X^3",
+        "small_lc_2_5_3M9E1": "theorem small_lc_2_5_3M9E1 (i : ℕ) (hi : i ≤ 6) :\n coeff (frame [false,true]).mid.p i 3*coeff (frame [false,true]).mid.p (i+2) 3 ≤\n coeff (frame [false,true]).mid.p (i+1) 3^2",
+        "small_row_2_5_4M9E1": "theorem small_row_2_5_4M9E1 : (Bivariate.swap (frame [false,true]).mid.p).coeff 4=\n 8*X^1+15*X^2",
+        "small_lc_2_5_4M9E1": "theorem small_lc_2_5_4M9E1 (i : ℕ) (hi : i ≤ 6) :\n coeff (frame [false,true]).mid.p i 4*coeff (frame [false,true]).mid.p (i+2) 4 ≤\n coeff (frame [false,true]).mid.p (i+1) 4^2"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    },
+    "MarkovSmallHorizontal2_7M9E1": {
+      "sha256": "9a2ba2db81775c98fdd9b6c89ca048057c63672e3adff0c1fa43eef8d9f9a84d",
+      "theorem_headers": {
+        "small_poly_2_7M9E1": "theorem small_poly_2_7M9E1 : Bivariate.swap (frame [false,false,true]).mid.p=\n C (1*X^2+6*X^3+15*X^4+20*X^5+15*X^6+6*X^7+1*X^8)*X^0 +\n C (5*X^2+28*X^3+62*X^4+68*X^5+37*X^6+8*X^7)*X^1 +\n C (14*X^2+68*X^3+122*X^4+96*X^5+28*X^6)*X^2 +\n C (30*X^2+108*X^3+135*X^4+56*X^5)*X^3 +\n C (4*X^1+47*X^2+110*X^3+70*X^4)*X^4 +\n C (8*X^1+51*X^2+56*X^3)*X^5 +\n C (12*X^1+28*X^2)*X^6 +\n C (1*X^0+8*X^1)*X^7 +\n C (1*X^0)*X^8",
+        "small_row_2_7_3M9E1": "theorem small_row_2_7_3M9E1 : (Bivariate.swap (frame [false,false,true]).mid.p).coeff 3=\n 30*X^2+108*X^3+135*X^4+56*X^5",
+        "small_lc_2_7_3M9E1": "theorem small_lc_2_7_3M9E1 (i : ℕ) (hi : i ≤ 8) :\n coeff (frame [false,false,true]).mid.p i 3*coeff (frame [false,false,true]).mid.p (i+2) 3 ≤\n coeff (frame [false,false,true]).mid.p (i+1) 3^2",
+        "small_row_2_7_4M9E1": "theorem small_row_2_7_4M9E1 : (Bivariate.swap (frame [false,false,true]).mid.p).coeff 4=\n 4*X^1+47*X^2+110*X^3+70*X^4",
+        "small_lc_2_7_4M9E1": "theorem small_lc_2_7_4M9E1 (i : ℕ) (hi : i ≤ 8) :\n coeff (frame [false,false,true]).mid.p i 4*coeff (frame [false,false,true]).mid.p (i+2) 4 ≤\n coeff (frame [false,false,true]).mid.p (i+1) 4^2"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    },
+    "MarkovSmallHorizontal3_4M9E1": {
+      "sha256": "0905b14505371536d13305c0b21c08631a8ccbad260e80e0ee4abc5c660af13f",
+      "theorem_headers": {
+        "small_poly_3_4M9E1": "theorem small_poly_3_4M9E1 : Bivariate.swap (frame [true,true]).mid.p=\n C (1*X^3+3*X^4+3*X^5+1*X^6)*X^0 +\n C (8*X^3+14*X^4+6*X^5)*X^1 +\n C (8*X^2+26*X^3+15*X^4)*X^2 +\n C (4*X^1+24*X^2+20*X^3)*X^3 +\n C (1*X^0+11*X^1+15*X^2)*X^4 +\n C (2*X^0+6*X^1)*X^5 +\n C (1*X^0)*X^6",
+        "small_row_3_4_3M9E1": "theorem small_row_3_4_3M9E1 : (Bivariate.swap (frame [true,true]).mid.p).coeff 3=\n 4*X^1+24*X^2+20*X^3",
+        "small_lc_3_4_3M9E1": "theorem small_lc_3_4_3M9E1 (i : ℕ) (hi : i ≤ 6) :\n coeff (frame [true,true]).mid.p i 3*coeff (frame [true,true]).mid.p (i+2) 3 ≤\n coeff (frame [true,true]).mid.p (i+1) 3^2",
+        "small_row_3_4_4M9E1": "theorem small_row_3_4_4M9E1 : (Bivariate.swap (frame [true,true]).mid.p).coeff 4=\n 1*X^0+11*X^1+15*X^2",
+        "small_lc_3_4_4M9E1": "theorem small_lc_3_4_4M9E1 (i : ℕ) (hi : i ≤ 6) :\n coeff (frame [true,true]).mid.p i 4*coeff (frame [true,true]).mid.p (i+2) 4 ≤\n coeff (frame [true,true]).mid.p (i+1) 4^2"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    },
+    "MarkovSmallHorizontal3_5M9E1": {
+      "sha256": "33fb875cf893a785d7da3e91ba9253f2fb9c08566981b0ec383d784284c55d14",
+      "theorem_headers": {
+        "small_poly_3_5M9E1": "theorem small_poly_3_5M9E1 : Bivariate.swap (frame [true,false]).mid.p=\n C (1*X^3+4*X^4+6*X^5+4*X^6+1*X^7)*X^0 +\n C (8*X^3+23*X^4+22*X^5+7*X^6)*X^1 +\n C (4*X^2+34*X^3+50*X^4+21*X^5)*X^2 +\n C (24*X^2+60*X^3+35*X^4)*X^3 +\n C (8*X^1+40*X^2+35*X^3)*X^4 +\n C (1*X^0+14*X^1+21*X^2)*X^5 +\n C (2*X^0+7*X^1)*X^6 +\n C (1*X^0)*X^7",
+        "small_row_3_5_3M9E1": "theorem small_row_3_5_3M9E1 : (Bivariate.swap (frame [true,false]).mid.p).coeff 3=\n 24*X^2+60*X^3+35*X^4",
+        "small_lc_3_5_3M9E1": "theorem small_lc_3_5_3M9E1 (i : ℕ) (hi : i ≤ 7) :\n coeff (frame [true,false]).mid.p i 3*coeff (frame [true,false]).mid.p (i+2) 3 ≤\n coeff (frame [true,false]).mid.p (i+1) 3^2",
+        "small_row_3_5_4M9E1": "theorem small_row_3_5_4M9E1 : (Bivariate.swap (frame [true,false]).mid.p).coeff 4=\n 8*X^1+40*X^2+35*X^3",
+        "small_lc_3_5_4M9E1": "theorem small_lc_3_5_4M9E1 (i : ℕ) (hi : i ≤ 7) :\n coeff (frame [true,false]).mid.p i 4*coeff (frame [true,false]).mid.p (i+2) 4 ≤\n coeff (frame [true,false]).mid.p (i+1) 4^2"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    },
+    "MarkovSmallHorizontal3_7M9E1": {
+      "sha256": "52a3961997ba2609f7c7ae2f9646134c43405bfc6de5942cb470c7065218376d",
+      "theorem_headers": {
+        "small_poly_3_7M9E1": "theorem small_poly_3_7M9E1 : Bivariate.swap (frame [false,true,true]).mid.p=\n C (1*X^3+6*X^4+15*X^5+20*X^6+15*X^7+6*X^8+1*X^9)*X^0 +\n C (8*X^3+41*X^4+84*X^5+86*X^6+44*X^7+9*X^8)*X^1 +\n C (34*X^3+136*X^4+206*X^5+140*X^6+36*X^7)*X^2 +\n C (8*X^2+104*X^3+265*X^4+252*X^5+84*X^6)*X^3 +\n C (36*X^2+195*X^3+280*X^4+126*X^5)*X^4 +\n C (4*X^1+80*X^2+196*X^3+126*X^4)*X^5 +\n C (16*X^1+84*X^2+84*X^3)*X^6 +\n C (1*X^0+20*X^1+36*X^2)*X^7 +\n C (2*X^0+9*X^1)*X^8 +\n C (1*X^0)*X^9",
+        "small_row_3_7_3M9E1": "theorem small_row_3_7_3M9E1 : (Bivariate.swap (frame [false,true,true]).mid.p).coeff 3=\n 8*X^2+104*X^3+265*X^4+252*X^5+84*X^6",
+        "small_lc_3_7_3M9E1": "theorem small_lc_3_7_3M9E1 (i : ℕ) (hi : i ≤ 9) :\n coeff (frame [false,true,true]).mid.p i 3*coeff (frame [false,true,true]).mid.p (i+2) 3 ≤\n coeff (frame [false,true,true]).mid.p (i+1) 3^2",
+        "small_row_3_7_4M9E1": "theorem small_row_3_7_4M9E1 : (Bivariate.swap (frame [false,true,true]).mid.p).coeff 4=\n 36*X^2+195*X^3+280*X^4+126*X^5",
+        "small_lc_3_7_4M9E1": "theorem small_lc_3_7_4M9E1 (i : ℕ) (hi : i ≤ 9) :\n coeff (frame [false,true,true]).mid.p i 4*coeff (frame [false,true,true]).mid.p (i+2) 4 ≤\n coeff (frame [false,true,true]).mid.p (i+1) 4^2"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    },
+    "MarkovSmallHorizontal3_8M9E1": {
+      "sha256": "c9e650525d2a9cc1e6cba0e1e5a20941f3dc11fc36a131c726a8adebbe1729c5",
+      "theorem_headers": {
+        "small_poly_3_8M9E1": "theorem small_poly_3_8M9E1 : Bivariate.swap (frame [false,true,false]).mid.p=\n C (1*X^3+7*X^4+21*X^5+35*X^6+35*X^7+21*X^8+7*X^9+1*X^10)*X^0 +\n C (8*X^3+50*X^4+130*X^5+180*X^6+140*X^7+58*X^8+10*X^9)*X^1 +\n C (34*X^3+179*X^4+378*X^5+400*X^6+212*X^7+45*X^8)*X^2 +\n C (4*X^2+108*X^3+412*X^4+636*X^5+448*X^6+120*X^7)*X^3 +\n C (24*X^2+243*X^3+610*X^4+602*X^5+210*X^6)*X^4 +\n C (72*X^2+356*X^3+532*X^4+252*X^5)*X^5 +\n C (8*X^1+120*X^2+308*X^3+210*X^4)*X^6 +\n C (20*X^1+112*X^2+120*X^3)*X^7 +\n C (1*X^0+23*X^1+45*X^2)*X^8 +\n C (2*X^0+10*X^1)*X^9 +\n C (1*X^0)*X^10",
+        "small_row_3_8_3M9E1": "theorem small_row_3_8_3M9E1 : (Bivariate.swap (frame [false,true,false]).mid.p).coeff 3=\n 4*X^2+108*X^3+412*X^4+636*X^5+448*X^6+120*X^7",
+        "small_lc_3_8_3M9E1": "theorem small_lc_3_8_3M9E1 (i : ℕ) (hi : i ≤ 10) :\n coeff (frame [false,true,false]).mid.p i 3*coeff (frame [false,true,false]).mid.p (i+2) 3 ≤\n coeff (frame [false,true,false]).mid.p (i+1) 3^2",
+        "small_row_3_8_4M9E1": "theorem small_row_3_8_4M9E1 : (Bivariate.swap (frame [false,true,false]).mid.p).coeff 4=\n 24*X^2+243*X^3+610*X^4+602*X^5+210*X^6",
+        "small_lc_3_8_4M9E1": "theorem small_lc_3_8_4M9E1 (i : ℕ) (hi : i ≤ 10) :\n coeff (frame [false,true,false]).mid.p i 4*coeff (frame [false,true,false]).mid.p (i+2) 4 ≤\n coeff (frame [false,true,false]).mid.p (i+1) 4^2"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    },
+    "MarkovSmallHorizontal4_5M9E1": {
+      "sha256": "217e1c5205c8948fb0cfe1b36f68d3b6fa8ba65c68b4ec7e2934e8d105d8dac9",
+      "theorem_headers": {
+        "small_poly_4_5M9E1": "theorem small_poly_4_5M9E1 : Bivariate.swap (frame [true,true,true]).mid.p=\n C (1*X^4+4*X^5+6*X^6+4*X^7+1*X^8)*X^0 +\n C (11*X^4+30*X^5+27*X^6+8*X^7)*X^1 +\n C (12*X^3+63*X^4+78*X^5+28*X^6)*X^2 +\n C (8*X^2+72*X^3+125*X^4+56*X^5)*X^3 +\n C (4*X^1+48*X^2+120*X^3+70*X^4)*X^4 +\n C (1*X^0+18*X^1+69*X^2+56*X^3)*X^5 +\n C (3*X^0+22*X^1+28*X^2)*X^6 +\n C (3*X^0+8*X^1)*X^7 +\n C (1*X^0)*X^8",
+        "small_row_4_5_3M9E1": "theorem small_row_4_5_3M9E1 : (Bivariate.swap (frame [true,true,true]).mid.p).coeff 3=\n 8*X^2+72*X^3+125*X^4+56*X^5",
+        "small_lc_4_5_3M9E1": "theorem small_lc_4_5_3M9E1 (i : ℕ) (hi : i ≤ 8) :\n coeff (frame [true,true,true]).mid.p i 3*coeff (frame [true,true,true]).mid.p (i+2) 3 ≤\n coeff (frame [true,true,true]).mid.p (i+1) 3^2",
+        "small_row_4_5_4M9E1": "theorem small_row_4_5_4M9E1 : (Bivariate.swap (frame [true,true,true]).mid.p).coeff 4=\n 4*X^1+48*X^2+120*X^3+70*X^4",
+        "small_lc_4_5_4M9E1": "theorem small_lc_4_5_4M9E1 (i : ℕ) (hi : i ≤ 8) :\n coeff (frame [true,true,true]).mid.p i 4*coeff (frame [true,true,true]).mid.p (i+2) 4 ≤\n coeff (frame [true,true,true]).mid.p (i+1) 4^2"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    },
+    "MarkovSmallHorizontal4_7M9E1": {
+      "sha256": "6de2e6f91d3187d03267fe856c5f3b9b290b795afed2d76109daefc59b1c926f",
+      "theorem_headers": {
+        "small_poly_4_7M9E1": "theorem small_poly_4_7M9E1 : Bivariate.swap (frame [true,false,false]).mid.p=\n C (1*X^4+6*X^5+15*X^6+20*X^7+15*X^8+6*X^9+1*X^10)*X^0 +\n C (11*X^4+54*X^5+106*X^6+104*X^7+51*X^8+10*X^9)*X^1 +\n C (4*X^3+71*X^4+232*X^5+312*X^6+192*X^7+45*X^8)*X^2 +\n C (40*X^3+269*X^4+528*X^5+420*X^6+120*X^7)*X^3 +\n C (8*X^2+176*X^3+550*X^4+588*X^5+210*X^6)*X^4 +\n C (64*X^2+360*X^3+546*X^4+252*X^5)*X^5 +\n C (12*X^1+144*X^2+336*X^3+210*X^4)*X^6 +\n C (1*X^0+32*X^1+132*X^2+120*X^3)*X^7 +\n C (3*X^0+30*X^1+45*X^2)*X^8 +\n C (3*X^0+10*X^1)*X^9 +\n C (1*X^0)*X^10",
+        "small_row_4_7_3M9E1": "theorem small_row_4_7_3M9E1 : (Bivariate.swap (frame [true,false,false]).mid.p).coeff 3=\n 40*X^3+269*X^4+528*X^5+420*X^6+120*X^7",
+        "small_lc_4_7_3M9E1": "theorem small_lc_4_7_3M9E1 (i : ℕ) (hi : i ≤ 10) :\n coeff (frame [true,false,false]).mid.p i 3*coeff (frame [true,false,false]).mid.p (i+2) 3 ≤\n coeff (frame [true,false,false]).mid.p (i+1) 3^2",
+        "small_row_4_7_4M9E1": "theorem small_row_4_7_4M9E1 : (Bivariate.swap (frame [true,false,false]).mid.p).coeff 4=\n 8*X^2+176*X^3+550*X^4+588*X^5+210*X^6",
+        "small_lc_4_7_4M9E1": "theorem small_lc_4_7_4M9E1 (i : ℕ) (hi : i ≤ 10) :\n coeff (frame [true,false,false]).mid.p i 4*coeff (frame [true,false,false]).mid.p (i+2) 4 ≤\n coeff (frame [true,false,false]).mid.p (i+1) 4^2"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    },
+    "MarkovSmallHorizontal5_6M9E1": {
+      "sha256": "027090b7944916f313fd90794fdfe9f128b4ac4c087ec0f6f9fb2f4009f7a283",
+      "theorem_headers": {
+        "small_poly_5_6M9E1": "theorem small_poly_5_6M9E1 : Bivariate.swap (frame [true,true,true,true]).mid.p=\n C (1*X^5+5*X^6+10*X^7+10*X^8+5*X^9+1*X^10)*X^0 +\n C (14*X^5+52*X^6+72*X^7+44*X^8+10*X^9)*X^1 +\n C (16*X^4+117*X^5+228*X^6+172*X^7+45*X^8)*X^2 +\n C (12*X^3+152*X^4+416*X^5+392*X^6+120*X^7)*X^3 +\n C (8*X^2+128*X^3+480*X^4+574*X^5+210*X^6)*X^4 +\n C (4*X^1+72*X^2+360*X^3+560*X^4+252*X^5)*X^5 +\n C (1*X^0+25*X^1+172*X^2+364*X^3+210*X^4)*X^6 +\n C (4*X^0+48*X^1+152*X^2+120*X^3)*X^7 +\n C (6*X^0+37*X^1+45*X^2)*X^8 +\n C (4*X^0+10*X^1)*X^9 +\n C (1*X^0)*X^10",
+        "small_row_5_6_3M9E1": "theorem small_row_5_6_3M9E1 : (Bivariate.swap (frame [true,true,true,true]).mid.p).coeff 3=\n 12*X^3+152*X^4+416*X^5+392*X^6+120*X^7",
+        "small_lc_5_6_3M9E1": "theorem small_lc_5_6_3M9E1 (i : ℕ) (hi : i ≤ 10) :\n coeff (frame [true,true,true,true]).mid.p i 3*coeff (frame [true,true,true,true]).mid.p (i+2) 3 ≤\n coeff (frame [true,true,true,true]).mid.p (i+1) 3^2",
+        "small_row_5_6_4M9E1": "theorem small_row_5_6_4M9E1 : (Bivariate.swap (frame [true,true,true,true]).mid.p).coeff 4=\n 8*X^2+128*X^3+480*X^4+574*X^5+210*X^6",
+        "small_lc_5_6_4M9E1": "theorem small_lc_5_6_4M9E1 (i : ℕ) (hi : i ≤ 10) :\n coeff (frame [true,true,true,true]).mid.p i 4*coeff (frame [true,true,true,true]).mid.p (i+2) 4 ≤\n coeff (frame [true,true,true,true]).mid.p (i+1) 4^2"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    },
+    "MarkovSmallHorizontal5_7M9E1": {
+      "sha256": "d0894b2e97263ccc30634bd0e4a9503bfe5e41ad245541dddf5ec6bfe62bda2a",
+      "theorem_headers": {
+        "small_poly_5_7M9E1": "theorem small_poly_5_7M9E1 : Bivariate.swap (frame [true,true,false]).mid.p=\n C (1*X^5+6*X^6+15*X^7+20*X^8+15*X^9+6*X^10+1*X^11)*X^0 +\n C (14*X^5+67*X^6+128*X^7+122*X^8+58*X^9+11*X^10)*X^1 +\n C (12*X^4+125*X^5+356*X^6+440*X^7+252*X^8+55*X^9)*X^2 +\n C (4*X^3+128*X^4+564*X^5+924*X^6+648*X^7+165*X^8)*X^3 +\n C (80*X^3+560*X^4+1246*X^5+1092*X^6+330*X^7)*X^4 +\n C (32*X^2+360*X^3+1120*X^4+1260*X^5+462*X^6)*X^5 +\n C (8*X^1+148*X^2+672*X^3+1008*X^4+462*X^5)*X^6 +\n C (1*X^0+36*X^1+260*X^2+552*X^3+330*X^4)*X^7 +\n C (4*X^0+59*X^1+198*X^2+165*X^3)*X^8 +\n C (6*X^0+42*X^1+55*X^2)*X^9 +\n C (4*X^0+11*X^1)*X^10 +\n C (1*X^0)*X^11",
+        "small_row_5_7_3M9E1": "theorem small_row_5_7_3M9E1 : (Bivariate.swap (frame [true,true,false]).mid.p).coeff 3=\n 4*X^3+128*X^4+564*X^5+924*X^6+648*X^7+165*X^8",
+        "small_lc_5_7_3M9E1": "theorem small_lc_5_7_3M9E1 (i : ℕ) (hi : i ≤ 11) :\n coeff (frame [true,true,false]).mid.p i 3*coeff (frame [true,true,false]).mid.p (i+2) 3 ≤\n coeff (frame [true,true,false]).mid.p (i+1) 3^2",
+        "small_row_5_7_4M9E1": "theorem small_row_5_7_4M9E1 : (Bivariate.swap (frame [true,true,false]).mid.p).coeff 4=\n 80*X^3+560*X^4+1246*X^5+1092*X^6+330*X^7",
+        "small_lc_5_7_4M9E1": "theorem small_lc_5_7_4M9E1 (i : ℕ) (hi : i ≤ 11) :\n coeff (frame [true,true,false]).mid.p i 4*coeff (frame [true,true,false]).mid.p (i+2) 4 ≤\n coeff (frame [true,true,false]).mid.p (i+1) 4^2"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    },
+    "MarkovSmallHorizontal5_8M9E1": {
+      "sha256": "bde2424791c91458e38e0a0194a8e9b5c906d9059b2f9544fd13ae1380700f26",
+      "theorem_headers": {
+        "small_poly_5_8M9E1": "theorem small_poly_5_8M9E1 : Bivariate.swap (frame [true,false,true]).mid.p=\n C (1*X^5+7*X^6+21*X^7+35*X^8+35*X^9+21*X^10+7*X^11+1*X^12)*X^0 +\n C (14*X^5+82*X^6+200*X^7+260*X^8+190*X^9+74*X^10+12*X^11)*X^1 +\n C (8*X^4+125*X^5+484*X^6+848*X^7+770*X^8+355*X^9+66*X^10)*X^2 +\n C (92*X^4+644*X^5+1592*X^6+1840*X^7+1020*X^8+220*X^9)*X^3 +\n C (32*X^3+512*X^4+1894*X^5+2870*X^6+1950*X^7+495*X^8)*X^4 +\n C (4*X^2+248*X^3+1480*X^4+3052*X^5+2604*X^6+792*X^7)*X^5 +\n C (72*X^2+760*X^3+2240*X^4+2478*X^5+924*X^6)*X^6 +\n C (12*X^1+248*X^2+1120*X^3+1680*X^4+792*X^5)*X^7 +\n C (1*X^0+47*X^1+365*X^2+795*X^3+495*X^4)*X^8 +\n C (4*X^0+70*X^1+250*X^2+220*X^3)*X^9 +\n C (6*X^0+47*X^1+66*X^2)*X^10 +\n C (4*X^0+12*X^1)*X^11 +\n C (1*X^0)*X^12",
+        "small_row_5_8_3M9E1": "theorem small_row_5_8_3M9E1 : (Bivariate.swap (frame [true,false,true]).mid.p).coeff 3=\n 92*X^4+644*X^5+1592*X^6+1840*X^7+1020*X^8+220*X^9",
+        "small_lc_5_8_3M9E1": "theorem small_lc_5_8_3M9E1 (i : ℕ) (hi : i ≤ 12) :\n coeff (frame [true,false,true]).mid.p i 3*coeff (frame [true,false,true]).mid.p (i+2) 3 ≤\n coeff (frame [true,false,true]).mid.p (i+1) 3^2",
+        "small_row_5_8_4M9E1": "theorem small_row_5_8_4M9E1 : (Bivariate.swap (frame [true,false,true]).mid.p).coeff 4=\n 32*X^3+512*X^4+1894*X^5+2870*X^6+1950*X^7+495*X^8",
+        "small_lc_5_8_4M9E1": "theorem small_lc_5_8_4M9E1 (i : ℕ) (hi : i ≤ 12) :\n coeff (frame [true,false,true]).mid.p i 4*coeff (frame [true,false,true]).mid.p (i+2) 4 ≤\n coeff (frame [true,false,true]).mid.p (i+1) 4^2"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    },
+    "MarkovSmallHorizontal6_7M9E1": {
+      "sha256": "8cdc999da7b19b028fc6c3f5bae95d9000a3a2d69fb5af60d761e31cff05344a",
+      "theorem_headers": {
+        "small_poly_6_7M9E1": "theorem small_poly_6_7M9E1 : Bivariate.swap (frame [true,true,true,true,true]).mid.p=\n C (1*X^6+6*X^7+15*X^8+20*X^9+15*X^10+6*X^11+1*X^12)*X^0 +\n C (17*X^6+80*X^7+150*X^8+140*X^9+65*X^10+12*X^11)*X^1 +\n C (20*X^5+188*X^6+504*X^7+590*X^8+320*X^9+66*X^10)*X^2 +\n C (16*X^4+264*X^5+1004*X^6+1480*X^7+945*X^8+220*X^9)*X^3 +\n C (12*X^3+256*X^4+1320*X^5+2450*X^6+1860*X^7+495*X^8)*X^4 +\n C (8*X^2+184*X^3+1200*X^4+2800*X^5+2562*X^6+792*X^7)*X^5 +\n C (4*X^1+96*X^2+760*X^3+2240*X^4+2520*X^5+924*X^6)*X^6 +\n C (1*X^0+32*X^1+324*X^2+1240*X^3+1770*X^4+792*X^5)*X^7 +\n C (5*X^0+84*X^1+455*X^2+870*X^3+495*X^4)*X^8 +\n C (10*X^0+100*X^1+285*X^2+220*X^3)*X^9 +\n C (10*X^0+56*X^1+66*X^2)*X^10 +\n C (5*X^0+12*X^1)*X^11 +\n C (1*X^0)*X^12",
+        "small_row_6_7_3M9E1": "theorem small_row_6_7_3M9E1 : (Bivariate.swap (frame [true,true,true,true,true]).mid.p).coeff 3=\n 16*X^4+264*X^5+1004*X^6+1480*X^7+945*X^8+220*X^9",
+        "small_lc_6_7_3M9E1": "theorem small_lc_6_7_3M9E1 (i : ℕ) (hi : i ≤ 12) :\n coeff (frame [true,true,true,true,true]).mid.p i 3*coeff (frame [true,true,true,true,true]).mid.p (i+2) 3 ≤\n coeff (frame [true,true,true,true,true]).mid.p (i+1) 3^2",
+        "small_row_6_7_4M9E1": "theorem small_row_6_7_4M9E1 : (Bivariate.swap (frame [true,true,true,true,true]).mid.p).coeff 4=\n 12*X^3+256*X^4+1320*X^5+2450*X^6+1860*X^7+495*X^8",
+        "small_lc_6_7_4M9E1": "theorem small_lc_6_7_4M9E1 (i : ℕ) (hi : i ≤ 12) :\n coeff (frame [true,true,true,true,true]).mid.p i 4*coeff (frame [true,true,true,true,true]).mid.p (i+2) 4 ≤\n coeff (frame [true,true,true,true,true]).mid.p (i+1) 4^2"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    },
+    "MarkovSmallHorizontal7_8M9E1": {
+      "sha256": "b70a0698c6dac1bc5dccf63970484c9682c74e144c01d52367a503c6fe01a545",
+      "theorem_headers": {
+        "small_poly_7_8M9E1": "theorem small_poly_7_8M9E1 : Bivariate.swap (frame [true,true,true,true,true,true]).mid.p=\n C (1*X^7+7*X^8+21*X^9+35*X^10+35*X^11+21*X^12+7*X^13+1*X^14)*X^0 +\n C (20*X^7+114*X^8+270*X^9+340*X^10+240*X^11+90*X^12+14*X^13)*X^1 +\n C (24*X^6+276*X^7+945*X^8+1510*X^9+1260*X^10+534*X^11+91*X^12)*X^2 +\n C (20*X^5+408*X^6+2000*X^7+4060*X^8+4020*X^9+1936*X^10+364*X^11)*X^3 +\n C (16*X^4+432*X^5+2880*X^6+7370*X^7+8685*X^8+4785*X^9+1001*X^10)*X^4 +\n C (12*X^3+360*X^4+3000*X^5+9520*X^6+13392*X^7+8514*X^8+2002*X^9)*X^5 +\n C (8*X^2+240*X^3+2320*X^4+8960*X^5+15120*X^6+11220*X^7+3003*X^8)*X^6 +\n C (4*X^1+120*X^2+1320*X^3+6160*X^4+12600*X^5+11088*X^6+3432*X^7)*X^7 +\n C (1*X^0+39*X^1+525*X^2+3035*X^3+7695*X^4+8217*X^5+3003*X^6)*X^8 +\n C (6*X^0+130*X^1+1020*X^2+3360*X^3+4510*X^4+2002*X^5)*X^9 +\n C (15*X^0+210*X^1+996*X^2+1782*X^3+1001*X^4)*X^10 +\n C (20*X^0+180*X^1+480*X^2+364*X^3)*X^11 +\n C (15*X^0+79*X^1+91*X^2)*X^12 +\n C (6*X^0+14*X^1)*X^13 +\n C (1*X^0)*X^14",
+        "small_row_7_8_3M9E1": "theorem small_row_7_8_3M9E1 : (Bivariate.swap (frame [true,true,true,true,true,true]).mid.p).coeff 3=\n 20*X^5+408*X^6+2000*X^7+4060*X^8+4020*X^9+1936*X^10+364*X^11",
+        "small_lc_7_8_3M9E1": "theorem small_lc_7_8_3M9E1 (i : ℕ) (hi : i ≤ 14) :\n coeff (frame [true,true,true,true,true,true]).mid.p i 3*coeff (frame [true,true,true,true,true,true]).mid.p (i+2) 3 ≤\n coeff (frame [true,true,true,true,true,true]).mid.p (i+1) 3^2",
+        "small_row_7_8_4M9E1": "theorem small_row_7_8_4M9E1 : (Bivariate.swap (frame [true,true,true,true,true,true]).mid.p).coeff 4=\n 16*X^4+432*X^5+2880*X^6+7370*X^7+8685*X^8+4785*X^9+1001*X^10",
+        "small_lc_7_8_4M9E1": "theorem small_lc_7_8_4M9E1 (i : ℕ) (hi : i ≤ 14) :\n coeff (frame [true,true,true,true,true,true]).mid.p i 4*coeff (frame [true,true,true,true,true,true]).mid.p (i+2) 4 ≤\n coeff (frame [true,true,true,true,true,true]).mid.p (i+1) 4^2"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    },
+    "MarkovSmallHorizontalM9E1": {
+      "sha256": "db5192173aec1f05f610c7c3f9708da84edcf3fa444c78b7bd4f7ed6234184db",
+      "theorem_headers": {
+        "small_horizontalM9E1": "theorem small_horizontalM9E1 (path : List Bool) (ha : 2 ≤ (frame path).mid.a)\n (hb : (frame path).mid.b ≤ 8) (i j : ℕ) (hj : j=3 ∨ j=4)\n (hi : i ≤ (frame path).mid.a+(frame path).mid.b-1) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) j^2"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    },
+    "MarkovVerticalAllOrderM9E1": {
+      "sha256": "3ba9b90e81c3118d6a09e7216cb141c0191edaf089e589ce76a573e33ae4ffe5",
+      "theorem_headers": {
+        "vsub_coeffM9E1": "theorem vsub_coeffM9E1 (p : BiPoly) (i : ℕ) :\n (vsubM9E1 p).coeff i=(X+1)^(2*i)*p.coeff i",
+        "vertical_all_order_clearedM9E1": "theorem vertical_all_order_clearedM9E1 (path : List Bool) (i : ℕ) :\n (X+1)^(2*i)*((frame path).mid.p).coeff i=\n (X+1)^((frame path).mid.a-1)*vresidualM9E1 path i",
+        "vertical_all_order_factorM9E1": "theorem vertical_all_order_factorM9E1 (path : List Bool) (i : ℕ)\n (ha : 2*i+1 ≤ (frame path).mid.a) :\n ((frame path).mid.p).coeff i=\n (X+1)^((frame path).mid.a-2*i-1)*vresidualM9E1 path i",
+        "vKa_nonnegM9E1": "theorem vKa_nonnegM9E1 : MatNonneg16 (vKaM9E1 (X:ℤ[X]))",
+        "vKc_nonnegM9E1": "theorem vKc_nonnegM9E1 : MatNonneg16 (vKcM9E1 (X:ℤ[X]))",
+        "vKletter_nonnegM9E1": "theorem vKletter_nonnegM9E1 (r : Bool) : MatNonneg16 (vKletterM9E1 (X:ℤ[X]) r)",
+        "vKword_nonnegM9E1": "theorem vKword_nonnegM9E1 (w : List Bool) : MatNonneg16 (vKwordM9E1 (X:ℤ[X]) w)",
+        "vdiff_source_nonnegM9E1": "theorem vdiff_source_nonnegM9E1 (path : List Bool) :\n PolyNonneg16 (vdiffM9E1 (vKwordM9E1 (X:ℤ[X]) (sourceWord28 path)))",
+        "vresidual_coeff_nonnegM9E1": "theorem vresidual_coeff_nonnegM9E1 (path : List Bool) (i j : ℕ) :\n 0 ≤ (vresidualM9E1 path i).coeff j",
+        "vertical_positive_factorM9E1": "theorem vertical_positive_factorM9E1 (path : List Bool) (i : ℕ) :\n ∃ Q : ℤ[X], (∀ j, 0 ≤ Q.coeff j) ∧\n ((frame path).mid.p).coeff i=(X+1)^((frame path).mid.a-2*i-1)*Q"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    },
+    "MarkovVerticalRescaleM9E1": {
+      "sha256": "a6f6efbc58e589b690457c5131257d00e66f9e2c4f224c05a311a3cd6788b180",
+      "theorem_headers": {
+        "vletter_intertwineM9E1": "theorem vletter_intertwineM9E1 (r : Bool) :\n mm16 (hmapM13D vsubM9E1 (if r then rawB18 else rawA18)) (vrightM9E1 (X:ℤ[X]))=\n hscaleM13D (if r then C (X+1) else 1)\n   (mm16 (vrightM9E1 (X:ℤ[X])) (vKletterM9E1 X r))",
+        "vscale_leftM9E1": "theorem vscale_leftM9E1 {R : Type*} [CommRing R] (c : R) (m n : Mat16 R) :\n mm16 (hscaleM13D c m) n=hscaleM13D c (mm16 m n)",
+        "vscale_rightM9E1": "theorem vscale_rightM9E1 {R : Type*} [CommRing R] (c : R) (m n : Mat16 R) :\n mm16 m (hscaleM13D c n)=hscaleM13D c (mm16 m n)",
+        "vscale_scaleM9E1": "theorem vscale_scaleM9E1 {R : Type*} [CommRing R] (c d : R) (m : Mat16 R) :\n hscaleM13D c (hscaleM13D d m)=hscaleM13D (c*d) m",
+        "vword_intertwineM9E1": "theorem vword_intertwineM9E1 (w : List Bool) :\n mm16 (hmapM13D vsubM9E1 (rawWord80 w)) (vrightM9E1 (X:ℤ[X]))=\n hscaleM13D (C (X+1)^w.count true)\n   (mm16 (vrightM9E1 (X:ℤ[X])) (vKwordM9E1 X w))",
+        "vertical_rescaled_sourceM9E1": "theorem vertical_rescaled_sourceM9E1 (path : List Bool) :\n vsubM9E1 (frame path).mid.p=\n C (X+1)^((frame path).mid.a-1)*vdiffM9E1 (vKwordM9E1 (X:ℤ[X]) (sourceWord28 path))",
+        "vdiff_firstM9E1": "theorem vdiff_firstM9E1 {R : Type*} [CommRing R] (x : R) (m : Mat16 R[X]) :\n vdiffM9E1 (mm16 (vKaM9E1 x) m)=C x*(m.a+m.b)+(m.c+m.d)"
+      },
+      "forbidden_token_occurrences": {
+        "sorry": 0,
+        "admit": 0,
+        "axiom": 0,
+        "native_decide": 0,
+        "unsafe": 0,
+        "partial": 0
+      }
+    }
+  },
+  "small_case_exhaustion": {
+    "domain": "2 <= a < b <= 8, gcd(a,b)=1",
+    "expected_pairs": [
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        8
+      ]
+    ],
+    "cases": [
+      {
+        "a": 2,
+        "b": 3,
+        "path_literal": "[true]",
+        "i_upper_inclusive": 4,
+        "rows": [
+          3,
+          4
+        ],
+        "bounded_adjacent_instances": 10,
+        "full_poly_from_frame_simp_ring": true,
+        "row_extractions": 2,
+        "bounded_kernel_arithmetic_branches": 2
+      },
+      {
+        "a": 2,
+        "b": 5,
+        "path_literal": "[false,true]",
+        "i_upper_inclusive": 6,
+        "rows": [
+          3,
+          4
+        ],
+        "bounded_adjacent_instances": 14,
+        "full_poly_from_frame_simp_ring": true,
+        "row_extractions": 2,
+        "bounded_kernel_arithmetic_branches": 2
+      },
+      {
+        "a": 2,
+        "b": 7,
+        "path_literal": "[false,false,true]",
+        "i_upper_inclusive": 8,
+        "rows": [
+          3,
+          4
+        ],
+        "bounded_adjacent_instances": 18,
+        "full_poly_from_frame_simp_ring": true,
+        "row_extractions": 2,
+        "bounded_kernel_arithmetic_branches": 2
+      },
+      {
+        "a": 3,
+        "b": 4,
+        "path_literal": "[true,true]",
+        "i_upper_inclusive": 6,
+        "rows": [
+          3,
+          4
+        ],
+        "bounded_adjacent_instances": 14,
+        "full_poly_from_frame_simp_ring": true,
+        "row_extractions": 2,
+        "bounded_kernel_arithmetic_branches": 2
+      },
+      {
+        "a": 3,
+        "b": 5,
+        "path_literal": "[true,false]",
+        "i_upper_inclusive": 7,
+        "rows": [
+          3,
+          4
+        ],
+        "bounded_adjacent_instances": 16,
+        "full_poly_from_frame_simp_ring": true,
+        "row_extractions": 2,
+        "bounded_kernel_arithmetic_branches": 2
+      },
+      {
+        "a": 3,
+        "b": 7,
+        "path_literal": "[false,true,true]",
+        "i_upper_inclusive": 9,
+        "rows": [
+          3,
+          4
+        ],
+        "bounded_adjacent_instances": 20,
+        "full_poly_from_frame_simp_ring": true,
+        "row_extractions": 2,
+        "bounded_kernel_arithmetic_branches": 2
+      },
+      {
+        "a": 3,
+        "b": 8,
+        "path_literal": "[false,true,false]",
+        "i_upper_inclusive": 10,
+        "rows": [
+          3,
+          4
+        ],
+        "bounded_adjacent_instances": 22,
+        "full_poly_from_frame_simp_ring": true,
+        "row_extractions": 2,
+        "bounded_kernel_arithmetic_branches": 2
+      },
+      {
+        "a": 4,
+        "b": 5,
+        "path_literal": "[true,true,true]",
+        "i_upper_inclusive": 8,
+        "rows": [
+          3,
+          4
+        ],
+        "bounded_adjacent_instances": 18,
+        "full_poly_from_frame_simp_ring": true,
+        "row_extractions": 2,
+        "bounded_kernel_arithmetic_branches": 2
+      },
+      {
+        "a": 4,
+        "b": 7,
+        "path_literal": "[true,false,false]",
+        "i_upper_inclusive": 10,
+        "rows": [
+          3,
+          4
+        ],
+        "bounded_adjacent_instances": 22,
+        "full_poly_from_frame_simp_ring": true,
+        "row_extractions": 2,
+        "bounded_kernel_arithmetic_branches": 2
+      },
+      {
+        "a": 5,
+        "b": 6,
+        "path_literal": "[true,true,true,true]",
+        "i_upper_inclusive": 10,
+        "rows": [
+          3,
+          4
+        ],
+        "bounded_adjacent_instances": 22,
+        "full_poly_from_frame_simp_ring": true,
+        "row_extractions": 2,
+        "bounded_kernel_arithmetic_branches": 2
+      },
+      {
+        "a": 5,
+        "b": 7,
+        "path_literal": "[true,true,false]",
+        "i_upper_inclusive": 11,
+        "rows": [
+          3,
+          4
+        ],
+        "bounded_adjacent_instances": 24,
+        "full_poly_from_frame_simp_ring": true,
+        "row_extractions": 2,
+        "bounded_kernel_arithmetic_branches": 2
+      },
+      {
+        "a": 5,
+        "b": 8,
+        "path_literal": "[true,false,true]",
+        "i_upper_inclusive": 12,
+        "rows": [
+          3,
+          4
+        ],
+        "bounded_adjacent_instances": 26,
+        "full_poly_from_frame_simp_ring": true,
+        "row_extractions": 2,
+        "bounded_kernel_arithmetic_branches": 2
+      },
+      {
+        "a": 6,
+        "b": 7,
+        "path_literal": "[true,true,true,true,true]",
+        "i_upper_inclusive": 12,
+        "rows": [
+          3,
+          4
+        ],
+        "bounded_adjacent_instances": 26,
+        "full_poly_from_frame_simp_ring": true,
+        "row_extractions": 2,
+        "bounded_kernel_arithmetic_branches": 2
+      },
+      {
+        "a": 7,
+        "b": 8,
+        "path_literal": "[true,true,true,true,true,true]",
+        "i_upper_inclusive": 14,
+        "rows": [
+          3,
+          4
+        ],
+        "bounded_adjacent_instances": 30,
+        "full_poly_from_frame_simp_ring": true,
+        "row_extractions": 2,
+        "bounded_kernel_arithmetic_branches": 2
+      }
+    ],
+    "count": 14,
+    "bounded_adjacent_instances": 282,
+    "extension": "small_horizontal_all uses raw_outside_polygon18 when i>a+b-1; no dropped trailing zeros. Path identities supplied by frame_path_injective_098 and ordinary by decide in saved source; no auditor frame recurrence evaluation."
+  },
+  "horizontal_case_split": [
+    "a=1: inherited source_one_global6, every row and start",
+    "j=3,a>=2,b>=7: inherited horizontal_third_rawM13D",
+    "j=3,a>=2,b<7: exhaustive small source branch",
+    "j=4,a>=3,b>=9: inherited horizontal_fourth_rawM511",
+    "j=4,a=2,b>=9: new horizontal_fourth_twoM9E1",
+    "j=4,a>=2,b<9: exhaustive small source branch"
+  ],
+  "vertical_range": "R_i defined for every path/i; cleared identity and coefficient nonnegativity unrestricted. Exact raw=h^(a-2i-1)R_i needs 2i+1<=a. Unrestricted positive quotient chooses raw column outside range. No LC theorem.",
+  "root_residual": "For all actual paths with a>=2: H j>=5 and i+j+4<=a+b-1; V i>=2 and i+j+4<=a+b-1; D i+j+8<=a+b-1, a+5<=i+j+2, a+2<=b. All three original InPolygon guards in each clause. Both root endpoints inherited through root_iff_horizontalM511. Residual unproved."
+}
