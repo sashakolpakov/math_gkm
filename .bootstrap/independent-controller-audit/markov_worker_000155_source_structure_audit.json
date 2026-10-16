@@ -1,0 +1,439 @@
+{
+  "worker": 155,
+  "request": "96ada19b024045ac97c60b3c8dfb10e6",
+  "created_at_utc": "2026-10-16T19:35:02.504986+00:00",
+  "historical_status": "completed/return0/structured report; full root unresolved",
+  "scope": "Static completed155 archive and explicit named inherited/current counterparts only. No project program/proof/checker/replay/experiment/generator/finalizer execution or mathematical-value recomputation. No source/machinery edits, proposer contact or research assistance. Active156 excluded, prior seals final.",
+  "new_modules": [
+    {
+      "module": "MarkovFibAdditionM96A",
+      "path": "research/MarkovFibAdditionM96A.lean",
+      "bytes": 1905,
+      "sha256": "c9b51857b07b7c2c7791f54e76862de9a51f74bc4b0fa2db7b2e3ce21dbfeb74",
+      "current_sha256": "c9b51857b07b7c2c7791f54e76862de9a51f74bc4b0fa2db7b2e3ce21dbfeb74",
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fib_pair_addM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_pair_detM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_pair_tripleM96A"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovThreeTransferM9E2"
+      ],
+      "theorem_statements": [
+        "theorem fib_pair_addM96A {R : Type*} [CommRing R] (u v : R) (m n : ℕ) :\n u*(fibPairM9E2 u v (m+n)).1=\n   u*(fibPairM9E2 u v m).1*(fibPairM9E2 u v n).1+\n   (fibPairM9E2 u v m).2*(fibPairM9E2 u v n).2 ∧\n u*(fibPairM9E2 u v (m+n)).2=\n   u*(fibPairM9E2 u v m).2*(fibPairM9E2 u v n).1+\n   u*(fibPairM9E2 u v m).1*(fibPairM9E2 u v n).2+\n   (1-u-v)*(fibPairM9E2 u v m).2*(fibPairM9E2 u v n).2",
+        "theorem fib_pair_detM96A {R : Type*} [CommRing R] (u v : R) (n : ℕ) :\n u*(fibPairM9E2 u v n).1^2+\n (1-u-v)*(fibPairM9E2 u v n).1*(fibPairM9E2 u v n).2-\n (fibPairM9E2 u v n).2^2=u*v^n",
+        "theorem fib_pair_tripleM96A {R : Type*} [CommRing R] (u v : R) (n : ℕ) :\n u^2*(fibPairM9E2 u v (3*n)).1=\n   u^2*(fibPairM9E2 u v n).1^3+\n   3*u*(fibPairM9E2 u v n).1*(fibPairM9E2 u v n).2^2+\n   (1-u-v)*(fibPairM9E2 u v n).2^3 ∧\n u^2*(fibPairM9E2 u v (3*n)).2=\n   3*u^2*(fibPairM9E2 u v n).1^2*(fibPairM9E2 u v n).2+\n   3*u*(1-u-v)*(fibPairM9E2 u v n).1*(fibPairM9E2 u v n).2^2+\n   ((1-u-v)^2+u)*(fibPairM9E2 u v n).2^3"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThreeSparseM96A",
+      "path": "research/MarkovThreeSparseM96A.lean",
+      "bytes": 2644,
+      "sha256": "58dd270415da09471a363b755075c0e141d1255948f3f95114cd6e2db9aa564c",
+      "current_sha256": "58dd270415da09471a363b755075c0e141d1255948f3f95114cd6e2db9aa564c",
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "threeSparseM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_sparse_identityM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_sparse_differenceM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_three_sparseM96A"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovFibAdditionM96A"
+      ],
+      "theorem_statements": [
+        "theorem three_sparse_identityM96A (q : ℕ) (r : Bool) :\n (S^2-4*V)*threePolyM9E2 q r=threeSparseM96A q r",
+        "theorem three_sparse_differenceM96A (q : ℕ) (r : Bool) :\n threeSparseM96A q r=\n if r then\n S^2*(fib6 (3*q+3)-2*fib6 (3*q+2)+fib6 (3*q+1))+\n 4*U*V^(q+1)*(S*fib6 q+fib6 (q+1))\n else\n S^2*(fib6 (3*q+4)-2*fib6 (3*q+3)+fib6 (3*q+2))+\n 4*U*V^(q+1)*(V*fib6 q+S*fib6 (q+1))",
+        "theorem source_three_sparseM96A (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1≤q ∧ (frame path).mid.b=3*q+(if r then 1 else 2) ∧\n   (S^2-4*V)*(frame path).mid.p=threeSparseM96A q r"
+      ],
+      "definitions": [
+        "def threeSparseM96A (q : ℕ) (r : Bool) : BiPoly :=\n if r then\n S^2*((U+V)^2-V)*fib6 (3*q+1)-S^2*V*(U+V-1)*fib6 (3*q)+\n 4*U*V^(q+1)*(S*fib6 q+fib6 (q+1))\n else\n S^2*(U+V)*((U+V)^2+(U+V)-2*V)*fib6 (3*q+1)-\n S^2*V*((U+V)^2-V)*fib6 (3*q)+\n 4*U*V^(q+1)*(V*fib6 q+S*fib6 (q+1))"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThreeForceM96A",
+      "path": "research/MarkovThreeForceM96A.lean",
+      "bytes": 3442,
+      "sha256": "53c03a0828512d11b80d1abde55f7007a0a5393f535bac58fef0d477cb161ddf",
+      "current_sha256": "53c03a0828512d11b80d1abde55f7007a0a5393f535bac58fef0d477cb161ddf",
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "threeForceM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_force_coeffM96A"
+        },
+        {
+          "kind": "def",
+          "name": "discriminantActionM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "discriminant_coeffM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_raw_equationM96A"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovThreeSparseM96A",
+        "MarkovThreeArithmeticM9E2"
+      ],
+      "theorem_statements": [
+        "theorem three_force_coeffM96A (q : ℕ) (r : Bool) (i j : ℕ) :\n coeff (threeSparseM96A q r) i j=threeForceM96A q r i j",
+        "theorem discriminant_coeffM96A (P : BiPoly) (i j : ℕ) :\n coeff ((S^2-4*V)*P) i j=discriminantActionM96A (coeff P) i j",
+        "theorem three_raw_equationM96A (q : ℕ) (r : Bool) (i j : ℕ) :\n discriminantActionM96A (threeRawM9E2 q r) i j=threeForceM96A q r i j"
+      ],
+      "definitions": [
+        "def threeForceM96A (q : ℕ) (r : Bool) : ℕ → ℕ → ℤ :=\n let n := 3*q+(if r then 1 else 2)\n let f := fun i j => fibRawM9E2 (n+2) i j-2*fibRawM9E2 (n+1) i j+fibRawM9E2 n i j\n let g := if r then (fun i j => addSRawM9E2 (fibRawM9E2 q) i j+fibRawM9E2 (q+1) i j)\n   else (fun i j => shiftRawM9E2 0 1 (fibRawM9E2 q) i j+addSRawM9E2 (fibRawM9E2 (q+1)) i j)\n fun i j => addSRawM9E2 (addSRawM9E2 f) i j+4*shiftRawM9E2 1 (q+1) g i j",
+        "def discriminantActionM96A (f : ℕ → ℕ → ℤ) (i j : ℕ) : ℤ :=\n f i j+2*shiftRawM9E2 1 0 f i j-2*shiftRawM9E2 0 1 f i j+\n shiftRawM9E2 2 0 f i j+2*shiftRawM9E2 1 1 f i j+shiftRawM9E2 0 2 f i j"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThreeSolverM96A",
+      "path": "research/MarkovThreeSolverM96A.lean",
+      "bytes": 3145,
+      "sha256": "6348abc64d53e1e90a6a0deedf145cb2e6d07548995f3a6ad34a8621d9673717",
+      "current_sha256": "6348abc64d53e1e90a6a0deedf145cb2e6d07548995f3a6ad34a8621d9673717",
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "solveDiscM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "solve_disc_stepM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "solve_disc_uniqueM96A"
+        },
+        {
+          "kind": "def",
+          "name": "sparseRawM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "sparse_raw_eqM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "sparse_source_coeffM96A"
+        },
+        {
+          "kind": "def",
+          "name": "SparseThreeLCM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_sparse_threeM96A"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovThreeForceM96A"
+      ],
+      "theorem_statements": [
+        "theorem solve_disc_stepM96A (f : ℕ → ℕ → ℤ) (i j : ℕ) :\n solveDiscM96A f i j=f i j-2*shiftRawM9E2 1 0 (solveDiscM96A f) i j+\n 2*shiftRawM9E2 0 1 (solveDiscM96A f) i j-shiftRawM9E2 2 0 (solveDiscM96A f) i j-\n 2*shiftRawM9E2 1 1 (solveDiscM96A f) i j-shiftRawM9E2 0 2 (solveDiscM96A f) i j",
+        "theorem solve_disc_uniqueM96A (f g : ℕ → ℕ → ℤ)\n (hg : ∀ i j, discriminantActionM96A g i j=f i j) :\n ∀ i j, solveDiscM96A f i j=g i j",
+        "theorem sparse_raw_eqM96A (q : ℕ) (r : Bool) (i j : ℕ) :\n sparseRawM96A q r i j=threeRawM9E2 q r i j",
+        "theorem sparse_source_coeffM96A (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1 ≤ q ∧ (frame path).mid.b=3*q+(if r then 1 else 2) ∧\n   ∀ i j, coeff (frame path).mid.p i j=sparseRawM96A q r i j",
+        "theorem root_iff_sparse_threeM96A : Conjecture63 ↔ SparseThreeLCM96A ∧ OtherFourM9E2"
+      ],
+      "definitions": [
+        "def solveDiscM96A (f : ℕ → ℕ → ℤ) (i j : ℕ) : ℤ :=\n f i j-\n 2*(if 1 ≤ i ∧ 0 ≤ j then solveDiscM96A f (i-1) (j-0) else 0)+\n 2*(if 0 ≤ i ∧ 1 ≤ j then solveDiscM96A f (i-0) (j-1) else 0)-\n (if 2 ≤ i ∧ 0 ≤ j then solveDiscM96A f (i-2) (j-0) else 0)-\n 2*(if 1 ≤ i ∧ 1 ≤ j then solveDiscM96A f (i-1) (j-1) else 0)-\n (if 0 ≤ i ∧ 2 ≤ j then solveDiscM96A f (i-0) (j-2) else 0)\ntermination_by i+j\ndecreasing_by all_goals omega",
+        "def sparseRawM96A (q : ℕ) (r : Bool) : ℕ → ℕ → ℤ :=\n solveDiscM96A (threeForceM96A q r)",
+        "def SparseThreeLCM96A : Prop := ∀ q : ℕ, 1 ≤ q → ∀ r,\n (∀ i j, sparseRawM96A q r i j*sparseRawM96A q r (i+2) j ≤ sparseRawM96A q r (i+1) j^2) ∧\n (∀ i j, sparseRawM96A q r i j*sparseRawM96A q r i (j+2) ≤ sparseRawM96A q r i (j+1)^2) ∧\n (∀ i j, sparseRawM96A q r i (j+2)*sparseRawM96A q r (i+2) j ≤ sparseRawM96A q r (i+1) (j+1)^2)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBinomialInverseM96A",
+      "path": "research/MarkovBinomialInverseM96A.lean",
+      "bytes": 1719,
+      "sha256": "ca0f4a9f159f315978d6f322596e6d8c7c5ff4b7f3b1cbe188e738c9cab5d80e",
+      "current_sha256": "ca0f4a9f159f315978d6f322596e6d8c7c5ff4b7f3b1cbe188e738c9cab5d80e",
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "choose_four_relationM96A"
+        },
+        {
+          "kind": "def",
+          "name": "inverseKernelM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "inverse_kernel_interiorM96A"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovThreeForceM96A"
+      ],
+      "theorem_statements": [
+        "theorem choose_four_relationM96A (n k : ℕ) :\n (Nat.choose (n+4) (k+4):ℤ)=\n 2*(Nat.choose (n+2) (k+2):ℤ)+2*(Nat.choose (n+2) (k+4):ℤ)-\n (Nat.choose n k:ℤ)+2*(Nat.choose n (k+2):ℤ)-(Nat.choose n (k+4):ℤ)",
+        "theorem inverse_kernel_interiorM96A (i j : ℕ) :\n inverseKernelM96A (i+2) (j+2)+2*inverseKernelM96A (i+1) (j+2)-\n 2*inverseKernelM96A (i+2) (j+1)+inverseKernelM96A i (j+2)+\n 2*inverseKernelM96A (i+1) (j+1)+inverseKernelM96A (i+2) j=0"
+      ],
+      "definitions": [
+        "def inverseKernelM96A (i j : ℕ) : ℤ :=\n (-1:ℤ)^i*(Nat.choose (2*i+2*j+2) (2*i+1):ℤ)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovInverseBoundaryM96A",
+      "path": "research/MarkovInverseBoundaryM96A.lean",
+      "bytes": 3801,
+      "sha256": "ec8584f3cdad1f57bf385e7c590e946c747e3668147ef35a00194a38acff2c68",
+      "current_sha256": "ec8584f3cdad1f57bf385e7c590e946c747e3668147ef35a00194a38acff2c68",
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "inverse_zero_rowM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "inverse_zero_columnM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "inverse_swapM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_three_differenceM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "inverse_near_rowM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "inverse_near_columnM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "inverse_kernel_equationM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "inverse_impulseM96A"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovBinomialInverseM96A",
+        "MarkovThreeSolverM96A"
+      ],
+      "theorem_statements": [
+        "theorem inverse_zero_rowM96A (j : ℕ) : inverseKernelM96A 0 j=2*((j:ℤ)+1)",
+        "theorem inverse_zero_columnM96A (i : ℕ) :\n inverseKernelM96A i 0=(-1:ℤ)^i*(2*((i:ℤ)+1))",
+        "theorem inverse_swapM96A (i j : ℕ) :\n inverseKernelM96A i j=(-1:ℤ)^i*(-1:ℤ)^j*inverseKernelM96A j i",
+        "theorem choose_three_differenceM96A (j : ℕ) :\n ((2*j+8).choose 3:ℤ)-2*((2*j+6).choose 3:ℤ)+((2*j+4).choose 3:ℤ)=8*j+20",
+        "theorem inverse_near_rowM96A (j : ℕ) :\n inverseKernelM96A 1 (j+2)+2*inverseKernelM96A 0 (j+2)-\n 2*inverseKernelM96A 1 (j+1)+2*inverseKernelM96A 0 (j+1)+inverseKernelM96A 1 j=0",
+        "theorem inverse_near_columnM96A (i : ℕ) :\n inverseKernelM96A (i+2) 1+2*inverseKernelM96A (i+1) 1-\n 2*inverseKernelM96A (i+2) 0+inverseKernelM96A i 1+\n 2*inverseKernelM96A (i+1) 0=0",
+        "theorem inverse_kernel_equationM96A (i j : ℕ) :\n discriminantActionM96A inverseKernelM96A i j=if i=0 ∧ j=0 then 2 else 0",
+        "theorem inverse_impulseM96A (i j : ℕ) :\n solveDiscM96A (fun a b => if a=0 ∧ b=0 then 2 else 0) i j=inverseKernelM96A i j"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovSparseConvolutionM96A",
+      "path": "research/MarkovSparseConvolutionM96A.lean",
+      "bytes": 4007,
+      "sha256": "aec486c3a5af8b58aba06c948d89b28b641e973d9ef740022ebb2998ae996830",
+      "current_sha256": "aec486c3a5af8b58aba06c948d89b28b641e973d9ef740022ebb2998ae996830",
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "rectPolyM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "rect_poly_coeffM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "disc_action_congrM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "rect_kernel_actionM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "coeff_mul_impulseM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "discriminant_inverse_coeffM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "three_double_sumM96A"
+        },
+        {
+          "kind": "def",
+          "name": "DoubleSumThreeLCM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_double_sumM96A"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovInverseBoundaryM96A"
+      ],
+      "theorem_statements": [
+        "theorem rect_poly_coeffM96A (f : ℕ → ℕ → ℤ) (N i j : ℕ) :\n coeff (rectPolyM96A f N) i j=if i ≤ N ∧ j ≤ N then f i j else 0",
+        "theorem disc_action_congrM96A (f g : ℕ → ℕ → ℤ) (i j : ℕ)\n (h : ∀ a b, a ≤ i → b ≤ j → f a b=g a b) :\n discriminantActionM96A f i j=discriminantActionM96A g i j",
+        "theorem rect_kernel_actionM96A (N i j : ℕ) (hi : i ≤ N) (hj : j ≤ N) :\n coeff ((S^2-4*V)*rectPolyM96A inverseKernelM96A N) i j=\n if i=0 ∧ j=0 then 2 else 0",
+        "theorem coeff_mul_impulseM96A (P Q : BiPoly) (i j : ℕ)\n (h : ∀ a b, a ≤ i → b ≤ j → coeff Q a b=if a=0 ∧ b=0 then 2 else 0) :\n coeff (P*Q) i j=2*coeff P i j",
+        "theorem discriminant_inverse_coeffM96A (P : BiPoly) (i j : ℕ) :\n 2*coeff P i j=biConvM9E2 (coeff ((S^2-4*V)*P)) inverseKernelM96A i j",
+        "theorem three_double_sumM96A (q : ℕ) (r : Bool) (i j : ℕ) :\n 2*threeRawM9E2 q r i j=biConvM9E2 (threeForceM96A q r) inverseKernelM96A i j",
+        "theorem root_iff_double_sumM96A : Conjecture63 ↔ DoubleSumThreeLCM96A ∧ OtherFourM9E2"
+      ],
+      "definitions": [
+        "def rectPolyM96A (f : ℕ → ℕ → ℤ) (N : ℕ) : BiPoly :=\n ∑ a ∈ range (N+1), monomial a (∑ b ∈ range (N+1), monomial b (f a b))",
+        "def DoubleSumThreeLCM96A : Prop := ∀ q : ℕ, 1 ≤ q → ∀ r,\n let z := biConvM9E2 (threeForceM96A q r) inverseKernelM96A\n (∀ i j, z i j*z (i+2) j ≤ z (i+1) j^2) ∧\n (∀ i j, z i j*z i (j+2) ≤ z i (j+1)^2) ∧\n (∀ i j, z i (j+2)*z (i+2) j ≤ z (i+1) (j+1)^2)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovSparseSignM96A",
+      "path": "research/MarkovSparseSignM96A.lean",
+      "bytes": 1305,
+      "sha256": "247c127a175120b5c4c18d86acb069ded4b2730a3f62953a28401d879079e7bf",
+      "current_sha256": "247c127a175120b5c4c18d86acb069ded4b2730a3f62953a28401d879079e7bf",
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "sparse_forcing_negativeM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "sparse_negative_at_sourceM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "sparse_source_vertical_boundaryM96A"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovThreeForceM96A"
+      ],
+      "theorem_statements": [
+        "theorem sparse_forcing_negativeM96A : threeForceM96A 1 false 0 7 = -2",
+        "theorem sparse_negative_at_sourceM96A :\n InPolygon 3 5 0 7 ∧ coeff (frame [true,false]).mid.p 0 7=1 ∧\n coeff ((S^2-4*V)*(frame [true,false]).mid.p) 0 7 = -2",
+        "theorem sparse_source_vertical_boundaryM96A :\n InPolygon 3 5 0 5 ∧ InPolygon 3 5 0 6 ∧ InPolygon 3 5 0 7 ∧\n coeff (frame [true,false]).mid.p 0 5=1 ∧\n coeff (frame [true,false]).mid.p 0 6=2 ∧\n coeff (frame [true,false]).mid.p 0 7=1 ∧\n coeff (frame [true,false]).mid.p 0 5*coeff (frame [true,false]).mid.p 0 7 ≤\n coeff (frame [true,false]).mid.p 0 6^2"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLowerCandidateM96A",
+      "path": "research/MarkovLowerCandidateM96A.lean",
+      "bytes": 1883,
+      "sha256": "29400e47f764ac81e696637312526eb39e4c0295c9098c7d4019d689a1a57bc5",
+      "current_sha256": "29400e47f764ac81e696637312526eb39e4c0295c9098c7d4019d689a1a57bc5",
+      "status": "accepted",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "lowerCoreM96A"
+        },
+        {
+          "kind": "def",
+          "name": "lowerCandidateM96A"
+        },
+        {
+          "kind": "def",
+          "name": "lowerGapM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_gap_identityM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_gap_nonnegM96A"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_candidate_lcM96A"
+        }
+      ],
+      "final_validation_source_matches": true,
+      "imports": [
+        "MarkovThreeForceM96A"
+      ],
+      "theorem_statements": [
+        "theorem lower_gap_identityM96A (x d c : ℚ) :\n (x+2)*(x+5)*lowerCoreM96A (x+d+2) (x+1) c^2-\n (x+1)*(x+6)*lowerCoreM96A (x+d+2) x c*lowerCoreM96A (x+d+2) (x+2) c=\n lowerGapM96A x d c",
+        "theorem lower_gap_nonnegM96A (x d c : ℚ) (hx : 0 ≤ x) (hd : 0 ≤ d) (hc : 0 ≤ c) :\n 0 ≤ lowerGapM96A x d c",
+        "theorem lower_candidate_lcM96A (q x c : ℚ) (hx : 0 ≤ x) (hq : x+2 ≤ q) (hc : 0 ≤ c) :\n lowerCandidateM96A q x c*lowerCandidateM96A q (x+2) c ≤ lowerCandidateM96A q (x+1) c^2"
+      ],
+      "definitions": [
+        "def lowerCoreM96A (q x c : ℚ) : ℚ :=\n 7*(3*q+c)*(2*x^2+10*x+15)-x*(18*x^2+100*x+155)",
+        "def lowerCandidateM96A (q x c : ℚ) : ℚ :=\n (x+1)*(x+2)*(x+3)*(x+4)*lowerCoreM96A q x c/2520",
+        "def lowerGapM96A (x d c : ℚ) : ℚ :=\n 3814650+\n 1517040*c+\n 167580*c^2+\n 4551120*d+\n 1005480*d*c+\n 1508220*d^2+\n 7167447*x+\n 2275476*x*c+\n 193452*x*c^2+\n 6826428*x*d+\n 1160712*x*d*c+\n 1741068*x*d^2+\n 5616597*x^2+\n 1389444*x^2*c+\n 85260*x^2*c^2+\n 4168332*x^2*d+\n 511560*x^2*d*c+\n 767340*x^2*d^2+\n 2360484*x^3+\n 428232*x^3*c+\n 16464*x^3*c^2+\n 1284696*x^3*d+\n 98784*x^3*d*c+\n 148176*x^3*d^2+\n 561120*x^4+\n 65856*x^4*c+\n 1176*x^4*c^2+\n 197568*x^4*d+\n 7056*x^4*d*c+\n 10584*x^4*d^2+\n 71316*x^5+\n 4032*x^5*c+\n 12096*x^5*d+\n 3780*x^6"
+      ],
+      "forbidden_tokens": []
+    }
+  ],
+  "accepted_counts": {
+    "theorem": 37,
+    "def": 12
+  },
+  "classification_scope": "Inherited exact path false^n++[true,r],q=n+1>=1; true3/(3q+1),false3/(3q+2), all actual numerator3 paths and all denominators without extra shape/ratio premise. q0 algebraic extension only. New source adapters retain exact labels and all natural indices.",
+  "pair_sparse_scope": "Generic CommRing addition and determinant identities are division-free with u/u^2 factors. Sparse identity in BiPoly cancels U^2 using its nonzero polynomial and the domain cancellation law, not positivity of U at a point or a nonzero coefficient. D=S^2-4V has signed coefficients; D is never assumed coefficientwise positive or divided in an inequality. Both sparse differences use inherited exact Fibonacci recurrence. No GAP output is a premise.",
+  "forcing_scope": "threeForce is S-shift twice of F_(n+2)-2F_(n+1)+F_n plus4 guarded shift(1,q+1) of the exact true/false correction. n=3q+1 true or3q+2false. Inherited fibRaw and shiftRaw preserve axis and outside zeros. discriminantAction has signed stencil f+2shift10-2shift01+shift20+2shift11+shift02. Equality with actual raw array all naturalq/i/j, no sign or gap assumption.",
+  "solver_scope": "Well-founded recursive solveDisc decreases i+j on every guarded shift. Bounds are checked before natural subtraction; zero-index cases terminate without extra initial conditions. Uniqueness is for any integer forcing/array satisfying the whole action equation. It identifies sparseRaw with threeRaw for every natural index including zeros. No LC conclusion from the recurrence alone.",
+  "inverse_scope": "K(i,j)=(-1)^i*C(2i+2j+2,2i+1) in integers is DOUBLED impulse response. Four-Pascal relation proves interior at(i+2,j+2); axes, near row/column1, signed swap and four smallcornercases supply all boundaries. Full action=2delta, then unique solve equality. There is no asserted general nonnegativity or integer division by2. Python uses a halved integer floor expression separately in finite tests.",
+  "finite_rectangle_scope": "No new Lean PowerSeries object or infinite-series theorem is needed: rectPoly is a finite square0..N with exact guarded coefficient extraction. Action congruence depends only on lower rectangle; withinN, D*rectK equals2delta. For arbitrary BiPolyP and targeti,j chooseN=i+j; all convolution arguments and shifted indices lie in rectangle. coeff_mul_impulse isolatesa=i,b=j and all other terms vanish. Polynomial associativity yields2coeffP=biConv(coeff(DP),K). No boundedness assumption on sourceq or rawsupport, no truncation error at target, no positivity or convergence premise.",
+  "double_sum_root_scope": "three_double_sum gives exact z=2*threeRaw at all naturalq/i/j, including outside zeros. DoubleSumThreeLC quantifies q>=1,bothr,all naturalH/V/D. Formal equivalence cancels common scale2 via integer inequality equivalence (2a)(2c)<=(2b)^2 iff ac<=b^2. No coefficient-dependent normalization/divisibility claim. SparseThreeLC and DoubleSumThreeLC each exactrootiff with OtherFourM9E2; both residuals remain unproved. Original H/V/D indices, original polygon and separate0/1,1/1 endpoints retained via inherited equivalences.",
+  "candidate_scope": "lowerCandidate(q,x,c) rational polynomial with denominator2520; proven LC for every rationalx>=0,q>=x+2,c>=0. Gapidentity usesd=q-x-2>=0,34 literal positive-coefficient terms and nonnegative factor(x+2)(x+3)^2(x+4)^2(x+5). No lowerCore positivity premise required for this expression inequality. Proposed sourcecolumn i4,x=j,c0true/c1false, j<=q, lacks universal source identification; endpointj=q only finite checked. No actual raw region credited, no zero-extension/support theorem for candidate or upper/crossing coverage.",
+  "negative_scope": "Accepted force(1,false,0,7)=-2; actualsource[true,false]=3/5, point(0,7) polygonvalid with rawcoefficient1. Literal rawV triple(0,5),(0,6),(0,7)=[1,2,1], all polygon guards and LC proved. Negative DP forcing and alternating inverse are auxiliary, not source failure or root refutation.",
+  "finite_gap_scope": "Candidate full fourth-column rational numerator from interpolation of(1-v)^8 times column is finite-only. GAP elimination/factorization suggested identities but saved Lean proofs independently establish them; firstGAPcall errors despiteexit0. No external theorem, interpolation result, or symbolic calculation admitted.",
+  "mathematical_values_recomputed": false
+}

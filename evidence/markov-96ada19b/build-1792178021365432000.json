@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovThreeSolverM96A.lean:10:10: error: unexpected token '\u2227'; expected term\n/Users/sasha/math_gkm/research/MarkovThreeSolverM96A.lean:22:5: warning: declaration uses `sorry`\n/Users/sasha/math_gkm/research/MarkovThreeSolverM96A.lean:18:8: warning: declaration uses `sorry`\n/Users/sasha/math_gkm/research/MarkovThreeSolverM96A.lean:23:1: warning: 'rfl' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n/Users/sasha/math_gkm/research/MarkovThreeSolverM96A.lean:62:9: error: Type mismatch\n  sparseRawM96A q r i j * sparseRawM96A q r (i + 2) j\nhas type\n  \u2124\nbut is expected to have type\n  Graph ?m.8 ?m.9\n/Users/sasha/math_gkm/research/MarkovThreeSolverM96A.lean:62:58: error(lean.unknownIdentifier): Unknown identifier `parseRawM96A`\n/Users/sasha/math_gkm/research/MarkovThreeSolverM96A.lean:63:9: error: Type mismatch\n  sparseRawM96A q r i j * sparseRawM96A q r i (j + 2)\nhas type\n  \u2124\nbut is expected to have type\n  Graph ?m.34 ?m.35\n/Users/sasha/math_gkm/research/MarkovThreeSolverM96A.lean:63:58: error(lean.unknownIdentifier): Unknown identifier `parseRawM96A`\n/Users/sasha/math_gkm/research/MarkovThreeSolverM96A.lean:64:9: error: Type mismatch\n  sparseRawM96A q r i (j + 2) * sparseRawM96A q r (i + 2) j\nhas type\n  \u2124\nbut is expected to have type\n  Graph ?m.60 ?m.61\n/Users/sasha/math_gkm/research/MarkovThreeSolverM96A.lean:64:62: error(lean.unknownIdentifier): Unknown identifier `parseRawM96A`\n/Users/sasha/math_gkm/research/MarkovThreeSolverM96A.lean:66:8: warning: declaration uses `sorry`\n/Users/sasha/math_gkm/research/MarkovThreeSolverM96A.lean:69:1: warning: 'simp only [sparse_raw_eqM96A]' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovThreeSolverM96A": "c66315e52906b42a004e7ad9efe305d75b0d0a6a1ce0e7b0d792a0c5bea813ed"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-96ada19b/MarkovThreeSolverM96A.olean",
+    "/Users/sasha/math_gkm/research/MarkovThreeSolverM96A.lean"
+  ],
+  "seconds": 35.54028620803729,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

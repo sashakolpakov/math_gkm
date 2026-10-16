@@ -1,0 +1,43 @@
+Syntax warning: Unbound global variable in research/cubic_identity_96ada19b.g:\
+14
+ aug:=List([1..4],i->Concatenation(mat[i],[vals[i]]));;
+                                           ^^^^
+Syntax warning: Unbound global variable in research/cubic_identity_96ada19b.g:\
+17
+   k:=First([i+1..4],j->not IsZero(aug[j][i]));tmp:=aug[i];aug[i]:=aug[k];aug[\
+k]:=tmp;
+                                   ^^^
+Syntax warning: Unbound global variable in research/cubic_identity_96ada19b.g:\
+19
+  piv:=aug[i][i];aug[i]:=List(aug[i],z->z/piv);
+                                          ^^^
+residue 0
+N [ -v, v, v, v, v, u, u+v+1, u+v+1, u+v+1, u+v+1, u^2+2*u*v+v^2-v, 
+  u^2+2*u*v+v^2+2*u-2*v+1 ]
+D [ v, v, v, v, u, u+v+1, u+v+1, u^2+2*u*v+v^2+2*u-2*v+1, 
+  u^2+2*u*v+v^2+2*u-2*v+1 ]
+N [ v, v, v, v, u, u+v, u+v+1, u+v+1, u+v+1, u+v+1, u^2+2*u*v+v^2+u-v, 
+  u^2+2*u*v+v^2+2*u-2*v+1 ]
+D [ v, v, v, v, u, u+v+1, u+v+1, u^2+2*u*v+v^2+2*u-2*v+1, 
+  u^2+2*u*v+v^2+2*u-2*v+1 ]
+N [ 4*v, v, v, v, v, v, u, u, u+v+1, u+v+1, u^2+2*u*v+v^2+2*u-2*v+1 ]
+D [ v, v, v, v, u, u+v+1, u+v+1, u^2+2*u*v+v^2+2*u-2*v+1, 
+  u^2+2*u*v+v^2+2*u-2*v+1 ]
+N [ 4*v, v, v, v, v, u, u, u+v+1, u+v+1, u+v+1, u^2+2*u*v+v^2+2*u-2*v+1 ]
+D [ v, v, v, v, u, u+v+1, u+v+1, u^2+2*u*v+v^2+2*u-2*v+1, 
+  u^2+2*u*v+v^2+2*u-2*v+1 ]
+residue 1
+N [ -v, v, v, v, v, u, u+v-1, u+v+1, u+v+1, u+v+1, u+v+1, 
+  u^2+2*u*v+v^2+2*u-2*v+1 ]
+D [ v, v, v, v, u, u+v+1, u+v+1, u^2+2*u*v+v^2+2*u-2*v+1, 
+  u^2+2*u*v+v^2+2*u-2*v+1 ]
+N [ v, v, v, v, u, u+v+1, u+v+1, u+v+1, u+v+1, u^2+2*u*v+v^2-v, 
+  u^2+2*u*v+v^2+2*u-2*v+1 ]
+D [ v, v, v, v, u, u+v+1, u+v+1, u^2+2*u*v+v^2+2*u-2*v+1, 
+  u^2+2*u*v+v^2+2*u-2*v+1 ]
+N [ 4*v, v, v, v, v, u, u, u+v+1, u+v+1, u+v+1, u^2+2*u*v+v^2+2*u-2*v+1 ]
+D [ v, v, v, v, u, u+v+1, u+v+1, u^2+2*u*v+v^2+2*u-2*v+1, 
+  u^2+2*u*v+v^2+2*u-2*v+1 ]
+N [ 4*v, v, v, v, v, u, u, u+v+1, u+v+1, u^2+2*u*v+v^2+2*u-2*v+1 ]
+D [ v, v, v, v, u, u+v+1, u+v+1, u^2+2*u*v+v^2+2*u-2*v+1, 
+  u^2+2*u*v+v^2+2*u-2*v+1 ]

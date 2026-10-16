@@ -1,0 +1,106 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovFibAdditionM96A\ncollected MarkovThreeSparseM96A\ncollected MarkovThreeForceM96A\ncollected MarkovThreeSolverM96A\ncollected MarkovBinomialInverseM96A\ncollected MarkovInverseBoundaryM96A\ncollected MarkovSparseConvolutionM96A\ncollected MarkovSparseSignM96A\ncollected MarkovLowerCandidateM96A\nreplay union of 9 modules over 3 inherited imports\nisolation checked for 49 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovFibAdditionM96A": "c9b51857b07b7c2c7791f54e76862de9a51f74bc4b0fa2db7b2e3ce21dbfeb74",
+    "MarkovThreeSparseM96A": "58dd270415da09471a363b755075c0e141d1255948f3f95114cd6e2db9aa564c",
+    "MarkovThreeForceM96A": "53c03a0828512d11b80d1abde55f7007a0a5393f535bac58fef0d477cb161ddf",
+    "MarkovThreeSolverM96A": "6348abc64d53e1e90a6a0deedf145cb2e6d07548995f3a6ad34a8621d9673717",
+    "MarkovBinomialInverseM96A": "ca0f4a9f159f315978d6f322596e6d8c7c5ff4b7f3b1cbe188e738c9cab5d80e",
+    "MarkovInverseBoundaryM96A": "ec8584f3cdad1f57bf385e7c590e946c747e3668147ef35a00194a38acff2c68",
+    "MarkovSparseConvolutionM96A": "aec486c3a5af8b58aba06c948d89b28b641e973d9ef740022ebb2998ae996830",
+    "MarkovSparseSignM96A": "247c127a175120b5c4c18d86acb069ded4b2730a3f62953a28401d879079e7bf",
+    "MarkovLowerCandidateM96A": "29400e47f764ac81e696637312526eb39e4c0295c9098c7d4019d689a1a57bc5"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM96A.lean",
+    "MarkovFibAdditionM96A",
+    "MarkovThreeSparseM96A",
+    "MarkovThreeForceM96A",
+    "MarkovThreeSolverM96A",
+    "MarkovBinomialInverseM96A",
+    "MarkovInverseBoundaryM96A",
+    "MarkovSparseConvolutionM96A",
+    "MarkovSparseSignM96A",
+    "MarkovLowerCandidateM96A"
+  ],
+  "seconds": 78.77124620898394,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "65de62848efa7f061148236d72defd50fc22a22c291b28b244df9e531ce052d7",
+  "declared_names": {
+    "MarkovFibAdditionM96A": [
+      "fib_pair_addM96A",
+      "fib_pair_detM96A",
+      "fib_pair_tripleM96A"
+    ],
+    "MarkovThreeSparseM96A": [
+      "threeSparseM96A",
+      "three_sparse_identityM96A",
+      "three_sparse_differenceM96A",
+      "source_three_sparseM96A"
+    ],
+    "MarkovThreeForceM96A": [
+      "threeForceM96A",
+      "three_force_coeffM96A",
+      "discriminantActionM96A",
+      "discriminant_coeffM96A",
+      "three_raw_equationM96A"
+    ],
+    "MarkovThreeSolverM96A": [
+      "solveDiscM96A",
+      "solve_disc_stepM96A",
+      "solve_disc_uniqueM96A",
+      "sparseRawM96A",
+      "sparse_raw_eqM96A",
+      "sparse_source_coeffM96A",
+      "SparseThreeLCM96A",
+      "root_iff_sparse_threeM96A"
+    ],
+    "MarkovBinomialInverseM96A": [
+      "choose_four_relationM96A",
+      "inverseKernelM96A",
+      "inverse_kernel_interiorM96A"
+    ],
+    "MarkovInverseBoundaryM96A": [
+      "inverse_zero_rowM96A",
+      "inverse_zero_columnM96A",
+      "inverse_swapM96A",
+      "choose_three_differenceM96A",
+      "inverse_near_rowM96A",
+      "inverse_near_columnM96A",
+      "inverse_kernel_equationM96A",
+      "inverse_impulseM96A"
+    ],
+    "MarkovSparseConvolutionM96A": [
+      "rectPolyM96A",
+      "rect_poly_coeffM96A",
+      "disc_action_congrM96A",
+      "rect_kernel_actionM96A",
+      "coeff_mul_impulseM96A",
+      "discriminant_inverse_coeffM96A",
+      "three_double_sumM96A",
+      "DoubleSumThreeLCM96A",
+      "root_iff_double_sumM96A"
+    ],
+    "MarkovSparseSignM96A": [
+      "sparse_forcing_negativeM96A",
+      "sparse_negative_at_sourceM96A",
+      "sparse_source_vertical_boundaryM96A"
+    ],
+    "MarkovLowerCandidateM96A": [
+      "lowerCoreM96A",
+      "lowerCandidateM96A",
+      "lowerGapM96A",
+      "lower_gap_identityM96A",
+      "lower_gap_nonnegM96A",
+      "lower_candidate_lcM96A"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed M96A; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}
