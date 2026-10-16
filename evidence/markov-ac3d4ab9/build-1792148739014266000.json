@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSourceRegionMAC3.lean:32:3: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  j \u2265 0\n  j - l \u2265 0\n  i \u2265 0\n  g \u2265 0\n  f \u2265 0\n  f - g - i \u2265 1\n  d - e \u2265 0\n  c \u2265 0\n  c - j + l \u2264 -1\n  b \u2265 0\n  a \u2265 0\n  a - 2*b \u2265 1\nwhere\n a := \u2191(frame path).mid.b\n b := \u2191r\n c := \u2191k\n d := coeff (frame path).mid.p k r\n e := (hresidualM511 X (sourceWord28 path) r).coeff k\n f := \u2191(frame path).mid.a * \u2191(frame path).mid.b\n g := \u2191(frame path).mid.b * \u2191k\n i := \u2191(frame path).mid.a * \u2191r\n j := \u2191(frame path).mid.a\n l := \u2191((frame path).mid.a * r) / \u2191(frame path).mid.b\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSourceRegionMAC3": "39e7d933361e39dcad156f1e863dfa57426e92bf02402c4d429d5009997538e9"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ac3d4ab9/MarkovSourceRegionMAC3.olean",
+    "/Users/sasha/math_gkm/research/MarkovSourceRegionMAC3.lean"
+  ],
+  "seconds": 32.663457999995444,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,328 @@
+{
+  "worker": 138,
+  "request": "ac3d4ab98366433dacc719574d5ff03e",
+  "created_at_utc": "2026-10-16T11:36:02.559743+00:00",
+  "scope": "Archive-first static source parsing, exact named hashes and finite input/index-domain counts only. No project execution or mathematical coefficient/polynomial/gap computation.",
+  "new_modules": [
+    {
+      "module": "MarkovBinomialGapMAC3",
+      "path": "research/MarkovBinomialGapMAC3.lean",
+      "sha256": "0727800b113987fe42d3e601cf47c030caaebeca98eb0d3d71ccd29b9817fc0c",
+      "current_sha256": "0727800b113987fe42d3e601cf47c030caaebeca98eb0d3d71ccd29b9817fc0c",
+      "bytes": 6263,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "mixed_factorMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "mixed_tripleMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "cast_pairMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "binomial_mixedMAC3"
+        },
+        {
+          "kind": "def",
+          "name": "MixtureRegionMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "binomial_mixed_interval_orderedMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "binomial_mixed_intervalMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "binomial_region_lcMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "integer_binomial_region_lcMAC3"
+        }
+      ],
+      "validation_source_hash_match": true,
+      "validation_theorem_names_match": true,
+      "imports": [
+        "MarkovBinomialInteriorMF1E"
+      ],
+      "theorem_statements": [
+        "theorem mixed_factorMAC3 (a b t : ℝ) :\n mixedNumeratorMF1E a b t = (a+b+t+3)*\n   (2*(a+2)*(b+2)-t*(t-1)*(a+b+t+4))",
+        "theorem mixed_tripleMAC3 (a b t L M R l m r : ℝ)\n (ha : 0 ≤ a) (hb : 0 ≤ b) (ht : 0 ≤ t)\n (hgap : t*(t-1)*(a+b+t+4) ≤ 2*(a+2)*(b+2))\n (hM : 0 ≤ M) (hm : 0 ≤ m)\n (hL : L*(b+2)=(a+t+1)*M)\n (hR : R*(a+t+2)=(b+1)*M)\n (hl : l*(b+t+2)=(a+1)*m)\n (hr : r*(a+2)=(b+t+1)*m) : L*r+l*R ≤ 2*M*m",
+        "theorem cast_pairMAC3 (t : ℕ) :\n ((t*(t-1):ℕ):ℝ)=(t:ℝ)*((t:ℝ)-1)",
+        "theorem binomial_mixedMAC3 (a b t : ℕ)\n (hg : t*(t-1)*(a+b+t+4) ≤ 2*(a+2)*(b+2)) :\n let n",
+        "theorem binomial_mixed_interval_orderedMAC3 (n k lo hi r s : ℕ)\n (hr : lo ≤ r) (hrs : r ≤ s) (hs : s ≤ hi)\n (h : MixtureRegionMAC3 n k lo hi) :\n (n.choose (k-r):ℝ)*(n.choose (k+2-s):ℝ)+\n (n.choose (k-s):ℝ)*(n.choose (k+2-r):ℝ) ≤\n 2*(n.choose (k+1-r):ℝ)*(n.choose (k+1-s):ℝ)",
+        "theorem binomial_mixed_intervalMAC3 (n k lo hi r s : ℕ)\n (hr : lo ≤ r) (hr' : r ≤ hi) (hs : lo ≤ s) (hs' : s ≤ hi)\n (h : MixtureRegionMAC3 n k lo hi) :\n (n.choose (k-r):ℝ)*(n.choose (k+2-s):ℝ)+\n (n.choose (k-s):ℝ)*(n.choose (k+2-r):ℝ) ≤\n 2*(n.choose (k+1-r):ℝ)*(n.choose (k+1-s):ℝ)",
+        "theorem binomial_region_lcMAC3 (P : ℝ[X]) (n k lo hi : ℕ)\n (hP : P.natDegree ≤ hi) (hpos : ∀ r, 0 ≤ P.coeff r)\n (hlow : ∀ r<lo, P.coeff r=0) (h : MixtureRegionMAC3 n k lo hi) :\n (((1+X)^n*P):ℝ[X]).coeff k * (((1+X)^n*P):ℝ[X]).coeff (k+2) ≤\n (((1+X)^n*P):ℝ[X]).coeff (k+1)^2",
+        "theorem integer_binomial_region_lcMAC3 (P : ℤ[X]) (n k lo hi : ℕ)\n (hP : P.natDegree ≤ hi) (hpos : ∀ r, 0 ≤ P.coeff r)\n (hlow : ∀ r<lo, P.coeff r=0) (h : MixtureRegionMAC3 n k lo hi) :\n (((1+X)^n*P):ℤ[X]).coeff k * (((1+X)^n*P):ℤ[X]).coeff (k+2) ≤\n (((1+X)^n*P):ℤ[X]).coeff (k+1)^2"
+      ],
+      "definitions": [
+        "def MixtureRegionMAC3 (n k lo hi : ℕ) : Prop :=\n hi ≤ k ∧ k+2 ≤ n+lo ∧\n (hi-lo)*(hi-lo-1)*(n+2) ≤ 2*(k-hi+2)*(n+lo-k)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovSourceRegionMAC3",
+      "path": "research/MarkovSourceRegionMAC3.lean",
+      "sha256": "6c36643247feb8c393a5ebd00cab51113e349b7c627fef003aafc755020b9ede",
+      "current_sha256": "6c36643247feb8c393a5ebd00cab51113e349b7c627fef003aafc755020b9ede",
+      "bytes": 5363,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "below_polygon_floorMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_residual_lowerMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_residual_lowerMAC3"
+        },
+        {
+          "kind": "def",
+          "name": "HorizontalRegionMAC3"
+        },
+        {
+          "kind": "def",
+          "name": "VerticalRegionMAC3"
+        },
+        {
+          "kind": "def",
+          "name": "DiagonalRegionMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_horizontal_regionMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_vertical_regionMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_diagonal_regionMAC3"
+        }
+      ],
+      "validation_source_hash_match": true,
+      "validation_theorem_names_match": true,
+      "imports": [
+        "MarkovBinomialGapMAC3",
+        "MarkovSourceInteriorMF1E"
+      ],
+      "theorem_statements": [
+        "theorem below_polygon_floorMAC3 (a b r k : ℕ) (hb : 0<b)\n (hk : k<a-a*r/b) : b*k+a*r<a*b",
+        "theorem horizontal_residual_lowerMAC3 (path : List Bool) (r k : ℕ)\n (hb : 2*r+1 ≤ (frame path).mid.b)\n (hk : k<(frame path).mid.a-(frame path).mid.a*r/(frame path).mid.b) :\n (hresidualM511 (X:ℤ[X]) (sourceWord28 path) r).coeff k=0",
+        "theorem vertical_residual_lowerMAC3 (path : List Bool) (r k : ℕ)\n (ha : 2*r+1 ≤ (frame path).mid.a)\n (hk : k<(frame path).mid.b-(frame path).mid.b*r/(frame path).mid.a) :\n (vresidualM9E1 path r).coeff k=0",
+        "theorem source_horizontal_regionMAC3 (path : List Bool) (i j : ℕ)\n (h : HorizontalRegionMAC3 (frame path).mid.a (frame path).mid.b i j) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) j^2",
+        "theorem source_vertical_regionMAC3 (path : List Bool) (i j : ℕ)\n (h : VerticalRegionMAC3 (frame path).mid.a (frame path).mid.b i j) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p i (j+2) ≤\n coeff (frame path).mid.p i (j+1)^2",
+        "theorem source_diagonal_regionMAC3 (path : List Bool) (i j : ℕ)\n (h : DiagonalRegionMAC3 (frame path).mid.a (frame path).mid.b i j) :\n coeff (frame path).mid.p i (j+2)*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) (j+1)^2"
+      ],
+      "definitions": [
+        "def HorizontalRegionMAC3 (a b i j : ℕ) : Prop :=\n 2*j+1 ≤ b ∧ MixtureRegionMAC3 (b-2*j-1) i (a-a*j/b) (a+j)",
+        "def VerticalRegionMAC3 (a b i j : ℕ) : Prop :=\n 2*i+1 ≤ a ∧ MixtureRegionMAC3 (a-2*i-1) j (b-b*i/a) (b+i)",
+        "def DiagonalRegionMAC3 (a b i j : ℕ) : Prop :=\n ∃ r, i+j+2+r=a+b-1 ∧ r ≤ i ∧ r ≤ j ∧\n   r*(r-1)*(a+b-1-2*r+2) ≤ 2*(i-r+2)*(j-r+2)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovVarianceMAC3",
+      "path": "research/MarkovVarianceMAC3.lean",
+      "sha256": "da0f7003deffec9e72583715d802589d279305e12531cb159b5ee2dca6766480",
+      "current_sha256": "da0f7003deffec9e72583715d802589d279305e12531cb159b5ee2dca6766480",
+      "bytes": 3407,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "bounded_momentsMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "moment_mixture_lcMAC3"
+        }
+      ],
+      "validation_source_hash_match": true,
+      "validation_theorem_names_match": true,
+      "imports": [
+        "MarkovBinomialGapMAC3"
+      ],
+      "theorem_statements": [
+        "theorem bounded_momentsMAC3 {ι : Type*} (s : Finset ι) (q x : ι → ℝ)\n (A B H : ℝ) (hA : 0 ≤ A) (hBH : B ≤ H) (hH : 0 ≤ H)\n (hq : ∀ r∈s, 0 ≤ q r) (hx : ∀ r∈s, A ≤ x r ∧ x r ≤ B)\n (hgap : H*(B-A)^2 ≤ 4*A*(H-B)) :\n let Q",
+        "theorem moment_mixture_lcMAC3 {ι : Type*} (s : Finset ι) (q x : ι → ℝ)\n (A B H : ℝ) (hA : 0 ≤ A) (hBH : B ≤ H) (hH : 1 ≤ H)\n (hq : ∀ r∈s, 0 ≤ q r) (hx : ∀ r∈s, A ≤ x r ∧ x r ≤ B)\n (hgap : H*(B-A)^2 ≤ 4*A*(H-B)) :\n (∑ r∈s, q r*x r*(x r-1)) *\n (∑ r∈s, q r*(H-x r)*(H-x r-1)) ≤\n (∑ r∈s, q r*x r*(H-x r))^2"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovBinomialVarianceMAC3",
+      "path": "research/MarkovBinomialVarianceMAC3.lean",
+      "sha256": "1575fbb1b8b6b5d79ff05a34703bb562723874093cd0d6c13be3a82f7a2d115b",
+      "current_sha256": "1575fbb1b8b6b5d79ff05a34703bb562723874093cd0d6c13be3a82f7a2d115b",
+      "bytes": 5218,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "VarianceRegionMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "binomial_coeff_IccMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "moment_reconstructMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "binomial_variance_lcMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "integer_binomial_variance_lcMAC3"
+        }
+      ],
+      "validation_source_hash_match": true,
+      "validation_theorem_names_match": true,
+      "imports": [
+        "MarkovVarianceMAC3"
+      ],
+      "theorem_statements": [
+        "theorem binomial_coeff_IccMAC3 (P : ℝ[X]) (n k lo hi : ℕ)\n (hP : P.natDegree ≤ hi) (hlow : ∀ r<lo, P.coeff r=0) (hk : hi ≤ k) :\n (((1+X)^n*P):ℝ[X]).coeff k=\n ∑ r∈Finset.Icc lo hi, P.coeff r*(n.choose (k-r):ℝ)",
+        "theorem moment_reconstructMAC3 (c L M R x y : ℝ)\n (hx : 0<x) (hy : 0<y)\n (hL : L*y=(x-1)*M) (hR : R*x=(y-1)*M) :\n (c*M/(x*y))*x*(x-1)=c*L ∧\n (c*M/(x*y))*x*y=c*M ∧\n (c*M/(x*y))*y*(y-1)=c*R",
+        "theorem binomial_variance_lcMAC3 (P : ℝ[X]) (n k lo hi : ℕ)\n (hP : P.natDegree ≤ hi) (hpos : ∀ r, 0 ≤ P.coeff r)\n (hlow : ∀ r<lo, P.coeff r=0) (h : VarianceRegionMAC3 n k lo hi) :\n (((1+X)^n*P):ℝ[X]).coeff k * (((1+X)^n*P):ℝ[X]).coeff (k+2) ≤\n (((1+X)^n*P):ℝ[X]).coeff (k+1)^2",
+        "theorem integer_binomial_variance_lcMAC3 (P : ℤ[X]) (n k lo hi : ℕ)\n (hP : P.natDegree ≤ hi) (hpos : ∀ r, 0 ≤ P.coeff r)\n (hlow : ∀ r<lo, P.coeff r=0) (h : VarianceRegionMAC3 n k lo hi) :\n (((1+X)^n*P):ℤ[X]).coeff k * (((1+X)^n*P):ℤ[X]).coeff (k+2) ≤\n (((1+X)^n*P):ℤ[X]).coeff (k+1)^2"
+      ],
+      "definitions": [
+        "def VarianceRegionMAC3 (n k lo hi : ℕ) : Prop :=\n lo ≤ hi ∧ hi ≤ k ∧ k+2 ≤ n+lo ∧\n (n+2)*(hi-lo)^2 ≤ 4*(k-hi+2)*(n+lo-k)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovSourceVarianceMAC3",
+      "path": "research/MarkovSourceVarianceMAC3.lean",
+      "sha256": "d40600c31a549de4833a4a2fe4c804adca34848a993f08912fe47435fd7f6139",
+      "current_sha256": "d40600c31a549de4833a4a2fe4c804adca34848a993f08912fe47435fd7f6139",
+      "bytes": 3469,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "HorizontalVarianceMAC3"
+        },
+        {
+          "kind": "def",
+          "name": "VerticalVarianceMAC3"
+        },
+        {
+          "kind": "def",
+          "name": "DiagonalVarianceMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_horizontal_varianceMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_vertical_varianceMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_diagonal_varianceMAC3"
+        }
+      ],
+      "validation_source_hash_match": true,
+      "validation_theorem_names_match": true,
+      "imports": [
+        "MarkovSourceRegionMAC3",
+        "MarkovBinomialVarianceMAC3"
+      ],
+      "theorem_statements": [
+        "theorem source_horizontal_varianceMAC3 (path : List Bool) (i j : ℕ)\n (h : HorizontalVarianceMAC3 (frame path).mid.a (frame path).mid.b i j) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) j^2",
+        "theorem source_vertical_varianceMAC3 (path : List Bool) (i j : ℕ)\n (h : VerticalVarianceMAC3 (frame path).mid.a (frame path).mid.b i j) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p i (j+2) ≤\n coeff (frame path).mid.p i (j+1)^2",
+        "theorem source_diagonal_varianceMAC3 (path : List Bool) (i j : ℕ)\n (h : DiagonalVarianceMAC3 (frame path).mid.a (frame path).mid.b i j) :\n coeff (frame path).mid.p i (j+2)*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) (j+1)^2"
+      ],
+      "definitions": [
+        "def HorizontalVarianceMAC3 (a b i j : ℕ) : Prop :=\n 2*j+1 ≤ b ∧ VarianceRegionMAC3 (b-2*j-1) i (a-a*j/b) (a+j)",
+        "def VerticalVarianceMAC3 (a b i j : ℕ) : Prop :=\n 2*i+1 ≤ a ∧ VarianceRegionMAC3 (a-2*i-1) j (b-b*i/a) (b+i)",
+        "def DiagonalVarianceMAC3 (a b i j : ℕ) : Prop :=\n ∃ r, i+j+2+r=a+b-1 ∧ r ≤ i ∧ r ≤ j ∧\n   (a+b-1-2*r+2)*r^2 ≤ 4*(i-r+2)*(j-r+2)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovResidualMAC3",
+      "path": "research/MarkovResidualMAC3.lean",
+      "sha256": "94c702cb3d552c3c0e4627e172b574ba70f980ded635346837b65bb39ae6861a",
+      "current_sha256": "94c702cb3d552c3c0e4627e172b574ba70f980ded635346837b65bb39ae6861a",
+      "bytes": 3049,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "InteriorCore63MAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_interiorMAC3"
+        }
+      ],
+      "validation_source_hash_match": true,
+      "validation_theorem_names_match": true,
+      "imports": [
+        "MarkovResidualMF1E",
+        "MarkovSourceVarianceMAC3"
+      ],
+      "theorem_statements": [
+        "theorem root_iff_interiorMAC3 : Conjecture63 ↔ InteriorCore63MAC3"
+      ],
+      "definitions": [
+        "def InteriorCore63MAC3 : Prop := ∀ path : List Bool,\n let m := (frame path).mid\n 2 ≤ m.a →\n (∀ i j, InPolygon m.a m.b i j → InPolygon m.a m.b (i+1) j →\n   InPolygon m.a m.b (i+2) j → i+j+4 ≤ m.a+m.b-1 → 5 ≤ j →\n   ¬HorizontalMiddleMF1E m.a m.b i j →\n   ¬(HorizontalRegionMAC3 m.a m.b i j ∨ HorizontalVarianceMAC3 m.a m.b i j) →\n   coeff m.p i j*coeff m.p (i+2) j ≤ coeff m.p (i+1) j^2) ∧\n (∀ i j, InPolygon m.a m.b i j → InPolygon m.a m.b i (j+1) →\n   InPolygon m.a m.b i (j+2) → i+j+4 ≤ m.a+m.b-1 → 4 ≤ i → 3 ≤ j →\n   ¬VerticalMiddleMF1E m.a m.b i j →\n   ¬(VerticalRegionMAC3 m.a m.b i j ∨ VerticalVarianceMAC3 m.a m.b i j) →\n   coeff m.p i j*coeff m.p i (j+2) ≤ coeff m.p i (j+1)^2) ∧\n (∀ i j, InPolygon m.a m.b i (j+2) → InPolygon m.a m.b (i+1) (j+1) →\n   InPolygon m.a m.b (i+2) j → i+j+8 ≤ m.a+m.b-1 → m.a+5 ≤ i+j+2 →\n   m.a+2 ≤ m.b → ¬DiagonalMiddleMF1E m.a m.b i j →\n   ¬(DiagonalRegionMAC3 m.a m.b i j ∨ DiagonalVarianceMAC3 m.a m.b i j) →\n   coeff m.p i (j+2)*coeff m.p (i+2) j ≤ coeff m.p (i+1) (j+1)^2)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovVarianceWitnessMAC3",
+      "path": "research/MarkovVarianceWitnessMAC3.lean",
+      "sha256": "372c35bbf573b5022e01b980220521ca986a92a70a2bf071d5ea67075d6133bb",
+      "current_sha256": "372c35bbf573b5022e01b980220521ca986a92a70a2bf071d5ea67075d6133bb",
+      "bytes": 3435,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "witness_pair_gapMAC3"
+        },
+        {
+          "kind": "theorem",
+          "name": "unbounded_variance_onlyMAC3"
+        }
+      ],
+      "validation_source_hash_match": true,
+      "validation_theorem_names_match": true,
+      "imports": [
+        "MarkovSourceVarianceMAC3",
+        "MarkovInteriorWitnessMF1E"
+      ],
+      "theorem_statements": [
+        "theorem witness_pair_gapMAC3 (s : ℝ) (hs : 5 ≤ s) :\n 2*(2*s^2+2)*(14*s^2+2*s+7)<\n (2*s)*(2*s-1)*(16*s^2+4*s+9)",
+        "theorem unbounded_variance_onlyMAC3 (s : ℕ) (hs : 5 ≤ s) :\n ∃ (path : List Bool) (i j : ℕ),\n   let m"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    }
+  ],
+  "counts": {
+    "theorem": 26,
+    "def": 9
+  },
+  "exact_residual_guard_additions": true,
+  "witness_scope": "forall natural s>=5, actual path and raw triple at depth2s; negates old square-margin and new pair predicates, affirms variance and all prior diagonal/polygon guards. Varying sources, no strict positivity claim.",
+  "lower_support_scope": "Zero-below exact floor-derived bounds only; no assertion that lower bound is attained or every internal coefficient is positive.",
+  "generic_edge_scope": "MixtureRegion has no explicitlo<=hi; withlo>hi seed supportforceszero. VarianceRegion explicitlylo<=hi. Neither dividesbyrawcoefficient orweightsum.",
+  "all_index_moment_adapter_formalized": false,
+  "symbolic_identities_recomputed": false
+}

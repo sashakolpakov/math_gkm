@@ -1,0 +1,84 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovBinomialGapMAC3\ncollected MarkovSourceRegionMAC3\ncollected MarkovVarianceMAC3\ncollected MarkovBinomialVarianceMAC3\ncollected MarkovSourceVarianceMAC3\ncollected MarkovResidualMAC3\ncollected MarkovVarianceWitnessMAC3\nreplay union of 7 modules over 5 inherited imports\nisolation checked for 35 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBinomialGapMAC3": "0727800b113987fe42d3e601cf47c030caaebeca98eb0d3d71ccd29b9817fc0c",
+    "MarkovSourceRegionMAC3": "6c36643247feb8c393a5ebd00cab51113e349b7c627fef003aafc755020b9ede",
+    "MarkovVarianceMAC3": "da0f7003deffec9e72583715d802589d279305e12531cb159b5ee2dca6766480",
+    "MarkovBinomialVarianceMAC3": "1575fbb1b8b6b5d79ff05a34703bb562723874093cd0d6c13be3a82f7a2d115b",
+    "MarkovSourceVarianceMAC3": "d40600c31a549de4833a4a2fe4c804adca34848a993f08912fe47435fd7f6139",
+    "MarkovResidualMAC3": "94c702cb3d552c3c0e4627e172b574ba70f980ded635346837b65bb39ae6861a",
+    "MarkovVarianceWitnessMAC3": "372c35bbf573b5022e01b980220521ca986a92a70a2bf071d5ea67075d6133bb"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedMAC3.lean",
+    "MarkovBinomialGapMAC3",
+    "MarkovSourceRegionMAC3",
+    "MarkovVarianceMAC3",
+    "MarkovBinomialVarianceMAC3",
+    "MarkovSourceVarianceMAC3",
+    "MarkovResidualMAC3",
+    "MarkovVarianceWitnessMAC3"
+  ],
+  "seconds": 34.26538645901019,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "d44eb6a3eecc5efe8fad059f5a8840c694198186488d9ac7fd34e1e13ca89906",
+  "declared_names": {
+    "MarkovBinomialGapMAC3": [
+      "mixed_factorMAC3",
+      "mixed_tripleMAC3",
+      "cast_pairMAC3",
+      "binomial_mixedMAC3",
+      "MixtureRegionMAC3",
+      "binomial_mixed_interval_orderedMAC3",
+      "binomial_mixed_intervalMAC3",
+      "binomial_region_lcMAC3",
+      "integer_binomial_region_lcMAC3"
+    ],
+    "MarkovSourceRegionMAC3": [
+      "below_polygon_floorMAC3",
+      "horizontal_residual_lowerMAC3",
+      "vertical_residual_lowerMAC3",
+      "HorizontalRegionMAC3",
+      "VerticalRegionMAC3",
+      "DiagonalRegionMAC3",
+      "source_horizontal_regionMAC3",
+      "source_vertical_regionMAC3",
+      "source_diagonal_regionMAC3"
+    ],
+    "MarkovVarianceMAC3": [
+      "bounded_momentsMAC3",
+      "moment_mixture_lcMAC3"
+    ],
+    "MarkovBinomialVarianceMAC3": [
+      "VarianceRegionMAC3",
+      "binomial_coeff_IccMAC3",
+      "moment_reconstructMAC3",
+      "binomial_variance_lcMAC3",
+      "integer_binomial_variance_lcMAC3"
+    ],
+    "MarkovSourceVarianceMAC3": [
+      "HorizontalVarianceMAC3",
+      "VerticalVarianceMAC3",
+      "DiagonalVarianceMAC3",
+      "source_horizontal_varianceMAC3",
+      "source_vertical_varianceMAC3",
+      "source_diagonal_varianceMAC3"
+    ],
+    "MarkovResidualMAC3": [
+      "InteriorCore63MAC3",
+      "root_iff_interiorMAC3"
+    ],
+    "MarkovVarianceWitnessMAC3": [
+      "witness_pair_gapMAC3",
+      "unbounded_variance_onlyMAC3"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed MAC3; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

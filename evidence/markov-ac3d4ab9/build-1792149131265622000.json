@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBinomialVarianceMAC3.lean:108:71: error: Invalid argument name `R` for function `Nat.cast_nonneg`\n\nHint: Perhaps you meant one of the following parameter names:\n  \u2022 `\u03b1`: R\u0335\u03b1\u0332\n  \u2022 `n`: R\u0335n\u0332\n/Users/sasha/math_gkm/research/MarkovBinomialVarianceMAC3.lean:108:33: error: unsolved goals\nP : \u211d[X]\nn k lo hi : \u2115\nhP : P.natDegree \u2264 hi\nhpos : \u2200 (r : \u2115), 0 \u2264 P.coeff r\nhlow : \u2200 r < lo, P.coeff r = 0\nhlh : lo \u2264 hi\nhk : hi \u2264 k\nhn : k + 2 \u2264 n + lo\nhg : (n + 2) * (hi - lo) ^ 2 \u2264 4 * (k - hi + 2) * (n + lo - k)\nH : \u211d := \u2191n + 2\nA : \u211d := \u2191(k - hi + 2)\nB : \u211d := \u2191(k - lo + 2)\nx : \u2115 \u2192 \u211d := fun r => \u2191(k - r + 2)\nq : \u2115 \u2192 \u211d := fun r => P.coeff r * \u2191(n.choose (k + 1 - r)) / (x r * (H - x r))\nhx : \u2200 r \u2208 Finset.Icc lo hi, A \u2264 x r \u2227 x r \u2264 B\nhA : 0 < A\nhBH : B < H\nhxy : \u2200 r \u2208 Finset.Icc lo hi, 0 < x r \u2227 0 < H - x r\nhq : \u2200 r \u2208 Finset.Icc lo hi, 0 \u2264 q r\nhgap : H * (B - A) ^ 2 \u2264 4 * A * (H - B)\nhc :\n  \u2200 r \u2208 Finset.Icc lo hi,\n    q r * x r * (x r - 1) = P.coeff r * \u2191(n.choose (k - r)) \u2227\n      q r * x r * (H - x r) = P.coeff r * \u2191(n.choose (k + 1 - r)) \u2227\n        q r * (H - x r) * (H - x r - 1) = P.coeff r * \u2191(n.choose (k + 2 - r))\n\u22a2 1 \u2264 \u2191n + 2\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBinomialVarianceMAC3": "0a197c73fd4471c0c7feae9fefa0399ba7a19f43568f805ceeb827aaede40e71"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ac3d4ab9/MarkovBinomialVarianceMAC3.olean",
+    "/Users/sasha/math_gkm/research/MarkovBinomialVarianceMAC3.lean"
+  ],
+  "seconds": 30.882010917004663,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

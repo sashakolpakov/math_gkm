@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBinomialVarianceMAC3.lean:38:3: error: linarith failed to find a contradiction\ncase left.h1\nc L M R x y : \u211d\nhx : 0 < x\nhy : 0 < y\nhL : L * y = (x - 1) * M\nhR : R * x = (y - 1) * M\nhx0 : x \u2260 0\nhy0 : y \u2260 0\na\u271d : c * M * (x - 1) < c * y * L\n\u22a2 False\nfailed\n/Users/sasha/math_gkm/research/MarkovBinomialVarianceMAC3.lean:42:3: error: linarith failed to find a contradiction\ncase right.right.h1\nc L M R x y : \u211d\nhx : 0 < x\nhy : 0 < y\nhL : L * y = (x - 1) * M\nhR : R * x = (y - 1) * M\nhx0 : x \u2260 0\nhy0 : y \u2260 0\na\u271d : c * M * (y - 1) < c * x * R\n\u22a2 False\nfailed\n/Users/sasha/math_gkm/research/MarkovBinomialVarianceMAC3.lean:101:9: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2191(k + 1 - r)\nin the target expression\n  \u2191(n.choose (k + 1 - r)) * (\u2191(k - r) + 1) = \u2191(n.choose (k - r)) * (\u2191n - \u2191(k - r))\n\ncase hL\nP : \u211d[X]\nn k lo hi : \u2115\nhP : P.natDegree \u2264 hi\nhpos : \u2200 (r : \u2115), 0 \u2264 P.coeff r\nhlow : \u2200 r < lo, P.coeff r = 0\nhlh : lo \u2264 hi\nhk : hi \u2264 k\nhn : k + 2 \u2264 n + lo\nhg : (n + 2) * (hi - lo) ^ 2 \u2264 4 * (k - hi + 2) * (n + lo - k)\nH : \u211d := \u2191n + 2\nA : \u211d := \u2191(k - hi + 2)\nB : \u211d := \u2191(k - lo + 2)\nx : \u2115 \u2192 \u211d := fun r => \u2191(k - r + 2)\nq : \u2115 \u2192 \u211d := fun r => P.coeff r * \u2191(n.choose (k + 1 - r)) / (x r * (H - x r))\nhx : \u2200 r \u2208 Finset.Icc lo hi, A \u2264 x r \u2227 x r \u2264 B\nhA : 0 < A\nhBH : B < H\nhxy : \u2200 r \u2208 Finset.Icc lo hi, 0 < x r \u2227 0 < H - x r\nhq : \u2200 r \u2208 Finset.Icc lo hi, 0 \u2264 q r\nhgap : H * (B - A) ^ 2 \u2264 4 * A * (H - B)\nr : \u2115\nhr : r \u2208 Finset.Icc lo hi\nhrl : lo \u2264 r\nhrh : r \u2264 hi\nhrk : r \u2264 k\nhkn : k - r + 2 \u2264 n\nhL : \u2191(n.choose (k + 1 - r)) * (\u2191(k - r) + 1) = \u2191(n.choose (k - r)) * (\u2191n - \u2191(k - r))\nhR : \u2191(n.choose (k + 2 - r)) * (\u2191(k + 1 - r) + 1) = \u2191(n.choose (k + 1 - r)) * \u2191(n - (k + 1 - r))\nhe1 : \u2191(k + 1 - r) = \u2191(k - r) + 1\n\u22a2 \u2191(n.choose (k - r)) * (\u2191n + 2 - \u2191(k - r + 2)) = (\u2191(k - r + 2) - 1) * \u2191(n.choose (k + 1 - r))\n/Users/sasha/math_gkm/research/MarkovBinomialVarianceMAC3.lean:110:47: error: not a positivity goal\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBinomialVarianceMAC3": "5f98879dbb826263b46e00d3ab941f25a00f1db29b8ad7a87bc9c6c1be626305"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ac3d4ab9/MarkovBinomialVarianceMAC3.olean",
+    "/Users/sasha/math_gkm/research/MarkovBinomialVarianceMAC3.lean"
+  ],
+  "seconds": 35.4987450420158,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
