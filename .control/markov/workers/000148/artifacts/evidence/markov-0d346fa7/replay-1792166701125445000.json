@@ -1,0 +1,102 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovBinomialPolyM0D3\ncollected MarkovVerticalRegionsM0D3\ncollected MarkovVerticalPolyM0D3\ncollected MarkovVerticalEquivalenceM0D3\ncollected MarkovFourCertificateM0D3\ncollected MarkovFourVerticalM0D3\ncollected MarkovResidualM0D3\ncollected MarkovFourGainM0D3\ncollected MarkovUniformVerticalM0D3\ncollected MarkovContinuousObstructionM0D3\nreplay union of 10 modules over 5 inherited imports\nisolation checked for 41 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBinomialPolyM0D3": "edbcb65b2f62ffeff5d2ad6fcfdda35dac9131991c8415edcd3c312c4c093374",
+    "MarkovVerticalRegionsM0D3": "fb0453f03fd056ad86b44dc60f778f9c54323bf4c6f2980542405a4be0d72add",
+    "MarkovVerticalPolyM0D3": "3b4436319addfb65492c0f5509d9ac9b0a07bb0390a796898faa9684ca6206ae",
+    "MarkovVerticalEquivalenceM0D3": "f6df60538c2df3c04face41ec34da306903fbb0d168420c9bfb2f3227ed6fbde",
+    "MarkovFourCertificateM0D3": "26997043f1dc014d7efce27a890f30b3af5c7b9be6288759f5fcffcc9244b5e2",
+    "MarkovFourVerticalM0D3": "af3b17150e12cfd9ac37dfee82ab495f450e8deb1d0437a3b4c0c401a1a4b095",
+    "MarkovResidualM0D3": "7e12449ee40fc60e3a3394a43f937ef980ff5df94970f0c08a44bd4aa8447310",
+    "MarkovFourGainM0D3": "1adc0d7eacde4737b114a5a345e989a91d0b9628ac0a53322df8934ef05c8331",
+    "MarkovUniformVerticalM0D3": "d3f798e037e3336f013d8e05ce82002a0f4f9096105a771c5b00ede14f3d4c86",
+    "MarkovContinuousObstructionM0D3": "1ce64cee775a22d9e47caa8181b849e54e5565ff08f4d87a4d64322433ab6deb"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM0D3.lean",
+    "MarkovBinomialPolyM0D3",
+    "MarkovVerticalRegionsM0D3",
+    "MarkovVerticalPolyM0D3",
+    "MarkovVerticalEquivalenceM0D3",
+    "MarkovFourCertificateM0D3",
+    "MarkovFourVerticalM0D3",
+    "MarkovResidualM0D3",
+    "MarkovFourGainM0D3",
+    "MarkovUniformVerticalM0D3",
+    "MarkovContinuousObstructionM0D3"
+  ],
+  "seconds": 8.314000290993135,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "410c37a036b445eb181f07cf5050d21186a06094e46ca3502ec4650872f67133",
+  "declared_names": {
+    "MarkovBinomialPolyM0D3": [
+      "choosePolyM0D3",
+      "choose_poly_natM0D3",
+      "choose_poly_zeroM0D3",
+      "choose_poly_succM0D3"
+    ],
+    "MarkovVerticalRegionsM0D3": [
+      "VerticalRegionsM0D3",
+      "source_two_vertical_regionsM0D3"
+    ],
+    "MarkovVerticalPolyM0D3": [
+      "lowerPolynomialM0D3",
+      "upperPolynomialM0D3",
+      "lower_polynomial_eqM0D3",
+      "upper_polynomial_eqM0D3"
+    ],
+    "MarkovVerticalEquivalenceM0D3": [
+      "source_two_existsM0D3",
+      "vertical_regions_of_sourceM0D3",
+      "vertical_regions_iff_sourceM0D3"
+    ],
+    "MarkovFourCertificateM0D3": [
+      "lowerGapFourM0D3",
+      "lower_gap_fourM0D3",
+      "lower_gap_four_nonnegM0D3",
+      "upperGapFourM0D3",
+      "upper_gap_fourM0D3",
+      "upper_gap_four_nonnegM0D3",
+      "cross_oneGapFourM0D3",
+      "cross_one_gap_fourM0D3",
+      "cross_one_gap_four_nonnegM0D3",
+      "cross_twoGapFourM0D3",
+      "cross_two_gap_fourM0D3",
+      "cross_two_gap_four_nonnegM0D3"
+    ],
+    "MarkovFourVerticalM0D3": [
+      "lower_four_lcM0D3",
+      "upper_four_lcM0D3",
+      "cross_one_four_lcM0D3",
+      "cross_two_four_lcM0D3",
+      "vertical_regions_fourM0D3",
+      "source_two_vertical_fourM0D3"
+    ],
+    "MarkovResidualM0D3": [
+      "InteriorCore63M0D3",
+      "root_iff_interiorM0D3"
+    ],
+    "MarkovFourGainM0D3": [
+      "four_previous_guardsM0D3",
+      "four_gain_rawM0D3"
+    ],
+    "MarkovUniformVerticalM0D3": [
+      "UniformVerticalRemainingM0D3",
+      "OtherVerticalCoreM0D3",
+      "root_iff_uniform_verticalM0D3"
+    ],
+    "MarkovContinuousObstructionM0D3": [
+      "continuous_lower_gap_valueM0D3",
+      "continuous_lower_gap_negativeM0D3",
+      "continuous_lower_certificate_failsM0D3"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed M0D3; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

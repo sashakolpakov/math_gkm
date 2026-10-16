@@ -1,0 +1,623 @@
+{
+  "worker": 148,
+  "request": "0d346fa78677421eb796b0c79e5057fa",
+  "created_at_utc": "2026-10-16T16:22:02.060418+00:00",
+  "scope": "Archive-first static completed-source/declaration/hash and input-index domain audit. No project program/proof/checker/experiment execution or mathematical-value recomputation. No targeted active149 inspection; one overbroad declaration-location search is separately disclosed.",
+  "source_location_search_exception": {
+    "command": "rg -n '^(def|theorem) (lowerVal|source_two_lower_formula|upperVal|source_two_upper_formula)' /Users/sasha/math_gkm/research/Markov* MISSING",
+    "returned_source_locations": [
+      "MarkovSourceUpperM2B3.lean:8",
+      "MarkovSourceUpperM2B3.lean:64",
+      "MarkovSourceOffsetM58E.lean:9",
+      "MarkovSourceOffsetM58E.lean:55"
+    ],
+    "exit_code": 2,
+    "other_output": "rg: MISSING: No such file or directory",
+    "scope": "One declaration-location search accidentally expanded all research/Markov* paths. Active-file exclusion is not claimed for that enumeration. Only the two named inherited files returned content; no worker149 content appeared. Parent informed and acknowledged; all subsequent reads use explicit completed/named paths. No project execution, mathematical-value recomputation or proposer assistance occurred."
+  },
+  "new_modules": [
+    {
+      "module": "MarkovBinomialPolyM0D3",
+      "path": "research/MarkovBinomialPolyM0D3.lean",
+      "sha256": "edbcb65b2f62ffeff5d2ad6fcfdda35dac9131991c8415edcd3c312c4c093374",
+      "current_sha256": "edbcb65b2f62ffeff5d2ad6fcfdda35dac9131991c8415edcd3c312c4c093374",
+      "bytes": 903,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "choosePolyM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_poly_natM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_poly_zeroM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_poly_succM0D3"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "Mathlib"
+      ],
+      "theorem_statements": [
+        "theorem choose_poly_natM0D3 (n k : ℕ) :\n (n.choose k:ℚ)=choosePolyM0D3 n k",
+        "theorem choose_poly_zeroM0D3 (x : ℚ) : choosePolyM0D3 x 0=1",
+        "theorem choose_poly_succM0D3 (x : ℚ) (k : ℕ) :\n choosePolyM0D3 x (k+1)=choosePolyM0D3 x k*(x-k)/(k+1)"
+      ],
+      "definitions": [
+        "def choosePolyM0D3 (x : ℚ) (k : ℕ) : ℚ :=\n (descPochhammer ℚ k).eval x / (k.factorial:ℚ)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovVerticalRegionsM0D3",
+      "path": "research/MarkovVerticalRegionsM0D3.lean",
+      "sha256": "fb0453f03fd056ad86b44dc60f778f9c54323bf4c6f2980542405a4be0d72add",
+      "current_sha256": "fb0453f03fd056ad86b44dc60f778f9c54323bf4c6f2980542405a4be0d72add",
+      "bytes": 3109,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "VerticalRegionsM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_vertical_regionsM0D3"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovSourceUpperM2B3",
+        "MarkovTwoReductionM679"
+      ],
+      "theorem_statements": [
+        "theorem source_two_vertical_regionsM0D3 (i : ℕ) (hi : 4 ≤ i)\n (h : VerticalRegionsM0D3 i) (path : List Bool) (ha : (frame path).mid.a=2)\n (j : ℕ) : coeff (frame path).mid.p i j*coeff (frame path).mid.p i (j+2) ≤\n   coeff (frame path).mid.p i (j+1)^2"
+      ],
+      "definitions": [
+        "def VerticalRegionsM0D3 (i : ℕ) : Prop :=\n (∀ j d, lowerValM58E j (d+2) i*lowerValM58E (j+2) d i ≤\n    lowerValM58E (j+1) (d+1) i^2) ∧\n (∀ N d, i≤N+2 →\n    upperValM2B3 (N+2) (d+1) i*upperValM2B3 N (d+3) i ≤\n    upperValM2B3 (N+1) (d+2) i^2) ∧\n (∀ q, i≤q+1 → lowerValM58E (q-1) 1 i*upperValM2B3 (q-1) 1 i ≤\n    lowerValM58E q 0 i^2) ∧\n (∀ q, i≤q → lowerValM58E q 0 i*upperValM2B3 (q-2) 2 i ≤\n    upperValM2B3 (q-1) 1 i^2)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovVerticalPolyM0D3",
+      "path": "research/MarkovVerticalPolyM0D3.lean",
+      "sha256": "3b4436319addfb65492c0f5509d9ac9b0a07bb0390a796898faa9684ca6206ae",
+      "current_sha256": "3b4436319addfb65492c0f5509d9ac9b0a07bb0390a796898faa9684ca6206ae",
+      "bytes": 1500,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "lowerPolynomialM0D3"
+        },
+        {
+          "kind": "def",
+          "name": "upperPolynomialM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_polynomial_eqM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_polynomial_eqM0D3"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovBinomialPolyM0D3",
+        "MarkovVerticalRegionsM0D3"
+      ],
+      "theorem_statements": [
+        "theorem lower_polynomial_eqM0D3 (i j d : ℕ) :\n (lowerValM58E j d i:ℚ)=lowerPolynomialM0D3 i j d",
+        "theorem upper_polynomial_eqM0D3 (i N d : ℕ) (hi : 1 ≤ i) (hd : 1 ≤ d) :\n (upperValM2B3 N d i:ℚ)=upperPolynomialM0D3 i N d"
+      ],
+      "definitions": [
+        "def lowerPolynomialM0D3 (i : ℕ) (x y : ℚ) : ℚ :=\n ∑ h∈range (i-1), choosePolyM0D3 (2*y) h*((2*i-2-h).choose i:ℚ)*\n  (choosePolyM0D3 (x+i+1) (2*i-1-h)+choosePolyM0D3 (x+i) (2*i-1-h))",
+        "def upperPolynomialM0D3 (i : ℕ) (x y : ℚ) : ℚ :=\n ∑ h∈range (i+1), choosePolyM0D3 (2*y+h-1) h*((2*i-2-h).choose (i-h):ℚ)*\n  (choosePolyM0D3 (x+(i-h:ℕ)+1) (2*i-1-h)+\n   choosePolyM0D3 (x+(i-h:ℕ)) (2*i-1-h))"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovVerticalEquivalenceM0D3",
+      "path": "research/MarkovVerticalEquivalenceM0D3.lean",
+      "sha256": "f6df60538c2df3c04face41ec34da306903fbb0d168420c9bfb2f3227ed6fbde",
+      "current_sha256": "f6df60538c2df3c04face41ec34da306903fbb0d168420c9bfb2f3227ed6fbde",
+      "bytes": 3265,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_two_existsM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_regions_of_sourceM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_regions_iff_sourceM0D3"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovVerticalPolyM0D3"
+      ],
+      "theorem_statements": [
+        "theorem source_two_existsM0D3 (q : ℕ) (hq : 1 ≤ q) :\n ∃ path : List Bool, (frame path).mid.a=2 ∧ (frame path).mid.b=2*q+1",
+        "theorem vertical_regions_of_sourceM0D3 (i : ℕ) (hi : 4 ≤ i)\n (h : ∀ path : List Bool, (frame path).mid.a=2 → ∀ j : ℕ,\n coeff (frame path).mid.p i j*coeff (frame path).mid.p i (j+2) ≤\n coeff (frame path).mid.p i (j+1)^2) : VerticalRegionsM0D3 i",
+        "theorem vertical_regions_iff_sourceM0D3 (i : ℕ) (hi : 4 ≤ i) :\n VerticalRegionsM0D3 i ↔\n (∀ path : List Bool, (frame path).mid.a=2 → ∀ j : ℕ,\n coeff (frame path).mid.p i j*coeff (frame path).mid.p i (j+2) ≤\n coeff (frame path).mid.p i (j+1)^2)"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovFourCertificateM0D3",
+      "path": "research/MarkovFourCertificateM0D3.lean",
+      "sha256": "26997043f1dc014d7efce27a890f30b3af5c7b9be6288759f5fcffcc9244b5e2",
+      "current_sha256": "26997043f1dc014d7efce27a890f30b3af5c7b9be6288759f5fcffcc9244b5e2",
+      "bytes": 6860,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "lowerGapFourM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_gap_fourM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_gap_four_nonnegM0D3"
+        },
+        {
+          "kind": "def",
+          "name": "upperGapFourM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_gap_fourM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_gap_four_nonnegM0D3"
+        },
+        {
+          "kind": "def",
+          "name": "cross_oneGapFourM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_one_gap_fourM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_one_gap_four_nonnegM0D3"
+        },
+        {
+          "kind": "def",
+          "name": "cross_twoGapFourM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_two_gap_fourM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_two_gap_four_nonnegM0D3"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovVerticalPolyM0D3"
+      ],
+      "theorem_statements": [
+        "theorem lower_gap_fourM0D3 (x y : ℚ) :\n lowerPolynomialM0D3 4 (x+1) (y+1)^2 -\n  lowerPolynomialM0D3 4 x (y+2)*lowerPolynomialM0D3 4 (x+2) y = lowerGapFourM0D3 x y",
+        "theorem lower_gap_four_nonnegM0D3 (x y : ℚ) (hx : 0 ≤ x) (hy : 0 ≤ y) :\n 0 ≤ lowerPolynomialM0D3 4 (x+1) (y+1)^2 -\n  lowerPolynomialM0D3 4 x (y+2)*lowerPolynomialM0D3 4 (x+2) y",
+        "theorem upper_gap_fourM0D3 (x y : ℚ) :\n upperPolynomialM0D3 4 (x+3) (y+2)^2 -\n  upperPolynomialM0D3 4 (x+4) (y+1)*upperPolynomialM0D3 4 (x+2) (y+3) = upperGapFourM0D3 x y",
+        "theorem upper_gap_four_nonnegM0D3 (x y : ℚ) (hx : 0 ≤ x) (hy : 0 ≤ y) :\n 0 ≤ upperPolynomialM0D3 4 (x+3) (y+2)^2 -\n  upperPolynomialM0D3 4 (x+4) (y+1)*upperPolynomialM0D3 4 (x+2) (y+3)",
+        "theorem cross_one_gap_fourM0D3 (x : ℚ) :\n lowerPolynomialM0D3 4 (x+3) 0^2 -\n  lowerPolynomialM0D3 4 (x+2) 1*upperPolynomialM0D3 4 (x+2) 1 = cross_oneGapFourM0D3 x",
+        "theorem cross_one_gap_four_nonnegM0D3 (x : ℚ) (hx : 0 ≤ x) :\n 0 ≤ lowerPolynomialM0D3 4 (x+3) 0^2 -\n  lowerPolynomialM0D3 4 (x+2) 1*upperPolynomialM0D3 4 (x+2) 1",
+        "theorem cross_two_gap_fourM0D3 (x : ℚ) :\n upperPolynomialM0D3 4 (x+3) 1^2 -\n  lowerPolynomialM0D3 4 (x+4) 0*upperPolynomialM0D3 4 (x+2) 2 = cross_twoGapFourM0D3 x",
+        "theorem cross_two_gap_four_nonnegM0D3 (x : ℚ) (hx : 0 ≤ x) :\n 0 ≤ upperPolynomialM0D3 4 (x+3) 1^2 -\n  lowerPolynomialM0D3 4 (x+4) 0*upperPolynomialM0D3 4 (x+2) 2"
+      ],
+      "definitions": [
+        "def lowerGapFourM0D3 (x y : ℚ) : ℚ := (\n   361065600 +\n   1144886400 * y +\n   1291852800 * y^2 +\n   696729600 * y^3 +\n   159667200 * y^4 +\n   1482935040 * x +\n   4191635520 * x * y +\n   4184853120 * x * y^2 +\n   1980357120 * x * y^3 +\n   399651840 * x * y^4 +\n   2760141384 * x^2 +\n   6900372648 * x^2 * y +\n   6054299712 * x^2 * y^2 +\n   2485808640 * x^2 * y^3 +\n   431484480 * x^2 * y^4 +\n   3081811500 * x^3 +\n   6752053200 * x^3 * y +\n   5153115240 * x^3 * y^2 +\n   1808194080 * x^3 * y^3 +\n   262553760 * x^3 * y^4 +\n   2301244970 * x^4 +\n   4368546150 * x^4 * y +\n   2858426820 * x^4 * y^2 +\n   839658960 * x^4 * y^3 +\n   98521920 * x^4 * y^4 +\n   1211775645 * x^5 +\n   1964024700 * x^5 * y +\n   1079877960 * x^5 * y^2 +\n   258007680 * x^5 * y^3 +\n   23355360 * x^5 * y^4 +\n   461749927 * x^6 +\n   626481324 * x^6 * y +\n   281400336 * x^6 * y^2 +\n   52436160 * x^6 * y^3 +\n   3417120 * x^6 * y^4 +\n   128371230 * x^7 +\n   141837120 * x^7 * y +\n   49941360 * x^7 * y^2 +\n   6793920 * x^7 * y^3 +\n   282240 * x^7 * y^4 +\n   25854150 * x^8 +\n   22341150 * x^8 * y +\n   5776380 * x^8 * y^2 +\n   509040 * x^8 * y^3 +\n   10080 * x^8 * y^4 +\n   3679965 * x^9 +\n   2331780 * x^9 * y +\n   393120 * x^9 * y^2 +\n   16800 * x^9 * y^3 +\n   351439 * x^10 +\n   145128 * x^10 * y +\n   11952 * x^10 * y^2 +\n   20220 * x^11 +\n   4080 * x^11 * y +\n   530 * x^12\n  ) / 1814400",
+        "def upperGapFourM0D3 (x y : ℚ) : ℚ := (\n   1670844672000 +\n   2907741110400 * y +\n   2216914711200 * y^2 +\n   967509547200 * y^3 +\n   264451370400 * y^4 +\n   46372838400 * y^5 +\n   5096044800 * y^6 +\n   320947200 * y^7 +\n   8870400 * y^8 +\n   4091236827840 * x +\n   6828376288320 * x * y +\n   4989416667600 * x * y^2 +\n   2085807679680 * x * y^3 +\n   545968460400 * x * y^4 +\n   91684911360 * x * y^5 +\n   9652272000 * x * y^6 +\n   582758400 * x * y^7 +\n   15456000 * x * y^8 +\n   4340174414328 * x^2 +\n   6856097427024 * x^2 * y +\n   4728738171392 * x^2 * y^2 +\n   1860835045680 * x^2 * y^3 +\n   457241015120 * x^2 * y^4 +\n   71889632640 * x^2 * y^5 +\n   7068333440 * x^2 * y^6 +\n   397689600 * x^2 * y^7 +\n   9811200 * x^2 * y^8 +\n   2645209045740 * x^3 +\n   3893033995840 * x^3 * y +\n   2486633381760 * x^3 * y^2 +\n   899956392320 * x^3 * y^3 +\n   201756844800 * x^3 * y^4 +\n   28674320640 * x^3 * y^5 +\n   2521209600 * x^3 * y^6 +\n   125260800 * x^3 * y^7 +\n   2688000 * x^3 * y^8 +\n   1036559458670 * x^4 +\n   1395811301340 * x^4 * y +\n   806973034160 * x^4 * y^2 +\n   260731914240 * x^4 * y^3 +\n   51250508960 * x^4 * y^4 +\n   6232195200 * x^4 * y^5 +\n   452748800 * x^4 * y^6 +\n   17606400 * x^4 * y^7 +\n   268800 * x^4 * y^8 +\n   276659908725 * x^5 +\n   333956579640 * x^5 * y +\n   170132627280 * x^5 * y^2 +\n   47303215680 * x^5 * y^3 +\n   7727966400 * x^5 * y^4 +\n   738743040 * x^5 * y^5 +\n   38035200 * x^5 * y^6 +\n   806400 * x^5 * y^7 +\n   51827188639 * x^6 +\n   54741660792 * x^6 * y +\n   23789078096 * x^6 * y^2 +\n   5434084320 * x^6 * y^3 +\n   686530880 * x^6 * y^4 +\n   45346560 * x^6 * y^5 +\n   1218560 * x^6 * y^6 +\n   6892607070 * x^7 +\n   6174743520 * x^7 * y +\n   2189996640 * x^7 * y^2 +\n   383815680 * x^7 * y^3 +\n   33177600 * x^7 * y^4 +\n   1128960 * x^7 * y^5 +\n   648104250 * x^8 +\n   471381660 * x^8 * y +\n   127509840 * x^8 * y^2 +\n   15186960 * x^8 * y^3 +\n   671040 * x^8 * y^4 +\n   42172485 * x^9 +\n   23281640 * x^9 * y +\n   4255920 * x^9 * y^2 +\n   257440 * x^9 * y^3 +\n   1809583 * x^10 +\n   672384 * x^10 * y +\n   62112 * x^10 * y^2 +\n   46140 * x^11 +\n   8640 * x^11 * y +\n   530 * x^12\n  ) / 1814400",
+        "def cross_oneGapFourM0D3 (x : ℚ) : ℚ := (\n   17572464000 +\n   54376755840 * x +\n   75620616408 * x^2 +\n   62566858860 * x^3 +\n   34342692470 * x^4 +\n   13190251845 * x^5 +\n   3638896879 * x^6 +\n   727296030 * x^7 +\n   104621250 * x^8 +\n   10573365 * x^9 +\n   713263 * x^10 +\n   28860 * x^11 +\n   530 * x^12\n  ) / 1814400",
+        "def cross_twoGapFourM0D3 (x : ℚ) : ℚ := (\n   235371225600 +\n   629838046080 * x +\n   744011950536 * x^2 +\n   514333200300 * x^3 +\n   232443002210 * x^4 +\n   72559192845 * x^5 +\n   16082924503 * x^6 +\n   2556093150 * x^7 +\n   289716510 * x^8 +\n   22889325 * x^9 +\n   1199311 * x^10 +\n   37500 * x^11 +\n   530 * x^12\n  ) / 1814400"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovFourVerticalM0D3",
+      "path": "research/MarkovFourVerticalM0D3.lean",
+      "sha256": "af3b17150e12cfd9ac37dfee82ab495f450e8deb1d0437a3b4c0c401a1a4b095",
+      "current_sha256": "af3b17150e12cfd9ac37dfee82ab495f450e8deb1d0437a3b4c0c401a1a4b095",
+      "bytes": 3230,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "lower_four_lcM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_four_lcM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_one_four_lcM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "cross_two_four_lcM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_regions_fourM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_vertical_fourM0D3"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovFourCertificateM0D3"
+      ],
+      "theorem_statements": [
+        "theorem lower_four_lcM0D3 (j d : ℕ) :\n lowerValM58E j (d+2) 4*lowerValM58E (j+2) d 4 ≤\n lowerValM58E (j+1) (d+1) 4^2",
+        "theorem upper_four_lcM0D3 (N d : ℕ) (hN : 4 ≤ N+2) :\n upperValM2B3 (N+2) (d+1) 4*upperValM2B3 N (d+3) 4 ≤\n upperValM2B3 (N+1) (d+2) 4^2",
+        "theorem cross_one_four_lcM0D3 (q : ℕ) (hq : 4 ≤ q+1) :\n lowerValM58E (q-1) 1 4*upperValM2B3 (q-1) 1 4 ≤ lowerValM58E q 0 4^2",
+        "theorem cross_two_four_lcM0D3 (q : ℕ) (hq : 4 ≤ q) :\n lowerValM58E q 0 4*upperValM2B3 (q-2) 2 4 ≤ upperValM2B3 (q-1) 1 4^2",
+        "theorem vertical_regions_fourM0D3 : VerticalRegionsM0D3 4",
+        "theorem source_two_vertical_fourM0D3 (path : List Bool)\n (ha : (frame path).mid.a=2) (j : ℕ) :\n coeff (frame path).mid.p 4 j*coeff (frame path).mid.p 4 (j+2) ≤\n coeff (frame path).mid.p 4 (j+1)^2"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovResidualM0D3",
+      "path": "research/MarkovResidualM0D3.lean",
+      "sha256": "7e12449ee40fc60e3a3394a43f937ef980ff5df94970f0c08a44bd4aa8447310",
+      "current_sha256": "7e12449ee40fc60e3a3394a43f937ef980ff5df94970f0c08a44bd4aa8447310",
+      "bytes": 2211,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "InteriorCore63M0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_interiorM0D3"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovResidualMEC6",
+        "MarkovFourVerticalM0D3"
+      ],
+      "theorem_statements": [
+        "theorem root_iff_interiorM0D3 : Conjecture63 ↔ InteriorCore63M0D3"
+      ],
+      "definitions": [
+        "def InteriorCore63M0D3 : Prop := ∀ path : List Bool,\n let m := (frame path).mid\n 2 ≤ m.a →\n (∀ i j, InPolygon m.a m.b i j → InPolygon m.a m.b (i+1) j →\n   InPolygon m.a m.b (i+2) j → i+j+4 ≤ m.a+m.b-1 → 5 ≤ j →\n   ¬HorizontalMiddleMF1E m.a m.b i j →\n   ¬(HorizontalRegionMAC3 m.a m.b i j ∨ HorizontalVarianceMAC3 m.a m.b i j) →\n   ¬HorizontalSharpM37B m.a m.b i j → m.a≠2 →\n   coeff m.p i j*coeff m.p (i+2) j ≤ coeff m.p (i+1) j^2) ∧\n (∀ i j, InPolygon m.a m.b i j → InPolygon m.a m.b i (j+1) →\n   InPolygon m.a m.b i (j+2) → i+j+4 ≤ m.a+m.b-1 → 4 ≤ i → 3 ≤ j →\n   ¬VerticalMiddleMF1E m.a m.b i j →\n   ¬(VerticalRegionMAC3 m.a m.b i j ∨ VerticalVarianceMAC3 m.a m.b i j) →\n   ¬VerticalSharpM37B m.a m.b i j → ¬(m.a=2 ∧ i=4) →\n   coeff m.p i j*coeff m.p i (j+2) ≤ coeff m.p i (j+1)^2) ∧\n (∀ i j, InPolygon m.a m.b i (j+2) → InPolygon m.a m.b (i+1) (j+1) →\n   InPolygon m.a m.b (i+2) j → i+j+8 ≤ m.a+m.b-1 → m.a+5 ≤ i+j+2 →\n   m.a+2 ≤ m.b → ¬DiagonalMiddleMF1E m.a m.b i j →\n   ¬(DiagonalRegionMAC3 m.a m.b i j ∨ DiagonalVarianceMAC3 m.a m.b i j) →\n   ¬DiagonalSharpM37B m.a m.b i j →\n   coeff m.p i (j+2)*coeff m.p (i+2) j ≤ coeff m.p (i+1) (j+1)^2)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovFourGainM0D3",
+      "path": "research/MarkovFourGainM0D3.lean",
+      "sha256": "1adc0d7eacde4737b114a5a345e989a91d0b9628ac0a53322df8934ef05c8331",
+      "current_sha256": "1adc0d7eacde4737b114a5a345e989a91d0b9628ac0a53322df8934ef05c8331",
+      "bytes": 1334,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "four_previous_guardsM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "four_gain_rawM0D3"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovResidualM0D3"
+      ],
+      "theorem_statements": [
+        "theorem four_previous_guardsM0D3 (n : ℕ) :\n let m := (frame (twoPath3af (n+5))).mid\n 2 ≤ m.a ∧ InPolygon m.a m.b 4 (n+6) ∧ InPolygon m.a m.b 4 (n+7) ∧\n InPolygon m.a m.b 4 (n+8) ∧ 4+(n+6)+4 ≤ m.a+m.b-1 ∧ 4 ≤ 4 ∧ 3 ≤ n+6 ∧\n ¬VerticalMiddleMF1E m.a m.b 4 (n+6) ∧\n ¬(VerticalRegionMAC3 m.a m.b 4 (n+6) ∨ VerticalVarianceMAC3 m.a m.b 4 (n+6)) ∧\n ¬VerticalSharpM37B m.a m.b 4 (n+6)",
+        "theorem four_gain_rawM0D3 (n : ℕ) :\n let p := (frame (twoPath3af (n+5))).mid.p\n coeff p 4 (n+6)*coeff p 4 (n+8) ≤ coeff p 4 (n+7)^2"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovUniformVerticalM0D3",
+      "path": "research/MarkovUniformVerticalM0D3.lean",
+      "sha256": "d3f798e037e3336f013d8e05ce82002a0f4f9096105a771c5b00ede14f3d4c86",
+      "current_sha256": "d3f798e037e3336f013d8e05ce82002a0f4f9096105a771c5b00ede14f3d4c86",
+      "bytes": 2793,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "UniformVerticalRemainingM0D3"
+        },
+        {
+          "kind": "def",
+          "name": "OtherVerticalCoreM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_uniform_verticalM0D3"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovResidualM0D3",
+        "MarkovVerticalEquivalenceM0D3"
+      ],
+      "theorem_statements": [
+        "theorem root_iff_uniform_verticalM0D3 :\n Conjecture63 ↔ UniformVerticalRemainingM0D3 ∧ OtherVerticalCoreM0D3"
+      ],
+      "definitions": [
+        "def UniformVerticalRemainingM0D3 : Prop := ∀ i : ℕ, 5 ≤ i → VerticalRegionsM0D3 i",
+        "def OtherVerticalCoreM0D3 : Prop := ∀ path : List Bool,\n let m := (frame path).mid\n 2 ≤ m.a →\n (∀ i j, InPolygon m.a m.b i j → InPolygon m.a m.b (i+1) j →\n   InPolygon m.a m.b (i+2) j → i+j+4 ≤ m.a+m.b-1 → 5 ≤ j →\n   ¬HorizontalMiddleMF1E m.a m.b i j →\n   ¬(HorizontalRegionMAC3 m.a m.b i j ∨ HorizontalVarianceMAC3 m.a m.b i j) →\n   ¬HorizontalSharpM37B m.a m.b i j → m.a≠2 →\n   coeff m.p i j*coeff m.p (i+2) j ≤ coeff m.p (i+1) j^2) ∧\n (∀ i j, InPolygon m.a m.b i j → InPolygon m.a m.b i (j+1) →\n   InPolygon m.a m.b i (j+2) → i+j+4 ≤ m.a+m.b-1 → 4 ≤ i → 3 ≤ j →\n   ¬VerticalMiddleMF1E m.a m.b i j →\n   ¬(VerticalRegionMAC3 m.a m.b i j ∨ VerticalVarianceMAC3 m.a m.b i j) →\n   ¬VerticalSharpM37B m.a m.b i j → m.a≠2 →\n   coeff m.p i j*coeff m.p i (j+2) ≤ coeff m.p i (j+1)^2) ∧\n (∀ i j, InPolygon m.a m.b i (j+2) → InPolygon m.a m.b (i+1) (j+1) →\n   InPolygon m.a m.b (i+2) j → i+j+8 ≤ m.a+m.b-1 → m.a+5 ≤ i+j+2 →\n   m.a+2 ≤ m.b → ¬DiagonalMiddleMF1E m.a m.b i j →\n   ¬(DiagonalRegionMAC3 m.a m.b i j ∨ DiagonalVarianceMAC3 m.a m.b i j) →\n   ¬DiagonalSharpM37B m.a m.b i j →\n   coeff m.p i (j+2)*coeff m.p (i+2) j ≤ coeff m.p (i+1) (j+1)^2)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovContinuousObstructionM0D3",
+      "path": "research/MarkovContinuousObstructionM0D3.lean",
+      "sha256": "1ce64cee775a22d9e47caa8181b849e54e5565ff08f4d87a4d64322433ab6deb",
+      "current_sha256": "1ce64cee775a22d9e47caa8181b849e54e5565ff08f4d87a4d64322433ab6deb",
+      "bytes": 1162,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "continuous_lower_gap_valueM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "continuous_lower_gap_negativeM0D3"
+        },
+        {
+          "kind": "theorem",
+          "name": "continuous_lower_certificate_failsM0D3"
+        }
+      ],
+      "validation_source_and_final_axiom_names_match": true,
+      "imports": [
+        "MarkovVerticalPolyM0D3"
+      ],
+      "theorem_statements": [
+        "theorem continuous_lower_gap_valueM0D3 :\n lowerPolynomialM0D3 8 1 (5/4)^2 -\n lowerPolynomialM0D3 8 0 (9/4)*lowerPolynomialM0D3 8 2 (1/4) = -19/131072",
+        "theorem continuous_lower_gap_negativeM0D3 :\n lowerPolynomialM0D3 8 1 (5/4)^2 <\n lowerPolynomialM0D3 8 0 (9/4)*lowerPolynomialM0D3 8 2 (1/4)",
+        "theorem continuous_lower_certificate_failsM0D3 :\n ¬ (∀ (i : ℕ) (x y : ℚ), 5 ≤ i → 0 ≤ x → 0 ≤ y →\n   lowerPolynomialM0D3 i x (y+2)*lowerPolynomialM0D3 i (x+2) y ≤\n   lowerPolynomialM0D3 i (x+1) (y+1)^2)"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    }
+  ],
+  "counts": {
+    "def": 11,
+    "theorem": 30
+  },
+  "theorem_statement_extraction": "Complete header before proof assignment, including alias proofs and let-bound statements. Definitions retained with bodies.",
+  "source_scope": "Every Boolean source path with mid.a=2 and every natural j: raw coefficient(4,j)*coefficient(4,j+2)<=coefficient(4,j+1)^2. No row/denominator/support/polygon/formula/sign premise; all zeros included. Literal column i4, not ordinal reinterpretation.",
+  "regions_scope": "For each fixed natural i>=4, VerticalRegions iff universal actual-a2 vertical LC at that column/all natural rows. Four families: lower(j,d+2)*lower(j+2,d)<=lower(j+1,d+1)^2 for all j,dNat; upper(N+2,d+1)*upper(N,d+3)<=upper(N+1,d+2)^2 for i<=N+2; crossing1 lower(q-1,1)*upper(q-1,1)<=lower(q,0)^2 for i<=q+1; crossing2 lower(q,0)*upper(q-2,2)<=upper(q-1,1)^2 for i<=q. Every function also has fixed columni.",
+  "region_source_bridge": "Outside polygon of last point(i,j+2), exact raw zero makes product0<=square. Inside, i+j<=2q. Cases j+2<=q, j+1=q, j=q, otherwise upperN=2q-j-2,d=j-q-1 cover all rows. i>=4 forces all upper N>=1,d>=1 and guarded natural subtraction; smallq/endpoints omitted by no assumption, dispatched by zero/support branch.",
+  "converse_scope": "Canonical twoPath(q-1) realizes every q>=1. Lower family chooses sourceq=j+d+2; upper choosesq=N+d+3; crossings chooseq itself. i>=4 and crossing/upper guards force positive parameters. Every needed source coefficient has exact inherited lower/upper formula. No new general slope correspondence assumption.",
+  "polynomial_bridge": "choosePoly is descPochhammer over Q divided by natural factorial. Pinned Mathlib theorem for DivisionRing/CharZero equates all natural choose values including n<k zeros. Lower bridge all natural i,j,d. Upper bridge all naturalN with i>=1,d>=1; retains natural (i-h),(2i-2-h),(2i-1-h), rewrites N+i-h=N+(i-h) with h<=i and casts 2d+h-1 with positive guard. i0 upper case excluded from generic bridge but explicit in old source formula. No target normalization or continuous positivity assumption.",
+  "four_certificate_scope": "Four exact Q polynomial identities with literal denominators1814400 and 55/81/13/13 unsigned monomial terms. Ring/norm_num validates identities, positivity proves signs for nonnegative rational offsets. Natural specializations lowerx=j,y=d; upperN=x+2; crossingq=x+3 orx+4 are exhaustive under region guards. exact_mod_cast transfers inequalities back to raw integers without division/cancellation on coefficients.",
+  "certificates": [
+    {
+      "name": "lower",
+      "term_count": 55,
+      "denominator_literal": "1814400",
+      "all_term_coefficient_literals_unsigned": true,
+      "term_texts": [
+        "361065600",
+        "1144886400 * y",
+        "1291852800 * y^2",
+        "696729600 * y^3",
+        "159667200 * y^4",
+        "1482935040 * x",
+        "4191635520 * x * y",
+        "4184853120 * x * y^2",
+        "1980357120 * x * y^3",
+        "399651840 * x * y^4",
+        "2760141384 * x^2",
+        "6900372648 * x^2 * y",
+        "6054299712 * x^2 * y^2",
+        "2485808640 * x^2 * y^3",
+        "431484480 * x^2 * y^4",
+        "3081811500 * x^3",
+        "6752053200 * x^3 * y",
+        "5153115240 * x^3 * y^2",
+        "1808194080 * x^3 * y^3",
+        "262553760 * x^3 * y^4",
+        "2301244970 * x^4",
+        "4368546150 * x^4 * y",
+        "2858426820 * x^4 * y^2",
+        "839658960 * x^4 * y^3",
+        "98521920 * x^4 * y^4",
+        "1211775645 * x^5",
+        "1964024700 * x^5 * y",
+        "1079877960 * x^5 * y^2",
+        "258007680 * x^5 * y^3",
+        "23355360 * x^5 * y^4",
+        "461749927 * x^6",
+        "626481324 * x^6 * y",
+        "281400336 * x^6 * y^2",
+        "52436160 * x^6 * y^3",
+        "3417120 * x^6 * y^4",
+        "128371230 * x^7",
+        "141837120 * x^7 * y",
+        "49941360 * x^7 * y^2",
+        "6793920 * x^7 * y^3",
+        "282240 * x^7 * y^4",
+        "25854150 * x^8",
+        "22341150 * x^8 * y",
+        "5776380 * x^8 * y^2",
+        "509040 * x^8 * y^3",
+        "10080 * x^8 * y^4",
+        "3679965 * x^9",
+        "2331780 * x^9 * y",
+        "393120 * x^9 * y^2",
+        "16800 * x^9 * y^3",
+        "351439 * x^10",
+        "145128 * x^10 * y",
+        "11952 * x^10 * y^2",
+        "20220 * x^11",
+        "4080 * x^11 * y",
+        "530 * x^12"
+      ],
+      "scope": "Literal syntax and term counts only; no coefficient arithmetic or polynomial expansion was recomputed. Retained ring/positivity proof validates identities/sign."
+    },
+    {
+      "name": "upper",
+      "term_count": 81,
+      "denominator_literal": "1814400",
+      "all_term_coefficient_literals_unsigned": true,
+      "term_texts": [
+        "1670844672000",
+        "2907741110400 * y",
+        "2216914711200 * y^2",
+        "967509547200 * y^3",
+        "264451370400 * y^4",
+        "46372838400 * y^5",
+        "5096044800 * y^6",
+        "320947200 * y^7",
+        "8870400 * y^8",
+        "4091236827840 * x",
+        "6828376288320 * x * y",
+        "4989416667600 * x * y^2",
+        "2085807679680 * x * y^3",
+        "545968460400 * x * y^4",
+        "91684911360 * x * y^5",
+        "9652272000 * x * y^6",
+        "582758400 * x * y^7",
+        "15456000 * x * y^8",
+        "4340174414328 * x^2",
+        "6856097427024 * x^2 * y",
+        "4728738171392 * x^2 * y^2",
+        "1860835045680 * x^2 * y^3",
+        "457241015120 * x^2 * y^4",
+        "71889632640 * x^2 * y^5",
+        "7068333440 * x^2 * y^6",
+        "397689600 * x^2 * y^7",
+        "9811200 * x^2 * y^8",
+        "2645209045740 * x^3",
+        "3893033995840 * x^3 * y",
+        "2486633381760 * x^3 * y^2",
+        "899956392320 * x^3 * y^3",
+        "201756844800 * x^3 * y^4",
+        "28674320640 * x^3 * y^5",
+        "2521209600 * x^3 * y^6",
+        "125260800 * x^3 * y^7",
+        "2688000 * x^3 * y^8",
+        "1036559458670 * x^4",
+        "1395811301340 * x^4 * y",
+        "806973034160 * x^4 * y^2",
+        "260731914240 * x^4 * y^3",
+        "51250508960 * x^4 * y^4",
+        "6232195200 * x^4 * y^5",
+        "452748800 * x^4 * y^6",
+        "17606400 * x^4 * y^7",
+        "268800 * x^4 * y^8",
+        "276659908725 * x^5",
+        "333956579640 * x^5 * y",
+        "170132627280 * x^5 * y^2",
+        "47303215680 * x^5 * y^3",
+        "7727966400 * x^5 * y^4",
+        "738743040 * x^5 * y^5",
+        "38035200 * x^5 * y^6",
+        "806400 * x^5 * y^7",
+        "51827188639 * x^6",
+        "54741660792 * x^6 * y",
+        "23789078096 * x^6 * y^2",
+        "5434084320 * x^6 * y^3",
+        "686530880 * x^6 * y^4",
+        "45346560 * x^6 * y^5",
+        "1218560 * x^6 * y^6",
+        "6892607070 * x^7",
+        "6174743520 * x^7 * y",
+        "2189996640 * x^7 * y^2",
+        "383815680 * x^7 * y^3",
+        "33177600 * x^7 * y^4",
+        "1128960 * x^7 * y^5",
+        "648104250 * x^8",
+        "471381660 * x^8 * y",
+        "127509840 * x^8 * y^2",
+        "15186960 * x^8 * y^3",
+        "671040 * x^8 * y^4",
+        "42172485 * x^9",
+        "23281640 * x^9 * y",
+        "4255920 * x^9 * y^2",
+        "257440 * x^9 * y^3",
+        "1809583 * x^10",
+        "672384 * x^10 * y",
+        "62112 * x^10 * y^2",
+        "46140 * x^11",
+        "8640 * x^11 * y",
+        "530 * x^12"
+      ],
+      "scope": "Literal syntax and term counts only; no coefficient arithmetic or polynomial expansion was recomputed. Retained ring/positivity proof validates identities/sign."
+    },
+    {
+      "name": "cross_one",
+      "term_count": 13,
+      "denominator_literal": "1814400",
+      "all_term_coefficient_literals_unsigned": true,
+      "term_texts": [
+        "17572464000",
+        "54376755840 * x",
+        "75620616408 * x^2",
+        "62566858860 * x^3",
+        "34342692470 * x^4",
+        "13190251845 * x^5",
+        "3638896879 * x^6",
+        "727296030 * x^7",
+        "104621250 * x^8",
+        "10573365 * x^9",
+        "713263 * x^10",
+        "28860 * x^11",
+        "530 * x^12"
+      ],
+      "scope": "Literal syntax and term counts only; no coefficient arithmetic or polynomial expansion was recomputed. Retained ring/positivity proof validates identities/sign."
+    },
+    {
+      "name": "cross_two",
+      "term_count": 13,
+      "denominator_literal": "1814400",
+      "all_term_coefficient_literals_unsigned": true,
+      "term_texts": [
+        "235371225600",
+        "629838046080 * x",
+        "744011950536 * x^2",
+        "514333200300 * x^3",
+        "232443002210 * x^4",
+        "72559192845 * x^5",
+        "16082924503 * x^6",
+        "2556093150 * x^7",
+        "289716510 * x^8",
+        "22889325 * x^9",
+        "1199311 * x^10",
+        "37500 * x^11",
+        "530 * x^12"
+      ],
+      "scope": "Literal syntax and term counts only; no coefficient arithmetic or polynomial expansion was recomputed. Retained ring/positivity proof validates identities/sign."
+    }
+  ],
+  "root_scope": "Conjecture63 iff InteriorCore63M0D3. Only new V guard is not(a=2 and i=4); all prior H/D clauses, sourcepath quantifiers, original polygon/triple indices, total-degree/support guards, middle/variance/sharp exclusions and reverse-factor ranges byte-preserved. Root and residual unproved.",
+  "uniform_scope": "Conjecture63 iff UniformVerticalRemainingM0D3 AND OtherVerticalCoreM0D3. First is all four regions for every i>=5. Second preserves H/D exactly and all remaining V clauses for a!=2. Both unproved. Forward uses actual global/weak equivalence; reverse splits a2 versusother and residuali>=4 plusnoti4 forcesi>=5. It does not drop lowercolumns or any diagonal/horizontal remainder.",
+  "gain_scope": "For every nNat canonicaltwoPath(n+5) has a2,b2n+13,q=n+6. V column4,startrown+6, midpointn+7,lastn+8. Theorem proves all previous MEC6 V residual guards and negations of old Middle/Region/Variance/Sharp criteria; separate theorem proves rawLC. Unbounded actual-source gain, not finite-only. Documentedn0values/gap are experiment observations, not literal-value theorem.",
+  "continuous_scope": "Formal theorem over rational offsets: at i8,x0,y1/4 lower middle-square minus outer-product=-19/131072; strict negativity and failure of universali>=5,x,y>=0 Q certificate proved. Corresponding family q=x+y+2=9/4 is not natural/admissible. Documentation calls it real-offset strengthening; literal theorem is over Q, which already obstructs a matching real claim, without a formal Real theorem. No root/source counterexample.",
+  "pending_scope": "Uniform integer-domain sign and both root factors remain unproved. Newton coefficient positivity, generic finite-difference reconstruction/degree bounds and diagonal full source-region bridge are not formalized here. Finite ordinary-monomial and midpoint failures are auxiliary observations, not source failures.",
+  "helper_error_scope": "Rejected Python experiment used i1 although helper treats signed integer subtraction and is valid onlyi>=2. Saved mismatchq2,i1,j3 actual4/helper0 is a helper-range error, not Lean formula/root failure. Final exact script differs only range lower bound1->2; generic Lean upper bridge remainsi>=1 with natural-subtraction convention.",
+  "mathematical_values_recomputed": false
+}

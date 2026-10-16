@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBinomialPolyM0D3.lean:12:45: error: Application type mismatch: The argument\n  n\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  Type ?u.6\nof sort `Type (?u.6 + 1)` in the application\n  @Nat.cast_choose_eq_descPochhammer_div n\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovBinomialPolyM0D3.lean:18:58: error: unsolved goals\nx : \u211a\nk : \u2115\n\u22a2 eval x (descPochhammer \u211a k) * x * (\u2191k * \u2191k.factorial + \u2191k.factorial)\u207b\u00b9 -\n      eval x (descPochhammer \u211a k) * \u2191k * (\u2191k * \u2191k.factorial + \u2191k.factorial)\u207b\u00b9 =\n    eval x (descPochhammer \u211a k) * x * (\u2191k.factorial)\u207b\u00b9 * (1 + \u2191k)\u207b\u00b9 -\n      eval x (descPochhammer \u211a k) * \u2191k * (\u2191k.factorial)\u207b\u00b9 * (1 + \u2191k)\u207b\u00b9\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBinomialPolyM0D3": "e4accf793478a1081f2c8c00d3d203af60e30c46f9e372fc15e5f00a0af61db8"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-0d346fa7/MarkovBinomialPolyM0D3.olean",
+    "/Users/sasha/math_gkm/research/MarkovBinomialPolyM0D3.lean"
+  ],
+  "seconds": 23.623141624964774,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
