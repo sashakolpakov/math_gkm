@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovOffsetWeightsMAF6.lean:28:65: error: No goals to be solved\n/Users/sasha/math_gkm/research/MarkovOffsetWeightsMAF6.lean:28:32: error: unsolved goals\nn h k : \u2115\nhk : h < k\nhn : k \u2264 n\nhh : h \u2264 n\nh0 : \u2191(n.choose (h + 1)) * (\u2191h + 1) = \u2191(n.choose h) * (\u2191n - \u2191h)\nh1 : \u2191(n.choose k) * \u2191k = \u2191(n.choose (k - 1)) * (\u2191n - (\u2191k - 1))\nhe : \u2191(k - 1) = \u2191k - 1\nhg :\n  (\u2191h + 1) * \u2191k * (\u2191(n.choose (h + 1)) * \u2191(n.choose (k - 1)) - \u2191(n.choose h) * \u2191(n.choose k)) =\n    (\u2191n + 1) * (\u2191k - \u2191h - 1) * \u2191(n.choose h) * \u2191(n.choose (k - 1))\nhp : 0 \u2264 (\u2191h + 1) * \u2191k * (\u2191(n.choose (h + 1)) * \u2191(n.choose (k - 1)) - \u2191(n.choose h) * \u2191(n.choose k))\nthis : 0 < \u2191k\n\u22a2 0 < (\u2191h + 1) * \u2191k\n",
+  "stderr": "",
+  "modules": {
+    "MarkovOffsetWeightsMAF6": "57919986fc754f8e18951adc61ec00bd94cd7a9ac6b7708e36e65cef39cec2d1"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-af6200bf/MarkovOffsetWeightsMAF6.olean",
+    "/Users/sasha/math_gkm/research/MarkovOffsetWeightsMAF6.lean"
+  ],
+  "seconds": 6.124707292008679,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

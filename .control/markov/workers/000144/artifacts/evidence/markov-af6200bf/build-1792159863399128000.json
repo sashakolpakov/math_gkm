@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSquareObstructionMAF6.lean:43:19: warning: This simp argument is unused:\n  Polynomial.coeff_X_mul\n\nHint: Omit it from the simp argument list.\n  simp [\u0335c\u0335o\u0335e\u0335f\u0335f\u0335,\u0335V\u0335,\u0335P\u0335o\u0335l\u0335y\u0335n\u0335o\u0335m\u0335i\u0335a\u0335l\u0335.\u0335c\u0335o\u0335e\u0335f\u0335f\u0335_\u0335X\u0335_\u0335m\u0335u\u0335l\u0335]\u0335[\u0332c\u0332o\u0332e\u0332f\u0332f\u0332,\u0332 \u0332V\u0332]\u0332\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovSquareObstructionMAF6.lean:59:56: error: unsolved goals\n\u22a2 3263 <\n    2 *\n      (3 * \u2191(Nat.choose 8 2) + 4 * (2 * \u2191(Nat.choose 7 2)) + 5 * (3 * \u2191(Nat.choose 6 2)) + 6 * (4 * \u2191(Nat.choose 5 2)) +\n            7 * (5 * \u2191(Nat.choose 4 2)) +\n          144 +\n        (3 * \u2191(Nat.choose 7 2) + 4 * (2 * \u2191(Nat.choose 6 2)) + 5 * (3 * \u2191(Nat.choose 5 2)) +\n            6 * (4 * \u2191(Nat.choose 4 2)) +\n          105))\n/Users/sasha/math_gkm/research/MarkovSquareObstructionMAF6.lean:66:50: error: unsolved goals\nha : (frame (lowerPathM58E 7 0)).mid.a = 2\nhb : (frame (lowerPathM58E 7 0)).mid.b = 2 * (7 + 0) + 1\nhq : 1 \u2264 7\nhq' : (frame (lowerPathM58E 7 0)).mid.b = 2 * 7 + 1\nhp : (frame (lowerPathM58E 7 0)).mid.p = fib6 (7 + 1) ^ 2 + V * fib6 7 ^ 2\n\u22a2 \u2191(Nat.choose 7 2) + \u2191(Nat.choose 6 2) +\n            (3 * \u2191(Nat.choose 8 2) + 4 * (2 * \u2191(Nat.choose 7 2)) + 5 * (3 * \u2191(Nat.choose 6 2)) +\n                    6 * (4 * \u2191(Nat.choose 5 2)) +\n                  7 * (5 * \u2191(Nat.choose 4 2)) +\n                144 +\n              (3 * \u2191(Nat.choose 7 2) + 4 * (2 * \u2191(Nat.choose 6 2)) + 5 * (3 * \u2191(Nat.choose 5 2)) +\n                  6 * (4 * \u2191(Nat.choose 4 2)) +\n                105)) +\n          (144 + 5 * \u2191(Nat.choose 4 2) * 7 + 4 * \u2191(Nat.choose 5 2) * 6 + 3 * \u2191(Nat.choose 6 2) * 5 +\n                2 * \u2191(Nat.choose 7 2) * 4 +\n              \u2191(Nat.choose 8 2) * 3 +\n            (105 + 4 * \u2191(Nat.choose 4 2) * 6 + 3 * \u2191(Nat.choose 5 2) * 5 + 2 * \u2191(Nat.choose 6 2) * 4 +\n              \u2191(Nat.choose 7 2) * 3)) +\n        (\u2191(Nat.choose 7 2) + \u2191(Nat.choose 6 2)) =\n      3378 \u2227\n    4 *\n        (\u2191(Nat.choose 7 2) + \u2191(Nat.choose 6 2) +\n              (3 * \u2191(Nat.choose 8 2) + 4 * (2 * \u2191(Nat.choose 7 2)) + 5 * (3 * \u2191(Nat.choose 6 2)) +\n                      6 * (4 * \u2191(Nat.choose 5 2)) +\n                    7 * (5 * \u2191(Nat.choose 4 2)) +\n                  144 +\n                (3 * \u2191(Nat.choose 7 2) + 4 * (2 * \u2191(Nat.choose 6 2)) + 5 * (3 * \u2191(Nat.choose 5 2)) +\n                    6 * (4 * \u2191(Nat.choose 4 2)) +\n                  105)) +\n            (144 + 5 * \u2191(Nat.choose 4 2) * 7 + 4 * \u2191(Nat.choose 5 2) * 6 + 3 * \u2191(Nat.choose 6 2) * 5 +\n                  2 * \u2191(Nat.choose 7 2) * 4 +\n                \u2191(Nat.choose 8 2) * 3 +\n              (105 + 4 * \u2191(Nat.choose 4 2) * 6 + 3 * \u2191(Nat.choose 5 2) * 5 + 2 * \u2191(Nat.choose 6 2) * 4 +\n                \u2191(Nat.choose 7 2) * 3)) +\n          (\u2191(Nat.choose 7 2) + \u2191(Nat.choose 6 2))) \u2264\n      76729\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSquareObstructionMAF6": "6205b888741e6b865aff830e8404c08fb63194df9284fe8168f12b5ed76a146a"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-af6200bf/MarkovSquareObstructionMAF6.olean",
+    "/Users/sasha/math_gkm/research/MarkovSquareObstructionMAF6.lean"
+  ],
+  "seconds": 13.089926166983787,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

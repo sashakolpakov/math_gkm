@@ -1,0 +1,87 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovShiftedSumMAF6\ncollected MarkovOffsetStepMAF6\ncollected MarkovOffsetScalarMAF6\ncollected MarkovOffsetCoreMAF6\ncollected MarkovOffsetWeightsMAF6\ncollected MarkovOffsetGlobalMAF6\ncollected MarkovLowerLCMAF6\ncollected MarkovResidualMAF6\ncollected MarkovLowerGainMAF6\nreplay union of 9 modules over 9 inherited imports\nisolation checked for 30 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovShiftedSumMAF6": "f164c1a7b59db30837a8a6123f1343d2d1792d8528afa0a4bc24d17811a36400",
+    "MarkovOffsetStepMAF6": "a3314909352748336b4b2b80cd594350f1e0eb3d7683f88376ee43d236cce778",
+    "MarkovOffsetScalarMAF6": "cf0d52377a053728eafdea01d05920301ab74581bb2f06764a1f97e437185597",
+    "MarkovOffsetCoreMAF6": "c98fbc6e4f350a582b79fae8289e71528327f31d233dbd258715b12d1c1c3328",
+    "MarkovOffsetWeightsMAF6": "b8d993f812366c156c474b20a36367d78123a86f495e9a8e9fe54eb939bf4b69",
+    "MarkovOffsetGlobalMAF6": "cdf5bc997ec994b7e5b3dd9ad7853be79e81cb177dcd4827ffdf832a77df3c84",
+    "MarkovLowerLCMAF6": "3d55891055bc03c1da304b0198f45123cd177f39bc85039d207e9bed69c45fde",
+    "MarkovResidualMAF6": "3b7a6ebe12ef9ce413c6d9f447c79e35354254c82ad2a0404210ef34610c7bd5",
+    "MarkovLowerGainMAF6": "2d7c978dd5db6bf20b74c7ecff16db4bffff5a3a2be7cec4945ba7f692f2e4d9"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedMAF6.lean",
+    "MarkovShiftedSumMAF6",
+    "MarkovOffsetStepMAF6",
+    "MarkovOffsetScalarMAF6",
+    "MarkovOffsetCoreMAF6",
+    "MarkovOffsetWeightsMAF6",
+    "MarkovOffsetGlobalMAF6",
+    "MarkovLowerLCMAF6",
+    "MarkovResidualMAF6",
+    "MarkovLowerGainMAF6"
+  ],
+  "seconds": 16.24621270899661,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "586a6f0769d2a9a56abd125f17d593a61eebcfa807d0500a2273ad7801776f4e",
+  "declared_names": {
+    "MarkovShiftedSumMAF6": [
+      "padShiftMAF6",
+      "sum_padShiftMAF6",
+      "shifted_sumMAF6"
+    ],
+    "MarkovOffsetStepMAF6": [
+      "horizontalNumMAF6",
+      "horizontalDenMAF6",
+      "diagonalNumMAF6",
+      "diagonalDenMAF6",
+      "lower_aux_stepMAF6",
+      "lower_core_stepMAF6",
+      "lower_core_diagonalMAF6",
+      "product_transferMAF6"
+    ],
+    "MarkovOffsetScalarMAF6": [
+      "horizontalGapMAF6",
+      "diagonalGapMAF6",
+      "horizontal_gapMAF6",
+      "diagonal_gapMAF6"
+    ],
+    "MarkovOffsetCoreMAF6": [
+      "lower_core_orderedMAF6",
+      "lower_core_separatedMAF6"
+    ],
+    "MarkovOffsetWeightsMAF6": [
+      "choose_inwardMAF6",
+      "lower_term_supportMAF6",
+      "lower_term_highMAF6",
+      "lower_term_sumMAF6"
+    ],
+    "MarkovOffsetGlobalMAF6": [
+      "lower_term_shiftedMAF6"
+    ],
+    "MarkovLowerLCMAF6": [
+      "lower_value_lc_ge_twoMAF6",
+      "source_two_lower_lcMAF6",
+      "lower_binomial_lcMAF6",
+      "source_two_lower_halfMAF6"
+    ],
+    "MarkovResidualMAF6": [
+      "InteriorCore63MAF6",
+      "root_iff_interiorMAF6"
+    ],
+    "MarkovLowerGainMAF6": [
+      "lower_previous_guardsMAF6",
+      "lower_gain_rawMAF6"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed MAF6; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

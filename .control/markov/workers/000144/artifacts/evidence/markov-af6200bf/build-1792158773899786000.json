@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovShiftedSumMAF6.lean:37:5: error: Type mismatch: After simplification, term\n  h (\u2191x - 1) \u2191y\n has type\n  a (\u2191x - 1) * c \u2191y \u2264 b (min \u2191x \u2191y) * b (max \u2191x \u2191y - 1)\nbut is expected to have type\n  (if x = 0 then 0 else a (\u2191x - 1) * c \u2191y) \u2264 if x = 0 \u2227 y = 0 then 0 else b (min \u2191x \u2191y) * b (max \u2191x \u2191y - 1)\n/Users/sasha/math_gkm/research/MarkovShiftedSumMAF6.lean:42:33: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  b (n + 1)\nin the target expression\n  (\u2211 x \u2208 range n, a x + a n) * (\u2211 x \u2208 range (n + 1), c x + c (n + 1)) \u2264\n    (\u2211 i \u2208 range (n + 1 + 1), b i) * \u2211 k \u2208 range (n + 1), b k\n\na b c : \u2115 \u2192 \u2124\nn : \u2115\nha : \u2200 (k : \u2115), 0 \u2264 a k\nhb : \u2200 (k : \u2115), 0 \u2264 b k\nhc : \u2200 (k : \u2115), 0 \u2264 c k\nhbz : b (n + 1) = 0\nhcz : c (n + 1) = 0\nh : \u2200 (x y : \u2115), a x * c y \u2264 b (min (x + 1) y) * b (max (x + 1) y - 1)\nf\u2081 : Fin (n + 2) \u2192 \u2124 := fun k => padShiftMAF6 a \u2191k\nf\u2082 : Fin (n + 2) \u2192 \u2124 := fun k => c \u2191k\nf\u2083 : Fin (n + 2) \u2192 \u2124 := fun k => b \u2191k\nf\u2084 : Fin (n + 2) \u2192 \u2124 := fun k => padShiftMAF6 b \u2191k\nhp : \u2200 (v : \u2115 \u2192 \u2124), (\u2200 (k : \u2115), 0 \u2264 v k) \u2192 \u2200 (k : \u2115), 0 \u2264 padShiftMAF6 v k\nhh : \u2200 (x y : Fin (n + 2)), f\u2081 x * f\u2082 y \u2264 f\u2083 (min x y) * f\u2084 (max x y)\nht :\n  (\u2211 x \u2208 range n, a x + a n) * (\u2211 x \u2208 range (n + 1), c x + c (n + 1)) \u2264\n    (\u2211 i \u2208 range (n + 1 + 1), b i) * \u2211 k \u2208 range (n + 1), b k\n\u22a2 (\u2211 k \u2208 range (n + 1), a k) * \u2211 k \u2208 range (n + 1), c k \u2264 (\u2211 k \u2208 range (n + 1), b k) ^ 2\n",
+  "stderr": "",
+  "modules": {
+    "MarkovShiftedSumMAF6": "019f7fb3e8cd2ba3b4b9a9aa061e4a5074843d6d5efd1fe139ee1065bfd1daa2"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-af6200bf/MarkovShiftedSumMAF6.olean",
+    "/Users/sasha/math_gkm/research/MarkovShiftedSumMAF6.lean"
+  ],
+  "seconds": 24.086319458961952,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

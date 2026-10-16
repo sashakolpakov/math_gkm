@@ -1,0 +1,392 @@
+{
+  "worker": 144,
+  "request": "af6200bf65064e34b8d9216a2d53d5b2",
+  "created_at_utc": "2026-10-16T14:26:12.399034+00:00",
+  "scope": "Archive-first static reading, declarations, hashes and input/index-domain counts only. No project code or coefficient/binomial/polynomial/matrix/recurrence/moment/gap recomputation. Active145 excluded.",
+  "new_modules": [
+    {
+      "module": "MarkovShiftedSumMAF6",
+      "path": "research/MarkovShiftedSumMAF6.lean",
+      "sha256": "f164c1a7b59db30837a8a6123f1343d2d1792d8528afa0a4bc24d17811a36400",
+      "current_sha256": "f164c1a7b59db30837a8a6123f1343d2d1792d8528afa0a4bc24d17811a36400",
+      "bytes": 2155,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "padShiftMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "sum_padShiftMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "shifted_sumMAF6"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "Mathlib.Combinatorics.SetFamily.FourFunctions",
+        "Mathlib"
+      ],
+      "theorem_statements": [
+        "theorem sum_padShiftMAF6 (a : ℕ → ℤ) (n : ℕ) :\n (∑ k ∈ range (n+1), padShiftMAF6 a k)=∑ k ∈ range n, a k",
+        "theorem shifted_sumMAF6 (a b c : ℕ → ℤ) (n : ℕ)\n (ha : ∀ k, 0 ≤ a k) (hb : ∀ k, 0 ≤ b k) (hc : ∀ k, 0 ≤ c k)\n (hbz : b (n+1)=0) (hcz : c (n+1)=0)\n (h : ∀ x y, a x*c y ≤ b (min (x+1) y)*b (max (x+1) y-1)) :\n (∑ k ∈ range (n+1), a k)*(∑ k ∈ range (n+1), c k) ≤\n (∑ k ∈ range (n+1), b k)^2"
+      ],
+      "definitions": [
+        "def padShiftMAF6 (a : ℕ → ℤ) (k : ℕ) : ℤ := if k=0 then 0 else a (k-1)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovOffsetStepMAF6",
+      "path": "research/MarkovOffsetStepMAF6.lean",
+      "sha256": "a3314909352748336b4b2b80cd594350f1e0eb3d7683f88376ee43d236cce778",
+      "current_sha256": "a3314909352748336b4b2b80cd594350f1e0eb3d7683f88376ee43d236cce778",
+      "bytes": 2032,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "horizontalNumMAF6"
+        },
+        {
+          "kind": "def",
+          "name": "horizontalDenMAF6"
+        },
+        {
+          "kind": "def",
+          "name": "diagonalNumMAF6"
+        },
+        {
+          "kind": "def",
+          "name": "diagonalDenMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_aux_stepMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_core_stepMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_core_diagonalMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "product_transferMAF6"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovOffsetTermM58E"
+      ],
+      "theorem_statements": [
+        "theorem lower_aux_stepMAF6 (j i h : ℕ) (hh : h+2 ≤ i) (hi : i ≤ j+h+2) :\n ((i:ℤ)+1)*(i-1-h)*lowerAuxM58E j (i+1) h=\n ((j:ℤ)+i+1)*(j-i+h+2)*lowerAuxM58E j i h",
+        "theorem lower_core_stepMAF6 (j i h : ℕ) (hh : h+2 ≤ i) (hi : i+1 ≤ j+h+2) :\n horizontalDenMAF6 i h*lowerCoreM58E j (i+1) h=\n horizontalNumMAF6 j i h*lowerCoreM58E j i h",
+        "theorem lower_core_diagonalMAF6 (j i h : ℕ) (hh : h+2 ≤ i) (hi : i ≤ j+h+2) :\n diagonalDenMAF6 j i h*lowerCoreM58E j (i+1) (h+1)=\n diagonalNumMAF6 j i h*lowerCoreM58E j i h",
+        "theorem product_transferMAF6 (a b c d L M N R : ℤ)\n (h0 : a*M=b*L) (h1 : c*R=d*N) :\n a*c*(M*N-L*R)=(b*c-d*a)*L*N"
+      ],
+      "definitions": [
+        "def horizontalNumMAF6 (j i h : ℤ) : ℤ := (j+i+1)*(j-i+h+2)*(2*i-1-h)",
+        "def horizontalDenMAF6 (i h : ℤ) : ℤ := (i+1)*(i-1-h)*(2*i+1-h)",
+        "def diagonalNumMAF6 (j i h : ℤ) : ℤ := (j+i+1)*(2*i-1-h)*(2*j+4+h)",
+        "def diagonalDenMAF6 (j i h : ℤ) : ℤ := (i+1)*(2*i-h)*(2*j+3+h)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovOffsetScalarMAF6",
+      "path": "research/MarkovOffsetScalarMAF6.lean",
+      "sha256": "cf0d52377a053728eafdea01d05920301ab74581bb2f06764a1f97e437185597",
+      "current_sha256": "cf0d52377a053728eafdea01d05920301ab74581bb2f06764a1f97e437185597",
+      "bytes": 4222,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "horizontalGapMAF6"
+        },
+        {
+          "kind": "def",
+          "name": "diagonalGapMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_gapMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "diagonal_gapMAF6"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovOffsetStepMAF6"
+      ],
+      "theorem_statements": [
+        "theorem horizontal_gapMAF6 (k p r t : ℤ) (hk : 0 ≤ k) (hp : 0 ≤ p) (hr : 0 ≤ r) (ht : 0 ≤ t) :\n 0 ≤ horizontalGapMAF6 (r+p+2+t) (r+k+p+2) (k+p) k",
+        "theorem diagonal_gapMAF6 (k p r t : ℤ) (hk : 0 ≤ k) (hp : 0 ≤ p) (hr : 0 ≤ r) (ht : 0 ≤ t) :\n 0 ≤ diagonalGapMAF6 (p+r+t) (k+p+r+2) k (k+p+1)"
+      ],
+      "definitions": [
+        "def horizontalGapMAF6 (j i h k : ℤ) : ℤ :=\n horizontalNumMAF6 j i h*horizontalDenMAF6 (i+1) k-\n horizontalNumMAF6 j (i+1) k*horizontalDenMAF6 i h",
+        "def diagonalGapMAF6 (j i h k : ℤ) : ℤ :=\n diagonalNumMAF6 j i h*diagonalDenMAF6 j (i+1) k-\n diagonalNumMAF6 j (i+1) k*diagonalDenMAF6 j i h"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovOffsetCoreMAF6",
+      "path": "research/MarkovOffsetCoreMAF6.lean",
+      "sha256": "c98fbc6e4f350a582b79fae8289e71528327f31d233dbd258715b12d1c1c3328",
+      "current_sha256": "c98fbc6e4f350a582b79fae8289e71528327f31d233dbd258715b12d1c1c3328",
+      "bytes": 2634,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "lower_core_orderedMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_core_separatedMAF6"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovOffsetScalarMAF6",
+        "MarkovOffsetMixedM58E"
+      ],
+      "theorem_statements": [
+        "theorem lower_core_orderedMAF6 (j i h k : ℕ) (hk : k ≤ h)\n (hh : h+2 ≤ i) (hi : i ≤ j+k) :\n lowerCoreM58E j i h*lowerCoreM58E j (i+2) k ≤\n lowerCoreM58E j (i+1) h*lowerCoreM58E j (i+1) k",
+        "theorem lower_core_separatedMAF6 (j i h k : ℕ) (hk : h+2 ≤ k)\n (hh : k ≤ i) (hi : i ≤ j+h+2) :\n lowerCoreM58E j i h*lowerCoreM58E j (i+2) k ≤\n lowerCoreM58E j (i+1) (h+1)*lowerCoreM58E j (i+1) (k-1)"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovOffsetWeightsMAF6",
+      "path": "research/MarkovOffsetWeightsMAF6.lean",
+      "sha256": "b8d993f812366c156c474b20a36367d78123a86f495e9a8e9fe54eb939bf4b69",
+      "current_sha256": "b8d993f812366c156c474b20a36367d78123a86f495e9a8e9fe54eb939bf4b69",
+      "bytes": 2906,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "choose_inwardMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_term_supportMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_term_highMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_term_sumMAF6"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovOffsetObstructionM58E"
+      ],
+      "theorem_statements": [
+        "theorem choose_inwardMAF6 (n h k : ℕ) (hk : h < k) :\n (n.choose h:ℤ)*(n.choose k:ℤ) ≤ (n.choose (h+1):ℤ)*(n.choose (k-1):ℤ)",
+        "theorem lower_term_supportMAF6 (j d i h : ℕ) (hn : lowerTermM58E j d i h ≠ 0) :\n h+2 ≤ i ∧ i ≤ j+h+2 ∧ h ≤ 2*d",
+        "theorem lower_term_highMAF6 (j d i h : ℕ) (hh : 2*d<h) : lowerTermM58E j d i h=0",
+        "theorem lower_term_sumMAF6 (j d i : ℕ) :\n (∑ h∈Finset.range (2*d+1), lowerTermM58E j d i h)=lowerValM58E j d i"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovOffsetGlobalMAF6",
+      "path": "research/MarkovOffsetGlobalMAF6.lean",
+      "sha256": "cdf5bc997ec994b7e5b3dd9ad7853be79e81cb177dcd4827ffdf832a77df3c84",
+      "current_sha256": "cdf5bc997ec994b7e5b3dd9ad7853be79e81cb177dcd4827ffdf832a77df3c84",
+      "bytes": 2555,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "lower_term_shiftedMAF6"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovOffsetCoreMAF6",
+        "MarkovOffsetWeightsMAF6"
+      ],
+      "theorem_statements": [
+        "theorem lower_term_shiftedMAF6 (j d i h k : ℕ) (hj : 2 ≤ j) :\n lowerTermM58E j d i h*lowerTermM58E j d (i+2) k ≤\n lowerTermM58E j d (i+1) (min (h+1) k)*\n lowerTermM58E j d (i+1) (max (h+1) k-1)"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovLowerLCMAF6",
+      "path": "research/MarkovLowerLCMAF6.lean",
+      "sha256": "3d55891055bc03c1da304b0198f45123cd177f39bc85039d207e9bed69c45fde",
+      "current_sha256": "3d55891055bc03c1da304b0198f45123cd177f39bc85039d207e9bed69c45fde",
+      "bytes": 1960,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "lower_value_lc_ge_twoMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_lower_lcMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_binomial_lcMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_two_lower_halfMAF6"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovOffsetGlobalMAF6",
+        "MarkovShiftedSumMAF6",
+        "MarkovHorizontalLCB46",
+        "MathGKM.MarkovBoundary"
+      ],
+      "theorem_statements": [
+        "theorem lower_value_lc_ge_twoMAF6 (j d i : ℕ) (hj : 2 ≤ j) :\n lowerValM58E j d i*lowerValM58E j d (i+2) ≤ lowerValM58E j d (i+1)^2",
+        "theorem source_two_lower_lcMAF6 (path : List Bool) (j d i : ℕ)\n (ha : (frame path).mid.a=2) (hb : (frame path).mid.b=2*(j+d)+1) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) j^2",
+        "theorem lower_binomial_lcMAF6 : LowerBinomialLCM58E",
+        "theorem source_two_lower_halfMAF6 (path : List Bool) (j i : ℕ)\n (ha : (frame path).mid.a=2) (hb : 2*j+1 ≤ (frame path).mid.b) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) j^2"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovResidualMAF6",
+      "path": "research/MarkovResidualMAF6.lean",
+      "sha256": "3b7a6ebe12ef9ce413c6d9f447c79e35354254c82ad2a0404210ef34610c7bd5",
+      "current_sha256": "3b7a6ebe12ef9ce413c6d9f447c79e35354254c82ad2a0404210ef34610c7bd5",
+      "bytes": 2240,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "InteriorCore63MAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_interiorMAF6"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovResidualM6E1",
+        "MarkovLowerLCMAF6"
+      ],
+      "theorem_statements": [
+        "theorem root_iff_interiorMAF6 : Conjecture63 ↔ InteriorCore63MAF6"
+      ],
+      "definitions": [
+        "def InteriorCore63MAF6 : Prop := ∀ path : List Bool,\n let m := (frame path).mid\n 2 ≤ m.a →\n (∀ i j, InPolygon m.a m.b i j → InPolygon m.a m.b (i+1) j →\n   InPolygon m.a m.b (i+2) j → i+j+4 ≤ m.a+m.b-1 → 5 ≤ j →\n   ¬HorizontalMiddleMF1E m.a m.b i j →\n   ¬(HorizontalRegionMAC3 m.a m.b i j ∨ HorizontalVarianceMAC3 m.a m.b i j) →\n   ¬HorizontalSharpM37B m.a m.b i j →\n   ¬(m.a=2 ∧ 2*j+1 ≤ m.b) →\n   coeff m.p i j*coeff m.p (i+2) j ≤ coeff m.p (i+1) j^2) ∧\n (∀ i j, InPolygon m.a m.b i j → InPolygon m.a m.b i (j+1) →\n   InPolygon m.a m.b i (j+2) → i+j+4 ≤ m.a+m.b-1 → 4 ≤ i → 3 ≤ j →\n   ¬VerticalMiddleMF1E m.a m.b i j →\n   ¬(VerticalRegionMAC3 m.a m.b i j ∨ VerticalVarianceMAC3 m.a m.b i j) →\n   ¬VerticalSharpM37B m.a m.b i j →\n   coeff m.p i j*coeff m.p i (j+2) ≤ coeff m.p i (j+1)^2) ∧\n (∀ i j, InPolygon m.a m.b i (j+2) → InPolygon m.a m.b (i+1) (j+1) →\n   InPolygon m.a m.b (i+2) j → i+j+8 ≤ m.a+m.b-1 → m.a+5 ≤ i+j+2 →\n   m.a+2 ≤ m.b → ¬DiagonalMiddleMF1E m.a m.b i j →\n   ¬(DiagonalRegionMAC3 m.a m.b i j ∨ DiagonalVarianceMAC3 m.a m.b i j) →\n   ¬DiagonalSharpM37B m.a m.b i j →\n   coeff m.p i (j+2)*coeff m.p (i+2) j ≤ coeff m.p (i+1) (j+1)^2)"
+      ],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovLowerGainMAF6",
+      "path": "research/MarkovLowerGainMAF6.lean",
+      "sha256": "2d7c978dd5db6bf20b74c7ecff16db4bffff5a3a2be7cec4945ba7f692f2e4d9",
+      "current_sha256": "2d7c978dd5db6bf20b74c7ecff16db4bffff5a3a2be7cec4945ba7f692f2e4d9",
+      "bytes": 1579,
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "lower_previous_guardsMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_gain_rawMAF6"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovResidualMAF6"
+      ],
+      "theorem_statements": [
+        "theorem lower_previous_guardsMAF6 (n : ℕ) :\n let m := (frame (lowerPathM58E (n+5) 1)).mid\n 2 ≤ m.a ∧ InPolygon m.a m.b 3 (n+5) ∧ InPolygon m.a m.b 4 (n+5) ∧\n InPolygon m.a m.b 5 (n+5) ∧ 3+(n+5)+4 ≤ m.a+m.b-1 ∧ 5 ≤ n+5 ∧\n ¬HorizontalMiddleMF1E m.a m.b 3 (n+5) ∧\n ¬(HorizontalRegionMAC3 m.a m.b 3 (n+5) ∨ HorizontalVarianceMAC3 m.a m.b 3 (n+5)) ∧\n ¬HorizontalSharpM37B m.a m.b 3 (n+5) ∧\n ¬(m.a=2 ∧ m.b=2*(n+5)+1)",
+        "theorem lower_gain_rawMAF6 (n : ℕ) :\n let p := (frame (lowerPathM58E (n+5) 1)).mid.p\n coeff p 3 (n+5)*coeff p 5 (n+5) ≤ coeff p 4 (n+5)^2"
+      ],
+      "definitions": [],
+      "forbidden_raw_tokens": []
+    },
+    {
+      "module": "MarkovSquareObstructionMAF6",
+      "path": "research/MarkovSquareObstructionMAF6.lean",
+      "sha256": "327809157a81649b9a7b184bd40a135fcf5c50939fc0c17ba3a2a3c6282e4824",
+      "current_sha256": "327809157a81649b9a7b184bd40a135fcf5c50939fc0c17ba3a2a3c6282e4824",
+      "bytes": 3053,
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "fibCoeffMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_coeff_allMAF6"
+        },
+        {
+          "kind": "def",
+          "name": "squareSummandMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_square_sumMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "square_summand_formulaMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "square_summand_failsMAF6"
+        },
+        {
+          "kind": "theorem",
+          "name": "square_obstruction_sourceMAF6"
+        }
+      ],
+      "validation_source_and_axiom_names_match": true,
+      "imports": [
+        "MarkovLowerLCMAF6"
+      ],
+      "theorem_statements": [
+        "theorem fib_coeff_allMAF6 (n i j : ℕ) : coeff (fib6 n) i j=fibCoeffMAF6 n i j",
+        "theorem fib_square_sumMAF6 (n i j : ℕ) :\n coeff (fib6 n^2) i j=∑ h∈range (i+1),∑ t∈range (j+1),\n fibCoeffMAF6 n h t*fibCoeffMAF6 n (i-h) (j-t)",
+        "theorem square_summand_formulaMAF6 (q i j : ℕ) :\n coeff (fib6 (q+1)^2+V*fib6 q^2) i j=\n ∑ h∈range (i+1),squareSummandMAF6 q j i h",
+        "theorem square_summand_failsMAF6 :\n squareSummandMAF6 7 8 2 1*squareSummandMAF6 7 8 2 0 <\n squareSummandMAF6 7 8 1 0*squareSummandMAF6 7 8 3 1",
+        "theorem square_obstruction_sourceMAF6 :\n let m := (frame (lowerPathM58E 7 0)).mid\n m.a=2 ∧ m.b=15 ∧ InPolygon m.a m.b 1 8 ∧ InPolygon m.a m.b 2 8 ∧\n InPolygon m.a m.b 3 8 ∧ coeff m.p 1 8=4 ∧ coeff m.p 2 8=277 ∧ coeff m.p 3 8=3378 ∧\n coeff m.p 1 8*coeff m.p 3 8 ≤ coeff m.p 2 8^2"
+      ],
+      "definitions": [
+        "def fibCoeffMAF6 (n i j : ℕ) : ℤ :=\n if i=0 then if j=n then 1 else 0\n else if j<n then ((n-j-1).choose (i-1):ℤ)*((j+i).choose i:ℤ) else 0",
+        "def squareSummandMAF6 (q j i h : ℕ) : ℤ :=\n if h ≤ i then\n  (∑ t∈range (j+1),fibCoeffMAF6 (q+1) h t*fibCoeffMAF6 (q+1) (i-h) (j-t))+\n  (if j=0 then 0 else ∑ t∈range j,fibCoeffMAF6 q h t*fibCoeffMAF6 q (i-h) (j-1-t))\n else 0"
+      ],
+      "forbidden_raw_tokens": []
+    }
+  ],
+  "counts": {
+    "def": 10,
+    "theorem": 27
+  },
+  "theorem_statement_extraction": "Whole theorem header through proof assignment, retaining inner let binders.",
+  "source_scope": "Every actual path with a=2, every natural j satisfying 2*j+1<=b and every natural i. Source squares identity derives b=2*q+1 and q>=1; choose d=q-j with nonnegative subtraction justified. Raw H indices (i,j),(i+1,j),(i+2,j), no normalization or formula/sign premise.",
+  "small_rows": "j>=2 uses the new global shifted sum. j=0 uses inherited boundary_raw_logConcave; j=1 uses inherited horizontal_one_raw46. The arithmetic LowerBinomialLCM58E now proved retains j+d>=1; artificial q0 is not admitted as an actual source.",
+  "support_scope": "Nonzero lowerTerm implies h+2<=i<=j+h+2 and h<=2*d. Terms above 2*d vanish. Finite sum reindexed from range(i-1) to common range(2*d+1) by explicit zero additions/removals, including i0/1 and d0. Inherited raw positive support remains exactly2<=i<=j+2*d+2, equal to original polygon section.",
+  "scaled_recurrences": "Horizontal/diagonal recurrences are exact integer identities on proved support. Core comparison cancels only positive polynomial denominator products; never a coefficient, mass or possibly zero summand.",
+  "global_shifted_scope": "For all natural d,i,h,k and j>=2, T(i,h)T(i+2,k)<=T(i+1,min(h+1,k))T(i+1,max(h+1,k)-1). Left zero cases first. k<=h uses ordered core comparison with unchanged nonnegative weights; k=h+1 uses inherited local comparison; k>=h+2 uses separated core comparison and zero-aware binomial inward inequality. This is not a proof of arbitrary floor/ceiling midpoint.",
+  "four_functions_scope": "Generic a,b,c:Nat->Int nonnegative everywhere, b(n+1)=c(n+1)=0 and all x,y shifted pair inequality. Instantiate f1=padShift(a), f2=c, f3=b, f4=padShift(b) on Fin(n+2); x0 product is zero, x>0 max is positive and x-1+1=x. Exact finite distributive-chain theorem applies. Shifted sums remove initial zeros; only b/c terminal zeros needed. No infinite sums or positive mass assumption.",
+  "scalar_scope": "Two stored expansions, 155 and115 listed terms, inserted literally into Lean equality proofs by ring and sign proofs by positivity. Python generation is not a premise and was not rerun by auditor. Parameters are proved nonnegative under actual core support guards.",
+  "root_scope": "New root_iff_interiorMAF6 is an exact iff via inherited M6E1. Only H exclusion expands from central equality to all lower rows. V/D, polygon triples, natural-zero conventions, endpoints and reverse-factor conditions remain. InteriorCore63MAF6 and Conjecture63 remain unproved.",
+  "gain_scope": "For every natural n, lowerPath(n+5,1) labels2/(2*n+13), row n+5 and columns3,4,5. The theorem proves all former residual/polygon guards and negates old middle/pair/variance/sharp and central-equality exclusions. New raw LC at these unbounded rows is proved.",
+  "obstruction_scope": "Different squareSummand decomposition has all-index Fibonacci/source coefficient identities. At q7,row8,start1,h0,k1 its shifted comparison strictly reverses. Explicit actual2/15 source has polygon-valid raw4,277,3378 and proves LC. Saved3306 versus3263 and Sturm claims are not auditor recomputed. No root refutation.",
+  "sturm_scope": "Exact-rational finite experiment only. v1 distinct-root deficits alone do not distinguish repeated roots; v2 separately counts squarefree deficits. Neither root-count statement nor universal upper-row LC/real-rootedness is formalized.",
+  "mathematical_values_recomputed": false
+}

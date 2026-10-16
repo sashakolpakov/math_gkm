@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovOffsetGlobalMAF6.lean:25:27: error: unexpected token '+'; expected term\n/Users/sasha/math_gkm/research/MarkovOffsetGlobalMAF6.lean:21:1: error: unsolved goals\ncase pos\nj d i h k : \u2115\nhj : 2 \u2264 j\nhz0 : \u00aclowerTermM58E j d i h = 0\nhz2 : \u00aclowerTermM58E j d (i + 2) k = 0\nhh : h + 2 \u2264 i\nhi : i \u2264 j + h + 2\nhd : h \u2264 2 * d\nhk : k + 2 \u2264 i + 2\nhj' : i + 2 \u2264 j + k + 2\nkd : k \u2264 2 * d\nhkh : k \u2264 h\nhc : lowerCoreM58E j i h * lowerCoreM58E j (i + 2) k \u2264 lowerCoreM58E j (i + 1) h * lowerCoreM58E j (i + 1) k\n\u22a2 ((if h < i - 1 then \u2191((2 * d).choose h) * lowerCoreM58E j i h else 0) *\n      if k < i + 2 - 1 then \u2191((2 * d).choose k) * lowerCoreM58E j (i + 2) k else 0) \u2264\n    (if k < i + 1 - 1 then \u2191((2 * d).choose k) * lowerCoreM58E j (i + 1) k else 0) *\n      if h < i + 1 - 1 then \u2191((2 * d).choose h) * lowerCoreM58E j (i + 1) h else 0\n/Users/sasha/math_gkm/research/MarkovOffsetGlobalMAF6.lean:11:44: error: unsolved goals\ncase neg\nj d i h k : \u2115\nhj : 2 \u2264 j\nhz0 : \u00aclowerTermM58E j d i h = 0\nhz2 : \u00aclowerTermM58E j d (i + 2) k = 0\nhh : h + 2 \u2264 i\nhi : i \u2264 j + h + 2\nhd : h \u2264 2 * d\nhk : k + 2 \u2264 i + 2\nhj' : i + 2 \u2264 j + k + 2\nkd : k \u2264 2 * d\nhkh : \u00ack \u2264 h\n\u22a2 lowerTermM58E j d i h * lowerTermM58E j d (i + 2) k \u2264\n    lowerTermM58E j d (i + 1) (min (h + 1) k) * lowerTermM58E j d (i + 1) (max (h + 1) k - 1)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovOffsetGlobalMAF6": "8d4546745a7b0414708398f3a2cbf55750059aabcec16cb2e2d218705bb0bd54"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-af6200bf/MarkovOffsetGlobalMAF6.olean",
+    "/Users/sasha/math_gkm/research/MarkovOffsetGlobalMAF6.lean"
+  ],
+  "seconds": 3.6530954579939134,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
