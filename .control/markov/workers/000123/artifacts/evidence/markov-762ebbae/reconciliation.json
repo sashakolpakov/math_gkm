@@ -1,0 +1,47 @@
+{
+  "inherited_index": {
+    "RESUME.json": true,
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": true,
+    "evidence/independent-markov/markov_residual_scope_audit.md": true,
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": true,
+    "evidence/markov/research-run/state.json": true,
+    "requests/markov-next.json": true
+  },
+  "artifact_count": 702,
+  "artifact_errors": [],
+  "latest_worker_outcome": "completed",
+  "event_count": 215,
+  "event_log_sha256": "d88e94c114b837878f8b7d1590e3df58be8447fcd63a85b7acd151e2aeafdae5",
+  "last_events": [
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_112",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/finalize_9fc35bc5.py'",
+        "aggregated_output": "{\"request_id\": \"9fc35bc50ae14db198b964755648474b\", \"new_compiled_modules\": 109, \"validated_modules\": 109, \"validated_theorem_closures\": 259, \"unchanged_prior_inputs\": 4664, \"unchanged_inherited_artifacts\": 1353, \"failures\": [], \"nonzero_build_receipts\": 6, \"replay_failures\": 1, \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\", \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\", \"stop_file_present\": false, \"scope\": \"Local builds and isolated selected-declaration replay over compiled imports. No whole-source rebuild or independent completion audit.\", \"completion\": null}\nVerified artifacts 702\n",
+        "exit_code": 0,
+        "status": "completed"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_113",
+        "type": "agent_message",
+        "text": "{\n  \"actions\": [\n    \"Reconciled timed-out worker 121 and verified 1,353 inherited artifacts: evidence/markov-9fc35bc5/reconciliation.json.\",\n    \"Compiled and kernel-replayed 109 mathematical modules; audited 259 theorem closures: evidence/markov-9fc35bc5/validation.json.\",\n    \"Verified 702 artifact hashes, 4,664 unchanged prior inputs, and pinned root/contract hashes: evidence/markov-9fc35bc5/final-check.json and last-verification.json.\"\n  ],\n  \"agenda\": [\n    \"Extend third-column log-concavity to smaller remainders using the checked two-chart coverage reduction: research/markov-9fc35bc5-next.md.\",\n    \"Resolve small-numerator third columns, higher horizontal rows, remaining vertical columns, and deeper diagonals.\",\n    \"Discharge every source-correspondence obligation before claiming exact-root completion.\"\n  ],\n  \"completion\": null,\n  \"observations\": [\n    \"Proved raw third-column log-concavity for every source path with a\u22657 and a\u22643(b mod a), at every natural starting index, retaining zeros: vertical_third_third_remainderM9FC in research/MarkovThirdThirdSourceM9FC.lean.\",\n    \"Proved Conjecture63 \u2194 InteriorCore63ThirdM9FC. The residual remains unproved: research/MarkovResidualThirdM9FC.lean.\",\n    \"Proved that two parameter charts cover the remaining high source cone; their coefficient inequalities remain pending: research/MarkovThirdHighCoverM9FC.lean.\",\n    \"Finite experiments passed 79,633 coefficient comparisons and 79,363 adjacent inequalities across 135 fractions, retaining 64,040 zeros. These are not proofs: evidence/markov-9fc35bc5/experiments.json.\",\n    \"All audited closures use permitted axioms. Replay checks exclude pre-imported explicit new declarations. Compiled imports were reused; no whole-source rebuild or independent completion audit occurred. Scope: research/markov-9fc35bc5-correspondence.md.\",\n    \"Preserved six unsuccessful build receipts and one rejected replay batch. Corrected validation passed; all foreground executions ended. Operational record: research/markov-9fc35bc5-operational.md.\"\n  ],\n  \"request_id\": \"9fc35bc50ae14db198b964755648474b\",\n  \"summary\": \"Expanded the unbounded third-column region to a\u22657 and a\u22643(b mod a). Full pinned Conjecture63 remains unresolved.\"\n}"
+      }
+    },
+    {
+      "type": "turn.completed",
+      "usage": {
+        "input_tokens": 7842052,
+        "cached_input_tokens": 7655680,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 35271,
+        "reasoning_output_tokens": 13209
+      }
+    }
+  ],
+  "finding": "Latest worker completed. Earlier interrupted workers reconciled by worker 122. Reuse only hash-checked successful modules; copy pending candidates to unique names."
+}

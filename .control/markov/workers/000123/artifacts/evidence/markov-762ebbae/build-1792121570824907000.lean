@@ -1,0 +1,59 @@
+/- Machine-authored 762ebbae: inherited pending certificate, uniquely renamed. -/
+import MarkovThirdSep11I9M762Defs
+import MarkovThirdSep11I9M762E0
+import MarkovThirdSep11I9M762E1
+import MarkovThirdSep11I9M762E2
+import MarkovThirdSep11I9M762G0
+import MarkovThirdSep11I9M762G1
+import MarkovThirdSep11I9M762G2
+import MarkovThirdSep11I9M762G3
+namespace MathGKM.Markov
+noncomputable section
+set_option maxHeartbeats 15000000
+set_option maxRecDepth 32768
+set_option linter.unusedSimpArgs false
+set_option linter.unusedVariables false
+set_option linter.unnecessarySeqFocus false
+
+theorem sSep11I9FinalM762 (x y u v : ℤ) (hx : 0 ≤ x) (hy : 0 ≤ y) (hu : 0 ≤ u) (hv : 0 ≤ v) :
+ vEM115 (7+y+3*x) (6+y+2*x) (5+y+x) (1+x) (4+y) (4+v+u) (9+v+2*u-1)*vEM115 (7+y+3*x) (6+y+2*x) (5+y+x) (1+x) (4+y) (4+v+u) (9+v+2*u+1) ≤ vEM115 (7+y+3*x) (6+y+2*x) (5+y+x) (1+x) (4+y) (4+v+u) (9+v+2*u)^2 ∧
+ 0 < vEM115 (7+y+3*x) (6+y+2*x) (5+y+x) (1+x) (4+y) (4+v+u) (9+v+2*u) := by
+ rw [vE_mid1M115 _ _ _ _ _ (4+v+u) ((9+v+2*u)-1) (by omega) (by omega)]
+ rw [vE_mid1M115 _ _ _ _ _ (4+v+u) ((9+v+2*u)+1) (by omega) (by omega)]
+ rw [vE_mid1M115 _ _ _ _ _ (4+v+u) (9+v+2*u) (by omega) (by omega)]
+ constructor
+ · rw [sSep11I9e0M762,sSep11I9e2M762,sSep11I9e1M762]
+   apply cubic_lcM03 _ _ (sSep11I9a00M762 u v) (sSep11I9a01M762 u v) (sSep11I9a02M762 u v) (sSep11I9a03M762 u v) (sSep11I9a10M762 u v) (sSep11I9a11M762 u v) (sSep11I9a12M762 u v) (sSep11I9a20M762 u v) (sSep11I9a21M762 u v) (sSep11I9a30M762 u v) (sSep11I9b00M762 u v) (sSep11I9b01M762 u v) (sSep11I9b02M762 u v) (sSep11I9b03M762 u v) (sSep11I9b10M762 u v) (sSep11I9b11M762 u v) (sSep11I9b12M762 u v) (sSep11I9b20M762 u v) (sSep11I9b21M762 u v) (sSep11I9b30M762 u v) (sSep11I9c00M762 u v) (sSep11I9c01M762 u v) (sSep11I9c02M762 u v) (sSep11I9c03M762 u v) (sSep11I9c10M762 u v) (sSep11I9c11M762 u v) (sSep11I9c12M762 u v) (sSep11I9c20M762 u v) (sSep11I9c21M762 u v) (sSep11I9c30M762 u v) hx hy
+   · exact sSep11I9g00M762 u v hu hv
+   · exact sSep11I9g01M762 u v hu hv
+   · exact sSep11I9g02M762 u v hu hv
+   · exact sSep11I9g03M762 u v hu hv
+   · exact sSep11I9g04M762 u v hu hv
+   · exact sSep11I9g05M762 u v hu hv
+   · exact sSep11I9g06M762 u v hu hv
+   · exact sSep11I9g10M762 u v hu hv
+   · exact sSep11I9g11M762 u v hu hv
+   · exact sSep11I9g12M762 u v hu hv
+   · exact sSep11I9g13M762 u v hu hv
+   · exact sSep11I9g14M762 u v hu hv
+   · exact sSep11I9g15M762 u v hu hv
+   · exact sSep11I9g20M762 u v hu hv
+   · exact sSep11I9g21M762 u v hu hv
+   · exact sSep11I9g22M762 u v hu hv
+   · exact sSep11I9g23M762 u v hu hv
+   · exact sSep11I9g24M762 u v hu hv
+   · exact sSep11I9g30M762 u v hu hv
+   · exact sSep11I9g31M762 u v hu hv
+   · exact sSep11I9g32M762 u v hu hv
+   · exact sSep11I9g33M762 u v hu hv
+   · exact sSep11I9g40M762 u v hu hv
+   · exact sSep11I9g41M762 u v hu hv
+   · exact sSep11I9g42M762 u v hu hv
+   · exact sSep11I9g50M762 u v hu hv
+   · exact sSep11I9g51M762 u v hu hv
+   · exact sSep11I9g60M762 u v hu hv
+ · rw [sSep11I9e1M762]
+   simp only [cubicM03,sSep11I9b00M762,sSep11I9b01M762,sSep11I9b02M762,sSep11I9b03M762,sSep11I9b10M762,sSep11I9b11M762,sSep11I9b12M762,sSep11I9b20M762,sSep11I9b21M762,sSep11I9b30M762]
+   positivity
+end
+end MathGKM.Markov

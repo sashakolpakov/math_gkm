@@ -1,0 +1,6 @@
+import MarkovThirdGeFourM762
+import MarkovResidualGeFourM762
+#print axioms MathGKM.Markov.small_vertical_third_rightM762
+#print axioms MathGKM.Markov.vertical_third_four_to_sixM762
+#print axioms MathGKM.Markov.vertical_third_ge_fourM762
+#print axioms MathGKM.Markov.root_iff_interiorGeFourM762

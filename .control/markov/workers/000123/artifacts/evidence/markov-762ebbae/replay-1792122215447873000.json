@@ -1,0 +1,42 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovThirdRight5_9M762\ncollected MarkovThirdRight6_11M762\ncollected MarkovThirdRight6_7M762\nreplay union of 3 modules over 2 inherited imports\nisolation checked for 9 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovThirdRight5_9M762": "d68ec459160e1240caad7b70907d48eb8beaf31dc718524f03186af740d54cbe",
+    "MarkovThirdRight6_11M762": "07de5ae18c5ade5debb6d16c0909778b4d2a86a42b56d0ae1842152015b20778",
+    "MarkovThirdRight6_7M762": "1ca1c9c939b28fda1bad269c663f9468f018593cef0534027050ea16a22e27cc"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM762.lean",
+    "MarkovThirdRight5_9M762",
+    "MarkovThirdRight6_11M762",
+    "MarkovThirdRight6_7M762"
+  ],
+  "seconds": 22.01757245801855,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "4a2d39938966fec59ad8f639412db08d6d2fe3b11a92be0ab80d0e45d8895d91",
+  "declared_names": {
+    "MarkovThirdRight5_9M762": [
+      "small_v3poly_5_9M762",
+      "small_v3col_5_9M762",
+      "small_v3lc_5_9M762"
+    ],
+    "MarkovThirdRight6_11M762": [
+      "small_v3poly_6_11M762",
+      "small_v3col_6_11M762",
+      "small_v3lc_6_11M762"
+    ],
+    "MarkovThirdRight6_7M762": [
+      "small_v3poly_6_7M762",
+      "small_v3col_6_7M762",
+      "small_v3lc_6_7M762"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed M762; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

@@ -1,0 +1,70 @@
+import MarkovThirdSmallGap61P14M762
+import MarkovThirdSmallGap61P15M762
+import MarkovThirdSmallGap61P16M762
+import MarkovThirdSmallGap61P17M762
+import MarkovThirdSmallGap61P18M762
+import MarkovThirdSmallGap61P19M762
+import MarkovThirdSmallGap61P1M762
+import MarkovThirdSmallGap61P2M762
+import MarkovThirdSmallGap61P3M762
+import MarkovThirdSmallGap61P4M762
+import MarkovThirdSmallGap61P5M762
+import MarkovThirdSmallGap61P6M762
+import MarkovThirdSmallGap61P7M762
+import MarkovThirdSmallGap61P8M762
+import MarkovThirdSmallGap61P9M762
+import MarkovThirdSmallGap65P0M762
+import MarkovThirdSmallGap65P10M762
+import MarkovThirdSmallGap65P11M762
+import MarkovThirdSmallGap65P12M762
+import MarkovThirdSmallGap65P13M762
+import MarkovThirdSmallGap65P14M762
+import MarkovThirdSmallGap65P15M762
+import MarkovThirdSmallGap65P16M762
+import MarkovThirdSmallGap65P17M762
+import MarkovThirdSmallGap65P18M762
+import MarkovThirdSmallGap65P19M762
+import MarkovThirdSmallGap65P1M762
+import MarkovThirdSmallGap65P2M762
+import MarkovThirdSmallGap65P3M762
+import MarkovThirdSmallGap65P4M762
+import MarkovThirdSmallGap65P5M762
+import MarkovThirdSmallGap65P6M762
+import MarkovThirdSmallGap65P7M762
+import MarkovThirdSmallGap65P8M762
+import MarkovThirdSmallGap65P9M762
+#print axioms MathGKM.Markov.sThird61mid2M762
+#print axioms MathGKM.Markov.sThird61tail2M762
+#print axioms MathGKM.Markov.sThird61tail3M762
+#print axioms MathGKM.Markov.sThird61tail4M762
+#print axioms MathGKM.Markov.sThird61tail5M762
+#print axioms MathGKM.Markov.sThird61tail6M762
+#print axioms MathGKM.Markov.sThird61first2M762
+#print axioms MathGKM.Markov.sThird61first3M762
+#print axioms MathGKM.Markov.sThird61first4M762
+#print axioms MathGKM.Markov.sThird61lowM762
+#print axioms MathGKM.Markov.sThird61cross1_1M762
+#print axioms MathGKM.Markov.sThird61cross1_2M762
+#print axioms MathGKM.Markov.sThird61cross1_3M762
+#print axioms MathGKM.Markov.sThird61cross1_4M762
+#print axioms MathGKM.Markov.sThird61mid1M762
+#print axioms MathGKM.Markov.sThird65first1M762
+#print axioms MathGKM.Markov.sThird65cross2_2M762
+#print axioms MathGKM.Markov.sThird65cross2_3M762
+#print axioms MathGKM.Markov.sThird65cross2_4M762
+#print axioms MathGKM.Markov.sThird65cross2_5M762
+#print axioms MathGKM.Markov.sThird65mid2M762
+#print axioms MathGKM.Markov.sThird65tail2M762
+#print axioms MathGKM.Markov.sThird65tail3M762
+#print axioms MathGKM.Markov.sThird65tail4M762
+#print axioms MathGKM.Markov.sThird65tail5M762
+#print axioms MathGKM.Markov.sThird65tail6M762
+#print axioms MathGKM.Markov.sThird65first2M762
+#print axioms MathGKM.Markov.sThird65first3M762
+#print axioms MathGKM.Markov.sThird65first4M762
+#print axioms MathGKM.Markov.sThird65lowM762
+#print axioms MathGKM.Markov.sThird65cross1_1M762
+#print axioms MathGKM.Markov.sThird65cross1_2M762
+#print axioms MathGKM.Markov.sThird65cross1_3M762
+#print axioms MathGKM.Markov.sThird65cross1_4M762
+#print axioms MathGKM.Markov.sThird65mid1M762
