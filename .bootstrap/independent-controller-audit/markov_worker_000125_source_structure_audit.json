@@ -1,0 +1,465 @@
+{
+  "worker": 125,
+  "request": "ea4238fc86ab42dca04c21467d7fa66c",
+  "created_at_utc": "2026-10-16T04:52:39.739667+00:00",
+  "scope": "Static completed-source parsing, hashing and integer domain/index/polygon/word-prefix counts only. No project code, coefficient, matrix, recurrence, inequality-gap, proof, checker, replay, experiment or finalizer execution.",
+  "new_modules": [
+    {
+      "module": "MarkovAtomicSupportMEA423",
+      "sha256": "4139e85b48c5b7bdc105b4f23d8717449bf51b30bb66b40b5c47bed866c67741",
+      "imports": [
+        "MarkovHorizontalPairMEA423"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "hgood_lower_addMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "outer_VMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "outer_smoothMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "coeff_smooth_posMEA423"
+        },
+        {
+          "kind": "def",
+          "name": "PairGoodMEA423"
+        },
+        {
+          "kind": "def",
+          "name": "hmixMEA423"
+        },
+        {
+          "kind": "def",
+          "name": "atomicAMEA423"
+        },
+        {
+          "kind": "def",
+          "name": "atomicCMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_sum_topMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_mix_goodMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_initialMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_step_AMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_step_CMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "atomic_BMEA423"
+        }
+      ],
+      "theorem_statements": [
+        "theorem hgood_lower_addMEA423 {a : ℕ} {p q : BiPoly}\n (hp : HGoodMEA423 a p) (hq : HGoodMEA423 (a+1) q)\n (ht : ∀ r i, 0<coeff p r i → 0<coeff q r (r+a+1)) :\n HGoodMEA423 (a+1) (p+q)",
+        "theorem outer_VMEA423 {n : ℕ} {p : BiPoly} (hp : OuterBound725 n p) :\n OuterBound725 n (V*p)",
+        "theorem outer_smoothMEA423 {n : ℕ} {p : BiPoly} (hp : OuterBound725 n p) :\n OuterBound725 n ((V+1)*p)",
+        "theorem coeff_smooth_posMEA423 {p : BiPoly} (np : PolyNonneg16 p)\n (r i : ℕ) (hi : 0<coeff p r i) : 0<coeff ((V+1)*p) r (i+1)",
+        "theorem pair_sum_topMEA423 {n a : ℕ} {z : BiPoly × BiPoly}\n (hz : PairGoodMEA423 n a z) (r : ℕ) (hr : r≤n+1) :\n 0<coeff (z.1+z.2) r (r+a)",
+        "theorem pair_mix_goodMEA423 {n a : ℕ} {z : BiPoly × BiPoly}\n (hz : PairGoodMEA423 n a z) :\n HGoodMEA423 (a+1) (hmixMEA423 z) ∧ OuterBound725 (n+1) (hmixMEA423 z) ∧\n (∀ r, r≤n+1 → 0<coeff (hmixMEA423 z) r (r+(a+1)))",
+        "theorem pair_initialMEA423 : PairGoodMEA423 0 0 (U*(V+1),1)",
+        "theorem pair_step_AMEA423 {n a : ℕ} {z : BiPoly × BiPoly}\n (hz : PairGoodMEA423 n a z) : PairGoodMEA423 (n+1) a (atomicAMEA423 z)",
+        "theorem pair_step_CMEA423 {n a : ℕ} {z : BiPoly × BiPoly}\n (hz : PairGoodMEA423 n a z) : PairGoodMEA423 (n+1) (a+1) (atomicCMEA423 z)",
+        "theorem atomic_BMEA423 (z : BiPoly × BiPoly) :\n atomicCMEA423 (atomicAMEA423 z)=hstepMEA423 z true"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHorizontalIntervalMEA423",
+      "sha256": "b08ce218b4a492a500ae470c899da985a2117eb9e1aab9a8b9c00862d4934d15",
+      "imports": [
+        "MarkovHorizontalPairMEA423",
+        "MarkovTopLC1998"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "horizontal_residual_interval_natMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_residual_intervalMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_residual_cross_iffMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_raw_of_residual_adjacentMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_residual_ne_zeroMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_residual_top_positiveMEA423"
+        }
+      ],
+      "theorem_statements": [
+        "theorem horizontal_residual_interval_natMEA423 (path : List Bool) (r i k l : ℕ)\n (hik : i≤k) (hkl : k≤l)\n (hi : 0<(hresidualM511 (X:ℤ[X]) (sourceWord28 path) r).coeff i)\n (hl : 0<(hresidualM511 (X:ℤ[X]) (sourceWord28 path) r).coeff l) :\n 0<(hresidualM511 (X:ℤ[X]) (sourceWord28 path) r).coeff k",
+        "theorem horizontal_residual_intervalMEA423 (path : List Bool) (r : ℕ) :\n IntervalSupport774\n  (CoeffSeq ((hresidualM511 (X:ℤ[X]) (sourceWord28 path) r).map (Int.castRingHom ℝ)))",
+        "theorem horizontal_residual_cross_iffMEA423 (path : List Bool) (r : ℕ) :\n CrossLC (CoeffSeq ((hresidualM511 (X:ℤ[X]) (sourceWord28 path) r).map (Int.castRingHom ℝ))) ↔\n ∀ i, (hresidualM511 (X:ℤ[X]) (sourceWord28 path) r).coeff i *\n       (hresidualM511 (X:ℤ[X]) (sourceWord28 path) r).coeff (i+2) ≤\n       (hresidualM511 (X:ℤ[X]) (sourceWord28 path) r).coeff (i+1)^2",
+        "theorem horizontal_raw_of_residual_adjacentMEA423 (path : List Bool) (j : ℕ)\n (hb : 2*j+1 ≤ (frame path).mid.b)\n (hc : ∀ i, (hresidualM511 (X:ℤ[X]) (sourceWord28 path) j).coeff i *\n       (hresidualM511 (X:ℤ[X]) (sourceWord28 path) j).coeff (i+2) ≤\n       (hresidualM511 (X:ℤ[X]) (sourceWord28 path) j).coeff (i+1)^2) :\n ∀ i, coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n   coeff (frame path).mid.p (i+1) j^2",
+        "theorem horizontal_residual_ne_zeroMEA423 (path : List Bool) (j : ℕ)\n (hj : j≤(frame path).mid.a+(frame path).mid.b-1) :\n hresidualM511 (X:ℤ[X]) (sourceWord28 path) j ≠ 0",
+        "theorem horizontal_residual_top_positiveMEA423 (path : List Bool) (j : ℕ)\n (hj : j≤(frame path).mid.a+(frame path).mid.b-1) :\n 0<(hresidualM511 (X:ℤ[X]) (sourceWord28 path) j).coeff (j+(frame path).mid.a)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHorizontalPairMEA423",
+      "sha256": "9efd1b8bed6bf64dc4db497e60baa9713ee64857c8dd3ac643b6847382f3c0fe",
+      "imports": [
+        "MarkovHorizontalSupportMEA423"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "hpairMEA423"
+        },
+        {
+          "kind": "def",
+          "name": "hstepMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "hpair_mulMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "hgood_stepMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "hpair_word_goodMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_residual_goodMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_residual_filledMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_residual_boundMEA423"
+        }
+      ],
+      "theorem_statements": [
+        "theorem hpair_mulMEA423 (m : Mat16 BiPoly) (r : Bool) :\n hpairMEA423 (mm16 m (hKletterM511 (X:ℤ[X]) r))=hstepMEA423 (hpairMEA423 m) r",
+        "theorem hgood_stepMEA423 {a : ℕ} {z : BiPoly × BiPoly}\n (hf : HGoodMEA423 a z.1) (hh : HGoodMEA423 a z.2) (r : Bool) :\n HGoodMEA423 (a+if r then 1 else 0) (hstepMEA423 z r).1 ∧\n HGoodMEA423 (a+if r then 1 else 0) (hstepMEA423 z r).2",
+        "theorem hpair_word_goodMEA423 (w : List Bool) :\n HGoodMEA423 (w.count true) (hpairMEA423 (hKwordM511 (X:ℤ[X]) w)).1 ∧\n HGoodMEA423 (w.count true) (hpairMEA423 (hKwordM511 (X:ℤ[X]) w)).2",
+        "theorem horizontal_residual_goodMEA423 (path : List Bool) :\n HGoodMEA423 (frame path).mid.a\n   (hdiffM511 (hKwordM511 (X:ℤ[X]) (sourceWord28 path)))",
+        "theorem horizontal_residual_filledMEA423 (path : List Bool) (r i k : ℕ)\n (hi : 0<(hresidualM511 (X:ℤ[X]) (sourceWord28 path) r).coeff i)\n (hik : i≤k) (hkr : k≤r+(frame path).mid.a) :\n 0<(hresidualM511 (X:ℤ[X]) (sourceWord28 path) r).coeff k",
+        "theorem horizontal_residual_boundMEA423 (path : List Bool) (r i : ℕ)\n (hi : r+(frame path).mid.a < i) :\n (hresidualM511 (X:ℤ[X]) (sourceWord28 path) r).coeff i=0"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovHorizontalSupportMEA423",
+      "sha256": "e740403ece81a5b30611ee5a82d3705408b7f3328005d0222788135337405069",
+      "imports": [
+        "MarkovResidualSupport725",
+        "MarkovHorizontalResidualPositiveM511"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "HFilledMEA423"
+        },
+        {
+          "kind": "def",
+          "name": "HBoundMEA423"
+        },
+        {
+          "kind": "def",
+          "name": "HGoodMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "hgood_zeroMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "hgood_oneMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "hgood_addMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "hgood_VMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "hgood_UMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "hgood_smoothMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "hgood_smooth_twoMEA423"
+        }
+      ],
+      "theorem_statements": [
+        "theorem hgood_zeroMEA423 (a : ℕ) : HGoodMEA423 a 0",
+        "theorem hgood_oneMEA423 : HGoodMEA423 0 1",
+        "theorem hgood_addMEA423 {a : ℕ} {p q : BiPoly}\n (hp : HGoodMEA423 a p) (hq : HGoodMEA423 a q) : HGoodMEA423 a (p+q)",
+        "theorem hgood_VMEA423 {a : ℕ} {p : BiPoly}\n (hp : HGoodMEA423 a p) : HGoodMEA423 (a+1) (V*p)",
+        "theorem hgood_UMEA423 {a : ℕ} {p : BiPoly}\n (hp : HGoodMEA423 (a+1) p) : HGoodMEA423 a (U*p)",
+        "theorem hgood_smoothMEA423 {a : ℕ} {p : BiPoly}\n (hp : HGoodMEA423 a p) : HGoodMEA423 (a+1) ((V+1)*p)",
+        "theorem hgood_smooth_twoMEA423 {a : ℕ} {p : BiPoly}\n (hp : HGoodMEA423 a p) : HGoodMEA423 (a+1) ((V+2)*p)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovResidualEndpointsMEA423",
+      "sha256": "e596735c4805a3a6a2ff28eba6422dc32d5f5fcbf6a3f5429c8cbb16acff7daf",
+      "imports": [
+        "MarkovHorizontalIntervalMEA423",
+        "MarkovVerticalIntervalMEA423"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "horizontal_row_degreeMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_row_degreeMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_residual_zero_iffMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_residual_zero_iffMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_residual_degreeMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_residual_degreeMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_residual_high_factorMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_residual_high_factorMEA423"
+        }
+      ],
+      "theorem_statements": [
+        "theorem horizontal_row_degreeMEA423 (path : List Bool) (j : ℕ) :\n ((Bivariate.swap (frame path).mid.p).coeff j).natDegree ≤\n (frame path).mid.a+(frame path).mid.b-1-j",
+        "theorem vertical_row_degreeMEA423 (path : List Bool) (i : ℕ) :\n ((frame path).mid.p.coeff i).natDegree ≤ (frame path).mid.a+(frame path).mid.b-1-i",
+        "theorem horizontal_residual_zero_iffMEA423 (path : List Bool) (j : ℕ) :\n hresidualM511 (X:ℤ[X]) (sourceWord28 path) j=0 ↔\n (frame path).mid.a+(frame path).mid.b-1 < j",
+        "theorem vertical_residual_zero_iffMEA423 (path : List Bool) (i : ℕ) :\n vresidualM9E1 path i=0 ↔ (frame path).mid.a+(frame path).mid.b-1 < i",
+        "theorem horizontal_residual_degreeMEA423 (path : List Bool) (j : ℕ)\n (hj : j≤(frame path).mid.a+(frame path).mid.b-1) :\n (hresidualM511 (X:ℤ[X]) (sourceWord28 path) j).natDegree=j+(frame path).mid.a",
+        "theorem vertical_residual_degreeMEA423 (path : List Bool) (i : ℕ)\n (hi : i≤(frame path).mid.a+(frame path).mid.b-1) :\n (vresidualM9E1 path i).natDegree=i+(frame path).mid.b",
+        "theorem horizontal_residual_high_factorMEA423 (path : List Bool) (j : ℕ)\n (hj : (frame path).mid.b≤2*j+1) :\n hresidualM511 (X:ℤ[X]) (sourceWord28 path) j=\n (1+X)^(2*j+1-(frame path).mid.b)*(Bivariate.swap (frame path).mid.p).coeff j",
+        "theorem vertical_residual_high_factorMEA423 (path : List Bool) (i : ℕ)\n (hi : (frame path).mid.a≤2*i+1) :\n vresidualM9E1 path i=(X+1)^(2*i+1-(frame path).mid.a)*(frame path).mid.p.coeff i"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovResidualLeadingMEA423",
+      "sha256": "0ee717ab31ca20b2e7d431eec491c38c1c0c9d92a1dd21d4bf14bea278823f6e",
+      "imports": [
+        "MarkovResidualEndpointsMEA423"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "binomial_degree_leMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "cleared_leadingMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "horizontal_residual_leadingMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_residual_leadingMEA423"
+        }
+      ],
+      "theorem_statements": [
+        "theorem binomial_degree_leMEA423 (n : ℕ) : ((1+X:ℤ[X])^n).natDegree≤n",
+        "theorem cleared_leadingMEA423 (p q : ℤ[X]) (n m d e : ℕ)\n (hp : p.natDegree≤d) (hq : q.natDegree≤e)\n (hi : n+d=m+e) (he : (1+X)^n*p=(1+X)^m*q) : p.coeff d=q.coeff e",
+        "theorem horizontal_residual_leadingMEA423 (path : List Bool) (j : ℕ)\n (hj : j≤(frame path).mid.a+(frame path).mid.b-1) :\n (hresidualM511 (X:ℤ[X]) (sourceWord28 path) j).coeff (j+(frame path).mid.a)=\n (((frame path).mid.a+(frame path).mid.b-1).choose\n   ((frame path).mid.a+(frame path).mid.b-1-j):ℤ)",
+        "theorem vertical_residual_leadingMEA423 (path : List Bool) (i : ℕ)\n (hi : i≤(frame path).mid.a+(frame path).mid.b-1) :\n (vresidualM9E1 path i).coeff (i+(frame path).mid.b)=\n (((frame path).mid.a+(frame path).mid.b-1).choose i:ℤ)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovVerticalIntervalMEA423",
+      "sha256": "5abd13e9fbb99adf0fe6c0f5e25bfec6fa3c0cbd3ce1d8b24766a1dca2cbbaa5",
+      "imports": [
+        "MarkovVerticalPairMEA423",
+        "MarkovTopLC1998"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "vertical_residual_interval_natMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_residual_intervalMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_residual_cross_iffMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_raw_of_residual_adjacentMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_residual_ne_zeroMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_residual_top_positiveMEA423"
+        }
+      ],
+      "theorem_statements": [
+        "theorem vertical_residual_interval_natMEA423 (path : List Bool) (r i k l : ℕ)\n (hik : i≤k) (hkl : k≤l)\n (hi : 0<(vresidualM9E1 path r).coeff i) (hl : 0<(vresidualM9E1 path r).coeff l) :\n 0<(vresidualM9E1 path r).coeff k",
+        "theorem vertical_residual_intervalMEA423 (path : List Bool) (r : ℕ) :\n IntervalSupport774 (CoeffSeq ((vresidualM9E1 path r).map (Int.castRingHom ℝ)))",
+        "theorem vertical_residual_cross_iffMEA423 (path : List Bool) (r : ℕ) :\n CrossLC (CoeffSeq ((vresidualM9E1 path r).map (Int.castRingHom ℝ))) ↔\n ∀ i, (vresidualM9E1 path r).coeff i*(vresidualM9E1 path r).coeff (i+2) ≤\n       (vresidualM9E1 path r).coeff (i+1)^2",
+        "theorem vertical_raw_of_residual_adjacentMEA423 (path : List Bool) (i : ℕ)\n (ha : 2*i+1 ≤ (frame path).mid.a)\n (hc : ∀ j, (vresidualM9E1 path i).coeff j*(vresidualM9E1 path i).coeff (j+2) ≤\n       (vresidualM9E1 path i).coeff (j+1)^2) :\n ∀ j, coeff (frame path).mid.p i j*coeff (frame path).mid.p i (j+2) ≤\n   coeff (frame path).mid.p i (j+1)^2",
+        "theorem vertical_residual_ne_zeroMEA423 (path : List Bool) (i : ℕ)\n (hi : i≤(frame path).mid.a+(frame path).mid.b-1) : vresidualM9E1 path i≠0",
+        "theorem vertical_residual_top_positiveMEA423 (path : List Bool) (i : ℕ)\n (hi : i≤(frame path).mid.a+(frame path).mid.b-1) :\n 0<(vresidualM9E1 path i).coeff (i+(frame path).mid.b)"
+      ],
+      "raw_forbidden_flags": []
+    },
+    {
+      "module": "MarkovVerticalPairMEA423",
+      "sha256": "7363e9bed6977d73cb0ccce72fd544036f39029ef2becf511302e3711c16017c",
+      "imports": [
+        "MarkovAtomicSupportMEA423",
+        "MarkovVerticalAllOrderM9E1"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "vpairMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "vpair_mulMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "vpair_lastMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_pair_word_goodMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_residual_goodMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_residual_filledMEA423"
+        },
+        {
+          "kind": "theorem",
+          "name": "vertical_residual_boundMEA423"
+        }
+      ],
+      "theorem_statements": [
+        "theorem vpair_mulMEA423 (m : Mat16 BiPoly) (r : Bool) :\n vpairMEA423 (mm16 (vKletterM9E1 (X:ℤ[X]) r) m)=\n if r then hstepMEA423 (vpairMEA423 m) true else atomicCMEA423 (vpairMEA423 m)",
+        "theorem vpair_lastMEA423 :\n vpairMEA423 (vKwordM9E1 (X:ℤ[X]) [true])=atomicCMEA423 (U*(V+1),1)",
+        "theorem vertical_pair_word_goodMEA423 (w : List Bool) :\n PairGoodMEA423 (w.length+w.count true+1) (w.length+1)\n   (vpairMEA423 (vKwordM9E1 (X:ℤ[X]) (w++[true])))",
+        "theorem vertical_residual_goodMEA423 (path : List Bool) :\n HGoodMEA423 (frame path).mid.b\n   (vdiffM9E1 (vKwordM9E1 (X:ℤ[X]) (sourceWord28 path)))"
+      ],
+      "raw_forbidden_flags": []
+    }
+  ],
+  "new_counts": {
+    "theorem": 53,
+    "def": 10
+  },
+  "per_module_counts": {
+    "MarkovAtomicSupportMEA423": {
+      "theorem": 10,
+      "def": 4
+    },
+    "MarkovHorizontalIntervalMEA423": {
+      "theorem": 6
+    },
+    "MarkovHorizontalPairMEA423": {
+      "def": 2,
+      "theorem": 6
+    },
+    "MarkovHorizontalSupportMEA423": {
+      "def": 3,
+      "theorem": 7
+    },
+    "MarkovResidualEndpointsMEA423": {
+      "theorem": 8
+    },
+    "MarkovResidualLeadingMEA423": {
+      "theorem": 4
+    },
+    "MarkovVerticalIntervalMEA423": {
+      "theorem": 6
+    },
+    "MarkovVerticalPairMEA423": {
+      "def": 1,
+      "theorem": 6
+    }
+  },
+  "source_scope": {
+    "horizontal_pair": "All Boolean words, right multiplication; endpoint offset true-letter count.",
+    "vertical_pair": "All Boolean words ending true, left multiplication/right-to-left induction; endpoint offset word length.",
+    "actual_support": "Every source path and every natural slice index, both coordinate residuals; interval support with zero extension.",
+    "zero_slice_iff": "Residual polynomial R_r equals zero iff its slice index r>a+b-1.",
+    "nonzero_slice_degree": "Horizontal a+j and vertical b+i when slice index <=a+b-1.",
+    "leading_coefficients": "Horizontal choose(d,d-j), vertical choose(d,i), with d=a+b-1 and slice index<=d.",
+    "conditional_horizontal_transfer": "2*j+1<=b AND all natural adjacent inequalities for horizontal residual row j.",
+    "conditional_vertical_transfer": "2*i+1<=a AND all natural adjacent inequalities for vertical residual column i.",
+    "high_factorization": "Residual=(1+X)^(2*r+1-opposite_source_index)*raw slice in the opposite inequality range, including equality; no reverse LC cancellation.",
+    "new_unconditional_raw_lc_region": false,
+    "new_root_equivalence": false,
+    "inherited_root_equivalence": "Conjecture63 iff InteriorCore63MF8"
+  },
+  "notes": [
+    "All exact theorem statements are preserved above. Auxiliary support/PairGood hypotheses are discharged by actual-word recurrences, while adjacent-LC hypotheses in the two raw-transfer theorems remain explicit.",
+    "Support and leading/degree results alone do not assert residual or raw LC.",
+    "Natural subtraction in raw degree bounds is distinct from residual degree equalities, which require slice<=d."
+  ]
+}

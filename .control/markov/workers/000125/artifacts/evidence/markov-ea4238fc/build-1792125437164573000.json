@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovVerticalIntervalMEA423.lean:70:1: error: 'change' tactic failed, pattern\n  coeff (frame path).mid.p i ((frame path).mid.a + (frame path).mid.b - 1 - i) = 0\nis not definitionally equal to target\n  (Polynomial.coeff (frame path).mid.p i).coeff ((frame path).mid.a + (frame path).mid.b - 1 - i) =\n    Polynomial.coeff 0 ((frame path).mid.a + (frame path).mid.b - 1 - i)\n/Users/sasha/math_gkm/research/MarkovVerticalIntervalMEA423.lean:86:15: error: unexpected token '+'; expected term\n/Users/sasha/math_gkm/research/MarkovVerticalIntervalMEA423.lean:86:12: error: Application type mismatch: The argument\n  j\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  Type ?u.40\nof sort `Type (?u.40 + 1)` in the application\n  @InitialSeg j\n/Users/sasha/math_gkm/research/MarkovVerticalIntervalMEA423.lean:75:58: error: unsolved goals\ncase hjb\npath : List Bool\ni : \u2115\nhi : i \u2264 (frame path).mid.a + (frame path).mid.b - 1\nhn : vresidualM9E1 path i \u2260 0\nj : \u2115\nhj : (vresidualM9E1 path i).coeff j \u2260 0\nhp : 0 < (vresidualM9E1 path i).coeff j\n\u22a2 InitialSeg (fun x1 x2 => sorry) fun x1 x2 => sorry\n\npath : List Bool\ni : \u2115\nhi : i \u2264 (frame path).mid.a + (frame path).mid.b - 1\nhn : vresidualM9E1 path i \u2260 0\nj : \u2115\nhj : (vresidualM9E1 path i).coeff j \u2260 0\nhp : 0 < (vresidualM9E1 path i).coeff j\nhjb : InitialSeg (fun x1 x2 => sorry) fun x1 x2 => sorry\n\u22a2 0 < (vresidualM9E1 path i).coeff (i + (frame path).mid.b)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovVerticalIntervalMEA423": "77db7af30c4e1434b0b89b479d77216a2f3c1e653aacdc0f2617fa2f671d9109"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ea4238fc/MarkovVerticalIntervalMEA423.olean",
+    "/Users/sasha/math_gkm/research/MarkovVerticalIntervalMEA423.lean"
+  ],
+  "seconds": 27.72911600000225,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovHorizontalIntervalMEA423.lean:58:47: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ?f (?x * ?y)\nin the target expression\n  CrossLC\n    (CoeffSeq\n      (map (Int.castRingHom \u211d) ((1 + X) ^ ((frame path).mid.b - 2 * j - 1) * hresidualM511 X (sourceWord28 path) j)))\n\npath : List Bool\nj : \u2115\nhb : 2 * j + 1 \u2264 (frame path).mid.b\nhc :\n  \u2200 (i : \u2115),\n    (hresidualM511 X (sourceWord28 path) j).coeff i * (hresidualM511 X (sourceWord28 path) j).coeff (i + 2) \u2264\n      (hresidualM511 X (sourceWord28 path) j).coeff (i + 1) ^ 2\n\u22a2 CrossLC\n    (CoeffSeq\n      (map (Int.castRingHom \u211d) ((1 + X) ^ ((frame path).mid.b - 2 * j - 1) * hresidualM511 X (sourceWord28 path) j)))\n/Users/sasha/math_gkm/research/MarkovHorizontalIntervalMEA423.lean:94:3: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.\nIf you'd rather continue using `push_neg` in your project, you can implement it as follows:\n```\nopen Lean.Parser.Tactic in\nmacro \"push_neg\" cfg:optConfig loc:(location)? : tactic =>\n  `(tactic| push $cfg:optConfig Not $[$loc]?)\n```\n",
+  "stderr": "",
+  "modules": {
+    "MarkovHorizontalIntervalMEA423": "fb6ee113968508c9287dd84dea1f7ef02668a8cbf9d12b1d7719e5a704f6077d"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ea4238fc/MarkovHorizontalIntervalMEA423.olean",
+    "/Users/sasha/math_gkm/research/MarkovHorizontalIntervalMEA423.lean"
+  ],
+  "seconds": 5.626133457990363,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,52 @@
+{
+  "outcome": "timeout",
+  "event_log_sha256": "cca8bfd2725a4af05d8d9996176344b35db3ed92b1fa25f830a384224af19918",
+  "event_count": 228,
+  "last_events": [
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_118",
+        "type": "file_change",
+        "changes": [
+          {
+            "path": "/Users/sasha/math_gkm/research/markov-ae257c53-checkpoint.md",
+            "kind": "update"
+          },
+          {
+            "path": "/Users/sasha/math_gkm/research/markov-ae257c53-operational.md",
+            "kind": "update"
+          }
+        ],
+        "status": "completed"
+      }
+    },
+    {
+      "type": "item.started",
+      "item": {
+        "id": "item_119",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/finalize_ae257c53.py'",
+        "aggregated_output": "",
+        "exit_code": null,
+        "status": "in_progress"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_119",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/finalize_ae257c53.py'",
+        "aggregated_output": "{\"request_id\": \"ae257c53f22a4da2970651c23916380a\", \"compiled_modules\": 235, \"validated_modules\": 23, \"validated_theorem_closures\": 62, \"axiom_audited_modules\": 167, \"unchanged_prior_inputs\": 4104, \"failures\": [], \"nonzero_build_receipts\": 12, \"replay_timeouts\": 3, \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\", \"canonical_contract_hash\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\", \"stop_file_present\": false, \"scope\": \"Local ordinary Lean builds; listed source modules replayed over compiled imports. Dependency-wide replay was not completed. No whole-source rebuild or independent completion audit.\", \"completion\": null}\nVerified artifacts 1353\n",
+        "exit_code": 0,
+        "status": "completed"
+      }
+    }
+  ],
+  "checked_changed_artifacts": 1355,
+  "mismatches": [],
+  "skipped_paths": [],
+  "earlier_record_matches": true,
+  "finding": "Read the complete interrupted worker log and its receipt. Its final recorded action completed finalization before timeout. Existing changes were checked; no side effect was replayed."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovResidualEndpointsMEA423.lean:25:1: error: Type mismatch\n  raw_outside_polygon18 path i k fun h =>\n    have ht := h.right;\n    vertical_row_degreeMEA423._proof_1_1 path i k hk ht\nhas type\n  coeff (frame path).mid.p i k = 0\nbut is expected to have type\n  (Polynomial.coeff (frame path).mid.p i).coeff k = 0\n/Users/sasha/math_gkm/research/MarkovResidualEndpointsMEA423.lean:54:5: error: Type mismatch\n  raw_outside_polygon18 path i k fun h =>\n    have ht := h.right;\n    vertical_residual_zero_iffMEA423._proof_1_2 path i hi k ht\nhas type\n  coeff (frame path).mid.p i k = 0\nbut is expected to have type\n  (Polynomial.coeff (frame path).mid.p i).coeff k = Polynomial.coeff 0 k\n",
+  "stderr": "",
+  "modules": {
+    "MarkovResidualEndpointsMEA423": "531ec96cbf2fb3c8a899a282eda63b47539f8185064e29a39dae1041ad0de061"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ea4238fc/MarkovResidualEndpointsMEA423.olean",
+    "/Users/sasha/math_gkm/research/MarkovResidualEndpointsMEA423.lean"
+  ],
+  "seconds": 50.353077750012744,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

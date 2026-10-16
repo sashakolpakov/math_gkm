@@ -1,0 +1,19 @@
+{
+  "returncode": 0,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovHorizontalIntervalMEA423.lean:89:3: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.\nIf you'd rather continue using `push_neg` in your project, you can implement it as follows:\n```\nopen Lean.Parser.Tactic in\nmacro \"push_neg\" cfg:optConfig loc:(location)? : tactic =>\n  `(tactic| push $cfg:optConfig Not $[$loc]?)\n```\n",
+  "stderr": "",
+  "modules": {
+    "MarkovHorizontalIntervalMEA423": "b08ce218b4a492a500ae470c899da985a2117eb9e1aab9a8b9c00862d4934d15"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ea4238fc/MarkovHorizontalIntervalMEA423.olean",
+    "/Users/sasha/math_gkm/research/MarkovHorizontalIntervalMEA423.lean"
+  ],
+  "seconds": 27.552681165980175,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

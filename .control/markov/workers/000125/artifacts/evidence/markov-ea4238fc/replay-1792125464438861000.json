@@ -1,0 +1,49 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovAtomicSupportMEA423\ncollected MarkovHorizontalIntervalMEA423\nreplay union of 2 modules over 3 inherited imports\nisolation checked for 20 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovAtomicSupportMEA423": "4139e85b48c5b7bdc105b4f23d8717449bf51b30bb66b40b5c47bed866c67741",
+    "MarkovHorizontalIntervalMEA423": "b08ce218b4a492a500ae470c899da985a2117eb9e1aab9a8b9c00862d4934d15"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedMEA423.lean",
+    "MarkovAtomicSupportMEA423",
+    "MarkovHorizontalIntervalMEA423"
+  ],
+  "seconds": 12.088395499973558,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "239de8f6041251722c4cbc99f3e697832733f526339f940a3aa56d6cd510a1b3",
+  "declared_names": {
+    "MarkovAtomicSupportMEA423": [
+      "hgood_lower_addMEA423",
+      "outer_VMEA423",
+      "outer_smoothMEA423",
+      "coeff_smooth_posMEA423",
+      "PairGoodMEA423",
+      "hmixMEA423",
+      "atomicAMEA423",
+      "atomicCMEA423",
+      "pair_sum_topMEA423",
+      "pair_mix_goodMEA423",
+      "pair_initialMEA423",
+      "pair_step_AMEA423",
+      "pair_step_CMEA423",
+      "atomic_BMEA423"
+    ],
+    "MarkovHorizontalIntervalMEA423": [
+      "horizontal_residual_interval_natMEA423",
+      "horizontal_residual_intervalMEA423",
+      "horizontal_residual_cross_iffMEA423",
+      "horizontal_raw_of_residual_adjacentMEA423",
+      "horizontal_residual_ne_zeroMEA423",
+      "horizontal_residual_top_positiveMEA423"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed MEA423; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}
