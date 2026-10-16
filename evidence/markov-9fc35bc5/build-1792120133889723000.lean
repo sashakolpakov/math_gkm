@@ -1,0 +1,3 @@
+import MarkovThirdRemainderM9FC
+#print axioms MathGKM.Markov.third_remainder_neM9FC
+#print axioms MathGKM.Markov.third_remainder_strictM9FC
