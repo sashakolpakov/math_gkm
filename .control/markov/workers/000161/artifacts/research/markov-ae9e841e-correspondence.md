@@ -1,0 +1,23 @@
+# Source correspondence and unresolved scope
+
+Machine-authored scope argument for request ae9e841e98884e419ff8cadb546d21cc. This is not the separate independent hash-bound completion audit. Neither the pinned root nor its negation is proved.
+
+**Coverage.** The inherited source_three_rawM9E2 classification covers every generated middle label with numerator 3, with q>=1 and denominator 3q+1 or 3q+2. New coefficient identities quantify over every natural column offset and every lower row j<=q. New inequality strips quantify over every q, without a finite denominator cutoff. source_bands_pathMAE9 explicitly transports them to every numerator-three source path. OtherFourM9E2 retains all larger-numerator and inherited reverse-factor obligations. The complete rational/path/publication bridge is not independently re-audited in this run. Experiments supply no coverage proof.
+
+**Source family.** The lift is proved from lower_row_positive_coeffMDAB, Vandermonde, an exact binomial product identity and the double hockey-stick sum. The source bridge uses source_lower_rowMFFD, which identifies the inherited row polynomial with the literal protected recurrence coefficients in the specified range. Neither interpolation nor numerical matching supplies this bridge. The first-correction bridge uses the exact inherited first_row_sourceM1BB and keeps q>=2 explicit; q=1 retains its inherited exceptional correction.
+
+**Homogeneity and coefficients.** All source conclusions concern threeRawM9E2, identified with coeff of the protected squared-variable numerator at w=1. The common binomial factor of the inherited residual row is already restored in lowerRowMFFD. The new lift does not normalize coefficients. Falling-factorial polynomials are exact evaluations of ordinary binomial coefficients, including natural zero cases. Rational casts used in certificates are injectively transported back to integers. No new homogeneous-degree or omitted-variable assumption is made.
+
+**Polygon.** New raw inequalities are proved on their full stated natural ranges, even beyond the polygon; no coefficient or zero is filtered out. lower_band_polygonMAE9 proves that for q>=3 every point with 3<=i<=8 and j<=q is in the source polygon. Consequently it supplies polygon membership for every point of each new strip in that unbounded subfamily. Small q cases remain included in the raw inequality theorems, with zero tails. The auxiliary midpoint failure is expressly distinguished from the actual polygon-valid 3/4 triple [8,14,6]. No auxiliary kernel failure is asserted to refute a source polynomial.
+
+**Directions, zeros and endpoints.** Horizontal strips start at i=4,5,6 and use j<=q. Vertical strips use i=6,7,8 and j+2<=q. Diagonal strips start at i=4,5,6 and use the triple (i,j+2),(i+1,j+1),(i+2,j) with j+2<=q. Every conclusion is non-strict, as in WeakLC. Exact residual equivalence retains all other clauses, every correction band, both endpoint clauses through the inherited root equivalence, all larger numerators and reverse-factor ranges. The transform support proof gives positivity exactly on 0..d+j and vanishing above it; this is not an identification of arbitrary adjacent-only LC with CrossLC. No new complete source direction is claimed.
+
+**Assumptions.** Pinned Lean 4.32.2 and pinned read-only Mathlib only. The axiom audit permits only propext, Classical.choice and Quot.sound. The generated certificates are proved by ordinary ring normalization and order reasoning. No external theorem, experiment, custom axiom or native_decide enters the mathematics. The unsafe replay API is confined to the operational checker, which is not a mathematical import. Inherited compiled imports are reused; this is not a fresh whole-source rebuild.
+
+**Proof scope.** A positive transposed coefficient formula, its polynomial form and exact reversed transform/support; additional universal strips in three directions; a first-correction polynomial bridge; an auxiliary midpoint obstruction and a valid source comparison; and Conjecture63 iff ThreeRemainingMAE9 AND OtherFourM9E2. Both residual predicates are unproved. The full lower-row LC condition, old RowGapMonotoneMDAB and RowDifferenceShapeM468, and the new transform LC-positivity condition remain unproved. Correction-gap candidates and finite LC-positive tests are experiments, not additional source theorems.
+
+Pinned root SHA256: 8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe.
+
+Canonical contract SHA256: 6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc.
+
+No root completion, independent completion audit or certified controller switch is claimed.
