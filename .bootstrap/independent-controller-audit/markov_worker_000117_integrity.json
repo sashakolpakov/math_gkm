@@ -1,0 +1,97 @@
+{
+  "worker": 117,
+  "request": "1152282d605b45568637f8914ec5fc57",
+  "created_utc": "2026-10-16T02:00:47.949904+00:00",
+  "mode": "Audit-file-only integrity and consistency checks; no project source reread or project execution in this final step.",
+  "main": {
+    "file": "/private/tmp/math_gkm_godel_20261013/markov_worker_000117_monitoring_audit.md",
+    "sha256": "50f7daca42efc99bc59e56c7d7eb5f821bbfd8515105ce948c7732f3c0a8b313",
+    "bytes": 21909
+  },
+  "supports": [
+    {
+      "file": "markov_worker_000117_mathematical_source_hashes.json",
+      "sha256": "16b6ae5a1a240ea9fe55f29375610c17cacf1d76b60eb92f82283978d5cc8e17",
+      "bytes": 21417
+    },
+    {
+      "file": "markov_worker_000117_source_structure_audit.json",
+      "sha256": "37166899752a6425ef4a86f7aba5350c0c7fa5ea0e52873d4ea3d1e94e079bdf",
+      "bytes": 38379
+    },
+    {
+      "file": "markov_worker_000117_finite_domain_audit.json",
+      "sha256": "c68353906ba517c1a05f364f4af83395134104366f2f3612340c493c2058a1f1",
+      "bytes": 10186
+    },
+    {
+      "file": "markov_worker_000117_validation_audit.md",
+      "sha256": "76123ab1242cb69313abefe9ffbe4c30b0ffe0eda48c1ef88c3a697a037d84a0",
+      "bytes": 20870
+    },
+    {
+      "file": "markov_worker_000117_validation_evidence.json",
+      "sha256": "29e7d6e5a94b31bb07bb21ae59cdd4fb4fa05a8d0f785cc63d75c3d82622117e",
+      "bytes": 2387938
+    },
+    {
+      "file": "markov_worker_000117_replay_method.md",
+      "sha256": "dc72d41bfd1e36302758c8d1f3712b2478c36bd701590788618c38fe65692fbc",
+      "bytes": 15687
+    },
+    {
+      "file": "markov_worker_000117_replay_method_evidence.json",
+      "sha256": "e07728cf7f56e95b972b73fc3750e5a8e40bbcb511d5c92e370d8bd039559e33",
+      "bytes": 2485086
+    }
+  ],
+  "checks": {
+    "all_seven_support_hashes_match": true,
+    "accepted_module_sources_bind_across_three_audits": true,
+    "accepted_counts": [
+      28,
+      193,
+      135
+    ],
+    "pending_unaccepted_counts": [
+      17,
+      317,
+      1
+    ],
+    "pending_sources_bound_no_successful_build_or_object": true,
+    "all_final_accepted_build_object_replay_flags_match": true,
+    "printed_rows_and_unique_names": 193,
+    "definition_only_target": "MarkovThirdAllBoundsDefM115",
+    "named_inherited_hash_bindings_match": true,
+    "retained_validation_mismatch_flags_empty": true,
+    "rejection_list_exact": true,
+    "static_graph_nodes": 1557,
+    "fixed_charts_and_polynomial_bounds": [
+      56,
+      1400
+    ],
+    "allrun_identity_regions_and_rewrites_each": [
+      15,
+      34
+    ],
+    "finite_domain_totals_match": {
+      "fractions": 1160,
+      "raw_coefficient_comparisons": 219496,
+      "seed_adjacent_checks": 51388,
+      "seed_cross_checks": 1958196,
+      "polygon_valid_raw_checks": 50948,
+      "raw_polygon_exterior_positions": 166228,
+      "allocated_seed_positions": 53708
+    },
+    "full_root_completion": null
+  },
+  "child_consistency_review": {
+    "agent": "/root/monitoring_audit/validation109",
+    "scope": "Existing seven117 audit supports and main text only; no new project reads or execution.",
+    "reviewed_draft_main_sha256": "177fff9ea0db54570dea1f700d6013ee1d191652497611f081d4bd60bdbd4dd6",
+    "result": "Agreed after precision corrections concerning superseded build source versus unmeasured prior object, and excluded workers118/119 start-state wording.",
+    "changes_after_review": "Appended seven support hashes and this review-binding paragraph only."
+  },
+  "evidence_label_correction": "A mislabeled negative Boolean checks.all_rejections_recorded was renamed checks.rejection_list_mismatch=false; recorded_rejections_exact remains true. No recorded project evidence was changed.",
+  "trust_limits": "Saved compilation, selected alternate replay and named axiom-print coverage only, over inherited compiled imports. No fresh whole-source rebuild, invocation-time binary identity, official checker, all-run third-column LC or full-root proof."
+}

@@ -1,0 +1,626 @@
+import MarkovThirdRun1DefsM115
+/-! Machine-authored 1152282d. Universal nonnegative gap certificates. -/
+namespace MathGKM.Markov
+noncomputable section
+open Polynomial
+set_option maxHeartbeats 10000000
+set_option maxRecDepth 32768
+set_option linter.unusedSimpArgs false
+
+theorem vR1chart_low_0_4M115 (x y : ℝ) (hx : 0≤x) (hy : 0≤y) :
+ vR1BoundsM115 (7+y+3*x) (1+x) (0) (0) (0) := by
+ unfold vR1BoundsM115
+ refine ⟨?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ⟩
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+
+theorem vR1chart_low_1_1M115 (x y : ℝ) (hx : 0≤x) (hy : 0≤y) :
+ vR1BoundsM115 (7+y+3*x) (2+x) (0) (0) (0) := by
+ unfold vR1BoundsM115
+ refine ⟨?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ⟩
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+
+theorem vR1chart_low_2_0M115 (x y : ℝ) (hx : 0≤x) (hy : 0≤y) :
+ vR1BoundsM115 (9+y+3*x) (3+x) (0) (0) (0) := by
+ unfold vR1BoundsM115
+ refine ⟨?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ⟩
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+
+theorem vR1chart_midlow_0_4M115 (x y : ℝ) (hx : 0≤x) (hy : 0≤y) :
+ vR1BoundsM115 (8+2*y+3*x) (4+y+x) (0) (4+y) (0) := by
+ unfold vR1BoundsM115
+ refine ⟨?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ⟩
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+
+theorem vR1chart_midhigh_0_4M115 (x y : ℝ) (hx : 0≤x) (hy : 0≤y) :
+ vR1BoundsM115 (8+2*y+3*x) (4+y+2*x) (x) (4+y+x) (0) := by
+ unfold vR1BoundsM115
+ refine ⟨?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ⟩
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+
+theorem vR1chart_midlow_1_2M115 (x y : ℝ) (hx : 0≤x) (hy : 0≤y) :
+ vR1BoundsM115 (7+2*y+3*x) (3+y+x) (0) (2+y) (0) := by
+ unfold vR1BoundsM115
+ refine ⟨?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ⟩
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+
+theorem vR1chart_midhigh_1_2M115 (x y : ℝ) (hx : 0≤x) (hy : 0≤y) :
+ vR1BoundsM115 (7+2*y+3*x) (4+y+2*x) (1+x) (3+y+x) (0) := by
+ unfold vR1BoundsM115
+ refine ⟨?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ⟩
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+
+theorem vR1chart_midlow_2_1M115 (x y : ℝ) (hx : 0≤x) (hy : 0≤y) :
+ vR1BoundsM115 (8+2*y+3*x) (3+y+x) (0) (1+y) (0) := by
+ unfold vR1BoundsM115
+ refine ⟨?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ⟩
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+
+theorem vR1chart_midhigh_2_1M115 (x y : ℝ) (hx : 0≤x) (hy : 0≤y) :
+ vR1BoundsM115 (8+2*y+3*x) (5+y+2*x) (2+x) (3+y+x) (0) := by
+ unfold vR1BoundsM115
+ refine ⟨?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ⟩
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+
+theorem vR1chart_midlow_3_0M115 (x y : ℝ) (hx : 0≤x) (hy : 0≤y) :
+ vR1BoundsM115 (9+2*y+3*x) (3+y+x) (0) (y) (0) := by
+ unfold vR1BoundsM115
+ refine ⟨?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ⟩
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+
+theorem vR1chart_midhigh_3_0M115 (x y : ℝ) (hx : 0≤x) (hy : 0≤y) :
+ vR1BoundsM115 (9+2*y+3*x) (6+y+2*x) (3+x) (3+y+x) (0) := by
+ unfold vR1BoundsM115
+ refine ⟨?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ⟩
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+
+theorem vR1chart_high_1_4M115 (x y : ℝ) (hx : 0≤x) (hy : 0≤y) :
+ vR1BoundsM115 (7+y+3*x) (6+y+2*x) (5+y+x) (1+x) (4+y) := by
+ unfold vR1BoundsM115
+ refine ⟨?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ⟩
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+
+theorem vR1chart_high_2_1M115 (x y : ℝ) (hx : 0≤x) (hy : 0≤y) :
+ vR1BoundsM115 (7+y+3*x) (5+y+2*x) (3+y+x) (2+x) (1+y) := by
+ unfold vR1BoundsM115
+ refine ⟨?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ⟩
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+
+theorem vR1chart_high_3_0M115 (x y : ℝ) (hx : 0≤x) (hy : 0≤y) :
+ vR1BoundsM115 (9+y+3*x) (6+y+2*x) (3+y+x) (3+x) (y) := by
+ unfold vR1BoundsM115
+ refine ⟨?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ,?_ ⟩
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+ · apply sub_nonneg.mp
+   simp only [vR1c1M115,vR1c2M115,vR1c3M115,vR1c4M115,vR1c5M115,vR1c6M115,vR1c7M115,vR1c8M115,vR1c9M115]
+   ring_nf <;> positivity
+end
+end MathGKM.Markov
