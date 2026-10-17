@@ -1,0 +1,3310 @@
+{
+  "worker": 167,
+  "request": "7a3441816890468e98c10c97d76927c6",
+  "created_at_utc": "2026-10-17T01:29:50.104557+00:00",
+  "historical_status": "Completed / return0 / delivered report,1570.6689448356628 seconds. Thirteen selected modules compiled, replayed and theorem-printed. Root remains open.",
+  "scope": "Closed167 archive and explicit named inherited/current counterparts only. Own operations are static parsing, hashes, literal syntax comparison and domain-index counts. No project/compiler/checker/replay/experiment/generator/finalizer execution, mathematical-value recomputation, source edits, proposer contact or research advice. Active168 and later excluded; prior seals/windows unchanged.",
+  "new_modules": [
+    {
+      "module": "MarkovPackedPolynomialM7A3",
+      "path": "research/MarkovPackedPolynomialM7A3.lean",
+      "bytes": 2257,
+      "sha256": "712bead61833b281eccdf39ba853dc47a683d3693fa2744616e2f3a5bd9300ed",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "digits_rangeM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "polynomial_digitsM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "coefficient_mass_boundM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "polynomial_packed_injectiveM7A3"
+        }
+      ],
+      "object_path": "evidence/markov-7a344181/MarkovPackedPolynomialM7A3.olean",
+      "object_sha256": "31ff78e165a08adaa14d66155113443516f89249a58d77d1aadde79f3d4930d1",
+      "selected": true,
+      "replayed_in167": true,
+      "printed_in167": true,
+      "status": "selected_replayed_printed",
+      "successful_build": "evidence/markov-7a344181/build-1792198562169235000.json",
+      "attempts": [
+        {
+          "path": "build-1792198519577487000.json",
+          "sha256": "9c889eaa84b47a1d12571053a7f4bbb206bb9a5ad95370a93d1dadc623f17574",
+          "source_sha256": "761ed760a447cd09ce4d95004a09363ccd740f8b3729f2a70c424fd2fc795491",
+          "matches_final_source": false,
+          "returncode": 1,
+          "timeout": false
+        },
+        {
+          "path": "build-1792198562169235000.json",
+          "sha256": "74d05d150a51687159cf006eef223e63a49be00eb99bddac09b39b108e242622",
+          "source_sha256": "712bead61833b281eccdf39ba853dc47a683d3693fa2744616e2f3a5bd9300ed",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "Mathlib",
+        "Mathlib.Data.Nat.Digits.Lemmas"
+      ],
+      "theorem_statements": [
+        {
+          "name": "digits_rangeM7A3",
+          "kind": "theorem",
+          "header": "theorem digits_rangeM7A3 (B n : ℕ) (f : ℕ → ℕ) :\n Nat.ofDigits B ((List.range n).map f) = ∑ i ∈ Finset.range n, f i * B^i",
+          "block_sha256": "e83cfeb3b417ecc645407a0c0ff098a0747f3945fac88857756f865f94be2ee5",
+          "block_characters": 300
+        },
+        {
+          "name": "polynomial_digitsM7A3",
+          "kind": "theorem",
+          "header": "theorem polynomial_digitsM7A3 (P : Polynomial ℕ) (B n : ℕ)\n (hn : P.natDegree < n) :\n Nat.ofDigits B ((List.range n).map P.coeff) = P.eval B",
+          "block_sha256": "c682655e7590ee40cb72639063bdddca7f1facfbf22e93dd9916ec36e1f73183",
+          "block_characters": 203
+        },
+        {
+          "name": "coefficient_mass_boundM7A3",
+          "kind": "theorem",
+          "header": "theorem coefficient_mass_boundM7A3 (P : Polynomial ℕ) (i : ℕ) :\n P.coeff i ≤ P.eval 1",
+          "block_sha256": "296bf42d5d1464a0aa3f0b0206cc93c9ef657860b21c507a5fcfd1b4e9101b2b",
+          "block_characters": 326
+        },
+        {
+          "name": "polynomial_packed_injectiveM7A3",
+          "kind": "theorem",
+          "header": "theorem polynomial_packed_injectiveM7A3 (B : ℕ) (hB : 1 < B)\n (P Q : Polynomial ℕ) (hP : P.eval 1 < B) (hQ : Q.eval 1 < B)\n (heq : P.eval B = Q.eval B) : P = Q",
+          "block_sha256": "e3049da356ddf01c9e3bc4b65c88545941951ca8af778757d6ba5b0246cf251d",
+          "block_characters": 1064
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovKroneckerM7A3",
+      "path": "research/MarkovKroneckerM7A3.lean",
+      "bytes": 2350,
+      "sha256": "604d1a64ff0742a37d390743ca233e02bdf8cfab30c06ea3716c168f80882a24",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "flattenM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "flatten_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "flatten_massM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "flatten_injectiveM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "multivariate_packed_injectiveM7A3"
+        }
+      ],
+      "object_path": "evidence/markov-7a344181/MarkovKroneckerM7A3.olean",
+      "object_sha256": "2c0be5e6f34920640f6fa0b18d8f4ac63aba2c0430f783dc31449959b2de90e8",
+      "selected": true,
+      "replayed_in167": true,
+      "printed_in167": true,
+      "status": "selected_replayed_printed",
+      "successful_build": "evidence/markov-7a344181/build-1792198651386236000.json",
+      "attempts": [
+        {
+          "path": "build-1792198598453764000.json",
+          "sha256": "2f7dc7e0f0285a9af1345e09eded36bd5b95693c1160a662a92b806723d44563",
+          "source_sha256": "843838c5b46bf668a14a63d8508b02048e8b72176dd73b833293a7a682b626c0",
+          "matches_final_source": false,
+          "returncode": 1,
+          "timeout": false
+        },
+        {
+          "path": "build-1792198651386236000.json",
+          "sha256": "95c23a0f5cfc877252981bea95cd9b8b44baaf32f99446f8186df42d7d7ad0a0",
+          "source_sha256": "604d1a64ff0742a37d390743ca233e02bdf8cfab30c06ea3716c168f80882a24",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovPackedPolynomialM7A3"
+      ],
+      "theorem_statements": [
+        {
+          "name": "flatten_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem flatten_evalM7A3 {σ : Type*} (encode : (σ →₀ ℕ) → ℕ)\n (P : MvPolynomial σ ℕ) (B : ℕ) :\n (flattenM7A3 encode P).eval B =\n   (AddMonoidAlgebra.coeff P).sum (fun e c => c * B^(encode e))",
+          "block_sha256": "427e8189844fd5035cd41a3ca7be1c63e37013438f5f25ef4d40714d7f5e5aa3",
+          "block_characters": 404
+        },
+        {
+          "name": "flatten_massM7A3",
+          "kind": "theorem",
+          "header": "theorem flatten_massM7A3 {σ : Type*} (encode : (σ →₀ ℕ) → ℕ)\n (P : MvPolynomial σ ℕ) :\n (flattenM7A3 encode P).eval 1 = MvPolynomial.eval (fun _ => 1) P",
+          "block_sha256": "31fbb94fafe3bf0fdee3bddd285299ae10db1737da787fdf300d6c78b0659428",
+          "block_characters": 227
+        },
+        {
+          "name": "flatten_injectiveM7A3",
+          "kind": "theorem",
+          "header": "theorem flatten_injectiveM7A3 {σ : Type*} (encode : (σ →₀ ℕ) → ℕ)\n (S : Set (σ →₀ ℕ)) (hS : Set.InjOn encode S)\n (P Q : MvPolynomial σ ℕ)\n (hP : (P.support : Set (σ →₀ ℕ)) ⊆ S)\n (hQ : (Q.support : Set (σ →₀ ℕ)) ⊆ S)\n (h : flattenM7A3 encode P = flattenM7A3 encode Q) : P=Q",
+          "block_sha256": "ee6ec368e45ee786fb036fa69d72bc0763734a38c2ef92605acb4ad3d62c3a3d",
+          "block_characters": 444
+        },
+        {
+          "name": "multivariate_packed_injectiveM7A3",
+          "kind": "theorem",
+          "header": "theorem multivariate_packed_injectiveM7A3 {σ : Type*}\n (encode : (σ →₀ ℕ) → ℕ) (S : Set (σ →₀ ℕ)) (hS : Set.InjOn encode S)\n (B : ℕ) (hB : 1 < B) (P Q : MvPolynomial σ ℕ)\n (hP : (P.support : Set (σ →₀ ℕ)) ⊆ S)\n (hQ : (Q.support : Set (σ →₀ ℕ)) ⊆ S)\n (hmP : MvPolynomial.eval (fun _ => 1) P < B)\n (hmQ : MvPolynomial.eval (fun _ => 1) Q < B)\n (h : (AddMonoidAlgebra.coeff P).sum (fun e c => c*B^(encode e)) =\n      (AddMonoidAlgebra.coeff Q).sum (fun e c => c*B^(encode e))) : P=Q",
+          "block_sha256": "49cbe19ad8bb11f17b37b6cede1f72b48c1ad5e4be32c3a7d2c98ba204560355",
+          "block_characters": 678
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "flattenM7A3",
+          "kind": "def",
+          "header": "def flattenM7A3 {σ : Type*} (encode : (σ →₀ ℕ) → ℕ)\n (P : MvPolynomial σ ℕ) : Polynomial ℕ",
+          "block_sha256": "17bd3b4dc8141354212cbd56904f8110ed33b5d73a0d2cf3a9bbe7a584a33f99",
+          "block_characters": 153
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovFourEncodingM7A3",
+      "path": "research/MarkovFourEncodingM7A3.lean",
+      "bytes": 2474,
+      "sha256": "04edd727125b828900fa86b8860f6d206c07b3062604293ef50e01c3e473f167",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "encodeFourM7A3"
+        },
+        {
+          "kind": "def",
+          "name": "boxFourM7A3"
+        },
+        {
+          "kind": "def",
+          "name": "weightFourM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "encode_four_injectiveM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "packed_four_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "packed_four_soundM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "packed_four_overflowM7A3"
+        }
+      ],
+      "object_path": "evidence/markov-7a344181/MarkovFourEncodingM7A3.olean",
+      "object_sha256": "2f487ef7cdd415e45336f2c5f15e434feeb5eabf82f9cc216e77d5edd491c837",
+      "selected": true,
+      "replayed_in167": true,
+      "printed_in167": true,
+      "status": "selected_replayed_printed",
+      "successful_build": "evidence/markov-7a344181/build-1792198746516345000.json",
+      "attempts": [
+        {
+          "path": "build-1792198704532127000.json",
+          "sha256": "11d004a65385029b2a5dfea4bdcdd59b224950cf08c59505e49777435f630d94",
+          "source_sha256": "3a3a5ea30423ce9219b68d88f0b86bfde2460e351b477843f5ae29eb53ba1dc0",
+          "matches_final_source": false,
+          "returncode": 1,
+          "timeout": false
+        },
+        {
+          "path": "build-1792198746516345000.json",
+          "sha256": "a09cff96ff157fee78e040ea1ebc45908bd07b6ad8e20bfe2a85e94e076bee54",
+          "source_sha256": "04edd727125b828900fa86b8860f6d206c07b3062604293ef50e01c3e473f167",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovKroneckerM7A3"
+      ],
+      "theorem_statements": [
+        {
+          "name": "encode_four_injectiveM7A3",
+          "kind": "theorem",
+          "header": "theorem encode_four_injectiveM7A3 : Set.InjOn encodeFourM7A3 boxFourM7A3",
+          "block_sha256": "1730b62d5ce4cce5682c2069615a64f16d062a54523f785e513d0d0140fe2ad3",
+          "block_characters": 341
+        },
+        {
+          "name": "packed_four_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem packed_four_evalM7A3 (P : MvPolynomial (Fin 4) ℕ) (B : ℕ) :\n MvPolynomial.eval (fun i => B^weightFourM7A3 i) P =\n (AddMonoidAlgebra.coeff P).sum (fun e c => c*B^(encodeFourM7A3 e))",
+          "block_sha256": "1222d8f56e196947b8dbbebd6a214269b35b2e5d1e025404f9f6b417d99c5ec6",
+          "block_characters": 642
+        },
+        {
+          "name": "packed_four_soundM7A3",
+          "kind": "theorem",
+          "header": "theorem packed_four_soundM7A3 (B : ℕ) (hB : 1<B)\n (P Q : MvPolynomial (Fin 4) ℕ)\n (hP : (P.support : Set (Fin 4 →₀ ℕ)) ⊆ boxFourM7A3)\n (hQ : (Q.support : Set (Fin 4 →₀ ℕ)) ⊆ boxFourM7A3)\n (hmP : MvPolynomial.eval (fun _ => 1) P < B)\n (hmQ : MvPolynomial.eval (fun _ => 1) Q < B)\n (hpack : MvPolynomial.eval (fun i => B^weightFourM7A3 i) P =\n          MvPolynomial.eval (fun i => B^weightFourM7A3 i) Q) : P=Q",
+          "block_sha256": "579b0b9b1cce727806509adb550508a9fafebf0bee111f1cfff2db7714f066c8",
+          "block_characters": 580
+        },
+        {
+          "name": "packed_four_overflowM7A3",
+          "kind": "theorem",
+          "header": "theorem packed_four_overflowM7A3 :\n encodeFourM7A3 (Finsupp.single 0 23) = encodeFourM7A3 (Finsupp.single 1 1) ∧\n (Finsupp.single 0 23 : Fin 4 →₀ ℕ) ≠ Finsupp.single 1 1",
+          "block_sha256": "d8ce87b7e7a81f88a7b0170d02085d9d2842ab8fef8bd31480729d27ddb1b683",
+          "block_characters": 375
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "encodeFourM7A3",
+          "kind": "def",
+          "header": "def encodeFourM7A3 (e : Fin 4 →₀ ℕ) : ℕ",
+          "block_sha256": "c20d58124cf378ff44310c21704067f5a890e65c202b6fbc45002fbf4adad436",
+          "block_characters": 77
+        },
+        {
+          "name": "boxFourM7A3",
+          "kind": "def",
+          "header": "def boxFourM7A3 : Set (Fin 4 →₀ ℕ)",
+          "block_sha256": "12d42fccaacd0ef4aad7519d3b89e9630b23a36356b2ff2dbc52e98f0ec5584a",
+          "block_characters": 75
+        },
+        {
+          "name": "weightFourM7A3",
+          "kind": "def",
+          "header": "def weightFourM7A3 : Fin 4 → ℕ",
+          "block_sha256": "fe2b75a7de5f88fa13b8fe04b4d822cd6324e3b439b2de5ec456f64bc8bdffdc",
+          "block_characters": 50
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovExpressionM7A3",
+      "path": "research/MarkovExpressionM7A3.lean",
+      "bytes": 4467,
+      "sha256": "e3f9d58ef86e469b75aaf3744de1b3ba0e9120e540c48876934f16aebce9cc95",
+      "declarations": [
+        {
+          "kind": "inductive",
+          "name": "NExprM7A3"
+        },
+        {
+          "kind": "def",
+          "name": "evalExprM7A3"
+        },
+        {
+          "kind": "def",
+          "name": "polyExprM7A3"
+        },
+        {
+          "kind": "def",
+          "name": "degreeExprM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "eval_poly_exprM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "degree_poly_exprM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "expr_boxM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "eval_expr_nonnegM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "expr_certificateM7A3"
+        }
+      ],
+      "object_path": "evidence/markov-7a344181/MarkovExpressionM7A3.olean",
+      "object_sha256": "611f9bd56989e872e1800e4d35eee874991bd2d3fb21cf69f85db16d84c3be1e",
+      "selected": true,
+      "replayed_in167": true,
+      "printed_in167": true,
+      "status": "selected_replayed_printed",
+      "successful_build": "evidence/markov-7a344181/build-1792198861217318000.json",
+      "attempts": [
+        {
+          "path": "build-1792198778633427000.json",
+          "sha256": "b4d67794f227f3de3b3a8c1755d0956e279b8dd22b3dbb6cef6bdccc5789a596",
+          "source_sha256": "4019e4d276696db1fa1927eef216329c721dd016f57956a8283593cc041761a7",
+          "matches_final_source": false,
+          "returncode": 1,
+          "timeout": false
+        },
+        {
+          "path": "build-1792198829564116000.json",
+          "sha256": "6fd1f57d32003ee68d14869c3a9849cf5d4da8bd646cfa66172577d84ff52b03",
+          "source_sha256": "a6a8e50567425c3c934c38c57c936c705e22b41496ca5f37a1ea1b249cf15ef3",
+          "matches_final_source": false,
+          "returncode": 1,
+          "timeout": false
+        },
+        {
+          "path": "build-1792198861217318000.json",
+          "sha256": "7cade9c16e5d8cb1ee9b89cdc99d6e010b1391ebddb41da1933046dbb9df8d4a",
+          "source_sha256": "e3f9d58ef86e469b75aaf3744de1b3ba0e9120e540c48876934f16aebce9cc95",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovFourEncodingM7A3"
+      ],
+      "theorem_statements": [
+        {
+          "name": "eval_poly_exprM7A3",
+          "kind": "theorem",
+          "header": "theorem eval_poly_exprM7A3 {R : Type*} [CommSemiring R]\n (v : Fin 4 → R) (e : NExprM7A3) :\n MvPolynomial.eval₂ (Nat.castRingHom R) v (polyExprM7A3 e) = evalExprM7A3 v e",
+          "block_sha256": "798af19d6ffe688c0e8257f974e673330c12c312c10493e585946a8d532e803c",
+          "block_characters": 522
+        },
+        {
+          "name": "degree_poly_exprM7A3",
+          "kind": "theorem",
+          "header": "theorem degree_poly_exprM7A3 (i : Fin 4) (e : NExprM7A3) :\n (polyExprM7A3 e).degreeOf i ≤ degreeExprM7A3 i e",
+          "block_sha256": "0b5f244ca061d8ee42a5bd11f91deeb75f7b4daa5c2f6c95061c27f7753a2d5e",
+          "block_characters": 793
+        },
+        {
+          "name": "expr_boxM7A3",
+          "kind": "theorem",
+          "header": "theorem expr_boxM7A3 (e : NExprM7A3)\n (h0 : degreeExprM7A3 0 e < 23) (h1 : degreeExprM7A3 1 e < 20)\n (h2 : degreeExprM7A3 2 e < 13) :\n ((polyExprM7A3 e).support : Set (Fin 4 →₀ ℕ)) ⊆ boxFourM7A3",
+          "block_sha256": "2df75ff34bffd9fd7a5ec9e378f2289ffda01a078f99e6487e6667a89c0b71b1",
+          "block_characters": 520
+        },
+        {
+          "name": "eval_expr_nonnegM7A3",
+          "kind": "theorem",
+          "header": "theorem eval_expr_nonnegM7A3 (v : Fin 4 → ℚ) (hv : ∀ i, 0 ≤ v i)\n (e : NExprM7A3) : 0 ≤ evalExprM7A3 v e",
+          "block_sha256": "a89ac57ff91f518439345fd6b083122851878acf3a2174bd54cf9a380983299c",
+          "block_characters": 308
+        },
+        {
+          "name": "expr_certificateM7A3",
+          "kind": "theorem",
+          "header": "theorem expr_certificateM7A3 (B : ℕ) (hB : 1<B) (a b : NExprM7A3)\n (ha0 : degreeExprM7A3 0 a < 23) (ha1 : degreeExprM7A3 1 a < 20)\n (ha2 : degreeExprM7A3 2 a < 13)\n (hb0 : degreeExprM7A3 0 b < 23) (hb1 : degreeExprM7A3 1 b < 20)\n (hb2 : degreeExprM7A3 2 b < 13)\n (hma : evalExprM7A3 (fun _ => (1:ℕ)) a < B)\n (hmb : evalExprM7A3 (fun _ => (1:ℕ)) b < B)\n (hpack : evalExprM7A3 (fun i => B^weightFourM7A3 i) a =\n          evalExprM7A3 (fun i => B^weightFourM7A3 i) b)\n (v : Fin 4 → ℚ) : evalExprM7A3 v a = evalExprM7A3 v b",
+          "block_sha256": "3d518705bfa4d481e89cddaeafb0708f735b715577f3ebbb3037810a3120140e",
+          "block_characters": 1118
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "NExprM7A3",
+          "kind": "inductive",
+          "header": "inductive NExprM7A3",
+          "block_sha256": "1fe9f10542b9b2243b611d7992025a39ac5c5d83632ca0c5edb62557f8d7b1d5",
+          "block_characters": 212
+        },
+        {
+          "name": "evalExprM7A3",
+          "kind": "def",
+          "header": "def evalExprM7A3 {R : Type*} [Semiring R] (v : Fin 4 → R) : NExprM7A3 → R\n | .c n => n\n | .x i => v i\n | .add a b => evalExprM7A3 v a + evalExprM7A3 v b\n | .mul a b => evalExprM7A3 v a * evalExprM7A3 v b\n | .pow a n => evalExprM7A3 v a ^ n",
+          "block_sha256": "54f924134d5b1af2eed9d0e05e7c4b55f6568bcb01c7da1c3833116e4975f042",
+          "block_characters": 239
+        },
+        {
+          "name": "polyExprM7A3",
+          "kind": "def",
+          "header": "noncomputable def polyExprM7A3 (e : NExprM7A3) : MvPolynomial (Fin 4) ℕ",
+          "block_sha256": "890eca9070a209183d301eebd982aa5d350dd7485b995821653524bc6a346afe",
+          "block_characters": 105
+        },
+        {
+          "name": "degreeExprM7A3",
+          "kind": "def",
+          "header": "def degreeExprM7A3 (i : Fin 4) : NExprM7A3 → ℕ\n | .c _ => 0\n | .x j => if i=j then 1 else 0\n | .add a b => max (degreeExprM7A3 i a) (degreeExprM7A3 i b)\n | .mul a b => degreeExprM7A3 i a + degreeExprM7A3 i b\n | .pow a n => degreeExprM7A3 i a * n",
+          "block_sha256": "cfa9c4f2e15926dc16f76b52c8f710e28a45610b61cc9c0f063472420801870b",
+          "block_characters": 245
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovExpressionFactorsM7A3",
+      "path": "research/MarkovExpressionFactorsM7A3.lean",
+      "bytes": 19807,
+      "sha256": "95648c5700ce2ae99a79962dc5ff8268b86120fa183e8b07e8f0115b38221fc3",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "ef0M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef1M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef2M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef3M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef4M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef5M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef6M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef7M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef8M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef9M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef10M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef11M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef12M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef13M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef14M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef15M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef16M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef17M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef18M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef19M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef20M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef21M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef22M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef23M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef24M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef25M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef26M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef27M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef28M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef29M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef30M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef31M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef32M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef33M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef34M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef35M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef36M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ef37M7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef0_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef1_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef2_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef3_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef4_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef5_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef6_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef7_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef8_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef9_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef10_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef11_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef12_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef13_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef14_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef15_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef16_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef17_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef18_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef19_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef20_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef21_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef22_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef23_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef24_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef25_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef26_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef27_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef28_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef29_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef30_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef31_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef32_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef33_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef34_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef35_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef36_evalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ef37_evalM7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ep0M7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ep0_evalM7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ep1M7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ep1_evalM7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ep2M7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ep2_evalM7A3"
+        },
+        {
+          "kind": "def",
+          "name": "ep3M7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "ep3_evalM7A3"
+        },
+        {
+          "kind": "def",
+          "name": "leftExprM7A3"
+        }
+      ],
+      "object_path": "evidence/markov-7a344181/MarkovExpressionFactorsM7A3.olean",
+      "object_sha256": "cc981aead28bb47e2afb2067b892418a88d359703ceeffcdf6fd5646a25cc8ed",
+      "selected": true,
+      "replayed_in167": true,
+      "printed_in167": true,
+      "status": "selected_replayed_printed",
+      "successful_build": "evidence/markov-7a344181/build-1792198896779659000.json",
+      "attempts": [
+        {
+          "path": "build-1792198896779659000.json",
+          "sha256": "5cfdf5be94cd9a5452e2b299555477612f084f97664755c619faeca5f925848d",
+          "source_sha256": "95648c5700ce2ae99a79962dc5ff8268b86120fa183e8b07e8f0115b38221fc3",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovExpressionM7A3",
+        "MarkovFactorBridgeMAD5"
+      ],
+      "theorem_statements": [
+        {
+          "name": "ef0_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef0_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef0M7A3 = pf0MAD5 T x g z",
+          "block_sha256": "9fa5e70b319279103455df2cd99c31c7bb8293b62d3ff18378d882a1989d5c26",
+          "block_characters": 150
+        },
+        {
+          "name": "ef1_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef1_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef1M7A3 = pf1MAD5 T x g z",
+          "block_sha256": "dc82d18c8188b3674f267c5503ef86215a72b1abc1f48d3e61ef0626f99cb20c",
+          "block_characters": 150
+        },
+        {
+          "name": "ef2_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef2_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef2M7A3 = pf2MAD5 T x g z",
+          "block_sha256": "d4070fd899153ee2d134243404cff2266539009593254c9e5ef7ac5f1e3339b3",
+          "block_characters": 150
+        },
+        {
+          "name": "ef3_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef3_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef3M7A3 = pf3MAD5 T x g z",
+          "block_sha256": "72d2370a9bdb5e4e76c61867d80240b4c4b449bff2d1ef505c992935c45f7e13",
+          "block_characters": 150
+        },
+        {
+          "name": "ef4_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef4_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef4M7A3 = pf4MAD5 T x g z",
+          "block_sha256": "3d27df83dfe16cba6f40b6377af8ba81208ae8a8ae5a013aec74dcde9372bc0a",
+          "block_characters": 150
+        },
+        {
+          "name": "ef5_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef5_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef5M7A3 = pf5MAD5 T x g z",
+          "block_sha256": "1d3dc9defd8423ad08ce3af18ad0c55e02cdfd22a07948f237ce9643c5f79467",
+          "block_characters": 150
+        },
+        {
+          "name": "ef6_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef6_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef6M7A3 = pf6MAD5 T x g z",
+          "block_sha256": "c597bd6ad3d77d60c9fb3bf43f0770cc1dcf0edcafaf99d385d208fe7a365770",
+          "block_characters": 150
+        },
+        {
+          "name": "ef7_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef7_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef7M7A3 = pf7MAD5 T x g z",
+          "block_sha256": "004844ab5b22839d52e99d79a63571b268e57a17ea258a60d7f9ad6b9b4c4cc1",
+          "block_characters": 150
+        },
+        {
+          "name": "ef8_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef8_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef8M7A3 = pf8MAD5 T x g z",
+          "block_sha256": "fd12fe7279e2ef70fa836a97f3540304d605c158fdeb004a429c0a290f4a56d3",
+          "block_characters": 150
+        },
+        {
+          "name": "ef9_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef9_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef9M7A3 = pf9MAD5 T x g z",
+          "block_sha256": "169d284e389a2ecd1ad300db00a0dc16579cbb6ddf2dffdcdbddfa7c4e25c87b",
+          "block_characters": 150
+        },
+        {
+          "name": "ef10_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef10_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef10M7A3 = pf10MAD5 T x g z",
+          "block_sha256": "1b65839823f271136723413c369c77dc30ab79cd46e9bab165bad80d460efd18",
+          "block_characters": 155
+        },
+        {
+          "name": "ef11_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef11_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef11M7A3 = pf11MAD5 T x g z",
+          "block_sha256": "d55bc6ff63f850bd85044697ef1258704553f34f0e3cd1b540c0637ce1a76053",
+          "block_characters": 155
+        },
+        {
+          "name": "ef12_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef12_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef12M7A3 = pf12MAD5 T x g z",
+          "block_sha256": "f5c3dab7a577ccd86e2a04d33c1e851f0c0aed7e5fca9917a1ce1ae08aa08b94",
+          "block_characters": 155
+        },
+        {
+          "name": "ef13_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef13_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef13M7A3 = pf13MAD5 T x g z",
+          "block_sha256": "5a9585c41cafef486a6a8f7a857b0ee4477d9beb4040dbb0a1d077e2f545af53",
+          "block_characters": 155
+        },
+        {
+          "name": "ef14_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef14_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef14M7A3 = pf14MAD5 T x g z",
+          "block_sha256": "332bc075e2c52214235f5f67b65a36ba8c7e6cf75a0cf64bc105974086cc3da0",
+          "block_characters": 155
+        },
+        {
+          "name": "ef15_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef15_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef15M7A3 = pf15MAD5 T x g z",
+          "block_sha256": "0eef78598c9150364237412fa2129c2d46d0ec5010d7e12a722f564ad433a8dc",
+          "block_characters": 155
+        },
+        {
+          "name": "ef16_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef16_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef16M7A3 = pf16MAD5 T x g z",
+          "block_sha256": "42560e3a414a496a0e94d032d2005e440562df45eb3f29d2be8dc9f41d150859",
+          "block_characters": 155
+        },
+        {
+          "name": "ef17_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef17_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef17M7A3 = pf17MAD5 T x g z",
+          "block_sha256": "a26836b0adc68ef543c2609645b285f4fcc245186588f9d697b6bb520c917791",
+          "block_characters": 155
+        },
+        {
+          "name": "ef18_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef18_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef18M7A3 = pf18MAD5 T x g z",
+          "block_sha256": "c78324272c673b2dc988a37e0ec6fed215afe8c976a6331df06accec3fe2ee9a",
+          "block_characters": 155
+        },
+        {
+          "name": "ef19_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef19_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef19M7A3 = pf19MAD5 T x g z",
+          "block_sha256": "c2198a39ca47ef50f333e51e103eaa9f4f5eaeb2b3b5178cae9681ceb1f1df85",
+          "block_characters": 155
+        },
+        {
+          "name": "ef20_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef20_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef20M7A3 = pf20MAD5 T x g z",
+          "block_sha256": "2b2be2cc680cba7af401ac4c168b5122a46a8b20be48c9b33e355ecf833cbc81",
+          "block_characters": 155
+        },
+        {
+          "name": "ef21_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef21_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef21M7A3 = pf21MAD5 T x g z",
+          "block_sha256": "f3c7e3bda612a354367e7df6c576e928a5b8cba7df1a230989787449f9b0fb77",
+          "block_characters": 155
+        },
+        {
+          "name": "ef22_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef22_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef22M7A3 = pf22MAD5 T x g z",
+          "block_sha256": "4000f0eb0efee8e960f07fb22b8152392c7e180452f598a038850a543f1beb1c",
+          "block_characters": 155
+        },
+        {
+          "name": "ef23_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef23_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef23M7A3 = pf23MAD5 T x g z",
+          "block_sha256": "bbe54d3c066187f8a13852941857af7f76ca81ce1d37b2657cf4e0848360936f",
+          "block_characters": 155
+        },
+        {
+          "name": "ef24_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef24_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef24M7A3 = pf24MAD5 T x g z",
+          "block_sha256": "042151679c2bc718a0c6d41efcf7ef065fc4c36d07dd3ac1ed40da6ba7d176ab",
+          "block_characters": 155
+        },
+        {
+          "name": "ef25_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef25_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef25M7A3 = pf25MAD5 T x g z",
+          "block_sha256": "cef91a0a4194b6593bae0cc32c84983b223d9fba6876de968ed8d226c3b9d059",
+          "block_characters": 155
+        },
+        {
+          "name": "ef26_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef26_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef26M7A3 = pf26MAD5 T x g z",
+          "block_sha256": "78086656ef61a5d1fa373659580b5987fa533fadd7cd53007a7ee1534a184f6c",
+          "block_characters": 155
+        },
+        {
+          "name": "ef27_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef27_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef27M7A3 = pf27MAD5 T x g z",
+          "block_sha256": "8612ede40a22f3d1f7503410e36767ecda6a102240cc1ef688c2f86b705f4097",
+          "block_characters": 155
+        },
+        {
+          "name": "ef28_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef28_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef28M7A3 = pf28MAD5 T x g z",
+          "block_sha256": "d024a070572afe4c17945579520a26872831cebef60be3cdeb27645f6d18dbe9",
+          "block_characters": 155
+        },
+        {
+          "name": "ef29_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef29_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef29M7A3 = pf29MAD5 T x g z",
+          "block_sha256": "dce4667e9720094855a3aea54e32de08bb5e9750d7a16f7f671215fb89ee9c2c",
+          "block_characters": 155
+        },
+        {
+          "name": "ef30_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef30_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef30M7A3 = pf30MAD5 T x g z",
+          "block_sha256": "5c61d31d0a33aa28d4a1ace7705bf3756f0213c8324a7919627268edf58153f7",
+          "block_characters": 155
+        },
+        {
+          "name": "ef31_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef31_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef31M7A3 = pf31MAD5 T x g z",
+          "block_sha256": "a0f8afee590587812374947563c2d933f9fd8058dbc325532231fe88de5a2b44",
+          "block_characters": 155
+        },
+        {
+          "name": "ef32_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef32_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef32M7A3 = pf32MAD5 T x g z",
+          "block_sha256": "dd21441d0c14c6289a082ec5f5f78ca8101e73ccd1fe6d27940b4a44b65e217e",
+          "block_characters": 155
+        },
+        {
+          "name": "ef33_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef33_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef33M7A3 = pf33MAD5 T x g z",
+          "block_sha256": "a7fdb4beb3c4c26074f039c6607b5f1a5c013fabf8be64ad8266187ff20c68cf",
+          "block_characters": 155
+        },
+        {
+          "name": "ef34_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef34_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef34M7A3 = pf34MAD5 T x g z",
+          "block_sha256": "85e61474ba2efd074a8d418e2fa0f445737d1bd649e9213b003312cc0e30cad4",
+          "block_characters": 155
+        },
+        {
+          "name": "ef35_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef35_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef35M7A3 = pf35MAD5 T x g z",
+          "block_sha256": "4c61697c01e170e40295c405050842060ffdaa4435aee0fcd2a0368b82cc8062",
+          "block_characters": 155
+        },
+        {
+          "name": "ef36_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef36_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef36M7A3 = pf36MAD5 T x g z",
+          "block_sha256": "e3543051bb3bf1f51bbd17c477c2f7f71c6df80562c21e9dd1b9d3a7a91bd3d3",
+          "block_characters": 155
+        },
+        {
+          "name": "ef37_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ef37_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ef37M7A3 = pf37MAD5 T x g z",
+          "block_sha256": "8270e9fd5988e4c86ded8f000edde7064a65e7a0dcd088257f5cb2fac23bc21f",
+          "block_characters": 155
+        },
+        {
+          "name": "ep0_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ep0_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ep0M7A3 = pf0MAD5 T x g z*pf2MAD5 T x g z*pf3MAD5 T x g z*pf16MAD5 T x g z*pf5MAD5 T x g z*pf17MAD5 T x g z*pf32MAD5 T x g z*pf34MAD5 T x g z*pf24MAD5 T x g z*pf25MAD5 T x g z*pf28MAD5 T x g z*pf29MAD5 T x g z*pf0MAD5 T x g z*pf2MAD5 T x g z*pf33MAD5 T x g z*pf30MAD5 T x g z*pf16MAD5 T x g z*pf26MAD5 T x g z*pf5MAD5 T x g z*pf36MAD5 T x g z*pf37MAD5 T x g z*pf31MAD5 T x g z",
+          "block_sha256": "747e33f94ede322e5c3a1e159e0e3d020bede71e7097a27865f02c039d6228b5",
+          "block_characters": 746
+        },
+        {
+          "name": "ep1_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ep1_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ep1M7A3 = pf4MAD5 T x g z*pf5MAD5 T x g z*pf7MAD5 T x g z*pf14MAD5 T x g z*pf2MAD5 T x g z*pf15MAD5 T x g z*pf18MAD5 T x g z*pf9MAD5 T x g z*pf11MAD5 T x g z*pf12MAD5 T x g z*pf28MAD5 T x g z*pf29MAD5 T x g z*pf22MAD5 T x g z*pf0MAD5 T x g z*pf2MAD5 T x g z*pf30MAD5 T x g z*pf16MAD5 T x g z*pf5MAD5 T x g z*pf36MAD5 T x g z*pf35MAD5 T x g z*pf37MAD5 T x g z*pf31MAD5 T x g z",
+          "block_sha256": "ec6bab112b2eadf90b5cd875d85d45fb8f469cc06d4280afabad812dc8c1aa50",
+          "block_characters": 771
+        },
+        {
+          "name": "ep2_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ep2_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ep2M7A3 = pf8MAD5 T x g z*pf9MAD5 T x g z*pf10MAD5 T x g z*pf20MAD5 T x g z*pf12MAD5 T x g z*pf21MAD5 T x g z*pf18MAD5 T x g z*pf9MAD5 T x g z*pf32MAD5 T x g z*pf34MAD5 T x g z*pf23MAD5 T x g z*pf24MAD5 T x g z*pf25MAD5 T x g z*pf11MAD5 T x g z*pf12MAD5 T x g z*pf27MAD5 T x g z*pf0MAD5 T x g z*pf2MAD5 T x g z*pf33MAD5 T x g z*pf16MAD5 T x g z*pf26MAD5 T x g z*pf5MAD5 T x g z",
+          "block_sha256": "d32b3c3f1a97346325d80f55e42a59eced48236ae431a9c62d11c5631cc6c075",
+          "block_characters": 774
+        },
+        {
+          "name": "ep3_evalM7A3",
+          "kind": "theorem",
+          "header": "theorem ep3_evalM7A3 (T x g z : ℚ) : evalExprM7A3 (fun i : Fin 4 => ![x,g,z,T] i) ep3M7A3 = pf11MAD5 T x g z*pf12MAD5 T x g z*pf13MAD5 T x g z*pf18MAD5 T x g z*pf9MAD5 T x g z*pf19MAD5 T x g z*pf18MAD5 T x g z*pf9MAD5 T x g z*pf32MAD5 T x g z*pf34MAD5 T x g z*pf23MAD5 T x g z*pf24MAD5 T x g z*pf25MAD5 T x g z*pf11MAD5 T x g z*pf12MAD5 T x g z*pf27MAD5 T x g z*pf28MAD5 T x g z*pf29MAD5 T x g z*pf22MAD5 T x g z*pf36MAD5 T x g z*pf35MAD5 T x g z*pf37MAD5 T x g z",
+          "block_sha256": "8fbeee68a3675def844f92aac0382e4f5a8e90feb24072bd1ba6a9927af17f86",
+          "block_characters": 754
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "ef0M7A3",
+          "kind": "def",
+          "header": "def ef0M7A3 : NExprM7A3",
+          "block_sha256": "3b907b137918369bdcc6aae04394564ca663e9dd95ab878056f3812f06ecdcc2",
+          "block_characters": 89
+        },
+        {
+          "name": "ef1M7A3",
+          "kind": "def",
+          "header": "def ef1M7A3 : NExprM7A3",
+          "block_sha256": "870cc6a804d100a10271f66d7c00a10b0e3b689448c177fe9abfd0b5a3ece591",
+          "block_characters": 117
+        },
+        {
+          "name": "ef2M7A3",
+          "kind": "def",
+          "header": "def ef2M7A3 : NExprM7A3",
+          "block_sha256": "613a46ec998bbfe51a6a29172b648280ef9afc72d0bf7f3021869203f400054e",
+          "block_characters": 117
+        },
+        {
+          "name": "ef3M7A3",
+          "kind": "def",
+          "header": "def ef3M7A3 : NExprM7A3",
+          "block_sha256": "9f83d0e24a8e6f441bf3a01be70af2e5f5dac1fde8698aff1ec09a52dc33d631",
+          "block_characters": 550
+        },
+        {
+          "name": "ef4M7A3",
+          "kind": "def",
+          "header": "def ef4M7A3 : NExprM7A3",
+          "block_sha256": "3e1b50c93f7ae560d2fa12759e57f1b44d8a167d3d671b6713f6dbf7f53eb158",
+          "block_characters": 47
+        },
+        {
+          "name": "ef5M7A3",
+          "kind": "def",
+          "header": "def ef5M7A3 : NExprM7A3",
+          "block_sha256": "9b48c0b6e843460fc652d3046dfa97a48b05bd9d53d6d929aa2b329c70eda0ed",
+          "block_characters": 89
+        },
+        {
+          "name": "ef6M7A3",
+          "kind": "def",
+          "header": "def ef6M7A3 : NExprM7A3",
+          "block_sha256": "c8f31c57fa419abe509f407ca2aa030fa40617a536d3a68ecc9addec31920190",
+          "block_characters": 89
+        },
+        {
+          "name": "ef7M7A3",
+          "kind": "def",
+          "header": "def ef7M7A3 : NExprM7A3",
+          "block_sha256": "1cbf494e3311344066652f88dba69800977a71b45bc30342e965748a95c61101",
+          "block_characters": 550
+        },
+        {
+          "name": "ef8M7A3",
+          "kind": "def",
+          "header": "def ef8M7A3 : NExprM7A3",
+          "block_sha256": "68f07ec4f71e318b045611c951fd2208277563b52570a6efcf30429150a9ed0b",
+          "block_characters": 89
+        },
+        {
+          "name": "ef9M7A3",
+          "kind": "def",
+          "header": "def ef9M7A3 : NExprM7A3",
+          "block_sha256": "8f1b4006d33af42d6fbb20680dba2f8d40562dcef04f29880c9d0e2447dd60af",
+          "block_characters": 117
+        },
+        {
+          "name": "ef10M7A3",
+          "kind": "def",
+          "header": "def ef10M7A3 : NExprM7A3",
+          "block_sha256": "4743779b8e27dc362a37fb64a2c189b7a0efb0feeb02276dcc2bcf920c89bb99",
+          "block_characters": 551
+        },
+        {
+          "name": "ef11M7A3",
+          "kind": "def",
+          "header": "def ef11M7A3 : NExprM7A3",
+          "block_sha256": "27fe6b88344be08ad913df509c7f2d25531057ef29f6054bdaedf2874d23abb7",
+          "block_characters": 62
+        },
+        {
+          "name": "ef12M7A3",
+          "kind": "def",
+          "header": "def ef12M7A3 : NExprM7A3",
+          "block_sha256": "96fc0070ee6efeccfef47d370666ae4683363fbb576a123745325bdab82c0a52",
+          "block_characters": 90
+        },
+        {
+          "name": "ef13M7A3",
+          "kind": "def",
+          "header": "def ef13M7A3 : NExprM7A3",
+          "block_sha256": "ea68f017c3afe28039c7cd9ba2c0f63625894a3e1c7ca70287b032f3b4a1a38e",
+          "block_characters": 551
+        },
+        {
+          "name": "ef14M7A3",
+          "kind": "def",
+          "header": "def ef14M7A3 : NExprM7A3",
+          "block_sha256": "920219bb74f1cd44ed7f229c0d03147d3e69ac31ae07e488496bbc53c763368b",
+          "block_characters": 48
+        },
+        {
+          "name": "ef15M7A3",
+          "kind": "def",
+          "header": "def ef15M7A3 : NExprM7A3",
+          "block_sha256": "59106475fc8a0eed2795e4a396b3472129cf053b3e7129d89382f8ac9c67e58c",
+          "block_characters": 551
+        },
+        {
+          "name": "ef16M7A3",
+          "kind": "def",
+          "header": "def ef16M7A3 : NExprM7A3",
+          "block_sha256": "34fc7f1f183429f3a7ea893407e74650c559bfd96502d28658bd89e08a90d9f2",
+          "block_characters": 90
+        },
+        {
+          "name": "ef17M7A3",
+          "kind": "def",
+          "header": "def ef17M7A3 : NExprM7A3",
+          "block_sha256": "26cb16033d3103769c1e05cfb2f1ba58d8d0478ff212cd69c6fd81cd61829c0d",
+          "block_characters": 551
+        },
+        {
+          "name": "ef18M7A3",
+          "kind": "def",
+          "header": "def ef18M7A3 : NExprM7A3",
+          "block_sha256": "01643b84159b5175bc648e994267dbdae070df1eb8fdf24a011c6ee1d78f0b78",
+          "block_characters": 62
+        },
+        {
+          "name": "ef19M7A3",
+          "kind": "def",
+          "header": "def ef19M7A3 : NExprM7A3",
+          "block_sha256": "80e4079767345c36caee739bb857812bb17c84f7e1d6208b3c193e21bbf437ac",
+          "block_characters": 551
+        },
+        {
+          "name": "ef20M7A3",
+          "kind": "def",
+          "header": "def ef20M7A3 : NExprM7A3",
+          "block_sha256": "682449a09a2ba694c27265bb1b1d266b9920c05a99a13944f16b454c060f0f37",
+          "block_characters": 90
+        },
+        {
+          "name": "ef21M7A3",
+          "kind": "def",
+          "header": "def ef21M7A3 : NExprM7A3",
+          "block_sha256": "f960307a312c06cbd7eb732a7855bddf6833ffdfc1b3893478ed35563ef8c737",
+          "block_characters": 551
+        },
+        {
+          "name": "ef22M7A3",
+          "kind": "def",
+          "header": "def ef22M7A3 : NExprM7A3",
+          "block_sha256": "e3f50c8c07655389ff60a9bb34366b02b86d4edd39c3e3dc42b0f48faedef86f",
+          "block_characters": 118
+        },
+        {
+          "name": "ef23M7A3",
+          "kind": "def",
+          "header": "def ef23M7A3 : NExprM7A3",
+          "block_sha256": "76b7dc259b6498b8b31ad36124f488d2b06efa8485386d9b86fc4c7ad4d515e3",
+          "block_characters": 551
+        },
+        {
+          "name": "ef24M7A3",
+          "kind": "def",
+          "header": "def ef24M7A3 : NExprM7A3",
+          "block_sha256": "322e48852ce8b629f8ebd2306e1ec8fafb4a18ac8326e14a9d0f3442bc06970e",
+          "block_characters": 90
+        },
+        {
+          "name": "ef25M7A3",
+          "kind": "def",
+          "header": "def ef25M7A3 : NExprM7A3",
+          "block_sha256": "fb27442516f6abda63393423bf07e30aa01c9ebdb806518a5649897a0ff0c9a9",
+          "block_characters": 90
+        },
+        {
+          "name": "ef26M7A3",
+          "kind": "def",
+          "header": "def ef26M7A3 : NExprM7A3",
+          "block_sha256": "4e6c5f6e776047721d3320e038036ed09329a69fa23573141abdcac6f20f811e",
+          "block_characters": 90
+        },
+        {
+          "name": "ef27M7A3",
+          "kind": "def",
+          "header": "def ef27M7A3 : NExprM7A3",
+          "block_sha256": "f4e7b51a5a9af2ec28324c4d357647441875bb3d4efac9bdf5f66a4db5421df2",
+          "block_characters": 551
+        },
+        {
+          "name": "ef28M7A3",
+          "kind": "def",
+          "header": "def ef28M7A3 : NExprM7A3",
+          "block_sha256": "43cd9396b00473f8848909db98a8ff40e5a5f42d770e1d7e783a31d35156ef95",
+          "block_characters": 62
+        },
+        {
+          "name": "ef29M7A3",
+          "kind": "def",
+          "header": "def ef29M7A3 : NExprM7A3",
+          "block_sha256": "3e3bbc4907390e8f757454d1e12bab5937c78a96d5e4f0697677e9395127bc7e",
+          "block_characters": 118
+        },
+        {
+          "name": "ef30M7A3",
+          "kind": "def",
+          "header": "def ef30M7A3 : NExprM7A3",
+          "block_sha256": "858eab645192c804b2ac1c5537ad5c01f5fabe6218be555932cb1a47ca8c60d4",
+          "block_characters": 551
+        },
+        {
+          "name": "ef31M7A3",
+          "kind": "def",
+          "header": "def ef31M7A3 : NExprM7A3",
+          "block_sha256": "87faeab35bf4ea22f0a014bd3f093613fb0dd9b0b3460f7d837f51ed0da3604d",
+          "block_characters": 551
+        },
+        {
+          "name": "ef32M7A3",
+          "kind": "def",
+          "header": "def ef32M7A3 : NExprM7A3",
+          "block_sha256": "96844c6940efbf96cfb09124617caa95a042a44b36b69e5c786d1463187c371d",
+          "block_characters": 90
+        },
+        {
+          "name": "ef33M7A3",
+          "kind": "def",
+          "header": "def ef33M7A3 : NExprM7A3",
+          "block_sha256": "9c0bbe68f7c16470112bd4ed5564b0d1656b52d2e0c1b6a696b091e731b7cc06",
+          "block_characters": 118
+        },
+        {
+          "name": "ef34M7A3",
+          "kind": "def",
+          "header": "def ef34M7A3 : NExprM7A3",
+          "block_sha256": "128a94e98fb1d3f7e93c3aef0a0e25666adc09fb7b1d2b7bf084f77067ca8345",
+          "block_characters": 119
+        },
+        {
+          "name": "ef35M7A3",
+          "kind": "def",
+          "header": "def ef35M7A3 : NExprM7A3",
+          "block_sha256": "4013c7fce94a5352227e859d93d2286316a3faf602de647193cd3bc9318c8828",
+          "block_characters": 90
+        },
+        {
+          "name": "ef36M7A3",
+          "kind": "def",
+          "header": "def ef36M7A3 : NExprM7A3",
+          "block_sha256": "075298afdaadc92ebeeb97d0e68e9b68d336150324e7103a49333089e60306b0",
+          "block_characters": 62
+        },
+        {
+          "name": "ef37M7A3",
+          "kind": "def",
+          "header": "def ef37M7A3 : NExprM7A3",
+          "block_sha256": "7375f319ebd7c0039cfbd58ed9146e0de7ac0b3c689b9991cd9e5b9c7a24b471",
+          "block_characters": 90
+        },
+        {
+          "name": "ep0M7A3",
+          "kind": "def",
+          "header": "def ep0M7A3 : NExprM7A3",
+          "block_sha256": "5b0945f79fcf243bc2b6d9c9c3302338dacec88d6e951b0a208dcf9c961c5c75",
+          "block_characters": 364
+        },
+        {
+          "name": "ep1M7A3",
+          "kind": "def",
+          "header": "def ep1M7A3 : NExprM7A3",
+          "block_sha256": "cd1df717f42c285fa538c079667c88fbd008dc7a681ad59a6507c48c6f7505fd",
+          "block_characters": 363
+        },
+        {
+          "name": "ep2M7A3",
+          "kind": "def",
+          "header": "def ep2M7A3 : NExprM7A3",
+          "block_sha256": "f38e668b62ddd3da31fdd10268cec8b30286375ca04f6b54573e87bcebb582d6",
+          "block_characters": 365
+        },
+        {
+          "name": "ep3M7A3",
+          "kind": "def",
+          "header": "def ep3M7A3 : NExprM7A3",
+          "block_sha256": "548990e1f8dfb843cae3ef8efaf02b8264fed3aeadf0bc02e4dc5f279b53ee74",
+          "block_characters": 369
+        },
+        {
+          "name": "leftExprM7A3",
+          "kind": "def",
+          "header": "def leftExprM7A3 : NExprM7A3",
+          "block_sha256": "40f3ca10571f4ba0f0370622bbc1bb2f8c44ddfb62505495bef021d37cd1c418",
+          "block_characters": 52
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovExpressionGapM7A3",
+      "path": "research/MarkovExpressionGapM7A3.lean",
+      "bytes": 830215,
+      "sha256": "b1a2d7ef13359b68bd8184248d272c23ad9f53f40697e8d850c6b459b0ff566b",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "eg0M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "eg1M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "eg2M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "eg3M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "eg4M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "eg5M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "eg6M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "eg7M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "eg8M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "eg9M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "eg10M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "eg11M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "eg12M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "eg13M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "eg14M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "eg15M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "eg16M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "eg17M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "eg18M7A3"
+        },
+        {
+          "kind": "def",
+          "name": "gapExprM7A3"
+        }
+      ],
+      "object_path": "evidence/markov-7a344181/MarkovExpressionGapM7A3.olean",
+      "object_sha256": "37e71e3e8c72fd5bc93319bc8c44ee4a0051e1636e0f737ae3f11a06de3d3ef6",
+      "selected": true,
+      "replayed_in167": true,
+      "printed_in167": true,
+      "status": "selected_replayed_printed",
+      "successful_build": "evidence/markov-7a344181/build-1792198896779671000.json",
+      "attempts": [
+        {
+          "path": "build-1792198896779671000.json",
+          "sha256": "44b7a0dd18ccb18d7e5999ad35595f59e27d2d39c4031abd9b9cf73c0af72b66",
+          "source_sha256": "b1a2d7ef13359b68bd8184248d272c23ad9f53f40697e8d850c6b459b0ff566b",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovExpressionM7A3"
+      ],
+      "theorem_statements": [],
+      "definition_bindings": [
+        {
+          "name": "eg0M7A3",
+          "kind": "def",
+          "header": "def eg0M7A3 : NExprM7A3",
+          "block_sha256": "fab5bd2f665d860e1b6b79d62f118fbd883092ad1e412e00999971158a0135c0",
+          "block_characters": 104773
+        },
+        {
+          "name": "eg1M7A3",
+          "kind": "def",
+          "header": "def eg1M7A3 : NExprM7A3",
+          "block_sha256": "123ba6667727b7897e34b00f9fffe67d35f493c1998385e80c4425c2afefd3f9",
+          "block_characters": 98225
+        },
+        {
+          "name": "eg2M7A3",
+          "kind": "def",
+          "header": "def eg2M7A3 : NExprM7A3",
+          "block_sha256": "d2e832052b79fdc7af05a0ed0ffd0c5cf78b8babf84fec1b8deaa1b8267091f5",
+          "block_characters": 90773
+        },
+        {
+          "name": "eg3M7A3",
+          "kind": "def",
+          "header": "def eg3M7A3 : NExprM7A3",
+          "block_sha256": "1af85f3dd86fde689ed58859b90277f750eb10953d48dacf4c20967d9f7b365f",
+          "block_characters": 82832
+        },
+        {
+          "name": "eg4M7A3",
+          "kind": "def",
+          "header": "def eg4M7A3 : NExprM7A3",
+          "block_sha256": "a4841b6648bcc4aa147058ddd57d82d6879d2d3986ea95b1a9306d30ef319341",
+          "block_characters": 74667
+        },
+        {
+          "name": "eg5M7A3",
+          "kind": "def",
+          "header": "def eg5M7A3 : NExprM7A3",
+          "block_sha256": "212ef4f0c1c982fb093dda19b7ec7be9e6f8f0ad085de825558be4fe8750d796",
+          "block_characters": 66382
+        },
+        {
+          "name": "eg6M7A3",
+          "kind": "def",
+          "header": "def eg6M7A3 : NExprM7A3",
+          "block_sha256": "15c22416414ee4331879614079422381ab3dc228b89c354dc95a2bc22104048e",
+          "block_characters": 58088
+        },
+        {
+          "name": "eg7M7A3",
+          "kind": "def",
+          "header": "def eg7M7A3 : NExprM7A3",
+          "block_sha256": "88873eeb14ce18c26149e4dec52da67f55a06e98d7b3cfb517e9ff5f4cdb0827",
+          "block_characters": 50273
+        },
+        {
+          "name": "eg8M7A3",
+          "kind": "def",
+          "header": "def eg8M7A3 : NExprM7A3",
+          "block_sha256": "403517a29e239a8e0305bb03e64a3eaf8b36bdc5f90e0a747d70a2f3a2e267d8",
+          "block_characters": 42973
+        },
+        {
+          "name": "eg9M7A3",
+          "kind": "def",
+          "header": "def eg9M7A3 : NExprM7A3",
+          "block_sha256": "7006084068878305296a7b1b6ac8a7024e9d03e7eac593d90228eed3b97db29d",
+          "block_characters": 36260
+        },
+        {
+          "name": "eg10M7A3",
+          "kind": "def",
+          "header": "def eg10M7A3 : NExprM7A3",
+          "block_sha256": "de708a7c962130ffb9f5fa12d588f69f1f1ee6bc4f35c748a2fd3469b99c102e",
+          "block_characters": 30185
+        },
+        {
+          "name": "eg11M7A3",
+          "kind": "def",
+          "header": "def eg11M7A3 : NExprM7A3",
+          "block_sha256": "58bfec38c012fbe3be80097a39b0e0e11c0e32f320ca762ec2e28ba00665f16e",
+          "block_characters": 24544
+        },
+        {
+          "name": "eg12M7A3",
+          "kind": "def",
+          "header": "def eg12M7A3 : NExprM7A3",
+          "block_sha256": "564840e01bd06373f7524f2f2c2ff60530175aca6f57e09edc9ac94e87f82ca2",
+          "block_characters": 19638
+        },
+        {
+          "name": "eg13M7A3",
+          "kind": "def",
+          "header": "def eg13M7A3 : NExprM7A3",
+          "block_sha256": "a1c7156744badcdf8e621066203a487df18b659981b8a767552f9889d63183a1",
+          "block_characters": 15421
+        },
+        {
+          "name": "eg14M7A3",
+          "kind": "def",
+          "header": "def eg14M7A3 : NExprM7A3",
+          "block_sha256": "61f5c49282ee230c8ca300343ab2d0a4215828b8df05f931b678165eb6bc960c",
+          "block_characters": 11840
+        },
+        {
+          "name": "eg15M7A3",
+          "kind": "def",
+          "header": "def eg15M7A3 : NExprM7A3",
+          "block_sha256": "b04ee270eddba945778256a717065c9c642da15baaca61ba37665a67a40c7bfb",
+          "block_characters": 8835
+        },
+        {
+          "name": "eg16M7A3",
+          "kind": "def",
+          "header": "def eg16M7A3 : NExprM7A3",
+          "block_sha256": "f7a06bd24d29936ca0d8af47bf9c30511d77d2997db7484cfa3057560d74e4cd",
+          "block_characters": 6382
+        },
+        {
+          "name": "eg17M7A3",
+          "kind": "def",
+          "header": "def eg17M7A3 : NExprM7A3",
+          "block_sha256": "ceed942df810726f12c35ad1661ead08af6da06a441f04c662f8ee93e9a8014c",
+          "block_characters": 4405
+        },
+        {
+          "name": "eg18M7A3",
+          "kind": "def",
+          "header": "def eg18M7A3 : NExprM7A3",
+          "block_sha256": "2ef18b8c9995cf1dfb00284a86fb95b6ac8555325e518388e91a210b29cfa39b",
+          "block_characters": 2863
+        },
+        {
+          "name": "gapExprM7A3",
+          "kind": "def",
+          "header": "def gapExprM7A3 : NExprM7A3",
+          "block_sha256": "b1f0536be9a08bf52752a07293c5b5c78ea1705c62829cf67a1ee3186c487302",
+          "block_characters": 569
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovExpressionBoundsM7A3",
+      "path": "research/MarkovExpressionBoundsM7A3.lean",
+      "bytes": 1110,
+      "sha256": "a0132b308ca75b6789c28c31f7c6add3891fb77fc8d802fde64c383d074cf00d",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "rightExprM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "leftExpr_degree0M7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "leftExpr_degree1M7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "leftExpr_degree2M7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "leftExpr_massM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "rightExpr_degree0M7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "rightExpr_degree1M7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "rightExpr_degree2M7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "rightExpr_massM7A3"
+        }
+      ],
+      "object_path": "evidence/markov-7a344181/MarkovExpressionBoundsM7A3.olean",
+      "object_sha256": "e5ecae0178d6d5de0855161d9f2bfecfbd129de6fd1b77303a25a52020acca72",
+      "selected": true,
+      "replayed_in167": true,
+      "printed_in167": true,
+      "status": "selected_replayed_printed",
+      "successful_build": "evidence/markov-7a344181/build-1792198991715553000.json",
+      "attempts": [
+        {
+          "path": "build-1792198991715553000.json",
+          "sha256": "f92ec0c8ec605b5eeaf3c12975788574cc7329eeb206db70c13dcfc6bc792e57",
+          "source_sha256": "a0132b308ca75b6789c28c31f7c6add3891fb77fc8d802fde64c383d074cf00d",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovExpressionFactorsM7A3",
+        "MarkovExpressionGapM7A3"
+      ],
+      "theorem_statements": [
+        {
+          "name": "leftExpr_degree0M7A3",
+          "kind": "theorem",
+          "header": "theorem leftExpr_degree0M7A3 : degreeExprM7A3 0 leftExprM7A3 < 23",
+          "block_sha256": "44f8a14064d8b541d7f6b09ac9e95b060e78629636dc33c2868cef8daf3c147d",
+          "block_characters": 86
+        },
+        {
+          "name": "leftExpr_degree1M7A3",
+          "kind": "theorem",
+          "header": "theorem leftExpr_degree1M7A3 : degreeExprM7A3 1 leftExprM7A3 < 20",
+          "block_sha256": "e9ae23a7aa5893a91f992a894d80f9e9d86ea525920ab95086ae1e15bccf760d",
+          "block_characters": 86
+        },
+        {
+          "name": "leftExpr_degree2M7A3",
+          "kind": "theorem",
+          "header": "theorem leftExpr_degree2M7A3 : degreeExprM7A3 2 leftExprM7A3 < 13",
+          "block_sha256": "4ff944139ef106656f1e54fa8d30c01092cb15d474d49089c744869a89ac768c",
+          "block_characters": 86
+        },
+        {
+          "name": "leftExpr_massM7A3",
+          "kind": "theorem",
+          "header": "theorem leftExpr_massM7A3 : evalExprM7A3 (fun _ => (1:ℕ)) leftExprM7A3 < 2^80",
+          "block_sha256": "849880b01015eb522df8d00d83cdfd0e2c98fc184d1e2f7136a3801062d8ea56",
+          "block_characters": 98
+        },
+        {
+          "name": "rightExpr_degree0M7A3",
+          "kind": "theorem",
+          "header": "theorem rightExpr_degree0M7A3 : degreeExprM7A3 0 rightExprM7A3 < 23",
+          "block_sha256": "356f24b269c4865cdc08f6d3936fd4fba8241a1f545198417455dbe6523fee02",
+          "block_characters": 88
+        },
+        {
+          "name": "rightExpr_degree1M7A3",
+          "kind": "theorem",
+          "header": "theorem rightExpr_degree1M7A3 : degreeExprM7A3 1 rightExprM7A3 < 20",
+          "block_sha256": "6ef85f9288ac9e0c9aba0fb9d2416d3e137fc6b4b42159b884a38ac25b67d8b5",
+          "block_characters": 88
+        },
+        {
+          "name": "rightExpr_degree2M7A3",
+          "kind": "theorem",
+          "header": "theorem rightExpr_degree2M7A3 : degreeExprM7A3 2 rightExprM7A3 < 13",
+          "block_sha256": "dad1996c3e661787dd49d0b59466696c2e86f1564075b9667536ba64103eeada",
+          "block_characters": 88
+        },
+        {
+          "name": "rightExpr_massM7A3",
+          "kind": "theorem",
+          "header": "theorem rightExpr_massM7A3 : evalExprM7A3 (fun _ => (1:ℕ)) rightExprM7A3 < 2^80",
+          "block_sha256": "d378c3e7c82a2c946290537f25109a0c304535084869bbe675d1a1f6ea55f24f",
+          "block_characters": 100
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "rightExprM7A3",
+          "kind": "def",
+          "header": "def rightExprM7A3 : NExprM7A3",
+          "block_sha256": "337a637e531880ba66b6610c47a2f09b30f0d1bea47046329fd2ff835c6951cd",
+          "block_characters": 72
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovExpressionPackedM7A3",
+      "path": "research/MarkovExpressionPackedM7A3.lean",
+      "bytes": 457,
+      "sha256": "9289026c638fd0797001b2c90ffcb6df558256f8129c6b51c11e113ee493d290",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "packed_identityM7A3"
+        }
+      ],
+      "object_path": "evidence/markov-7a344181/MarkovExpressionPackedM7A3.olean",
+      "object_sha256": "d384702903a7670dcde69c8ca799235271e99676a1467f8b971395d71486857a",
+      "selected": true,
+      "replayed_in167": true,
+      "printed_in167": true,
+      "status": "selected_replayed_printed",
+      "successful_build": "evidence/markov-7a344181/build-1792199065446627000.json",
+      "attempts": [
+        {
+          "path": "build-1792199065446627000.json",
+          "sha256": "3b0ea46086e3105b8af8c10fcfc5cf1d83046f350a063f67cc9312ec9c557e58",
+          "source_sha256": "9289026c638fd0797001b2c90ffcb6df558256f8129c6b51c11e113ee493d290",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovExpressionBoundsM7A3"
+      ],
+      "theorem_statements": [
+        {
+          "name": "packed_identityM7A3",
+          "kind": "theorem",
+          "header": "theorem packed_identityM7A3 : evalExprM7A3 (fun i => (2^80:ℕ)^weightFourM7A3 i) leftExprM7A3 = evalExprM7A3 (fun i => (2^80:ℕ)^weightFourM7A3 i) rightExprM7A3",
+          "block_sha256": "be4f0636f75ad953b717e7224ba95a9d78cad101b62ae2c1723cce85673b29cc",
+          "block_characters": 179
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovExpressionClosedM7A3",
+      "path": "research/MarkovExpressionClosedM7A3.lean",
+      "bytes": 1360,
+      "sha256": "aba1bb8fc75a3f223d3556cfe8b960fd7aab3c1fb56b19c51f7f0d38eb344d39",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "pair_reduced_nonnegM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "reduced_pair_positiveM7A3"
+        }
+      ],
+      "object_path": "evidence/markov-7a344181/MarkovExpressionClosedM7A3.olean",
+      "object_sha256": "6246fd7d480eb6b4ae4a980e9373eed5cc54cee35fc43404402a5c261f38e951",
+      "selected": true,
+      "replayed_in167": true,
+      "printed_in167": true,
+      "status": "selected_replayed_printed",
+      "successful_build": "evidence/markov-7a344181/build-1792199158933838000.json",
+      "attempts": [
+        {
+          "path": "build-1792199158933838000.json",
+          "sha256": "721b674d0a8727be1d5ee8ccdda33cacf616635b58671922df62bc5512926606",
+          "source_sha256": "aba1bb8fc75a3f223d3556cfe8b960fd7aab3c1fb56b19c51f7f0d38eb344d39",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovExpressionPackedM7A3"
+      ],
+      "theorem_statements": [
+        {
+          "name": "pair_reduced_nonnegM7A3",
+          "kind": "theorem",
+          "header": "theorem pair_reduced_nonnegM7A3 (T x g z : ℚ)\n (hT : 0 ≤ T) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 ≤ pairReducedMAD5 T x g z",
+          "block_sha256": "b334717f129c9b0418e29f2ae630c4cd3ca82e5ce1a8c02c18deade281b68ba7",
+          "block_characters": 832
+        },
+        {
+          "name": "reduced_pair_positiveM7A3",
+          "kind": "theorem",
+          "header": "theorem reduced_pair_positiveM7A3 : ReducedPairPositiveMAD5",
+          "block_sha256": "a1ffc5395e08e85f51b1f804f11f9e26e7bbe7b4e6d68ceca19dc8850f096140",
+          "block_characters": 190
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLowerClosedM7A3",
+      "path": "research/MarkovLowerClosedM7A3.lean",
+      "bytes": 2625,
+      "sha256": "a399718527f622626d7e91edaf25754fccf74d893dfe2a9d701aee7020b45f02",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "rational_pair_stepM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_middleM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_all_cutsM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_boundaryM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_output_lcM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_horizontalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_horizontalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_horizontal_pathsM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_horizontal_pathM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_outside_lowerM7A3"
+        }
+      ],
+      "object_path": "evidence/markov-7a344181/MarkovLowerClosedM7A3.olean",
+      "object_sha256": "cfbbc3359ca3cc7f5a47abb1c4aeefd3ce81001a2c271a932a6d9e7e320995ef",
+      "selected": true,
+      "replayed_in167": true,
+      "printed_in167": true,
+      "status": "selected_replayed_printed",
+      "successful_build": "evidence/markov-7a344181/build-1792199316015790000.json",
+      "attempts": [
+        {
+          "path": "build-1792199235891736000.json",
+          "sha256": "8f07985d98ce38225bc32a880fbd2ba5784d6e39b5ba15f5876785d4babdbafc",
+          "source_sha256": "5f13b33fa2dde59d43ee4d94d3b7434b25d17ebe474d2f20baead9ef62db3fcd",
+          "matches_final_source": false,
+          "returncode": 1,
+          "timeout": false
+        },
+        {
+          "path": "build-1792199316015790000.json",
+          "sha256": "208907262260813472a453b48943862220586ca91e2e56c4ca2594454f759f60",
+          "source_sha256": "a399718527f622626d7e91edaf25754fccf74d893dfe2a9d701aee7020b45f02",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovExpressionClosedM7A3"
+      ],
+      "theorem_statements": [
+        {
+          "name": "rational_pair_stepM7A3",
+          "kind": "theorem",
+          "header": "theorem rational_pair_stepM7A3 : RationalPairStepMAD5",
+          "block_sha256": "8e7481b7c4996de22bdb83b36525b707e310a3b938e754ffe3be18818827bf9d",
+          "block_characters": 159
+        },
+        {
+          "name": "lift_middleM7A3",
+          "kind": "theorem",
+          "header": "theorem lift_middleM7A3 : LiftMiddleMFEE",
+          "block_sha256": "13b68f80c8fd077b0973994fd8114291a10c371dca3c05e47e85bd6022af9875",
+          "block_characters": 166
+        },
+        {
+          "name": "lift_all_cutsM7A3",
+          "kind": "theorem",
+          "header": "theorem lift_all_cutsM7A3 : LiftLCPositiveM7E2",
+          "block_sha256": "0973b7696a08b30effd2204b371416fcc87d5e540f6a3c9f12b323cffe42d446",
+          "block_characters": 99
+        },
+        {
+          "name": "lift_boundaryM7A3",
+          "kind": "theorem",
+          "header": "theorem lift_boundaryM7A3 : LiftBoundaryM7E2",
+          "block_sha256": "d310fb54be32beaf0fe806ee14e9888bd7d730eb3dc829e5b4726e4f60b0f42b",
+          "block_characters": 100
+        },
+        {
+          "name": "lift_output_lcM7A3",
+          "kind": "theorem",
+          "header": "theorem lift_output_lcM7A3 (d j t : ℕ) :\n liftOutputMAE9 d j t*liftOutputMAE9 d j (t+2) ≤ liftOutputMAE9 d j (t+1)^2",
+          "block_sha256": "17d1ad88046334c0c070fbabea477bb9fd949d1450bb1a68a4807bd914cd1f69",
+          "block_characters": 175
+        },
+        {
+          "name": "lower_horizontalM7A3",
+          "kind": "theorem",
+          "header": "theorem lower_horizontalM7A3 : LowerHorizontalMFEE",
+          "block_sha256": "d7d7ae4eb8907db9262749f11d832b4744a7a355d7837cc985504553d0d8ae68",
+          "block_characters": 198
+        },
+        {
+          "name": "source_lower_horizontalM7A3",
+          "kind": "theorem",
+          "header": "theorem source_lower_horizontalM7A3 (q i j : ℕ) (r : Bool) (hj : j ≤ q) :\n threeRawM9E2 q r i j * threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2",
+          "block_sha256": "ec549d0ae332ebb738968f88cc0aacc6ff5fe969ec782f5ed9467bba1c2a4ebd",
+          "block_characters": 224
+        },
+        {
+          "name": "lower_horizontal_pathsM7A3",
+          "kind": "theorem",
+          "header": "theorem lower_horizontal_pathsM7A3 (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1 ≤ q ∧ (frame path).mid.b=sourceNME9C q r ∧\n ∀ i j, j ≤ q → coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n   coeff (frame path).mid.p (i+1) j^2",
+          "block_sha256": "e8bbcc0a7c5ce0eb924acc285b28b10d67eb94dffb7f26d74fd990c355d9d224",
+          "block_characters": 404
+        },
+        {
+          "name": "source_lower_horizontal_pathM7A3",
+          "kind": "theorem",
+          "header": "theorem source_lower_horizontal_pathM7A3 (path : List Bool)\n (ha : (frame path).mid.a=3) (i j : ℕ) (hj : 3*j ≤ (frame path).mid.b) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n   coeff (frame path).mid.p (i+1) j^2",
+          "block_sha256": "4a9d3d94308da1024ddccb5b038e88ebc41b1185ba44bfb8fb8caee9cc5b60af",
+          "block_characters": 513
+        },
+        {
+          "name": "root_iff_outside_lowerM7A3",
+          "kind": "theorem",
+          "header": "theorem root_iff_outside_lowerM7A3 :\n Conjecture63 ↔ ThreeOutsideLowerMFEE ∧ OtherFourM9E2",
+          "block_sha256": "8f13e15b158525c734c42127c23ffdb3d59d8b1d9a06e424275ddbdd1c582ec7",
+          "block_characters": 263
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLowerCrossM7A3",
+      "path": "research/MarkovLowerCrossM7A3.lean",
+      "bytes": 3474,
+      "sha256": "1593d0a87c2ac757e3d419e3b33e2b4c2c48f02eec52a444361ccb081a51266b",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "outputSeqM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "output_seq_zeroM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "output_seq_nonnegM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "output_seq_posM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "output_seq_adjacentM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "output_seq_intervalM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "output_seq_crossM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_row_seqM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_row_polynomial_crossM7A3"
+        }
+      ],
+      "object_path": "evidence/markov-7a344181/MarkovLowerCrossM7A3.olean",
+      "object_sha256": "c61ce6593a24f3b0929ae30a40e60e2b685cfbc5c1bb642a5d0d377374d98822",
+      "selected": true,
+      "replayed_in167": true,
+      "printed_in167": true,
+      "status": "selected_replayed_printed",
+      "successful_build": "evidence/markov-7a344181/build-1792199430098359000.json",
+      "attempts": [
+        {
+          "path": "build-1792199430098359000.json",
+          "sha256": "349d63b566a9984b940b931f5a1f0432fceb7f2b62cbfa65c86ca5ff849bdfc9",
+          "source_sha256": "1593d0a87c2ac757e3d419e3b33e2b4c2c48f02eec52a444361ccb081a51266b",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovLowerClosedM7A3",
+        "MarkovCross774"
+      ],
+      "theorem_statements": [
+        {
+          "name": "output_seq_zeroM7A3",
+          "kind": "theorem",
+          "header": "theorem output_seq_zeroM7A3 (d j : ℕ) (k : ℤ)\n (hk : k<0 ∨ (d+j:ℕ)<k) : outputSeqM7A3 d j k=0",
+          "block_sha256": "09808696f36449e7fa592d504f5bdededbcb08003c7e2db0e02243250d4835ba",
+          "block_characters": 268
+        },
+        {
+          "name": "output_seq_nonnegM7A3",
+          "kind": "theorem",
+          "header": "theorem output_seq_nonnegM7A3 (d j : ℕ) (k : ℤ) : 0 ≤ outputSeqM7A3 d j k",
+          "block_sha256": "a6d370e87830ecd1fd1c7880bfe179f6b9c237582dd927d9c4fb386dcf44640b",
+          "block_characters": 181
+        },
+        {
+          "name": "output_seq_posM7A3",
+          "kind": "theorem",
+          "header": "theorem output_seq_posM7A3 (d j : ℕ) (k : ℤ) (h0 : 0 ≤ k) (h1 : k ≤ (d+j:ℕ)) :\n 0 < outputSeqM7A3 d j k",
+          "block_sha256": "79dea81d882924b7c7b3a7c6142fb389231a7814e059f26404eee998e56a3bc6",
+          "block_characters": 225
+        },
+        {
+          "name": "output_seq_adjacentM7A3",
+          "kind": "theorem",
+          "header": "theorem output_seq_adjacentM7A3 (d j : ℕ) (k : ℤ) :\n outputSeqM7A3 d j (k-1)*outputSeqM7A3 d j (k+1) ≤ outputSeqM7A3 d j k^2",
+          "block_sha256": "96ddb1c5183432fef634c8872e128874b4f981441bc5ca26fa87a0503411a8ad",
+          "block_characters": 525
+        },
+        {
+          "name": "output_seq_intervalM7A3",
+          "kind": "theorem",
+          "header": "theorem output_seq_intervalM7A3 (d j : ℕ) : IntervalSupport774 (outputSeqM7A3 d j)",
+          "block_sha256": "61ccfa5104a3c71648501b25204c70cbf992f08d345ff8e218c8e3373b0fedd0",
+          "block_characters": 425
+        },
+        {
+          "name": "output_seq_crossM7A3",
+          "kind": "theorem",
+          "header": "theorem output_seq_crossM7A3 (d j : ℕ) : CrossLC (outputSeqM7A3 d j)",
+          "block_sha256": "42ab938ee933e35458e2ab43b63cb12c703004c2dce8768c529f59a9e5aebbf1",
+          "block_characters": 197
+        },
+        {
+          "name": "lower_row_seqM7A3",
+          "kind": "theorem",
+          "header": "theorem lower_row_seqM7A3 (d j : ℕ) (k : ℤ) :\n CoeffSeq ((lowerRowMFFD (2*j+1+d) j).map (Int.castRingHom ℝ)) k =\n outputSeqM7A3 d j (k-3)",
+          "block_sha256": "fa96b2764ff555f77af98625dc56b1263b28bf2cec0763dcd726c69419161f29",
+          "block_characters": 613
+        },
+        {
+          "name": "lower_row_polynomial_crossM7A3",
+          "kind": "theorem",
+          "header": "theorem lower_row_polynomial_crossM7A3 (n j : ℕ) (hn : 2*j+1 ≤ n) :\n CrossLC (CoeffSeq ((lowerRowMFFD n j).map (Int.castRingHom ℝ)))",
+          "block_sha256": "b752db0ce53c6a46215370f4c7dfecd3eb407ac82db7efab1ef529e6144d6572",
+          "block_characters": 468
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "outputSeqM7A3",
+          "kind": "def",
+          "header": "def outputSeqM7A3 (d j : ℕ) (k : ℤ) : ℝ",
+          "block_sha256": "ff506d8c7d0572c37ebf1b430a44968db3cb50a0f19c1281bbb88f35deb8faf2",
+          "block_characters": 95
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovAugmentedObstructionM7A3",
+      "path": "research/MarkovAugmentedObstructionM7A3.lean",
+      "bytes": 2550,
+      "sha256": "bb6b399aad7d47b14b79a20b68a84ca7a89f2e94af1f714780ec06ed0a8b2984",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "augmentedLiftM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "augmented_kernel_valuesM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "augmented_kernel_negativeM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "augmented_kernel_shape_falseM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_middle_valuesM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_middle_sourceM7A3"
+        }
+      ],
+      "object_path": "evidence/markov-7a344181/MarkovAugmentedObstructionM7A3.olean",
+      "object_sha256": "f3db858650f4985ea214afc3419a39ca7907a60239fadc0c6e3773c00b95f109",
+      "selected": true,
+      "replayed_in167": true,
+      "printed_in167": true,
+      "status": "selected_replayed_printed",
+      "successful_build": "evidence/markov-7a344181/build-1792199430092257000.json",
+      "attempts": [
+        {
+          "path": "build-1792199146145281000.json",
+          "sha256": "06d612b42d9825f8f7677c6891eef4631992fbca30bee96c1a1ce796e4145fbb",
+          "source_sha256": "75175ca5c7b77025b56e2dce0d8ea0435e86c832117d42ca2930839510741fbe",
+          "matches_final_source": false,
+          "returncode": 1,
+          "timeout": false
+        },
+        {
+          "path": "build-1792199255537103000.json",
+          "sha256": "c26ab3f020da57e699c90a7190816bc9ef393101d4f93f5241ec11b8ed1e1c11",
+          "source_sha256": "794acdf28d5915c1dc25b846199e0dce0125b7a70e11ca44721d571040836c47",
+          "matches_final_source": false,
+          "returncode": 1,
+          "timeout": false
+        },
+        {
+          "path": "build-1792199316015759000.json",
+          "sha256": "00ff2832673c2c0123af8fd61abe0d78628d401839bfe444bd99d9a30896fe59",
+          "source_sha256": "ee5f13532b6f518ed6fcbaee3899b820fc12f44d9d4adcb91a6f59349a9d8987",
+          "matches_final_source": false,
+          "returncode": 1,
+          "timeout": false
+        },
+        {
+          "path": "build-1792199430092257000.json",
+          "sha256": "a55240b41c3d864b04ecdccf013f62b6bc0a13cb101a6f3178f658b66fe5754d",
+          "source_sha256": "bb6b399aad7d47b14b79a20b68a84ca7a89f2e94af1f714780ec06ed0a8b2984",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovLiftPolynomialM7E2",
+        "MarkovCorrectionObstructionMC9F"
+      ],
+      "theorem_statements": [
+        {
+          "name": "augmented_kernel_valuesM7A3",
+          "kind": "theorem",
+          "header": "theorem augmented_kernel_valuesM7A3 :\n augmentedLiftM7A3 3 4 1=C 104+C 4*X ∧\n augmentedLiftM7A3 3 4 2=C 265+C 147*X+C 4*X^2 ∧\n augmentedLiftM7A3 3 4 3=C 252+C 384*X+C 200*X^2+C 4*X^3",
+          "block_sha256": "46c149f50b5efd7a5b72e080d81abc30d745725097a6b56bc4afe6ff862e7ac4",
+          "block_characters": 330
+        },
+        {
+          "name": "augmented_kernel_negativeM7A3",
+          "kind": "theorem",
+          "header": "theorem augmented_kernel_negativeM7A3 :\n ((augmentedLiftM7A3 3 4 2)^2-\n   augmentedLiftM7A3 3 4 1*augmentedLiftM7A3 3 4 3).coeff 3 = -40",
+          "block_sha256": "02584603cec5ca591349620d345616e950eb73ae21a0b1fe83cccbab19ed0e4b",
+          "block_characters": 465
+        },
+        {
+          "name": "augmented_kernel_shape_falseM7A3",
+          "kind": "theorem",
+          "header": "theorem augmented_kernel_shape_falseM7A3 :\n ¬(∀ j t k : ℕ, 3 ≤ j →\n   0 ≤ ((augmentedLiftM7A3 j 4 (t+1))^2-\n     augmentedLiftM7A3 j 4 t*augmentedLiftM7A3 j 4 (t+2)).coeff k)",
+          "block_sha256": "d99b8d1b874e7b171819dff1ff7fd2333588fe3bd9f6358c293b1edfa68c740c",
+          "block_characters": 278
+        },
+        {
+          "name": "correction_middle_valuesM7A3",
+          "kind": "theorem",
+          "header": "theorem correction_middle_valuesM7A3 :\n threeRawM9E2 2 false 3 3=108 ∧ threeRawM9E2 2 false 4 3=412 ∧\n threeRawM9E2 2 false 5 3=636",
+          "block_sha256": "db9f3d62f879ccd0140d3853c0aa1972f0e6998ac9e69a441c396603045998bb",
+          "block_characters": 174
+        },
+        {
+          "name": "correction_middle_sourceM7A3",
+          "kind": "theorem",
+          "header": "theorem correction_middle_sourceM7A3 :\n (frame [false,true,false]).mid.a=3 ∧ (frame [false,true,false]).mid.b=8 ∧\n InPolygon 3 8 3 3 ∧ InPolygon 3 8 4 3 ∧ InPolygon 3 8 5 3 ∧\n coeff (frame [false,true,false]).mid.p 3 3=108 ∧\n coeff (frame [false,true,false]).mid.p 4 3=412 ∧\n coeff (frame [false,true,false]).mid.p 5 3=636 ∧\n coeff (frame [false,true,false]).mid.p 4 3^2-\n   coeff (frame [false,true,false]).mid.p 3 3*\n   coeff (frame [false,true,false]).mid.p 5 3=101056",
+          "block_sha256": "8878d0dac7b058dfd0acf047db4e86bccc8bd80fff4eae732b6f5cc64e0e562c",
+          "block_characters": 744
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "augmentedLiftM7A3",
+          "kind": "def",
+          "header": "def augmentedLiftM7A3 (j : ℕ) (c : ℝ) : ℕ → Polynomial ℝ\n | 0 => C c\n | t+1 => liftPolyM7E2 j t + C c*X^(t+1)",
+          "block_sha256": "e782adc7a5ae3c0b07129ea6072a7a9790a9ea37f12fbb3045c3829024f53fd8",
+          "block_characters": 109
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovAugmentedSourceM7A3",
+      "path": "research/MarkovAugmentedSourceM7A3.lean",
+      "bytes": 2927,
+      "sha256": "4f73d3e90842ae22af6bafa6037eb6e88bd5331a0c5301a539ee2e7ee1636b1d",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "augmentedOutputM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_outputM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_output_lc_iffM7A3"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_output_witnessM7A3"
+        }
+      ],
+      "object_path": "evidence/markov-7a344181/MarkovAugmentedSourceM7A3.olean",
+      "object_sha256": "839fa00a6c36e8673c8f90ddf37f76db9c52ac0b93be1f78745f141a98ada1c0",
+      "selected": true,
+      "replayed_in167": true,
+      "printed_in167": true,
+      "status": "selected_replayed_printed",
+      "successful_build": "evidence/markov-7a344181/build-1792199668388393000.json",
+      "attempts": [
+        {
+          "path": "build-1792199579660122000.json",
+          "sha256": "1e3894bf5898488cd23b205e4faa3041eef09db6137e60bd6dbc99e9499690bc",
+          "source_sha256": "72947b40cd6fa46355a690a2bdf1e9fa41e00bc4890ece2164e6325ce71ee57c",
+          "matches_final_source": false,
+          "returncode": 1,
+          "timeout": false
+        },
+        {
+          "path": "build-1792199668388393000.json",
+          "sha256": "d2b5b371eec6c0933a0f752cc6a55bf7e51508bd4bf8e7848e5fc1a8dd4f19df",
+          "source_sha256": "4f73d3e90842ae22af6bafa6037eb6e88bd5331a0c5301a539ee2e7ee1636b1d",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovLowerClosedM7A3",
+        "MarkovCorrectionFactorMDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "source_correction_outputM7A3",
+          "kind": "theorem",
+          "header": "theorem source_correction_outputM7A3 (q t : ℕ) (r : Bool) (hq : 2 ≤ q) :\n threeRawM9E2 q r (t+2) (q+1) =\n augmentedOutputM7A3 (correctionExponentMDB2 q r) (q+1) (correctionConstantMDB2 r) t",
+          "block_sha256": "2a9108ec87a508a8679d4fc49f6a82bd358f960bff237e0a1bac9bde3af79f6a",
+          "block_characters": 1355
+        },
+        {
+          "name": "source_correction_output_lc_iffM7A3",
+          "kind": "theorem",
+          "header": "theorem source_correction_output_lc_iffM7A3 (q : ℕ) (r : Bool) (hq : 2 ≤ q) :\n (∀ t : ℕ, threeRawM9E2 q r (t+2) (q+1)*threeRawM9E2 q r (t+4) (q+1) ≤\n     threeRawM9E2 q r (t+3) (q+1)^2) ↔\n (∀ t : ℕ,\n   augmentedOutputM7A3 (correctionExponentMDB2 q r) (q+1) (correctionConstantMDB2 r) t *\n   augmentedOutputM7A3 (correctionExponentMDB2 q r) (q+1) (correctionConstantMDB2 r) (t+2) ≤\n   augmentedOutputM7A3 (correctionExponentMDB2 q r) (q+1) (correctionConstantMDB2 r) (t+1)^2)",
+          "block_sha256": "ad09c459fda259f52ef58a315f70d4d1eeb1a640b73511ffa1894ab5e48eb048",
+          "block_characters": 765
+        },
+        {
+          "name": "correction_output_witnessM7A3",
+          "kind": "theorem",
+          "header": "theorem correction_output_witnessM7A3 :\n augmentedOutputM7A3 1 3 4 1=108 ∧ augmentedOutputM7A3 1 3 4 2=412 ∧\n augmentedOutputM7A3 1 3 4 3=636",
+          "block_sha256": "7505d052221ba4ef3b97a636272433c20278700704137ff8779e3851d4144596",
+          "block_characters": 224
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "augmentedOutputM7A3",
+          "kind": "def",
+          "header": "def augmentedOutputM7A3 (d j : ℕ) (c : ℤ) : ℕ → ℤ\n | 0 => c\n | t+1 => liftOutputMAE9 d j t + c*(d.choose (t+1):ℤ)",
+          "block_sha256": "69928d0e419e775eb671e1aa58b97cf13763b1cf911973225d207c2898d55d0d",
+          "block_characters": 113
+        }
+      ],
+      "forbidden_tokens": []
+    }
+  ],
+  "excluded_modules": [
+    {
+      "module": "MarkovExpressionDataM7A3",
+      "path": "research/MarkovExpressionDataM7A3.lean",
+      "bytes": 1059,
+      "sha256": "a9c3d1aabc27f81a9b2a73ba0d5ad2bb84ef825dea7a9f3b03632745b3daa487",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "expressionDataM7A3"
+        }
+      ],
+      "object_path": "evidence/markov-7a344181/MarkovExpressionDataM7A3.olean",
+      "object_sha256": "bedec03cfa91f94dce4779e62ded8bd9386913c79a7ea3e0a66796477be4c64b",
+      "selected": false,
+      "replayed_in167": false,
+      "printed_in167": false,
+      "status": "compiled_only_excluded_helper",
+      "successful_build": "evidence/markov-7a344181/build-1792198984013302000.json",
+      "attempts": [
+        {
+          "path": "build-1792198984013302000.json",
+          "sha256": "da2e271aa043bee679540cb0fcb60d100ef2f18a1331309f4f24c7d01743c80f",
+          "source_sha256": "a9c3d1aabc27f81a9b2a73ba0d5ad2bb84ef825dea7a9f3b03632745b3daa487",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovExpressionM7A3",
+        "Lean"
+      ],
+      "theorem_statements": [],
+      "definition_bindings": [
+        {
+          "name": "expressionDataM7A3",
+          "kind": "def",
+          "header": "def expressionDataM7A3 : Nat → Json → Except String Expr\n | 0, j => return mkApp (mkConst ``NExprM7A3.c) (toExpr (← j.getNat?))\n | n+1, j => do\n   if n ≥ 4 then throw \"variable index exceeds four-variable certificate\"\n   let a ← j.getArr?\n   let x",
+          "block_sha256": "af5724b645acbef180f7ffc73cb4032aa83a4a4f29a6eed2868268b69362f7c5",
+          "block_characters": 786
+        }
+      ],
+      "forbidden_tokens": []
+    }
+  ],
+  "accepted_counts": {
+    "theorem": 96,
+    "def": 74,
+    "inductive": 1
+  },
+  "excluded_counts": {
+    "def": 1
+  },
+  "packed_scope": "For natural polynomials, base>1, both masses at1<base, and equality at base imply polynomial equality. Common max-degree+1 list padding keeps zeros, including zero polynomial. No nonzero-polynomial hypothesis.",
+  "flatten_scope": "Generic arbitrary encoding requires injectivity on a common set containing both supports. Flattening sums collisions; evaluation/mass lemmas use additive mapDomain. Four weights[1,23,460,5980], bounds e0<23,e1<20,e2<13, no e3 bound. Explicit overflow obstruction outside box.",
+  "expression_scope": "Positive expression language constants/natural powers/add/mul; rational interpretation and compositional degree bound proved. Degree and both mass checks and packed equality are explicit accepted decide+kernel theorems. Semantic equality for arbitrary rational valuations; nonnegativity only for nonnegative valuations.",
+  "literal_syntax_audit": {
+    "factors": [
+      {
+        "name": "ef0M7A3",
+        "syntax_counts": {
+          ".add": 2,
+          ".c": 3,
+          ".mul": 2,
+          ".x": 2
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "10e8768a1d5466b9d33da30080e00bd0a1d22b5fb193dab6aad7ec8bedd32850"
+      },
+      {
+        "name": "ef1M7A3",
+        "syntax_counts": {
+          ".add": 3,
+          ".c": 4,
+          ".mul": 3,
+          ".x": 3
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "e6f9fb958a42ffdaad8bbc1dfef7ae6acaab6d2928b90b4e6ea79b491a61b37f"
+      },
+      {
+        "name": "ef2M7A3",
+        "syntax_counts": {
+          ".add": 3,
+          ".c": 4,
+          ".mul": 3,
+          ".x": 3
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "e38fb9688f94f62ae16e35360b0e7ba07743d31656b5b32e1d29a7e2d0b8e54b"
+      },
+      {
+        "name": "ef3M7A3",
+        "syntax_counts": {
+          ".add": 14,
+          ".c": 15,
+          ".mul": 20,
+          ".x": 20,
+          ".pow": 4
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "1d5a67123427c7a8c2a656e08e8c35696d03994abbdcbfb5b095aa5664e0d0b6"
+      },
+      {
+        "name": "ef4M7A3",
+        "syntax_counts": {
+          ".mul": 1,
+          ".c": 1,
+          ".x": 1
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "4ba0c0f65f0fe3ba0149f20af9edcc700aa6cf563f16e77e50508286137f0f1a"
+      },
+      {
+        "name": "ef5M7A3",
+        "syntax_counts": {
+          ".add": 2,
+          ".c": 3,
+          ".mul": 2,
+          ".x": 2
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "ccde3c34342ec927c730f683ce0b34aae5617d9f797954760536f0e96b6d5af0"
+      },
+      {
+        "name": "ef6M7A3",
+        "syntax_counts": {
+          ".add": 2,
+          ".c": 3,
+          ".mul": 2,
+          ".x": 2
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "c1353f2fc340c0da4a934cd6bcf5d7dbfbaa3c3b739313be637c8d0b70863f5e"
+      },
+      {
+        "name": "ef7M7A3",
+        "syntax_counts": {
+          ".add": 14,
+          ".c": 15,
+          ".mul": 20,
+          ".x": 20,
+          ".pow": 4
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "fe5570f4844e64681d8e8dc6b7e31481d32059a4233c579c265e354165fcac13"
+      },
+      {
+        "name": "ef8M7A3",
+        "syntax_counts": {
+          ".add": 2,
+          ".c": 3,
+          ".mul": 2,
+          ".x": 2
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "bd48899c82687691b20c8ca872bfb6c67c679d4fa0b586134c02072dcda09098"
+      },
+      {
+        "name": "ef9M7A3",
+        "syntax_counts": {
+          ".add": 3,
+          ".c": 4,
+          ".mul": 3,
+          ".x": 3
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "090bf760fde350ed343206fbb8a6615312862d92cccd74df9571275d50179e23"
+      },
+      {
+        "name": "ef10M7A3",
+        "syntax_counts": {
+          ".add": 14,
+          ".c": 15,
+          ".mul": 20,
+          ".x": 20,
+          ".pow": 4
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "d82d44b6f92c5df62165def701d7aac47036b6ab810f5cce0b58ad3b308edb0a"
+      },
+      {
+        "name": "ef11M7A3",
+        "syntax_counts": {
+          ".add": 1,
+          ".c": 2,
+          ".mul": 1,
+          ".x": 1
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "7becb9b3c3747287f0c31f4d601e59d9a0778ae024615dea48bf7da04e32bd72"
+      },
+      {
+        "name": "ef12M7A3",
+        "syntax_counts": {
+          ".add": 2,
+          ".c": 3,
+          ".mul": 2,
+          ".x": 2
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "858d385408ecb437777905e11b952b71f4e10497a3603a663a2aa2b0b659a19c"
+      },
+      {
+        "name": "ef13M7A3",
+        "syntax_counts": {
+          ".add": 14,
+          ".c": 15,
+          ".mul": 20,
+          ".x": 20,
+          ".pow": 4
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "f42dabdbc1ce19ec25feef6a78ced95aa13a2814c28dc8279bb0b7b8ab1daa82"
+      },
+      {
+        "name": "ef14M7A3",
+        "syntax_counts": {
+          ".mul": 1,
+          ".c": 1,
+          ".x": 1
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "2e5e9bc5c4e5b280aeb43a408916b81b2bbb6d0fdd8e50ad3c1f5da476d62123"
+      },
+      {
+        "name": "ef15M7A3",
+        "syntax_counts": {
+          ".add": 14,
+          ".c": 15,
+          ".mul": 20,
+          ".x": 20,
+          ".pow": 4
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "c8c04a701c5f8f5166066e705ceb72083be4afdcf3ec73e6a213c4cef6f06737"
+      },
+      {
+        "name": "ef16M7A3",
+        "syntax_counts": {
+          ".add": 2,
+          ".c": 3,
+          ".mul": 2,
+          ".x": 2
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "117bc1158a6ac556dd73691038df8b46d0f88f95a26c8a3908b24db6ffa80512"
+      },
+      {
+        "name": "ef17M7A3",
+        "syntax_counts": {
+          ".add": 14,
+          ".c": 15,
+          ".mul": 20,
+          ".x": 20,
+          ".pow": 4
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "02f101cf3eecdcf9962b39d40972b00f135737f5c1022ebc6672f05735bdbc4b"
+      },
+      {
+        "name": "ef18M7A3",
+        "syntax_counts": {
+          ".add": 1,
+          ".c": 2,
+          ".mul": 1,
+          ".x": 1
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "559e518072bb19167c9d875b2766aa0dd88f1489729d1f2ae6202e30cda772e1"
+      },
+      {
+        "name": "ef19M7A3",
+        "syntax_counts": {
+          ".add": 14,
+          ".c": 15,
+          ".mul": 20,
+          ".x": 20,
+          ".pow": 4
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "1e8d62aee9eced16c8bd029a4f36b6c9d32d21f72ad9cf5121f75b586d06535d"
+      },
+      {
+        "name": "ef20M7A3",
+        "syntax_counts": {
+          ".add": 2,
+          ".c": 3,
+          ".mul": 2,
+          ".x": 2
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "9b0991b57879c64951e2bf3d374eb3589378135e524fdbc12b9f7307def46f62"
+      },
+      {
+        "name": "ef21M7A3",
+        "syntax_counts": {
+          ".add": 14,
+          ".c": 15,
+          ".mul": 20,
+          ".x": 20,
+          ".pow": 4
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "277f5657fafd4edcc090f3d69e9b0fd53b55fb50bf5e25f97dd42cde97544956"
+      },
+      {
+        "name": "ef22M7A3",
+        "syntax_counts": {
+          ".add": 3,
+          ".c": 4,
+          ".mul": 3,
+          ".x": 3
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "0757726f338b21dcf5f8a258661067111c32f2700798bebd43891e386029e6e0"
+      },
+      {
+        "name": "ef23M7A3",
+        "syntax_counts": {
+          ".add": 14,
+          ".c": 15,
+          ".mul": 20,
+          ".x": 20,
+          ".pow": 4
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "d4609ed5c8631e0435bdbed5170d192151657d5f188f5686517027f762c633b9"
+      },
+      {
+        "name": "ef24M7A3",
+        "syntax_counts": {
+          ".add": 2,
+          ".c": 3,
+          ".mul": 2,
+          ".x": 2
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "e7c752e4dab262805bdb5847be93d90f086275c4b64e6bc423e65015b9c0412d"
+      },
+      {
+        "name": "ef25M7A3",
+        "syntax_counts": {
+          ".add": 2,
+          ".c": 3,
+          ".mul": 2,
+          ".x": 2
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "b822a452bf711224149458139cf15c8b478eb102315feb6d926355d5796363e7"
+      },
+      {
+        "name": "ef26M7A3",
+        "syntax_counts": {
+          ".add": 2,
+          ".c": 3,
+          ".mul": 2,
+          ".x": 2
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "194966a0fbfbced89b8a58f168ee904e6e1613a837b7d17df52d7f9ded49d541"
+      },
+      {
+        "name": "ef27M7A3",
+        "syntax_counts": {
+          ".add": 14,
+          ".c": 15,
+          ".mul": 20,
+          ".x": 20,
+          ".pow": 4
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "1f2a148620b1a5118bcf4fc2a9c2213834fa319911f9d14de012c336d9496ea3"
+      },
+      {
+        "name": "ef28M7A3",
+        "syntax_counts": {
+          ".add": 1,
+          ".c": 2,
+          ".mul": 1,
+          ".x": 1
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "f2aaf0d571e03c53cc31ee529accf4212348f844771d0e23de63320ac5a88508"
+      },
+      {
+        "name": "ef29M7A3",
+        "syntax_counts": {
+          ".add": 3,
+          ".c": 4,
+          ".mul": 3,
+          ".x": 3
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "01cd93a60706b4425d65555d3343088ebfaa36743379775456ca88202bb50a37"
+      },
+      {
+        "name": "ef30M7A3",
+        "syntax_counts": {
+          ".add": 14,
+          ".c": 15,
+          ".mul": 20,
+          ".x": 20,
+          ".pow": 4
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "c74ad67239d13fcb43e1b9fd57040a3ecc799723742f280a40d349f6304f7d62"
+      },
+      {
+        "name": "ef31M7A3",
+        "syntax_counts": {
+          ".add": 14,
+          ".c": 15,
+          ".mul": 20,
+          ".x": 20,
+          ".pow": 4
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "f85e4b7dd50b3196fe33c09e85ec8ca7b9f1480e1a25e9f99eeee47348bff6da"
+      },
+      {
+        "name": "ef32M7A3",
+        "syntax_counts": {
+          ".add": 2,
+          ".c": 3,
+          ".mul": 2,
+          ".x": 2
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "9bcd1918ccdefc5f34f9f6351cb96366906a55cdbc1181a2c968cd18a0b5708d"
+      },
+      {
+        "name": "ef33M7A3",
+        "syntax_counts": {
+          ".add": 3,
+          ".c": 4,
+          ".mul": 3,
+          ".x": 3
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "a0d6aeca8aa64b6228c829f83d0a568ab9543a3894eadf0aee2fe333fa655c1e"
+      },
+      {
+        "name": "ef34M7A3",
+        "syntax_counts": {
+          ".add": 3,
+          ".c": 4,
+          ".mul": 3,
+          ".x": 3
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "0116f17c4be06480e484b29c48d4a8a800189bdcd123d0937fc2479b818b3d50"
+      },
+      {
+        "name": "ef35M7A3",
+        "syntax_counts": {
+          ".add": 2,
+          ".c": 3,
+          ".mul": 2,
+          ".x": 2
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "5b0744233421d2dad7f4d7f4d2877c1aba4c8d54035409115aade2d7a45169e5"
+      },
+      {
+        "name": "ef36M7A3",
+        "syntax_counts": {
+          ".add": 1,
+          ".c": 2,
+          ".mul": 1,
+          ".x": 1
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "961e72ab7c1ae9a2e5542246cf843511f9cb1ac716f88d4355321a9ba8415c25"
+      },
+      {
+        "name": "ef37M7A3",
+        "syntax_counts": {
+          ".add": 2,
+          ".c": 3,
+          ".mul": 2,
+          ".x": 2
+        },
+        "matches_inherited_factor_syntax": true,
+        "body_sha256": "f5705851968f8f53b363e585382381b5a0b464e3a1480db6771c00ceffde50c2"
+      }
+    ],
+    "products": [
+      {
+        "name": "ep0M7A3",
+        "factor_indices": [
+          0,
+          2,
+          3,
+          16,
+          5,
+          17,
+          32,
+          34,
+          24,
+          25,
+          28,
+          29,
+          0,
+          2,
+          33,
+          30,
+          16,
+          26,
+          5,
+          36,
+          37,
+          31
+        ],
+        "syntax_counts": {
+          ".mul": 21,
+          "reference": 22
+        },
+        "body_sha256": "26f627acc76620a457265e507769d9cae4e3b28e4c87a0627b39aabb3875456e"
+      },
+      {
+        "name": "ep1M7A3",
+        "factor_indices": [
+          4,
+          5,
+          7,
+          14,
+          2,
+          15,
+          18,
+          9,
+          11,
+          12,
+          28,
+          29,
+          22,
+          0,
+          2,
+          30,
+          16,
+          5,
+          36,
+          35,
+          37,
+          31
+        ],
+        "syntax_counts": {
+          ".mul": 21,
+          "reference": 22
+        },
+        "body_sha256": "29e22e4b3fb8d3039bf256e75415271758c4beb3fa01e95d42d0cbce0e9d65e4"
+      },
+      {
+        "name": "ep2M7A3",
+        "factor_indices": [
+          8,
+          9,
+          10,
+          20,
+          12,
+          21,
+          18,
+          9,
+          32,
+          34,
+          23,
+          24,
+          25,
+          11,
+          12,
+          27,
+          0,
+          2,
+          33,
+          16,
+          26,
+          5
+        ],
+        "syntax_counts": {
+          ".mul": 21,
+          "reference": 22
+        },
+        "body_sha256": "c740ac5b10829425bd48b450ef5906d18b1eaf2c2799f0476f8009746afc66ff"
+      },
+      {
+        "name": "ep3M7A3",
+        "factor_indices": [
+          11,
+          12,
+          13,
+          18,
+          9,
+          19,
+          18,
+          9,
+          32,
+          34,
+          23,
+          24,
+          25,
+          11,
+          12,
+          27,
+          28,
+          29,
+          22,
+          36,
+          35,
+          37
+        ],
+        "syntax_counts": {
+          ".mul": 21,
+          "reference": 22
+        },
+        "body_sha256": "c65a2c18e4f43dfa86bd361362655ff3e443e1f4f5257d7f238c06f11e0bcef2"
+      }
+    ],
+    "gap_definitions": [
+      {
+        "name": "eg0M7A3",
+        "body_sha256": "6f2cbdc4db8e809c82af54bbe4a3e25b79c1e7e8071b9809ddefb428b3a6fdc4",
+        "body_characters": 104746,
+        "syntax_counts": {
+          ".add": 2599,
+          ".c": 2600,
+          ".mul": 2599,
+          ".x": 2599
+        },
+        "references": [],
+        "represented_values_evaluated": false
+      },
+      {
+        "name": "eg1M7A3",
+        "body_sha256": "01e74909c9d45edbe99425f7f2857df7c3045b19a540760a375be4ab662b64b8",
+        "body_characters": 98198,
+        "syntax_counts": {
+          ".add": 2405,
+          ".c": 2406,
+          ".mul": 2405,
+          ".x": 2405
+        },
+        "references": [],
+        "represented_values_evaluated": false
+      },
+      {
+        "name": "eg2M7A3",
+        "body_sha256": "6feba6bc833ceaae4ff5b060b90e0d1b9d9a7e5b4e670f5e4b50d7f3d84bded8",
+        "body_characters": 90746,
+        "syntax_counts": {
+          ".add": 2211,
+          ".c": 2212,
+          ".mul": 2211,
+          ".x": 2211
+        },
+        "references": [],
+        "represented_values_evaluated": false
+      },
+      {
+        "name": "eg3M7A3",
+        "body_sha256": "f097a82974bdd908ed5041e8904797fb8d1971c7ab0ac7d88c6e2cd2008e4d96",
+        "body_characters": 82805,
+        "syntax_counts": {
+          ".add": 2017,
+          ".c": 2018,
+          ".mul": 2017,
+          ".x": 2017
+        },
+        "references": [],
+        "represented_values_evaluated": false
+      },
+      {
+        "name": "eg4M7A3",
+        "body_sha256": "91d030fb5c80a28a15b0c820993c1fde79c647de2fc8d0bb41835bbaf49eddab",
+        "body_characters": 74640,
+        "syntax_counts": {
+          ".add": 1823,
+          ".c": 1824,
+          ".mul": 1823,
+          ".x": 1823
+        },
+        "references": [],
+        "represented_values_evaluated": false
+      },
+      {
+        "name": "eg5M7A3",
+        "body_sha256": "c58d2fd40248ede9820fcec416d777e3627b3abfd70f3a469cfbf77679ebfaf6",
+        "body_characters": 66355,
+        "syntax_counts": {
+          ".add": 1629,
+          ".c": 1630,
+          ".mul": 1629,
+          ".x": 1629
+        },
+        "references": [],
+        "represented_values_evaluated": false
+      },
+      {
+        "name": "eg6M7A3",
+        "body_sha256": "071431eb53f5af070436c5dcd049e01d1275832b018011ce1ee98d7ab60071bb",
+        "body_characters": 58061,
+        "syntax_counts": {
+          ".add": 1434,
+          ".c": 1435,
+          ".mul": 1434,
+          ".x": 1434
+        },
+        "references": [],
+        "represented_values_evaluated": false
+      },
+      {
+        "name": "eg7M7A3",
+        "body_sha256": "10683a7ceb5ca3e5de82d2c480dd4ce58c033a80894e478a72a27569d209c6cc",
+        "body_characters": 50246,
+        "syntax_counts": {
+          ".add": 1252,
+          ".c": 1253,
+          ".mul": 1252,
+          ".x": 1252
+        },
+        "references": [],
+        "represented_values_evaluated": false
+      },
+      {
+        "name": "eg8M7A3",
+        "body_sha256": "4822a1a20aa3ade823eae63f0ccd9bb36a370b6cb73b8e3aef373c489d6398d7",
+        "body_characters": 42946,
+        "syntax_counts": {
+          ".add": 1083,
+          ".c": 1084,
+          ".mul": 1083,
+          ".x": 1083
+        },
+        "references": [],
+        "represented_values_evaluated": false
+      },
+      {
+        "name": "eg9M7A3",
+        "body_sha256": "7fed2b6ba5d9ab341ddac68321396822a4abf2b15856dd0c3c1d9692fecfe721",
+        "body_characters": 36233,
+        "syntax_counts": {
+          ".add": 927,
+          ".c": 928,
+          ".mul": 927,
+          ".x": 927
+        },
+        "references": [],
+        "represented_values_evaluated": false
+      },
+      {
+        "name": "eg10M7A3",
+        "body_sha256": "8923290328cc60dee1499b5a5d73a2370285e1d050e8bd494211b2c2c79fccb8",
+        "body_characters": 30157,
+        "syntax_counts": {
+          ".add": 784,
+          ".c": 785,
+          ".mul": 784,
+          ".x": 784
+        },
+        "references": [],
+        "represented_values_evaluated": false
+      },
+      {
+        "name": "eg11M7A3",
+        "body_sha256": "e9cccfbb8f5b9be1b469722318547c46821cc4883ed4164e018c37e3ce37f9d3",
+        "body_characters": 24516,
+        "syntax_counts": {
+          ".add": 649,
+          ".c": 650,
+          ".mul": 649,
+          ".x": 649
+        },
+        "references": [],
+        "represented_values_evaluated": false
+      },
+      {
+        "name": "eg12M7A3",
+        "body_sha256": "a6fed4310c3d587849739c718965ec11ef4ab3e8d669d98a2cdac212b1ec8ae9",
+        "body_characters": 19610,
+        "syntax_counts": {
+          ".add": 530,
+          ".c": 531,
+          ".mul": 530,
+          ".x": 530
+        },
+        "references": [],
+        "represented_values_evaluated": false
+      },
+      {
+        "name": "eg13M7A3",
+        "body_sha256": "64665844f90985904cadf639cd78eed0812b8055cc4d1f71d14803700c7a5fef",
+        "body_characters": 15393,
+        "syntax_counts": {
+          ".add": 426,
+          ".c": 427,
+          ".mul": 426,
+          ".x": 426
+        },
+        "references": [],
+        "represented_values_evaluated": false
+      },
+      {
+        "name": "eg14M7A3",
+        "body_sha256": "733830650934922db0dbb0b997fa54497c6ffbcfd8710975f91393cef0a0f816",
+        "body_characters": 11812,
+        "syntax_counts": {
+          ".add": 336,
+          ".c": 337,
+          ".mul": 336,
+          ".x": 336
+        },
+        "references": [],
+        "represented_values_evaluated": false
+      },
+      {
+        "name": "eg15M7A3",
+        "body_sha256": "5470d6fa32865d3164b9c6a6d0bd42bb8c9beb3dd182a88f175606891c6bdad2",
+        "body_characters": 8807,
+        "syntax_counts": {
+          ".add": 259,
+          ".c": 260,
+          ".mul": 259,
+          ".x": 259
+        },
+        "references": [],
+        "represented_values_evaluated": false
+      },
+      {
+        "name": "eg16M7A3",
+        "body_sha256": "e820f433b0695305fc1f016df36d285a4863f6ada1bb664284fa3123085d19f6",
+        "body_characters": 6354,
+        "syntax_counts": {
+          ".add": 194,
+          ".c": 195,
+          ".mul": 194,
+          ".x": 194
+        },
+        "references": [],
+        "represented_values_evaluated": false
+      },
+      {
+        "name": "eg17M7A3",
+        "body_sha256": "554bba7bedd01d27cb60fffe6834fd26385cdb54121d0da45382c349bf4bb761",
+        "body_characters": 4377,
+        "syntax_counts": {
+          ".add": 140,
+          ".c": 141,
+          ".mul": 140,
+          ".x": 140
+        },
+        "references": [],
+        "represented_values_evaluated": false
+      },
+      {
+        "name": "eg18M7A3",
+        "body_sha256": "ac5dc22509838965a46621f2aeb594aef0ce4b520e5558d9fd0ca4e23ec8cb5b",
+        "body_characters": 2835,
+        "syntax_counts": {
+          ".add": 96,
+          ".c": 97,
+          ".mul": 96,
+          ".x": 96
+        },
+        "references": [],
+        "represented_values_evaluated": false
+      },
+      {
+        "name": "gapExprM7A3",
+        "body_sha256": "d2bf0da0499f255a954b8cae5bd876fe70930b83d425885f798cf92421f9d73f",
+        "body_characters": 538,
+        "syntax_counts": {
+          ".add": 18,
+          "reference": 19,
+          ".mul": 18,
+          ".x": 18
+        },
+        "references": [
+          "eg0M7A3",
+          "eg1M7A3",
+          "eg2M7A3",
+          "eg3M7A3",
+          "eg4M7A3",
+          "eg5M7A3",
+          "eg6M7A3",
+          "eg7M7A3",
+          "eg8M7A3",
+          "eg9M7A3",
+          "eg10M7A3",
+          "eg11M7A3",
+          "eg12M7A3",
+          "eg13M7A3",
+          "eg14M7A3",
+          "eg15M7A3",
+          "eg16M7A3",
+          "eg17M7A3",
+          "eg18M7A3"
+        ],
+        "represented_values_evaluated": false
+      }
+    ],
+    "scope": "Syntax only; numeric literals compared as tokens, factor references checked in order. No polynomial expansion, expression evaluation, degree/mass/packed arithmetic or sign recomputation."
+  },
+  "source_scope": "All actual paths with mid.a=3, all natural i,j,3*j<=mid.b. Exact raw i,i+1,i+2 at fixed j; zeros kept. Classification q>=1,b=3q+1 or3q+2; j<=q. No ratio/denominator bound or remaining sign/formula premise. Rational normalization stays auxiliary; source coefficients remain literal integers.",
+  "zero_boundary_scope": "Inherited source transfer splits i<3 before factor transport and handles leading zeros without division; i>=3 maps t=i-3. All d,j,t lift outputs have LC, including d0/j0 and tails. Support proof includes negative integer indices and exact upper tail.",
+  "smoothed_cross_scope": "All n,j natural with2*j+1<=n: CrossLC of coefficient sequence of lowerRow=X^3(1+X)^(n-2*j-1)rowH. Output sequence positive on0..d+j, zero outside; shift3 exact. Does not establish CrossLC for unsmoothed rowH or LowerRowShapeMFFD.",
+  "correction_scope": "For q>=2,source columnt+2,rowq+1 equals augmentedOutput(d,j,c)t; t0=c, successor=liftOutput(d,j,t)+c*choose(d,t+1). Iff is only adjacent source starts>=2; q1 excluded. Universal augmented-output LC unproved.",
+  "obstruction_scope": "Augmented coefficientwise universal sign statement false atj3,t1,c4,coefficient3=-40. Associated actual path[false,true,false],3/8,rawH triple[108,412,636] atcolumns3,4,5,row3 has three polygon guards and positive gap101056. Auxiliary failure is not raw/root refutation.",
+  "root_residual_scope": "ThreeOutsideLower: allq>=1,bothr; H q<j andj!=5; V outside((i3or4 andj+1<=q)or(5<=i<=8 andj+2<=q)); D outside(3<=i<=6 andj+2<=q), original natural indices/zeros. OtherFour:everypath witha>=4,GlobalLC. Full Conjecture63 endpoints and allthree polygon guards retained by inherited exact equivalences; two residuals remain open.",
+  "extra_helper_scope": "ExpressionData compiled but not selected/replayed/printed or imported by final chain; final Gap uses ordinary constructor syntax. No helper proof credit.",
+  "mathematical_values_recomputed": false
+}

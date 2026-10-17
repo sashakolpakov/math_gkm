@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovKroneckerM7A3.lean:15:11: error(lean.invalidField): Invalid field `sum`: The environment does not contain `Function.sum`, so it is not possible to project the field `sum` from an expression\n  fun m => MvPolynomial.coeff m P\nof type `(\u03c3 \u2192\u2080 \u2115) \u2192 \u2115`\n/Users/sasha/math_gkm/research/MarkovKroneckerM7A3.lean:17:34: error: Application type mismatch: The argument\n  fun m => MvPolynomial.coeff m P\nhas type\n  (\u03c3 \u2192\u2080 \u2115) \u2192 \u2115\nbut is expected to have type\n  (\u03c3 \u2192\u2080 \u2115) \u2192\u2080 ?m.19\nin the application\n  Finsupp.mapDomain encode fun m => MvPolynomial.coeff m P\n/Users/sasha/math_gkm/research/MarkovKroneckerM7A3.lean:22:69: error: unsolved goals\n\u03c3 : Type u_1\nencode : (\u03c3 \u2192\u2080 \u2115) \u2192 \u2115\nP : MvPolynomial \u03c3 \u2115\n\u22a2 sorry () = P.coeff.sum fun s a => a\n/Users/sasha/math_gkm/research/MarkovKroneckerM7A3.lean:43:14: error(lean.invalidField): Invalid field `sum`: The environment does not contain `Function.sum`, so it is not possible to project the field `sum` from an expression\n  fun m => MvPolynomial.coeff m P\nof type `(\u03c3 \u2192\u2080 \u2115) \u2192 \u2115`\n/Users/sasha/math_gkm/research/MarkovKroneckerM7A3.lean:44:14: error(lean.invalidField): Invalid field `sum`: The environment does not contain `Function.sum`, so it is not possible to project the field `sum` from an expression\n  fun m => MvPolynomial.coeff m Q\nof type `(\u03c3 \u2192\u2080 \u2115) \u2192 \u2115`\n/Users/sasha/math_gkm/research/MarkovKroneckerM7A3.lean:49:3: warning: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovKroneckerM7A3": "843838c5b46bf668a14a63d8508b02048e8b72176dd73b833293a7a682b626c0"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovKroneckerM7A3.olean",
+    "/Users/sasha/math_gkm/research/MarkovKroneckerM7A3.lean"
+  ],
+  "seconds": 12.414691291982308,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

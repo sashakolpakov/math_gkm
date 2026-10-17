@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovFourEncodingM7A3.lean:27:24: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  MvPolynomial.eval\u2082 ?g ?X ?f\nin the target expression\n  (MvPolynomial.eval\u2082Hom (RingHom.id \u2115) fun i => B ^ weightFourM7A3 i) P =\n    P.coeff.sum fun e c => c * B ^ encodeFourM7A3 e\n\nP : MvPolynomial (Fin 4) \u2115\nB : \u2115\n\u22a2 (MvPolynomial.eval\u2082Hom (RingHom.id \u2115) fun i => B ^ weightFourM7A3 i) P =\n    P.coeff.sum fun e c => c * B ^ encodeFourM7A3 e\n/Users/sasha/math_gkm/research/MarkovFourEncodingM7A3.lean:53:1: error: unsolved goals\ncase left\n\u22a2 ((23 + if 0 = 2 then 10580 else 0) + if 0 = 3 then 137540 else 0) =\n    (23 + if 1 = 2 then 460 else 0) + if 1 = 3 then 5980 else 0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovFourEncodingM7A3": "3a3a5ea30423ce9219b68d88f0b86bfde2460e351b477843f5ae29eb53ba1dc0"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovFourEncodingM7A3.olean",
+    "/Users/sasha/math_gkm/research/MarkovFourEncodingM7A3.lean"
+  ],
+  "seconds": 23.215716250007972,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

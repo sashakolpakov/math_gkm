@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovAugmentedObstructionM7A3.lean:18:60: error: unsolved goals\n\u22a2 5 * (21 + C 4 * 8) + (35 + C 4 * 28) * X = C 265 + C 147 * X \u2227\n    21 * (8 + C 4) + 6 * (28 + C 4 * 9) * X + (56 + C 4 * 36) * X ^ 2 = C 252 + C 384 * X + C 200 * X ^ 2\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovAugmentedObstructionM7A3.lean:29:44: error: unsolved goals\nh1 : augmentedLiftM7A3 3 4 1 = C 104 + C 4 * X\nh2 : augmentedLiftM7A3 3 4 2 = C 265 + C 147 * X + C 4 * X ^ 2\nh3 : augmentedLiftM7A3 3 4 3 = C 252 + C 384 * X + C 200 * X ^ 2 + C 4 * X ^ 3\n\u22a2 C 265 * C 147 * X * 2 + C 265 * X ^ 2 * C 4 * 2 + C 265 ^ 2 + C 147 * X ^ 3 * C 4 * 2 + C 147 ^ 2 * X ^ 2 -\n                  X * C 4 * C 252 -\n                X * C 104 * C 384 -\n              X ^ 2 * C 4 * C 384 -\n            X ^ 2 * C 104 * C 200 -\n          X ^ 3 * C 4 * C 104 -\n        X ^ 3 * C 4 * C 200 -\n      C 104 * C 252 =\n    X * C 36966 + X ^ 2 * C 1393 - X ^ 3 * C 40 + C 44017\n",
+  "stderr": "",
+  "modules": {
+    "MarkovAugmentedObstructionM7A3": "794acdf28d5915c1dc25b846199e0dce0125b7a70e11ca44721d571040836c47"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovAugmentedObstructionM7A3.olean",
+    "/Users/sasha/math_gkm/research/MarkovAugmentedObstructionM7A3.lean"
+  ],
+  "seconds": 37.58019216696266,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

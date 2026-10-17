@@ -1,0 +1,64 @@
+import MarkovPackedPolynomialM7A3
+import MarkovKroneckerM7A3
+import MarkovFourEncodingM7A3
+import MarkovExpressionM7A3
+import MarkovExpressionFactorsM7A3
+#print axioms MathGKM.Markov.digits_rangeM7A3
+#print axioms MathGKM.Markov.polynomial_digitsM7A3
+#print axioms MathGKM.Markov.coefficient_mass_boundM7A3
+#print axioms MathGKM.Markov.polynomial_packed_injectiveM7A3
+#print axioms MathGKM.Markov.flatten_evalM7A3
+#print axioms MathGKM.Markov.flatten_massM7A3
+#print axioms MathGKM.Markov.flatten_injectiveM7A3
+#print axioms MathGKM.Markov.multivariate_packed_injectiveM7A3
+#print axioms MathGKM.Markov.encode_four_injectiveM7A3
+#print axioms MathGKM.Markov.packed_four_evalM7A3
+#print axioms MathGKM.Markov.packed_four_soundM7A3
+#print axioms MathGKM.Markov.packed_four_overflowM7A3
+#print axioms MathGKM.Markov.eval_poly_exprM7A3
+#print axioms MathGKM.Markov.degree_poly_exprM7A3
+#print axioms MathGKM.Markov.expr_boxM7A3
+#print axioms MathGKM.Markov.eval_expr_nonnegM7A3
+#print axioms MathGKM.Markov.expr_certificateM7A3
+#print axioms MathGKM.Markov.ef0_evalM7A3
+#print axioms MathGKM.Markov.ef1_evalM7A3
+#print axioms MathGKM.Markov.ef2_evalM7A3
+#print axioms MathGKM.Markov.ef3_evalM7A3
+#print axioms MathGKM.Markov.ef4_evalM7A3
+#print axioms MathGKM.Markov.ef5_evalM7A3
+#print axioms MathGKM.Markov.ef6_evalM7A3
+#print axioms MathGKM.Markov.ef7_evalM7A3
+#print axioms MathGKM.Markov.ef8_evalM7A3
+#print axioms MathGKM.Markov.ef9_evalM7A3
+#print axioms MathGKM.Markov.ef10_evalM7A3
+#print axioms MathGKM.Markov.ef11_evalM7A3
+#print axioms MathGKM.Markov.ef12_evalM7A3
+#print axioms MathGKM.Markov.ef13_evalM7A3
+#print axioms MathGKM.Markov.ef14_evalM7A3
+#print axioms MathGKM.Markov.ef15_evalM7A3
+#print axioms MathGKM.Markov.ef16_evalM7A3
+#print axioms MathGKM.Markov.ef17_evalM7A3
+#print axioms MathGKM.Markov.ef18_evalM7A3
+#print axioms MathGKM.Markov.ef19_evalM7A3
+#print axioms MathGKM.Markov.ef20_evalM7A3
+#print axioms MathGKM.Markov.ef21_evalM7A3
+#print axioms MathGKM.Markov.ef22_evalM7A3
+#print axioms MathGKM.Markov.ef23_evalM7A3
+#print axioms MathGKM.Markov.ef24_evalM7A3
+#print axioms MathGKM.Markov.ef25_evalM7A3
+#print axioms MathGKM.Markov.ef26_evalM7A3
+#print axioms MathGKM.Markov.ef27_evalM7A3
+#print axioms MathGKM.Markov.ef28_evalM7A3
+#print axioms MathGKM.Markov.ef29_evalM7A3
+#print axioms MathGKM.Markov.ef30_evalM7A3
+#print axioms MathGKM.Markov.ef31_evalM7A3
+#print axioms MathGKM.Markov.ef32_evalM7A3
+#print axioms MathGKM.Markov.ef33_evalM7A3
+#print axioms MathGKM.Markov.ef34_evalM7A3
+#print axioms MathGKM.Markov.ef35_evalM7A3
+#print axioms MathGKM.Markov.ef36_evalM7A3
+#print axioms MathGKM.Markov.ef37_evalM7A3
+#print axioms MathGKM.Markov.ep0_evalM7A3
+#print axioms MathGKM.Markov.ep1_evalM7A3
+#print axioms MathGKM.Markov.ep2_evalM7A3
+#print axioms MathGKM.Markov.ep3_evalM7A3

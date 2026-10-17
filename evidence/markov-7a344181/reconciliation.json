@@ -1,0 +1,91 @@
+{
+  "bindings": {
+    "RESUME.json": true,
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": true,
+    "evidence/independent-markov/markov_residual_scope_audit.md": true,
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": true,
+    "evidence/markov/research-run/state.json": true,
+    "requests/markov-next.json": true
+  },
+  "predecessor_artifacts": 172,
+  "mismatches": [],
+  "root_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+  "contract_sha256": "6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc",
+  "stop_file_present": false,
+  "capabilities": {
+    "scratch": "Denied by developer policy; not accessed; new durable research/evidence paths used.",
+    "sage": null,
+    "gap": "/opt/homebrew/bin/gap",
+    "Singular": "/opt/homebrew/bin/Singular"
+  },
+  "reconciliation": "Completed predecessor 166 inspected; unvalidated whole-product/closure candidates are not results and are not replayed. Interrupted 156 already reconciled by predecessor; raw final events inspected again.",
+  "000166": {
+    "event_sha256": "c2215be0d2c2875e3093cac38e7d128b88bad0a4a0d740f44ccb5a361a7f95c4",
+    "last_events": [
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_123",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/finalize_db238071.py'",
+          "aggregated_output": "{\n  \"validation\": {\n    \"request_id\": \"db238071732b4d94a95826082e34e37e\",\n    \"modules\": [\n      \"MarkovProduct0S19MDB2\",\n      \"MarkovProduct0S20MDB2\",\n      \"MarkovProduct1S19MDB2\",\n      \"MarkovProduct1S20MDB2\",\n      \"MarkovDirect2S15MDB2\",\n      \"MarkovDirect2S16MDB2\",\n      \"MarkovSwap3S15MDB2\",\n      \"MarkovDenseTransportMDB2\",\n      \"MarkovCorrectionFactorMDB2\",\n      \"MarkovPackedConvolutionMDB2\",\n      \"MarkovCorrectionSupportMDB2\",\n      \"MarkovPackedExamplesMDB2\"\n    ],\n    \"source_sha256\": {\n      \"MarkovProduct0S19MDB2\": \"8f641b63763a34790f92e01f4dfb086fd6e6871c0173da9312dfeab75591f253\",\n      \"MarkovProduct0S20MDB2\": \"cf9146f703bedf19e815aaa8c3f93da2788ed7ad0cc08d24d8a039bf66d82f9c\",\n      \"MarkovProduct1S19MDB2\": \"349231d3389a637b3f38af73ca34828cb3927d500f41180b32d903fb1a61d637\",\n      \"MarkovProduct1S20MDB2\": \"7db213ffac63fdcfb2c3c49c6f51be5235e33258da00142b3d12ff875338fe3b\",\n      \"MarkovDirect2S15MDB2\": \"fbfacaf697cbe8b1a99df085eef00b3aaebbf6856c975e5da7dfcc5f81cfc9ce\",\n      \"MarkovDirect2S16MDB2\": \"556530d292ceea5188274f226f5f0709d2fa9e78106cf70479db505e100c4891\",\n      \"MarkovSwap3S15MDB2\": \"843da9786f7a602cc4d323de7cb4265b11cacd529ae7cc1485951b5cce4bfe57\",\n      \"MarkovDenseTransportMDB2\": \"9fc7620c862ba44729925fbbf3f16f021d1e0d1436f69daa035d105bfca5de3e\",\n      \"MarkovCorrectionFactorMDB2\": \"0050f8fdf49da5d84ef18ce5324a35d38426ec14b418a77c70dd2f270f4bacde\",\n      \"MarkovPackedConvolutionMDB2\": \"d630a7646b8ef2dc7f47ef3b888b057e73c524d2204d14f98b1b8e8bba1a74b9\",\n      \"MarkovCorrectionSupportMDB2\": \"c269bfbca1dd829c8aa7907c8d9dcba7f67d118dbbba9a36ecad05846726e6d5\",\n      \"MarkovPackedExamplesMDB2\": \"eeb39504baaaa4676d613a54e56ad08ff95c747452cc5f5e805d6f8d4e41edd9\"\n    },\n    \"successful_builds\": {\n      \"MarkovProduct0S19MDB2\": \"evidence/markov-db238071/build-1792196618668488000.json\",\n      \"MarkovProduct0S20MDB2\": \"evidence/markov-db238071/build-1792196750561306000.json\",\n      \"MarkovProduct1S19MDB2\": \"evidence/markov-db238071/build-1792196639818808000.json\",\n      \"MarkovProduct1S20MDB2\": \"evidence/markov-db238071/build-1792196727502933000.json\",\n      \"MarkovDirect2S15MDB2\": \"evidence/markov-db238071/build-1792196960621862000.json\",\n      \"MarkovDirect2S16MDB2\": \"evidence/markov-db238071/build-1792197209396397000.json\",\n      \"MarkovSwap3S15MDB2\": \"evidence/markov-db238071/build-1792197189754271000.json\",\n      \"MarkovDenseTransportMDB2\": \"evidence/markov-db238071/build-1792197062549278000.json\",\n      \"MarkovCorrectionFactorMDB2\": \"evidence/markov-db238071/build-1792197197691826000.json\",\n      \"MarkovPackedConvolutionMDB2\": \"evidence/markov-db238071/build-1792197719227104000.json\",\n      \"MarkovCorrectionSupportMDB2\": \"evidence/markov-db238071/build-1792198048934982000.json\",\n      \"MarkovPackedExamplesMDB2\": \"evidence/markov-db238071/build-1792197812449855000.json\"\n    },\n    \"axiom_reports\": [\n      \"evidence/markov-db238071/axioms-1792198145422283000.json\"\n    ],\n    \"theorem_closures\": 33,\n    \"allowed_axioms_only\": true,\n    \"replay_receipts\": [\n      \"evidence/markov-db238071/replay-1792198156409403000.json\",\n      \"evidence/markov-db238071/replay-1792197734100336000.json\"\n    ],\n    \"successfully_replayed\": [\n      \"MarkovCorrectionFactorMDB2\",\n      \"MarkovCorrectionSupportMDB2\",\n      \"MarkovDenseTransportMDB2\",\n      \"MarkovPackedConvolutionMDB2\",\n      \"MarkovPackedExamplesMDB2\"\n    ],\n    \"not_replayed\": [\n      \"MarkovDirect2S15MDB2\",\n      \"MarkovDirect2S16MDB2\",\n      \"MarkovProduct0S19MDB2\",\n      \"MarkovProduct0S20MDB2\",\n      \"MarkovProduct1S19MDB2\",\n      \"MarkovProduct1S20MDB2\",\n      \"MarkovSwap3S15MDB2\"\n    ],\n    \"rejected_builds\": [\n      \"evidence/markov-db238071/build-1792197111517176000.json\",\n      \"evidence/markov-db238071/build-1792197654170800000.json\",\n      \"evidence/markov-db238071/build-1792197334183176000.json\",\n      \"evidence/markov-db238071/build-1792196971634998000.json\",\n      \"evidence/markov-db238071/build-1792197917490049000.json\",\n      \"evidence/markov-db238071/build-1792196641031412000.json\",\n      \"evidence/markov-db238071/build-1792197249322475000.json\",\n      \"evidence/markov-db238071/build-1792196870575363000.json\",\n      \"evidence/markov-db238071/build-1792196728062453000.json\",\n      \"evidence/markov-db238071/build-1792196864125404000.json\",\n      \"evidence/markov-db238071/build-1792197787088736000.json\",\n      \"evidence/markov-db238071/build-1792196642293950000.json\",\n      \"evidence/markov-db238071/build-1792197376678958000.json\"\n    ],\n    \"limits\": \"Inherited compiled imports reused. No fresh whole-source rebuild, full root proof, or independent hash-bound completion audit.\",\n    \"completion\": null\n  },\n  \"preservation\": {\n    \"artifacts\": 172,\n    \"artifact_mismatches\": [],\n    \"unchanged_inputs\": 7015,\n    \"unchanged_predecessor_artifacts\": 298,\n    \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\",\n    \"contract_sha256\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\",\n    \"validation_sha256\": \"f7b32643bf2430d1d57dc5e875b5ef4f5b31f7ec6d6532fcca3c95ad0a5dfbab\",\n    \"manifest_sha256\": \"5072c47b66489a40b5dde8cf88681453d78135e386455b799307111c1046b2cc\",\n    \"completion\": null\n  }\n}\n",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_124",
+          "type": "agent_message",
+          "text": "{\n  \"actions\": [\n    \"Reconciled inherited effects and verified 298 predecessor artifacts: evidence/markov-db238071/reconciliation.json.\",\n    \"Compiled 12 modules, audited 33 theorem closures, and kernel-replayed five core modules: evidence/markov-db238071/validation.json.\",\n    \"Verified 172 artifacts, 7,015 unchanged inputs and pinned hashes: evidence/markov-db238071/last-verification.json.\"\n  ],\n  \"agenda\": [\n    \"Investigate the packed certificate\u2019s missing multivariate bridges or the augmented correction residual: research/markov-db238071-next.md.\",\n    \"Retain ThreeOutsideLowerMFEE and OtherFourM9E2 completely.\",\n    \"Discharge every correspondence obligation and obtain the independent hash-bound audit before claiming completion.\"\n  ],\n  \"completion\": null,\n  \"observations\": [\n    \"Proved the exact first-correction-row factorization for q\u22652, both residue classes and all columns, with conditional log-concavity transport: research/MarkovCorrectionFactorMDB2.lean.\",\n    \"Proved augmented residual interval support and equivalence between adjacent inequalities and CrossLC. Universal residual shape remains open: research/MarkovCorrectionSupportMDB2.lean.\",\n    \"Proved packed-convolution certificate soundness with explicit bounds, semantic transport and a carry obstruction. The four-variable application remains unproved: research/MarkovPackedConvolutionMDB2.lean and research/MarkovPackedExamplesMDB2.lean.\",\n    \"Extended checked product prefixes, but complete products, aggregate positivity and LowerHorizontalMFEE remain unproved. The large combined replay timed out after 300 seconds: evidence/markov-db238071/validation.json.\",\n    \"Finite experiments passed 8,379 source comparisons, 64,778 residual cross-pair checks and four packed product checks. These are experiments, not proofs: evidence/markov-db238071/correction-experiment.json and packed-probe.json.\",\n    \"All audited closures use permitted axioms. Failures and capability restrictions are preserved; all foreground executions completed. No fresh whole-source rebuild or independent completion audit occurred: research/markov-db238071-operational.md and markov-db238071-correspondence.md.\"\n  ],\n  \"request_id\": \"db238071732b4d94a95826082e34e37e\",\n  \"summary\": \"Proved a correction-row factorization and support, plus packed-convolution certificate soundness. Full pinned Conjecture63 remains unresolved.\"\n}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 12637830,
+          "cached_input_tokens": 12430208,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 52891,
+          "reasoning_output_tokens": 22557
+        }
+      }
+    ]
+  },
+  "000156": {
+    "event_sha256": "f26a2c44e1c582df45136f91eb1a4106cde5ef09afb0641e8c6f1ec1fb9ea788",
+    "last_events": [
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_114",
+          "type": "agent_message",
+          "text": "The unchanged-input check passed for all 6,531 snapshotted files. All twelve selected modules compiled; their combined replay and axiom audit are still running under bounded timeouts. I\u2019ll report those outcomes exactly and keep completion null.\n"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_110",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/audit_e9cdd527.py'",
+          "aggregated_output": "{\"receipt\": \"evidence/markov-e9cdd527/build-1792180597571888000.json\", \"returncode\": null, \"timeout\": true, \"seconds\": 100.37072212499334, \"stdout\": \"None\"}\nTraceback (most recent call last):\n  File \"/Users/sasha/math_gkm/research/audit_e9cdd527.py\", line 16, in <module>\n    assert match or empty,n\n           ^^^^^^^^^^^^^^\nAssertionError: fib_raw_extendedME9C\n",
+          "exit_code": 1,
+          "status": "failed"
+        }
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_109",
+          "type": "command_execution",
+          "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/validate_e9cdd527.py replay 100 MarkovLowDifferenceME9C MarkovLowForceME9C MarkovLowSolutionsME9C MarkovLowSourceME9C MarkovLowLCME9C MarkovLowResidualME9C MarkovLowLimitME9C MarkovLowKernelLimitME9C MarkovLowerUniformME9C MarkovLowerShapeME9C MarkovLowerReductionME9C MarkovLowerDomainME9C'",
+          "aggregated_output": "{\"receipt\": \"evidence/markov-e9cdd527/replay-1792180597567945000.json\", \"returncode\": null, \"timeout\": true, \"seconds\": 100.48190745798638, \"stdout\": \"None\"}\n",
+          "exit_code": 1,
+          "status": "failed"
+        }
+      }
+    ]
+  }
+}

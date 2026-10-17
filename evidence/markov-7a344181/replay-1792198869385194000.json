@@ -1,0 +1,49 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovPackedPolynomialM7A3\ncollected MarkovKroneckerM7A3\ncollected MarkovFourEncodingM7A3\nreplay union of 3 modules over 3 inherited imports\nisolation checked for 16 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovPackedPolynomialM7A3": "712bead61833b281eccdf39ba853dc47a683d3693fa2744616e2f3a5bd9300ed",
+    "MarkovKroneckerM7A3": "604d1a64ff0742a37d390743ca233e02bdf8cfab30c06ea3716c168f80882a24",
+    "MarkovFourEncodingM7A3": "04edd727125b828900fa86b8860f6d206c07b3062604293ef50e01c3e473f167"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM7A3.lean",
+    "MarkovPackedPolynomialM7A3",
+    "MarkovKroneckerM7A3",
+    "MarkovFourEncodingM7A3"
+  ],
+  "seconds": 31.959432333998848,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "a780591ce9ee8560d4ec138ef498b04106c17bb938c044583347be1da5ac8ee4",
+  "declared_names": {
+    "MarkovPackedPolynomialM7A3": [
+      "digits_rangeM7A3",
+      "polynomial_digitsM7A3",
+      "coefficient_mass_boundM7A3",
+      "polynomial_packed_injectiveM7A3"
+    ],
+    "MarkovKroneckerM7A3": [
+      "flattenM7A3",
+      "flatten_evalM7A3",
+      "flatten_massM7A3",
+      "flatten_injectiveM7A3",
+      "multivariate_packed_injectiveM7A3"
+    ],
+    "MarkovFourEncodingM7A3": [
+      "encodeFourM7A3",
+      "boxFourM7A3",
+      "weightFourM7A3",
+      "encode_four_injectiveM7A3",
+      "packed_four_evalM7A3",
+      "packed_four_soundM7A3",
+      "packed_four_overflowM7A3"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed M7A3; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}
