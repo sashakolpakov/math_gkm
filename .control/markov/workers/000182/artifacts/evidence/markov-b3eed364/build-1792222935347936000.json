@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTopEdgesMB3E.lean:44:1: error: Type mismatch: After simplification, term\n  h2\n has type\n  (topTemplateMB3E n t).coeff 2 = 4 * ((\u2191t - 2) * \u2191((n - 2 * t + 6).choose 2))\nbut is expected to have type\n  (topTemplateMB3E n t).coeff 2 = 4 * (\u2191t - 2) * \u2191((n - 2 * t + 6).choose 2)\n/Users/sasha/math_gkm/research/MarkovTopEdgesMB3E.lean:79:3: error: ring failed, ring expressions not equal\na k m : \u2115\nih :\n  \u2211 s \u2208 range m, (\u2191m - \u2191s) * \u2191((a + s).choose k) =\n    \u2191((a + m + 1).choose (k + 2)) - \u2191((a + 1).choose (k + 2)) - \u2191m * \u2191(a.choose (k + 1))\nhs :\n  \u2211 s \u2208 range m, (\u2191(m + 1) - \u2191s) * \u2191((a + s).choose k) =\n    \u2211 s \u2208 range m, (\u2191m - \u2191s) * \u2191((a + s).choose k) + \u2211 s \u2208 range m, \u2191((a + s).choose k)\nh0 : \u2191((a + m + 1).choose (k + 1)) = \u2191((a + m).choose k) + \u2191((a + m).choose (k + 1))\nh1 : \u2191((a + m + 2).choose (k + 2)) = \u2191((a + m + 1).choose (k + 1)) + \u2191((a + m + 1).choose (k + 2))\n\u22a2 \u2191((a + m + 1).choose (k + 2)) * 2 + \u2191((a + m).choose (k + 1)) * 2 + \u2191((a + m).choose k) * 2 -\n      \u2191((a + m + 2).choose (k + 2)) * 2 =\n    0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTopEdgesMB3E": "3e30f1cb61a32f4449428a357d34e64ef8e81115383b41fdeaa39efbe89a9ed8"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-b3eed364/MarkovTopEdgesMB3E.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopEdgesMB3E.lean"
+  ],
+  "seconds": 8.094454457983375,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

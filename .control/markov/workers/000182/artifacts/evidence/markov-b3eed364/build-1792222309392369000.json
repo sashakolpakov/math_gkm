@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTopTemplateMB3E.lean:25:44: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b \u2265 0\n  a \u2265 1\n  3*a - b \u2264 -1\nwhere\n a := \u2191q\n b := \u2191(sourceNME9C q r)\n/Users/sasha/math_gkm/research/MarkovTopTemplateMB3E.lean:27:35: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b \u2265 0\n  a \u2265 1\n  3*a - b \u2264 -1\nwhere\n a := \u2191q\n b := \u2191(sourceNME9C q r)\n/Users/sasha/math_gkm/research/MarkovTopTemplateMB3E.lean:28:7: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  topDeltaMB3E ?n (?n + 2)\nin the target expression\n  0 + 2 * (X - 1) * 0 + (X + 1) ^ 2 * rawRowMC3E (threePolyM9E2 q r) (sourceNME9C q r + 2 + 2) =\n    0 + 2 * (X + 1) * 0 + (X + 1) ^ 2 * topDeltaMB3E (sourceNME9C q r) (sourceNME9C q r + 2 + 2)\n\ncase h.zero\nq : \u2115\nr : Bool\nhq : 1 \u2264 q\nhn : 3 * q + 1 \u2264 sourceNME9C q r\nih : \u2200 m < 0, m \u2264 q + 2 \u2192 rawRowMC3E (threePolyM9E2 q r) (sourceNME9C q r + 2 - m) = topTemplateMB3E (sourceNME9C q r) m\nht : 0 \u2264 q + 2\nhe :\n  0 + 2 * (X - 1) * 0 + (X + 1) ^ 2 * rawRowMC3E (threePolyM9E2 q r) (sourceNME9C q r + 2 + 2) =\n    0 + 2 * (X + 1) * 0 + (X + 1) ^ 2 * topDeltaMB3E (sourceNME9C q r) (sourceNME9C q r + 2 + 2)\n\u22a2 rawRowMC3E (threePolyM9E2 q r) (sourceNME9C q r + 2 - 0) = topTemplateMB3E (sourceNME9C q r) 0\n/Users/sasha/math_gkm/research/MarkovTopTemplateMB3E.lean:34:42: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b \u2265 0\n  a \u2265 1\n  3*a - b \u2264 -1\nwhere\n a := \u2191q\n b := \u2191(sourceNME9C q r)\n/Users/sasha/math_gkm/research/MarkovTopTemplateMB3E.lean:35:53: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b \u2265 0\n  a \u2265 1\n  3*a - b \u2264 -1\nwhere\n a := \u2191q\n b := \u2191(sourceNME9C q r)\n/Users/sasha/math_gkm/research/MarkovTopTemplateMB3E.lean:37:5: error: ring failed, ring expressions not equal\nq : \u2115\nr : Bool\nhq : 1 \u2264 q\nhn : 3 * q + 1 \u2264 sourceNME9C q r\nih :\n  \u2200 m < 0 + 1,\n    m \u2264 q + 2 \u2192 rawRowMC3E (threePolyM9E2 q r) (sourceNME9C q r + 2 - m) = topTemplateMB3E (sourceNME9C q r) m\nht : 0 + 1 \u2264 q + 2\nh0 : rawRowMC3E (threePolyM9E2 q r) (sourceNME9C q r + 2) = 1\nhe :\n  0 + 2 * (X - 1) * 1 + (X + 1) ^ 2 * rawRowMC3E (threePolyM9E2 q r) (sourceNME9C q r + 1 + 2) =\n    0 + 2 * (X + 1) * 1 + (X + 1) ^ 2 * topDeltaMB3E (sourceNME9C q r) (sourceNME9C q r + 1 + 2)\n\u22a2 rawRowMC3E (threePolyM9E2 q r) (sourceNME9C q r + 1) +\n                  X * topDeltaMB3E (sourceNME9C q r) (sourceNME9C q r + 1 + 2) * 2 -\n                X * rawRowMC3E (threePolyM9E2 q r) (sourceNME9C q r + 1 + 2) * 2 +\n              X ^ 2 * topDeltaMB3E (sourceNME9C q r) (sourceNME9C q r + 1 + 2) -\n            X ^ 2 * rawRowMC3E (threePolyM9E2 q r) (sourceNME9C q r + 1 + 2) +\n          topDeltaMB3E (sourceNME9C q r) (sourceNME9C q r + 1 + 2) -\n        topDeltaMB3E (sourceNME9C q r) (sourceNME9C q r + 1) -\n      rawRowMC3E (threePolyM9E2 q r) (sourceNME9C q r + 1 + 2) =\n    0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTopTemplateMB3E": "a73ae5b74616c73c47689b8ff722666ab7a7ce919c70887d9b3046a02a165469"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-b3eed364/MarkovTopTemplateMB3E.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopTemplateMB3E.lean"
+  ],
+  "seconds": 30.693063625018112,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

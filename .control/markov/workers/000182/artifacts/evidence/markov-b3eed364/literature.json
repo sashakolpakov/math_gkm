@@ -1,0 +1,32 @@
+{
+  "request_id": "b3eed36486ad48a08ac07be4c9b62794",
+  "date": "2026-10-17",
+  "transport": "hosted web tools; no shell networking",
+  "queries": [
+    "Markov polynomials horizontal rows real rooted log concavity coefficients Evans Veselov Winn"
+  ],
+  "sources_read": [
+    {
+      "url": "https://armj.math.stonybrook.edu/Articles/250708-Winn/index.html",
+      "purpose": "Reconfirm published raw-coefficient target, three directions, source recurrence and homogeneous numerator conventions.",
+      "adopted_as_lean_axiom": false
+    },
+    {
+      "url": "https://dlmf.nist.gov/18.5.E7",
+      "purpose": "Compare an exploratory Jacobi representation against the finite coefficient expansion in equation 18.5.7.",
+      "worker_inference": "Substitution alpha=-3 and beta=d+5 suggests Delta(2t+d,t;X)=P_t^(-3,d+5)(1+2X). This representation is not formally attached to a Jacobi definition, and neither weighted-sum real-rootedness nor a log-concavity theorem is adopted.",
+      "adopted_as_lean_axiom": false
+    }
+  ],
+  "capability_failures": [
+    {
+      "url": "https://dlmf.nist.gov/18.5.E7.tex",
+      "result": "HTTP 400: unsupported content-type application/x-tex"
+    },
+    {
+      "url": "https://dlmf.nist.gov/18.5.E8.tex",
+      "result": "HTTP 400: unsupported content-type application/x-tex"
+    }
+  ],
+  "resolution": "Read the equations from the HTML page instead. No unresolved external action requests. No historical-novelty or root-resolution claim."
+}

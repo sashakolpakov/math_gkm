@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTopTemplateMB3E.lean:50:7: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  sourceNME9C q r + 2 - (t + 1)\nin the target expression\n  rawRowMC3E (threePolyM9E2 q r) (sourceNME9C q r - t) =\n    topDeltaMB3E (sourceNME9C q r) (sourceNME9C q r - t) +\n            2 * (X + 1) * topDiagonalDeltaMB3E (sourceNME9C q r) (t + 1) +\n          (X + 1) ^ 2 * topDiagonalDeltaMB3E (sourceNME9C q r) t -\n        2 * (X - 1) * topTemplateMB3E (sourceNME9C q r) (t + 1) -\n      (X + 1) ^ 2 * topTemplateMB3E (sourceNME9C q r) t\n\ncase h.succ.succ\nq : \u2115\nr : Bool\nhq : 1 \u2264 q\nhn : 3 * q + 1 \u2264 sourceNME9C q r\nt : \u2115\nih :\n  \u2200 m < t + 1 + 1,\n    m \u2264 q + 2 \u2192 rawRowMC3E (threePolyM9E2 q r) (sourceNME9C q r + 2 - m) = topTemplateMB3E (sourceNME9C q r) m\nht : t + 1 + 1 \u2264 q + 2\nh0 : rawRowMC3E (threePolyM9E2 q r) (sourceNME9C q r + 2 - t) = topTemplateMB3E (sourceNME9C q r) t\nh1 : rawRowMC3E (threePolyM9E2 q r) (sourceNME9C q r + 2 - (t + 1)) = topTemplateMB3E (sourceNME9C q r) (t + 1)\nhe :\n  rawRowMC3E (threePolyM9E2 q r) (sourceNME9C q r - t) + 2 * (X - 1) * topTemplateMB3E (sourceNME9C q r) (t + 1) +\n      (X + 1) ^ 2 * topTemplateMB3E (sourceNME9C q r) t =\n    topDeltaMB3E (sourceNME9C q r) (sourceNME9C q r - t) +\n        2 * (X + 1) * topDeltaMB3E (sourceNME9C q r) (sourceNME9C q r + 2 - (t + 1)) +\n      (X + 1) ^ 2 * topDeltaMB3E (sourceNME9C q r) (sourceNME9C q r + 2 - t)\n\u22a2 rawRowMC3E (threePolyM9E2 q r) (sourceNME9C q r - t) =\n    topDeltaMB3E (sourceNME9C q r) (sourceNME9C q r - t) +\n            2 * (X + 1) * topDiagonalDeltaMB3E (sourceNME9C q r) (t + 1) +\n          (X + 1) ^ 2 * topDiagonalDeltaMB3E (sourceNME9C q r) t -\n        2 * (X - 1) * topTemplateMB3E (sourceNME9C q r) (t + 1) -\n      (X + 1) ^ 2 * topTemplateMB3E (sourceNME9C q r) t\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTopTemplateMB3E": "06869fc1459f67ab7ccca4409a222ba3a22ea33e16b506397ee7557ab7d96247"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-b3eed364/MarkovTopTemplateMB3E.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopTemplateMB3E.lean"
+  ],
+  "seconds": 10.216287249990273,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

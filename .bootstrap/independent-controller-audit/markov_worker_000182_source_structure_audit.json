@@ -1,0 +1,1152 @@
+{
+  "worker": 182,
+  "request": "b3eed36486ad48a08ac07be4c9b62794",
+  "created_at_utc": "2026-10-17T07:55:44.599374+00:00",
+  "historical_status": "Completed host outcome / return0 / structured report present / elapsed1650.6843659877777. Nine final mathematical modules compiled and jointly replayed,45 distinct theorem closures printed;10 rejected compiler attempts retained, one timeout. Earlier successful8-module replay and earlier successful template snapshot remain separate. Full root open.",
+  "scope": "Archive-first closed182 and explicit named inherited/current counterparts only. Static hashes, source/record parsing, literal comparison and finite index-domain counts. No mathematical-value recomputation, project/proof/checker/replay/experiment/generator/finalizer execution/import, project edit or proposer help/contact. Active183 and later excluded. Earlier seals/windows unchanged.",
+  "new_modules": [
+    {
+      "module": "MarkovTopEquationMB3E",
+      "path": "research/MarkovTopEquationMB3E.lean",
+      "bytes": 3927,
+      "sha256": "3708affb23c6804518a9ba6d656cad27e5d9e90e8433b8aadda90c8f77ad8146",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "topDeltaMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_rows_aboveMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_rows_topMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_delta_aboveMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_delta_topMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "gain_rows_aboveMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_rows_equationMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_equationMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_rows_aboveMB3E"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792222152151332000.json",
+          "sha256": "e02e69c6dea664d8a8619a2a3ad907a269b759720f9c034fdf7b23fde688cbda",
+          "source_sha256": "30612c2aad933b48f8c10871c0eb804c4a07f16fa927579fe2fb330fa3cbce85",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "30612c2aad933b48f8c10871c0eb804c4a07f16fa927579fe2fb330fa3cbce85"
+        },
+        {
+          "path": "build-1792222209784325000.json",
+          "sha256": "3aee03eb2b17084f573f60a0223159121569c95e440e9a62b432f325814f10bc",
+          "source_sha256": "3708affb23c6804518a9ba6d656cad27e5d9e90e8433b8aadda90c8f77ad8146",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "3708affb23c6804518a9ba6d656cad27e5d9e90e8433b8aadda90c8f77ad8146"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in182": true,
+      "printed_in182": true,
+      "object_path": "evidence/markov-b3eed364/MarkovTopEquationMB3E.olean",
+      "object_sha256": "32447748c584fa1d88f0bdc815d919316c61862d48bf5f95d5518b3de9822dfc",
+      "successful_final_build": "evidence/markov-b3eed364/build-1792222209784325000.json",
+      "historical_successful_source_versions": [
+        "3708affb23c6804518a9ba6d656cad27e5d9e90e8433b8aadda90c8f77ad8146"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovHalfPlaneM5BF"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "fib_rows_aboveMB3E",
+          "header": "theorem fib_rows_aboveMB3E (n j : ℕ) (hj : n<j) : fibRowsMC3E n j=0",
+          "block_sha256": "22d153f31ccef454feeaf1c060b58e87e6f71c218f4b4c8f1a8ef92669411341",
+          "block_characters": 151
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_rows_topMB3E",
+          "header": "theorem fib_rows_topMB3E (n : ℕ) : fibRowsMC3E n n=1",
+          "block_sha256": "713f06f63bb32cf59a99e4d2670f807550545233a35faaddcef9f32cec652de6",
+          "block_characters": 131
+        },
+        {
+          "kind": "theorem",
+          "name": "top_delta_aboveMB3E",
+          "header": "theorem top_delta_aboveMB3E (n j : ℕ) (hj : n+2<j) : topDeltaMB3E n j=0",
+          "block_sha256": "7cea6bead11305abeb246088d97c69bc6a3c3097927e4f85fa31287b23bbdb33",
+          "block_characters": 200
+        },
+        {
+          "kind": "theorem",
+          "name": "top_delta_topMB3E",
+          "header": "theorem top_delta_topMB3E (n : ℕ) : topDeltaMB3E n (n+2)=1",
+          "block_sha256": "96ec355e28372dce494106d0f8a3852f7053b6219739d23290a1ab7ffdb0c902",
+          "block_characters": 186
+        },
+        {
+          "kind": "theorem",
+          "name": "gain_rows_aboveMB3E",
+          "header": "theorem gain_rows_aboveMB3E (q j : ℕ) (r : Bool)\n (hj : q+(if r then 1 else 2)<j) : gainRowsMC3E q r j=0",
+          "block_sha256": "6f3e4f1a98ca07c3aa320ceb7bab932464f77de571eb22643475087fbb9e3d04",
+          "block_characters": 595
+        },
+        {
+          "kind": "theorem",
+          "name": "source_rows_equationMB3E",
+          "header": "theorem source_rows_equationMB3E (q j : ℕ) (r : Bool) :\n rowDiscMFFD (rawRowMC3E (threePolyM9E2 q r)) j=\n rowSMFFD (rowSMFFD (topDeltaMB3E (sourceNME9C q r))) j+\n 4*rowShiftMFFD 1 (q+1) (gainRowsMC3E q r) j",
+          "block_sha256": "a101bb009a29412d59914cefa513c2963aabbf4564fdfe2f0b5e48c044b79ec2",
+          "block_characters": 928
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_equationMB3E",
+          "header": "theorem source_top_equationMB3E (q j : ℕ) (r : Bool)\n (hj : sourceNME9C q r ≤ j+q) :\n rawRowMC3E (threePolyM9E2 q r) j+\n 2*(X-1)*rawRowMC3E (threePolyM9E2 q r) (j+1)+\n (X+1)^2*rawRowMC3E (threePolyM9E2 q r) (j+2)=\n topDeltaMB3E (sourceNME9C q r) j+\n 2*(X+1)*topDeltaMB3E (sourceNME9C q r) (j+1)+\n (X+1)^2*topDeltaMB3E (sourceNME9C q r) (j+2)",
+          "block_sha256": "a536f868d94b69f939bed790588a01a38e189cc8d582c4e0f61a1acc46add1eb",
+          "block_characters": 742
+        },
+        {
+          "kind": "theorem",
+          "name": "source_rows_aboveMB3E",
+          "header": "theorem source_rows_aboveMB3E (q j : ℕ) (r : Bool) (hq : 1 ≤ q)\n (hj : sourceNME9C q r+2<j) : rawRowMC3E (threePolyM9E2 q r) j=0",
+          "block_sha256": "b3186464a5e366af026b5eb1b1763c41311a61cc5dfae9f975c216a964721ac4",
+          "block_characters": 531
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "topDeltaMB3E",
+          "header": "def topDeltaMB3E (n j : ℕ) : Polynomial ℤ",
+          "block_sha256": "aa38ea30299d401f000ebb55c5162a7fd74fd770a7b06478791a94c1c544a939",
+          "block_characters": 103,
+          "definition_text": "def topDeltaMB3E (n j : ℕ) : Polynomial ℤ :=\n fibRowsMC3E (n+2) j-2*fibRowsMC3E (n+1) j+fibRowsMC3E n j"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovTopTemplateMB3E",
+      "path": "research/MarkovTopTemplateMB3E.lean",
+      "bytes": 4083,
+      "sha256": "7950948c55a74aad5f0b0b56c2c5253a1b389279bf2e55dca9c74276eb665823",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "topDiagonalDeltaMB3E"
+        },
+        {
+          "kind": "def",
+          "name": "topTemplateMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_templateMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_coeffMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_pathMB3E"
+        },
+        {
+          "kind": "def",
+          "name": "TopTemplateLCMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_of_templateMB3E"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792222309392369000.json",
+          "sha256": "80b99d57c7c18754d2214a0424d8ffe3d27f9d5c428e870c09845be8b11e22c4",
+          "source_sha256": "a73ae5b74616c73c47689b8ff722666ab7a7ce919c70887d9b3046a02a165469",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "a73ae5b74616c73c47689b8ff722666ab7a7ce919c70887d9b3046a02a165469"
+        },
+        {
+          "path": "build-1792222426494985000.json",
+          "sha256": "5bf22c591776209a41dbcb9d64c442d3486f0bf7ca9fbdf287be5692b8a8c107",
+          "source_sha256": "d525b263215ac06935e03df3b8c1a3be44a4265fd0f0d07c054b9c5b866906e2",
+          "final_identical": false,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "d525b263215ac06935e03df3b8c1a3be44a4265fd0f0d07c054b9c5b866906e2"
+        },
+        {
+          "path": "build-1792222490472953000.json",
+          "sha256": "5ecceed5111cd80875940a7620e03d57d59e7a17aa4df169ca162da65bb8ef1b",
+          "source_sha256": "06869fc1459f67ab7ccca4409a222ba3a22ea33e16b506397ee7557ab7d96247",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "06869fc1459f67ab7ccca4409a222ba3a22ea33e16b506397ee7557ab7d96247"
+        },
+        {
+          "path": "build-1792222581847603000.json",
+          "sha256": "f2334634332e85b57bc493db9c198a776e88a1183acdf7c2c7f4fd4b77f72963",
+          "source_sha256": "7950948c55a74aad5f0b0b56c2c5253a1b389279bf2e55dca9c74276eb665823",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "7950948c55a74aad5f0b0b56c2c5253a1b389279bf2e55dca9c74276eb665823"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in182": true,
+      "printed_in182": true,
+      "object_path": "evidence/markov-b3eed364/MarkovTopTemplateMB3E.olean",
+      "object_sha256": "fa5096e871f990857490e5fc0c7f90b3725ed92f88da4a7921afa56e4a6e832d",
+      "successful_final_build": "evidence/markov-b3eed364/build-1792222581847603000.json",
+      "historical_successful_source_versions": [
+        "7950948c55a74aad5f0b0b56c2c5253a1b389279bf2e55dca9c74276eb665823",
+        "d525b263215ac06935e03df3b8c1a3be44a4265fd0f0d07c054b9c5b866906e2"
+      ],
+      "earlier_successful_differing_source_versions": true,
+      "imports": [
+        "MarkovTopEquationMB3E"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "source_top_templateMB3E",
+          "header": "theorem source_top_templateMB3E (q t : ℕ) (r : Bool) (hq : 1 ≤ q)\n (ht : t ≤ q+2) :\n rawRowMC3E (threePolyM9E2 q r) (sourceNME9C q r+2-t)=\n topTemplateMB3E (sourceNME9C q r) t",
+          "block_sha256": "ccf3c71deb882be0d762650cad7ffbce975cc688c53c6f9e169b92d29d84d876",
+          "block_characters": 1979
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_coeffMB3E",
+          "header": "theorem source_top_coeffMB3E (q t i : ℕ) (r : Bool) (hq : 1 ≤ q)\n (ht : t ≤ q+2) :\n threeRawM9E2 q r i (sourceNME9C q r+2-t)=\n (topTemplateMB3E (sourceNME9C q r) t).coeff i",
+          "block_sha256": "fc510b2dd7b9644a69aa65a4cccf6486effae90b352be43ec4e61b496726315d",
+          "block_characters": 262
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_pathMB3E",
+          "header": "theorem source_top_pathMB3E (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1 ≤ q ∧ (frame path).mid.b=sourceNME9C q r ∧\n ∀ t i, t ≤ q+2 → coeff (frame path).mid.p i ((frame path).mid.b+2-t)=\n   (topTemplateMB3E (frame path).mid.b t).coeff i",
+          "block_sha256": "ab44c260361f24e627b1e807c84143e2c290a0fc058e4cc57cdb73deb555af38",
+          "block_characters": 450
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_of_templateMB3E",
+          "header": "theorem source_top_of_templateMB3E (H : TopTemplateLCMB3E)\n (q t i : ℕ) (r : Bool) (hq : 1 ≤ q) (ht : t ≤ q+2) :\n threeRawM9E2 q r i (sourceNME9C q r+2-t)*\n threeRawM9E2 q r (i+2) (sourceNME9C q r+2-t) ≤\n threeRawM9E2 q r (i+1) (sourceNME9C q r+2-t)^2",
+          "block_sha256": "e15c78f00216c56d442b8aedb10164068e40f6ec4bc54851bc6449645a0dc057",
+          "block_characters": 482
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "topDiagonalDeltaMB3E",
+          "header": "def topDiagonalDeltaMB3E (n t : ℕ) : Polynomial ℤ",
+          "block_sha256": "b0093f96574020d23c063998fbd0ff4b105b7a30c1f7288395f50bf3ac08fb91",
+          "block_characters": 75,
+          "definition_text": "def topDiagonalDeltaMB3E (n t : ℕ) : Polynomial ℤ := topDeltaMB3E n (n+2-t)"
+        },
+        {
+          "kind": "def",
+          "name": "topTemplateMB3E",
+          "header": "def topTemplateMB3E (n : ℕ) : ℕ → Polynomial ℤ\n | 0 => 1\n | 1 => topDiagonalDeltaMB3E n 1+4\n | t+2 => topDiagonalDeltaMB3E n (t+2)+2*(X+1)*topDiagonalDeltaMB3E n (t+1)+\n     (X+1)^2*topDiagonalDeltaMB3E n t-\n     2*(X-1)*topTemplateMB3E n (t+1)-(X+1)^2*topTemplateMB3E n t",
+          "block_sha256": "a5ff2c8b0a2c4e824f3556fbed54f04209fd4f416e19fe985a760ec5d13df23a",
+          "block_characters": 272,
+          "definition_text": "def topTemplateMB3E (n : ℕ) : ℕ → Polynomial ℤ\n | 0 => 1\n | 1 => topDiagonalDeltaMB3E n 1+4\n | t+2 => topDiagonalDeltaMB3E n (t+2)+2*(X+1)*topDiagonalDeltaMB3E n (t+1)+\n     (X+1)^2*topDiagonalDeltaMB3E n t-\n     2*(X-1)*topTemplateMB3E n (t+1)-(X+1)^2*topTemplateMB3E n t"
+        },
+        {
+          "kind": "def",
+          "name": "TopTemplateLCMB3E",
+          "header": "def TopTemplateLCMB3E : Prop",
+          "block_sha256": "8f3ede7f2ad2c865d25680f7dc69e0e6fa6ec7afec28f02b4257c39d106a1038",
+          "block_characters": 173,
+          "definition_text": "def TopTemplateLCMB3E : Prop := ∀ n t : ℕ, 4 ≤ n → 3*t ≤ n+5 →\n ∀ i, (topTemplateMB3E n t).coeff i*(topTemplateMB3E n t).coeff (i+2) ≤\n   (topTemplateMB3E n t).coeff (i+1)^2"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovTopSumMB3E",
+      "path": "research/MarkovTopSumMB3E.lean",
+      "bytes": 4352,
+      "sha256": "c9390efd2e8044a91ffc76a6ee9f2fd0f45cf74ac4238aff3397a3e6c58798be",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "top_delta_zeroMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_rows_succMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_delta_parameterMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_template_parameterMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_diagonal_equationMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_diagonal_sumMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_template_sumMB3E"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792222588926974000.json",
+          "sha256": "a7ec40b6eb9e632329af3c80d5bc023702d16de571070894896544a236f0deab",
+          "source_sha256": "5228517147237142948a51f468c23513c11938188e69647a7405e7e863651720",
+          "final_identical": false,
+          "returncode": null,
+          "timeout": true,
+          "snapshot_sha256": "5228517147237142948a51f468c23513c11938188e69647a7405e7e863651720"
+        },
+        {
+          "path": "build-1792222748696886000.json",
+          "sha256": "e7b44120323f6f5c992372d324ed9ff5d5962385c80a5f37e0c877d04268e9c3",
+          "source_sha256": "3e9c4ff434421b185d935abede9f582714ffa538ca0c40f676175ab76b553a81",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "3e9c4ff434421b185d935abede9f582714ffa538ca0c40f676175ab76b553a81"
+        },
+        {
+          "path": "build-1792222794967284000.json",
+          "sha256": "b4b92de21dbc1bc1dfe56b30ffcddd2b3e62e9045bf7614b0049707673516482",
+          "source_sha256": "c9390efd2e8044a91ffc76a6ee9f2fd0f45cf74ac4238aff3397a3e6c58798be",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "c9390efd2e8044a91ffc76a6ee9f2fd0f45cf74ac4238aff3397a3e6c58798be"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in182": true,
+      "printed_in182": true,
+      "object_path": "evidence/markov-b3eed364/MarkovTopSumMB3E.olean",
+      "object_sha256": "8531f6dadfe8704e2aaace31ef57652ae2a8133b0c3a31238bd7c4311f91f63b",
+      "successful_final_build": "evidence/markov-b3eed364/build-1792222794967284000.json",
+      "historical_successful_source_versions": [
+        "c9390efd2e8044a91ffc76a6ee9f2fd0f45cf74ac4238aff3397a3e6c58798be"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovTopTemplateMB3E"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "top_delta_zeroMB3E",
+          "header": "theorem top_delta_zeroMB3E (n : ℕ) : topDiagonalDeltaMB3E n 0=1",
+          "block_sha256": "ef836d322dc7c1f1f81f663e9a23cb4058574d0e62fd1e769103c8bf44db1e3b",
+          "block_characters": 116
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_rows_succMB3E",
+          "header": "theorem fib_rows_succMB3E (n j : ℕ) :\n fibRowsMC3E (n+2) (j+1)=(X+1)*fibRowsMC3E (n+1) (j+1)+\n fibRowsMC3E (n+1) j-fibRowsMC3E n j",
+          "block_sha256": "99a2d447813b6eded3ab4e3c503659350dd242cb3037f6974a514c5d21f15ba3",
+          "block_characters": 195
+        },
+        {
+          "kind": "theorem",
+          "name": "top_delta_parameterMB3E",
+          "header": "theorem top_delta_parameterMB3E (n t : ℕ) (ht : t ≤ n) :\n topDiagonalDeltaMB3E (n+2) (t+1)+topDiagonalDeltaMB3E n t=\n topDiagonalDeltaMB3E (n+1) (t+1)+(X+1)*topDiagonalDeltaMB3E (n+1) t",
+          "block_sha256": "1c65149b6593b3f682401759eda9984becbc9589accdf072f19ddb07834279a3",
+          "block_characters": 557
+        },
+        {
+          "kind": "theorem",
+          "name": "top_template_parameterMB3E",
+          "header": "theorem top_template_parameterMB3E (n t : ℕ) (ht : t ≤ n) :\n topTemplateMB3E (n+2) (t+1)+topTemplateMB3E n t=\n topTemplateMB3E (n+1) (t+1)+(X+1)*topTemplateMB3E (n+1) t",
+          "block_sha256": "a752f14165d039f05cb49e6736cda7c5c7f7665f05ef345f1da10c0655bf3d79",
+          "block_characters": 998
+        },
+        {
+          "kind": "theorem",
+          "name": "top_diagonal_equationMB3E",
+          "header": "theorem top_diagonal_equationMB3E (n t : ℕ) (ht : t ≤ n) :\n topTemplateMB3E (n+4) (t+2)-2*topTemplateMB3E (n+2) (t+1)+topTemplateMB3E n t=\n topDiagonalDeltaMB3E (n+4) (t+2)+2*topDiagonalDeltaMB3E (n+2) (t+1)+\n topDiagonalDeltaMB3E n t",
+          "block_sha256": "942bea0e171786991683b0d24692ab3ae2bf3f636ada27fce49964acf63da841",
+          "block_characters": 1050
+        },
+        {
+          "kind": "theorem",
+          "name": "top_diagonal_sumMB3E",
+          "header": "theorem top_diagonal_sumMB3E (d t : ℕ) :\n topTemplateMB3E (2*t+d) t=topDiagonalDeltaMB3E (2*t+d) t+\n 4*doublePrefixMDAB (fun s => topDiagonalDeltaMB3E (2*s+d) s) t",
+          "block_sha256": "3b49961e28e09591ce28135e4198d04424f892ef3a85139806d3a8a5fa142c28",
+          "block_characters": 635
+        },
+        {
+          "kind": "theorem",
+          "name": "top_template_sumMB3E",
+          "header": "theorem top_template_sumMB3E (n t : ℕ) (hn : 2*t ≤ n) :\n topTemplateMB3E n t=topDiagonalDeltaMB3E n t+\n 4*∑ s ∈ range t, C (t-s:ℤ)*topDiagonalDeltaMB3E (n-2*t+2*s) s",
+          "block_sha256": "0c72b303ba0a0522fd44fae215140ea2e5229022cb9029a1e742b037130f4e08",
+          "block_characters": 385
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovTopCoefficientsMB3E",
+      "path": "research/MarkovTopCoefficientsMB3E.lean",
+      "bytes": 5428,
+      "sha256": "632df5d4fb9c9c4f7d4edfdad0146dc1f9ec6053b6ac11ea2d191a0759d7e65b",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "top_delta_coeffMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_delta_oneMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_delta_twoMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_delta_highMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_delta_low_zeroMB3E"
+        },
+        {
+          "kind": "def",
+          "name": "topPositiveMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_positive_formulaMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_positive_nonnegMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_positive_supportMB3E"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792222804316839000.json",
+          "sha256": "8319a900e26dce3eb39520a977f3dfc1eefea11ff7702b60ef22a8346c83e773",
+          "source_sha256": "8d6c5958c1616b07fc3d8f96ead4cf8e4a48d4c4bc8ecf77871332c23a011d4e",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "8d6c5958c1616b07fc3d8f96ead4cf8e4a48d4c4bc8ecf77871332c23a011d4e"
+        },
+        {
+          "path": "build-1792222866836112000.json",
+          "sha256": "8718222e7ee230842c1aa465211ad77c132d71500635b545e5fe1db52995f7be",
+          "source_sha256": "2306884dfebfaae5df7e8b9cee493de055ecba78106fd2a7c7cb3c123582f1e1",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "2306884dfebfaae5df7e8b9cee493de055ecba78106fd2a7c7cb3c123582f1e1"
+        },
+        {
+          "path": "build-1792222921735559000.json",
+          "sha256": "b6af60af6ec0a94a8581d3695774209d457e8905ba9d348d6c192d6f6ef007b3",
+          "source_sha256": "632df5d4fb9c9c4f7d4edfdad0146dc1f9ec6053b6ac11ea2d191a0759d7e65b",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "632df5d4fb9c9c4f7d4edfdad0146dc1f9ec6053b6ac11ea2d191a0759d7e65b"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in182": true,
+      "printed_in182": true,
+      "object_path": "evidence/markov-b3eed364/MarkovTopCoefficientsMB3E.olean",
+      "object_sha256": "c2add13cdcbd574c7f7ba7c1d147ef0bacf5e747b00b00c7be984323099b991d",
+      "successful_final_build": "evidence/markov-b3eed364/build-1792222921735559000.json",
+      "historical_successful_source_versions": [
+        "632df5d4fb9c9c4f7d4edfdad0146dc1f9ec6053b6ac11ea2d191a0759d7e65b"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovTopSumMB3E"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "top_delta_coeffMB3E",
+          "header": "theorem top_delta_coeffMB3E (n t i : ℕ) :\n (topDiagonalDeltaMB3E n t).coeff i=fibDeltaME9C n i (n+2-t)",
+          "block_sha256": "84814bdc6b9629f9c673106577231d562ec8a37024e7d65d1f45c3ed0607ab51",
+          "block_characters": 182
+        },
+        {
+          "kind": "theorem",
+          "name": "top_delta_oneMB3E",
+          "header": "theorem top_delta_oneMB3E (n : ℕ) :\n topDiagonalDeltaMB3E n 1= -2+C (n+2:ℤ)*X",
+          "block_sha256": "f6090087f66b8b78bb4dee7378f9ab7d47f48cea6b7e8f391e5b8db70298697f",
+          "block_characters": 657
+        },
+        {
+          "kind": "theorem",
+          "name": "top_delta_twoMB3E",
+          "header": "theorem top_delta_twoMB3E (n : ℕ) :\n topDiagonalDeltaMB3E n 2=1-C (n+1:ℤ)*X+C ((n+2).choose 2:ℤ)*X^2",
+          "block_sha256": "e8100d62af9aa9688147cc437065c30fbc8fd7861ee880cb212bc3d2e9658d89",
+          "block_characters": 847
+        },
+        {
+          "kind": "theorem",
+          "name": "top_delta_highMB3E",
+          "header": "theorem top_delta_highMB3E (n t i : ℕ) (ht : t ≤ n+2) :\n (topDiagonalDeltaMB3E n t).coeff (i+3)=\n if 3 ≤ t then ((t-3).choose i:ℤ)*((n+5-t+i).choose (i+3):ℤ) else 0",
+          "block_sha256": "9acd8772689dbcaef756805af61e2ca16445afa568a1973e4bdc13546f728d42",
+          "block_characters": 643
+        },
+        {
+          "kind": "theorem",
+          "name": "top_delta_low_zeroMB3E",
+          "header": "theorem top_delta_low_zeroMB3E (n t i : ℕ) (ht : t ≤ n+2) (h3 : 3 ≤ t)\n (hi : i ≤ 2) : (topDiagonalDeltaMB3E n t).coeff i=0",
+          "block_sha256": "6dc1fc92654f6754fa903cb46aee8c61083555270588e8401161c94c6d409f1d",
+          "block_characters": 300
+        },
+        {
+          "kind": "theorem",
+          "name": "top_positive_formulaMB3E",
+          "header": "theorem top_positive_formulaMB3E (n t i : ℕ) (hn : 2*t ≤ n) :\n (topTemplateMB3E n t).coeff (i+3)=topPositiveMB3E n t i",
+          "block_sha256": "dddd9d10ec588143521f465b7e31405359ec0ba3a530d5a9a4ba52c986cc492a",
+          "block_characters": 468
+        },
+        {
+          "kind": "theorem",
+          "name": "top_positive_nonnegMB3E",
+          "header": "theorem top_positive_nonnegMB3E (n t i : ℕ) : 0 ≤ topPositiveMB3E n t i",
+          "block_sha256": "87dbb7c6255edd6a179255cbac6a6bb95551365abfdbc0b0cb0e0a1dd9cfa09e",
+          "block_characters": 341
+        },
+        {
+          "kind": "theorem",
+          "name": "top_positive_supportMB3E",
+          "header": "theorem top_positive_supportMB3E (n t i : ℕ) (hn : 2*t ≤ n) :\n 0 < topPositiveMB3E n t i ↔ i+3 ≤ t",
+          "block_sha256": "e2af18e340905d691b0b8ccf5f1ba7c74f08e7d74b1014c57bc052a8abec117d",
+          "block_characters": 1252
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "topPositiveMB3E",
+          "header": "def topPositiveMB3E (n t i : ℕ) : ℤ",
+          "block_sha256": "d52c3422f44c12cdec6befe7870589587c5f2b899989fbe25ad5910823766264",
+          "block_characters": 214,
+          "definition_text": "def topPositiveMB3E (n t i : ℕ) : ℤ :=\n (if 3 ≤ t then ((t-3).choose i:ℤ)*((n+5-t+i).choose (i+3):ℤ) else 0)+\n 4*∑ s ∈ range t, ((t:ℤ)-s)*\n   (if 3 ≤ s then ((s-3).choose i:ℤ)*((n-2*t+s+i+5).choose (i+3):ℤ) else 0)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovTopEdgesMB3E",
+      "path": "research/MarkovTopEdgesMB3E.lean",
+      "bytes": 4456,
+      "sha256": "907409b083520a1dce6b17e444b41fb5860c6c0fcac50aaf5dfa19daad0dde22",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "sum_first_threeMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_edge_coeffsMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_prefix_generalMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_weighted_generalMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_third_coeffMB3E"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792222935347936000.json",
+          "sha256": "71185db348b22e09cd8160ea4abcf00c532478ef88538661055495edc7987d27",
+          "source_sha256": "3e30f1cb61a32f4449428a357d34e64ef8e81115383b41fdeaa39efbe89a9ed8",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "3e30f1cb61a32f4449428a357d34e64ef8e81115383b41fdeaa39efbe89a9ed8"
+        },
+        {
+          "path": "build-1792222951592905000.json",
+          "sha256": "2adff204ec39e36c6291467967652e9f5afb33e64c853a59350dc149c6ee73c8",
+          "source_sha256": "907409b083520a1dce6b17e444b41fb5860c6c0fcac50aaf5dfa19daad0dde22",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "907409b083520a1dce6b17e444b41fb5860c6c0fcac50aaf5dfa19daad0dde22"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in182": true,
+      "printed_in182": true,
+      "object_path": "evidence/markov-b3eed364/MarkovTopEdgesMB3E.olean",
+      "object_sha256": "d0c92d040f91c6b3da1c2bf87c3b9890a93fcaa622b8e4410ad3951a87c131d2",
+      "successful_final_build": "evidence/markov-b3eed364/build-1792222951592905000.json",
+      "historical_successful_source_versions": [
+        "907409b083520a1dce6b17e444b41fb5860c6c0fcac50aaf5dfa19daad0dde22"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovTopCoefficientsMB3E"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "sum_first_threeMB3E",
+          "header": "theorem sum_first_threeMB3E (f : ℕ → ℤ) (t : ℕ) (ht : 3 ≤ t)\n (hf : ∀ s, 3 ≤ s → s<t → f s=0) : ∑ s ∈ range t, f s=f 0+f 1+f 2",
+          "block_sha256": "1d6f893c93a0619836826fb05fae7016868b7fc8a21251089e9ac3179fd465ac",
+          "block_characters": 331
+        },
+        {
+          "kind": "theorem",
+          "name": "top_edge_coeffsMB3E",
+          "header": "theorem top_edge_coeffsMB3E (n t : ℕ) (hn : 2*t ≤ n) (ht : 3 ≤ t) :\n (topTemplateMB3E n t).coeff 0=0 ∧\n (topTemplateMB3E n t).coeff 1=4*((n:ℤ)+6-3*t) ∧\n (topTemplateMB3E n t).coeff 2=4*((t:ℤ)-2)*((n-2*t+6).choose 2:ℤ)",
+          "block_sha256": "80ef9e9613d3e44cf7cb50789f06023aa41562eb0a3e3dd27f2c78b66b175e0d",
+          "block_characters": 1299
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_prefix_generalMB3E",
+          "header": "theorem choose_prefix_generalMB3E (a k m : ℕ) :\n (∑ s ∈ range m, ((a+s).choose k:ℤ))=\n ((a+m).choose (k+1):ℤ)-(a.choose (k+1):ℤ)",
+          "block_sha256": "50e67d4fcbafecd3d811056ebc806961d441d4aac64e28598079e38995e7436c",
+          "block_characters": 280
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_weighted_generalMB3E",
+          "header": "theorem choose_weighted_generalMB3E (a k m : ℕ) :\n (∑ s ∈ range m, ((m:ℤ)-s)*((a+s).choose k:ℤ))=\n ((a+m+1).choose (k+2):ℤ)-((a+1).choose (k+2):ℤ)-m*(a.choose (k+1):ℤ)",
+          "block_sha256": "1346f06c9d236c5a0d11f9765ec13d8beb95004cb94546af436a31f2bd1def34",
+          "block_characters": 912
+        },
+        {
+          "kind": "theorem",
+          "name": "top_third_coeffMB3E",
+          "header": "theorem top_third_coeffMB3E (n t : ℕ) (hn : 2*t ≤ n) (ht : 3 ≤ t) :\n (topTemplateMB3E n t).coeff 3=\n ((n+5-t).choose 3:ℤ)+4*(\n ((n-t+6).choose 5:ℤ)-((n-2*t+9).choose 5:ℤ)-\n ((t:ℤ)-3)*((n-2*t+8).choose 4:ℤ))",
+          "block_sha256": "bb19e2098dee899844cb70100b3d60bd9c46dee3b5860529a111cafb330b50fd",
+          "block_characters": 1129
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovTopEdgeGapMB3E",
+      "path": "research/MarkovTopEdgeGapMB3E.lean",
+      "bytes": 1609,
+      "sha256": "2119fefd781ae4fcef0cbafdc9a9921b4b2f54d2ec7c66efd2d47b3eb38ee61c",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "topEdgeThirdMB3E"
+        },
+        {
+          "kind": "def",
+          "name": "topEdgeSecondMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_edge_gap_positiveMB3E"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792222960745725000.json",
+          "sha256": "380cdc7613d254a4842eba6955ec312eb46e75b1ed67669ced329b3b0aca1942",
+          "source_sha256": "2119fefd781ae4fcef0cbafdc9a9921b4b2f54d2ec7c66efd2d47b3eb38ee61c",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "2119fefd781ae4fcef0cbafdc9a9921b4b2f54d2ec7c66efd2d47b3eb38ee61c"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in182": true,
+      "printed_in182": true,
+      "object_path": "evidence/markov-b3eed364/MarkovTopEdgeGapMB3E.olean",
+      "object_sha256": "7f0c43ea01eee5c2bddf261c38c435aab64ee8dad660b157b47996c3c8ef33d6",
+      "successful_final_build": "evidence/markov-b3eed364/build-1792222960745725000.json",
+      "historical_successful_source_versions": [
+        "2119fefd781ae4fcef0cbafdc9a9921b4b2f54d2ec7c66efd2d47b3eb38ee61c"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovTopEdgesMB3E"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "top_edge_gap_positiveMB3E",
+          "header": "theorem top_edge_gap_positiveMB3E (s d : ℚ) (hs : 0 ≤ s) (hd : 0 ≤ d) :\n 4*(d+1)*topEdgeThirdMB3E s d < topEdgeSecondMB3E s d^2",
+          "block_sha256": "05a1dad1e94ef6fc2a3eeec17db0647006d13554a6985a52d113c33a1cfa4c66",
+          "block_characters": 1099
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "topEdgeThirdMB3E",
+          "header": "def topEdgeThirdMB3E (s d : ℚ) : ℚ",
+          "block_sha256": "694585b83459e273c83b3c87ee79a0ce2497468741187a926cdb81c4223caa57",
+          "block_characters": 150,
+          "definition_text": "def topEdgeThirdMB3E (s d : ℚ) : ℚ :=\n choosePolyM0D3 (2*s+d+6) 3+4*(choosePolyM0D3 (2*s+d+7) 5-\n choosePolyM0D3 (s+d+7) 5-s*choosePolyM0D3 (s+d+6) 4)"
+        },
+        {
+          "kind": "def",
+          "name": "topEdgeSecondMB3E",
+          "header": "def topEdgeSecondMB3E (s d : ℚ) : ℚ",
+          "block_sha256": "3b16cb97eae3b2f74b12d58d7b8fbbf600db6d1a01ab02f189c371a4f9c19e67",
+          "block_characters": 71,
+          "definition_text": "def topEdgeSecondMB3E (s d : ℚ) : ℚ := 4*(s+1)*choosePolyM0D3 (s+d+4) 2"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovTopEdgeSourceMB3E",
+      "path": "research/MarkovTopEdgeSourceMB3E.lean",
+      "bytes": 3253,
+      "sha256": "9166c6b4a168886b1cb2aa2006d8bbf0e7a1ed10b6891d505853b9078a9a4d8f",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "top_template_first_strictMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_first_strictMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_first_pathMB3E"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792222968280232000.json",
+          "sha256": "944754aaff719b53da182b99ffaf0a715888b3e0ee413963591dc862b2975bf6",
+          "source_sha256": "3ecac493cd26c9392155d13ad288d4b3b255310cfc98f8941e011769c5f6d3d1",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "3ecac493cd26c9392155d13ad288d4b3b255310cfc98f8941e011769c5f6d3d1"
+        },
+        {
+          "path": "build-1792223004926763000.json",
+          "sha256": "8522158fa380cb8c95d13c39e85fe362a74c74043391b4afb0ea9b3d2b86f5ee",
+          "source_sha256": "9166c6b4a168886b1cb2aa2006d8bbf0e7a1ed10b6891d505853b9078a9a4d8f",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "9166c6b4a168886b1cb2aa2006d8bbf0e7a1ed10b6891d505853b9078a9a4d8f"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in182": true,
+      "printed_in182": true,
+      "object_path": "evidence/markov-b3eed364/MarkovTopEdgeSourceMB3E.olean",
+      "object_sha256": "a09b1ccc8046db14e35d6e34b1de286ca6390ef89f9fc7e601eb0400f61ba599",
+      "successful_final_build": "evidence/markov-b3eed364/build-1792223004926763000.json",
+      "historical_successful_source_versions": [
+        "9166c6b4a168886b1cb2aa2006d8bbf0e7a1ed10b6891d505853b9078a9a4d8f"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovTopEdgeGapMB3E"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "top_template_first_strictMB3E",
+          "header": "theorem top_template_first_strictMB3E (n t : ℕ) (hn : 2*t ≤ n)\n (ht : 3 ≤ t) (hnt : 3*t ≤ n+5) :\n (topTemplateMB3E n t).coeff 1*(topTemplateMB3E n t).coeff 3 <\n (topTemplateMB3E n t).coeff 2^2",
+          "block_sha256": "665eea1b1a1273bf68e2a6e0e3c23d0de3262af0025cb2a51e7fc269cd6a1962",
+          "block_characters": 1749
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_first_strictMB3E",
+          "header": "theorem source_top_first_strictMB3E (q t : ℕ) (r : Bool) (hq : 1 ≤ q)\n (ht0 : 5 ≤ t) (ht : t ≤ q+2) :\n threeRawM9E2 q r 1 (sourceNME9C q r+2-t)*\n threeRawM9E2 q r 3 (sourceNME9C q r+2-t) <\n threeRawM9E2 q r 2 (sourceNME9C q r+2-t)^2",
+          "block_sha256": "83e7d00a0b46a2f3ef51d837c8f4a7a23c6cba3add00779db641c1ac2e709c17",
+          "block_characters": 487
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_first_pathMB3E",
+          "header": "theorem source_top_first_pathMB3E (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1 ≤ q ∧ (frame path).mid.b=sourceNME9C q r ∧\n ∀ t, 5 ≤ t → t ≤ q+2 →\n coeff (frame path).mid.p 1 ((frame path).mid.b+2-t)*\n coeff (frame path).mid.p 3 ((frame path).mid.b+2-t) <\n coeff (frame path).mid.p 2 ((frame path).mid.b+2-t)^2",
+          "block_sha256": "0e7604a9a867cc7db3ce4f621e85f866c17e742629c9a6431670e5d1771c2aaf",
+          "block_characters": 559
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovTopRegionMB3E",
+      "path": "research/MarkovTopRegionMB3E.lean",
+      "bytes": 2924,
+      "sha256": "6a6db069abbfd3d95f46a145eb459194d63a5cf4a8307c06c14e5c8a2835da09",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "TopEdgeRegionMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_zeroMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_edge_regionMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_positive_formulaMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_high_supportMB3E"
+        },
+        {
+          "kind": "def",
+          "name": "ThreeRemainingMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_remainingMB3E"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792223013867093000.json",
+          "sha256": "4829bdfe0f908fa7f5b008b94a040b7d205b697a5173b15bb70764cbe8926610",
+          "source_sha256": "6a6db069abbfd3d95f46a145eb459194d63a5cf4a8307c06c14e5c8a2835da09",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "6a6db069abbfd3d95f46a145eb459194d63a5cf4a8307c06c14e5c8a2835da09"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in182": true,
+      "printed_in182": true,
+      "object_path": "evidence/markov-b3eed364/MarkovTopRegionMB3E.olean",
+      "object_sha256": "0f10fe58e8ef181c26f2cef0beaf7fc5601fa675e348f64fac4cc53ad59457da",
+      "successful_final_build": "evidence/markov-b3eed364/build-1792223013867093000.json",
+      "historical_successful_source_versions": [
+        "6a6db069abbfd3d95f46a145eb459194d63a5cf4a8307c06c14e5c8a2835da09"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovTopEdgeSourceMB3E"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "source_top_zeroMB3E",
+          "header": "theorem source_top_zeroMB3E (q t : ℕ) (r : Bool) (hq : 1 ≤ q)\n (ht0 : 5 ≤ t) (ht : t ≤ q+2) :\n threeRawM9E2 q r 0 (sourceNME9C q r+2-t)=0",
+          "block_sha256": "26a168c61b0ba25c9b18bf698c3d9196a43bfe3eed16751197a8ce1a450aa5ba",
+          "block_characters": 291
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_edge_regionMB3E",
+          "header": "theorem source_top_edge_regionMB3E (q i j : ℕ) (r : Bool) (hq : 1 ≤ q)\n (h : TopEdgeRegionMB3E q r i j) :\n threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2",
+          "block_sha256": "6439460bd140623ebe749b86e87e777d06bad75637c2c878d39145ad7560a3c2",
+          "block_characters": 405
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_positive_formulaMB3E",
+          "header": "theorem source_top_positive_formulaMB3E (q t i : ℕ) (r : Bool) (hq : 1 ≤ q)\n (ht0 : 5 ≤ t) (ht : t ≤ q+2) :\n threeRawM9E2 q r (i+3) (sourceNME9C q r+2-t)=topPositiveMB3E (sourceNME9C q r) t i",
+          "block_sha256": "85c1dd1a42a87bb55beab1b29a731d72cca95383f1d8dd729a83ab737e0e62eb",
+          "block_characters": 316
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_high_supportMB3E",
+          "header": "theorem source_top_high_supportMB3E (q t i : ℕ) (r : Bool) (hq : 1 ≤ q)\n (ht0 : 5 ≤ t) (ht : t ≤ q+2) :\n 0 < threeRawM9E2 q r (i+3) (sourceNME9C q r+2-t) ↔ i+3 ≤ t",
+          "block_sha256": "e48ffe3e3710f409b5e3a4a7c27e08b01be1192a4767f25cb0156a4977d46968",
+          "block_characters": 299
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_remainingMB3E",
+          "header": "theorem root_iff_remainingMB3E : Conjecture63 ↔ ThreeRemainingMB3E ∧ OtherFourM9E2",
+          "block_sha256": "7d3428c9c388d5988e69fa5790c9e3b61a20e9baec9ecefd19758bb40f3f2d4c",
+          "block_characters": 499
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "TopEdgeRegionMB3E",
+          "header": "def TopEdgeRegionMB3E (q : ℕ) (r : Bool) (i j : ℕ) : Prop",
+          "block_sha256": "28c87531b6c10432c8a003905dce93a5bfc9b954a7507f10b34c4076da2455bc",
+          "block_characters": 114,
+          "definition_text": "def TopEdgeRegionMB3E (q : ℕ) (r : Bool) (i j : ℕ) : Prop :=\n i ≤ 1 ∧ ∃ t, 5 ≤ t ∧ t ≤ q+2 ∧ j=sourceNME9C q r+2-t"
+        },
+        {
+          "kind": "def",
+          "name": "ThreeRemainingMB3E",
+          "header": "def ThreeRemainingMB3E : Prop",
+          "block_sha256": "b7ee3c08fba04f76b7e773edc4df3b81ee1dbef179a5c4c3fc7fca76f3dac070",
+          "block_characters": 488,
+          "definition_text": "def ThreeRemainingMB3E : Prop := ∀ q : ℕ, 1 ≤ q → ∀ r,\n (∀ i j, q+3<j → sourceNME9C q r<2*j+1 → j≠5 → ¬TopEdgeRegionMB3E q r i j →\n   threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2) ∧\n (∀ i j, ¬(((i=3 ∨ i=4) ∧ j+1 ≤ q) ∨ (5 ≤ i ∧ i ≤ 8 ∧ j+2 ≤ q)) →\n   threeRawM9E2 q r i j*threeRawM9E2 q r i (j+2) ≤ threeRawM9E2 q r i (j+1)^2) ∧\n (∀ i j, ¬(3 ≤ i ∧ i ≤ 6 ∧ j+2 ≤ q) →\n   threeRawM9E2 q r i (j+2)*threeRawM9E2 q r (i+2) j ≤\n     threeRawM9E2 q r (i+1) (j+1)^2)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovTopSupportMB3E",
+      "path": "research/MarkovTopSupportMB3E.lean",
+      "bytes": 2392,
+      "sha256": "4c77521e7efe92459637ddcec6db14124d65117a2be3f360af73322c3af98a32",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "top_template_supportMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_supportMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_zero_tailMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_edge_polygonMB3E"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792223209461830000.json",
+          "sha256": "6edb27d9c887ed56bb2792b52e54983c50e9b48332e3e4d1b985f98ef7424570",
+          "source_sha256": "fd2d2a1999bb2adfcff6d7a16c079cc1c3fb20dbf8c2c4e2a77d3d907fb9e192",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "fd2d2a1999bb2adfcff6d7a16c079cc1c3fb20dbf8c2c4e2a77d3d907fb9e192"
+        },
+        {
+          "path": "build-1792223239842139000.json",
+          "sha256": "69ca28d0b4b0a88a26350ddcdf62f3822a99c449c4f353bbe147a48f83074461",
+          "source_sha256": "4c77521e7efe92459637ddcec6db14124d65117a2be3f360af73322c3af98a32",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "4c77521e7efe92459637ddcec6db14124d65117a2be3f360af73322c3af98a32"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in182": true,
+      "printed_in182": true,
+      "object_path": "evidence/markov-b3eed364/MarkovTopSupportMB3E.olean",
+      "object_sha256": "78fb113c5afece51ab75f3d34360cadc9cd701835db9fe41063526f4929aadb2",
+      "successful_final_build": "evidence/markov-b3eed364/build-1792223239842139000.json",
+      "historical_successful_source_versions": [
+        "4c77521e7efe92459637ddcec6db14124d65117a2be3f360af73322c3af98a32"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovTopRegionMB3E"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "top_template_supportMB3E",
+          "header": "theorem top_template_supportMB3E (n t i : ℕ) (hn : 2*t ≤ n)\n (ht : 5 ≤ t) (hnt : 3*t ≤ n+5) :\n 0 ≤ (topTemplateMB3E n t).coeff i ∧\n (0 < (topTemplateMB3E n t).coeff i ↔ 1 ≤ i ∧ i ≤ t)",
+          "block_sha256": "85a4fe02731e60f6efbdedd6d6003d83faae1db0241767b1fc3ad91b5b006e15",
+          "block_characters": 870
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_supportMB3E",
+          "header": "theorem source_top_supportMB3E (q t i : ℕ) (r : Bool) (hq : 1 ≤ q)\n (ht0 : 5 ≤ t) (ht : t ≤ q+2) :\n 0 ≤ threeRawM9E2 q r i (sourceNME9C q r+2-t) ∧\n (0 < threeRawM9E2 q r i (sourceNME9C q r+2-t) ↔ 1 ≤ i ∧ i ≤ t)",
+          "block_sha256": "996e35dc9aebfb417efa174f829dc2ba61e6f3bf5a3699e1ddaa1e252d9394c2",
+          "block_characters": 390
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_zero_tailMB3E",
+          "header": "theorem source_top_zero_tailMB3E (q t i : ℕ) (r : Bool) (hq : 1 ≤ q)\n (ht0 : 5 ≤ t) (ht : t ≤ q+2) (hi : i=0 ∨ t < i) :\n threeRawM9E2 q r i (sourceNME9C q r+2-t)=0",
+          "block_sha256": "fa6bf012646706a3e9aa50cbc4383a53d93f8de6242016b0aa0410b33d167b7f",
+          "block_characters": 312
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_edge_polygonMB3E",
+          "header": "theorem source_top_edge_polygonMB3E (q t : ℕ) (r : Bool) (hq : 1 ≤ q)\n (ht0 : 5 ≤ t) (ht : t ≤ q+2) :\n InPolygon 3 (sourceNME9C q r) 1 (sourceNME9C q r+2-t) ∧\n InPolygon 3 (sourceNME9C q r) 2 (sourceNME9C q r+2-t) ∧\n InPolygon 3 (sourceNME9C q r) 3 (sourceNME9C q r+2-t)",
+          "block_sha256": "4f3c23e897e40ddd195bf978240fa862c1f89fea95c45a4973fb67a871d8a2c4",
+          "block_characters": 374
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    }
+  ],
+  "excluded_modules": [],
+  "accepted_counts": {
+    "def": 9,
+    "theorem": 45
+  },
+  "excluded_counts": {},
+  "superseded_successful_snapshots": [
+    {
+      "module": "MarkovTopTemplateMB3E",
+      "snapshot": "evidence/markov-b3eed364/build-1792222426494985000.lean",
+      "sha256": "d525b263215ac06935e03df3b8c1a3be44a4265fd0f0d07c054b9c5b866906e2",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "topTemplateMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_templateMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_coeffMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_pathMB3E"
+        },
+        {
+          "kind": "def",
+          "name": "TopTemplateLCMB3E"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_of_templateMB3E"
+        }
+      ],
+      "final_diff": "--- superseded successful snapshot\n+++ final source\n@@ -6,11 +6,13 @@\n open Polynomial\n set_option maxHeartbeats 5000000\n \n+def topDiagonalDeltaMB3E (n t : ℕ) : Polynomial ℤ := topDeltaMB3E n (n+2-t)\n+\n def topTemplateMB3E (n : ℕ) : ℕ → Polynomial ℤ\n  | 0 => 1\n- | 1 => topDeltaMB3E n (n+1)+4\n- | t+2 => topDeltaMB3E n (n-t)+2*(X+1)*topDeltaMB3E n (n+1-t)+\n-     (X+1)^2*topDeltaMB3E n (n+2-t)-\n+ | 1 => topDiagonalDeltaMB3E n 1+4\n+ | t+2 => topDiagonalDeltaMB3E n (t+2)+2*(X+1)*topDiagonalDeltaMB3E n (t+1)+\n+     (X+1)^2*topDiagonalDeltaMB3E n t-\n      2*(X-1)*topTemplateMB3E n (t+1)-(X+1)^2*topTemplateMB3E n t\n \n theorem source_top_templateMB3E (q t : ℕ) (r : Bool) (hq : 1 ≤ q)\n@@ -34,7 +36,8 @@\n      rw [show sourceNME9C q r+1+1=sourceNME9C q r+2 by omega,h0,\n        source_rows_aboveMB3E q (sourceNME9C q r+1+2) r hq (by omega),\n        top_delta_topMB3E,top_delta_aboveMB3E _ (sourceNME9C q r+1+2) (by omega)] at he\n-     rw [show sourceNME9C q r+2-1=sourceNME9C q r+1 by omega,topTemplateMB3E]\n+     simp only [topTemplateMB3E,topDiagonalDeltaMB3E,\n+       show sourceNME9C q r+2-1=sourceNME9C q r+1 by omega]\n      linear_combination he\n    · have h0 := ih t (by omega) (by omega)\n      have h1 := ih (t+1) (by omega) (by omega)\n@@ -43,6 +46,9 @@\n        show sourceNME9C q r-t+2=sourceNME9C q r+2-t by omega,h0,h1] at he\n      rw [show sourceNME9C q r+2-(t+1+1)=sourceNME9C q r-t by omega,\n        topTemplateMB3E]\n+     simp only [topDiagonalDeltaMB3E]\n+     rw [show sourceNME9C q r+2-(t+2)=sourceNME9C q r-t by omega,\n+       show sourceNME9C q r+2-(t+1)=sourceNME9C q r+1-t by omega]\n      have hx : sourceNME9C q r+2-(t+1)=sourceNME9C q r+1-t := by omega\n      rw [hx] at he\n      linear_combination he\n",
+      "replayed_as_final": false,
+      "scope": "Earlier compile is evidence for its own source only; both retained replays bind final source, which adds topDiagonalDeltaMB3E and changes topTemplate body."
+    }
+  ],
+  "mathematical_values_recomputed": false,
+  "source_level_scope": {
+    "root_open": true,
+    "new_unconditional_raw_LC_region": true,
+    "root_equivalence": "Conjecture63 iff ThreeRemainingMB3E and OtherFourM9E2",
+    "remaining_predicates_unproved": [
+      "ThreeRemainingMB3E",
+      "OtherFourM9E2",
+      "TopTemplateLCMB3E"
+    ],
+    "new_unconditional_source_LC": "Every actual numerator-three source q>=1,b=3q+1(rtrue) or3q+2(rfalse), each depth5<=t<=q+2, rowj=b+2-t: strict rawH at columns1,2,3; non-strict startingi0 byrawcolumn0=0. No denominator bound or auxiliary premise. No general full-row LC.",
+    "source_identity": "Allnatural t,i, q>=1,t<=q+2: raw source row atb+2-t equals denominator-only topTemplate(b,t); pathwrapper existentialq,r withall t,i. Finite topdepth rangej>=b-q to b+2; j>b+2 zero theorem separate.",
+    "positive_formula": "topPositive(n,t,k) is coeff(k+3) under2t<=n, with explicit3<=s guard. Unconditional topPositive>=0; support0<topPositive iffk+3<=t under2t<=n. Whole-row support requires2t<=n,5<=t,3t<=n+5. Source attachment5<=t<=q+2 gives0<raw iff1<=i<=t, zerosi0ori>t.",
+    "strict_first_generic": "For naturaln,t with2t<=n,3<=t,3t<=n+5:coeff1*coeff3<coeff2^2. This is broader than source range, not a source-family replacement.",
+    "horizontal_residual": "Everyq>=1,r,i,j withq+3<j,b<2j+1,j!=5 and NOT(i<=1 andexists t,5<=t<=q+2,j=b+2-t), rawH at(i,j),(i+1,j),(i+2,j).",
+    "vertical_residual": "Allnatural i,j outside ((i=3 or4) andj+1<=q) or(5<=i<=8 andj+2<=q), rawV(i,j),(i,j+1),(i,j+2), unchanged from181.",
+    "diagonal_residual": "Allnatural i,j outside3<=i<=6 andj+2<=q, rawD(i,j+2),(i+1,j+1),(i+2,j), unchanged from181.",
+    "other_four": "OtherFourM9E2 unchanged:every actual path with numerator>=4 requiresGlobalLC18. Root endpoints and earlier a1/a2 coverage inherited unchanged.",
+    "conditional_full_top_LC": "TopTemplateLCMB3E forallnaturaln,t,n>=4,3t<=n+5,allnaturali, ordinaryrawtemplateHLC. No2t<=n premise in this definition. source_top_of_template proves sourceattachment forq>=1,t<=q+2 onlyconditionalonthisunprovedproposition.",
+    "genuine_gain": "TopEdge source hypotheses forceq>=3. The saved full source range and polygon theorem identify an unbounded upper-edge family outside181 lowerhalfplane/lowerthreecorrections/row5; this is a static comparison of source guards, not a new auditor theorem or computed witness. Startingi0 is zero-handling and generally outside original polygon; stricti1 triple explicitlypolygonvalid.",
+    "no_root_refutation": "54 nonreal source rows are finite stronger-property obstructions, not LC counterexamples; allrecordedrawLC tests pass. Jacobi identification andweighted-sum real-rootedness unformalized.",
+    "prior_scope": "Allactuala2all3directions152; a3H2j+1<=b andj<=q+3,j5 retained. No newV/D result.",
+    "old212_recovery_claimed": false,
+    "old166_prefix_recovery_claimed": false
+  },
+  "proof_chain_details": {
+    "source_equation": "rawRow is swapped polynomial coefficient; raw_row_coeff returns literal originalcoeff(i,j). source_rows_equation holdsallq,j bythree_raw_equation andguardedrowoperators. Upperforcingvanishes whenb<=j+q via gain supportq+(if r then1else2)<rowindex. No negative-exponent clipping. source_rows_above requiresq>=1 andb+2<j fromoriginalpolygon.",
+    "template": "Top deptht0=1,t1=Delta(n,1)+4; higher signedrecurrence. Stronginductionusesb>=3q+1 andt<=q+2 tojustifyallNat.sub indexrewrites andtopzero boundary. No unprovedrecurrence/formulapremise.",
+    "diagonal_sum": "Deltaandtemplateparameterrecurrences requiret<=n. Fourinstancesofinheritedrow_diagonal_operator andtwo-stepinduction yieldT(2t+d,t)=Delta(2t+d,t)+4doublePrefix allnaturald,t. Generaln substitutiond=n-2t requires2t<=n. Finiteweightedprefix includes s0..t-1 andretainsalllowdepthterms.",
+    "coefficients": "Delta0=1,Delta1=-2+(n+2)X,Delta2=1-(n+1)X+choose(n+2,2)X². High coeffk+3 guard3<=t usesfib_delta_high underrow<n; lowcoeff0..2 vanishonly3<=t<=n+2. topPositive keeps3<=s guard, preventingfakeNat-sub terms s0,1,2.",
+    "exceptional_columns": "top_edge_coeffs with2t<=n,t>=3: A0=0,A1=4(n+6-3t),A2=4(t-2)choose(n-2t+6,2); exactIntsub/cast explicitly justified. No positivityclaimfromsignedexpressionwithout3t<=n+5.",
+    "telescope": "choose_prefix_general andchoose_weighted_general holdallnaturala,k,m viaPascalinduction; top_third_coeff splitsrange t at3, dropsonlyprovedzero s<3, reindexes s=3+u withm=t-3, retainsbothendpointsubtractions.",
+    "certificate": "s=(t:Q)-3,d=(n:Q)+5-3t nonnegativefromguard; rationalchoosePolybridges toNatchoose useexplicitNatcastsub bounds.25integerliteralterms,scale15,constant7440. LeanringchecksidentityandpositivitycheckspositiveRHS; auditoronlycomparesliteralserialization, neverexpands/evaluates. StrictQgap transportsinjectivelytoInt;no sourcecoefficientnormalization.",
+    "support": "Highsupport usesfirstpositivebinomialterm whenk+3<=t andallothertermsnonnegative; ifk+3>t allNatchoose vanish. Lowcolumns0,1,2 handledseparately. Fullsupportforall i statesnonnegativeandpositiveiff1<=i<=t; zero-tailusesbothparts. Smallt<5 notpromotedthroughthissupporttheorem; sourceidentitycoversthem.",
+    "root": "TopEdgeRegion i<=1 plusdepthguard. i0 usesA0=0 andsquare_nonneg;i1 strictresultweakened. rootiff splitsTopEdgeRegion inold181Hclause; V/Dtuplescopiedverbatim. Bothremainingconjunctsunproved; allsource/endpoints inherited.",
+    "scope_limit": "Positivebinomialformula andfiniteSturm experiments do notprovealltopcolumnsLC. NoJacobiLeanbridge, no unrestrictedreal-rootedness proof; literature ismachine-recordedonly,noindependentsearch."
+  },
+  "literal_raw_indices": {
+    "horizontal_new": [
+      "(1,b+2-t)",
+      "(2,b+2-t)",
+      "(3,b+2-t)"
+    ],
+    "horizontal_zero_start": [
+      "(0,b+2-t)",
+      "(1,b+2-t)",
+      "(2,b+2-t)"
+    ],
+    "vertical_residual": [
+      "(i,j)",
+      "(i,j+1)",
+      "(i,j+2)"
+    ],
+    "diagonal_residual": [
+      "(i,j+2)",
+      "(i+1,j+1)",
+      "(i+2,j)"
+    ]
+  },
+  "zero_and_endpoint_handling": "Natural t<=q+2 withq>=1 prevents topindexunderflow; generalformula2t<=n needed. Explicit s<3zero guards; exceptionalcolumns0/1/2; supportpositivity1..t andalloutsidezeros. Smallq1/2 no new5<=t<=q+2edgecases, identitystillcovers;root0/1,1/1 unchanged."
+}

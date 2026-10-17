@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTopCoefficientsMB3E.lean:20:1: error: unsolved goals\ncase succ.zero\nn : \u2115\n\u22a2 \u2191n + 1 + 1 = \u2191n + 2\n/Users/sasha/math_gkm/research/MarkovTopCoefficientsMB3E.lean:44:9: error: Function expected at\n  Nat.choose_symm_add\nbut this term has type\n  (?m.105 + ?m.106).choose ?m.105 = (?m.105 + ?m.106).choose ?m.106\n\nNote: Expected a function because this term is being applied to the argument\n  n\n/Users/sasha/math_gkm/research/MarkovTopCoefficientsMB3E.lean:55:15: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  d \u2265 0\n  c \u2265 0\n  c - d \u2265 1\n  b \u2265 3\n  a \u2265 0\n  a - b \u2265 -2\nwhere\n a := \u2191n\n b := \u2191t\n c := \u2191((t - 3).choose i)\n d := \u2191((n - (n + 2 - t) - 1).choose i)\n/Users/sasha/math_gkm/research/MarkovTopCoefficientsMB3E.lean:55:15: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  d \u2265 0\n  c \u2265 0\n  c - d \u2265 1\n  b \u2265 3\n  a \u2265 0\n  a - b \u2265 -2\nwhere\n a := \u2191n\n b := \u2191t\n c := \u2191((n + 5 - t + i).choose (i + 3))\n d := \u2191((i + 3 + (n + 2 - t)).choose (i + 3))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTopCoefficientsMB3E": "2306884dfebfaae5df7e8b9cee493de055ecba78106fd2a7c7cb3c123582f1e1"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-b3eed364/MarkovTopCoefficientsMB3E.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopCoefficientsMB3E.lean"
+  ],
+  "seconds": 9.757040833996143,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
