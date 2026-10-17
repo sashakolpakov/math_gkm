@@ -64,17 +64,21 @@ switch, and permission to edit the host controller are three different things.
   controller-retained worker records for provenance. A file's existence or a
   worker's successful exit does not alone establish mathematical acceptance.
 
-The historical bootstrap checks are described in the construction/controller
-pages. With the supplied pinned dependencies, `python3 -m machinery.check`
-runs bounded construction checks, and `python3 evidence/markov/reproduce.py`
-reproduces the initial Markov experiments. Neither command validates the entire
-later campaign. Ordinary working `.olean` caches and `.lake` dependencies are
-intentionally untracked. Explicitly sealed partial-evidence copies may be retained
-and carry only their recorded validation status. A public clone needs the compatible pinned Lean/Mathlib
-setup; retained commands also contain environment-specific library paths. There
-is no advertised one-command fresh rebuild of every later research result.
-Consult the recorded commands and import/validation scope for a particular result.
-No build or experiment is needed merely to read these documents.
+Use the [portable reproduction and recovery tools](repro/README.md) to create a
+separate workspace with exact source and dependency pins. Fresh construction,
+Agoh and initial Markov compilation and kernel replay have passed using the
+existing pinned dependencies. A cold dependency bootstrap and the whole later
+campaign have not been rebuilt by that check. The historical wrappers and their
+environment-specific paths remain preserved.
+
+Sources, scripts, inputs, dependency pins and recovery manifests stay in Git.
+Large optional compilation caches are archived as checksum-verified
+[GitHub Release assets](https://github.com/sashakolpakov/math_gkm/releases/tag/recovery-cache-2026-10-17);
+`git clone` does not download those assets. The recovery tool downloads them
+explicitly. Local cache cleanup must never remove necessary public source/data
+history or turn into a Git deletion commit. Ordinary `.olean` and `.lake` build
+caches remain untracked; explicitly sealed binary evidence keeps its recorded
+historical status.
 
 ## Public evidence provenance
 
