@@ -1,0 +1,100 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovOutwardRatesM5BF\ncollected MarkovRadialCovarianceM5BF\ncollected MarkovOutwardMomentsM5BF\ncollected MarkovDriftClosedM5BF\ncollected MarkovFullBandRegionM5BF\ncollected MarkovDropObstructionM5BF\ncollected MarkovDriftStrictM5BF\ncollected MarkovHalfPlaneM5BF\nreplay union of 8 modules over 3 inherited imports\nisolation checked for 47 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovOutwardRatesM5BF": "a6ee56a9d8d460c385ee542526760864c88b2a2aa75c17c57cfd4ebb594c669f",
+    "MarkovRadialCovarianceM5BF": "bbc90c863645f8bf89a8309c5f4696c875dc333f1e8d50a5963367a9d3b0d901",
+    "MarkovOutwardMomentsM5BF": "49c75cf74a01cd99b8246e8127a8839cd2d502f717f4eeaf7f1e276de63454ea",
+    "MarkovDriftClosedM5BF": "d64214663fb73fc2ece37355378f5d2ef9680fd92a124b0bada5b17d1eb3182e",
+    "MarkovFullBandRegionM5BF": "eddcd13242ce8e02c3e69cbf69e0a353c5a2d58689aea95fc64976d26f737141",
+    "MarkovDropObstructionM5BF": "fcf2a1a8bc8c950612f872fcb5a934a41be6d2f47463aa0ceb1b44ee11de3e39",
+    "MarkovDriftStrictM5BF": "b644585bcf0e067e39c46383279a00a2e2e341fc3d607cf9cac1881241236431",
+    "MarkovHalfPlaneM5BF": "1eeff381c879ef3b84dca7426ef498503ab001c98b88df50e93e0ecfb18a11b9"
+  },
+  "mode": "kernel",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM5BF.lean",
+    "MarkovOutwardRatesM5BF",
+    "MarkovRadialCovarianceM5BF",
+    "MarkovOutwardMomentsM5BF",
+    "MarkovDriftClosedM5BF",
+    "MarkovFullBandRegionM5BF",
+    "MarkovDropObstructionM5BF",
+    "MarkovDriftStrictM5BF",
+    "MarkovHalfPlaneM5BF"
+  ],
+  "seconds": 12.221404624986462,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "560d974ecd228cba7bf08f8bada902c7a27f4934256ba6efe70855cdfde255df",
+  "declared_names": {
+    "MarkovOutwardRatesM5BF": [
+      "birthRateM5BF",
+      "radialRateM5BF",
+      "birth_rate_positive_indexM5BF",
+      "radial_rate_reflectM5BF",
+      "radial_rate_endpointM5BF",
+      "radial_rate_interiorM5BF",
+      "radial_rate_le_endpointM5BF",
+      "radial_rate_orderM5BF",
+      "kernel_birthM5BF"
+    ],
+    "MarkovRadialCovarianceM5BF": [
+      "weighted_covarianceM5BF",
+      "outward_sumM5BF"
+    ],
+    "MarkovOutwardMomentsM5BF": [
+      "rateMassM5BF",
+      "rateMomentM5BF",
+      "outwardTailM5BF",
+      "rate_productM5BF",
+      "outward_massM5BF",
+      "outward_momentM5BF",
+      "rate_covarianceM5BF"
+    ],
+    "MarkovDriftClosedM5BF": [
+      "outward_tail_nonnegM5BF",
+      "previous_moment_boundM5BF",
+      "variance_drift_succM5BF",
+      "variance_drift_nonnegM5BF",
+      "positive_parameter_tail_closedM5BF",
+      "upper_adjacent_closedM5BF",
+      "unshifted_adjacent_closedM5BF",
+      "unshifted_ratio_closedM5BF",
+      "sharp_complete_margin_closedM5BF",
+      "source_band_allM5BF"
+    ],
+    "MarkovFullBandRegionM5BF": [
+      "FullBandRegionM5BF",
+      "source_full_band_regionM5BF",
+      "ThreeBeyondFullBandM5BF",
+      "root_iff_beyond_full_bandM5BF",
+      "source_full_band_pathM5BF"
+    ],
+    "MarkovDropObstructionM5BF": [
+      "quarter_drop_beforeM5BF",
+      "quarter_drop_afterM5BF",
+      "quarter_drop_failsM5BF",
+      "quarter_drop_shortcut_falseM5BF",
+      "quarter_witness_driftM5BF",
+      "quarter_witness_required_inequalityM5BF"
+    ],
+    "MarkovDriftStrictM5BF": [
+      "outward_tail_positiveM5BF",
+      "previous_moment_strict_boundM5BF",
+      "variance_drift_positiveM5BF",
+      "reverse_adjacent_strictM5BF"
+    ],
+    "MarkovHalfPlaneM5BF": [
+      "source_lower_halfM5BF",
+      "source_lower_half_pathM5BF",
+      "ThreeUpperResidualM5BF",
+      "root_iff_upper_residualM5BF"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed M5BF; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

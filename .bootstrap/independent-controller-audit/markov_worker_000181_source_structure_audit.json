@@ -1,0 +1,967 @@
+{
+  "worker": 181,
+  "request": "5bf6837d0c5b4b818f68c99f57ad498a",
+  "created_at_utc": "2026-10-17T07:29:06.706479+00:00",
+  "historical_status": "Completed host outcome / return0 / structured report present / elapsed1063.704658985138. Eight final mathematical modules compiled and jointly replayed,39 distinct theorem closures printed;7 rejected compiler attempts retained. Full root open.",
+  "scope": "Archive-first closed181 and explicit named inherited/current counterparts only. Static hashes, source/record parsing, literal comparison and finite index-domain counts. No mathematical-value recomputation, project/proof/checker/replay/experiment/generator/finalizer execution/import, project edit or proposer help/contact. Active182 and later excluded. Earlier seals/windows unchanged.",
+  "new_modules": [
+    {
+      "module": "MarkovOutwardRatesM5BF",
+      "path": "research/MarkovOutwardRatesM5BF.lean",
+      "bytes": 4525,
+      "sha256": "a6ee56a9d8d460c385ee542526760864c88b2a2aa75c17c57cfd4ebb594c669f",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "birthRateM5BF"
+        },
+        {
+          "kind": "def",
+          "name": "radialRateM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "birth_rate_positive_indexM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "radial_rate_reflectM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "radial_rate_endpointM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "radial_rate_interiorM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "radial_rate_le_endpointM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "radial_rate_orderM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_birthM5BF"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792220954417161000.json",
+          "sha256": "e120c91e9d823301cbd58b2564b598c472a0012657e978e9fc05ba9c5d72e31e",
+          "source_sha256": "2506118fef95e2175895e4c26365596e54961398075782e097466cab95e9a109",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "2506118fef95e2175895e4c26365596e54961398075782e097466cab95e9a109"
+        },
+        {
+          "path": "build-1792221011924033000.json",
+          "sha256": "68962a85c8f793be3faad16a4bbc8843b1413f6b267c3ed45d9d76a391414c52",
+          "source_sha256": "7cf62cda96c8054066eefbde2922228dbb6937a80935c4d0235d92a48e719db4",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "7cf62cda96c8054066eefbde2922228dbb6937a80935c4d0235d92a48e719db4"
+        },
+        {
+          "path": "build-1792221105345781000.json",
+          "sha256": "552c3ca9392ec9dd7b6e84e7c24068233c74fa43ec9c9b4079c43a807b34258a",
+          "source_sha256": "a6ee56a9d8d460c385ee542526760864c88b2a2aa75c17c57cfd4ebb594c669f",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "a6ee56a9d8d460c385ee542526760864c88b2a2aa75c17c57cfd4ebb594c669f"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in181": true,
+      "printed_in181": true,
+      "object_path": "evidence/markov-5bf6837d/MarkovOutwardRatesM5BF.olean",
+      "object_sha256": "c16e681f5ce4f5d640ebabf8bb46a8d7fa176064e0b22ca7f350a324fa0563f0",
+      "successful_final_build": "evidence/markov-5bf6837d/build-1792221105345781000.json",
+      "historical_successful_source_versions": [
+        "a6ee56a9d8d460c385ee542526760864c88b2a2aa75c17c57cfd4ebb594c669f"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovVarianceContractionM1C6"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "birth_rate_positive_indexM5BF",
+          "header": "theorem birth_rate_positive_indexM5BF (j r : ℕ) (hr : 0<r) :\n birthRateM5BF j r=((r:ℝ)+1)*((j:ℝ)-r)/r",
+          "block_sha256": "6393dbe1bcdca4721a7f316bbcbd33663c5f06ef52c2ca44521d906cf8a2622d",
+          "block_characters": 241
+        },
+        {
+          "kind": "theorem",
+          "name": "radial_rate_reflectM5BF",
+          "header": "theorem radial_rate_reflectM5BF (j H t : ℕ) (ht : t≤H) :\n radialRateM5BF j H (H-t)=radialRateM5BF j H t",
+          "block_sha256": "2066714c0f2c72d54dad4548599bc065bb9af2d183cc61237ec1e9a457a3afb1",
+          "block_characters": 170
+        },
+        {
+          "kind": "theorem",
+          "name": "radial_rate_endpointM5BF",
+          "header": "theorem radial_rate_endpointM5BF (j H : ℕ) (hH : 0<H) :\n radialRateM5BF j H 0=5*(j:ℝ)-H-1+j/(H:ℝ)",
+          "block_sha256": "f9832ce6b6a369b0a586e34bbe45081514e09092a908a922a2d410a90b06b4e8",
+          "block_characters": 168
+        },
+        {
+          "kind": "theorem",
+          "name": "radial_rate_interiorM5BF",
+          "header": "theorem radial_rate_interiorM5BF (j H t : ℕ) (ht : 0<t) (hT : t<H) :\n radialRateM5BF j H t=2*(j:ℝ)-H-2+(j:ℝ)*H/((t:ℝ)*(H-t))",
+          "block_sha256": "dca2744b136315ddb99ac2c78c1a3fdcfc1c21aa8c2113b7ec33c7717ea8f8eb",
+          "block_characters": 427
+        },
+        {
+          "kind": "theorem",
+          "name": "radial_rate_le_endpointM5BF",
+          "header": "theorem radial_rate_le_endpointM5BF (j H t : ℕ) (ht : t≤H) :\n radialRateM5BF j H t≤radialRateM5BF j H 0",
+          "block_sha256": "1d75c2307787c5b95482ad87e3add713da577adcd494aca8d3992b02435e3246",
+          "block_characters": 793
+        },
+        {
+          "kind": "theorem",
+          "name": "radial_rate_orderM5BF",
+          "header": "theorem radial_rate_orderM5BF (j H t u : ℕ) (ht : t≤H) (hu : u≤H)\n (hord : ((t:ℝ)-(H:ℝ)/2)^2≤((u:ℝ)-(H:ℝ)/2)^2) :\n radialRateM5BF j H t≤radialRateM5BF j H u",
+          "block_sha256": "56c219a06316e529c93fa73f8a11084cf57066a86f78731a5942aa43a8137936",
+          "block_characters": 1081
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_birthM5BF",
+          "header": "theorem kernel_birthM5BF (j s r : ℕ) (hr : r<j) :\n ((s:ℝ)+j+3-r)*reverseKernelMBEC j s (r+1)=\n birthRateM5BF j r*reverseKernelMBEC j s r",
+          "block_sha256": "7893ab02705abc5c88ffd94b545249121c6454831d0bcb2930af98a39a13a190",
+          "block_characters": 983
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "birthRateM5BF",
+          "header": "def birthRateM5BF (j r : ℕ) : ℝ",
+          "block_sha256": "40faecfc3e661a40b9a917dba30cf1cf5bc17845d0a2370ad92ad990403c7c93",
+          "block_characters": 74,
+          "definition_text": "def birthRateM5BF (j r : ℕ) : ℝ :=\n if r=0 then 4*j else (j:ℝ)-r-1+j/(r:ℝ)"
+        },
+        {
+          "kind": "def",
+          "name": "radialRateM5BF",
+          "header": "def radialRateM5BF (j H t : ℕ) : ℝ",
+          "block_sha256": "2647b786509eaceac5571338f35714bd35215554f4f1c188d00f33ced91a6bb5",
+          "block_characters": 77,
+          "definition_text": "def radialRateM5BF (j H t : ℕ) : ℝ := birthRateM5BF j t+birthRateM5BF j (H-t)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovRadialCovarianceM5BF",
+      "path": "research/MarkovRadialCovarianceM5BF.lean",
+      "bytes": 3385,
+      "sha256": "bbc90c863645f8bf89a8309c5f4696c875dc333f1e8d50a5963367a9d3b0d901",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "weighted_covarianceM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "outward_sumM5BF"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792220995888082000.json",
+          "sha256": "d6b95647f89ccdf0235c918e5abe011a9ebac1665d8a78925cfb2f82d95a32f0",
+          "source_sha256": "e0c84355200563629e00d5c577308dab0cb579ca91225c88d0aa81b60e9f62b4",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "e0c84355200563629e00d5c577308dab0cb579ca91225c88d0aa81b60e9f62b4"
+        },
+        {
+          "path": "build-1792221035620565000.json",
+          "sha256": "deb62c70e7e31d23d64e5f0244e74434e7706cfcefd322d56c24339efc1f7e31",
+          "source_sha256": "ec69a0dafd456fcda4046629f34bbe5691e0648ec046988021981dad03d6ea6a",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "ec69a0dafd456fcda4046629f34bbe5691e0648ec046988021981dad03d6ea6a"
+        },
+        {
+          "path": "build-1792221165440244000.json",
+          "sha256": "f7c8bee291d1018085590325dc86c980d152e0e0cbdc1ff603fddd9898381524",
+          "source_sha256": "bbc90c863645f8bf89a8309c5f4696c875dc333f1e8d50a5963367a9d3b0d901",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "bbc90c863645f8bf89a8309c5f4696c875dc333f1e8d50a5963367a9d3b0d901"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in181": true,
+      "printed_in181": true,
+      "object_path": "evidence/markov-5bf6837d/MarkovRadialCovarianceM5BF.olean",
+      "object_sha256": "a81636495e69df93bba6cd0a7c62a790008b2e7c4a5bbb72c9c70d35fa6c061e",
+      "successful_final_build": "evidence/markov-5bf6837d/build-1792221165440244000.json",
+      "historical_successful_source_versions": [
+        "bbc90c863645f8bf89a8309c5f4696c875dc333f1e8d50a5963367a9d3b0d901"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovVarianceContractionM1C6"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "weighted_covarianceM5BF",
+          "header": "theorem weighted_covarianceM5BF (N : ℕ) (w x b : ℕ → ℝ)\n (hw : ∀ i, i<N → 0≤w i)\n (hb : ∀ i, i<N → ∀ k, k<N → x i≤x k → b i≤b k) :\n (∑ i ∈ range N, w i*x i)*(∑ i ∈ range N, w i*b i) ≤\n (∑ i ∈ range N, w i)*(∑ i ∈ range N, w i*b i*x i)",
+          "block_sha256": "24630f86cc1e20498e4fe5e8a3b60d25bf140b848500ad7a15b0f579a4f1939d",
+          "block_characters": 1333
+        },
+        {
+          "kind": "theorem",
+          "name": "outward_sumM5BF",
+          "header": "theorem outward_sumM5BF (H : ℕ) (f : ℕ → ℝ) (y : ℝ) (F : ℝ → ℝ) :\n (∑ t ∈ range (H+1),\n   (((y-(t+1))*f (t+1)*f (H-t)+(y-(H-t+1))*f t*f (H-t+1))*\n     F ((t:ℝ)-(H:ℝ)/2)))+\n y*f 0*f (H+1)*F (-(H:ℝ)/2-1)+\n y*f (H+1)*f 0*F ((H:ℝ)/2+1)=\n ∑ r ∈ range (H+2),\n   ((y-r)*F ((r:ℝ)-(H:ℝ)/2-1)+(y-(H+1-r))*F ((r:ℝ)-(H:ℝ)/2))*\n     f r*f (H+1-r)",
+          "block_sha256": "9cd94803834162268c021d2ca3fa4f9da72185125402285090285700756d734c",
+          "block_characters": 1550
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovOutwardMomentsM5BF",
+      "path": "research/MarkovOutwardMomentsM5BF.lean",
+      "bytes": 4540,
+      "sha256": "49c75cf74a01cd99b8246e8127a8839cd2d502f717f4eeaf7f1e276de63454ea",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "rateMassM5BF"
+        },
+        {
+          "kind": "def",
+          "name": "rateMomentM5BF"
+        },
+        {
+          "kind": "def",
+          "name": "outwardTailM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "rate_productM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "outward_massM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "outward_momentM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "rate_covarianceM5BF"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792221248035192000.json",
+          "sha256": "b898cfcde9ac14cabcddbc8df8d100ea298844ecba0b463752c816e667f7a612",
+          "source_sha256": "90f9155f93bf0254f776eddd91ec95b9f68f8d9f6319e90e3bee5e82502a19ef",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "90f9155f93bf0254f776eddd91ec95b9f68f8d9f6319e90e3bee5e82502a19ef"
+        },
+        {
+          "path": "build-1792221278901461000.json",
+          "sha256": "39a043cece8a3c9547305cc6ea58261270029da4a77fe4d3cc1134ddc0aad730",
+          "source_sha256": "49c75cf74a01cd99b8246e8127a8839cd2d502f717f4eeaf7f1e276de63454ea",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "49c75cf74a01cd99b8246e8127a8839cd2d502f717f4eeaf7f1e276de63454ea"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in181": true,
+      "printed_in181": true,
+      "object_path": "evidence/markov-5bf6837d/MarkovOutwardMomentsM5BF.olean",
+      "object_sha256": "54a692c791bea9a8663b7ebe7f368f02315610fb3b98e913b2c0c4ce20f000fc",
+      "successful_final_build": "evidence/markov-5bf6837d/build-1792221278901461000.json",
+      "historical_successful_source_versions": [
+        "49c75cf74a01cd99b8246e8127a8839cd2d502f717f4eeaf7f1e276de63454ea"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovOutwardRatesM5BF",
+        "MarkovRadialCovarianceM5BF"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "rate_productM5BF",
+          "header": "theorem rate_productM5BF (j s H t : ℕ) (hH : H<j) (ht : t≤H) :\n radialRateM5BF j H t*reverseKernelMBEC j s t*reverseKernelMBEC j s (H-t)=\n (((s:ℝ)+j+4-(t+1))*reverseKernelMBEC j s (t+1)*reverseKernelMBEC j s (H-t)+\n  ((s:ℝ)+j+4-(H-t+1))*reverseKernelMBEC j s t*reverseKernelMBEC j s (H-t+1))",
+          "block_sha256": "bc7e22c98a6fb1256a30044ba339df6ab214b04fc04afef54eaf99b051973d32",
+          "block_characters": 576
+        },
+        {
+          "kind": "theorem",
+          "name": "outward_massM5BF",
+          "header": "theorem outward_massM5BF (j s H : ℕ) (hH : H<j) :\n rateMassM5BF j s H+outwardTailM5BF j s H=\n 2*reverseCenterM1C6 j s (H+1)*reverseConvMBEC j s s (H+1)",
+          "block_sha256": "8066578a759b7997ea08b598a527dcd5f47682fbed8dfef26483ec1217969b13",
+          "block_characters": 1117
+        },
+        {
+          "kind": "theorem",
+          "name": "outward_momentM5BF",
+          "header": "theorem outward_momentM5BF (j s H : ℕ) (hH : H<j) :\n rateMomentM5BF j s H+outwardTailM5BF j s H*((H:ℝ)/2+1)^2=\n 2*(reverseCenterM1C6 j s (H+1)+1)*reverseMomentM1C6 j s (H+1)+\n reverseCenterM1C6 j s (H+1)/2*reverseConvMBEC j s s (H+1)",
+          "block_sha256": "aaa49358e7a07b70aacc4ae448f2d0ef2db6a28bf1e2b6eeb0e12910703297d6",
+          "block_characters": 1299
+        },
+        {
+          "kind": "theorem",
+          "name": "rate_covarianceM5BF",
+          "header": "theorem rate_covarianceM5BF (j s H : ℕ) (hH : H≤j) :\n reverseMomentM1C6 j s H*rateMassM5BF j s H≤\n reverseConvMBEC j s s H*rateMomentM5BF j s H",
+          "block_sha256": "468fed48383b654bd355f7b01484ebe2c7236d6a0ade93373c6006492929b592",
+          "block_characters": 734
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "rateMassM5BF",
+          "header": "def rateMassM5BF (j s H : ℕ) : ℝ",
+          "block_sha256": "ef052f4b31ccd6f87fe9aa30256c3fa3aed4f89b90c5fa8c3f137121dd03b1f8",
+          "block_characters": 128,
+          "definition_text": "def rateMassM5BF (j s H : ℕ) : ℝ := ∑ t ∈ range (H+1),\n radialRateM5BF j H t*reverseKernelMBEC j s t*reverseKernelMBEC j s (H-t)"
+        },
+        {
+          "kind": "def",
+          "name": "rateMomentM5BF",
+          "header": "def rateMomentM5BF (j s H : ℕ) : ℝ",
+          "block_sha256": "cf29887830002e7b81911031b4e9d5a13e9a595846112f484a8c643e8f16525d",
+          "block_characters": 152,
+          "definition_text": "def rateMomentM5BF (j s H : ℕ) : ℝ := ∑ t ∈ range (H+1),\n radialRateM5BF j H t*reverseKernelMBEC j s t*reverseKernelMBEC j s (H-t)*\n   ((t:ℝ)-(H:ℝ)/2)^2"
+        },
+        {
+          "kind": "def",
+          "name": "outwardTailM5BF",
+          "header": "def outwardTailM5BF (j s H : ℕ) : ℝ",
+          "block_sha256": "9684331ecb2d2d14328afff48a9ce7fb75c16a9ab0d4ea4c43d0669adec9f8af",
+          "block_characters": 105,
+          "definition_text": "def outwardTailM5BF (j s H : ℕ) : ℝ :=\n 2*((s:ℝ)+j+4)*reverseKernelMBEC j s 0*reverseKernelMBEC j s (H+1)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovDriftClosedM5BF",
+      "path": "research/MarkovDriftClosedM5BF.lean",
+      "bytes": 3049,
+      "sha256": "d64214663fb73fc2ece37355378f5d2ef9680fd92a124b0bada5b17d1eb3182e",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "outward_tail_nonnegM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "previous_moment_boundM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "variance_drift_succM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "variance_drift_nonnegM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "positive_parameter_tail_closedM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_adjacent_closedM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "unshifted_adjacent_closedM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "unshifted_ratio_closedM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "sharp_complete_margin_closedM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_allM5BF"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792221294149677000.json",
+          "sha256": "9c90af4c30f2d394c69112e4504d7c41cabae5645f7b88ba5e8e30e858a702a4",
+          "source_sha256": "ebf9b7b02f6a7fe90e398efa37f5c30c02a079196d14e08dcf4fd050370022e8",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "ebf9b7b02f6a7fe90e398efa37f5c30c02a079196d14e08dcf4fd050370022e8"
+        },
+        {
+          "path": "build-1792221315877965000.json",
+          "sha256": "cca86d3e82f5307c27a52336ffca7268271cdb7973dc8f16418495d8d7969e82",
+          "source_sha256": "d64214663fb73fc2ece37355378f5d2ef9680fd92a124b0bada5b17d1eb3182e",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "d64214663fb73fc2ece37355378f5d2ef9680fd92a124b0bada5b17d1eb3182e"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in181": true,
+      "printed_in181": true,
+      "object_path": "evidence/markov-5bf6837d/MarkovDriftClosedM5BF.olean",
+      "object_sha256": "cfb3c0a24fb4259d867a76a2e898303115e413e25ebbff016d79f471ee9e5b39",
+      "successful_final_build": "evidence/markov-5bf6837d/build-1792221315877965000.json",
+      "historical_successful_source_versions": [
+        "d64214663fb73fc2ece37355378f5d2ef9680fd92a124b0bada5b17d1eb3182e"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovOutwardMomentsM5BF",
+        "MarkovFixedZeroClosedM1C6"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "outward_tail_nonnegM5BF",
+          "header": "theorem outward_tail_nonnegM5BF (j s H : ℕ) (hH : H<j) :\n 0 ≤ outwardTailM5BF j s H",
+          "block_sha256": "fa2c3e4917353ba2953f4419082159b69f3c71dbe724b75562dd01fb7b6fe582",
+          "block_characters": 270
+        },
+        {
+          "kind": "theorem",
+          "name": "previous_moment_boundM5BF",
+          "header": "theorem previous_moment_boundM5BF (j s H : ℕ) (hH : H ≤ j) :\n reverseMomentM1C6 j s H ≤ reverseConvMBEC j s s H*((H:ℝ)/2+1)^2",
+          "block_sha256": "3fc356619fef340a4fc725503442f36b9d294fbee5668f958c17f43e88f75220",
+          "block_characters": 446
+        },
+        {
+          "kind": "theorem",
+          "name": "variance_drift_succM5BF",
+          "header": "theorem variance_drift_succM5BF (j s H : ℕ) (hH : H<j) :\n 0 ≤ varianceDriftM1C6 j s (H+1)",
+          "block_sha256": "6ce89e2ce33e4b47775ba797b92e66067aaed951590fe7f45da993b25323905b",
+          "block_characters": 808
+        },
+        {
+          "kind": "theorem",
+          "name": "variance_drift_nonnegM5BF",
+          "header": "theorem variance_drift_nonnegM5BF (j s h : ℕ) (h0 : 1 ≤ h) (hh : h ≤ j) :\n 0 ≤ varianceDriftM1C6 j s h",
+          "block_sha256": "ff6f08527e4c57470f8aea6a5da2c2b64e4a939c99aac4e2e3b5264d9ddc4ba6",
+          "block_characters": 222
+        },
+        {
+          "kind": "theorem",
+          "name": "positive_parameter_tail_closedM5BF",
+          "header": "theorem positive_parameter_tail_closedM5BF : PositiveParameterTailM1C6",
+          "block_sha256": "b31a63369e9c0cffc5c6e0e7ff2588f4fc19653845d9b150b84c32ce58565687",
+          "block_characters": 151
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_adjacent_closedM5BF",
+          "header": "theorem upper_adjacent_closedM5BF : UpperAdjacentMA45",
+          "block_sha256": "682cfeab33c22f3eb2ad1c129633dae077354f5e52cfc1a104cf58a4bead37f5",
+          "block_characters": 127
+        },
+        {
+          "kind": "theorem",
+          "name": "unshifted_adjacent_closedM5BF",
+          "header": "theorem unshifted_adjacent_closedM5BF : UnshiftedAdjacentM09F",
+          "block_sha256": "b5809a64c23bd4e07731ccfb84a23c8813d1c7b6c72b9cbd28b311b7f137a4a6",
+          "block_characters": 117
+        },
+        {
+          "kind": "theorem",
+          "name": "unshifted_ratio_closedM5BF",
+          "header": "theorem unshifted_ratio_closedM5BF : UnshiftedRatioM09F",
+          "block_sha256": "a54e9814740ed534166181f20331d63ca8fa5dd69db2b5b72dc5cb0a9df25da6",
+          "block_characters": 108
+        },
+        {
+          "kind": "theorem",
+          "name": "sharp_complete_margin_closedM5BF",
+          "header": "theorem sharp_complete_margin_closedM5BF : SharpCompleteMarginMBE3",
+          "block_sha256": "6816f7541015747de6479de68e651c3da0fa83faf89b89d2cd31d5ffee388ceb",
+          "block_characters": 122
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_allM5BF",
+          "header": "theorem source_band_allM5BF (q k i : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n threeRawM9E2 q r i (q+k+1)*threeRawM9E2 q r (i+2) (q+k+1) ≤ \n threeRawM9E2 q r (i+1) (q+k+1)^2",
+          "block_sha256": "2e78b515a6a696145669aa85510ec09d54a92f7c73a6cc9f386a74e98791561e",
+          "block_characters": 273
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovFullBandRegionM5BF",
+      "path": "research/MarkovFullBandRegionM5BF.lean",
+      "bytes": 2381,
+      "sha256": "eddcd13242ce8e02c3e69cbf69e0a353c5a2d58689aea95fc64976d26f737141",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "FullBandRegionM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_full_band_regionM5BF"
+        },
+        {
+          "kind": "def",
+          "name": "ThreeBeyondFullBandM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_beyond_full_bandM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_full_band_pathM5BF"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792221348182101000.json",
+          "sha256": "1f6a867312bfa02fe695bc3820e37ae79b632655ff04a22c78f7c089335ed20a",
+          "source_sha256": "eddcd13242ce8e02c3e69cbf69e0a353c5a2d58689aea95fc64976d26f737141",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "eddcd13242ce8e02c3e69cbf69e0a353c5a2d58689aea95fc64976d26f737141"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in181": true,
+      "printed_in181": true,
+      "object_path": "evidence/markov-5bf6837d/MarkovFullBandRegionM5BF.olean",
+      "object_sha256": "34548a0f15ab45b33c67cb5792ce9763207ec58e78d3b0437f8dd0b21e73b086",
+      "successful_final_build": "evidence/markov-5bf6837d/build-1792221348182101000.json",
+      "historical_successful_source_versions": [
+        "eddcd13242ce8e02c3e69cbf69e0a353c5a2d58689aea95fc64976d26f737141"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovDriftClosedM5BF"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "source_full_band_regionM5BF",
+          "header": "theorem source_full_band_regionM5BF (q i j : ℕ) (r : Bool)\n (h : FullBandRegionM5BF q r i j) :\n threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2",
+          "block_sha256": "99ba238482d47b3fc3e3ff971458138c5ef160d78606b91727bc1598c4d2b066",
+          "block_characters": 319
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_beyond_full_bandM5BF",
+          "header": "theorem root_iff_beyond_full_bandM5BF :\n Conjecture63 ↔ ThreeBeyondFullBandM5BF ∧ OtherFourM9E2",
+          "block_sha256": "52a5a0bccf3de5068e7f64f5a9c58db6d1c7439a29a68b5463c81aeae562d582",
+          "block_characters": 528
+        },
+        {
+          "kind": "theorem",
+          "name": "source_full_band_pathM5BF",
+          "header": "theorem source_full_band_pathM5BF (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1 ≤ q ∧ (frame path).mid.b=sourceNME9C q r ∧\n ∀ i j, FullBandRegionM5BF q r i j →\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤ \n coeff (frame path).mid.p (i+1) j^2",
+          "block_sha256": "3ab9f8321f9fabba9e8e36a53773ec0454b84cf1bac7221edb5d03dffab7bdc3",
+          "block_characters": 441
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "FullBandRegionM5BF",
+          "header": "def FullBandRegionM5BF (q : ℕ) (r : Bool) (i j : ℕ) : Prop",
+          "block_sha256": "11fb5e6e69320e8775b75b73bf769e6c4ff457c23a8a93755a7e8a70df3bb6d4",
+          "block_characters": 100,
+          "definition_text": "def FullBandRegionM5BF (q : ℕ) (r : Bool) (i j : ℕ) : Prop :=\n 2 ≤ q ∧ q<j ∧ 2*j+1 ≤ sourceNME9C q r"
+        },
+        {
+          "kind": "def",
+          "name": "ThreeBeyondFullBandM5BF",
+          "header": "def ThreeBeyondFullBandM5BF : Prop",
+          "block_sha256": "c15a029b46b4db29f21e43013d7c0a5a02cdbe44148b2e004d3c41d680b6c690",
+          "block_characters": 496,
+          "definition_text": "def ThreeBeyondFullBandM5BF : Prop := ∀ q : ℕ, 1 ≤ q → ∀ r,\n (∀ i j, q<j → j≠5 → j≠q+1 → j≠q+2 → j≠q+3 →\n   ¬FullBandRegionM5BF q r i j →\n   threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2) ∧\n (∀ i j, ¬(((i=3 ∨ i=4) ∧ j+1 ≤ q) ∨ (5 ≤ i ∧ i ≤ 8 ∧ j+2 ≤ q)) →\n   threeRawM9E2 q r i j*threeRawM9E2 q r i (j+2) ≤ threeRawM9E2 q r i (j+1)^2) ∧\n (∀ i j, ¬(3 ≤ i ∧ i ≤ 6 ∧ j+2 ≤ q) →\n   threeRawM9E2 q r i (j+2)*threeRawM9E2 q r (i+2) j ≤ \n     threeRawM9E2 q r (i+1) (j+1)^2)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovDropObstructionM5BF",
+      "path": "research/MarkovDropObstructionM5BF.lean",
+      "bytes": 1522,
+      "sha256": "fcf2a1a8bc8c950612f872fcb5a934a41be6d2f47463aa0ceb1b44ee11de3e39",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "quarter_drop_beforeM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "quarter_drop_afterM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "quarter_drop_failsM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "quarter_drop_shortcut_falseM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "quarter_witness_driftM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "quarter_witness_required_inequalityM5BF"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792221349459707000.json",
+          "sha256": "be040d3b7c5c28c4988d8c1c737417cca834e003698cd543c97fc8779b53af90",
+          "source_sha256": "fcf2a1a8bc8c950612f872fcb5a934a41be6d2f47463aa0ceb1b44ee11de3e39",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "fcf2a1a8bc8c950612f872fcb5a934a41be6d2f47463aa0ceb1b44ee11de3e39"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in181": true,
+      "printed_in181": true,
+      "object_path": "evidence/markov-5bf6837d/MarkovDropObstructionM5BF.olean",
+      "object_sha256": "701b508286651da2476cd620c43382b7fdf2b307c4295d63b8beb014b7069aa9",
+      "successful_final_build": "evidence/markov-5bf6837d/build-1792221349459707000.json",
+      "historical_successful_source_versions": [
+        "fcf2a1a8bc8c950612f872fcb5a934a41be6d2f47463aa0ceb1b44ee11de3e39"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovDriftClosedM5BF"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "quarter_drop_beforeM5BF",
+          "header": "theorem quarter_drop_beforeM5BF : reverseVarianceM1C6 22 5 21=2668474283/272959244",
+          "block_sha256": "d55e2cb2bddaa03f93bbae51200dcf5d4629172c6af3abe008f131481513aee7",
+          "block_characters": 226
+        },
+        {
+          "kind": "theorem",
+          "name": "quarter_drop_afterM5BF",
+          "header": "theorem quarter_drop_afterM5BF : reverseVarianceM1C6 22 5 22=4129805/433571",
+          "block_sha256": "80e18fe2ea57e2f9a3fb522fe3d65ff97c32d7b0de38d1bf8be441e1fdc33c7c",
+          "block_characters": 219
+        },
+        {
+          "kind": "theorem",
+          "name": "quarter_drop_failsM5BF",
+          "header": "theorem quarter_drop_failsM5BF :\n reverseVarianceM1C6 22 5 22+1/4<reverseVarianceM1C6 22 5 21",
+          "block_sha256": "b12b3b863b828f1df95c95e017c557bd99923353574a022db2fef5bb1804f08e",
+          "block_characters": 162
+        },
+        {
+          "kind": "theorem",
+          "name": "quarter_drop_shortcut_falseM5BF",
+          "header": "theorem quarter_drop_shortcut_falseM5BF : ¬(∀ j s h : ℕ, 1 ≤ h → h ≤ j →\n reverseVarianceM1C6 j s (h-1) ≤ reverseVarianceM1C6 j s h+1/4)",
+          "block_sha256": "c7c3be2f930a2be3359c7e3aeaddb9a015e8e687aeadbbcec944534a2e766d1a",
+          "block_characters": 230
+        },
+        {
+          "kind": "theorem",
+          "name": "quarter_witness_driftM5BF",
+          "header": "theorem quarter_witness_driftM5BF :\n varianceDriftM1C6 22 5 22=281228064706395/29586803095081",
+          "block_sha256": "7201773128fe03f0a6d408b534e081ed4eb7f74013b3ee94b6a823d6b97f0968",
+          "block_characters": 217
+        },
+        {
+          "kind": "theorem",
+          "name": "quarter_witness_required_inequalityM5BF",
+          "header": "theorem quarter_witness_required_inequalityM5BF : 0<varianceDriftM1C6 22 5 22",
+          "block_sha256": "f880ba3aceca83e9ddd371bcd33aea1b942a4dc10ec06520e0c34671c046936f",
+          "block_characters": 130
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovDriftStrictM5BF",
+      "path": "research/MarkovDriftStrictM5BF.lean",
+      "bytes": 2665,
+      "sha256": "b644585bcf0e067e39c46383279a00a2e2e341fc3d607cf9cac1881241236431",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "outward_tail_positiveM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "previous_moment_strict_boundM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "variance_drift_positiveM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_adjacent_strictM5BF"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792221405903579000.json",
+          "sha256": "13f864c95c14b2aa06c6fed1fae8cad6281faf942f97da778b0d676dbe8f8687",
+          "source_sha256": "ace0ab713bdf31b6f04129bcb505ab15960beaad4224863af06d9699aca5934d",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "ace0ab713bdf31b6f04129bcb505ab15960beaad4224863af06d9699aca5934d"
+        },
+        {
+          "path": "build-1792221450128256000.json",
+          "sha256": "769b9b763599e6c4decc91cfe4c8f56f78ca28a7cfce730c96e60d39b8cf389b",
+          "source_sha256": "b644585bcf0e067e39c46383279a00a2e2e341fc3d607cf9cac1881241236431",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "b644585bcf0e067e39c46383279a00a2e2e341fc3d607cf9cac1881241236431"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in181": true,
+      "printed_in181": true,
+      "object_path": "evidence/markov-5bf6837d/MarkovDriftStrictM5BF.olean",
+      "object_sha256": "964926b7055fcd03dc9686afbb4ff56e62e8c0a7279c1308c257661a805330cb",
+      "successful_final_build": "evidence/markov-5bf6837d/build-1792221450128256000.json",
+      "historical_successful_source_versions": [
+        "b644585bcf0e067e39c46383279a00a2e2e341fc3d607cf9cac1881241236431"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovDriftClosedM5BF"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "outward_tail_positiveM5BF",
+          "header": "theorem outward_tail_positiveM5BF (j s H : ℕ) (hH : H < j) :\n 0 < outwardTailM5BF j s H",
+          "block_sha256": "3bbd7af3865cfc084b25c638edb3a24bab05ea24dbef262c9e6ce135f80e4a67",
+          "block_characters": 259
+        },
+        {
+          "kind": "theorem",
+          "name": "previous_moment_strict_boundM5BF",
+          "header": "theorem previous_moment_strict_boundM5BF (j s H : ℕ) (hH : H ≤ j) :\n reverseMomentM1C6 j s H < reverseConvMBEC j s s H*((H:ℝ)/2+1)^2",
+          "block_sha256": "64d497fc6ddf5089f73ec6e831f77b4290fba1fc51c00808f45b492ae9ed1d52",
+          "block_characters": 452
+        },
+        {
+          "kind": "theorem",
+          "name": "variance_drift_positiveM5BF",
+          "header": "theorem variance_drift_positiveM5BF (j s h : ℕ) (h0 : 1 ≤ h) (hh : h ≤ j) :\n 0 < varianceDriftM1C6 j s h",
+          "block_sha256": "f1a020dac8564d4218f9de329471b5af3de825f4946e566aea042f6fb9a4e372",
+          "block_characters": 916
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_adjacent_strictM5BF",
+          "header": "theorem reverse_adjacent_strictM5BF (j s h : ℕ) (h0 : 1 ≤ h) (hh : h ≤ j) :\n reverseConvMBEC j (s+1) (s+1) h*reverseConvMBEC j s (s+2) (h-1) < \n reverseConvMBEC j (s+1) (s+1) (h-1)*reverseConvMBEC j s (s+2) h",
+          "block_sha256": "008986f958d332cc5eb097dd373fc4fc1ac797e9c6b1f444edf000ce01a364dd",
+          "block_characters": 719
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovHalfPlaneM5BF",
+      "path": "research/MarkovHalfPlaneM5BF.lean",
+      "bytes": 2315,
+      "sha256": "1eeff381c879ef3b84dca7426ef498503ab001c98b88df50e93e0ecfb18a11b9",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_lower_halfM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_half_pathM5BF"
+        },
+        {
+          "kind": "def",
+          "name": "ThreeUpperResidualM5BF"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_upper_residualM5BF"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792221440309033000.json",
+          "sha256": "22a5b041222fbf0fbfd955cf72e43760f7b785448e453ffd1afb673400189ffc",
+          "source_sha256": "1eeff381c879ef3b84dca7426ef498503ab001c98b88df50e93e0ecfb18a11b9",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "1eeff381c879ef3b84dca7426ef498503ab001c98b88df50e93e0ecfb18a11b9"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in181": true,
+      "printed_in181": true,
+      "object_path": "evidence/markov-5bf6837d/MarkovHalfPlaneM5BF.olean",
+      "object_sha256": "78f5d7904ae78cf7f851665014354e3c282282853a6fc1e2becfee7b20c0d456",
+      "successful_final_build": "evidence/markov-5bf6837d/build-1792221440309033000.json",
+      "historical_successful_source_versions": [
+        "1eeff381c879ef3b84dca7426ef498503ab001c98b88df50e93e0ecfb18a11b9"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovFullBandRegionM5BF"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "source_lower_halfM5BF",
+          "header": "theorem source_lower_halfM5BF (q i j : ℕ) (r : Bool) (hq : 1 ≤ q)\n (hj : 2*j+1 ≤ sourceNME9C q r) :\n threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2",
+          "block_sha256": "b5959866f0a9e4cd7cda61ca54867482d013a4e2aecf28812476642125768966",
+          "block_characters": 435
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_half_pathM5BF",
+          "header": "theorem source_lower_half_pathM5BF (path : List Bool) (ha : (frame path).mid.a=3)\n (i j : ℕ) (hj : 2*j+1 ≤ (frame path).mid.b) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) j^2",
+          "block_sha256": "2ba124f60c4d972273ff8b485acd5d7f638ad7b9541edbe2aea99c379b02d53b",
+          "block_characters": 384
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_upper_residualM5BF",
+          "header": "theorem root_iff_upper_residualM5BF :\n Conjecture63 ↔ ThreeUpperResidualM5BF ∧ OtherFourM9E2",
+          "block_sha256": "4fb14c551f9e38f0b64c77aaaa371a6091a720e2ffe5b32f7d2cdd71be6e82f0",
+          "block_characters": 570
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "ThreeUpperResidualM5BF",
+          "header": "def ThreeUpperResidualM5BF : Prop",
+          "block_sha256": "b70198f66a0ebcd2a6f48666ded8fa5b38f6c56b3d2c489bdafb93eed6310b29",
+          "block_characters": 463,
+          "definition_text": "def ThreeUpperResidualM5BF : Prop := ∀ q : ℕ, 1 ≤ q → ∀ r,\n (∀ i j, q+3<j → sourceNME9C q r<2*j+1 → j≠5 →\n   threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2) ∧\n (∀ i j, ¬(((i=3 ∨ i=4) ∧ j+1 ≤ q) ∨ (5 ≤ i ∧ i ≤ 8 ∧ j+2 ≤ q)) →\n   threeRawM9E2 q r i j*threeRawM9E2 q r i (j+2) ≤ threeRawM9E2 q r i (j+1)^2) ∧\n (∀ i j, ¬(3 ≤ i ∧ i ≤ 6 ∧ j+2 ≤ q) →\n   threeRawM9E2 q r i (j+2)*threeRawM9E2 q r (i+2) j ≤\n     threeRawM9E2 q r (i+1) (j+1)^2)"
+        }
+      ],
+      "forbidden_tokens": []
+    }
+  ],
+  "excluded_modules": [],
+  "accepted_counts": {
+    "def": 8,
+    "theorem": 39
+  },
+  "excluded_counts": {},
+  "mathematical_values_recomputed": false,
+  "source_level_scope": {
+    "root_open": true,
+    "new_unconditional_raw_LC_region": true,
+    "new_unconditional_source_estimate": false,
+    "root_equivalence": "Conjecture63 iff ThreeUpperResidualM5BF and OtherFourM9E2",
+    "remaining_predicates_unproved": [
+      "ThreeUpperResidualM5BF",
+      "OtherFourM9E2"
+    ],
+    "UpperAdjacentMA45_proved": true,
+    "PositiveParameterTailM1C6_proved": true,
+    "UnshiftedAdjacentM09F_proved": true,
+    "UnshiftedRatioM09F_proved": true,
+    "SharpCompleteMargin_proved": true,
+    "new_unconditional_auxiliary_results": "Variance drift strictly positive for all natural j,s,h with1<=h<=j; strict reversed adjacent comparison in same domain. Radial covariance and exact mass/moment transport retain both exterior endpoints.",
+    "new_unconditional_source_LC": "Every path with frame.mid.a=3, every natural i,j with2*j+1<=frame.mid.b: raw horizontal LC at(i,j),(i+1,j),(i+2,j), zeros retained. No denominator bound or auxiliary premise.",
+    "full_band": "Natural q,k,i, Bool r, q>=2 and2*(q+k+1)+1<=sourceN(q,r); all i. FullBandRegion(q,r,i,j):q>=2,q<j,2*j+1<=sourceN; independent of i.",
+    "source_residues": "rfalse:N=3q+2; rtrue:N=3q+1, actual path false^(q-1)++[true,r]. All actual a3 classified withq>=1. q1 handled by inherited lower/three corrections in half-plane theorem.",
+    "horizontal_residual": "For every q>=1,r, allnatural i,j withq+3<j,sourceN<2*j+1,j!=5, rawH inequality. Both endpoints source0/1,1/1 and a1/a2 coverage inherited unchanged.",
+    "vertical_residual": "Allnatural i,j outside ((i=3 or4) andj+1<=q) or(5<=i<=8 andj+2<=q), rawV(i,j),(i,j+1),(i,j+2).",
+    "diagonal_residual": "Allnatural i,j outside3<=i<=6 andj+2<=q, rawD(i,j+2),(i+1,j+1),(i+2,j).",
+    "other_four": "OtherFourM9E2 unchanged:every actual path with numerator>=4 requiresGlobalLC18. No all-source root completion.",
+    "formal_auxiliary_obstruction": "Quarter-drop v(h-1)<=v(h)+1/4 false atj22,s5,h22; exact variance constants and negative difference retained, required drift positive. Not a source counterexample.",
+    "strictness_limit": "Strict only for auxiliary drift/reverse gap; raw source conclusion non-strict and includes zero entries.",
+    "actual_raw_source_counterexample": false,
+    "old212_recovery_claimed": false,
+    "old166_prefix_recovery_claimed": false,
+    "prior_source_scope": "Allactuala2all3 directions152 retained; a3Hj<=q+3 andj5 inherited. New entireband removes175prefix/tail column restrictions; no newV/D claim."
+  },
+  "proof_chain_details": {
+    "birth": "Natural j,r; r0 exceptional4j. Forr>0 rate=j-r-1+j/r=(r+1)(j-r)/r. Exact(N-r)K(r+1)=birth(r)K(r) onlyr<j; falling-factorial denominators positive. No division byzero r0.",
+    "radial": "B(t)=birth(t)+birth(H-t). Reflectiont<=H. EndpointH>0:5j-H-1+j/H. Interior0<t<H:2j-H-2+jH/[t(H-t)]. Radial order proved for arbitrary naturalj,H andt,u<=H ordered bysquaredcenter distance; endpoint cases split, H0 covered.",
+    "covariance": "Generic finiteN, w>=0, b monotone on x-order. Expand double sum w_i*w_k*(x_i-x_k)*(b_i-b_k)>=0; yields(sumwx)(sumwb)<=(sumw)(sumwbx), no probability assumption/division. N0 allowed.",
+    "outward_sum": "Identity for anynaturalH,real y,functionf:Nat->Real,F:Real->Real. Split first andlast indices ofrangeH+2, retain two external endpoint terms. ReindexH+1-(t+1)=H-t under t<=H; no endpoint deletion.",
+    "rates_to_moments": "ForH<j, rateMassR+E=2zS_(H+1), rateMomentQ+E*(H/2+1)^2=2(z+1)T_(H+1)+(z/2)S_(H+1); E=2(s+j+4)K0K_(H+1). Rate covariance holdsH<=j via positivekernelweights.",
+    "drift": "Previousvariancebound v_H<=H^2/4 andpositiveS_H giveT_H<=S_H*(H/2+1)^2; E>=0 permits addingoutsidecontribution. Momentidentity andpositive masses implyD>=0. StrongerE>0 and strict square bound giveD>0 for all1<=h<=j includingh1/H0. Naturalh-1 cast/integerbounds retained.",
+    "strict_gap": "reverse_gap_drift plusmoment_variance identity cancelpositive y^3(y+1),(2z+1) andbothmasses. B_h A_(h-1)<B_(h-1)A_h for1<=h<=j; sourceLC not claimedstrict.",
+    "auxiliary_assembly": "D>=0 closesPositiveParameterTail; its exactiff yieldsUpperAdjacent, thenUnshiftedAdjacent/Ratio andSharpCompleteMargin. Inherited low/cutoff/final/zero-tail orderedtransport used with actualprovedglobalpremise.",
+    "source_attachment": "source_band_of_upper inherited transport now applied toclosedUpperAdjacent; actualcubic/sourceclassification andrawcoefficient identity retained, no normalization orformula assumption. Nonnegative exponent2j+1<=N remains; noNat-truncation extension to upperrows.",
+    "half_plane": "Ifj<=q+3 use inherited lower_and_three_corrections; otherwise rowguardforcesq>=2 byexplicit bothresidue arithmetic, thenfullband. Everyactualpath mappedvia source_three_raw, q>=1 andbothresidues. Allnaturali inclsupportzeros.",
+    "root": "Two exactiffs fromroot_iff_beyond_thirdM964; fullband excludedorproved; transparentresidualsplits2j+1<=N vsN<2j+1. Vertical/diagonal tuple copied verbatim. Hremainingq+3<j,j!=5; otherfour unchanged. No residualproof.",
+    "obstruction": "Norm_num certificates bind v(22,5,21)=2668474283/272959244, v(22,5,22)=4129805/433571, quarterdropfails and actualD=281228064706395/29586803095081>0; auxiliaryonly, no auditedvaluecalculation."
+  },
+  "literal_raw_indices": {
+    "horizontal": [
+      "(i,j)",
+      "(i+1,j)",
+      "(i+2,j)"
+    ],
+    "vertical_residual": [
+      "(i,j)",
+      "(i,j+1)",
+      "(i,j+2)"
+    ],
+    "diagonal_residual": [
+      "(i,j+2)",
+      "(i+1,j+1)",
+      "(i+2,j)"
+    ]
+  },
+  "zero_and_endpoint_handling": "r0birth4j,w0=1;H0/h1 strictcomparison;bothoutsideendpointsEpositive;allnaturalsourcecolumnszero tails inherited. q1smallcases via lowerrows; root0/1,1/1 andoriginalpolygon unchanged."
+}

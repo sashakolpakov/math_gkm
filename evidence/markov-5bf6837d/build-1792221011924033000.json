@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovOutwardRatesM5BF.lean:20:1: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovOutwardRatesM5BF.lean:29:1: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovOutwardRatesM5BF.lean:38:1: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovOutwardRatesM5BF.lean:88:1: error: Type mismatch\n  add_le_add_left\n    (div_le_div_of_nonneg_left\n      (have this := mul_nonneg (Nat.cast_nonneg' j) (Nat.cast_nonneg' H);\n      this)\n      ut prod)\n    ?m.370\nhas type\n  \u2191j * \u2191H / (\u2191t * (\u2191H - \u2191t)) + ?m.370 \u2264 \u2191j * \u2191H / (\u2191u * (\u2191H - \u2191u)) + ?m.370\nbut is expected to have type\n  2 * \u2191j - \u2191H - 2 + \u2191j * \u2191H / (\u2191t * (\u2191H - \u2191t)) \u2264 2 * \u2191j - \u2191H - 2 + \u2191j * \u2191H / (\u2191u * (\u2191H - \u2191u))\n/Users/sasha/math_gkm/research/MarkovOutwardRatesM5BF.lean:101:35: error: mod_cast has type\n  r < s + j + 3\nbut is expected to have type\n  0 < s + j + 3 - r\n",
+  "stderr": "",
+  "modules": {
+    "MarkovOutwardRatesM5BF": "7cf62cda96c8054066eefbde2922228dbb6937a80935c4d0235d92a48e719db4"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-5bf6837d/MarkovOutwardRatesM5BF.olean",
+    "/Users/sasha/math_gkm/research/MarkovOutwardRatesM5BF.lean"
+  ],
+  "seconds": 49.84279124997556,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

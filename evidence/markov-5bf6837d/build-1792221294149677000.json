@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovDriftClosedM5BF.lean:24:30: error: Invalid argument name `R` for function `Nat.cast_nonneg`\n\nHint: Perhaps you meant one of the following parameter names:\n  \u2022 `\u03b1`: R\u0335\u03b1\u0332\n  \u2022 `n`: R\u0335n\u0332\n/Users/sasha/math_gkm/research/MarkovDriftClosedM5BF.lean:35:11: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Matroid ?m.48) 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Matroid ?m.48\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovDriftClosedM5BF.lean:35:14: error(lean.unknownIdentifier): Unknown identifier `omentDriftM1C6`\n/Users/sasha/math_gkm/research/MarkovDriftClosedM5BF.lean:29:34: error: unsolved goals\nj s H : \u2115\nhH : H < j\nhc : reverseMomentM1C6 j s H * rateMassM5BF j s H \u2264 reverseConvMBEC j s s H * rateMomentM5BF j s H\nhb :\n  reverseMomentM1C6 j s H * outwardTailM5BF j s H \u2264 reverseConvMBEC j s s H * (\u2191H / 2 + 1) ^ 2 * outwardTailM5BF j s H\nhm : rateMassM5BF j s H + outwardTailM5BF j s H = 2 * reverseCenterM1C6 j s (H + 1) * reverseConvMBEC j s s (H + 1)\nht :\n  rateMomentM5BF j s H + outwardTailM5BF j s H * (\u2191H / 2 + 1) ^ 2 =\n    2 * (reverseCenterM1C6 j s (H + 1) + 1) * reverseMomentM1C6 j s (H + 1) +\n      reverseCenterM1C6 j s (H + 1) / 2 * reverseConvMBEC j s s (H + 1)\n\u22a2 0 \u2264 varianceDriftM1C6 j s (H + 1)\n/Users/sasha/math_gkm/research/MarkovDriftClosedM5BF.lean:68:7: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  HAdd \u2115 \u2115 (Graph ?m.6 ?m.7)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovDriftClosedM5BF.lean:68:20: error: Function expected at\n  ourceNME9C\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  q\n\nHint: The identifier `ourceNME9C` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n",
+  "stderr": "",
+  "modules": {
+    "MarkovDriftClosedM5BF": "ebf9b7b02f6a7fe90e398efa37f5c30c02a079196d14e08dcf4fd050370022e8"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-5bf6837d/MarkovDriftClosedM5BF.olean",
+    "/Users/sasha/math_gkm/research/MarkovDriftClosedM5BF.lean"
+  ],
+  "seconds": 9.759118665999267,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

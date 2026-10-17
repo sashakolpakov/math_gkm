@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovOutwardMomentsM5BF.lean:53:33: error: No goals to be solved\n/Users/sasha/math_gkm/research/MarkovOutwardMomentsM5BF.lean:83:33: error: No goals to be solved\n/Users/sasha/math_gkm/research/MarkovOutwardMomentsM5BF.lean:96:9: error: unknown tactic\n/Users/sasha/math_gkm/research/MarkovOutwardMomentsM5BF.lean:95:19: error: Type mismatch\n  mul_nonneg\n    (LT.lt.le\n      (reverse_kernel_positiveM1C6 j s t\n        (Decidable.byContradiction fun a => rate_covarianceM5BF._proof_1_1 j H hH t ht a)))\nhas type\n  0 \u2264 ?m.71 \u2192 0 \u2264 reverseKernelMBEC j s t * ?m.71\nbut is expected to have type\n  0 \u2264 reverseKernelMBEC j s t * reverseKernelMBEC j s (H - t)\n/Users/sasha/math_gkm/research/MarkovOutwardMomentsM5BF.lean:91:49: error: unsolved goals\nj s H : \u2115\nhH : H \u2264 j\nhe :\n  (\u2200 i < H + 1, \u2200 k < H + 1, (\u2191i - \u2191H / 2) ^ 2 \u2264 (\u2191k - \u2191H / 2) ^ 2 \u2192 radialRateM5BF j H i \u2264 radialRateM5BF j H k) \u2192\n    (\u2211 i \u2208 range (H + 1), reverseKernelMBEC j s i * reverseKernelMBEC j s (H - i) * (\u2191i - \u2191H / 2) ^ 2) *\n        \u2211 i \u2208 range (H + 1), reverseKernelMBEC j s i * reverseKernelMBEC j s (H - i) * radialRateM5BF j H i \u2264\n      (\u2211 i \u2208 range (H + 1), reverseKernelMBEC j s i * reverseKernelMBEC j s (H - i)) *\n        \u2211 i \u2208 range (H + 1),\n          reverseKernelMBEC j s i * reverseKernelMBEC j s (H - i) * radialRateM5BF j H i * (\u2191i - \u2191H / 2) ^ 2\n\u22a2 reverseMomentM1C6 j s H * rateMassM5BF j s H \u2264 reverseConvMBEC j s s H * rateMomentM5BF j s H\n",
+  "stderr": "",
+  "modules": {
+    "MarkovOutwardMomentsM5BF": "90f9155f93bf0254f776eddd91ec95b9f68f8d9f6319e90e3bee5e82502a19ef"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-5bf6837d/MarkovOutwardMomentsM5BF.olean",
+    "/Users/sasha/math_gkm/research/MarkovOutwardMomentsM5BF.lean"
+  ],
+  "seconds": 13.510596040985547,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

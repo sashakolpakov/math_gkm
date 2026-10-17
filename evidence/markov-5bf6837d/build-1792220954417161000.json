@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovOutwardRatesM5BF.lean:20:1: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovOutwardRatesM5BF.lean:29:1: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovOutwardRatesM5BF.lean:34:27: error: mod_cast has type\n  \u00acH = t\nbut is expected to have type\n  \u00acInt.subNatNat H t = 0\n/Users/sasha/math_gkm/research/MarkovOutwardRatesM5BF.lean:48:31: error: mod_cast has type\n  t + 1 \u2264 H\nbut is expected to have type\n  1 \u2264 H - t\n/Users/sasha/math_gkm/research/MarkovOutwardRatesM5BF.lean:72:61: error: No goals to be solved\n/Users/sasha/math_gkm/research/MarkovOutwardRatesM5BF.lean:72:18: error: unsolved goals\nj H t u : \u2115\nht : t \u2264 H\nhu : u \u2264 H\nhord : (\u2191t - \u2191H / 2) ^ 2 \u2264 (\u2191u - \u2191H / 2) ^ 2\nhu0 : \u00acu = 0\nhuH : \u00acu = H\nu0 : 0 < \u2191u\nuH : \u2191u < \u2191H\nut : 0 < \u2191u * (\u2191H - \u2191u)\nprod : \u2191u * (\u2191H - \u2191u) \u2264 \u2191t * (\u2191H - \u2191t)\nh : \u00ac0 < t\nhe : t = 0\n\u22a2 False\n/Users/sasha/math_gkm/research/MarkovOutwardRatesM5BF.lean:73:61: error: No goals to be solved\n/Users/sasha/math_gkm/research/MarkovOutwardRatesM5BF.lean:73:18: error: unsolved goals\nj H t u : \u2115\nht : t \u2264 H\nhu : u \u2264 H\nhord : (\u2191t - \u2191H / 2) ^ 2 \u2264 (\u2191u - \u2191H / 2) ^ 2\nhu0 : \u00acu = 0\nhuH : \u00acu = H\nu0 : 0 < \u2191u\nuH : \u2191u < \u2191H\nut : 0 < \u2191u * (\u2191H - \u2191u)\nprod : \u2191u * (\u2191H - \u2191u) \u2264 \u2191t * (\u2191H - \u2191t)\nt0 : 0 < t\nh : \u00act < H\nhe : t = H\n\u22a2 False\n/Users/sasha/math_gkm/research/MarkovOutwardRatesM5BF.lean:77:54: error: failed to prove positivity/nonnegativity/nonzeroness\n/Users/sasha/math_gkm/research/MarkovOutwardRatesM5BF.lean:88:15: error: unexpected token '+'; expected term\n/Users/sasha/math_gkm/research/MarkovOutwardRatesM5BF.lean:88:12: error: Application type mismatch: The argument\n  r\nhas type\n  \u2115\nbut is expected to have type\n  Graph ?m.65 ?m.66\nin the application\n  Graph.IsSpanningSubgraph r\n/Users/sasha/math_gkm/research/MarkovOutwardRatesM5BF.lean:81:46: error: unsolved goals\ncase hrd\nj s r : \u2115\nhr : r < j\nhz : \u00acr = 0\nhrj : r \u2264 j\n\u22a2 sorry \u2264s sorry\n\ncase neg\nj s r : \u2115\nhr : r < j\nhz : \u00acr = 0\nhrj : r \u2264 j\nhrd : sorry \u2264s sorry\n\u22a2 (\u2191s + \u2191j + 3 - \u2191r) * reverseKernelMBEC j s (r + 1) = birthRateM5BF j r * reverseKernelMBEC j s r\n",
+  "stderr": "",
+  "modules": {
+    "MarkovOutwardRatesM5BF": "2506118fef95e2175895e4c26365596e54961398075782e097466cab95e9a109"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-5bf6837d/MarkovOutwardRatesM5BF.olean",
+    "/Users/sasha/math_gkm/research/MarkovOutwardRatesM5BF.lean"
+  ],
+  "seconds": 41.26012599997921,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

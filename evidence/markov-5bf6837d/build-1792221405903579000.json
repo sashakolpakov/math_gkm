@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovDriftStrictM5BF.lean:33:11: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Matroid ?m.93) 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Matroid ?m.93\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovDriftStrictM5BF.lean:33:14: error(lean.unknownIdentifier): Unknown identifier `omentDriftM1C6`\n/Users/sasha/math_gkm/research/MarkovDriftStrictM5BF.lean:26:30: error: unsolved goals\nj s H : \u2115\nh0 : 1 \u2264 H.succ\nhh : H.succ \u2264 j\nhc : reverseMomentM1C6 j s H * rateMassM5BF j s H \u2264 reverseConvMBEC j s s H * rateMomentM5BF j s H\nhb :\n  reverseMomentM1C6 j s H * outwardTailM5BF j s H < reverseConvMBEC j s s H * (\u2191H / 2 + 1) ^ 2 * outwardTailM5BF j s H\nhm : rateMassM5BF j s H + outwardTailM5BF j s H = 2 * reverseCenterM1C6 j s (H + 1) * reverseConvMBEC j s s (H + 1)\nht :\n  rateMomentM5BF j s H + outwardTailM5BF j s H * (\u2191H / 2 + 1) ^ 2 =\n    2 * (reverseCenterM1C6 j s (H + 1) + 1) * reverseMomentM1C6 j s (H + 1) +\n      reverseCenterM1C6 j s (H + 1) / 2 * reverseConvMBEC j s s (H + 1)\n\u22a2 0 < varianceDriftM1C6 j s H.succ\n/Users/sasha/math_gkm/research/MarkovDriftStrictM5BF.lean:55:16: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  (2 * reverseCenterM1C6 j s h + 1) *\n    (reverseConvMBEC j s s h * reverseConvMBEC j s s (h - 1) * varianceDriftM1C6 j s h)\nin the target expression\n  0 <\n    (2 * reverseCenterM1C6 j s h + 1) * (reverseConvMBEC j s s h * reverseConvMBEC j s s (h - 1)) *\n      varianceDriftM1C6 j s h\n\nj s h : \u2115\nh0 : 1 \u2264 h\nhh : h \u2264 j\nhe :\n  (\u2191s + \u2191j + 4) ^ 3 * (\u2191s + \u2191j + 5) *\n      (reverseConvMBEC j (s + 1) (s + 1) (h - 1) * reverseConvMBEC j s (s + 2) h -\n        reverseConvMBEC j (s + 1) (s + 1) h * reverseConvMBEC j s (s + 2) (h - 1)) =\n    (2 * reverseCenterM1C6 j s h + 1) *\n      (reverseConvMBEC j s s h * reverseConvMBEC j s s (h - 1) * varianceDriftM1C6 j s h)\nhp : 0 < (\u2191s + \u2191j + 4) ^ 3 * (\u2191s + \u2191j + 5)\nhc : 0 < reverseCenterM1C6 j s h\nhm : 0 < reverseConvMBEC j s s h * reverseConvMBEC j s s (h - 1)\nH :\n  0 <\n    (2 * reverseCenterM1C6 j s h + 1) * (reverseConvMBEC j s s h * reverseConvMBEC j s s (h - 1)) *\n      varianceDriftM1C6 j s h\n\u22a2 reverseConvMBEC j (s + 1) (s + 1) h * reverseConvMBEC j s (s + 2) (h - 1) <\n    reverseConvMBEC j (s + 1) (s + 1) (h - 1) * reverseConvMBEC j s (s + 2) h\n",
+  "stderr": "",
+  "modules": {
+    "MarkovDriftStrictM5BF": "ace0ab713bdf31b6f04129bcb505ab15960beaad4224863af06d9699aca5934d"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-5bf6837d/MarkovDriftStrictM5BF.olean",
+    "/Users/sasha/math_gkm/research/MarkovDriftStrictM5BF.lean"
+  ],
+  "seconds": 6.94982954103034,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

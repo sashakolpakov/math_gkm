@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovRadialCovarianceM5BF.lean:50:22: error: unsolved goals\nH : \u2115\nf : \u2115 \u2192 \u211d\ny : \u211d\nF : \u211d \u2192 \u211d\nhsplit :\n  \u2211 r \u2208 range (H + 2), ((y - \u2191r) * F (\u2191r - \u2191H / 2 - 1) + (y - (\u2191H + 1 - \u2191r)) * F (\u2191r - \u2191H / 2)) * f r * f (H + 1 - r) =\n    \u2211 r \u2208 range (H + 2), (y - \u2191r) * f r * f (H + 1 - r) * F (\u2191r - \u2191H / 2 - 1) +\n      \u2211 r \u2208 range (H + 2), (y - (\u2191H + 1 - \u2191r)) * f r * f (H + 1 - r) * F (\u2191r - \u2191H / 2)\nhe :\n  \u2211 t \u2208 range (H + 1),\n      ((y - (\u2191t + 1)) * f (t + 1) * f (H - t) + (y - (\u2191H - \u2191t + 1)) * f t * f (H - t + 1)) * F (\u2191t - \u2191H / 2) =\n    \u2211 r \u2208 range (H + 1), (y - \u2191(r + 1)) * f (r + 1) * f (H + 1 - (r + 1)) * F (\u2191(r + 1) - \u2191H / 2 - 1) +\n      \u2211 r \u2208 range (H + 1), (y - (\u2191H + 1 - \u2191r)) * f r * f (H + 1 - r) * F (\u2191r - \u2191H / 2)\nha : \u2191H + 1 - \u2191H / 2 = \u2191H / 2 + 1\n\u22a2 \u2211 x \u2208 range (H + 1),\n        (\u2191x * f x * f (H + 1 - x) * F (\u2191x + \u2191H * (-1 / 2)) +\n            (y * f x * f (H + 1 - x) * F (\u2191x + \u2191H * (-1 / 2)) - \u2191H * f x * f (H + 1 - x) * F (\u2191x + \u2191H * (-1 / 2))) -\n          f x * f (H + 1 - x) * F (\u2191x + \u2191H * (-1 / 2))) +\n      (y * f 0 * f (H + 1) * F (1 + \u2191H * (1 / 2)) + y * f 0 * f (H + 1) * F (-1 + \u2191H * (-1 / 2)) +\n        \u2211 x \u2208 range (H + 1),\n          (y * f (x + 1) * f (H + 1 - (x + 1)) * F (\u2191x + \u2191H * (-1 / 2)) -\n              \u2191x * f (x + 1) * f (H + 1 - (x + 1)) * F (\u2191x + \u2191H * (-1 / 2)) -\n            f (x + 1) * f (H + 1 - (x + 1)) * F (\u2191x + \u2191H * (-1 / 2)))) =\n    y * f 0 * f (H + 1) * F (1 + \u2191H * (1 / 2)) + y * f 0 * f (H + 1) * F (-1 + \u2191H * (-1 / 2)) +\n        \u2211 x \u2208 range (H + 1),\n          (\u2191x * f x * f (H + 1 - x) * F (\u2191x + \u2191H * (-1 / 2)) +\n              (y * f x * f (H + 1 - x) * F (\u2191x + \u2191H * (-1 / 2)) - \u2191H * f x * f (H + 1 - x) * F (\u2191x + \u2191H * (-1 / 2))) -\n            f x * f (H + 1 - x) * F (\u2191x + \u2191H * (-1 / 2))) +\n      \u2211 x \u2208 range (H + 1),\n        (y * f (x + 1) * f (H + 1 - (x + 1)) * F (\u2191x + \u2191H * (-1 / 2)) -\n            \u2191x * f (x + 1) * f (H + 1 - (x + 1)) * F (\u2191x + \u2191H * (-1 / 2)) -\n          f (x + 1) * f (H + 1 - (x + 1)) * F (\u2191x + \u2191H * (-1 / 2)))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovRadialCovarianceM5BF": "ec69a0dafd456fcda4046629f34bbe5691e0648ec046988021981dad03d6ea6a"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-5bf6837d/MarkovRadialCovarianceM5BF.olean",
+    "/Users/sasha/math_gkm/research/MarkovRadialCovarianceM5BF.lean"
+  ],
+  "seconds": 95.02065324998694,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
