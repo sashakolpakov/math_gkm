@@ -1,0 +1,19 @@
+{
+  "schema": "math-gkm.goal.v1",
+  "id": "published-markov-6-3",
+  "phase": "markov",
+  "root_declaration": "MathGKM.Markov.Conjecture63",
+  "root_file": "MathGKM/Markov.lean",
+  "root_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+  "root_meaning": "Full published Evans–Veselov–Winn Conjecture 6.3: for every source Markov polynomial indexed by a reduced rational 0<a<=b, every consecutive lattice triple in its Newton polygon satisfies the non-strict log-concavity inequality for raw squared-variable numerator coefficients in each direction (1,0), (0,1), (1,-1), retaining zeros. The 0/1 endpoint is included separately. No normalization or finite bound is allowed.",
+  "source": "https://armj.math.stonybrook.edu/Articles/250708-Winn/index.html",
+  "source_sections": "Equations (5), (7)–(11), Definitions 6.1–6.2, Conjecture 6.3",
+  "assumptions": ["Pinned Lean 4.32.2 and pinned read-only Mathlib", "Only propext, Classical.choice, Quot.sound in theorem axiom closure", "No external mathematical assertions as new Lean axioms"],
+  "accepted_outcomes": ["proof", "refutation"],
+  "correspondence_obligations": ["coverage", "source_family", "homogeneity_coefficients", "polygon", "directions_zeros_endpoints", "assumptions", "proof_scope"],
+  "completion": "Fresh source rebuild, kernel replay and axiom audit of a closed proof of the pinned root or its exact negation, AND an independent hash-bound English/source audit discharging every correspondence obligation. Proof needs universal rational coverage; refutation needs an actual source-family witness, valid triple and exact reversed inequality. Missing formal bridges may not be silently assumed. Partial results, scans, conditional lemmas, different normalizations, resource exhaustion and model success reports cannot close the goal.",
+  "preference": "Research directed at exact root resolution; agenda and inherited subgoals are revisable suggestions. Complexity/description length are audit-only and excluded from decisions.",
+  "execution_status": "explicitly user-authorized experimental controller; no certified Python/LLM continuation or utility improvement claim",
+  "inherited": ["RESUME.json", "requests/markov-next.json", "evidence/markov/research-run/state.json", "evidence/independent-markov/markov_round5_target_definition_audit.md", "evidence/independent-markov/markov_residual_scope_audit.md", "evidence/independent-markov/MATHEMATICAL_REVIEW.md"],
+  "provenance": "Machine-authored by authorized Codex/gpt-6-astra builder; construction and Agoh stand. Supervisor supplies no proof recipe."
+}

@@ -1,0 +1,2157 @@
+{
+  "schema": "math-gkm.static-source-audit.v1",
+  "generated_utc": "2026-10-17T22:09:22.105993+00:00",
+  "validation": "NOT YET RUN on these bytes",
+  "method": "AST parsing and JSON parsing only; no code imports or execution",
+  "errors": [],
+  "protected": {
+    "MISSION.md": {
+      "before": "9cfa1230bd2e0e92dfaec64f68ee72143dc1a17d1435d449cba0ff16da0ce727",
+      "after": "9cfa1230bd2e0e92dfaec64f68ee72143dc1a17d1435d449cba0ff16da0ce727",
+      "unchanged": true
+    },
+    "docs/DESIGN.md": {
+      "before": "47ebe858b2d7b06a9ac29527d74a7d65d7c39f988c399537b8da38bd24ce7d15",
+      "after": "47ebe858b2d7b06a9ac29527d74a7d65d7c39f988c399537b8da38bd24ce7d15",
+      "unchanged": true
+    },
+    "MathGKM/Markov.lean": {
+      "before": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "after": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "unchanged": true
+    },
+    "MathGKM/Protocol.lean": {
+      "before": "60b543592c2dadac3aeefea7ea2dd664c36a7910723e65bfd4e9e2e179bcf97c",
+      "after": "60b543592c2dadac3aeefea7ea2dd664c36a7910723e65bfd4e9e2e179bcf97c",
+      "unchanged": true
+    },
+    "contracts/markov-goal.json": {
+      "before": "10bc86a3043aefd4ff11978765bcc969e92c0a6731321b11f4c526d384f39ee7",
+      "after": "10bc86a3043aefd4ff11978765bcc969e92c0a6731321b11f4c526d384f39ee7",
+      "unchanged": true
+    },
+    "contracts/markov-clean-v2.json": {
+      "before": "495cf67ff80de3f6265a52266d8d212fc6e4ec411b0b2c0384cda47e84d29da3",
+      "after": "495cf67ff80de3f6265a52266d8d212fc6e4ec411b0b2c0384cda47e84d29da3",
+      "unchanged": true
+    },
+    "lean-toolchain": {
+      "before": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+      "after": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+      "unchanged": true
+    },
+    "lakefile.toml": {
+      "before": "211507039f4919cdc9d54f87efaf7bebf53532272377623f75269c714fb5b575",
+      "after": "211507039f4919cdc9d54f87efaf7bebf53532272377623f75269c714fb5b575",
+      "unchanged": true
+    },
+    "lake-manifest.json": {
+      "before": "b513f28de3996d022de1bad05cd06002dc5f21286f4cd26454fcfae26a745725",
+      "after": "b513f28de3996d022de1bad05cd06002dc5f21286f4cd26454fcfae26a745725",
+      "unchanged": true
+    }
+  },
+  "sources": {
+    "MISSION.md": {
+      "sha256": "9cfa1230bd2e0e92dfaec64f68ee72143dc1a17d1435d449cba0ff16da0ce727",
+      "bytes": 3786,
+      "change": "unchanged"
+    },
+    "MathGKM/ContinuationObligations.lean": {
+      "sha256": "3817165d086a45a316d03d58d5dbcdf5cb6aa1e244cad2e67b162ae0aacb3c57",
+      "bytes": 3683,
+      "change": "new"
+    },
+    "MathGKM/HarnessFixture.lean": {
+      "sha256": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+      "bytes": 256,
+      "change": "new"
+    },
+    "MathGKM/Markov.lean": {
+      "sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "bytes": 2002,
+      "change": "unchanged"
+    },
+    "MathGKM/Protocol.lean": {
+      "sha256": "60b543592c2dadac3aeefea7ea2dd664c36a7910723e65bfd4e9e2e179bcf97c",
+      "bytes": 2264,
+      "change": "unchanged"
+    },
+    "MathGKM/ResearchSemantics.lean": {
+      "sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+      "bytes": 4340,
+      "change": "new"
+    },
+    "contracts/markov-clean-v2.json": {
+      "sha256": "495cf67ff80de3f6265a52266d8d212fc6e4ec411b0b2c0384cda47e84d29da3",
+      "bytes": 2671,
+      "change": "unchanged"
+    },
+    "contracts/markov-goal.json": {
+      "sha256": "10bc86a3043aefd4ff11978765bcc969e92c0a6731321b11f4c526d384f39ee7",
+      "bytes": 2611,
+      "change": "unchanged"
+    },
+    "docs/CONTROLLER.md": {
+      "sha256": "991ab12e414975fad69584a3a4f6aadb55bd192c00db0901e8ddc2c33ba3b507",
+      "bytes": 17146,
+      "change": "unchanged"
+    },
+    "docs/DESIGN.md": {
+      "sha256": "47ebe858b2d7b06a9ac29527d74a7d65d7c39f988c399537b8da38bd24ce7d15",
+      "bytes": 22809,
+      "change": "unchanged"
+    },
+    "docs/HARNESS_CHECKPOINT.md": {
+      "sha256": "fa2f0edf12c4b789be71abe1e4d5dae873478bf9e0c5ee40c8b005e4ff462df9",
+      "bytes": 13142,
+      "change": "new"
+    },
+    "docs/REQUIREMENT_MAP.md": {
+      "sha256": "bd3066c5aa7314dd173abc044e62cd58f25af180ff6f654edff4b364a20dc0e8",
+      "bytes": 13749,
+      "change": "new"
+    },
+    "docs/STUDY_V2.md": {
+      "sha256": "26a8912489e26d3c747d10f3421bb489e468a2f0f2367e2675c56a83e6448717",
+      "bytes": 18781,
+      "change": "modified"
+    },
+    "lake-manifest.json": {
+      "sha256": "b513f28de3996d022de1bad05cd06002dc5f21286f4cd26454fcfae26a745725",
+      "bytes": 3542,
+      "change": "unchanged"
+    },
+    "lakefile.toml": {
+      "sha256": "211507039f4919cdc9d54f87efaf7bebf53532272377623f75269c714fb5b575",
+      "bytes": 236,
+      "change": "unchanged"
+    },
+    "lean-toolchain": {
+      "sha256": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+      "bytes": 25,
+      "change": "unchanged"
+    },
+    "machinery/broker.py": {
+      "sha256": "539bdbf3cdba5a3587d98454de77ef59f3e26f86c5becb9514ff3d9966d6cbe7",
+      "bytes": 8918,
+      "definitions": [
+        {
+          "name": "AstraProposer",
+          "line": 17
+        },
+        {
+          "name": "Broker",
+          "line": 25
+        },
+        {
+          "name": "propose",
+          "line": 18
+        },
+        {
+          "name": "__init__",
+          "line": 26
+        },
+        {
+          "name": "events",
+          "line": 34
+        },
+        {
+          "name": "agenda",
+          "line": 38
+        },
+        {
+          "name": "register",
+          "line": 41
+        },
+        {
+          "name": "act",
+          "line": 47
+        },
+        {
+          "name": "_dispatch",
+          "line": 70
+        },
+        {
+          "name": "context",
+          "line": 144
+        },
+        {
+          "name": "_context",
+          "line": 154
+        },
+        {
+          "name": "save",
+          "line": 161
+        },
+        {
+          "name": "project",
+          "line": 145
+        }
+      ],
+      "imports": [
+        "from __future__ import annotations",
+        "import copy",
+        "import json",
+        "from pathlib import Path",
+        "import shutil",
+        "import tempfile",
+        "import time",
+        "from .gate import ProofGate, Rejected, canonical, digest, check_graph",
+        "from .process import run",
+        "from .toolchain import ROOT",
+        "from .trust import environment",
+        "from .experiment_worker import validate"
+      ],
+      "change": "unchanged"
+    },
+    "machinery/check.py": {
+      "sha256": "cb9d7da571b9ea52a0ebe2004187c925690ac4c388c921eaf864b9597f8a2fbf",
+      "bytes": 1585,
+      "definitions": [
+        {
+          "name": "main",
+          "line": 10
+        }
+      ],
+      "imports": [
+        "import json",
+        "import sys",
+        "import time",
+        "from .process import run",
+        "from .toolchain import ROOT",
+        "from .trust import environment, sha"
+      ],
+      "change": "unchanged"
+    },
+    "machinery/completion.py": {
+      "sha256": "6707ab37a5a514bb58bc13c4475c4453f05cc18257df3b3499026ef12d8c5a5c",
+      "bytes": 9168,
+      "definitions": [
+        {
+          "name": "without_comments",
+          "line": 21
+        },
+        {
+          "name": "prepare",
+          "line": 44
+        },
+        {
+          "name": "dependency_paths",
+          "line": 93
+        },
+        {
+          "name": "verify",
+          "line": 97
+        },
+        {
+          "name": "visit",
+          "line": 53
+        }
+      ],
+      "imports": [
+        "import json",
+        "from pathlib import Path",
+        "import re",
+        "import time",
+        "import traceback",
+        "from .engine import atomic",
+        "from .gate import digest, Rejected",
+        "from .process import run",
+        "from .trust import ROOT, LEAN, CHECKER, CORE, environment, sha",
+        "from . import proof_audit"
+      ],
+      "change": "modified"
+    },
+    "machinery/controller.py": {
+      "sha256": "b6e4f1d8878c1459f8e9fda9de26409ca15daa633776b35247d15972874ecd7b",
+      "bytes": 26153,
+      "definitions": [
+        {
+          "name": "read",
+          "line": 25
+        },
+        {
+          "name": "goal_path",
+          "line": 29
+        },
+        {
+          "name": "initialize",
+          "line": 35
+        },
+        {
+          "name": "Locks",
+          "line": 71
+        },
+        {
+          "name": "status",
+          "line": 93
+        },
+        {
+          "name": "feedback",
+          "line": 111
+        },
+        {
+          "name": "prompt_for",
+          "line": 116
+        },
+        {
+          "name": "Controller",
+          "line": 131
+        },
+        {
+          "name": "serve",
+          "line": 332
+        },
+        {
+          "name": "main",
+          "line": 347
+        },
+        {
+          "name": "__init__",
+          "line": 72
+        },
+        {
+          "name": "fds",
+          "line": 84
+        },
+        {
+          "name": "close",
+          "line": 87
+        },
+        {
+          "name": "__init__",
+          "line": 132
+        },
+        {
+          "name": "save",
+          "line": 142
+        },
+        {
+          "name": "stopped",
+          "line": 149
+        },
+        {
+          "name": "worker",
+          "line": 152
+        },
+        {
+          "name": "uncertain",
+          "line": 171
+        },
+        {
+          "name": "account",
+          "line": 191
+        },
+        {
+          "name": "verify_claim",
+          "line": 213
+        },
+        {
+          "name": "run",
+          "line": 231
+        },
+        {
+          "name": "stop_signal",
+          "line": 336
+        }
+      ],
+      "imports": [
+        "import argparse",
+        "import fcntl",
+        "import json",
+        "import os",
+        "from pathlib import Path",
+        "import signal",
+        "import subprocess",
+        "import sys",
+        "import time",
+        "from .engine import Engine, atomic",
+        "from .gate import digest, Rejected",
+        "from .trust import ROOT, sha",
+        "from . import completion"
+      ],
+      "change": "unchanged"
+    },
+    "machinery/engine.py": {
+      "sha256": "6b0a2eae4b1e919233a3ac99f0ecb2af22f6c0cca0691befbb23af7a6be811dc",
+      "bytes": 9187,
+      "definitions": [
+        {
+          "name": "atomic",
+          "line": 17
+        },
+        {
+          "name": "Engine",
+          "line": 33
+        },
+        {
+          "name": "main",
+          "line": 176
+        },
+        {
+          "name": "__init__",
+          "line": 34
+        },
+        {
+          "name": "broker",
+          "line": 41
+        },
+        {
+          "name": "initialize",
+          "line": 51
+        },
+        {
+          "name": "request",
+          "line": 62
+        },
+        {
+          "name": "_request",
+          "line": 67
+        },
+        {
+          "name": "consume",
+          "line": 102
+        },
+        {
+          "name": "_execute",
+          "line": 130
+        },
+        {
+          "name": "recover",
+          "line": 167
+        }
+      ],
+      "imports": [
+        "import argparse",
+        "import copy",
+        "import fcntl",
+        "import json",
+        "from pathlib import Path",
+        "import uuid",
+        "import os",
+        "from .broker import Broker",
+        "from .protocol import transition",
+        "from .gate import canonical, digest, Rejected",
+        "from .toolchain import ROOT"
+      ],
+      "change": "unchanged"
+    },
+    "machinery/experiment_worker.py": {
+      "sha256": "d522946605fd2b2752f842035e76bbb99a94f2ef8b0c9fdfaa673787b8f57a87",
+      "bytes": 4926,
+      "definitions": [
+        {
+          "name": "validate",
+          "line": 25
+        },
+        {
+          "name": "main",
+          "line": 43
+        },
+        {
+          "name": "bounded_range",
+          "line": 50
+        },
+        {
+          "name": "checked",
+          "line": 58
+        },
+        {
+          "name": "binop",
+          "line": 66
+        },
+        {
+          "name": "BoundOperators",
+          "line": 77
+        },
+        {
+          "name": "bounded_fraction",
+          "line": 84
+        },
+        {
+          "name": "trace",
+          "line": 93
+        },
+        {
+          "name": "visit_BinOp",
+          "line": 78
+        },
+        {
+          "name": "visit_AugAssign",
+          "line": 82
+        }
+      ],
+      "imports": [
+        "import ast",
+        "import builtins",
+        "from fractions import Fraction",
+        "import json",
+        "import resource",
+        "import operator",
+        "import sys"
+      ],
+      "change": "unchanged"
+    },
+    "machinery/fixture_worker.py": {
+      "sha256": "d342813b1b725e700f97aa2a84eaf9d94fa3846bea586821df5fe93e9621b2c3",
+      "bytes": 1522,
+      "definitions": [
+        {
+          "name": "main",
+          "line": 9
+        }
+      ],
+      "imports": [
+        "import json",
+        "from pathlib import Path",
+        "import sys",
+        "import time",
+        "from .engine import atomic"
+      ],
+      "change": "unchanged"
+    },
+    "machinery/gate.py": {
+      "sha256": "3a5e68d87fa2a27902e5daa56f67ef691cffe2ff6c28e8a8bb1f3ce100431129",
+      "bytes": 8653,
+      "definitions": [
+        {
+          "name": "Rejected",
+          "line": 19
+        },
+        {
+          "name": "canonical",
+          "line": 23
+        },
+        {
+          "name": "digest",
+          "line": 27
+        },
+        {
+          "name": "file_digest",
+          "line": 31
+        },
+        {
+          "name": "bounded",
+          "line": 35
+        },
+        {
+          "name": "nat_expr",
+          "line": 47
+        },
+        {
+          "name": "proposition",
+          "line": 57
+        },
+        {
+          "name": "proof_term",
+          "line": 78
+        },
+        {
+          "name": "ProofGate",
+          "line": 103
+        },
+        {
+          "name": "check_graph",
+          "line": 177
+        },
+        {
+          "name": "walk",
+          "line": 38
+        },
+        {
+          "name": "__init__",
+          "line": 105
+        },
+        {
+          "name": "check",
+          "line": 108
+        },
+        {
+          "name": "close_root",
+          "line": 154
+        },
+        {
+          "name": "recheck",
+          "line": 167
+        },
+        {
+          "name": "visit",
+          "line": 184
+        }
+      ],
+      "imports": [
+        "from __future__ import annotations",
+        "import hashlib",
+        "import json",
+        "import re",
+        "import tempfile",
+        "from . import trust",
+        "from .process import run",
+        "from pathlib import Path",
+        "from .toolchain import ROOT, BUILD, invoke, compile_module, replay"
+      ],
+      "change": "unchanged"
+    },
+    "machinery/process.py": {
+      "sha256": "e957b94c70634b9d21594f749e16c8955d759c77ce12eb16d763f7b979e336e9",
+      "bytes": 2582,
+      "definitions": [
+        {
+          "name": "run",
+          "line": 12
+        },
+        {
+          "name": "kill_group",
+          "line": 25
+        }
+      ],
+      "imports": [
+        "import os",
+        "import selectors",
+        "import signal",
+        "import subprocess",
+        "import time"
+      ],
+      "change": "unchanged"
+    },
+    "machinery/proof_audit.py": {
+      "sha256": "7eea1235f291514e7463f4748d6315142ce8db0f2f53f4e524722629f148c8ab",
+      "bytes": 5258,
+      "definitions": [
+        {
+          "name": "inspector",
+          "line": 14
+        },
+        {
+          "name": "parse",
+          "line": 83
+        },
+        {
+          "name": "used_versions",
+          "line": 103
+        }
+      ],
+      "imports": [
+        "import json",
+        "from .study_common import Invalid, digest",
+        "from .completion import NAME"
+      ],
+      "change": "new"
+    },
+    "machinery/protocol.py": {
+      "sha256": "d34e97fe45cbde9b6359215ff58d107f5655eea2dc1e8caad66d9df94eafc932",
+      "bytes": 903,
+      "definitions": [
+        {
+          "name": "transition",
+          "line": 12
+        }
+      ],
+      "imports": [
+        "import json",
+        "import tempfile",
+        "from pathlib import Path",
+        "from .process import run",
+        "from .trust import ROOT, LEAN, CORE, environment, sha",
+        "from .gate import Rejected"
+      ],
+      "change": "unchanged"
+    },
+    "machinery/provenance.py": {
+      "sha256": "47ecc9acb217613bd86659bb184d03ef7a569fd301a1b0c54d9a8e7fc2631c49",
+      "bytes": 3274,
+      "definitions": [
+        {
+          "name": "checkpoint",
+          "line": 12
+        }
+      ],
+      "imports": [
+        "from datetime import datetime, timezone",
+        "import json",
+        "import platform",
+        "import shutil",
+        "import sys",
+        "from .gate import file_digest",
+        "from .switch import REFERENCE_HASHES",
+        "from .toolchain import ROOT"
+      ],
+      "change": "unchanged"
+    },
+    "machinery/source_checkpoint.py": {
+      "sha256": "6a76e3aede6002db06c55904ad37e94b3546e01437d81e685b8207c1318fd077",
+      "bytes": 4664,
+      "definitions": [],
+      "imports": [
+        "import ast",
+        "import hashlib",
+        "import json",
+        "from pathlib import Path",
+        "from datetime import datetime, timezone"
+      ],
+      "change": "new"
+    },
+    "machinery/study.py": {
+      "sha256": "9ffa1f606ed5edf10e6d3502aa5c83818e6c11a414e2c01d4f71ad1ee30a3781",
+      "bytes": 43651,
+      "definitions": [
+        {
+          "name": "public_receipt",
+          "line": 30
+        },
+        {
+          "name": "public_comparison",
+          "line": 36
+        },
+        {
+          "name": "validate_protocol",
+          "line": 39
+        },
+        {
+          "name": "validate_suite",
+          "line": 64
+        },
+        {
+          "name": "freeze",
+          "line": 87
+        },
+        {
+          "name": "verify",
+          "line": 171
+        },
+        {
+          "name": "Arm",
+          "line": 200
+        },
+        {
+          "name": "status",
+          "line": 675
+        },
+        {
+          "name": "main",
+          "line": 690
+        },
+        {
+          "name": "__init__",
+          "line": 201
+        },
+        {
+          "name": "save",
+          "line": 209
+        },
+        {
+          "name": "stopped",
+          "line": 215
+        },
+        {
+          "name": "permitted",
+          "line": 218
+        },
+        {
+          "name": "reserve",
+          "line": 223
+        },
+        {
+          "name": "consume",
+          "line": 235
+        },
+        {
+          "name": "recover",
+          "line": 250
+        },
+        {
+          "name": "call",
+          "line": 297
+        },
+        {
+          "name": "role_workspace",
+          "line": 350
+        },
+        {
+          "name": "checked_findings",
+          "line": 366
+        },
+        {
+          "name": "research_round",
+          "line": 379
+        },
+        {
+          "name": "archive_sources",
+          "line": 440
+        },
+        {
+          "name": "review",
+          "line": 450
+        },
+        {
+          "name": "policy_trial",
+          "line": 519
+        },
+        {
+          "name": "run",
+          "line": 632
+        },
+        {
+          "name": "stop_signal",
+          "line": 731
+        }
+      ],
+      "imports": [
+        "import argparse",
+        "import copy",
+        "import json",
+        "import os",
+        "from pathlib import Path",
+        "import shutil",
+        "import signal",
+        "import subprocess",
+        "import time",
+        "from .study_common import ROOT, PYTHON, SEED, Invalid, canonical, digest, sha, read, write, save_state, load_state, lock, inventory, snapshot, verify_snapshot, clean_contract, copy_seed, implementation, dependency_identity, authorize_live",
+        "from . import study_policy as policy",
+        "from .completion import NAME",
+        "from .study_common import inside",
+        "from .study_common import inside",
+        "from .study_observer import checkpoint",
+        "from .study_policy import prompt",
+        "from .study_bridge import event",
+        "from .study_common import inside",
+        "from .study_knowledge import SCHEMAS, ingest",
+        "from .study_bridge import observation",
+        "from .study_observer import checkpoint",
+        "from .study_bridge import observation",
+        "from .study_transfer import evaluate_pair",
+        "from .study_bridge import event",
+        "from .study_completion import check",
+        "from .study_transfer import evaluate_pair",
+        "from .study_transfer import evaluate_pair",
+        "from .study_knowledge import SCHEMAS, ingest",
+        "from .study_transfer import ablate",
+        "from .study_transfer import evaluate_pair"
+      ],
+      "change": "modified"
+    },
+    "machinery/study_audit.py": {
+      "sha256": "8fda0fa744f6488cbbf016c038da5b771abc8fddf49b4ae64cb72bc9498ee146",
+      "bytes": 12430,
+      "definitions": [
+        {
+          "name": "measured_cost",
+          "line": 13
+        },
+        {
+          "name": "measure",
+          "line": 22
+        },
+        {
+          "name": "report",
+          "line": 43
+        },
+        {
+          "name": "collect",
+          "line": 107
+        },
+        {
+          "name": "main",
+          "line": 148
+        }
+      ],
+      "imports": [
+        "import argparse",
+        "import html",
+        "from pathlib import Path",
+        "import time",
+        "import zlib",
+        "from .study_common import ROOT, Invalid, read, write, sha, load_state, canonical, verify_snapshot"
+      ],
+      "change": "unchanged"
+    },
+    "machinery/study_bridge.py": {
+      "sha256": "027a153f074a4431da1b85b0d45857df5d1b040f878422b3c3506e789777cb9e",
+      "bytes": 3622,
+      "definitions": [
+        {
+          "name": "initial",
+          "line": 22
+        },
+        {
+          "name": "event",
+          "line": 26
+        },
+        {
+          "name": "observation",
+          "line": 49
+        },
+        {
+          "name": "reject_certified_installation",
+          "line": 62
+        }
+      ],
+      "imports": [
+        "import time",
+        "from . import protocol",
+        "from .study_common import ROOT, digest, sha, write",
+        "from .study_common import Invalid"
+      ],
+      "change": "new"
+    },
+    "machinery/study_burden.py": {
+      "sha256": "60afcf75e79f50623c6592d3e6801de60e92e01e14941e5344b918d6199fa934",
+      "bytes": 8770,
+      "definitions": [
+        {
+          "name": "measure_checkpoint",
+          "line": 15
+        },
+        {
+          "name": "report",
+          "line": 87
+        }
+      ],
+      "imports": [
+        "import argparse",
+        "import html",
+        "import time",
+        "from pathlib import Path",
+        "from .study_common import Invalid, canonical, digest, read, write, verify_snapshot, sha"
+      ],
+      "change": "new"
+    },
+    "machinery/study_common.py": {
+      "sha256": "5296120fafed7685f5d67df674c1b33bfee5ee80c3a0802e978445136d2cfcb2",
+      "bytes": 7213,
+      "definitions": [
+        {
+          "name": "Invalid",
+          "line": 17
+        },
+        {
+          "name": "canonical",
+          "line": 20
+        },
+        {
+          "name": "digest",
+          "line": 23
+        },
+        {
+          "name": "sha",
+          "line": 26
+        },
+        {
+          "name": "read",
+          "line": 29
+        },
+        {
+          "name": "write",
+          "line": 32
+        },
+        {
+          "name": "save_state",
+          "line": 47
+        },
+        {
+          "name": "load_state",
+          "line": 50
+        },
+        {
+          "name": "lock",
+          "line": 57
+        },
+        {
+          "name": "inside",
+          "line": 66
+        },
+        {
+          "name": "inventory",
+          "line": 75
+        },
+        {
+          "name": "snapshot",
+          "line": 97
+        },
+        {
+          "name": "verify_snapshot",
+          "line": 109
+        },
+        {
+          "name": "dependencies",
+          "line": 115
+        },
+        {
+          "name": "copy_seed",
+          "line": 122
+        },
+        {
+          "name": "clean_contract",
+          "line": 133
+        },
+        {
+          "name": "implementation",
+          "line": 144
+        },
+        {
+          "name": "dependency_identity",
+          "line": 149
+        },
+        {
+          "name": "authorize_live",
+          "line": 166
+        }
+      ],
+      "imports": [
+        "import contextlib",
+        "import fcntl",
+        "import hashlib",
+        "import json",
+        "import os",
+        "from pathlib import Path",
+        "import shutil",
+        "import time",
+        "from .trust import CORE, LEAN, CHECKER"
+      ],
+      "change": "modified"
+    },
+    "machinery/study_completion.py": {
+      "sha256": "5708fffc05cf3f85adeafd5b4fa2c719e28a4d6a73c274ca90162da5f3702c03",
+      "bytes": 3593,
+      "definitions": [
+        {
+          "name": "check",
+          "line": 14
+        },
+        {
+          "name": "main",
+          "line": 66
+        },
+        {
+          "name": "bounded",
+          "line": 46
+        }
+      ],
+      "imports": [
+        "import argparse",
+        "from pathlib import Path",
+        "import time",
+        "from . import completion",
+        "from .study_common import Invalid, read, write, canonical, lock, digest",
+        "from .study import Arm, verify",
+        "from .study_transfer import sandbox_prefix, dependency_paths"
+      ],
+      "change": "modified"
+    },
+    "machinery/study_curate.py": {
+      "sha256": "f108476b55439df56f4d3412ce319060ddb77f78e0f7f58bb5c02c45f3185aeb",
+      "bytes": 4975,
+      "definitions": [
+        {
+          "name": "curate",
+          "line": 18
+        }
+      ],
+      "imports": [
+        "import argparse",
+        "import json",
+        "from pathlib import Path",
+        "import shutil",
+        "import subprocess",
+        "import time",
+        "from .study_common import ROOT, PYTHON, SEED, Invalid, write, read, clean_contract, copy_seed, canonical, authorize_live, sha, digest",
+        "from .study import validate_suite"
+      ],
+      "change": "modified"
+    },
+    "machinery/study_fixture.py": {
+      "sha256": "7438612dae2455a50d9b0a3dbdd92882951881505fac267426064ecdd504fc8c",
+      "bytes": 6472,
+      "definitions": [
+        {
+          "name": "main",
+          "line": 8
+        }
+      ],
+      "imports": [
+        "import json",
+        "from pathlib import Path",
+        "import sys",
+        "import time",
+        "from .study_common import read, write, sha"
+      ],
+      "change": "modified"
+    },
+    "machinery/study_knowledge.py": {
+      "sha256": "ca56fbe272669b2e40de14b17af4cd75bb8c874afc5d220a4188cefd43639679",
+      "bytes": 12855,
+      "definitions": [
+        {
+          "name": "task_for",
+          "line": 37
+        },
+        {
+          "name": "ingest",
+          "line": 86
+        }
+      ],
+      "imports": [
+        "import copy",
+        "import re",
+        "from .study_common import Invalid, digest, read, write, sha, inside",
+        "from .study_transfer import check_task, wrapper"
+      ],
+      "change": "new"
+    },
+    "machinery/study_manifest.py": {
+      "sha256": "2740ce1bb8464bd05b46cb8675937d50788f275280858cd04dab5cbaac32372c",
+      "bytes": 3531,
+      "definitions": [
+        {
+          "name": "generate",
+          "line": 8
+        }
+      ],
+      "imports": [
+        "import argparse",
+        "import platform",
+        "from pathlib import Path",
+        "import sys",
+        "from .study_common import ROOT, SEED, read, write, sha"
+      ],
+      "change": "unchanged"
+    },
+    "machinery/study_observer.py": {
+      "sha256": "2bc680d07855c0cb3133a9a79c4537edfcb3988463d364d3cd787fb29b1a79b5",
+      "bytes": 1658,
+      "definitions": [
+        {
+          "name": "checkpoint",
+          "line": 9
+        }
+      ],
+      "imports": [
+        "from .study_common import Invalid, digest, read, write, verify_snapshot"
+      ],
+      "change": "new"
+    },
+    "machinery/study_policy.py": {
+      "sha256": "a9672dec84f2aba9348b5c882585dd76babea92e698339a561cb6adc9f1c8c6b",
+      "bytes": 15455,
+      "definitions": [
+        {
+          "name": "validate_policy",
+          "line": 15
+        },
+        {
+          "name": "initial",
+          "line": 19
+        },
+        {
+          "name": "request",
+          "line": 27
+        },
+        {
+          "name": "record",
+          "line": 41
+        },
+        {
+          "name": "commit",
+          "line": 117
+        },
+        {
+          "name": "validate_execution",
+          "line": 143
+        },
+        {
+          "name": "finish_episode",
+          "line": 158
+        },
+        {
+          "name": "prompt",
+          "line": 168
+        }
+      ],
+      "imports": [
+        "from .study_common import Invalid, digest, inside, sha",
+        "from . import study_program",
+        "from .study_bridge import OBLIGATIONS",
+        "import copy"
+      ],
+      "change": "modified"
+    },
+    "machinery/study_program.py": {
+      "sha256": "b20bc591b8e7f1383e3c8331d977e9eec449a9904488e7df66b50075b924ff60",
+      "bytes": 3079,
+      "definitions": [
+        {
+          "name": "validate",
+          "line": 13
+        },
+        {
+          "name": "execute",
+          "line": 40
+        },
+        {
+          "name": "proposal",
+          "line": 66
+        },
+        {
+          "name": "walk",
+          "line": 17
+        },
+        {
+          "name": "run",
+          "line": 44
+        }
+      ],
+      "imports": [
+        "import copy",
+        "from .study_common import Invalid, digest"
+      ],
+      "change": "new"
+    },
+    "machinery/study_transfer.py": {
+      "sha256": "573637c989c84f3c1ed9bba6613a4d07488cb4397908e7add04cb2c3c41f6c35",
+      "bytes": 22171,
+      "definitions": [
+        {
+          "name": "dependency_paths",
+          "line": 21
+        },
+        {
+          "name": "collect",
+          "line": 24
+        },
+        {
+          "name": "sandbox_prefix",
+          "line": 54
+        },
+        {
+          "name": "exact_type",
+          "line": 74
+        },
+        {
+          "name": "wrapper",
+          "line": 80
+        },
+        {
+          "name": "check_task",
+          "line": 91
+        },
+        {
+          "name": "catalog_snapshot",
+          "line": 187
+        },
+        {
+          "name": "evaluate_pair",
+          "line": 216
+        },
+        {
+          "name": "copy_tasks",
+          "line": 322
+        },
+        {
+          "name": "ablate",
+          "line": 330
+        },
+        {
+          "name": "visit",
+          "line": 26
+        }
+      ],
+      "imports": [
+        "import os",
+        "from pathlib import Path",
+        "import re",
+        "import shutil",
+        "import time",
+        "from .study_common import ROOT, Invalid, read, write, digest, sha, verify_snapshot, copy_seed, inventory",
+        "from .trust import LEAN, CHECKER, CORE, environment",
+        "from .process import run",
+        "from .completion import NAME, ALLOWED, without_comments",
+        "from . import proof_audit",
+        "import json"
+      ],
+      "change": "modified"
+    },
+    "machinery/study_worker.py": {
+      "sha256": "cea861dbbb4285fe71f91eeeb6cf68eac2176428ac6cc36efd49b4ca5b39993f",
+      "bytes": 8417,
+      "definitions": [
+        {
+          "name": "permissions",
+          "line": 22
+        },
+        {
+          "name": "command",
+          "line": 44
+        },
+        {
+          "name": "execute",
+          "line": 69
+        }
+      ],
+      "imports": [
+        "import argparse",
+        "import json",
+        "import os",
+        "from pathlib import Path",
+        "import selectors",
+        "import signal",
+        "import subprocess",
+        "import sys",
+        "import time",
+        "from .study_common import ROOT, PYTHON, read, write, inventory, sha, authorize_live",
+        "from .worker import inline"
+      ],
+      "change": "modified"
+    },
+    "machinery/switch.py": {
+      "sha256": "416ae2f3116f7babad38cdcb078c0e79248e6b9c8fff2554a108355ab5dcc0e1",
+      "bytes": 7691,
+      "definitions": [
+        {
+          "name": "bindings",
+          "line": 29
+        },
+        {
+          "name": "SwitchGate",
+          "line": 36
+        },
+        {
+          "name": "__init__",
+          "line": 37
+        },
+        {
+          "name": "_check_model",
+          "line": 44
+        },
+        {
+          "name": "prepare",
+          "line": 85
+        },
+        {
+          "name": "install",
+          "line": 101
+        },
+        {
+          "name": "_bindings_check",
+          "line": 132
+        }
+      ],
+      "imports": [
+        "from __future__ import annotations",
+        "import fcntl",
+        "import json",
+        "import time",
+        "import uuid",
+        "from pathlib import Path",
+        "from .gate import Rejected, canonical, digest, file_digest",
+        "from .toolchain import ROOT, compile_module, replay"
+      ],
+      "change": "unchanged"
+    },
+    "machinery/toolchain.py": {
+      "sha256": "4e1ef9af43216c437246ae435b70b68d6d26d3823ef30421610ce05e2f207e68",
+      "bytes": 2306,
+      "definitions": [
+        {
+          "name": "environment",
+          "line": 12
+        },
+        {
+          "name": "invoke",
+          "line": 26
+        },
+        {
+          "name": "compile_module",
+          "line": 41
+        },
+        {
+          "name": "replay",
+          "line": 48
+        }
+      ],
+      "imports": [
+        "from pathlib import Path",
+        "import os",
+        "import subprocess",
+        "import time",
+        "import json",
+        "from .trust import environment as clean_environment",
+        "from .trust import CORE",
+        "from .process import run",
+        "from .trust import LEAN, CHECKER",
+        "import json"
+      ],
+      "change": "unchanged"
+    },
+    "machinery/trust.py": {
+      "sha256": "1a90f064a347d1beb983faa5222017f596e9aba08f5857d39b93fb3b282554c4",
+      "bytes": 2764,
+      "definitions": [
+        {
+          "name": "sha",
+          "line": 15
+        },
+        {
+          "name": "environment",
+          "line": 23
+        },
+        {
+          "name": "snapshot",
+          "line": 31
+        },
+        {
+          "name": "request_freeze",
+          "line": 42
+        }
+      ],
+      "imports": [
+        "import hashlib",
+        "import json",
+        "from pathlib import Path"
+      ],
+      "change": "unchanged"
+    },
+    "machinery/validate.py": {
+      "sha256": "5ffb50c9218e60cbd8ca2ec9766f7b9db4bd9751d525f7b2b7b03a26da7a8d73",
+      "bytes": 1476,
+      "definitions": [
+        {
+          "name": "main",
+          "line": 9
+        }
+      ],
+      "imports": [
+        "import json",
+        "from pathlib import Path",
+        "import tempfile",
+        "from . import toolchain",
+        "from .trust import ROOT, sha"
+      ],
+      "change": "unchanged"
+    },
+    "machinery/worker.py": {
+      "sha256": "65a1130e2624d8cda679984c49a268e2ab8e00844f69b9c63bf451ada0a35779",
+      "bytes": 10792,
+      "definitions": [
+        {
+          "name": "inline",
+          "line": 20
+        },
+        {
+          "name": "command",
+          "line": 43
+        },
+        {
+          "name": "valid_report",
+          "line": 82
+        },
+        {
+          "name": "inventory",
+          "line": 96
+        },
+        {
+          "name": "execute",
+          "line": 113
+        },
+        {
+          "name": "main",
+          "line": 227
+        }
+      ],
+      "imports": [
+        "import argparse",
+        "import json",
+        "import os",
+        "from pathlib import Path",
+        "import selectors",
+        "import signal",
+        "import subprocess",
+        "import time",
+        "from .engine import atomic",
+        "from .trust import ROOT, sha"
+      ],
+      "change": "unchanged"
+    },
+    "studies/v2-canary.json": {
+      "sha256": "db115a9cc3c2cdc6085e7b1c83d8eaaad9fced0f6d67220178936c76da0d4546",
+      "bytes": 281,
+      "change": "unchanged"
+    },
+    "studies/v2-fixture.json": {
+      "sha256": "bfe9647f4e51ab441a051e9cbcd7997eb0740a02b1a0516309cf52c55e62f145",
+      "bytes": 284,
+      "change": "unchanged"
+    },
+    "studies/v2-study.json": {
+      "sha256": "e263e7a7d10506633365351b5570bc114e195d7b4ec904b748717abe471d71c2",
+      "bytes": 302,
+      "change": "unchanged"
+    },
+    "tests/test_boundaries.py": {
+      "sha256": "495925ab29c1ee4cac28ef3d454fb1b1ee34ee0abb89e9be6d14c1cebd8262a6",
+      "bytes": 11800,
+      "definitions": [
+        {
+          "name": "AdmissionTests",
+          "line": 16
+        },
+        {
+          "name": "AttachmentTests",
+          "line": 79
+        },
+        {
+          "name": "BrokerTests",
+          "line": 104
+        },
+        {
+          "name": "SwitchTests",
+          "line": 137
+        },
+        {
+          "name": "DriverTests",
+          "line": 219
+        },
+        {
+          "name": "setUpClass",
+          "line": 18
+        },
+        {
+          "name": "test_universal_proof_has_no_axioms",
+          "line": 25
+        },
+        {
+          "name": "test_unrelated_true_does_not_close_root",
+          "line": 29
+        },
+        {
+          "name": "test_numerical_case_does_not_prove_universal",
+          "line": 33
+        },
+        {
+          "name": "test_valid_reduction_composes",
+          "line": 37
+        },
+        {
+          "name": "test_exact_refutation",
+          "line": 44
+        },
+        {
+          "name": "test_changed_hypotheses",
+          "line": 49
+        },
+        {
+          "name": "test_false_proof_rejected_by_kernel",
+          "line": 54
+        },
+        {
+          "name": "test_source_injection_and_omitted_dependency",
+          "line": 58
+        },
+        {
+          "name": "test_forged_receipt",
+          "line": 65
+        },
+        {
+          "name": "test_complexity_audit_has_no_effect",
+          "line": 71
+        },
+        {
+          "name": "cell",
+          "line": 80
+        },
+        {
+          "name": "test_compatible_sequential_graph",
+          "line": 83
+        },
+        {
+          "name": "test_conflicting_binding",
+          "line": 86
+        },
+        {
+          "name": "test_missing_or_omitted_dependencies",
+          "line": 90
+        },
+        {
+          "name": "test_circular_dependency",
+          "line": 95
+        },
+        {
+          "name": "test_unproved_assumption",
+          "line": 99
+        },
+        {
+          "name": "test_fixture_is_not_live",
+          "line": 105
+        },
+        {
+          "name": "test_nonproof_feedback_changes_agenda",
+          "line": 110
+        },
+        {
+          "name": "test_unavailable_tool_not_refutation",
+          "line": 116
+        },
+        {
+          "name": "test_exploration_cannot_install",
+          "line": 120
+        },
+        {
+          "name": "test_no_complexity_scheduling",
+          "line": 124
+        },
+        {
+          "name": "test_bounded_actions",
+          "line": 130
+        },
+        {
+          "name": "setUpClass",
+          "line": 139
+        },
+        {
+          "name": "test_a_missing_bridge_rejects_certified_install",
+          "line": 148
+        },
+        {
+          "name": "test_b_all_binding_mutations",
+          "line": 154
+        },
+        {
+          "name": "test_c_overhead_removes_gain",
+          "line": 165
+        },
+        {
+          "name": "test_c_deadline_rechecked_after_validation",
+          "line": 170
+        },
+        {
+          "name": "test_c_objective_and_verifier_bindings",
+          "line": 179
+        },
+        {
+          "name": "test_c_complexity_audit_does_not_change_switch_check",
+          "line": 186
+        },
+        {
+          "name": "test_d_forged_certificate",
+          "line": 192
+        },
+        {
+          "name": "test_z_experimental_install_and_replay_rejection",
+          "line": 198
+        },
+        {
+          "name": "test_future_rewrites_and_response_costs",
+          "line": 220
+        }
+      ],
+      "imports": [
+        "import copy",
+        "import json",
+        "from pathlib import Path",
+        "import tempfile",
+        "import time",
+        "import unittest",
+        "from unittest.mock import patch",
+        "from machinery.broker import Broker, AstraProposer",
+        "from machinery.gate import ProofGate, Rejected, check_graph, digest",
+        "from machinery.switch import SwitchGate",
+        "from machinery.toolchain import ROOT, invoke"
+      ],
+      "change": "unchanged"
+    },
+    "tests/test_controller.py": {
+      "sha256": "4333978ef8988e063c0b0cef5c55f3e79ad31b6b5a7e710e9c6014ecd619d2dd",
+      "bytes": 9860,
+      "definitions": [
+        {
+          "name": "ControllerFixtures",
+          "line": 26
+        },
+        {
+          "name": "setUp",
+          "line": 27
+        },
+        {
+          "name": "init",
+          "line": 31
+        },
+        {
+          "name": "tearDown",
+          "line": 39
+        },
+        {
+          "name": "run_controller",
+          "line": 44
+        },
+        {
+          "name": "test_two_automatic_iterations_feedback_epoch_rollover_and_false_success",
+          "line": 51
+        },
+        {
+          "name": "test_missing_malformed_killed_and_timeout_are_feedback",
+          "line": 70
+        },
+        {
+          "name": "test_duplicate_exclusion_stop_resume_and_stale_status",
+          "line": 87
+        },
+        {
+          "name": "test_interrupt_engine_no_completed_effect_replayed",
+          "line": 108
+        },
+        {
+          "name": "test_detached_fixture_survives_launcher_and_stop_is_effective",
+          "line": 138
+        },
+        {
+          "name": "test_killed_controller_watchdog_holds_lock_and_resume_uses_receipt",
+          "line": 159
+        },
+        {
+          "name": "test_live_argv_only_constructed_not_executed",
+          "line": 179
+        },
+        {
+          "name": "test_completion_real_lean_rejects_unrelated_theorem_and_pinned_mutation",
+          "line": 191
+        },
+        {
+          "name": "act",
+          "line": 111
+        }
+      ],
+      "imports": [
+        "import json",
+        "import os",
+        "from pathlib import Path",
+        "import shutil",
+        "import signal",
+        "import subprocess",
+        "import tempfile",
+        "import time",
+        "import unittest",
+        "import uuid",
+        "from unittest.mock import patch",
+        "from machinery.controller import Controller, Locks, initialize, read, status, ROOT, PYTHON, CONTROL",
+        "from machinery.engine import Engine, atomic",
+        "from machinery.gate import Rejected",
+        "from machinery.worker import command, valid_report",
+        "from machinery import completion"
+      ],
+      "change": "unchanged"
+    },
+    "tests/test_controller_history.py": {
+      "sha256": "ccb013ae7516465311175dfb375e102e6b72437e4ca6df486a6dadca96d6f6f7",
+      "bytes": 8225,
+      "definitions": [
+        {
+          "name": "CompletionHistoryFixtures",
+          "line": 19
+        },
+        {
+          "name": "setUp",
+          "line": 20
+        },
+        {
+          "name": "observation",
+          "line": 69
+        },
+        {
+          "name": "run_history",
+          "line": 75
+        },
+        {
+          "name": "test_later_timeout_cannot_shadow_completed_bundle",
+          "line": 89
+        },
+        {
+          "name": "test_later_nonzero_exit_cannot_shadow_completed_bundle",
+          "line": 98
+        },
+        {
+          "name": "test_latest_completed_matching_bundle_is_selected",
+          "line": 104
+        },
+        {
+          "name": "test_later_report_without_completion_preserves_history",
+          "line": 111
+        },
+        {
+          "name": "test_failed_reports_alone_cannot_resolve",
+          "line": 117
+        },
+        {
+          "name": "test_absent_audit_keeps_completed_claim_unresolved",
+          "line": 123
+        },
+        {
+          "name": "test_wrong_bundle_audit_keeps_completed_claim_unresolved",
+          "line": 128
+        },
+        {
+          "name": "test_missing_obligation_keeps_recovered_claim_unresolved",
+          "line": 134
+        },
+        {
+          "name": "test_changed_correspondence_does_not_reuse_old_audit",
+          "line": 142
+        },
+        {
+          "name": "test_fixture_transport_still_cannot_resolve",
+          "line": 150
+        }
+      ],
+      "imports": [
+        "import copy",
+        "from pathlib import Path",
+        "import tempfile",
+        "import unittest",
+        "from unittest.mock import patch",
+        "from machinery import completion",
+        "from machinery.controller import Controller, ROOT, read",
+        "from machinery.engine import atomic",
+        "from machinery.gate import digest",
+        "from machinery.trust import sha"
+      ],
+      "change": "modified"
+    },
+    "tests/test_revision_static_checkpoint.py": {
+      "sha256": "f32b685afd41f8fdc52fa5114c7d807d7728ef99eb8009d4056d3c971a826fbe",
+      "bytes": 15229,
+      "definitions": [
+        {
+          "name": "neutral_contract",
+          "line": 21
+        },
+        {
+          "name": "plan",
+          "line": 31
+        },
+        {
+          "name": "PureMechanisms",
+          "line": 42
+        },
+        {
+          "name": "RealLeanMechanisms",
+          "line": 126
+        },
+        {
+          "name": "setUp",
+          "line": 43
+        },
+        {
+          "name": "test_full_commitment_rejects_changed_uncertainty_outcome_claim_and_binding",
+          "line": 48
+        },
+        {
+          "name": "test_invention_charged_once_and_future_episode_not_reset_by_local_zero",
+          "line": 63
+        },
+        {
+          "name": "test_executable_program_reaches_request_without_editing_authority",
+          "line": 75
+        },
+        {
+          "name": "test_baseline_does_not_acquire_policy_or_program_selection",
+          "line": 88
+        },
+        {
+          "name": "test_audit_values_never_reach_request",
+          "line": 97
+        },
+        {
+          "name": "test_fresh_seed_neutral_contract_and_intent_recovery",
+          "line": 104
+        },
+        {
+          "name": "setUp",
+          "line": 128
+        },
+        {
+          "name": "task",
+          "line": 137
+        },
+        {
+          "name": "solution",
+          "line": 143
+        },
+        {
+          "name": "test_true_proof_and_missing_premise_are_different",
+          "line": 147
+        },
+        {
+          "name": "test_hidden_premise_with_spoofed_empty_reports_rejected",
+          "line": 154
+        },
+        {
+          "name": "test_before_can_solve_without_after_component_and_non_solution_is_explicit",
+          "line": 180
+        },
+        {
+          "name": "test_attachment_composes_and_missing_section_fails",
+          "line": 190
+        },
+        {
+          "name": "test_lossy_representation_cannot_preserve_distinguished_predicate",
+          "line": 203
+        },
+        {
+          "name": "test_cocartesian_family_map_and_its_universal_consumer",
+          "line": 211
+        },
+        {
+          "name": "test_connected_cycle_delayed_use_policy_install_and_next_actual_request",
+          "line": 222
+        }
+      ],
+      "imports": [
+        "import copy",
+        "import json",
+        "from pathlib import Path",
+        "import tempfile",
+        "import unittest",
+        "from unittest.mock import patch",
+        "from machinery import study, study_policy, study_program, completion",
+        "from machinery.study_common import ROOT, Invalid, digest, sha, read, write, lock, load_state, inventory, snapshot",
+        "from machinery.study_transfer import check_task, evaluate_pair",
+        "from machinery.study_knowledge import task_for, ingest",
+        "from machinery.study_bridge import reject_certified_installation",
+        "from machinery import study_burden"
+      ],
+      "change": "new"
+    },
+    "tests/test_round2.py": {
+      "sha256": "8bdaaabea99f6eefeca6daaa7640f36f36127c4cb2cb5245b94a39d53bd56c7b",
+      "bytes": 8013,
+      "definitions": [
+        {
+          "name": "BoundaryTests",
+          "line": 15
+        },
+        {
+          "name": "BrokerTests",
+          "line": 54
+        },
+        {
+          "name": "EngineTests",
+          "line": 130
+        },
+        {
+          "name": "test_positive_and_real_false",
+          "line": 16
+        },
+        {
+          "name": "test_actual_shadow_import",
+          "line": 24
+        },
+        {
+          "name": "test_forged_receipt_and_source_binding",
+          "line": 37
+        },
+        {
+          "name": "test_project_dependencies_and_injection",
+          "line": 43
+        },
+        {
+          "name": "test_real_refutation_exact_target",
+          "line": 48
+        },
+        {
+          "name": "test_arbitrary_experiment",
+          "line": 55
+        },
+        {
+          "name": "test_failures_record_and_limits_contract",
+          "line": 61
+        },
+        {
+          "name": "test_mutation_cannot_rewrite_history",
+          "line": 68
+        },
+        {
+          "name": "test_citation_is_unverified",
+          "line": 75
+        },
+        {
+          "name": "test_external_response_binding_and_replay",
+          "line": 79
+        },
+        {
+          "name": "test_forbidden_host_access",
+          "line": 90
+        },
+        {
+          "name": "test_real_proof_attempt",
+          "line": 95
+        },
+        {
+          "name": "test_output_and_timeout",
+          "line": 100
+        },
+        {
+          "name": "test_no_complexity_in_context",
+          "line": 108
+        },
+        {
+          "name": "test_nested_complexity_not_in_context",
+          "line": 114
+        },
+        {
+          "name": "test_descendant_group_timeout",
+          "line": 120
+        },
+        {
+          "name": "test_fixture_feedback_continuation_and_replay",
+          "line": 131
+        }
+      ],
+      "imports": [
+        "import copy",
+        "import json",
+        "import os",
+        "from pathlib import Path",
+        "import tempfile",
+        "import unittest",
+        "from unittest.mock import patch",
+        "from machinery.broker import Broker",
+        "from machinery.engine import Engine",
+        "from machinery.gate import ProofGate, Rejected",
+        "from machinery.process import run",
+        "from machinery.trust import ROOT, LEAN, CORE, environment",
+        "from machinery.gate import digest",
+        "import time"
+      ],
+      "change": "unchanged"
+    },
+    "tests/test_study_v2.py": {
+      "sha256": "f08481b94fb781b9c0ea7ad88bd1fe3b6481c573d7b71fcc0647a5c497e5c325",
+      "bytes": 22012,
+      "definitions": [
+        {
+          "name": "task",
+          "line": 22
+        },
+        {
+          "name": "suite",
+          "line": 28
+        },
+        {
+          "name": "StudyFixtures",
+          "line": 32
+        },
+        {
+          "name": "LeanTransferFixtures",
+          "line": 310
+        },
+        {
+          "name": "load_tests",
+          "line": 379
+        },
+        {
+          "name": "setUp",
+          "line": 33
+        },
+        {
+          "name": "freeze",
+          "line": 39
+        },
+        {
+          "name": "run_arm",
+          "line": 43
+        },
+        {
+          "name": "test_clean_paired_seed_and_legacy_contract_unchanged",
+          "line": 49
+        },
+        {
+          "name": "test_full_lifecycle_portfolio_prospective_distinct_roles_delayed_horizon",
+          "line": 69
+        },
+        {
+          "name": "test_frozen_suite_answers_not_in_any_research_request",
+          "line": 93
+        },
+        {
+          "name": "test_protocol_suite_source_and_state_tampering_rejected",
+          "line": 103
+        },
+        {
+          "name": "test_no_praise_or_self_report_can_choose_policy",
+          "line": 125
+        },
+        {
+          "name": "test_audit_only_metric_changes_cannot_change_requests_or_decisions",
+          "line": 138
+        },
+        {
+          "name": "test_live_argv_constructed_only_and_read_grants_are_isolated",
+          "line": 155
+        },
+        {
+          "name": "test_finite_budget_failure_and_uncertain_recovery_without_replay",
+          "line": 171
+        },
+        {
+          "name": "test_stop_and_resume_and_duplicate_exclusion",
+          "line": 188
+        },
+        {
+          "name": "test_killed_controller_watchdog_retains_lock_and_receipt_recovers",
+          "line": 201
+        },
+        {
+          "name": "test_plot_empty_single_and_same_data_pair",
+          "line": 231
+        },
+        {
+          "name": "test_no_evidence_and_exhausted_invention_are_rejected",
+          "line": 260
+        },
+        {
+          "name": "test_retrospective_audit_uses_actual_snapshots_and_costs",
+          "line": 275
+        },
+        {
+          "name": "test_review_interruption_reuses_committed_inputs_and_receipt",
+          "line": 287
+        },
+        {
+          "name": "prepare_lean",
+          "line": 312
+        },
+        {
+          "name": "test_real_lean_use_transport_hypotheses_and_scope",
+          "line": 318
+        },
+        {
+          "name": "test_real_lean_exact_root_rejects_unrelated_and_mutated_source",
+          "line": 347
+        },
+        {
+          "name": "test_checked_transfer_drives_experimental_policy_change_with_equal_branches",
+          "line": 362
+        },
+        {
+          "name": "interrupted",
+          "line": 294
+        }
+      ],
+      "imports": [
+        "import copy",
+        "import json",
+        "import os",
+        "from pathlib import Path",
+        "import signal",
+        "import subprocess",
+        "import tempfile",
+        "import time",
+        "import unittest",
+        "from unittest.mock import patch",
+        "from machinery.study_common import ROOT, PYTHON, SEED, ROOT_SHA, Invalid, read, write, load_state, save_state, sha, digest, lock, snapshot, verify_snapshot, inventory",
+        "from machinery import study, study_policy, study_worker, study_audit, completion",
+        "from machinery.study_transfer import check_task, evaluate_pair, copy_tasks, wrapper"
+      ],
+      "change": "modified"
+    }
+  }
+}
