@@ -1,0 +1,4250 @@
+{
+  "worker": 172,
+  "request": "9647c1ba01484705bdaa6edb4d3c7d32",
+  "created_at_utc": "2026-10-17T03:35:59.863416+00:00",
+  "historical_status": "Completed host outcome, return0, structured report present, elapsed1326.2065389156342 seconds. Thirty final mathematical modules compiled/replayed and82 closures printed. Universal third-correction horizontal row closed; full root open.",
+  "scope": "Archive-first closed172 and explicitly named inherited/current counterparts only. Static hashes, source/record parsing, literal syntax comparison and finite index-domain counts. No mathematical-value recomputation, project/proof/checker/replay/experiment/generator/finalizer execution or import, project edit or proposer help/contact. Active173 and later excluded. Earlier seals/windows unchanged.",
+  "new_modules": [
+    {
+      "module": "MarkovRobustCutM964",
+      "path": "research/MarkovRobustCutM964.lean",
+      "bytes": 3268,
+      "sha256": "1be5954e200d90314775c1f7c1ecab525c6f5e3ce14a25ffb8967347d98ae32e",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "product_coeff_monoM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "scaled_product_coeffM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "robust_cutM964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792206719894133000.json",
+          "sha256": "ba323b89bd23fc762f2a1ba3609cc8f5f8d4ad8bfec89913f5d38b4edb7ef193",
+          "source_sha256": "30e297616c20d6a56f797e683ae3410ce1fe4583a7fe3be856b843db73713282",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "30e297616c20d6a56f797e683ae3410ce1fe4583a7fe3be856b843db73713282"
+        },
+        {
+          "path": "build-1792206786465859000.json",
+          "sha256": "90450adcd596e3c4f9c870b2518ec9505e3bdda22caf0653c220df4a85cbf201",
+          "source_sha256": "1be5954e200d90314775c1f7c1ecab525c6f5e3ce14a25ffb8967347d98ae32e",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "1be5954e200d90314775c1f7c1ecab525c6f5e3ce14a25ffb8967347d98ae32e"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovRobustCutM964.olean",
+      "object_sha256": "b9af57d00709773fdf560f199a98e642e2deba21061349a70fe3a790bb77f55d",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792206786465859000.json",
+      "historical_successful_source_versions": [
+        "1be5954e200d90314775c1f7c1ecab525c6f5e3ce14a25ffb8967347d98ae32e"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovSecondClosedMC3E"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "product_coeff_monoM964",
+          "header": "theorem product_coeff_monoM964 (A B C D : ℝ[X])\n (hA : ∀ k, 0 ≤ A.coeff k) (hD : ∀ k, 0 ≤ D.coeff k)\n (hAC : ∀ k, A.coeff k ≤ C.coeff k) (hBD : ∀ k, B.coeff k ≤ D.coeff k)\n (k : ℕ) : (A*B).coeff k ≤ (C*D).coeff k",
+          "block_sha256": "29f4a5eb70b69edaa0f6a2f99a0ba45001a839c23d291a19ece8375c5e63b154",
+          "block_characters": 352
+        },
+        {
+          "kind": "theorem",
+          "name": "scaled_product_coeffM964",
+          "header": "theorem scaled_product_coeffM964 (A C A' C' : ℝ[X]) (x y : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y)\n (hA' : ∀ k, 0 ≤ A'.coeff k) (hC : ∀ k, 0 ≤ C.coeff k)\n (ha : ∀ k, x*A'.coeff k ≤ y*A.coeff k)\n (hc : ∀ k, x*C'.coeff k ≤ y*C.coeff k) (k : ℕ) :\n x^2*(A'*C').coeff k ≤ y^2*(A*C).coeff k",
+          "block_sha256": "f50020166d2d986291d8b8912b740e343f32de1ba8f22d6d7ed6fa4f73c21403",
+          "block_characters": 466
+        },
+        {
+          "kind": "theorem",
+          "name": "robust_cutM964",
+          "header": "theorem robust_cutM964 (A B C A' B' C' : ℝ[X]) (M N x y : ℝ)\n (hM : 0 < M) (hx : 0 < x) (hy : 0 ≤ y)\n (hA' : ∀ k, 0 ≤ A'.coeff k) (hB : ∀ k, 0 ≤ B.coeff k)\n (hC : ∀ k, 0 ≤ C.coeff k)\n (ha : ∀ k, x*A'.coeff k ≤ y*A.coeff k)\n (hb : ∀ k, B.coeff k ≤ B'.coeff k)\n (hc : ∀ k, x*C'.coeff k ≤ y*C.coeff k)\n (hmargin : y^2*M ≤ x^2*M+y^2*N)\n (hbase : ∀ h k, N*((cutPolyMFEE h B)^2).coeff k ≤\n   M*((cutPolyMFEE h B)^2-cutPolyMFEE h A*cutPolyMFEE h C).coeff k)\n (h k : ℕ) :\n 0 ≤ ((cutPolyMFEE h B')^2-cutPolyMFEE h A'*cutPolyMFEE h C').coeff k",
+          "block_sha256": "a7548a4c604cfe4bbac26c22c4cc93841a12dba8d55e7972380fab7f110c75db",
+          "block_characters": 2008
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovTwinKernelM964",
+      "path": "research/MarkovTwinKernelM964.lean",
+      "bytes": 4360,
+      "sha256": "2cb1cf4ee03bfd6f7cda2da1c940fb42db0fb9d77fe62193fa67f0530e8074dc",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "twinLiftM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_binomial_lowerM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_nonnegM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "twin_nonnegM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "twin_ge_liftM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "twin_scaledM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "twin_all_cutsM964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792206832466080000.json",
+          "sha256": "5d6aabdb8d198e66d3f1bbb580e8e6fe19deac4d21a14aa6ffa7dd83f5d27db2",
+          "source_sha256": "1892cf6bf512ec11985c7fe670134c818b4e58e5acdc9a1b28e98a2c8dd5ba19",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "1892cf6bf512ec11985c7fe670134c818b4e58e5acdc9a1b28e98a2c8dd5ba19"
+        },
+        {
+          "path": "build-1792206872676060000.json",
+          "sha256": "d40d7b334548c69899f951f65eeae29767f25a4a32da8deb5af65b88f1fead55",
+          "source_sha256": "9b57e8c22ae6f0b1648aa5ce4e1025ee54956031a168d0f454736220fb47b033",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "9b57e8c22ae6f0b1648aa5ce4e1025ee54956031a168d0f454736220fb47b033"
+        },
+        {
+          "path": "build-1792206922053961000.json",
+          "sha256": "60c9be72bb1de531b2d30b7c63e2f7f5b9061cec4e76119b139752b9951237d9",
+          "source_sha256": "2cb1cf4ee03bfd6f7cda2da1c940fb42db0fb9d77fe62193fa67f0530e8074dc",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "2cb1cf4ee03bfd6f7cda2da1c940fb42db0fb9d77fe62193fa67f0530e8074dc"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovTwinKernelM964.olean",
+      "object_sha256": "9cfe15d4fe9d20351ba858dac6387ba4852b32e250b4978dae80c4b821e48cfa",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792206922053961000.json",
+      "historical_successful_source_versions": [
+        "2cb1cf4ee03bfd6f7cda2da1c940fb42db0fb9d77fe62193fa67f0530e8074dc"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovRobustCutM964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "lift_binomial_lowerM964",
+          "header": "theorem lift_binomial_lowerM964 (j t m : ℕ) :\n ((t+j+3).choose j:ℝ)*(j.choose m:ℝ) ≤ (liftTermMAE9 j t m:ℝ)",
+          "block_sha256": "b53f8c4c882c60966cd805f95b74d196c24a3cbc41ff2e2315f561cb7c2a8949",
+          "block_characters": 239
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_nonnegM964",
+          "header": "theorem lift_nonnegM964 (j t k : ℕ) : 0 ≤ (liftPolyM7E2 j t).coeff k",
+          "block_sha256": "f6bb0794786b2413571fee332edfd20edf79ddb73770f64d791716a81418536d",
+          "block_characters": 174
+        },
+        {
+          "kind": "theorem",
+          "name": "twin_nonnegM964",
+          "header": "theorem twin_nonnegM964 (j t k : ℕ) (a v : ℝ) (ha : 0 ≤ a) (hv : 0 ≤ v) :\n 0 ≤ (twinLiftM964 j t a v).coeff k",
+          "block_sha256": "2c35a99141c2dab14f506a1c41d223a6ca831d47a2a75afec1b28fcc5eb5bde5",
+          "block_characters": 264
+        },
+        {
+          "kind": "theorem",
+          "name": "twin_ge_liftM964",
+          "header": "theorem twin_ge_liftM964 (j t k : ℕ) (a v : ℝ) (ha : 0 ≤ a) (hv : 0 ≤ v) :\n (liftPolyM7E2 j (t+1)).coeff k ≤ (twinLiftM964 j t a v).coeff k",
+          "block_sha256": "4be7c4f537872000f80506bce8e5d04740bef13d3a54ab585b05dfaab48528fd",
+          "block_characters": 257
+        },
+        {
+          "kind": "theorem",
+          "name": "twin_scaledM964",
+          "header": "theorem twin_scaledM964 (j t k : ℕ) (a v B U : ℝ) (hj : 1 ≤ j)\n (hB : 0 ≤ B) (hU : 0 ≤ U) (ha : a ≤ U) (hv : v ≤ U*j)\n (hbase : B ≤ ((t+1+j+3).choose j:ℝ)) :\n B*(twinLiftM964 j t a v).coeff k ≤ (B+U)*(liftPolyM7E2 j (t+1)).coeff k",
+          "block_sha256": "b4538c5e0c68d25ea99c9b13c7a553085eafdc0889d6c1bf21e4b7c63baeed2b",
+          "block_characters": 1425
+        },
+        {
+          "kind": "theorem",
+          "name": "twin_all_cutsM964",
+          "header": "theorem twin_all_cutsM964 (j t : ℕ) (a b c v B U : ℝ)\n (hj : t+1 ≤ j) (hB : 0 < B) (hU : 0 ≤ U)\n (ha : 0 ≤ a) (hb : 0 ≤ b) (hc : 0 ≤ c) (hv : 0 ≤ v)\n (hau : a ≤ U) (hcu : c ≤ U) (hvu : v ≤ U*j)\n (hbase : B ≤ ((t+1+j+3).choose j:ℝ))\n (hmargin : (B+U)^2*kernelScaleMA64 j (t+1) ≤\n   B^2*kernelScaleMA64 j (t+1)+(B+U)^2*topGapMA64 j (t+1))\n (h k : ℕ) :\n 0 ≤ ((cutPolyMFEE h (twinLiftM964 j (t+1) b v))^2-\n   cutPolyMFEE h (twinLiftM964 j t a v)*cutPolyMFEE h (twinLiftM964 j (t+2) c v)).coeff k",
+          "block_sha256": "653cf7ba7280b0d12d4926bdafaa596ddc29145979c97c8879a4198249bf2625",
+          "block_characters": 1488
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "twinLiftM964",
+          "header": "def twinLiftM964 (j t : ℕ) (a v : ℝ) : ℝ[X]",
+          "block_sha256": "16deacea0fb8082833a31bcea0b014b9b135fd555e3efecf444b52600a07e6d0",
+          "block_characters": 88,
+          "definition_text": "def twinLiftM964 (j t : ℕ) (a v : ℝ) : ℝ[X] :=\n liftPolyM7E2 j (t+1)+C a*X^(t+1)+C v*X^t"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdMarginCertificateM964",
+      "path": "research/MarkovThirdMarginCertificateM964.lean",
+      "bytes": 34272,
+      "sha256": "5f857178dc8243f3de39328ae25f4376ba98a289eb7e4cff768a4a49c6629dee",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdMarginBaseM964"
+        },
+        {
+          "kind": "def",
+          "name": "thirdBoundNumeratorM964"
+        },
+        {
+          "kind": "def",
+          "name": "thirdMarginScalarM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_margin_falseM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_margin_trueM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_margin_nonnegM964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792206871506512000.json",
+          "sha256": "0becb0e56eafff2eed6f155df9c350de098a215f1e8370201c1984439e02a5bb",
+          "source_sha256": "5f857178dc8243f3de39328ae25f4376ba98a289eb7e4cff768a4a49c6629dee",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "5f857178dc8243f3de39328ae25f4376ba98a289eb7e4cff768a4a49c6629dee"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdMarginCertificateM964.olean",
+      "object_sha256": "bf8a69abfdcc3f3456e5e75683250b4ba11aeb7aa72746b735d9e6e34614f0f6",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792206871506512000.json",
+      "historical_successful_source_versions": [
+        "5f857178dc8243f3de39328ae25f4376ba98a289eb7e4cff768a4a49c6629dee"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovSecondMarginsMC3E"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "third_margin_falseM964",
+          "header": "theorem third_margin_falseM964 (x g z : ℚ) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 ≤ thirdMarginScalarM964 (x+7) (x+6+g) (thirdMarginBaseM964 (x+14+g)+z) false",
+          "block_sha256": "7d32f915f42ed3d58ea807963e79bf245eb10d907db82755335a05db3f4f6431",
+          "block_characters": 16369
+        },
+        {
+          "kind": "theorem",
+          "name": "third_margin_trueM964",
+          "header": "theorem third_margin_trueM964 (x g z : ℚ) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 ≤ thirdMarginScalarM964 (x+7) (x+6+g) (thirdMarginBaseM964 (x+15+g)+z) true",
+          "block_sha256": "39b153b37f459b299b9b6ca39f0ce943cfc2448bf5f4f7ace5a00d43f1606998",
+          "block_characters": 16526
+        },
+        {
+          "kind": "theorem",
+          "name": "third_margin_nonnegM964",
+          "header": "theorem third_margin_nonnegM964 (s d B : ℚ) (r : Bool) (hs : 7 ≤ s) (hd : s-1 ≤ d)\n (hB : thirdMarginBaseM964 (d+(if r then 9 else 8)) ≤ B) :\n 0 ≤ thirdMarginScalarM964 s d B r",
+          "block_sha256": "6837940749e4a8f03923d5fc75a2cd459d5cb5029447e5ec46029831cf85c6f5",
+          "block_characters": 574
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdMarginBaseM964",
+          "header": "def thirdMarginBaseM964 (j : ℚ) : ℚ",
+          "block_sha256": "61df7fc4081361943d44341239c82097434200a32c9656b68ee387f9bd17d9e1",
+          "block_characters": 107,
+          "definition_text": "def thirdMarginBaseM964 (j : ℚ) : ℚ := (j+1)*(j+2)*(j+3)*(j+4)*(j+5)*(j+6)*(j+7)*(j+8)*(j+9)*(j+10)/3628800"
+        },
+        {
+          "kind": "def",
+          "name": "thirdBoundNumeratorM964",
+          "header": "def thirdBoundNumeratorM964 (s d : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "f20157e424aa986a0629d26eb5fe0b15f267622d11e745990e094c5fa73dec28",
+          "block_characters": 123,
+          "definition_text": "def thirdBoundNumeratorM964 (s d : ℚ) (r : Bool) : ℚ :=\n (if r then 96 else 72)*d+\n (if r then 44*d+156 else 28*d+96)*(s+1)"
+        },
+        {
+          "kind": "def",
+          "name": "thirdMarginScalarM964",
+          "header": "def thirdMarginScalarM964 (s d B : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "bae084260dbe21c0aff04b4f6ce2fd55f3ac358e6fbbb7c6dde5589fd0361df2",
+          "block_characters": 213,
+          "definition_text": "def thirdMarginScalarM964 (s d B : ℚ) (r : Bool) : ℚ :=\n let j := d+(if r then 9 else 8)\n let V := thirdBoundNumeratorM964 s d r\n B^2*j*(s+5)*(s+6)^2*(s+1)^2-\n (2*B*V*(s+1)+V^2)*(s+j+4)*((s+5)*(s+6)+4*j*(s+j+5))^2"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdOutputM964",
+      "path": "research/MarkovThirdOutputM964.lean",
+      "bytes": 3947,
+      "sha256": "cd4b8a53d0ae9210d0c01a013d80088a8e0aeed3e8d7d8564880c0e3dc3ec11d",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdQM964"
+        },
+        {
+          "kind": "def",
+          "name": "thirdJM964"
+        },
+        {
+          "kind": "def",
+          "name": "thirdCM964"
+        },
+        {
+          "kind": "def",
+          "name": "thirdLM964"
+        },
+        {
+          "kind": "def",
+          "name": "thirdVM964"
+        },
+        {
+          "kind": "def",
+          "name": "thirdExtraM964"
+        },
+        {
+          "kind": "def",
+          "name": "thirdOutputM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_parametersM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_correction_coeffM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_outputM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_weighted_outputM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_output_tailM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_extra_nonnegM964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792206975300334000.json",
+          "sha256": "80cff772ad9c88b56242e582255a1074e89ceb6019181a0283ef0fac0069acd8",
+          "source_sha256": "20b289172463dbc5a95d1ec036632c62cd0d3b0fce389872d296c055241b250a",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "20b289172463dbc5a95d1ec036632c62cd0d3b0fce389872d296c055241b250a"
+        },
+        {
+          "path": "build-1792206992879022000.json",
+          "sha256": "3c0e44d423800f15ec825b00edf03403a43b3934fc8fa9901152705ce81fc9f5",
+          "source_sha256": "cd4b8a53d0ae9210d0c01a013d80088a8e0aeed3e8d7d8564880c0e3dc3ec11d",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "cd4b8a53d0ae9210d0c01a013d80088a8e0aeed3e8d7d8564880c0e3dc3ec11d"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdOutputM964.olean",
+      "object_sha256": "d5e9bf1357b39af13d276568490e05fb988ba3d138291abeea51bd03cff7fd62",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792206992879022000.json",
+      "historical_successful_source_versions": [
+        "cd4b8a53d0ae9210d0c01a013d80088a8e0aeed3e8d7d8564880c0e3dc3ec11d"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdRowFormulaMC3E",
+        "MarkovTwinKernelM964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "third_parametersM964",
+          "header": "theorem third_parametersM964 (d : ℕ) (r : Bool) :\n thirdExponentMC3E (thirdQM964 d r) r=d ∧\n thirdJM964 d r=thirdQM964 d r+3 ∧\n sourceNME9C (thirdQM964 d r) r=2*(thirdJM964 d r)+1+d ∧\n thirdConstantMC3E r=(thirdCM964 r:ℤ) ∧\n thirdLinearMC3E (thirdQM964 d r) r=(thirdLM964 d r:ℤ) ∧\n thirdQuadraticMC3E (thirdQM964 d r) r=(thirdVM964 d r:ℤ)",
+          "block_sha256": "6dc6e0a98c8482dfe2f182c60650c0a9baec062935cde991e05c9b5d61511d60",
+          "block_characters": 557
+        },
+        {
+          "kind": "theorem",
+          "name": "third_correction_coeffM964",
+          "header": "theorem third_correction_coeffM964 (q i : ℕ) (r : Bool) :\n (thirdCorrectionMC3E q r).coeff i=\n (if 2 ≤ i then thirdConstantMC3E r*(thirdExponentMC3E q r).choose (i-2) else 0)+\n (if 3 ≤ i then thirdLinearMC3E q r*(thirdExponentMC3E q r).choose (i-3) else 0)+\n (if 4 ≤ i then thirdQuadraticMC3E q r*(thirdExponentMC3E q r).choose (i-4) else 0)",
+          "block_sha256": "b328c3638c8fa59140993b7c24b6edf18a5c78655f3bc65e4966d799052f3d22",
+          "block_characters": 708
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_outputM964",
+          "header": "theorem source_third_outputM964 (d t : ℕ) (r : Bool) :\n threeRawM9E2 (thirdQM964 d r) r (t+4) (thirdJM964 d r)=thirdOutputM964 d t r",
+          "block_sha256": "e7c7642089bcd682ad6758d514ffb184f13c12d72fe36c6e255b1119e5269307",
+          "block_characters": 715
+        },
+        {
+          "kind": "theorem",
+          "name": "third_weighted_outputM964",
+          "header": "theorem third_weighted_outputM964 (d t : ℕ) (r : Bool) :\n (weightPolyMFEE (fun k => zchooseM37B d k)\n   (twinLiftM964 (thirdJM964 d r) t (thirdExtraM964 d (t+1) r) (thirdVM964 d r))).eval 1=\n (thirdOutputM964 d t r:ℝ)",
+          "block_sha256": "0b97b82262c965a80cda486b77814275e5d4074ee5dcdae3bf260edeef0689a9",
+          "block_characters": 517
+        },
+        {
+          "kind": "theorem",
+          "name": "third_output_tailM964",
+          "header": "theorem third_output_tailM964 (d t : ℕ) (r : Bool) (ht : d<t) :\n thirdOutputM964 d t r=liftOutputMAE9 d (thirdJM964 d r) (t+1)",
+          "block_sha256": "9fcb2431d3c2fc6726a3adddf9d74535b41d7f09980f1f351e0f26a0ac36f656",
+          "block_characters": 282
+        },
+        {
+          "kind": "theorem",
+          "name": "third_extra_nonnegM964",
+          "header": "theorem third_extra_nonnegM964 (d s : ℕ) (r : Bool) : 0 ≤ thirdExtraM964 d s r",
+          "block_sha256": "81171a10964939cdf599d39f6de103ae576494a07d315bd4c8c09352b635834e",
+          "block_characters": 142
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdQM964",
+          "header": "def thirdQM964 (d : ℕ) (r : Bool) : ℕ",
+          "block_sha256": "ba6da962c9faa7ac9f0f49307a8fe2467a062fe466e3d62288c91cfb68f5b1e2",
+          "block_characters": 63,
+          "definition_text": "def thirdQM964 (d : ℕ) (r : Bool) : ℕ := d+(if r then 6 else 5)"
+        },
+        {
+          "kind": "def",
+          "name": "thirdJM964",
+          "header": "def thirdJM964 (d : ℕ) (r : Bool) : ℕ",
+          "block_sha256": "60615e8cff3accf49d2a4591d463cffa31744dee3c371f4da4bcd8244ff4730f",
+          "block_characters": 63,
+          "definition_text": "def thirdJM964 (d : ℕ) (r : Bool) : ℕ := d+(if r then 9 else 8)"
+        },
+        {
+          "kind": "def",
+          "name": "thirdCM964",
+          "header": "def thirdCM964 (r : Bool) : ℕ",
+          "block_sha256": "a50b6b24796519cfe8957504b844a15c588c160b11b7d2f79dc974f93dbb8323",
+          "block_characters": 53,
+          "definition_text": "def thirdCM964 (r : Bool) : ℕ := if r then 96 else 72"
+        },
+        {
+          "kind": "def",
+          "name": "thirdLM964",
+          "header": "def thirdLM964 (d : ℕ) (r : Bool) : ℕ",
+          "block_sha256": "ceeb73a616bfbbe8799c17d89a4bd9cdbe51cbc6da8c42a847289983248915f5",
+          "block_characters": 72,
+          "definition_text": "def thirdLM964 (d : ℕ) (r : Bool) : ℕ := if r then 44*d+156 else 28*d+96"
+        },
+        {
+          "kind": "def",
+          "name": "thirdVM964",
+          "header": "def thirdVM964 (d : ℕ) (r : Bool) : ℕ",
+          "block_sha256": "d852535945d6a7ef9e4a75c9bb17b096fd2f122cdd528b34caf27ddc0b4c6f36",
+          "block_characters": 73,
+          "definition_text": "def thirdVM964 (d : ℕ) (r : Bool) : ℕ := (if r then 4 else 2)*(d+5)*(d+4)"
+        },
+        {
+          "kind": "def",
+          "name": "thirdExtraM964",
+          "header": "def thirdExtraM964 (d s : ℕ) (r : Bool) : ℝ",
+          "block_sha256": "e5db75e755f24a45a44cc194c1a1c46f4871d091b72bebb97b319a44658b862a",
+          "block_characters": 99,
+          "definition_text": "def thirdExtraM964 (d s : ℕ) (r : Bool) : ℝ :=\n absorbedExtraM418 d s (thirdCM964 r)+thirdLM964 d r"
+        },
+        {
+          "kind": "def",
+          "name": "thirdOutputM964",
+          "header": "def thirdOutputM964 (d t : ℕ) (r : Bool) : ℤ",
+          "block_sha256": "61a2853836ff4c6b34268ab2bc3cebcc13efdde433722eb2a59b8c525cf197c5",
+          "block_characters": 188,
+          "definition_text": "def thirdOutputM964 (d t : ℕ) (r : Bool) : ℤ :=\n liftOutputMAE9 d (thirdJM964 d r) (t+1)+\n thirdCM964 r*(d.choose (t+2):ℤ)+thirdLM964 d r*(d.choose (t+1):ℤ)+\n thirdVM964 d r*(d.choose t:ℤ)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdMarginsM964",
+      "path": "research/MarkovThirdMarginsM964.lean",
+      "bytes": 5264,
+      "sha256": "961bc124ab488875d884ebc7bc7b54b5bb2ec85fb1e4621323d776cdbdb65927",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdBoundM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_bound_nonnegM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_extra_boundM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_second_slot_boundM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "base_choose_tenM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_margin_rationalM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_bound_castM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_robust_marginM964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207010658891000.json",
+          "sha256": "9457c2f122a8005999f0f4b77f527202a41c988c43c0e2245e42071a12e8ae38",
+          "source_sha256": "757539d64e84d0a60e442660b43e8b8c4575432260e11ccbda9805724884855b",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "757539d64e84d0a60e442660b43e8b8c4575432260e11ccbda9805724884855b"
+        },
+        {
+          "path": "build-1792207054779234000.json",
+          "sha256": "51b2dab4b67a3fef9c3bd3ec0e4359ad26d9eefd82de4991cfa17566acb0e8ca",
+          "source_sha256": "961bc124ab488875d884ebc7bc7b54b5bb2ec85fb1e4621323d776cdbdb65927",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "961bc124ab488875d884ebc7bc7b54b5bb2ec85fb1e4621323d776cdbdb65927"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdMarginsM964.olean",
+      "object_sha256": "5232dfba2d1aa1127da8dc596419c44486bdb163ba10de854af93a1a5e988386",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207054779234000.json",
+      "historical_successful_source_versions": [
+        "961bc124ab488875d884ebc7bc7b54b5bb2ec85fb1e4621323d776cdbdb65927"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdMarginCertificateM964",
+        "MarkovThirdOutputM964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "third_bound_nonnegM964",
+          "header": "theorem third_bound_nonnegM964 (d s : ℕ) (r : Bool) : 0 ≤ thirdBoundM964 d s r",
+          "block_sha256": "c96a325f9be1174fd2cb779c39831da85e03ca60184e2e2da64c592ebbefddab",
+          "block_characters": 119
+        },
+        {
+          "kind": "theorem",
+          "name": "third_extra_boundM964",
+          "header": "theorem third_extra_boundM964 (d s n : ℕ) (r : Bool) :\n thirdExtraM964 d (s+n) r ≤ thirdBoundM964 d s r",
+          "block_sha256": "e0b4dc47afb24048afcef276c4393092ab4705ca119047f416bdf7bd89fab604",
+          "block_characters": 385
+        },
+        {
+          "kind": "theorem",
+          "name": "third_second_slot_boundM964",
+          "header": "theorem third_second_slot_boundM964 (d s : ℕ) (r : Bool) :\n (thirdVM964 d r:ℝ) ≤ thirdBoundM964 d s r*thirdJM964 d r",
+          "block_sha256": "3ef8258e93f5478b5d25c6fce4ee1990bbc4f50d4a38bd49d8917ebb5be878a2",
+          "block_characters": 557
+        },
+        {
+          "kind": "theorem",
+          "name": "base_choose_tenM964",
+          "header": "theorem base_choose_tenM964 (j s : ℕ) (hs : 7 ≤ s) :\n thirdMarginBaseM964 j ≤ ((s+j+3).choose j:ℚ)",
+          "block_sha256": "015cbde25e87afbf69117c52024b35ace4baee06cf75836726041a23cb184f53",
+          "block_characters": 759
+        },
+        {
+          "kind": "theorem",
+          "name": "third_margin_rationalM964",
+          "header": "theorem third_margin_rationalM964 (d s : ℕ) (r : Bool) (hs : 7 ≤ s) (hd : s ≤ d+1) :\n let j",
+          "block_sha256": "bfb76b6efd27f5a61460f64a3b114219a9c8182e2fcf23be44e2515b801a8c80",
+          "block_characters": 1429
+        },
+        {
+          "kind": "theorem",
+          "name": "third_bound_castM964",
+          "header": "theorem third_bound_castM964 (d s : ℕ) (r : Bool) :\n ((thirdBoundNumeratorM964 s d r/((s:ℚ)+1):ℚ):ℝ)=thirdBoundM964 d s r",
+          "block_sha256": "e7722ddedf087064555e4e864bbed06336b68b3df638eace5086181da7943151",
+          "block_characters": 336
+        },
+        {
+          "kind": "theorem",
+          "name": "third_robust_marginM964",
+          "header": "theorem third_robust_marginM964 (d s : ℕ) (r : Bool) (hs : 7 ≤ s) (hd : s ≤ d+1) :\n let j",
+          "block_sha256": "a7da1bad0e91779fe283f0ba239794a26cb82576673de0e0e53214c0642e12a5",
+          "block_characters": 1047
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdBoundM964",
+          "header": "def thirdBoundM964 (d s : ℕ) (r : Bool) : ℝ",
+          "block_sha256": "525035257d314d6a9268431d0890bd3d11303e8f170744c0be6e0c0534b8b632",
+          "block_characters": 87,
+          "definition_text": "def thirdBoundM964 (d s : ℕ) (r : Bool) : ℝ :=\n (thirdCM964 r:ℝ)*d/(s+1)+thirdLM964 d r"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdHighM964",
+      "path": "research/MarkovThirdHighM964.lean",
+      "bytes": 2589,
+      "sha256": "5040848ece650a0c72138fb777e8634406d9c39e1a5fc50e010bccc3e4d9b11d",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "third_output_lcM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_highM964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207106497705000.json",
+          "sha256": "242647976d84cd30d0088333c813b5ebc479bfe75ef2ab2c1fe7937ef8238e9a",
+          "source_sha256": "5040848ece650a0c72138fb777e8634406d9c39e1a5fc50e010bccc3e4d9b11d",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "5040848ece650a0c72138fb777e8634406d9c39e1a5fc50e010bccc3e4d9b11d"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdHighM964.olean",
+      "object_sha256": "fbce1b315d126f9e632523ccbfb0645a7b897fac3cf3f2a4927eca42953d3423",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207106497705000.json",
+      "historical_successful_source_versions": [
+        "5040848ece650a0c72138fb777e8634406d9c39e1a5fc50e010bccc3e4d9b11d"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdMarginsM964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "third_output_lcM964",
+          "header": "theorem third_output_lcM964 (d t : ℕ) (r : Bool) (ht : 6 ≤ t) :\n thirdOutputM964 d t r*thirdOutputM964 d (t+2) r ≤ thirdOutputM964 d (t+1) r^2",
+          "block_sha256": "54205bc16d39985732d249455d42d7f74f4c76866538fee499dab168af287d73",
+          "block_characters": 1829
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_highM964",
+          "header": "theorem source_third_highM964 (d i : ℕ) (r : Bool) (hi : 10 ≤ i) :\n threeRawM9E2 (thirdQM964 d r) r i (thirdJM964 d r)*\n threeRawM9E2 (thirdQM964 d r) r (i+2) (thirdJM964 d r) ≤\n threeRawM9E2 (thirdQM964 d r) r (i+1) (thirdJM964 d r)^2",
+          "block_sha256": "5b4eebf74b27ecf2aa1684947f86f7072fd438576eb906a6816153d8ec8fee4f",
+          "block_characters": 425
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdColumnsBaseM964",
+      "path": "research/MarkovThirdColumnsBaseM964.lean",
+      "bytes": 1901,
+      "sha256": "0c6880893955672ab52b7e9455eecf9700481e4aa3a63f6eca2fb6dedf073b8f",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_third_polynomialM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_lowM964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207055969171000.json",
+          "sha256": "95503974dbc4dba823b53d4d5bba325ee645ec636437692d45197567519da146",
+          "source_sha256": "de1db16e47457bbdef618dbf1caf1e3ba770c9986477cf6b083cf7171b26342c",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "de1db16e47457bbdef618dbf1caf1e3ba770c9986477cf6b083cf7171b26342c"
+        },
+        {
+          "path": "build-1792207107681990000.json",
+          "sha256": "91c836708d701b4141eed7eb12e746bb528f0e133c491f5f0db897869a9fceea",
+          "source_sha256": "0c6880893955672ab52b7e9455eecf9700481e4aa3a63f6eca2fb6dedf073b8f",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "0c6880893955672ab52b7e9455eecf9700481e4aa3a63f6eca2fb6dedf073b8f"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdColumnsBaseM964.olean",
+      "object_sha256": "4e023acca64217a0a1b56d0cef7e0d6b7a22eb9d2a3520203c8f4688ac63b31f",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207107681990000.json",
+      "historical_successful_source_versions": [
+        "0c6880893955672ab52b7e9455eecf9700481e4aa3a63f6eca2fb6dedf073b8f"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdOutputM964",
+        "MarkovCorrectionColumnsM418"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "source_third_polynomialM964",
+          "header": "theorem source_third_polynomialM964 (d t : ℕ) (r : Bool) :\n (threeRawM9E2 (thirdQM964 d r) r (t+3) (thirdJM964 d r):ℚ)=\n lowColumnMAE9 (sourceNME9C (thirdQM964 d r) r) (thirdJM964 d r) t+\n thirdCM964 r*choosePolyM0D3 d (t+1)+thirdLM964 d r*choosePolyM0D3 d t+\n (if 1 ≤ t then thirdVM964 d r*choosePolyM0D3 d (t-1) else 0)",
+          "block_sha256": "9a5ecfd308254080605bc88f60e9aeb5f4ff64e57fd5afcd28d0d3becab3112f",
+          "block_characters": 943
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_lowM964",
+          "header": "theorem source_third_lowM964 (d i : ℕ) (r : Bool) (hi : i ≤ 2) :\n threeRawM9E2 (thirdQM964 d r) r i (thirdJM964 d r)=if i=2 then (thirdCM964 r:ℤ) else 0",
+          "block_sha256": "7e3b620ebe2d8a39c2b9aea98e20c4e74f3c7aafa50492624f2650193d8b61ba",
+          "block_characters": 615
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdColumn2M964",
+      "path": "research/MarkovThirdColumn2M964.lean",
+      "bytes": 684,
+      "sha256": "48976ef3ca69aebb97b3b2226614c541790b4b7b963c8d0431eeb18371ac99c8",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdColumn2M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_column2M964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207128995756000.json",
+          "sha256": "3db5e729475503325a5f1d3d1fcde1b52bd92cbfe380e9ef7b44e2999a3926d6",
+          "source_sha256": "48976ef3ca69aebb97b3b2226614c541790b4b7b963c8d0431eeb18371ac99c8",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "48976ef3ca69aebb97b3b2226614c541790b4b7b963c8d0431eeb18371ac99c8"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdColumn2M964.olean",
+      "object_sha256": "0b958e99ba56fd9d1b26aa7090a7fe0e5c60f885c728ac608ee4f5352c3d8e4c",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207128995756000.json",
+      "historical_successful_source_versions": [
+        "48976ef3ca69aebb97b3b2226614c541790b4b7b963c8d0431eeb18371ac99c8"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdColumnsBaseM964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "source_third_column2M964",
+          "header": "theorem source_third_column2M964 (d : ℕ) (r : Bool) :\n (threeRawM9E2 (thirdQM964 d r) r 2 (thirdJM964 d r):ℚ)=thirdColumn2M964 d r",
+          "block_sha256": "a752db5c450f6fc592c28f0e65d7fefc0caa612f6ba6b0b44202eb15e1ac338d",
+          "block_characters": 237
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdColumn2M964",
+          "header": "def thirdColumn2M964 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "c14d4d505d656c0ac168ee78593ccf22c73c02a0387d5ea736d3387bb7bba511",
+          "block_characters": 68,
+          "definition_text": "def thirdColumn2M964 (x : ℚ) (r : Bool) : ℚ :=\n if r then 96 else 72"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdColumn3M964",
+      "path": "research/MarkovThirdColumn3M964.lean",
+      "bytes": 1402,
+      "sha256": "f597f00bf4e239c15ef5c5fee322f20f35d2821e254d624eaf0d64968ab471fe",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdColumn3M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_column3M964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207137260267000.json",
+          "sha256": "fe7db546ed4041ad478d3f4e1d227c51232a245e86d2cd35c92614b9de92e845",
+          "source_sha256": "f597f00bf4e239c15ef5c5fee322f20f35d2821e254d624eaf0d64968ab471fe",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "f597f00bf4e239c15ef5c5fee322f20f35d2821e254d624eaf0d64968ab471fe"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdColumn3M964.olean",
+      "object_sha256": "8b8575b74b249dcfc9a6a1cecc1f88e45dd365aa5e127f4b8328badcc4cbb635",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207137260267000.json",
+      "historical_successful_source_versions": [
+        "f597f00bf4e239c15ef5c5fee322f20f35d2821e254d624eaf0d64968ab471fe"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdColumnsBaseM964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "source_third_column3M964",
+          "header": "theorem source_third_column3M964 (d : ℕ) (r : Bool) :\n (threeRawM9E2 (thirdQM964 d r) r 3 (thirdJM964 d r):ℚ)=thirdColumn3M964 d r",
+          "block_sha256": "2bb5349873cc8399d710ebea13cc49dbc451ea82666e2573e846e579f0edbbcc",
+          "block_characters": 823
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdColumn3M964",
+          "header": "def thirdColumn3M964 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "3a0eaa7e11e8bb3efde0f6013d4a9aea6ca97669d240515854b4e1cbff35ebbb",
+          "block_characters": 195,
+          "definition_text": "def thirdColumn3M964 (x : ℚ) (r : Bool) : ℚ :=\n if r then (5524+x*((38702/15)+x*((1331/3)+x*((121/3)+x*((11/6)+x*(1/30)))))) else (3429+x*((52999/30)+x*((1000/3)+x*((100/3)+x*((5/3)+x*(1/30))))))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdColumn4M964",
+      "path": "research/MarkovThirdColumn4M964.lean",
+      "bytes": 1519,
+      "sha256": "e68ccc34f7790ab39fe66045411a6bd234f84b27b0df65330bc7a38bc2f0335f",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdColumn4M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_column4M964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207144942113000.json",
+          "sha256": "bb37966bfc70424c91c2fd14d07a74921c360a1443755874fa7bd9cf28ff2cdc",
+          "source_sha256": "e68ccc34f7790ab39fe66045411a6bd234f84b27b0df65330bc7a38bc2f0335f",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "e68ccc34f7790ab39fe66045411a6bd234f84b27b0df65330bc7a38bc2f0335f"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdColumn4M964.olean",
+      "object_sha256": "924ce16e39dc01337e256a6c3b962df3b3da87bfae5fd2d70373ef5aae5a907b",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207144942113000.json",
+      "historical_successful_source_versions": [
+        "e68ccc34f7790ab39fe66045411a6bd234f84b27b0df65330bc7a38bc2f0335f"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdColumnsBaseM964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "source_third_column4M964",
+          "header": "theorem source_third_column4M964 (d : ℕ) (r : Bool) :\n (threeRawM9E2 (thirdQM964 d r) r 4 (thirdJM964 d r):ℚ)=thirdColumn4M964 d r",
+          "block_sha256": "139da7216d80f794e1189edc4c47d082e6b2a4931fd24955ad96148b021c472c",
+          "block_characters": 861
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdColumn4M964",
+          "header": "def thirdColumn4M964 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "4f81a8ad4b0ff2484427a68affe10b2fd673f755092ebe961b0f3198f6e61266",
+          "block_characters": 275,
+          "definition_text": "def thirdColumn4M964 (x : ℚ) (r : Bool) : ℚ :=\n if r then (75155+x*((5128979/84)+x*((7197677/360)+x*((104059/30)+x*((25399/72)+x*((253/12)+x*((31/45)+x*(1/105)))))))) else (38320+x*((724840/21)+x*((561683/45)+x*((23833/10)+x*((9595/36)+x*((35/2)+x*((113/180)+x*(1/105))))))))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdColumn5M964",
+      "path": "research/MarkovThirdColumn5M964.lean",
+      "bytes": 1664,
+      "sha256": "6c10fe961c7569e2a03913d0ee96dc7d995835278ed48a4283c9f297eb1bb369",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdColumn5M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_column5M964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207152813204000.json",
+          "sha256": "b678d4056ed5c5820f4c891625c1ed95892ffe10fa6993c7f9cfb8f55b92e0cf",
+          "source_sha256": "6c10fe961c7569e2a03913d0ee96dc7d995835278ed48a4283c9f297eb1bb369",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "6c10fe961c7569e2a03913d0ee96dc7d995835278ed48a4283c9f297eb1bb369"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdColumn5M964.olean",
+      "object_sha256": "26920267864772defec77ef7ff06f3c4290263796f535bb8dad4fd74ad7b56fe",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207152813204000.json",
+      "historical_successful_source_versions": [
+        "6c10fe961c7569e2a03913d0ee96dc7d995835278ed48a4283c9f297eb1bb369"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdColumnsBaseM964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "source_third_column5M964",
+          "header": "theorem source_third_column5M964 (d : ℕ) (r : Bool) :\n (threeRawM9E2 (thirdQM964 d r) r 5 (thirdJM964 d r):ℚ)=thirdColumn5M964 d r",
+          "block_sha256": "9557605efb869acf0338cb31726cd60c22b5e94d876b0101415787496a38980b",
+          "block_characters": 901
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdColumn5M964",
+          "header": "def thirdColumn5M964 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "7c7059fcbcb8abac104d57107eae69a83afddedfd9e7ba1a25a1200915e86328",
+          "block_characters": 380,
+          "definition_text": "def thirdColumn5M964 (x : ℚ) (r : Bool) : ℚ :=\n if r then (492492+x*((17133481/30)+x*((235596103/840)+x*((289661587/3780)+x*((3717949/288)+x*((403933/288)+x*((71131/720)+x*((1049/240)+x*((223/2016)+x*(37/30240)))))))))) else (204204+x*((3960191/15)+x*((5042468/35)+x*((164717131/3780)+x*((5831573/720)+x*((464959/480)+x*((3374/45)+x*((2621/720)+x*((509/5040)+x*(37/30240))))))))))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdColumn6M964",
+      "path": "research/MarkovThirdColumn6M964.lean",
+      "bytes": 1843,
+      "sha256": "6f26981fa521c486d840e88eb03154156d9bc7934e6fcad544b7272eabec4b98",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdColumn6M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_column6M964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207160913637000.json",
+          "sha256": "125aa66b6e1d9f841c49aac117b90964ffda23f7b247b6246f911d55154eaf58",
+          "source_sha256": "6f26981fa521c486d840e88eb03154156d9bc7934e6fcad544b7272eabec4b98",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "6f26981fa521c486d840e88eb03154156d9bc7934e6fcad544b7272eabec4b98"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdColumn6M964.olean",
+      "object_sha256": "0eb1d57b584d9af9c702e47f35872af864be32059dbf62097267143d2a0a3fef",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207160913637000.json",
+      "historical_successful_source_versions": [
+        "6f26981fa521c486d840e88eb03154156d9bc7934e6fcad544b7272eabec4b98"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdColumnsBaseM964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "source_third_column6M964",
+          "header": "theorem source_third_column6M964 (d : ℕ) (r : Bool) :\n (threeRawM9E2 (thirdQM964 d r) r 6 (thirdJM964 d r):ℚ)=thirdColumn6M964 d r",
+          "block_sha256": "c47445f654ecffdbd733139a7b1fff8c816435cdf72c9045c3c8570041562954",
+          "block_characters": 943
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdColumn6M964",
+          "header": "def thirdColumn6M964 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "e991bb727b614e3bb68adf20dd76e24a05d21b4ad52512ccf085535c8cfee708",
+          "block_characters": 517,
+          "definition_text": "def thirdColumn6M964 (x : ℚ) (r : Bool) : ℚ :=\n if r then (1888068+x*((95331100/33)+x*((12141746231/6300)+x*((27935926493/37800)+x*((8214563069/45360)+x*((902986283/30240)+x*((36674213/10800)+x*((1925671/7200)+x*((108511/7560)+x*((15167/30240)+x*((146/14175)+x*(157/1663200)))))))))))) else (626808+x*((177723262/165)+x*((112603891/140)+x*((25999546681/75600)+x*((2122617671/22680)+x*((1032632887/60480)+x*((3700861/1728)+x*((668153/3600)+x*((330737/30240)+x*((25339/60480)+x*((1709/181440)+x*(157/1663200))))))))))))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdColumn7M964",
+      "path": "research/MarkovThirdColumn7M964.lean",
+      "bytes": 2044,
+      "sha256": "18212f03f5a43beab2dd97784e3177ad258a67f15d10caef51229fc67088f97f",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdColumn7M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_column7M964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207170188400000.json",
+          "sha256": "368aefce96b18f1fa237706de19b2e0817f025e9e35f2555a1b625e1ff1861bd",
+          "source_sha256": "18212f03f5a43beab2dd97784e3177ad258a67f15d10caef51229fc67088f97f",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "18212f03f5a43beab2dd97784e3177ad258a67f15d10caef51229fc67088f97f"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdColumn7M964.olean",
+      "object_sha256": "25fc2f42ddbb97b05328b7b81bd6eb2f15d5f97eda2e39260b28f8a8232fd91b",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207170188400000.json",
+      "historical_successful_source_versions": [
+        "18212f03f5a43beab2dd97784e3177ad258a67f15d10caef51229fc67088f97f"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdColumnsBaseM964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "source_third_column7M964",
+          "header": "theorem source_third_column7M964 (d : ℕ) (r : Bool) :\n (threeRawM9E2 (thirdQM964 d r) r 7 (thirdJM964 d r):ℚ)=thirdColumn7M964 d r",
+          "block_sha256": "14d0c6599882d58c72c0521118b4d233baf4a088c7b48728752ff9680fc4a348",
+          "block_characters": 985
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdColumn7M964",
+          "header": "def thirdColumn7M964 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "b5dc99ee3aa6e99329409308f2665f5955bdaf0a3d112ae14897127748ef8dd0",
+          "block_characters": 676,
+          "definition_text": "def thirdColumn7M964 (x : ℚ) (r : Bool) : ℚ :=\n if r then (4583040+x*((1733810989/195)+x*((637029822581/83160)+x*((429566813651/110880)+x*((498507116801/388800)+x*((177416531699/604800)+x*((20823733759/435456)+x*((4093508029/725760)+x*((1752365113/3628800)+x*((35970859/1209600)+x*((399431/311040)+x*((8933/241920)+x*((76063/119750400)+x*(2567/518918400)))))))))))))) else (1189650+x*((510705248/195)+x*((42415123049/16632)+x*((14369638301/9900)+x*((26154825923/48600)+x*((124566418181/907200)+x*((27056984009/1088640)+x*((11767069751/3628800)+x*((555423601/1814400)+x*((1194049/57600)+x*((152753/155520)+x*((112237/3628800)+x*((34831/59875200)+x*(2567/518918400))))))))))))))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdColumn8M964",
+      "path": "research/MarkovThirdColumn8M964.lean",
+      "bytes": 2259,
+      "sha256": "c94bfbc5f29ba1f77d96f454498abe3b422b6efee97d763a6e5edfbd40c5ef17",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdColumn8M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_column8M964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207180701707000.json",
+          "sha256": "2063e1175535258063619252fa1c111899840e7b5a59e499a341b1d37b877e1d",
+          "source_sha256": "c94bfbc5f29ba1f77d96f454498abe3b422b6efee97d763a6e5edfbd40c5ef17",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "c94bfbc5f29ba1f77d96f454498abe3b422b6efee97d763a6e5edfbd40c5ef17"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdColumn8M964.olean",
+      "object_sha256": "08a22c5e33d7c383f92ea461f3a5b2f3cc8a8dbf9de7e3017a63b5240aa41f0c",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207180701707000.json",
+      "historical_successful_source_versions": [
+        "c94bfbc5f29ba1f77d96f454498abe3b422b6efee97d763a6e5edfbd40c5ef17"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdColumnsBaseM964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "source_third_column8M964",
+          "header": "theorem source_third_column8M964 (d : ℕ) (r : Bool) :\n (threeRawM9E2 (thirdQM964 d r) r 8 (thirdJM964 d r):ℚ)=thirdColumn8M964 d r",
+          "block_sha256": "4bfe94559d546f17c6145d9cea954f9b31e24715e8e3020684174d92a4048ec0",
+          "block_characters": 1027
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdColumn8M964",
+          "header": "def thirdColumn8M964 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "063764151c4282ada92b54a764e2543be028a61b12d9626bd5543444727abd4e",
+          "block_characters": 849,
+          "definition_text": "def thirdColumn8M964 (x : ℚ) (r : Bool) : ℚ :=\n if r then (7263828+x*((2451766943/140)+x*((13290564874539/700700)+x*((1233415071798941/100900800)+x*((17418917255123/3326400)+x*((63016389725417/39916800)+x*((3768390384149/10886400)+x*((153207938791/2721600)+x*((261427128959/38102400)+x*((47891051951/76204800)+x*((156141331/3628800)+x*((3934733/1814400)+x*((1168801/14968800)+x*((56899/29937600)+x*((15269/544864320)+x*(103/544864320)))))))))))))))) else (1420848+x*((138149187/35)+x*((30898358919041/6306300)+x*((272389731032647/75675600)+x*((17443939509391/9979200)+x*((35572637525617/59875200)+x*((318017927687/2177280)+x*((192299040361/7257600)+x*((546515749159/152409600)+x*((55361736733/152409600)+x*((66314533/2419200)+x*((33058561/21772800)+x*((14354609/239500800)+x*((18203/11404800)+x*((560137/21794572800)+x*(103/544864320))))))))))))))))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdColumn9M964",
+      "path": "research/MarkovThirdColumn9M964.lean",
+      "bytes": 2505,
+      "sha256": "945ab8d2bb28768c0e74e51933a13b22eb95992e2577e6cfde2de1a5bbb8f9f1",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdColumn9M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_column9M964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207189828750000.json",
+          "sha256": "13a3686f5fdc2d9940a372900c718be1eaa80d29579f7b5a0d39be9f12ee6ea2",
+          "source_sha256": "945ab8d2bb28768c0e74e51933a13b22eb95992e2577e6cfde2de1a5bbb8f9f1",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "945ab8d2bb28768c0e74e51933a13b22eb95992e2577e6cfde2de1a5bbb8f9f1"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdColumn9M964.olean",
+      "object_sha256": "9c859a342b8ff6c12ec110a67ffeaa18f8fa03639f1253a62b4b7c68bf0829c9",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207189828750000.json",
+      "historical_successful_source_versions": [
+        "945ab8d2bb28768c0e74e51933a13b22eb95992e2577e6cfde2de1a5bbb8f9f1"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdColumnsBaseM964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "source_third_column9M964",
+          "header": "theorem source_third_column9M964 (d : ℕ) (r : Bool) :\n (threeRawM9E2 (thirdQM964 d r) r 9 (thirdJM964 d r):ℚ)=thirdColumn9M964 d r",
+          "block_sha256": "0aa306c6df25431297e65cd0b034407ab30b5b1034e93a039596c168ec62f400",
+          "block_characters": 1069
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdColumn9M964",
+          "header": "def thirdColumn9M964 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "a00c2be2e646260d79890027c19a3e1e7232b82b32e0a19e8e810171aa15107f",
+          "block_characters": 1053,
+          "definition_text": "def thirdColumn9M964 (x : ℚ) (r : Bool) : ℚ :=\n if r then (7507500+x*((31918310821/1428)+x*((130109983438921/4324320)+x*((2005662889951517/82555200)+x*((286968308737388653/21794572800)+x*((332134326959731327/65383718400)+x*((296518325228143/205286400)+x*((1646582037047/5322240)+x*((52885212195367/1045094400)+x*((15532898324603/2438553600)+x*((1131297025687/1828915200)+x*((84496098539/1828915200)+x*((2158341281/821145600)+x*((1298249/11612160)+x*((18368803/5337446400)+x*((6311579/87178291200)+x*((194819/209227898880)+x*(98207/17784371404800)))))))))))))))))) else (1041040+x*((3920208122/1071)+x*((1386430505843/240240)+x*((2458851067580041/454053600)+x*((135124172579159/39916800)+x*((97771163751207523/65383718400)+x*((49618754629699/102643200)+x*((6222934126781/53222400)+x*((11214408034393/522547200)+x*((1470180318751/487710720)+x*((42463643923/130636800)+x*((49096390223/1828915200)+x*((690843719/410572800)+x*((7172201/91238400)+x*((49519363/18681062400)+x*((5313437/87178291200)+x*((983/1149603840)+x*(98207/17784371404800))))))))))))))))))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdColumn10M964",
+      "path": "research/MarkovThirdColumn10M964.lean",
+      "bytes": 2807,
+      "sha256": "ee423a552265a11c1de59e4d08470500980a2ba7f061797b722712f928cb7357",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdColumn10M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_column10M964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207200304119000.json",
+          "sha256": "83696a8c84009c8bae2a40306bb18290b0bcab4ffb1ddc6df5b21374309de81a",
+          "source_sha256": "ee423a552265a11c1de59e4d08470500980a2ba7f061797b722712f928cb7357",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "ee423a552265a11c1de59e4d08470500980a2ba7f061797b722712f928cb7357"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdColumn10M964.olean",
+      "object_sha256": "c7de7784572db1be4ed09ae7a875291a13360949f1eceaeef5a517ff4d6bbbdf",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207200304119000.json",
+      "historical_successful_source_versions": [
+        "ee423a552265a11c1de59e4d08470500980a2ba7f061797b722712f928cb7357"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdColumnsBaseM964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "source_third_column10M964",
+          "header": "theorem source_third_column10M964 (d : ℕ) (r : Bool) :\n (threeRawM9E2 (thirdQM964 d r) r 10 (thirdJM964 d r):ℚ)=thirdColumn10M964 d r",
+          "block_sha256": "fa0b4ce8ebaf57196b0cbbfaa1c45dd82a84e88105f4274e4601bad7ca7a80fd",
+          "block_characters": 1115
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdColumn10M964",
+          "header": "def thirdColumn10M964 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "a7aa04377d74ad41049e5d197a30adc1308e10603614f059f44ad0bd455c6961",
+          "block_characters": 1309,
+          "definition_text": "def thirdColumn10M964 (x : ℚ) (r : Bool) : ℚ :=\n if r then (4881448+x*((72190503103/3990)+x*((2252949591406721/74220300)+x*((98527658533159019/3216213000)+x*((170358296383223587/8172964800)+x*((1106853104019781667/108972864000)+x*((1351957291350829571/367783416000)+x*((1984063872506223163/1961511552000)+x*((1297311768561953/6035420160)+x*((14341225790400589/402361344000)+x*((127305267591961/27433728000)+x*((128845199687/270950400)+x*((866788987483/22632825600)+x*((1454112284539/603542016000)+x*((17648587837/150885504000)+x*((11226724291/2615348736000)+x*((45150607/392302310400)+x*((1235621/581188608000)+x*((4837661/200074178304000)+x*(646651/5068545850368000)))))))))))))))))))) else (427856+x*((3912021058/1995)+x*((7727985107355017/1929727800)+x*((13873339879805561/2858856000)+x*((64016245103663791/16345929600)+x*((69697137736675429/31135104000)+x*((4518471034609801/4803701760)+x*((233557394446584343/784604620800)+x*((1088174560376887/15088550400)+x*((3628286489440087/268240896000)+x*((86818268912777/43893964800)+x*((168900655999/746496000)+x*((1046786838773/51732172800)+x*((1698633073721/1207084032000)+x*((236119761077/3138418483200)+x*((440359291/145297152000)+x*((27914377/313841848320)+x*((2681183/1494484992000)+x*((1016707/45731240755200)+x*(646651/5068545850368000))))))))))))))))))))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdColumn11M964",
+      "path": "research/MarkovThirdColumn11M964.lean",
+      "bytes": 3116,
+      "sha256": "24dfa705276370fd3eb04ab5cd2d6d5721b004b7d1f1f65e50d2ae6365864d0e",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdColumn11M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_column11M964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207210600717000.json",
+          "sha256": "99257500bdec29bfa1d55d94a22e51cf2dcff84cf56308a37f117a8704c66fc8",
+          "source_sha256": "24dfa705276370fd3eb04ab5cd2d6d5721b004b7d1f1f65e50d2ae6365864d0e",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "24dfa705276370fd3eb04ab5cd2d6d5721b004b7d1f1f65e50d2ae6365864d0e"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdColumn11M964.olean",
+      "object_sha256": "75da2d6366067f6176c024fbcdce412f0a689484c42657597b283c3f74e9680b",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207210600717000.json",
+      "historical_successful_source_versions": [
+        "24dfa705276370fd3eb04ab5cd2d6d5721b004b7d1f1f65e50d2ae6365864d0e"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdColumnsBaseM964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "source_third_column11M964",
+          "header": "theorem source_third_column11M964 (d : ℕ) (r : Bool) :\n (threeRawM9E2 (thirdQM964 d r) r 11 (thirdJM964 d r):ℚ)=thirdColumn11M964 d r",
+          "block_sha256": "e748d0bd066dadc3932e0a7092f460b6748e80101c4d3c65b13de1f0047d4ec6",
+          "block_characters": 1157
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdColumn11M964",
+          "header": "def thirdColumn11M964 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "6cfd8c3bd3bdf2cd63e00d379b4e2623839a22e3033790b7a671b0cd65a0059f",
+          "block_characters": 1576,
+          "definition_text": "def thirdColumn11M964 (x : ℚ) (r : Bool) : ℚ :=\n if r then (1813968+x*((19969674463/2310)+x*((150781409766819409/8147739600)+x*((486927650675217543329/20532303792000)+x*((77345078232005579/3783780000)+x*((1402332819322481000407/111152321280000)+x*((77704183200625829/13412044800)+x*((434414120518015831/213983078400)+x*((2653249354085736683/4803701760000)+x*((778414044455202066893/6590678814720000)+x*((38663815594332637/1931334451200)+x*((967272716224499/357654528000)+x*((14098014814985279/48283361280000)+x*((3648172306901011/144850083840000)+x*((65128071443807/37661021798400)+x*((123605404966429/1318135762944000)+x*((1243245154951/313841848320000)+x*((606508043/4755179520000)+x*((99212321/32832685670400)+x*((317772547/6402373705728000)+x*((18057199/35777970708480000)+x*(10186763/4257578514309120000)))))))))))))))))))))) else (75582+x*((1547267199/3080)+x*((5832222519740629/4073869800)+x*((16150378533821603213/6844101264000)+x*((41612026569221/16336320)+x*((17846806040176073281/9262693440000)+x*((66313999233609109/62270208000)+x*((3469749085102966397/7846046208000)+x*((3310978762345671379/23538138624000)+x*((650621211096249569/18723519360000)+x*((4644533588577149/689762304000)+x*((9951854681223671/9656672256000)+x*((12324548430859/98537472000)+x*((64634541052373/5364817920000)+x*((86490739934029/94152554496000)+x*((72567603802387/1318135762944000)+x*((11477650193/4483454976000)+x*((28376824753/313841848320000)+x*((357135253/152437469184000)+x*((1628897/38802264883200)+x*((28259299/60822550204416000)+x*(10186763/4257578514309120000))))))))))))))))))))))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdGap2M964",
+      "path": "research/MarkovThirdGap2M964.lean",
+      "bytes": 1964,
+      "sha256": "f451ef3362b064fd9e1210ec3aa76a49f2248357f776bd313e753f8347bb766b",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdGap2M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_identity2M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_nonneg2M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_horizontal2M964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207236098065000.json",
+          "sha256": "0c605c6a57884301f1eb459239dc5ae07c57378e11ff0c52c3ccb5ad1119504b",
+          "source_sha256": "f451ef3362b064fd9e1210ec3aa76a49f2248357f776bd313e753f8347bb766b",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "f451ef3362b064fd9e1210ec3aa76a49f2248357f776bd313e753f8347bb766b"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdGap2M964.olean",
+      "object_sha256": "48caa23ee3977e147f0ac845a5eda129e9271bef7d571c9729fc7ddf4c0a2bec",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207236098065000.json",
+      "historical_successful_source_versions": [
+        "f451ef3362b064fd9e1210ec3aa76a49f2248357f776bd313e753f8347bb766b"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdColumn2M964",
+        "MarkovThirdColumn3M964",
+        "MarkovThirdColumn4M964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "third_gap_identity2M964",
+          "header": "theorem third_gap_identity2M964 (x : ℚ) (r : Bool) :\n thirdColumn3M964 x r^2-thirdColumn2M964 x r*thirdColumn4M964 x r=thirdGap2M964 x r",
+          "block_sha256": "d64b4a61b762a992356c9751b3c988f1c1163122b3db478f2b6a3f805705cf57",
+          "block_characters": 281
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_nonneg2M964",
+          "header": "theorem third_gap_nonneg2M964 (x : ℚ) (r : Bool) (hx : 0 ≤ x) : 0 ≤ thirdGap2M964 x r",
+          "block_sha256": "035292252dd85fd5f4850edb9dff373f4ce26e0964a91e40550c11cd6c243382",
+          "block_characters": 181
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_horizontal2M964",
+          "header": "theorem source_third_horizontal2M964 (d : ℕ) (r : Bool) :\n threeRawM9E2 (thirdQM964 d r) r 2 (thirdJM964 d r)*\n threeRawM9E2 (thirdQM964 d r) r 4 (thirdJM964 d r) ≤\n threeRawM9E2 (thirdQM964 d r) r 3 (thirdJM964 d r)^2",
+          "block_sha256": "c33ad936454025e4a18d9b1a8d65dbc46b2e3f97abfbfb8caffe379d1e6d98a4",
+          "block_characters": 656
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdGap2M964",
+          "header": "def thirdGap2M964 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "6694807363eafb7bded20e84b8f41aead1319e897dba313277651263678bce00",
+          "block_characters": 389,
+          "definition_text": "def thirdGap2M964 (x : ℚ) (r : Bool) : ℚ :=\n if r then (23299696+x*((2377580392/105)+x*((2168850784/225)+x*((108092348/45)+x*((1956801/5)+x*((653908/15)+x*((755872/225)+x*((18538/105)+x*((121/20)+x*((11/90)+x*(1/900))))))))))) else (8999001+x*((337064199/35)+x*((4057470481/900)+x*((55564108/45)+x*((663380/3)+x*((135398/5)+x*((1032659/450)+x*((13928/105)+x*(5+x*((1/9)+x*(1/900)))))))))))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdGap3M964",
+      "path": "research/MarkovThirdGap3M964.lean",
+      "bytes": 2300,
+      "sha256": "9e12490d535795fd162ca6826e8dc5c3e6c662bbf9ace815c42db35f6a5460d5",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdGap3M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_identity3M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_nonneg3M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_horizontal3M964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207242446069000.json",
+          "sha256": "f936ed65f6e3340ee56ab298b861bda7dd8f94b6e1707d13d48316a0d3e52111",
+          "source_sha256": "9e12490d535795fd162ca6826e8dc5c3e6c662bbf9ace815c42db35f6a5460d5",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "9e12490d535795fd162ca6826e8dc5c3e6c662bbf9ace815c42db35f6a5460d5"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdGap3M964.olean",
+      "object_sha256": "79afaa2ed0dae4f1b3683e5a679c79342866edbfa71e9ca86569eb02450433ce",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207242446069000.json",
+      "historical_successful_source_versions": [
+        "9e12490d535795fd162ca6826e8dc5c3e6c662bbf9ace815c42db35f6a5460d5"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdColumn3M964",
+        "MarkovThirdColumn4M964",
+        "MarkovThirdColumn5M964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "third_gap_identity3M964",
+          "header": "theorem third_gap_identity3M964 (x : ℚ) (r : Bool) :\n thirdColumn4M964 x r^2-thirdColumn3M964 x r*thirdColumn5M964 x r=thirdGap3M964 x r",
+          "block_sha256": "b249e51c30fdba31eda1cbf6376b09edacd70c3da933af51b65e54853d1072ae",
+          "block_characters": 281
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_nonneg3M964",
+          "header": "theorem third_gap_nonneg3M964 (x : ℚ) (r : Bool) (hx : 0 ≤ x) : 0 ≤ thirdGap3M964 x r",
+          "block_sha256": "ea82c0bdbee4f1fb2fe98c61ace755e033eaaaae97aa11e05ac32f915ae99819",
+          "block_characters": 181
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_horizontal3M964",
+          "header": "theorem source_third_horizontal3M964 (d : ℕ) (r : Bool) :\n threeRawM9E2 (thirdQM964 d r) r 3 (thirdJM964 d r)*\n threeRawM9E2 (thirdQM964 d r) r 5 (thirdJM964 d r) ≤\n threeRawM9E2 (thirdQM964 d r) r 4 (thirdJM964 d r)^2",
+          "block_sha256": "7f85eac4086230cbb6faebc2cab7435c05112000e8850c40dfe1e5225a949148",
+          "block_characters": 656
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdGap3M964",
+          "header": "def thirdGap3M964 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "507e8ada2edb563da0673b66340e76a731fd4438c65c6671331fc6baa07d4823",
+          "block_characters": 725,
+          "definition_text": "def thirdGap3M964 (x : ℚ) (r : Bool) : ℚ :=\n if r then (2927748217+x*((997978685041/210)+x*((616003327164101/176400)+x*((38877195231493/25200)+x*((416358051691679/907200)+x*((11058608964523/113400)+x*((231330428891/15120)+x*((204574429463/113400)+x*((510896203697/3175200)+x*((204442339/18900)+x*((490079311/907200)+x*((1103203/56700)+x*((144643/302400)+x*((233/32400)+x*(317/6350400))))))))))))))) else (768206884+x*((144823096141/105)+x*((24684456264799/22050)+x*((10310985087029/18900)+x*((1622328732155/9072)+x*((1355339789413/32400)+x*((34656905981/4800)+x*((30330437987/32400)+x*((11655697301/127008)+x*((170827507/25200)+x*((84339361/226800)+x*((476549/32400)+x*((343/864)+x*((743/113400)+x*(317/6350400)))))))))))))))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdGap4M964",
+      "path": "research/MarkovThirdGap4M964.lean",
+      "bytes": 2724,
+      "sha256": "81c0ee39b7b0964c320527f6de94ebea55a5198426a89d0eaedca1abf31417aa",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdGap4M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_identity4M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_nonneg4M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_horizontal4M964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207265185135000.json",
+          "sha256": "9f7d01c46f31d0d62465713aaef00b7a081d07777c667e42dec9a7b6c1bb922c",
+          "source_sha256": "81c0ee39b7b0964c320527f6de94ebea55a5198426a89d0eaedca1abf31417aa",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "81c0ee39b7b0964c320527f6de94ebea55a5198426a89d0eaedca1abf31417aa"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdGap4M964.olean",
+      "object_sha256": "0de9a9fb242bd7a2bdde56877be0e1e927fa071d05baeaf33fc1165d0f085898",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207265185135000.json",
+      "historical_successful_source_versions": [
+        "81c0ee39b7b0964c320527f6de94ebea55a5198426a89d0eaedca1abf31417aa"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdColumn4M964",
+        "MarkovThirdColumn5M964",
+        "MarkovThirdColumn6M964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "third_gap_identity4M964",
+          "header": "theorem third_gap_identity4M964 (x : ℚ) (r : Bool) :\n thirdColumn5M964 x r^2-thirdColumn4M964 x r*thirdColumn6M964 x r=thirdGap4M964 x r",
+          "block_sha256": "7b848563614c3e08dbe189659883736a2e7a3d51f675c7fb78f18ebdfcd3255d",
+          "block_characters": 281
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_nonneg4M964",
+          "header": "theorem third_gap_nonneg4M964 (x : ℚ) (r : Bool) (hx : 0 ≤ x) : 0 ≤ thirdGap4M964 x r",
+          "block_sha256": "ebc61eb7a7b8c4be71535bb975d4b38b1bf993fc8a67d1164c7eefbaf7775a5b",
+          "block_characters": 181
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_horizontal4M964",
+          "header": "theorem source_third_horizontal4M964 (d : ℕ) (r : Bool) :\n threeRawM9E2 (thirdQM964 d r) r 4 (thirdJM964 d r)*\n threeRawM9E2 (thirdQM964 d r) r 6 (thirdJM964 d r) ≤\n threeRawM9E2 (thirdQM964 d r) r 5 (thirdJM964 d r)^2",
+          "block_sha256": "12dbdd91ae5a7e84009c760f5aa161b7635ad602da960c58833eaab57c30ecfa",
+          "block_characters": 656
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdGap4M964",
+          "header": "def thirdGap4M964 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "b69ed4da337dc60a156f371cf1f9ddff7cf4dd4d8430506efa168dda1bdaf61a",
+          "block_characters": 1149,
+          "definition_text": "def thirdGap4M964 (x : ℚ) (r : Bool) : ℚ :=\n if r then (100650619524+x*((37974211406477/165)+x*((4217800500198763/17325)+x*((921589214498136157/5821200)+x*((24782332829023398707/349272000)+x*((158468285723555303/6804000)+x*((474229696807739381/81648000)+x*((26978405060482453/23950080)+x*((1238912349986208913/7185024000)+x*((16013176240159687/762048000)+x*((9354303026876057/4572288000)+x*((1585952506139/9979200)+x*((11719856988607/1197504000)+x*((282458731007/598752000)+x*((62588948077/3592512000)+x*((36277151/76204800)+x*((41466937/4572288000)+x*((18401/171072000)+x*(4297/7185024000))))))))))))))))))) else (17679991056+x*((7410976132568/165)+x*((304455130179059/5775)+x*((13822085610433739/363825)+x*((16453447316542129/873180)+x*((596914079883288803/87318000)+x*((422549257745955349/224532000)+x*((1204827000084431/2993760)+x*((24379166811011879/359251200)+x*((1734014378831659/190512000)+x*((4455907001987417/4572288000)+x*((69740719127297/838252800)+x*((8022141221/1425600)+x*((178279571171/598752000)+x*((6192152011/513216000)+x*((303097867/838252800)+x*((18992233/2514758400)+x*((411461/4191264000)+x*(4297/7185024000)))))))))))))))))))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdGap5M964",
+      "path": "research/MarkovThirdGap5M964.lean",
+      "bytes": 3301,
+      "sha256": "dee8cef275fabc057b9af5ab40b4fb8c71571ca05c755e75d3ef524111ee0a71",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdGap5M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_identity5M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_nonneg5M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_horizontal5M964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207272444433000.json",
+          "sha256": "45e202685e49e5dd18d1f9d0a1c8983d49a60b504c6f7c4c608bab04717eb233",
+          "source_sha256": "dee8cef275fabc057b9af5ab40b4fb8c71571ca05c755e75d3ef524111ee0a71",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "dee8cef275fabc057b9af5ab40b4fb8c71571ca05c755e75d3ef524111ee0a71"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdGap5M964.olean",
+      "object_sha256": "7a80e9e77529626d87026b5759d4d5f133005fcd6378e48ea81e6f3286b15393",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207272444433000.json",
+      "historical_successful_source_versions": [
+        "dee8cef275fabc057b9af5ab40b4fb8c71571ca05c755e75d3ef524111ee0a71"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdColumn5M964",
+        "MarkovThirdColumn6M964",
+        "MarkovThirdColumn7M964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "third_gap_identity5M964",
+          "header": "theorem third_gap_identity5M964 (x : ℚ) (r : Bool) :\n thirdColumn6M964 x r^2-thirdColumn5M964 x r*thirdColumn7M964 x r=thirdGap5M964 x r",
+          "block_sha256": "dde0ddd7b92554a5f52c88cc838eb87978eb9579934c2b07dd3e77124c28fadb",
+          "block_characters": 281
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_nonneg5M964",
+          "header": "theorem third_gap_nonneg5M964 (x : ℚ) (r : Bool) (hx : 0 ≤ x) : 0 ≤ thirdGap5M964 x r",
+          "block_sha256": "0a3911fd7070709d29c900e4e02f0bc4a8b0f6244530a41ccf6d6c36b75db9f5",
+          "block_characters": 181
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_horizontal5M964",
+          "header": "theorem source_third_horizontal5M964 (d : ℕ) (r : Bool) :\n threeRawM9E2 (thirdQM964 d r) r 5 (thirdJM964 d r)*\n threeRawM9E2 (thirdQM964 d r) r 7 (thirdJM964 d r) ≤\n threeRawM9E2 (thirdQM964 d r) r 6 (thirdJM964 d r)^2",
+          "block_sha256": "04a84f28a5352bc0a7dd4aa514ecb42520634ed4f90c3dc93d23c29b83debc41",
+          "block_characters": 656
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdGap5M964",
+          "header": "def thirdGap5M964 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "895d933dfc1f38274de99f929fe00f78492fed26535f02820da1e024df146d59",
+          "block_characters": 1726,
+          "definition_text": "def thirdGap5M964 (x : ℚ) (r : Bool) : ℚ :=\n if r then (1307690236944+x*((215172161458548/55)+x*((1941936347213624539/353925)+x*((31121416501185612983/6486480)+x*((33316978918099206173671/11351340000)+x*((1092064133936935064729167/817296480000)+x*((85396344915689737551449/181621440000)+x*((385828128664390972379041/2942267328000)+x*((867637831858644425541077/29422673280000)+x*((636820022261370805580903/117690693120000)+x*((21358451937486197897161/26153487360000)+x*((61485286019230590119/603542016000)+x*((174701916087925742221/16597405440000)+x*((2037601417952897239/2263282560000)+x*((14953706920936828129/235381386240000)+x*((43245000951870017/11769069312000)+x*((1690418833880879/9807557760000)+x*((253134604227581/39230231040000)+x*((14766545348593/78460462080000)+x*((96998402597/23538138624000)+x*((3749273779/58845346560000)+x*((36493939/58845346560000)+x*(2466643/863065082880000))))))))))))))))))))))) else (149956980264+x*((27576444323106/55)+x*((555563907710423903/707850)+x*((12404622096465382309/16216200)+x*((118241734765978689673/227026800)+x*((96145421023741943593/364864500)+x*((12014211463251576596279/116756640000)+x*((46782948845363451719707/1471133664000)+x*((23282749803638979056729/2942267328000)+x*((9442229374187998293023/5884534656000)+x*((3495232420860137255483/13076743680000)+x*((56593447291734953/1539648000)+x*((1133324809087123883/270978048000)+x*((356287687609725533/905313024000)+x*((7185285980243959459/235381386240000)+x*((5705513544245677/2942267328000)+x*((15985008348313/160123392000)+x*((574295135083/140107968000)+x*((367211763091/2802159360000)+x*((578048501/183891708000)+x*((2505190451/47076277248000)+x*((1334369/2353813862400)+x*(2466643/863065082880000)))))))))))))))))))))))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdGap6M964",
+      "path": "research/MarkovThirdGap6M964.lean",
+      "bytes": 3903,
+      "sha256": "e4dfe5576e748db37e7e0619a17edd7efbca0926e80ca5ea98c49a0278aeec59",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdGap6M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_identity6M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_nonneg6M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_horizontal6M964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207279357694000.json",
+          "sha256": "b2e48926360507f2b31cabf1bf5ab4bf619ef496772e2e0942c0fbe6b5dbbcb9",
+          "source_sha256": "e4dfe5576e748db37e7e0619a17edd7efbca0926e80ca5ea98c49a0278aeec59",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "e4dfe5576e748db37e7e0619a17edd7efbca0926e80ca5ea98c49a0278aeec59"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdGap6M964.olean",
+      "object_sha256": "3889338dc5cb095e55450db4f322c9bd67c1550091feff7a1f93ef9f0f5433d1",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207279357694000.json",
+      "historical_successful_source_versions": [
+        "e4dfe5576e748db37e7e0619a17edd7efbca0926e80ca5ea98c49a0278aeec59"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdColumn6M964",
+        "MarkovThirdColumn7M964",
+        "MarkovThirdColumn8M964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "third_gap_identity6M964",
+          "header": "theorem third_gap_identity6M964 (x : ℚ) (r : Bool) :\n thirdColumn7M964 x r^2-thirdColumn6M964 x r*thirdColumn8M964 x r=thirdGap6M964 x r",
+          "block_sha256": "7627093a42fd1e3ec560e651b0ef899d59004764c97986c54eb4719a714f9ff5",
+          "block_characters": 281
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_nonneg6M964",
+          "header": "theorem third_gap_nonneg6M964 (x : ℚ) (r : Bool) (hx : 0 ≤ x) : 0 ≤ thirdGap6M964 x r",
+          "block_sha256": "3c50130ce92ddc330f896444a839f81cee3a7f3e147471c1ed96f159bc725a4f",
+          "block_characters": 181
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_horizontal6M964",
+          "header": "theorem source_third_horizontal6M964 (d : ℕ) (r : Bool) :\n threeRawM9E2 (thirdQM964 d r) r 6 (thirdJM964 d r)*\n threeRawM9E2 (thirdQM964 d r) r 8 (thirdJM964 d r) ≤\n threeRawM9E2 (thirdQM964 d r) r 7 (thirdJM964 d r)^2",
+          "block_sha256": "add0e586951e5c135eb9f99222994373ca2ff6dad9a37b352b82c4ca4671af48",
+          "block_characters": 656
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdGap6M964",
+          "header": "def thirdGap6M964 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "7e70be76c45e6815c20b1d0f3fecd2fad48cc93249427850c3490cdebc943235",
+          "block_characters": 2328,
+          "definition_text": "def thirdGap6M964 (x : ℚ) (r : Bool) : ℚ :=\n if r then (7289654437296+x*((1784236959322411/65)+x*((143083549985551942636/2927925)+x*((170871026477305747735061/3121618500)+x*((681423969777786213115794469/15732957240000)+x*((1621768373679040679592900749/62931828960000)+x*((27151329676279910662120067329/2265545842560000)+x*((4721802806176708852172149/1056198528000)+x*((918249077984374224766312561/674046696960000)+x*((40440516022061398155973637/117690693120000)+x*((165259122629612261779289129/2281388820480000)+x*((18481196367066561957865/1437966286848)+x*((228789104831424430256910701/118632218664960000)+x*((53393507488534970319772711/217492400885760000)+x*((450360830898744901996173769/16964407269089280000)+x*((9864029506023649477/4045617576000)+x*((247716833273024423515231/1304954405314560000)+x*((246777642595595868811/19772036444160000)+x*((7429570563445686133/10784747151360000)+x*((4812467524963463/152092588032000)+x*((141705114109462031/118632218664960000)+x*((5497261883/150958080000)+x*((7976559535121/9125555281920000)+x*((6915714901/434984801771520)+x*((53743845977/260990881062912000)+x*((367970047/217492400885760000)+x*(4163581/628311380336640000))))))))))))))))))))))))))) else (524668229316+x*((28949609157320/13)+x*((26125787518380494579/5855850)+x*((17526588491256096454379/3121618500)+x*((15679362974231529904616063/3146591448000)+x*((13057496927085960561810503/3933239310000)+x*((488708344918200257426596373/283193230320000)+x*((49314015403718898273525017/68652904320000)+x*((903896789164123246341584461/3707256833280000)+x*((12072780609188218167884411/176536039680000)+x*((59333308659853706112823579/3707256833280000)+x*((942871550248945311511961/299576309760000)+x*((2384766637840886519848387/4562777640960000)+x*((7995317856460400366789521/108746200442880000)+x*((148848242608996862041089799/16964407269089280000)+x*((6899172815673580068577/7767585745920000)+x*((6209082518810169301717/81559650332160000)+x*((12441414373861019/2260177920000)+x*((39598296096804491663/118632218664960000)+x*((166360027989549773/9886018222080000)+x*((41324016603346051/59316109332480000)+x*((2988180620123/128389847040000)+x*((72572135486663/118632218664960000)+x*((27585488911/2265545842560000)+x*((4328168521/25095277025280000)+x*((42106003/27186550110720000)+x*(4163581/628311380336640000)))))))))))))))))))))))))))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdGap7M964",
+      "path": "research/MarkovThirdGap7M964.lean",
+      "bytes": 4699,
+      "sha256": "ac29457907f1f7d4e5f76e07996c04efdd26545eba4a7561486a9734171a4fb0",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdGap7M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_identity7M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_nonneg7M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_horizontal7M964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207286315028000.json",
+          "sha256": "a658ae59ecac84a1ec7f88a6c064b9fbc222bacb4b557ca481d0f20720b32759",
+          "source_sha256": "ac29457907f1f7d4e5f76e07996c04efdd26545eba4a7561486a9734171a4fb0",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "ac29457907f1f7d4e5f76e07996c04efdd26545eba4a7561486a9734171a4fb0"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdGap7M964.olean",
+      "object_sha256": "0885397b697784ab66062e89ac3d0e6215a6f96c2a99f361987a0ca3b43161aa",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207286315028000.json",
+      "historical_successful_source_versions": [
+        "ac29457907f1f7d4e5f76e07996c04efdd26545eba4a7561486a9734171a4fb0"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdColumn7M964",
+        "MarkovThirdColumn8M964",
+        "MarkovThirdColumn9M964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "third_gap_identity7M964",
+          "header": "theorem third_gap_identity7M964 (x : ℚ) (r : Bool) :\n thirdColumn8M964 x r^2-thirdColumn7M964 x r*thirdColumn9M964 x r=thirdGap7M964 x r",
+          "block_sha256": "2d5ae989b1bbf867da7e4aa2839e6fb079c0abb884a2aa37b533878e37fbbb20",
+          "block_characters": 281
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_nonneg7M964",
+          "header": "theorem third_gap_nonneg7M964 (x : ℚ) (r : Bool) (hx : 0 ≤ x) : 0 ≤ thirdGap7M964 x r",
+          "block_sha256": "6445584319884fe9adcf7c7fb0fa118b661de2a646f26098d85b8107352b6053",
+          "block_characters": 181
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_horizontal7M964",
+          "header": "theorem source_third_horizontal7M964 (d : ℕ) (r : Bool) :\n threeRawM9E2 (thirdQM964 d r) r 7 (thirdJM964 d r)*\n threeRawM9E2 (thirdQM964 d r) r 9 (thirdJM964 d r) ≤\n threeRawM9E2 (thirdQM964 d r) r 8 (thirdJM964 d r)^2",
+          "block_sha256": "c584a983d10f367b4d99f9309d043e03fdf313787aebfc1cb9ced48bf7ff85fa",
+          "block_characters": 656
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdGap7M964",
+          "header": "def thirdGap7M964 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "df309cf25163bed6d0255aab9953d6afe2e1208302b143c3af42679ac088f2f4",
+          "block_characters": 3124,
+          "definition_text": "def thirdGap7M964 (x : ℚ) (r : Bool) : ℚ :=\n if r then (18356024413584+x*((50709832071022234/595)+x*((7333159209607707902929/38984400)+x*((25634185370168181180370013/97558461000)+x*((25403191890778151748106475292443/97355539401120000)+x*((229193160676017726072858865389977/1168266472813440000)+x*((814063822954322115629140428384613/7009598836880640000)+x*((14679171522228826482922974762791/264097915361280000)+x*((34727347285385755943547493498507/1584587492167680000)+x*((7391018440415991723282734852257/1023887302631424000)+x*((374018143027804528262086337131903/186347489078919168000)+x*((80444216310052575968273252632091/169406808253562880000)+x*((3620619178934547283771383081917/37645957389680640000)+x*((2859846999840233302430767051/170729965486080000)+x*((1668307549479176374033492147/662833983651840000)+x*((88744818808539509047409403401/271430516305428480000)+x*((69834439390189300406044213783/1900013614137999360000)+x*((115490711240968876356131316119/32300231440345989120000)+x*((3237169226788244338493638427/10766743813448663040000)+x*((122843522600917851659503/5634088861040640000)+x*((22963602124533159680641/16902266583121920000)+x*((179606735227463244013/2482151036682240000)+x*((23083101420025948321/7058617010565120000)+x*((28049763847371808403/225875744338083840000)+x*((3238074244514860307/828211062572974080000)+x*((1693493576071243/16902266583121920000)+x*((103243434123811/50706799749365760000)+x*((87373532920301/2768591266315370496000)+x*((33953653545569/96900694321037967360000)+x*((60110557583/24225173580259491840000)+x*(3554489/422225247586222080000))))))))))))))))))))))))))))))) else (780335803104+x*((7381909068342292/1785)+x*((67548052607629972309/6497400)+x*((86950002263721168309726647/5268156894000)+x*((150803220489329646034925431139/8112961616760000)+x*((769843490227746967193266270003/48677769700560000)+x*((8233703001232417099908953705387/778844315208960000)+x*((10842708832464092342858887423/1901939719680000)+x*((48667295772479076593122998773/19257139661760000)+x*((15538189988678658734347737655513/16638168667760640000)+x*((67713876934820867660777588328281/232934361348648960000)+x*((650833747154086077471163865471/8470340412678144000)+x*((32659623530387174045712003649/1882297869484032000)+x*((1808499309268183684973576797/537799391281152000)+x*((75114379481520965564183539/133841477468160000)+x*((137122595052244146620123623/1696440726908928000)+x*((7643843168047564816043338207/760005445655199744000)+x*((3492528035400689525369305321/3230023144034598912000)+x*((2160514345708434856974054877/21533487626897326080000)+x*((47432194696484110970489/5915793304092672000)+x*((5204414566824033785527/9465269286548275200)+x*((103873205242000034387/3226796347686912000)+x*((721645388041553415397/451751488676167680000)+x*((375736893385454941/5646893608452096000)+x*((3802601738254172071/1656422125145948160000)+x*((3810471525661139/59157933040926720000)+x*((338843944307941/236631732163706880000)+x*((83963082473573/3460739082894213120000)+x*((57025558543279/193801388642075934720000)+x*((110203388969/48450347160518983680000)+x*(3554489/422225247586222080000)))))))))))))))))))))))))))))))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdGap8M964",
+      "path": "research/MarkovThirdGap8M964.lean",
+      "bytes": 5668,
+      "sha256": "d727c021da177b0210aeaf04a0403e63d8e3ea65ec6f663341cff5c309564c9f",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdGap8M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_identity8M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_nonneg8M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_horizontal8M964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207293397504000.json",
+          "sha256": "9f98059b33dfd8d8fc4f7d0f8a37232bb8298041a5c25ff18966966237275afc",
+          "source_sha256": "d727c021da177b0210aeaf04a0403e63d8e3ea65ec6f663341cff5c309564c9f",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "d727c021da177b0210aeaf04a0403e63d8e3ea65ec6f663341cff5c309564c9f"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdGap8M964.olean",
+      "object_sha256": "2d806c1821cb347a56beba385db81f90bf7f364479ab317546b94d5d174d4a5d",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207293397504000.json",
+      "historical_successful_source_versions": [
+        "d727c021da177b0210aeaf04a0403e63d8e3ea65ec6f663341cff5c309564c9f"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdColumn8M964",
+        "MarkovThirdColumn9M964",
+        "MarkovThirdColumn10M964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "third_gap_identity8M964",
+          "header": "theorem third_gap_identity8M964 (x : ℚ) (r : Bool) :\n thirdColumn9M964 x r^2-thirdColumn8M964 x r*thirdColumn10M964 x r=thirdGap8M964 x r",
+          "block_sha256": "8677f0d5317f5f303c54aa6912f70aa4b37e7d4c60e4eb3f24793d9e109cf45e",
+          "block_characters": 283
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_nonneg8M964",
+          "header": "theorem third_gap_nonneg8M964 (x : ℚ) (r : Bool) (hx : 0 ≤ x) : 0 ≤ thirdGap8M964 x r",
+          "block_sha256": "a9c95eab42d684922d0ca1a0fab51f0df53892d167916c1c6aa2524e67d69e4d",
+          "block_characters": 181
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_horizontal8M964",
+          "header": "theorem source_third_horizontal8M964 (d : ℕ) (r : Bool) :\n threeRawM9E2 (thirdQM964 d r) r 8 (thirdJM964 d r)*\n threeRawM9E2 (thirdQM964 d r) r 10 (thirdJM964 d r) ≤\n threeRawM9E2 (thirdQM964 d r) r 9 (thirdJM964 d r)^2",
+          "block_sha256": "6273e6f83893644bf27e9b3a07b5e76fb9dd757012ec966fbeda707a1997e814",
+          "block_characters": 659
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdGap8M964",
+          "header": "def thirdGap8M964 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "2489330bf876a5b532864e84702bc5760014094ce5fa64867385e67e945644c4",
+          "block_characters": 4087,
+          "definition_text": "def thirdGap8M964 (x : ℚ) (r : Bool) : ℚ :=\n if r then (20904557587056+x*((1341918125518221394/11305)+x*((311347504931099150775881/968612400)+x*((171991405291451577974473501/311095512000)+x*((1004285852329756905457052760567151/1479804198897024000)+x*((627715967822919281034674690053301/990940311761400000)+x*((1245824911812587914416411314460560803/2663647558014643200000)+x*((4484761598156627094938722083385325831/15981885348087859200000)+x*((389053537352847531065655230194043317/2789565442575335424000)+x*((67027225263311613689305742647274333509/1150695745062325862400000)+x*((570813189090781092626917804058567983/27616697881495820697600)+x*((11920006208204658445234993317917027/1896751228124712960000)+x*((21009054949595145854187429081564993511/12746168252998071091200000)+x*((5621487376193661280375452723056051/14995492062350671872000)+x*((6882087584947197204641762557134779/92699405476349607936000)+x*((65477420410102818360379145228585389/5098467301199228436480000)+x*((25464510110674073765336637513851513/13092360477153574256640000)+x*((778339069024281788968041546703/3013432670819450880000)+x*((173096262323694092704584041873071/5750615750252144099328000)+x*((68016683394191614680771392469391/22093358305196656558080000)+x*((24405373430369588310326999669143/88373433220786626232320000)+x*((38346346110562298543390985193/1767468664415732524646400)+x*((43869586935175912658087759929/29457811073595542077440000)+x*((7204034986733998148978339/80928052399987752960000)+x*((62709733019494950613177049/13595912803197942497280000)+x*((6998841096622830077349577/33989782007994856243200000)+x*((534132445003510984953629/67979564015989712486400000)+x*((2154989280395171014481/8497445501998714060800000)+x*((10971069255342605053/1606789694923393204224000)+x*((279366362602812403/1856584731529130803200000)+x*((700764833120006537/265120299662359878696960000)+x*((1179182862330923/33140037457794984837120000)+x*((1827337133309669/5302405993247197573939200000)+x*((226681089269/106048119864943951478784000)+x*(9653587/1514082504160617431040000))))))))))))))))))))))))))))))))))) else (475845939712+x*((320103170411250512/101745)+x*((5387071250421100756198/544844475)+x*((25245734784399948913401947/1283268987000)+x*((10303178854365390089722127989363/369951049724256000)+x*((103656156240514589559818240580647/3468291091164900000)+x*((5614722477856282962332497704557633/221970629834553600000)+x*((192503739145210927026097470194029/11098531491727680000)+x*((1884067045416666229235394850539555323/191782624177054310400000)+x*((447094783138728161631441551029267579/95891312088527155200000)+x*((12943889836716835959579820562427696137/6904174470373955174400000)+x*((1026357776466644243440881094337468843/1593271031624758886400000)+x*((303397169446744177383603212599402463/1593271031624758886400000)+x*((103428134455451383813463316181762441/2124361375499678515200000)+x*((6890453085111482364117256873766953/637308412649903554560000)+x*((10666789777187296335306815679477821/5098467301199228436480000)+x*((10417059533350917929225638962409711/29457811073595542077440000)+x*((14308213649466898261150218676639/273601960435871907840000)+x*((2142090653184367314090044986746193/316283866263867925463040000)+x*((1131589201339842191060908688179/1472890553679777103872000)+x*((3371298671678949781914627156053/44186716610393313116160000)+x*((73176826184519732838161286689/11046679152598328279040000)+x*((547389913045464762196262641/1091030039762797854720000)+x*((56152114656437306824523551/1699489100399742812160000)+x*((1600482582075877925948351/849744550199871406080000)+x*((174456546131040527628013/1888321222666380902400000)+x*((262997624426276379023273/67979564015989712486400000)+x*((17894165418048632687/130729930799980216320000)+x*((891556773105208011299/220933583051966565580800000)+x*((8060068283912637049/82850093644487462092800000)+x*((2475808516935413911/1325601498311799393484800000)+x*((1516414483160911/55233395762991641395200000)+x*((384599018613869/1325601498311799393484800000)+x*((2600792357231/1325601498311799393484800000)+x*(9653587/1514082504160617431040000)))))))))))))))))))))))))))))))))))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdGap9M964",
+      "path": "research/MarkovThirdGap9M964.lean",
+      "bytes": 6674,
+      "sha256": "b336f90fb40326c9c1390599d2facc0532c84793bda600a8077ef7a3f034eb84",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "thirdGap9M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_identity9M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_nonneg9M964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_horizontal9M964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207300720507000.json",
+          "sha256": "e49b2a2cbaa0e86e616bcb936d162711007116554059a34a4b513798a7381ad0",
+          "source_sha256": "b336f90fb40326c9c1390599d2facc0532c84793bda600a8077ef7a3f034eb84",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "b336f90fb40326c9c1390599d2facc0532c84793bda600a8077ef7a3f034eb84"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdGap9M964.olean",
+      "object_sha256": "fda43a9055bf046b638c164ec2d39bdfcb41217f9c3b54c74183fbf3011a3517",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207300720507000.json",
+      "historical_successful_source_versions": [
+        "b336f90fb40326c9c1390599d2facc0532c84793bda600a8077ef7a3f034eb84"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdColumn9M964",
+        "MarkovThirdColumn10M964",
+        "MarkovThirdColumn11M964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "third_gap_identity9M964",
+          "header": "theorem third_gap_identity9M964 (x : ℚ) (r : Bool) :\n thirdColumn10M964 x r^2-thirdColumn9M964 x r*thirdColumn11M964 x r=thirdGap9M964 x r",
+          "block_sha256": "6014da433e7fc4da0be4d758e2cca5f493822cae7d519ee71769be93034e1e65",
+          "block_characters": 285
+        },
+        {
+          "kind": "theorem",
+          "name": "third_gap_nonneg9M964",
+          "header": "theorem third_gap_nonneg9M964 (x : ℚ) (r : Bool) (hx : 0 ≤ x) : 0 ≤ thirdGap9M964 x r",
+          "block_sha256": "3f5aa78c703ba54ce4790e343ac9ac37560c6e30bae6821c20a8bc6e26ae638b",
+          "block_characters": 181
+        },
+        {
+          "kind": "theorem",
+          "name": "source_third_horizontal9M964",
+          "header": "theorem source_third_horizontal9M964 (d : ℕ) (r : Bool) :\n threeRawM9E2 (thirdQM964 d r) r 9 (thirdJM964 d r)*\n threeRawM9E2 (thirdQM964 d r) r 11 (thirdJM964 d r) ≤\n threeRawM9E2 (thirdQM964 d r) r 10 (thirdJM964 d r)^2",
+          "block_sha256": "5863c5ffa269975a0147ca3dc16554e1191d109ae25b3fd9c84120ffe243f791",
+          "block_characters": 662
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "thirdGap9M964",
+          "header": "def thirdGap9M964 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "f25f916b2e99663487ea2088a0852b994e0f050b813713350d4e9e50a1151ff1",
+          "block_characters": 5087,
+          "definition_text": "def thirdGap9M964 (x : ℚ) (r : Bool) : ℚ :=\n if r then (10210169816704+x*((142027788542862274/1995)+x*((746950419967982262626113/3152179800)+x*((1444545684466373040888487321993/2879655606828000)+x*((30694823246619057929142612979323697/40430364719865120000)+x*((6607041544603982801450488749973182403/7547001414374822400000)+x*((11417821317319017317984800301414184971599/14263832673168414336000000)+x*((667180859327717162083398478974515778973/1118731974366150144000000)+x*((7434658008833136243102910239501169905697/20137175538590702592000000)+x*((806480569684861878116478901594104250873/4184348163863003136000000)+x*((42657385119367358040379973630639745861631/497100561866924772556800000)+x*((56746365954272685134123690558909358073/1726043617593488793600000)+x*((68372416531182042673823221182357132341299/6263467079523252134215680000)+x*((659589371336402512513418898033737367629431/208782235984108404473856000000)+x*((19666084972705033579216595948170337793869/24562615998130400526336000000)+x*((272799815595124079290002474061719931607/1529540190359768530944000000)+x*((4178854872645410873873262371298229904233/119304134848061945413632000000)+x*((644647272547035339678844726330915738699/106048119864943951478784000000)+x*((37436698686733059619404759556909983272789/40086189308948813658980352000000)+x*((262612547602551668240803560098898500507/2065046115915544946068684800000)+x*((552421777116859229644337881013814872137/35966219852195741144029593600000)+x*((59338888536886183617269833901576179/36056360754080943502786560000)+x*((67662304509354029803405227246487921/432676329048971322033438720000)+x*((7756993898501874236740891436227/589156221471910841548800000)+x*((163802307765473541202308759604081/167025788787286723579084800000)+x*((14360402767554776669793684864073/222701051716382298105446400000)+x*((8310018073912596001979340018769/2227010517163822981054464000000)+x*((772065643785539336633290777/4078773840959382749184000000)+x*((20814962818814425127541971/2485502809334623862784000000)+x*((2046945589603476790199/6376149583029338112000000)+x*((2493350411249118091501771/235801113582051845052825600000)+x*((19776838365183017476681/66810315514914689431633920000)+x*((289934520089633730713/41756447196821680894771200000)+x*((42589379036926649953/318144359594831854436352000000)+x*((3942112880376226277/1908866157568991126618112000000)+x*((44174442334827451/1802818037704047175139328000000)+x*((1625248309601963/7743922934683293547757568000000)+x*((65579623887923/56788768187677486016888832000000)+x*(4409003639977/1438648794087829645761183744000000))))))))))))))))))))))))))))))))))))))) else (104376871456+x*((1752299517129226/1995)+x*((143554994075956973021/40937400)+x*((101975491234948560497003941123/11518622427312000)+x*((4497968178713788399661916973901641/283012553039055840000)+x*((40807754463385530836761427721873263/1886750353593705600000)+x*((165652625997639171884089137326829445313/7131916336584207168000000)+x*((11344881818554367577277192064469197/560767906950451200000)+x*((293565430040258218112989693428520402801/20137175538590702592000000)+x*((50751826510608914104779521206852047781/5753478725311629312000000)+x*((5634249636220820277000854312108472227161/1242751404667311931392000000)+x*((413683074640935448909335436812182119489/207125234111218655232000000)+x*((118953457614440765124915544704778853805253/156586676988081303355392000000)+x*((12150096307213327970592745153448522621/48418885896129036288000000)+x*((15101890882907609285337842782831983620639/208782235984108404473856000000)+x*((423298005429568792976012674767967537/23174851369087401984000000)+x*((241785026884259392311451525173062771993/59652067424030972706816000000)+x*((6302461364691087874481916467230352171/7953608989870796360908800000)+x*((2740648704476635149964090267421071782367/20043094654474406829490176000000)+x*((33839670335389970901745503915311725051/1622536233933642457625395200000)+x*((809720645673974064326407313192411802761/287729758817565929152236748800000)+x*((20194170032423695251487804696248119/60093934590134905837977600000)+x*((76810150897176224620735222831686593/2163381645244856610167193600000)+x*((8792979718613573387723213531611/2651202996623598786969600000)+x*((182752793936965233391812873447961/668103155149146894316339200000)+x*((8321028600813092320191361223/418610999466884018995200000)+x*((176636890605260320102271799991/139188157322738936315904000000)+x*((3213511487245101099146377/45319709343993141657600000)+x*((156806552406603264483914257/45449194227833122062336000000)+x*((142625427432866395839781/981927035786518069248000000)+x*((105170012868266413062355537/20043094654474406829490176000000)+x*((19197429684071845196791/119304134848061945413632000000)+x*((13795861407608684872561/3340515775745734471581696000000)+x*((576814392367324907/6628007491558996967424000000)+x*((1399117694356004041/954433078784495563309056000000)+x*((7329726937050307/386318150936581537529856000000)+x*((120700225512037583/681465218252129832202665984000000)+x*((344393695729/324507246786728491525079040000)+x*(4409003639977/1438648794087829645761183744000000)))))))))))))))))))))))))))))))))))))))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdSmallM964",
+      "path": "research/MarkovThirdSmallM964.lean",
+      "bytes": 1140,
+      "sha256": "5dcd5c47c37429cb0dd1ca4bc54b3d949c860fe874027625fce9df8cae37f425",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "third_small_boundedM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_small_allM964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207167635075000.json",
+          "sha256": "fb27e18380b811f876f1018033693bbb9e4cbc0c4853cd1c9d830933ef141661",
+          "source_sha256": "5dcd5c47c37429cb0dd1ca4bc54b3d949c860fe874027625fce9df8cae37f425",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "5dcd5c47c37429cb0dd1ca4bc54b3d949c860fe874027625fce9df8cae37f425"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdSmallM964.olean",
+      "object_sha256": "0b94bec87458c4b3d7ec21cf518f98a81a0bfd25f3eaf7c31866b20a1864b80c",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207167635075000.json",
+      "historical_successful_source_versions": [
+        "5dcd5c47c37429cb0dd1ca4bc54b3d949c860fe874027625fce9df8cae37f425"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdOutputM964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "third_small_boundedM964",
+          "header": "theorem third_small_boundedM964 (q i : ℕ) (r : Bool)\n (hq : 3 ≤ q) (hq5 : q ≤ 5) (hi : i ≤ 11) :\n threeRawM9E2 q r i (q+3)*threeRawM9E2 q r (i+2) (q+3) ≤\n threeRawM9E2 q r (i+1) (q+3)^2",
+          "block_sha256": "aa133606fca11a293e3a8c30fbf9633cec4cfc9d74968841770fa89d8b81e662",
+          "block_characters": 253
+        },
+        {
+          "kind": "theorem",
+          "name": "third_small_allM964",
+          "header": "theorem third_small_allM964 (q i : ℕ) (r : Bool) (hq : 1 ≤ q) (hq5 : q ≤ 5) :\n threeRawM9E2 q r i (q+3)*threeRawM9E2 q r (i+2) (q+3) ≤\n threeRawM9E2 q r (i+1) (q+3)^2",
+          "block_sha256": "2319b030c4b0ca4095c9689d523d0d45d403e7194f299061e716e3bb7a63b81e",
+          "block_characters": 557
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovThirdClosedM964",
+      "path": "research/MarkovThirdClosedM964.lean",
+      "bytes": 3717,
+      "sha256": "2bf381a3242d2bda000df308ea428c069ec317efa563abc92c16b8852c59a1e1",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "third_parameter_row_closedM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "third_correction_closedM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_and_three_correctionsM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_third_pathM964"
+        },
+        {
+          "kind": "def",
+          "name": "ThreeBeyondThirdM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_beyond_thirdM964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207335623549000.json",
+          "sha256": "ef9e7ab3d7e633b6e58fe34671834a593fc83c32d930c37a6050803978578e9c",
+          "source_sha256": "2bf381a3242d2bda000df308ea428c069ec317efa563abc92c16b8852c59a1e1",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "2bf381a3242d2bda000df308ea428c069ec317efa563abc92c16b8852c59a1e1"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovThirdClosedM964.olean",
+      "object_sha256": "bb485066a62ef3415a3902052e6261e65ab48d9e398a605a52e3a36ab30550c4",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207335623549000.json",
+      "historical_successful_source_versions": [
+        "2bf381a3242d2bda000df308ea428c069ec317efa563abc92c16b8852c59a1e1"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovThirdHighM964",
+        "MarkovThirdSmallM964",
+        "MarkovThirdGap2M964",
+        "MarkovThirdGap3M964",
+        "MarkovThirdGap4M964",
+        "MarkovThirdGap5M964",
+        "MarkovThirdGap6M964",
+        "MarkovThirdGap7M964",
+        "MarkovThirdGap8M964",
+        "MarkovThirdGap9M964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "third_parameter_row_closedM964",
+          "header": "theorem third_parameter_row_closedM964 (d i : ℕ) (r : Bool) :\n threeRawM9E2 (thirdQM964 d r) r i (thirdJM964 d r)*\n threeRawM9E2 (thirdQM964 d r) r (i+2) (thirdJM964 d r) ≤\n threeRawM9E2 (thirdQM964 d r) r (i+1) (thirdJM964 d r)^2",
+          "block_sha256": "7dbf0c1a7ff08338740138e95f30d3824d264ea94a1684a267dc8e7a5338093c",
+          "block_characters": 768
+        },
+        {
+          "kind": "theorem",
+          "name": "third_correction_closedM964",
+          "header": "theorem third_correction_closedM964 (q i : ℕ) (r : Bool) (hq : 1 ≤ q) :\n threeRawM9E2 q r i (q+3)*threeRawM9E2 q r (i+2) (q+3) ≤\n threeRawM9E2 q r (i+1) (q+3)^2",
+          "block_sha256": "0fc53e2de12ed87412d91ed420358a9f79c86ce1720868612157a72b521a1382",
+          "block_characters": 566
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_and_three_correctionsM964",
+          "header": "theorem lower_and_three_correctionsM964 (q i j : ℕ) (r : Bool)\n (hq : 1 ≤ q) (hj : j ≤ q+3) :\n threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2",
+          "block_sha256": "376196497ee91037c2284ba9a7767d0f57f061165f104c6ee759ec45e6de7b17",
+          "block_characters": 312
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_third_pathM964",
+          "header": "theorem source_lower_third_pathM964 (path : List Bool)\n (ha : (frame path).mid.a=3) (i j : ℕ) (hj : 3*j ≤ (frame path).mid.b+9) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) j^2",
+          "block_sha256": "c7f6d08fa9debfd45170226d3628d7b9a176496dbf105145dab16336acd253a7",
+          "block_characters": 428
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_beyond_thirdM964",
+          "header": "theorem root_iff_beyond_thirdM964 : Conjecture63 ↔ ThreeBeyondThirdM964 ∧ OtherFourM9E2",
+          "block_sha256": "c8e690ab0585119980f958b62705acfd7472edb15bb0179df586cb6234b59079",
+          "block_characters": 500
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "ThreeBeyondThirdM964",
+          "header": "def ThreeBeyondThirdM964 : Prop",
+          "block_sha256": "b6389cd141b3175e29a9673fa8828a70997d084b1444d28cb1e35e8e79a1c8cc",
+          "block_characters": 459,
+          "definition_text": "def ThreeBeyondThirdM964 : Prop := ∀ q : ℕ, 1 ≤ q → ∀ r,\n (∀ i j, q<j → j≠5 → j≠q+1 → j≠q+2 → j≠q+3 →\n   threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2) ∧\n (∀ i j, ¬(((i=3 ∨ i=4) ∧ j+1 ≤ q) ∨ (5 ≤ i ∧ i ≤ 8 ∧ j+2 ≤ q)) →\n   threeRawM9E2 q r i j*threeRawM9E2 q r i (j+2) ≤ threeRawM9E2 q r i (j+1)^2) ∧\n (∀ i j, ¬(3 ≤ i ∧ i ≤ 6 ∧ j+2 ≤ q) →\n   threeRawM9E2 q r i (j+2)*threeRawM9E2 q r (i+2) j ≤\n     threeRawM9E2 q r (i+1) (j+1)^2)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLiftBudgetM964",
+      "path": "research/MarkovLiftBudgetM964.lean",
+      "bytes": 3506,
+      "sha256": "79c7257601ec162529e38d54e324cc276d6adc2b260891aec23e7cd0f55a7dc7",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "LiftBudgetM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_scaledM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_all_cutsM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_weighted_lcM964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207336886769000.json",
+          "sha256": "3a729278a1d08b69a11457b1a58f0d7a21dce8573c78c6ce5b567bae9e40f151",
+          "source_sha256": "79c7257601ec162529e38d54e324cc276d6adc2b260891aec23e7cd0f55a7dc7",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "79c7257601ec162529e38d54e324cc276d6adc2b260891aec23e7cd0f55a7dc7"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovLiftBudgetM964.olean",
+      "object_sha256": "2d8991710cd9e2c7a8fcd3ed7839eaf599a81f33040bf616844445ae4a93343e",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207336886769000.json",
+      "historical_successful_source_versions": [
+        "79c7257601ec162529e38d54e324cc276d6adc2b260891aec23e7cd0f55a7dc7"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovTwinKernelM964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "budget_scaledM964",
+          "header": "theorem budget_scaledM964 (j s : ℕ) (B U : ℝ) (R : ℝ[X])\n (hB : 0 ≤ B) (hU : 0 ≤ U) (hbase : B ≤ ((s+j+3).choose j:ℝ))\n (hR : LiftBudgetM964 j s U R) (k : ℕ) :\n B*(liftPolyM7E2 j s+R).coeff k ≤ (B+U)*(liftPolyM7E2 j s).coeff k",
+          "block_sha256": "d03cc0911518c21c90cee336b4243c889aaa28a8f185f0bb561b9094264afb62",
+          "block_characters": 845
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_all_cutsM964",
+          "header": "theorem budget_all_cutsM964 (j s : ℕ) (B U : ℝ) (R0 R1 R2 : ℝ[X])\n (hs : s ≤ j) (hB : 0 < B) (hU : 0 ≤ U)\n (hbase : B ≤ ((s+j+3).choose j:ℝ))\n (hR0 : LiftBudgetM964 j s U R0) (hR1 : ∀ k, 0 ≤ R1.coeff k)\n (hR2 : LiftBudgetM964 j (s+2) U R2)\n (hmargin : (B+U)^2*kernelScaleMA64 j s ≤\n   B^2*kernelScaleMA64 j s+(B+U)^2*topGapMA64 j s)\n (h k : ℕ) :\n 0 ≤ ((cutPolyMFEE h (liftPolyM7E2 j (s+1)+R1))^2-\n   cutPolyMFEE h (liftPolyM7E2 j s+R0)*cutPolyMFEE h (liftPolyM7E2 j (s+2)+R2)).coeff k",
+          "block_sha256": "7e818ce74682a754fcffa095047e83fba846a2912c10c33287a91c3747186028",
+          "block_characters": 1393
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_weighted_lcM964",
+          "header": "theorem budget_weighted_lcM964 (j s : ℕ) (B U : ℝ) (R0 R1 R2 : ℝ[X])\n (hs : s ≤ j) (hB : 0 < B) (hU : 0 ≤ U)\n (hbase : B ≤ ((s+j+3).choose j:ℝ))\n (hR0 : LiftBudgetM964 j s U R0) (hR1 : ∀ k, 0 ≤ R1.coeff k)\n (hR2 : LiftBudgetM964 j (s+2) U R2)\n (hmargin : (B+U)^2*kernelScaleMA64 j s ≤\n   B^2*kernelScaleMA64 j s+(B+U)^2*topGapMA64 j s)\n (f : ℤ → ℝ) (hf : CrossLC f) (hp : ∀ k, 0 ≤ f k) :\n (weightPolyMFEE (fun k => f k) (liftPolyM7E2 j s+R0)).eval 1*\n (weightPolyMFEE (fun k => f k) (liftPolyM7E2 j (s+2)+R2)).eval 1 ≤\n (weightPolyMFEE (fun k => f k) (liftPolyM7E2 j (s+1)+R1)).eval 1^2",
+          "block_sha256": "4a10795830306944b144f1b4e0603e50e900975d98c29dec847121e3e251fbea",
+          "block_characters": 708
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "LiftBudgetM964",
+          "header": "def LiftBudgetM964 (j s : ℕ) (U : ℝ) (R : ℝ[X]) : Prop",
+          "block_sha256": "fa8e4920ddfaff931fc5857e892cb1e9ede7ca0cdd61bd3c936d5b0e3669e410",
+          "block_characters": 133,
+          "definition_text": "def LiftBudgetM964 (j s : ℕ) (U : ℝ) (R : ℝ[X]) : Prop :=\n ∀ k, 0 ≤ R.coeff k ∧ R.coeff k ≤ if k ≤ s then U*(j.choose (s-k):ℝ) else 0"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCorrectionBudgetM964",
+      "path": "research/MarkovCorrectionBudgetM964.lean",
+      "bytes": 3965,
+      "sha256": "0ffd05c5cd69d5a1e8d50df893eeb5991280b97f3e9ded390d4260a516250b2e",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "correctionKernelM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_sumM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_kernel_coeffM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_kernel_weightM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_kernel_budgetM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_kernel_nonnegM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_row_weightM964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207524124700000.json",
+          "sha256": "857ab489974275bc5024d99487554233a0cc22152d089ea23b7a34a28e3bc452",
+          "source_sha256": "41fbd3968a477a5436bda041aa5930eeaf487571b472dcbf4d6c5f619436da23",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "41fbd3968a477a5436bda041aa5930eeaf487571b472dcbf4d6c5f619436da23"
+        },
+        {
+          "path": "build-1792207569345769000.json",
+          "sha256": "7be8134306abceb8ae3eea81e44757497eed5a02368ee4f74347d714afdabfe7",
+          "source_sha256": "0ffd05c5cd69d5a1e8d50df893eeb5991280b97f3e9ded390d4260a516250b2e",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "0ffd05c5cd69d5a1e8d50df893eeb5991280b97f3e9ded390d4260a516250b2e"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovCorrectionBudgetM964.olean",
+      "object_sha256": "6bd4caa1873b4572828707497cb2fb868b065dcfa377a713fa96e20ac231685c",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207569345769000.json",
+      "historical_successful_source_versions": [
+        "0ffd05c5cd69d5a1e8d50df893eeb5991280b97f3e9ded390d4260a516250b2e"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovLiftBudgetM964",
+        "MarkovThirdOutputM964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "weight_sumM964",
+          "header": "theorem weight_sumM964 (w : ℕ → ℝ) (I : Finset ℕ) (P : ℕ → ℝ[X]) :\n weightPolyMFEE w (∑ k ∈ I, P k)=∑ k ∈ I, weightPolyMFEE w (P k)",
+          "block_sha256": "e2a999330f98449789b33eb483b157e49b02e5e44c09b613d107ca92f3b639f7",
+          "block_characters": 198
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_kernel_coeffM964",
+          "header": "theorem correction_kernel_coeffM964 (d s k : ℕ) (Q : ℝ[X]) :\n (correctionKernelM964 d s Q).coeff k=\n (if k=s then absorbedExtraM418 d s (Q.coeff 0) else 0)+\n (if k ≤ s then Q.coeff (s-k+1) else 0)",
+          "block_sha256": "09b194d48fd209b7b2dca352a5a9b926957dd10554a546e7fe107d2c3c5b484f",
+          "block_characters": 369
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_kernel_weightM964",
+          "header": "theorem correction_kernel_weightM964 (d s : ℕ) (Q : ℝ[X]) :\n (weightPolyMFEE (fun k => zchooseM37B d k) (correctionKernelM964 d s Q)).eval 1=\n ((X+1)^d*Q).coeff (s+1)",
+          "block_sha256": "cf73f5ab54590a43a0f43ecd9da4eb313cd3da00c08de42c586d791a18ad51ae",
+          "block_characters": 780
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_kernel_budgetM964",
+          "header": "theorem correction_kernel_budgetM964 (d j s : ℕ) (Q : ℝ[X]) (c : ℝ)\n (hQ : ∀ k, 0 ≤ Q.coeff k) (hc : 0 ≤ c)\n (hcoeff : ∀ m, Q.coeff (m+1) ≤ c*(j.choose m:ℝ)) :\n LiftBudgetM964 j s (Q.coeff 0*d/(s+1)+c) (correctionKernelM964 d s Q)",
+          "block_sha256": "98ade1805f93b68defa200a4b5655e19751edcbd04276fe616f3935b07d42321",
+          "block_characters": 1287
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_kernel_nonnegM964",
+          "header": "theorem correction_kernel_nonnegM964 (d s k : ℕ) (Q : ℝ[X])\n (hQ : ∀ k, 0 ≤ Q.coeff k) : 0 ≤ (correctionKernelM964 d s Q).coeff k",
+          "block_sha256": "e2997e6103db89434529f4a8eca80d222c4d7f4644e46302312a79ce2c0c4dd4",
+          "block_characters": 362
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_row_weightM964",
+          "header": "theorem correction_row_weightM964 (d j s : ℕ) (Q : ℝ[X]) :\n (weightPolyMFEE (fun k => zchooseM37B d k)\n   (liftPolyM7E2 j s+correctionKernelM964 d s Q)).eval 1=\n (liftOutputMAE9 d j s:ℝ)+(X^2*((X+1)^d*Q)).coeff (s+3)",
+          "block_sha256": "8031cb2ac536f57779273702ae213e8f4f92c326db8f9d33c19712b9ed4fcbf8",
+          "block_characters": 374
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "correctionKernelM964",
+          "header": "def correctionKernelM964 (d s : ℕ) (Q : ℝ[X]) : ℝ[X]",
+          "block_sha256": "d51b326dbb08d025ff4a956d0b59347ca11019bd8a294d17668a7a1ad6dd4acf",
+          "block_characters": 143,
+          "definition_text": "def correctionKernelM964 (d s : ℕ) (Q : ℝ[X]) : ℝ[X] :=\n C (absorbedExtraM418 d s (Q.coeff 0))*X^s+\n ∑ k ∈ range (s+1), C (Q.coeff (s-k+1))*X^k"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovFactoredRowM964",
+      "path": "research/MarkovFactoredRowM964.lean",
+      "bytes": 3054,
+      "sha256": "88a214a32fb824bb4d012b935b79ed018256f7b1f30ceb0263b4a65de6dfe997",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "budget_monoM964"
+        },
+        {
+          "kind": "def",
+          "name": "factoredValueM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "factored_value_lcM964"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_factored_row_lcM964"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792207599917890000.json",
+          "sha256": "d09326eee119b14a1ca100e02cd7b434665f3d7cb4b510257fbd344fa804fa72",
+          "source_sha256": "88a214a32fb824bb4d012b935b79ed018256f7b1f30ceb0263b4a65de6dfe997",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "88a214a32fb824bb4d012b935b79ed018256f7b1f30ceb0263b4a65de6dfe997"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in172": true,
+      "printed_in172": true,
+      "object_path": "evidence/markov-9647c1ba/MarkovFactoredRowM964.olean",
+      "object_sha256": "05be88087c24d35be09addda844ba49d54c0272fbcdfdac7ddb06307558afc28",
+      "successful_final_build": "evidence/markov-9647c1ba/build-1792207599917890000.json",
+      "historical_successful_source_versions": [
+        "88a214a32fb824bb4d012b935b79ed018256f7b1f30ceb0263b4a65de6dfe997"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovCorrectionBudgetM964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "budget_monoM964",
+          "header": "theorem budget_monoM964 (j s : ℕ) (u v : ℝ) (R : ℝ[X])\n (h : LiftBudgetM964 j s u R) (huv : u ≤ v) : LiftBudgetM964 j s v R",
+          "block_sha256": "32bbfcf31ad197302f5c4b5ba614f27627d62ceb2927e69d81aca5785f7c7fda",
+          "block_characters": 256
+        },
+        {
+          "kind": "theorem",
+          "name": "factored_value_lcM964",
+          "header": "theorem factored_value_lcM964 (d j s : ℕ) (Q : ℝ[X]) (c : ℝ)\n (hs : s ≤ j) (hc : 0 ≤ c) (hQ : ∀ k, 0 ≤ Q.coeff k)\n (hcoeff : ∀ m, Q.coeff (m+1) ≤ c*(j.choose m:ℝ))\n (hmargin : let B : ℝ",
+          "block_sha256": "ecf42d084cea5316adf4c4c190d3bc0e836a350b66f20236ec8c401d516b8862",
+          "block_characters": 1618
+        },
+        {
+          "kind": "theorem",
+          "name": "source_factored_row_lcM964",
+          "header": "theorem source_factored_row_lcM964 (P : BiPoly) (row d j s : ℕ) (Q : ℝ[X]) (c : ℝ)\n (hsource : ∀ n, (coeff P (n+3) row:ℝ)=factoredValueM964 d j n Q)\n (hs : s ≤ j) (hc : 0 ≤ c) (hQ : ∀ k, 0 ≤ Q.coeff k)\n (hcoeff : ∀ m, Q.coeff (m+1) ≤ c*(j.choose m:ℝ))\n (hmargin : let B : ℝ",
+          "block_sha256": "5ac48ac861126baf460605fa0ab38dd617e59b1c49581b5a0429c3160daa6f34",
+          "block_characters": 671
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "factoredValueM964",
+          "header": "def factoredValueM964 (d j s : ℕ) (Q : ℝ[X]) : ℝ",
+          "block_sha256": "2b1123109a34046fa7261bc26ba039c9b17f43a2134509d8b559beb9234032d3",
+          "block_characters": 107,
+          "definition_text": "def factoredValueM964 (d j s : ℕ) (Q : ℝ[X]) : ℝ :=\n (liftOutputMAE9 d j s:ℝ)+(X^2*((X+1)^d*Q)).coeff (s+3)"
+        }
+      ],
+      "forbidden_tokens": []
+    }
+  ],
+  "excluded_modules": [],
+  "accepted_counts": {
+    "theorem": 82,
+    "def": 34
+  },
+  "excluded_counts": {},
+  "mathematical_values_recomputed": false,
+  "source_level_scope": {
+    "root_open": true,
+    "new_unconditional_raw_LC_region": true,
+    "actual_a3_H_range": "Every actual frame path with a=3; all natural i,j with3*j<=b+9. Familyq>=1,b=3*q+(1 if r else2),j<=q+3. All zeros and smallq retained.",
+    "third_row_theorem": "third_correction_closedM964, allq>=1,r:Bool,i:Nat atrowq+3.",
+    "third_formula_ranges": {
+      "false": "q>=5,d=q-5,c0=72,c1=28q-44,c2=2q(q-1)",
+      "true": "q>=6,d=q-6,c0=96,c1=44q-108,c2=4(q-1)(q-2)"
+    },
+    "third_two_slot_transport_proved": true,
+    "third_two_slot_cut_positivity_proved_in_used_domain": true,
+    "general_factored_identity": "Every naturald,j,s and arbitrary realpolynomialQ; weightedkernel equals factoredcorrection coefficient includingzeros,s=0.",
+    "general_LC_conditions": "s<=j;c>=0; allQcoeff>=0; allm Q_(m+1)<=c*choose(j,m); explicit scalar robustnessmargin. Source adapter additionally assumes alln sourcecoeff(n+3,row)=factoredValue(d,j,n,Q). No universal later-row identity/budget/margin.",
+    "root_equivalence": "Conjecture63 iff ThreeBeyondThirdM964 and OtherFourM9E2",
+    "remaining_predicates_unproved": [
+      "ThreeBeyondThirdM964",
+      "OtherFourM9E2"
+    ],
+    "residual_H": "q<j,j!=5,j!=q+1,j!=q+2,j!=q+3, allnaturali.",
+    "residual_V": "Outside ((i=3 or4) andj+1<=q) or(5<=i<=8 andj+2<=q).",
+    "residual_D": "Outside3<=i<=6 andj+2<=q; indices(i,j+2),(i+1,j+1),(i+2,j).",
+    "new_vertical_or_diagonal_region": false,
+    "actual_raw_source_counterexample": false,
+    "old212_recovery_claimed": false,
+    "old166_prefix_recovery_claimed": false,
+    "older_failed_versions_retroactively_recovered": false,
+    "prior171_host_outcome_unchanged": "missing_or_malformed_report / return1 / reportnull, not timeout or completed."
+  },
+  "literal_raw_indices": [
+    "(i,j)",
+    "(i+1,j)",
+    "(i+2,j)"
+  ],
+  "residue_map": {
+    "true": "b=3*q+1",
+    "false": "b=3*q+2"
+  },
+  "source_bridge": "Inherited exact actualsource third-row formula -> two-slot binomial weighted lift -> generic robustness/allcuts with certified scalar margins -> highcolumns; exact rational columns2..11 and gaps2..9 -> lowstarts; smallq and zerotails -> allthirdrow -> exactroot iff.",
+  "zero_and_endpoint_handling": [
+    "q1 uses inheritedj4; q2 inheriteduniversalj5; q3..5 andi<=11 ordinarydecide finite arithmetic. i>11 uses totaldegreezero forleftfactor. q>=6 uses exponentparameter; falseq5 also lies in validformula range but assembly uses smallq.",
+    "Parameterizedfalseq=d+5,j=d+8;trueq=d+6,j=d+9. All naturald. Starts0/1 leftcoefficientzero; i2..9 exactgapcertificate; i>=10 maps t=i-4>=6.",
+    "Outputt corresponds sourcecolumn t+4 and liftindexs=t+1. At t=d finalquadraticbinomial correction remains; onlyt>d takes zero-correction tailbranch.",
+    "Natural subtraction d-s occurs before cast in absorbedExtra. Coefficient correction guardsi>=2,3,4 are explicit. General kernel guardk<=s ensures s-k+1 is not misinterpreted beyond its range.",
+    "Only positive auxiliaryx^2*M or rational denominators are cancelled; no division by rawsourcecoefficient or possiblyzero binomialweight.",
+    "Root guards/endpoint definitions are unchanged; newH theorem itself is allnatural indices. V/D residualclauses unchanged."
+  ],
+  "proof_chain_details": {
+    "generic_robustness": "A,B,C,Aprime,Bprime,Cprime realpolynomials; M>0,x>0,y>=0; Aprime,B,C coefficientnonnegative; xAprime<=yA,xCprime<=yC,B<=Bprime; explicit coefficientwise basecut margin and scalar margin. No assumed positivity of every remaining coefficient beyond actual stated hypotheses.",
+    "twin": "twinLift(j,t,a,v)=liftPoly(j,t+1)+aX^(t+1)+vX^t. t+1<=j; B>0,U>=0,a,b,c,v>=0,a,c<=U,v<=Uj, lowerbinomialBbound, explicitmargin. Centralb has no upperbound.",
+    "third_scalar": "s>=7,s<=d+1; B>=choose(j+10,10); variablesx=s-7,g=d-s+1,z=B-base nonnegative. Two rational expressions each514unsigned literals, ring/positivity. Rational transfer uses cut_kernel_values/base_choose formulas and nonnegativeF; exactcasts then robustmargin.",
+    "small_columns": "Ten exact sourcecolumn identities2..11, eight gapidentities2..9 for every naturald andbothresidues; positivity of rationalHorner expressions forx>=0. FinalLC is integerraw with no scaling.",
+    "general_budget": "LiftBudget(j,s,U,R): allk 0<=R_k<=ifk<=s thenUchoose(j,s-k) else0. Endpolynomials budgeted, middleonlynonnegative; arbitrary nonnegative integer-index CrossLC weighting.",
+    "general_transport": "correctionKernel=C(absorbedExtra(d,s,Q0))X^s + sumk0..s Q_(s-k+1)X^k. Exact weighted coefficient(s+1) of(1+X)^dQ, including arbitrarysignedQ ands0. Positivity/budget premises enter onlylaterLCcriterion.",
+    "root": "Exact previousroot equivalence rewritten; backwardcasej=q+3 discharged by newtheorem, everyotherclause passedthrough. No rootcompletion."
+  },
+  "certificate_syntax": [
+    {
+      "module": "MarkovThirdMarginCertificateM964",
+      "theorem": "third_margin_falseM964",
+      "residue": false,
+      "expression_characters": 15947,
+      "expression_sha256": "776f9a346f86656406156788d606c08a000fa41443b63fb1f2f1bc4c3896ba26",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 15,
+      "rational_literal_count": 499,
+      "coefficient_literal_count": 514,
+      "denominator_tokens": [
+        "10287648000",
+        "102876480000",
+        "104509440000",
+        "105840000",
+        "1071630000",
+        "10973491200",
+        "109734912000",
+        "1097349120000",
+        "11197440000",
+        "11340",
+        "113400",
+        "1143072000",
+        "11430720000",
+        "1170505728",
+        "117573120000",
+        "11907000",
+        "119070000",
+        "12096",
+        "120960",
+        "12192768000",
+        "121927680000",
+        "12859560000",
+        "13063680000",
+        "13168189440",
+        "131681894400",
+        "1316818944000",
+        "13168189440000",
+        "13436928000",
+        "1371686400",
+        "14175",
+        "1428840000",
+        "146313216000",
+        "1463132160000",
+        "15120",
+        "151200",
+        "156764160000",
+        "1575",
+        "164602368000",
+        "1646023680000",
+        "1653750",
+        "1714608000",
+        "17146080000",
+        "17280",
+        "174960000",
+        "175",
+        "175575859200",
+        "178605000",
+        "1800",
+        "181440",
+        "1814400",
+        "18289152000",
+        "182891520000",
+        "1837080000",
+        "18375",
+        "188116992000",
+        "1890",
+        "19508428800",
+        "19595520000",
+        "201600",
+        "20575296000",
+        "205752960000",
+        "20901888000",
+        "209018880000",
+        "21",
+        "2143260000",
+        "21600",
+        "219469824000",
+        "2194698240000",
+        "225",
+        "22680",
+        "226800",
+        "23814000",
+        "238140000",
+        "243855360000",
+        "2480625",
+        "25082265600",
+        "25200",
+        "25719120000",
+        "259200",
+        "2612736000",
+        "263363788800",
+        "2633637888000",
+        "27095040000",
+        "27433728000",
+        "274337280000",
+        "275625",
+        "27993600",
+        "2835",
+        "2857680000",
+        "28800",
+        "292626432000",
+        "29767500",
+        "30240",
+        "302400",
+        "31352832000",
+        "313528320000",
+        "315",
+        "32400",
+        "32920473600",
+        "329204736000",
+        "3292047360000",
+        "33600",
+        "3429216000",
+        "34292160000",
+        "35",
+        "3511517184",
+        "357210000",
+        "36288",
+        "362880",
+        "36578304000",
+        "365783040000",
+        "37623398400",
+        "376233984000",
+        "3780",
+        "39191040000",
+        "39690000",
+        "4032",
+        "40320",
+        "41150592000",
+        "411505920000",
+        "41803776000",
+        "4286520000",
+        "43200",
+        "43893964800",
+        "438939648000",
+        "4389396480000",
+        "45360",
+        "453600",
+        "45722880000",
+        "470292480000",
+        "4725",
+        "476280000",
+        "4800",
+        "487710720000",
+        "496125",
+        "4961250",
+        "5",
+        "5040",
+        "5080320",
+        "5143824000",
+        "51438240000",
+        "525",
+        "52672757760",
+        "54867456000",
+        "548674560000",
+        "55125",
+        "567",
+        "5670",
+        "56700",
+        "571536000",
+        "5715360000",
+        "5760",
+        "58786560000",
+        "6048",
+        "60480",
+        "604800",
+        "62705664000",
+        "627056640000",
+        "63",
+        "6429780000",
+        "648",
+        "64800",
+        "6531840000",
+        "658409472000",
+        "6584094720000",
+        "675",
+        "68584320000",
+        "71442000",
+        "72576",
+        "73156608000",
+        "731566080000",
+        "7441875",
+        "78382080000",
+        "79380000",
+        "8064",
+        "82301184000",
+        "823011840000",
+        "826875",
+        "83607552",
+        "8360755200",
+        "857304000",
+        "8573040000",
+        "86400",
+        "87787929600",
+        "877879296000",
+        "90720",
+        "907200",
+        "9144576000",
+        "91445760000",
+        "94058496000",
+        "940584960000",
+        "945"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "65b675ec71bac23d40d78c0e0a8b5f1d895efee69096a0b25ba8014d836c406c",
+      "source_sha256": "5f857178dc8243f3de39328ae25f4376ba98a289eb7e4cff768a4a49c6629dee",
+      "saved_generator_record": {
+        "residue": false,
+        "terms": 514,
+        "negative": 0,
+        "degrees": [
+          26,
+          21,
+          2
+        ]
+      },
+      "long_literal_omitted_from_display": true
+    },
+    {
+      "module": "MarkovThirdMarginCertificateM964",
+      "theorem": "third_margin_trueM964",
+      "residue": true,
+      "expression_characters": 16107,
+      "expression_sha256": "707cf562203efce7f598b0cba4cb1b9511f17209f583a73320fe8e8f87d05dca",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 15,
+      "rational_literal_count": 499,
+      "coefficient_literal_count": 514,
+      "denominator_tokens": [
+        "100800",
+        "102876480000",
+        "10450944000",
+        "105",
+        "1050",
+        "105345515520",
+        "109734912000",
+        "1097349120000",
+        "11025",
+        "1125",
+        "11340",
+        "113400",
+        "11430720000",
+        "117573120000",
+        "1200",
+        "12096",
+        "120960",
+        "127008000",
+        "1285956000",
+        "129600",
+        "131681894400",
+        "1316818944000",
+        "13168189440000",
+        "134369280000",
+        "137168640000",
+        "14175",
+        "14288400",
+        "1463132160",
+        "14631321600",
+        "146313216000",
+        "1463132160000",
+        "1469664000",
+        "1488375",
+        "15120",
+        "151200",
+        "156764160000",
+        "1575",
+        "16257024000",
+        "1646023680000",
+        "165375",
+        "1714608000",
+        "17146080000",
+        "17280",
+        "17860500",
+        "178605000",
+        "1800",
+        "181440",
+        "1814400",
+        "182891520000",
+        "188116992000",
+        "189",
+        "19440000",
+        "20160",
+        "20575296000",
+        "205752960000",
+        "20901888000",
+        "209018880000",
+        "209952000",
+        "21069103104",
+        "2126250",
+        "214326000",
+        "21600",
+        "219469824000",
+        "2194698240000",
+        "2239488000",
+        "225",
+        "226800",
+        "228614400",
+        "235146240000",
+        "23625",
+        "24192",
+        "24300",
+        "243855360000",
+        "2480625",
+        "257191200",
+        "25719120000",
+        "25920",
+        "259200",
+        "26127360000",
+        "2633637888000",
+        "2646000",
+        "26873856000",
+        "268738560000",
+        "27433728000",
+        "274337280000",
+        "2835",
+        "28576800",
+        "285768000",
+        "2857680000",
+        "28800",
+        "29393280",
+        "2976750",
+        "30240",
+        "302400",
+        "30481920000",
+        "313528320000",
+        "3150",
+        "3240",
+        "32920473600",
+        "329204736000",
+        "3292047360000",
+        "33075",
+        "3360",
+        "33600",
+        "342921600",
+        "3429216000",
+        "34292160000",
+        "3456",
+        "35",
+        "3511517184",
+        "35721000",
+        "360",
+        "362880",
+        "36578304000",
+        "365783040000",
+        "376233984000",
+        "4032",
+        "41150592000",
+        "411505920000",
+        "41803776000",
+        "428652000",
+        "4286520000",
+        "43200",
+        "43893964800",
+        "438939648000",
+        "4389396480000",
+        "45",
+        "4536",
+        "453600",
+        "45722880",
+        "4572288000",
+        "47029248000",
+        "470292480000",
+        "4725",
+        "476280000",
+        "487710720",
+        "487710720000",
+        "496125",
+        "50400",
+        "5103000",
+        "51438240000",
+        "51840",
+        "52254720000",
+        "525",
+        "526727577600",
+        "5400",
+        "54432000",
+        "54867456000",
+        "548674560000",
+        "567",
+        "571536000",
+        "5715360000",
+        "60480",
+        "604800",
+        "60963840000",
+        "61236000",
+        "6270566400",
+        "62705664000",
+        "627056640000",
+        "63",
+        "642978000",
+        "6429780000",
+        "64800",
+        "658409472000",
+        "6584094720000",
+        "6615",
+        "661500",
+        "675",
+        "685843200",
+        "7",
+        "714420000",
+        "7200",
+        "72576",
+        "7315660800",
+        "73156608000",
+        "731566080000",
+        "7560",
+        "75600",
+        "76545000",
+        "78382080000",
+        "8064",
+        "81",
+        "810",
+        "8100",
+        "8230118400",
+        "823011840000",
+        "8573040000",
+        "86400",
+        "8778792960",
+        "87787929600",
+        "877879296000",
+        "9072",
+        "90720",
+        "907200",
+        "91445760000",
+        "940584960000",
+        "945"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "d564754dcf4a9ea96ab06189c3db0e372f332d92576c7c158038bd71c1c9c485",
+      "source_sha256": "5f857178dc8243f3de39328ae25f4376ba98a289eb7e4cff768a4a49c6629dee",
+      "saved_generator_record": {
+        "residue": true,
+        "terms": 514,
+        "negative": 0,
+        "degrees": [
+          26,
+          21,
+          2
+        ]
+      },
+      "long_literal_omitted_from_display": true
+    }
+  ],
+  "column_syntax": [
+    {
+      "module": "MarkovThirdColumn2M964",
+      "definition": "thirdColumn2M964",
+      "residue": true,
+      "expression_characters": 2,
+      "expression_sha256": "7b1a278f5abe8e9da907fc9c29dfd432d60dc76e17b0fabab659d2a508bc65c4",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 0,
+      "coefficient_literal_count": 1,
+      "denominator_tokens": [],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "9980c0464df2cf95488c954cbedd6e48f07bddf7aec465735cd4c86ebbea1c66",
+      "source_sha256": "48976ef3ca69aebb97b3b2226614c541790b4b7b963c8d0431eeb18371ac99c8",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdColumn2M964",
+      "definition": "thirdColumn2M964",
+      "residue": false,
+      "expression_characters": 2,
+      "expression_sha256": "8722616204217eddb39e7df969e0698aed8e599ba62ed2de1ce49b03ade0fede",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 0,
+      "coefficient_literal_count": 1,
+      "denominator_tokens": [],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "9980c0464df2cf95488c954cbedd6e48f07bddf7aec465735cd4c86ebbea1c66",
+      "source_sha256": "48976ef3ca69aebb97b3b2226614c541790b4b7b963c8d0431eeb18371ac99c8",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdColumn3M964",
+      "definition": "thirdColumn3M964",
+      "residue": true,
+      "expression_characters": 66,
+      "expression_sha256": "316bcbeb2afc8bedd4098f1794a6af8effb9ae4f80c16c39d6f874c4d5ec85f7",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 5,
+      "coefficient_literal_count": 6,
+      "denominator_tokens": [
+        "15",
+        "3",
+        "30",
+        "6"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "47a66781ad1363d006aae8b3ba41bb8156a2d79ffe276fd2c6d9d2a8422f532c",
+      "source_sha256": "f597f00bf4e239c15ef5c5fee322f20f35d2821e254d624eaf0d64968ab471fe",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdColumn3M964",
+      "definition": "thirdColumn3M964",
+      "residue": false,
+      "expression_characters": 65,
+      "expression_sha256": "f7505f4387fd3de58c837de1d733331f339feb681135d9736dbb1e6f9f02bd0b",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 5,
+      "coefficient_literal_count": 6,
+      "denominator_tokens": [
+        "3",
+        "30"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "47a66781ad1363d006aae8b3ba41bb8156a2d79ffe276fd2c6d9d2a8422f532c",
+      "source_sha256": "f597f00bf4e239c15ef5c5fee322f20f35d2821e254d624eaf0d64968ab471fe",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdColumn4M964",
+      "definition": "thirdColumn4M964",
+      "residue": true,
+      "expression_characters": 108,
+      "expression_sha256": "22b0193a9809dbff7e87026827354cab367aa3a72e0d4241c49977f1d43e23c3",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 7,
+      "coefficient_literal_count": 8,
+      "denominator_tokens": [
+        "105",
+        "12",
+        "30",
+        "360",
+        "45",
+        "72",
+        "84"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "eee28c6d192090ba569ca76f2a0b94a06603d5fef2c901f699b862ab840ea446",
+      "source_sha256": "e68ccc34f7790ab39fe66045411a6bd234f84b27b0df65330bc7a38bc2f0335f",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdColumn4M964",
+      "definition": "thirdColumn4M964",
+      "residue": false,
+      "expression_characters": 103,
+      "expression_sha256": "697a0342f8a6e84c5580f09511958c1f1272bdd12affd9f0737e01d7a8a45790",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 7,
+      "coefficient_literal_count": 8,
+      "denominator_tokens": [
+        "10",
+        "105",
+        "180",
+        "2",
+        "21",
+        "36",
+        "45"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "eee28c6d192090ba569ca76f2a0b94a06603d5fef2c901f699b862ab840ea446",
+      "source_sha256": "e68ccc34f7790ab39fe66045411a6bd234f84b27b0df65330bc7a38bc2f0335f",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdColumn5M964",
+      "definition": "thirdColumn5M964",
+      "residue": true,
+      "expression_characters": 161,
+      "expression_sha256": "14acfd8e48cac807a4d52ce06959291ad4e46d93ff9ffe1da399aa6a98ab81a9",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 9,
+      "coefficient_literal_count": 10,
+      "denominator_tokens": [
+        "2016",
+        "240",
+        "288",
+        "30",
+        "30240",
+        "3780",
+        "720",
+        "840"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "de3c527d3e67e2afaebdfa626eb1b9254b77626bf243268b80d9d216cda1fc4b",
+      "source_sha256": "6c10fe961c7569e2a03913d0ee96dc7d995835278ed48a4283c9f297eb1bb369",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdColumn5M964",
+      "definition": "thirdColumn5M964",
+      "residue": false,
+      "expression_characters": 155,
+      "expression_sha256": "fad6112164534f6c078f196a52bc0587648c251d2e797ac1c3d259d4e3a8ef11",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 9,
+      "coefficient_literal_count": 10,
+      "denominator_tokens": [
+        "15",
+        "30240",
+        "35",
+        "3780",
+        "45",
+        "480",
+        "5040",
+        "720"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "de3c527d3e67e2afaebdfa626eb1b9254b77626bf243268b80d9d216cda1fc4b",
+      "source_sha256": "6c10fe961c7569e2a03913d0ee96dc7d995835278ed48a4283c9f297eb1bb369",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdColumn6M964",
+      "definition": "thirdColumn6M964",
+      "residue": true,
+      "expression_characters": 227,
+      "expression_sha256": "600dfcdd3e51957a436a5d52f6377cb88ca4e116a001bc9899118e2be5c71926",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 11,
+      "coefficient_literal_count": 12,
+      "denominator_tokens": [
+        "10800",
+        "14175",
+        "1663200",
+        "30240",
+        "33",
+        "37800",
+        "45360",
+        "6300",
+        "7200",
+        "7560"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "09a2628a87f0ee2d54b81b05463721a76c4539726c13e9690658b8168dd5b584",
+      "source_sha256": "6f26981fa521c486d840e88eb03154156d9bc7934e6fcad544b7272eabec4b98",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdColumn6M964",
+      "definition": "thirdColumn6M964",
+      "residue": false,
+      "expression_characters": 226,
+      "expression_sha256": "5c042d9bc2fc6637a1334be2b3324ae5fb6982d1a78e2281c6bbbdf9a20644fc",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 11,
+      "coefficient_literal_count": 12,
+      "denominator_tokens": [
+        "140",
+        "165",
+        "1663200",
+        "1728",
+        "181440",
+        "22680",
+        "30240",
+        "3600",
+        "60480",
+        "75600"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "09a2628a87f0ee2d54b81b05463721a76c4539726c13e9690658b8168dd5b584",
+      "source_sha256": "6f26981fa521c486d840e88eb03154156d9bc7934e6fcad544b7272eabec4b98",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdColumn7M964",
+      "definition": "thirdColumn7M964",
+      "residue": true,
+      "expression_characters": 309,
+      "expression_sha256": "0af9ef8ad2c986634a906416529737b813a551252ac6db5e43ffe1e4007eec78",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 13,
+      "coefficient_literal_count": 14,
+      "denominator_tokens": [
+        "110880",
+        "119750400",
+        "1209600",
+        "195",
+        "241920",
+        "311040",
+        "3628800",
+        "388800",
+        "435456",
+        "518918400",
+        "604800",
+        "725760",
+        "83160"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "c2d0dd7d56ee3f4d4ca870882b43265aa55956208ce38968664d0f5bdb9e187d",
+      "source_sha256": "18212f03f5a43beab2dd97784e3177ad258a67f15d10caef51229fc67088f97f",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdColumn7M964",
+      "definition": "thirdColumn7M964",
+      "residue": false,
+      "expression_characters": 303,
+      "expression_sha256": "180707fa2cc19952a31e6f3e61c097ac11fbffabaef36fd4d11ac2b5d1212ffb",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 13,
+      "coefficient_literal_count": 14,
+      "denominator_tokens": [
+        "1088640",
+        "155520",
+        "16632",
+        "1814400",
+        "195",
+        "3628800",
+        "48600",
+        "518918400",
+        "57600",
+        "59875200",
+        "907200",
+        "9900"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "c2d0dd7d56ee3f4d4ca870882b43265aa55956208ce38968664d0f5bdb9e187d",
+      "source_sha256": "18212f03f5a43beab2dd97784e3177ad258a67f15d10caef51229fc67088f97f",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdColumn8M964",
+      "definition": "thirdColumn8M964",
+      "residue": true,
+      "expression_characters": 391,
+      "expression_sha256": "e4560d94120fe1a6f49d738184c3c46ae762e88a601f0a99193d60786347f2d4",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 15,
+      "coefficient_literal_count": 16,
+      "denominator_tokens": [
+        "100900800",
+        "10886400",
+        "140",
+        "14968800",
+        "1814400",
+        "2721600",
+        "29937600",
+        "3326400",
+        "3628800",
+        "38102400",
+        "39916800",
+        "544864320",
+        "700700",
+        "76204800"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "af57455c36c7c41cb528cf047b9f357343b17d5e4f78821ff897d9845d1a2c55",
+      "source_sha256": "c94bfbc5f29ba1f77d96f454498abe3b422b6efee97d763a6e5edfbd40c5ef17",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdColumn8M964",
+      "definition": "thirdColumn8M964",
+      "residue": false,
+      "expression_characters": 394,
+      "expression_sha256": "4ab44506a825e54520672a39bd8c8659d9019a765487f63c9b2beee95b5859da",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 15,
+      "coefficient_literal_count": 16,
+      "denominator_tokens": [
+        "11404800",
+        "152409600",
+        "2177280",
+        "21772800",
+        "21794572800",
+        "239500800",
+        "2419200",
+        "35",
+        "544864320",
+        "59875200",
+        "6306300",
+        "7257600",
+        "75675600",
+        "9979200"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "af57455c36c7c41cb528cf047b9f357343b17d5e4f78821ff897d9845d1a2c55",
+      "source_sha256": "c94bfbc5f29ba1f77d96f454498abe3b422b6efee97d763a6e5edfbd40c5ef17",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdColumn9M964",
+      "definition": "thirdColumn9M964",
+      "residue": true,
+      "expression_characters": 505,
+      "expression_sha256": "48bc40860bcf91680e48ae4cf9c30be0c257c6fa3ea809780e9d42f38c004a13",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 17,
+      "coefficient_literal_count": 18,
+      "denominator_tokens": [
+        "1045094400",
+        "11612160",
+        "1428",
+        "17784371404800",
+        "1828915200",
+        "205286400",
+        "209227898880",
+        "21794572800",
+        "2438553600",
+        "4324320",
+        "5322240",
+        "5337446400",
+        "65383718400",
+        "821145600",
+        "82555200",
+        "87178291200"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "870644affaeb046162baa660d0742caa5bf86ffe00d83a809d6f2d3b079fea98",
+      "source_sha256": "945ab8d2bb28768c0e74e51933a13b22eb95992e2577e6cfde2de1a5bbb8f9f1",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdColumn9M964",
+      "definition": "thirdColumn9M964",
+      "residue": false,
+      "expression_characters": 484,
+      "expression_sha256": "fb31f39c600202ffdd41e8dbba4bc371e0ab9734c73b810aff16272b5b29824d",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 17,
+      "coefficient_literal_count": 18,
+      "denominator_tokens": [
+        "102643200",
+        "1071",
+        "1149603840",
+        "130636800",
+        "17784371404800",
+        "1828915200",
+        "18681062400",
+        "240240",
+        "39916800",
+        "410572800",
+        "454053600",
+        "487710720",
+        "522547200",
+        "53222400",
+        "65383718400",
+        "87178291200",
+        "91238400"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "870644affaeb046162baa660d0742caa5bf86ffe00d83a809d6f2d3b079fea98",
+      "source_sha256": "945ab8d2bb28768c0e74e51933a13b22eb95992e2577e6cfde2de1a5bbb8f9f1",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdColumn10M964",
+      "definition": "thirdColumn10M964",
+      "residue": true,
+      "expression_characters": 627,
+      "expression_sha256": "973b03abc9018ddac0f52369674ec7267b044fdc9104a4f472b906dbfebeb069",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 19,
+      "coefficient_literal_count": 20,
+      "denominator_tokens": [
+        "108972864000",
+        "150885504000",
+        "1961511552000",
+        "200074178304000",
+        "22632825600",
+        "2615348736000",
+        "270950400",
+        "27433728000",
+        "3216213000",
+        "367783416000",
+        "392302310400",
+        "3990",
+        "402361344000",
+        "5068545850368000",
+        "581188608000",
+        "6035420160",
+        "603542016000",
+        "74220300",
+        "8172964800"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "16e37d688afae40f020757a1032eb352a941951a6eb306cb2ff36a537f48b828",
+      "source_sha256": "ee423a552265a11c1de59e4d08470500980a2ba7f061797b722712f928cb7357",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdColumn10M964",
+      "definition": "thirdColumn10M964",
+      "residue": false,
+      "expression_characters": 617,
+      "expression_sha256": "ff1d7e58114bb29546c42f7f8b71078fe94004f4b80e5ddcb36c35c67e7637bb",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 19,
+      "coefficient_literal_count": 20,
+      "denominator_tokens": [
+        "1207084032000",
+        "145297152000",
+        "1494484992000",
+        "15088550400",
+        "16345929600",
+        "1929727800",
+        "1995",
+        "268240896000",
+        "2858856000",
+        "31135104000",
+        "313841848320",
+        "3138418483200",
+        "43893964800",
+        "45731240755200",
+        "4803701760",
+        "5068545850368000",
+        "51732172800",
+        "746496000",
+        "784604620800"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "16e37d688afae40f020757a1032eb352a941951a6eb306cb2ff36a537f48b828",
+      "source_sha256": "ee423a552265a11c1de59e4d08470500980a2ba7f061797b722712f928cb7357",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdColumn11M964",
+      "definition": "thirdColumn11M964",
+      "residue": true,
+      "expression_characters": 771,
+      "expression_sha256": "9fe707d7314476147f65c258257b842da57f9aaf9bb72467923d1fbc29f1336d",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 21,
+      "coefficient_literal_count": 22,
+      "denominator_tokens": [
+        "111152321280000",
+        "1318135762944000",
+        "13412044800",
+        "144850083840000",
+        "1931334451200",
+        "20532303792000",
+        "213983078400",
+        "2310",
+        "313841848320000",
+        "32832685670400",
+        "357654528000",
+        "35777970708480000",
+        "37661021798400",
+        "3783780000",
+        "4257578514309120000",
+        "4755179520000",
+        "4803701760000",
+        "48283361280000",
+        "6402373705728000",
+        "6590678814720000",
+        "8147739600"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "03f10b068fa6afa80cfc7cf6ce526c05ab7da612abd78c51e29ac01dc4f5e637",
+      "source_sha256": "24dfa705276370fd3eb04ab5cd2d6d5721b004b7d1f1f65e50d2ae6365864d0e",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdColumn11M964",
+      "definition": "thirdColumn11M964",
+      "residue": false,
+      "expression_characters": 740,
+      "expression_sha256": "8d39837ed07da9dfcdd06c0fcb957bd8e492223ca69952398d47cdb493f3fe62",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 21,
+      "coefficient_literal_count": 22,
+      "denominator_tokens": [
+        "1318135762944000",
+        "152437469184000",
+        "16336320",
+        "18723519360000",
+        "23538138624000",
+        "3080",
+        "313841848320000",
+        "38802264883200",
+        "4073869800",
+        "4257578514309120000",
+        "4483454976000",
+        "5364817920000",
+        "60822550204416000",
+        "62270208000",
+        "6844101264000",
+        "689762304000",
+        "7846046208000",
+        "9262693440000",
+        "94152554496000",
+        "9656672256000",
+        "98537472000"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "03f10b068fa6afa80cfc7cf6ce526c05ab7da612abd78c51e29ac01dc4f5e637",
+      "source_sha256": "24dfa705276370fd3eb04ab5cd2d6d5721b004b7d1f1f65e50d2ae6365864d0e",
+      "saved_degree_only": null
+    },
+    {
+      "module": "MarkovThirdGap2M964",
+      "definition": "thirdGap2M964",
+      "residue": true,
+      "expression_characters": 171,
+      "expression_sha256": "28ee73d92c8cc7950de2706e6b26922ef53ea6f5e4cbec82b0a99e713e46fb0b",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 10,
+      "coefficient_literal_count": 11,
+      "denominator_tokens": [
+        "105",
+        "15",
+        "20",
+        "225",
+        "45",
+        "5",
+        "90",
+        "900"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "e3a48a781ec181e0c57223236ba66be19e1b5b435092ce419cece5f54565c503",
+      "source_sha256": "f451ef3362b064fd9e1210ec3aa76a49f2248357f776bd313e753f8347bb766b",
+      "saved_degree_only": 10
+    },
+    {
+      "module": "MarkovThirdGap2M964",
+      "definition": "thirdGap2M964",
+      "residue": false,
+      "expression_characters": 157,
+      "expression_sha256": "7585d9b6939622b3603a62687e08e9843ef097b67ef8ca55e02da1a3aed808bb",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 2,
+      "rational_literal_count": 9,
+      "coefficient_literal_count": 11,
+      "denominator_tokens": [
+        "105",
+        "3",
+        "35",
+        "45",
+        "450",
+        "5",
+        "9",
+        "900"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "e3a48a781ec181e0c57223236ba66be19e1b5b435092ce419cece5f54565c503",
+      "source_sha256": "f451ef3362b064fd9e1210ec3aa76a49f2248357f776bd313e753f8347bb766b",
+      "saved_degree_only": 10
+    },
+    {
+      "module": "MarkovThirdGap3M964",
+      "definition": "thirdGap3M964",
+      "residue": true,
+      "expression_characters": 343,
+      "expression_sha256": "46692454c07a7bcb0283ad1ba20eacbe77b8a30a9ec1cb63ca9e3653ed88e838",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 14,
+      "coefficient_literal_count": 15,
+      "denominator_tokens": [
+        "113400",
+        "15120",
+        "176400",
+        "18900",
+        "210",
+        "25200",
+        "302400",
+        "3175200",
+        "32400",
+        "56700",
+        "6350400",
+        "907200"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "10414867146d00ce07f1492ce397e2f817619f8851f76a53c617df2078061eb2",
+      "source_sha256": "9e12490d535795fd162ca6826e8dc5c3e6c662bbf9ace815c42db35f6a5460d5",
+      "saved_degree_only": 14
+    },
+    {
+      "module": "MarkovThirdGap3M964",
+      "definition": "thirdGap3M964",
+      "residue": false,
+      "expression_characters": 321,
+      "expression_sha256": "46e3489597328c9bfeb92793108b6d749c31633ee85eaf4a6311c09df5fd6b4c",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 14,
+      "coefficient_literal_count": 15,
+      "denominator_tokens": [
+        "105",
+        "113400",
+        "127008",
+        "18900",
+        "22050",
+        "226800",
+        "25200",
+        "32400",
+        "4800",
+        "6350400",
+        "864",
+        "9072"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "10414867146d00ce07f1492ce397e2f817619f8851f76a53c617df2078061eb2",
+      "source_sha256": "9e12490d535795fd162ca6826e8dc5c3e6c662bbf9ace815c42db35f6a5460d5",
+      "saved_degree_only": 14
+    },
+    {
+      "module": "MarkovThirdGap4M964",
+      "definition": "thirdGap4M964",
+      "residue": true,
+      "expression_characters": 553,
+      "expression_sha256": "0c8b7c69b7c34950e554d6d65c19885dafc9217161a3bfa95e990960c94c6a0e",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 18,
+      "coefficient_literal_count": 19,
+      "denominator_tokens": [
+        "1197504000",
+        "165",
+        "171072000",
+        "17325",
+        "23950080",
+        "349272000",
+        "3592512000",
+        "4572288000",
+        "5821200",
+        "598752000",
+        "6804000",
+        "7185024000",
+        "76204800",
+        "762048000",
+        "81648000",
+        "9979200"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "12d205bf6184edc767f190faf0bad193a6b6d7926123385defce24b870f2a0ce",
+      "source_sha256": "81c0ee39b7b0964c320527f6de94ebea55a5198426a89d0eaedca1abf31417aa",
+      "saved_degree_only": 18
+    },
+    {
+      "module": "MarkovThirdGap4M964",
+      "definition": "thirdGap4M964",
+      "residue": false,
+      "expression_characters": 535,
+      "expression_sha256": "afbcb6d2a46e35958bd13ce48a6faa1a620dbc115c38f9e640bbea100eaf22bd",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 18,
+      "coefficient_literal_count": 19,
+      "denominator_tokens": [
+        "1425600",
+        "165",
+        "190512000",
+        "224532000",
+        "2514758400",
+        "2993760",
+        "359251200",
+        "363825",
+        "4191264000",
+        "4572288000",
+        "513216000",
+        "5775",
+        "598752000",
+        "7185024000",
+        "838252800",
+        "873180",
+        "87318000"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "12d205bf6184edc767f190faf0bad193a6b6d7926123385defce24b870f2a0ce",
+      "source_sha256": "81c0ee39b7b0964c320527f6de94ebea55a5198426a89d0eaedca1abf31417aa",
+      "saved_degree_only": 18
+    },
+    {
+      "module": "MarkovThirdGap5M964",
+      "definition": "thirdGap5M964",
+      "residue": true,
+      "expression_characters": 859,
+      "expression_sha256": "070eaf75b1b7510d304686c4db0c4ca236953e70e33b92d57c5cda4739d3af3e",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 22,
+      "coefficient_literal_count": 23,
+      "denominator_tokens": [
+        "11351340000",
+        "11769069312000",
+        "117690693120000",
+        "16597405440000",
+        "181621440000",
+        "2263282560000",
+        "23538138624000",
+        "235381386240000",
+        "26153487360000",
+        "2942267328000",
+        "29422673280000",
+        "353925",
+        "39230231040000",
+        "55",
+        "58845346560000",
+        "603542016000",
+        "6486480",
+        "78460462080000",
+        "817296480000",
+        "863065082880000",
+        "9807557760000"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "1ebc9f33491d95f27c1193321615e7cb3ed420fa8de1e3547e1b19dccc7359b3",
+      "source_sha256": "dee8cef275fabc057b9af5ab40b4fb8c71571ca05c755e75d3ef524111ee0a71",
+      "saved_degree_only": 22
+    },
+    {
+      "module": "MarkovThirdGap5M964",
+      "definition": "thirdGap5M964",
+      "residue": false,
+      "expression_characters": 806,
+      "expression_sha256": "a0d322d693646fa7d3a0674eaf117693fa2c266cd26350fcfb7ca934b84a23cd",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 22,
+      "coefficient_literal_count": 23,
+      "denominator_tokens": [
+        "116756640000",
+        "13076743680000",
+        "140107968000",
+        "1471133664000",
+        "1539648000",
+        "160123392000",
+        "16216200",
+        "183891708000",
+        "227026800",
+        "2353813862400",
+        "235381386240000",
+        "270978048000",
+        "2802159360000",
+        "2942267328000",
+        "364864500",
+        "47076277248000",
+        "55",
+        "5884534656000",
+        "707850",
+        "863065082880000",
+        "905313024000"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "1ebc9f33491d95f27c1193321615e7cb3ed420fa8de1e3547e1b19dccc7359b3",
+      "source_sha256": "dee8cef275fabc057b9af5ab40b4fb8c71571ca05c755e75d3ef524111ee0a71",
+      "saved_degree_only": 22
+    },
+    {
+      "module": "MarkovThirdGap6M964",
+      "definition": "thirdGap6M964",
+      "residue": true,
+      "expression_characters": 1138,
+      "expression_sha256": "8f61c93384d0b62b99e8d353f423db7e64ac5056c7b917822b4bf24fa548692d",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 26,
+      "coefficient_literal_count": 27,
+      "denominator_tokens": [
+        "1056198528000",
+        "10784747151360000",
+        "117690693120000",
+        "118632218664960000",
+        "1304954405314560000",
+        "1437966286848",
+        "150958080000",
+        "152092588032000",
+        "15732957240000",
+        "16964407269089280000",
+        "19772036444160000",
+        "217492400885760000",
+        "2265545842560000",
+        "2281388820480000",
+        "260990881062912000",
+        "2927925",
+        "3121618500",
+        "4045617576000",
+        "434984801771520",
+        "628311380336640000",
+        "62931828960000",
+        "65",
+        "674046696960000",
+        "9125555281920000"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "59b93597aa1b15d73f1608d650bc75cf0028d1ddd8e541db0a57597c86bad01a",
+      "source_sha256": "e4dfe5576e748db37e7e0619a17edd7efbca0926e80ca5ea98c49a0278aeec59",
+      "saved_degree_only": 26
+    },
+    {
+      "module": "MarkovThirdGap6M964",
+      "definition": "thirdGap6M964",
+      "residue": false,
+      "expression_characters": 1129,
+      "expression_sha256": "6de986c14a955f5c5d90461833abae546db7c60b00fde155299f04dfed807632",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 26,
+      "coefficient_literal_count": 27,
+      "denominator_tokens": [
+        "108746200442880000",
+        "118632218664960000",
+        "128389847040000",
+        "13",
+        "16964407269089280000",
+        "176536039680000",
+        "2260177920000",
+        "2265545842560000",
+        "25095277025280000",
+        "27186550110720000",
+        "283193230320000",
+        "299576309760000",
+        "3121618500",
+        "3146591448000",
+        "3707256833280000",
+        "3933239310000",
+        "4562777640960000",
+        "5855850",
+        "59316109332480000",
+        "628311380336640000",
+        "68652904320000",
+        "7767585745920000",
+        "81559650332160000",
+        "9886018222080000"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "59b93597aa1b15d73f1608d650bc75cf0028d1ddd8e541db0a57597c86bad01a",
+      "source_sha256": "e4dfe5576e748db37e7e0619a17edd7efbca0926e80ca5ea98c49a0278aeec59",
+      "saved_degree_only": 26
+    },
+    {
+      "module": "MarkovThirdGap7M964",
+      "definition": "thirdGap7M964",
+      "residue": true,
+      "expression_characters": 1552,
+      "expression_sha256": "16e30e8903779013f5f4c2dc2165e1b8638015694dfd98abd6be11e183349ef3",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 30,
+      "coefficient_literal_count": 31,
+      "denominator_tokens": [
+        "1023887302631424000",
+        "10766743813448663040000",
+        "1168266472813440000",
+        "1584587492167680000",
+        "16902266583121920000",
+        "169406808253562880000",
+        "170729965486080000",
+        "186347489078919168000",
+        "1900013614137999360000",
+        "225875744338083840000",
+        "24225173580259491840000",
+        "2482151036682240000",
+        "264097915361280000",
+        "271430516305428480000",
+        "2768591266315370496000",
+        "32300231440345989120000",
+        "37645957389680640000",
+        "38984400",
+        "422225247586222080000",
+        "50706799749365760000",
+        "5634088861040640000",
+        "595",
+        "662833983651840000",
+        "7009598836880640000",
+        "7058617010565120000",
+        "828211062572974080000",
+        "96900694321037967360000",
+        "97355539401120000",
+        "97558461000"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "f339e10868f08d7b3ba822a6e570cfcb1ede623a124e9651d813471e41d9e8d5",
+      "source_sha256": "ac29457907f1f7d4e5f76e07996c04efdd26545eba4a7561486a9734171a4fb0",
+      "saved_degree_only": 30
+    },
+    {
+      "module": "MarkovThirdGap7M964",
+      "definition": "thirdGap7M964",
+      "residue": false,
+      "expression_characters": 1511,
+      "expression_sha256": "2119ae0355c87b0b67065c8be1c108e0f9071b183a6a8ff669237ea7e5fac3ba",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 30,
+      "coefficient_literal_count": 31,
+      "denominator_tokens": [
+        "133841477468160000",
+        "1656422125145948160000",
+        "16638168667760640000",
+        "1696440726908928000",
+        "1785",
+        "1882297869484032000",
+        "1901939719680000",
+        "19257139661760000",
+        "193801388642075934720000",
+        "21533487626897326080000",
+        "232934361348648960000",
+        "236631732163706880000",
+        "3226796347686912000",
+        "3230023144034598912000",
+        "3460739082894213120000",
+        "422225247586222080000",
+        "451751488676167680000",
+        "48450347160518983680000",
+        "48677769700560000",
+        "5268156894000",
+        "537799391281152000",
+        "5646893608452096000",
+        "5915793304092672000",
+        "59157933040926720000",
+        "6497400",
+        "760005445655199744000",
+        "778844315208960000",
+        "8112961616760000",
+        "8470340412678144000",
+        "9465269286548275200"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "f339e10868f08d7b3ba822a6e570cfcb1ede623a124e9651d813471e41d9e8d5",
+      "source_sha256": "ac29457907f1f7d4e5f76e07996c04efdd26545eba4a7561486a9734171a4fb0",
+      "saved_degree_only": 30
+    },
+    {
+      "module": "MarkovThirdGap8M964",
+      "definition": "thirdGap8M964",
+      "residue": true,
+      "expression_characters": 2014,
+      "expression_sha256": "67c69fac53a2803ba618bcd5e65b3836eb8816a4081e6d9e842ddd763afa142b",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 34,
+      "coefficient_literal_count": 35,
+      "denominator_tokens": [
+        "106048119864943951478784000",
+        "11305",
+        "1150695745062325862400000",
+        "12746168252998071091200000",
+        "13092360477153574256640000",
+        "13595912803197942497280000",
+        "1479804198897024000",
+        "14995492062350671872000",
+        "1514082504160617431040000",
+        "15981885348087859200000",
+        "1606789694923393204224000",
+        "1767468664415732524646400",
+        "1856584731529130803200000",
+        "1896751228124712960000",
+        "22093358305196656558080000",
+        "265120299662359878696960000",
+        "2663647558014643200000",
+        "27616697881495820697600",
+        "2789565442575335424000",
+        "29457811073595542077440000",
+        "3013432670819450880000",
+        "311095512000",
+        "33140037457794984837120000",
+        "33989782007994856243200000",
+        "5098467301199228436480000",
+        "5302405993247197573939200000",
+        "5750615750252144099328000",
+        "67979564015989712486400000",
+        "80928052399987752960000",
+        "8497445501998714060800000",
+        "88373433220786626232320000",
+        "92699405476349607936000",
+        "968612400",
+        "990940311761400000"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "145abe4a31fbb3ddc1dbebb20eb33b71e39c6985a1c4aa0e2a39cadc5d6d0e88",
+      "source_sha256": "d727c021da177b0210aeaf04a0403e63d8e3ea65ec6f663341cff5c309564c9f",
+      "saved_degree_only": 34
+    },
+    {
+      "module": "MarkovThirdGap8M964",
+      "definition": "thirdGap8M964",
+      "residue": false,
+      "expression_characters": 2012,
+      "expression_sha256": "7722ea1e94b510562d1b5fe687015a75dac61f250a46e1aa62bf0291cff0a6b3",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 34,
+      "coefficient_literal_count": 35,
+      "denominator_tokens": [
+        "101745",
+        "1091030039762797854720000",
+        "11046679152598328279040000",
+        "11098531491727680000",
+        "1283268987000",
+        "130729930799980216320000",
+        "1325601498311799393484800000",
+        "1472890553679777103872000",
+        "1514082504160617431040000",
+        "1593271031624758886400000",
+        "1699489100399742812160000",
+        "1888321222666380902400000",
+        "191782624177054310400000",
+        "2124361375499678515200000",
+        "220933583051966565580800000",
+        "221970629834553600000",
+        "273601960435871907840000",
+        "29457811073595542077440000",
+        "316283866263867925463040000",
+        "3468291091164900000",
+        "369951049724256000",
+        "44186716610393313116160000",
+        "5098467301199228436480000",
+        "544844475",
+        "55233395762991641395200000",
+        "637308412649903554560000",
+        "67979564015989712486400000",
+        "6904174470373955174400000",
+        "82850093644487462092800000",
+        "849744550199871406080000",
+        "95891312088527155200000"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "145abe4a31fbb3ddc1dbebb20eb33b71e39c6985a1c4aa0e2a39cadc5d6d0e88",
+      "source_sha256": "d727c021da177b0210aeaf04a0403e63d8e3ea65ec6f663341cff5c309564c9f",
+      "saved_degree_only": 34
+    },
+    {
+      "module": "MarkovThirdGap9M964",
+      "definition": "thirdGap9M964",
+      "residue": true,
+      "expression_characters": 2533,
+      "expression_sha256": "65442627f10eea2cc04053b7e3a85236e8d672fcba882c43d23d9a1e0ddb329b",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 38,
+      "coefficient_literal_count": 39,
+      "denominator_tokens": [
+        "106048119864943951478784000000",
+        "1118731974366150144000000",
+        "119304134848061945413632000000",
+        "14263832673168414336000000",
+        "1438648794087829645761183744000000",
+        "1529540190359768530944000000",
+        "167025788787286723579084800000",
+        "1726043617593488793600000",
+        "1802818037704047175139328000000",
+        "1908866157568991126618112000000",
+        "1995",
+        "20137175538590702592000000",
+        "2065046115915544946068684800000",
+        "208782235984108404473856000000",
+        "222701051716382298105446400000",
+        "2227010517163822981054464000000",
+        "235801113582051845052825600000",
+        "24562615998130400526336000000",
+        "2485502809334623862784000000",
+        "2879655606828000",
+        "3152179800",
+        "318144359594831854436352000000",
+        "35966219852195741144029593600000",
+        "36056360754080943502786560000",
+        "40086189308948813658980352000000",
+        "40430364719865120000",
+        "4078773840959382749184000000",
+        "41756447196821680894771200000",
+        "4184348163863003136000000",
+        "432676329048971322033438720000",
+        "497100561866924772556800000",
+        "56788768187677486016888832000000",
+        "589156221471910841548800000",
+        "6263467079523252134215680000",
+        "6376149583029338112000000",
+        "66810315514914689431633920000",
+        "7547001414374822400000",
+        "7743922934683293547757568000000"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "83919bcbd8ff637145a9ae6fc19f273de074790c9fba0b4c6c8970356a81f04c",
+      "source_sha256": "b336f90fb40326c9c1390599d2facc0532c84793bda600a8077ef7a3f034eb84",
+      "saved_degree_only": 38
+    },
+    {
+      "module": "MarkovThirdGap9M964",
+      "definition": "thirdGap9M964",
+      "residue": false,
+      "expression_characters": 2493,
+      "expression_sha256": "11c7964934cf52341a268c131cd363b54578bc98914c66162cd75b40dc63685f",
+      "grammar": "Unsigned numeral tokens, unsigned literal fractions with nonzero literal denominator, named variables, addition, multiplication and parentheses. AST parsed without evaluation.",
+      "integer_literal_count": 1,
+      "rational_literal_count": 38,
+      "coefficient_literal_count": 39,
+      "denominator_tokens": [
+        "11518622427312000",
+        "119304134848061945413632000000",
+        "1242751404667311931392000000",
+        "139188157322738936315904000000",
+        "1438648794087829645761183744000000",
+        "156586676988081303355392000000",
+        "1622536233933642457625395200000",
+        "1886750353593705600000",
+        "1995",
+        "20043094654474406829490176000000",
+        "20137175538590702592000000",
+        "207125234111218655232000000",
+        "208782235984108404473856000000",
+        "2163381645244856610167193600000",
+        "23174851369087401984000000",
+        "2651202996623598786969600000",
+        "283012553039055840000",
+        "287729758817565929152236748800000",
+        "324507246786728491525079040000",
+        "3340515775745734471581696000000",
+        "386318150936581537529856000000",
+        "40937400",
+        "418610999466884018995200000",
+        "45319709343993141657600000",
+        "45449194227833122062336000000",
+        "48418885896129036288000000",
+        "560767906950451200000",
+        "5753478725311629312000000",
+        "59652067424030972706816000000",
+        "60093934590134905837977600000",
+        "6628007491558996967424000000",
+        "668103155149146894316339200000",
+        "681465218252129832202665984000000",
+        "7131916336584207168000000",
+        "7953608989870796360908800000",
+        "954433078784495563309056000000",
+        "981927035786518069248000000"
+      ],
+      "mathematical_values_recomputed": false,
+      "generated_line_sha256": "83919bcbd8ff637145a9ae6fc19f273de074790c9fba0b4c6c8970356a81f04c",
+      "source_sha256": "b336f90fb40326c9c1390599d2facc0532c84793bda600a8077ef7a3f034eb84",
+      "saved_degree_only": 38
+    }
+  ]
+}

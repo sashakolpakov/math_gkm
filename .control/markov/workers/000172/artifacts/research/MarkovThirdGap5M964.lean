@@ -1,0 +1,34 @@
+import MarkovThirdColumn5M964
+import MarkovThirdColumn6M964
+import MarkovThirdColumn7M964
+/-! Machine-authored 9647c1ba. Exact third-correction column certificate.
+External arithmetic proposes coefficients; Lean ring checks the identity. -/
+namespace MathGKM.Markov
+noncomputable section
+open Finset
+set_option maxHeartbeats 18000000
+set_option maxRecDepth 8192
+attribute [local irreducible] threeRawM9E2
+
+def thirdGap5M964 (x : ℚ) (r : Bool) : ℚ :=
+ if r then (1307690236944+x*((215172161458548/55)+x*((1941936347213624539/353925)+x*((31121416501185612983/6486480)+x*((33316978918099206173671/11351340000)+x*((1092064133936935064729167/817296480000)+x*((85396344915689737551449/181621440000)+x*((385828128664390972379041/2942267328000)+x*((867637831858644425541077/29422673280000)+x*((636820022261370805580903/117690693120000)+x*((21358451937486197897161/26153487360000)+x*((61485286019230590119/603542016000)+x*((174701916087925742221/16597405440000)+x*((2037601417952897239/2263282560000)+x*((14953706920936828129/235381386240000)+x*((43245000951870017/11769069312000)+x*((1690418833880879/9807557760000)+x*((253134604227581/39230231040000)+x*((14766545348593/78460462080000)+x*((96998402597/23538138624000)+x*((3749273779/58845346560000)+x*((36493939/58845346560000)+x*(2466643/863065082880000))))))))))))))))))))))) else (149956980264+x*((27576444323106/55)+x*((555563907710423903/707850)+x*((12404622096465382309/16216200)+x*((118241734765978689673/227026800)+x*((96145421023741943593/364864500)+x*((12014211463251576596279/116756640000)+x*((46782948845363451719707/1471133664000)+x*((23282749803638979056729/2942267328000)+x*((9442229374187998293023/5884534656000)+x*((3495232420860137255483/13076743680000)+x*((56593447291734953/1539648000)+x*((1133324809087123883/270978048000)+x*((356287687609725533/905313024000)+x*((7185285980243959459/235381386240000)+x*((5705513544245677/2942267328000)+x*((15985008348313/160123392000)+x*((574295135083/140107968000)+x*((367211763091/2802159360000)+x*((578048501/183891708000)+x*((2505190451/47076277248000)+x*((1334369/2353813862400)+x*(2466643/863065082880000)))))))))))))))))))))))
+theorem third_gap_identity5M964 (x : ℚ) (r : Bool) :
+ thirdColumn6M964 x r^2-thirdColumn5M964 x r*thirdColumn7M964 x r=thirdGap5M964 x r := by
+ cases r <;> simp only [thirdColumn5M964,thirdColumn6M964,thirdColumn7M964,
+   thirdGap5M964,Bool.false_eq_true,if_false,if_true] <;> ring
+theorem third_gap_nonneg5M964 (x : ℚ) (r : Bool) (hx : 0 ≤ x) : 0 ≤ thirdGap5M964 x r := by
+ cases r <;> simp only [thirdGap5M964,Bool.false_eq_true,if_false,if_true] <;> positivity
+theorem source_third_horizontal5M964 (d : ℕ) (r : Bool) :
+ threeRawM9E2 (thirdQM964 d r) r 5 (thirdJM964 d r)*
+ threeRawM9E2 (thirdQM964 d r) r 7 (thirdJM964 d r) ≤
+ threeRawM9E2 (thirdQM964 d r) r 6 (thirdJM964 d r)^2 := by
+ have h : (threeRawM9E2 (thirdQM964 d r) r 5 (thirdJM964 d r):ℚ)*
+     (threeRawM9E2 (thirdQM964 d r) r 7 (thirdJM964 d r):ℚ) ≤
+     (threeRawM9E2 (thirdQM964 d r) r 6 (thirdJM964 d r):ℚ)^2 := by
+   rw [source_third_column5M964,source_third_column6M964,source_third_column7M964]
+   have he := third_gap_identity5M964 (d:ℚ) r
+   have hp := third_gap_nonneg5M964 (d:ℚ) r (by positivity)
+   linarith only [he,hp]
+ exact_mod_cast h
+end
+end MathGKM.Markov

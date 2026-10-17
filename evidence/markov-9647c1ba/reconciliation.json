@@ -1,0 +1,60 @@
+{
+  "bindings": {
+    "RESUME.json": true,
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": true,
+    "evidence/independent-markov/markov_residual_scope_audit.md": true,
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": true,
+    "evidence/markov/research-run/state.json": true,
+    "requests/markov-next.json": true
+  },
+  "predecessor_artifacts": 127,
+  "mismatches": [],
+  "root_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+  "contract_sha256": "6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc",
+  "predecessor_events_sha256": "a44e032f46681be10e6e0ec9ba62796b499e6ea8eb36e804602fbfd4c6594ba1",
+  "predecessor_event_count": 280,
+  "predecessor_final_events": [
+    {
+      "type": "item.started",
+      "item": {
+        "id": "item_143",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/finalize_c3e5369f.py'",
+        "aggregated_output": "",
+        "exit_code": null,
+        "status": "in_progress"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_143",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/finalize_c3e5369f.py'",
+        "aggregated_output": "{\n  \"modules\": 14,\n  \"theorem_closures\": 90,\n  \"rejected_builds\": 12,\n  \"preservation\": {\n    \"artifacts\": 127,\n    \"artifact_mismatches\": [],\n    \"unchanged_inputs\": 7254,\n    \"owned_files_created_before_snapshot\": [],\n    \"unchanged_predecessor_artifacts\": 128,\n    \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\",\n    \"contract_sha256\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\",\n    \"validation_sha256\": \"a1eccdb81fc3882bbf4704ab0219aab686c636dee21b3b2b13d493c5b82fc8fd\",\n    \"manifest_sha256\": \"0016e515a1fd846b326d0f851c896a839d6dc307b8f6af2eedeaf1a653fe3deb\",\n    \"stop_file_present\": false,\n    \"completion\": null\n  }\n}\n",
+        "exit_code": 0,
+        "status": "completed"
+      }
+    },
+    {
+      "type": "error",
+      "message": "Selected model is at capacity. Please try a different model."
+    },
+    {
+      "type": "turn.failed",
+      "error": {
+        "message": "Selected model is at capacity. Please try a different model."
+      }
+    }
+  ],
+  "predecessor_returncode": 1,
+  "predecessor_outcome": "missing_or_malformed_report",
+  "reconciliation": "Worker 171 returned 1 with missing_or_malformed_report. Inspected raw final events and filesystem effects. Final manifest, preservation receipt, 14-module joint replay and 90 permitted axiom closures already exist and their hashes agree. No mathematical build or experiment is pending; no completed side effect replayed. Retain the validated second-row theorem and third-row identity, despite missing transport report.",
+  "capabilities": {
+    "scratch": "Denied by developer; not accessed. Durable unique research/evidence paths used.",
+    "sage": null,
+    "gap": "/opt/homebrew/bin/gap",
+    "heredoc": "zsh here-document failed creating a temporary file; empty setup file only, replaced using apply_patch."
+  },
+  "stop_file_present": false
+}

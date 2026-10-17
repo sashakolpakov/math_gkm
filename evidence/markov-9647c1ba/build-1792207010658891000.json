@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovThirdMarginsM964.lean:19:1: error: Tactic `apply` failed: could not unify the conclusion of `@add_le_add_right`\n  ?a + ?b \u2264 ?a + ?c\nwith the goal\n  \u2191(thirdCM964 r) * \u2191(d - (s + n)) / (\u2191(s + n) + 1) + \u2191(thirdLM964 d r) \u2264\n    \u2191(thirdCM964 r) * \u2191d / (\u2191s + 1) + \u2191(thirdLM964 d r)\n\nNote: The full type of `@add_le_add_right` is\n  \u2200 {\u03b1 : Type ?u.10} [inst : Add \u03b1] [inst_1 : LE \u03b1] [AddLeftMono \u03b1] {b c : \u03b1}, b \u2264 c \u2192 \u2200 (a : \u03b1), a + b \u2264 a + c\n\nd s n : \u2115\nr : Bool\n\u22a2 \u2191(thirdCM964 r) * \u2191(d - (s + n)) / (\u2191(s + n) + 1) + \u2191(thirdLM964 d r) \u2264\n    \u2191(thirdCM964 r) * \u2191d / (\u2191s + 1) + \u2191(thirdLM964 d r)\n/Users/sasha/math_gkm/research/MarkovThirdMarginsM964.lean:84:3: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovThirdMarginsM964.lean:82:3: warning: 'push_cast' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n/Users/sasha/math_gkm/research/MarkovThirdMarginsM964.lean:93:22: warning: this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`\n/Users/sasha/math_gkm/research/MarkovThirdMarginsM964.lean:93:22: warning: 'ring' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n/Users/sasha/math_gkm/research/MarkovThirdMarginsM964.lean:106:1: error: 'change' tactic failed, pattern\n  (2 * B * thirdBoundM964 d s r + thirdBoundM964 d s r ^ 2) * kernelScaleMA64 j s \u2264 B ^ 2 * topGapMA64 j s\nis not definitionally equal to target\n  (2 * \u2191((s + thirdJM964 d r + 3).choose (thirdJM964 d r)) * thirdBoundM964 d s r + thirdBoundM964 d s r ^ 2) *\n      \u2191(liftTermMAE9 (thirdJM964 d r) (s + 1) 0) ^ 2 \u2264\n    \u2191((s + thirdJM964 d r + 3).choose (thirdJM964 d r)) ^ 2 *\n      (\u2191((s + 1 + thirdJM964 d r + 3).choose (thirdJM964 d r)) ^ 2 -\n        \u2191((s + thirdJM964 d r + 3).choose (thirdJM964 d r)) * \u2191((s + 2 + thirdJM964 d r + 3).choose (thirdJM964 d r)))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovThirdMarginsM964": "757539d64e84d0a60e442660b43e8b8c4575432260e11ccbda9805724884855b"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-9647c1ba/MarkovThirdMarginsM964.olean",
+    "/Users/sasha/math_gkm/research/MarkovThirdMarginsM964.lean"
+  ],
+  "seconds": 9.81051895802375,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

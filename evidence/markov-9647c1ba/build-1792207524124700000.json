@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCorrectionBudgetM964.lean:25:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2211 x \u2208 ?s, if x = ?a then ?b x else 0\nin the target expression\n  ((if k = s then absorbedExtraM418 d s (Q.coeff 0) else 0) +\n      \u2211 x \u2208 range (s + 1), if k = x then Q.coeff (s - x + 1) else 0) =\n    (if k = s then absorbedExtraM418 d s (Q.coeff 0) else 0) + if k \u2264 s then Q.coeff (s - k + 1) else 0\n\nd s k : \u2115\nQ : \u211d[X]\n\u22a2 ((if k = s then absorbedExtraM418 d s (Q.coeff 0) else 0) +\n      \u2211 x \u2208 range (s + 1), if k = x then Q.coeff (s - x + 1) else 0) =\n    (if k = s then absorbedExtraM418 d s (Q.coeff 0) else 0) + if k \u2264 s then Q.coeff (s - k + 1) else 0\n/Users/sasha/math_gkm/research/MarkovCorrectionBudgetM964.lean:31:65: warning: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead\n/Users/sasha/math_gkm/research/MarkovCorrectionBudgetM964.lean:45:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2211 k \u2208 range (s + 1), eval 1 (weightPolyMFEE (fun k => zchooseM37B d \u2191k) (C (Q.coeff (s - k + 1)) * X ^ k))\nin the target expression\n  Q.coeff 0 * \u2191(d.choose (s + 1)) +\n      (\u2211 x \u2208 range s, eval 1 (weightPolyMFEE (fun k => \u2191(d.choose k)) (C (Q.coeff (s - x + 1)) * X ^ x)) +\n        eval 1 (weightPolyMFEE (fun k => \u2191(d.choose k)) (C (Q.coeff (0 + 1)) * X ^ s))) =\n    \u2211 x \u2208 range (s + 1).succ, \u2191(d.choose x) * Q.coeff (s + 1 - x)\n\nd s : \u2115\nQ : \u211d[X]\nhe :\n  \u2211 k \u2208 range (s + 1), eval 1 (weightPolyMFEE (fun k => zchooseM37B d \u2191k) (C (Q.coeff (s - k + 1)) * X ^ k)) =\n    \u2211 k \u2208 range (s + 1), \u2191(d.choose k) * Q.coeff (s + 1 - k)\n\u22a2 Q.coeff 0 * \u2191(d.choose (s + 1)) +\n      (\u2211 x \u2208 range s, eval 1 (weightPolyMFEE (fun k => \u2191(d.choose k)) (C (Q.coeff (s - x + 1)) * X ^ x)) +\n        eval 1 (weightPolyMFEE (fun k => \u2191(d.choose k)) (C (Q.coeff (0 + 1)) * X ^ s))) =\n    \u2211 x \u2208 range (s + 1).succ, \u2191(d.choose x) * Q.coeff (s + 1 - x)\n/Users/sasha/math_gkm/research/MarkovCorrectionBudgetM964.lean:65:24: error: Application type mismatch: The argument\n  hQ 1\nhas type\n  0 \u2264 Q.coeff 1\nbut is expected to have type\n  0 \u2264 if s \u2264 s then Q.coeff 1 else 0\nin the application\n  add_nonneg ha (hQ 1)\n/Users/sasha/math_gkm/research/MarkovCorrectionBudgetM964.lean:72:5: error: linarith failed to find a contradiction\ncase pos\nd j s : \u2115\nQ : \u211d[X]\nc : \u211d\nhQ : \u2200 (k : \u2115), 0 \u2264 Q.coeff k\nhc : 0 \u2264 c\nhcoeff : \u2200 (m : \u2115), Q.coeff (m + 1) \u2264 c * \u2191(j.choose m)\nk : \u2115\nha : 0 \u2264 absorbedExtraM418 d s (Q.coeff 0)\nhb : absorbedExtraM418 d s (Q.coeff 0) \u2264 Q.coeff 0 * \u2191d / (\u2191s + 1)\nhu : 0 \u2264 Q.coeff 0 * \u2191d / (\u2191s + 1)\nhk : \u00ack = s\nhks : k \u2264 s\nh1 : Q.coeff (s - k + 1) \u2264 c * \u2191(j.choose (s - k))\nhp : 0 \u2264 Q.coeff 0 * \u2191d / (\u2191s + 1) * \u2191(j.choose (s - k))\na\u271d : (if k \u2264 s then (Q.coeff 0 * \u2191d / (\u2191s + 1) + c) * \u2191(j.choose (s - k)) else 0) < Q.coeff (s - k + 1)\n\u22a2 False\nfailed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCorrectionBudgetM964": "41fbd3968a477a5436bda041aa5930eeaf487571b472dcbf4d6c5f619436da23"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-9647c1ba/MarkovCorrectionBudgetM964.olean",
+    "/Users/sasha/math_gkm/research/MarkovCorrectionBudgetM964.lean"
+  ],
+  "seconds": 22.13091104204068,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
