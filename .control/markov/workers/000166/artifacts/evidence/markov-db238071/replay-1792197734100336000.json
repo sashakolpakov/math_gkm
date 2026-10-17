@@ -1,0 +1,76 @@
+{
+  "timeout": true,
+  "stdout": "None",
+  "stderr": "None",
+  "modules": {
+    "MarkovProduct0S19MDB2": "8f641b63763a34790f92e01f4dfb086fd6e6871c0173da9312dfeab75591f253",
+    "MarkovProduct0S20MDB2": "cf9146f703bedf19e815aaa8c3f93da2788ed7ad0cc08d24d8a039bf66d82f9c",
+    "MarkovProduct1S19MDB2": "349231d3389a637b3f38af73ca34828cb3927d500f41180b32d903fb1a61d637",
+    "MarkovProduct1S20MDB2": "7db213ffac63fdcfb2c3c49c6f51be5235e33258da00142b3d12ff875338fe3b",
+    "MarkovDirect2S15MDB2": "fbfacaf697cbe8b1a99df085eef00b3aaebbf6856c975e5da7dfcc5f81cfc9ce",
+    "MarkovDirect2S16MDB2": "556530d292ceea5188274f226f5f0709d2fa9e78106cf70479db505e100c4891",
+    "MarkovSwap3S15MDB2": "843da9786f7a602cc4d323de7cb4265b11cacd529ae7cc1485951b5cce4bfe57",
+    "MarkovDenseTransportMDB2": "9fc7620c862ba44729925fbbf3f16f021d1e0d1436f69daa035d105bfca5de3e",
+    "MarkovCorrectionFactorMDB2": "0050f8fdf49da5d84ef18ce5324a35d38426ec14b418a77c70dd2f270f4bacde"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedMDB2.lean",
+    "MarkovProduct0S19MDB2",
+    "MarkovProduct0S20MDB2",
+    "MarkovProduct1S19MDB2",
+    "MarkovProduct1S20MDB2",
+    "MarkovDirect2S15MDB2",
+    "MarkovDirect2S16MDB2",
+    "MarkovSwap3S15MDB2",
+    "MarkovDenseTransportMDB2",
+    "MarkovCorrectionFactorMDB2"
+  ],
+  "seconds": 301.1161153750145,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "7677dfca91bea4eaa17e04eac9934cc22f27ea4934984bc7be8d42d78a49a2b5",
+  "declared_names": {
+    "MarkovProduct0S19MDB2": [
+      "prod0s19_eqMDB2"
+    ],
+    "MarkovProduct0S20MDB2": [
+      "prod0s20_eqMDB2"
+    ],
+    "MarkovProduct1S19MDB2": [
+      "prod1s19_eqMDB2"
+    ],
+    "MarkovProduct1S20MDB2": [
+      "prod1s20_eqMDB2"
+    ],
+    "MarkovDirect2S15MDB2": [
+      "direct2s15_eqMDB2"
+    ],
+    "MarkovDirect2S16MDB2": [
+      "direct2s16_eqMDB2"
+    ],
+    "MarkovSwap3S15MDB2": [
+      "swap3s15_eqMDB2"
+    ],
+    "MarkovDenseTransportMDB2": [
+      "dense_mul_transportMDB2",
+      "dense_gap_transportMDB2"
+    ],
+    "MarkovCorrectionFactorMDB2": [
+      "correctionExponentMDB2",
+      "correctionConstantMDB2",
+      "correctionResidualMDB2",
+      "correctionRowMDB2",
+      "correction_exponentMDB2",
+      "correction_binomial_coeffMDB2",
+      "correction_row_splitMDB2",
+      "source_correction_factorMDB2",
+      "correction_row_crossMDB2",
+      "source_correction_lc_of_residualMDB2"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed MDB2; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

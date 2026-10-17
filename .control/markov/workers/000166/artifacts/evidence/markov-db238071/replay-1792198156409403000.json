@@ -1,0 +1,73 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovDenseTransportMDB2\ncollected MarkovCorrectionFactorMDB2\ncollected MarkovPackedConvolutionMDB2\ncollected MarkovCorrectionSupportMDB2\ncollected MarkovPackedExamplesMDB2\nreplay union of 5 modules over 7 inherited imports\nisolation checked for 32 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovDenseTransportMDB2": "9fc7620c862ba44729925fbbf3f16f021d1e0d1436f69daa035d105bfca5de3e",
+    "MarkovCorrectionFactorMDB2": "0050f8fdf49da5d84ef18ce5324a35d38426ec14b418a77c70dd2f270f4bacde",
+    "MarkovPackedConvolutionMDB2": "d630a7646b8ef2dc7f47ef3b888b057e73c524d2204d14f98b1b8e8bba1a74b9",
+    "MarkovCorrectionSupportMDB2": "c269bfbca1dd829c8aa7907c8d9dcba7f67d118dbbba9a36ecad05846726e6d5",
+    "MarkovPackedExamplesMDB2": "eeb39504baaaa4676d613a54e56ad08ff95c747452cc5f5e805d6f8d4e41edd9"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedMDB2.lean",
+    "MarkovDenseTransportMDB2",
+    "MarkovCorrectionFactorMDB2",
+    "MarkovPackedConvolutionMDB2",
+    "MarkovCorrectionSupportMDB2",
+    "MarkovPackedExamplesMDB2"
+  ],
+  "seconds": 12.349011707992759,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "7677dfca91bea4eaa17e04eac9934cc22f27ea4934984bc7be8d42d78a49a2b5",
+  "declared_names": {
+    "MarkovDenseTransportMDB2": [
+      "dense_mul_transportMDB2",
+      "dense_gap_transportMDB2"
+    ],
+    "MarkovCorrectionFactorMDB2": [
+      "correctionExponentMDB2",
+      "correctionConstantMDB2",
+      "correctionResidualMDB2",
+      "correctionRowMDB2",
+      "correction_exponentMDB2",
+      "correction_binomial_coeffMDB2",
+      "correction_row_splitMDB2",
+      "source_correction_factorMDB2",
+      "correction_row_crossMDB2",
+      "source_correction_lc_of_residualMDB2"
+    ],
+    "MarkovPackedConvolutionMDB2": [
+      "natConvolutionMDB2",
+      "nat_dense_evalMDB2",
+      "packed_convolution_evalMDB2",
+      "convolution_sumMDB2",
+      "convolution_digit_boundMDB2",
+      "packed_convolution_soundMDB2",
+      "packed_convolution_sum_soundMDB2"
+    ],
+    "MarkovCorrectionSupportMDB2": [
+      "correction_residual_zero_coeffMDB2",
+      "correction_residual_succ_coeffMDB2",
+      "correction_residual_posMDB2",
+      "correction_residual_tailMDB2",
+      "correctionSeqMDB2",
+      "correction_seq_zeroMDB2",
+      "correction_seq_posMDB2",
+      "correction_seq_nonnegMDB2",
+      "correction_seq_intervalMDB2",
+      "correction_cross_iff_adjacentMDB2"
+    ],
+    "MarkovPackedExamplesMDB2": [
+      "packed_polynomial_transportMDB2",
+      "packed_small_certificateMDB2",
+      "packed_carry_obstructionMDB2"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed MDB2; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

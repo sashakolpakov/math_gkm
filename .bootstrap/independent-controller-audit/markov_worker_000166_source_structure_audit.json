@@ -1,0 +1,3877 @@
+{
+  "worker": 166,
+  "request": "db238071732b4d94a95826082e34e37e",
+  "created_at_utc": "2026-10-17T00:57:44.987225+00:00",
+  "historical_status": "Completed / return0 / delivered report; host elapsed1819.4393000602722 seconds. Twelve selected compiled/printed modules, five replayed. Root unresolved.",
+  "scope": "Closed166 archive and explicit named inherited/current counterparts only. Static parsing, hashes, literal inventory and loop-index counts. No project/compiler/proof/checker/replay/generator/experiment/finalizer execution, mathematical-value recomputation, project edits or research assistance. Active/later work excluded; earlier windows unchanged.",
+  "new_modules": [
+    {
+      "module": "MarkovCorrectionFactorMDB2",
+      "path": "research/MarkovCorrectionFactorMDB2.lean",
+      "bytes": 3499,
+      "characters": 3428,
+      "sha256": "0050f8fdf49da5d84ef18ce5324a35d38426ec14b418a77c70dd2f270f4bacde",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "correctionExponentMDB2"
+        },
+        {
+          "kind": "def",
+          "name": "correctionConstantMDB2"
+        },
+        {
+          "kind": "def",
+          "name": "correctionResidualMDB2"
+        },
+        {
+          "kind": "def",
+          "name": "correctionRowMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_exponentMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_binomial_coeffMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_row_splitMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_factorMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_row_crossMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_lc_of_residualMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovCorrectionFactorMDB2.olean",
+      "object_sha256": "9c2814be29968f5d18d2ec3763a1f2ff55007c38b6a60740ceebfc9daefeac54",
+      "archive_object_present": true,
+      "current_object_present_at_initial_observation": true,
+      "selected": true,
+      "replayed_in166": true,
+      "printed_in166": true,
+      "status": "selected_replayed",
+      "attempts": [
+        {
+          "path": "build-1792197111517176000.json",
+          "sha256": "a2fab053b59072d9068abc375e3e70205f00b162263b7ead505d576081689fc3",
+          "source_sha256": "2a1fff1d63d88e57e9f4126e6b6252159dfb99e0d82f5decb2c78d846acec033",
+          "matches_final_source": false,
+          "returncode": 1,
+          "timeout": false
+        },
+        {
+          "path": "build-1792197197691826000.json",
+          "sha256": "a701dd132a7fa5f220b28d783f2e5da5de368b8b43121a53f04a7679fcd7262f",
+          "source_sha256": "0050f8fdf49da5d84ef18ce5324a35d38426ec14b418a77c70dd2f270f4bacde",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovFirstCorrectionPolynomialMAE9",
+        "MarkovRowTransferMFFD"
+      ],
+      "theorem_statements": [
+        {
+          "name": "correction_exponentMDB2",
+          "statement": "theorem correction_exponentMDB2 (q : ℕ) (r : Bool) (hq : 2 ≤ q) :\n sourceNME9C q r - 2*(q+1)-1=correctionExponentMDB2 q r",
+          "block_sha256": "4ada0f6447183568d67f29c05d1ae5d5829edb74e788126b949b8f08293c068c"
+        },
+        {
+          "name": "correction_binomial_coeffMDB2",
+          "statement": "theorem correction_binomial_coeffMDB2 (q i : ℕ) (r : Bool) (hq : 2 ≤ q) :\n (C (correctionConstantMDB2 r)*(X^2*(X+1)^correctionExponentMDB2 q r)).coeff i =\n firstCorrectionM1BB q r i",
+          "block_sha256": "afaeb87fced1a835b4f177dc4875b3439f9d21054e61c8bee6efbfa5bff39fdc"
+        },
+        {
+          "name": "correction_row_splitMDB2",
+          "statement": "theorem correction_row_splitMDB2 (q : ℕ) (r : Bool) (hq : 2 ≤ q) :\n correctionRowMDB2 q r=lowerRowMFFD (sourceNME9C q r) (q+1)+\n C (correctionConstantMDB2 r)*(X^2*(X+1)^correctionExponentMDB2 q r)",
+          "block_sha256": "3a3835316c6cb3b2630a6f4e54fe46dd1bc3c40d858b794d7621a83c72b40064"
+        },
+        {
+          "name": "source_correction_factorMDB2",
+          "statement": "theorem source_correction_factorMDB2 (q i : ℕ) (r : Bool) (hq : 2 ≤ q) :\n threeRawM9E2 q r i (q+1)=(correctionRowMDB2 q r).coeff i",
+          "block_sha256": "c1a8cec8be303202421b807fde8bd21ff72cf0c8b1c96dc03a740a6fc343edff"
+        },
+        {
+          "name": "correction_row_crossMDB2",
+          "statement": "theorem correction_row_crossMDB2 (q : ℕ) (r : Bool)\n (h : CrossLC (CoeffSeq ((correctionResidualMDB2 q r).map (Int.castRingHom ℝ)))) :\n CrossLC (CoeffSeq ((correctionRowMDB2 q r).map (Int.castRingHom ℝ)))",
+          "block_sha256": "da02a16a5fed878d0b7f003e3cafc50bc13b878ac4c43a4cc916d3796afc3664"
+        },
+        {
+          "name": "source_correction_lc_of_residualMDB2",
+          "statement": "theorem source_correction_lc_of_residualMDB2 (q i : ℕ) (r : Bool) (hq : 2 ≤ q)\n (h : CrossLC (CoeffSeq ((correctionResidualMDB2 q r).map (Int.castRingHom ℝ)))) :\n threeRawM9E2 q r i (q+1)*threeRawM9E2 q r (i+2) (q+1) ≤\n   threeRawM9E2 q r (i+1) (q+1)^2",
+          "block_sha256": "8f4e6b3ec714b51307b199d6b622a7d69d46597512afdb54f3e24ea798c0d490"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "correctionExponentMDB2",
+          "kind": "def",
+          "header": "def correctionExponentMDB2 (q : ℕ) (r : Bool) : ℕ",
+          "block_sha256": "11a7450f6688a247f34b716b97808ecfee57cd9aeba6f4ee69375b5aee70ee34",
+          "block_characters": 75
+        },
+        {
+          "name": "correctionConstantMDB2",
+          "kind": "def",
+          "header": "def correctionConstantMDB2 (r : Bool) : ℤ",
+          "block_sha256": "c671b42a889b68cb2780cf9acda6abbca2200dcdd4321a94abc69acbdefc7f49",
+          "block_characters": 63
+        },
+        {
+          "name": "correctionResidualMDB2",
+          "kind": "def",
+          "header": "def correctionResidualMDB2 (q : ℕ) (r : Bool) : Polynomial ℤ",
+          "block_sha256": "d6711161ff808a7ededba1c5c94d8326778ebde53ff3f5be171db6da01bfee82",
+          "block_characters": 130
+        },
+        {
+          "name": "correctionRowMDB2",
+          "kind": "def",
+          "header": "def correctionRowMDB2 (q : ℕ) (r : Bool) : Polynomial ℤ",
+          "block_sha256": "7061df3cbb106683b406aa149df617f0ccd89e1da062bd394502d1c449f30a4b",
+          "block_characters": 125
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovCorrectionSupportMDB2",
+      "path": "research/MarkovCorrectionSupportMDB2.lean",
+      "bytes": 3540,
+      "characters": 3450,
+      "sha256": "c269bfbca1dd829c8aa7907c8d9dcba7f67d118dbbba9a36ecad05846726e6d5",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "correction_residual_zero_coeffMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_residual_succ_coeffMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_residual_posMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_residual_tailMDB2"
+        },
+        {
+          "kind": "def",
+          "name": "correctionSeqMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_seq_zeroMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_seq_posMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_seq_nonnegMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_seq_intervalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_cross_iff_adjacentMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovCorrectionSupportMDB2.olean",
+      "object_sha256": "14d9aac1d32cc948f07b7e8c5dcf9fcc975b5879bd73da95ad7ff41241d428c1",
+      "archive_object_present": true,
+      "current_object_present_at_initial_observation": true,
+      "selected": true,
+      "replayed_in166": true,
+      "printed_in166": true,
+      "status": "selected_replayed",
+      "attempts": [
+        {
+          "path": "build-1792197787088736000.json",
+          "sha256": "bd7607bfac7043e65934286ae18c03b424d34887b73d9b619f1d5d5119b99a34",
+          "source_sha256": "a8ff8472f2b0bad44c95164e584779cfea08418ddf284d7ad796202d062c4284",
+          "matches_final_source": false,
+          "returncode": 1,
+          "timeout": false
+        },
+        {
+          "path": "build-1792197917490049000.json",
+          "sha256": "8c9efcdefc67a4cb584ef65e72aa87adea62ff8105a78c7987754e698e82ac2b",
+          "source_sha256": "c269bfbca1dd829c8aa7907c8d9dcba7f67d118dbbba9a36ecad05846726e6d5",
+          "matches_final_source": true,
+          "returncode": null,
+          "timeout": true
+        },
+        {
+          "path": "build-1792198048934982000.json",
+          "sha256": "c0d618c71f7aeeb7a23cb9aa794fed969b5cb5335bf09bfae7138508f768fac0",
+          "source_sha256": "c269bfbca1dd829c8aa7907c8d9dcba7f67d118dbbba9a36ecad05846726e6d5",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovCorrectionFactorMDB2",
+        "MarkovPositiveRowsMDAB",
+        "MarkovCross774"
+      ],
+      "theorem_statements": [
+        {
+          "name": "correction_residual_zero_coeffMDB2",
+          "statement": "theorem correction_residual_zero_coeffMDB2 (q : ℕ) (r : Bool) :\n (correctionResidualMDB2 q r).coeff 0=correctionConstantMDB2 r",
+          "block_sha256": "d64f088a67de2ffaaaa4734e7b1f755964e97db23b0827814482e9b4205a1518"
+        },
+        {
+          "name": "correction_residual_succ_coeffMDB2",
+          "statement": "theorem correction_residual_succ_coeffMDB2 (q k : ℕ) (r : Bool) :\n (correctionResidualMDB2 q r).coeff (k+1)=\n (rowHMFFD (sourceNME9C q r) (q+1)).coeff k",
+          "block_sha256": "a4078a86be5167294f900cbb2b04dbdc3800de6be64899ae0613ee3b91be30dc"
+        },
+        {
+          "name": "correction_residual_posMDB2",
+          "statement": "theorem correction_residual_posMDB2 (q k : ℕ) (r : Bool)\n (hq : 2 ≤ q) (hk : k ≤ q+2) : 0 < (correctionResidualMDB2 q r).coeff k",
+          "block_sha256": "b8d8a5dd4adccc289f63d767f57a39ca657a1d3d8392c50804c8561da00e1d92"
+        },
+        {
+          "name": "correction_residual_tailMDB2",
+          "statement": "theorem correction_residual_tailMDB2 (q k : ℕ) (r : Bool) (hk : q+2<k) :\n (correctionResidualMDB2 q r).coeff k=0",
+          "block_sha256": "490d94dff4b3467a94156b3a2a46d0f708467d95e62917abc1bb5e4cb725146e"
+        },
+        {
+          "name": "correction_seq_zeroMDB2",
+          "statement": "theorem correction_seq_zeroMDB2 (q : ℕ) (r : Bool) (k : ℤ)\n (hk : k<0 ∨ (q:ℤ)+2<k) : correctionSeqMDB2 q r k=0",
+          "block_sha256": "4c22c62270df9fd8d21aa565b7195830f8a0448b7fd83635a9bbbf7bd5b853dd"
+        },
+        {
+          "name": "correction_seq_posMDB2",
+          "statement": "theorem correction_seq_posMDB2 (q : ℕ) (r : Bool) (hq : 2 ≤ q) (k : ℤ)\n (hk0 : 0 ≤ k) (hkq : k ≤ (q:ℤ)+2) : 0 < correctionSeqMDB2 q r k",
+          "block_sha256": "ffa6ff0c1d60999ae013ede87e3e29b54ad44a248ddd7563be95f26ae95f163d"
+        },
+        {
+          "name": "correction_seq_nonnegMDB2",
+          "statement": "theorem correction_seq_nonnegMDB2 (q : ℕ) (r : Bool) (hq : 2 ≤ q) (k : ℤ) :\n 0 ≤ correctionSeqMDB2 q r k",
+          "block_sha256": "de52c661b530fba66021d688027bd8969d3c5ae418b66418c084e074cc052865"
+        },
+        {
+          "name": "correction_seq_intervalMDB2",
+          "statement": "theorem correction_seq_intervalMDB2 (q : ℕ) (r : Bool) (hq : 2 ≤ q) :\n IntervalSupport774 (correctionSeqMDB2 q r)",
+          "block_sha256": "cf512deb8445318fb3604dffea4c8bd1e06cbced0c9f15958ed6ff77eb86b778"
+        },
+        {
+          "name": "correction_cross_iff_adjacentMDB2",
+          "statement": "theorem correction_cross_iff_adjacentMDB2 (q : ℕ) (r : Bool) (hq : 2 ≤ q) :\n CrossLC (correctionSeqMDB2 q r) ↔\n ∀ k : ℤ, correctionSeqMDB2 q r (k-1)*correctionSeqMDB2 q r (k+1) ≤\n   correctionSeqMDB2 q r k^2",
+          "block_sha256": "0582d3e375bd7d3d6d43ecec2f931faeae46887b29e264eb6b01aa927ba2e902"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "correctionSeqMDB2",
+          "kind": "def",
+          "header": "def correctionSeqMDB2 (q : ℕ) (r : Bool) : ℤ → ℝ",
+          "block_sha256": "6efd9ea0b0d74a406a80b5a76e01d6f730ad745f43ca7f5c0d4f21ae99df3cd4",
+          "block_characters": 116
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovDenseTransportMDB2",
+      "path": "research/MarkovDenseTransportMDB2.lean",
+      "bytes": 800,
+      "characters": 782,
+      "sha256": "9fc7620c862ba44729925fbbf3f16f021d1e0d1436f69daa035d105bfca5de3e",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "dense_mul_transportMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "dense_gap_transportMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovDenseTransportMDB2.olean",
+      "object_sha256": "1aa3fa43fb28017824ea2a6c211427e62ea5c62e24a4cb36aa6fec9559765b64",
+      "archive_object_present": true,
+      "current_object_present_at_initial_observation": true,
+      "selected": true,
+      "replayed_in166": true,
+      "printed_in166": true,
+      "status": "selected_replayed",
+      "attempts": [
+        {
+          "path": "build-1792196728062453000.json",
+          "sha256": "dde75440edf739e0a28384529d528303d7335d952b678bf4200c683baf9dc041",
+          "source_sha256": "9fc7620c862ba44729925fbbf3f16f021d1e0d1436f69daa035d105bfca5de3e",
+          "matches_final_source": true,
+          "returncode": null,
+          "timeout": true
+        },
+        {
+          "path": "build-1792197062549278000.json",
+          "sha256": "f097a9fe5318dc56fac80dff8f408918b008d7a8ff1ee28fee4c50680fdf3bb7",
+          "source_sha256": "9fc7620c862ba44729925fbbf3f16f021d1e0d1436f69daa035d105bfca5de3e",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovDenseCertificateMC9F"
+      ],
+      "theorem_statements": [
+        {
+          "name": "dense_mul_transportMDB2",
+          "statement": "theorem dense_mul_transportMDB2 (n : ℕ) (a b c : DenseMC9F n)\n (h : dmulMC9F n a b = c) (v : ℕ → ℚ) :\n devalMC9F n v c = devalMC9F n v a * devalMC9F n v b",
+          "block_sha256": "e54d9fabd042e9fbb484cc553cc05931eef6a1e243cf0d456e007a180f197c29"
+        },
+        {
+          "name": "dense_gap_transportMDB2",
+          "statement": "theorem dense_gap_transportMDB2 (n : ℕ) (a b c d e : DenseMC9F n)\n (h : daddMC9F n (daddMC9F n a b) (dnegMC9F n (daddMC9F n c d)) = e)\n (v : ℕ → ℚ) :\n devalMC9F n v e = devalMC9F n v a + devalMC9F n v b -\n   devalMC9F n v c - devalMC9F n v d",
+          "block_sha256": "6945a96e5c14fa927d2e1baaa627dfbe323b0b292a6703ea19af415c926a5824"
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovDirect2S15MDB2",
+      "path": "research/MarkovDirect2S15MDB2.lean",
+      "bytes": 102236,
+      "characters": 102236,
+      "sha256": "fbfacaf697cbe8b1a99df085eef00b3aaebbf6856c975e5da7dfcc5f81cfc9ce",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "direct2s15MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "direct2s15_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovDirect2S15MDB2.olean",
+      "object_sha256": "da566a553d95f70e4b5e32e9c12e3590830fe41bc71e893f34f90c4f14c3f50b",
+      "archive_object_present": true,
+      "current_object_present_at_initial_observation": true,
+      "selected": true,
+      "replayed_in166": false,
+      "printed_in166": true,
+      "status": "selected_unreplayed",
+      "attempts": [
+        {
+          "path": "build-1792196960621862000.json",
+          "sha256": "d965cf53c9c91805260b6c8cab9da468b68b72097d0fe9b9d9e9d856aa65ae46",
+          "source_sha256": "fbfacaf697cbe8b1a99df085eef00b3aaebbf6856c975e5da7dfcc5f81cfc9ce",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovDenseBatch2S14MC9F"
+      ],
+      "theorem_statements": [
+        {
+          "name": "direct2s15_eqMDB2",
+          "statement": "theorem direct2s15_eqMDB2 : dmulMC9F 4 dp2s14MC9F df27MC9F = direct2s15MDB2",
+          "block_sha256": "eb0be64e2b9672c8a0021212b9fd8bf67ff76873819898cb59ad85a921619559"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "direct2s15MDB2",
+          "kind": "def",
+          "header": "noncomputable def direct2s15MDB2 : DenseMC9F 4",
+          "block_sha256": "106adc3f3b7e3b7604c699a7cce46b1e3db647c9457aba961d821dc7322f464a",
+          "block_characters": 101878
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovDirect2S16MDB2",
+      "path": "research/MarkovDirect2S16MDB2.lean",
+      "bytes": 123735,
+      "characters": 123735,
+      "sha256": "556530d292ceea5188274f226f5f0709d2fa9e78106cf70479db505e100c4891",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "direct2s16MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "direct2s16_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovDirect2S16MDB2.olean",
+      "object_sha256": "71ddc72678c1e1d915eaf6e74805ff07f9484fc31749cffa01f2ebabae445b66",
+      "archive_object_present": true,
+      "current_object_present_at_initial_observation": true,
+      "selected": true,
+      "replayed_in166": false,
+      "printed_in166": true,
+      "status": "selected_unreplayed",
+      "attempts": [
+        {
+          "path": "build-1792197209396397000.json",
+          "sha256": "96515fc67d64ca403c50d990e79840e38acab36461e6703db61490941b6bd6bf",
+          "source_sha256": "556530d292ceea5188274f226f5f0709d2fa9e78106cf70479db505e100c4891",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovDirect2S15MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "direct2s16_eqMDB2",
+          "statement": "theorem direct2s16_eqMDB2 : dmulMC9F 4 direct2s15MDB2 df0MC9F = direct2s16MDB2",
+          "block_sha256": "19b751c49624a6c0978ef25fe78cec7fe2feea2c17924b62673dac0d1b02a35f"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "direct2s16MDB2",
+          "kind": "def",
+          "header": "noncomputable def direct2s16MDB2 : DenseMC9F 4",
+          "block_sha256": "a0d25b63a6413b6d9bae1ea6d351144bf6b28b544a325970a146a707cc5fbe6d",
+          "block_characters": 123378
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovPackedConvolutionMDB2",
+      "path": "research/MarkovPackedConvolutionMDB2.lean",
+      "bytes": 2377,
+      "characters": 2322,
+      "sha256": "d630a7646b8ef2dc7f47ef3b888b057e73c524d2204d14f98b1b8e8bba1a74b9",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "natConvolutionMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "nat_dense_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "packed_convolution_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "convolution_sumMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "convolution_digit_boundMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "packed_convolution_soundMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "packed_convolution_sum_soundMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovPackedConvolutionMDB2.olean",
+      "object_sha256": "ba9bedf949996381f815ecc157a988b1b92788a2cb3b40a183b23d947fe70289",
+      "archive_object_present": true,
+      "current_object_present_at_initial_observation": true,
+      "selected": true,
+      "replayed_in166": true,
+      "printed_in166": true,
+      "status": "selected_replayed",
+      "attempts": [
+        {
+          "path": "build-1792197654170800000.json",
+          "sha256": "532abb0af2c30273782c2aaecf1596aec8de8b6d52e421136e478e4fcdde1954",
+          "source_sha256": "f12435f072ff7395b10a4fd77a22c5fef95f65a90d6f59c4016186ef0e57b025",
+          "matches_final_source": false,
+          "returncode": 1,
+          "timeout": false
+        },
+        {
+          "path": "build-1792197719227104000.json",
+          "sha256": "0b7b8bb087a9551242726545d06ba17903a867c01eed156337244ce25cd9147f",
+          "source_sha256": "d630a7646b8ef2dc7f47ef3b888b057e73c524d2204d14f98b1b8e8bba1a74b9",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovDenseCertificateMC9F",
+        "Mathlib.Data.Nat.Digits.Lemmas"
+      ],
+      "theorem_statements": [
+        {
+          "name": "nat_dense_evalMDB2",
+          "statement": "theorem nat_dense_evalMDB2 (B : ℕ) (a : List ℕ) :\n denseEvalMC9F (fun k : ℕ => (k:ℚ)) B a = ((Nat.ofDigits B a:ℕ):ℚ)",
+          "block_sha256": "fba8694aa67dde3cb3a3ef1f1ca8dec0a9a8700253158bfa2713b79b24bc0302"
+        },
+        {
+          "name": "packed_convolution_evalMDB2",
+          "statement": "theorem packed_convolution_evalMDB2 (B : ℕ) (a b : List ℕ) :\n Nat.ofDigits B (natConvolutionMDB2 a b)=Nat.ofDigits B a*Nat.ofDigits B b",
+          "block_sha256": "884cf6127b703525c63bbf866d516ca65fa27a8081d946f9fc482adbcab6d7d8"
+        },
+        {
+          "name": "convolution_sumMDB2",
+          "statement": "theorem convolution_sumMDB2 (a b : List ℕ) :\n (natConvolutionMDB2 a b).sum=a.sum*b.sum",
+          "block_sha256": "d5061d17a6da4a7f109fb8dd052d79e1b88b82b684c682460f14547c21d6843e"
+        },
+        {
+          "name": "convolution_digit_boundMDB2",
+          "statement": "theorem convolution_digit_boundMDB2 (B : ℕ) (a b : List ℕ)\n (h : a.sum*b.sum < B) : ∀ k ∈ natConvolutionMDB2 a b, k < B",
+          "block_sha256": "6854068b6ccf755a454250e21b59ff0e9140d54f7f59e94df9bec6d9420b55cc"
+        },
+        {
+          "name": "packed_convolution_soundMDB2",
+          "statement": "theorem packed_convolution_soundMDB2 (B : ℕ) (hB : 1 < B)\n (a b c : List ℕ) (hlen : (natConvolutionMDB2 a b).length=c.length)\n (hab : a.sum*b.sum < B) (hc : ∀ k ∈ c, k < B)\n (hpack : Nat.ofDigits B a*Nat.ofDigits B b=Nat.ofDigits B c) :\n natConvolutionMDB2 a b=c",
+          "block_sha256": "c6ebab5020dd4c23f0366957f7ae4cb108b5064f8782e54bbf6ac38cd0e5732d"
+        },
+        {
+          "name": "packed_convolution_sum_soundMDB2",
+          "statement": "theorem packed_convolution_sum_soundMDB2 (B : ℕ) (hB : 1 < B)\n (a b c : List ℕ) (hlen : (natConvolutionMDB2 a b).length=c.length)\n (hab : a.sum*b.sum < B) (hc : c.sum < B)\n (hpack : Nat.ofDigits B a*Nat.ofDigits B b=Nat.ofDigits B c) :\n natConvolutionMDB2 a b=c",
+          "block_sha256": "e21d6ca2fc9464308909f772db2ac7e10394496139fb0c92c7e39fdad13035cf"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "natConvolutionMDB2",
+          "kind": "def",
+          "header": "def natConvolutionMDB2 (a b : List ℕ) : List ℕ",
+          "block_sha256": "e262e314dcbfb6db9cfed747cdd4779d7ec562b4138e834ccba257aa329bbeeb",
+          "block_characters": 85
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovPackedExamplesMDB2",
+      "path": "research/MarkovPackedExamplesMDB2.lean",
+      "bytes": 1515,
+      "characters": 1453,
+      "sha256": "eeb39504baaaa4676d613a54e56ad08ff95c747452cc5f5e805d6f8d4e41edd9",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "packed_polynomial_transportMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "packed_small_certificateMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "packed_carry_obstructionMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovPackedExamplesMDB2.olean",
+      "object_sha256": "6e53e293e26dedb245d7ac25e20f5694f67e606e9a0f7107a47f82b824bf9461",
+      "archive_object_present": true,
+      "current_object_present_at_initial_observation": true,
+      "selected": true,
+      "replayed_in166": true,
+      "printed_in166": true,
+      "status": "selected_replayed",
+      "attempts": [
+        {
+          "path": "build-1792197812449855000.json",
+          "sha256": "30a151abb0d4abb8d436f119c7f5aadac8313641efd00ed16add8ace2b01d5a3",
+          "source_sha256": "eeb39504baaaa4676d613a54e56ad08ff95c747452cc5f5e805d6f8d4e41edd9",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovPackedConvolutionMDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "packed_polynomial_transportMDB2",
+          "statement": "theorem packed_polynomial_transportMDB2 (B : ℕ) (hB : 1 < B)\n (a b c : List ℕ) (hlen : (natConvolutionMDB2 a b).length=c.length)\n (hab : a.sum*b.sum < B) (hc : ∀ k ∈ c, k < B)\n (hpack : Nat.ofDigits B a*Nat.ofDigits B b=Nat.ofDigits B c) (x : ℚ) :\n denseEvalMC9F (fun k : ℕ => (k:ℚ)) x c=\n denseEvalMC9F (fun k : ℕ => (k:ℚ)) x a *\n denseEvalMC9F (fun k : ℕ => (k:ℚ)) x b",
+          "block_sha256": "b83ac05da1c73224e8a8cb9e3dd6687168c2f708efed2e1943f3ae9fecf9de01"
+        },
+        {
+          "name": "packed_small_certificateMDB2",
+          "statement": "theorem packed_small_certificateMDB2 :\n natConvolutionMDB2 [3,2] [5,1]=[15,13,2]",
+          "block_sha256": "693921a79af9b860c6ed35238721dac59e53348145a140dc4b4f4b3f3071c211"
+        },
+        {
+          "name": "packed_carry_obstructionMDB2",
+          "statement": "theorem packed_carry_obstructionMDB2 :\n (natConvolutionMDB2 [9,0] [9]).length=([1,8]:List ℕ).length ∧\n (∀ k ∈ ([9,0]:List ℕ), k<10) ∧ (∀ k ∈ ([9]:List ℕ), k<10) ∧\n (∀ k ∈ ([1,8]:List ℕ), k<10) ∧\n Nat.ofDigits (10:ℕ) [9,0]*Nat.ofDigits (10:ℕ) [9]=Nat.ofDigits (10:ℕ) [1,8] ∧\n natConvolutionMDB2 [9,0] [9]≠[1,8]",
+          "block_sha256": "b69c9f349fe2104688edd87c87e7d92d82ee24fd99b7530a01886150cc5ce392"
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct0S19MDB2",
+      "path": "research/MarkovProduct0S19MDB2.lean",
+      "bytes": 171001,
+      "characters": 171001,
+      "sha256": "8f641b63763a34790f92e01f4dfb086fd6e6871c0173da9312dfeab75591f253",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod0s19MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod0s19_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct0S19MDB2.olean",
+      "object_sha256": "ce988c75b498fddc356d68f40491db127b141993e675f7fae6407778afa7cbd9",
+      "archive_object_present": true,
+      "current_object_present_at_initial_observation": true,
+      "selected": true,
+      "replayed_in166": false,
+      "printed_in166": true,
+      "status": "selected_unreplayed",
+      "attempts": [
+        {
+          "path": "build-1792196618668488000.json",
+          "sha256": "7a0f12d0dab559b59a98bb89aca5c6f313be26fe114e2d83a8f1818731970aad",
+          "source_sha256": "8f641b63763a34790f92e01f4dfb086fd6e6871c0173da9312dfeab75591f253",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovDenseBatch0S18MC9F"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod0s19_eqMDB2",
+          "statement": "theorem prod0s19_eqMDB2 : dmulMC9F 4 dp0s18MC9F df36MC9F = prod0s19MDB2",
+          "block_sha256": "9b19c08993388bc7e1716238bfb5514865cf43b75ce796d72ed226b1c2077510"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod0s19MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod0s19MDB2 : DenseMC9F 4",
+          "block_sha256": "dd7f09d5822c607700c7f076d35a03c765cba3b8ae8418ed7ab0702b33c9b66c",
+          "block_characters": 170646
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct0S20MDB2",
+      "path": "research/MarkovProduct0S20MDB2.lean",
+      "bytes": 205189,
+      "characters": 205189,
+      "sha256": "cf9146f703bedf19e815aaa8c3f93da2788ed7ad0cc08d24d8a039bf66d82f9c",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod0s20MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod0s20_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct0S20MDB2.olean",
+      "object_sha256": "51111aadcbd553ef4dc1fc4a040540be8aa8955e16cc7783d8ba26ae79c2e935",
+      "archive_object_present": true,
+      "current_object_present_at_initial_observation": true,
+      "selected": true,
+      "replayed_in166": false,
+      "printed_in166": true,
+      "status": "selected_unreplayed",
+      "attempts": [
+        {
+          "path": "build-1792196750561306000.json",
+          "sha256": "d1d78d5544c4c554be4e7686eddc831c3f7f60b59850a34f18ecac48c45572b8",
+          "source_sha256": "cf9146f703bedf19e815aaa8c3f93da2788ed7ad0cc08d24d8a039bf66d82f9c",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovProduct0S19MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod0s20_eqMDB2",
+          "statement": "theorem prod0s20_eqMDB2 : dmulMC9F 4 prod0s19MDB2 df37MC9F = prod0s20MDB2",
+          "block_sha256": "6d696fffb1ed580856fcdefcceed3f9fead96c9f324551af2f5baa92da21a602"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod0s20MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod0s20MDB2 : DenseMC9F 4",
+          "block_sha256": "60df5f2e1e0740cec13f82408fad682cdb6b7738e292300b8dc7fa737e019fee",
+          "block_characters": 204835
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct1S19MDB2",
+      "path": "research/MarkovProduct1S19MDB2.lean",
+      "bytes": 107272,
+      "characters": 107272,
+      "sha256": "349231d3389a637b3f38af73ca34828cb3927d500f41180b32d903fb1a61d637",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod1s19MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod1s19_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct1S19MDB2.olean",
+      "object_sha256": "294e668e63231000d2370d4f75825d55a4df38bd3cba7f9ecf23d5a5e70d56ce",
+      "archive_object_present": true,
+      "current_object_present_at_initial_observation": true,
+      "selected": true,
+      "replayed_in166": false,
+      "printed_in166": true,
+      "status": "selected_unreplayed",
+      "attempts": [
+        {
+          "path": "build-1792196639818808000.json",
+          "sha256": "689da72ac8f228c98ef0cb79ae8ac7ad3d9604b03f3820751ee9c77346059bc9",
+          "source_sha256": "349231d3389a637b3f38af73ca34828cb3927d500f41180b32d903fb1a61d637",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovDenseBatch1S18MC9F"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod1s19_eqMDB2",
+          "statement": "theorem prod1s19_eqMDB2 : dmulMC9F 4 dp1s18MC9F df35MC9F = prod1s19MDB2",
+          "block_sha256": "651cda7b1fbb620b22ee66dbf5a307bbbc2d592fd1dba854f31d1afd31a9e888"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod1s19MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod1s19MDB2 : DenseMC9F 4",
+          "block_sha256": "533753b2cdc90a14fa1077d1eeb59037ba4201f5f3775ef7970484ea584de034",
+          "block_characters": 106917
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct1S20MDB2",
+      "path": "research/MarkovProduct1S20MDB2.lean",
+      "bytes": 130112,
+      "characters": 130112,
+      "sha256": "7db213ffac63fdcfb2c3c49c6f51be5235e33258da00142b3d12ff875338fe3b",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod1s20MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod1s20_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct1S20MDB2.olean",
+      "object_sha256": "f27947648ed69c48f518a3ba459aec0f143ce23b066b20d6d04aafbd2a521973",
+      "archive_object_present": true,
+      "current_object_present_at_initial_observation": true,
+      "selected": true,
+      "replayed_in166": false,
+      "printed_in166": true,
+      "status": "selected_unreplayed",
+      "attempts": [
+        {
+          "path": "build-1792196727502933000.json",
+          "sha256": "f1a6653f0c4c4ed54579fc1e55704897701947fd73fdaf6bd685566b83daddc6",
+          "source_sha256": "7db213ffac63fdcfb2c3c49c6f51be5235e33258da00142b3d12ff875338fe3b",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovProduct1S19MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod1s20_eqMDB2",
+          "statement": "theorem prod1s20_eqMDB2 : dmulMC9F 4 prod1s19MDB2 df37MC9F = prod1s20MDB2",
+          "block_sha256": "1ce2606b87ac40e70e13ac085f2109a6c2eff753809845ff85c85ff711347df2"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod1s20MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod1s20MDB2 : DenseMC9F 4",
+          "block_sha256": "e31417d86fbba4bd8f26c0abc94dabfa86032ddb1acfdf854efc32be0a44d1da",
+          "block_characters": 129758
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovSwap3S15MDB2",
+      "path": "research/MarkovSwap3S15MDB2.lean",
+      "bytes": 91745,
+      "characters": 91745,
+      "sha256": "843da9786f7a602cc4d323de7cb4265b11cacd529ae7cc1485951b5cce4bfe57",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "swap3s15MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap3s15_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovSwap3S15MDB2.olean",
+      "object_sha256": "1246acfec5467e4a3abc0690fa022f467324c9ef5693887fc6363b1f40c59a4f",
+      "archive_object_present": true,
+      "current_object_present_at_initial_observation": true,
+      "selected": true,
+      "replayed_in166": false,
+      "printed_in166": true,
+      "status": "selected_unreplayed",
+      "attempts": [
+        {
+          "path": "build-1792197189754271000.json",
+          "sha256": "723872b3fb7b837f301db74aa31a7081e9c36176de36114fe20c62ea71ce605a",
+          "source_sha256": "843da9786f7a602cc4d323de7cb4265b11cacd529ae7cc1485951b5cce4bfe57",
+          "matches_final_source": true,
+          "returncode": 0,
+          "timeout": false
+        }
+      ],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovDenseBatch3S14MC9F"
+      ],
+      "theorem_statements": [
+        {
+          "name": "swap3s15_eqMDB2",
+          "statement": "theorem swap3s15_eqMDB2 : dmulMC9F 4 df27MC9F dp3s14MC9F = swap3s15MDB2",
+          "block_sha256": "1e532affb1369d268ce02f4d2c0075c539fc542d3d3c356944e2acbfc5df5074"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "swap3s15MDB2",
+          "kind": "def",
+          "header": "noncomputable def swap3s15MDB2 : DenseMC9F 4",
+          "block_sha256": "bcd702b54e9f9c12711c1f7f23b78d06d258d232d857d2d30a345f0330a53046",
+          "block_characters": 91383
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    }
+  ],
+  "excluded_modules": [
+    {
+      "module": "MarkovDirect0S21MDB2",
+      "path": "research/MarkovDirect0S21MDB2.lean",
+      "bytes": 323525,
+      "characters": 323525,
+      "sha256": "bc171f7b35bc637e15de58b36a9d318abd3ac84c2f80c64be9d4dd418fa8b793",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "direct0s21MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "direct0s21_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovDirect0S21MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovProduct0S20MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "direct0s21_eqMDB2",
+          "statement": "theorem direct0s21_eqMDB2 : dmulMC9F 4 prod0s20MDB2 df31MC9F = direct0s21MDB2",
+          "block_sha256": "a0fbba31d7894c5571d184dddfdf358faaeca831cb42cc8c596b0bbc3d771637"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "direct0s21MDB2",
+          "kind": "def",
+          "header": "noncomputable def direct0s21MDB2 : DenseMC9F 4",
+          "block_sha256": "6413d515841100e1978c9570756ffdd3b4753f67d229fd7ffd8913b6a7e0cf92",
+          "block_characters": 323168
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovDirect1S21MDB2",
+      "path": "research/MarkovDirect1S21MDB2.lean",
+      "bytes": 213895,
+      "characters": 213895,
+      "sha256": "4482acb34088ed7249cef662763e975d25a0ccb2d0fd30d984777b3e3d32a6c4",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "direct1s21MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "direct1s21_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovDirect1S21MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovProduct1S20MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "direct1s21_eqMDB2",
+          "statement": "theorem direct1s21_eqMDB2 : dmulMC9F 4 prod1s20MDB2 df31MC9F = direct1s21MDB2",
+          "block_sha256": "c226e0911f2d697e0aac3bef3669ec55c26d9015eb8b8c70067f5bf1c0935a28"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "direct1s21MDB2",
+          "kind": "def",
+          "header": "noncomputable def direct1s21MDB2 : DenseMC9F 4",
+          "block_sha256": "9686fda28b257996604b5faa8eea092239319c238341f906be7810be2b0b400b",
+          "block_characters": 213538
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovDirect2S17MDB2",
+      "path": "research/MarkovDirect2S17MDB2.lean",
+      "bytes": 153715,
+      "characters": 153715,
+      "sha256": "2e643f88ee9068f76032581f6626eb13483de93a2f81c645e8740c6f9d632f0a",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "direct2s17MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "direct2s17_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovDirect2S17MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "timed_out_excluded",
+      "attempts": [
+        {
+          "path": "build-1792197334183176000.json",
+          "sha256": "12717bb6926fbb29eae19a52dcfdd13adce6339af17076e3273358a8bcaab715",
+          "source_sha256": "2e643f88ee9068f76032581f6626eb13483de93a2f81c645e8740c6f9d632f0a",
+          "matches_final_source": true,
+          "returncode": null,
+          "timeout": true
+        }
+      ],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovDirect2S16MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "direct2s17_eqMDB2",
+          "statement": "theorem direct2s17_eqMDB2 : dmulMC9F 4 direct2s16MDB2 df2MC9F = direct2s17MDB2",
+          "block_sha256": "24f03b99e338571a1e62ed657cffc59adf4fc8a3e03b9ea7a936125b4ee12c4c"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "direct2s17MDB2",
+          "kind": "def",
+          "header": "noncomputable def direct2s17MDB2 : DenseMC9F 4",
+          "block_sha256": "fb804b9dc6e48d184ca9e33abfbf6d1796dbbf13e9750593ea7a5a7ebfc574ba",
+          "block_characters": 153358
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovDirect2S18MDB2",
+      "path": "research/MarkovDirect2S18MDB2.lean",
+      "bytes": 189197,
+      "characters": 189197,
+      "sha256": "bd30d6de97770ade9ef477c2b6783fe1c6aec05ca811e53caafca4754dc7d6e9",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "direct2s18MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "direct2s18_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovDirect2S18MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovDirect2S17MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "direct2s18_eqMDB2",
+          "statement": "theorem direct2s18_eqMDB2 : dmulMC9F 4 direct2s17MDB2 df33MC9F = direct2s18MDB2",
+          "block_sha256": "9e86c59d454791a11c1639d0bd216881a4811c95c233d03d8acdc6eab601c164"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "direct2s18MDB2",
+          "kind": "def",
+          "header": "noncomputable def direct2s18MDB2 : DenseMC9F 4",
+          "block_sha256": "6273133f5af6f32ceb908b3687fa0c3b2bae10506e4d9e5d8f336d705560218d",
+          "block_characters": 188839
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovDirect2S19MDB2",
+      "path": "research/MarkovDirect2S19MDB2.lean",
+      "bytes": 226986,
+      "characters": 226986,
+      "sha256": "f29af1d60740417b541def2cb695b2d674e6cc1bdbe900f2790ee415327e6924",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "direct2s19MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "direct2s19_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovDirect2S19MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovDirect2S18MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "direct2s19_eqMDB2",
+          "statement": "theorem direct2s19_eqMDB2 : dmulMC9F 4 direct2s18MDB2 df16MC9F = direct2s19MDB2",
+          "block_sha256": "86661408b53114ae5af9a3e36336b9ff0241b40fa4338026603ca25b9d7e68a0"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "direct2s19MDB2",
+          "kind": "def",
+          "header": "noncomputable def direct2s19MDB2 : DenseMC9F 4",
+          "block_sha256": "9eb15f126f61e988307a88690f7ba62f59fa599775455fa48eef3889c95881a1",
+          "block_characters": 226628
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovDirect2S20MDB2",
+      "path": "research/MarkovDirect2S20MDB2.lean",
+      "bytes": 269336,
+      "characters": 269336,
+      "sha256": "954b4a2a2b37a879ece84d3187761140927f0e9c47777e61d399393ff8d6117e",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "direct2s20MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "direct2s20_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovDirect2S20MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovDirect2S19MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "direct2s20_eqMDB2",
+          "statement": "theorem direct2s20_eqMDB2 : dmulMC9F 4 direct2s19MDB2 df26MC9F = direct2s20MDB2",
+          "block_sha256": "5269488c057b690aa42455734e6596f41d93204c874dc30663f25d7a1950f44e"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "direct2s20MDB2",
+          "kind": "def",
+          "header": "noncomputable def direct2s20MDB2 : DenseMC9F 4",
+          "block_sha256": "d048c7aa5b1b37d07917088f7928ceb349d7bdcd7a670e79692a8a65077fea86",
+          "block_characters": 268978
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovDirect2S21MDB2",
+      "path": "research/MarkovDirect2S21MDB2.lean",
+      "bytes": 317416,
+      "characters": 317416,
+      "sha256": "85bbea5b842cb71d95d66e182ea5b7b19000a64d94ea954ddf52f1cd7d989f63",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "direct2s21MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "direct2s21_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovDirect2S21MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovDirect2S20MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "direct2s21_eqMDB2",
+          "statement": "theorem direct2s21_eqMDB2 : dmulMC9F 4 direct2s20MDB2 df5MC9F = direct2s21MDB2",
+          "block_sha256": "7b5b4467c812aa48af091d4b9f240164cf56d148f8ef3d3020e2d24ef6cb89fd"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "direct2s21MDB2",
+          "kind": "def",
+          "header": "noncomputable def direct2s21MDB2 : DenseMC9F 4",
+          "block_sha256": "4f49b235884774a6f11ea1d2a9556634cd9a1bb28da0368126e220f22b0b5f16",
+          "block_characters": 317059
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovDirect3S15MDB2",
+      "path": "research/MarkovDirect3S15MDB2.lean",
+      "bytes": 91743,
+      "characters": 91743,
+      "sha256": "7a36e932b973670473bac49f08ff7f1be74f3594bd4138380150ccb9f161ccd8",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "direct3s15MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "direct3s15_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovDirect3S15MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovDenseBatch3S14MC9F"
+      ],
+      "theorem_statements": [
+        {
+          "name": "direct3s15_eqMDB2",
+          "statement": "theorem direct3s15_eqMDB2 : dmulMC9F 4 dp3s14MC9F df27MC9F = direct3s15MDB2",
+          "block_sha256": "f3d3393dde8b9068e0556d456e7769e60586b273f1dae09edf712ab4d17eec1e"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "direct3s15MDB2",
+          "kind": "def",
+          "header": "noncomputable def direct3s15MDB2 : DenseMC9F 4",
+          "block_sha256": "7f98b21ea5ec30e88f43bd25de77b49dadc6a0cfe76ddaa3dcc2f5056407f967",
+          "block_characters": 91385
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovDirect3S16MDB2",
+      "path": "research/MarkovDirect3S16MDB2.lean",
+      "bytes": 106820,
+      "characters": 106820,
+      "sha256": "e74efd083ec7f70add809b2596b9ba3ef9427b595d7cbb7b077b39e6f42c599e",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "direct3s16MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "direct3s16_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovDirect3S16MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovDirect3S15MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "direct3s16_eqMDB2",
+          "statement": "theorem direct3s16_eqMDB2 : dmulMC9F 4 direct3s15MDB2 df28MC9F = direct3s16MDB2",
+          "block_sha256": "33554634c300ca21f29c4ed2275ef5466bf808ec613114485cc0f3baffde6076"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "direct3s16MDB2",
+          "kind": "def",
+          "header": "noncomputable def direct3s16MDB2 : DenseMC9F 4",
+          "block_sha256": "f1240f45795cc91d5db86ae0e200b03495a4c77e8f569f5454c03c7c24b2475f",
+          "block_characters": 106462
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovDirect3S17MDB2",
+      "path": "research/MarkovDirect3S17MDB2.lean",
+      "bytes": 133605,
+      "characters": 133605,
+      "sha256": "dd20a40130edf56c3c5f1225a00cedd5d4272a8e7619f67000e086dc9f926454",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "direct3s17MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "direct3s17_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovDirect3S17MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovDirect3S16MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "direct3s17_eqMDB2",
+          "statement": "theorem direct3s17_eqMDB2 : dmulMC9F 4 direct3s16MDB2 df29MC9F = direct3s17MDB2",
+          "block_sha256": "8a8d6fcc59fc25b4370af67a27cf8f8fd16768341be995b3ed9309e130bc7dc6"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "direct3s17MDB2",
+          "kind": "def",
+          "header": "noncomputable def direct3s17MDB2 : DenseMC9F 4",
+          "block_sha256": "9ce2127fa7095c54d0a9b2057912a57c7735ae22e5af8c05265cd589cb4f1270",
+          "block_characters": 133247
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovDirect3S18MDB2",
+      "path": "research/MarkovDirect3S18MDB2.lean",
+      "bytes": 165554,
+      "characters": 165554,
+      "sha256": "49f4c02c65be05d3e6ec2845ff1c6838cb95040a87e3b4e02309b6c6c43bfee9",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "direct3s18MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "direct3s18_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovDirect3S18MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovDirect3S17MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "direct3s18_eqMDB2",
+          "statement": "theorem direct3s18_eqMDB2 : dmulMC9F 4 direct3s17MDB2 df22MC9F = direct3s18MDB2",
+          "block_sha256": "52d25be2887e5adf92f7f660c9e9ab5b9f262eb28267df38f1fc12888ecfc781"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "direct3s18MDB2",
+          "kind": "def",
+          "header": "noncomputable def direct3s18MDB2 : DenseMC9F 4",
+          "block_sha256": "5eb06da4e00fe15d72fd861c7bb06483f48ae5c2c2e9703ff18b41488889e625",
+          "block_characters": 165196
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovDirect3S19MDB2",
+      "path": "research/MarkovDirect3S19MDB2.lean",
+      "bytes": 188373,
+      "characters": 188373,
+      "sha256": "db9e5cb57df4237fc8d468381a7e8c0e02c269924f68f0ad61987a876cafbaca",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "direct3s19MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "direct3s19_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovDirect3S19MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovDirect3S18MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "direct3s19_eqMDB2",
+          "statement": "theorem direct3s19_eqMDB2 : dmulMC9F 4 direct3s18MDB2 df36MC9F = direct3s19MDB2",
+          "block_sha256": "885886f669877e6d3998470d78baaedfa040e6f49edb90a03cf52e5bdf3b8f3a"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "direct3s19MDB2",
+          "kind": "def",
+          "header": "noncomputable def direct3s19MDB2 : DenseMC9F 4",
+          "block_sha256": "b3e0fee59a990da97a1e9b9703a45ed00f65d8c1142a0a3fab673436e35bc04c",
+          "block_characters": 188015
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovDirect3S20MDB2",
+      "path": "research/MarkovDirect3S20MDB2.lean",
+      "bytes": 225770,
+      "characters": 225770,
+      "sha256": "3a0ad4a7ecaa096f5499854d2b8dfbefac55e4037354839e44f535d66227fa82",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "direct3s20MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "direct3s20_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovDirect3S20MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovDirect3S19MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "direct3s20_eqMDB2",
+          "statement": "theorem direct3s20_eqMDB2 : dmulMC9F 4 direct3s19MDB2 df35MC9F = direct3s20MDB2",
+          "block_sha256": "e7d94252e17d55ad048bc5b13ce10fe06257bd80d3d95b127a66a4c371cbcc8f"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "direct3s20MDB2",
+          "kind": "def",
+          "header": "noncomputable def direct3s20MDB2 : DenseMC9F 4",
+          "block_sha256": "da8f76a30ef1dc131efa0f88f6f6292a8d925046a460a81f526276d5441dafd3",
+          "block_characters": 225412
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovDirect3S21MDB2",
+      "path": "research/MarkovDirect3S21MDB2.lean",
+      "bytes": 268424,
+      "characters": 268424,
+      "sha256": "c568a2844e766d23d264ac2caba1fc522f25dcd7ef24f7e13c1bc7e05d817642",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "direct3s21MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "direct3s21_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovDirect3S21MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovDirect3S20MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "direct3s21_eqMDB2",
+          "statement": "theorem direct3s21_eqMDB2 : dmulMC9F 4 direct3s20MDB2 df37MC9F = direct3s21MDB2",
+          "block_sha256": "cd24fc3bd724ee41f3e54ab6a4511f2d7489b35b5fbc108d1f4bff409095b0ca"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "direct3s21MDB2",
+          "kind": "def",
+          "header": "noncomputable def direct3s21MDB2 : DenseMC9F 4",
+          "block_sha256": "ec0961445a87bfdcd6d78b592d94b3af309564d79a02cc48fb06d059455f3103",
+          "block_characters": 268066
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovGapClosedMDB2",
+      "path": "research/MarkovGapClosedMDB2.lean",
+      "bytes": 1588,
+      "characters": 1570,
+      "sha256": "d0e3a4e209df3a7efcd7d402bd2d0dde5bf7096d6c3be81bfd031bd47e05ff6a",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "gap_identityMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "gap_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_reduced_nonnegMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "reduced_pair_positiveMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovGapClosedMDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "MarkovProductEval0MDB2",
+        "MarkovProductEval1MDB2",
+        "MarkovProductEval2MDB2",
+        "MarkovProductEval3MDB2",
+        "MarkovGapDataMDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "gap_identityMDB2",
+          "statement": "theorem gap_identityMDB2 : daddMC9F 4 (daddMC9F 4 prod0s21MDB2 prod1s21MDB2) (dnegMC9F 4 (daddMC9F 4 prod2s21MDB2 prod3s21MDB2)) = gapMDB2",
+          "block_sha256": "006c87ee543a183fce4e115849edb24e2e20c9971c97f29999eb5c94d027e2eb"
+        },
+        {
+          "name": "gap_evalMDB2",
+          "statement": "theorem gap_evalMDB2 (x g z T : ℚ) : devalMC9F 4 (fun k => match k with | 0 => x | 1 => g | 2 => z | _ => T) gapMDB2 = pairReducedMAD5 T x g z",
+          "block_sha256": "759e2cba50c205d0f9c2a32d5aa2e76aa208a8bff805c2c3465a96d6cc3a3bec"
+        },
+        {
+          "name": "pair_reduced_nonnegMDB2",
+          "statement": "theorem pair_reduced_nonnegMDB2 (T x g z : ℚ) (hT : 0 ≤ T) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) : 0 ≤ pairReducedMAD5 T x g z",
+          "block_sha256": "552cf9b3f64beaceae6743385e26ef048df7473e4716aeb93155271853c82ec1"
+        },
+        {
+          "name": "reduced_pair_positiveMDB2",
+          "statement": "theorem reduced_pair_positiveMDB2 : ReducedPairPositiveMAD5",
+          "block_sha256": "9f1d2e201b6e8b7e314f87377479db692d291fbb2b9776031a1d65446d209df9"
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovGapDataMDB2",
+      "path": "research/MarkovGapDataMDB2.lean",
+      "bytes": 299206,
+      "characters": 299206,
+      "sha256": "a97aa795e2044b06cfef925a710400e86613451bb9895c7ac2cf1dfac34f23bb",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "gapMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "gap_positiveMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovGapDataMDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "MarkovDenseDataMC9F"
+      ],
+      "theorem_statements": [
+        {
+          "name": "gap_positiveMDB2",
+          "statement": "theorem gap_positiveMDB2 : dpositiveMC9F 4 gapMDB2 = true",
+          "block_sha256": "3eb51962366a4e8f70b6077a3613a101e36b6a8f10a32afa836585c057eb7908"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "gapMDB2",
+          "kind": "def",
+          "header": "noncomputable def gapMDB2 : DenseMC9F 4",
+          "block_sha256": "4e1e8f9c8e49c26c292ad0d6fd6a59a6e71993e28508271a81ff96c38de7d312",
+          "block_characters": 298887
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovLowerClosedMDB2",
+      "path": "research/MarkovLowerClosedMDB2.lean",
+      "bytes": 2646,
+      "characters": 2594,
+      "sha256": "cdebae2360b92a94785c6018adf037fc76f8833d4297f749dad83e3bc3284d63",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "rational_pair_stepMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_middleMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_all_cutsMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_boundaryMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_output_lcMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_horizontalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_horizontalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_horizontal_pathsMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_horizontal_pathMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_outside_lowerMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovLowerClosedMDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "MarkovGapClosedMDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "rational_pair_stepMDB2",
+          "statement": "theorem rational_pair_stepMDB2 : RationalPairStepMAD5",
+          "block_sha256": "ea3db1834deb1b1ffc55d37074ccfdac2afdd3627367c25611ead81a6baec5ae"
+        },
+        {
+          "name": "lift_middleMDB2",
+          "statement": "theorem lift_middleMDB2 : LiftMiddleMFEE",
+          "block_sha256": "6aaa05fc6320c4af2cfac232be588de72abd6c75e5d5a631537300ba137c111b"
+        },
+        {
+          "name": "lift_all_cutsMDB2",
+          "statement": "theorem lift_all_cutsMDB2 : LiftLCPositiveM7E2",
+          "block_sha256": "c1df84e4b800313a23d61cac496cae69193d08822095147bb1520d5d4eb433bb"
+        },
+        {
+          "name": "lift_boundaryMDB2",
+          "statement": "theorem lift_boundaryMDB2 : LiftBoundaryM7E2",
+          "block_sha256": "a261bd851df4d26151aec04d981959034ba97f7c6edf269ea0e283591fd5b8c5"
+        },
+        {
+          "name": "lift_output_lcMDB2",
+          "statement": "theorem lift_output_lcMDB2 (d j t : ℕ) :\n liftOutputMAE9 d j t*liftOutputMAE9 d j (t+2) ≤ liftOutputMAE9 d j (t+1)^2",
+          "block_sha256": "f8f1f6e3d98e0bb1b76c94cb2c051a96c1b8cefdaa4672cad74e78367b7be42c"
+        },
+        {
+          "name": "lower_horizontalMDB2",
+          "statement": "theorem lower_horizontalMDB2 : LowerHorizontalMFEE",
+          "block_sha256": "0915b2ee3c4cdc562c77401379b60393d10fa7d2e4fd06c9355167653193cc42"
+        },
+        {
+          "name": "source_lower_horizontalMDB2",
+          "statement": "theorem source_lower_horizontalMDB2 (q i j : ℕ) (r : Bool) (hj : j ≤ q) :\n threeRawM9E2 q r i j * threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2",
+          "block_sha256": "438198107c6f044e0c777f2338008fd1c1c1e685a4eee46aaa3cdc18e865777b"
+        },
+        {
+          "name": "lower_horizontal_pathsMDB2",
+          "statement": "theorem lower_horizontal_pathsMDB2 (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1 ≤ q ∧ (frame path).mid.b=sourceNME9C q r ∧\n ∀ i j, j ≤ q → coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n   coeff (frame path).mid.p (i+1) j^2",
+          "block_sha256": "b38cbfd49c5096d75f0b1206bca5d4e6cfb06e65dbd40383dbfe14ed08e1ac73"
+        },
+        {
+          "name": "source_lower_horizontal_pathMDB2",
+          "statement": "theorem source_lower_horizontal_pathMDB2 (path : List Bool)\n (ha : (frame path).mid.a=3) (i j : ℕ) (hj : 3*j ≤ (frame path).mid.b) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n   coeff (frame path).mid.p (i+1) j^2",
+          "block_sha256": "ed7501f4e7154d9fb8f3b30c6d8e85a1e55e55b26851a3e4c5ef17f7777a161f"
+        },
+        {
+          "name": "root_iff_outside_lowerMDB2",
+          "statement": "theorem root_iff_outside_lowerMDB2 :\n Conjecture63 ↔ ThreeOutsideLowerMFEE ∧ OtherFourM9E2",
+          "block_sha256": "5971091530d6dde6d6a6b5087ab3ba1e70ff5765556c88d33a7efe1397e8d09b"
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct0S21MDB2",
+      "path": "research/MarkovProduct0S21MDB2.lean",
+      "bytes": 323520,
+      "characters": 323520,
+      "sha256": "93f94f73fdf2ee0baec9e96df34ced2374eb850bad1a7ca7e2dd76bf68aa8568",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod0s21MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod0s21_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct0S21MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "timed_out_excluded",
+      "attempts": [
+        {
+          "path": "build-1792196870575363000.json",
+          "sha256": "e04e8a146097912d01af0bf7bf7b4e80ae29ad5d049cfed8d1ceea439e86dd3f",
+          "source_sha256": "93f94f73fdf2ee0baec9e96df34ced2374eb850bad1a7ca7e2dd76bf68aa8568",
+          "matches_final_source": true,
+          "returncode": null,
+          "timeout": true
+        }
+      ],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovProduct0S20MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod0s21_eqMDB2",
+          "statement": "theorem prod0s21_eqMDB2 : dmulMC9F 4 prod0s20MDB2 df31MC9F = prod0s21MDB2",
+          "block_sha256": "ad5732a253e670f6971ec2f2e7e6f05ee46c8f9592f7be5094e9b1ea13d65fea"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod0s21MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod0s21MDB2 : DenseMC9F 4",
+          "block_sha256": "39b85baeb5816a3287efd2c386aa2c0b0bd9327f2586ada89b7348992929eece",
+          "block_characters": 323166
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct1S21MDB2",
+      "path": "research/MarkovProduct1S21MDB2.lean",
+      "bytes": 213890,
+      "characters": 213890,
+      "sha256": "fd5dce3e661af9f96ade946ee262f6d30f9ca87a58931d220ff873cfffbabd80",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod1s21MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod1s21_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct1S21MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "timed_out_excluded",
+      "attempts": [
+        {
+          "path": "build-1792196864125404000.json",
+          "sha256": "5de84af1614a208b92b330aad4fc87ecc011eb6544aa6ab593bf4aa68bd28625",
+          "source_sha256": "fd5dce3e661af9f96ade946ee262f6d30f9ca87a58931d220ff873cfffbabd80",
+          "matches_final_source": true,
+          "returncode": null,
+          "timeout": true
+        }
+      ],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovProduct1S20MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod1s21_eqMDB2",
+          "statement": "theorem prod1s21_eqMDB2 : dmulMC9F 4 prod1s20MDB2 df31MC9F = prod1s21MDB2",
+          "block_sha256": "b33c20d935a33a4cb82f6e050381ff73b1b72bd222f7277157b95310ff8ce032"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod1s21MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod1s21MDB2 : DenseMC9F 4",
+          "block_sha256": "52c94970ed5e1c1bd291bcb266c8ed4c7b61e156465e4b632036034ac2ffc7fc",
+          "block_characters": 213536
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct2S15MDB2",
+      "path": "research/MarkovProduct2S15MDB2.lean",
+      "bytes": 102231,
+      "characters": 102231,
+      "sha256": "568cf7b9337dac0fce8beb7b104c6c78fbb49e2657314b8ca103b8b96ecbb943",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod2s15MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod2s15_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct2S15MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "timed_out_excluded",
+      "attempts": [
+        {
+          "path": "build-1792196641031412000.json",
+          "sha256": "50be3c79f6cd1c530c47d92fb921012c73ae2021d3556cb26a8a59ea2f10a61d",
+          "source_sha256": "568cf7b9337dac0fce8beb7b104c6c78fbb49e2657314b8ca103b8b96ecbb943",
+          "matches_final_source": true,
+          "returncode": null,
+          "timeout": true
+        }
+      ],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovDenseBatch2S14MC9F"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod2s15_eqMDB2",
+          "statement": "theorem prod2s15_eqMDB2 : dmulMC9F 4 dp2s14MC9F df27MC9F = prod2s15MDB2",
+          "block_sha256": "4131436368cca25d845ffe0eefee13e38198f8895903845eeb6efe1bbdb587a0"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod2s15MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod2s15MDB2 : DenseMC9F 4",
+          "block_sha256": "a00a2cdee45f33f2a21ad7ccb99a4c79f21650fc75afc443cae14b8056f823c6",
+          "block_characters": 101876
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct2S16MDB2",
+      "path": "research/MarkovProduct2S16MDB2.lean",
+      "bytes": 123729,
+      "characters": 123729,
+      "sha256": "a10e50c221012fb09e4b6ed38c72d4d045927633e9424ada6444f3bca1c79118",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod2s16MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod2s16_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct2S16MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovProduct2S15MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod2s16_eqMDB2",
+          "statement": "theorem prod2s16_eqMDB2 : dmulMC9F 4 prod2s15MDB2 df0MC9F = prod2s16MDB2",
+          "block_sha256": "29648632f5ffd08cbc8bc8d2d22075fa7c11ea0c7de6c2f76b6a207b1c7d4b03"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod2s16MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod2s16MDB2 : DenseMC9F 4",
+          "block_sha256": "17782f2a62ae7cc65ff482920e06fa3f53620a59ec3dd5b24cbc82e59e1c4e7c",
+          "block_characters": 123376
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct2S17MDB2",
+      "path": "research/MarkovProduct2S17MDB2.lean",
+      "bytes": 153709,
+      "characters": 153709,
+      "sha256": "69f11748f2e4ceaddef772889951d005f1b87fdb6ebead9932905c1cd79dbd7d",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod2s17MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod2s17_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct2S17MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovProduct2S16MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod2s17_eqMDB2",
+          "statement": "theorem prod2s17_eqMDB2 : dmulMC9F 4 prod2s16MDB2 df2MC9F = prod2s17MDB2",
+          "block_sha256": "4a56f8d1bca208f94eb5f53f0e89b501b3ec411c9c36c0ac72ea51738041f1f0"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod2s17MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod2s17MDB2 : DenseMC9F 4",
+          "block_sha256": "2cbf3c0c099711fe2618f57216fbad21c385bafb0ddf89265affc86589f13863",
+          "block_characters": 153356
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct2S18MDB2",
+      "path": "research/MarkovProduct2S18MDB2.lean",
+      "bytes": 189191,
+      "characters": 189191,
+      "sha256": "7773fa6c8bd51d4c9d110aa47b61a50a3a9dea271910aba30d17e7b6768b76c6",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod2s18MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod2s18_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct2S18MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovProduct2S17MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod2s18_eqMDB2",
+          "statement": "theorem prod2s18_eqMDB2 : dmulMC9F 4 prod2s17MDB2 df33MC9F = prod2s18MDB2",
+          "block_sha256": "d33abf819e053aca50071cc6ccb7904bbc35ac70b5dc6ea037b46896afa3647f"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod2s18MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod2s18MDB2 : DenseMC9F 4",
+          "block_sha256": "5402c028aecefe76318c8ef0b43fdda3e96e4ca686cf10fe684bd205a822da1f",
+          "block_characters": 188837
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct2S19MDB2",
+      "path": "research/MarkovProduct2S19MDB2.lean",
+      "bytes": 226980,
+      "characters": 226980,
+      "sha256": "fe11ba4cb5a8ea3d2b0464caff10a949faf5b906afab7aaab8dd339bad1f5139",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod2s19MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod2s19_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct2S19MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovProduct2S18MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod2s19_eqMDB2",
+          "statement": "theorem prod2s19_eqMDB2 : dmulMC9F 4 prod2s18MDB2 df16MC9F = prod2s19MDB2",
+          "block_sha256": "bb9dd8c03db735646406ae8bee7dfd1ef68d1f6b59f27b8508c70c964e26372c"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod2s19MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod2s19MDB2 : DenseMC9F 4",
+          "block_sha256": "c911d15a6b9e7c2f85810c5b5003fff4a34b4b1b43eafaad811d6647d77ca7fe",
+          "block_characters": 226626
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct2S20MDB2",
+      "path": "research/MarkovProduct2S20MDB2.lean",
+      "bytes": 269330,
+      "characters": 269330,
+      "sha256": "2c4b8871f4d53bab77448afef9c09b0c830bcc1f22a9c97d9c8d61023d865d5d",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod2s20MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod2s20_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct2S20MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovProduct2S19MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod2s20_eqMDB2",
+          "statement": "theorem prod2s20_eqMDB2 : dmulMC9F 4 prod2s19MDB2 df26MC9F = prod2s20MDB2",
+          "block_sha256": "71843fd3a1d12a14e53d3619a201375dfa99fefd1c552866c241ec3bbb9cda4a"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod2s20MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod2s20MDB2 : DenseMC9F 4",
+          "block_sha256": "63b62411427d660d5d8e97bf34bb636a89c1bda3abb4892a5db533d2ad38707e",
+          "block_characters": 268976
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct2S21MDB2",
+      "path": "research/MarkovProduct2S21MDB2.lean",
+      "bytes": 317410,
+      "characters": 317410,
+      "sha256": "2b6e1a7b52330f0687ada14e26f636297f3c0a944b833c5cac311408dd69b23f",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod2s21MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod2s21_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct2S21MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovProduct2S20MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod2s21_eqMDB2",
+          "statement": "theorem prod2s21_eqMDB2 : dmulMC9F 4 prod2s20MDB2 df5MC9F = prod2s21MDB2",
+          "block_sha256": "834972bc26d56559a5bfad1dede2c1af9753800b8727b616e2b2af924fee9899"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod2s21MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod2s21MDB2 : DenseMC9F 4",
+          "block_sha256": "7e62abce0aa1afa51e1b7de622b8fd163fe8620cbb98d33d54a94e335d0c5535",
+          "block_characters": 317057
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct3S15MDB2",
+      "path": "research/MarkovProduct3S15MDB2.lean",
+      "bytes": 91738,
+      "characters": 91738,
+      "sha256": "5b1015da36f5dbd782a68091aad0f8a653da83ae28f6a6ca82d1f900c33f9db4",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod3s15MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod3s15_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct3S15MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "timed_out_excluded",
+      "attempts": [
+        {
+          "path": "build-1792196642293950000.json",
+          "sha256": "2910ca9ef43787020b05e25585123a65142cd4100a0615b89b2e07f27d7b6f60",
+          "source_sha256": "5b1015da36f5dbd782a68091aad0f8a653da83ae28f6a6ca82d1f900c33f9db4",
+          "matches_final_source": true,
+          "returncode": null,
+          "timeout": true
+        }
+      ],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovDenseBatch3S14MC9F"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod3s15_eqMDB2",
+          "statement": "theorem prod3s15_eqMDB2 : dmulMC9F 4 dp3s14MC9F df27MC9F = prod3s15MDB2",
+          "block_sha256": "3d28e72ce59f43c5cc6281bada285ec11e4b0b55446f03ef1edc51360b8f7d55"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod3s15MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod3s15MDB2 : DenseMC9F 4",
+          "block_sha256": "384edffd93ed128c8b69b6a7a6073fd84e08a7a38c34d848d60ceeacb3e50f6b",
+          "block_characters": 91383
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct3S16MDB2",
+      "path": "research/MarkovProduct3S16MDB2.lean",
+      "bytes": 106814,
+      "characters": 106814,
+      "sha256": "bb8c9e8e1d2c45e3ff4afda90f8565a7e4b3ff5f6b78b24682c09b819446d0d9",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod3s16MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod3s16_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct3S16MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovProduct3S15MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod3s16_eqMDB2",
+          "statement": "theorem prod3s16_eqMDB2 : dmulMC9F 4 prod3s15MDB2 df28MC9F = prod3s16MDB2",
+          "block_sha256": "605499bb0260f91a961fe000511ab27cc4987cb31abe785b4a584d35535855e7"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod3s16MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod3s16MDB2 : DenseMC9F 4",
+          "block_sha256": "e1936c524ba92c7e41810915c5b284d98ec1117d4c0e6880648ce8edd2ad812b",
+          "block_characters": 106460
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct3S17MDB2",
+      "path": "research/MarkovProduct3S17MDB2.lean",
+      "bytes": 133599,
+      "characters": 133599,
+      "sha256": "009706c78b798597b6db388b1258ce71d875b0fc892b14e45da614885b5ae340",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod3s17MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod3s17_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct3S17MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovProduct3S16MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod3s17_eqMDB2",
+          "statement": "theorem prod3s17_eqMDB2 : dmulMC9F 4 prod3s16MDB2 df29MC9F = prod3s17MDB2",
+          "block_sha256": "22d4ebf2929446e4e073635aaa948cdea35b0f3544e7e1fa03fdb1f15a3d8b5e"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod3s17MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod3s17MDB2 : DenseMC9F 4",
+          "block_sha256": "3be80e407d0fa70751741dc961e3d8ed052151b15e1c2c35eb3fe978a0d3bcf0",
+          "block_characters": 133245
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct3S18MDB2",
+      "path": "research/MarkovProduct3S18MDB2.lean",
+      "bytes": 165548,
+      "characters": 165548,
+      "sha256": "2a34373e6ac99590db71a7c2308531fe412ccbc5979edcd4985a23647cc0a129",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod3s18MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod3s18_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct3S18MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovProduct3S17MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod3s18_eqMDB2",
+          "statement": "theorem prod3s18_eqMDB2 : dmulMC9F 4 prod3s17MDB2 df22MC9F = prod3s18MDB2",
+          "block_sha256": "58bf36d4b7ef5e315f795e396cc8cacde210cc6f0a68bcfd5dc70a1f366726cc"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod3s18MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod3s18MDB2 : DenseMC9F 4",
+          "block_sha256": "db7854b6bf8f77520b8cf5a405e9c2e75e82aa7288cde412ec1fff9eba2e96ec",
+          "block_characters": 165194
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct3S19MDB2",
+      "path": "research/MarkovProduct3S19MDB2.lean",
+      "bytes": 188367,
+      "characters": 188367,
+      "sha256": "6ad49068c11d53c8c102559bd7e28ca51037cb60072829098eea8b571f587a3c",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod3s19MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod3s19_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct3S19MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovProduct3S18MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod3s19_eqMDB2",
+          "statement": "theorem prod3s19_eqMDB2 : dmulMC9F 4 prod3s18MDB2 df36MC9F = prod3s19MDB2",
+          "block_sha256": "73ce80fa0ac76f86372396a06f6aea552731766f8d09928d1197f8ffd5ddb406"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod3s19MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod3s19MDB2 : DenseMC9F 4",
+          "block_sha256": "a1b692c1805adbdaaca591b378d587212fa450aecff5ff14a1788649d039072d",
+          "block_characters": 188013
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct3S20MDB2",
+      "path": "research/MarkovProduct3S20MDB2.lean",
+      "bytes": 225764,
+      "characters": 225764,
+      "sha256": "7b2eaa1c3ad226efac60285cc69960599303403b9c527791b0ad9e3ab41360db",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod3s20MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod3s20_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct3S20MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovProduct3S19MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod3s20_eqMDB2",
+          "statement": "theorem prod3s20_eqMDB2 : dmulMC9F 4 prod3s19MDB2 df35MC9F = prod3s20MDB2",
+          "block_sha256": "3d7181fc4033ef1bf43c9b201e1f9fd1c3f90e6bc30e03d30692a1502965d34d"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod3s20MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod3s20MDB2 : DenseMC9F 4",
+          "block_sha256": "d121d34a7515217f227317b32216a9cc6942d6073c908e80a2fe6daa7b0e7fe4",
+          "block_characters": 225410
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProduct3S21MDB2",
+      "path": "research/MarkovProduct3S21MDB2.lean",
+      "bytes": 268418,
+      "characters": 268418,
+      "sha256": "521e901bbce768c0e3af3ab45afe497592bbf453e1c03a132a423723c90bb0fe",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "prod3s21MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod3s21_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProduct3S21MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "MarkovDenseDataMC9F",
+        "MarkovProduct3S20MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod3s21_eqMDB2",
+          "statement": "theorem prod3s21_eqMDB2 : dmulMC9F 4 prod3s20MDB2 df37MC9F = prod3s21MDB2",
+          "block_sha256": "ad146c9492687e2c5c68d791dd0db476e7f8911284025cf654676fd318525626"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "prod3s21MDB2",
+          "kind": "def",
+          "header": "noncomputable def prod3s21MDB2 : DenseMC9F 4",
+          "block_sha256": "61ad0a9336917e03531b41883ce96674f8b12c7d3b4aceae4b0ec88804df1dca",
+          "block_characters": 268064
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProductEval0MDB2",
+      "path": "research/MarkovProductEval0MDB2.lean",
+      "bytes": 2383,
+      "characters": 2363,
+      "sha256": "6406f5e62efaaf6bd2d2ce8d3e9d926c569b7d2c3296fba7fd06943125916954",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "prod0s19_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod0s20_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod0s21_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "product0_evalMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProductEval0MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "MarkovProduct0S21MDB2",
+        "MarkovDenseTransportMDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod0s19_evalMDB2",
+          "statement": "theorem prod0s19_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod0s19MDB2 = devalMC9F 4 v dp0s18MC9F * devalMC9F 4 v df36MC9F",
+          "block_sha256": "ca3b528369059807520deec51d5e34f27af3cc6054aeec540ab36790b86e43fa"
+        },
+        {
+          "name": "prod0s20_evalMDB2",
+          "statement": "theorem prod0s20_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod0s20MDB2 = devalMC9F 4 v prod0s19MDB2 * devalMC9F 4 v df37MC9F",
+          "block_sha256": "12cdea708df45a44db02432449e281cf0c0162fa8ed0b21b243c8bfcf3cd2355"
+        },
+        {
+          "name": "prod0s21_evalMDB2",
+          "statement": "theorem prod0s21_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod0s21MDB2 = devalMC9F 4 v prod0s20MDB2 * devalMC9F 4 v df31MC9F",
+          "block_sha256": "e4603c8b45b292182e0287e3b86ff61d9c49d1a5ed19202a7573892a9d356170"
+        },
+        {
+          "name": "product0_evalMDB2",
+          "statement": "theorem product0_evalMDB2 (x g z T : ℚ) : devalMC9F 4 (fun k => match k with | 0 => x | 1 => g | 2 => z | _ => T) prod0s21MDB2 = pf0MAD5 T x g z*pf2MAD5 T x g z*pf3MAD5 T x g z*pf16MAD5 T x g z*pf5MAD5 T x g z*pf17MAD5 T x g z*pf32MAD5 T x g z*pf34MAD5 T x g z*pf24MAD5 T x g z*pf25MAD5 T x g z*pf28MAD5 T x g z*pf29MAD5 T x g z*pf0MAD5 T x g z*pf2MAD5 T x g z*pf33MAD5 T x g z*pf30MAD5 T x g z*pf16MAD5 T x g z*pf26MAD5 T x g z*pf5MAD5 T x g z*pf36MAD5 T x g z*pf37MAD5 T x g z*pf31MAD5 T x g z",
+          "block_sha256": "bc371b2bbbc77e5715002a8b5ffd1cc5c3c92ceba4a63e2b1d453d77aa57b47d"
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProductEval1MDB2",
+      "path": "research/MarkovProductEval1MDB2.lean",
+      "bytes": 2382,
+      "characters": 2362,
+      "sha256": "fb8de5980bc9f845b106028e8afedef41b0de647912cc7a0da1fb5054788efb2",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "prod1s19_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod1s20_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod1s21_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "product1_evalMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProductEval1MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "MarkovProduct1S21MDB2",
+        "MarkovDenseTransportMDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod1s19_evalMDB2",
+          "statement": "theorem prod1s19_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod1s19MDB2 = devalMC9F 4 v dp1s18MC9F * devalMC9F 4 v df35MC9F",
+          "block_sha256": "c16ec219bdf097323bb2d321d3d490f40b4ab48b967bd1df078d497868f8ff70"
+        },
+        {
+          "name": "prod1s20_evalMDB2",
+          "statement": "theorem prod1s20_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod1s20MDB2 = devalMC9F 4 v prod1s19MDB2 * devalMC9F 4 v df37MC9F",
+          "block_sha256": "71cdc44782c2fc9ccd40fbeb9d321cc4fd7d7f2d28fb17e6b411a6dd80a35498"
+        },
+        {
+          "name": "prod1s21_evalMDB2",
+          "statement": "theorem prod1s21_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod1s21MDB2 = devalMC9F 4 v prod1s20MDB2 * devalMC9F 4 v df31MC9F",
+          "block_sha256": "9a2f64ac62fe1757baf555465d358dfc9e08850b16cef2b754d0730b44e47dd2"
+        },
+        {
+          "name": "product1_evalMDB2",
+          "statement": "theorem product1_evalMDB2 (x g z T : ℚ) : devalMC9F 4 (fun k => match k with | 0 => x | 1 => g | 2 => z | _ => T) prod1s21MDB2 = pf4MAD5 T x g z*pf5MAD5 T x g z*pf7MAD5 T x g z*pf14MAD5 T x g z*pf2MAD5 T x g z*pf15MAD5 T x g z*pf18MAD5 T x g z*pf9MAD5 T x g z*pf11MAD5 T x g z*pf12MAD5 T x g z*pf28MAD5 T x g z*pf29MAD5 T x g z*pf22MAD5 T x g z*pf0MAD5 T x g z*pf2MAD5 T x g z*pf30MAD5 T x g z*pf16MAD5 T x g z*pf5MAD5 T x g z*pf36MAD5 T x g z*pf35MAD5 T x g z*pf37MAD5 T x g z*pf31MAD5 T x g z",
+          "block_sha256": "a7b9b33719d8954e3718d87081b26636d799fcedc5da93c88eebd7cb64cc0139"
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProductEval2MDB2",
+      "path": "research/MarkovProductEval2MDB2.lean",
+      "bytes": 3210,
+      "characters": 3166,
+      "sha256": "17c4d20dc99bb02d61e260eb89ede2b4e7a3b8220d50ee5c16503ab38c21a855",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "prod2s15_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod2s16_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod2s17_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod2s18_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod2s19_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod2s20_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod2s21_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "product2_evalMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProductEval2MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "MarkovProduct2S21MDB2",
+        "MarkovDenseTransportMDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod2s15_evalMDB2",
+          "statement": "theorem prod2s15_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod2s15MDB2 = devalMC9F 4 v dp2s14MC9F * devalMC9F 4 v df27MC9F",
+          "block_sha256": "36ccd891a12fed0728f246cd282156bdee5c382f2dd94dcb7d64ea3cf3168d87"
+        },
+        {
+          "name": "prod2s16_evalMDB2",
+          "statement": "theorem prod2s16_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod2s16MDB2 = devalMC9F 4 v prod2s15MDB2 * devalMC9F 4 v df0MC9F",
+          "block_sha256": "ce0b0e09b9a1f90e333025b8a9fafeddb011a821724d3b0ca7ba651b94edf67d"
+        },
+        {
+          "name": "prod2s17_evalMDB2",
+          "statement": "theorem prod2s17_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod2s17MDB2 = devalMC9F 4 v prod2s16MDB2 * devalMC9F 4 v df2MC9F",
+          "block_sha256": "376430728a7cef9aacd2e58753f97fb3c4cd3aa3e49035435d4841220a9d4ea4"
+        },
+        {
+          "name": "prod2s18_evalMDB2",
+          "statement": "theorem prod2s18_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod2s18MDB2 = devalMC9F 4 v prod2s17MDB2 * devalMC9F 4 v df33MC9F",
+          "block_sha256": "5be459dfdad2837e7053a380df9b549d54a03ab130a3a54412e461f59bd20412"
+        },
+        {
+          "name": "prod2s19_evalMDB2",
+          "statement": "theorem prod2s19_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod2s19MDB2 = devalMC9F 4 v prod2s18MDB2 * devalMC9F 4 v df16MC9F",
+          "block_sha256": "3b6a8f8d7d41ff6e06aa8e15f69924b7935e0348e6ef08f6aff938a2e2bb467b"
+        },
+        {
+          "name": "prod2s20_evalMDB2",
+          "statement": "theorem prod2s20_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod2s20MDB2 = devalMC9F 4 v prod2s19MDB2 * devalMC9F 4 v df26MC9F",
+          "block_sha256": "6ecd5695ac33684b8a79f892799bf725e9c60c18f95ae0bd53cd4550fca8d7be"
+        },
+        {
+          "name": "prod2s21_evalMDB2",
+          "statement": "theorem prod2s21_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod2s21MDB2 = devalMC9F 4 v prod2s20MDB2 * devalMC9F 4 v df5MC9F",
+          "block_sha256": "5ed4dade8899dc3982a5f8fbdfc3c4197e7f67a3c4cdefc929d05bf966ee65ac"
+        },
+        {
+          "name": "product2_evalMDB2",
+          "statement": "theorem product2_evalMDB2 (x g z T : ℚ) : devalMC9F 4 (fun k => match k with | 0 => x | 1 => g | 2 => z | _ => T) prod2s21MDB2 = pf8MAD5 T x g z*pf9MAD5 T x g z*pf10MAD5 T x g z*pf20MAD5 T x g z*pf12MAD5 T x g z*pf21MAD5 T x g z*pf18MAD5 T x g z*pf9MAD5 T x g z*pf32MAD5 T x g z*pf34MAD5 T x g z*pf23MAD5 T x g z*pf24MAD5 T x g z*pf25MAD5 T x g z*pf11MAD5 T x g z*pf12MAD5 T x g z*pf27MAD5 T x g z*pf0MAD5 T x g z*pf2MAD5 T x g z*pf33MAD5 T x g z*pf16MAD5 T x g z*pf26MAD5 T x g z*pf5MAD5 T x g z",
+          "block_sha256": "b93429d1a2c314fd6c97a925b419248cc99f687a9da42e080bd2a39913c47fac"
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovProductEval3MDB2",
+      "path": "research/MarkovProductEval3MDB2.lean",
+      "bytes": 3220,
+      "characters": 3176,
+      "sha256": "753bc85fb84981246968f494d86cfc60fcfd152fe059334b31cf29c56895c5b3",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "prod3s15_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod3s16_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod3s17_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod3s18_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod3s19_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod3s20_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "prod3s21_evalMDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "product3_evalMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovProductEval3MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "MarkovProduct3S21MDB2",
+        "MarkovDenseTransportMDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "prod3s15_evalMDB2",
+          "statement": "theorem prod3s15_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod3s15MDB2 = devalMC9F 4 v dp3s14MC9F * devalMC9F 4 v df27MC9F",
+          "block_sha256": "52a56401db7dfc89de66134896685c819e27c494afca0cc12babb5be550d6e1e"
+        },
+        {
+          "name": "prod3s16_evalMDB2",
+          "statement": "theorem prod3s16_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod3s16MDB2 = devalMC9F 4 v prod3s15MDB2 * devalMC9F 4 v df28MC9F",
+          "block_sha256": "ef71c0a3881a0f90908450d8b65986e5c789703878e1233136f67809cff0e1c6"
+        },
+        {
+          "name": "prod3s17_evalMDB2",
+          "statement": "theorem prod3s17_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod3s17MDB2 = devalMC9F 4 v prod3s16MDB2 * devalMC9F 4 v df29MC9F",
+          "block_sha256": "153e260293839a5a0754319e40f310b0c603c2198f77d6689976d81aff6cd792"
+        },
+        {
+          "name": "prod3s18_evalMDB2",
+          "statement": "theorem prod3s18_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod3s18MDB2 = devalMC9F 4 v prod3s17MDB2 * devalMC9F 4 v df22MC9F",
+          "block_sha256": "4f482c000b624ce07b6c348d03c7643dd3f7185c878d61ed15d55f2ab256b9aa"
+        },
+        {
+          "name": "prod3s19_evalMDB2",
+          "statement": "theorem prod3s19_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod3s19MDB2 = devalMC9F 4 v prod3s18MDB2 * devalMC9F 4 v df36MC9F",
+          "block_sha256": "05861e0017adfcc4cde1cc1c81553e2cf2c8e9644ece3a4147ef6e4eced510f8"
+        },
+        {
+          "name": "prod3s20_evalMDB2",
+          "statement": "theorem prod3s20_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod3s20MDB2 = devalMC9F 4 v prod3s19MDB2 * devalMC9F 4 v df35MC9F",
+          "block_sha256": "57aab657eb784aacb97a9f121893a01d045110889b672b03c7e6f63f34946609"
+        },
+        {
+          "name": "prod3s21_evalMDB2",
+          "statement": "theorem prod3s21_evalMDB2 (v : ℕ → ℚ) : devalMC9F 4 v prod3s21MDB2 = devalMC9F 4 v prod3s20MDB2 * devalMC9F 4 v df37MC9F",
+          "block_sha256": "a41e96e8269c8c009cdbb05e4cee5cd155e26ed9ed545ad35b311db481db7267"
+        },
+        {
+          "name": "product3_evalMDB2",
+          "statement": "theorem product3_evalMDB2 (x g z T : ℚ) : devalMC9F 4 (fun k => match k with | 0 => x | 1 => g | 2 => z | _ => T) prod3s21MDB2 = pf11MAD5 T x g z*pf12MAD5 T x g z*pf13MAD5 T x g z*pf18MAD5 T x g z*pf9MAD5 T x g z*pf19MAD5 T x g z*pf18MAD5 T x g z*pf9MAD5 T x g z*pf32MAD5 T x g z*pf34MAD5 T x g z*pf23MAD5 T x g z*pf24MAD5 T x g z*pf25MAD5 T x g z*pf11MAD5 T x g z*pf12MAD5 T x g z*pf27MAD5 T x g z*pf28MAD5 T x g z*pf29MAD5 T x g z*pf22MAD5 T x g z*pf36MAD5 T x g z*pf35MAD5 T x g z*pf37MAD5 T x g z",
+          "block_sha256": "af93e6a5103df48a4b042e76be3801223785ce22a0743c53e9299284b4de6ab2"
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovSwap0S21MDB2",
+      "path": "research/MarkovSwap0S21MDB2.lean",
+      "bytes": 323558,
+      "characters": 323558,
+      "sha256": "53cd0f69774e225d9e4a9b1ce38707a03eca614f7d228de11fd8e34280109ada",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "swap0s21MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap0s21_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovSwap0S21MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "timed_out_excluded",
+      "attempts": [
+        {
+          "path": "build-1792197249322475000.json",
+          "sha256": "dc6eda1a101b029a6c27495766314efeaf69a88166fd8b012bd2cc03e1510903",
+          "source_sha256": "53cd0f69774e225d9e4a9b1ce38707a03eca614f7d228de11fd8e34280109ada",
+          "matches_final_source": true,
+          "returncode": null,
+          "timeout": true
+        }
+      ],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovProduct0S20MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "swap0s21_eqMDB2",
+          "statement": "theorem swap0s21_eqMDB2 : dmulMC9F 4 df31MC9F prod0s20MDB2 = swap0s21MDB2",
+          "block_sha256": "f201a0f9fa59a058ecb8ae52da1e89ebd830e520e797ba171cd062f26c1c30c0"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "swap0s21MDB2",
+          "kind": "def",
+          "header": "noncomputable def swap0s21MDB2 : DenseMC9F 4",
+          "block_sha256": "144915b87a27049cd8b6b9f59f077c9119070f7b8376f9764ac863a48a12a7f8",
+          "block_characters": 323166
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovSwap1S21MDB2",
+      "path": "research/MarkovSwap1S21MDB2.lean",
+      "bytes": 213902,
+      "characters": 213902,
+      "sha256": "bad18242a91e395c66ed5e8ccefe83b8dff438e260c54676659c0eec80692ea3",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "swap1s21MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap1s21_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovSwap1S21MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovProduct1S20MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "swap1s21_eqMDB2",
+          "statement": "theorem swap1s21_eqMDB2 : dmulMC9F 4 df31MC9F prod1s20MDB2 = swap1s21MDB2",
+          "block_sha256": "19917ca3067848615051c680f517ef7eb82ab90c21a4742daf95329799bfa4e7"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "swap1s21MDB2",
+          "kind": "def",
+          "header": "noncomputable def swap1s21MDB2 : DenseMC9F 4",
+          "block_sha256": "d4f8294287dd594614cee328129aa2b1a0728b339778998fa6fe0b77589a8091",
+          "block_characters": 213541
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovSwap2S15MDB2",
+      "path": "research/MarkovSwap2S15MDB2.lean",
+      "bytes": 102238,
+      "characters": 102238,
+      "sha256": "9f2fda77fdfca20c7c3bc550b6a6127d58d4886f2d040b025146819ea0350cb3",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "swap2s15MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap2s15_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovSwap2S15MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovDenseBatch2S14MC9F"
+      ],
+      "theorem_statements": [
+        {
+          "name": "swap2s15_eqMDB2",
+          "statement": "theorem swap2s15_eqMDB2 : dmulMC9F 4 df27MC9F dp2s14MC9F = swap2s15MDB2",
+          "block_sha256": "f4ce103cd2f943db3ca0b60cf32bc5470628fbd13a83e6e2fa2fa6ca33da02df"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "swap2s15MDB2",
+          "kind": "def",
+          "header": "noncomputable def swap2s15MDB2 : DenseMC9F 4",
+          "block_sha256": "13ccacb24d5a5aa2bb6281e4278b5a8f44d4e239858cdc51f85da5150507f3ab",
+          "block_characters": 101876
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovSwap2S16MDB2",
+      "path": "research/MarkovSwap2S16MDB2.lean",
+      "bytes": 123733,
+      "characters": 123733,
+      "sha256": "8ebd7422f8e4a6ba392a011dd1bd0ba9beadded62badeff3e347236b9cee68d2",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "swap2s16MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap2s16_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovSwap2S16MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovSwap2S15MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "swap2s16_eqMDB2",
+          "statement": "theorem swap2s16_eqMDB2 : dmulMC9F 4 df0MC9F swap2s15MDB2 = swap2s16MDB2",
+          "block_sha256": "0f85e45efd06271d959d7bee43c0d5ae41e4f68b57ae5703c67ae2d353d8adcb"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "swap2s16MDB2",
+          "kind": "def",
+          "header": "noncomputable def swap2s16MDB2 : DenseMC9F 4",
+          "block_sha256": "4755dcc77215346a8edbb15fb504afe745d122f4a47b814a7d1e8560eea50924",
+          "block_characters": 123376
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovSwap2S17MDB2",
+      "path": "research/MarkovSwap2S17MDB2.lean",
+      "bytes": 153713,
+      "characters": 153713,
+      "sha256": "e2e2dd720f3aa3447afd964ec865601b407cbaa0ebe00b20d22932d7d7d3c269",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "swap2s17MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap2s17_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovSwap2S17MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovSwap2S16MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "swap2s17_eqMDB2",
+          "statement": "theorem swap2s17_eqMDB2 : dmulMC9F 4 df2MC9F swap2s16MDB2 = swap2s17MDB2",
+          "block_sha256": "7621979f26680657c6b08c01bec1cfbbf48ae7a652b35d27b1f34e5c298fffd0"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "swap2s17MDB2",
+          "kind": "def",
+          "header": "noncomputable def swap2s17MDB2 : DenseMC9F 4",
+          "block_sha256": "c9752a1c900ae1c6a31faeb7dcf1e3b9cbcce33da7893321a2da0f05e3db6858",
+          "block_characters": 153356
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovSwap2S18MDB2",
+      "path": "research/MarkovSwap2S18MDB2.lean",
+      "bytes": 189195,
+      "characters": 189195,
+      "sha256": "34d7fda576debddcfb8bc740234540799954350772fe28624c55e74a97214e7c",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "swap2s18MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap2s18_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovSwap2S18MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovSwap2S17MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "swap2s18_eqMDB2",
+          "statement": "theorem swap2s18_eqMDB2 : dmulMC9F 4 df33MC9F swap2s17MDB2 = swap2s18MDB2",
+          "block_sha256": "b56ceb059bb13a69c7b038b0c130744072e357fc56bb48fd1a287a25ff59118c"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "swap2s18MDB2",
+          "kind": "def",
+          "header": "noncomputable def swap2s18MDB2 : DenseMC9F 4",
+          "block_sha256": "13082a66242244e501326731cd3b54bdc29a5010dfafe3615e71221eb7fbf745",
+          "block_characters": 188837
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovSwap2S19MDB2",
+      "path": "research/MarkovSwap2S19MDB2.lean",
+      "bytes": 226984,
+      "characters": 226984,
+      "sha256": "caf9ef6a5d4038ae1c0824d3d2ac679282e285c9f856257355be4924a5d78ffb",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "swap2s19MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap2s19_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovSwap2S19MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovSwap2S18MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "swap2s19_eqMDB2",
+          "statement": "theorem swap2s19_eqMDB2 : dmulMC9F 4 df16MC9F swap2s18MDB2 = swap2s19MDB2",
+          "block_sha256": "7da3bfdac5b291f93524b5d5426722b1cba3783387dc469cfab5e2544d90a9e3"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "swap2s19MDB2",
+          "kind": "def",
+          "header": "noncomputable def swap2s19MDB2 : DenseMC9F 4",
+          "block_sha256": "742dbfdf90e2958566e4c4721d8938ec44ab7c992750a4d0c7caa9870e6e8755",
+          "block_characters": 226626
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovSwap2S20MDB2",
+      "path": "research/MarkovSwap2S20MDB2.lean",
+      "bytes": 269334,
+      "characters": 269334,
+      "sha256": "2d0fb92bf09a5279e10a9c0d566c51117e5a088d3caf78836ddcaa08cda63384",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "swap2s20MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap2s20_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovSwap2S20MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovSwap2S19MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "swap2s20_eqMDB2",
+          "statement": "theorem swap2s20_eqMDB2 : dmulMC9F 4 df26MC9F swap2s19MDB2 = swap2s20MDB2",
+          "block_sha256": "e299d73bb39065f6e8d5d91dbb4b2958b25e90dfc5617728e0762fb3af5aa7d5"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "swap2s20MDB2",
+          "kind": "def",
+          "header": "noncomputable def swap2s20MDB2 : DenseMC9F 4",
+          "block_sha256": "38052397f2183d1bbb0441900b4a23d3c1a8389858ac2fce228c44f093cf2021",
+          "block_characters": 268976
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovSwap2S21MDB2",
+      "path": "research/MarkovSwap2S21MDB2.lean",
+      "bytes": 317414,
+      "characters": 317414,
+      "sha256": "fe4f48385163b224d911748b39d9a424473e7e7957d9d6618863646b5ce67c9d",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "swap2s21MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap2s21_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovSwap2S21MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovSwap2S20MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "swap2s21_eqMDB2",
+          "statement": "theorem swap2s21_eqMDB2 : dmulMC9F 4 df5MC9F swap2s20MDB2 = swap2s21MDB2",
+          "block_sha256": "69af7600cfc56325468c9563b1b11b7977da3126ed4b2103bc3a483d9fbe865f"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "swap2s21MDB2",
+          "kind": "def",
+          "header": "noncomputable def swap2s21MDB2 : DenseMC9F 4",
+          "block_sha256": "0adaf3e7209bd4396ac463dd3cb8930a4de72d2548ffc2172949892ce1bd5790",
+          "block_characters": 317057
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovSwap3S16MDB2",
+      "path": "research/MarkovSwap3S16MDB2.lean",
+      "bytes": 106818,
+      "characters": 106818,
+      "sha256": "8dbcb014d82792ca72b77dbd28421018f0de5c2d2eff100fe45d785ac32f99b2",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "swap3s16MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap3s16_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovSwap3S16MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "timed_out_excluded",
+      "attempts": [
+        {
+          "path": "build-1792197376678958000.json",
+          "sha256": "a833acab55feb9803f135c49912be520c683f2e33670e64faa0426bccd8de6c0",
+          "source_sha256": "8dbcb014d82792ca72b77dbd28421018f0de5c2d2eff100fe45d785ac32f99b2",
+          "matches_final_source": true,
+          "returncode": null,
+          "timeout": true
+        }
+      ],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovSwap3S15MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "swap3s16_eqMDB2",
+          "statement": "theorem swap3s16_eqMDB2 : dmulMC9F 4 df28MC9F swap3s15MDB2 = swap3s16MDB2",
+          "block_sha256": "a75d5f2ce934c40adf636016198aa4159364527d3e4036a7d31e5b17a5549771"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "swap3s16MDB2",
+          "kind": "def",
+          "header": "noncomputable def swap3s16MDB2 : DenseMC9F 4",
+          "block_sha256": "c12e3b313432b87fe9e8c49e165889b50eff807027cc8cd390b2894ee3122920",
+          "block_characters": 106460
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovSwap3S17MDB2",
+      "path": "research/MarkovSwap3S17MDB2.lean",
+      "bytes": 133603,
+      "characters": 133603,
+      "sha256": "a637274295b627041702f9ed27c59eb7e888f73be7f6694900337a93259b2e0a",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "swap3s17MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap3s17_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovSwap3S17MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovSwap3S16MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "swap3s17_eqMDB2",
+          "statement": "theorem swap3s17_eqMDB2 : dmulMC9F 4 df29MC9F swap3s16MDB2 = swap3s17MDB2",
+          "block_sha256": "42d5f084aa5c90741caae18a38b49027f85cded1c1e7f0cd24cf640206708894"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "swap3s17MDB2",
+          "kind": "def",
+          "header": "noncomputable def swap3s17MDB2 : DenseMC9F 4",
+          "block_sha256": "28ec4e15238c3188583935cc8c123e6c700a735458ab5d7e33f243d4ffeb817d",
+          "block_characters": 133245
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovSwap3S18MDB2",
+      "path": "research/MarkovSwap3S18MDB2.lean",
+      "bytes": 165552,
+      "characters": 165552,
+      "sha256": "6912937005964af83b09408dd0b4f04cc2d091889ddfb6e03d5b3ea1fb6c3267",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "swap3s18MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap3s18_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovSwap3S18MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovSwap3S17MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "swap3s18_eqMDB2",
+          "statement": "theorem swap3s18_eqMDB2 : dmulMC9F 4 df22MC9F swap3s17MDB2 = swap3s18MDB2",
+          "block_sha256": "d6a29e6491a3d2e12f933b81f79f1b8da4514955bc4c8c5aa46b128bbd93e10b"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "swap3s18MDB2",
+          "kind": "def",
+          "header": "noncomputable def swap3s18MDB2 : DenseMC9F 4",
+          "block_sha256": "32ff431b41e26d5a11711af44cf0716ca32eab6a1fe7a9d94d915f0461614da7",
+          "block_characters": 165194
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovSwap3S19MDB2",
+      "path": "research/MarkovSwap3S19MDB2.lean",
+      "bytes": 188371,
+      "characters": 188371,
+      "sha256": "e96c76d24c58098d8f326af9a4f3d47a05acb6bb9881ec49e16fccee6885d406",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "swap3s19MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap3s19_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovSwap3S19MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovSwap3S18MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "swap3s19_eqMDB2",
+          "statement": "theorem swap3s19_eqMDB2 : dmulMC9F 4 df36MC9F swap3s18MDB2 = swap3s19MDB2",
+          "block_sha256": "6abbaecf28e3ff487b5f554782bcbd5ccea41b84883f009361e41249c54d3b1f"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "swap3s19MDB2",
+          "kind": "def",
+          "header": "noncomputable def swap3s19MDB2 : DenseMC9F 4",
+          "block_sha256": "c929ba8dd18334fb4ff463a03fb18e21e607ec48bca1a01543a6448f21ce9196",
+          "block_characters": 188013
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovSwap3S20MDB2",
+      "path": "research/MarkovSwap3S20MDB2.lean",
+      "bytes": 225768,
+      "characters": 225768,
+      "sha256": "4cba3d083d60388bc7932a5e2af919a60f0236f5659c17e1d64cad4865d6c3c4",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "swap3s20MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap3s20_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovSwap3S20MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovSwap3S19MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "swap3s20_eqMDB2",
+          "statement": "theorem swap3s20_eqMDB2 : dmulMC9F 4 df35MC9F swap3s19MDB2 = swap3s20MDB2",
+          "block_sha256": "84c2b85469804f81521ce6a8bfa2928cf946b581069809e4de6c37058d7181fd"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "swap3s20MDB2",
+          "kind": "def",
+          "header": "noncomputable def swap3s20MDB2 : DenseMC9F 4",
+          "block_sha256": "9a8bffd80be9f7a63f5b2d97e2d52860a2ef679b68cffadcaae2f2972ac596a7",
+          "block_characters": 225410
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    },
+    {
+      "module": "MarkovSwap3S21MDB2",
+      "path": "research/MarkovSwap3S21MDB2.lean",
+      "bytes": 268422,
+      "characters": 268422,
+      "sha256": "af26177dcab44aba56b679febffdd697bcc6618eca1e8cb86fc316a3c4ed0a73",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "swap3s21MDB2"
+        },
+        {
+          "kind": "theorem",
+          "name": "swap3s21_eqMDB2"
+        }
+      ],
+      "object_path": "evidence/markov-db238071/MarkovSwap3S21MDB2.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in166": false,
+      "printed_in166": false,
+      "status": "unattempted_excluded",
+      "attempts": [],
+      "imports": [
+        "KernelRflMDB2",
+        "MarkovDenseDataMC9F",
+        "MarkovSwap3S20MDB2"
+      ],
+      "theorem_statements": [
+        {
+          "name": "swap3s21_eqMDB2",
+          "statement": "theorem swap3s21_eqMDB2 : dmulMC9F 4 df37MC9F swap3s20MDB2 = swap3s21MDB2",
+          "block_sha256": "f6a3ac12764962f22f238bc3adb903144ea57e05a2d77a632f40fa658ed80a4a"
+        }
+      ],
+      "definition_bindings": [
+        {
+          "name": "swap3s21MDB2",
+          "kind": "def",
+          "header": "noncomputable def swap3s21MDB2 : DenseMC9F 4",
+          "block_sha256": "a213ffbf274780bf3c30d704e20136b4974e1eae2f7f4dd1124ffe84c7d4a207",
+          "block_characters": 268064
+        }
+      ],
+      "forbidden_tokens": [],
+      "literal_mathematical_data_hashed_not_evaluated": true
+    }
+  ],
+  "accepted_counts": {
+    "def": 13,
+    "theorem": 33
+  },
+  "excluded_counts": {
+    "def": 46,
+    "theorem": 84
+  },
+  "coverage_counts": {
+    "selected_replayed": {
+      "def": 6,
+      "theorem": 26
+    },
+    "unattempted_excluded": {
+      "def": 39,
+      "theorem": 77
+    },
+    "selected_unreplayed": {
+      "def": 7,
+      "theorem": 7
+    },
+    "timed_out_excluded": {
+      "def": 7,
+      "theorem": 7
+    }
+  },
+  "correction_factor_scope": "For all natural q,i and Boolean r with q>=2, actual threeRaw(q,r,i,q+1) equals coeff_i of X^2(1+X)^d(c+X H), where n=3q+(1 if true else2), d=q-2 or q-1 and c=8 or4. Literal raw integer coefficients, no normalization. q1 excluded; inherited classification covers actual numerator3 sources. CrossLC transport is conditional.",
+  "correction_support_scope": "Residual constant c; successor coefficient equals rowH coefficient. For q>=2 it is positive exactly on integer0..q+2 and zero outside; nonnegative and interval support. CrossLC iff all integer-centered adjacent inequalities; the latter remains unproved universally.",
+  "packed_scope": "Natural coefficient lists including empty lists and zeros. Evaluation and sum identities universal. Soundness requires base>1, actual convolution/proposal equal lengths, product of input sums<base, each proposal digit<base, and equality of packed naturals. Variant uses proposal sum<base. Semantic transport for all rational x. A small concrete certificate is proved. No actual four-variable flattening, carry/radix bounds, concrete candidate packed equality or actual-source bridge is proved.",
+  "packed_obstruction_scope": "Formal auxiliary carry obstruction: bounded input/proposal digits and equal length plus equal packed number do not imply convolution-list equality without actual-product coefficient bounds. No Markov-source claim.",
+  "dense_transport_scope": "Two general conditional semantic identities for arbitrary dimension and rational valuation; exact dense multiplication or signed-addition equality remains an explicit premise.",
+  "prefix_scope": {
+    "new_steps": [
+      {
+        "module": "MarkovDirect2S15MDB2",
+        "group": 2,
+        "step": 15,
+        "factor_index": 27,
+        "reversed": false,
+        "literal_previous": "dp2s14MC9F",
+        "literal_result": "direct2s15MDB2",
+        "compiled": true,
+        "printed": true,
+        "replayed": false
+      },
+      {
+        "module": "MarkovDirect2S16MDB2",
+        "group": 2,
+        "step": 16,
+        "factor_index": 0,
+        "reversed": false,
+        "literal_previous": "direct2s15MDB2",
+        "literal_result": "direct2s16MDB2",
+        "compiled": true,
+        "printed": true,
+        "replayed": false
+      },
+      {
+        "module": "MarkovProduct0S19MDB2",
+        "group": 0,
+        "step": 19,
+        "factor_index": 36,
+        "reversed": false,
+        "literal_previous": "dp0s18MC9F",
+        "literal_result": "prod0s19MDB2",
+        "compiled": true,
+        "printed": true,
+        "replayed": false
+      },
+      {
+        "module": "MarkovProduct0S20MDB2",
+        "group": 0,
+        "step": 20,
+        "factor_index": 37,
+        "reversed": false,
+        "literal_previous": "prod0s19MDB2",
+        "literal_result": "prod0s20MDB2",
+        "compiled": true,
+        "printed": true,
+        "replayed": false
+      },
+      {
+        "module": "MarkovProduct1S19MDB2",
+        "group": 1,
+        "step": 19,
+        "factor_index": 35,
+        "reversed": false,
+        "literal_previous": "dp1s18MC9F",
+        "literal_result": "prod1s19MDB2",
+        "compiled": true,
+        "printed": true,
+        "replayed": false
+      },
+      {
+        "module": "MarkovProduct1S20MDB2",
+        "group": 1,
+        "step": 20,
+        "factor_index": 37,
+        "reversed": false,
+        "literal_previous": "prod1s19MDB2",
+        "literal_result": "prod1s20MDB2",
+        "compiled": true,
+        "printed": true,
+        "replayed": false
+      },
+      {
+        "module": "MarkovSwap3S15MDB2",
+        "group": 3,
+        "step": 15,
+        "factor_index": 27,
+        "reversed": true,
+        "literal_previous": "dp3s14MC9F",
+        "literal_result": "swap3s15MDB2",
+        "compiled": true,
+        "printed": true,
+        "replayed": false
+      }
+    ],
+    "reached_steps": [
+      20,
+      20,
+      16,
+      15
+    ],
+    "factors_including_initial": [
+      21,
+      21,
+      17,
+      16
+    ],
+    "complete_target_factors": 22,
+    "source_evaluation_layers_unbuilt": true,
+    "qualification": "Seven exact literal multiplication certificates compiled and printed, not successfully replayed; group3 reverses factors. No complete product/sign/source consequence inferred."
+  },
+  "candidate_scope": "Four ProductEval files, GapData/GapClosed and LowerClosed are unbuilt. Unconditional-looking candidate statements are not results; root residual unchanged.",
+  "operational_scope": "KernelRfl proposes Eq.refl terms via mkAuxLemma with async false. Positive anonymous arithmetic example compiled; deliberately false1=2 operational example rejected. No named closure/replay credit assigned to helper or false test.",
+  "mathematical_values_recomputed": false
+}

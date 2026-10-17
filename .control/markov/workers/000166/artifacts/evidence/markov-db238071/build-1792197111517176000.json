@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCorrectionFactorMDB2.lean:20:81: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  c \u2265 0\n  b \u2265 0\n  b - c \u2265 -1\n  b \u2265 0\n  a \u2265 0\n  a - b \u2265 1\nwhere\n a := \u2191(if false = true then q - 2 else q - 1)\n b := \u2191((3 * q + if false = true then 1 else 2) - (2 * (q + 1) + 1))\n c := \u2191(if false = true then 1 else 2)\n/Users/sasha/math_gkm/research/MarkovCorrectionFactorMDB2.lean:20:67: warning: This simp argument is unused:\n  if_false\n\nHint: Omit it from the simp argument list.\n  simp only [sourceNME9C, \u0332correctionExponentMDB2, \u0332if_true,\u0335i\u0335f\u0335_\u0335f\u0335a\u0335l\u0335s\u0335e\u0335]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovCorrectionFactorMDB2.lean:45:60: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b \u2265 0\n  a \u2265 2\n  a + b \u2264 2\nwhere\n a := \u2191q\n b := \u2191(if false = true then 1 else 2)\n/Users/sasha/math_gkm/research/MarkovCorrectionFactorMDB2.lean:45:46: warning: This simp argument is unused:\n  if_false\n\nHint: Omit it from the simp argument list.\n  simp only [\u0335s\u0335o\u0335u\u0335r\u0335c\u0335e\u0335N\u0335M\u0335E\u03359\u0335C\u0335,\u0335i\u0335f\u0335_\u0335t\u0335r\u0335u\u0335e\u0335,\u0335i\u0335f\u0335_\u0335f\u0335a\u0335l\u0335s\u0335e\u0335]\u0335[\u0332s\u0332o\u0332u\u0332r\u0332c\u0332e\u0332N\u0332M\u0332E\u03329\u0332C\u0332,\u0332 \u0332i\u0332f\u0332_\u0332t\u0332r\u0332u\u0332e\u0332]\u0332\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCorrectionFactorMDB2": "2a1fff1d63d88e57e9f4126e6b6252159dfb99e0d82f5decb2c78d846acec033"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovCorrectionFactorMDB2.olean",
+    "/Users/sasha/math_gkm/research/MarkovCorrectionFactorMDB2.lean"
+  ],
+  "seconds": 55.42131354101002,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
