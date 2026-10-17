@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovWeightedSeparationM09F.lean:28:3: error: mod_cast has type\n  (k + s + 4).choose (s + 5) * (k + 1 + s + 4) = (k + 1 + s + 4).choose (s + 5) * k\nbut is expected to have type\n  (k + s + 4).choose (s + 5) * (k + s + 5) = (k + 1 + s + 4).choose (s + 5) * k\n/Users/sasha/math_gkm/research/MarkovWeightedSeparationM09F.lean:36:3: error: ring failed, ring expressions not equal\na k s : \u2115\nhk : 1 \u2264 k\nh0 : weightedChooseM09F a k s * (\u2191k + \u2191s + 4) = \u2191((k + s + 4).choose (s + 5)) * weightedLinearM09F a k s\nha : (k + s + 4).choose (s + 5) * (k + 1 + s + 4) = (k + 1 + s + 4).choose (s + 5) * k\nha' : \u2191((k + s + 4).choose (s + 5)) * (\u2191k + \u2191s + 5) = \u2191((k + 1 + s + 4).choose (s + 5)) * \u2191k\nhl : weightedLinearM09F a (k + 1) s = weightedLinearM09F a k s + 3\nh1 :\n  weightedChooseM09F a (k + 1) s * (\u2191k + 1 + \u2191s + 4) =\n    \u2191((k + 1 + s + 4).choose (s + 5)) * (weightedLinearM09F a k s + 3)\n\u22a2 \u2191k * \u2191((k + 1 + s + 4).choose (s + 5)) * 6 + \u2191k * \u2191((k + 1 + s + 4).choose (s + 5)) * weightedLinearM09F a k s * 2 -\n                \u2191k * weightedLinearM09F a k s * \u2191((k + s + 4).choose (s + 5)) * 2 -\n              \u2191k * \u2191((k + s + 4).choose (s + 5)) * 6 -\n            \u2191s * weightedLinearM09F a k s * \u2191((k + s + 4).choose (s + 5)) * 2 -\n          \u2191s * \u2191((k + s + 4).choose (s + 5)) * 6 -\n        weightedLinearM09F a k s * \u2191((k + s + 4).choose (s + 5)) * 10 -\n      \u2191((k + s + 4).choose (s + 5)) * 30 =\n    0\n/Users/sasha/math_gkm/research/MarkovWeightedSeparationM09F.lean:86:5: warning: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\n/Users/sasha/math_gkm/research/MarkovWeightedSeparationM09F.lean:107:3: error: 'change' tactic failed, pattern\n  ?m.664 \u2264 \u2191k * weightedLinearM09F a k s * ?m.666\nis not definitionally equal to target\n  (\u2191k + (\u2191s - 3) + 3 + 4) * (3 * \u2191k + \u2191a * \u2191s + 5 * \u2191a) * (3 * \u2191k + \u2191a + 1) * (3 * \u2191k + \u2191a + 2) * (3 * \u2191k + \u2191a + 3) \u2264\n    \u2191k * (3 * \u2191k + \u2191a * \u2191s + 5 * \u2191a - 3) * (3 * \u2191k + (\u2191s - 3) + 3 + \u2191a + 6) * (3 * \u2191k + (\u2191s - 3) + 3 + \u2191a + 7) *\n      (3 * \u2191k + (\u2191s - 3) + 3 + \u2191a + 8)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovWeightedSeparationM09F": "02f8f9516421611dd75474b39c2b387304159344fb49e6b251f23e8ae0cf3f1a"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-09fffb56/MarkovWeightedSeparationM09F.olean",
+    "/Users/sasha/math_gkm/research/MarkovWeightedSeparationM09F.lean"
+  ],
+  "seconds": 16.685499333019834,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

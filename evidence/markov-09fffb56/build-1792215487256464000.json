@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovOrderedConvolutionM09F.lean:56:1: error: mod_cast has type\n  i.choose n \u2264 j.choose n\nbut is expected to have type\n  (fun i => \u2191(i.choose n)) i \u2264 (fun i => \u2191(i.choose n)) j\n/Users/sasha/math_gkm/research/MarkovOrderedConvolutionM09F.lean:71:13: error(lean.unknownIdentifier): Unknown constant `Polynomial.coeff_zero_pow`\n/Users/sasha/math_gkm/research/MarkovOrderedConvolutionM09F.lean:71:1: error: Type mismatch: After simplification, term\n  h\n has type\n  (completeLiftMA64 j (s + 1) ^ 2).coeff 0 * (completeLiftMA64 j s * completeLiftMA64 j (s + 2)).coeff n \u2264\n    \u2191(liftTermMAE9 j s 0) * \u2191(liftTermMAE9 j (s + 2) 0) * (completeLiftMA64 j (s + 1) ^ 2).coeff n\nbut is expected to have type\n  \u2191(liftTermMAE9 j (s + 1) 0) ^ 2 * (completeLiftMA64 j s * completeLiftMA64 j (s + 2)).coeff n \u2264\n    \u2191(liftTermMAE9 j s 0) * \u2191(liftTermMAE9 j (s + 2) 0) * (completeLiftMA64 j (s + 1) ^ 2).coeff n\n",
+  "stderr": "",
+  "modules": {
+    "MarkovOrderedConvolutionM09F": "23f4ac18024b5cbce249dbcb0c55c2e7fce7c08e1bfccee5958627b5262b0d4b"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-09fffb56/MarkovOrderedConvolutionM09F.olean",
+    "/Users/sasha/math_gkm/research/MarkovOrderedConvolutionM09F.lean"
+  ],
+  "seconds": 25.636159542016685,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

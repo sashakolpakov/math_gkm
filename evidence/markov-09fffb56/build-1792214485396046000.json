@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovNormalizedKernelM09F.lean:27:57: error: unexpected token '+'; expected term\n/Users/sasha/math_gkm/research/MarkovNormalizedKernelM09F.lean:39:87: error: unexpected token '+'; expected term\n/Users/sasha/math_gkm/research/MarkovNormalizedKernelM09F.lean:58:1: error: linarith failed to find a contradiction\nj t m : \u211a\nht : 0 \u2264 t\nhm : 0 \u2264 m\nhmj : m \u2264 j\nhj : 0 \u2264 j\nh : 0 \u2264 normNumerM09F j (t + 1) m * normDenomM09F j t m - sorry\na\u271d : normNumerM09F j (t + 1) m * normDenomM09F j t m < normNumerM09F j t m * normDenomM09F j (t + 1) m\n\u22a2 False\nfailed\n/Users/sasha/math_gkm/research/MarkovNormalizedKernelM09F.lean:70:1: error: linarith failed to find a contradiction\nj t m : \u211a\nht : 0 \u2264 t\nhm : 0 \u2264 m\nhmj : m \u2264 j\nhj : 0 \u2264 j\nh : 0 \u2264 normNumerM09F j (t + 1) m ^ 2 * normDenomM09F j t m * normDenomM09F j (t + 2) m - sorry\na\u271d :\n  normNumerM09F j (t + 1) m ^ 2 * (normDenomM09F j t m * normDenomM09F j (t + 2) m) <\n    normNumerM09F j t m * normNumerM09F j (t + 2) m * normDenomM09F j (t + 1) m ^ 2\n\u22a2 False\nfailed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovNormalizedKernelM09F": "c43a8e2347e060d1f829a0f3cf05d18f00f81a96148a50cff6f1537438771976"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-09fffb56/MarkovNormalizedKernelM09F.olean",
+    "/Users/sasha/math_gkm/research/MarkovNormalizedKernelM09F.lean"
+  ],
+  "seconds": 26.62426891695941,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

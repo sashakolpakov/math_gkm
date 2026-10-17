@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBaseCurvatureM09F.lean:33:3: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovBaseCurvatureM09F.lean:50:1: error: mod_cast has type\n  (s + 6) * (s + 7) * (s + 8) * (s + 9) = 24 * (s + 9).choose 4\nbut is expected to have type\n  budgetDenM09F \u2191s = \u2191(24 * (s + 9).choose 4)\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBaseCurvatureM09F": "05c4a66ffb358c615b53c8c2f43f40f1772ff79a4f3278953fa74d5ec6482a58"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-09fffb56/MarkovBaseCurvatureM09F.olean",
+    "/Users/sasha/math_gkm/research/MarkovBaseCurvatureM09F.lean"
+  ],
+  "seconds": 8.284149332961533,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

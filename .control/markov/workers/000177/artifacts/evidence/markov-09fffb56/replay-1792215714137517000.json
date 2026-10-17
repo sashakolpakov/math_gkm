@@ -1,0 +1,137 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovNormalizedKernelM09F\ncollected MarkovNormalizedCoefficientsM09F\ncollected MarkovWeightedSeparationM09F\ncollected MarkovCorrectionBudgetM09F\ncollected MarkovBaseCurvatureM09F\ncollected MarkovChooseGrowthM09F\ncollected MarkovTopScalarM09F\ncollected MarkovAbsorbedBudgetM09F\ncollected MarkovZeroBandBudgetM09F\ncollected MarkovSharpScalarsClosedM09F\ncollected MarkovOrderedConvolutionM09F\ncollected MarkovAdjacentConvolutionM09F\nreplay union of 12 modules over 5 inherited imports\nisolation checked for 68 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovNormalizedKernelM09F": "5474f92daefce98a56251ccc1e50c626aae1f17c20fcaa43e124c97c05c3aa9c",
+    "MarkovNormalizedCoefficientsM09F": "9c53fa357bfaa910192646b407eeff532f2f8656a68524ff11087bddfb370cde",
+    "MarkovWeightedSeparationM09F": "2d28e662ce243dbdb23655fe04c4694cdc5adfd67efe1abf6b1b9f6bec38398b",
+    "MarkovCorrectionBudgetM09F": "e69c62d8aab1c8bbc0b144b3278a66b09a2ec6545881cd303a3dd8b9e36b5052",
+    "MarkovBaseCurvatureM09F": "d166681c75a5f0d90a69901f4685530d604bba7401e9921e755c428c7c3d43c0",
+    "MarkovChooseGrowthM09F": "4af146c801b4590da72676d80f880928b2dfc3616377c565b40c856ae985a5b5",
+    "MarkovTopScalarM09F": "8471d8ff2bc836acadce0244633823b08f3924190dd57d0dd3b9d4fb2b7c256f",
+    "MarkovAbsorbedBudgetM09F": "9ff42f437d0795165ac2cbce5e44ee101e97647b077ad3ba521242306c6f104f",
+    "MarkovZeroBandBudgetM09F": "8a004ec88b25a7abf78e2bad46c92fc53225e92b53d9e3eaadc66116ff813608",
+    "MarkovSharpScalarsClosedM09F": "36785ff4adbe70196d26725c3e77123e4a7641c430f74a766da0ce057f0a1758",
+    "MarkovOrderedConvolutionM09F": "c302702718f00223979c5702e6d985f529ac70d7b08459f36aadac5af4c203db",
+    "MarkovAdjacentConvolutionM09F": "5782be7b2e51ef6be300a5afb3e061dc5886833224d40ffd142cbb2c423b81a1"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM09F.lean",
+    "MarkovNormalizedKernelM09F",
+    "MarkovNormalizedCoefficientsM09F",
+    "MarkovWeightedSeparationM09F",
+    "MarkovCorrectionBudgetM09F",
+    "MarkovBaseCurvatureM09F",
+    "MarkovChooseGrowthM09F",
+    "MarkovTopScalarM09F",
+    "MarkovAbsorbedBudgetM09F",
+    "MarkovZeroBandBudgetM09F",
+    "MarkovSharpScalarsClosedM09F",
+    "MarkovOrderedConvolutionM09F",
+    "MarkovAdjacentConvolutionM09F"
+  ],
+  "seconds": 47.64686891599558,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "4a06c8e6d0d942b5811688bbea79368569fd2a2ec63bd0689f857b81fae10be6",
+  "declared_names": {
+    "MarkovNormalizedKernelM09F": [
+      "normNumerM09F",
+      "normDenomM09F",
+      "normKernelM09F",
+      "norm_den_posM09F",
+      "norm_num_nonnegM09F",
+      "norm_step_clearedM09F",
+      "norm_gap_clearedM09F",
+      "norm_stepM09F",
+      "norm_lcM09F"
+    ],
+    "MarkovNormalizedCoefficientsM09F": [
+      "normalizedCoeffM09F",
+      "normalized_coeff_formulaM09F",
+      "normalized_coeff_tailM09F",
+      "normalized_coeff_nonnegM09F",
+      "normalized_coeff_monoM09F",
+      "normalized_coeff_lcM09F",
+      "normalized_coeff_crossM09F"
+    ],
+    "MarkovWeightedSeparationM09F": [
+      "weightedChooseM09F",
+      "weightedLinearM09F",
+      "weighted_choose_scaledM09F",
+      "weighted_choose_stepM09F",
+      "weighted_step_certificateM09F",
+      "weighted_separated_chooseM09F"
+    ],
+    "MarkovCorrectionBudgetM09F": [
+      "weighted_correction_boundM09F",
+      "band_budget_clampedM09F",
+      "band_uniform_sharpM09F",
+      "source_band_uniform_sharpM09F"
+    ],
+    "MarkovBaseCurvatureM09F": [
+      "base_weight_gapM09F",
+      "base_curvature_ratM09F",
+      "base_curvatureM09F",
+      "budgetDenM09F",
+      "budget_den_chooseM09F",
+      "budget_scalar_largeM09F",
+      "budget_scalarM09F"
+    ],
+    "MarkovChooseGrowthM09F": [
+      "choose_linear_lowerM09F",
+      "choose_small_monoM09F",
+      "choose_growth_scaledM09F",
+      "band_base_growthM09F"
+    ],
+    "MarkovTopScalarM09F": [
+      "top_scalar_of_budgetsM09F",
+      "top_scalar_clampedM09F",
+      "robust_cut_clampedM09F"
+    ],
+    "MarkovAbsorbedBudgetM09F": [
+      "correction_pair_rawM09F",
+      "correction_pair_scalarM09F",
+      "correction_pair_budgetM09F",
+      "budget_dominated_by_zeroM09F",
+      "band_budget_positive_kM09F"
+    ],
+    "MarkovZeroBandBudgetM09F": [
+      "zero_band_chooseM09F",
+      "zero_band_budgetM09F"
+    ],
+    "MarkovSharpScalarsClosedM09F": [
+      "band_budget_allM09F",
+      "sharp_top_scalarsM09F",
+      "band_uniform_allM09F",
+      "source_band_uniform_allM09F",
+      "band_middle_of_marginM09F",
+      "source_band_all_of_marginM09F"
+    ],
+    "MarkovOrderedConvolutionM09F": [
+      "ordered_weighted_sumM09F",
+      "translated_coeff_sumM09F",
+      "translated_zero_ratioM09F",
+      "UnshiftedRatioM09F",
+      "sharp_margin_of_unshiftedM09F",
+      "source_band_of_unshiftedM09F",
+      "ordinary_concavity_obstructionM09F",
+      "ordinary_concavity_falseM09F"
+    ],
+    "MarkovAdjacentConvolutionM09F": [
+      "ordered_of_adjacentM09F",
+      "q_coeff_positiveM09F",
+      "q_product_positiveM09F",
+      "q_product_tailM09F",
+      "UnshiftedAdjacentM09F",
+      "unshifted_adjacent_iffM09F",
+      "source_band_of_adjacentM09F"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed M09F; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

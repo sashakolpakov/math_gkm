@@ -1,0 +1,1391 @@
+{
+  "worker": 177,
+  "request": "09fffb56626d410db28e496da5a3241c",
+  "created_at_utc": "2026-10-17T05:51:19.752048+00:00",
+  "historical_status": "Completed host outcome / return0 / structured report present / elapsed1606.1280918121338. Twelve final mathematical modules compiled and jointly replayed,59 distinct theorem closures printed;12 rejected compiler attempts retained. Full root open.",
+  "scope": "Archive-first closed177 and explicit named inherited/current counterparts only. Static hashes, source/record parsing, literal comparison and finite index-domain counts. No mathematical-value recomputation, project/proof/checker/replay/experiment/generator/finalizer execution/import, project edit or proposer help/contact. Active178 and later excluded. Earlier seals/windows unchanged.",
+  "new_modules": [
+    {
+      "module": "MarkovNormalizedKernelM09F",
+      "path": "research/MarkovNormalizedKernelM09F.lean",
+      "bytes": 10239,
+      "sha256": "5474f92daefce98a56251ccc1e50c626aae1f17c20fcaa43e124c97c05c3aa9c",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "normNumerM09F"
+        },
+        {
+          "kind": "def",
+          "name": "normDenomM09F"
+        },
+        {
+          "kind": "def",
+          "name": "normKernelM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_den_posM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_num_nonnegM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_step_clearedM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_gap_clearedM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_stepM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_lcM09F"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792214485396046000.json",
+          "sha256": "9219c6df95f1d7d0c8d35863eecfc3e829ff48a687b6385b33b142df7f6e7015",
+          "source_sha256": "c43a8e2347e060d1f829a0f3cf05d18f00f81a96148a50cff6f1537438771976",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "c43a8e2347e060d1f829a0f3cf05d18f00f81a96148a50cff6f1537438771976"
+        },
+        {
+          "path": "build-1792214525576236000.json",
+          "sha256": "a44ed3f2606c037281146b8c1ee7c93a987ddd58238f15d7eea21a5383adb967",
+          "source_sha256": "5474f92daefce98a56251ccc1e50c626aae1f17c20fcaa43e124c97c05c3aa9c",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "5474f92daefce98a56251ccc1e50c626aae1f17c20fcaa43e124c97c05c3aa9c"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in177": true,
+      "printed_in177": true,
+      "object_path": "evidence/markov-09fffb56/MarkovNormalizedKernelM09F.olean",
+      "object_sha256": "3162c6618207b629f9587eea184170ccdcd2e35ee97547816b8afb8c393d588b",
+      "successful_final_build": "evidence/markov-09fffb56/build-1792214525576236000.json",
+      "historical_successful_source_versions": [
+        "5474f92daefce98a56251ccc1e50c626aae1f17c20fcaa43e124c97c05c3aa9c"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovSharpMarginMBE3"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "norm_den_posM09F",
+          "header": "theorem norm_den_posM09F (j t m : ℚ) (hj : 0 ≤ j) (ht : 0 ≤ t) (hm : 0 ≤ m) :\n 0 < normDenomM09F j t m",
+          "block_sha256": "e7fbdb03236baedf4e3e487bca6066ac2063d66cc377fdad40f7b2618d089538",
+          "block_characters": 204
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_num_nonnegM09F",
+          "header": "theorem norm_num_nonnegM09F (j t m : ℚ) (ht : 0 ≤ t) (hm : 0 ≤ m) (hmj : m ≤ j) :\n 0 ≤ normNumerM09F j t m",
+          "block_sha256": "aebddd1164f1204707d74fc30597d4258e815fc7b8c9fab5691ec7ed32e1fcf5",
+          "block_characters": 198
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_step_clearedM09F",
+          "header": "theorem norm_step_clearedM09F (t m z : ℚ) (ht : 0 ≤ t) (hm : 0 ≤ m) (hz : 0 ≤ z) :\n 0 ≤ normNumerM09F (m+z) (t+1) m*normDenomM09F (m+z) t m-\n normNumerM09F (m+z) t m*normDenomM09F (m+z) (t+1) m",
+          "block_sha256": "4d83f9b18065c4cf22096e6b63cb45661398d419e2a489048fd41531315d2dc7",
+          "block_characters": 1117
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_gap_clearedM09F",
+          "header": "theorem norm_gap_clearedM09F (t m z : ℚ) (ht : 0 ≤ t) (hm : 0 ≤ m) (hz : 0 ≤ z) :\n 0 ≤ normNumerM09F (m+z) (t+1) m^2*normDenomM09F (m+z) t m*normDenomM09F (m+z) (t+2) m-\n normNumerM09F (m+z) t m*normNumerM09F (m+z) (t+2) m*normDenomM09F (m+z) (t+1) m^2",
+          "block_sha256": "2af6744bd849fe533dd6635e80c2cd8ca28ba3cafe5255f6ff1b8c2a2e5ba9f1",
+          "block_characters": 7127
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_stepM09F",
+          "header": "theorem norm_stepM09F (j t m : ℚ) (ht : 0 ≤ t) (hm : 0 ≤ m) (hmj : m ≤ j) :\n normKernelM09F j t m ≤ normKernelM09F j (t+1) m",
+          "block_sha256": "26171caef1277d60ebae138249827e1d8774924a947b1d705c989aabae50cd76",
+          "block_characters": 415
+        },
+        {
+          "kind": "theorem",
+          "name": "norm_lcM09F",
+          "header": "theorem norm_lcM09F (j t m : ℚ) (ht : 0 ≤ t) (hm : 0 ≤ m) (hmj : m ≤ j) :\n normKernelM09F j t m*normKernelM09F j (t+2) m ≤ normKernelM09F j (t+1) m^2",
+          "block_sha256": "a9c48ab9b70b9f5ef1093e6681237b5a56d340b198ab15bb5dde07b611c4b4e9",
+          "block_characters": 563
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "normNumerM09F",
+          "header": "def normNumerM09F (j t m : ℚ) : ℚ",
+          "block_sha256": "086e47c15bd55c6e61ac7f34e9484ad16ca3bbdb2a61dd629377f4e4ec549462",
+          "block_characters": 70,
+          "definition_text": "def normNumerM09F (j t m : ℚ) : ℚ :=\n (t+4)*(t+5)*liftWeightMAE9 j t m"
+        },
+        {
+          "kind": "def",
+          "name": "normDenomM09F",
+          "header": "def normDenomM09F (j t m : ℚ) : ℚ",
+          "block_sha256": "ae702a75181faf35ec462ba4514eabfd49f11c427533fd55b79527ea05b79408",
+          "block_characters": 74,
+          "definition_text": "def normDenomM09F (j t m : ℚ) : ℚ :=\n (t+m+4)*(t+m+5)*liftWeightMAE9 j t 0"
+        },
+        {
+          "kind": "def",
+          "name": "normKernelM09F",
+          "header": "def normKernelM09F (j t m : ℚ) : ℚ",
+          "block_sha256": "86e0778f0d1d5195fbf1386b5260ba2b098b87858d2f64f83d30470b89335b28",
+          "block_characters": 79,
+          "definition_text": "def normKernelM09F (j t m : ℚ) : ℚ := normNumerM09F j t m / normDenomM09F j t m"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovNormalizedCoefficientsM09F",
+      "path": "research/MarkovNormalizedCoefficientsM09F.lean",
+      "bytes": 3156,
+      "sha256": "9c53fa357bfaa910192646b407eeff532f2f8656a68524ff11087bddfb370cde",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "normalizedCoeffM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "normalized_coeff_formulaM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "normalized_coeff_tailM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "normalized_coeff_nonnegM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "normalized_coeff_monoM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "normalized_coeff_lcM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "normalized_coeff_crossM09F"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792214706507422000.json",
+          "sha256": "b60baef2138ad357166f6cece37590c076c63b68aff80642994997f8c9113b21",
+          "source_sha256": "c3e689a967fae549b75e36fdc4738d71f071659ede8f7afca51d3aa5c46537ca",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "c3e689a967fae549b75e36fdc4738d71f071659ede8f7afca51d3aa5c46537ca"
+        },
+        {
+          "path": "build-1792214797125296000.json",
+          "sha256": "a21802f7fe5d9f2f659baeb7d92133ebc868e7e42c16a7906691427f6c43628a",
+          "source_sha256": "9c53fa357bfaa910192646b407eeff532f2f8656a68524ff11087bddfb370cde",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "9c53fa357bfaa910192646b407eeff532f2f8656a68524ff11087bddfb370cde"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in177": true,
+      "printed_in177": true,
+      "object_path": "evidence/markov-09fffb56/MarkovNormalizedCoefficientsM09F.olean",
+      "object_sha256": "6e044274e6f5c4d55264ba77f02cc4fc425cfe93148d85f41d99b0474cd50c64",
+      "successful_final_build": "evidence/markov-09fffb56/build-1792214797125296000.json",
+      "historical_successful_source_versions": [
+        "9c53fa357bfaa910192646b407eeff532f2f8656a68524ff11087bddfb370cde"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovNormalizedKernelM09F"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "normalized_coeff_formulaM09F",
+          "header": "theorem normalized_coeff_formulaM09F (j t m : ℕ) (hm : m ≤ j) :\n normalizedCoeffM09F j t m=(j.choose m:ℚ)*normKernelM09F j t m",
+          "block_sha256": "53cb98c11b86660cbbf022816b7cb91108d03c933f9af0ffdb32be1a47faafae",
+          "block_characters": 576
+        },
+        {
+          "kind": "theorem",
+          "name": "normalized_coeff_tailM09F",
+          "header": "theorem normalized_coeff_tailM09F (j t m : ℕ) (hm : j < m) :\n normalizedCoeffM09F j t m=0",
+          "block_sha256": "3f89ffadf4546fe833866f1d5af511db89883b78c7941fea8e0eb589cf8643a6",
+          "block_characters": 256
+        },
+        {
+          "kind": "theorem",
+          "name": "normalized_coeff_nonnegM09F",
+          "header": "theorem normalized_coeff_nonnegM09F (j t m : ℕ) :\n 0 ≤ normalizedCoeffM09F j t m",
+          "block_sha256": "454486f269224786d9ef623278babd8bff82e2a96f337cda4768dae7a1c03bc5",
+          "block_characters": 139
+        },
+        {
+          "kind": "theorem",
+          "name": "normalized_coeff_monoM09F",
+          "header": "theorem normalized_coeff_monoM09F (j t m : ℕ) :\n normalizedCoeffM09F j t m ≤ normalizedCoeffM09F j (t+1) m",
+          "block_sha256": "bad2f9a0ed6e1c0fc47458be65d7fbd27d09d8dd556bd3d58fb3c32b6a8a8942",
+          "block_characters": 465
+        },
+        {
+          "kind": "theorem",
+          "name": "normalized_coeff_lcM09F",
+          "header": "theorem normalized_coeff_lcM09F (j t m : ℕ) :\n normalizedCoeffM09F j t m*normalizedCoeffM09F j (t+2) m ≤\n normalizedCoeffM09F j (t+1) m^2",
+          "block_sha256": "0487ef2daf5b0ab4a144aa3ba7c4dd2d65afb8f6cd2e8bf75633a77e4aa1e538",
+          "block_characters": 644
+        },
+        {
+          "kind": "theorem",
+          "name": "normalized_coeff_crossM09F",
+          "header": "theorem normalized_coeff_crossM09F (j t m : ℕ) :\n (liftTermMAE9 j (t+1) 0:ℝ)^2*(liftTermMAE9 j t m:ℝ)*(liftTermMAE9 j (t+2) m:ℝ) ≤\n (liftTermMAE9 j t 0:ℝ)*(liftTermMAE9 j (t+2) 0:ℝ)*(liftTermMAE9 j (t+1) m:ℝ)^2",
+          "block_sha256": "1f653f6b28c5e43e250564e1673883b135e620a289e0b2bef042dcda913bde3a",
+          "block_characters": 607
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "normalizedCoeffM09F",
+          "header": "def normalizedCoeffM09F (j t m : ℕ) : ℚ",
+          "block_sha256": "5f02f1eb40ee2b4c1e452dbe4b8a702b72865a809a3c4232fd164701e36d5593",
+          "block_characters": 89,
+          "definition_text": "def normalizedCoeffM09F (j t m : ℕ) : ℚ :=\n (liftTermMAE9 j t m:ℚ)/(liftTermMAE9 j t 0:ℚ)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovWeightedSeparationM09F",
+      "path": "research/MarkovWeightedSeparationM09F.lean",
+      "bytes": 6071,
+      "sha256": "2d28e662ce243dbdb23655fe04c4694cdc5adfd67efe1abf6b1b9f6bec38398b",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "weightedChooseM09F"
+        },
+        {
+          "kind": "def",
+          "name": "weightedLinearM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_choose_scaledM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_choose_stepM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_step_certificateM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_separated_chooseM09F"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792214782778670000.json",
+          "sha256": "79d0886faa5557b12518d8fa62ed76c954076c1e412ce7097a4a54c474e39ae1",
+          "source_sha256": "02f8f9516421611dd75474b39c2b387304159344fb49e6b251f23e8ae0cf3f1a",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "02f8f9516421611dd75474b39c2b387304159344fb49e6b251f23e8ae0cf3f1a"
+        },
+        {
+          "path": "build-1792214811615655000.json",
+          "sha256": "77d727cdd68a67fa16392b15d6c6de355a40d07c75afdb0a76497c47239c3eaa",
+          "source_sha256": "49511fb7080fc2c9c575b44016f052487754c4d81a4e8f2bb7494b9040bb537c",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "49511fb7080fc2c9c575b44016f052487754c4d81a4e8f2bb7494b9040bb537c"
+        },
+        {
+          "path": "build-1792214881661420000.json",
+          "sha256": "60027e91ed7bd0ea4e6ddefd22fa048235cc78e2e262e418a0e6d0d7af2a1289",
+          "source_sha256": "2d28e662ce243dbdb23655fe04c4694cdc5adfd67efe1abf6b1b9f6bec38398b",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "2d28e662ce243dbdb23655fe04c4694cdc5adfd67efe1abf6b1b9f6bec38398b"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in177": true,
+      "printed_in177": true,
+      "object_path": "evidence/markov-09fffb56/MarkovWeightedSeparationM09F.olean",
+      "object_sha256": "133272c7ccf492cf3144c03bd8e565dcb6f8b98d18915c0d21439f61c59b4afb",
+      "successful_final_build": "evidence/markov-09fffb56/build-1792214881661420000.json",
+      "historical_successful_source_versions": [
+        "2d28e662ce243dbdb23655fe04c4694cdc5adfd67efe1abf6b1b9f6bec38398b"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovSeparatedChooseMBE3"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "weighted_choose_scaledM09F",
+          "header": "theorem weighted_choose_scaledM09F (a k s : ℕ) (hk : 1 ≤ k) :\n weightedChooseM09F a k s*(k+s+4)=((k+s+4).choose (s+5):ℝ)*weightedLinearM09F a k s",
+          "block_sha256": "834f9e27e9691b6d826fd95c27a847d18732d7f052e7836e124ac0f3735d9f7a",
+          "block_characters": 446
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_choose_stepM09F",
+          "header": "theorem weighted_choose_stepM09F (a k s : ℕ) (hk : 1 ≤ k) :\n weightedChooseM09F a (k+1) s*k*weightedLinearM09F a k s=\n weightedChooseM09F a k s*(k+s+4)*(weightedLinearM09F a k s+3)",
+          "block_sha256": "d206f04c3e9f24eb824eaffcd2d89c385881359004ed4de5a18c9f379aacedf1",
+          "block_characters": 985
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_step_certificateM09F",
+          "header": "theorem weighted_step_certificateM09F (a : ℕ) (ha : 1 ≤ a) (ha2 : a ≤ 2)\n (u x : ℝ) (hu : 0 ≤ u) (hx : 0 ≤ x) :\n (u+1+x+3+4)*(3*(u+1)+a*(x+3)+5*a)*\n   (3*(u+1)+a+1)*(3*(u+1)+a+2)*(3*(u+1)+a+3) ≤\n (u+1)*(3*(u+1)+a*(x+3)+5*a-3)*\n   (3*(u+1)+x+3+a+6)*(3*(u+1)+x+3+a+7)*(3*(u+1)+x+3+a+8)",
+          "block_sha256": "daa9fd3883c49b31cd00f9cc9193b627e5803831d6cdc8705942fad042c9b9c0",
+          "block_characters": 1451
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_separated_chooseM09F",
+          "header": "theorem weighted_separated_chooseM09F (a k s : ℕ) (ha : 1 ≤ a) (ha2 : a ≤ 2)\n (hk : 1 ≤ k) (hs : 3 ≤ s) :\n ((s+9).choose 4:ℝ)*weightedChooseM09F a k s ≤ ((3*k+a+s+5).choose (s+5):ℝ)",
+          "block_sha256": "7fb6e86627e99953c57215663f003ac7e16b5cb82c9b30b7c1b2b5d013a566d5",
+          "block_characters": 2674
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "weightedChooseM09F",
+          "header": "def weightedChooseM09F (a k s : ℕ) : ℝ",
+          "block_sha256": "e13efe75dbcc9e7df93d0f8abda325552715da247a7aab8ebeeabb894c8b04b5",
+          "block_characters": 102,
+          "definition_text": "def weightedChooseM09F (a k s : ℕ) : ℝ :=\n a*((k+s+4).choose (s+5):ℝ)+(3-a:ℝ)*((k+s+3).choose (s+5):ℝ)"
+        },
+        {
+          "kind": "def",
+          "name": "weightedLinearM09F",
+          "header": "def weightedLinearM09F (a k s : ℕ) : ℝ",
+          "block_sha256": "f85287340a6e5b3a60a131cea5e2665cbf4852eaab28b609703be2a6cf012235",
+          "block_characters": 55,
+          "definition_text": "def weightedLinearM09F (a k s : ℕ) : ℝ := 3*k+a*s+5*a-3"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCorrectionBudgetM09F",
+      "path": "research/MarkovCorrectionBudgetM09F.lean",
+      "bytes": 4334,
+      "sha256": "e69c62d8aab1c8bbc0b144b3278a66b09a2ec6545881cd303a3dd8b9e36b5052",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "weighted_correction_boundM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_budget_clampedM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_uniform_sharpM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_uniform_sharpM09F"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792214921562710000.json",
+          "sha256": "e81901b54b502f3393924f3a5d51abcec7545122f410414db96c3573146003af",
+          "source_sha256": "7339a2b03b284f0a0912399c9e5dc25eee05cf2ab786df272091288ea39d6521",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "7339a2b03b284f0a0912399c9e5dc25eee05cf2ab786df272091288ea39d6521"
+        },
+        {
+          "path": "build-1792215000637489000.json",
+          "sha256": "41e1db6e632a91ea6939fdb124a7f397fa789975531d91079b86ef4abc50ab68",
+          "source_sha256": "74d9051f6a21be9aaf0864cefbabdac0d7f0442a0645cdb9ffe5890ce2c4f2ae",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "74d9051f6a21be9aaf0864cefbabdac0d7f0442a0645cdb9ffe5890ce2c4f2ae"
+        },
+        {
+          "path": "build-1792215028852607000.json",
+          "sha256": "d3e60bfa24f2e57288241db7ae28f38ae8e22cbbf837e67a2fab45cbf3501ca8",
+          "source_sha256": "e69c62d8aab1c8bbc0b144b3278a66b09a2ec6545881cd303a3dd8b9e36b5052",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "e69c62d8aab1c8bbc0b144b3278a66b09a2ec6545881cd303a3dd8b9e36b5052"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in177": true,
+      "printed_in177": true,
+      "object_path": "evidence/markov-09fffb56/MarkovCorrectionBudgetM09F.olean",
+      "object_sha256": "129beff408b445d15dad755fcdc583bb7aa94e3da17183bf1ab11a2fcf232b00",
+      "successful_final_build": "evidence/markov-09fffb56/build-1792215028852607000.json",
+      "historical_successful_source_versions": [
+        "e69c62d8aab1c8bbc0b144b3278a66b09a2ec6545881cd303a3dd8b9e36b5052"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovWeightedSeparationM09F",
+        "MarkovUniformCorrectionMBE3"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "weighted_correction_boundM09F",
+          "header": "theorem weighted_correction_boundM09F (d k s : ℕ) (r : Bool) (hs : 3 ≤ s) :\n ((s+9).choose 4:ℝ)*(correctionTermM657 k (s+1) 1 r:ℝ) ≤\n (s+3)*bandBaseMBE3 d k s r",
+          "block_sha256": "1e4663feee516d214d2f864f0da0a7dfd48f486dc0e93b5da45aede00a95eb78",
+          "block_characters": 1794
+        },
+        {
+          "kind": "theorem",
+          "name": "band_budget_clampedM09F",
+          "header": "theorem band_budget_clampedM09F (d k s : ℕ) (r : Bool) (hs : 3 ≤ s) (hd : d ≤ s) :\n ((s+9).choose 4:ℝ)*transposedBudgetMBE3 d k s r ≤ (s+3)*bandBaseMBE3 d k s r",
+          "block_sha256": "4fe534f2dbe2cd7a442bc5aa76d3a2d8af7349ba183fe48a977e3a54c57a58ae",
+          "block_characters": 388
+        },
+        {
+          "kind": "theorem",
+          "name": "band_uniform_sharpM09F",
+          "header": "theorem band_uniform_sharpM09F (d k s h : ℕ) (r : Bool) (hs : 3 ≤ s) (hd : d ≤ s) :\n ((s+9).choose 4:ℝ)*(bandKernelM657 d k s r).coeff h ≤\n (((s+9).choose 4:ℝ)+(s+3))*(liftPolyM7E2 (bandJMBE3 d k r) s).coeff h",
+          "block_sha256": "15fb72f21159d8fcb8bafeedc3f6c0102d1285a10629077e8e5e0a52303295be",
+          "block_characters": 607
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_uniform_sharpM09F",
+          "header": "theorem source_band_uniform_sharpM09F (q k s : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) (hs : 3 ≤ s)\n (hd : bandExponentM139 q k r ≤ s) :\n ((s+9).choose 4:ℤ)*threeRawM9E2 q r (s+3) (q+k+1) ≤\n (((s+9).choose 4:ℤ)+(s+3))*liftOutputMAE9 (bandExponentM139 q k r) (q+k+1) s",
+          "block_sha256": "b10c113c3aca0718c8af9d366dd01e9363e146d3b4c4575e380c07ccefe33125",
+          "block_characters": 1110
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBaseCurvatureM09F",
+      "path": "research/MarkovBaseCurvatureM09F.lean",
+      "bytes": 4081,
+      "sha256": "d166681c75a5f0d90a69901f4685530d604bba7401e9921e755c428c7c3d43c0",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "base_weight_gapM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "base_curvature_ratM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "base_curvatureM09F"
+        },
+        {
+          "kind": "def",
+          "name": "budgetDenM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_den_chooseM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_scalar_largeM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_scalarM09F"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792214987997174000.json",
+          "sha256": "19a1dba4e1c73a6dbfc35dec2b3d8246ea43fed30b8cf5f15d475c99ecfa8ad7",
+          "source_sha256": "05c4a66ffb358c615b53c8c2f43f40f1772ff79a4f3278953fa74d5ec6482a58",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "05c4a66ffb358c615b53c8c2f43f40f1772ff79a4f3278953fa74d5ec6482a58"
+        },
+        {
+          "path": "build-1792215020352230000.json",
+          "sha256": "c25d30cbe9dd3adb3acc1dfed7eeda04f88b51a477491e50d577d1fdeb62955d",
+          "source_sha256": "d166681c75a5f0d90a69901f4685530d604bba7401e9921e755c428c7c3d43c0",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "d166681c75a5f0d90a69901f4685530d604bba7401e9921e755c428c7c3d43c0"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in177": true,
+      "printed_in177": true,
+      "object_path": "evidence/markov-09fffb56/MarkovBaseCurvatureM09F.olean",
+      "object_sha256": "288e3aa7dbe81883c05984a539456c63f93b873d6dbf492396afe041936273c3",
+      "successful_final_build": "evidence/markov-09fffb56/build-1792215020352230000.json",
+      "historical_successful_source_versions": [
+        "d166681c75a5f0d90a69901f4685530d604bba7401e9921e755c428c7c3d43c0"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovNormalizedCoefficientsM09F"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "base_weight_gapM09F",
+          "header": "theorem base_weight_gapM09F (j s : ℚ) (hj : 0 ≤ j) (hs : 0 ≤ s) :\n 0 ≤ liftWeightMAE9 j (s+1) 0^2-liftWeightMAE9 j s 0*liftWeightMAE9 j (s+2) 0",
+          "block_sha256": "55c9d6cbfca1d7cd0dbbc45de3f2629b80b4aab467d3c976e89b1cec65c2b546",
+          "block_characters": 335
+        },
+        {
+          "kind": "theorem",
+          "name": "base_curvature_ratM09F",
+          "header": "theorem base_curvature_ratM09F (j s : ℕ) :\n (liftTermMAE9 j s 0:ℚ)*(liftTermMAE9 j (s+2) 0:ℚ)*(s+7)*(s+j+4) ≤\n (liftTermMAE9 j (s+1) 0:ℚ)^2*(s+6)*(s+j+5)",
+          "block_sha256": "a2aaf09a134305ebbd54061013aaaedae96c15683491b39e1acc06f00fbb9cbc",
+          "block_characters": 993
+        },
+        {
+          "kind": "theorem",
+          "name": "base_curvatureM09F",
+          "header": "theorem base_curvatureM09F (j s : ℕ) :\n (liftTermMAE9 j s 0:ℝ)*(liftTermMAE9 j (s+2) 0:ℝ)*(s+7)*(s+j+4) ≤\n (liftTermMAE9 j (s+1) 0:ℝ)^2*(s+6)*(s+j+5)",
+          "block_sha256": "0b269e53d398c1ebb197316ffe84b552e4570240895bf70abe2cd89867313905",
+          "block_characters": 245
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_den_chooseM09F",
+          "header": "theorem budget_den_chooseM09F (s : ℕ) : budgetDenM09F s=24*((s+9).choose 4:ℝ)",
+          "block_sha256": "481733483121e62631c36dee31ed6627cba10b554a4409f620085c8f481cfedb",
+          "block_characters": 343
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_scalar_largeM09F",
+          "header": "theorem budget_scalar_largeM09F (x u : ℝ) (hx : 0 ≤ x) (hu : 0 ≤ u) :\n (budgetDenM09F (x+5)+24*(x+8))*(budgetDenM09F (x+7)+24*(x+10))*(x+11)*(2*x+u+15) ≤\n budgetDenM09F (x+5)*budgetDenM09F (x+7)*(x+12)*(2*x+u+14)",
+          "block_sha256": "ff798d99a036daea71fc158f19e9d053bf8d81eafba9c8edd570f2c69241588c",
+          "block_characters": 886
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_scalarM09F",
+          "header": "theorem budget_scalarM09F (j s : ℕ) (hs : 3 ≤ s) (hj : 5 ≤ j) (hsj : s ≤ j) :\n (((s+9).choose 4:ℝ)+(s+3))*(((s+11).choose 4:ℝ)+(s+5))*(s+6)*(s+j+5) ≤\n ((s+9).choose 4:ℝ)*((s+11).choose 4:ℝ)*(s+7)*(s+j+4)",
+          "block_sha256": "df3eb702944a8aad0f8588d870ed1530b5ca1d73398ea692933284dadd54afba",
+          "block_characters": 895
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "budgetDenM09F",
+          "header": "def budgetDenM09F (s : ℝ) : ℝ",
+          "block_sha256": "77820c8b920bd0bbfdf94419a8c3c0faf0b93118edafbb56d0632bfa7200d330",
+          "block_characters": 56,
+          "definition_text": "def budgetDenM09F (s : ℝ) : ℝ := (s+6)*(s+7)*(s+8)*(s+9)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovChooseGrowthM09F",
+      "path": "research/MarkovChooseGrowthM09F.lean",
+      "bytes": 3387,
+      "sha256": "4af146c801b4590da72676d80f880928b2dfc3616377c565b40c856ae985a5b5",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "choose_linear_lowerM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_small_monoM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_growth_scaledM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_base_growthM09F"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792215074941536000.json",
+          "sha256": "2a754923d2aa1997b270e036599f61e7f52757959bad6c84570d6157e98dd9db",
+          "source_sha256": "682b145ee49fde52c51d32bf2ddf14e4b59bfddb43b22eb0c91fd3c4647803e8",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "682b145ee49fde52c51d32bf2ddf14e4b59bfddb43b22eb0c91fd3c4647803e8"
+        },
+        {
+          "path": "build-1792215111249691000.json",
+          "sha256": "b3d587e5056ac18779c5383e91616a4915d72a27c27716f4d7a7ff21788cabcb",
+          "source_sha256": "fdadb28960b25ae2208d15615a525a00bc64a7ea252de2374069d89b49286b0f",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "fdadb28960b25ae2208d15615a525a00bc64a7ea252de2374069d89b49286b0f"
+        },
+        {
+          "path": "build-1792215137383298000.json",
+          "sha256": "98d8dbdba8f8d0a12928668c53a2aed3e48d955d8f86c743797aee081022900f",
+          "source_sha256": "4af146c801b4590da72676d80f880928b2dfc3616377c565b40c856ae985a5b5",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "4af146c801b4590da72676d80f880928b2dfc3616377c565b40c856ae985a5b5"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in177": true,
+      "printed_in177": true,
+      "object_path": "evidence/markov-09fffb56/MarkovChooseGrowthM09F.olean",
+      "object_sha256": "13f60d4951f38b9c942db1fd3ae3f2a2402638d2d89de561cbee1dca8f1cd0e3",
+      "successful_final_build": "evidence/markov-09fffb56/build-1792215137383298000.json",
+      "historical_successful_source_versions": [
+        "4af146c801b4590da72676d80f880928b2dfc3616377c565b40c856ae985a5b5"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovCorrectionBudgetM09F"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "choose_linear_lowerM09F",
+          "header": "theorem choose_linear_lowerM09F (A d n : ℕ) :\n (d:ℝ)*(A.choose n:ℝ) ≤ ((A+d).choose (n+1):ℝ)",
+          "block_sha256": "77a420c0cb9c12596dc05245b27781b91b30df1cb9cbe9b5c2ff96492fce20a8",
+          "block_characters": 363
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_small_monoM09F",
+          "header": "theorem choose_small_monoM09F (n a b : ℕ) (hab : a ≤ b) (hb : b ≤ n/2) :\n n.choose a ≤ n.choose b",
+          "block_sha256": "a3a6b291aeebafe89851009e4e034075abfc55df2c6939bc95af644143ceaea0",
+          "block_characters": 273
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_growth_scaledM09F",
+          "header": "theorem choose_growth_scaledM09F (p q d : ℕ) :\n ((p+q).choose q:ℝ)*(p+1+d*q) ≤ ((p+q+d).choose q:ℝ)*(p+1)",
+          "block_sha256": "786e733a8996cb1815fcfd8ca2e1e968f6c36d2b46aa736607170c05b55f24d9",
+          "block_characters": 948
+        },
+        {
+          "kind": "theorem",
+          "name": "band_base_growthM09F",
+          "header": "theorem band_base_growthM09F (d k s : ℕ) (r : Bool) :\n bandBaseMBE3 0 k s r*(bandJMBE3 0 k r+1+d*(s+3)) ≤\n bandBaseMBE3 d k s r*(bandJMBE3 0 k r+1)",
+          "block_sha256": "69c8c03d579f14c129108aa341100cbc7d8e334de38f3eaeacfab09d34696a56",
+          "block_characters": 1476
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovTopScalarM09F",
+      "path": "research/MarkovTopScalarM09F.lean",
+      "bytes": 3677,
+      "sha256": "8471d8ff2bc836acadce0244633823b08f3924190dd57d0dd3b9d4fb2b7c256f",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "top_scalar_of_budgetsM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_scalar_clampedM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "robust_cut_clampedM09F"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792215103736782000.json",
+          "sha256": "2ff45b56d29abe9b0b4745ea8e059da46562c876e7da98fe7293469eadeddd6b",
+          "source_sha256": "568921cf3a4e713d353d12e0f61f71174b2cf717b8f38d502477f62dc3d9338c",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "568921cf3a4e713d353d12e0f61f71174b2cf717b8f38d502477f62dc3d9338c"
+        },
+        {
+          "path": "build-1792215143317685000.json",
+          "sha256": "153889dfc76a2037e55fd4258475a7f01721e6a12c6ca6ac25e7e3d519de78d1",
+          "source_sha256": "8471d8ff2bc836acadce0244633823b08f3924190dd57d0dd3b9d4fb2b7c256f",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "8471d8ff2bc836acadce0244633823b08f3924190dd57d0dd3b9d4fb2b7c256f"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in177": true,
+      "printed_in177": true,
+      "object_path": "evidence/markov-09fffb56/MarkovTopScalarM09F.olean",
+      "object_sha256": "862384f7b0a2e41ae305691bcce7fe9cb547c2cddb79036d6601d46e0615963f",
+      "successful_final_build": "evidence/markov-09fffb56/build-1792215143317685000.json",
+      "historical_successful_source_versions": [
+        "8471d8ff2bc836acadce0244633823b08f3924190dd57d0dd3b9d4fb2b7c256f"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBaseCurvatureM09F",
+        "MarkovCorrectionBudgetM09F",
+        "MarkovSharpTransportMBE3"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "top_scalar_of_budgetsM09F",
+          "header": "theorem top_scalar_of_budgetsM09F (d k s : ℕ) (r : Bool) (hs : 3 ≤ s)\n (hj : 5 ≤ bandJMBE3 d k r) (hsj : s ≤ bandJMBE3 d k r)\n (h0 : ((s+9).choose 4:ℝ)*transposedBudgetMBE3 d k s r ≤ (s+3)*bandBaseMBE3 d k s r)\n (h2 : ((s+11).choose 4:ℝ)*transposedBudgetMBE3 d k (s+2) r ≤ (s+5)*bandBaseMBE3 d k (s+2) r) :\n bandTopMBE3 d k s r*bandTopMBE3 d k (s+2) r ≤ bandBaseMBE3 d k (s+1) r^2",
+          "block_sha256": "003a602e7d356857b898a2b7825e72b21d7ef067c0a4e6de1c14ee598afc9685",
+          "block_characters": 1664
+        },
+        {
+          "kind": "theorem",
+          "name": "top_scalar_clampedM09F",
+          "header": "theorem top_scalar_clampedM09F (d k s : ℕ) (r : Bool) (hs : 3 ≤ s)\n (hsj : s ≤ bandJMBE3 d k r) (hd : d ≤ s) :\n bandTopMBE3 d k s r*bandTopMBE3 d k (s+2) r ≤ bandBaseMBE3 d k (s+1) r^2",
+          "block_sha256": "082b5f445d89120fd96d95727d35079f93fa4ba2463b9e856c400b998560ee16",
+          "block_characters": 1202
+        },
+        {
+          "kind": "theorem",
+          "name": "robust_cut_clampedM09F",
+          "header": "theorem robust_cut_clampedM09F (HM : SharpCompleteMarginMBE3)\n (d k s : ℕ) (r : Bool) (hs : 3 ≤ s) (hsj : s ≤ bandJMBE3 d k r)\n (hd : d ≤ s) (h n : ℕ) :\n 0 ≤ ((cutPolyMFEE h (liftPolyM7E2 (bandJMBE3 d k r) (s+1)))^2-\n   cutPolyMFEE h (bandKernelM657 d k s r)*cutPolyMFEE h (bandKernelM657 d k (s+2) r)).coeff n",
+          "block_sha256": "05083a327fa6b9e25c5bb93a015767610097aa990f607d8c52b692fdc7396d7f",
+          "block_characters": 401
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovAbsorbedBudgetM09F",
+      "path": "research/MarkovAbsorbedBudgetM09F.lean",
+      "bytes": 5429,
+      "sha256": "9ff42f437d0795165ac2cbce5e44ee101e97647b077ad3ba521242306c6f104f",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "correction_pair_rawM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_pair_scalarM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_pair_budgetM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_dominated_by_zeroM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_budget_positive_kM09F"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792215187551779000.json",
+          "sha256": "8a3c80c674cb927a84e3234a382ae280f76f6fb3401cdbe8cee6819fd54bb951",
+          "source_sha256": "1366e4893dc472493034005aeab75cad67ba421cc9ec86bd7faa95d71835fc89",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "1366e4893dc472493034005aeab75cad67ba421cc9ec86bd7faa95d71835fc89"
+        },
+        {
+          "path": "build-1792215224377714000.json",
+          "sha256": "9a8ce8ddfa3a5bfacefb8d60904ba503efcb957aa2e934e9ec789c672e38b7a4",
+          "source_sha256": "9ff42f437d0795165ac2cbce5e44ee101e97647b077ad3ba521242306c6f104f",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "9ff42f437d0795165ac2cbce5e44ee101e97647b077ad3ba521242306c6f104f"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in177": true,
+      "printed_in177": true,
+      "object_path": "evidence/markov-09fffb56/MarkovAbsorbedBudgetM09F.olean",
+      "object_sha256": "d8e0b40db634f3f991f20e81e27cc7f88ce47070944de873a16a7c067364e8a7",
+      "successful_final_build": "evidence/markov-09fffb56/build-1792215224377714000.json",
+      "historical_successful_source_versions": [
+        "9ff42f437d0795165ac2cbce5e44ee101e97647b077ad3ba521242306c6f104f"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovChooseGrowthM09F"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "correction_pair_rawM09F",
+          "header": "theorem correction_pair_rawM09F (k s : ℕ) (r : Bool) :\n (if r then 2 else 1:ℝ)*k*(s+3)*(correctionTermM657 k (s+1) 0 r:ℝ) ≤\n 3*(s+5)*(correctionTermM657 k (s+1) 1 r:ℝ)",
+          "block_sha256": "9c5cbd6f6f1c35044c84f45799b14d8350a84470cd0f828f84479faa460e1bae",
+          "block_characters": 1791
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_pair_scalarM09F",
+          "header": "theorem correction_pair_scalarM09F (k s : ℕ) (r : Bool) (hk : 1 ≤ k) (hs : 3 ≤ s) :\n 3*(s+5)*(bandJMBE3 0 k r+1) ≤ (if r then 2 else 1:ℝ)*k*(s+3)^2*(s+1)",
+          "block_sha256": "9fac9217385eb36451051e188026f38e509f04f48757b5f31f8294c516b1f79e",
+          "block_characters": 1066
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_pair_budgetM09F",
+          "header": "theorem correction_pair_budgetM09F (k s : ℕ) (r : Bool) (hk : 1 ≤ k) (hs : 3 ≤ s) :\n (correctionTermM657 k (s+1) 0 r:ℝ)*(bandJMBE3 0 k r+1) ≤\n (correctionTermM657 k (s+1) 1 r:ℝ)*(s+3)*(s+1)",
+          "block_sha256": "f08e8391103112d673ef2cf94d455fbb80a885ca76c9dd15f7d3acb4b5580a8a",
+          "block_characters": 682
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_dominated_by_zeroM09F",
+          "header": "theorem budget_dominated_by_zeroM09F (d k s : ℕ) (r : Bool) (hk : 1 ≤ k) (hs : 3 ≤ s) :\n transposedBudgetMBE3 d k s r*(bandJMBE3 0 k r+1) ≤\n (correctionTermM657 k (s+1) 1 r:ℝ)*(bandJMBE3 0 k r+1+d*(s+3))",
+          "block_sha256": "b57b991e6d3c89977381479912e86f006b9b850d968e2424aa00e04e14605efa",
+          "block_characters": 791
+        },
+        {
+          "kind": "theorem",
+          "name": "band_budget_positive_kM09F",
+          "header": "theorem band_budget_positive_kM09F (d k s : ℕ) (r : Bool) (hk : 1 ≤ k) (hs : 3 ≤ s) :\n ((s+9).choose 4:ℝ)*transposedBudgetMBE3 d k s r ≤ (s+3)*bandBaseMBE3 d k s r",
+          "block_sha256": "be2e424ca8a0e8c9046a287b898603cf85a3023014297b61e2dfda1147d70554",
+          "block_characters": 691
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovZeroBandBudgetM09F",
+      "path": "research/MarkovZeroBandBudgetM09F.lean",
+      "bytes": 3425,
+      "sha256": "8a004ec88b25a7abf78e2bad46c92fc53225e92b53d9e3eaadc66116ff813608",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "zero_band_chooseM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "zero_band_budgetM09F"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792215256070987000.json",
+          "sha256": "acc38be9ae39a51a84967088bdb920aa0e306b913fa4e3a5a6a334ce1ddbc073",
+          "source_sha256": "8a004ec88b25a7abf78e2bad46c92fc53225e92b53d9e3eaadc66116ff813608",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "8a004ec88b25a7abf78e2bad46c92fc53225e92b53d9e3eaadc66116ff813608"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in177": true,
+      "printed_in177": true,
+      "object_path": "evidence/markov-09fffb56/MarkovZeroBandBudgetM09F.olean",
+      "object_sha256": "190f65610559139495fa03a144a8de1b2e61b299a6e7394e0877798e1e81f318",
+      "successful_final_build": "evidence/markov-09fffb56/build-1792215256070987000.json",
+      "historical_successful_source_versions": [
+        "8a004ec88b25a7abf78e2bad46c92fc53225e92b53d9e3eaadc66116ff813608"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovChooseGrowthM09F"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "zero_band_chooseM09F",
+          "header": "theorem zero_band_chooseM09F (d s c : ℕ) (hs : 3 ≤ s) (hc : 2 ≤ c) (hc3 : c ≤ 3)\n (hd : s ≤ d) :\n ((d-s:ℕ):ℝ)*((s+9).choose 4:ℝ) ≤ ((d+c+s+4).choose (s+5):ℝ)",
+          "block_sha256": "6d32f12a48bf0042ed1a1cd28dea179d1d0c5c2cbf62865faf28df803ff93d52",
+          "block_characters": 810
+        },
+        {
+          "kind": "theorem",
+          "name": "zero_band_budgetM09F",
+          "header": "theorem zero_band_budgetM09F (d s : ℕ) (r : Bool) (hs : 3 ≤ s) :\n ((s+9).choose 4:ℝ)*transposedBudgetMBE3 d 0 s r ≤ (s+3)*bandBaseMBE3 d 0 s r",
+          "block_sha256": "37276603accd0bc04be0eb9bbb34d8da68ab5736969c844fa10505ca63f652f5",
+          "block_characters": 2304
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovSharpScalarsClosedM09F",
+      "path": "research/MarkovSharpScalarsClosedM09F.lean",
+      "bytes": 3295,
+      "sha256": "36785ff4adbe70196d26725c3e77123e4a7641c430f74a766da0ce057f0a1758",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "band_budget_allM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "sharp_top_scalarsM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_uniform_allM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_uniform_allM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_middle_of_marginM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_all_of_marginM09F"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792215288526039000.json",
+          "sha256": "c948355ce903944c765374b2f24aab650773ffc498203b2bf41b4233af7024f6",
+          "source_sha256": "36785ff4adbe70196d26725c3e77123e4a7641c430f74a766da0ce057f0a1758",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "36785ff4adbe70196d26725c3e77123e4a7641c430f74a766da0ce057f0a1758"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in177": true,
+      "printed_in177": true,
+      "object_path": "evidence/markov-09fffb56/MarkovSharpScalarsClosedM09F.olean",
+      "object_sha256": "6bdc5b1a015e41d686ad160ae997fb30aa25004e5c641553f56aa869240ff3c1",
+      "successful_final_build": "evidence/markov-09fffb56/build-1792215288526039000.json",
+      "historical_successful_source_versions": [
+        "36785ff4adbe70196d26725c3e77123e4a7641c430f74a766da0ce057f0a1758"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovAbsorbedBudgetM09F",
+        "MarkovZeroBandBudgetM09F",
+        "MarkovTopScalarM09F"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "band_budget_allM09F",
+          "header": "theorem band_budget_allM09F (d k s : ℕ) (r : Bool) (hs : 3 ≤ s) :\n ((s+9).choose 4:ℝ)*transposedBudgetMBE3 d k s r ≤ (s+3)*bandBaseMBE3 d k s r",
+          "block_sha256": "20e9c57fd75f74483d8cfcd4916b0e7100cb6394f8484eca350c73c8225c7791",
+          "block_characters": 274
+        },
+        {
+          "kind": "theorem",
+          "name": "sharp_top_scalarsM09F",
+          "header": "theorem sharp_top_scalarsM09F : SharpTopScalarsMBE3",
+          "block_sha256": "b53ff1e64b15f6ee1b1440e8498907fbe8b8b8b07774ecfaff6bb777728fc360",
+          "block_characters": 489
+        },
+        {
+          "kind": "theorem",
+          "name": "band_uniform_allM09F",
+          "header": "theorem band_uniform_allM09F (d k s h : ℕ) (r : Bool) (hs : 3 ≤ s) :\n ((s+9).choose 4:ℝ)*(bandKernelM657 d k s r).coeff h ≤\n (((s+9).choose 4:ℝ)+(s+3))*(liftPolyM7E2 (bandJMBE3 d k r) s).coeff h",
+          "block_sha256": "318eb8fb0c45aaf22d11576124d7863505f59309f7a9abf71a8187d9d2fec7d2",
+          "block_characters": 585
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_uniform_allM09F",
+          "header": "theorem source_band_uniform_allM09F (q k s : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) (hs : 3 ≤ s) :\n ((s+9).choose 4:ℤ)*threeRawM9E2 q r (s+3) (q+k+1) ≤\n (((s+9).choose 4:ℤ)+(s+3))*liftOutputMAE9 (bandExponentM139 q k r) (q+k+1) s",
+          "block_sha256": "31ddef2aca3adb5364833a0ac7adefccb3deb6d46eedb834bd2faa956df9676e",
+          "block_characters": 1063
+        },
+        {
+          "kind": "theorem",
+          "name": "band_middle_of_marginM09F",
+          "header": "theorem band_middle_of_marginM09F (HM : SharpCompleteMarginMBE3) : BandMiddleM657",
+          "block_sha256": "7ca7bccae2b52d7f1a5f7b30b86940c109e832aeb6ec3b1b17f287dedbc6b8b7",
+          "block_characters": 135
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_all_of_marginM09F",
+          "header": "theorem source_band_all_of_marginM09F (HM : SharpCompleteMarginMBE3)\n (q k i : ℕ) (r : Bool) (hq : 2 ≤ q) (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n threeRawM9E2 q r i (q+k+1)*threeRawM9E2 q r (i+2) (q+k+1) ≤\n threeRawM9E2 q r (i+1) (q+k+1)^2",
+          "block_sha256": "4a855f7c5f7cfec596e2d84c00590c3b547ead7a2b5b5ddd2faffe20536ffa45",
+          "block_characters": 316
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovOrderedConvolutionM09F",
+      "path": "research/MarkovOrderedConvolutionM09F.lean",
+      "bytes": 4233,
+      "sha256": "c302702718f00223979c5702e6d985f529ac70d7b08459f36aadac5af4c203db",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "ordered_weighted_sumM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "translated_coeff_sumM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "translated_zero_ratioM09F"
+        },
+        {
+          "kind": "def",
+          "name": "UnshiftedRatioM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "sharp_margin_of_unshiftedM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_of_unshiftedM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "ordinary_concavity_obstructionM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "ordinary_concavity_falseM09F"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792215487256464000.json",
+          "sha256": "afbc0af8ec7a6e874d9adf51c926bd3765c3d90ed6d8e69beacd8aa403ca4410",
+          "source_sha256": "23f4ac18024b5cbce249dbcb0c55c2e7fce7c08e1bfccee5958627b5262b0d4b",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "23f4ac18024b5cbce249dbcb0c55c2e7fce7c08e1bfccee5958627b5262b0d4b"
+        },
+        {
+          "path": "build-1792215577563296000.json",
+          "sha256": "43d246015b557f9a9c42ab067f20f25d2102771521c7a8cba8b12d98faec9e85",
+          "source_sha256": "c302702718f00223979c5702e6d985f529ac70d7b08459f36aadac5af4c203db",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "c302702718f00223979c5702e6d985f529ac70d7b08459f36aadac5af4c203db"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in177": true,
+      "printed_in177": true,
+      "object_path": "evidence/markov-09fffb56/MarkovOrderedConvolutionM09F.olean",
+      "object_sha256": "a3f4cbe2a1bbf78e7721cc2ef62173746b30f13966133f9ba6be0489c93e7844",
+      "successful_final_build": "evidence/markov-09fffb56/build-1792215577563296000.json",
+      "historical_successful_source_versions": [
+        "c302702718f00223979c5702e6d985f529ac70d7b08459f36aadac5af4c203db"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovSharpScalarsClosedM09F"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "ordered_weighted_sumM09F",
+          "header": "theorem ordered_weighted_sumM09F (N : ℕ) (a b w : ℕ → ℝ)\n (h : ∀ i j, i ≤ j → a i*b j ≤ a j*b i) (hw : Monotone w) :\n (∑ i ∈ range N, a i)*(∑ i ∈ range N, b i*w i) ≤\n (∑ i ∈ range N, b i)*(∑ i ∈ range N, a i*w i)",
+          "block_sha256": "a27b50c7f2310db4aebdf337495e67e3abd0d33d078de6cc565e30b206820990",
+          "block_characters": 1168
+        },
+        {
+          "kind": "theorem",
+          "name": "translated_coeff_sumM09F",
+          "header": "theorem translated_coeff_sumM09F (P : ℝ[X]) (N m : ℕ) (hN : P.natDegree < N) :\n (P.comp (X+1)).coeff m=∑ i ∈ range N, P.coeff i*(i.choose m:ℝ)",
+          "block_sha256": "dfcf406421992bef72ae0b4f20e7d13962d822fc908e63f859b3f5ca27454bbf",
+          "block_characters": 330
+        },
+        {
+          "kind": "theorem",
+          "name": "translated_zero_ratioM09F",
+          "header": "theorem translated_zero_ratioM09F (P Q : ℝ[X])\n (H : ∀ i j, i ≤ j → P.coeff i*Q.coeff j ≤ P.coeff j*Q.coeff i) (n : ℕ) :\n (P.comp (X+1)).coeff 0*(Q.comp (X+1)).coeff n ≤\n (Q.comp (X+1)).coeff 0*(P.comp (X+1)).coeff n",
+          "block_sha256": "915abe40aa0ccb295417b8e2cb3ab940b4bf930da9a0c1ce8f6e4449653ebc64",
+          "block_characters": 740
+        },
+        {
+          "kind": "theorem",
+          "name": "sharp_margin_of_unshiftedM09F",
+          "header": "theorem sharp_margin_of_unshiftedM09F (H : UnshiftedRatioM09F) : SharpCompleteMarginMBE3",
+          "block_sha256": "ab596dd0a000a57e4ebf864a0b22cc4cb28b68cdf6a74f10b4abd1fa3ad36c29",
+          "block_characters": 555
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_of_unshiftedM09F",
+          "header": "theorem source_band_of_unshiftedM09F (H : UnshiftedRatioM09F)\n (q k i : ℕ) (r : Bool) (hq : 2 ≤ q) (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n threeRawM9E2 q r i (q+k+1)*threeRawM9E2 q r (i+2) (q+k+1) ≤\n threeRawM9E2 q r (i+1) (q+k+1)^2",
+          "block_sha256": "4256abce6bf241557a1027ae8dc9e161e367ffd14ebe5b646c3b932a077d8a37",
+          "block_characters": 314
+        },
+        {
+          "kind": "theorem",
+          "name": "ordinary_concavity_obstructionM09F",
+          "header": "theorem ordinary_concavity_obstructionM09F :\n 2*normalizedCoeffM09F 6 1 6-normalizedCoeffM09F 6 0 6-normalizedCoeffM09F 6 2 6 = -4/35035",
+          "block_sha256": "cb075b347c90db9165d19455fb3024962b2d369ba8a4d6be6c1252849b5f0899",
+          "block_characters": 198
+        },
+        {
+          "kind": "theorem",
+          "name": "ordinary_concavity_falseM09F",
+          "header": "theorem ordinary_concavity_falseM09F : ¬ (∀ j s m : ℕ,\n normalizedCoeffM09F j s m+normalizedCoeffM09F j (s+2) m ≤ 2*normalizedCoeffM09F j (s+1) m)",
+          "block_sha256": "24f9b289925d508ec88cc5bf2d31f811d54eee6252521cc0d4aa4af9df509baa",
+          "block_characters": 257
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "UnshiftedRatioM09F",
+          "header": "def UnshiftedRatioM09F : Prop",
+          "block_sha256": "d24d9e38dad88dc8bab149da562c5eb121ad29e3585dbd25241944fdc2811d6e",
+          "block_characters": 203,
+          "definition_text": "def UnshiftedRatioM09F : Prop := ∀ j s i n : ℕ, i ≤ n →\n (qPolyM7E2 j (s+1)^2).coeff i*(qPolyM7E2 j s*qPolyM7E2 j (s+2)).coeff n ≤\n (qPolyM7E2 j (s+1)^2).coeff n*(qPolyM7E2 j s*qPolyM7E2 j (s+2)).coeff i"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovAdjacentConvolutionM09F",
+      "path": "research/MarkovAdjacentConvolutionM09F.lean",
+      "bytes": 3416,
+      "sha256": "5782be7b2e51ef6be300a5afb3e061dc5886833224d40ffd142cbb2c423b81a1",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "ordered_of_adjacentM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_coeff_positiveM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_product_positiveM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_product_tailM09F"
+        },
+        {
+          "kind": "def",
+          "name": "UnshiftedAdjacentM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "unshifted_adjacent_iffM09F"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_of_adjacentM09F"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792215626266896000.json",
+          "sha256": "19b27d50100ca0e9e165666446f011e42cf1f5f6def4495b35ca1d53ee5b9b76",
+          "source_sha256": "5782be7b2e51ef6be300a5afb3e061dc5886833224d40ffd142cbb2c423b81a1",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "5782be7b2e51ef6be300a5afb3e061dc5886833224d40ffd142cbb2c423b81a1"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in177": true,
+      "printed_in177": true,
+      "object_path": "evidence/markov-09fffb56/MarkovAdjacentConvolutionM09F.olean",
+      "object_sha256": "33d64f807203af313db9a34bc017e9d5122c9bdf10a831b0e7bc00faab7d0424",
+      "successful_final_build": "evidence/markov-09fffb56/build-1792215626266896000.json",
+      "historical_successful_source_versions": [
+        "5782be7b2e51ef6be300a5afb3e061dc5886833224d40ffd142cbb2c423b81a1"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovOrderedConvolutionM09F"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "ordered_of_adjacentM09F",
+          "header": "theorem ordered_of_adjacentM09F (a b : ℕ → ℝ) (N : ℕ)\n (hb : ∀ i, i ≤ N → 0 < b i)\n (ha0 : ∀ i, N < i → a i=0) (hb0 : ∀ i, N < i → b i=0)\n (H : ∀ i, i < N → a i*b (i+1) ≤ a (i+1)*b i) :\n ∀ i j, i ≤ j → a i*b j ≤ a j*b i",
+          "block_sha256": "466b6150afce8c7d8c001180a1e1ec09515fbaf09fc1f83fbdfd51c434ac0fe0",
+          "block_characters": 700
+        },
+        {
+          "kind": "theorem",
+          "name": "q_coeff_positiveM09F",
+          "header": "theorem q_coeff_positiveM09F (j t i : ℕ) (hi : i ≤ j) : 0 < (qPolyM7E2 j t).coeff i",
+          "block_sha256": "071e545d057bc1791aa6e5ce1c01d386933ad81a7c2b6769f48d557a8316c96e",
+          "block_characters": 492
+        },
+        {
+          "kind": "theorem",
+          "name": "q_product_positiveM09F",
+          "header": "theorem q_product_positiveM09F (j t u n : ℕ) (hn : n ≤ 2*j) :\n 0 < (qPolyM7E2 j t*qPolyM7E2 j u).coeff n",
+          "block_sha256": "dba23d829f75feb2e84898dff08f60a2b2fdc17996e9153e2734dc9f3ceb5489",
+          "block_characters": 561
+        },
+        {
+          "kind": "theorem",
+          "name": "q_product_tailM09F",
+          "header": "theorem q_product_tailM09F (j t u n : ℕ) (hn : 2*j < n) :\n (qPolyM7E2 j t*qPolyM7E2 j u).coeff n=0",
+          "block_sha256": "aca89e4b387e6828e304c8623c49d489b9578ec583f7f2a309cea256a0bcf64e",
+          "block_characters": 279
+        },
+        {
+          "kind": "theorem",
+          "name": "unshifted_adjacent_iffM09F",
+          "header": "theorem unshifted_adjacent_iffM09F : UnshiftedAdjacentM09F ↔ UnshiftedRatioM09F",
+          "block_sha256": "e0867cb6cf4cc9127be704d51ce8da878efe4307fda20c2736f5615ed849d3e8",
+          "block_characters": 428
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_of_adjacentM09F",
+          "header": "theorem source_band_of_adjacentM09F (H : UnshiftedAdjacentM09F)\n (q k i : ℕ) (r : Bool) (hq : 2 ≤ q) (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n threeRawM9E2 q r i (q+k+1)*threeRawM9E2 q r (i+2) (q+k+1) ≤\n threeRawM9E2 q r (i+1) (q+k+1)^2",
+          "block_sha256": "62674944cc39e2ce21e1ee69609d96c90c1748acfe0154d999ca81ce6df4c2fc",
+          "block_characters": 320
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "UnshiftedAdjacentM09F",
+          "header": "def UnshiftedAdjacentM09F : Prop",
+          "block_sha256": "cde80af321e9ac50bd803e49ce2e9a92bd0cc190cf58fd21b5dd49b0c89ccd24",
+          "block_characters": 214,
+          "definition_text": "def UnshiftedAdjacentM09F : Prop := ∀ j s n : ℕ, n < 2*j →\n (qPolyM7E2 j (s+1)^2).coeff n*(qPolyM7E2 j s*qPolyM7E2 j (s+2)).coeff (n+1) ≤\n (qPolyM7E2 j (s+1)^2).coeff (n+1)*(qPolyM7E2 j s*qPolyM7E2 j (s+2)).coeff n"
+        }
+      ],
+      "forbidden_tokens": []
+    }
+  ],
+  "excluded_modules": [],
+  "accepted_counts": {
+    "def": 9,
+    "theorem": 59
+  },
+  "excluded_counts": {},
+  "mathematical_values_recomputed": false,
+  "source_level_scope": {
+    "root_open": true,
+    "new_unconditional_raw_LC_region": false,
+    "new_unconditional_source_estimate": true,
+    "root_equivalence": "Conjecture63 iff ThreeBeyondBandM657 and OtherFourM9E2",
+    "remaining_predicates_unproved": [
+      "ThreeBeyondBandM657",
+      "OtherFourM9E2"
+    ],
+    "SharpTopScalars_proved": true,
+    "SharpCompleteMargin_proved": false,
+    "UnshiftedRatio_proved": false,
+    "UnshiftedAdjacent_proved": false,
+    "SharpTopScalars_scope": "All natural d,k,s and Boolean r,3<=s<=bandJ(d,k,r), both clamp regimes/k=0 included. No denominator/run bound.",
+    "SharpCompleteMargin_scope": "All natural j,s,n, without s<=j guard; full complete-lift convolution inequality remains an unproved proposition.",
+    "source_estimate_guard": "All natural q,k,s; r Boolean; q>=2; j=q+k+1;2*j+1<=sourceN(q,r);s>=3. Column i=s+3>=6; d=bandExponent(q,k,r). No d<=s guard.",
+    "source_estimate": "choose(s+9,4)*raw(s+3,j) <= (choose(s+9,4)+(s+3))*liftOutput(d,j,s). Integral raw coefficients, all zero tails.",
+    "old_estimate_comparison": "Factor3 on the additive budget replaced by1; clamp restriction removed, but new estimate requires s>=3. Old176 estimate remains separately applicable to smaller s under d<=s; no scope erasure.",
+    "conditional_source_LC": "SharpCompleteMargin alone now implies raw horizontal(i,j),(i+1,j),(i+2,j) LC for all natural starts i in the actual q>=2 correction band; inherited prefix/tail assembly retained.",
+    "conditional_is_root_equivalence": false,
+    "unshifted_equivalence": "UnshiftedAdjacent iff UnshiftedRatio universally. Either is sufficient for SharpCompleteMargin and hence guarded source-band LC; no converse from SharpCompleteMargin or root asserted.",
+    "normalization_scope": "Rational auxiliary complete coefficient divided by positive full B_s. Monotone/log-concave in s, fixed j,m; m>j zero tails. Does not change raw root coefficients.",
+    "actual_raw_source_counterexample": false,
+    "obstructions": "Formal additive normalized-coefficient concavity failure j6,s0,m6, gap-4/35035. Arbitrary log-concave weights failure is finite-only and not identified with source family.",
+    "proposed_low_degree_formulas_proved": false,
+    "q1_new_source_gain": false,
+    "new_vertical_or_diagonal_region": false,
+    "old212_recovery_claimed": false,
+    "old166_prefix_recovery_claimed": false,
+    "older_failed_versions_retroactively_recovered": false,
+    "prior175_scope_unchanged": "Raw band prefix i<=5 or strict tail N<i+j+q remains latest unconditional LC region gain; no clause removed in176/177."
+  },
+  "literal_raw_indices": {
+    "bound": [
+      "(s+3,q+k+1)"
+    ],
+    "horizontal": [
+      "(i,q+k+1)",
+      "(i+1,q+k+1)",
+      "(i+2,q+k+1)"
+    ]
+  },
+  "residue_map": {
+    "false": "N=3q+2,q=d+2k+1,j=d+3k+2",
+    "true": "N=3q+1,q=d+2k+2,j=d+3k+3"
+  },
+  "zero_and_endpoint_handling": "Positive bases/binomial denominators only canceled. Source zeros not divided out; kernel h>s, normalized m>j and q-product n>2j zero tails explicit. Original root0/1,1/1/polygon clauses unchanged.",
+  "proof_chain_details": {
+    "scalar_assembly": "Weighted paired binomials with a1/2, induction k>=1,s>=3; positive-k absorbed budget from zero-d base growth; k0 separate clamp/choose argument; exact positive B_s and binomial factors permit cancellation. Top scalar uses s3/4 separately, s>=5 via positive polynomial, j<5 via clamped k0.",
+    "normalized_geometry": "j,m,t rational with0<=m<=j,0<=t; j=m+z. Final Lean ring/positivity checks saved75/498-term certificates; auditor compares literal expressions only. Formula attaches natural coefficients using inherited lift_normalizedMFEE and positive denominators, then handles m>j by natural binomial zeros.",
+    "finite_covariance": "Finite cross-ratio ordering and monotone weights imply ordered weighted-sum inequality; no implicit positivity of a,b needed. Translation weights choose(i,n) monotone, arbitrary finite polynomial cutoff max degree+1. Only implication to margin proved.",
+    "adjacent_support": "q coefficient positive for0<=i<=j with endpoint weight1; product positive for0<=n<=2j by min(n,j) term and nonnegative summands; zero beyond2j by degree bound. Positive denominator product enables adjacent chaining, with zero tails explicit and j0 included.",
+    "clamp_and_indices": "absorbed term uses natural d-s=max(d-s,0), divided by positive s+1. New raw estimate is at column s+3,rowq+k+1. Python kernel is integer-scaled bys+1, which its weighting check accounts for; Lean K is rational/real coefficient kernel.",
+    "statement_precision": "Correspondence prose saying bounds cover every natural column must be read with its explicit s>=3 restriction. Formal source bound covers columns>=6; conditional LC theorem covers every natural starting column."
+  }
+}

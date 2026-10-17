@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovChooseGrowthM09F.lean:56:35: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  j - 1 + 1\nin the target expression\n  \u2191((j + s + 4).choose (s + 5)) * (\u2191(j - 1) + 1 + \u2191d * \u2191(s + 5)) \u2264 \u2191((j + s + 4 + d).choose (s + 5)) * (\u2191(j - 1) + 1)\n\nd k s : \u2115\nr : Bool\nj : \u2115 := bandJMBE3 0 k r\nhj : 1 \u2264 j\nhe : bandJMBE3 d k r = j + d\nh0 : \u2191((j + (s + 3)).choose (s + 3)) * (\u2191j + 1 + \u2191d * \u2191(s + 3)) \u2264 \u2191((j + (s + 3) + d).choose (s + 3)) * (\u2191j + 1)\nh2 : \u2191((j + s + 4).choose (s + 5)) * (\u2191(j - 1) + 1 + \u2191d * \u2191(s + 5)) \u2264 \u2191((j + s + 4 + d).choose (s + 5)) * (\u2191(j - 1) + 1)\n\u22a2 bandBaseMBE3 0 k s r * (\u2191(bandJMBE3 0 k r) + 1 + \u2191d * (\u2191s + 3)) \u2264 bandBaseMBE3 d k s r * (\u2191(bandJMBE3 0 k r) + 1)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovChooseGrowthM09F": "682b145ee49fde52c51d32bf2ddf14e4b59bfddb43b22eb0c91fd3c4647803e8"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-09fffb56/MarkovChooseGrowthM09F.olean",
+    "/Users/sasha/math_gkm/research/MarkovChooseGrowthM09F.lean"
+  ],
+  "seconds": 6.729895790980663,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

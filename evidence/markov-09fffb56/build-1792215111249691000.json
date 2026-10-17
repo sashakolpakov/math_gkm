@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovChooseGrowthM09F.lean:76:1: error: linarith failed to find a contradiction\nd k s : \u2115\nr : Bool\nj : \u2115 := bandJMBE3 0 k r\nhj : 1 \u2264 j\nhe : bandJMBE3 d k r = j + d\nh0 : \u2191((j + (s + 3)).choose (s + 3)) * (\u2191j + 1 + \u2191d * \u2191(s + 3)) \u2264 \u2191((j + (s + 3) + d).choose (s + 3)) * (\u2191j + 1)\nh2 : \u2191((j + s + 4).choose (s + 5)) * (\u2191(j - 1) + 1 + \u2191d * \u2191(s + 5)) \u2264 \u2191((j + s + 4 + d).choose (s + 5)) * (\u2191(j - 1) + 1)\nh2' : \u2191((j + s + 4).choose (s + 5)) * (\u2191j + \u2191d * (\u2191s + 5)) \u2264 \u2191((j + s + 4 + d).choose (s + 5)) * \u2191j\nh2'' : \u2191((j + s + 4).choose (s + 5)) * (\u2191j + 1 + \u2191d * (\u2191s + 3)) \u2264 \u2191((j + s + 4 + d).choose (s + 5)) * (\u2191j + 1)\na\u271d :\n  (\u2191((j + (s + 3) + d).choose (s + 3)) + 4 * \u2191((j + s + 4 + d).choose (s + 5))) * (\u2191(bandJMBE3 0 k r) + 1) <\n    (\u2191((j + (s + 3)).choose (s + 3)) + 4 * \u2191((j + s + 4).choose (s + 5))) * (\u2191j + 1 + \u2191d * (\u2191s + 3))\n\u22a2 False\nfailed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovChooseGrowthM09F": "fdadb28960b25ae2208d15615a525a00bc64a7ea252de2374069d89b49286b0f"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-09fffb56/MarkovChooseGrowthM09F.olean",
+    "/Users/sasha/math_gkm/research/MarkovChooseGrowthM09F.lean"
+  ],
+  "seconds": 7.70569199998863,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
