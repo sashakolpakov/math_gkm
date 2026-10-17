@@ -1,0 +1,20 @@
+{
+  "returncode": 0,
+  "stdout": "elaboration took 165ms\n",
+  "stderr": "import took 24.9s\ncumulative profiling times:\n\t.olean serialization 4.59ms\n\tattribute application 0.0136ms\n\tcompilation (IR) 0.367ms\n\tcompilation (LCNF base) 4.62ms\n\tcompilation (LCNF impure) 1.75ms\n\tcompilation (LCNF mono) 2.5ms\n\telaboration 168ms\n\tfix level params 0.0303ms\n\timport 24.9s\n\tinitialization 13.5ms\n\tinstantiate metavars 0.782ms\n\tinterpretation 422ms\n\tlet-to-have transformation 0.0409ms\n\tlinting 1.99ms\n\tmodule linting 0.0005ms\n\toverlappingInstancesLinter 0.777ms\n\tparsing 1.18ms\n\tprocess pre-definitions 63.8ms\n\tshare common exprs 0.321ms\n\ttacticAnalysis 6.27ms\n\ttype checking 0.371ms\n\ttypeclass inference 2.91s\n",
+  "modules": {
+    "MarkovTopFirstCentralDefsM731": "66d6af562a9e96d964dd79390393ef06cadb01d35bb7b930550aa3ddc12be706"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--profile",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-73199834/MarkovTopFirstCentralDefsM731.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopFirstCentralDefsM731.lean"
+  ],
+  "seconds": 28.675182915991172,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

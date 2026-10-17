@@ -1,0 +1,20 @@
+{
+  "returncode": 0,
+  "stdout": "elaboration took 194ms\nring took 175ms\nshare common exprs took 112ms\ntype checking took 369ms\ntactic execution of Lean.Parser.Tactic.refine took 243ms\nring took 420ms\ntactic execution of Lean.Parser.Tactic.refine took 218ms\ninterpretation of Mathlib.Meta.Positivity.evalAdd._lam_0._boxed took 1.03s\ninterpretation of Mathlib.Meta.Positivity.evalAdd._lam_0._boxed took 121ms\nring took 126ms\ninterpretation of Mathlib.Tactic._aux_Mathlib_Tactic_Linarith_Frontend___elabRules_Mathlib_Tactic_linarith_1._boxed took 118ms\nshare common exprs took 460ms\nprocess pre-definitions took 194ms\nelaboration took 166ms\ntype checking took 1s\nlinting took 359ms\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovTopFourthMomentCertificateM731.lean:321:21: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n",
+  "stderr": "import took 9.3s\n.olean serialization took 593ms\ncumulative profiling times:\n\t.olean serialization 593ms\n\tattribute application 0.0457ms\n\tcompilation (IR) 0.601ms\n\tcompilation (LCNF base) 8.27ms\n\tcompilation (LCNF impure) 1.85ms\n\tcompilation (LCNF mono) 6.81ms\n\tcongr simp thm 0.297ms\n\telaboration 418ms\n\tfix level params 23.5ms\n\timport 9.3s\n\tinitialization 14.7ms\n\tinstantiate metavars 8.03ms\n\tinterpretation 1.97s\n\tlet-to-have transformation 0.0938ms\n\tlinting 364ms\n\tmodule linting 0.000458ms\n\tnorm_num 284ms\n\toverlappingInstancesLinter 1.73ms\n\tparsing 4ms\n\tprocess pre-definitions 326ms\n\tring 727ms\n\tshare common exprs 575ms\n\tsimp 4.2ms\n\ttactic execution 685ms\n\ttacticAnalysis 23.8ms\n\ttype checking 1.38s\n\ttypeclass inference 11.6s\n",
+  "modules": {
+    "MarkovTopFourthMomentCertificateM731": "f478f705c2c9ee0e1c40182a092a82918da105ae4b52019968eddfaee8d786a7"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--profile",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-73199834/MarkovTopFourthMomentCertificateM731.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopFourthMomentCertificateM731.lean"
+  ],
+  "seconds": 28.521219875023235,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

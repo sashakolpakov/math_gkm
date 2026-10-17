@@ -1,0 +1,20 @@
+{
+  "returncode": 0,
+  "stdout": "tactic execution of Lean.Parser.Tactic.refine took 131ms\nring took 112ms\nring took 142ms\nshare common exprs took 156ms\ntype checking took 282ms\n",
+  "stderr": "import took 33.5s\n.olean serialization took 937ms\ncumulative profiling times:\n\t.olean serialization 937ms\n\tattribute application 0.01ms\n\telaboration 69.2ms\n\tfix level params 5.76ms\n\timport 33.5s\n\tinitialization 19.3ms\n\tinstantiate metavars 13.9ms\n\tinterpretation 857ms\n\tlet-to-have transformation 0.0178ms\n\tlinting 2.68ms\n\tmodule linting 0.000583ms\n\tnorm_num 8.48ms\n\toverlappingInstancesLinter 1.66ms\n\tparsing 0.995ms\n\tprocess pre-definitions 52.3ms\n\tring 254ms\n\tshare common exprs 156ms\n\ttactic execution 185ms\n\ttacticAnalysis 5.79ms\n\ttype checking 282ms\n\ttypeclass inference 1.99s\n",
+  "modules": {
+    "MarkovTopFirstCentralIdentityM731": "1e5d26ea210e7ef62af3384b0b88c8e10de20d488c651687f8bfe06a0e0aac06"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--profile",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-73199834/MarkovTopFirstCentralIdentityM731.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopFirstCentralIdentityM731.lean"
+  ],
+  "seconds": 38.58222691703122,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,57 @@
+{
+  "raw_sha256": "345ebb4e2e62e75ff7fb9e7610c1daa9d04ba4fe00eabedad913bb732cf331b0",
+  "event_count": 180,
+  "pending": {},
+  "last_events": [
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_90",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/validate_55cf20d2.py build 120 MarkovTopLeadingM55C'",
+        "aggregated_output": "{\"receipt\": \"evidence/markov-55cf20d2/build-1792224671054702000.json\", \"returncode\": 0, \"timeout\": false, \"seconds\": 10.8740698749898, \"stdout\": \"\"}\n",
+        "exit_code": 0,
+        "status": "completed"
+      }
+    },
+    {
+      "type": "item.started",
+      "item": {
+        "id": "item_91",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc \"rg 'natDegree_eq_of_le_of_coeff_ne_zero|natDegree_eq_of_le_of_coeff' .lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/*.lean; rg 'exists_nat_ge|eventually_atTop.*natCast|tendsto_natCast_atTop' research/Markov*Limit*.lean | head -30\"",
+        "aggregated_output": "",
+        "exit_code": null,
+        "status": "in_progress"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_91",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc \"rg 'natDegree_eq_of_le_of_coeff_ne_zero|natDegree_eq_of_le_of_coeff' .lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/*.lean; rg 'exists_nat_ge|eventually_atTop.*natCast|tendsto_natCast_atTop' research/Markov*Limit*.lean | head -30\"",
+        "aggregated_output": ".lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/Lemmas.lean:  apply natDegree_eq_of_le_of_coeff_ne_zero natDegree_comp_le\n.lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/IsMonicOfDegree.lean:  \u00b7 exact natDegree_eq_of_le_of_coeff_ne_zero H\u2081 <| H\u2082 \u25b8 one_ne_zero\n.lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/Operations.lean:theorem natDegree_eq_of_le_of_coeff_ne_zero (pn : p.natDegree \u2264 n) (p1 : p.coeff n \u2260 0) :\n.lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/Operations.lean:  refine (congr_arg _ <| natDegree_eq_of_le_of_coeff_ne_zero pn ?_).trans p1\n.lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/Domain.lean:  \u00b7 apply natDegree_eq_of_le_of_coeff_ne_zero\n",
+        "exit_code": 0,
+        "status": "completed"
+      }
+    }
+  ],
+  "drafts": {
+    "MarkovTopFirstCentralMarginM208": {
+      "sha256": "1e2709326e1babb912ff58d215367ed8fd2cdd9fe5ab921a10de7d6dd65e69bd",
+      "status": "unaccepted: three builds timed out",
+      "receipts": [
+        "evidence/markov-20825094/build-1792232073229638000.json",
+        "evidence/markov-20825094/build-1792232260474025000.json",
+        "evidence/markov-20825094/build-1792232479837865000.json"
+      ]
+    },
+    "MarkovTopFirstCentralM208": {
+      "sha256": "73a5e4e9103d18084853b15282b7aebedc8bc4de1b89886e909734c0a40ef5e3",
+      "status": "unaccepted: dependency margin never compiled",
+      "receipts": []
+    }
+  },
+  "decision": "No unfinished raw event. Prior nine-module validation remains distinct from two unaccepted drafts. New renamed work only; no replay of prior side effects."
+}

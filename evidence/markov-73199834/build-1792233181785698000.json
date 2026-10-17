@@ -1,0 +1,20 @@
+{
+  "returncode": 0,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\ninterpretation of Mathlib.Meta.Positivity.evalAdd._lam_0._boxed took 524ms\n/Users/sasha/math_gkm/research/MarkovTopIntegerDensityM731.lean:78:1: warning: 'push_cast' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n",
+  "stderr": "import took 9.25s\n.olean serialization took 140ms\ncumulative profiling times:\n\t.olean serialization 140ms\n\tattribute application 0.0405ms\n\tcompilation (IR) 0.309ms\n\tcompilation (LCNF base) 6.7ms\n\tcompilation (LCNF impure) 1.26ms\n\tcompilation (LCNF mono) 2.17ms\n\tcongr simp thm 3.8ms\n\telaboration 15.4ms\n\tfix level params 0.44ms\n\timport 9.25s\n\tinitialization 17.3ms\n\tinstantiate metavars 0.637ms\n\tinterpretation 1.14s\n\tlet-to-have transformation 0.0592ms\n\tlinting 3.9ms\n\tmodule linting 0.0005ms\n\tnorm_num 3.49ms\n\toverlappingInstancesLinter 1.52ms\n\tparsing 2.6ms\n\tprocess pre-definitions 4.18ms\n\tring 15.1ms\n\tshare common exprs 4.1ms\n\tsimp 54.6ms\n\ttactic execution 100ms\n\ttacticAnalysis 10.1ms\n\ttype checking 45.9ms\n\ttypeclass inference 246ms\n",
+  "modules": {
+    "MarkovTopIntegerDensityM731": "31741607229379a6fba58b72790b02f39c57820e084574b549f9ce859d96d480"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--profile",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-73199834/MarkovTopIntegerDensityM731.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopIntegerDensityM731.lean"
+  ],
+  "seconds": 11.268194707983639,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

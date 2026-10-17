@@ -1,0 +1,20 @@
+{
+  "returncode": 0,
+  "stdout": "ring took 585ms\nshare common exprs took 470ms\nprocess pre-definitions took 240ms\nelaboration took 153ms\ntype checking took 1.25s\n",
+  "stderr": "import took 31.1s\n.olean serialization took 1.2s\ncumulative profiling times:\n\t.olean serialization 1.2s\n\tattribute application 0.0155ms\n\tcongr simp thm 0.766ms\n\telaboration 166ms\n\tfix level params 25.8ms\n\timport 31.1s\n\tinitialization 24ms\n\tinstantiate metavars 0.915ms\n\tinterpretation 1.13s\n\tlet-to-have transformation 0.0695ms\n\tlinting 8.12ms\n\tmodule linting 0.000542ms\n\tnorm_num 47.5ms\n\toverlappingInstancesLinter 1.97ms\n\tparsing 1.7ms\n\tprocess pre-definitions 244ms\n\tring 603ms\n\tshare common exprs 476ms\n\tsimp 15.4ms\n\ttactic execution 41.9ms\n\ttacticAnalysis 7.49ms\n\ttype checking 1.27s\n\ttypeclass inference 123ms\n",
+  "modules": {
+    "MarkovTopFourthMomentConditionalM731": "9623ce0db97ca472b8ea659b47127a7c8d4c4886cf113963e3979d673bb3dfc2"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--profile",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-73199834/MarkovTopFourthMomentConditionalM731.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopFourthMomentConditionalM731.lean"
+  ],
+  "seconds": 36.71650429198053,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

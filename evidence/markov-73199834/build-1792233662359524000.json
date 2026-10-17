@@ -1,0 +1,20 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTopFourthSourceM731.lean:49:1: error: Type mismatch\n  source_top_fourth_polygonM731 q t r hq ht htq\nhas type\n  (\u2200 (i : \u2115), 4 \u2264 i \u2192 i \u2264 6 \u2192 InPolygon 3 (sourceNME9C q r) i (sourceNME9C q r + 2 - t)) \u2227\n    threeRawM9E2 q r 4 (sourceNME9C q r + 2 - t) * threeRawM9E2 q r 6 (sourceNME9C q r + 2 - t) <\n      threeRawM9E2 q r 5 (sourceNME9C q r + 2 - t) ^ 2\nbut is expected to have type\n  (\u2200 (i : \u2115),\n      4 \u2264 i \u2192 i \u2264 6 \u2192 InPolygon 3 (3 * q + if r = true then 1 else 2) i ((3 * q + if r = true then 1 else 2) + 2 - t)) \u2227\n    threeRawM9E2 q r 4 ((3 * q + if r = true then 1 else 2) + 2 - t) *\n        coeff (frame path).mid.p 6 ((3 * q + if r = true then 1 else 2) + 2 - t) <\n      coeff (frame path).mid.p 5 ((3 * q + if r = true then 1 else 2) + 2 - t) ^ 2\n",
+  "stderr": "import took 8.84s\ncumulative profiling times:\n\tattribute application 0.0516ms\n\tcongr simp thm 0.0481ms\n\telaboration 13.4ms\n\tfix level params 0.124ms\n\timport 8.84s\n\tinitialization 14.8ms\n\tinstantiate metavars 0.189ms\n\tinterpretation 578ms\n\tlet-to-have transformation 0.068ms\n\tlinting 3.06ms\n\tmodule linting 0.0005ms\n\toverlappingInstancesLinter 1.26ms\n\tparsing 1.95ms\n\tprocess pre-definitions 0.88ms\n\tshare common exprs 0.641ms\n\tsimp 9.47ms\n\ttactic execution 46.4ms\n\ttacticAnalysis 5.29ms\n\ttype checking 47.2ms\n\ttypeclass inference 46.8ms\n",
+  "modules": {
+    "MarkovTopFourthSourceM731": "bb3f637623b97abda0ffba3e8106df9380f7be46390d45c392050cbcf44cf1f5"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--profile",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-73199834/MarkovTopFourthSourceM731.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopFourthSourceM731.lean"
+  ],
+  "seconds": 9.799762207956519,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
