@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovRationalBridgeMAD5.lean:62:1: error: mod_cast has type\n  (2 * liftTermMAE9 j (t + 1) (j + 1 - i) * liftTermMAE9 j (t + 1) (j + 1 - k) -\n          leftTermMAD5 j t (j + 1 - i) * liftTermMAE9 j (t + 2) (j + 1 - k + 1) -\n        liftTermMAE9 j (t + 2) (j + 1 - i + 1) * leftTermMAD5 j t (j + 1 - k)) *\n      (liftTermMAE9 j (t + 1) (j + 1 - i - 1) * liftTermMAE9 j (t + 1) (j + 1 - k + 1)) \u2264\n    (2 * liftTermMAE9 j (t + 1) (j + 1 - i - 1) * liftTermMAE9 j (t + 1) (j + 1 - k + 1) -\n          leftTermMAD5 j t (j + 1 - i - 1) * liftTermMAE9 j (t + 2) (j + 1 - k + 1 + 1) -\n        liftTermMAE9 j (t + 2) (j + 1 - i - 1 + 1) * leftTermMAD5 j t (j + 1 - k + 1)) *\n      (liftTermMAE9 j (t + 1) (j + 1 - i) * liftTermMAE9 j (t + 1) (j + 1 - k))\nbut is expected to have type\n  (2 * (liftTermMAE9 j (t + 1) (j + 1 - i) * liftTermMAE9 j (t + 1) (j + 1 - k)) -\n          leftTermMAD5 j t (j + 1 - i) * liftTermMAE9 j (t + 2) (j + 1 - k + 1) -\n        liftTermMAE9 j (t + 2) (j + 1 - i + 1) * leftTermMAD5 j t (j + 1 - k)) *\n      (liftTermMAE9 j (t + 1) (j + 1 - i - 1) * liftTermMAE9 j (t + 1) (j + 1 - k + 1)) \u2264\n    (2 * (liftTermMAE9 j (t + 1) (j + 1 - i - 1) * liftTermMAE9 j (t + 1) (j + 1 - k + 1)) -\n          leftTermMAD5 j t (j + 1 - i - 1) * liftTermMAE9 j (t + 2) (j + 1 - k + 1 + 1) -\n        liftTermMAE9 j (t + 2) (j + 1 - i - 1 + 1) * leftTermMAD5 j t (j + 1 - k + 1)) *\n      (liftTermMAE9 j (t + 1) (j + 1 - i) * liftTermMAE9 j (t + 1) (j + 1 - k))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovRationalBridgeMAD5": "c6020335fdafbd3ae215606c5d9944c306bbd9d1b4f5dc6f839b937a9cb39591"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovRationalBridgeMAD5.olean",
+    "/Users/sasha/math_gkm/research/MarkovRationalBridgeMAD5.lean"
+  ],
+  "seconds": 32.57964429096319,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

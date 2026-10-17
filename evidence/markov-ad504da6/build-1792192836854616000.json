@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSymmetricCutMAD5.lean:38:12: error: Ambiguous term\n  antidiagonal\nPossible interpretations:\n  HasAntidiagonal.antidiagonal n : Finset (?m.4 \u00d7 ?m.4)\n  \n  Finset.antidiagonal n : Set.IsPWO ?m.14 \u2192 ?m.15 \u2192 Finset (?m.15 \u00d7 ?m.15)\n/Users/sasha/math_gkm/research/MarkovSymmetricCutMAD5.lean:38:6: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  Membership ?m.5 (Set.IsPWO ?m.14 \u2192 ?m.15 \u2192 Finset (?m.15 \u00d7 ?m.15))\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovSymmetricCutMAD5.lean:38:28: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  Membership ?m.18 (Set.IsPWO ?m.27 \u2192 ?m.15 \u2192 Finset (?m.15 \u00d7 ?m.15))\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovSymmetricCutMAD5.lean:63:49: error: Function expected at\n  horder\nbut this term has type\n  PairOrderMAD5 A B C\n\nNote: Expected a function because this term is being applied to the argument\n  n\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSymmetricCutMAD5": "73fe30d4d2975587f8a0d4cd18a28efbfca446556e4b626fc86b8424874b5be3"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovSymmetricCutMAD5.olean",
+    "/Users/sasha/math_gkm/research/MarkovSymmetricCutMAD5.lean"
+  ],
+  "seconds": 39.05038566701114,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

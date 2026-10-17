@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCenteredBridgeMAD5.lean:31:3: error: unsolved goals\ncase pos\nj t h s H : \u2115\nhH : H + t = j + h\nk : \u2115\nhk : \u00acj + h \u2264 k\nhj : j \u2264 k\n\u22a2 0 = if t \u2264 k then (cutPolyMFEE H (X ^ s * ePolyM7E2 j (t + s))).coeff (k - t) else 0\n/Users/sasha/math_gkm/research/MarkovCenteredBridgeMAD5.lean:32:3: error: unsolved goals\ncase neg\nj t h s H : \u2115\nhH : H + t = j + h\nk : \u2115\nhk : \u00acj + h \u2264 k\nhj : \u00acj \u2264 k\n\u22a2 0 = if t \u2264 k then (cutPolyMFEE H (X ^ s * ePolyM7E2 j (t + s))).coeff (k - t) else 0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCenteredBridgeMAD5": "c9a6140561fa4ec3cc8d48b9fdb76cb55692057e22fccd72d59aa1c2055303b8"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovCenteredBridgeMAD5.olean",
+    "/Users/sasha/math_gkm/research/MarkovCenteredBridgeMAD5.lean"
+  ],
+  "seconds": 43.97077299997909,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

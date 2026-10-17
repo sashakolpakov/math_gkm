@@ -1,0 +1,23 @@
+import MarkovPairHalf00MAD5
+import MarkovPairHalf01MAD5
+import MarkovPairHalf10MAD5
+import MarkovPairHalf11MAD5
+import MarkovPairHalf20MAD5
+import MarkovPairHalf21MAD5
+import MarkovPairHalf30MAD5
+import MarkovPairHalf31MAD5/-! Machine-authored ad504da6. Generated algebra; all identities checked by Lean ring. -/
+namespace MathGKM.Markov
+noncomputable section
+set_option maxHeartbeats 16000000
+set_option maxRecDepth 65536
+set_option linter.unusedVariables false
+def pc18MAD5 (g z T : ℚ) : ℚ := (ph00c6MAD5 g z T*ph01c12MAD5 g z T+ph00c7MAD5 g z T*ph01c11MAD5 g z T+ph00c8MAD5 g z T*ph01c10MAD5 g z T+ph00c9MAD5 g z T*ph01c9MAD5 g z T+ph00c10MAD5 g z T*ph01c8MAD5 g z T)+(ph10c6MAD5 g z T*ph11c12MAD5 g z T+ph10c7MAD5 g z T*ph11c11MAD5 g z T+ph10c8MAD5 g z T*ph11c10MAD5 g z T+ph10c9MAD5 g z T*ph11c9MAD5 g z T+ph10c10MAD5 g z T*ph11c8MAD5 g z T)-(ph20c8MAD5 g z T*ph21c10MAD5 g z T+ph20c9MAD5 g z T*ph21c9MAD5 g z T+ph20c10MAD5 g z T*ph21c8MAD5 g z T+ph20c11MAD5 g z T*ph21c7MAD5 g z T+ph20c12MAD5 g z T*ph21c6MAD5 g z T)-(ph30c8MAD5 g z T*ph31c10MAD5 g z T+ph30c9MAD5 g z T*ph31c9MAD5 g z T+ph30c10MAD5 g z T*ph31c8MAD5 g z T+ph30c11MAD5 g z T*ph31c7MAD5 g z T+ph30c12MAD5 g z T*ph31c6MAD5 g z T)
+theorem pc18_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :
+ 0 ≤ pc18MAD5 g z T := by
+ have he : pc18MAD5 g z T = (((151906548+T*(76736268+T*(14412804+T*(1192992+T*36720))))+z*((251463942+T*(117939234+T*(20408038+T*(1541968+T*42840))))+z*((150322330+T*(62100646+T*(9211762+T*(572832+T*12240))))+z*((40967310+T*(13531340+T*(1449032+T*50048)))+z*((5515762+T*(1271504+T*71780))+z*((353952+T*42304)+z*8512))))))+g*(((325062853+T*(153664851+T*(26864849+T*(2057000+T*58140))))+z*((474658829+T*(205464223+T*(32525037+T*(2223328+T*55080))))+z*((250143188+T*(93873326+T*(12464554+T*(678912+T*12240))))+z*((60360821+T*(17879872+T*(1686908+T*50048)))+z*((7186499+T*(1466716+T*71780))+z*((405632+T*42304)+z*8512))))))+g*(((252494395+T*(106509538+T*(16291727+T*(1061480+T*24480))))+z*((299821469+T*(110885136+T*(14381135+T*(749904+T*12240))))+z*((124034763+T*(37032518+T*(3529926+T*106080)))+z*((22384609+T*(4689508+T*237876))+z*((1794502+T*195212)+z*51680)))))+g*(((98061988+T*(35039003+T*(4339528+T*(211480+T*3060))))+z*((89377872+T*(26031308+T*(2398753+T*68544)))+z*((26757836+T*(5541966+T*277134))+z*((3141291+T*340976)+z*123765))))+g*(((21126510+T*(5942033+T*(523081+T*14008)))+z*((13780914+T*(2781866+T*134617))+z*((2641567+T*282128)+z*150193)))+g*(((2561612+T*(500506+T*23235))+z*((1061901+T*110705)+z*97636))+g*(((163239+T*16521)+z*32277)+g*4239))))))) := by
+  unfold pc18MAD5 ph00c6MAD5 ph01c12MAD5 ph00c7MAD5 ph01c11MAD5 ph00c8MAD5 ph01c10MAD5 ph00c9MAD5 ph01c9MAD5 ph00c10MAD5 ph01c8MAD5 ph10c6MAD5 ph11c12MAD5 ph10c7MAD5 ph11c11MAD5 ph10c8MAD5 ph11c10MAD5 ph10c9MAD5 ph11c9MAD5 ph10c10MAD5 ph11c8MAD5 ph20c8MAD5 ph21c10MAD5 ph20c9MAD5 ph21c9MAD5 ph20c10MAD5 ph21c8MAD5 ph20c11MAD5 ph21c7MAD5 ph20c12MAD5 ph21c6MAD5 ph30c8MAD5 ph31c10MAD5 ph30c9MAD5 ph31c9MAD5 ph30c10MAD5 ph31c8MAD5 ph30c11MAD5 ph31c7MAD5 ph30c12MAD5 ph31c6MAD5
+  ring
+ rw [he]
+ positivity
+end
+end MathGKM.Markov

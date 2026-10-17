@@ -1,0 +1,2739 @@
+{
+  "worker": 164,
+  "request": "ad504da6c8b84f10b937c15cf985413e",
+  "created_at_utc": "2026-10-16T23:47:41.053695+00:00",
+  "historical_status": "Completed / return0 / delivered report; full root remains open.",
+  "scope": "Closed164 archive and explicit named inherited/current counterparts only. Static parsing, hashes, literal inventories and index/domain counts. No project/Lean/compiler/checker/replay/generator/finalizer/experiment/Singular execution, mathematical-value recomputation, project edits, proposer contact or research assistance. All active/later workers unexamined. Earlier seals and observation windows remain final.",
+  "new_modules": [
+    {
+      "module": "MarkovZeroNormalizedMAD5",
+      "path": "research/MarkovZeroNormalizedMAD5.lean",
+      "bytes": 2446,
+      "characters": 2258,
+      "sha256": "283d9fe6aece1a4dbf4eef1184f8b8513b0c9b56866e7deace7c72d8da9ff186",
+      "current_sha256": "283d9fe6aece1a4dbf4eef1184f8b8513b0c9b56866e7deace7c72d8da9ff186",
+      "status": "Final source compiled, jointly replayed and all explicit theorem closures printed in164.",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "normalized_subset_zeroMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "normalized_rank_zeroMAD5"
+        }
+      ],
+      "object_path": "evidence/markov-ad504da6/MarkovZeroNormalizedMAD5.olean",
+      "object_sha256": "f4ed9a31a239bee87576b37a6a81345045b917fb8308a48a3397dc18667dc52e",
+      "successful_final_build": "build-1792192710242714000.json",
+      "successful_final_build_sha256": "305d60ab848e65664b2287fd4ab4c416d72ee68cd4a9a55ee3258b34aeec4cbb",
+      "imports": [
+        "MarkovNormalizedCutMFEE"
+      ],
+      "theorem_statements": [
+        "theorem normalized_subset_zeroMAD5 {ι : Type*} [DecidableEq ι]\n (s u : Finset ι) (hu : u ⊆ s) (a b : ι → ℝ)\n (hb : ∀ i ∈ s, 0 ≤ b i) (hz : ∀ i ∈ s, b i=0 → a i ≤ 0)\n (ha : 0 ≤ ∑ i ∈ s, a i)\n (hr : ∀ i ∈ s\\u, ∀ j ∈ u, a i*b j ≤ a j*b i) :\n 0 ≤ ∑ i ∈ u, a i",
+        "theorem normalized_rank_zeroMAD5 {ι : Type*} [DecidableEq ι]\n (s : Finset ι) (rank : ι → ℕ) (a b : ι → ℝ)\n (hb : ∀ i ∈ s, 0 ≤ b i) (hz : ∀ i ∈ s, b i=0 → a i ≤ 0)\n (ha : 0 ≤ ∑ i ∈ s, a i)\n (hr : ∀ i ∈ s, ∀ j ∈ s, rank i ≤ rank j → a i*b j ≤ a j*b i)\n (h : ℕ) : 0 ≤ ∑ i ∈ s, if h ≤ rank i then a i else 0"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovSymmetricCutMAD5",
+      "path": "research/MarkovSymmetricCutMAD5.lean",
+      "bytes": 2730,
+      "characters": 2612,
+      "sha256": "52e425f8209af7875156a219cccd048c8de4176fb93ef56b0fa2e2faea17bd85",
+      "current_sha256": "52e425f8209af7875156a219cccd048c8de4176fb93ef56b0fa2e2faea17bd85",
+      "status": "Final source compiled, jointly replayed and all explicit theorem closures printed in164.",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pairDenMAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pairGapMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "symmetric_cut_sumMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_zeroMAD5"
+        },
+        {
+          "kind": "def",
+          "name": "PairOrderMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "symmetric_cut_nonnegMAD5"
+        }
+      ],
+      "object_path": "evidence/markov-ad504da6/MarkovSymmetricCutMAD5.olean",
+      "object_sha256": "4b8fdd079821d10e5345862d7980e795d56a7534a87c1489d7427724d6aed18e",
+      "successful_final_build": "build-1792192908892672000.json",
+      "successful_final_build_sha256": "0a15e7cb05bf808beaaf594f6e4d3750dcc05a6ce53b3abfb43590d3047be85a",
+      "imports": [
+        "MarkovZeroNormalizedMAD5",
+        "MarkovPolynomialWeightMFEE"
+      ],
+      "theorem_statements": [
+        "theorem symmetric_cut_sumMAD5 (A B C : ℝ[X]) (h n : ℕ) :\n (∑ p ∈ antidiagonal n, if h ≤ min p.1 p.2 then pairGapMAD5 A B C p else 0)=\n 2*((cutPolyMFEE h B)^2-cutPolyMFEE h A*cutPolyMFEE h C).coeff n",
+        "theorem cut_zeroMAD5 (P : ℝ[X]) : cutPolyMFEE 0 P=P",
+        "theorem symmetric_cut_nonnegMAD5 (A B C : ℝ[X])\n (hA : ∀ k, 0 ≤ A.coeff k) (hB : ∀ k, 0 ≤ B.coeff k)\n (hC : ∀ k, 0 ≤ C.coeff k) (hgap : ∀ n, 0 ≤ (B^2-A*C).coeff n)\n (horder : PairOrderMAD5 A B C) (h n : ℕ) :\n 0 ≤ ((cutPolyMFEE h B)^2-cutPolyMFEE h A*cutPolyMFEE h C).coeff n"
+      ],
+      "definitions": [
+        "def pairDenMAD5 (B : ℝ[X]) (p : ℕ × ℕ) : ℝ := B.coeff p.1*B.coeff p.2",
+        "def pairGapMAD5 (A B C : ℝ[X]) (p : ℕ × ℕ) : ℝ :=\n 2*pairDenMAD5 B p-A.coeff p.1*C.coeff p.2-C.coeff p.1*A.coeff p.2",
+        "def PairOrderMAD5 (A B C : ℝ[X]) : Prop :=\n ∀ n : ℕ, ∀ p ∈ antidiagonal n, ∀ q ∈ antidiagonal n,\n min p.1 p.2 ≤ min q.1 q.2 →\n pairGapMAD5 A B C p*pairDenMAD5 B q ≤ pairGapMAD5 A B C q*pairDenMAD5 B p"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCenteredBridgeMAD5",
+      "path": "research/MarkovCenteredBridgeMAD5.lean",
+      "bytes": 3347,
+      "characters": 3300,
+      "sha256": "292b5142e5af2aa1839cfdbbd7926c1f2efb656ec0eaceea8c9fa5cb44f004f6",
+      "current_sha256": "292b5142e5af2aa1839cfdbbd7926c1f2efb656ec0eaceea8c9fa5cb44f004f6",
+      "status": "Final source compiled, jointly replayed and all explicit theorem closures printed in164.",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "lift_cut_common_shiftMAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ShiftedPairOrderMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "shifted_full_gapMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_middle_of_pair_orderMAD5"
+        }
+      ],
+      "object_path": "evidence/markov-ad504da6/MarkovCenteredBridgeMAD5.olean",
+      "object_sha256": "24fef25e6001df53196ef4068568fb4bb69f3172c97d18165886c066b56c926c",
+      "successful_final_build": "build-1792193009346672000.json",
+      "successful_final_build_sha256": "ac9063bb8cb8a8e321a6298f10db5e3162796e72395fbcd4e75491a092f13a1e",
+      "imports": [
+        "MarkovSymmetricCutMAD5",
+        "MarkovCutOuterMFEE"
+      ],
+      "theorem_statements": [
+        "theorem lift_cut_common_shiftMAD5 (j t h s H : ℕ) (hH : H+t=j+h) :\n X^j*liftCutM7E2 j (t+s) h=\n X^t*cutPolyMFEE H (X^s*ePolyM7E2 j (t+s))",
+        "theorem shifted_full_gapMAD5 (j t n : ℕ) :\n 0 ≤ ((X*ePolyM7E2 j (t+1))^2-ePolyM7E2 j t*(X^2*ePolyM7E2 j (t+2))).coeff n",
+        "theorem lift_middle_of_pair_orderMAD5 (ho : ShiftedPairOrderMAD5) : LiftMiddleMFEE"
+      ],
+      "definitions": [
+        "def ShiftedPairOrderMAD5 : Prop := ∀ j t,\n PairOrderMAD5 (ePolyM7E2 j t) (X*ePolyM7E2 j (t+1)) (X^2*ePolyM7E2 j (t+2))"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovPairStepMAD5",
+      "path": "research/MarkovPairStepMAD5.lean",
+      "bytes": 3657,
+      "characters": 3549,
+      "sha256": "06d85e24fbfc1750d6e0de11c8b41843458f0f65963ed13f396f10cbe3c380a9",
+      "current_sha256": "06d85e24fbfc1750d6e0de11c8b41843458f0f65963ed13f396f10cbe3c380a9",
+      "status": "Final source compiled, jointly replayed and all explicit theorem closures printed in164.",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "pair_den_sortMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_gap_sortMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_order_of_stepsMAD5"
+        }
+      ],
+      "object_path": "evidence/markov-ad504da6/MarkovPairStepMAD5.olean",
+      "object_sha256": "7895410ecf31a14561dd9fbef469b8a9e0be1558261cdf563806ba79da2bafdf",
+      "successful_final_build": "build-1792192996040265000.json",
+      "successful_final_build_sha256": "9c1ae16f80f7f81f39bb09a0ca6436daeecfd96374810d3b052208ca00c96c8b",
+      "imports": [
+        "MarkovSymmetricCutMAD5"
+      ],
+      "theorem_statements": [
+        "theorem pair_den_sortMAD5 (B : ℝ[X]) (p : ℕ × ℕ) :\n pairDenMAD5 B p=pairDenMAD5 B (min p.1 p.2,max p.1 p.2)",
+        "theorem pair_gap_sortMAD5 (A B C : ℝ[X]) (p : ℕ × ℕ) :\n pairGapMAD5 A B C p=pairGapMAD5 A B C (min p.1 p.2,max p.1 p.2)",
+        "theorem pair_order_of_stepsMAD5 (A B C : ℝ[X]) (l u : ℕ)\n (hA : ∀ k, 0 ≤ A.coeff k) (hB : ∀ k, 0 ≤ B.coeff k)\n (hC : ∀ k, 0 ≤ C.coeff k)\n (hs : ∀ k, 0 < B.coeff k ↔ l ≤ k ∧ k ≤ u)\n (hstep : ∀ i k, l ≤ i → k ≤ u → i+2 ≤ k →\n   pairGapMAD5 A B C (i,k)*pairDenMAD5 B (i+1,k-1) ≤\n   pairGapMAD5 A B C (i+1,k-1)*pairDenMAD5 B (i,k)) :\n PairOrderMAD5 A B C"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovKernelSupportMAD5",
+      "path": "research/MarkovKernelSupportMAD5.lean",
+      "bytes": 2491,
+      "characters": 2426,
+      "sha256": "710b11c535118a74ba0cb68c441aaf023f7aed74f94db27cd5f03ed45b295468",
+      "current_sha256": "710b11c535118a74ba0cb68c441aaf023f7aed74f94db27cd5f03ed45b295468",
+      "status": "Final source compiled, jointly replayed and all explicit theorem closures printed in164.",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "lift_term_positiveMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "e_coeff_positive_iffMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "shifted_middle_supportMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "shifted_middle_nonnegMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "shifted_right_nonnegMAD5"
+        },
+        {
+          "kind": "def",
+          "name": "KernelPairStepMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "shifted_order_of_kernel_stepsMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_positive_of_kernel_stepsMAD5"
+        }
+      ],
+      "object_path": "evidence/markov-ad504da6/MarkovKernelSupportMAD5.olean",
+      "object_sha256": "43d521176c45a671e64c801621501656f012e1c71dd8f7fb542aaf6fe550616e",
+      "successful_final_build": "build-1792193076663011000.json",
+      "successful_final_build_sha256": "83baeb450befa0db774bea24220a37d023722787321755ac241c325e9dc796a1",
+      "imports": [
+        "MarkovCenteredBridgeMAD5",
+        "MarkovPairStepMAD5"
+      ],
+      "theorem_statements": [
+        "theorem lift_term_positiveMAD5 (j t m : ℕ) (hm : m ≤ j) : 0 < liftTermMAE9 j t m",
+        "theorem e_coeff_positive_iffMAD5 (j t k : ℕ) :\n 0 < (ePolyM7E2 j t).coeff k ↔ k ≤ j",
+        "theorem shifted_middle_supportMAD5 (j t k : ℕ) :\n 0 < (X*ePolyM7E2 j (t+1)).coeff k ↔ 1 ≤ k ∧ k ≤ j+1",
+        "theorem shifted_middle_nonnegMAD5 (j t k : ℕ) :\n 0 ≤ (X*ePolyM7E2 j (t+1)).coeff k",
+        "theorem shifted_right_nonnegMAD5 (j t k : ℕ) :\n 0 ≤ (X^2*ePolyM7E2 j (t+2)).coeff k",
+        "theorem shifted_order_of_kernel_stepsMAD5 (hs : KernelPairStepMAD5) : ShiftedPairOrderMAD5",
+        "theorem lift_positive_of_kernel_stepsMAD5 (hs : KernelPairStepMAD5) : LiftLCPositiveM7E2"
+      ],
+      "definitions": [
+        "def KernelPairStepMAD5 : Prop := ∀ j t i k, 1 ≤ i → k ≤ j+1 → i+2 ≤ k →\n pairGapMAD5 (ePolyM7E2 j t) (X*ePolyM7E2 j (t+1)) (X^2*ePolyM7E2 j (t+2)) (i,k)*\n   pairDenMAD5 (X*ePolyM7E2 j (t+1)) (i+1,k-1) ≤\n pairGapMAD5 (ePolyM7E2 j t) (X*ePolyM7E2 j (t+1)) (X^2*ePolyM7E2 j (t+2)) (i+1,k-1)*\n   pairDenMAD5 (X*ePolyM7E2 j (t+1)) (i,k)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovPairRatiosMAD5",
+      "path": "research/MarkovPairRatiosMAD5.lean",
+      "bytes": 2865,
+      "characters": 2781,
+      "sha256": "de9d2a48e3bf888177e183b25d94c5d22086bafaaa65256f29aceb8dd10bc5b1",
+      "current_sha256": "de9d2a48e3bf888177e183b25d94c5d22086bafaaa65256f29aceb8dd10bc5b1",
+      "status": "Final source compiled, jointly replayed and all explicit theorem closures printed in164.",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pairAMAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pairBMAD5"
+        },
+        {
+          "kind": "def",
+          "name": "leftTermMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_left_stepMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_right_stepMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_left_allMAD5"
+        }
+      ],
+      "object_path": "evidence/markov-ad504da6/MarkovPairRatiosMAD5.olean",
+      "object_sha256": "ec5aa7d22ce4f40812f6d0d7cf7c5cc4b0fe10081415cfd268955b13e87fe857",
+      "successful_final_build": "build-1792193303074414000.json",
+      "successful_final_build_sha256": "89c7102fdda475cc40ab7fbf2e2244fd0973ff250047e7719cd359eaeb9ef045",
+      "imports": [
+        "MarkovKernelStepM7E2",
+        "MarkovKernelSupportMAD5"
+      ],
+      "theorem_statements": [
+        "theorem pair_left_stepMAD5 (j t m : ℕ) (hm : m+1 ≤ j) :\n (liftTermMAE9 j t m:ℚ)=(liftTermMAE9 j (t+1) (m+1):ℚ)*\n ((t+4)/(t+j+4))*pairAMAD5 j (t+1) (m+1)",
+        "theorem pair_right_stepMAD5 (j t m : ℕ) (hm : m ≤ j) :\n (liftTermMAE9 j (t+2) (m+1):ℚ)=(liftTermMAE9 j (t+1) m:ℚ)*\n ((t+j+5)/(t+5))*pairBMAD5 j (t+1) m",
+        "theorem pair_left_allMAD5 (j t m : ℕ) (hm : m ≤ j) :\n (leftTermMAD5 j t m:ℚ)=(liftTermMAE9 j (t+1) m:ℚ)*\n ((t+4)/(t+j+4))*pairAMAD5 j (t+1) m"
+      ],
+      "definitions": [
+        "def pairAMAD5 (j t m : ℚ) : ℚ :=\n m*liftDenMAE9 t m*(liftWeightMAE9 j t m-2)/\n ((j-m+1)*(t+m+2)*(t+m+3)*liftWeightMAE9 j t m)",
+        "def pairBMAD5 (j t m : ℚ) : ℚ :=\n (j-m)*liftDenMAE9 t m*(liftWeightMAE9 j t m+2)/\n ((m+1)*(t+m+6)*(t+m+7)*liftWeightMAE9 j t m)",
+        "def leftTermMAD5 (j t m : ℕ) : ℤ := if m=0 then 0 else liftTermMAE9 j t (m-1)"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovKernelValuesMAD5",
+      "path": "research/MarkovKernelValuesMAD5.lean",
+      "bytes": 1184,
+      "characters": 1151,
+      "sha256": "0a250e6e8120c0c482ca1679c6e114fb969aa91454c17dded24493b89a18d0cf",
+      "current_sha256": "0a250e6e8120c0c482ca1679c6e114fb969aa91454c17dded24493b89a18d0cf",
+      "status": "Final source compiled, jointly replayed and all explicit theorem closures printed in164.",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "shifted_kernel_valuesMAD5"
+        }
+      ],
+      "object_path": "evidence/markov-ad504da6/MarkovKernelValuesMAD5.olean",
+      "object_sha256": "a821c52c616b3bf452ac2d7268a57a1a1c75ec192369221ec3307a018b1c8a5a",
+      "successful_final_build": "build-1792193370940269000.json",
+      "successful_final_build_sha256": "ce92fd6594ec770dfdea2242d048aca3177b84d3748ed6b9d5ca6d5762ebe8a4",
+      "imports": [
+        "MarkovKernelSupportMAD5",
+        "MarkovPairRatiosMAD5"
+      ],
+      "theorem_statements": [
+        "theorem shifted_kernel_valuesMAD5 (j t i : ℕ) (hi : 1 ≤ i) (hij : i ≤ j+1) :\n (ePolyM7E2 j t).coeff i=(leftTermMAD5 j t (j+1-i):ℝ) ∧\n (X*ePolyM7E2 j (t+1)).coeff i=(liftTermMAE9 j (t+1) (j+1-i):ℝ) ∧\n (X^2*ePolyM7E2 j (t+2)).coeff i=(liftTermMAE9 j (t+2) (j+1-i+1):ℝ)"
+      ],
+      "definitions": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovRationalBridgeMAD5",
+      "path": "research/MarkovRationalBridgeMAD5.lean",
+      "bytes": 3525,
+      "characters": 3433,
+      "sha256": "0e2fecf4c62402f5831674f81222a7aaab1701d95eebb1a4308e5df0c67b78bc",
+      "current_sha256": "0e2fecf4c62402f5831674f81222a7aaab1701d95eebb1a4308e5df0c67b78bc",
+      "status": "Final source compiled, jointly replayed and all explicit theorem closures printed in164.",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "RationalPairStepMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "scalar_pair_stepMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_steps_of_rationalMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_horizontal_of_rationalMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_of_rational_and_remainingMAD5"
+        }
+      ],
+      "object_path": "evidence/markov-ad504da6/MarkovRationalBridgeMAD5.olean",
+      "object_sha256": "06cdcf9a515f7967be8d1c7ed6472c97b150e0b5ecd785e965148ab5274abdea",
+      "successful_final_build": "build-1792193501019465000.json",
+      "successful_final_build_sha256": "f99b34c69f3be2e4c7e4df719c3c91a42994a74e700b8ddee3c6e65c39c2f6ef",
+      "imports": [
+        "MarkovKernelValuesMAD5",
+        "MarkovLiftRootMFEE"
+      ],
+      "theorem_statements": [
+        "theorem scalar_pair_stepMAD5 (H : RationalPairStepMAD5) (j t m n : ℕ)\n (hnm : n+2 ≤ m) (hmj : m ≤ j) :\n (2*(liftTermMAE9 j (t+1) m:ℚ)*liftTermMAE9 j (t+1) n-\n    leftTermMAD5 j t m*liftTermMAE9 j (t+2) (n+1)-\n    liftTermMAE9 j (t+2) (m+1)*leftTermMAD5 j t n)*\n   ((liftTermMAE9 j (t+1) (m-1):ℚ)*liftTermMAE9 j (t+1) (n+1)) ≤\n (2*(liftTermMAE9 j (t+1) (m-1):ℚ)*liftTermMAE9 j (t+1) (n+1)-\n    leftTermMAD5 j t (m-1)*liftTermMAE9 j (t+2) (n+1+1)-\n    liftTermMAE9 j (t+2) (m-1+1)*leftTermMAD5 j t (n+1))*\n   ((liftTermMAE9 j (t+1) m:ℚ)*liftTermMAE9 j (t+1) n)",
+        "theorem kernel_steps_of_rationalMAD5 (H : RationalPairStepMAD5) : KernelPairStepMAD5",
+        "theorem lower_horizontal_of_rationalMAD5 (H : RationalPairStepMAD5) : LowerHorizontalMFEE",
+        "theorem root_of_rational_and_remainingMAD5 (H : RationalPairStepMAD5)\n (ho : ThreeOutsideLowerMFEE) (h4 : OtherFourM9E2) : Conjecture63"
+      ],
+      "definitions": [
+        "def RationalPairStepMAD5 : Prop := ∀ j t m n : ℕ, 1 ≤ t → n+2 ≤ m → m ≤ j →\n pairAMAD5 j t (m-1)*pairBMAD5 j t (n+1)+pairAMAD5 j t (n+1)*pairBMAD5 j t (m-1) ≤\n pairAMAD5 j t m*pairBMAD5 j t n+pairAMAD5 j t n*pairBMAD5 j t m"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovClearingBridgeMAD5",
+      "path": "research/MarkovClearingBridgeMAD5.lean",
+      "bytes": 5312,
+      "characters": 5176,
+      "sha256": "27747edcdfab4e7d7e435790b37e3602d1f53591c5054b69006e6633f5840e4e",
+      "current_sha256": "27747edcdfab4e7d7e435790b37e3602d1f53591c5054b69006e6633f5840e4e",
+      "status": "Final source compiled, jointly replayed and all explicit theorem closures printed in164.",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pairAnMAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pairBnMAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pairAdMAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pairBdMAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pairProductNMAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pairProductDMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_product_ratioMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_product_den_posMAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pairNumeratorMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "four_fraction_signMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_numerator_iffMAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ParametricPairPositiveMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "rational_step_iff_polynomialMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_horizontal_of_polynomialMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_of_polynomial_and_remainingMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_horizontal_paths_of_polynomialMAD5"
+        }
+      ],
+      "object_path": "evidence/markov-ad504da6/MarkovClearingBridgeMAD5.olean",
+      "object_sha256": "ac8b8c8fca29a76df55727e01970ab9160dd6c8c48334d83bae83c98867291c0",
+      "successful_final_build": "build-1792193830163762000.json",
+      "successful_final_build_sha256": "36348c016adc0669eeac2ef8a5084a35d9b85ce9e6d6e5ec279610969a45714d",
+      "imports": [
+        "MarkovRationalBridgeMAD5"
+      ],
+      "theorem_statements": [
+        "theorem pair_product_ratioMAD5 (j t m n : ℚ) :\n pairAMAD5 j t m*pairBMAD5 j t n=pairProductNMAD5 j t m n/pairProductDMAD5 j t m n",
+        "theorem pair_product_den_posMAD5 (j t m n : ℚ) (ht : 0 ≤ t)\n (hm : 0 ≤ m) (hn : 0 ≤ n) (hmj : m ≤ j) (hnj : n ≤ j) :\n 0 < pairProductDMAD5 j t m n",
+        "theorem four_fraction_signMAD5 (a b c d e f g h : ℚ)\n (hb : 0 < b) (hd : 0 < d) (hf : 0 < f) (hh : 0 < h) :\n e/f+g/h ≤ a/b+c/d ↔ 0 ≤ a*d*f*h+c*b*f*h-e*b*d*h-g*b*d*f",
+        "theorem pair_numerator_iffMAD5 (j t m n : ℚ) (ht : 0 ≤ t)\n (hn : 0 ≤ n) (hnm : n+2 ≤ m) (hmj : m ≤ j) :\n (pairAMAD5 j t (m-1)*pairBMAD5 j t (n+1)+pairAMAD5 j t (n+1)*pairBMAD5 j t (m-1) ≤\n pairAMAD5 j t m*pairBMAD5 j t n+pairAMAD5 j t n*pairBMAD5 j t m) ↔\n 0 ≤ pairNumeratorMAD5 j t m n",
+        "theorem rational_step_iff_polynomialMAD5 : RationalPairStepMAD5 ↔ ParametricPairPositiveMAD5",
+        "theorem lower_horizontal_of_polynomialMAD5 (H : ParametricPairPositiveMAD5) : LowerHorizontalMFEE",
+        "theorem root_of_polynomial_and_remainingMAD5 (H : ParametricPairPositiveMAD5)\n (ho : ThreeOutsideLowerMFEE) (h4 : OtherFourM9E2) : Conjecture63",
+        "theorem lower_horizontal_paths_of_polynomialMAD5 (H : ParametricPairPositiveMAD5)\n (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1 ≤ q ∧ (frame path).mid.b=sourceNME9C q r ∧\n ∀ i j, j ≤ q → coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n   coeff (frame path).mid.p (i+1) j^2"
+      ],
+      "definitions": [
+        "def pairAnMAD5 (j t m : ℚ) : ℚ := m*liftDenMAE9 t m*(liftWeightMAE9 j t m-2)",
+        "def pairBnMAD5 (j t m : ℚ) : ℚ := (j-m)*liftDenMAE9 t m*(liftWeightMAE9 j t m+2)",
+        "def pairAdMAD5 (j t m : ℚ) : ℚ := (j-m+1)*(t+m+2)*(t+m+3)*liftWeightMAE9 j t m",
+        "def pairBdMAD5 (j t m : ℚ) : ℚ := (m+1)*(t+m+6)*(t+m+7)*liftWeightMAE9 j t m",
+        "def pairProductNMAD5 (j t m n : ℚ) : ℚ := pairAnMAD5 j t m*pairBnMAD5 j t n",
+        "def pairProductDMAD5 (j t m n : ℚ) : ℚ := pairAdMAD5 j t m*pairBdMAD5 j t n",
+        "def pairNumeratorMAD5 (j t m n : ℚ) : ℚ :=\n pairProductNMAD5 j t m n*pairProductDMAD5 j t n m*\n   pairProductDMAD5 j t (m-1) (n+1)*pairProductDMAD5 j t (n+1) (m-1)+\n pairProductNMAD5 j t n m*pairProductDMAD5 j t m n*\n   pairProductDMAD5 j t (m-1) (n+1)*pairProductDMAD5 j t (n+1) (m-1)-\n pairProductNMAD5 j t (m-1) (n+1)*pairProductDMAD5 j t m n*\n   pairProductDMAD5 j t n m*pairProductDMAD5 j t (n+1) (m-1)-\n pairProductNMAD5 j t (n+1) (m-1)*pairProductDMAD5 j t m n*\n   pairProductDMAD5 j t n m*pairProductDMAD5 j t (m-1) (n+1)",
+        "def ParametricPairPositiveMAD5 : Prop := ∀ T x g z : ℕ,\n 0 ≤ pairNumeratorMAD5 ((x:ℚ)+g+2+z) (T+1) (x+g+2) x"
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovFactorBridgeMAD5",
+      "path": "research/MarkovFactorBridgeMAD5.lean",
+      "bytes": 9967,
+      "characters": 9753,
+      "sha256": "6d4875f1c6b9917d8fcbfcfc651e9d1b4b73073e1c2e5a2d041960c0e93be550",
+      "current_sha256": "6d4875f1c6b9917d8fcbfcfc651e9d1b4b73073e1c2e5a2d041960c0e93be550",
+      "status": "Final source compiled, jointly replayed and all explicit theorem closures printed in164.",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pf0MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf1MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf2MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf3MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf4MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf5MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf6MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf7MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf8MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf9MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf10MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf11MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf12MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf13MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf14MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf15MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf16MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf17MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf18MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf19MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf20MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf21MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf22MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf23MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf24MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf25MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf26MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf27MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf28MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf29MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf30MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf31MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf32MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf33MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf34MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf35MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf36MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pf37MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pairReducedMAD5"
+        },
+        {
+          "kind": "def",
+          "name": "pairPrefactorMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "normAn0MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "normAn1MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "normAn2MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "normAn3MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "normBn0MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "normBn1MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "normBn2MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "normBn3MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "normAd0MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "normAd1MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "normAd2MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "normAd3MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "normBd0MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "normBd1MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "normBd2MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "normBd3MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_reduced_identityMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_prefactor_positiveMAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ReducedPairPositiveMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "reduced_pair_iff_polynomialMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_horizontal_of_reducedMAD5"
+        }
+      ],
+      "object_path": "evidence/markov-ad504da6/MarkovFactorBridgeMAD5.olean",
+      "object_sha256": "5b216637b5fe590948b00d448b82d15715a4273d44de11236102cf9fefd323fc",
+      "successful_final_build": "build-1792193934219511000.json",
+      "successful_final_build_sha256": "62b5b5c8951243ac278c084af1785b64e9df3d50411b89bb7e8135c4aebca155",
+      "imports": [
+        "MarkovClearingBridgeMAD5"
+      ],
+      "theorem_statements": [
+        "theorem normAn0MAD5 (T x g z : ℚ) : pairAnMAD5 (x+g+2+z) (T+1) (x+g+2)=pf0MAD5 T x g z*pf1MAD5 T x g z*pf2MAD5 T x g z*pf3MAD5 T x g z",
+        "theorem normAn1MAD5 (T x g z : ℚ) : pairAnMAD5 (x+g+2+z) (T+1) x=pf4MAD5 T x g z*pf5MAD5 T x g z*pf6MAD5 T x g z*pf7MAD5 T x g z",
+        "theorem normAn2MAD5 (T x g z : ℚ) : pairAnMAD5 (x+g+2+z) (T+1) (x+g+2-1)=pf8MAD5 T x g z*pf9MAD5 T x g z*pf1MAD5 T x g z*pf10MAD5 T x g z",
+        "theorem normAn3MAD5 (T x g z : ℚ) : pairAnMAD5 (x+g+2+z) (T+1) (x+1)=pf11MAD5 T x g z*pf6MAD5 T x g z*pf12MAD5 T x g z*pf13MAD5 T x g z",
+        "theorem normBn0MAD5 (T x g z : ℚ) : pairBnMAD5 (x+g+2+z) (T+1) (x+g+2)=pf14MAD5 T x g z*pf1MAD5 T x g z*pf2MAD5 T x g z*pf15MAD5 T x g z",
+        "theorem normBn1MAD5 (T x g z : ℚ) : pairBnMAD5 (x+g+2+z) (T+1) x=pf16MAD5 T x g z*pf5MAD5 T x g z*pf6MAD5 T x g z*pf17MAD5 T x g z",
+        "theorem normBn2MAD5 (T x g z : ℚ) : pairBnMAD5 (x+g+2+z) (T+1) (x+g+2-1)=pf18MAD5 T x g z*pf9MAD5 T x g z*pf1MAD5 T x g z*pf19MAD5 T x g z",
+        "theorem normBn3MAD5 (T x g z : ℚ) : pairBnMAD5 (x+g+2+z) (T+1) (x+1)=pf20MAD5 T x g z*pf6MAD5 T x g z*pf12MAD5 T x g z*pf21MAD5 T x g z",
+        "theorem normAd0MAD5 (T x g z : ℚ) : pairAdMAD5 (x+g+2+z) (T+1) (x+g+2)=pf18MAD5 T x g z*pf22MAD5 T x g z*pf9MAD5 T x g z*pf23MAD5 T x g z",
+        "theorem normAd1MAD5 (T x g z : ℚ) : pairAdMAD5 (x+g+2+z) (T+1) x=pf24MAD5 T x g z*pf25MAD5 T x g z*pf26MAD5 T x g z*pf27MAD5 T x g z",
+        "theorem normAd2MAD5 (T x g z : ℚ) : pairAdMAD5 (x+g+2+z) (T+1) (x+g+2-1)=pf28MAD5 T x g z*pf29MAD5 T x g z*pf22MAD5 T x g z*pf30MAD5 T x g z",
+        "theorem normAd3MAD5 (T x g z : ℚ) : pairAdMAD5 (x+g+2+z) (T+1) (x+1)=pf16MAD5 T x g z*pf26MAD5 T x g z*pf5MAD5 T x g z*pf31MAD5 T x g z",
+        "theorem normBd0MAD5 (T x g z : ℚ) : pairBdMAD5 (x+g+2+z) (T+1) (x+g+2)=pf32MAD5 T x g z*pf33MAD5 T x g z*pf34MAD5 T x g z*pf23MAD5 T x g z",
+        "theorem normBd1MAD5 (T x g z : ℚ) : pairBdMAD5 (x+g+2+z) (T+1) x=pf11MAD5 T x g z*pf12MAD5 T x g z*pf35MAD5 T x g z*pf27MAD5 T x g z",
+        "theorem normBd2MAD5 (T x g z : ℚ) : pairBdMAD5 (x+g+2+z) (T+1) (x+g+2-1)=pf0MAD5 T x g z*pf2MAD5 T x g z*pf33MAD5 T x g z*pf30MAD5 T x g z",
+        "theorem normBd3MAD5 (T x g z : ℚ) : pairBdMAD5 (x+g+2+z) (T+1) (x+1)=pf36MAD5 T x g z*pf35MAD5 T x g z*pf37MAD5 T x g z*pf31MAD5 T x g z",
+        "theorem pair_reduced_identityMAD5 (T x g z : ℚ) :\n pairNumeratorMAD5 (x+g+2+z) (T+1) (x+g+2) x=pairPrefactorMAD5 T x g z*pairReducedMAD5 T x g z",
+        "theorem pair_prefactor_positiveMAD5 (T x g z : ℚ) (hT : 0 ≤ T) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 < pairPrefactorMAD5 T x g z",
+        "theorem reduced_pair_iff_polynomialMAD5 : ReducedPairPositiveMAD5 ↔ ParametricPairPositiveMAD5",
+        "theorem lower_horizontal_of_reducedMAD5 (H : ReducedPairPositiveMAD5) : LowerHorizontalMFEE"
+      ],
+      "definitions": [
+        "def pf0MAD5 (T x g z : ℚ) : ℚ := (2+1*g+1*x)",
+        "def pf1MAD5 (T x g z : ℚ) : ℚ := (7+1*T+1*g+1*x)",
+        "def pf2MAD5 (T x g z : ℚ) : ℚ := (8+1*T+1*g+1*x)",
+        "def pf3MAD5 (T x g z : ℚ) : ℚ := (54+15*T+1*T^2+28*z+4*z*T+4*z^2+15*g+2*g*T+4*g*z+1*g^2+15*x+2*x*T+4*x*z+2*x*g+1*x^2)",
+        "def pf4MAD5 (T x g z : ℚ) : ℚ := (1*x)",
+        "def pf5MAD5 (T x g z : ℚ) : ℚ := (5+1*T+1*x)",
+        "def pf6MAD5 (T x g z : ℚ) : ℚ := (6+1*T+1*x)",
+        "def pf7MAD5 (T x g z : ℚ) : ℚ := (84+19*T+1*T^2+36*z+4*z*T+4*z^2+36*g+4*g*T+8*g*z+4*g^2+19*x+2*x*T+4*x*z+4*x*g+1*x^2)",
+        "def pf8MAD5 (T x g z : ℚ) : ℚ := (1+1*g+1*x)",
+        "def pf9MAD5 (T x g z : ℚ) : ℚ := (6+1*T+1*g+1*x)",
+        "def pf10MAD5 (T x g z : ℚ) : ℚ := (68+17*T+1*T^2+32*z+4*z*T+4*z^2+17*g+2*g*T+4*g*z+1*g^2+17*x+2*x*T+4*x*z+2*x*g+1*x^2)",
+        "def pf11MAD5 (T x g z : ℚ) : ℚ := (1+1*x)",
+        "def pf12MAD5 (T x g z : ℚ) : ℚ := (7+1*T+1*x)",
+        "def pf13MAD5 (T x g z : ℚ) : ℚ := (68+17*T+1*T^2+32*z+4*z*T+4*z^2+32*g+4*g*T+8*g*z+4*g^2+17*x+2*x*T+4*x*z+4*x*g+1*x^2)",
+        "def pf14MAD5 (T x g z : ℚ) : ℚ := (1*z)",
+        "def pf15MAD5 (T x g z : ℚ) : ℚ := (58+15*T+1*T^2+28*z+4*z*T+4*z^2+15*g+2*g*T+4*g*z+1*g^2+15*x+2*x*T+4*x*z+2*x*g+1*x^2)",
+        "def pf16MAD5 (T x g z : ℚ) : ℚ := (2+1*z+1*g)",
+        "def pf17MAD5 (T x g z : ℚ) : ℚ := (88+19*T+1*T^2+36*z+4*z*T+4*z^2+36*g+4*g*T+8*g*z+4*g^2+19*x+2*x*T+4*x*z+4*x*g+1*x^2)",
+        "def pf18MAD5 (T x g z : ℚ) : ℚ := (1+1*z)",
+        "def pf19MAD5 (T x g z : ℚ) : ℚ := (72+17*T+1*T^2+32*z+4*z*T+4*z^2+17*g+2*g*T+4*g*z+1*g^2+17*x+2*x*T+4*x*z+2*x*g+1*x^2)",
+        "def pf20MAD5 (T x g z : ℚ) : ℚ := (1+1*z+1*g)",
+        "def pf21MAD5 (T x g z : ℚ) : ℚ := (72+17*T+1*T^2+32*z+4*z*T+4*z^2+32*g+4*g*T+8*g*z+4*g^2+17*x+2*x*T+4*x*z+4*x*g+1*x^2)",
+        "def pf22MAD5 (T x g z : ℚ) : ℚ := (5+1*T+1*g+1*x)",
+        "def pf23MAD5 (T x g z : ℚ) : ℚ := (56+15*T+1*T^2+28*z+4*z*T+4*z^2+15*g+2*g*T+4*g*z+1*g^2+15*x+2*x*T+4*x*z+2*x*g+1*x^2)",
+        "def pf24MAD5 (T x g z : ℚ) : ℚ := (3+1*z+1*g)",
+        "def pf25MAD5 (T x g z : ℚ) : ℚ := (3+1*T+1*x)",
+        "def pf26MAD5 (T x g z : ℚ) : ℚ := (4+1*T+1*x)",
+        "def pf27MAD5 (T x g z : ℚ) : ℚ := (86+19*T+1*T^2+36*z+4*z*T+4*z^2+36*g+4*g*T+8*g*z+4*g^2+19*x+2*x*T+4*x*z+4*x*g+1*x^2)",
+        "def pf28MAD5 (T x g z : ℚ) : ℚ := (2+1*z)",
+        "def pf29MAD5 (T x g z : ℚ) : ℚ := (4+1*T+1*g+1*x)",
+        "def pf30MAD5 (T x g z : ℚ) : ℚ := (70+17*T+1*T^2+32*z+4*z*T+4*z^2+17*g+2*g*T+4*g*z+1*g^2+17*x+2*x*T+4*x*z+2*x*g+1*x^2)",
+        "def pf31MAD5 (T x g z : ℚ) : ℚ := (70+17*T+1*T^2+32*z+4*z*T+4*z^2+32*g+4*g*T+8*g*z+4*g^2+17*x+2*x*T+4*x*z+4*x*g+1*x^2)",
+        "def pf32MAD5 (T x g z : ℚ) : ℚ := (3+1*g+1*x)",
+        "def pf33MAD5 (T x g z : ℚ) : ℚ := (9+1*T+1*g+1*x)",
+        "def pf34MAD5 (T x g z : ℚ) : ℚ := (10+1*T+1*g+1*x)",
+        "def pf35MAD5 (T x g z : ℚ) : ℚ := (8+1*T+1*x)",
+        "def pf36MAD5 (T x g z : ℚ) : ℚ := (2+1*x)",
+        "def pf37MAD5 (T x g z : ℚ) : ℚ := (9+1*T+1*x)",
+        "def pairReducedMAD5 (T x g z : ℚ) : ℚ :=\n (pf0MAD5 T x g z*pf2MAD5 T x g z*pf3MAD5 T x g z*pf16MAD5 T x g z*pf5MAD5 T x g z*pf17MAD5 T x g z*pf32MAD5 T x g z*pf34MAD5 T x g z*pf24MAD5 T x g z*pf25MAD5 T x g z*pf28MAD5 T x g z*pf29MAD5 T x g z*pf0MAD5 T x g z*pf2MAD5 T x g z*pf33MAD5 T x g z*pf30MAD5 T x g z*pf16MAD5 T x g z*pf26MAD5 T x g z*pf5MAD5 T x g z*pf36MAD5 T x g z*pf37MAD5 T x g z*pf31MAD5 T x g z)+(pf4MAD5 T x g z*pf5MAD5 T x g z*pf7MAD5 T x g z*pf14MAD5 T x g z*pf2MAD5 T x g z*pf15MAD5 T x g z*pf18MAD5 T x g z*pf9MAD5 T x g z*pf11MAD5 T x g z*pf12MAD5 T x g z*pf28MAD5 T x g z*pf29MAD5 T x g z*pf22MAD5 T x g z*pf0MAD5 T x g z*pf2MAD5 T x g z*pf30MAD5 T x g z*pf16MAD5 T x g z*pf5MAD5 T x g z*pf36MAD5 T x g z*pf35MAD5 T x g z*pf37MAD5 T x g z*pf31MAD5 T x g z)-(pf8MAD5 T x g z*pf9MAD5 T x g z*pf10MAD5 T x g z*pf20MAD5 T x g z*pf12MAD5 T x g z*pf21MAD5 T x g z*pf18MAD5 T x g z*pf9MAD5 T x g z*pf32MAD5 T x g z*pf34MAD5 T x g z*pf23MAD5 T x g z*pf24MAD5 T x g z*pf25MAD5 T x g z*pf11MAD5 T x g z*pf12MAD5 T x g z*pf27MAD5 T x g z*pf0MAD5 T x g z*pf2MAD5 T x g z*pf33MAD5 T x g z*pf16MAD5 T x g z*pf26MAD5 T x g z*pf5MAD5 T x g z)-(pf11MAD5 T x g z*pf12MAD5 T x g z*pf13MAD5 T x g z*pf18MAD5 T x g z*pf9MAD5 T x g z*pf19MAD5 T x g z*pf18MAD5 T x g z*pf9MAD5 T x g z*pf32MAD5 T x g z*pf34MAD5 T x g z*pf23MAD5 T x g z*pf24MAD5 T x g z*pf25MAD5 T x g z*pf11MAD5 T x g z*pf12MAD5 T x g z*pf27MAD5 T x g z*pf28MAD5 T x g z*pf29MAD5 T x g z*pf22MAD5 T x g z*pf36MAD5 T x g z*pf35MAD5 T x g z*pf37MAD5 T x g z)",
+        "def pairPrefactorMAD5 (T x g z : ℚ) : ℚ := pf1MAD5 T x g z*pf6MAD5 T x g z*pf33MAD5 T x g z*pf26MAD5 T x g z*pf22MAD5 T x g z*pf35MAD5 T x g z*pf23MAD5 T x g z*pf27MAD5 T x g z*pf30MAD5 T x g z*pf31MAD5 T x g z",
+        "def ReducedPairPositiveMAD5 : Prop := ∀ T x g z : ℕ, 0 ≤ pairReducedMAD5 T x g z"
+      ],
+      "forbidden_tokens": []
+    }
+  ],
+  "excluded_modules": [
+    {
+      "module": "MarkovPairClearedMAD5",
+      "path": "research/MarkovPairClearedMAD5.lean",
+      "bytes": 5735,
+      "characters": 5717,
+      "sha256": "0a034beb6d798e4e359f5b20c52daa63141dd92b7b0e5d57603ee12ddabf9837",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pairClearedMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_cleared_expansionMAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pair_cleared_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pair_cleared_expansionMAD5 (T x g z : ℚ) : pairClearedMAD5 T x g z =\n pc0MAD5 g z T*x^0+pc1MAD5 g z T*x^1+pc2MAD5 g z T*x^2+pc3MAD5 g z T*x^3+pc4MAD5 g z T*x^4+pc5MAD5 g z T*x^5+pc6MAD5 g z T*x^6+pc7MAD5 g z T*x^7+pc8MAD5 g z T*x^8+pc9MAD5 g z T*x^9+pc10MAD5 g z T*x^10+pc11MAD5 g z T*x^11+pc12MAD5 g z T*x^12+pc13MAD5 g z T*x^13+pc14MAD5 g z T*x^14+pc15MAD5 g z T*x^15+pc16MAD5 g z T*x^16+pc17MAD5 g z T*x^17+pc18MAD5 g z T*x^18+pc19MAD5 g z T*x^19+pc20MAD5 g z T*x^20+pc21MAD5 g z T*x^21+pc22MAD5 g z T*x^22",
+        "theorem pair_cleared_nonnegMAD5 (T x g z : ℚ) (hT : 0 ≤ T) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 ≤ pairClearedMAD5 T x g z"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "9fc9e623188a6f6dce08811dec1ed1b854c05b058bfd2f0e9e7c3e90a7aa64f0"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairClearedMAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairCoeff0MAD5",
+        "MarkovPairCoeff1MAD5",
+        "MarkovPairCoeff2MAD5",
+        "MarkovPairCoeff3MAD5",
+        "MarkovPairCoeff4MAD5",
+        "MarkovPairCoeff5MAD5",
+        "MarkovPairCoeff6MAD5",
+        "MarkovPairCoeff7MAD5",
+        "MarkovPairCoeff8MAD5",
+        "MarkovPairCoeff9MAD5",
+        "MarkovPairCoeff10MAD5",
+        "MarkovPairCoeff11MAD5",
+        "MarkovPairCoeff12MAD5",
+        "MarkovPairCoeff13MAD5",
+        "MarkovPairCoeff14MAD5",
+        "MarkovPairCoeff15MAD5",
+        "MarkovPairCoeff16MAD5",
+        "MarkovPairCoeff17MAD5",
+        "MarkovPairCoeff18MAD5",
+        "MarkovPairCoeff19MAD5",
+        "MarkovPairCoeff20MAD5",
+        "MarkovPairCoeff21MAD5",
+        "MarkovPairCoeff22MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff0MAD5",
+      "path": "research/MarkovPairCoeff0MAD5.lean",
+      "bytes": 44393,
+      "characters": 44379,
+      "sha256": "adc6889b3ea722ce3c2d3743fa128abbd9de44972bde2eaeb80a3546b9212fc7",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc0MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc0_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc0_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc0MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "47e3fd38acb0cc6930651f06929f9f67a249439a970e8c816a850afe2206151b"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff0MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff10MAD5",
+      "path": "research/MarkovPairCoeff10MAD5.lean",
+      "bytes": 16985,
+      "characters": 16971,
+      "sha256": "a745d24cbe157c8e50d87492ac8da44cc06feb906c149d5452885d573a6743bc",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc10MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc10_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc10_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc10MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "89c1d2945fbd23cef19ee002f15b9292e93b9a8db42c73eec5b5aaf2d6803aed"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff10MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff11MAD5",
+      "path": "research/MarkovPairCoeff11MAD5.lean",
+      "bytes": 14409,
+      "characters": 14395,
+      "sha256": "99c7502437405becf40b6442dfde31dd8061c7b30cbb853f8afb3f5f22868553",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc11MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc11_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc11_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc11MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "b1936874538b40fdb4a0e6d5314a526251ff64132899014c6a662dcf5dfd35e3"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff11MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff12MAD5",
+      "path": "research/MarkovPairCoeff12MAD5.lean",
+      "bytes": 12124,
+      "characters": 12110,
+      "sha256": "61be0bbb1078de3e88e91afee085c698c3676c2af15ed1a39bee583c62267b2a",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc12MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc12_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc12_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc12MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "d97874d2af0be9c53e59b11c7fec0b698fc508dc82de45d2b9d97d16d573cf88"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff12MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff13MAD5",
+      "path": "research/MarkovPairCoeff13MAD5.lean",
+      "bytes": 9937,
+      "characters": 9923,
+      "sha256": "62ba0de2effd9f050fe5fce48f9d0d87b93d57cdabca496de1170c7042e82df3",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc13MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc13_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc13_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc13MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "c65cdb3a378b131654f863628a5237b2008c317047ed05798f66d46f803ac701"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff13MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff14MAD5",
+      "path": "research/MarkovPairCoeff14MAD5.lean",
+      "bytes": 8053,
+      "characters": 8039,
+      "sha256": "f7242306c57e44e1de11c3cf06cc4c53fb255b42bc66242fb0e5d9f566df7577",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc14MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc14_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc14_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc14MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "8ef6fd5d28f0ac1fb8d7bf70f45d22ef2b1ad0c83a6c6fff1d4c3d2b43c4c8f0"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff14MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff15MAD5",
+      "path": "research/MarkovPairCoeff15MAD5.lean",
+      "bytes": 6449,
+      "characters": 6435,
+      "sha256": "73d7abbd03ec0293071b4bd31a8e8b098a87ccc2aee77efd70f3a12aa76fa278",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc15MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc15_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc15_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc15MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "0a7f5b9274a34ba1d29bd10d76bb2fce116ae062af57bec58f7c7761709e3f1e"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff15MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff16MAD5",
+      "path": "research/MarkovPairCoeff16MAD5.lean",
+      "bytes": 5102,
+      "characters": 5088,
+      "sha256": "d35217497ae0062538d97093f36c8e91907ed26fc1cd7e5fb4b8721d66574d49",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc16MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc16_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc16_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc16MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "524bc63aae122a98cfbdc917bdcd5d338bcc3c610f0d6d79e50f0fe1eb0ae802"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff16MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff17MAD5",
+      "path": "research/MarkovPairCoeff17MAD5.lean",
+      "bytes": 4000,
+      "characters": 3986,
+      "sha256": "118b2f481b0ae0f55ca6f8a42c33837d93dbef27a5022bff292e9c9b3b36b80b",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc17MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc17_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc17_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc17MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "0eab215923ff6c12523a4cd108e7bb17c9d19e13dfec3d5d3ee08317ae9ee885"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff17MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff18MAD5",
+      "path": "research/MarkovPairCoeff18MAD5.lean",
+      "bytes": 3109,
+      "characters": 3095,
+      "sha256": "26e5ba8bc7064682202bd326e7167ce00eb9ca725d07a563438f4aea6821443f",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc18MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc18_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc18_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc18MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "3c4aeb2e4b0ad72141cea7d7e72576a72b240a1f824560fb521cc8d880cf56ea"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff18MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff19MAD5",
+      "path": "research/MarkovPairCoeff19MAD5.lean",
+      "bytes": 2390,
+      "characters": 2376,
+      "sha256": "f82876236f894fe2a492e8e71fa1931858ddb6d0144c57d4bfbc9b98df9eb89b",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc19MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc19_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc19_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc19MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "6990b2ef5cf4e2ccfc139d387c0fe97caf90bfc5ad68d776a1c07cd877406c67"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff19MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff1MAD5",
+      "path": "research/MarkovPairCoeff1MAD5.lean",
+      "bytes": 43631,
+      "characters": 43617,
+      "sha256": "51dc90ac4305f72093268c96528b22e1ec4103e4b750bf63993f8dd54f8a0213",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc1MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc1_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc1_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc1MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "65bd5aac30561a91eac114aa314651fcd39a83e5906f913c97c9ec80273e55e9"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff1MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff20MAD5",
+      "path": "research/MarkovPairCoeff20MAD5.lean",
+      "bytes": 1830,
+      "characters": 1816,
+      "sha256": "dfb4371b260c19ea3a75d44365a4522a85c89a83ab4e848bce338885fedbd2cd",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc20MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc20_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc20_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc20MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "e20b9ba83a23a335a2478284bae2b90aeafc9e4c881484512cdc801f5418000a"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff20MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff21MAD5",
+      "path": "research/MarkovPairCoeff21MAD5.lean",
+      "bytes": 1373,
+      "characters": 1359,
+      "sha256": "f3561046ae7f02d8d239109cafda776125806f514a810c934d3c8c1ab55bb198",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc21MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc21_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc21_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc21MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "c6a7a6298862f5a8fcff1a8d788ed7c4a3977f5a71932b0f171e4427838c1afe"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff21MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff22MAD5",
+      "path": "research/MarkovPairCoeff22MAD5.lean",
+      "bytes": 1017,
+      "characters": 1003,
+      "sha256": "45b1a84babfe853747e75d7df2ab71b3104719bef91ee38496755ba0842d3dc8",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc22MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc22_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc22_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc22MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "96afa40d720b5bf040a3270481f1a1b20ee6b519cb6cb219ed1c2d2474ce0b0c"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff22MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff2MAD5",
+      "path": "research/MarkovPairCoeff2MAD5.lean",
+      "bytes": 41638,
+      "characters": 41624,
+      "sha256": "87ee903b43098ea10368a269beaa13ca71349b1d358d797590dc85c0fd537633",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc2MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc2_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc2_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc2MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "dcad23ffb7a98f88a6169113365e69e8de83ae0f2c92562758ac085dff9ff8eb"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff2MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff3MAD5",
+      "path": "research/MarkovPairCoeff3MAD5.lean",
+      "bytes": 38894,
+      "characters": 38880,
+      "sha256": "b59518ccadcf55f38f39a893cfe864fb27357444cb0b5f93e43cf70125051e08",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc3MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc3_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc3_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc3MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "1799132f2286c63d8fda8d7892123747b86fe87fff971e3d0ed47a486533de16"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff3MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff4MAD5",
+      "path": "research/MarkovPairCoeff4MAD5.lean",
+      "bytes": 35775,
+      "characters": 35761,
+      "sha256": "f982e54312126f1fd749945ad7b5457247390330dc75610e61e6f2b84fb93d2e",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc4MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc4_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc4_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc4MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "8cf90c4ec555c7a7cf602c3719efb2aa240cb9ab53a0b3f292f081ba2b0a6b90"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff4MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff5MAD5",
+      "path": "research/MarkovPairCoeff5MAD5.lean",
+      "bytes": 32409,
+      "characters": 32395,
+      "sha256": "78efa82cc0bec43d23938b38c03555a13e4ffd87e00958d2bcb361a8fdc0365b",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc5MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc5_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc5_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc5MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "34fc4237ae6f6d4a80687c9f906b7319f950228c1b0165513405a66b17185164"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff5MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff6MAD5",
+      "path": "research/MarkovPairCoeff6MAD5.lean",
+      "bytes": 28961,
+      "characters": 28947,
+      "sha256": "26280d7b59b3086cf6bf488580eae9cc8e17372744e6a760e22e72f59597e1a1",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc6MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc6_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc6_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc6MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "cf93887f2a37ec472a0c8beb28c3a7cac65002589f52c7743fa203452acf395b"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff6MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff7MAD5",
+      "path": "research/MarkovPairCoeff7MAD5.lean",
+      "bytes": 25671,
+      "characters": 25657,
+      "sha256": "9a99245e2346a70eacf9aec61d01b4b843e3dc8219366b86e0f09032256efd0a",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc7MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc7_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc7_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc7MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "9ec7fb07158631cc8c937639378a2efb9bc2cee52de4250df48e5969078cee96"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff7MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff8MAD5",
+      "path": "research/MarkovPairCoeff8MAD5.lean",
+      "bytes": 22504,
+      "characters": 22490,
+      "sha256": "2db18ddeec8479a038adfa95cbfd1773706c73870e9231f7c18cea620342f97b",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc8MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc8_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc8_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc8MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "bab0ba898c34b50a08cdd8736f11da927ae7f95091dd45c6db24ec1ccecac36d"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff8MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairCoeff9MAD5",
+      "path": "research/MarkovPairCoeff9MAD5.lean",
+      "bytes": 19602,
+      "characters": 19588,
+      "sha256": "4e5aa5e5a84467acdff0ceb3c888ea72b6f5e57d36b9c806c2e58f7249aeb0e6",
+      "status": "unattempted_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "pc9MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "pc9_nonnegMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem pc9_nonnegMAD5 (g z T : ℚ) (hg : 0 ≤ g) (hz : 0 ≤ z) (hT : 0 ≤ T) :\n 0 ≤ pc9MAD5 g z T"
+      ],
+      "definition_count": 1,
+      "definition_sha256": [
+        "8bda82c94834c6d26bff89a72c1a18b067dc90173da84ed6951776ccc99eeb10"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [],
+      "object_path": "evidence/markov-ad504da6/MarkovPairCoeff9MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MarkovPairHalf00MAD5",
+        "MarkovPairHalf01MAD5",
+        "MarkovPairHalf10MAD5",
+        "MarkovPairHalf11MAD5",
+        "MarkovPairHalf20MAD5",
+        "MarkovPairHalf21MAD5",
+        "MarkovPairHalf30MAD5",
+        "MarkovPairHalf31MAD5"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairHalf00MAD5",
+      "path": "research/MarkovPairHalf00MAD5.lean",
+      "bytes": 22637,
+      "characters": 22591,
+      "sha256": "c2e3d4c79eb3f6184a5f030e30bbb5350636358d49950db2aba9e91cd4507953",
+      "status": "compiled_only_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "ph00c0MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph00c1MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph00c2MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph00c3MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph00c4MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph00c5MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph00c6MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph00c7MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph00c8MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph00c9MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph00c10MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "ph00_expandMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem ph00_expandMAD5 (x g z T : ℚ) :\n ((((2+g*1)+x*1))*((((8+T*1)+g*1)+x*1))*(((((54+T*(15+T*1))+z*((28+T*4)+z*4))+g*(((15+T*2)+z*4)+g*1))+x*((((15+T*2)+z*4)+g*2)+x*1)))*(((2+z*1)+g*1))*(((5+T*1)+x*1))*(((((88+T*(19+T*1))+z*((36+T*4)+z*4))+g*(((36+T*4)+z*8)+g*4))+x*((((19+T*2)+z*4)+g*4)+x*1)))*(((3+g*1)+x*1))*((((10+T*1)+g*1)+x*1))*(((3+z*1)+g*1))*(((3+T*1)+x*1))*((2+z*1)))=(ph00c0MAD5 g z T*x^0+ph00c1MAD5 g z T*x^1+ph00c2MAD5 g z T*x^2+ph00c3MAD5 g z T*x^3+ph00c4MAD5 g z T*x^4+ph00c5MAD5 g z T*x^5+ph00c6MAD5 g z T*x^6+ph00c7MAD5 g z T*x^7+ph00c8MAD5 g z T*x^8+ph00c9MAD5 g z T*x^9+ph00c10MAD5 g z T*x^10)"
+      ],
+      "definition_count": 11,
+      "definition_sha256": [
+        "545561599d48dd778b4c234496019e780a35fcd8d1ca79c16fa3e983f63805a1",
+        "76fc50fbbdd4447c8748cb744d76795051c2a9259882160bcb15e1ad3704b34e",
+        "aa74ba36d59e22481ac2a1015f381c592cc65e43774ea5cc1418bbc76aadff66",
+        "3af5f72dc482afcdcac5aef082f5fc74b1f232f551879f59df6d050c360f1b66",
+        "6c28fe96ee22608b0fae074d6acf6ffdc62ab6d9b228ef60375852963f61ddf6",
+        "b89e57482207c48faa5c690968748d3caf49aed0a262d1313f4c2f26b3ded110",
+        "787d0e23c596d747a490a6b2695237168dceb86e6e8a435b3a7e0c7694b78638",
+        "91e6b9393b54b99047321f0405612906824bfd38ac37aa86c4e0864cef79dba4",
+        "413fc1cd1c3480ac873f0110c47e3629888ed541d9c4a8f209561e685ea375a3",
+        "47ad804a65e9bf80653f41beffeccf8d5a4c3b2e73a6aa9d6db6c237eebf56e2",
+        "f12623c91aead96d4d6c5c4139bd21239670fd25533e040347c5bd399089ddcc"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [
+        {
+          "path": "build-1792192918764654000.json",
+          "sha256": "26d8e5e3edfe94f29f6700ca6a26754f4cb6af44d5c3c999dce41f45a7d42fee",
+          "returncode": 0,
+          "returncode_field_present": true,
+          "timeout": false
+        }
+      ],
+      "object_path": "evidence/markov-ad504da6/MarkovPairHalf00MAD5.olean",
+      "object_sha256": "2558c8f6224c9c819e19c78565511ac38f0e6154f308c235bfeaaf9ec5d34173",
+      "archive_object_present": true,
+      "current_object_present_at_initial_observation": true,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MathGKM.Markov"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairHalf01MAD5",
+      "path": "research/MarkovPairHalf01MAD5.lean",
+      "bytes": 22241,
+      "characters": 22187,
+      "sha256": "d1ec266dc2978cba2808afcbc24f4cb02e5af2dd14a8d29517f1d455b697b1db",
+      "status": "compiled_only_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "ph01c0MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph01c1MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph01c2MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph01c3MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph01c4MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph01c5MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph01c6MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph01c7MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph01c8MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph01c9MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph01c10MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph01c11MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph01c12MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "ph01_expandMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem ph01_expandMAD5 (x g z T : ℚ) :\n (((((4+T*1)+g*1)+x*1))*(((2+g*1)+x*1))*((((8+T*1)+g*1)+x*1))*((((9+T*1)+g*1)+x*1))*(((((70+T*(17+T*1))+z*((32+T*4)+z*4))+g*(((17+T*2)+z*4)+g*1))+x*((((17+T*2)+z*4)+g*2)+x*1)))*(((2+z*1)+g*1))*(((4+T*1)+x*1))*(((5+T*1)+x*1))*((2+x*1))*(((9+T*1)+x*1))*(((((70+T*(17+T*1))+z*((32+T*4)+z*4))+g*(((32+T*4)+z*8)+g*4))+x*((((17+T*2)+z*4)+g*4)+x*1))))=(ph01c0MAD5 g z T*x^0+ph01c1MAD5 g z T*x^1+ph01c2MAD5 g z T*x^2+ph01c3MAD5 g z T*x^3+ph01c4MAD5 g z T*x^4+ph01c5MAD5 g z T*x^5+ph01c6MAD5 g z T*x^6+ph01c7MAD5 g z T*x^7+ph01c8MAD5 g z T*x^8+ph01c9MAD5 g z T*x^9+ph01c10MAD5 g z T*x^10+ph01c11MAD5 g z T*x^11+ph01c12MAD5 g z T*x^12)"
+      ],
+      "definition_count": 13,
+      "definition_sha256": [
+        "18a88fa7a241117f3a89997888db46c063f1f8ef0008099777e5ffdbabda2109",
+        "2b379070ef04dab2a7f51d6fac9548431d370541c0e5e8162d6375d5c1f04088",
+        "6bb2047eb3bc4589f91d51b7ba3b899abb8f2792e28a8a3d3ec8751855ebb012",
+        "ab1e256edb1e770982c18087cbc4c9c30c4c1677f08717a0317ce2a9202e9cd7",
+        "53be957e17ecbbd5edbcb95d27791413edc3b521732d9c40c09c87c1375057bb",
+        "89cbe82aaf2f3b55f855c2cdeb468389d5244ce5251cf83a4315ffebc72df974",
+        "680bb01583c7ae3cb87af662f570e2d6746bf961bc8f256c054b3b746a2a41b0",
+        "768a7df59f55da84e0c20cb71960d6925348903c3174a92cf1f468e33b749b35",
+        "0e86f189e6b6bc34e53bed3d15b3c23554ffca0f9e89dbf781af2e448470c532",
+        "11ab6625e7ffa1415099b50a114f5861a28d05c03a3ed97001f684fa03f786a6",
+        "b7379bebfdff2dfc5fdea3c5d82010b89ab8ccd8ebde6ec2e0f338ac65b8eb85",
+        "41082a970e99d3d8e968cd44de2b9557ba77ae176b30cea775fdaf1285e32470",
+        "4a20fd089aa9fbb0e319accc342fbbdcc29d665b35471b2bef2b1dc79cf7da2d"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [
+        {
+          "path": "build-1792193025988555000.json",
+          "sha256": "3d7b73457c8c61f18a097067483239084bb757da7976115d2e8ced08f1afaee0",
+          "returncode": 0,
+          "returncode_field_present": true,
+          "timeout": false
+        }
+      ],
+      "object_path": "evidence/markov-ad504da6/MarkovPairHalf01MAD5.olean",
+      "object_sha256": "d90e40e0fb107c4b098ae49fd184dc532ca171a277e18e3b135aff07671f8ce1",
+      "archive_object_present": true,
+      "current_object_present_at_initial_observation": true,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MathGKM.Markov"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairHalf10MAD5",
+      "path": "research/MarkovPairHalf10MAD5.lean",
+      "bytes": 11151,
+      "characters": 11105,
+      "sha256": "1fce606fa877b2f76eaebedda09aa33d3cd4b409517f8ffec10ef91b735beec2",
+      "status": "compiled_only_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "ph10c0MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph10c1MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph10c2MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph10c3MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph10c4MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph10c5MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph10c6MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph10c7MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph10c8MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph10c9MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph10c10MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "ph10_expandMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem ph10_expandMAD5 (x g z T : ℚ) :\n (((0+x*1))*(((5+T*1)+x*1))*(((((84+T*(19+T*1))+z*((36+T*4)+z*4))+g*(((36+T*4)+z*8)+g*4))+x*((((19+T*2)+z*4)+g*4)+x*1)))*((0+z*1))*((((8+T*1)+g*1)+x*1))*(((((58+T*(15+T*1))+z*((28+T*4)+z*4))+g*(((15+T*2)+z*4)+g*1))+x*((((15+T*2)+z*4)+g*2)+x*1)))*((1+z*1))*((((6+T*1)+g*1)+x*1))*((1+x*1))*(((7+T*1)+x*1))*((2+z*1)))=(ph10c0MAD5 g z T*x^0+ph10c1MAD5 g z T*x^1+ph10c2MAD5 g z T*x^2+ph10c3MAD5 g z T*x^3+ph10c4MAD5 g z T*x^4+ph10c5MAD5 g z T*x^5+ph10c6MAD5 g z T*x^6+ph10c7MAD5 g z T*x^7+ph10c8MAD5 g z T*x^8+ph10c9MAD5 g z T*x^9+ph10c10MAD5 g z T*x^10)"
+      ],
+      "definition_count": 11,
+      "definition_sha256": [
+        "86c948901bd33ac1c888f7180e806140304352d72f052d63f7afd1904b29dd1f",
+        "952f76a5eff77e57d88537aacda463dbd7db3eab1d11fa5dd9448220701bfcb1",
+        "e757997a4f11f1bfe15a1bf31932388dcd559f8e8f531f4f68b434ea9260c643",
+        "776ecad7b0618c7aa15ee097549175a2d4f65da819e4a9750bcad61936679340",
+        "2f12fcc8f5d8d5762b345b6ced4dd58077cf8d0ad1d707f3134a4ec40b95e029",
+        "01fe5e15ff738ba220445f45d99a93dd183529e1c1febea5f96444379b14e8d6",
+        "ec178c4b64cc954cf5fe83eb65f1c34a19ad02d8bc3fefbb392e19821d9af54f",
+        "72413287a8960bbbf4b898c5abef328130aa3c12f3356d5147afb6a9ece36fc2",
+        "1c11698172f88418a468cb30bd142096e56287419ea43e02d413ebdc95ebcc0f",
+        "f486170fbede7b28ec01badd0699834ad93f35bf8d94e2a1ee84a396270dca19",
+        "7e7db8d726657403fe83eaab01c89c8e56741fd060a5932774a4f56bf48691e2"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [
+        {
+          "path": "build-1792193155133967000.json",
+          "sha256": "6514360b740de0a95a82ef217632107a181cb3e3c9198d145ae06fa1b76aa15a",
+          "returncode": 0,
+          "returncode_field_present": true,
+          "timeout": false
+        }
+      ],
+      "object_path": "evidence/markov-ad504da6/MarkovPairHalf10MAD5.olean",
+      "object_sha256": "dab4e841399e7dbbc0bb01e812d653c467b4614b74b749235c2c14713b9a03ff",
+      "archive_object_present": true,
+      "current_object_present_at_initial_observation": true,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MathGKM.Markov"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairHalf11MAD5",
+      "path": "research/MarkovPairHalf11MAD5.lean",
+      "bytes": 22303,
+      "characters": 22249,
+      "sha256": "a096218be1d6c998d95b82b52d692dfd4c00aec2e74099b11ee3c79a4b466239",
+      "status": "compiled_only_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "ph11c0MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph11c1MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph11c2MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph11c3MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph11c4MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph11c5MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph11c6MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph11c7MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph11c8MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph11c9MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph11c10MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph11c11MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph11c12MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "ph11_expandMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem ph11_expandMAD5 (x g z T : ℚ) :\n (((((4+T*1)+g*1)+x*1))*((((5+T*1)+g*1)+x*1))*(((2+g*1)+x*1))*((((8+T*1)+g*1)+x*1))*(((((70+T*(17+T*1))+z*((32+T*4)+z*4))+g*(((17+T*2)+z*4)+g*1))+x*((((17+T*2)+z*4)+g*2)+x*1)))*(((2+z*1)+g*1))*(((5+T*1)+x*1))*((2+x*1))*(((8+T*1)+x*1))*(((9+T*1)+x*1))*(((((70+T*(17+T*1))+z*((32+T*4)+z*4))+g*(((32+T*4)+z*8)+g*4))+x*((((17+T*2)+z*4)+g*4)+x*1))))=(ph11c0MAD5 g z T*x^0+ph11c1MAD5 g z T*x^1+ph11c2MAD5 g z T*x^2+ph11c3MAD5 g z T*x^3+ph11c4MAD5 g z T*x^4+ph11c5MAD5 g z T*x^5+ph11c6MAD5 g z T*x^6+ph11c7MAD5 g z T*x^7+ph11c8MAD5 g z T*x^8+ph11c9MAD5 g z T*x^9+ph11c10MAD5 g z T*x^10+ph11c11MAD5 g z T*x^11+ph11c12MAD5 g z T*x^12)"
+      ],
+      "definition_count": 13,
+      "definition_sha256": [
+        "5fe35eca96af902af375de67962a239132c8937588903c92e4ebae0bbd2450a9",
+        "c57e831d9d078b3ab3a88785c0b10637e881d45db3c912b3869fce1ea3642748",
+        "5f8bb6a2a8ce32fe62e42a8e52ef2961ea8d4978ef9691d58121227879b03e90",
+        "cd398eb19efedbba19fa55420713bbc18b4f9ff67c84ef200959e0772a488de6",
+        "9147b94b22a8f514e7bd7111effe85a1cff0cb5d07f51d7b66fb8c6710f70954",
+        "fd71161c0acbeee31bdcc3896469878e252979c3830e1ac4e430dd69d78c878e",
+        "6f4b900c6531459e6e94e298ad7fb76278c9fc64f7f04f5c780a14066ec096af",
+        "953b697f5f30b8da8fc1eb981eddb1a2cd54f612a7e91895cb0dac13905748ea",
+        "e730f28bec72d942aa9a3e15927a839fb705ce3dae3cd816a391a304d7ca67f8",
+        "258e868f2e7a11075285e25feb926f1047eb5ace198674fff9dc98adc8a5867a",
+        "cf521ff87d59122f34172ccf0c5b386bb2a51d1dbd67ec6342657dab0dc3c867",
+        "a96152839452b2a2507fa397bb40953e2091997bd9074236988cc39619f19955",
+        "1dc830d6a942af9a5a259ba456bff2d61327317072c94ed83be4d6a89ddbe1e9"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [
+        {
+          "path": "build-1792193188311527000.json",
+          "sha256": "2abcfd8a1b808e6e39d394c3ec5aee501787218dca8d4eb790aff34a57e9fbf3",
+          "returncode": 0,
+          "returncode_field_present": true,
+          "timeout": false
+        }
+      ],
+      "object_path": "evidence/markov-ad504da6/MarkovPairHalf11MAD5.olean",
+      "object_sha256": "157ed4e268ee5350393920a5d888285bc2f9e00fbaa19f4b137a182e205b0b17",
+      "archive_object_present": true,
+      "current_object_present_at_initial_observation": true,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MathGKM.Markov"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairHalf20MAD5",
+      "path": "research/MarkovPairHalf20MAD5.lean",
+      "bytes": 33687,
+      "characters": 33633,
+      "sha256": "ecf121b91ca87a9decdfade0f7e12fffc3435e1adc4ce4a24f5acc2a040894a6",
+      "status": "timed_out_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "ph20c0MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph20c1MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph20c2MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph20c3MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph20c4MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph20c5MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph20c6MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph20c7MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph20c8MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph20c9MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph20c10MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph20c11MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph20c12MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "ph20_expandMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem ph20_expandMAD5 (x g z T : ℚ) :\n ((((1+g*1)+x*1))*((((6+T*1)+g*1)+x*1))*(((((68+T*(17+T*1))+z*((32+T*4)+z*4))+g*(((17+T*2)+z*4)+g*1))+x*((((17+T*2)+z*4)+g*2)+x*1)))*(((1+z*1)+g*1))*(((7+T*1)+x*1))*(((((72+T*(17+T*1))+z*((32+T*4)+z*4))+g*(((32+T*4)+z*8)+g*4))+x*((((17+T*2)+z*4)+g*4)+x*1)))*((1+z*1))*((((6+T*1)+g*1)+x*1))*(((3+g*1)+x*1))*((((10+T*1)+g*1)+x*1))*(((((56+T*(15+T*1))+z*((28+T*4)+z*4))+g*(((15+T*2)+z*4)+g*1))+x*((((15+T*2)+z*4)+g*2)+x*1))))=(ph20c0MAD5 g z T*x^0+ph20c1MAD5 g z T*x^1+ph20c2MAD5 g z T*x^2+ph20c3MAD5 g z T*x^3+ph20c4MAD5 g z T*x^4+ph20c5MAD5 g z T*x^5+ph20c6MAD5 g z T*x^6+ph20c7MAD5 g z T*x^7+ph20c8MAD5 g z T*x^8+ph20c9MAD5 g z T*x^9+ph20c10MAD5 g z T*x^10+ph20c11MAD5 g z T*x^11+ph20c12MAD5 g z T*x^12)"
+      ],
+      "definition_count": 13,
+      "definition_sha256": [
+        "aabcbbc6d20c2e6cbc6be15b6e9dc819af5bd6e3868b924bf01e8935e7e48645",
+        "2469164f400fd0c605d7db3eacc6cf99f76db65059515e195234dddbb9d1ecfd",
+        "9d413f37555ef0863a41792d6d51a78ad3ad2900e24401cfb0e9b06900865ffe",
+        "59a3aea26eb7adc97f6d4c159e215d23a4ba37d3f56554d27a5b760ce37aae72",
+        "de9e65cec601a13acbc45fb002a2675b7bcdabd20b79cb9e60333020653f8da0",
+        "b96fad90557e5784dd12c936b6054470f3f0e031519e12b05cec2211d571d61e",
+        "4e7540f18104395efbaba272337ecd94098d7d5f4edf8cc8f86a134671b5a0e1",
+        "75c9a538545e4b847e4a0b38795253b303a88b5d6fa8bbe5e0b0ed0d0e09b25c",
+        "3f53043284fc7c1698b49a847ea3023cb4948879051de7bea84cdc7ff629a49c",
+        "12c5fbfb7ea0485d73266262263f6cce6dd6286a4e97d7f259e572b7bf1787ae",
+        "54a13ad84ef52e246c487a0c0a07fee1d808bc3aa0314ec6b4cb8f7bfecf542e",
+        "fe33b890f90bf253e2a5a5b7d6d07d0c79a033219f4883b4ac29b1324fc80d23",
+        "aad825e0b1d467cd9ef095dcc5a67173071e183fa96eee2bf84f0287d4dc3996"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [
+        {
+          "path": "build-1792193027171409000.json",
+          "sha256": "10475948aaededf90ead85ec426f7e3cb98e3e579858eeb0756455fc04ebd6c6",
+          "returncode": null,
+          "returncode_field_present": false,
+          "timeout": true
+        },
+        {
+          "path": "build-1792193372128131000.json",
+          "sha256": "2e56509288d11a6654d09591e49e4e38ae3db3cfbd24bd4c8842f2fb1f83a11d",
+          "returncode": null,
+          "returncode_field_present": false,
+          "timeout": true
+        }
+      ],
+      "object_path": "evidence/markov-ad504da6/MarkovPairHalf20MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MathGKM.Markov"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairHalf21MAD5",
+      "path": "research/MarkovPairHalf21MAD5.lean",
+      "bytes": 13494,
+      "characters": 13448,
+      "sha256": "09e097433b5bfee4ba65bf20d582e1d1ca9939d0c80c1d388138b6609de36837",
+      "status": "compiled_only_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "ph21c0MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph21c1MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph21c2MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph21c3MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph21c4MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph21c5MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph21c6MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph21c7MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph21c8MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph21c9MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph21c10MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "ph21_expandMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem ph21_expandMAD5 (x g z T : ℚ) :\n ((((3+z*1)+g*1))*(((3+T*1)+x*1))*((1+x*1))*(((7+T*1)+x*1))*(((((86+T*(19+T*1))+z*((36+T*4)+z*4))+g*(((36+T*4)+z*8)+g*4))+x*((((19+T*2)+z*4)+g*4)+x*1)))*(((2+g*1)+x*1))*((((8+T*1)+g*1)+x*1))*((((9+T*1)+g*1)+x*1))*(((2+z*1)+g*1))*(((4+T*1)+x*1))*(((5+T*1)+x*1)))=(ph21c0MAD5 g z T*x^0+ph21c1MAD5 g z T*x^1+ph21c2MAD5 g z T*x^2+ph21c3MAD5 g z T*x^3+ph21c4MAD5 g z T*x^4+ph21c5MAD5 g z T*x^5+ph21c6MAD5 g z T*x^6+ph21c7MAD5 g z T*x^7+ph21c8MAD5 g z T*x^8+ph21c9MAD5 g z T*x^9+ph21c10MAD5 g z T*x^10)"
+      ],
+      "definition_count": 11,
+      "definition_sha256": [
+        "3c2943eee720a65454eb21eb776794e6d5d8b6ef75427f92d880561d560549bd",
+        "cadbe97a7de4c9ca43e3d8c3025cc33cbcb8b1c24aee1ae7e994c7c0c130a7b3",
+        "001051b605e1d55b2a65f09ff20ab473085000dc69cd4bbcb9c4e0c605b6f2fd",
+        "1a2680a05140b85acf323284f507f94cf047ca9b11835c3a55bfbd0c998fbd7c",
+        "418d628c73003a635d133b9421d0f9bb69ded95241dfb59abe79d8cdd985b140",
+        "50596048244e49ab837e25532f15669c2ef1bf7a858822629e5aec9aee8105d8",
+        "e00a8d666b12350cfcbd5a5db166b4b054f51935e4d2b3b96d7094063f94098e",
+        "42ebc35b9581a87185264f350d201923d94984cc36b86f95fb8381f2839427b6",
+        "0c987374a84e3fb13f4202c17bcc6a4105e71d6c9935916f80c7177b45674b78",
+        "445f8fbb74e908011cbc860dc6c0aa43536a5ac871e4b31b08b48d9a5d1087d3",
+        "4e132a0913bd77944e5d3d06ef2afc06b1c1c726f11655f9e6f7250d6a30aecb"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [
+        {
+          "path": "build-1792193207409449000.json",
+          "sha256": "18d5999617c08d24bdb4ac9bd7824c4c81db6f1c64dae525ffd185a02577ab90",
+          "returncode": 0,
+          "returncode_field_present": true,
+          "timeout": false
+        }
+      ],
+      "object_path": "evidence/markov-ad504da6/MarkovPairHalf21MAD5.olean",
+      "object_sha256": "c242a6a509a569ea5704c8df892bdd23ecfa14ae253ab5a2a6520b1d55ff06fb",
+      "archive_object_present": true,
+      "current_object_present_at_initial_observation": true,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MathGKM.Markov"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairHalf30MAD5",
+      "path": "research/MarkovPairHalf30MAD5.lean",
+      "bytes": 29784,
+      "characters": 29730,
+      "sha256": "6905922378ca338660af3bc2900e8d50a57e3b7d156a190520e2d2fa5016c8f8",
+      "status": "timed_out_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "ph30c0MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph30c1MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph30c2MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph30c3MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph30c4MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph30c5MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph30c6MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph30c7MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph30c8MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph30c9MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph30c10MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph30c11MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph30c12MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "ph30_expandMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem ph30_expandMAD5 (x g z T : ℚ) :\n (((1+x*1))*(((7+T*1)+x*1))*(((((68+T*(17+T*1))+z*((32+T*4)+z*4))+g*(((32+T*4)+z*8)+g*4))+x*((((17+T*2)+z*4)+g*4)+x*1)))*((1+z*1))*((((6+T*1)+g*1)+x*1))*(((((72+T*(17+T*1))+z*((32+T*4)+z*4))+g*(((17+T*2)+z*4)+g*1))+x*((((17+T*2)+z*4)+g*2)+x*1)))*((1+z*1))*((((6+T*1)+g*1)+x*1))*(((3+g*1)+x*1))*((((10+T*1)+g*1)+x*1))*(((((56+T*(15+T*1))+z*((28+T*4)+z*4))+g*(((15+T*2)+z*4)+g*1))+x*((((15+T*2)+z*4)+g*2)+x*1))))=(ph30c0MAD5 g z T*x^0+ph30c1MAD5 g z T*x^1+ph30c2MAD5 g z T*x^2+ph30c3MAD5 g z T*x^3+ph30c4MAD5 g z T*x^4+ph30c5MAD5 g z T*x^5+ph30c6MAD5 g z T*x^6+ph30c7MAD5 g z T*x^7+ph30c8MAD5 g z T*x^8+ph30c9MAD5 g z T*x^9+ph30c10MAD5 g z T*x^10+ph30c11MAD5 g z T*x^11+ph30c12MAD5 g z T*x^12)"
+      ],
+      "definition_count": 13,
+      "definition_sha256": [
+        "b085ebbec53e6befaebca6e0e7b55495025b26243f4ea791357a1cd5d2ba1390",
+        "61edcf9b5713644283f02acd25d809791fc4d5668542a7369bf330da0d0d228e",
+        "0350e50f83006a9d68907e076776ddbe2b353e5dc253a4262b25f796258ea4c0",
+        "3552bbdc5deaf27bd6f3ddd4694df8a9ff6cfb51dcd486733e61dad609efcdc7",
+        "26c0fda5a04b397ada4a16f01f67194ea73085562b033e2f7c084a7fe95dba8f",
+        "459e4abacbdccc6ff229d6d7a23011551987416d1a56c64d29f4efbf33e65b23",
+        "2a5b8625dcb63c3d035be6517f6211b3e78bff6d37ed597379cb7483f92d2997",
+        "ee2b6776f0c53736b607f2389989f696d0e056de218ec57b2145593e0d702066",
+        "a598616f22ec6e86244d6313c5ae76ce9bd45c0b98ae72fe842b178922a34fca",
+        "e514249bb8034d300d434d29a76ed1878e492cb46837ffcf7b2c23a7c01965e7",
+        "6a90867826abfe50fc822a59f590add846749733317a79dc1095bea263e5cbe4",
+        "d556dca699e12b04fdb84e1bed47dae087056c2b66770844ae3007696aa4b957",
+        "f4510206522328fe43102f65cd6d5ccd0fc00eda8f49a659b07e2a23ffc45ecd"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [
+        {
+          "path": "build-1792193242355564000.json",
+          "sha256": "b6cf6f06af492f3b8e634a60cb1b062dc9364581ba256fe57830a8ae5da352d6",
+          "returncode": null,
+          "returncode_field_present": false,
+          "timeout": true
+        }
+      ],
+      "object_path": "evidence/markov-ad504da6/MarkovPairHalf30MAD5.olean",
+      "object_sha256": null,
+      "archive_object_present": false,
+      "current_object_present_at_initial_observation": false,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MathGKM.Markov"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    },
+    {
+      "module": "MarkovPairHalf31MAD5",
+      "path": "research/MarkovPairHalf31MAD5.lean",
+      "bytes": 11424,
+      "characters": 11378,
+      "sha256": "93032d20eb4972dc7815d2d08f706e6d42afe838195116c04caeaa8d821e1cd8",
+      "status": "compiled_only_excluded",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "ph31c0MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph31c1MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph31c2MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph31c3MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph31c4MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph31c5MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph31c6MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph31c7MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph31c8MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph31c9MAD5"
+        },
+        {
+          "kind": "def",
+          "name": "ph31c10MAD5"
+        },
+        {
+          "kind": "theorem",
+          "name": "ph31_expandMAD5"
+        }
+      ],
+      "theorem_statements": [
+        "theorem ph31_expandMAD5 (x g z T : ℚ) :\n ((((3+z*1)+g*1))*(((3+T*1)+x*1))*((1+x*1))*(((7+T*1)+x*1))*(((((86+T*(19+T*1))+z*((36+T*4)+z*4))+g*(((36+T*4)+z*8)+g*4))+x*((((19+T*2)+z*4)+g*4)+x*1)))*((2+z*1))*((((4+T*1)+g*1)+x*1))*((((5+T*1)+g*1)+x*1))*((2+x*1))*(((8+T*1)+x*1))*(((9+T*1)+x*1)))=(ph31c0MAD5 g z T*x^0+ph31c1MAD5 g z T*x^1+ph31c2MAD5 g z T*x^2+ph31c3MAD5 g z T*x^3+ph31c4MAD5 g z T*x^4+ph31c5MAD5 g z T*x^5+ph31c6MAD5 g z T*x^6+ph31c7MAD5 g z T*x^7+ph31c8MAD5 g z T*x^8+ph31c9MAD5 g z T*x^9+ph31c10MAD5 g z T*x^10)"
+      ],
+      "definition_count": 11,
+      "definition_sha256": [
+        "f6a6a1b72017b677a1db65b54f1f044ba518b124741d6d3a82f328150f1483bf",
+        "c54a5565f879fae466981994a9c483a263b41878d592beb7ae914300ce16883a",
+        "3beaa0d5c16c17e9e7c631b96e70693364fd965156bdb95d3e83f693311f707d",
+        "243b5d395ab695906dbd49327c76a43347548edebe6c73ccbcde85611270f06d",
+        "1e4b4a9ac3049304226c9307038138a84c1b95a5be386996b8e326d26c6bfe9b",
+        "49c4e3457f8319344fb54008356e01a73e9da43700a5cfad524e9d7e98e2fbb5",
+        "7574c316a61bc84b680932a652ec02250fa0e61d9a1d8580ab75eecf43c3f54e",
+        "2788fd0c6de6a5800d225152870cd0224431b174a4fa1919c8cd14c68ccb58d7",
+        "aa9cb98fc263b5998764ed4b96ae9f8351fbfa2102c1522a857be04aa0b5f22c",
+        "e42f07ecd6a0d89f41b5c3c0f599cca8dc7acc032a34b1931bac3d3b0d067770",
+        "d5fbb119d6ee3d9f304a5e05b603ece4a2acdc178840afeda8eebd880108b75a"
+      ],
+      "forbidden_tokens": [],
+      "build_receipts": [
+        {
+          "path": "build-1792193423102404000.json",
+          "sha256": "3e262b08c6050595ca88a8c58c53f236ce20b9fca0a8e0ead1c5753158cbafb3",
+          "returncode": 0,
+          "returncode_field_present": true,
+          "timeout": false
+        }
+      ],
+      "object_path": "evidence/markov-ad504da6/MarkovPairHalf31MAD5.olean",
+      "object_sha256": "4ee59a2de9f40a6ed05a79205184610a73ffdb438a4a9aaccf1033a68fcc2c9e",
+      "archive_object_present": true,
+      "current_object_present_at_initial_observation": true,
+      "selected": false,
+      "replayed_in164": false,
+      "printed_in164": false,
+      "imports": [
+        "MathGKM.Markov"
+      ],
+      "candidate_literal_definitions_not_evaluated": true
+    }
+  ],
+  "accepted_counts": {
+    "theorem": 54,
+    "def": 58
+  },
+  "excluded_counts": {
+    "def": 120,
+    "theorem": 33
+  },
+  "zero_factor_scope": "Arbitrary finite signed a, b>=0, a<=0 wherever b=0, total a>=0 and cross-product order across complement/subset. Positive total b branch clears only after proving positivity; total b=0 branch retains nonpositive terms and uses total. No zero term deletion.",
+  "symmetric_scope": "Nonnegative coefficients A,B,C, full coefficientwise gap>=0, and PairOrder on all antidiagonal pairs ordered by min rank imply every high-index cut gap>=0. Signed symmetric sum equals twice literal cut gap; b=0 gives a<=0. Full antidiagonal, including swapped and diagonal pairs, no normalization of source coefficients.",
+  "centered_scope": "X^j liftCut(j,t+s,h)=X^t cut_H(X^s E(j,t+s)) for all naturalj,t,h,s,H withH+t=j+h. All leading/tail branches and natural subtractions explicit. Middle usesH=j+h-t and coefficient2j+k; if shifted coefficient outside support zero retained. ShiftedPairOrder impliesLiftMiddle, not assertedproved.",
+  "adjacent_scope": "General real A/B/C nonnegative and Bstrictsupport exactly[l,u]. Sorting bymin/max preservespairGap/pairDen. Zero outerdenominator yields nonpositiveleftgap; otherwise entire inward interval strictlypositive permitsratio comparison and induction. Stepdomain l<=i,k<=u,i+2<=k, no unchecked gap in positive support.",
+  "kernel_scope": "Naturalj,t,m withm<=j kernelstrictpositive. Ecoeffpositive iff k<=j; XEmiddleexactpositive1<=k<=j+1. Fullgap inherited withX^2factor. KernelPairStep remainspremise, implyShiftedPairOrder thenLiftLCPositive.",
+  "ratio_scope": "Auxiliaryrational A/B exact as source. Naturalendpointm0 leftTerm=0, endpointm=j rightkernelzero. Diagonalstep inherited KernelStepM7E2, actualm<=j andpositiveW/linear denominators. Identity multiplieskernelvalues, neverdividesbythem. Shiftedkernelvaluesmapm=j+1-i andhandlesi1/i=j+1.",
+  "rational_scope": "RationalPairStep quantifiesnaturalj,t,m,n witht>=1,n+2<=m<=j. Scalarstep multiplies bynonnegativefour-kernelproduct andpositiveglobalratios. Inwardi,k correspondm=j+1-i,n=j+1-k withnaturalminusguards. GivesallnaturalcolumnsrawH foractualnumerator3lowerrowsj<=q, q>=1,both3q1/2; premiseunproved.",
+  "clearing_scope": "Fourfraction sign iff requiresfourstrictpositivedenominators. Generalrational domaint>=0,n>=0,n+2<=m<=j sufficient. NaturalreparameterT=t-1,x=n,g=m-n-2,z=j-m exact, allNat.cast_sub obligationsproved. RationalPairStep iffParametricPairPositive onallnaturalT,x,g,z; no missingendpointcase.",
+  "factor_scope": "38literalpolynomialatoms;16exactsmallfactoridentities; four signed22-factorproducts. Arbitraryrationalparameter identity numerator=prefactor*reduced. Prefactor10factors:6commonpositive linear and4W, strictpositivefornonnegative rationalT,x,g,z. ReducedPairPositive quantifiesnaturals only, iffParametricPairPositive. Positivityofreduceddifference itselfunproved. Extraexperimental g+1factorisnotLeanproved.",
+  "root_scope": "Inherited exactrootMFEEunchanged; lowerHnewconditionaltransportraw(i,j),(i+1,j),(i+2,j) withallzeros. Explicitpathadaptera3 yieldsq>=1anddenomfamily. Rootconditionalrational/polynomialtheoremsretainThreeOutsideLowerMFEEandOtherFourM9E2; noiffbetweenreducedandroot, no newunconditionalrawregion. Originalpolygon/endpoints/HVDguardsremaininherited.",
+  "excluded_scope": "Sixhalfexpansions compiledonly,6theorems70defs, no selectedreplay/prints. Twohalves2theorems26defs timedout3times total.23coefficientmodules plusaggregateunattempted25theorems24defs. No partialexpansionprovesfullsignedsumpositive; aggregateuniversalrationalnonnegativeclaimunvalidated.",
+  "mathematical_values_recomputed": false
+}

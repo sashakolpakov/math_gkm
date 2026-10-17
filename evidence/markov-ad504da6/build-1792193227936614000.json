@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovPairRatiosMAD5.lean:21:28: error: mod_cast has type\n  m < j\nbut is expected to have type\n  0 < Int.subNatNat j m\n/Users/sasha/math_gkm/research/MarkovPairRatiosMAD5.lean:60:3: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovPairRatiosMAD5.lean:69:3: error: Type mismatch\n  pair_left_stepMAD5 j t m hm\nhas type\n  \u2191(liftTermMAE9 j t m) =\n    \u2191(liftTermMAE9 j (t + 1) (m + 1)) * ((\u2191t + 4) / (\u2191t + \u2191j + 4)) * pairAMAD5 (\u2191j) (\u2191t + 1) (\u2191m + 1)\nbut is expected to have type\n  \u2191(liftTermMAE9 j t m) =\n    \u2191(liftTermMAE9 j (t + 1) (m + 1)) * ((\u2191t + 4) / (\u2191t + \u2191j + 4)) * pairAMAD5 (\u2191j) (\u2191t + 1) \u2191(m + 1)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovPairRatiosMAD5": "59432595e7a91932ab8cf84158493bfdfcfc3b56cdf27f1c318fdd97281cde3b"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovPairRatiosMAD5.olean",
+    "/Users/sasha/math_gkm/research/MarkovPairRatiosMAD5.lean"
+  ],
+  "seconds": 26.586255166039336,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

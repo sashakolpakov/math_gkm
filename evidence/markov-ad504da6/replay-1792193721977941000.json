@@ -1,0 +1,88 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovZeroNormalizedMAD5\ncollected MarkovSymmetricCutMAD5\ncollected MarkovCenteredBridgeMAD5\ncollected MarkovPairStepMAD5\ncollected MarkovKernelSupportMAD5\ncollected MarkovPairRatiosMAD5\ncollected MarkovKernelValuesMAD5\ncollected MarkovRationalBridgeMAD5\nreplay union of 8 modules over 6 inherited imports\nisolation checked for 35 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovZeroNormalizedMAD5": "283d9fe6aece1a4dbf4eef1184f8b8513b0c9b56866e7deace7c72d8da9ff186",
+    "MarkovSymmetricCutMAD5": "52e425f8209af7875156a219cccd048c8de4176fb93ef56b0fa2e2faea17bd85",
+    "MarkovCenteredBridgeMAD5": "292b5142e5af2aa1839cfdbbd7926c1f2efb656ec0eaceea8c9fa5cb44f004f6",
+    "MarkovPairStepMAD5": "06d85e24fbfc1750d6e0de11c8b41843458f0f65963ed13f396f10cbe3c380a9",
+    "MarkovKernelSupportMAD5": "710b11c535118a74ba0cb68c441aaf023f7aed74f94db27cd5f03ed45b295468",
+    "MarkovPairRatiosMAD5": "de9d2a48e3bf888177e183b25d94c5d22086bafaaa65256f29aceb8dd10bc5b1",
+    "MarkovKernelValuesMAD5": "0a250e6e8120c0c482ca1679c6e114fb969aa91454c17dded24493b89a18d0cf",
+    "MarkovRationalBridgeMAD5": "0e2fecf4c62402f5831674f81222a7aaab1701d95eebb1a4308e5df0c67b78bc"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedMAD5.lean",
+    "MarkovZeroNormalizedMAD5",
+    "MarkovSymmetricCutMAD5",
+    "MarkovCenteredBridgeMAD5",
+    "MarkovPairStepMAD5",
+    "MarkovKernelSupportMAD5",
+    "MarkovPairRatiosMAD5",
+    "MarkovKernelValuesMAD5",
+    "MarkovRationalBridgeMAD5"
+  ],
+  "seconds": 21.99510637501953,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "c298371ccb1927b35cf74f0b3bb13c35f97849aa5f431be2535db3deb73b9683",
+  "declared_names": {
+    "MarkovZeroNormalizedMAD5": [
+      "normalized_subset_zeroMAD5",
+      "normalized_rank_zeroMAD5"
+    ],
+    "MarkovSymmetricCutMAD5": [
+      "pairDenMAD5",
+      "pairGapMAD5",
+      "symmetric_cut_sumMAD5",
+      "cut_zeroMAD5",
+      "PairOrderMAD5",
+      "symmetric_cut_nonnegMAD5"
+    ],
+    "MarkovCenteredBridgeMAD5": [
+      "lift_cut_common_shiftMAD5",
+      "ShiftedPairOrderMAD5",
+      "shifted_full_gapMAD5",
+      "lift_middle_of_pair_orderMAD5"
+    ],
+    "MarkovPairStepMAD5": [
+      "pair_den_sortMAD5",
+      "pair_gap_sortMAD5",
+      "pair_order_of_stepsMAD5"
+    ],
+    "MarkovKernelSupportMAD5": [
+      "lift_term_positiveMAD5",
+      "e_coeff_positive_iffMAD5",
+      "shifted_middle_supportMAD5",
+      "shifted_middle_nonnegMAD5",
+      "shifted_right_nonnegMAD5",
+      "KernelPairStepMAD5",
+      "shifted_order_of_kernel_stepsMAD5",
+      "lift_positive_of_kernel_stepsMAD5"
+    ],
+    "MarkovPairRatiosMAD5": [
+      "pairAMAD5",
+      "pairBMAD5",
+      "leftTermMAD5",
+      "pair_left_stepMAD5",
+      "pair_right_stepMAD5",
+      "pair_left_allMAD5"
+    ],
+    "MarkovKernelValuesMAD5": [
+      "shifted_kernel_valuesMAD5"
+    ],
+    "MarkovRationalBridgeMAD5": [
+      "RationalPairStepMAD5",
+      "scalar_pair_stepMAD5",
+      "kernel_steps_of_rationalMAD5",
+      "lower_horizontal_of_rationalMAD5",
+      "root_of_rational_and_remainingMAD5"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed MAD5; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}
