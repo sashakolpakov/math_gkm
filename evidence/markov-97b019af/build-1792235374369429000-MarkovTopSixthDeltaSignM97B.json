@@ -1,0 +1,20 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTopSixthDeltaSignM97B.lean:75:18: error: `dsimp` made no progress\ntactic execution of Lean.Parser.Tactic.refine took 398ms\ntactic execution of Lean.Parser.Tactic.refine took 390ms\ninterpretation of Mathlib.Meta.Positivity.evalAdd._lam_0._boxed took 1.55s\nring took 213ms\ninterpretation of Mathlib.Tactic._aux_Mathlib_Tactic_Linarith_Frontend___elabRules_Mathlib_Tactic_linarith_1._boxed took 178ms\nshare common exprs took 105ms\ntype checking took 142ms\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovTopSixthDeltaSignM97B.lean:148:19: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n",
+  "stderr": "import took 116s\ncumulative profiling times:\n\tattribute application 0.0193ms\n\tcongr simp thm 0.534ms\n\tdsimp 28.2ms\n\telaboration 28.1ms\n\tfix level params 2.52ms\n\timport 116s\n\tinitialization 32.4ms\n\tinstantiate metavars 13.8ms\n\tinterpretation 3.51s\n\tlet-to-have transformation 0.0667ms\n\tlinting 11.6ms\n\tmodule linting 0.000667ms\n\tnorm_num 401ms\n\toverlappingInstancesLinter 2.73ms\n\tparsing 3.92ms\n\tprocess pre-definitions 39.2ms\n\tring 222ms\n\tshare common exprs 109ms\n\tsimp 5.08ms\n\ttactic execution 942ms\n\ttacticAnalysis 5.15ms\n\ttype checking 161ms\n\ttypeclass inference 9.73s\n",
+  "modules": {
+    "MarkovTopSixthDeltaSignM97B": "23ed7562abdce2ce82722c555ff03574fd3ba7cba31b9d6b6cc4d7ba64e41974"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--profile",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-97b019af/MarkovTopSixthDeltaSignM97B.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopSixthDeltaSignM97B.lean"
+  ],
+  "seconds": 131.30783666600473,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

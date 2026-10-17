@@ -1,0 +1,20 @@
+{
+  "returncode": 0,
+  "stdout": "type checking took 169ms\n",
+  "stderr": "import took 6.67s\n.olean serialization took 820ms\ncumulative profiling times:\n\t.olean serialization 820ms\n\tattribute application 0.0185ms\n\tcompilation (IR) 0.123ms\n\tcompilation (LCNF base) 2.23ms\n\tcompilation (LCNF impure) 0.461ms\n\tcompilation (LCNF mono) 1.1ms\n\tcongr simp thm 5.82ms\n\telaboration 35.9ms\n\tfix level params 3.39ms\n\timport 6.67s\n\tinitialization 13.6ms\n\tinstantiate metavars 6.83ms\n\tinterpretation 466ms\n\tlet-to-have transformation 0.0453ms\n\tlinting 3.13ms\n\tmodule linting 0.000584ms\n\tnorm_num 42.7ms\n\toverlappingInstancesLinter 0.911ms\n\tparsing 2.24ms\n\tprocess pre-definitions 27.1ms\n\tring 96ms\n\tshare common exprs 57.1ms\n\tsimp 54.2ms\n\ttactic execution 104ms\n\ttacticAnalysis 7.28ms\n\ttype checking 190ms\n\ttypeclass inference 288ms\n",
+  "modules": {
+    "MarkovTopSixthBetaM97B": "720d48f406716dd1a123a87f23c2c6241fb1cc9439dcd8c9d45fda7967707ee9"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--profile",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-97b019af/MarkovTopSixthBetaM97B.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopSixthBetaM97B.lean"
+  ],
+  "seconds": 9.059349041956011,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

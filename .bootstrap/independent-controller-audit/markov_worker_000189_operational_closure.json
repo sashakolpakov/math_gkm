@@ -1,0 +1,68 @@
+{
+  "worker": 189,
+  "request": "97b019af81a143628246a03e1f19b898",
+  "recorded_utc": "2026-10-17T11:30:30.726425+00:00",
+  "scope": "Closed interrupted189 exactcontrol observations only, no project execution or mathematical values; laterworkers excluded.",
+  "closure_basis": "Existing exact-request reconciliation, independently read after root reported controller/watchdog/worker absent. No receipt fabricated or completed/timeout outcome inferred.",
+  "receipt_absence_last_retained_utc": "2026-10-17T11:28:08.772578+00:00",
+  "watch_error": "ENOSPC prevented recording one earlier receipt query; outcome of that individual query remains unknown. Prior watch file intact; next printed observation absent.",
+  "parent_process_observation": {
+    "attributed_to": "root",
+    "approximately_utc": "2026-10-17T11:28:00+00:00",
+    "absent_pids": [
+      9112,
+      23862,
+      23882
+    ],
+    "caffeinate_alive_pid": 95137,
+    "STOP_json_absent": true
+  },
+  "records": [
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000189/reconciliation.json",
+      "bytes": 375,
+      "sha256": "c691742f5f4cd76fb392167f112502991afcb52caa7f2afdd90d8f592af800f0",
+      "mtime_ns": 1792236262792827012,
+      "text": "{\"directory\":\"/Users/sasha/math_gkm/.control/markov/workers/000189\",\"evidence\":\"execution_outcome\",\"mathematical_resolution\":false,\"outcome\":\"uncertain_effects\",\"reason\":\"watchdog exited without receipt\",\"reconciliation\":\"Do not replay this attempt. Next worker must inspect retained files and logs.\",\"report\":null,\"request_id\":\"97b019af81a143628246a03e1f19b898\",\"usage\":[]}\n"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000189/process.json",
+      "bytes": 64,
+      "sha256": "3480af657f3e6692610c7d8f75d297e64b0c98a0de673047abe803b923cac6d7",
+      "mtime_ns": 1792234494680641905,
+      "text": "{\"pid\":23882,\"started\":1792234494.6767418,\"watchdog_pid\":23862}\n"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000189/final.json",
+      "bytes": 2363,
+      "sha256": "5dbd24569ca4c3a02a13af3615b7e5c8cb1774155d3356568610c68760d39330",
+      "mtime_ns": 1792236234149133701,
+      "text": "{\n  \"actions\": [\n    \"Read the required mission, design, contract and audits; reconciled inherited artifacts and interrupted-worker effects: evidence/markov-97b019af/reconciliation.json and interruption-reconciliation.json.\",\n    \"Compiled and jointly kernel-replayed 23 modules; audited 66 theorem closures using only permitted axioms: evidence/markov-97b019af/validation.json.\",\n    \"Verified 177 artifacts, 22,724 unchanged inputs and pinned bindings: evidence/markov-97b019af/last-verification.json.\"\n  ],\n  \"agenda\": [\n    \"Investigate ThreeAfterUpperM97B, especially the remaining middle horizontal strip. TopMomentBoundM55C is now closed: research/markov-97b019af-next.md.\",\n    \"Retain the vertical and diagonal residuals and unchanged OtherFourM9E2.\",\n    \"Discharge all source-correspondence obligations and obtain fresh whole-source validation and an independent hash-bound audit before claiming completion.\"\n  ],\n  \"completion\": null,\n  \"observations\": [\n    \"Closed TopMomentBoundM55C and every numerator-three upper-sector horizontal inequality for 5\u2264t\u2264q+2, with raw-path transport and explicit polygon validity: research/MarkovTopSectorClosedM97B.lean.\",\n    \"Proved actual-weight sixth-moment control and a two-generator certificate covering i\u22656; four universal polynomial certificates close i=2,3,4,5: research/markov-97b019af-mathematics.md.\",\n    \"Proved Conjecture63 iff ThreeAfterUpperM97B and unchanged OtherFourM9E2. Both residuals remain open: research/MarkovTopSectorResidualM97B.lean.\",\n    \"Also completed the inherited fourth-moment attachment and its quadratic raw-source region: research/MarkovTopFourthGroupsM97B.lean and MarkovTopQuadraticSourceM97B.lean.\",\n    \"Finite source checks passed 26,288 coefficient comparisons, retaining 4,956 zeros, and 538,256 polygon-valid triples. These are experiments: evidence/markov-97b019af/source-experiment.json.\",\n    \"Preserved 14 unsuccessful builds, including five timeouts; reconciled a receipt-name collision and rebuilt the affected module. No fresh whole-source rebuild or independent completion audit occurred: research/markov-97b019af-operational.md and markov-97b019af-correspondence.md.\"\n  ],\n  \"request_id\": \"97b019af81a143628246a03e1f19b898\",\n  \"summary\": \"Closed the full numerator-three upper-sector horizontal condition. Full pinned Conjecture63 remains unresolved.\"\n}"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000189/stderr.log",
+      "bytes": 164,
+      "sha256": "769392ce9847378a8e799e2fd318a75c9c23fcf547ef07068a31b2c2c33d6268",
+      "mtime_ns": 1792236141732181174,
+      "text": "2026-10-17T11:22:21.732093Z ERROR codex_core::tools::router: error=apply_patch verification failed: invalid hunk at line 20, Update hunk does not contain any lines\n"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000189/watchdog.log",
+      "bytes": 779,
+      "sha256": "50c44c3da8442be2bca5ceacea479a99fa65cfdaaf7c1d9f722816b34198f048",
+      "mtime_ns": 1792236262582835000,
+      "text": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 203, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Users/sasha/math_gkm/machinery/worker.py\", line 235, in <module>\n    main()\n    ~~~~^^\n  File \"/Users/sasha/math_gkm/machinery/worker.py\", line 231, in main\n    execute(args.directory)\n    ~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/Users/sasha/math_gkm/machinery/worker.py\", line 215, in execute\n    target.write_bytes((ROOT/name).read_bytes())\n    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py\", line 797, in write_bytes\n    return f.write(view)\n           ~~~~~~~^^^^^^\nOSError: [Errno 28] No space left on device\n"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000189/activity.json",
+      "bytes": 55,
+      "sha256": "bdab9bcd0da7a82c352010972e1cbbe403f3fa732e949df0452b3b1d7438427f",
+      "mtime_ns": 1792236233645323420,
+      "text": "{\"bytes\":448825,\"pid\":23882,\"time\":1792236233.6451359}\n"
+    }
+  ],
+  "mathematical_claims_unvalidated": true,
+  "historical_status": "uncertain_effects",
+  "host_report": null,
+  "retained_final_json_not_host_receipt": true
+}

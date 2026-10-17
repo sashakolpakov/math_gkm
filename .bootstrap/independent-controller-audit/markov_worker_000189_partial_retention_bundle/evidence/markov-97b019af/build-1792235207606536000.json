@@ -1,0 +1,20 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTopInwardGeneratorM97B.lean:24:3: error: ring failed, ring expressions not equal\nm : \u2115\nw B D f g : \u2115 \u2192 \u211d\nhB : B m = 0\nhD : D 0 = 0\nhstep : \u2200 k < m, w k * B k = w (k + 1) * D (k + 1)\nh0 : \u2211 k \u2208 range (m + 1), w k * f k * B k * (g (k + 1) - g k) = \u2211 k \u2208 range m, w k * f k * B k * (g (k + 1) - g k)\nk : \u2115\nhk : k \u2208 range m\nh : w k * B k = w (k + 1) * D (k + 1)\n\u22a2 w (k + 1) * f (k + 1) * D (k + 1) * g k * 2 - w (k + 1) * f (k + 1) * D (k + 1) * g (k + 1) * 2 -\n        f (k + 1) * g k * w k * B k * 2 +\n      f (k + 1) * g (k + 1) * w k * B k * 2 =\n    0\n",
+  "stderr": "import took 6.55s\ncumulative profiling times:\n\tattribute application 0.0117ms\n\tcongr simp thm 0.305ms\n\telaboration 8.55ms\n\tfix level params 0.193ms\n\timport 6.55s\n\tinitialization 13.4ms\n\tinstantiate metavars 0.401ms\n\tinterpretation 431ms\n\tlet-to-have transformation 0.0408ms\n\tlinting 3.34ms\n\tmodule linting 0.000542ms\n\tnorm_num 1.79ms\n\toverlappingInstancesLinter 0.812ms\n\tparsing 1.93ms\n\tprocess pre-definitions 1.74ms\n\tring 10.5ms\n\tshare common exprs 1.96ms\n\tsimp 16.5ms\n\ttactic execution 37.9ms\n\ttacticAnalysis 4.84ms\n\ttype checking 22.8ms\n\ttypeclass inference 93.9ms\n",
+  "modules": {
+    "MarkovTopInwardGeneratorM97B": "a421ee054b47ea895cd546db9e69239d79e701a36b0de26d39cf29f609c36485"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--profile",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-97b019af/MarkovTopInwardGeneratorM97B.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopInwardGeneratorM97B.lean"
+  ],
+  "seconds": 7.346513625001535,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

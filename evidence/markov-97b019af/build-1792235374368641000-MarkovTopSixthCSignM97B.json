@@ -1,0 +1,20 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTopSixthCSignM97B.lean:38:17: error: `dsimp` made no progress\ninterpretation of Mathlib.Meta.Positivity.evalAdd._lam_0._boxed took 366ms\ninterpretation of Mathlib.Tactic._aux_Mathlib_Tactic_Linarith_Frontend___elabRules_Mathlib_Tactic_linarith_1._boxed took 148ms\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovTopSixthCSignM97B.lean:74:19: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n",
+  "stderr": "import took 116s\ncumulative profiling times:\n\tattribute application 0.0171ms\n\tcongr simp thm 0.479ms\n\tdsimp 8.46ms\n\telaboration 17.1ms\n\tfix level params 1.18ms\n\timport 116s\n\tinitialization 33.1ms\n\tinstantiate metavars 3.62ms\n\tinterpretation 2.26s\n\tlet-to-have transformation 0.0488ms\n\tlinting 6.15ms\n\tmodule linting 0.000583ms\n\tnorm_num 210ms\n\toverlappingInstancesLinter 4.58ms\n\tparsing 3.32ms\n\tprocess pre-definitions 17.1ms\n\tring 102ms\n\tshare common exprs 36ms\n\tsimp 2.53ms\n\ttactic execution 200ms\n\ttacticAnalysis 8.38ms\n\ttype checking 80.5ms\n\ttypeclass inference 1.46s\n",
+  "modules": {
+    "MarkovTopSixthCSignM97B": "b223b3848a2ab490cfa90c9889883d311700a58d13726472b22d57d987dee344"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--profile",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-97b019af/MarkovTopSixthCSignM97B.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopSixthCSignM97B.lean"
+  ],
+  "seconds": 120.50969649996841,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

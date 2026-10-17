@@ -1,0 +1,20 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTopInwardGeneratorM97B.lean:11:18: error: unexpected token '\u2192'; expected term\n/Users/sasha/math_gkm/research/MarkovTopInwardGeneratorM97B.lean:32:18: error: unexpected token ')'; expected term\n/Users/sasha/math_gkm/research/MarkovTopInwardGeneratorM97B.lean:58:19: error: unexpected token ':='; expected term\n/Users/sasha/math_gkm/research/MarkovTopInwardGeneratorM97B.lean:51:5: error(lean.unknownIdentifier): Unknown identifier `finite_generator_partsM97B`\n/Users/sasha/math_gkm/research/MarkovTopInwardGeneratorM97B.lean:50:66: error: unsolved goals\nd i r m : \u2115\ng : \u2115 \u2192 \u211d\nhs : \u2200 k \u2264 m, g (m - k) = g k\nhi : \u2200 (k : \u2115), 2 * k + 1 \u2264 m \u2192 g k \u2264 g (k + 1)\n\u22a2 \u2211 k \u2208 range (m + 1),\n      steinPairM208 d i m k * steinCutM208 r m k *\n        (steinBM208 (\u2191i + 1) (\u2191m) (\u2191d + 2 * \u2191i + 9) \u2191k * (g (k + 1) - g k) +\n          steinDM208 (\u2191i + 1) (\u2191m) (\u2191d + 2 * \u2191i + 9) \u2191k * (g (k - 1) - g k)) \u2264\n    0\n",
+  "stderr": "import took 6.72s\ncumulative profiling times:\n\tattribute application 0.00596ms\n\telaboration 5.44ms\n\tfix level params 0.0168ms\n\timport 6.72s\n\tinitialization 13.8ms\n\tinstantiate metavars 0.0284ms\n\tinterpretation 391ms\n\tlet-to-have transformation 0.0188ms\n\tlinting 0.902ms\n\tmodule linting 0.000334ms\n\toverlappingInstancesLinter 2.15ms\n\tparsing 1.49ms\n\tprocess pre-definitions 0.0939ms\n\tshare common exprs 0.083ms\n\ttactic execution 0.115ms\n\ttacticAnalysis 1.63ms\n\ttype checking 0.292ms\n\ttypeclass inference 11.3ms\n",
+  "modules": {
+    "MarkovTopInwardGeneratorM97B": "48270f819b5f60fc6a3019a78544567c28b0d381b43bb90f3a1054d11b6d992e"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--profile",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-97b019af/MarkovTopInwardGeneratorM97B.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopInwardGeneratorM97B.lean"
+  ],
+  "seconds": 7.302884917007759,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

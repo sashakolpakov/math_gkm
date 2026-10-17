@@ -1,0 +1,8 @@
+{
+  "request_id": "97b019af81a143628246a03e1f19b898",
+  "affected_receipt": "evidence/markov-97b019af/build-1792235236432769000.json",
+  "observation": "The tool separately reported successful concurrent builds for SixthControl (19.94452999997884 seconds) and SixthCertificate (106.68711579201045 seconds) using the same timestamp-derived receipt filename. The surviving receipt binds SixthCertificate. Their module-specific olean destinations were distinct.",
+  "recovery": "SixthControl was rebuilt from its current source with receipt evidence/markov-97b019af/build-1792235720262304000-MarkovTopSixthControlM97B.json, returncode 0. The superseded operational report is not used for theorem acceptance.",
+  "prevention": "New validation receipt and snapshot filenames include the module name as well as timestamp.",
+  "scope": "Only artifacts created during this invocation were affected; no inherited input or protected root was changed. This record is operational evidence only."
+}

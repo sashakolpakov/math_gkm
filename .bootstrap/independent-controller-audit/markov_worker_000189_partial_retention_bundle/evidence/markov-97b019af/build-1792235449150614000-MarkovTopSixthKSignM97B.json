@@ -1,0 +1,20 @@
+{
+  "returncode": 0,
+  "stdout": "ring took 214ms\ninterpretation of Mathlib.Meta.Positivity.evalAdd._lam_0._boxed took 379ms\ninterpretation of Mathlib.Tactic._aux_Mathlib_Tactic_Linarith_Frontend___elabRules_Mathlib_Tactic_linarith_1._boxed took 107ms\nshare common exprs took 121ms\ntype checking took 251ms\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovTopSixthKSignM97B.lean:86:19: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n",
+  "stderr": "import took 75.4s\n.olean serialization took 307ms\ncumulative profiling times:\n\t.olean serialization 307ms\n\tattribute application 0.018ms\n\tcongr simp thm 0.603ms\n\tdsimp 16.5ms\n\telaboration 73.9ms\n\tfix level params 4.27ms\n\timport 75.4s\n\tinitialization 37.5ms\n\tinstantiate metavars 2.64ms\n\tinterpretation 2.03s\n\tlet-to-have transformation 0.053ms\n\tlinting 85.6ms\n\tmodule linting 0.000666ms\n\tnorm_num 209ms\n\toverlappingInstancesLinter 2.14ms\n\tparsing 5.86ms\n\tprocess pre-definitions 49.5ms\n\tring 305ms\n\tshare common exprs 124ms\n\tsimp 2.37ms\n\ttactic execution 228ms\n\ttacticAnalysis 12.4ms\n\ttype checking 264ms\n\ttypeclass inference 1.97s\n",
+  "modules": {
+    "MarkovTopSixthKSignM97B": "964a4420fe4557746ae8a7ebe982717d888f81dbbbde4c9e71148baf6801451e"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--profile",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-97b019af/MarkovTopSixthKSignM97B.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopSixthKSignM97B.lean"
+  ],
+  "seconds": 81.4280700419913,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

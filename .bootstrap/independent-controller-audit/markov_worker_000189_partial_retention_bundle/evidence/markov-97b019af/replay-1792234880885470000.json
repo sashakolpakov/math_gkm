@@ -1,0 +1,74 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovTopFourthBetaM97B\ncollected MarkovTopFourthControlM97B\ncollected MarkovTopFourthSignsM97B\ncollected MarkovTopFourthGroupsM97B\ncollected MarkovTopQuadraticSourceM97B\ncollected MarkovTopQuadraticResidualM97B\nreplay union of 6 modules over 3 inherited imports\nisolation checked for 29 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTopFourthBetaM97B": "5b392123f0f4d3bc7a47fbd7170a54a8d38ecaefefc4b6f2726d2ffa0f6dc0e3",
+    "MarkovTopFourthControlM97B": "83a985d43c6b44dc1b84341246bece8673f0cc251b14ce3b5032c29dcd14dbc4",
+    "MarkovTopFourthSignsM97B": "0b66701a140564ccb4a9acc635f8f7408cb9d1d041d895ef91b8b0a0dc17bde9",
+    "MarkovTopFourthGroupsM97B": "a8e4a47a22f031596805c30ca54bf6bde849ca6a25cdc325bd17095bab4ae2fa",
+    "MarkovTopQuadraticSourceM97B": "c0f53d3e09866466b083b48a4cff614022bfbe22471c4a17ec13e0ee28564d78",
+    "MarkovTopQuadraticResidualM97B": "3e075e117d4dc5eb0eb59d1686b07bf1ce99c9d5a5d756867c7a0179e0b90b8f"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM97B.lean",
+    "MarkovTopFourthBetaM97B",
+    "MarkovTopFourthControlM97B",
+    "MarkovTopFourthSignsM97B",
+    "MarkovTopFourthGroupsM97B",
+    "MarkovTopQuadraticSourceM97B",
+    "MarkovTopQuadraticResidualM97B"
+  ],
+  "seconds": 42.734478584025055,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "923b009606dd86c73609fdc69424196963586a29120f5f4bbf4071fd9b96ba43",
+  "declared_names": {
+    "MarkovTopFourthBetaM97B": [
+      "fourthBetaIntM97B",
+      "fourth_beta_expansionM97B",
+      "fourth_beta_integerM97B",
+      "fourth_beta_realM97B"
+    ],
+    "MarkovTopFourthControlM97B": [
+      "fourthControlM97B",
+      "fourth_control_symmetricM97B",
+      "fourth_control_inwardM97B",
+      "fourth_control_base_zeroM97B",
+      "fourth_control_inward_sumM97B",
+      "fourth_actual_controlM97B"
+    ],
+    "MarkovTopFourthSignsM97B": [
+      "fourth_delta_shift_positiveM97B",
+      "fourth_delta_positiveM97B",
+      "fourth_cp_shift_positiveM97B",
+      "fourth_cp_positiveM97B"
+    ],
+    "MarkovTopFourthGroupsM97B": [
+      "fourth_group_positiveM97B",
+      "fourth_density_gap_positiveM97B",
+      "fourth_tail_gap_positiveM97B",
+      "fourth_top_mass_strictM97B"
+    ],
+    "MarkovTopQuadraticSourceM97B": [
+      "top_template_quadratic_columnM97B",
+      "source_top_quadratic_columnM97B",
+      "source_top_quadratic_polygonM97B",
+      "source_top_path_quadraticM97B"
+    ],
+    "MarkovTopQuadraticResidualM97B": [
+      "TopQuadraticResidualM97B",
+      "top_interior_iff_quadraticM97B",
+      "top_moment_iff_quadraticM97B",
+      "TopClosedRegionM97B",
+      "source_top_closedM97B",
+      "ThreeFrontierM97B",
+      "root_iff_frontierM97B"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed M97B; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

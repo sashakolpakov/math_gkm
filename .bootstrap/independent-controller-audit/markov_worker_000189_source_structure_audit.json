@@ -1,0 +1,1392 @@
+{
+  "worker": 189,
+  "request": "97b019af81a143628246a03e1f19b898",
+  "created_at_utc": "2026-10-17T11:41:17.209404+00:00",
+  "host_status": "uncertain_effects; watchdog exited without receipt; reconciliation reportnull; no completed or timeout upgrade",
+  "scope": "Closed interrupted189 archive-first with explicitly named current fallbacks for missing partial-archive files. No later worker material, mathematical-value recomputation, research execution, edits or assistance.",
+  "modules": [
+    {
+      "module": "MarkovTopFourthBetaM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopFourthBetaM97B.lean",
+        "bytes": 2587,
+        "sha256": "5b392123f0f4d3bc7a47fbd7170a54a8d38ecaefefc4b6f2726d2ffa0f6dc0e3"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopFourthMomentConditionalM731"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "fourthBetaIntM97B",
+          "line": 9,
+          "header": "def fourthBetaIntM97B (i m : ℕ) : ℤ",
+          "body_sha256": "b90e111b5345d51f531eae4f2b1a55483673bc1c67ee708b4ce59f7c31e23388"
+        },
+        {
+          "kind": "theorem",
+          "name": "fourth_beta_expansionM97B",
+          "line": 12,
+          "header": "theorem fourth_beta_expansionM97B (i m : ℕ) :\n fourthBetaIntM97B i m=(m:ℤ)^4*betaMomentMDCB i m 0 0+\n (16*(m:ℤ)-16-8*(m:ℤ)^2)*betaMomentMDCB i m 1 1+16*betaMomentMDCB i m 2 2",
+          "body_sha256": "f711dd7527dd33b120c8fe229f47b0bf2b3f1fcfc812f9872ce7c6a327d079ba"
+        },
+        {
+          "kind": "theorem",
+          "name": "fourth_beta_integerM97B",
+          "line": 23,
+          "header": "theorem fourth_beta_integerM97B (i m : ℕ) :\n (2*(i:ℤ)+3)*(2*i+5)*fourthBetaIntM97B i m=\n (m:ℤ)*(2*((i:ℤ)+1)+m)*(3*(m:ℤ)*(2*((i:ℤ)+1)+m)-4*((i:ℤ)+1))*\n betaMomentMDCB i m 0 0",
+          "body_sha256": "ac8fd45c831270130b3c22f11dd0604453e7f25d2923281f7581ccd3855010af"
+        },
+        {
+          "kind": "theorem",
+          "name": "fourth_beta_realM97B",
+          "line": 37,
+          "header": "theorem fourth_beta_realM97B (i m : ℕ) :\n fourthMomentDenM731 ((i:ℝ)+1)*\n (∑ k ∈ range (m+1), betaBaseWeightMCA9 i m k*((k:ℝ)-(m:ℝ)/2)^4)=\n fourthMomentNumM731 ((i:ℝ)+1) m*(∑ k ∈ range (m+1), betaBaseWeightMCA9 i m k)",
+          "body_sha256": "fd394461bc8d9ab7a99e255701f0c578cf83a00a42d9a69b6aafe8cff14f9458"
+        }
+      ],
+      "theorems": 3,
+      "definitions": 1,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792234588219199000.json",
+        "bytes": 1395,
+        "sha256": "404874b5eba127d2735e3a0e4989597e1c2c69ddeeb4f21cdcf6c8ce07396454"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792234588219199000.lean",
+        "bytes": 2587,
+        "sha256": "5b392123f0f4d3bc7a47fbd7170a54a8d38ecaefefc4b6f2726d2ffa0f6dc0e3"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopFourthControlM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopFourthControlM97B.lean",
+        "bytes": 3382,
+        "sha256": "83a985d43c6b44dc1b84341246bece8673f0cc251b14ce3b5032c29dcd14dbc4"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopFourthBetaM97B"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "fourthControlM97B",
+          "line": 9,
+          "header": "def fourthControlM97B (i m k : ℕ) : ℝ",
+          "body_sha256": "ef6589e49ecf30dbadd8c676f724241226a0a507a0a41f94e74886b4ac46b626"
+        },
+        {
+          "kind": "theorem",
+          "name": "fourth_control_symmetricM97B",
+          "line": 13,
+          "header": "theorem fourth_control_symmetricM97B (i m k : ℕ) (hk : k ≤ m) :\n fourthControlM97B i m (m-k)=fourthControlM97B i m k",
+          "body_sha256": "fa811741df80d40b9105448c4111f5b1d4ddce996a6b4909e498f1f0dd01055c"
+        },
+        {
+          "kind": "theorem",
+          "name": "fourth_control_inwardM97B",
+          "line": 19,
+          "header": "theorem fourth_control_inwardM97B (i m k : ℕ) (hk : 2*k+1 ≤ m) :\n fourthControlM97B i m k ≤ fourthControlM97B i m (k+1)",
+          "body_sha256": "b7b6e6d2ff60613c15c2ed29296a0b0abf92d605debd11b4da2a481f4d4ecc8a"
+        },
+        {
+          "kind": "theorem",
+          "name": "fourth_control_base_zeroM97B",
+          "line": 32,
+          "header": "theorem fourth_control_base_zeroM97B (i m : ℕ) :\n (∑ k ∈ range (m+1), betaBaseWeightMCA9 i m k*fourthControlM97B i m k)=0",
+          "body_sha256": "7b8dff0bbb048b29e433ca28f9311af5e6e007a0e49c9cfdb5eff632ab254bd4"
+        },
+        {
+          "kind": "theorem",
+          "name": "fourth_control_inward_sumM97B",
+          "line": 44,
+          "header": "theorem fourth_control_inward_sumM97B (i m : ℕ) (f : ℕ → ℝ)\n (hs : ∀ k, k ≤ m → f (m-k)=f k)\n (hi : ∀ k, 2*k+1 ≤ m → f k ≤ f (k+1)) :\n 0 ≤ ∑ k ∈ range (m+1), betaBaseWeightMCA9 i m k*f k*fourthControlM97B i m k",
+          "body_sha256": "1a39c3983dd3e4eaa632381e23674f2939490579f02b93fe29c3ef4c5d666217"
+        },
+        {
+          "kind": "theorem",
+          "name": "fourth_actual_controlM97B",
+          "line": 58,
+          "header": "theorem fourth_actual_controlM97B (d i r m : ℕ) :\n (∑ k ∈ range (m+1), steinPairM208 d i m k*steinCutM208 r m k*\n   (fourthMomentDenM731 ((i:ℝ)+1)*((k:ℝ)-(m:ℝ)/2)^4-\n     fourthMomentNumM731 ((i:ℝ)+1) m)) ≤ 0",
+          "body_sha256": "9778cacab59b1c568905b31ca2ace85d275e48613317e675fd855ac94e6b76f3"
+        }
+      ],
+      "theorems": 5,
+      "definitions": 1,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792234675372245000.json",
+        "bytes": 1406,
+        "sha256": "2cbb4e97ed6dd1f3fc1c5ca760d4b94a472308631b55bcf5468b56cc0b34ed42"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792234675372245000.lean",
+        "bytes": 3382,
+        "sha256": "83a985d43c6b44dc1b84341246bece8673f0cc251b14ce3b5032c29dcd14dbc4"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopFourthSignsM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopFourthSignsM97B.lean",
+        "bytes": 2486,
+        "sha256": "0b66701a140564ccb4a9acc635f8f7408cb9d1d041d895ef91b8b0a0dc17bde9"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopFourthMomentConditionalM731"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fourth_delta_shift_positiveM97B",
+          "line": 6,
+          "header": "theorem fourth_delta_shift_positiveM97B (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) :\n 0 < fourthDeltaM731 (x+3) (y+2) (3*(x+3)+(y+2)/2+4+z)",
+          "body_sha256": "ffa854925d25d2858192d032448d2e33951d80f14741f1737375821b3c74113e"
+        },
+        {
+          "kind": "theorem",
+          "name": "fourth_delta_positiveM97B",
+          "line": 44,
+          "header": "theorem fourth_delta_positiveM97B (a m H : ℝ)\n (ha : 3 ≤ a) (hm : 2 ≤ m) (hH : 6*a+m+8 ≤ 2*H) :\n 0 < fourthDeltaM731 a m H",
+          "body_sha256": "d5815da8eb0744e4ac28b96e9b9c3efa6ea2f26efbe901cab87cf88141e06010"
+        },
+        {
+          "kind": "theorem",
+          "name": "fourth_cp_shift_positiveM97B",
+          "line": 51,
+          "header": "theorem fourth_cp_shift_positiveM97B (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) :\n 0 < steinCpM208 (x+3) (y+2) (3*(x+3)+(y+2)/2+4+z)",
+          "body_sha256": "345aec1cf41ca5e4f571d231133c903f31832ade93edb00101c672ef72148cac"
+        },
+        {
+          "kind": "theorem",
+          "name": "fourth_cp_positiveM97B",
+          "line": 113,
+          "header": "theorem fourth_cp_positiveM97B (a m H : ℝ)\n (ha : 3 ≤ a) (hm : 2 ≤ m) (hH : 6*a+m+8 ≤ 2*H) :\n 0 < steinCpM208 a m H",
+          "body_sha256": "2f53b103f18f6d4056e82853b70b1171a03931381108d787f1b4c75f19bae524"
+        }
+      ],
+      "theorems": 4,
+      "definitions": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792234706827616000.json",
+        "bytes": 2320,
+        "sha256": "3355918b39d155688a04ac3b65be05fbfe66ac12fd5878724754bacc639f2a37"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000189/artifacts/evidence/markov-97b019af/build-1792234706827616000.lean",
+        "bytes": 2486,
+        "sha256": "0b66701a140564ccb4a9acc635f8f7408cb9d1d041d895ef91b8b0a0dc17bde9"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopFourthGroupsM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopFourthGroupsM97B.lean",
+        "bytes": 3359,
+        "sha256": "a8e4a47a22f031596805c30ca54bf6bde849ca6a25cdc325bd17095bab4ae2fa"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopFourthControlM97B",
+        "MarkovTopFourthSignsM97B"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fourth_group_positiveM97B",
+          "line": 10,
+          "header": "theorem fourth_group_positiveM97B (d i r m : ℕ)\n (hi : 2 ≤ i) (hm : 2 ≤ m) (hmr : m ≤ 2*r)\n (ham : 4*(m-2) ≤ (i-2)^2)\n (hH : 6*(i+1)+m+8 ≤ 2*(d+2*i+9)) : 0 < betaGroupMCA9 d i r m",
+          "body_sha256": "7061b1613de8ae9fe1d877a9643ad84a57e4e765a43536368a4807d0a04b90e7"
+        },
+        {
+          "kind": "theorem",
+          "name": "fourth_density_gap_positiveM97B",
+          "line": 39,
+          "header": "theorem fourth_density_gap_positiveM97B (d i r : ℕ)\n (hi : 2 ≤ i) (hr : 1 ≤ r) (hd : i+r ≤ d+2)\n (hq : 8*(r-1) ≤ (i-2)^2) : 0 < betaDensityGapMCA9 d i r",
+          "body_sha256": "e78a0847a98b91ce5c8230bf58c7c039d5490f86ef91fc515ba705360f369b85"
+        },
+        {
+          "kind": "theorem",
+          "name": "fourth_tail_gap_positiveM97B",
+          "line": 56,
+          "header": "theorem fourth_tail_gap_positiveM97B (d i r : ℕ)\n (hi : 2 ≤ i) (hr : 1 ≤ r) (hd : i+r ≤ d+2)\n (hq : 8*(r-1) ≤ (i-2)^2) : 0 < tailGapMDCB i d r",
+          "body_sha256": "888811afdbae03fb957e674af4e617b8fb05e31964ac77813f9bc8ef140ffccf"
+        },
+        {
+          "kind": "theorem",
+          "name": "fourth_top_mass_strictM97B",
+          "line": 65,
+          "header": "theorem fourth_top_mass_strictM97B (d i r : ℕ)\n (hi : 2 ≤ i) (hr : 1 ≤ r) (hd : i+r ≤ d+2)\n (hq : 8*(r-1) ≤ (i-2)^2) :\n topMassM55C d (i+r) i*topMassM55C d (i+r) (i+2) < topMassM55C d (i+r) (i+1)^2",
+          "body_sha256": "d05221669cb981a552d5b666c91da7c6c98786da6935509673d4d1b5b900a291"
+        }
+      ],
+      "theorems": 4,
+      "definitions": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792234749750446000.json",
+        "bytes": 1275,
+        "sha256": "d8b98b699f84b0ac332534be68407ab1909625bc6dd4eebcf3093af6b7fde191"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792234749750446000.lean",
+        "bytes": 3359,
+        "sha256": "a8e4a47a22f031596805c30ca54bf6bde849ca6a25cdc325bd17095bab4ae2fa"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopQuadraticSourceM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopQuadraticSourceM97B.lean",
+        "bytes": 3223,
+        "sha256": "c0f53d3e09866466b083b48a4cff614022bfbe22471c4a17ec13e0ee28564d78"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopFourthGroupsM97B",
+        "MarkovTopFourthResidualM731"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "top_template_quadratic_columnM97B",
+          "line": 10,
+          "header": "theorem top_template_quadratic_columnM97B (n t c : ℕ)\n (hn : 2*t ≤ n) (hsector : 3*t ≤ n+5)\n (hc : 5 ≤ c) (hct : c+1 ≤ t) (hw : 8*(t-c-1) ≤ (c-5)^2) :\n (topTemplateMB3E n t).coeff c*(topTemplateMB3E n t).coeff (c+2) <\n (topTemplateMB3E n t).coeff (c+1)^2",
+          "body_sha256": "c29d7517281117e7f75da8aa16dd814a56668c488fac968bf74fbf8ce7886a8f"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_quadratic_columnM97B",
+          "line": 23,
+          "header": "theorem source_top_quadratic_columnM97B (q t c : ℕ) (r : Bool)\n (hq : 1 ≤ q) (ht : 5 ≤ t) (htq : t ≤ q+2)\n (hc : 5 ≤ c) (hct : c+1 ≤ t) (hw : 8*(t-c-1) ≤ (c-5)^2) :\n threeRawM9E2 q r c (sourceNME9C q r+2-t)*\n threeRawM9E2 q r (c+2) (sourceNME9C q r+2-t) <\n threeRawM9E2 q r (c+1) (sourceNME9C q r+2-t)^2",
+          "body_sha256": "d55747419e59789c708ef94b825c7a6046affcdc0cc149920c84b16cf0ab9db8"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_quadratic_polygonM97B",
+          "line": 34,
+          "header": "theorem source_top_quadratic_polygonM97B (q t c : ℕ) (r : Bool)\n (hq : 1 ≤ q) (ht : 5 ≤ t) (htq : t ≤ q+2) (hc : 5 ≤ c)\n (hct : c+2 ≤ t) (hw : 8*(t-c-1) ≤ (c-5)^2) :\n InPolygon 3 (sourceNME9C q r) c (sourceNME9C q r+2-t) ∧\n InPolygon 3 (sourceNME9C q r) (c+1) (sourceNME9C q r+2-t) ∧\n InPolygon 3 (sourceNME9C q r) (c+2) (sourceNME9C q r+2-t) ∧\n threeRawM9E2 q r c (sourceNME9C q r+2-t)*\n threeRawM9E2 q r (c+2) (sourceNME9C q r+2-t) <\n threeRawM9E2 q r (c+1) (sourceNME9C q r+2-t)^2",
+          "body_sha256": "88020f27af3948d383b540ae47fa9de5e7957f3c93efad433cc835ee686c8f2e"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_path_quadraticM97B",
+          "line": 46,
+          "header": "theorem source_top_path_quadraticM97B (path : List Bool) (t c : ℕ)\n (ha : (frame path).mid.a=3) (ht : 5 ≤ t)\n (hb : 3*t ≤ (frame path).mid.b+5) (hc : 5 ≤ c)\n (hct : c+2 ≤ t) (hw : 8*(t-c-1) ≤ (c-5)^2) :\n InPolygon (frame path).mid.a (frame path).mid.b c ((frame path).mid.b+2-t) ∧\n InPolygon (frame path).mid.a (frame path).mid.b (c+1) ((frame path).mid.b+2-t) ∧\n InPolygon (frame path).mid.a (frame path).mid.b (c+2) ((frame path).mid.b+2-t) ∧\n coeff (frame path).mid.p c ((frame path).mid.b+2-t)*\n coeff (frame path).mid.p (c+2) ((frame path).mid.b+2-t) <\n coeff (frame path).mid.p (c+1) ((frame path).mid.b+2-t)^2",
+          "body_sha256": "15b9c1244517b7be12c2fd569fe475312a1183318f6065ad26ba182d8349ecb4"
+        }
+      ],
+      "theorems": 4,
+      "definitions": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792234787742138000.json",
+        "bytes": 1249,
+        "sha256": "cd60bf5dba0ce34edb12e66635f2b016b01f6fb90beefb931c48a2ce70a760e0"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792234787742138000.lean",
+        "bytes": 3223,
+        "sha256": "c0f53d3e09866466b083b48a4cff614022bfbe22471c4a17ec13e0ee28564d78"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopQuadraticResidualM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopQuadraticResidualM97B.lean",
+        "bytes": 2718,
+        "sha256": "3e075e117d4dc5eb0eb59d1686b07bf1ce99c9d5a5d756867c7a0179e0b90b8f"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopQuadraticSourceM97B"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "TopQuadraticResidualM97B",
+          "line": 9,
+          "header": "def TopQuadraticResidualM97B : Prop",
+          "body_sha256": "024a96ef91c6660d6906209114e032910addf0b2ba1833d9ad20679680df464f"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_interior_iff_quadraticM97B",
+          "line": 13,
+          "header": "theorem top_interior_iff_quadraticM97B : TopInteriorWedgeM731 ↔ TopQuadraticResidualM97B",
+          "body_sha256": "e31bcfe459e1f15080eb67c7f2e755c6ca099b740c7fd390fc4608b23439d3c8"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_moment_iff_quadraticM97B",
+          "line": 22,
+          "header": "theorem top_moment_iff_quadraticM97B : TopMomentBoundM55C ↔ TopQuadraticResidualM97B",
+          "body_sha256": "9e5a08ddcbadbbdbba67ed4f8b9533ce22319d54e1873bc0237a056462544a6c"
+        },
+        {
+          "kind": "def",
+          "name": "TopClosedRegionM97B",
+          "line": 25,
+          "header": "def TopClosedRegionM97B (q : ℕ) (r : Bool) (i j : ℕ) : Prop",
+          "body_sha256": "b532da9be969f3c98e33b2b5277bc9342f34ca9e6f5097c1566e523d7da88faa"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_closedM97B",
+          "line": 29,
+          "header": "theorem source_top_closedM97B (q i j : ℕ) (r : Bool) (hq : 1 ≤ q)\n (h : TopClosedRegionM97B q r i j) :\n threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2",
+          "body_sha256": "5f098c5935f6b02d3987ec74e79a91d249175f99bb2117b50ce69ab1ac6e3ba2"
+        },
+        {
+          "kind": "def",
+          "name": "ThreeFrontierM97B",
+          "line": 36,
+          "header": "def ThreeFrontierM97B : Prop",
+          "body_sha256": "357683068fa27dcc4a47395e83fce70cc548e6b9c99e51071c47a9723bf7250f"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_frontierM97B",
+          "line": 45,
+          "header": "theorem root_iff_frontierM97B : Conjecture63 ↔ ThreeFrontierM97B ∧ OtherFourM9E2",
+          "body_sha256": "9cee95409b54e82c46a0c5a30e0c035183df36d9d0f26343bb5bd61183beeb9f"
+        }
+      ],
+      "theorems": 4,
+      "definitions": 3,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792234834726118000.json",
+        "bytes": 1217,
+        "sha256": "b7a7cad8b2c4e88663e0e92ec49ebf51841e6beb85b08104a3486bcc43ece725"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000189/artifacts/evidence/markov-97b019af/build-1792234834726118000.lean",
+        "bytes": 2718,
+        "sha256": "3e075e117d4dc5eb0eb59d1686b07bf1ce99c9d5a5d756867c7a0179e0b90b8f"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSixthBetaM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopSixthBetaM97B.lean",
+        "bytes": 3536,
+        "sha256": "720d48f406716dd1a123a87f23c2c6241fb1cc9439dcd8c9d45fda7967707ee9"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopFourthControlM97B"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "sixthMomentDenM97B",
+          "line": 7,
+          "header": "def sixthMomentDenM97B (a : ℝ) : ℝ",
+          "body_sha256": "d028170e3a6f2648c2609377c2680caca7defc804a4ce81fb28c74d475059357"
+        },
+        {
+          "kind": "def",
+          "name": "sixthMomentNumM97B",
+          "line": 8,
+          "header": "def sixthMomentNumM97B (a m : ℝ) : ℝ",
+          "body_sha256": "7a8d79fe2b1e3a8fd5ac57999aa416e00dc229b314c3bd832fc509ee7103c027"
+        },
+        {
+          "kind": "def",
+          "name": "sixthBetaIntM97B",
+          "line": 11,
+          "header": "def sixthBetaIntM97B (i m : ℕ) : ℤ",
+          "body_sha256": "3fb857f6a29bb75142bc06ed60669eedb7bfe0056ec289c28d7a75aca0eefeae"
+        },
+        {
+          "kind": "theorem",
+          "name": "sixth_beta_expansionM97B",
+          "line": 14,
+          "header": "theorem sixth_beta_expansionM97B (i m : ℕ) :\n sixthBetaIntM97B i m=(m:ℤ)^6*betaMomentMDCB i m 0 0+\n (-12*(m:ℤ)^4+48*(m:ℤ)^2*(m-1)-64*((m:ℤ)-1)^2)*betaMomentMDCB i m 1 1+\n (48*(m:ℤ)^2-64*(3*(m:ℤ)-5))*betaMomentMDCB i m 2 2-64*betaMomentMDCB i m 3 3",
+          "body_sha256": "3cb82aa282376b78ae5b23a4a47b118a86c8191a7ee942398a6f914eec526d43"
+        },
+        {
+          "kind": "theorem",
+          "name": "sixth_beta_realM97B",
+          "line": 27,
+          "header": "theorem sixth_beta_realM97B (i m : ℕ) :\n sixthMomentDenM97B ((i:ℝ)+1)*\n (∑ k ∈ range (m+1), betaBaseWeightMCA9 i m k*((k:ℝ)-(m:ℝ)/2)^6)=\n sixthMomentNumM97B ((i:ℝ)+1) m*(∑ k ∈ range (m+1), betaBaseWeightMCA9 i m k)",
+          "body_sha256": "649f2228d8a0f6f5260d6a59ca2f23a1cd3a2bea9edeece2db29255471fc5501"
+        }
+      ],
+      "theorems": 2,
+      "definitions": 3,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235193519072000.json",
+        "bytes": 1420,
+        "sha256": "f653555c2250fe5686bb1af942a017dadc787b237515c05c8f60d45bc20be9c9"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235193519072000.lean",
+        "bytes": 3536,
+        "sha256": "720d48f406716dd1a123a87f23c2c6241fb1cc9439dcd8c9d45fda7967707ee9"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSixthControlM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopSixthControlM97B.lean",
+        "bytes": 3313,
+        "sha256": "24d10a47b90fbcbf73d822cc9d0d1b05e544a5aceb6424f3d6a689cc9827ea18"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopSixthBetaM97B"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "sixthControlM97B",
+          "line": 9,
+          "header": "def sixthControlM97B (i m k : ℕ) : ℝ",
+          "body_sha256": "766d4995e6a961336cffbf95f4387097ecefcae949c126ac2ca741262efd4112"
+        },
+        {
+          "kind": "theorem",
+          "name": "sixth_control_symmetricM97B",
+          "line": 13,
+          "header": "theorem sixth_control_symmetricM97B (i m k : ℕ) (hk : k ≤ m) :\n sixthControlM97B i m (m-k)=sixthControlM97B i m k",
+          "body_sha256": "c1e211ebb172cf42c71786f775845d498f1832343d5c5e9b200a30da2ccb648d"
+        },
+        {
+          "kind": "theorem",
+          "name": "sixth_control_inwardM97B",
+          "line": 19,
+          "header": "theorem sixth_control_inwardM97B (i m k : ℕ) (hk : 2*k+1 ≤ m) :\n sixthControlM97B i m k ≤ sixthControlM97B i m (k+1)",
+          "body_sha256": "50220421c4a3448924f74cf79fd606faf212716be133e027f8fe089fa56b1c05"
+        },
+        {
+          "kind": "theorem",
+          "name": "sixth_control_base_zeroM97B",
+          "line": 31,
+          "header": "theorem sixth_control_base_zeroM97B (i m : ℕ) :\n (∑ k ∈ range (m+1), betaBaseWeightMCA9 i m k*sixthControlM97B i m k)=0",
+          "body_sha256": "0cd676a647937af8639ae25dc37cf1d7c41658171f9228fff98e245d4a3b938e"
+        },
+        {
+          "kind": "theorem",
+          "name": "sixth_control_inward_sumM97B",
+          "line": 43,
+          "header": "theorem sixth_control_inward_sumM97B (i m : ℕ) (f : ℕ → ℝ)\n (hs : ∀ k, k ≤ m → f (m-k)=f k)\n (hi : ∀ k, 2*k+1 ≤ m → f k ≤ f (k+1)) :\n 0 ≤ ∑ k ∈ range (m+1), betaBaseWeightMCA9 i m k*f k*sixthControlM97B i m k",
+          "body_sha256": "78089399aa9ab3b4a1b3f1b58fd19097602bbfc23ff7d0d34e4b4acdd258dd2a"
+        },
+        {
+          "kind": "theorem",
+          "name": "sixth_actual_controlM97B",
+          "line": 57,
+          "header": "theorem sixth_actual_controlM97B (d i r m : ℕ) :\n (∑ k ∈ range (m+1), steinPairM208 d i m k*steinCutM208 r m k*\n   (sixthMomentDenM97B ((i:ℝ)+1)*((k:ℝ)-(m:ℝ)/2)^6-\n     sixthMomentNumM97B ((i:ℝ)+1) m)) ≤ 0",
+          "body_sha256": "645a79c19a77c18a70548040663a35c021f95f1859889bc4f881da13d9e12832"
+        }
+      ],
+      "theorems": 5,
+      "definitions": 1,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235720262304000-MarkovTopSixthControlM97B.json",
+        "bytes": 1402,
+        "sha256": "6372f0a1c8fc0a5f012b5fc27eff70946be0abe9a63a05292ff16ac0e6ca5c05"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235720262304000-MarkovTopSixthControlM97B.lean",
+        "bytes": 3313,
+        "sha256": "24d10a47b90fbcbf73d822cc9d0d1b05e544a5aceb6424f3d6a689cc9827ea18"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopInwardGeneratorM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000189/artifacts/research/MarkovTopInwardGeneratorM97B.lean",
+        "bytes": 3366,
+        "sha256": "51cff402e6efd8b7ca0260161059c49e71cf04ff87c27f68d613e812ce1eb048"
+      },
+      "archive_present": true,
+      "imports": [
+        "MarkovTopFourthControlM97B"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "finite_generator_partsM97B",
+          "line": 9,
+          "header": "theorem finite_generator_partsM97B (m : ℕ) (w B D f g : ℕ → ℝ)\n (hB : B m=0) (hD : D 0=0)\n (hstep : ∀ k, k < m → w k*B k=w (k+1)*D (k+1)) :\n (∑ k ∈ range (m+1), w k*f k*(B k*(g (k+1)-g k)+D k*(g (k-1)-g k)))=\n -(∑ k ∈ range m, w k*B k*(f (k+1)-f k)*(g (k+1)-g k))",
+          "body_sha256": "bfd3c4d0db232f8b865c70b6ed714c2821b2fcd50d066be471ccaa0499803829"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_inward_edge_nonnegM97B",
+          "line": 29,
+          "header": "theorem cut_inward_edge_nonnegM97B (r m : ℕ) (g : ℕ → ℝ)\n (hs : ∀ k, k ≤ m → g (m-k)=g k)\n (hi : ∀ k, 2*k+1 ≤ m → g k ≤ g (k+1))\n (k : ℕ) (hk : k < m) :\n 0 ≤ (steinCutM208 r m (k+1)-steinCutM208 r m k)*(g (k+1)-g k)",
+          "body_sha256": "29101a05a47e83a2b80d819060a88e7b9366be7c9470b1151bc538ccd56df4f1"
+        },
+        {
+          "kind": "theorem",
+          "name": "stein_generator_inward_nonposM97B",
+          "line": 45,
+          "header": "theorem stein_generator_inward_nonposM97B (d i r m : ℕ) (g : ℕ → ℝ)\n (hs : ∀ k, k ≤ m → g (m-k)=g k)\n (hi : ∀ k, 2*k+1 ≤ m → g k ≤ g (k+1)) :\n (∑ k ∈ range (m+1), steinPairM208 d i m k*steinCutM208 r m k*\n   (steinBM208 ((i:ℝ)+1) m ((d:ℝ)+2*i+9) k*(g (k+1)-g k)+\n    steinDM208 ((i:ℝ)+1) m ((d:ℝ)+2*i+9) k*(g (k-1)-g k))) ≤ 0",
+          "body_sha256": "15c76810d98936e3f944b1f71e5a626d511a7c5521a15a80c8f036da6a19e695"
+        }
+      ],
+      "theorems": 3,
+      "definitions": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235236432801000.json",
+        "bytes": 1285,
+        "sha256": "e49acf237d829595acde7c2d22b354bd4ffead8fac742a7d57ac372a21c3adb4"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235236432801000.lean",
+        "bytes": 3366,
+        "sha256": "51cff402e6efd8b7ca0260161059c49e71cf04ff87c27f68d613e812ce1eb048"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSixthCertificateM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopSixthCertificateM97B.lean",
+        "bytes": 9871,
+        "sha256": "ca4b6373e28bc636fc5df0396d08e396443384bf08d27fb4adc240cdf2e7ced0"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopSixthBetaM97B"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "sixthLM97B",
+          "line": 7,
+          "header": "def sixthLM97B (a m H k : ℝ) : ℝ",
+          "body_sha256": "405e7e41891ed3b8973224f638c8fc953db72bd63050fb2e836cd45fff26005d"
+        },
+        {
+          "kind": "def",
+          "name": "sixthdeltaM97B",
+          "line": 10,
+          "header": "def sixthdeltaM97B (a m H : ℝ) : ℝ",
+          "body_sha256": "3d34b647a00392cec8a7eee2ba790076120ee707a82278ec4fa29f127d6bed86"
+        },
+        {
+          "kind": "def",
+          "name": "sixthAM97B",
+          "line": 65,
+          "header": "def sixthAM97B (a m H : ℝ) : ℝ",
+          "body_sha256": "ffb6f9f04b3085ef6b37ad9dfbd58b4ef8c4b941f91e751074440c9be1f2ec0f"
+        },
+        {
+          "kind": "def",
+          "name": "sixthCM97B",
+          "line": 131,
+          "header": "def sixthCM97B (a m H : ℝ) : ℝ",
+          "body_sha256": "16ea28576d5ceedba37dcb52bb5fa104fad48fcacb73b679aef7f1377249c634"
+        },
+        {
+          "kind": "def",
+          "name": "sixthJM97B",
+          "line": 152,
+          "header": "def sixthJM97B (a m H : ℝ) : ℝ",
+          "body_sha256": "ab45010e8e739aa229e9ac951ef8e9cadd7c19b7136745f05689cc2d1e15462e"
+        },
+        {
+          "kind": "def",
+          "name": "sixthKM97B",
+          "line": 308,
+          "header": "def sixthKM97B (a m H : ℝ) : ℝ",
+          "body_sha256": "1702d5bea1200a75335287305deaea76ce9897fde46bdff90248047921514ef3"
+        },
+        {
+          "kind": "def",
+          "name": "sixthReducedM97B",
+          "line": 335,
+          "header": "def sixthReducedM97B (a m H : ℝ) : ℝ",
+          "body_sha256": "716c1b56a70667e72ee9a9e81bf94665f0a7e90620dd03185301f82c953882dc"
+        },
+        {
+          "kind": "theorem",
+          "name": "sixth_point_certificateM97B",
+          "line": 539,
+          "header": "theorem sixth_point_certificateM97B (a m H k : ℝ) :\n sixthdeltaM97B a m H*steinScalarM208 a H k (m-k)+\n sixthAM97B a m H*steinLM208 a m H k+sixthCM97B a m H*sixthLM97B a m H k=\n sixthJM97B a m H+sixthKM97B a m H*(k-m/2)^6",
+          "body_sha256": "48dc87931c599034190dd88e225642fee84c775a4eb1d4a5f38c68a51ad3abca"
+        },
+        {
+          "kind": "theorem",
+          "name": "sixth_certificate_factorM97B",
+          "line": 547,
+          "header": "theorem sixth_certificate_factorM97B (a m H : ℝ) :\n sixthMomentDenM97B a*sixthJM97B a m H+sixthKM97B a m H*sixthMomentNumM97B a m=\n a*m*(m-1)*sixthReducedM97B a m H",
+          "body_sha256": "ff8466c350ef5222659ec25ca953c54ec9cb71d35085c96ed6801ecc03c50cea"
+        }
+      ],
+      "theorems": 2,
+      "definitions": 7,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235236432769000.json",
+        "bytes": 1801,
+        "sha256": "737f5619f5524980aa150e5a7e125b38ea595513f85478412706aeb95f03a6a0"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235236432769000.lean",
+        "bytes": 9871,
+        "sha256": "ca4b6373e28bc636fc5df0396d08e396443384bf08d27fb4adc240cdf2e7ced0"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSixthDeltaSignM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopSixthDeltaSignM97B.lean",
+        "bytes": 2883,
+        "sha256": "84c5f922d4c5e7526c307380a1408d39326e2cb234fa7f36753e97107dd367e5"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopSixthCertificateM97B"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "sixth_delta_shiftM97B",
+          "line": 7,
+          "header": "theorem sixth_delta_shiftM97B (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) :\n 0 < sixthdeltaM97B (x+3) (y+2) (3*(x+3)+(y+2)/2+4+z)",
+          "body_sha256": "075b6824cf52a46689eb4d3f1a956ed7a0f2ad6cfc2e30df2e2e647f67eea864"
+        },
+        {
+          "kind": "theorem",
+          "name": "sixth_delta_positiveM97B",
+          "line": 145,
+          "header": "theorem sixth_delta_positiveM97B (a m H : ℝ)\n (ha : 3 ≤ a) (hm : 2 ≤ m) (hH : 6*a+m+8 ≤ 2*H) :\n 0 < sixthdeltaM97B a m H",
+          "body_sha256": "d366498bf0b9e0e3cabcbc884aed2675fbd906af72bb00d29ec3aa5c14e0399b"
+        }
+      ],
+      "theorems": 2,
+      "definitions": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000189/artifacts/evidence/markov-97b019af/build-1792235752883235000-MarkovTopSixthDeltaSignM97B.json",
+        "bytes": 1121,
+        "sha256": "ff3fd5f8075005c9d21a075f055bd9bc164cfc9649b8a6f92f00b3e34ef19b97"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235752883235000-MarkovTopSixthDeltaSignM97B.lean",
+        "bytes": 2883,
+        "sha256": "84c5f922d4c5e7526c307380a1408d39326e2cb234fa7f36753e97107dd367e5"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSixthASignM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopSixthASignM97B.lean",
+        "bytes": 3433,
+        "sha256": "a5e348eab7b4bc6ea1d0d95f97e79b37ff4f28eb7d868124385a3053a9c405d3"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopSixthCertificateM97B"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "sixth_a_shiftM97B",
+          "line": 7,
+          "header": "theorem sixth_a_shiftM97B (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) :\n 0 < sixthAM97B (x+3) (y+2) (3*(x+3)+(y+2)/2+4+z)",
+          "body_sha256": "38619e237824228dda6176c52048d578bdad4c26557838e8a048f0c0011b4796"
+        },
+        {
+          "kind": "theorem",
+          "name": "sixth_a_positiveM97B",
+          "line": 175,
+          "header": "theorem sixth_a_positiveM97B (a m H : ℝ)\n (ha : 3 ≤ a) (hm : 2 ≤ m) (hH : 6*a+m+8 ≤ 2*H) :\n 0 < sixthAM97B a m H",
+          "body_sha256": "1be46c78b865ff0e1216aebff4addad6d755ad0782774d272a1e69f7a8463f5d"
+        }
+      ],
+      "theorems": 2,
+      "definitions": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235831383488000-MarkovTopSixthASignM97B.json",
+        "bytes": 1105,
+        "sha256": "1b6969cebd2da58e78a13d82fa57051694cea6e5d341ea801eaa8bf9c3c65cc6"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235831383488000-MarkovTopSixthASignM97B.lean",
+        "bytes": 3433,
+        "sha256": "a5e348eab7b4bc6ea1d0d95f97e79b37ff4f28eb7d868124385a3053a9c405d3"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSixthCSignM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopSixthCSignM97B.lean",
+        "bytes": 1579,
+        "sha256": "f27c50dcf99898f5217244b616b83a2ea10ee0a5b6cc77d04d20447adb428caf"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopSixthCertificateM97B"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "sixth_c_shiftM97B",
+          "line": 7,
+          "header": "theorem sixth_c_shiftM97B (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) :\n 0 < sixthCM97B (x+3) (y+2) (3*(x+3)+(y+2)/2+4+z)",
+          "body_sha256": "8ca97640b28ce5fa4837b62b34929d2333ec326ea18c746000feb85b423ffd6b"
+        },
+        {
+          "kind": "theorem",
+          "name": "sixth_c_positiveM97B",
+          "line": 71,
+          "header": "theorem sixth_c_positiveM97B (a m H : ℝ)\n (ha : 3 ≤ a) (hm : 2 ≤ m) (hH : 6*a+m+8 ≤ 2*H) :\n 0 < sixthCM97B a m H",
+          "body_sha256": "94ab4ff242b4329f8dc8d2a1ebfd3d1404e99eb06e630634eb6c096657d43e5f"
+        }
+      ],
+      "theorems": 2,
+      "definitions": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235876755608000-MarkovTopSixthCSignM97B.json",
+        "bytes": 1105,
+        "sha256": "fcd5ea7f38fc41f47587471f77bc3e78a08f6a2044319879c044d383a5d6aeb1"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235876755608000-MarkovTopSixthCSignM97B.lean",
+        "bytes": 1579,
+        "sha256": "f27c50dcf99898f5217244b616b83a2ea10ee0a5b6cc77d04d20447adb428caf"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSixthKSignM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopSixthKSignM97B.lean",
+        "bytes": 1911,
+        "sha256": "964a4420fe4557746ae8a7ebe982717d888f81dbbbde4c9e71148baf6801451e"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopSixthCertificateM97B"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "sixth_k_shiftM97B",
+          "line": 7,
+          "header": "theorem sixth_k_shiftM97B (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) :\n 0 < (fun a m H => -sixthKM97B a m H) (x+3) (y+2) (3*(x+3)+(y+2)/2+4+z)",
+          "body_sha256": "12aac88babef7ba762789f11569daaeb2f74446f90077fb52fdc480c8d6ffcf9"
+        },
+        {
+          "kind": "theorem",
+          "name": "sixth_k_positiveM97B",
+          "line": 81,
+          "header": "theorem sixth_k_positiveM97B (a m H : ℝ)\n (ha : 3 ≤ a) (hm : 2 ≤ m) (hH : 6*a+m+8 ≤ 2*H) :\n 0 < (fun a m H => -sixthKM97B a m H) a m H",
+          "body_sha256": "df6d7ca917921bd1e812042140912a59bfaf98dca0b6be4dc1e2f5518d52e9a4"
+        }
+      ],
+      "theorems": 2,
+      "definitions": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235449150614000-MarkovTopSixthKSignM97B.json",
+        "bytes": 2081,
+        "sha256": "89921f57f11ffc9c05e71c22a02d3c803a26ae7eb9622dfb816a6739e80c672a"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235449150614000-MarkovTopSixthKSignM97B.lean",
+        "bytes": 1911,
+        "sha256": "964a4420fe4557746ae8a7ebe982717d888f81dbbbde4c9e71148baf6801451e"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSixthReducedSignM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopSixthReducedSignM97B.lean",
+        "bytes": 8714,
+        "sha256": "e169fdd8bb715baa6b2cb13804a13d24189f6e0aeb9970630faa66f92ebb577d"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopSixthCertificateM97B"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "sixth_reduced_shiftM97B",
+          "line": 7,
+          "header": "theorem sixth_reduced_shiftM97B (x y z : ℝ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) :\n 0 < sixthReducedM97B (x+7) (y+2) (3*(x+7)+(y+2)/2+4+z)",
+          "body_sha256": "eab956e098416e95b3e344ae3651239695aafbe304c258abe5a2382a5bd7cb59"
+        },
+        {
+          "kind": "theorem",
+          "name": "sixth_reduced_positiveM97B",
+          "line": 16,
+          "header": "theorem sixth_reduced_positiveM97B (a m H : ℝ)\n (ha : 7 ≤ a) (hm : 2 ≤ m) (hH : 6*a+m+8 ≤ 2*H) :\n 0 < sixthReducedM97B a m H",
+          "body_sha256": "b87ce21fcdbeb042d980ff5ad79fb276ecf82870b1e62008951f24c3abe7e8d3"
+        }
+      ],
+      "theorems": 2,
+      "definitions": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000189/artifacts/evidence/markov-97b019af/build-1792235728739059000-MarkovTopSixthReducedSignM97B.json",
+        "bytes": 1128,
+        "sha256": "7de10a183f87009f645a342f2423b412c9c25fde0f7e2c950e1772aa8624381c"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000189/artifacts/evidence/markov-97b019af/build-1792235728739059000-MarkovTopSixthReducedSignM97B.lean",
+        "bytes": 8714,
+        "sha256": "e169fdd8bb715baa6b2cb13804a13d24189f6e0aeb9970630faa66f92ebb577d"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSixthGeneratorM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopSixthGeneratorM97B.lean",
+        "bytes": 1202,
+        "sha256": "4854b2e73742e6251044c12f68652e377bde3cb416230f1c18f9b66799fae403"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopInwardGeneratorM97B",
+        "MarkovTopSixthCertificateM97B"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "sixth_generator_nonposM97B",
+          "line": 9,
+          "header": "theorem sixth_generator_nonposM97B (d i r m : ℕ) :\n (∑ k ∈ range (m+1), steinPairM208 d i m k*steinCutM208 r m k*\n   sixthLM97B ((i:ℝ)+1) m ((d:ℝ)+2*i+9) k) ≤ 0",
+          "body_sha256": "de384c700a5d74facb3cb3f42b7160a4aeaab0c88a887c2556c644b64381d0d6"
+        }
+      ],
+      "theorems": 1,
+      "definitions": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235449150722000-MarkovTopSixthGeneratorM97B.json",
+        "bytes": 1573,
+        "sha256": "9708294315b2bb686ff117e10b829701342118f5cddde00958b683c245ef6030"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235449150722000-MarkovTopSixthGeneratorM97B.lean",
+        "bytes": 1202,
+        "sha256": "4854b2e73742e6251044c12f68652e377bde3cb416230f1c18f9b66799fae403"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSixthGroupsM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopSixthGroupsM97B.lean",
+        "bytes": 4971,
+        "sha256": "2f64fd319dfc82b03312532cda715d9760d2057cbf4418ffd80b4ac798e0bc28"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopSixthControlM97B",
+        "MarkovTopSixthGeneratorM97B",
+        "MarkovTopSixthDeltaSignM97B",
+        "MarkovTopSixthASignM97B",
+        "MarkovTopSixthCSignM97B",
+        "MarkovTopSixthKSignM97B",
+        "MarkovTopSixthReducedSignM97B"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "sixth_combined_pointM97B",
+          "line": 15,
+          "header": "theorem sixth_combined_pointM97B (a m H k : ℝ) :\n sixthMomentDenM97B a*sixthdeltaM97B a m H*steinScalarM208 a H k (m-k)+\n sixthMomentDenM97B a*sixthAM97B a m H*steinLM208 a m H k+\n sixthMomentDenM97B a*sixthCM97B a m H*sixthLM97B a m H k+\n (-sixthKM97B a m H)*(sixthMomentDenM97B a*(k-m/2)^6-sixthMomentNumM97B a m)=\n a*m*(m-1)*sixthReducedM97B a m H",
+          "body_sha256": "367c9d431bc36e8c47dcb8ffd833de335977592ba3e2d6a15daf31ce37b94a95"
+        },
+        {
+          "kind": "theorem",
+          "name": "sixth_sum_positiveM97B",
+          "line": 24,
+          "header": "theorem sixth_sum_positiveM97B (a H : ℝ) (m : ℕ) (w : ℕ → ℝ)\n (ha : 7 ≤ a) (hm : 2 ≤ m) (hH : 6*a+m+8 ≤ 2*H)\n (hMass : 0 < ∑ k ∈ range (m+1), w k)\n (hL1 : (∑ k ∈ range (m+1), w k*steinLM208 a m H k) ≤ 0)\n (hL2 : (∑ k ∈ range (m+1), w k*sixthLM97B a m H k) ≤ 0)\n (h6 : (∑ k ∈ range (m+1), w k*(sixthMomentDenM97B a*((k:ℝ)-(m:ℝ)/2)^6-\n   sixthMomentNumM97B a m)) ≤ 0) :\n 0 < ∑ k ∈ range (m+1), w k*steinScalarM208 a H k ((m:ℝ)-k)",
+          "body_sha256": "faeedb2b6c6a7008f5f324fb896c62b5a82563301707fa49c38e32152eb1cf19"
+        },
+        {
+          "kind": "theorem",
+          "name": "sixth_group_positiveM97B",
+          "line": 56,
+          "header": "theorem sixth_group_positiveM97B (d i r m : ℕ)\n (hi : 6 ≤ i) (hm : 2 ≤ m) (hmr : m ≤ 2*r) (hd : i+r ≤ d+2) :\n 0 < betaGroupMCA9 d i r m",
+          "body_sha256": "f0cb77ff2de42af50cdc4df8bd83318541abfc03086e39b123448511101cd71f"
+        },
+        {
+          "kind": "theorem",
+          "name": "sixth_tail_gap_positiveM97B",
+          "line": 76,
+          "header": "theorem sixth_tail_gap_positiveM97B (d i r : ℕ)\n (hi : 6 ≤ i) (hr : 1 ≤ r) (hd : i+r ≤ d+2) : 0 < tailGapMDCB i d r",
+          "body_sha256": "a9826a5c85ec9d4357f36974627d7aa8758377650a81d197ac5c3bd9a5a4087b"
+        }
+      ],
+      "theorems": 4,
+      "definitions": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235922932587000-MarkovTopSixthGroupsM97B.json",
+        "bytes": 581,
+        "sha256": "0c7fb075cbbbf1e58b4f645060864688307966b7c271869c8823249ec4ffbcd3"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235922932587000-MarkovTopSixthGroupsM97B.lean",
+        "bytes": 4971,
+        "sha256": "2f64fd319dfc82b03312532cda715d9760d2057cbf4418ffd80b4ac798e0bc28"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSmall2GapM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopSmall2GapM97B.lean",
+        "bytes": 9556,
+        "sha256": "bfbf1fe659c6d2bf90ba7f7bd64480468763a21b8ee1491bdc7fecdc182fa23a"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopThirdGapMEB6"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "top_small_2_gapM97B",
+          "line": 9,
+          "header": "theorem top_small_2_gapM97B (h d : ℚ) (hh : 0 ≤ h) (hd : 0 ≤ d) :\n topShortQMEB6 d (h+4) 2*topShortQMEB6 d (h+4) 4 <\n topShortQMEB6 d (h+4) 3^2",
+          "body_sha256": "268986cb43516d908cb14bcd41d371cec773155ec88e8400ddd4db8f169a3c99"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_small_2_strictM97B",
+          "line": 331,
+          "header": "theorem top_mass_small_2_strictM97B (d T : ℕ) (hT : 4 ≤ T) :\n topMassM55C d T 2*topMassM55C d T 4 < topMassM55C d T 3^2",
+          "body_sha256": "f59232e83df0fa173b807b6156bd6b64625d2b316ae650591527e7e25194a9f9"
+        }
+      ],
+      "theorems": 2,
+      "definitions": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000189/artifacts/evidence/markov-97b019af/build-1792235305188263000.json",
+        "bytes": 2010,
+        "sha256": "95044ffdac66e4d878069d7c1744120982eb2cac0ea8e85cde08fe20b72e527d"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235305188263000.lean",
+        "bytes": 9556,
+        "sha256": "bfbf1fe659c6d2bf90ba7f7bd64480468763a21b8ee1491bdc7fecdc182fa23a"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSmall3GapM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopSmall3GapM97B.lean",
+        "bytes": 11044,
+        "sha256": "e7a82178be2e0c3ce1a58ef2ba3cb90b28f7d5780009610874ddcb055ceaf1b2"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopThirdGapMEB6"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "top_small_3_gapM97B",
+          "line": 9,
+          "header": "theorem top_small_3_gapM97B (h d : ℚ) (hh : 0 ≤ h) (hd : 0 ≤ d) :\n topShortQMEB6 d (h+5) 3*topShortQMEB6 d (h+5) 5 <\n topShortQMEB6 d (h+5) 4^2",
+          "body_sha256": "e1eb091399206e8a2e4ffb4d3249afdcc8dd5279fc00cdcd440212bef53e559d"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_small_3_strictM97B",
+          "line": 21,
+          "header": "theorem top_mass_small_3_strictM97B (d T : ℕ) (hT : 5 ≤ T) :\n topMassM55C d T 3*topMassM55C d T 5 < topMassM55C d T 4^2",
+          "body_sha256": "8c9daae69106568eec118b1e6b71d80d0122094a6e3248ea897b30782afc7ee9"
+        }
+      ],
+      "theorems": 2,
+      "definitions": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000189/artifacts/evidence/markov-97b019af/build-1792235651129092000-MarkovTopSmall3GapM97B.json",
+        "bytes": 1778,
+        "sha256": "8baecfa5b45b93781c5c7a1721a06c691e3c6528358a6f12bd043e2da5412d58"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235651129092000-MarkovTopSmall3GapM97B.lean",
+        "bytes": 11044,
+        "sha256": "e7a82178be2e0c3ce1a58ef2ba3cb90b28f7d5780009610874ddcb055ceaf1b2"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSmall4GapM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopSmall4GapM97B.lean",
+        "bytes": 14633,
+        "sha256": "38949a7a5331909b107e0c44f0fce15046640759e978233c8b1d8e0569ffba5d"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopThirdGapMEB6"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "top_small_4_gapM97B",
+          "line": 9,
+          "header": "theorem top_small_4_gapM97B (h d : ℚ) (hh : 0 ≤ h) (hd : 0 ≤ d) :\n topShortQMEB6 d (h+6) 4*topShortQMEB6 d (h+6) 6 <\n topShortQMEB6 d (h+6) 5^2",
+          "body_sha256": "d7fecac357f770837ad60b5c853df262ca2d9cd2110f53729c4e2175dd355d99"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_small_4_strictM97B",
+          "line": 21,
+          "header": "theorem top_mass_small_4_strictM97B (d T : ℕ) (hT : 6 ≤ T) :\n topMassM55C d T 4*topMassM55C d T 6 < topMassM55C d T 5^2",
+          "body_sha256": "473d47665834956f3e73fe46bac1f2ef3e99034ebccf7b892e72242617b5c5b9"
+        }
+      ],
+      "theorems": 2,
+      "definitions": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235728740184000-MarkovTopSmall4GapM97B.json",
+        "bytes": 575,
+        "sha256": "17462a804f80d67c613c15cdad6e04c308cdd84b12c00cbfee29bb4480215744"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235728740184000-MarkovTopSmall4GapM97B.lean",
+        "bytes": 14633,
+        "sha256": "38949a7a5331909b107e0c44f0fce15046640759e978233c8b1d8e0569ffba5d"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSmall5GapM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopSmall5GapM97B.lean",
+        "bytes": 19022,
+        "sha256": "b19f90234549ac765d90ae1a65077831e0fcc27a8d7512da81664e3d29f4ec87"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopThirdGapMEB6"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "top_small_5_gapM97B",
+          "line": 9,
+          "header": "theorem top_small_5_gapM97B (h d : ℚ) (hh : 0 ≤ h) (hd : 0 ≤ d) :\n topShortQMEB6 d (h+7) 5*topShortQMEB6 d (h+7) 7 <\n topShortQMEB6 d (h+7) 6^2",
+          "body_sha256": "757e4cd91eff1eb98da7b4bcd11dce055557482d3255ec66a9486180fd447a4b"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_small_5_strictM97B",
+          "line": 21,
+          "header": "theorem top_mass_small_5_strictM97B (d T : ℕ) (hT : 7 ≤ T) :\n topMassM55C d T 5*topMassM55C d T 7 < topMassM55C d T 6^2",
+          "body_sha256": "7fd5659c831e870ba07e8b309b445957a7820ce4e8e1e70eaae524b9e0b1cda6"
+        }
+      ],
+      "theorems": 2,
+      "definitions": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235828115512000-MarkovTopSmall5GapM97B.json",
+        "bytes": 575,
+        "sha256": "cbb11b24faa3175c333e4d682e841e6a8dde2d4f6d327feb983a7759b6a4f85f"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792235828115512000-MarkovTopSmall5GapM97B.lean",
+        "bytes": 19022,
+        "sha256": "b19f90234549ac765d90ae1a65077831e0fcc27a8d7512da81664e3d29f4ec87"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSectorClosedM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000189/artifacts/research/MarkovTopSectorClosedM97B.lean",
+        "bytes": 2936,
+        "sha256": "87709d1c0bb1a2b9d5c3b3df31982f90c2739d1cf634e8f3b40cf06b84d1557c"
+      },
+      "archive_present": true,
+      "imports": [
+        "MarkovTopSixthGroupsM97B",
+        "MarkovTopSmall2GapM97B",
+        "MarkovTopSmall3GapM97B",
+        "MarkovTopSmall4GapM97B",
+        "MarkovTopSmall5GapM97B",
+        "MarkovTopQuadraticResidualM97B"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "top_moment_closedM97B",
+          "line": 14,
+          "header": "theorem top_moment_closedM97B : TopMomentBoundM55C",
+          "body_sha256": "04455dc11971be406ca79c4dd82727a4a372e70bdc93815ddaa8422e4e51e1a9"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_sector_closedM97B",
+          "line": 26,
+          "header": "theorem top_sector_closedM97B : TopSectorLCM55C",
+          "body_sha256": "ad196036b60839d517676d3df274af2c08bae8d6228dd4d6d792490e75cd6200"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_allM97B",
+          "line": 29,
+          "header": "theorem source_top_allM97B (q t i : ℕ) (r : Bool)\n (hq : 1 ≤ q) (ht : 5 ≤ t) (htq : t ≤ q+2) :\n threeRawM9E2 q r i (sourceNME9C q r+2-t)*\n threeRawM9E2 q r (i+2) (sourceNME9C q r+2-t) ≤\n threeRawM9E2 q r (i+1) (sourceNME9C q r+2-t)^2",
+          "body_sha256": "460ba11db68d957acc5dae9da6d3dfc5a8da636ee78f416057853d6b53e6f08d"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_path_allM97B",
+          "line": 36,
+          "header": "theorem source_top_path_allM97B (path : List Bool) (t i : ℕ)\n (ha : (frame path).mid.a=3) (ht : 5 ≤ t)\n (hb : 3*t ≤ (frame path).mid.b+5) :\n coeff (frame path).mid.p i ((frame path).mid.b+2-t)*\n coeff (frame path).mid.p (i+2) ((frame path).mid.b+2-t) ≤\n coeff (frame path).mid.p (i+1) ((frame path).mid.b+2-t)^2",
+          "body_sha256": "90bdfdb2c218738cb48c0fe502f76c4c3c6c369429024bf38ff794234712eac7"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_all_polygonM97B",
+          "line": 50,
+          "header": "theorem source_top_all_polygonM97B (q t i : ℕ) (r : Bool)\n (hq : 1 ≤ q) (ht : 5 ≤ t) (htq : t ≤ q+2) (hi : 1 ≤ i) (hit : i+2 ≤ t) :\n InPolygon 3 (sourceNME9C q r) i (sourceNME9C q r+2-t) ∧\n InPolygon 3 (sourceNME9C q r) (i+1) (sourceNME9C q r+2-t) ∧\n InPolygon 3 (sourceNME9C q r) (i+2) (sourceNME9C q r+2-t) ∧\n threeRawM9E2 q r i (sourceNME9C q r+2-t)*\n threeRawM9E2 q r (i+2) (sourceNME9C q r+2-t) ≤\n threeRawM9E2 q r (i+1) (sourceNME9C q r+2-t)^2",
+          "body_sha256": "fc2d70ea7f6d14ab3c3fef5c5dac9b0630ecc9c64ca4aa72d9489b5b698822bb"
+        }
+      ],
+      "theorems": 5,
+      "definitions": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792236013493962000-MarkovTopSectorClosedM97B.json",
+        "bytes": 585,
+        "sha256": "4892c10a7d25b4eafc8ec6367206d86c4c06878040c7b29325c77302444d6b8a"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792236013493962000-MarkovTopSectorClosedM97B.lean",
+        "bytes": 2936,
+        "sha256": "87709d1c0bb1a2b9d5c3b3df31982f90c2739d1cf634e8f3b40cf06b84d1557c"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSectorResidualM97B",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopSectorResidualM97B.lean",
+        "bytes": 1928,
+        "sha256": "ddfa69d41b5d169ca12b67ff90fc002bb23c0df7fc9e31e759da7c2c821ca12f"
+      },
+      "archive_present": false,
+      "imports": [
+        "MarkovTopSectorClosedM97B"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "UpperClosedRegionM97B",
+          "line": 9,
+          "header": "def UpperClosedRegionM97B (q : ℕ) (r : Bool) (i j : ℕ) : Prop",
+          "body_sha256": "60a7af4e5fc53269f72fea837076cd4b91e049ec202728138976232aa585e701"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_upper_closedM97B",
+          "line": 12,
+          "header": "theorem source_upper_closedM97B (q i j : ℕ) (r : Bool) (hq : 1 ≤ q)\n (h : UpperClosedRegionM97B q r i j) :\n threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2",
+          "body_sha256": "4a8735d3333f48c3c226556025cc5e97eddc40622ab2b091b7538b9db20ec596"
+        },
+        {
+          "kind": "def",
+          "name": "ThreeAfterUpperM97B",
+          "line": 19,
+          "header": "def ThreeAfterUpperM97B : Prop",
+          "body_sha256": "3ef5b8d46a0ae54599ed31d0e8c024fe8b49b198e11d1cf767b8550f08232902"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_after_upperM97B",
+          "line": 28,
+          "header": "theorem root_iff_after_upperM97B : Conjecture63 ↔ ThreeAfterUpperM97B ∧ OtherFourM9E2",
+          "body_sha256": "97ae01c61aed934eafe31c4cf6b2033580e6ccab24baaa103f92167d29d8eaa2"
+        }
+      ],
+      "theorems": 2,
+      "definitions": 2,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792236028054217000-MarkovTopSectorResidualM97B.json",
+        "bytes": 591,
+        "sha256": "f93c22db69aeef4ac771a73fd0525e5df7ff8071a8218c43b72e923f7c315e9e"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-97b019af/build-1792236028054217000-MarkovTopSectorResidualM97B.lean",
+        "bytes": 1928,
+        "sha256": "ddfa69d41b5d169ca12b67ff90fc002bb23c0df7fc9e31e759da7c2c821ca12f"
+      },
+      "admission_literal_tokens": []
+    }
+  ],
+  "counts": {
+    "selected_modules": 23,
+    "theorems": 66,
+    "definitions": 18
+  },
+  "literal_certificates": [
+    {
+      "module": "MarkovTopFourthSignsM97B",
+      "rhs_sha256": "f203db41136146a02688481c23ddcf39fccee5e1123a297de127f839ae280cd3",
+      "positive_rhs_same_ast": true,
+      "nonnegative_literal_syntax": true,
+      "coefficient_literal_count": 16,
+      "coefficient_literals_sha256": "f80f49fc59f785edeebd81a3ab896ccb7a89c00adfe2d93ab197c1ecdb4e05e4",
+      "constant_positivity": "Compiler positivity proof; auditor checks syntax/literals, not evaluated polynomial sign"
+    },
+    {
+      "module": "MarkovTopFourthSignsM97B",
+      "rhs_sha256": "00ed5dd6fe92746f49846755d57953140d287833257ff73f9acb49be1170d11b",
+      "positive_rhs_same_ast": true,
+      "nonnegative_literal_syntax": true,
+      "coefficient_literal_count": 28,
+      "coefficient_literals_sha256": "113087f4a49cc03718dd3e567b805ef9d1018c071b4764b00274d53aaba0fe4a",
+      "constant_positivity": "Compiler positivity proof; auditor checks syntax/literals, not evaluated polynomial sign"
+    },
+    {
+      "module": "MarkovTopSixthDeltaSignM97B",
+      "rhs_sha256": "864598eeafb02fdd9127d3d312ed038ed3d90fd9d6917fe66b63054089019b89",
+      "positive_rhs_same_ast": true,
+      "nonnegative_literal_syntax": true,
+      "coefficient_literal_count": 65,
+      "coefficient_literals_sha256": "7f9bdf2fea4ed3158f9152b13151d6fcc3ac9a0dc6209385f258ae9500f04440",
+      "constant_positivity": "Compiler positivity proof; auditor checks syntax/literals, not evaluated polynomial sign"
+    },
+    {
+      "module": "MarkovTopSixthASignM97B",
+      "rhs_sha256": "e322619ecd3900f6ebd4ca24b64fe40939405ab704e8dc4957a3242b23f1c140",
+      "positive_rhs_same_ast": true,
+      "nonnegative_literal_syntax": true,
+      "coefficient_literal_count": 80,
+      "coefficient_literals_sha256": "0b2d5024dd7d76c78bec5a3d329e67f586f97b8449b7f2b6695fb84f22ace26a",
+      "constant_positivity": "Compiler positivity proof; auditor checks syntax/literals, not evaluated polynomial sign"
+    },
+    {
+      "module": "MarkovTopSixthCSignM97B",
+      "rhs_sha256": "c1452c3f05dd5a5968860e41e56859a99aeebcee4b0d3864189bb820639213e5",
+      "positive_rhs_same_ast": true,
+      "nonnegative_literal_syntax": true,
+      "coefficient_literal_count": 28,
+      "coefficient_literals_sha256": "ec5b88a4eeadeecaadb4e6b02ce57b0a755e3d66a199ed82da8ebf128764c5d0",
+      "constant_positivity": "Compiler positivity proof; auditor checks syntax/literals, not evaluated polynomial sign"
+    },
+    {
+      "module": "MarkovTopSixthKSignM97B",
+      "rhs_sha256": "e49511c44e92f840633146b09db3fd37cee1fc609a537398802bba3915690d8b",
+      "positive_rhs_same_ast": true,
+      "nonnegative_literal_syntax": true,
+      "coefficient_literal_count": 34,
+      "coefficient_literals_sha256": "203d965ecce0976df3714d49049acd0ac4b2a7b4c0fce351e2e6ceba3687c143",
+      "constant_positivity": "Compiler positivity proof; auditor checks syntax/literals, not evaluated polynomial sign"
+    },
+    {
+      "module": "MarkovTopSixthReducedSignM97B",
+      "rhs_sha256": "d637cc28cd315845ca4303c8e27d9939da1010c28ae74185aab914592720b8c0",
+      "positive_rhs_same_ast": true,
+      "nonnegative_literal_syntax": true,
+      "coefficient_literal_count": 224,
+      "coefficient_literals_sha256": "678aa62d3f756dc172f1cdf75add71836d2394632a8d448ff7288ac8a2bbeb4c",
+      "constant_positivity": "Compiler positivity proof; auditor checks syntax/literals, not evaluated polynomial sign"
+    },
+    {
+      "module": "MarkovTopSmall2GapM97B",
+      "rhs_sha256": "23254450e61ef6efdba4b5236e42336d39a59c8b6f2178a7b0465390a9be83d9",
+      "positive_rhs_same_ast": true,
+      "nonnegative_literal_syntax": true,
+      "coefficient_literal_count": 156,
+      "coefficient_literals_sha256": "f98cfa1cc4c2338e7877e678bc6224f4e70722e2acfb7b5d61403105d035430f",
+      "constant_positivity": "Compiler positivity proof; auditor checks syntax/literals, not evaluated polynomial sign",
+      "i": 2,
+      "offset": 4,
+      "scale": 2589195248640000,
+      "coefficient_multiset_matches_saved_array": true,
+      "terms": 156,
+      "constant_literal": "5748989290901176320000"
+    },
+    {
+      "module": "MarkovTopSmall3GapM97B",
+      "rhs_sha256": "fa1303e402e55df1318404fb26696dcdadcb6e60952ea1e677195fe5eae970ed",
+      "positive_rhs_same_ast": true,
+      "nonnegative_literal_syntax": true,
+      "coefficient_literal_count": 195,
+      "coefficient_literals_sha256": "56383b8c23aeca2a5a88c7099535a74ffe0acf7baf52d6d07bca7f3c6fa95f41",
+      "constant_positivity": "Compiler positivity proof; auditor checks syntax/literals, not evaluated polynomial sign",
+      "i": 3,
+      "offset": 5,
+      "scale": 84822036345446400000,
+      "coefficient_multiset_matches_saved_array": true,
+      "terms": 195,
+      "constant_literal": "145958420605426537844736000"
+    },
+    {
+      "module": "MarkovTopSmall4GapM97B",
+      "rhs_sha256": "04651287306422f4a191f90f4ffb0cbdce4969c831254ced1fa4166b2677e63d",
+      "positive_rhs_same_ast": true,
+      "nonnegative_literal_syntax": true,
+      "coefficient_literal_count": 238,
+      "coefficient_literals_sha256": "8d370593545e02bee7c5b1d9dcf972b45535b11dfa572ec4bd92c21efda10d9b",
+      "constant_positivity": "Compiler positivity proof; auditor checks syntax/literals, not evaluated polynomial sign",
+      "i": 4,
+      "offset": 6,
+      "scale": 4845034716051898368000000,
+      "coefficient_multiset_matches_saved_array": true,
+      "terms": 238,
+      "constant_literal": "4377047956129756988167127040000"
+    },
+    {
+      "module": "MarkovTopSmall5GapM97B",
+      "rhs_sha256": "7114098f37c0dd95ec3a28cc8d2f5f858867eb3af8956b9e1a616ad601cdd119",
+      "positive_rhs_same_ast": true,
+      "nonnegative_literal_syntax": true,
+      "coefficient_literal_count": 285,
+      "coefficient_literals_sha256": "1778aa583eb7405c7de76eb23d8792782e5a26c28341a4a121bc3bf459fca07d",
+      "constant_positivity": "Compiler positivity proof; auditor checks syntax/literals, not evaluated polynomial sign",
+      "i": 5,
+      "offset": 7,
+      "scale": 450704509426011793784832000000,
+      "coefficient_multiset_matches_saved_array": true,
+      "terms": 285,
+      "constant_literal": "153988253750565484841773702840320000"
+    }
+  ],
+  "source_level_scope": {
+    "raw_upper": "Actual source a=3; q>=1,b=3q+1/3q+2;5<=t<=q+2,j=b+2-t; all natural starting i. Raw H product endpoints(i,j),(i+2,j) <=middle(i+1,j)^2. Direct path theorem assumes a=3,t>=5,3t<=b+5. No column, denominator-linear, gap, moment or formula premise remains. Zeros retained.",
+    "polygon": "Family theorem adds i>=1,i+2<=t and returns all three original polygon memberships. General row theorem does not filter indices. Natural j subtraction justified by family/sector conditions; small q with empty t interval vacuous.",
+    "generic": "TopSectorLCM55C: allnatural n,t,2t<=n,5<=t,3t<=n+5,allnatural i rawtemplate LC. TopMomentBoundM55C universally closed, not an eventual/fixed-depth statement.",
+    "assembly": "Exact inherited TopMomentBound iff TopInteriorWedge reduces to i>=2,r>=5,i+r<=d+2 plus two wedge exclusions. New sixth gap handles i>=6; explicit universal small2/3/4/5 short-sum certificates handle exhaustive remainder. No finite experiments used as premises.",
+    "fourth": "New actual beta likelihood/cut fourth moment attachment (188 conditional history unchanged). Group strict i>=2,2<=m<=2r,4(m-2)<=(i-2)^2 and H bound. Tail strict i>=2,r>=1,i+r<=d+2,8(r-1)<=(i-2)^2. Source c>=5,c+1<=t,quadratic8(t-c-1)<=(c-5)^2; polygon c+2<=t. This earlier189 route is subsumed by later all-column upper closure.",
+    "sixth": "All-natural exact cleared sixth moment including m<6; actual weighted moment bound retains cut endpoint1 and zero tails. Finite summation by parts handles D(0)=0,B(m)=0 explicitly. Two symmetric inward test functions give generator signs with actual likelihood. Scalar Den6*Delta*F2+Den6*A*L1+Den6*C*L2+(-K)*(Den6*x^6-Num6)=a*m*(m-1)*Reduced. Positive Delta,A,C,-K for a>=3,m>=2,2H>=6a+m+8; Reduced requires a>=7. Generic summation uses positive total mass plus three aggregate signs, not individual w nonneg; actual source supplies every premise.",
+    "small": "Rational d,h>=0, exact topShort gaps for auxiliary i=2,3,4,5 at T=h+i+2; positive factors product_{j<i}(T-j)^2*(T-i), no raw coefficient division. Natural topMass strict all d,T>=i+2. Positive literals156/195/238/285; compiler/replay verifies algebra, auditor only literal syntax.",
+    "root": "Conjecture63 iff ThreeAfterUpperM97B AND OtherFourM9E2, both remain open. UpperClosedRegion adds entire5<=t<=q+2 upperrow to188 TopClosedRegionM731. Residual H q+3<j,b<2j+1,j!=5,notUpperClosed. Residual V and D unchanged; allnaturals residual exactiff retains originalroot polygon/endpoints.",
+    "V_D": "V exclusions ((i=3or4)&j+1<=q)or(5<=i<=8&j+2<=q); D exclusions3<=i<=6,j+2<=q. D literal(i,j+2),(i+1,j+1),(i+2,j). No new V/D result.",
+    "candidate_limits": "Small5Fast duplicate-name diagnostic timed out and excluded; saved symbolic a=6 negative coefficient is auxiliary expansion observation, no source failure or root refutation. No full root completion or negation.",
+    "history": "Old212/195 and separate19, WindowLC/Abel,166 partialreplay,171hostnull and183uncertain ordinarycompile/separate184recovery retained. Current selected union trusts inherited compiled imports, not fresh whole-source rebuild."
+  },
+  "literal_directions": {
+    "H": [
+      "(i,j)",
+      "(i+1,j)",
+      "(i+2,j)"
+    ],
+    "V": [
+      "(i,j)",
+      "(i,j+1)",
+      "(i,j+2)"
+    ],
+    "D": [
+      "(i,j+2)",
+      "(i+1,j+1)",
+      "(i+2,j)"
+    ]
+  }
+}

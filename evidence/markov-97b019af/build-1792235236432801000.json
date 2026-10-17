@@ -1,0 +1,20 @@
+{
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "import took 18.3s\n.olean serialization took 179ms\ncumulative profiling times:\n\t.olean serialization 179ms\n\tattribute application 0.0159ms\n\tcongr simp thm 0.338ms\n\telaboration 11.5ms\n\tfix level params 0.256ms\n\timport 18.3s\n\tinitialization 14ms\n\tinstantiate metavars 0.706ms\n\tinterpretation 569ms\n\tlet-to-have transformation 0.0527ms\n\tlinting 6.92ms\n\tmodule linting 0.000459ms\n\tnorm_num 2.26ms\n\toverlappingInstancesLinter 1.05ms\n\tparsing 2.32ms\n\tprocess pre-definitions 2.64ms\n\tring 12.2ms\n\tshare common exprs 3.18ms\n\tsimp 19.1ms\n\ttactic execution 44.7ms\n\ttacticAnalysis 8.13ms\n\ttype checking 31.9ms\n\ttypeclass inference 113ms\n",
+  "modules": {
+    "MarkovTopInwardGeneratorM97B": "51cff402e6efd8b7ca0260161059c49e71cf04ff87c27f68d613e812ce1eb048"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--profile",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-97b019af/MarkovTopInwardGeneratorM97B.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopInwardGeneratorM97B.lean"
+  ],
+  "seconds": 19.565634583006613,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

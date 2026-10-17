@@ -1,0 +1,20 @@
+{
+  "returncode": 0,
+  "stdout": "elaboration took 112ms\nelaboration took 127ms\nprocess pre-definitions took 590ms\nelaboration took 1.72s\nprocess pre-definitions took 818ms\nelaboration took 2.56s\nring took 1.36s\nshare common exprs took 1.34s\nprocess pre-definitions took 1.53s\nelaboration took 518ms\ntype checking took 3.29s\nring took 542ms\nshare common exprs took 424ms\nprocess pre-definitions took 229ms\nelaboration took 161ms\ntype checking took 1.15s\n",
+  "stderr": "import took 18.3s\n.olean serialization took 2.77s\ncumulative profiling times:\n\t.olean serialization 2.77s\n\tattribute application 0.0524ms\n\tcompilation (IR) 2.87ms\n\tcompilation (LCNF base) 40.7ms\n\tcompilation (LCNF impure) 9.46ms\n\tcompilation (LCNF mono) 35.4ms\n\telaboration 5.23s\n\tfix level params 84.5ms\n\timport 18.3s\n\tinitialization 14.4ms\n\tinstantiate metavars 8.19ms\n\tinterpretation 734ms\n\tlet-to-have transformation 0.305ms\n\tlinting 18.6ms\n\tmodule linting 0.0005ms\n\tnorm_num 22.9ms\n\toverlappingInstancesLinter 3.4ms\n\tparsing 6.7ms\n\tprocess pre-definitions 3.23s\n\tring 1.9s\n\tshare common exprs 1.77s\n\ttactic execution 14.9ms\n\ttacticAnalysis 60ms\n\ttype checking 4.46s\n\ttypeclass inference 67.6s\n",
+  "modules": {
+    "MarkovTopSixthCertificateM97B": "ca4b6373e28bc636fc5df0396d08e396443384bf08d27fb4adc240cdf2e7ced0"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--profile",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-97b019af/MarkovTopSixthCertificateM97B.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopSixthCertificateM97B.lean"
+  ],
+  "seconds": 106.68711579201045,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,20 @@
+{
+  "returncode": 0,
+  "stdout": "interpretation of Mathlib.Tactic._aux_Mathlib_Tactic_NormNum_Core___elabRules_Mathlib_Tactic_normNum_1._boxed took 1.72s\nring took 2.46s\ninterpretation of Mathlib.Meta.Positivity.evalMul._lam_3._boxed took 947ms\nring took 836ms\ninterpretation of Mathlib.Tactic._aux_Mathlib_Tactic_Linarith_Frontend___elabRules_Mathlib_Tactic_linarith_1._boxed took 392ms\nshare common exprs took 4.37s\nfix level params took 270ms\nprocess pre-definitions took 5.77s\nelaboration took 1.64s\ntype checking took 7.36s\nlinting took 2.58s\n",
+  "stderr": "import took 49.6s\n.olean serialization took 7.09s\ncumulative profiling times:\n\t.olean serialization 7.09s\n\tattribute application 0.0488ms\n\tcongr simp thm 2.61ms\n\telaboration 1.65s\n\tfix level params 270ms\n\timport 49.6s\n\tinitialization 176ms\n\tinstantiate metavars 58.5ms\n\tinterpretation 4.43s\n\tlet-to-have transformation 0.041ms\n\tlinting 2.58s\n\tmodule linting 0.000583ms\n\tnorm_num 948ms\n\toverlappingInstancesLinter 1.39ms\n\tparsing 11.2ms\n\tprocess pre-definitions 5.77s\n\tring 3.29s\n\tshare common exprs 4.37s\n\tsimp 1.1ms\n\ttactic execution 138ms\n\ttacticAnalysis 15.6ms\n\ttype checking 7.36s\n\ttypeclass inference 667ms\n",
+  "modules": {
+    "MarkovTopSmall3GapM97B": "e7a82178be2e0c3ce1a58ef2ba3cb90b28f7d5780009610874ddcb055ceaf1b2"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--profile",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-97b019af/MarkovTopSmall3GapM97B.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopSmall3GapM97B.lean"
+  ],
+  "seconds": 88.7310292920447,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,20 @@
+{
+  "returncode": 0,
+  "stdout": "tactic execution of Lean.Parser.Tactic.refine took 1.78s\ninterpretation of Mathlib.Tactic._aux_Mathlib_Tactic_NormNum_Core___elabRules_Mathlib_Tactic_normNum_1._boxed took 1.27s\nring took 1.46s\ntactic execution of Lean.Parser.Tactic.case took 445ms\ntactic execution of Lean.Parser.Tactic.refine took 2.63s\ninterpretation of Mathlib.Meta.Positivity.evalMul._lam_3._boxed took 7.28s\ntactic execution of Lean.Parser.Tactic.case took 533ms\nring took 775ms\ninterpretation of Mathlib.Tactic._aux_Mathlib_Tactic_Linarith_Frontend___elabRules_Mathlib_Tactic_linarith_1._boxed took 358ms\nshare common exprs took 2.88s\nfix level params took 177ms\nprocess pre-definitions took 2.92s\nelaboration took 1.19s\ntype checking took 7.79s\nlinting took 2.61s\n",
+  "stderr": "import took 17.6s\n.olean serialization took 11.3s\ncumulative profiling times:\n\t.olean serialization 11.3s\n\tattribute application 0.0371ms\n\tcongr simp thm 2.31ms\n\telaboration 1.19s\n\tfix level params 177ms\n\timport 17.6s\n\tinitialization 17.3ms\n\tinstantiate metavars 65.7ms\n\tinterpretation 10.1s\n\tlet-to-have transformation 0.0871ms\n\tlinting 2.62s\n\tmodule linting 0.000625ms\n\tnorm_num 1.45s\n\toverlappingInstancesLinter 17.8ms\n\tparsing 3.96ms\n\tprocess pre-definitions 2.92s\n\tring 2.24s\n\tshare common exprs 2.88s\n\tsimp 4.58ms\n\ttactic execution 5.42s\n\ttacticAnalysis 60.2ms\n\ttype checking 7.8s\n\ttypeclass inference 62.7s\n",
+  "modules": {
+    "MarkovTopSmall2GapM97B": "bfbf1fe659c6d2bf90ba7f7bd64480468763a21b8ee1491bdc7fecdc182fa23a"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--profile",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-97b019af/MarkovTopSmall2GapM97B.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopSmall2GapM97B.lean"
+  ],
+  "seconds": 128.87931070796913,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

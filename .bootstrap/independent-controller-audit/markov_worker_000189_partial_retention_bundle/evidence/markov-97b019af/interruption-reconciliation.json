@@ -1,0 +1,41 @@
+{
+  "raw_sha256": "345ebb4e2e62e75ff7fb9e7610c1daa9d04ba4fe00eabedad913bb732cf331b0",
+  "event_count": 180,
+  "pending": {},
+  "last_events": [
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_90",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/validate_55cf20d2.py build 120 MarkovTopLeadingM55C'",
+        "aggregated_output": "{\"receipt\": \"evidence/markov-55cf20d2/build-1792224671054702000.json\", \"returncode\": 0, \"timeout\": false, \"seconds\": 10.8740698749898, \"stdout\": \"\"}\n",
+        "exit_code": 0,
+        "status": "completed"
+      }
+    },
+    {
+      "type": "item.started",
+      "item": {
+        "id": "item_91",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc \"rg 'natDegree_eq_of_le_of_coeff_ne_zero|natDegree_eq_of_le_of_coeff' .lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/*.lean; rg 'exists_nat_ge|eventually_atTop.*natCast|tendsto_natCast_atTop' research/Markov*Limit*.lean | head -30\"",
+        "aggregated_output": "",
+        "exit_code": null,
+        "status": "in_progress"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_91",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc \"rg 'natDegree_eq_of_le_of_coeff_ne_zero|natDegree_eq_of_le_of_coeff' .lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/*.lean; rg 'exists_nat_ge|eventually_atTop.*natCast|tendsto_natCast_atTop' research/Markov*Limit*.lean | head -30\"",
+        "aggregated_output": ".lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/Lemmas.lean:  apply natDegree_eq_of_le_of_coeff_ne_zero natDegree_comp_le\n.lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/IsMonicOfDegree.lean:  \u00b7 exact natDegree_eq_of_le_of_coeff_ne_zero H\u2081 <| H\u2082 \u25b8 one_ne_zero\n.lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/Operations.lean:theorem natDegree_eq_of_le_of_coeff_ne_zero (pn : p.natDegree \u2264 n) (p1 : p.coeff n \u2260 0) :\n.lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/Operations.lean:  refine (congr_arg _ <| natDegree_eq_of_le_of_coeff_ne_zero pn ?_).trans p1\n.lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/Domain.lean:  \u00b7 apply natDegree_eq_of_le_of_coeff_ne_zero\n",
+        "exit_code": 0,
+        "status": "completed"
+      }
+    }
+  ],
+  "decision": "Inspected interrupted raw log and latest completed validation. No unfinished raw event; no prior side effect replayed. Fourth-moment attachment remains open in latest report."
+}

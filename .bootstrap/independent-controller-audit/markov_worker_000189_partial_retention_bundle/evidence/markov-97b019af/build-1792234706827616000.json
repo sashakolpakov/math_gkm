@@ -1,0 +1,20 @@
+{
+  "returncode": 0,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovTopFourthSignsM97B.lean:49:19: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovTopFourthSignsM97B.lean:118:19: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n",
+  "stderr": "import took 8.59s\n.olean serialization took 152ms\ncumulative profiling times:\n\t.olean serialization 152ms\n\tattribute application 0.0255ms\n\tcongr simp thm 0.355ms\n\telaboration 28.6ms\n\tfix level params 2.6ms\n\timport 8.59s\n\tinitialization 16.5ms\n\tinstantiate metavars 1.69ms\n\tinterpretation 867ms\n\tlet-to-have transformation 0.0678ms\n\tlinting 53ms\n\tmodule linting 0.000458ms\n\tnorm_num 102ms\n\toverlappingInstancesLinter 1.13ms\n\tparsing 1.98ms\n\tprocess pre-definitions 21.3ms\n\tring 121ms\n\tshare common exprs 51ms\n\tsimp 2.09ms\n\ttactic execution 88.6ms\n\ttacticAnalysis 9.23ms\n\ttype checking 127ms\n\ttypeclass inference 610ms\n",
+  "modules": {
+    "MarkovTopFourthSignsM97B": "0b66701a140564ccb4a9acc635f8f7408cb9d1d041d895ef91b8b0a0dc17bde9"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--profile",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-97b019af/MarkovTopFourthSignsM97B.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopFourthSignsM97B.lean"
+  ],
+  "seconds": 11.022211667033844,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
