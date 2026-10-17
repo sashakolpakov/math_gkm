@@ -1,0 +1,258 @@
+Read MISSION.md, docs/DESIGN.md and contract.json. The active versioned contract supplies the exact task and permitted assumptions. Follow its phase; do not start a different campaign. Historical campaigns are not rerun or inherited. Choose your own mathematical actions: literature, experiments using installed Python/Sage/GAP, representations, conjectures, proofs or refutations, typed attachments, strategy and executable request-program proposals. Missing tools are capability failures. A finite-budget failure is not unprovability. Do not use complexity, description length, compression or derived proxies in decisions. Never invoke another LLM, Codex, controllers or background processes. Do not access other workspaces, evaluation answers, audit records, Git, archives or credentials. No network shell, downloads, package updates, publication or messaging. Use .scratch for temporary files, pinned dependencies and /opt/homebrew/bin/python3. No sorry, admit, axioms or native_decide. Reports do not certify proofs. Checkpoint in research/ with unique names. Use existing artifacts; keep failed attempts. No supervisor supplies mathematical advice.
+Execute the committed_trial in this request. Its hypotheses/outcomes were recorded by a separate proposer before this call. Return the same trial identity and hypothesis claims, with actual evidence and updated status. A bounded invention round may precede a formal root reduction. Echo prospective_binding exactly. Honor episode horizons; delayed usefulness is distinct from refutation. Baseline keeps its incumbent single-agenda policy; changes are logged but not installed. Policy/program changes are proposals for equal-budget trials. Submit mathematical_claims, attachments, representations or reductions using the typed schemas in the request.
+The output envelope has request_id and payload_json (a JSON-encoded object).
+Researcher payload: {agenda:[strings], summary:string, hypotheses:[{id,kind,claim,uncertainty,outcomes:[{check,changes_next_choice}],status,reason,evidence:[paths]}], evidence:[{path,sha256,kind}], trial:{hypothesis,invention}, prospective_binding:request.prospective_binding, use_links:[{artifact,consumer,claim}], policy_proposal:null or {search,memory,allocation,reassessment}, executable_proposal:null or {schema:"math-gkm.request-program.v1",code:[instructions]}, mathematical_claims:[], attachments:[], representations:[], reductions:[], completion:null or {kind,module,declaration,correspondence}}. Executable instructions: reverse_agenda, reverse_portfolio; rotate_agenda/keep_observations with integer n; if_open_obligations with then/else instruction lists. These cannot edit admission, contract, costs or authority.
+Reviewer payload: {findings:[{path,sha256,finding}], correctness,scope,transfer,costs,recommendation}.
+Selector payload: {choice:"incumbent" or "candidate",reason,evidence:[{path,sha256}]}.
+REQUEST:
+{
+  "role": "researcher",
+  "round": 0,
+  "policy": {
+    "allocation": "consequential uncertainty trials and bounded invention episodes",
+    "memory": "retain alternatives, evidence and reasons; consult own history",
+    "reassessment": "review at committed episode horizon; permit delayed benefit",
+    "search": "retain competing obstacle, capability and strategy hypotheses"
+  },
+  "mode": "exploration",
+  "agenda": [
+    "fixture continuation after round 0"
+  ],
+  "portfolio": [
+    {
+      "claim": "toy representation may help",
+      "evidence": [],
+      "id": "h-a",
+      "kind": "capability",
+      "outcomes": [
+        {
+          "changes_next_choice": "test a second consumer",
+          "check": "toy interface check passes"
+        },
+        {
+          "changes_next_choice": "retain alternative",
+          "check": "toy interface check fails"
+        }
+      ],
+      "reason": "await independent checks",
+      "status": "usefulness_not_demonstrated",
+      "uncertainty": "Does the toy interface preserve its observation?"
+    },
+    {
+      "claim": "toy direct route may help",
+      "evidence": [],
+      "id": "h-b",
+      "kind": "strategy",
+      "outcomes": [
+        {
+          "changes_next_choice": "test a second consumer",
+          "check": "toy interface check passes"
+        },
+        {
+          "changes_next_choice": "retain alternative",
+          "check": "toy interface check fails"
+        }
+      ],
+      "reason": "await independent checks",
+      "status": "usefulness_not_demonstrated",
+      "uncertainty": "Does the toy interface preserve its observation?"
+    }
+  ],
+  "episode": {
+    "start": 0,
+    "review_round": 1,
+    "continuation_rounds": 2,
+    "invention_used": 0,
+    "hypothesis": "h-a",
+    "status": "usefulness_not_demonstrated"
+  },
+  "observations": [
+    {
+      "round": 0,
+      "evidence": [],
+      "summary": "SYNTHETIC evidence only",
+      "class": "unverified_research_report"
+    }
+  ],
+  "knowledge": {},
+  "components": {},
+  "remaining_obligations": {},
+  "formal_obligations": [
+    {
+      "id": "D1-whole-continuation",
+      "required": "Concrete strict/nonstrict comparison under the previous contract for install-and-continue versus the entire incumbent, including future discoveries and rewrites.",
+      "status": "open"
+    },
+    {
+      "id": "D2-host-refinement",
+      "required": "Simulation of Python interpreter, OS effects, role receipts, recovery and migration by the declared executable semantics.",
+      "status": "open"
+    },
+    {
+      "id": "D3-cost-and-environment",
+      "required": "Justified common time baseline, validation/install costs, deadline/state transport, and timed response coupling or explicit environment quantification.",
+      "status": "open"
+    },
+    {
+      "id": "D3-independent-installation",
+      "required": "Protected independent certificate validation and an actual guarded installation tied to contract/model/state/code/migration/deadline hashes.",
+      "status": "open"
+    }
+  ],
+  "delayed_use_links": [],
+  "limits": {
+    "rounds": 4,
+    "episode_rounds": 2,
+    "invention_rounds": 1,
+    "call_seconds": 30
+  },
+  "status": "experimental; no certified continuation improvement",
+  "program_execution": {
+    "program_hash": "11c1477fea8a88505809828150fdea7951a77065387e6e20866fbf74b1c44620",
+    "input_hash": "f5de5ac2b40a69cf316568fe2db485ba4d2352207ce8113a2247e607131aab01",
+    "executed": [],
+    "status": "experimental interpreter; refinement unproved"
+  },
+  "committed_trial": {
+    "hypothesis": "h-a",
+    "invention": false
+  },
+  "prospective_binding": "d57430a7a27961951b6c2b1159399d64c2a13c8c8007c81828528119022dcdfc",
+  "commitment": {
+    "schema": "math-gkm.prospective.v3",
+    "round": 0,
+    "trial": {
+      "hypothesis": "h-a",
+      "invention": false
+    },
+    "selected": {
+      "id": "h-a",
+      "kind": "capability",
+      "claim": "toy representation may help",
+      "uncertainty": "Does the toy interface preserve its observation?",
+      "outcomes": [
+        {
+          "changes_next_choice": "test a second consumer",
+          "check": "toy interface check passes"
+        },
+        {
+          "changes_next_choice": "retain alternative",
+          "check": "toy interface check fails"
+        }
+      ]
+    },
+    "alternatives": [
+      {
+        "id": "h-b",
+        "kind": "strategy",
+        "claim": "toy direct route may help",
+        "uncertainty": "Does the toy interface preserve its observation?",
+        "outcomes": [
+          {
+            "changes_next_choice": "test a second consumer",
+            "check": "toy interface check passes"
+          },
+          {
+            "changes_next_choice": "retain alternative",
+            "check": "toy interface check fails"
+          }
+        ]
+      }
+    ],
+    "episode": {
+      "start": 0,
+      "review_round": 1,
+      "continuation_rounds": 2,
+      "invention_used": 0,
+      "hypothesis": "h-a",
+      "status": "usefulness_not_demonstrated"
+    },
+    "resource_reservation_seconds": 30,
+    "continuation_envelope": {
+      "rounds": 2,
+      "seconds_per_round": 780,
+      "validation_limit_each_round": 6,
+      "semantics": "prepaid research and validation caps; operational protocol wall separately bounded and measured"
+    },
+    "state_binding": "c8f559eae6a061b7708e096916f6271b13468629a60a06838f939abbcc8272ac",
+    "program_hash": "11c1477fea8a88505809828150fdea7951a77065387e6e20866fbf74b1c44620"
+  },
+  "checked_submission_schemas": {
+    "mathematical_claims": {
+      "id": "new identity",
+      "module": "MathGKM module",
+      "statement": "exact closed Lean proposition (quantify premises)",
+      "term": "proof term",
+      "discharges": [
+        "optional explicit residual ids; checked against their original target constants"
+      ]
+    },
+    "attachments": {
+      "id": "new identity",
+      "module": "MathGKM module importing ResearchSemantics",
+      "base": "Lean type",
+      "extended": "Lean type",
+      "forget": "E \u2192 B term",
+      "extend": "B \u2192 E term",
+      "section_law": "\u2200 b, forget (extend b) = b proof",
+      "predicate": "B \u2192 Prop term",
+      "base_proof": "\u2200 b, predicate b proof",
+      "dependencies": [
+        "checked knowledge/component ids"
+      ],
+      "required_constants": [
+        "used Lean declarations"
+      ]
+    },
+    "representations": {
+      "id": "new identity",
+      "module": "MathGKM module importing ResearchSemantics",
+      "base": "Lean type",
+      "extended": "Lean type",
+      "predicate": "B \u2192 Prop",
+      "target_predicate": "E \u2192 Prop",
+      "forward": "B \u2192 E",
+      "law": "\u2200 b, target_predicate (forward b) \u2194 predicate b proof",
+      "dependencies": [
+        "checked ids"
+      ],
+      "required_constants": [
+        "used Lean declarations"
+      ]
+    },
+    "reductions": {
+      "id": "new identity",
+      "module": "MathGKM module",
+      "residuals": [
+        {
+          "id": "new residual id",
+          "statement": "closed Lean proposition"
+        }
+      ],
+      "term": "conjunction of residual propositions \u2192 exact pinned root proof",
+      "dependencies": [
+        "checked ids"
+      ],
+      "required_constants": [
+        "used Lean declarations"
+      ]
+    },
+    "fiber_gluings": {
+      "id": "new identity",
+      "module": "MathGKM.ResearchSemantics or importing module",
+      "base": "index type I",
+      "extended": "index type J",
+      "map": "I \u2192 J",
+      "family": "I \u2192 Type",
+      "target_family": "J \u2192 Type",
+      "family_map": "\u2200 i, family i \u2192 target_family (map i)",
+      "dependencies": [
+        "checked ids"
+      ],
+      "required_constants": [
+        "used declarations"
+      ]
+    }
+  },
+  "request_id": "round-0000"
+}

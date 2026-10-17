@@ -1,0 +1,63 @@
+COMMAND ["/opt/homebrew/bin/python3", "-m", "unittest", "-v", "tests.test_revision_static_checkpoint.RealLeanMechanisms.test_connected_cycle_delayed_use_policy_install_and_next_actual_request"]
+MANIFEST /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/pre-005/SOURCE_MANIFEST.json
+test_connected_cycle_delayed_use_policy_install_and_next_actual_request (tests.test_revision_static_checkpoint.RealLeanMechanisms.test_connected_cycle_delayed_use_policy_install_and_next_actual_request) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-fphi3c0q
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+    ~~~~^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/main.py", line 104, in __init__
+    self.runTests()
+    ~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/main.py", line 270, in runTests
+    self.result = testRunner.run(self.test)
+                  ~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/runner.py", line 257, in run
+    test(result)
+    ~~~~^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           ~~~~~~~~^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/suite.py", line 122, in run
+    test(result)
+    ~~~~^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           ~~~~~~~~^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/suite.py", line 122, in run
+    test(result)
+    ~~~~^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/case.py", line 725, in __call__
+    return self.run(*args, **kwds)
+           ~~~~~~~~^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/case.py", line 669, in run
+    self._callTestMethod(testMethod)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/case.py", line 615, in _callTestMethod
+    result = method()
+  File "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/tests/test_revision_static_checkpoint.py", line 235, in test_connected_cycle_delayed_use_policy_install_and_next_actual_request
+    arm.run()
+    ~~~~~~~^^
+  File "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study.py", line 720, in run
+    self.research_round()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study.py", line 428, in research_round
+    self._research_round()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study.py", line 455, in _research_round
+    result = self.call(f'round-{r:04d}', 'researcher', req)
+  File "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study.py", line 378, in call
+    event(self, {'claim': {'id': key}})
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study_bridge.py", line 39, in event
+    after = protocol.transition(before, command)
+  File "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/protocol.py", line 18, in transition
+    r=run([str(LEAN),'--run',str(source),str(path)],cwd=directory,
+          env=environment([CORE]),timeout=30)
+  File "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/process.py", line 35, in run
+    for key, _ in selector.select(0.02):
+                  ~~~~~~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/selectors.py", line 548, in select
+    kev_list = self._selector.control(None, max_ev, timeout)
+KeyboardInterrupt

@@ -1,0 +1,5 @@
+import MathGKM.ResearchSemantics
+import MathGKM.HarnessFixture
+def MathGKM.Target3366e9579a34aa13a3097d8d.Interface := ∀ j : (Nat), MathGKM.ResearchSemantics.Push (fun n : Nat => n) (fun _ : Nat => Nat) j → (fun _ : Nat => Nat) j
+def MathGKM.Target3366e9579a34aa13a3097d8d.Transport (StudyInterface : MathGKM.Target3366e9579a34aa13a3097d8d.Interface) : Prop := ∀ (i : (Nat)) (x : (fun _ : Nat => Nat) i), StudyInterface ((fun n : Nat => n) i) (MathGKM.ResearchSemantics.pushUnit (fun n : Nat => n) (fun _ : Nat => Nat) i x) = (fun (_ : Nat) (_ : Nat) => True.intro) i x
+def MathGKM.Target3366e9579a34aa13a3097d8d.Goal (StudyInterface : MathGKM.Target3366e9579a34aa13a3097d8d.Interface) : Prop := ∀ k : (∀ j : (Nat), MathGKM.ResearchSemantics.Push (fun n : Nat => n) (fun _ : Nat => Nat) j → (fun _ : Nat => Nat) j), (∀ (i : (Nat)) (x : (fun _ : Nat => Nat) i), k ((fun n : Nat => n) i) (MathGKM.ResearchSemantics.pushUnit (fun n : Nat => n) (fun _ : Nat => Nat) i x) = (fun (_ : Nat) (_ : Nat) => True.intro) i x) → k = StudyInterface

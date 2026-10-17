@@ -1,0 +1,188 @@
+{
+  "schema": "round3-current-static-PTSK-review.v1",
+  "observed_utc": "2026-10-17T22:40:56.058873+00:00",
+  "status": "bounded current-source handoff; builder validation ongoing; not final release acceptance",
+  "scope": "Static source/hash inspection only. No tests, Lean, checker, mathematical execution, candidate imports, model calls, source edits or researcher/builder contact.",
+  "findings": [
+    {
+      "id": "K-R3-1",
+      "severity": "concrete_binding_defect",
+      "requirements": [
+        "K2",
+        "K3"
+      ],
+      "title": "Conditional reference inputs are not checked against the frozen plan/seal",
+      "evidence": [
+        {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study_burden.py",
+          "sha256": "e0530b64947bcfbd8176a762df3836f9711777c815be9cf97db324cdaf3b8378",
+          "lines": "87-103,118-122,160-166,176-184",
+          "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round3_static_review_20261017/review_checkpoint_2238/study_burden.py"
+        }
+      ],
+      "finding": "The integrated report takes its schedule from seal.observer_plan and prevalidates scheduled feeds through measure_checkpoint. However, conditional_pair independently rereads the current seed contract, seed manifest/source bytes and evaluation suite to construct reference_tasks without comparing them to the sealed root, panel or seed bindings. A changed reference input can therefore silently redefine the purported fixed comparison while the originally sealed plan remains unchanged.",
+      "qualification": "The earlier missing feed-binding check is not an ordinary report-path bypass: measure_checkpoint validates those bindings first. Direct use of conditional_pair still relies on that unstated precondition. This finding concerns the unverified reference inputs, not a demonstrated research decision leak.",
+      "acceptance": "Bind conditional reference construction to the original seal/plan/source snapshots and reject or explicitly invalidate changed fixed inputs; do not relabel a changed panel as the original comparison."
+    },
+    {
+      "id": "K-R3-2",
+      "severity": "metric_scope_gap",
+      "requirements": [
+        "K1",
+        "K2"
+      ],
+      "title": "Conditional byte count still encodes a portfolio of alternative derivations",
+      "evidence": [
+        {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study_burden.py",
+          "sha256": "e0530b64947bcfbd8176a762df3836f9711777c815be9cf97db324cdaf3b8378",
+          "lines": "185-206,209-220",
+          "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round3_static_review_20261017/review_checkpoint_2238/study_burden.py"
+        }
+      ],
+      "finding": "The new theory dictionaries and introduced-overhead split are real improvements. But conditional_description_bytes serializes every retained root reduction and its residuals together. These are alternative partial derivations of one goal, not necessarily the one current remaining-goal witness. Adding an unused historical route increases this number even when the chosen/current obligation has not changed.",
+      "qualification": "This can be an honest conditional portfolio-description metric. It is no longer merely the previous cumulative source bundle, and no minimal/uncomputable representation or forced decrease is requested. The current metric should not silently stand in for a bound current remaining-goal witness.",
+      "acceptance": "Identify the encoded object explicitly. If claiming a current residual/proof-description comparison, bind that witness per fixed goal separately from the retained portfolio, with new dictionary/gluing overhead and unknown proof remainder separate. Do not manufacture a sawtooth."
+    }
+  ],
+  "improvements_observed": [
+    {
+      "area": "K",
+      "evidence": [
+        {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study_burden.py",
+          "sha256": "e0530b64947bcfbd8176a762df3836f9711777c815be9cf97db324cdaf3b8378",
+          "lines": "152-220",
+          "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round3_static_review_20261017/review_checkpoint_2238/study_burden.py"
+        }
+      ],
+      "statement": "Old and enlarged accepted theories now have separate dictionary bindings; introduced definitions/adapters/connecting sources are separated; unknown remainder and minimum remain unknown. Cumulative initial-theory storage is separately labelled."
+    },
+    {
+      "area": "P/S resources",
+      "evidence": [
+        {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study.py",
+          "sha256": "79e3fbc85c0757f8e6bdc0689a80e97db455aaed8288939b15d1c41ab36074be",
+          "lines": "214-271,417-428,587-606,680-683",
+          "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round3_static_review_20261017/review_checkpoint_2238/study.py"
+        }
+      ],
+      "statement": "Protected budget pools, ordinary delayed-horizon funding, and symmetric branch plus downstream evaluation/review funding are now active source paths. Runtime reviewer owns crash/accounting disposition; old round2 missing-pool finding is not repeated as current."
+    },
+    {
+      "area": "T catalog",
+      "evidence": [
+        {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study.py",
+          "sha256": "79e3fbc85c0757f8e6bdc0689a80e97db455aaed8288939b15d1c41ab36074be",
+          "lines": "214-217",
+          "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round3_static_review_20261017/review_checkpoint_2238/study.py"
+        },
+        {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study_transfer.py",
+          "sha256": "279f299e1d72d4cabd463c7253f9984353c8bd04a265b96c16e5365ed061085d",
+          "lines": "258-286",
+          "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round3_static_review_20261017/review_checkpoint_2238/study_transfer.py"
+        }
+      ],
+      "statement": "Catalog now imports admitted_modules rather than every retained draft; accepted source inputs feed snapshot admission lists."
+    },
+    {
+      "area": "T semantic context/use",
+      "evidence": [
+        {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study_transfer.py",
+          "sha256": "279f299e1d72d4cabd463c7253f9984353c8bd04a265b96c16e5365ed061085d",
+          "lines": "96-137,153-189,328-336,390-399",
+          "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round3_static_review_20261017/review_checkpoint_2238/study_transfer.py"
+        }
+      ],
+      "statement": "Named target-context compilation, bound paired tasks and required-component subset checks are present. Formal reviewer owns exact semantic negatives and final validity; no runtime pass inferred."
+    }
+  ],
+  "measurement_limits": [
+    "All non-root reference-panel task proofs are presently left unknown in conditional_pair (lines201-202); this path does not consume their evaluation proof records as measured conditional witnesses. The panel currently provides fixed reference identity, with transfer evaluation remaining separate.",
+    "Numeric audit outputs have no identified policy/selection consumer in reviewed paths. Producer outbox and sealed schedule separate audit-export discrepancies from research control.",
+    "Whole-continuation/actual host refinement remain open; bounded executable experiments are not certified switches.",
+    "No fresh Markov activation is authorized by this review. The user hold remains."
+  ],
+  "authority": "K1/K2 labels and detailed witness/accounting conditions are supervisor operational interpretations of the user's conditional remaining-proof audit request, not a claim of verbatim user wording.",
+  "pins": {
+    "utc": "2026-10-17T22:38:48.311389+00:00",
+    "files": [
+      {
+        "source": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study_burden.py",
+        "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round3_static_review_20261017/review_checkpoint_2238/study_burden.py",
+        "relative": "machinery/study_burden.py",
+        "sha256": "e0530b64947bcfbd8176a762df3836f9711777c815be9cf97db324cdaf3b8378",
+        "bytes": 14854,
+        "stable_reread": true
+      },
+      {
+        "source": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study_observer.py",
+        "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round3_static_review_20261017/review_checkpoint_2238/study_observer.py",
+        "relative": "machinery/study_observer.py",
+        "sha256": "c05a528c8b4e2beb718c02d2d7a471a3c14096262b06357e266a60e6583f174d",
+        "bytes": 1779,
+        "stable_reread": true
+      },
+      {
+        "source": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study_policy.py",
+        "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round3_static_review_20261017/review_checkpoint_2238/study_policy.py",
+        "relative": "machinery/study_policy.py",
+        "sha256": "92101c48d318723a97f1a6a42fadfdec964d7a1e1d929c1e664f7aa7b207df75",
+        "bytes": 15940,
+        "stable_reread": true
+      },
+      {
+        "source": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study.py",
+        "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round3_static_review_20261017/review_checkpoint_2238/study.py",
+        "relative": "machinery/study.py",
+        "sha256": "79e3fbc85c0757f8e6bdc0689a80e97db455aaed8288939b15d1c41ab36074be",
+        "bytes": 46986,
+        "stable_reread": true
+      },
+      {
+        "source": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study_transfer.py",
+        "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round3_static_review_20261017/review_checkpoint_2238/study_transfer.py",
+        "relative": "machinery/study_transfer.py",
+        "sha256": "279f299e1d72d4cabd463c7253f9984353c8bd04a265b96c16e5365ed061085d",
+        "bytes": 27501,
+        "stable_reread": true
+      },
+      {
+        "source": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study_knowledge.py",
+        "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round3_static_review_20261017/review_checkpoint_2238/study_knowledge.py",
+        "relative": "machinery/study_knowledge.py",
+        "sha256": "ac04d864110a0331d4346972d9bf4e9c5858da9779be1d7c0850ddeecedf5209",
+        "bytes": 15360,
+        "stable_reread": true
+      },
+      {
+        "source": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/proof_audit.py",
+        "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round3_static_review_20261017/review_checkpoint_2238/proof_audit.py",
+        "relative": "machinery/proof_audit.py",
+        "sha256": "d270be57f8cf0713677a032f6443f0d71d94e264696b7ff815c20a6b51d21b09",
+        "bytes": 6472,
+        "stable_reread": true
+      },
+      {
+        "source": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study_completion.py",
+        "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round3_static_review_20261017/review_checkpoint_2238/study_completion.py",
+        "relative": "machinery/study_completion.py",
+        "sha256": "4894c36c39aa06999eca011721777066660d1c3901e929d80f2137e7d759c7bd",
+        "bytes": 3855,
+        "stable_reread": true
+      },
+      {
+        "source": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/docs/HARNESS_CHECKPOINT.md",
+        "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round3_static_review_20261017/review_checkpoint_2238/HARNESS_CHECKPOINT.md",
+        "relative": "docs/HARNESS_CHECKPOINT.md",
+        "sha256": "dcc2a0d1065b0ac7fb59f5ead427dae7ff3e4a7c9e5d8379309efe71fcfac7e0",
+        "bytes": 2583,
+        "stable_reread": true
+      }
+    ]
+  }
+}

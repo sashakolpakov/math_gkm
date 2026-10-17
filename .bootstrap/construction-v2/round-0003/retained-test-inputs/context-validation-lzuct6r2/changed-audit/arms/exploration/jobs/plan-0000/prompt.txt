@@ -1,0 +1,62 @@
+Read MISSION.md, docs/DESIGN.md and contract.json. The active versioned contract supplies the exact task and permitted assumptions. Follow its phase; do not start a different campaign. Historical campaigns are not rerun or inherited. Choose your own mathematical actions: literature, experiments using installed Python/Sage/GAP, representations, conjectures, proofs or refutations, typed attachments, strategy and executable request-program proposals. Missing tools are capability failures. A finite-budget failure is not unprovability. Do not use complexity, description length, compression or derived proxies in decisions. Never invoke another LLM, Codex, controllers or background processes. Do not access other workspaces, evaluation answers, audit records, Git, archives or credentials. No network shell, downloads, package updates, publication or messaging. Use .scratch for temporary files, pinned dependencies and /opt/homebrew/bin/python3. No sorry, admit, axioms or native_decide. Reports do not certify proofs. Checkpoint in research/ with unique names. Use existing artifacts; keep failed attempts. No supervisor supplies mathematical advice.
+Plan the next bounded trial BEFORE execution. You have read-only access to own mathematical artifacts. Generate/retain competing explicit obstacle, capability and strategy hypotheses, not a prescribed math recipe. Return agenda, summary, hypotheses, evidence, trial, use_links, policy_proposal and completion (null). Each hypothesis has id, kind (obstacle/capability/strategy), claim, uncertainty, outcomes (list of {check, changes_next_choice}), status (open/supported_exploratorily/usefulness_not_demonstrated/refuted_by_evidence), reason, evidence (artifact paths). trial has hypothesis and invention boolean. Evidence entries have path, sha256, kind (experiment/source/representation/proof_candidate/capability_failure). Commit alternative observable outcomes and what changes next; invention is bounded by the episode. Baseline keeps a single agenda and need not retain competing hypotheses; still explicitly commit its selected claim and outcome checks. No execution or invented success. Proposed policy/program changes are experimental candidates.
+The output envelope has request_id and payload_json (a JSON-encoded object).
+Researcher payload: {agenda:[strings], summary:string, hypotheses:[{id,kind,claim,uncertainty,outcomes:[{check,changes_next_choice}],status,reason,evidence:[paths]}], evidence:[{path,sha256,kind}], trial:{hypothesis,invention}, prospective_binding:request.prospective_binding, use_links:[{artifact,consumer,claim}], policy_proposal:null or {search,memory,allocation,reassessment}, executable_proposal:null or {schema:"math-gkm.request-program.v1",code:[instructions]}, mathematical_claims:[], attachments:[], representations:[], reductions:[], completion:null or {kind,module,declaration,correspondence}}. Executable instructions: reverse_agenda, reverse_portfolio; rotate_agenda/keep_observations with integer n; if_open_obligations with then/else instruction lists. These cannot edit admission, contract, costs or authority.
+Reviewer payload: {findings:[{path,sha256,finding}], correctness,scope,transfer,costs,recommendation}.
+Selector payload: {choice:"incumbent" or "candidate",reason,evidence:[{path,sha256}]}.
+REQUEST:
+{
+  "role": "proposer",
+  "round": 0,
+  "policy": {
+    "allocation": "consequential uncertainty trials and bounded invention episodes",
+    "memory": "retain alternatives, evidence and reasons; consult own history",
+    "reassessment": "review at committed episode horizon; permit delayed benefit",
+    "search": "retain competing obstacle, capability and strategy hypotheses"
+  },
+  "mode": "exploration",
+  "agenda": [],
+  "portfolio": [],
+  "episode": null,
+  "observations": [],
+  "knowledge": {},
+  "components": {},
+  "remaining_obligations": {},
+  "formal_obligations": [
+    {
+      "id": "D1-whole-continuation",
+      "required": "Concrete strict/nonstrict comparison under the previous contract for install-and-continue versus the entire incumbent, including future discoveries and rewrites.",
+      "status": "open"
+    },
+    {
+      "id": "D2-host-refinement",
+      "required": "Simulation of Python interpreter, OS effects, role receipts, recovery and migration by the declared executable semantics.",
+      "status": "open"
+    },
+    {
+      "id": "D3-cost-and-environment",
+      "required": "Justified common time baseline, validation/install costs, deadline/state transport, and timed response coupling or explicit environment quantification.",
+      "status": "open"
+    },
+    {
+      "id": "D3-independent-installation",
+      "required": "Protected independent certificate validation and an actual guarded installation tied to contract/model/state/code/migration/deadline hashes.",
+      "status": "open"
+    }
+  ],
+  "delayed_use_links": [],
+  "limits": {
+    "rounds": 2,
+    "episode_rounds": 2,
+    "invention_rounds": 1,
+    "call_seconds": 30
+  },
+  "status": "experimental; no certified continuation improvement",
+  "program_execution": {
+    "program_hash": "11c1477fea8a88505809828150fdea7951a77065387e6e20866fbf74b1c44620",
+    "input_hash": "3f8fc3432a56f6d92ebeed68c1122d3082907d7ef7b75949845568854384cce8",
+    "executed": [],
+    "status": "experimental interpreter; refinement unproved"
+  },
+  "request_id": "plan-0000"
+}

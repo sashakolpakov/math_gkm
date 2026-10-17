@@ -1,0 +1,926 @@
+Read MISSION.md, docs/DESIGN.md and contract.json. The active versioned contract supplies the exact task and permitted assumptions. Follow its phase; do not start a different campaign. Historical campaigns are not rerun or inherited. Choose your own mathematical actions: literature, experiments using installed Python/Sage/GAP, representations, conjectures, proofs or refutations, typed attachments, strategy and executable request-program proposals. Missing tools are capability failures. A finite-budget failure is not unprovability. Do not use complexity, description length, compression or derived proxies in decisions. Never invoke another LLM, Codex, controllers or background processes. Do not access other workspaces, evaluation answers, audit records, Git, archives or credentials. No network shell, downloads, package updates, publication or messaging. Use .scratch for temporary files, pinned dependencies and /opt/homebrew/bin/python3. No sorry, admit, axioms or native_decide. Reports do not certify proofs. Checkpoint in research/ with unique names. Use existing artifacts; keep failed attempts. No supervisor supplies mathematical advice.
+Execute the committed_trial in this request. Its hypotheses/outcomes were recorded by a separate proposer before this call. Return the same trial identity and hypothesis claims, with actual evidence and updated status. A bounded invention round may precede a formal root reduction. Echo prospective_binding exactly. Honor episode horizons; delayed usefulness is distinct from refutation. Baseline keeps its incumbent single-agenda policy; changes are logged but not installed. Policy/program changes are proposals for equal-budget trials. Submit mathematical_claims, attachments, representations or reductions using the typed schemas in the request.
+The output envelope has request_id and payload_json (a JSON-encoded object).
+Researcher payload: {agenda:[strings], summary:string, hypotheses:[{id,kind,claim,uncertainty,outcomes:[{check,changes_next_choice}],status,reason,evidence:[paths]}], evidence:[{path,sha256,kind}], trial:{hypothesis,invention}, prospective_binding:request.prospective_binding, use_links:[{artifact,consumer,claim}], policy_proposal:null or {search,memory,allocation,reassessment}, executable_proposal:null or {schema:"math-gkm.request-program.v1",code:[instructions]}, mathematical_claims:[], attachments:[], representations:[], reductions:[], completion:null or {kind,module,declaration,correspondence}}. Executable instructions: reverse_agenda, reverse_portfolio; rotate_agenda/keep_observations with integer n; if_open_obligations with then/else instruction lists. These cannot edit admission, contract, costs or authority.
+Reviewer payload: {findings:[{path,sha256,finding}], correctness,scope,transfer,costs,recommendation}.
+Selector payload: {choice:"incumbent" or "candidate",reason,evidence:[{path,sha256}]}.
+REQUEST:
+{
+  "role": "researcher",
+  "round": 2,
+  "policy": {
+    "allocation": "consequential uncertainty trials and bounded invention episodes",
+    "memory": "retain alternatives, evidence and reasons; consult own history",
+    "reassessment": "review at committed episode horizon; permit delayed benefit",
+    "search": "retain competing obstacle, capability and strategy hypotheses"
+  },
+  "mode": "exploration",
+  "agenda": [
+    "fixture continuation after round 2"
+  ],
+  "portfolio": [
+    {
+      "claim": "toy representation may help",
+      "evidence": [],
+      "id": "h-a",
+      "kind": "capability",
+      "outcomes": [
+        {
+          "changes_next_choice": "test a second consumer",
+          "check": "toy interface check passes"
+        },
+        {
+          "changes_next_choice": "retain alternative",
+          "check": "toy interface check fails"
+        }
+      ],
+      "reason": "await independent checks",
+      "status": "usefulness_not_demonstrated",
+      "uncertainty": "Does the toy interface preserve its observation?"
+    },
+    {
+      "claim": "toy direct route may help",
+      "evidence": [],
+      "id": "h-b",
+      "kind": "strategy",
+      "outcomes": [
+        {
+          "changes_next_choice": "test a second consumer",
+          "check": "toy interface check passes"
+        },
+        {
+          "changes_next_choice": "retain alternative",
+          "check": "toy interface check fails"
+        }
+      ],
+      "reason": "await independent checks",
+      "status": "usefulness_not_demonstrated",
+      "uncertainty": "Does the toy interface preserve its observation?"
+    }
+  ],
+  "episode": {
+    "start": 2,
+    "review_round": 3,
+    "continuation_rounds": 2,
+    "invention_used": 0,
+    "hypothesis": "h-a",
+    "status": "usefulness_not_demonstrated"
+  },
+  "observations": [
+    {
+      "checked": true,
+      "kind": "reductions",
+      "knowledge_attempt": "fixture-reduction",
+      "receipt_hash": "e4524c33fe94f30c8de52f296c259acd7af88afa7ef648b742e9ebf351a12246",
+      "status": "checked_exact_obligation_and_interfaces"
+    },
+    {
+      "checked": true,
+      "kind": "fiber_gluings",
+      "knowledge_attempt": "fixture-family",
+      "receipt_hash": "a33d7214308ed6d56dc94fae464991920ffbb8dac6340d643f67435e3a951a60",
+      "status": "checked_exact_obligation_and_interfaces"
+    },
+    {
+      "class": "unverified_research_report",
+      "evidence": [],
+      "round": 1,
+      "summary": "SYNTHETIC evidence only"
+    },
+    {
+      "class": "unverified_research_report",
+      "evidence": [
+        {
+          "kind": "experiment",
+          "path": "research/toy-1.txt",
+          "sha256": "b09bc82752b10ed6c43058442fd449ba23d24a44169f1c3b437b4b921219b0d4"
+        }
+      ],
+      "round": 1,
+      "summary": "SYNTHETIC evidence only"
+    },
+    {
+      "checked": true,
+      "kind": "mathematical_claims",
+      "knowledge_attempt": "fixture-discharge",
+      "receipt_hash": "92da406e960f8f4a0d229c79e3125d07b5bf545642107c5d9162a275004a1246",
+      "status": "checked_exact_obligation_and_interfaces"
+    },
+    {
+      "checked": true,
+      "kind": "mathematical_claims",
+      "knowledge_attempt": "fixture-delayed-use",
+      "receipt_hash": "84f17d08e1f5ab60272b86b7f6402680b5d99b402abe3d67cac0db6f52bf8e29",
+      "status": "checked_exact_obligation_and_interfaces"
+    },
+    {
+      "checked": true,
+      "kind": "mathematical_claims",
+      "knowledge_attempt": "fixture-family-reuse",
+      "receipt_hash": "5832452279005f28e9307f1cdfd902f46ac696e751cb76d1fa7f7a0d18198c23",
+      "status": "checked_exact_obligation_and_interfaces"
+    },
+    {
+      "round": 2,
+      "evidence": [],
+      "summary": "SYNTHETIC evidence only",
+      "class": "unverified_research_report"
+    }
+  ],
+  "knowledge": {
+    "fixture-delayed-use": {
+      "claim": {
+        "hypotheses": [],
+        "statement": "\u2200 e : Nat \u00d7 Unit, e.1 = e.1"
+      },
+      "dependencies": [
+        "fixture-cell"
+      ],
+      "export_module": "MathGKM.Acceptedaefd49fa1521554951c1cdb2",
+      "export_status": "exact checked composition renamed; fresh rebuild mandatory for every consumer",
+      "exports": [
+        "Acceptedaefd49fa1521554951c1cdb2.obligation",
+        "Acceptedaefd49fa1521554951c1cdb2.interface",
+        "Acceptedaefd49fa1521554951c1cdb2.transport"
+      ],
+      "id": "fixture-delayed-use",
+      "kind": "mathematical_claims",
+      "novelty": "not assessed",
+      "proposal": {
+        "dependencies": [
+          "fixture-cell"
+        ],
+        "id": "fixture-delayed-use",
+        "module": "MathGKM.Accepted850eb30550d569e2c57c5846",
+        "required_constants": [
+          "Accepted850eb30550d569e2c57c5846.obligation"
+        ],
+        "statement": "\u2200 e : Nat \u00d7 Unit, e.1 = e.1",
+        "term": "Accepted850eb30550d569e2c57c5846.obligation"
+      },
+      "proposal_hash": "830cb991b4a6455bb7fe56efbccbe80a9c224bc5fa8a1430f7f2ddaf565466b6",
+      "receipt_hash": "84f17d08e1f5ab60272b86b7f6402680b5d99b402abe3d67cac0db6f52bf8e29",
+      "relevance": "not asserted",
+      "source_files": {
+        "MathGKM/Accepted850eb30550d569e2c57c5846.lean": "78573e8be29b8c334ea3f7b248d617361bdd70effa08aaee3a3da451064d6ab3",
+        "MathGKM/Acceptedaefd49fa1521554951c1cdb2.lean": "90be26d36b67fab012bd9e7a6500d689aa8284da6f7c530fe11592fad25c256b",
+        "MathGKM/HarnessFixture.lean": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+        "MathGKM/ResearchSemantics.lean": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+        "MathGKM/Target9f0559c601a2a45c01e8bc86.lean": "94dc17f9b060a39ab9a3c68a5bcfc80e5f29eaf3c779ce2414493edd7f3851f6",
+        "MathGKM/Targetcebba9251f16aa852b99e9eb.lean": "0e94923fc30edf4104a1a79228fffbe62d190e89917c264f8a6eaff256cae95b"
+      },
+      "task": {
+        "context_modules": [
+          "MathGKM.Accepted850eb30550d569e2c57c5846",
+          "MathGKM.HarnessFixture"
+        ],
+        "context_sources": {
+          "MathGKM/Accepted850eb30550d569e2c57c5846.lean": "65b6b397c4664c27f5e28b4b33693e52dff34a088aab55fad677b503c7f225b2",
+          "MathGKM/HarnessFixture.lean": "fd6c0a12d377d8ab226a11059c198dfae1adc9e26474eb67ffcae814bee5af5f",
+          "MathGKM/ResearchSemantics.lean": "3651085906419e9de0b530b474b2324f2b32019b33463c7da409062c0ca51716",
+          "MathGKM/Target9f0559c601a2a45c01e8bc86.lean": "3419cdbc32761898f44812a9735f615575ba622dded205721e307dcfb7024db9"
+        },
+        "hypotheses": [],
+        "id": "fixture-delayed-use",
+        "interface_type": "True",
+        "kind": "holdout",
+        "required_constants": [
+          "Accepted850eb30550d569e2c57c5846.obligation"
+        ],
+        "scope": "exact proposal; usefulness and novelty unassessed",
+        "source_sha256": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+        "statement": "\u2200 e : Nat \u00d7 Unit, e.1 = e.1",
+        "target_module": "MathGKM.Targetcebba9251f16aa852b99e9eb",
+        "transport_type": "True"
+      },
+      "truth": "checked exact proposition under allowed premise closure",
+      "used_declarations": {
+        "Accepted850eb30550d569e2c57c5846.interface": {
+          "module": "MathGKM.Accepted850eb30550d569e2c57c5846",
+          "semantic_sha256": "660e5ddb008005f52f098a8425841f66cc177cf88cd1cef13bfca5876489178d",
+          "source_sha256": "78573e8be29b8c334ea3f7b248d617361bdd70effa08aaee3a3da451064d6ab3"
+        },
+        "Accepted850eb30550d569e2c57c5846.interface._proof_1": {
+          "module": "MathGKM.Accepted850eb30550d569e2c57c5846",
+          "semantic_sha256": "fc7e56ae7c02f0a2018d9a016769f0bad0b474c5c3bf6e59e30233f975062057",
+          "source_sha256": "78573e8be29b8c334ea3f7b248d617361bdd70effa08aaee3a3da451064d6ab3"
+        },
+        "Accepted850eb30550d569e2c57c5846.obligation": {
+          "module": "MathGKM.Accepted850eb30550d569e2c57c5846",
+          "semantic_sha256": "b4e56a55edccc77cf256dba692dcbd03d6919b6996105cf5beafa9958d83126a",
+          "source_sha256": "78573e8be29b8c334ea3f7b248d617361bdd70effa08aaee3a3da451064d6ab3"
+        },
+        "MathGKM.ResearchSemantics.ConservativeExtension": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "cfdd81909ef43d5f9b4ee2652b6f6de6fd90fa06747c151267ea84888dc5714d",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        },
+        "MathGKM.ResearchSemantics.ConservativeExtension.forget": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "924d8bab983c1588078761007191ee28bf5d23c99122ad6cdff95c50619e2dbd",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        },
+        "MathGKM.ResearchSemantics.ConservativeExtension.mk": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "e7edb5e9fc88eda9c167d55f4610ef561438581ace5d2aaf64b499cde1b2aacf",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        },
+        "MathGKM.ResearchSemantics.ConservativeExtension.preserves": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "ffc5d73de799b66989604878be9d42071c7a8d2071b02334f20476b16e3608c0",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        },
+        "MathGKM.Target9f0559c601a2a45c01e8bc86.Goal": {
+          "module": "MathGKM.Target9f0559c601a2a45c01e8bc86",
+          "semantic_sha256": "022d79a421c8e325286f0ec5621239fbaedf14f44b1836a47bed6aa6ad82c20c",
+          "source_sha256": "94dc17f9b060a39ab9a3c68a5bcfc80e5f29eaf3c779ce2414493edd7f3851f6"
+        },
+        "MathGKM.Target9f0559c601a2a45c01e8bc86.Interface": {
+          "module": "MathGKM.Target9f0559c601a2a45c01e8bc86",
+          "semantic_sha256": "cc9f170466ad57edd76dc761fc94f4f50f34214707a2831c844180c85b13c785",
+          "source_sha256": "94dc17f9b060a39ab9a3c68a5bcfc80e5f29eaf3c779ce2414493edd7f3851f6"
+        }
+      },
+      "usefulness": "not established by checking"
+    },
+    "fixture-discharge": {
+      "claim": {
+        "hypotheses": [],
+        "statement": "(\u2200 n : Nat, n = n) \u2227 (MathGKM.Targetf2352ca8ca74aa9ed619a0fb.Residual0)"
+      },
+      "dependencies": [],
+      "export_module": "MathGKM.Accepteda9c0744e54f0c01ba0375d64",
+      "export_status": "exact checked composition renamed; fresh rebuild mandatory for every consumer",
+      "exports": [
+        "Accepteda9c0744e54f0c01ba0375d64.obligation",
+        "Accepteda9c0744e54f0c01ba0375d64.interface",
+        "Accepteda9c0744e54f0c01ba0375d64.transport"
+      ],
+      "id": "fixture-discharge",
+      "kind": "mathematical_claims",
+      "novelty": "not assessed",
+      "proposal": {
+        "discharges": [
+          "fixture-residual"
+        ],
+        "id": "fixture-discharge",
+        "module": "MathGKM.HarnessFixture",
+        "statement": "\u2200 n : Nat, n = n",
+        "term": "fun _ => rfl"
+      },
+      "proposal_hash": "3f7977f3bc307a0042ba6c4a0f5e9eea127837e9774f4888d505f87ff8f4ce04",
+      "receipt_hash": "92da406e960f8f4a0d229c79e3125d07b5bf545642107c5d9162a275004a1246",
+      "relevance": "not asserted",
+      "source_files": {
+        "MathGKM/Accepteda9c0744e54f0c01ba0375d64.lean": "4b60adcfe71b79919acdce437b4fa3f743844f2cadcfad27f260d73699a419c9",
+        "MathGKM/HarnessFixture.lean": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+        "MathGKM/Target109e0ed86b65c08c353a5c48.lean": "0e71e064c70d029b4bd29b7224d02433081f6f67e0fb69408d4b556f9dbd1e89",
+        "MathGKM/Targetf2352ca8ca74aa9ed619a0fb.lean": "6b3263505390ca305b4db05381fb4be16ee31d5ea7895820b37d7ede64d84c4d"
+      },
+      "task": {
+        "context_modules": [
+          "MathGKM.HarnessFixture",
+          "MathGKM.Targetf2352ca8ca74aa9ed619a0fb"
+        ],
+        "context_sources": {
+          "MathGKM/HarnessFixture.lean": "fd6c0a12d377d8ab226a11059c198dfae1adc9e26474eb67ffcae814bee5af5f",
+          "MathGKM/Targetf2352ca8ca74aa9ed619a0fb.lean": "8142677af850d23d197166009edc4136ad25cc83f186a45db66b32ea0f998126"
+        },
+        "hypotheses": [],
+        "id": "fixture-discharge",
+        "interface_type": "True",
+        "kind": "holdout",
+        "required_constants": [],
+        "scope": "exact proposal; usefulness and novelty unassessed",
+        "source_sha256": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+        "statement": "(\u2200 n : Nat, n = n) \u2227 (MathGKM.Targetf2352ca8ca74aa9ed619a0fb.Residual0)",
+        "target_module": "MathGKM.Target109e0ed86b65c08c353a5c48",
+        "transport_type": "True"
+      },
+      "truth": "checked exact proposition under allowed premise closure",
+      "used_declarations": {
+        "MathGKM.Targetf2352ca8ca74aa9ed619a0fb.Residual0": {
+          "module": "MathGKM.Targetf2352ca8ca74aa9ed619a0fb",
+          "semantic_sha256": "c42c02e392e706be81b485693a14f2c66d439bce4ac76b07c8803cf1dda79f62",
+          "source_sha256": "6b3263505390ca305b4db05381fb4be16ee31d5ea7895820b37d7ede64d84c4d"
+        }
+      },
+      "usefulness": "not established by checking"
+    },
+    "fixture-family-reuse": {
+      "claim": {
+        "hypotheses": [],
+        "statement": "\u2200 n : Nat, n = n"
+      },
+      "dependencies": [
+        "fixture-family"
+      ],
+      "export_module": "MathGKM.Accepted9aa1b42e6f5b7f07d5912777",
+      "export_status": "exact checked composition renamed; fresh rebuild mandatory for every consumer",
+      "exports": [
+        "Accepted9aa1b42e6f5b7f07d5912777.obligation",
+        "Accepted9aa1b42e6f5b7f07d5912777.interface",
+        "Accepted9aa1b42e6f5b7f07d5912777.transport"
+      ],
+      "id": "fixture-family-reuse",
+      "kind": "mathematical_claims",
+      "novelty": "not assessed",
+      "proposal": {
+        "dependencies": [
+          "fixture-family"
+        ],
+        "id": "fixture-family-reuse",
+        "module": "MathGKM.Accepted19b5ba76b0f7693f0684470f",
+        "required_constants": [
+          "Accepted19b5ba76b0f7693f0684470f.transport"
+        ],
+        "statement": "\u2200 n : Nat, n = n",
+        "term": "fun n => Accepted19b5ba76b0f7693f0684470f.transport 0 n"
+      },
+      "proposal_hash": "4cc46535aa25284c88cab673c54ea401cd24aa6cc625049c5296670e84abd74e",
+      "receipt_hash": "5832452279005f28e9307f1cdfd902f46ac696e751cb76d1fa7f7a0d18198c23",
+      "relevance": "not asserted",
+      "source_files": {
+        "MathGKM/Accepted19b5ba76b0f7693f0684470f.lean": "14348bbe4c549c1ae0071f65a21e92528d0a337291842addc885bacea74b5501",
+        "MathGKM/Accepted9aa1b42e6f5b7f07d5912777.lean": "d098c6aa2fd86b8c157acc64940e50a70cac8e844c6803936a7834c11376ba64",
+        "MathGKM/HarnessFixture.lean": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+        "MathGKM/ResearchSemantics.lean": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+        "MathGKM/Target5cb68e7ec94706e91d3493ef.lean": "50439db25f7f7f1bce582651d577f9768d3848aba0f47a72c281d7c3c6a08502",
+        "MathGKM/Target91114c123c384db802af698c.lean": "7ab8ce438de2261124e18c3c0271c3790cb12983933f9335488f17450f19f213"
+      },
+      "task": {
+        "context_modules": [
+          "MathGKM.Accepted19b5ba76b0f7693f0684470f",
+          "MathGKM.HarnessFixture"
+        ],
+        "context_sources": {
+          "MathGKM/Accepted19b5ba76b0f7693f0684470f.lean": "381fa925df719b12f8a2556bfe6fc0927db3f6c0d0d0de1fd34f1ebfb4000942",
+          "MathGKM/HarnessFixture.lean": "fd6c0a12d377d8ab226a11059c198dfae1adc9e26474eb67ffcae814bee5af5f",
+          "MathGKM/ResearchSemantics.lean": "3651085906419e9de0b530b474b2324f2b32019b33463c7da409062c0ca51716",
+          "MathGKM/Target5cb68e7ec94706e91d3493ef.lean": "5a418d83f53e7012303844b873ee4b7408c36185f839b9c4ba4a65c7d2d9c0df"
+        },
+        "hypotheses": [],
+        "id": "fixture-family-reuse",
+        "interface_type": "True",
+        "kind": "holdout",
+        "required_constants": [
+          "Accepted19b5ba76b0f7693f0684470f.transport"
+        ],
+        "scope": "exact proposal; usefulness and novelty unassessed",
+        "source_sha256": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+        "statement": "\u2200 n : Nat, n = n",
+        "target_module": "MathGKM.Target91114c123c384db802af698c",
+        "transport_type": "True"
+      },
+      "truth": "checked exact proposition under allowed premise closure",
+      "used_declarations": {
+        "Accepted19b5ba76b0f7693f0684470f.interface": {
+          "module": "MathGKM.Accepted19b5ba76b0f7693f0684470f",
+          "semantic_sha256": "4218186639dde747bd16add658ce2eac8dfe3a15eb4a90294bf852468e7f2660",
+          "source_sha256": "14348bbe4c549c1ae0071f65a21e92528d0a337291842addc885bacea74b5501"
+        },
+        "Accepted19b5ba76b0f7693f0684470f.transport": {
+          "module": "MathGKM.Accepted19b5ba76b0f7693f0684470f",
+          "semantic_sha256": "fc1aec6adbebd95400e1d0c3336ded22c8ea8adfefdc6fd6ef88b2133fa1cf2d",
+          "source_sha256": "14348bbe4c549c1ae0071f65a21e92528d0a337291842addc885bacea74b5501"
+        },
+        "MathGKM.ResearchSemantics.Push": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "fa74d2e1d572fa933e3edf1c6fb3d5c3a3f10780062492f32467299a643adb9a",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        },
+        "MathGKM.ResearchSemantics.pushLift": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "19d67d595fd5f8a2a205aa97af601ecd159daeb75f5be763aed6bbb63e1b3a78",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        },
+        "MathGKM.ResearchSemantics.pushLift.match_1": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "6bdea49c47ac27433c0d72113cdba33d234263eb575b0117d921c420648d7073",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        },
+        "MathGKM.ResearchSemantics.pushUnit": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "78ecfc1b1a6468478d723b03af9bff29501ca190a60db8f2a44c0646cb9ded45",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        },
+        "MathGKM.ResearchSemantics.pushUnit._proof_1": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "405838a4947f62ac7d7a753d8511cb1eaee9bfbf9ae9ab99b118ef802434d5cd",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        },
+        "MathGKM.ResearchSemantics.push_beta": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "8cb9d1973793be8ceb7b1d7571ee118e4b1868ccc3a22f8278e54596a5ce4447",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        },
+        "MathGKM.Target5cb68e7ec94706e91d3493ef.Interface": {
+          "module": "MathGKM.Target5cb68e7ec94706e91d3493ef",
+          "semantic_sha256": "15edd8dc485f6063aa3267ae8bb73c85526f71be285b2432b24143caaf7d7ce5",
+          "source_sha256": "50439db25f7f7f1bce582651d577f9768d3848aba0f47a72c281d7c3c6a08502"
+        },
+        "MathGKM.Target5cb68e7ec94706e91d3493ef.Transport": {
+          "module": "MathGKM.Target5cb68e7ec94706e91d3493ef",
+          "semantic_sha256": "103a0c7bcb4fc20a96f952bb9ced67e2b33febd16ee062a30cdb60f971629a31",
+          "source_sha256": "50439db25f7f7f1bce582651d577f9768d3848aba0f47a72c281d7c3c6a08502"
+        }
+      },
+      "usefulness": "not established by checking"
+    },
+    "fixture-reduction": {
+      "claim": {
+        "hypotheses": [],
+        "statement": "((\u2200 n : Nat, n = n)) \u2192 MathGKM.HarnessFixture.Root"
+      },
+      "dependencies": [],
+      "export_module": "MathGKM.Accepted4cabe22e0e1cee3a56cf3345",
+      "export_status": "exact checked composition renamed; fresh rebuild mandatory for every consumer",
+      "exports": [
+        "Accepted4cabe22e0e1cee3a56cf3345.obligation",
+        "Accepted4cabe22e0e1cee3a56cf3345.interface",
+        "Accepted4cabe22e0e1cee3a56cf3345.transport"
+      ],
+      "id": "fixture-reduction",
+      "kind": "reductions",
+      "novelty": "not assessed",
+      "proposal": {
+        "dependencies": [],
+        "id": "fixture-reduction",
+        "module": "MathGKM.HarnessFixture",
+        "required_constants": [],
+        "residuals": [
+          {
+            "id": "fixture-residual",
+            "statement": "\u2200 n : Nat, n = n"
+          }
+        ],
+        "term": "fun h => h"
+      },
+      "proposal_hash": "7301e8f3eaff7fd7ced1c95ce448b140bad21924e7dddce206aca05ddc969561",
+      "receipt_hash": "e4524c33fe94f30c8de52f296c259acd7af88afa7ef648b742e9ebf351a12246",
+      "relevance": "checked residual implication",
+      "source_files": {
+        "MathGKM/Accepted4cabe22e0e1cee3a56cf3345.lean": "ffb9d314140254ce70c200109fb1197ec76fb5e3383181e41fe5ec648ab7b425",
+        "MathGKM/HarnessFixture.lean": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+        "MathGKM/Targetf2352ca8ca74aa9ed619a0fb.lean": "6b3263505390ca305b4db05381fb4be16ee31d5ea7895820b37d7ede64d84c4d"
+      },
+      "task": {
+        "context_modules": [
+          "MathGKM.HarnessFixture"
+        ],
+        "context_sources": {
+          "MathGKM/HarnessFixture.lean": "fd6c0a12d377d8ab226a11059c198dfae1adc9e26474eb67ffcae814bee5af5f"
+        },
+        "hypotheses": [],
+        "id": "fixture-reduction",
+        "interface_type": "True",
+        "kind": "holdout",
+        "reduction_root": "MathGKM.HarnessFixture.Root",
+        "required_constants": [],
+        "residuals": [
+          {
+            "id": "fixture-residual",
+            "statement": "\u2200 n : Nat, n = n"
+          }
+        ],
+        "scope": "exact proposal; usefulness and novelty unassessed",
+        "source_sha256": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+        "statement": "((\u2200 n : Nat, n = n)) \u2192 MathGKM.HarnessFixture.Root",
+        "target_module": "MathGKM.Targetf2352ca8ca74aa9ed619a0fb",
+        "transport_type": "True"
+      },
+      "truth": "checked exact proposition under allowed premise closure",
+      "used_declarations": {
+        "MathGKM.HarnessFixture.Root": {
+          "module": "MathGKM.HarnessFixture",
+          "semantic_sha256": "c42c02e392e706be81b485693a14f2c66d439bce4ac76b07c8803cf1dda79f62",
+          "source_sha256": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd"
+        }
+      },
+      "usefulness": "not established by checking"
+    }
+  },
+  "components": {
+    "fixture-cell": {
+      "claim": {
+        "hypotheses": [],
+        "statement": "\u2200 e : (Nat \u00d7 Unit), (fun n : Nat => n = n) (StudyInterface.forget e)"
+      },
+      "dependencies": [],
+      "export_module": "MathGKM.Accepted850eb30550d569e2c57c5846",
+      "export_status": "exact checked composition renamed; fresh rebuild mandatory for every consumer",
+      "exports": [
+        "Accepted850eb30550d569e2c57c5846.obligation",
+        "Accepted850eb30550d569e2c57c5846.interface",
+        "Accepted850eb30550d569e2c57c5846.transport"
+      ],
+      "id": "fixture-cell",
+      "kind": "attachments",
+      "novelty": "not assessed",
+      "proposal": {
+        "base": "Nat",
+        "base_proof": "fun _ => rfl",
+        "dependencies": [],
+        "extend": "fun n => (n, ())",
+        "extended": "Nat \u00d7 Unit",
+        "forget": "Prod.fst",
+        "id": "fixture-cell",
+        "module": "MathGKM.ResearchSemantics",
+        "predicate": "fun n : Nat => n = n",
+        "required_constants": [],
+        "section_law": "fun _ => rfl"
+      },
+      "proposal_hash": "aa7c81395fd57657127c3b1f76eb34912a117d16e0bda15fa43393397e28e62a",
+      "receipt_hash": "2bc1b6cd2f251bc73aede81bb48d6e166682ed104ea35b376bd9addd326b804e",
+      "relevance": "not asserted",
+      "source_files": {
+        "MathGKM/Accepted850eb30550d569e2c57c5846.lean": "78573e8be29b8c334ea3f7b248d617361bdd70effa08aaee3a3da451064d6ab3",
+        "MathGKM/HarnessFixture.lean": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+        "MathGKM/ResearchSemantics.lean": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+        "MathGKM/Target9f0559c601a2a45c01e8bc86.lean": "94dc17f9b060a39ab9a3c68a5bcfc80e5f29eaf3c779ce2414493edd7f3851f6"
+      },
+      "task": {
+        "context_modules": [
+          "MathGKM.ResearchSemantics",
+          "MathGKM.HarnessFixture"
+        ],
+        "context_sources": {
+          "MathGKM/HarnessFixture.lean": "fd6c0a12d377d8ab226a11059c198dfae1adc9e26474eb67ffcae814bee5af5f",
+          "MathGKM/ResearchSemantics.lean": "3651085906419e9de0b530b474b2324f2b32019b33463c7da409062c0ca51716"
+        },
+        "hypotheses": [],
+        "id": "fixture-cell",
+        "interface_type": "MathGKM.ResearchSemantics.ConservativeExtension (Nat) (Nat \u00d7 Unit)",
+        "kind": "holdout",
+        "required_constants": [],
+        "scope": "exact proposal; usefulness and novelty unassessed",
+        "source_sha256": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+        "statement": "\u2200 e : (Nat \u00d7 Unit), (fun n : Nat => n = n) (StudyInterface.forget e)",
+        "target_module": "MathGKM.Target9f0559c601a2a45c01e8bc86",
+        "transport_type": "\u2200 b : (Nat), StudyInterface.forget (StudyInterface.extend b) = b"
+      },
+      "truth": "checked exact proposition under allowed premise closure",
+      "used_declarations": {
+        "MathGKM.ResearchSemantics.ConservativeExtension": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "cfdd81909ef43d5f9b4ee2652b6f6de6fd90fa06747c151267ea84888dc5714d",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        },
+        "MathGKM.ResearchSemantics.ConservativeExtension.forget": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "924d8bab983c1588078761007191ee28bf5d23c99122ad6cdff95c50619e2dbd",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        },
+        "MathGKM.ResearchSemantics.ConservativeExtension.mk": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "e7edb5e9fc88eda9c167d55f4610ef561438581ace5d2aaf64b499cde1b2aacf",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        },
+        "MathGKM.ResearchSemantics.ConservativeExtension.preserves": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "ffc5d73de799b66989604878be9d42071c7a8d2071b02334f20476b16e3608c0",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        }
+      },
+      "usefulness": "not established by checking"
+    },
+    "fixture-family": {
+      "claim": {
+        "hypotheses": [],
+        "statement": "\u2200 k : (\u2200 j : (Nat), MathGKM.ResearchSemantics.Push (fun n : Nat => n) (fun _ : Nat => Nat) j \u2192 (fun _ : Nat => Nat) j), (\u2200 (i : (Nat)) (x : (fun _ : Nat => Nat) i), k ((fun n : Nat => n) i) (MathGKM.ResearchSemantics.pushUnit (fun n : Nat => n) (fun _ : Nat => Nat) i x) = (fun (_ : Nat) (n : Nat) => n) i x) \u2192 k = StudyInterface"
+      },
+      "dependencies": [],
+      "export_module": "MathGKM.Accepted19b5ba76b0f7693f0684470f",
+      "export_status": "exact checked composition renamed; fresh rebuild mandatory for every consumer",
+      "exports": [
+        "Accepted19b5ba76b0f7693f0684470f.obligation",
+        "Accepted19b5ba76b0f7693f0684470f.interface",
+        "Accepted19b5ba76b0f7693f0684470f.transport"
+      ],
+      "id": "fixture-family",
+      "kind": "fiber_gluings",
+      "novelty": "not assessed",
+      "proposal": {
+        "base": "Nat",
+        "dependencies": [],
+        "extended": "Nat",
+        "family": "fun _ : Nat => Nat",
+        "family_map": "fun (_ : Nat) (n : Nat) => n",
+        "id": "fixture-family",
+        "map": "fun n : Nat => n",
+        "module": "MathGKM.ResearchSemantics",
+        "required_constants": [],
+        "target_family": "fun _ : Nat => Nat"
+      },
+      "proposal_hash": "cc221165c818dd36227ea2c564ff0c4e6a3b1a22408da0e2642364ff6d395d03",
+      "receipt_hash": "a33d7214308ed6d56dc94fae464991920ffbb8dac6340d643f67435e3a951a60",
+      "relevance": "not asserted",
+      "source_files": {
+        "MathGKM/Accepted19b5ba76b0f7693f0684470f.lean": "14348bbe4c549c1ae0071f65a21e92528d0a337291842addc885bacea74b5501",
+        "MathGKM/HarnessFixture.lean": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+        "MathGKM/ResearchSemantics.lean": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+        "MathGKM/Target5cb68e7ec94706e91d3493ef.lean": "50439db25f7f7f1bce582651d577f9768d3848aba0f47a72c281d7c3c6a08502"
+      },
+      "task": {
+        "context_modules": [
+          "MathGKM.ResearchSemantics",
+          "MathGKM.HarnessFixture"
+        ],
+        "context_sources": {
+          "MathGKM/HarnessFixture.lean": "fd6c0a12d377d8ab226a11059c198dfae1adc9e26474eb67ffcae814bee5af5f",
+          "MathGKM/ResearchSemantics.lean": "3651085906419e9de0b530b474b2324f2b32019b33463c7da409062c0ca51716"
+        },
+        "hypotheses": [],
+        "id": "fixture-family",
+        "interface_type": "\u2200 j : (Nat), MathGKM.ResearchSemantics.Push (fun n : Nat => n) (fun _ : Nat => Nat) j \u2192 (fun _ : Nat => Nat) j",
+        "kind": "holdout",
+        "required_constants": [],
+        "scope": "exact proposal; usefulness and novelty unassessed",
+        "source_sha256": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+        "statement": "\u2200 k : (\u2200 j : (Nat), MathGKM.ResearchSemantics.Push (fun n : Nat => n) (fun _ : Nat => Nat) j \u2192 (fun _ : Nat => Nat) j), (\u2200 (i : (Nat)) (x : (fun _ : Nat => Nat) i), k ((fun n : Nat => n) i) (MathGKM.ResearchSemantics.pushUnit (fun n : Nat => n) (fun _ : Nat => Nat) i x) = (fun (_ : Nat) (n : Nat) => n) i x) \u2192 k = StudyInterface",
+        "target_module": "MathGKM.Target5cb68e7ec94706e91d3493ef",
+        "transport_type": "\u2200 (i : (Nat)) (x : (fun _ : Nat => Nat) i), StudyInterface ((fun n : Nat => n) i) (MathGKM.ResearchSemantics.pushUnit (fun n : Nat => n) (fun _ : Nat => Nat) i x) = (fun (_ : Nat) (n : Nat) => n) i x"
+      },
+      "truth": "checked exact proposition under allowed premise closure",
+      "used_declarations": {
+        "MathGKM.ResearchSemantics.Push": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "fa74d2e1d572fa933e3edf1c6fb3d5c3a3f10780062492f32467299a643adb9a",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        },
+        "MathGKM.ResearchSemantics.pushLift": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "19d67d595fd5f8a2a205aa97af601ecd159daeb75f5be763aed6bbb63e1b3a78",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        },
+        "MathGKM.ResearchSemantics.pushLift.match_1": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "6bdea49c47ac27433c0d72113cdba33d234263eb575b0117d921c420648d7073",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        },
+        "MathGKM.ResearchSemantics.pushUnit": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "78ecfc1b1a6468478d723b03af9bff29501ca190a60db8f2a44c0646cb9ded45",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        },
+        "MathGKM.ResearchSemantics.pushUnit._proof_1": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "405838a4947f62ac7d7a753d8511cb1eaee9bfbf9ae9ab99b118ef802434d5cd",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        },
+        "MathGKM.ResearchSemantics.push_unique": {
+          "module": "MathGKM.ResearchSemantics",
+          "semantic_sha256": "fef381ed2ae59421bcca47d2e7cb0580fe10ac1986daae09b1d5c335a8f26f16",
+          "source_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+        }
+      },
+      "usefulness": "not established by checking"
+    }
+  },
+  "remaining_obligations": {
+    "fixture-residual": {
+      "connection": "checked implication to unchanged root; satisfiability/difficulty unknown",
+      "context_binding": "f336cdeed615ae9dfdf9804f4de34e1a4b6d457d10da9e2c1951634605cb3011",
+      "discharge": "fixture-discharge",
+      "id": "fixture-residual",
+      "source": "fixture-reduction",
+      "statement": "\u2200 n : Nat, n = n",
+      "status": "checked",
+      "target_constant": "MathGKM.Targetf2352ca8ca74aa9ed619a0fb.Residual0",
+      "target_module": "MathGKM.Targetf2352ca8ca74aa9ed619a0fb"
+    }
+  },
+  "formal_obligations": [
+    {
+      "id": "D1-whole-continuation",
+      "required": "Concrete strict/nonstrict comparison under the previous contract for install-and-continue versus the entire incumbent, including future discoveries and rewrites.",
+      "status": "open"
+    },
+    {
+      "id": "D2-host-refinement",
+      "required": "Simulation of Python interpreter, OS effects, role receipts, recovery and migration by the declared executable semantics.",
+      "status": "open"
+    },
+    {
+      "id": "D3-cost-and-environment",
+      "required": "Justified common time baseline, validation/install costs, deadline/state transport, and timed response coupling or explicit environment quantification.",
+      "status": "open"
+    },
+    {
+      "id": "D3-independent-installation",
+      "required": "Protected independent certificate validation and an actual guarded installation tied to contract/model/state/code/migration/deadline hashes.",
+      "status": "open"
+    }
+  ],
+  "delayed_use_links": [
+    {
+      "artifact": "fixture-cell",
+      "consumer": {
+        "hypotheses": [],
+        "statement": "\u2200 e : (Nat \u00d7 Unit), (fun n : Nat => n = n) (StudyInterface.forget e)"
+      },
+      "receipt_hash": "2bc1b6cd2f251bc73aede81bb48d6e166682ed104ea35b376bd9addd326b804e",
+      "status": "checked generated composition"
+    },
+    {
+      "artifact": "fixture-reduction",
+      "consumer": {
+        "hypotheses": [],
+        "statement": "((\u2200 n : Nat, n = n)) \u2192 MathGKM.HarnessFixture.Root"
+      },
+      "receipt_hash": "e4524c33fe94f30c8de52f296c259acd7af88afa7ef648b742e9ebf351a12246",
+      "status": "checked declaration closure"
+    },
+    {
+      "artifact": "fixture-family",
+      "consumer": {
+        "hypotheses": [],
+        "statement": "\u2200 k : (\u2200 j : (Nat), MathGKM.ResearchSemantics.Push (fun n : Nat => n) (fun _ : Nat => Nat) j \u2192 (fun _ : Nat => Nat) j), (\u2200 (i : (Nat)) (x : (fun _ : Nat => Nat) i), k ((fun n : Nat => n) i) (MathGKM.ResearchSemantics.pushUnit (fun n : Nat => n) (fun _ : Nat => Nat) i x) = (fun (_ : Nat) (n : Nat) => n) i x) \u2192 k = StudyInterface"
+      },
+      "receipt_hash": "a33d7214308ed6d56dc94fae464991920ffbb8dac6340d643f67435e3a951a60",
+      "status": "checked declaration closure"
+    },
+    {
+      "artifact": "fixture-discharge",
+      "consumer": {
+        "hypotheses": [],
+        "statement": "(\u2200 n : Nat, n = n) \u2227 (MathGKM.Targetf2352ca8ca74aa9ed619a0fb.Residual0)"
+      },
+      "receipt_hash": "92da406e960f8f4a0d229c79e3125d07b5bf545642107c5d9162a275004a1246",
+      "status": "checked declaration closure"
+    },
+    {
+      "artifact": "fixture-delayed-use",
+      "consumer": {
+        "hypotheses": [],
+        "statement": "\u2200 e : Nat \u00d7 Unit, e.1 = e.1"
+      },
+      "receipt_hash": "84f17d08e1f5ab60272b86b7f6402680b5d99b402abe3d67cac0db6f52bf8e29",
+      "status": "checked declaration closure"
+    },
+    {
+      "artifact": "fixture-family-reuse",
+      "consumer": {
+        "hypotheses": [],
+        "statement": "\u2200 n : Nat, n = n"
+      },
+      "receipt_hash": "5832452279005f28e9307f1cdfd902f46ac696e751cb76d1fa7f7a0d18198c23",
+      "status": "checked declaration closure"
+    }
+  ],
+  "limits": {
+    "rounds": 4,
+    "episode_rounds": 2,
+    "invention_rounds": 1,
+    "call_seconds": 30
+  },
+  "status": "experimental; no certified continuation improvement",
+  "program_execution": {
+    "program_hash": "11c1477fea8a88505809828150fdea7951a77065387e6e20866fbf74b1c44620",
+    "input_hash": "896cee8aa8524d40308ab918b713a2cf36e57f33c4547d5a0f5787b143d28639",
+    "executed": [],
+    "status": "experimental interpreter; refinement unproved"
+  },
+  "committed_trial": {
+    "hypothesis": "h-a",
+    "invention": false
+  },
+  "prospective_binding": "78f88a4ce50fbe3e5e974f9560a8e0383bddffae9047b3500fe4d557598b3116",
+  "commitment": {
+    "schema": "math-gkm.prospective.v3",
+    "round": 2,
+    "trial": {
+      "hypothesis": "h-a",
+      "invention": false
+    },
+    "selected": {
+      "id": "h-a",
+      "kind": "capability",
+      "claim": "toy representation may help",
+      "uncertainty": "Does the toy interface preserve its observation?",
+      "outcomes": [
+        {
+          "changes_next_choice": "test a second consumer",
+          "check": "toy interface check passes"
+        },
+        {
+          "changes_next_choice": "retain alternative",
+          "check": "toy interface check fails"
+        }
+      ]
+    },
+    "alternatives": [
+      {
+        "id": "h-b",
+        "kind": "strategy",
+        "claim": "toy direct route may help",
+        "uncertainty": "Does the toy interface preserve its observation?",
+        "outcomes": [
+          {
+            "changes_next_choice": "test a second consumer",
+            "check": "toy interface check passes"
+          },
+          {
+            "changes_next_choice": "retain alternative",
+            "check": "toy interface check fails"
+          }
+        ]
+      }
+    ],
+    "episode": {
+      "start": 2,
+      "review_round": 3,
+      "continuation_rounds": 2,
+      "invention_used": 0,
+      "hypothesis": "h-a",
+      "status": "usefulness_not_demonstrated"
+    },
+    "resource_reservation_seconds": 30,
+    "continuation_envelope": {
+      "rounds": 2,
+      "seconds_per_round": 780,
+      "validation_limit_each_round": 6,
+      "semantics": "prepaid research and validation caps; operational protocol wall separately bounded and measured"
+    },
+    "state_binding": "073650b57c38eca378f7f19c402f7368ceff48c4e9c2cb6877189100a2b20375",
+    "program_hash": "11c1477fea8a88505809828150fdea7951a77065387e6e20866fbf74b1c44620"
+  },
+  "checked_submission_schemas": {
+    "mathematical_claims": {
+      "id": "new identity",
+      "module": "MathGKM module",
+      "statement": "exact closed Lean proposition (quantify premises)",
+      "term": "proof term",
+      "discharges": [
+        "optional explicit residual ids; checked against their original target constants"
+      ]
+    },
+    "attachments": {
+      "id": "new identity",
+      "module": "MathGKM module importing ResearchSemantics",
+      "base": "Lean type",
+      "extended": "Lean type",
+      "forget": "E \u2192 B term",
+      "extend": "B \u2192 E term",
+      "section_law": "\u2200 b, forget (extend b) = b proof",
+      "predicate": "B \u2192 Prop term",
+      "base_proof": "\u2200 b, predicate b proof",
+      "dependencies": [
+        "checked knowledge/component ids"
+      ],
+      "required_constants": [
+        "used Lean declarations"
+      ]
+    },
+    "representations": {
+      "id": "new identity",
+      "module": "MathGKM module importing ResearchSemantics",
+      "base": "Lean type",
+      "extended": "Lean type",
+      "predicate": "B \u2192 Prop",
+      "target_predicate": "E \u2192 Prop",
+      "forward": "B \u2192 E",
+      "law": "\u2200 b, target_predicate (forward b) \u2194 predicate b proof",
+      "dependencies": [
+        "checked ids"
+      ],
+      "required_constants": [
+        "used Lean declarations"
+      ]
+    },
+    "reductions": {
+      "id": "new identity",
+      "module": "MathGKM module",
+      "residuals": [
+        {
+          "id": "new residual id",
+          "statement": "closed Lean proposition"
+        }
+      ],
+      "term": "conjunction of residual propositions \u2192 exact pinned root proof",
+      "dependencies": [
+        "checked ids"
+      ],
+      "required_constants": [
+        "used Lean declarations"
+      ]
+    },
+    "fiber_gluings": {
+      "id": "new identity",
+      "module": "MathGKM.ResearchSemantics or importing module",
+      "base": "index type I",
+      "extended": "index type J",
+      "map": "I \u2192 J",
+      "family": "I \u2192 Type",
+      "target_family": "J \u2192 Type",
+      "family_map": "\u2200 i, family i \u2192 target_family (map i)",
+      "dependencies": [
+        "checked ids"
+      ],
+      "required_constants": [
+        "used declarations"
+      ]
+    }
+  },
+  "request_id": "policy-c9bc9ff46e59b147-r2-incumbent-0"
+}

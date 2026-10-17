@@ -1,0 +1,3 @@
+Two separate audits: cumulative explicit witness storage in raw.json; same-goal conditional descriptions under old/enlarged accepted theories in conditional-paired.json.
+
+Every scheduled checkpoint, including missing/unfavorable points, is in raw.json. The unchanged goal, panel, conditional dictionary and encoding are bound before comparison. Definitions, adapters and connecting proof costs are included once. Unknown residual proof burden and minimum complexity stay unknown. A smaller encoding is not an easier proof. No failed bounded search supplies a lower bound. No sawtooth is required or inferred. These files and derived proxies have no research-role read grant or decision consumer.

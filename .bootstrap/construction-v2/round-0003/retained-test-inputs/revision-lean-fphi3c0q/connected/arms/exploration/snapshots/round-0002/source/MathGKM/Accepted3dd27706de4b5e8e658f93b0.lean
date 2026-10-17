@@ -1,0 +1,6 @@
+import MathGKM.Targetbbcdc7e97749b5f4e660c369
+import MathGKM.FixtureComponent
+import Lean
+def Accepted3dd27706de4b5e8e658f93b0.interface : MathGKM.Targetbbcdc7e97749b5f4e660c369.Interface := True.intro
+theorem Accepted3dd27706de4b5e8e658f93b0.transport : MathGKM.Targetbbcdc7e97749b5f4e660c369.Transport Accepted3dd27706de4b5e8e658f93b0.interface := True.intro
+theorem Accepted3dd27706de4b5e8e658f93b0.obligation : MathGKM.Targetbbcdc7e97749b5f4e660c369.Goal Accepted3dd27706de4b5e8e658f93b0.interface := FixtureComponent.use

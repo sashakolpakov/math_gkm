@@ -1,0 +1,6 @@
+import MathGKM.Targetd08a11c29060ec725c6f074f
+import MathGKM.Accepted850eb30550d569e2c57c5846
+import Lean
+def Accepted9538b98425c4a113da28508c.interface : MathGKM.Targetd08a11c29060ec725c6f074f.Interface := True.intro
+theorem Accepted9538b98425c4a113da28508c.transport : MathGKM.Targetd08a11c29060ec725c6f074f.Transport Accepted9538b98425c4a113da28508c.interface := True.intro
+theorem Accepted9538b98425c4a113da28508c.obligation : MathGKM.Targetd08a11c29060ec725c6f074f.Goal Accepted9538b98425c4a113da28508c.interface := Accepted850eb30550d569e2c57c5846.obligation
