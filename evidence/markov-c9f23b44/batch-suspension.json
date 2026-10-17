@@ -1,0 +1,64 @@
+{
+  "time_ns": 1792194976413250000,
+  "reason": "Repeated import overhead dominates. No mathematical proof is interrupted; stop each driver after S4 by holding the not-yet-started S5 input. Restore after driver exits.",
+  "held": [
+    [
+      "research/MarkovDenseProduct0S5MC9F.lean",
+      "research/MarkovDenseProduct0S5MC9F.held.lean"
+    ],
+    [
+      "research/MarkovDenseProduct1S5MC9F.lean",
+      "research/MarkovDenseProduct1S5MC9F.held.lean"
+    ],
+    [
+      "research/MarkovDenseProduct2S5MC9F.lean",
+      "research/MarkovDenseProduct2S5MC9F.held.lean"
+    ],
+    [
+      "research/MarkovDenseProduct3S5MC9F.lean",
+      "research/MarkovDenseProduct3S5MC9F.held.lean"
+    ]
+  ],
+  "modules": [
+    "MarkovDenseCertificateMC9F",
+    "MarkovDenseFactorsMC9F",
+    "MarkovDenseProduct0S1MC9F",
+    "MarkovDenseProduct0S2MC9F",
+    "MarkovDenseProduct0S3MC9F",
+    "MarkovDenseProduct0S4MC9F",
+    "MarkovDenseBatch0S9MC9F",
+    "MarkovDenseBatch0S14MC9F",
+    "MarkovDenseBatch0S18MC9F",
+    "MarkovDenseBatch0S21MC9F",
+    "MarkovDenseProduct1S1MC9F",
+    "MarkovDenseProduct1S2MC9F",
+    "MarkovDenseProduct1S3MC9F",
+    "MarkovDenseProduct1S4MC9F",
+    "MarkovDenseBatch1S9MC9F",
+    "MarkovDenseBatch1S14MC9F",
+    "MarkovDenseBatch1S18MC9F",
+    "MarkovDenseBatch1S21MC9F",
+    "MarkovDenseProduct2S1MC9F",
+    "MarkovDenseProduct2S2MC9F",
+    "MarkovDenseProduct2S3MC9F",
+    "MarkovDenseProduct2S4MC9F",
+    "MarkovDenseBatch2S9MC9F",
+    "MarkovDenseBatch2S14MC9F",
+    "MarkovDenseBatch2S18MC9F",
+    "MarkovDenseBatch2S21MC9F",
+    "MarkovDenseProduct3S1MC9F",
+    "MarkovDenseProduct3S2MC9F",
+    "MarkovDenseProduct3S3MC9F",
+    "MarkovDenseProduct3S4MC9F",
+    "MarkovDenseBatch3S9MC9F",
+    "MarkovDenseBatch3S14MC9F",
+    "MarkovDenseBatch3S18MC9F",
+    "MarkovDenseBatch3S21MC9F",
+    "MarkovDenseGapMC9F",
+    "MarkovLowerClosedMC9F"
+  ],
+  "additional_hold": "research/MarkovDenseProduct0S6MC9F.lean",
+  "observed": "Group 0 S5 had already started; held S6 instead. Groups 1,2,3 compiled S4 and exited with expected missing-S5 errors before starting any further Lean operation.",
+  "restored": true,
+  "group0_outcome": "S5 compiled; driver exited at deliberately held S6 before further Lean execution. Both sources restored. S5 standalone is redundant and excluded from selected replay, whose group-0 batch starts from S4."
+}

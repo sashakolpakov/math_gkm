@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovDenseCertificateMC9F.lean:47:16: error: unsolved goals\ncase cons.cons.x_2\n\u03b1 : Type\nzero : \u03b1\nadd mul : \u03b1 \u2192 \u03b1 \u2192 \u03b1\nf : \u03b1 \u2192 \u211a\nhz : f zero = 0\nha : \u2200 (a b : \u03b1), f (add a b) = f a + f b\nhm : \u2200 (a b : \u03b1), f (mul a b) = f a * f b\nx : \u211a\nb : List \u03b1\na a' : \u03b1\nas : List \u03b1\nih : denseEvalMC9F f x (denseMulMC9F zero add mul (a' :: as) b) = denseEvalMC9F f x (a' :: as) * denseEvalMC9F f x b\n\u22a2 a' :: as = [] \u2192 False\n/Users/sasha/math_gkm/research/MarkovDenseCertificateMC9F.lean:59:23: error(lean.unknownIdentifier): Unknown constant `List.instDecidableEq`\n/Users/sasha/math_gkm/research/MarkovDenseCertificateMC9F.lean:109:11: error: mod_cast has type\n  (0 : \u2124) \u2264 a\nbut is expected to have type\n  (0 : \u211a) \u2264 devalMC9F 0 v a\n",
+  "stderr": "",
+  "modules": {
+    "MarkovDenseCertificateMC9F": "e1758ea96154a43dc591be6b305bca2e4f40fc3aa21e0be3935941eb7bc5de4e"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseCertificateMC9F.olean",
+    "/Users/sasha/math_gkm/research/MarkovDenseCertificateMC9F.lean"
+  ],
+  "seconds": 9.029962792003062,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
