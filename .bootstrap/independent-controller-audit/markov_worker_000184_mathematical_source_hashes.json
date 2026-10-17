@@ -1,0 +1,2080 @@
+{
+  "worker": 184,
+  "request": "eb6a900170904ab59255de637301f446",
+  "created_at_utc": "2026-10-17T09:06:47.652492+00:00",
+  "historical_status": "completed, return0, delivered report, mathematical_resolution false",
+  "scope": "Closed184 archive-first static review, exact inherited counterparts; no active185 material, research execution, mathematical-value recomputation or proposer assistance",
+  "mathematical_values_recomputed": false,
+  "receipt_pin": {
+    "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/receipt.json",
+    "bytes": 21664,
+    "sha256": "c7eaeb3ee3e197db66a0ade9453907964a2c50bb4f9c81c9fe9609063829c6b9"
+  },
+  "prior183_scope_pin": {
+    "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_mathematical_source_hashes.json",
+    "bytes": 111886,
+    "sha256": "3262527fbf1f483b4848dee26e2db284328f70a2ca3d5ddd67e7327782110036"
+  },
+  "new_and_recovered_sources": [
+    {
+      "module": "MarkovTopFourthM55C",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225819307736000.lean",
+        "bytes": 2531,
+        "sha256": "bb18778d2a69c0d6e8398a7387626bddee556bd82227fd2f1174ff40208cc962"
+      },
+      "project_relative_source": "research/MarkovTopFourthM55C.lean",
+      "selected_recovered_from183": true,
+      "selected_new184": false,
+      "imports": [
+        "MarkovTopSupportMB3E"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "weightedChooseM55C",
+          "line": 9,
+          "header": "def weightedChooseM55C (a k m : ℕ) : ℤ",
+          "body_sha256": "01fb604ce1ebc70ee4c4873bb1ed1e71cd5828ffbf1fc5a18fe7e9b74a3a2dbf"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_choose_sumM55C",
+          "line": 12,
+          "header": "theorem weighted_choose_sumM55C (a k m : ℕ) :\n (∑ s ∈ range m, ((m:ℤ)-s)*((a+s).choose k:ℤ))=weightedChooseM55C a k m",
+          "body_sha256": "f6b1f601594ba53d813c6273d3930054bc11adf1a3d74b90a7c0b58962e89c8b"
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_linearM55C",
+          "line": 16,
+          "header": "theorem choose_linearM55C (a s k : ℕ) (hk : k ≤ a) :\n (s:ℤ)*((a+s).choose k:ℤ)=\n (k+1)*((a+s).choose (k+1):ℤ)+((k:ℤ)-a)*((a+s).choose k:ℤ)",
+          "body_sha256": "2e0586ea67823c213aec4e7dee5e480733e51876aa5afc55148fdd699c6b8079"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_choose_linearM55C",
+          "line": 25,
+          "header": "theorem weighted_choose_linearM55C (a k m : ℕ) (hk : k ≤ a) :\n (∑ s ∈ range m, ((m:ℤ)-s)*s*((a+s).choose k:ℤ))=\n (k+1)*weightedChooseM55C a (k+1) m+((k:ℤ)-a)*weightedChooseM55C a k m",
+          "body_sha256": "5e0323da8309ec50c4da310dffdb9b7fff5fda9ce24c9b0352329d048ef5e02f"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_fourth_coeffM55C",
+          "line": 34,
+          "header": "theorem top_fourth_coeffM55C (n t : ℕ) (hn : 2*t ≤ n) (ht : 3 ≤ t) :\n (topTemplateMB3E n t).coeff 4=\n ((t:ℤ)-3)*((n+6-t).choose 4:ℤ)+4*(\n 5*weightedChooseM55C (n-2*t+9) 5 (t-3)+\n (4-((n-2*t+9:ℕ):ℤ))*weightedChooseM55C (n-2*t+9) 4 (t-3))",
+          "body_sha256": "f5c226c2284186e442c85787a5fadb8e2377edceb317d7287a235077220acf8d"
+        }
+      ],
+      "theorem_count": 4,
+      "definition_count": 1,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225819307736000.json",
+        "bytes": 567,
+        "sha256": "f142ceb04778c6f9fbea1de4784be83aaf4e811b602d99da5c7d632ed4dac7e1"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225819307736000.lean",
+        "bytes": 2531,
+        "sha256": "bb18778d2a69c0d6e8398a7387626bddee556bd82227fd2f1174ff40208cc962"
+      },
+      "source_equals183_sealed_source": true,
+      "historical183_status": "ordinary compilation only; zero replay/print; uncertain host/nullreport",
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSecondGapM55C",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225850990449000.lean",
+        "bytes": 3330,
+        "sha256": "cb6e6f208cc6f62bbc63c3e8dc0709d220fe96248d8e8766d2b43f75d42449f3"
+      },
+      "project_relative_source": "research/MarkovTopSecondGapM55C.lean",
+      "selected_recovered_from183": true,
+      "selected_new184": false,
+      "imports": [
+        "MarkovTopFourthM55C"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "weightedChooseQM55C",
+          "line": 8,
+          "header": "def weightedChooseQM55C (a m : ℚ) (k : ℕ) : ℚ",
+          "body_sha256": "ccfc7a0781dfd56f0fc8e334080f1cddb24439c27773fb4570edbf183d8ae3f4"
+        },
+        {
+          "kind": "def",
+          "name": "topSecondQM55C",
+          "line": 10,
+          "header": "def topSecondQM55C (s d : ℚ) : ℚ",
+          "body_sha256": "37e3e71c0cec1d4e37ce1d820b8d766d0c3b55e8dfc3e43b81b627c6b6f2fcba"
+        },
+        {
+          "kind": "def",
+          "name": "topThirdQM55C",
+          "line": 11,
+          "header": "def topThirdQM55C (s d : ℚ) : ℚ",
+          "body_sha256": "c2eb3d9bc5cb7ea3c4254bee29c5e3b4ab855070dfbb04b6e474585c92734452"
+        },
+        {
+          "kind": "def",
+          "name": "topFourthQM55C",
+          "line": 13,
+          "header": "def topFourthQM55C (s d : ℚ) : ℚ",
+          "body_sha256": "03e34d40f7bf285ca155b743c8721f21f40834c314245a0c4c59d4bb12ca5198"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_second_gap_positiveM55C",
+          "line": 16,
+          "header": "theorem top_second_gap_positiveM55C (s d : ℚ) (hs : 0 ≤ s) (hd : 0 ≤ d) :\n topSecondQM55C s d*topFourthQM55C s d < topThirdQM55C s d^2",
+          "body_sha256": "6e64626fa0739cce59bb48381957bd5eab1dafaf178ce2db13152a9e97e14a0d"
+        }
+      ],
+      "theorem_count": 1,
+      "definition_count": 4,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225850990449000.json",
+        "bytes": 576,
+        "sha256": "4e91b99f04173bcaf364d7b476992e8b0dbe0acc9a6b3f85db50a163b2ab7177"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225850990449000.lean",
+        "bytes": 3330,
+        "sha256": "cb6e6f208cc6f62bbc63c3e8dc0709d220fe96248d8e8766d2b43f75d42449f3"
+      },
+      "source_equals183_sealed_source": true,
+      "historical183_status": "ordinary compilation only; zero replay/print; uncertain host/nullreport",
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSecondSourceM55C",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225863542573000.lean",
+        "bytes": 4429,
+        "sha256": "c86029699e559863c553fcd949ba98b364e844cc7548fcf1e7730fdba6c9a63a"
+      },
+      "project_relative_source": "research/MarkovTopSecondSourceM55C.lean",
+      "selected_recovered_from183": true,
+      "selected_new184": false,
+      "imports": [
+        "MarkovTopSecondGapM55C"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "weighted_choose_castM55C",
+          "line": 10,
+          "header": "theorem weighted_choose_castM55C (a k m : ℕ) :\n (weightedChooseM55C a k m:ℚ)=weightedChooseQM55C a m k",
+          "body_sha256": "36d84343d3a62021a0c8b41b9531458c45452bb456b652de2735c06717546ccf"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_template_second_strictM55C",
+          "line": 14,
+          "header": "theorem top_template_second_strictM55C (n t : ℕ) (hn : 2*t ≤ n)\n (ht : 5 ≤ t) (hnt : 3*t ≤ n+5) :\n (topTemplateMB3E n t).coeff 2*(topTemplateMB3E n t).coeff 4 <\n (topTemplateMB3E n t).coeff 3^2",
+          "body_sha256": "49058013e6380bffd7af8e8aff3ef7bfff85f1932cfa62ede6349c523a0b0ba0"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_second_strictM55C",
+          "line": 70,
+          "header": "theorem source_top_second_strictM55C (q t : ℕ) (r : Bool) (hq : 1 ≤ q)\n (ht0 : 5 ≤ t) (ht : t ≤ q+2) :\n threeRawM9E2 q r 2 (sourceNME9C q r+2-t)*\n threeRawM9E2 q r 4 (sourceNME9C q r+2-t) <\n threeRawM9E2 q r 3 (sourceNME9C q r+2-t)^2",
+          "body_sha256": "2a34e303ce536eaaf5dba5e5c2dcd6ddafea511b8afce12c17a93cdcb7e67086"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_second_polygonM55C",
+          "line": 82,
+          "header": "theorem source_top_second_polygonM55C (q t : ℕ) (r : Bool) (hq : 1 ≤ q)\n (ht0 : 5 ≤ t) (ht : t ≤ q+2) :\n InPolygon 3 (sourceNME9C q r) 2 (sourceNME9C q r+2-t) ∧\n InPolygon 3 (sourceNME9C q r) 3 (sourceNME9C q r+2-t) ∧\n InPolygon 3 (sourceNME9C q r) 4 (sourceNME9C q r+2-t)",
+          "body_sha256": "7ddbc9f1636c341e593cb256c1f2c55dc472d475af4498495451fc62b24d004b"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_second_pathM55C",
+          "line": 89,
+          "header": "theorem source_top_second_pathM55C (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1 ≤ q ∧ (frame path).mid.b=sourceNME9C q r ∧\n ∀ t, 5 ≤ t → t ≤ q+2 →\n coeff (frame path).mid.p 2 ((frame path).mid.b+2-t)*\n coeff (frame path).mid.p 4 ((frame path).mid.b+2-t) <\n coeff (frame path).mid.p 3 ((frame path).mid.b+2-t)^2",
+          "body_sha256": "2ec00ef868063bc3eb9aeec0ec23a8f21f13b45f6fbc2ebdaed384d4f6498dcf"
+        }
+      ],
+      "theorem_count": 5,
+      "definition_count": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225863542573000.json",
+        "bytes": 584,
+        "sha256": "c2f14d04cfba0abbf3d606971f8d0ce38d43f3db5f794cc4b2aa62aea04d389f"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225863542573000.lean",
+        "bytes": 4429,
+        "sha256": "c86029699e559863c553fcd949ba98b364e844cc7548fcf1e7730fdba6c9a63a"
+      },
+      "source_equals183_sealed_source": true,
+      "historical183_status": "ordinary compilation only; zero replay/print; uncertain host/nullreport",
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopKernelM55C",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225870711162000.lean",
+        "bytes": 3445,
+        "sha256": "49c8efe8de8545ce61b04d988c3e0b5ccf54c64ffbd1c45652759d3056654fcd"
+      },
+      "project_relative_source": "research/MarkovTopKernelM55C.lean",
+      "selected_recovered_from183": true,
+      "selected_new184": false,
+      "imports": [
+        "MarkovTopCoefficientsMB3E"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "topKernelM55C",
+          "line": 9,
+          "header": "def topKernelM55C (d i s : ℕ) : ℤ",
+          "body_sha256": "1746caae39dd46e56b60151c27699ecd714fd5608f082d42189684daf9429819"
+        },
+        {
+          "kind": "def",
+          "name": "topLinearM55C",
+          "line": 12,
+          "header": "def topLinearM55C (T : ℕ) (f : ℕ → ℤ) : ℤ",
+          "body_sha256": "33d1cd5f5e822d134cd8c3db14ff9d417a554adcc261f1792c6ffebef130b368"
+        },
+        {
+          "kind": "def",
+          "name": "topMassM55C",
+          "line": 15,
+          "header": "def topMassM55C (d T i : ℕ) : ℤ",
+          "body_sha256": "6ce410d0ee7f2ad61095b715a7c762c862518b3f9f43d80246916637548d3b7c"
+        },
+        {
+          "kind": "def",
+          "name": "topEigenM55C",
+          "line": 17,
+          "header": "def topEigenM55C (d s : ℕ) : ℤ",
+          "body_sha256": "b8f55fee998ebbe213220bff851c8bdc5200c1d7e65a2a49b3b5c0650d6599d5"
+        },
+        {
+          "kind": "def",
+          "name": "topScaleM55C",
+          "line": 19,
+          "header": "def topScaleM55C (i : ℕ) : ℤ",
+          "body_sha256": "0fc9d09598f13ea2ef340de26a0790af533dfd18ec77fae9506c287e005e2cb1"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_kernel_nonnegM55C",
+          "line": 21,
+          "header": "theorem top_kernel_nonnegM55C (d i s : ℕ) : 0 ≤ topKernelM55C d i s",
+          "body_sha256": "def17eaa57feb95c273a112359d2cf48bf8120b96400a4e9af66c08794e22fcd"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_linear_nonnegM55C",
+          "line": 25,
+          "header": "theorem top_linear_nonnegM55C (T : ℕ) (f : ℕ → ℤ) (hf : ∀ s, 0 ≤ f s) :\n 0 ≤ topLinearM55C T f",
+          "body_sha256": "715ddc28ab18e83e2368be308bd6150d2aa3912fdfe1d41ffaeb636ebf956167"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_linear_addM55C",
+          "line": 35,
+          "header": "theorem top_linear_addM55C (T : ℕ) (f g : ℕ → ℤ) :\n topLinearM55C T (fun s => f s+g s)=topLinearM55C T f+topLinearM55C T g",
+          "body_sha256": "4b05e2c7c00395559d5a5911663eab8bc6ce12eadbd148bc3b5b1a531ec4e28a"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_linear_smulM55C",
+          "line": 40,
+          "header": "theorem top_linear_smulM55C (T : ℕ) (a : ℤ) (f : ℕ → ℤ) :\n topLinearM55C T (fun s => a*f s)=a*topLinearM55C T f",
+          "body_sha256": "983508eb6a818c0c226042bddff9a6f46f7155defa623db092631d317a1e8968"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_coeffM55C",
+          "line": 50,
+          "header": "theorem top_mass_coeffM55C (d T i : ℕ) :\n (topTemplateMB3E (2*(T+3)+d) (T+3)).coeff (i+3)=topMassM55C d T i",
+          "body_sha256": "65e42dc9067e3c93ca9fe6aeca022ad58cd2585d5db1803882695945f986899a"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_kernel_stepM55C",
+          "line": 75,
+          "header": "theorem top_kernel_stepM55C (d i s : ℕ) :\n topScaleM55C i*topKernelM55C d (i+1) s=\n (topEigenM55C d s-topEigenM55C d i)*topKernelM55C d i s",
+          "body_sha256": "3bb9ed7f0032920af5dfb1f65308ab846af88353956f141d072186957e2cf5a1"
+        }
+      ],
+      "theorem_count": 6,
+      "definition_count": 5,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225870711162000.json",
+        "bytes": 2191,
+        "sha256": "29802fd0d41bdedf9af86f706ded700b934b351d238f068c083815109b9f3ede"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225870711162000.lean",
+        "bytes": 3445,
+        "sha256": "49c8efe8de8545ce61b04d988c3e0b5ccf54c64ffbd1c45652759d3056654fcd"
+      },
+      "source_equals183_sealed_source": true,
+      "historical183_status": "ordinary compilation only; zero replay/print; uncertain host/nullreport",
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopMomentsM55C",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225877761816000.lean",
+        "bytes": 4326,
+        "sha256": "c27e700323878787d7145c6afcb79d59ced210f3faac91a6bfbd35192fba0fdc"
+      },
+      "project_relative_source": "research/MarkovTopMomentsM55C.lean",
+      "selected_recovered_from183": true,
+      "selected_new184": false,
+      "imports": [
+        "MarkovTopKernelM55C"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "topMomentM55C",
+          "line": 9,
+          "header": "def topMomentM55C (d T i k : ℕ) : ℤ",
+          "body_sha256": "008a317a56d45e15a6abb363d673861f720ca430335865c2680368c1ac4c449a"
+        },
+        {
+          "kind": "def",
+          "name": "topExcessM55C",
+          "line": 12,
+          "header": "def topExcessM55C (d T i : ℕ) : ℤ",
+          "body_sha256": "62e899c43fd94c35201473a45995d6cf44be43227bab7b33812a50a07f89c62e"
+        },
+        {
+          "kind": "def",
+          "name": "topVarianceNumerM55C",
+          "line": 15,
+          "header": "def topVarianceNumerM55C (d T i : ℕ) : ℤ",
+          "body_sha256": "ce19294b434e1e5e63a648a624dc124de51424a58a969b3b499fb1d07ce97315"
+        },
+        {
+          "kind": "def",
+          "name": "topDriftM55C",
+          "line": 18,
+          "header": "def topDriftM55C (d T i : ℕ) : ℤ",
+          "body_sha256": "392c89b316746e96a4eb9ce1e10d79b28a27c451d54cc533f53d2394939b3c56"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_linear_subM55C",
+          "line": 23,
+          "header": "theorem top_linear_subM55C (T : ℕ) (f g : ℕ → ℤ) :\n topLinearM55C T (fun s => f s-g s)=topLinearM55C T f-topLinearM55C T g",
+          "body_sha256": "a0e3915a0fd9532a981b66cc61ce0e180f0421829456047a3e4bfbe0e03c72c6"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_moment_stepM55C",
+          "line": 28,
+          "header": "theorem top_moment_stepM55C (d T i k : ℕ) :\n topScaleM55C i*topMomentM55C d T (i+1) k=\n topMomentM55C d T i (k+1)-topEigenM55C d i*topMomentM55C d T i k",
+          "body_sha256": "c61cfa1e4d580da1abd75c699d4216eef7061bee347051146e2b487b95bb79b1"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_moment_zeroM55C",
+          "line": 39,
+          "header": "theorem top_moment_zeroM55C (d T i : ℕ) : topMomentM55C d T i 0=topMassM55C d T i",
+          "body_sha256": "8221b06771c79a01f75e18645fa3ca1ff3e9c798734def4a36a4a35e96f161ca"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_stepM55C",
+          "line": 42,
+          "header": "theorem top_mass_stepM55C (d T i : ℕ) :\n topScaleM55C i*topMassM55C d T (i+1)=topExcessM55C d T i",
+          "body_sha256": "22c52e5c2df1a4c1f1b287d6499056bf9fc00fa2e99d084a8ec1a5c366613227"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_two_stepM55C",
+          "line": 46,
+          "header": "theorem top_mass_two_stepM55C (d T i : ℕ) :\n topScaleM55C i*topScaleM55C (i+1)*topMassM55C d T (i+2)=\n topMomentM55C d T i 2-\n (topEigenM55C d i+topEigenM55C d (i+1))*topMomentM55C d T i 1+\n topEigenM55C d i*topEigenM55C d (i+1)*topMassM55C d T i",
+          "body_sha256": "634edbed6a29ebf930605969ce367c8e319aabf86d8507409c21bf60c44cb211"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_gap_driftM55C",
+          "line": 58,
+          "header": "theorem top_gap_driftM55C (d T i : ℕ) :\n topScaleM55C i^2*topScaleM55C (i+1)*\n (topMassM55C d T (i+1)^2-topMassM55C d T i*topMassM55C d T (i+2))=\n topDriftM55C d T i",
+          "body_sha256": "5370ddddaf95b9b1fcd8bdf51b04a7e552c3f49c7c1c8453e5503d7b21bca08f"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_scale_positiveM55C",
+          "line": 72,
+          "header": "theorem top_scale_positiveM55C (i : ℕ) : 0 < topScaleM55C i",
+          "body_sha256": "64d92db2fb0a98fe1ee939d15e17e56a9ef3b8b7c1936f2a35792e6f1d35a3e6"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_lc_iff_driftM55C",
+          "line": 76,
+          "header": "theorem top_lc_iff_driftM55C (d T i : ℕ) :\n topMassM55C d T i*topMassM55C d T (i+2) ≤ topMassM55C d T (i+1)^2 ↔\n 0 ≤ topDriftM55C d T i",
+          "body_sha256": "8bad36c957b244c9383bc09159657b3382366c5c3259d505b82c77aeae27ed79"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_nonnegM55C",
+          "line": 84,
+          "header": "theorem top_mass_nonnegM55C (d T i : ℕ) : 0 ≤ topMassM55C d T i",
+          "body_sha256": "441a5e4e46e5ca99fdb8c25692bd30e4a4bee9c288c536eee9b47819843b5214"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_excess_nonnegM55C",
+          "line": 87,
+          "header": "theorem top_excess_nonnegM55C (d T i : ℕ) : 0 ≤ topExcessM55C d T i",
+          "body_sha256": "aa9c8be340043970e91378e998650f33722f6cfc6f5ea48f1f0df695845426df"
+        },
+        {
+          "kind": "def",
+          "name": "TopMomentBoundM55C",
+          "line": 91,
+          "header": "def TopMomentBoundM55C : Prop",
+          "body_sha256": "749a26e282e6e37ba21fbbb9a2009e1fc0f2f0139659546781888d2235aca01c"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_high_of_momentM55C",
+          "line": 96,
+          "header": "theorem top_high_of_momentM55C (H : TopMomentBoundM55C) (n t i : ℕ)\n (hn : 2*t ≤ n) (ht : 3 ≤ t) (hnt : 3*t ≤ n+5) :\n (topTemplateMB3E n t).coeff (i+3)*(topTemplateMB3E n t).coeff (i+5) ≤\n (topTemplateMB3E n t).coeff (i+4)^2",
+          "body_sha256": "301f03b0c98e88c59e1de81303a35713c1182d7102495cd3ee9ad7f713e960f8"
+        }
+      ],
+      "theorem_count": 11,
+      "definition_count": 5,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225877761816000.json",
+        "bytes": 569,
+        "sha256": "42b7fd80ff26e149a552321a8dcc034b1d75d35cd25aa1e0aab3ae5551facccf"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225877761816000.lean",
+        "bytes": 4326,
+        "sha256": "c27e700323878787d7145c6afcb79d59ced210f3faac91a6bfbd35192fba0fdc"
+      },
+      "source_equals183_sealed_source": true,
+      "historical183_status": "ordinary compilation only; zero replay/print; uncertain host/nullreport",
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSectorM55C",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225884886500000.lean",
+        "bytes": 3660,
+        "sha256": "8b79fa0b4774d408d52b37d1dd8cedc95ab1d0d894fe50f5d3491b36cae9651a"
+      },
+      "project_relative_source": "research/MarkovTopSectorM55C.lean",
+      "selected_recovered_from183": true,
+      "selected_new184": false,
+      "imports": [
+        "MarkovTopMomentsM55C",
+        "MarkovTopSecondSourceM55C"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "top_mass_zeroM55C",
+          "line": 11,
+          "header": "theorem top_mass_zeroM55C (d T i : ℕ) (hi : T < i) : topMassM55C d T i=0",
+          "body_sha256": "9ff4f03d158ac7e2f899ca9326d67bd03aa22edc95952563d1207fe8ecc0403b"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_positiveM55C",
+          "line": 22,
+          "header": "theorem top_mass_positiveM55C (d T i : ℕ) (hi : i ≤ T) : 0 < topMassM55C d T i",
+          "body_sha256": "d4e0d32f471553f206c24bcf3c663f723febf150f8963b3bd0553098b48a42c1"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_drift_tailM55C",
+          "line": 35,
+          "header": "theorem top_drift_tailM55C (d T i : ℕ) (hi : T < i+2) : 0 ≤ topDriftM55C d T i",
+          "body_sha256": "d9f253ea663f2b07b0bc5f5c3653b242b40c8f8dfe0a4d993e467ef5ddc5b6f0"
+        },
+        {
+          "kind": "def",
+          "name": "TopSectorLCM55C",
+          "line": 40,
+          "header": "def TopSectorLCM55C : Prop",
+          "body_sha256": "1bfabe6a1d887e2b33d16c968081befcbc3660bae74b9721b02af19e6fc4f068"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_sector_iff_momentM55C",
+          "line": 44,
+          "header": "theorem top_sector_iff_momentM55C : TopSectorLCM55C ↔ TopMomentBoundM55C",
+          "body_sha256": "1224f784b65397fd7a34e012c79b832d5606b6d6a715116a3ca02e38d05b679b"
+        },
+        {
+          "kind": "def",
+          "name": "TopInteriorMomentM55C",
+          "line": 63,
+          "header": "def TopInteriorMomentM55C : Prop",
+          "body_sha256": "6cae822fe681b12bbbe8f28e991018840506af41509ed10c563d9f051d4746f8"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_moment_iff_interiorM55C",
+          "line": 66,
+          "header": "theorem top_moment_iff_interiorM55C : TopMomentBoundM55C ↔ TopInteriorMomentM55C",
+          "body_sha256": "b2ea4c95bd57cfd06a9ab004378fd38d0f1716eb65fb3b95221234409bc93771"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_sector_of_momentM55C",
+          "line": 77,
+          "header": "theorem source_top_sector_of_momentM55C (H : TopMomentBoundM55C)\n (q t i : ℕ) (r : Bool) (hq : 1 ≤ q) (ht0 : 5 ≤ t) (ht : t ≤ q+2) :\n threeRawM9E2 q r i (sourceNME9C q r+2-t)*\n threeRawM9E2 q r (i+2) (sourceNME9C q r+2-t) ≤\n threeRawM9E2 q r (i+1) (sourceNME9C q r+2-t)^2",
+          "body_sha256": "6cbdd05934817bf6a6c081e370b587b13f03465a02b922e9ce14e3ee10409e25"
+        }
+      ],
+      "theorem_count": 6,
+      "definition_count": 2,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225884886500000.json",
+        "bytes": 566,
+        "sha256": "8516fb61f3fada638b860410573dfeb2c212edec7f5a6c1464c57b49a46ab6fe"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225884886500000.lean",
+        "bytes": 3660,
+        "sha256": "8b79fa0b4774d408d52b37d1dd8cedc95ab1d0d894fe50f5d3491b36cae9651a"
+      },
+      "source_equals183_sealed_source": true,
+      "historical183_status": "ordinary compilation only; zero replay/print; uncertain host/nullreport",
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopObstructionsM55C",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225892950558000.lean",
+        "bytes": 2904,
+        "sha256": "0ad469f9d19606e1774aab36a887bb20f82d06a4634c1b4ea0c77cd406d770d9"
+      },
+      "project_relative_source": "research/MarkovTopObstructionsM55C.lean",
+      "selected_recovered_from183": true,
+      "selected_new184": false,
+      "imports": [
+        "MarkovTopSectorM55C"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "topTermM55C",
+          "line": 10,
+          "header": "def topTermM55C (d T i s : ℕ) : ℤ",
+          "body_sha256": "91991f777aef2eeafd99654858e5552f0059c4d7809baccf0e5f599179095a52"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_midpoint_failureM55C",
+          "line": 13,
+          "header": "theorem top_midpoint_failureM55C :\n topTermM55C 2 4 0 0*topTermM55C 2 4 2 3=69189120 ∧\n topTermM55C 2 4 1 1*topTermM55C 2 4 1 2=67953600 ∧\n topTermM55C 2 4 1 1*topTermM55C 2 4 1 2 <\n topTermM55C 2 4 0 0*topTermM55C 2 4 2 3",
+          "body_sha256": "4f246a9a32ea7f5484258bab5cf054ef9e5e9901f372305359db42b46fc0c4ee"
+        },
+        {
+          "kind": "def",
+          "name": "geometricWeightM55C",
+          "line": 20,
+          "header": "def geometricWeightM55C (s : ℕ) : ℤ",
+          "body_sha256": "dfb756f793e41edd7b12a7cadb1a41b83d1545ac01c8f40b77ce3a7b519def7d"
+        },
+        {
+          "kind": "theorem",
+          "name": "geometric_weight_nonnegM55C",
+          "line": 22,
+          "header": "theorem geometric_weight_nonnegM55C (s : ℕ) : 0 ≤ geometricWeightM55C s",
+          "body_sha256": "23cee3b0a4d1cd16d740eb76b1e5640269aea43a8840e5becacc5c60d849c6e1"
+        },
+        {
+          "kind": "theorem",
+          "name": "geometric_weight_supportM55C",
+          "line": 26,
+          "header": "theorem geometric_weight_supportM55C (s : ℕ) :\n 0 < geometricWeightM55C s ↔ s ≤ 5",
+          "body_sha256": "c81119d451999f101afb0c8e40af8daa0b978c2172ba5612294c34b6b43033ea"
+        },
+        {
+          "kind": "theorem",
+          "name": "geometric_weight_crossM55C",
+          "line": 31,
+          "header": "theorem geometric_weight_crossM55C (i j : ℕ) (hij : i ≤ j) :\n geometricWeightM55C i*geometricWeightM55C (j+1) ≤\n geometricWeightM55C (i+1)*geometricWeightM55C j",
+          "body_sha256": "e814ce6413e79ab6117d4144705085e72ff68fb80282c060e83a343795aac8b8"
+        },
+        {
+          "kind": "def",
+          "name": "geometricOutputM55C",
+          "line": 42,
+          "header": "def geometricOutputM55C (i : ℕ) : ℤ",
+          "body_sha256": "ea640abf414936917a4f18cd6e675e8aaa42d95879e2ea73f5bf3b0a0526105c"
+        },
+        {
+          "kind": "theorem",
+          "name": "geometric_transform_failureM55C",
+          "line": 45,
+          "header": "theorem geometric_transform_failureM55C :\n geometricOutputM55C 0=6578986 ∧ geometricOutputM55C 1=2942105 ∧\n geometricOutputM55C 2=1328250 ∧\n geometricOutputM55C 1^2-geometricOutputM55C 0*geometricOutputM55C 2= -82556323475",
+          "body_sha256": "4bbdc39f2ba0d7585d47fe4b15e047fff0c5f8418e874e9f79218cb611b0c556"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_obstruction_rowM55C",
+          "line": 51,
+          "header": "theorem source_obstruction_rowM55C (i : ℕ) :\n threeRawM9E2 5 true (i+3) 11=topMassM55C 2 4 i",
+          "body_sha256": "331d439e4c5d6c40557d4f0eaa59b5c6a3dd6b2ef9f7a9f85e1169baaa3a9622"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_obstruction_gapM55C",
+          "line": 58,
+          "header": "theorem source_obstruction_gapM55C :\n threeRawM9E2 5 true 3 11=7168 ∧ threeRawM9E2 5 true 4 11=34852 ∧\n threeRawM9E2 5 true 5 11=78260 ∧\n threeRawM9E2 5 true 4 11^2-threeRawM9E2 5 true 3 11*threeRawM9E2 5 true 5 11=653694224",
+          "body_sha256": "f78880063db67a653c038eb724e4c159b09e8f4d3c45eabc02b93e16188a3fc5"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_obstruction_polygonM55C",
+          "line": 69,
+          "header": "theorem source_obstruction_polygonM55C :\n InPolygon 3 16 3 11 ∧ InPolygon 3 16 4 11 ∧ InPolygon 3 16 5 11",
+          "body_sha256": "d04689de6fd6820c58236fb810242a7e74130af1561eab020dfb96c490cb8251"
+        }
+      ],
+      "theorem_count": 8,
+      "definition_count": 3,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225892950558000.json",
+        "bytes": 584,
+        "sha256": "611b0b76ac8c537518486f418aa4f5ac0deb660ac45e95c4da50f8d7171b8387"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225892950558000.lean",
+        "bytes": 2904,
+        "sha256": "0ad469f9d19606e1774aab36a887bb20f82d06a4634c1b4ea0c77cd406d770d9"
+      },
+      "source_equals183_sealed_source": true,
+      "historical183_status": "ordinary compilation only; zero replay/print; uncertain host/nullreport",
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopRegionM55C",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225902725159000.lean",
+        "bytes": 2129,
+        "sha256": "27380c95fc714565727dc36c36ab7c3f4841f1cbab2651ca0553ffe1848e6568"
+      },
+      "project_relative_source": "research/MarkovTopRegionM55C.lean",
+      "selected_recovered_from183": true,
+      "selected_new184": false,
+      "imports": [
+        "MarkovTopSectorM55C"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "TopFinishedRegionM55C",
+          "line": 9,
+          "header": "def TopFinishedRegionM55C (q : ℕ) (r : Bool) (i j : ℕ) : Prop",
+          "body_sha256": "6aeb0cd87a739257fe985d0fa69c467e75c7d6db4392e1e5a3c682e711ab9dc4"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_finished_regionM55C",
+          "line": 12,
+          "header": "theorem source_top_finished_regionM55C (q i j : ℕ) (r : Bool) (hq : 1 ≤ q)\n (h : TopFinishedRegionM55C q r i j) :\n threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2",
+          "body_sha256": "5ba73fdeb245faaf92151b8938060e3ea014f8404c6c244f0ce8aba1458f8791"
+        },
+        {
+          "kind": "def",
+          "name": "ThreeRemainingM55C",
+          "line": 23,
+          "header": "def ThreeRemainingM55C : Prop",
+          "body_sha256": "49ab42e866f8bfb720b102f58d33f8d8c8236d0f9bee1c41d8cd6beccecd35e4"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_remainingM55C",
+          "line": 32,
+          "header": "theorem root_iff_remainingM55C : Conjecture63 ↔ ThreeRemainingM55C ∧ OtherFourM9E2",
+          "body_sha256": "d477136593809e664fb601bd422d1d264dcb4ca2e9622b988c6180ef60fcb949"
+        }
+      ],
+      "theorem_count": 2,
+      "definition_count": 2,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225902725159000.json",
+        "bytes": 566,
+        "sha256": "e93e8e0e4186ee0981624e2403d0157551b170b70ec8b96f242c748dc4e9907d"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225902725159000.lean",
+        "bytes": 2129,
+        "sha256": "27380c95fc714565727dc36c36ab7c3f4841f1cbab2651ca0553ffe1848e6568"
+      },
+      "source_equals183_sealed_source": true,
+      "historical183_status": "ordinary compilation only; zero replay/print; uncertain host/nullreport",
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopParameterPolyM55C",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225911373636000.lean",
+        "bytes": 3261,
+        "sha256": "b3e7cba28e4af3a9e6d5a9e84edd1126a946223acca63724457e8724ca22e031"
+      },
+      "project_relative_source": "research/MarkovTopParameterPolyM55C.lean",
+      "selected_recovered_from183": true,
+      "selected_new184": false,
+      "imports": [
+        "MarkovTopSectorM55C"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "topKernelPolyM55C",
+          "line": 9,
+          "header": "def topKernelPolyM55C (i s : ℕ) : Polynomial ℚ",
+          "body_sha256": "2fff2dc5bf4c92de42fc8b41b697e8a7dd2015dbe30f5218f021ceef331be0fd"
+        },
+        {
+          "kind": "def",
+          "name": "topMassPolyM55C",
+          "line": 13,
+          "header": "def topMassPolyM55C (T i : ℕ) : Polynomial ℚ",
+          "body_sha256": "682fe4c94f2b2b769deb2ff4fc8282be5882883b2d0406f1907a0b3ab311bff4"
+        },
+        {
+          "kind": "def",
+          "name": "topLeadingM55C",
+          "line": 16,
+          "header": "def topLeadingM55C (T i : ℕ) : ℚ",
+          "body_sha256": "5b5c2b4a40377cbaca746578feabc6b80f6af3f79e970af136d0f7049f576915"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_kernel_poly_evalM55C",
+          "line": 19,
+          "header": "theorem top_kernel_poly_evalM55C (d i s : ℕ) :\n (topKernelPolyM55C i s).eval (d:ℚ)=(topKernelM55C d i s:ℚ)",
+          "body_sha256": "3485d42efcafa30fb23c29e5f43fa74369b5eafaba29b19d4ec6984baae77fd0"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_poly_evalM55C",
+          "line": 31,
+          "header": "theorem top_mass_poly_evalM55C (d T i : ℕ) :\n (topMassPolyM55C T i).eval (d:ℚ)=(topMassM55C d T i:ℚ)",
+          "body_sha256": "df1ba5597f8edd84bd05cad44fe9fa8d36641df24846d4137cdb37e81d381d85"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_kernel_poly_degreeM55C",
+          "line": 35,
+          "header": "theorem top_kernel_poly_degreeM55C (i s : ℕ) : (topKernelPolyM55C i s).natDegree ≤ i+3",
+          "body_sha256": "2874339568b50af32a5b1947676c4c3c4a703fc989651dd976e67fb4068ee189"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_kernel_poly_topM55C",
+          "line": 44,
+          "header": "theorem top_kernel_poly_topM55C (i s : ℕ) :\n (topKernelPolyM55C i s).coeff (i+3)=(s.choose i:ℚ)/(i+3).factorial",
+          "body_sha256": "8621825ec43daf53e2ba0b9dc9bda98e853906fa58acefa1e9f532ee594ef4d9"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_poly_degreeM55C",
+          "line": 55,
+          "header": "theorem top_mass_poly_degreeM55C (T i : ℕ) : (topMassPolyM55C T i).natDegree ≤ i+3",
+          "body_sha256": "3154c39b26c8702980845cd2b59bc1474b50b9447d39e0fbf3b920f2757215d8"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_choose_weightM55C",
+          "line": 64,
+          "header": "theorem top_choose_weightM55C (T i : ℕ) :\n (∑ s ∈ range T, ((T:ℤ)-s)*(s.choose i:ℤ))=((T+1).choose (i+2):ℤ)",
+          "body_sha256": "fc28a6f2f6820af602bba28aab67fa3fb4bc13d4722fd6967acb76e017f72c82"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_poly_topM55C",
+          "line": 70,
+          "header": "theorem top_mass_poly_topM55C (T i : ℕ) :\n (topMassPolyM55C T i).coeff (i+3)=topLeadingM55C T i",
+          "body_sha256": "22df71489338a0d806433196f52a2e82875e4acb3691c77e121e17e447d14936"
+        }
+      ],
+      "theorem_count": 7,
+      "definition_count": 3,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225911373636000.json",
+        "bytes": 756,
+        "sha256": "878845f9b1a577029ef1787ae6017680dc3170e6f5317693a3d3a318dcc60553"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225911373636000.lean",
+        "bytes": 3261,
+        "sha256": "b3e7cba28e4af3a9e6d5a9e84edd1126a946223acca63724457e8724ca22e031"
+      },
+      "source_equals183_sealed_source": true,
+      "historical183_status": "ordinary compilation only; zero replay/print; uncertain host/nullreport",
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopLeadingM55C",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225919206584000.lean",
+        "bytes": 2935,
+        "sha256": "d94f9fcde275e43c2fed5a5d1fcf01df7385b2ca70659cff10da1f470f49f121"
+      },
+      "project_relative_source": "research/MarkovTopLeadingM55C.lean",
+      "selected_recovered_from183": true,
+      "selected_new184": false,
+      "imports": [
+        "MarkovTopParameterPolyM55C"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "topLeadingNumerM55C",
+          "line": 9,
+          "header": "def topLeadingNumerM55C (T i : ℕ) : ℚ",
+          "body_sha256": "7a10a40e123c817f4a0b333b4563c68f377f9b591d492acfbba4c3417e985bee"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_leading_numer_nonnegM55C",
+          "line": 11,
+          "header": "theorem top_leading_numer_nonnegM55C (T i : ℕ) : 0 ≤ topLeadingNumerM55C T i",
+          "body_sha256": "acadcb3f8a0af9948e1ee41307e3599cabe06f120118577abd32f66b0a3d25cf"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_leading_numer_positiveM55C",
+          "line": 15,
+          "header": "theorem top_leading_numer_positiveM55C (T i : ℕ) (hi : i ≤ T) : 0 < topLeadingNumerM55C T i",
+          "body_sha256": "d08dc26a6e3b2b2812856bab307a5a7bec2a7c9e8dbbcdc00e54928de91d0727"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_leading_numer_lcM55C",
+          "line": 19,
+          "header": "theorem top_leading_numer_lcM55C (T i : ℕ) :\n topLeadingNumerM55C T i*topLeadingNumerM55C T (i+2) ≤ topLeadingNumerM55C T (i+1)^2",
+          "body_sha256": "08594ba4792b1f14045f28d65d8949a3bb298d232e22fb20bf7efa7ef823894f"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_leading_strictM55C",
+          "line": 38,
+          "header": "theorem top_leading_strictM55C (T i : ℕ) (hi : i+1 ≤ T) :\n topLeadingM55C T i*topLeadingM55C T (i+2) < topLeadingM55C T (i+1)^2",
+          "body_sha256": "1ab1eb0c7f5bbfd934de739f801906be9d9ce8242019164ccf8aac8cca9151fa"
+        }
+      ],
+      "theorem_count": 4,
+      "definition_count": 1,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225919206584000.json",
+        "bytes": 569,
+        "sha256": "f5e539c308ea1ec11a7fdb80c4ef5f42ae03f90974548d22ce698dfd51bc9717"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225919206584000.lean",
+        "bytes": 2935,
+        "sha256": "d94f9fcde275e43c2fed5a5d1fcf01df7385b2ca70659cff10da1f470f49f121"
+      },
+      "source_equals183_sealed_source": true,
+      "historical183_status": "ordinary compilation only; zero replay/print; uncertain host/nullreport",
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovPolynomialBoundMEB6",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovPolynomialBoundMEB6.lean",
+        "bytes": 2258,
+        "sha256": "4f726591744c59f9848f19a6fe1ad44d8b49940969d78b9c3a6376a72d0f4d05"
+      },
+      "project_relative_source": "research/MarkovPolynomialBoundMEB6.lean",
+      "selected_recovered_from183": false,
+      "selected_new184": true,
+      "imports": [
+        "Mathlib"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "negativeMassMEB6",
+          "line": 9,
+          "header": "def negativeMassMEB6 (P : Polynomial ℚ) : ℚ",
+          "body_sha256": "62514f1d63423dbd3700abcc95c657fcaf98fcdeae24eecb70caf15a07b9a136"
+        },
+        {
+          "kind": "def",
+          "name": "positiveThresholdMEB6",
+          "line": 12,
+          "header": "def positiveThresholdMEB6 (P : Polynomial ℚ) : ℕ",
+          "body_sha256": "0bdd59fd063ed7ed940fc387d135080ca1b4c8837fd2f646018cc3be98f2df02"
+        },
+        {
+          "kind": "theorem",
+          "name": "polynomial_positive_afterMEB6",
+          "line": 15,
+          "header": "theorem polynomial_positive_afterMEB6 (P : Polynomial ℚ)\n (hP : 0 < P.leadingCoeff) (n : ℕ) (hn : positiveThresholdMEB6 P ≤ n) :\n 0 < P.eval (n:ℚ)",
+          "body_sha256": "531b286428918ebf67527ebd501c089fab0bbc1df7abed2d0522e8b77e766e3b"
+        }
+      ],
+      "theorem_count": 1,
+      "definition_count": 2,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225942905405000.json",
+        "bytes": 584,
+        "sha256": "807544a018d3bf9f42e8ba2b1fd1042c3cd5576fdde77203528aa8d71611633c"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225942905405000.lean",
+        "bytes": 2258,
+        "sha256": "4f726591744c59f9848f19a6fe1ad44d8b49940969d78b9c3a6376a72d0f4d05"
+      },
+      "source_equals183_sealed_source": false,
+      "historical183_status": null,
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopGapPolynomialMEB6",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopGapPolynomialMEB6.lean",
+        "bytes": 3127,
+        "sha256": "689ce58910bf0a7f8c42c77f87d77447b20549d8fd086cac99739ea5146209b6"
+      },
+      "project_relative_source": "research/MarkovTopGapPolynomialMEB6.lean",
+      "selected_recovered_from183": false,
+      "selected_new184": true,
+      "imports": [
+        "MarkovTopLeadingM55C",
+        "MarkovPolynomialBoundMEB6"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "topGapPolyMEB6",
+          "line": 10,
+          "header": "def topGapPolyMEB6 (T i : ℕ) : Polynomial ℚ",
+          "body_sha256": "aacc9ca81cb4676204c7b60bb9d489039bb443677c5bb59de59b0683dcba931c"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_gap_poly_evalMEB6",
+          "line": 14,
+          "header": "theorem top_gap_poly_evalMEB6 (d T i : ℕ) :\n (topGapPolyMEB6 T i).eval (d:ℚ)=\n (topMassM55C d T (i+1)^2-topMassM55C d T i*topMassM55C d T (i+2):ℤ)",
+          "body_sha256": "a04d110f9f210a28110cae035e41db4455b5a1fa6e197b84b39f19e1a98992e6"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_gap_poly_degree_leMEB6",
+          "line": 19,
+          "header": "theorem top_gap_poly_degree_leMEB6 (T i : ℕ) :\n (topGapPolyMEB6 T i).natDegree ≤ 2*i+8",
+          "body_sha256": "3734fcbb73c3c2550c0109ab4935e24ac4778994319d5d8e1a732acda64d9dde"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_gap_poly_topMEB6",
+          "line": 30,
+          "header": "theorem top_gap_poly_topMEB6 (T i : ℕ) :\n (topGapPolyMEB6 T i).coeff (2*i+8)=\n topLeadingM55C T (i+1)^2-topLeadingM55C T i*topLeadingM55C T (i+2)",
+          "body_sha256": "fd2a1ca46870bdf0b39a0be2c83dd26f98c8e0615e97878d69c61604c04d3347"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_gap_poly_degreeMEB6",
+          "line": 43,
+          "header": "theorem top_gap_poly_degreeMEB6 (T i : ℕ) (hi : i+1 ≤ T) :\n (topGapPolyMEB6 T i).natDegree=2*i+8",
+          "body_sha256": "85a6d6391c08087ad97f3d7aefa2e7a859f185555eeac073a54ac98de5f011cb"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_gap_poly_leading_positiveMEB6",
+          "line": 49,
+          "header": "theorem top_gap_poly_leading_positiveMEB6 (T i : ℕ) (hi : i+1 ≤ T) :\n 0 < (topGapPolyMEB6 T i).leadingCoeff",
+          "body_sha256": "b62039dfbf5ad0bb94c259de56b9723bdd6fd4ecea666633ce223c0a859b1e09"
+        },
+        {
+          "kind": "def",
+          "name": "topGapThresholdMEB6",
+          "line": 54,
+          "header": "def topGapThresholdMEB6 (T i : ℕ) : ℕ",
+          "body_sha256": "1cacaf596b8d7f354c5c932800cc3c6b3d572010cd61901a81c9b37a42bcaaf6"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_strict_afterMEB6",
+          "line": 56,
+          "header": "theorem top_mass_strict_afterMEB6 (d T i : ℕ) (hi : i+1 ≤ T)\n (hd : topGapThresholdMEB6 T i ≤ d) :\n topMassM55C d T i*topMassM55C d T (i+2) < topMassM55C d T (i+1)^2",
+          "body_sha256": "05f461cae36774739b13cd01d9bd4396537d02f6425cc95f3d1026cd533478f0"
+        },
+        {
+          "kind": "def",
+          "name": "topRowThresholdMEB6",
+          "line": 64,
+          "header": "def topRowThresholdMEB6 (T : ℕ) : ℕ",
+          "body_sha256": "859c2b990cfac77dd97586dccc7f0db236ebe92d15ce68d21d4ccdc8390ce574"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_all_afterMEB6",
+          "line": 67,
+          "header": "theorem top_mass_all_afterMEB6 (d T : ℕ) (hd : topRowThresholdMEB6 T ≤ d) (i : ℕ) :\n topMassM55C d T i*topMassM55C d T (i+2) ≤ topMassM55C d T (i+1)^2",
+          "body_sha256": "abf52dcfa577e501a06b3478eb71d692769cb27b237af59f1a1353f274820843"
+        }
+      ],
+      "theorem_count": 7,
+      "definition_count": 3,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226033228486000.json",
+        "bytes": 587,
+        "sha256": "f921d1c4a4e3a799715e30942eb140655d5388a246bd4ce02136e27027680ed1"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226033228486000.lean",
+        "bytes": 3127,
+        "sha256": "689ce58910bf0a7f8c42c77f87d77447b20549d8fd086cac99739ea5146209b6"
+      },
+      "source_equals183_sealed_source": false,
+      "historical183_status": null,
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopFiniteStripMEB6",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopFiniteStripMEB6.lean",
+        "bytes": 2941,
+        "sha256": "472c788adf040c8706aaf91e9bbcdd2eee3cd54178e77731239067354d078364"
+      },
+      "project_relative_source": "research/MarkovTopFiniteStripMEB6.lean",
+      "selected_recovered_from183": false,
+      "selected_new184": true,
+      "imports": [
+        "MarkovTopGapPolynomialMEB6"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "TopFiniteStripMEB6",
+          "line": 9,
+          "header": "def TopFiniteStripMEB6 : Prop",
+          "body_sha256": "9308d35b6426c5b5328cd4dd8fe1952112639ab035461e66e06f5765c5c49c8e"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_moment_iff_finite_stripMEB6",
+          "line": 13,
+          "header": "theorem top_moment_iff_finite_stripMEB6 : TopMomentBoundM55C ↔ TopFiniteStripMEB6",
+          "body_sha256": "000fd5203c9ab8f77cce56bfcb7eb3e41caf46b480388b2026641216cf9c3f1c"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_template_all_afterMEB6",
+          "line": 28,
+          "header": "theorem top_template_all_afterMEB6 (n t : ℕ) (ht : 5 ≤ t)\n (hn : 2*t ≤ n) (hnt : 3*t ≤ n+5)\n (hd : topRowThresholdMEB6 (t-3) ≤ n-2*t) (i : ℕ) :\n (topTemplateMB3E n t).coeff i*(topTemplateMB3E n t).coeff (i+2) ≤\n (topTemplateMB3E n t).coeff (i+1)^2",
+          "body_sha256": "ca60c423a99a01dc70c26aed12debb6aecd8ace87dc0f410a28864525b199e73"
+        },
+        {
+          "kind": "def",
+          "name": "topSourceThresholdMEB6",
+          "line": 44,
+          "header": "def topSourceThresholdMEB6 (t : ℕ) : ℕ",
+          "body_sha256": "ec4afb280d28ae491b138696007fdcc7316d300e8bd770c8affc80ecc159372c"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_all_afterMEB6",
+          "line": 46,
+          "header": "theorem source_top_all_afterMEB6 (q t : ℕ) (r : Bool) (ht : 5 ≤ t)\n (hq : topSourceThresholdMEB6 t ≤ q) (i : ℕ) :\n threeRawM9E2 q r i (sourceNME9C q r+2-t)*\n threeRawM9E2 q r (i+2) (sourceNME9C q r+2-t) ≤\n threeRawM9E2 q r (i+1) (sourceNME9C q r+2-t)^2",
+          "body_sha256": "ab3edf79284a412769d3b2c7422b2624a2b88bbcfb23ea34c71717561172f500"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_eventualMEB6",
+          "line": 60,
+          "header": "theorem source_top_eventualMEB6 (t : ℕ) (ht : 5 ≤ t) :\n ∃ Q : ℕ, ∀ q, Q ≤ q → ∀ r i,\n threeRawM9E2 q r i (sourceNME9C q r+2-t)*\n threeRawM9E2 q r (i+2) (sourceNME9C q r+2-t) ≤\n threeRawM9E2 q r (i+1) (sourceNME9C q r+2-t)^2",
+          "body_sha256": "45a48e7a3284c9fe9da53ed38febbcdc1acc38ff566de0651432309128ed0099"
+        }
+      ],
+      "theorem_count": 4,
+      "definition_count": 2,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226085672343000.json",
+        "bytes": 581,
+        "sha256": "bedba8bfb459a8a85879778f446e2449cd2b0f4ff01fb8182c4a062522f80524"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226085672343000.lean",
+        "bytes": 2941,
+        "sha256": "472c788adf040c8706aaf91e9bbcdd2eee3cd54178e77731239067354d078364"
+      },
+      "source_equals183_sealed_source": false,
+      "historical183_status": null,
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopSourceRegionMEB6",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopSourceRegionMEB6.lean",
+        "bytes": 3977,
+        "sha256": "2d9101b5d01d26da7b8ae9be86d7227eac1c94105466110bda9290b9f5331d83"
+      },
+      "project_relative_source": "research/MarkovTopSourceRegionMEB6.lean",
+      "selected_recovered_from183": false,
+      "selected_new184": true,
+      "imports": [
+        "MarkovTopFiniteStripMEB6",
+        "MarkovTopRegionM55C"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_top_parameter_afterMEB6",
+          "line": 10,
+          "header": "theorem source_top_parameter_afterMEB6 (q t i : ℕ) (r : Bool)\n (hq : 1 ≤ q) (ht : 5 ≤ t) (htq : t ≤ q+2)\n (hd : topRowThresholdMEB6 (t-3) ≤ sourceNME9C q r-2*t) :\n threeRawM9E2 q r i (sourceNME9C q r+2-t)*\n threeRawM9E2 q r (i+2) (sourceNME9C q r+2-t) ≤\n threeRawM9E2 q r (i+1) (sourceNME9C q r+2-t)^2",
+          "body_sha256": "9abf02004616b4cb1224024a8b6a7005d8101c6b702f9c7d0a5cbeb786f11000"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_polygon_iffMEB6",
+          "line": 22,
+          "header": "theorem source_top_polygon_iffMEB6 (q t i : ℕ) (r : Bool)\n (hq : 1 ≤ q) (ht : 5 ≤ t) (htq : t ≤ q+2) :\n InPolygon 3 (sourceNME9C q r) i (sourceNME9C q r+2-t) ↔ 1 ≤ i ∧ i ≤ t",
+          "body_sha256": "f96333e2e7fbaf496321ba46c7053724a39bc35fd4e24e09a8512b2300695448"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_path_eventualMEB6",
+          "line": 43,
+          "header": "theorem source_top_path_eventualMEB6 (t : ℕ) (ht : 5 ≤ t) :\n ∃ B : ℕ, ∀ path : List Bool, (frame path).mid.a=3 → B ≤ (frame path).mid.b →\n ∀ i, coeff (frame path).mid.p i ((frame path).mid.b+2-t)*\n coeff (frame path).mid.p (i+2) ((frame path).mid.b+2-t) ≤\n coeff (frame path).mid.p (i+1) ((frame path).mid.b+2-t)^2",
+          "body_sha256": "4c73b66cdb40782be244fecae04782e753be253b204fb98c8952ae915333ff8c"
+        },
+        {
+          "kind": "def",
+          "name": "TopFinishedRegionMEB6",
+          "line": 58,
+          "header": "def TopFinishedRegionMEB6 (q : ℕ) (r : Bool) (i j : ℕ) : Prop",
+          "body_sha256": "95e93481b0d7de6168619a8b2bb9f2f8f8824a05b9c8e6926d32c7f00239dcc3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_finishedMEB6",
+          "line": 62,
+          "header": "theorem source_top_finishedMEB6 (q i j : ℕ) (r : Bool) (hq : 1 ≤ q)\n (h : TopFinishedRegionMEB6 q r i j) :\n threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2",
+          "body_sha256": "fe17a6415a8efa95eb15f594b2e65274c195fe4d28175f7df5bd8d6dc4bebecf"
+        },
+        {
+          "kind": "def",
+          "name": "ThreeRemainingMEB6",
+          "line": 69,
+          "header": "def ThreeRemainingMEB6 : Prop",
+          "body_sha256": "da146221f93b9fb72f4590a5b5b12ef2ba584abb85dfe24d6e1c788b8a69d5c3"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_remainingMEB6",
+          "line": 78,
+          "header": "theorem root_iff_remainingMEB6 : Conjecture63 ↔ ThreeRemainingMEB6 ∧ OtherFourM9E2",
+          "body_sha256": "9635dec6838eda2085c9bb6c737aa5783baa4636c0850ecd0256cf93b36aebbe"
+        }
+      ],
+      "theorem_count": 5,
+      "definition_count": 2,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226284888773000.json",
+        "bytes": 968,
+        "sha256": "0719d1d0576757e5153f351bacc631914d928bc56296aee6f5b6e1bdcbfcc761"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226284888773000.lean",
+        "bytes": 3977,
+        "sha256": "2d9101b5d01d26da7b8ae9be86d7227eac1c94105466110bda9290b9f5331d83"
+      },
+      "source_equals183_sealed_source": false,
+      "historical183_status": null,
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopVandermondeMEB6",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopVandermondeMEB6.lean",
+        "bytes": 2394,
+        "sha256": "90f8ae6893fc6812c579617365ece20cdc7abe88855b700c1a2e68c260caa533"
+      },
+      "project_relative_source": "research/MarkovTopVandermondeMEB6.lean",
+      "selected_recovered_from183": false,
+      "selected_new184": true,
+      "imports": [
+        "MarkovTopGapPolynomialMEB6"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "top_kernel_vandermondeMEB6",
+          "line": 9,
+          "header": "theorem top_kernel_vandermondeMEB6 (d i s : ℕ) :\n topKernelM55C d i s = ∑ k ∈ range (i+4),\n ((i+k).choose i:ℤ)*((d+2*i+8).choose (i+3-k):ℤ)*(s.choose (i+k):ℤ)",
+          "body_sha256": "88e3b773a62e6e9fb867f92b7999688fe1ad89f0c3c73f8ca73763b364e5323c"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_linear_sumMEB6",
+          "line": 35,
+          "header": "theorem top_linear_sumMEB6 {α : Type*} (T : ℕ) (A : Finset α) (f : α → ℕ → ℤ) :\n topLinearM55C T (fun s => ∑ k ∈ A, f k s)=∑ k ∈ A, topLinearM55C T (f k)",
+          "body_sha256": "c67e642e46856023cdcd22d47eae48424f4fc47eab73b43821bd81571db31cd5"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_linear_chooseMEB6",
+          "line": 44,
+          "header": "theorem top_linear_chooseMEB6 (T i : ℕ) :\n topLinearM55C T (fun s => (s.choose i:ℤ))=\n (T.choose i:ℤ)+4*((T+1).choose (i+2):ℤ)",
+          "body_sha256": "7a130e2965da66106bf7bcefd657c2e0652ddd030372332896aefcd31cd9c606"
+        },
+        {
+          "kind": "def",
+          "name": "topShortSumMEB6",
+          "line": 49,
+          "header": "def topShortSumMEB6 (d T i : ℕ) : ℤ",
+          "body_sha256": "b5befe6a99955e89a165f1428ee1315af542c6c06fddf88dc642ab437895fd9f"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_short_sumMEB6",
+          "line": 53,
+          "header": "theorem top_mass_short_sumMEB6 (d T i : ℕ) :\n topMassM55C d T i=topShortSumMEB6 d T i",
+          "body_sha256": "986e8ba5eb8b297e5f49052622289d12eac403f6361371179e4a42f2c50b0144"
+        }
+      ],
+      "theorem_count": 4,
+      "definition_count": 1,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226349518192000.json",
+        "bytes": 581,
+        "sha256": "0eb24fd694df64ae211e829991e76ba65357eed8442e09a1edaf2fa3daff7f5d"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226349518192000.lean",
+        "bytes": 2394,
+        "sha256": "90f8ae6893fc6812c579617365ece20cdc7abe88855b700c1a2e68c260caa533"
+      },
+      "source_equals183_sealed_source": false,
+      "historical183_status": null,
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopThirdGapMEB6",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopThirdGapMEB6.lean",
+        "bytes": 5686,
+        "sha256": "9f3d512e0f674b5cde8b87e524a43c82480998fb3f625a13f8b94168859485d4"
+      },
+      "project_relative_source": "research/MarkovTopThirdGapMEB6.lean",
+      "selected_recovered_from183": false,
+      "selected_new184": true,
+      "imports": [
+        "MarkovTopVandermondeMEB6"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "topShortQMEB6",
+          "line": 10,
+          "header": "def topShortQMEB6 (d T : ℚ) (i : ℕ) : ℚ",
+          "body_sha256": "9bc99d6c44c1ad7c59afef0f2f13e690be1bde199703ed9fd81034da6e69bbee"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_short_castMEB6",
+          "line": 14,
+          "header": "theorem top_short_castMEB6 (d T i : ℕ) :\n (topMassM55C d T i:ℚ)=topShortQMEB6 d T i",
+          "body_sha256": "d71ee2be81545f1f7666835773e1176d784e6a7f7a525e9b488da85e08ff7502"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_third_gap_positiveMEB6",
+          "line": 22,
+          "header": "theorem top_third_gap_positiveMEB6 (h d : ℚ) (hh : 0 ≤ h) (hd : 0 ≤ d) :\n topShortQMEB6 d (h+2) 0*topShortQMEB6 d (h+2) 2 < topShortQMEB6 d (h+2) 1^2",
+          "body_sha256": "2121b87341d53f656c0956da71cbd9b1527abae8ad8edfaa27ed0e104107734c"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_first_strictMEB6",
+          "line": 227,
+          "header": "theorem top_mass_first_strictMEB6 (d T : ℕ) (hT : 2 ≤ T) :\n topMassM55C d T 0*topMassM55C d T 2 < topMassM55C d T 1^2",
+          "body_sha256": "c8412d7db39a5cc16e84b0202becc8b93c9e32e2a4b05dba06f392f1dd156967"
+        }
+      ],
+      "theorem_count": 3,
+      "definition_count": 1,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226423194089000.json",
+        "bytes": 573,
+        "sha256": "417cd91ca10d73bfce26e3b447739ecc6ff69bd3b7caae0e411e0007a20bdc3b"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226423194089000.lean",
+        "bytes": 5686,
+        "sha256": "9f3d512e0f674b5cde8b87e524a43c82480998fb3f625a13f8b94168859485d4"
+      },
+      "source_equals183_sealed_source": false,
+      "historical183_status": null,
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopTailKernelMEB6",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopTailKernelMEB6.lean",
+        "bytes": 2173,
+        "sha256": "73f2ebc8ff30a308591e8eb906d3c0ed17e006f98478c9a23c739e1ebf5385b5"
+      },
+      "project_relative_source": "research/MarkovTopTailKernelMEB6.lean",
+      "selected_recovered_from183": false,
+      "selected_new184": true,
+      "imports": [
+        "MarkovTopVandermondeMEB6"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "top_mass_shiftedMEB6",
+          "line": 9,
+          "header": "theorem top_mass_shiftedMEB6 (d i r : ℕ) :\n topMassM55C d (i+r) i=topKernelM55C d i (i+r)+\n 4*∑ k ∈ range r, ((r:ℤ)-k)*topKernelM55C d i (i+k)",
+          "body_sha256": "9c59322889090bfd47970c72411031fabed86f2e04823dc0f7dd28acc14708c0"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_kernel_row_stepMEB6",
+          "line": 26,
+          "header": "theorem top_kernel_row_stepMEB6 (d i s : ℕ) (hi : i ≤ s) :\n ((s:ℤ)+1-i)*((d:ℤ)+s+6)*topKernelM55C d i (s+1)=\n ((s:ℤ)+1)*((d:ℤ)+s+i+9)*topKernelM55C d i s",
+          "body_sha256": "f26b1ba462af1f261482a9f0a7ad61df5723de0a32bf97b2bddc6fd5a4fc2b23"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_tail_mass_expansionsMEB6",
+          "line": 41,
+          "header": "theorem top_tail_mass_expansionsMEB6 (d i : ℕ) :\n topMassM55C d (i+2) i=topKernelM55C d i (i+2)+\n   8*topKernelM55C d i i+4*topKernelM55C d i (i+1) ∧\n topMassM55C d (i+2) (i+1)=topKernelM55C d (i+1) (i+2)+4*topKernelM55C d (i+1) (i+1) ∧\n topMassM55C d (i+2) (i+2)=topKernelM55C d (i+2) (i+2)",
+          "body_sha256": "5a1e50cda01675b07a9083f0791cf268a03f68013b033754a257c5dcd00f3351"
+        }
+      ],
+      "theorem_count": 3,
+      "definition_count": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226522406676000.json",
+        "bytes": 2647,
+        "sha256": "45f8e39ce76271c1263116fbadfcf7c2dfbdfd9e5efb6bdadc7263964f602777"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226522406676000.lean",
+        "bytes": 2173,
+        "sha256": "73f2ebc8ff30a308591e8eb906d3c0ed17e006f98478c9a23c739e1ebf5385b5"
+      },
+      "source_equals183_sealed_source": false,
+      "historical183_status": null,
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopTailScalarMEB6",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopTailScalarMEB6.lean",
+        "bytes": 3600,
+        "sha256": "881f23fe9e256aea0928aaafcf810299e0ac59042c6c6fa22a7de7827839de86"
+      },
+      "project_relative_source": "research/MarkovTopTailScalarMEB6.lean",
+      "selected_recovered_from183": false,
+      "selected_new184": true,
+      "imports": [
+        "MarkovTopTailKernelMEB6"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "tailDenMEB6",
+          "line": 9,
+          "header": "def tailDenMEB6 (i d : ℤ) : ℤ",
+          "body_sha256": "7bf47509ef87e51ac2596bcefb941d304dcff0abec2aff7f20fea5d5b708c654"
+        },
+        {
+          "kind": "def",
+          "name": "tailOneMEB6",
+          "line": 10,
+          "header": "def tailOneMEB6 (i d : ℤ) : ℤ",
+          "body_sha256": "d0be9c0453c86fdb3c9e421ac56c7413d36635eac6373343fb67679a96bef5ab"
+        },
+        {
+          "kind": "def",
+          "name": "tailTwoMEB6",
+          "line": 11,
+          "header": "def tailTwoMEB6 (i d : ℤ) : ℤ",
+          "body_sha256": "4743fd997d5c2d3afee9c7da61d78067200fd5335e96820c240ab660af9f8187"
+        },
+        {
+          "kind": "def",
+          "name": "tailAMMEB6",
+          "line": 12,
+          "header": "def tailAMMEB6 (i d : ℤ) : ℤ",
+          "body_sha256": "2d0f3c99d995b0252ceabf7ffd9eefd112dd24c94fb542313ecbef696372c934"
+        },
+        {
+          "kind": "def",
+          "name": "tailEMMEB6",
+          "line": 13,
+          "header": "def tailEMMEB6 (i d : ℤ) : ℤ",
+          "body_sha256": "c9fef5f697c4b3361b52cd86754217c569c0907451c0ada0c46f2e76412d1696"
+        },
+        {
+          "kind": "def",
+          "name": "tailCMMEB6",
+          "line": 14,
+          "header": "def tailCMMEB6 (i d : ℤ) : ℤ",
+          "body_sha256": "d4b473c59c20cfd4f685c408e32f16febcd22a4fd099b87364b591fff48ad5cd"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_tail_scalar_positiveMEB6",
+          "line": 16,
+          "header": "theorem top_tail_scalar_positiveMEB6 (i d : ℤ) (hi : 0 ≤ i) (hd : 0 ≤ d) :\n (i+1)*(i+4)*tailAMMEB6 i d*tailCMMEB6 i d < (i+2)*(i+5)*tailEMMEB6 i d^2",
+          "body_sha256": "8b007c1586ee659745ce0c03bce3943d0ffe3f06e86ee6afe23788b68e4459eb"
+        }
+      ],
+      "theorem_count": 1,
+      "definition_count": 6,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226599851188000.json",
+        "bytes": 579,
+        "sha256": "df3e08189b1aff71217e7cf7ed425608a9a911a6e17316691b28ed2ff54a0e6c"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226599851188000.lean",
+        "bytes": 3600,
+        "sha256": "881f23fe9e256aea0928aaafcf810299e0ac59042c6c6fa22a7de7827839de86"
+      },
+      "source_equals183_sealed_source": false,
+      "historical183_status": null,
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopTailClosedMEB6",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopTailClosedMEB6.lean",
+        "bytes": 3529,
+        "sha256": "5939b8a1366ee998fd35ef4e0d93a82571e8e08d2360f434abc78503de3ec687"
+      },
+      "project_relative_source": "research/MarkovTopTailClosedMEB6.lean",
+      "selected_recovered_from183": false,
+      "selected_new184": true,
+      "imports": [
+        "MarkovTopTailScalarMEB6"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "top_tail_kernel_ratiosMEB6",
+          "line": 8,
+          "header": "theorem top_tail_kernel_ratiosMEB6 (d i : ℕ) :\n tailDenMEB6 i d*topKernelM55C d i (i+1)=tailOneMEB6 i d*topKernelM55C d i i ∧\n tailDenMEB6 i d*topKernelM55C d i (i+2)=tailTwoMEB6 i d*topKernelM55C d i i",
+          "body_sha256": "3f6a9c0467441aa24c0d423683cd7d9d9b35589bee0610941885a52ef66ee3b9"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_tail_mass_scaledMEB6",
+          "line": 21,
+          "header": "theorem top_tail_mass_scaledMEB6 (d i : ℕ) :\n tailDenMEB6 i d*topMassM55C d (i+2) i=tailAMMEB6 i d*topKernelM55C d i i ∧\n tailDenMEB6 i d*topScaleM55C i*topMassM55C d (i+2) (i+1)=tailEMMEB6 i d*topKernelM55C d i i ∧\n tailDenMEB6 i d*topScaleM55C i*topScaleM55C (i+1)*topMassM55C d (i+2) (i+2)=\n   tailCMMEB6 i d*topKernelM55C d i i",
+          "body_sha256": "955a5b1cb829c7f3aec650f60470224dc476acc4e50d8b2c99dca9190321f6ca"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_last_strictMEB6",
+          "line": 49,
+          "header": "theorem top_mass_last_strictMEB6 (d i : ℕ) :\n topMassM55C d (i+2) i*topMassM55C d (i+2) (i+2) <\n topMassM55C d (i+2) (i+1)^2",
+          "body_sha256": "289983b428c13b82757bd4805ba8662d790d035c86beaec57ad2a8a1d49b462f"
+        }
+      ],
+      "theorem_count": 3,
+      "definition_count": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226643657070000.json",
+        "bytes": 800,
+        "sha256": "71adfa557649f6b4da02602071ab333ecfd701056a2aa95ed866bcb7ec561678"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226643657070000.lean",
+        "bytes": 3529,
+        "sha256": "5939b8a1366ee998fd35ef4e0d93a82571e8e08d2360f434abc78503de3ec687"
+      },
+      "source_equals183_sealed_source": false,
+      "historical183_status": null,
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopTwoEdgesMEB6",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopTwoEdgesMEB6.lean",
+        "bytes": 3316,
+        "sha256": "992f96a40690019f164a05b417b3672b126e35fad15e9d122dd387137d8d0c6c"
+      },
+      "project_relative_source": "research/MarkovTopTwoEdgesMEB6.lean",
+      "selected_recovered_from183": false,
+      "selected_new184": true,
+      "imports": [
+        "MarkovTopThirdGapMEB6",
+        "MarkovTopTailClosedMEB6",
+        "MarkovTopSourceRegionMEB6"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "top_template_third_strictMEB6",
+          "line": 11,
+          "header": "theorem top_template_third_strictMEB6 (n t : ℕ) (ht : 5 ≤ t) (hn : 2*t ≤ n) :\n (topTemplateMB3E n t).coeff 3*(topTemplateMB3E n t).coeff 5 <\n (topTemplateMB3E n t).coeff 4^2",
+          "body_sha256": "b86bbcefc61d78e0fa9c15014faa2bbbbe04782b05c3da7600480232d1ad0069"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_template_last_strictMEB6",
+          "line": 19,
+          "header": "theorem top_template_last_strictMEB6 (n t : ℕ) (ht : 5 ≤ t) (hn : 2*t ≤ n) :\n (topTemplateMB3E n t).coeff (t-2)*(topTemplateMB3E n t).coeff t <\n (topTemplateMB3E n t).coeff (t-1)^2",
+          "body_sha256": "af6724d994a7f71f4208ab350aa1517df8fb347474e6f53c1dbf54f7c36383d2"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_third_strictMEB6",
+          "line": 28,
+          "header": "theorem source_top_third_strictMEB6 (q t : ℕ) (r : Bool)\n (hq : 1 ≤ q) (ht : 5 ≤ t) (htq : t ≤ q+2) :\n threeRawM9E2 q r 3 (sourceNME9C q r+2-t)*threeRawM9E2 q r 5 (sourceNME9C q r+2-t) <\n threeRawM9E2 q r 4 (sourceNME9C q r+2-t)^2",
+          "body_sha256": "985b6cc0d5b685285f19eaa31af1b80a4a2c35b6511713a553ffcc3f6d5302e4"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_last_strictMEB6",
+          "line": 37,
+          "header": "theorem source_top_last_strictMEB6 (q t : ℕ) (r : Bool)\n (hq : 1 ≤ q) (ht : 5 ≤ t) (htq : t ≤ q+2) :\n threeRawM9E2 q r (t-2) (sourceNME9C q r+2-t)*threeRawM9E2 q r t (sourceNME9C q r+2-t) <\n threeRawM9E2 q r (t-1) (sourceNME9C q r+2-t)^2",
+          "body_sha256": "4666dfbfd792fb61a48a76f0e55d714cb747e0b25104af5c182cf1c8025b5b3d"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_two_edges_polygonMEB6",
+          "line": 46,
+          "header": "theorem source_top_two_edges_polygonMEB6 (q t : ℕ) (r : Bool)\n (hq : 1 ≤ q) (ht : 5 ≤ t) (htq : t ≤ q+2) :\n (∀ i, 3 ≤ i → i ≤ 5 → InPolygon 3 (sourceNME9C q r) i (sourceNME9C q r+2-t)) ∧\n (∀ i, t-2 ≤ i → i ≤ t → InPolygon 3 (sourceNME9C q r) i (sourceNME9C q r+2-t))",
+          "body_sha256": "33aa137834408158b3a804176ab730817a917aae97b35df32a9fd90d8d36bc5b"
+        },
+        {
+          "kind": "def",
+          "name": "TopInnerFiniteStripMEB6",
+          "line": 52,
+          "header": "def TopInnerFiniteStripMEB6 : Prop",
+          "body_sha256": "3fb00452f4704bb1aaca678f3226d121435ff49fca6d3c397b996de8705e7874"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_moment_iff_inner_stripMEB6",
+          "line": 56,
+          "header": "theorem top_moment_iff_inner_stripMEB6 : TopMomentBoundM55C ↔ TopInnerFiniteStripMEB6",
+          "body_sha256": "7cfca422dccfdbe43e2b067caad73d903eb978b737b4a12575ea55a6dde70400"
+        }
+      ],
+      "theorem_count": 6,
+      "definition_count": 1,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226692643164000.json",
+        "bytes": 571,
+        "sha256": "bab438ea6ca3469e9e49f12f1b850b6cd56ab036b32d525ead85d2e6d010cad2"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226692643164000.lean",
+        "bytes": 3316,
+        "sha256": "992f96a40690019f164a05b417b3672b126e35fad15e9d122dd387137d8d0c6c"
+      },
+      "source_equals183_sealed_source": false,
+      "historical183_status": null,
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopFrontierMEB6",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopFrontierMEB6.lean",
+        "bytes": 2546,
+        "sha256": "868227e8edbd84cf23ba1cba89456971d24e5b5b73ea57e620321a02f2b4ea90"
+      },
+      "project_relative_source": "research/MarkovTopFrontierMEB6.lean",
+      "selected_recovered_from183": false,
+      "selected_new184": true,
+      "imports": [
+        "MarkovTopTwoEdgesMEB6"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "TopClosedRegionMEB6",
+          "line": 9,
+          "header": "def TopClosedRegionMEB6 (q : ℕ) (r : Bool) (i j : ℕ) : Prop",
+          "body_sha256": "e0f844c5f4533d4c73f668ee3d9dbd5dd7ca50d42b5f34636469f2a4f1e26c73"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_closedMEB6",
+          "line": 13,
+          "header": "theorem source_top_closedMEB6 (q i j : ℕ) (r : Bool) (hq : 1 ≤ q)\n (h : TopClosedRegionMEB6 q r i j) :\n threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2",
+          "body_sha256": "4ea97726c7d9ab8c1ae88a0e62df0675c43cfdd9e6b3126c09b4f99fe6d244fe"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_small_depthsMEB6",
+          "line": 24,
+          "header": "theorem source_top_small_depthsMEB6 (q t i : ℕ) (r : Bool) (hq : 1 ≤ q)\n (ht0 : 5 ≤ t) (ht1 : t ≤ 6) (htq : t ≤ q+2) :\n threeRawM9E2 q r i (sourceNME9C q r+2-t)*\n threeRawM9E2 q r (i+2) (sourceNME9C q r+2-t) ≤\n threeRawM9E2 q r (i+1) (sourceNME9C q r+2-t)^2",
+          "body_sha256": "32cbf0149d7d2c6c89717688e01c2539b54506fefe1033211b0c9ce0b279c7e6"
+        },
+        {
+          "kind": "def",
+          "name": "ThreeFrontierMEB6",
+          "line": 34,
+          "header": "def ThreeFrontierMEB6 : Prop",
+          "body_sha256": "128885b933bf671e92eb55b474bbd93ab407733f1f3d9cff46e4a0c4997cb83c"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_frontierMEB6",
+          "line": 43,
+          "header": "theorem root_iff_frontierMEB6 : Conjecture63 ↔ ThreeFrontierMEB6 ∧ OtherFourM9E2",
+          "body_sha256": "6a535174ad9626f722d485515be5568cb4aa4b48314f3ae5ffe4970da9b44eef"
+        }
+      ],
+      "theorem_count": 3,
+      "definition_count": 2,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226800117866000.json",
+        "bytes": 572,
+        "sha256": "10d22f9cff47bab492913b982662cc7d98b369369bccc76e40be510d604d203a"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226800117866000.lean",
+        "bytes": 2546,
+        "sha256": "868227e8edbd84cf23ba1cba89456971d24e5b5b73ea57e620321a02f2b4ea90"
+      },
+      "source_equals183_sealed_source": false,
+      "historical183_status": null,
+      "admission_literal_tokens": []
+    }
+  ],
+  "counts": {
+    "selected_modules": 21,
+    "recovered183": 10,
+    "new184": 11,
+    "theorems": 94,
+    "definitions": 46,
+    "recovered_theorems": 54,
+    "new_theorems": 40
+  },
+  "source_level_scope": {
+    "actual_sources": "Every generated path with numerator a=3 has q>=1 and r:Bool, denominator b=3q+1 for true,3q+2 for false, and exact raw threeRaw coefficients. This source-classification theorem is inherited, not reproved184.",
+    "new_edges": "For q>=1,5<=t<=q+2,row j=b+2-t: raw coeff(3,j)*coeff(5,j)<coeff(4,j)^2 and raw coeff(t-2,j)*coeff(t,j)<coeff(t-1,j)^2. Source polygon contains exactly1<=i<=t in this sector. No extra gap/shape sign premise.",
+    "generic_edges": "For natural n,t,5<=t,2t<=n, both strict template edges hold. The generic edge theorems do not require3t<=n+5. Actual-source adapters retain5<=t<=q+2.",
+    "small_depths": "All natural starts, including zero endpoints/tails, for5<=t<=6 andt<=q+2. q1/q2 strict sector empty, rather than silently adding exceptional cases.",
+    "polynomial_bound": "For rational P with positive leading coefficient: negativeMass=sum overk<natDegree max(0,-coeffk),threshold=Nat.ceil(negativeMass/leadingCoeff)+1; allnatural n>=threshold give P.eval(n)>0. Degree0 handled separately; no numerical root computation.",
+    "gap_polynomial": "G(T,i)(d)=Mass(d,T,i+1)^2-Mass(d,T,i)*Mass(d,T,i+2) overQ, allnaturalparameters. Degree<=2i+8; degreeexact and positiveleading ifi+1<=T, using recovered183leadingstrict theorem. topGapThreshold usespolynomial bound.",
+    "all_starts_after": "rowThreshold(T)=sup_{i inrangeT}gapThreshold(T,i). Ifd>=rowThreshold(T), allnaturali massLC; i<T strict, remainingtails usezeroendpoint. Generictemplate requires5<=t,2t<=n,3t<=n+5 androwThreshold(t-3)<=n-2t.",
+    "source_threshold": "sourceThreshold(t)=2t+rowThreshold(t-3)+1. For everyt>=5, allq>=sourceThreshold(t),allr,allnaturalstarts give sourceH atrowb+2-t. Actualpath theorem takesB=3*sourceThreshold(t)+2 andb>=B. Explicit but depth-dependent; no single bound closes all depths.",
+    "finite_strip": "TopMomentBoundM55C iff TopFiniteStripMEB6 (T>=2,i+2<=T,T<=d+2,d<gapThreshold). Newedge results reduce this exactly toTopInnerFiniteStripMEB6:1<=i,i+3<=T,T<=d+2,d<gapThreshold,requiringG.eval(d)>=0. FiniteforfixedT; forallT remains open, not a completed finite proof.",
+    "short_sum": "Mass(d,T,i)=sum_{k<i+4} choose(i+k,i)*choose(d+2i+8,i+3-k)*(choose(T,i+k)+4choose(T+1,i+k+2)), allnaturalparameters includingzeros. Vandermonde and weightedfinite-sum identities; no assumption of eventualsign.",
+    "tail_certificate": "ForT=i+2: exact8,4,1 /4,1 /singleton shifted-kernel masses. Integer rowstep identity clears denominators using i<=s. Multipliers L,Scale andK are explicitlypositive; strict scalar certificate70literalterms transfers without dividing byrawmass.",
+    "third_certificate": "Rational topShortQ exactcast ofnaturalMass. For h,d>=0, T=h+2, firstmassgapstrict via6350400 timesgap equal99literaltermpositivepolynomial. TransferT>=2 usesh=T-2 with explicitbounds.",
+    "root_equivalence": "Conjecture63 iff ThreeFrontierMEB6 andOtherFourM9E2. Bothunproved. IntermediateThreeRemainingMEB6 alsoexact; rootdefinition unchanged.",
+    "horizontal_residual": "For q>=1,allr,i,j: q+3<j,b<2j+1,j!=5,notTopClosedRegionMEB6 =>rawH. TopClosedRegion includesoldM55Cfinishedregion, allstarts aboveparameterthreshold, andsectorstarts i=3 ori+2=t.",
+    "vertical_residual": "Allnaturalstarts outside ((i=3 ori=4) andj+1<=q) OR(5<=i<=8 andj+2<=q). Unchanged.",
+    "diagonal_residual": "Allnaturalstarts outside3<=i<=6 andj+2<=q; literalindices(i,j+2),(i+1,j+1),(i+2,j). Unchanged.",
+    "original_guard_preservation": "Root raw polynomial, naturalindices andpolygon guards retained by inherited exactroot_iff_upper_residualM5BF. Source subproblem stronger allnaturalindices, withzero extension; no positive-coefficient filtering or normalization.",
+    "unproved": "Universal coefficient positivity, innerfinite-strip sign forallT, middlehorizontalstrip, remainingV/D, OtherFoura>=4 andfullConjecture63. Finite genericgap experiments do not prove these.",
+    "recovery_boundary": "Allten unchanged183mathematicalsources receive new184rebuild/replay/94-print coverage.183historical uncertain_effects/nullreport/no-replay/no-prints remainsimmutable. Existing121212incl195,separate19,WindowLC/Abel,166seven-prefix compiled-only,171outcome and180versions unchanged."
+  },
+  "scripts": [
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/source_experiment_eb6a9001.py",
+      "bytes": 2486,
+      "sha256": "c463bf1caeb8c65161650eb80c4f7a8cdcb246ffa3b06fb467e377d8f0e1103f"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/top_gap_probe_eb6a9001.py",
+      "bytes": 1644,
+      "sha256": "bda82eef489cc01caf66d5f93fc8683dfa622ce3b0d68f727a77f04e5cea5d1c"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/top_short_probe_eb6a9001.py",
+      "bytes": 2098,
+      "sha256": "0be3753c43c2a98b004f5d3998ece4b57069d4d15968abab77e64366f63e9d0a"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/generate_top_third_eb6a9001.py",
+      "bytes": 3099,
+      "sha256": "4d82bd56e981434148018c6012548171a1882e3073945fd6047b8b57c27f6027"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/generate_top_tail_eb6a9001.py",
+      "bytes": 2407,
+      "sha256": "128f68a374e316a0318001449bae0648c379b5bafc85489859307d50c891ca2f"
+    }
+  ],
+  "audit_helper_corrections": [
+    "Pre-output Python syntax typo corrected.",
+    "Pre-output completed-command key changed from exit_code to recorded returncode.",
+    "Newton summary compared with its explicit count/list projection; no mathematical values recomputed."
+  ],
+  "own_helper_pin": {
+    "path": "/private/tmp/math_gkm_godel_20261013/static_math_worker184.py",
+    "bytes": 15484,
+    "sha256": "c7479e1f077f6fb421f36b7d7f01a50b66ed30642539a70b96ee9504c70dda2b"
+  },
+  "input_pins": [
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/validation.json",
+      "bytes": 5204,
+      "sha256": "3c7a9a6ea66da3b126e26534196455a0f5d3de5ebd8819084334b6f4a7eefda2"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/recovered-modules.json",
+      "bytes": 277,
+      "sha256": "7d77606654552e68213d6dcc2930473afaa4bdd235731f5285ab7351afe30b56"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/mathematical-modules.json",
+      "bytes": 599,
+      "sha256": "9754ac44402db2ac25bc6fabaf19a381e98b65ecc52bb394ba14b9b388e1360a"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/receipt.json",
+      "bytes": 21664,
+      "sha256": "c7eaeb3ee3e197db66a0ade9453907964a2c50bb4f9c81c9fe9609063829c6b9"
+    },
+    {
+      "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_mathematical_source_hashes.json",
+      "bytes": 111886,
+      "sha256": "3262527fbf1f483b4848dee26e2db284328f70a2ca3d5ddd67e7327782110036"
+    },
+    {
+      "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000184_completed_commands.json",
+      "bytes": 368048,
+      "sha256": "e87e66cbceb320f6fae2917419d70aac157f0232cba0bf46304307dfbb13de42"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225819307736000.lean",
+      "bytes": 2531,
+      "sha256": "bb18778d2a69c0d6e8398a7387626bddee556bd82227fd2f1174ff40208cc962"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225819307736000.json",
+      "bytes": 567,
+      "sha256": "f142ceb04778c6f9fbea1de4784be83aaf4e811b602d99da5c7d632ed4dac7e1"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225850990449000.lean",
+      "bytes": 3330,
+      "sha256": "cb6e6f208cc6f62bbc63c3e8dc0709d220fe96248d8e8766d2b43f75d42449f3"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225850990449000.json",
+      "bytes": 576,
+      "sha256": "4e91b99f04173bcaf364d7b476992e8b0dbe0acc9a6b3f85db50a163b2ab7177"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225863542573000.lean",
+      "bytes": 4429,
+      "sha256": "c86029699e559863c553fcd949ba98b364e844cc7548fcf1e7730fdba6c9a63a"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225863542573000.json",
+      "bytes": 584,
+      "sha256": "c2f14d04cfba0abbf3d606971f8d0ce38d43f3db5f794cc4b2aa62aea04d389f"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225870711162000.lean",
+      "bytes": 3445,
+      "sha256": "49c8efe8de8545ce61b04d988c3e0b5ccf54c64ffbd1c45652759d3056654fcd"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225870711162000.json",
+      "bytes": 2191,
+      "sha256": "29802fd0d41bdedf9af86f706ded700b934b351d238f068c083815109b9f3ede"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225877761816000.lean",
+      "bytes": 4326,
+      "sha256": "c27e700323878787d7145c6afcb79d59ced210f3faac91a6bfbd35192fba0fdc"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225877761816000.json",
+      "bytes": 569,
+      "sha256": "42b7fd80ff26e149a552321a8dcc034b1d75d35cd25aa1e0aab3ae5551facccf"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225884886500000.lean",
+      "bytes": 3660,
+      "sha256": "8b79fa0b4774d408d52b37d1dd8cedc95ab1d0d894fe50f5d3491b36cae9651a"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225884886500000.json",
+      "bytes": 566,
+      "sha256": "8516fb61f3fada638b860410573dfeb2c212edec7f5a6c1464c57b49a46ab6fe"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225892950558000.lean",
+      "bytes": 2904,
+      "sha256": "0ad469f9d19606e1774aab36a887bb20f82d06a4634c1b4ea0c77cd406d770d9"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225892950558000.json",
+      "bytes": 584,
+      "sha256": "611b0b76ac8c537518486f418aa4f5ac0deb660ac45e95c4da50f8d7171b8387"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225902725159000.lean",
+      "bytes": 2129,
+      "sha256": "27380c95fc714565727dc36c36ab7c3f4841f1cbab2651ca0553ffe1848e6568"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225902725159000.json",
+      "bytes": 566,
+      "sha256": "e93e8e0e4186ee0981624e2403d0157551b170b70ec8b96f242c748dc4e9907d"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225911373636000.lean",
+      "bytes": 3261,
+      "sha256": "b3e7cba28e4af3a9e6d5a9e84edd1126a946223acca63724457e8724ca22e031"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225911373636000.json",
+      "bytes": 756,
+      "sha256": "878845f9b1a577029ef1787ae6017680dc3170e6f5317693a3d3a318dcc60553"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225919206584000.lean",
+      "bytes": 2935,
+      "sha256": "d94f9fcde275e43c2fed5a5d1fcf01df7385b2ca70659cff10da1f470f49f121"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225919206584000.json",
+      "bytes": 569,
+      "sha256": "f5e539c308ea1ec11a7fdb80c4ef5f42ae03f90974548d22ce698dfd51bc9717"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovPolynomialBoundMEB6.lean",
+      "bytes": 2258,
+      "sha256": "4f726591744c59f9848f19a6fe1ad44d8b49940969d78b9c3a6376a72d0f4d05"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225942905405000.json",
+      "bytes": 584,
+      "sha256": "807544a018d3bf9f42e8ba2b1fd1042c3cd5576fdde77203528aa8d71611633c"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792225942905405000.lean",
+      "bytes": 2258,
+      "sha256": "4f726591744c59f9848f19a6fe1ad44d8b49940969d78b9c3a6376a72d0f4d05"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopGapPolynomialMEB6.lean",
+      "bytes": 3127,
+      "sha256": "689ce58910bf0a7f8c42c77f87d77447b20549d8fd086cac99739ea5146209b6"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226033228486000.json",
+      "bytes": 587,
+      "sha256": "f921d1c4a4e3a799715e30942eb140655d5388a246bd4ce02136e27027680ed1"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226033228486000.lean",
+      "bytes": 3127,
+      "sha256": "689ce58910bf0a7f8c42c77f87d77447b20549d8fd086cac99739ea5146209b6"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopFiniteStripMEB6.lean",
+      "bytes": 2941,
+      "sha256": "472c788adf040c8706aaf91e9bbcdd2eee3cd54178e77731239067354d078364"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226085672343000.json",
+      "bytes": 581,
+      "sha256": "bedba8bfb459a8a85879778f446e2449cd2b0f4ff01fb8182c4a062522f80524"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226085672343000.lean",
+      "bytes": 2941,
+      "sha256": "472c788adf040c8706aaf91e9bbcdd2eee3cd54178e77731239067354d078364"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopSourceRegionMEB6.lean",
+      "bytes": 3977,
+      "sha256": "2d9101b5d01d26da7b8ae9be86d7227eac1c94105466110bda9290b9f5331d83"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226284888773000.json",
+      "bytes": 968,
+      "sha256": "0719d1d0576757e5153f351bacc631914d928bc56296aee6f5b6e1bdcbfcc761"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226284888773000.lean",
+      "bytes": 3977,
+      "sha256": "2d9101b5d01d26da7b8ae9be86d7227eac1c94105466110bda9290b9f5331d83"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopVandermondeMEB6.lean",
+      "bytes": 2394,
+      "sha256": "90f8ae6893fc6812c579617365ece20cdc7abe88855b700c1a2e68c260caa533"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226349518192000.json",
+      "bytes": 581,
+      "sha256": "0eb24fd694df64ae211e829991e76ba65357eed8442e09a1edaf2fa3daff7f5d"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226349518192000.lean",
+      "bytes": 2394,
+      "sha256": "90f8ae6893fc6812c579617365ece20cdc7abe88855b700c1a2e68c260caa533"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopThirdGapMEB6.lean",
+      "bytes": 5686,
+      "sha256": "9f3d512e0f674b5cde8b87e524a43c82480998fb3f625a13f8b94168859485d4"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226423194089000.json",
+      "bytes": 573,
+      "sha256": "417cd91ca10d73bfce26e3b447739ecc6ff69bd3b7caae0e411e0007a20bdc3b"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226423194089000.lean",
+      "bytes": 5686,
+      "sha256": "9f3d512e0f674b5cde8b87e524a43c82480998fb3f625a13f8b94168859485d4"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopTailKernelMEB6.lean",
+      "bytes": 2173,
+      "sha256": "73f2ebc8ff30a308591e8eb906d3c0ed17e006f98478c9a23c739e1ebf5385b5"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226522406676000.json",
+      "bytes": 2647,
+      "sha256": "45f8e39ce76271c1263116fbadfcf7c2dfbdfd9e5efb6bdadc7263964f602777"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226522406676000.lean",
+      "bytes": 2173,
+      "sha256": "73f2ebc8ff30a308591e8eb906d3c0ed17e006f98478c9a23c739e1ebf5385b5"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopTailScalarMEB6.lean",
+      "bytes": 3600,
+      "sha256": "881f23fe9e256aea0928aaafcf810299e0ac59042c6c6fa22a7de7827839de86"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226599851188000.json",
+      "bytes": 579,
+      "sha256": "df3e08189b1aff71217e7cf7ed425608a9a911a6e17316691b28ed2ff54a0e6c"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226599851188000.lean",
+      "bytes": 3600,
+      "sha256": "881f23fe9e256aea0928aaafcf810299e0ac59042c6c6fa22a7de7827839de86"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopTailClosedMEB6.lean",
+      "bytes": 3529,
+      "sha256": "5939b8a1366ee998fd35ef4e0d93a82571e8e08d2360f434abc78503de3ec687"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226643657070000.json",
+      "bytes": 800,
+      "sha256": "71adfa557649f6b4da02602071ab333ecfd701056a2aa95ed866bcb7ec561678"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226643657070000.lean",
+      "bytes": 3529,
+      "sha256": "5939b8a1366ee998fd35ef4e0d93a82571e8e08d2360f434abc78503de3ec687"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopTwoEdgesMEB6.lean",
+      "bytes": 3316,
+      "sha256": "992f96a40690019f164a05b417b3672b126e35fad15e9d122dd387137d8d0c6c"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226692643164000.json",
+      "bytes": 571,
+      "sha256": "bab438ea6ca3469e9e49f12f1b850b6cd56ab036b32d525ead85d2e6d010cad2"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226692643164000.lean",
+      "bytes": 3316,
+      "sha256": "992f96a40690019f164a05b417b3672b126e35fad15e9d122dd387137d8d0c6c"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/MarkovTopFrontierMEB6.lean",
+      "bytes": 2546,
+      "sha256": "868227e8edbd84cf23ba1cba89456971d24e5b5b73ea57e620321a02f2b4ea90"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226800117866000.json",
+      "bytes": 572,
+      "sha256": "10d22f9cff47bab492913b982662cc7d98b369369bccc76e40be510d604d203a"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/build-1792226800117866000.lean",
+      "bytes": 2546,
+      "sha256": "868227e8edbd84cf23ba1cba89456971d24e5b5b73ea57e620321a02f2b4ea90"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/source-experiment.json",
+      "bytes": 2273,
+      "sha256": "9318fcc93a47b41e3dcb0b99fd609a5118019d513865c70d2d27b7505b03d1dc"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/top-gap-polynomial-probe.json",
+      "bytes": 3391,
+      "sha256": "1d936918949956af2e2cd06218a289c2164f691511aa5bda8935b6c5007bd314"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/top-short-newton-probe.json",
+      "bytes": 39707,
+      "sha256": "0cc3d0c7eeb598281f48be103491c4e6450262a1c9121566e4bba36380bf088f"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/top-short-monomial-probe.json",
+      "bytes": 408,
+      "sha256": "7614de4c32c53b406016181a0413506e81cd96d9051a102a3df4c7f00de9141c"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/top-third-certificate.json",
+      "bytes": 5045,
+      "sha256": "346835f722ce7b4d67b2a0024b196407b77e2fd2e28ea2b4c09a89758a7f19d8"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/evidence/markov-eb6a9001/top-tail-certificate.json",
+      "bytes": 3394,
+      "sha256": "2d45df8ff9b20560ee852c83e0157087a6e7a8a6823d8e1ee3d761b807f229f6"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/source_experiment_eb6a9001.py",
+      "bytes": 2486,
+      "sha256": "c463bf1caeb8c65161650eb80c4f7a8cdcb246ffa3b06fb467e377d8f0e1103f"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/top_gap_probe_eb6a9001.py",
+      "bytes": 1644,
+      "sha256": "bda82eef489cc01caf66d5f93fc8683dfa622ce3b0d68f727a77f04e5cea5d1c"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/top_short_probe_eb6a9001.py",
+      "bytes": 2098,
+      "sha256": "0be3753c43c2a98b004f5d3998ece4b57069d4d15968abab77e64366f63e9d0a"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/generate_top_third_eb6a9001.py",
+      "bytes": 3099,
+      "sha256": "4d82bd56e981434148018c6012548171a1882e3073945fd6047b8b57c27f6027"
+    },
+    {
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000184/artifacts/research/generate_top_tail_eb6a9001.py",
+      "bytes": 2407,
+      "sha256": "128f68a374e316a0318001449bae0648c379b5bafc85489859307d50c891ca2f"
+    },
+    {
+      "path": "/private/tmp/math_gkm_godel_20261013/static_math_worker184.py",
+      "bytes": 15484,
+      "sha256": "c7479e1f077f6fb421f36b7d7f01a50b66ed30642539a70b96ee9504c70dda2b"
+    }
+  ]
+}

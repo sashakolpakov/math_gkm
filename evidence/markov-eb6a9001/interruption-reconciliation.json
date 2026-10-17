@@ -1,0 +1,93 @@
+{
+  "raw_events_sha256": "345ebb4e2e62e75ff7fb9e7610c1daa9d04ba4fe00eabedad913bb732cf331b0",
+  "event_count": 180,
+  "unfinished_items": {},
+  "last_events": [
+    {
+      "type": "item.started",
+      "item": {
+        "id": "item_89",
+        "type": "file_change",
+        "changes": [
+          {
+            "path": "/Users/sasha/math_gkm/research/MarkovTopLeadingM55C.lean",
+            "kind": "update"
+          }
+        ],
+        "status": "in_progress"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_89",
+        "type": "file_change",
+        "changes": [
+          {
+            "path": "/Users/sasha/math_gkm/research/MarkovTopLeadingM55C.lean",
+            "kind": "update"
+          }
+        ],
+        "status": "completed"
+      }
+    },
+    {
+      "type": "item.started",
+      "item": {
+        "id": "item_90",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/validate_55cf20d2.py build 120 MarkovTopLeadingM55C'",
+        "aggregated_output": "",
+        "exit_code": null,
+        "status": "in_progress"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_90",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/validate_55cf20d2.py build 120 MarkovTopLeadingM55C'",
+        "aggregated_output": "{\"receipt\": \"evidence/markov-55cf20d2/build-1792224671054702000.json\", \"returncode\": 0, \"timeout\": false, \"seconds\": 10.8740698749898, \"stdout\": \"\"}\n",
+        "exit_code": 0,
+        "status": "completed"
+      }
+    },
+    {
+      "type": "item.started",
+      "item": {
+        "id": "item_91",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc \"rg 'natDegree_eq_of_le_of_coeff_ne_zero|natDegree_eq_of_le_of_coeff' .lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/*.lean; rg 'exists_nat_ge|eventually_atTop.*natCast|tendsto_natCast_atTop' research/Markov*Limit*.lean | head -30\"",
+        "aggregated_output": "",
+        "exit_code": null,
+        "status": "in_progress"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_91",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc \"rg 'natDegree_eq_of_le_of_coeff_ne_zero|natDegree_eq_of_le_of_coeff' .lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/*.lean; rg 'exists_nat_ge|eventually_atTop.*natCast|tendsto_natCast_atTop' research/Markov*Limit*.lean | head -30\"",
+        "aggregated_output": ".lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/Lemmas.lean:  apply natDegree_eq_of_le_of_coeff_ne_zero natDegree_comp_le\n.lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/IsMonicOfDegree.lean:  \u00b7 exact natDegree_eq_of_le_of_coeff_ne_zero H\u2081 <| H\u2082 \u25b8 one_ne_zero\n.lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/Operations.lean:theorem natDegree_eq_of_le_of_coeff_ne_zero (pn : p.natDegree \u2264 n) (p1 : p.coeff n \u2260 0) :\n.lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/Operations.lean:  refine (congr_arg _ <| natDegree_eq_of_le_of_coeff_ne_zero pn ?_).trans p1\n.lake/packages/mathlib/Mathlib/Algebra/Polynomial/Degree/Domain.lean:  \u00b7 apply natDegree_eq_of_le_of_coeff_ne_zero\n",
+        "exit_code": 0,
+        "status": "completed"
+      }
+    }
+  ],
+  "matching_compiled_sources": {
+    "MarkovTopMomentsM55C": "c27e700323878787d7145c6afcb79d59ced210f3faac91a6bfbd35192fba0fdc",
+    "MarkovTopObstructionsM55C": "0ad469f9d19606e1774aab36a887bb20f82d06a4634c1b4ea0c77cd406d770d9",
+    "MarkovTopKernelM55C": "49c8efe8de8545ce61b04d988c3e0b5ccf54c64ffbd1c45652759d3056654fcd",
+    "MarkovTopSecondGapM55C": "cb6e6f208cc6f62bbc63c3e8dc0709d220fe96248d8e8766d2b43f75d42449f3",
+    "MarkovTopFourthM55C": "bb18778d2a69c0d6e8398a7387626bddee556bd82227fd2f1174ff40208cc962",
+    "MarkovTopSectorM55C": "8b79fa0b4774d408d52b37d1dd8cedc95ab1d0d894fe50f5d3491b36cae9651a",
+    "MarkovTopLeadingM55C": "d94f9fcde275e43c2fed5a5d1fcf01df7385b2ca70659cff10da1f470f49f121",
+    "MarkovTopParameterPolyM55C": "b3e7cba28e4af3a9e6d5a9e84edd1126a946223acca63724457e8724ca22e031",
+    "MarkovTopRegionM55C": "27380c95fc714565727dc36c36ab7c3f4841f1cbab2651ca0553ffe1848e6568",
+    "MarkovTopSecondSourceM55C": "c86029699e559863c553fcd949ba98b364e844cc7548fcf1e7730fdba6c9a63a"
+  },
+  "previous_build_failures": 8,
+  "decision": "All started items have completed events. Final Leading module build succeeded, followed by read-only search. No joint replay, axiom audit, manifest or final report. Preserve all effects; rebuild and validate retained sources into a new evidence directory, never replay prior mutations."
+}

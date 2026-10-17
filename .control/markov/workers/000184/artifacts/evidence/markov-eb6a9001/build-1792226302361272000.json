@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTopVandermondeMEB6.lean:20:32: error: No goals to be solved\n/Users/sasha/math_gkm/research/MarkovTopVandermondeMEB6.lean:25:3: error: ring failed, ring expressions not equal\nd i s : \u2115\nhi : i \u2264 s\nhv :\n  (s - i + (d + 2 * i + 8)).choose (i + 3) =\n    \u2211 k \u2208 range (i + 3).succ, (s - i).choose (k, i + 3 - k).1 * (d + 2 * i + 8).choose (k, i + 3 - k).2\nhv' :\n  \u2191((d + s + i + 8).choose (i + 3)) =\n    \u2211 x \u2208 range (i + 3).succ, \u2191((s - i).choose x) * \u2191((d + 2 * i + 8).choose (i + 3 - x))\nk : \u2115\nhk : k \u2208 range (i + 4)\nh : \u2191(s.choose (i + k)) * \u2191((i + k).choose i) = \u2191(s.choose i) * \u2191((s - i).choose k)\n\u22a2 \u2191(s.choose i) * \u2191((s - i).choose k) * \u2191((d + 2 * i + 8).choose (i + 3 - k)) * 2 -\n      \u2191((d + 2 * i + 8).choose (i + 3 - k)) * \u2191((i + k).choose i) * \u2191(s.choose (i + k)) * 2 =\n    0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTopVandermondeMEB6": "7a6f7dcd1d3a9ee094cb4f6a9a35a025cafde4154cdae8259a8aa7af92c88575"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-eb6a9001/MarkovTopVandermondeMEB6.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopVandermondeMEB6.lean"
+  ],
+  "seconds": 6.740684124990366,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

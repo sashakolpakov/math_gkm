@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTopGapPolynomialMEB6.lean:21:1: error: Tactic `apply` failed: could not unify the conclusion of `@natDegree_sub_le_of_le`\n  (?p - ?q).natDegree \u2264 max ?m ?n\nwith the goal\n  (topGapPolyMEB6 T i).natDegree \u2264 2 * i + 8\n\nNote: The full type of `@natDegree_sub_le_of_le` is\n  \u2200 {R : Type ?u.16} {n m : \u2115} [inst : Ring R] {p q : R[X]},\n    p.natDegree \u2264 m \u2192 q.natDegree \u2264 n \u2192 (p - q).natDegree \u2264 max m n\n\nT i : \u2115\n\u22a2 (topGapPolyMEB6 T i).natDegree \u2264 2 * i + 8\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTopGapPolynomialMEB6": "1f2df06e8d93436592d89d7b803977e601979a663a42d1f92ea3357b76636c98"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-eb6a9001/MarkovTopGapPolynomialMEB6.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopGapPolynomialMEB6.lean"
+  ],
+  "seconds": 6.678715749992989,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

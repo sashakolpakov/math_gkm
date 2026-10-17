@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovPolynomialBoundMEB6.lean:45:3: error: linarith failed to find a contradiction\ncase neg\nP : \u211a[X]\nhP : 0 < P.leadingCoeff\nn : \u2115\nhn : positiveThresholdMEB6 P \u2264 n\nhn1 : 1 \u2264 n\nhx : 1 \u2264 \u2191n\nhx0 : 0 < \u2191n\nhceil : negativeMassMEB6 P / P.leadingCoeff \u2264 \u2191\u2308negativeMassMEB6 P / P.leadingCoeff\u2309\u208a\nhcast : \u2191\u2308negativeMassMEB6 P / P.leadingCoeff\u2309\u208a + 1 \u2264 \u2191n\nhratio : negativeMassMEB6 P / P.leadingCoeff < \u2191n\nhdom : negativeMassMEB6 P < \u2191n * P.leadingCoeff\nhd : \u00acP.natDegree = 0\nhdegree : P.natDegree - 1 + 1 = P.natDegree\nhsum : -(negativeMassMEB6 P * \u2191n ^ (P.natDegree - 1)) \u2264 \u2211 k \u2208 range P.natDegree, P.coeff k * \u2191n ^ k\nhpow : 0 < \u2191n ^ (P.natDegree - 1)\nhh : 0 < \u2191n ^ (P.natDegree - 1) * (\u2191n * P.leadingCoeff - negativeMassMEB6 P)\na\u271d : \u2211 x \u2208 range (P.natDegree - 1 + 1), P.coeff x * \u2191n ^ x + P.leadingCoeff * (\u2191n ^ (P.natDegree - 1) * \u2191n) \u2264 0\n\u22a2 False\nfailed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovPolynomialBoundMEB6": "5f224af5f79f432187aab34d12448db2a52aa83bdcafe1d04302b067c8724d27"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-eb6a9001/MarkovPolynomialBoundMEB6.olean",
+    "/Users/sasha/math_gkm/research/MarkovPolynomialBoundMEB6.lean"
+  ],
+  "seconds": 7.543791332980618,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
