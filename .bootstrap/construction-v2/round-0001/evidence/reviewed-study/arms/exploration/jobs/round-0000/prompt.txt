@@ -1,0 +1,90 @@
+Read MISSION.md, docs/DESIGN.md and contract.json. These supply principles and the exact target, not historical results. Construction and Agoh were historical; no proofs or agendas from them are supplied. Begin from the target definitions. This is a user-authorized experimental research study. Preserve the full published target, raw coefficients, zeros, endpoints, directions, allowed axioms and correspondence obligations. Choose your own mathematical actions: literature, experiments, representations, proof or refutation. A finite-budget failure is not unprovability. Do not use complexity, description length, compression or derived proxies in decisions. Never invoke another LLM, Codex, controllers or background processes. Do not access other workspaces, evaluation answers, audit records, Git, archives or credentials. No network shell, downloads, package updates, publication or messaging. Use .scratch for temporary files, pinned dependencies and /opt/homebrew/bin/python3. No sorry, admit, axioms or native_decide. Reports do not certify proofs. Checkpoint in research/ with unique names. Use existing artifacts; keep failed attempts. No supervisor supplies mathematical advice.
+Execute the committed_trial in this request. Its hypotheses/outcomes were recorded by a separate proposer before this call. Return the same trial identity and hypothesis claims, with actual evidence and updated status. A bounded invention round may precede a formal root reduction. Honor episode horizons; delayed usefulness is distinct from refutation. Policy changes are proposals for equal-budget trials.
+The output envelope has request_id and payload_json (a JSON-encoded object).
+Researcher payload: {agenda:[strings], summary:string, hypotheses:[{id,kind,claim,uncertainty,outcomes:[{check,changes_next_choice}],status,reason,evidence:[paths]}], evidence:[{path,sha256,kind}], trial:{hypothesis,invention}, use_links:[{artifact,consumer,claim}], policy_proposal:null or {search,memory,allocation,reassessment}, completion:null or {kind,module,declaration,correspondence}}. Baseline may return empty hypotheses and null trial.
+Reviewer payload: {findings:[{path,sha256,finding}], correctness,scope,transfer,costs,recommendation}.
+Selector payload: {choice:"incumbent" or "candidate",reason,evidence:[{path,sha256}]}.
+REQUEST:
+{
+  "role": "researcher",
+  "round": 0,
+  "policy": {
+    "allocation": "consequential uncertainty trials and bounded invention episodes",
+    "memory": "retain alternatives, evidence and reasons; consult own history",
+    "reassessment": "review at committed episode horizon; permit delayed benefit",
+    "search": "retain competing obstacle, capability and strategy hypotheses"
+  },
+  "mode": "exploration",
+  "agenda": [
+    "fixture continuation after round 0"
+  ],
+  "portfolio": [
+    {
+      "claim": "toy representation may help",
+      "evidence": [],
+      "id": "h-a",
+      "kind": "capability",
+      "outcomes": [
+        {
+          "changes_next_choice": "test a second consumer",
+          "check": "toy interface check passes"
+        },
+        {
+          "changes_next_choice": "retain alternative",
+          "check": "toy interface check fails"
+        }
+      ],
+      "reason": "await independent checks",
+      "status": "usefulness_not_demonstrated",
+      "uncertainty": "Does the toy interface preserve its observation?"
+    },
+    {
+      "claim": "toy direct route may help",
+      "evidence": [],
+      "id": "h-b",
+      "kind": "strategy",
+      "outcomes": [
+        {
+          "changes_next_choice": "test a second consumer",
+          "check": "toy interface check passes"
+        },
+        {
+          "changes_next_choice": "retain alternative",
+          "check": "toy interface check fails"
+        }
+      ],
+      "reason": "await independent checks",
+      "status": "usefulness_not_demonstrated",
+      "uncertainty": "Does the toy interface preserve its observation?"
+    }
+  ],
+  "episode": {
+    "start": 0,
+    "review_round": 1,
+    "continuation_rounds": 2,
+    "invention_used": 0,
+    "hypothesis": "h-a",
+    "status": "usefulness_not_demonstrated"
+  },
+  "observations": [
+    {
+      "round": 0,
+      "evidence": [],
+      "summary": "SYNTHETIC evidence only",
+      "class": "unverified_research_report"
+    }
+  ],
+  "limits": {
+    "rounds": 4,
+    "episode_rounds": 2,
+    "invention_rounds": 1,
+    "call_seconds": 5
+  },
+  "status": "experimental; no certified continuation improvement",
+  "committed_trial": {
+    "hypothesis": "h-a",
+    "invention": false
+  },
+  "prospective_binding": "849d0a30a8a094d1fe113897368760ec06f143922e730645768668deaf32c1d0",
+  "request_id": "round-0000"
+}

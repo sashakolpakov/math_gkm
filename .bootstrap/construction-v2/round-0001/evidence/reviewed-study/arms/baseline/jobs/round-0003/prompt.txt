@@ -1,0 +1,70 @@
+Read MISSION.md, docs/DESIGN.md and contract.json. These supply principles and the exact target, not historical results. Construction and Agoh were historical; no proofs or agendas from them are supplied. Begin from the target definitions. This is a user-authorized experimental research study. Preserve the full published target, raw coefficients, zeros, endpoints, directions, allowed axioms and correspondence obligations. Choose your own mathematical actions: literature, experiments, representations, proof or refutation. A finite-budget failure is not unprovability. Do not use complexity, description length, compression or derived proxies in decisions. Never invoke another LLM, Codex, controllers or background processes. Do not access other workspaces, evaluation answers, audit records, Git, archives or credentials. No network shell, downloads, package updates, publication or messaging. Use .scratch for temporary files, pinned dependencies and /opt/homebrew/bin/python3. No sorry, admit, axioms or native_decide. Reports do not certify proofs. Checkpoint in research/ with unique names. Use existing artifacts; keep failed attempts. No supervisor supplies mathematical advice.
+Continue the single revisable agenda. Execute a bounded research action, record observations and revise agenda. This reproduces the legacy single-worker agenda policy with empty initial history.
+The output envelope has request_id and payload_json (a JSON-encoded object).
+Researcher payload: {agenda:[strings], summary:string, hypotheses:[{id,kind,claim,uncertainty,outcomes:[{check,changes_next_choice}],status,reason,evidence:[paths]}], evidence:[{path,sha256,kind}], trial:{hypothesis,invention}, use_links:[{artifact,consumer,claim}], policy_proposal:null or {search,memory,allocation,reassessment}, completion:null or {kind,module,declaration,correspondence}}. Baseline may return empty hypotheses and null trial.
+Reviewer payload: {findings:[{path,sha256,finding}], correctness,scope,transfer,costs,recommendation}.
+Selector payload: {choice:"incumbent" or "candidate",reason,evidence:[{path,sha256}]}.
+REQUEST:
+{
+  "role": "researcher",
+  "round": 3,
+  "policy": {
+    "allocation": "one bounded research invocation per round",
+    "memory": "latest eight observations and full own retained history",
+    "reassessment": "revise agenda from observed results; no forced portfolio",
+    "search": "single revisable agenda; choose and execute next useful action"
+  },
+  "mode": "baseline",
+  "agenda": [
+    "fixture continuation after round 2"
+  ],
+  "portfolio": [],
+  "episode": null,
+  "observations": [
+    {
+      "round": 0,
+      "evidence": [
+        {
+          "kind": "experiment",
+          "path": "research/toy-0.txt",
+          "sha256": "d6236a2a46571071678633ea75ebeaa7f76d69f39aa2092b35beba3825441fc1"
+        }
+      ],
+      "summary": "SYNTHETIC evidence only",
+      "class": "unverified_research_report"
+    },
+    {
+      "round": 1,
+      "evidence": [
+        {
+          "kind": "experiment",
+          "path": "research/toy-1.txt",
+          "sha256": "b09bc82752b10ed6c43058442fd449ba23d24a44169f1c3b437b4b921219b0d4"
+        }
+      ],
+      "summary": "SYNTHETIC evidence only",
+      "class": "unverified_research_report"
+    },
+    {
+      "round": 2,
+      "evidence": [
+        {
+          "kind": "experiment",
+          "path": "research/toy-2.txt",
+          "sha256": "dfb2c42af170e349cc5976ff2e3e1295fc8b05c667d54f0ae666823a22634b52"
+        }
+      ],
+      "summary": "SYNTHETIC evidence only",
+      "class": "unverified_research_report"
+    }
+  ],
+  "limits": {
+    "rounds": 4,
+    "episode_rounds": 2,
+    "invention_rounds": 1,
+    "call_seconds": 5
+  },
+  "status": "experimental; no certified continuation improvement",
+  "committed_trial": null,
+  "request_id": "round-0003"
+}
