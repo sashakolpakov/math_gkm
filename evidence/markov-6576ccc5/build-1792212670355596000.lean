@@ -1,0 +1,39 @@
+import MarkovTransposedKernelM657
+/-! Machine-authored 6576ccc5. A termwise mixed-gap shortcut is false for
+the new exact kernel, even though its complete gap coefficient is positive.
+These are auxiliary kernel coefficients, not reversed source inequalities. -/
+namespace MathGKM.Markov
+noncomputable section
+open Polynomial Finset
+set_option maxHeartbeats 6000000
+set_option maxRecDepth 4096
+
+def kernelCorrectionM657 (d k s : ℕ) (r : Bool) : ℝ[X] :=
+ bandKernelM657 d k s r-liftPolyM7E2 (d+3*k+(if r then 3 else 2)) s
+
+theorem coeff_mul_threeM657 (P Q : ℝ[X]) :
+ (P*Q).coeff 3=P.coeff 0*Q.coeff 3+P.coeff 1*Q.coeff 2+
+   P.coeff 2*Q.coeff 1+P.coeff 3*Q.coeff 0 := by
+ rw [coeff_mul,Finset.Nat.sum_antidiagonal_eq_sum_range_succ_mk]
+ norm_num [sum_range_succ]
+
+theorem transposed_mixed_negativeM657 :
+ (2*liftPolyM7E2 5 4*kernelCorrectionM657 0 1 4 false-
+   liftPolyM7E2 5 3*kernelCorrectionM657 0 1 5 false-
+   kernelCorrectionM657 0 1 3 false*liftPolyM7E2 5 5).coeff 3 = -30888 := by
+ rw [mul_assoc]
+ simp only [coeff_sub,coeff_ofNat_mul,coeff_mul_threeM657,kernelCorrectionM657,coeff_sub]
+ norm_num [band_kernel_coeffM657,lift_poly_coeffM7E2,
+   reverseLiftMAE9,liftTermMAE9,correctionTermM657,absorbedExtraM418,
+   Nat.choose_succ_succ,Nat.choose_zero_succ,Nat.choose_zero_right]
+
+theorem transposed_complete_positiveM657 :
+ ((bandKernelM657 0 1 4 false)^2-
+   bandKernelM657 0 1 3 false*bandKernelM657 0 1 5 false).coeff 3=87742248 := by
+ simp only [pow_two,coeff_sub,coeff_mul_threeM657]
+ norm_num [band_kernel_coeffM657,lift_poly_coeffM7E2,
+   reverseLiftMAE9,liftTermMAE9,correctionTermM657,absorbedExtraM418,
+   Nat.choose_succ_succ,Nat.choose_zero_succ,Nat.choose_zero_right]
+
+end
+end MathGKM.Markov

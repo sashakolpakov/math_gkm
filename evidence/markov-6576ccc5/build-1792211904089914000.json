@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBandOutputM657.lean:66:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  threeRawM9E2 q r (t + 3) (q + k + 1)\nin the target expression\n  threeRawM9E2 q r (3 + t) (q + k + 1) * threeRawM9E2 q r (3 + t + 2) (q + k + 1) \u2264\n    threeRawM9E2 q r (3 + t + 1) (q + k + 1) ^ 2\n\nq k : \u2115\nr : Bool\nhq : 2 \u2264 q\nhn : 2 * (q + k + 1) + 1 \u2264 sourceNME9C q r\nt : \u2115\nhi : bandExponentM139 q k r + k + 2 < 3 + t\nhei : 3 + t = t + 3\n\u22a2 threeRawM9E2 q r (3 + t) (q + k + 1) * threeRawM9E2 q r (3 + t + 2) (q + k + 1) \u2264\n    threeRawM9E2 q r (3 + t + 1) (q + k + 1) ^ 2\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBandOutputM657": "cf2a525003ff9de70cc60eb91102a1e6d74292d7b88da75714c101c2be144993"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-6576ccc5/MarkovBandOutputM657.olean",
+    "/Users/sasha/math_gkm/research/MarkovBandOutputM657.lean"
+  ],
+  "seconds": 18.418098249996547,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
