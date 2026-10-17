@@ -1,0 +1,909 @@
+{
+  "worker": 170,
+  "request": "a646848db8dc4dffbca4cc335370b378",
+  "created_at_utc": "2026-10-17T02:48:02.724795+00:00",
+  "historical_status": "Completed, return 0, delivered report; elapsed 1586.8477318286896 seconds. Twelve final mathematical modules compiled/replayed, 53 closures printed. First-correction horizontal row closed; full root remains open.",
+  "scope": "Archive-first closed 170 and explicitly named inherited/current counterparts only. Static hashes, source/record parsing, literal syntax comparison and finite index-domain counts. No mathematical-value recomputation, project/proof/checker/replay/experiment/generator/finalizer execution or import, project edit or proposer help/contact. Active 171 and later excluded. Earlier seals/windows unchanged.",
+  "mathematical_values_recomputed": false,
+  "audit_parser_preflight": "Initial audit helper expected JSON at event188 and stopped before writing supports. The retained output is a Python dictionary literal; corrected to safe literal parsing, without project execution or experiment rerun.",
+  "source_experiment": {
+    "q_values": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      9,
+      16,
+      24,
+      40,
+      64
+    ],
+    "counts": {
+      "source_cases": 20,
+      "visited_coefficient_positions": 1184,
+      "triples": 1144,
+      "polygon_triples": 666,
+      "window_triples": 252,
+      "formula_source_cases": 18,
+      "coefficients": 1161,
+      "index_zero_region_positions": 462
+    },
+    "saved_result": {
+      "status": "finite source experiment only; not a theorem",
+      "q_values": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        9,
+        16,
+        24,
+        40,
+        64
+      ],
+      "coefficients": 1161,
+      "zeros": 462,
+      "triples": 1144,
+      "polygon_triples": 666,
+      "window_triples": 252,
+      "failures": [],
+      "completed_q": 64,
+      "seconds": 7.705935541016515
+    },
+    "ranges": "20 source cases, i=0..n+6 visited; formula q>=2 only (18 cases), starts0..n+4. Polygon guards retained separately.",
+    "zero_scope": "462 formula-domain zero positions recounted from established first-row index support; no coefficient evaluated.",
+    "progress_matches_final_except_seconds": true,
+    "complete_stdout_matches_result": true
+  },
+  "margin_probe": {
+    "j_range": [
+      7,
+      40
+    ],
+    "t_range": "4<=t<=j-3",
+    "h_range": "0<=h<=t",
+    "counts": {
+      "parameter_cases": 595,
+      "scalar_checks": 1190,
+      "quantitative_border_checks": 9520
+    },
+    "saved_result": {
+      "status": "finite exact computation only",
+      "scalar_checks": 1190,
+      "quantitative_border_checks": 9520,
+      "failures": [],
+      "rejected_shortcut_examples": [
+        {
+          "d": 5,
+          "t": 4,
+          "j": 7,
+          "c": 4,
+          "negative_Q_indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "constant_gap": "-112/5"
+        },
+        {
+          "d": 5,
+          "t": 4,
+          "j": 8,
+          "c": 8,
+          "negative_Q_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "constant_gap": "-256/5"
+        },
+        {
+          "d": 20,
+          "t": 4,
+          "j": 23,
+          "c": 8,
+          "negative_Q_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "constant_gap": "-784/5"
+        },
+        {
+          "d": 80,
+          "t": 4,
+          "j": 83,
+          "c": 8,
+          "negative_Q_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "constant_gap": "-11664/5"
+        }
+      ],
+      "seconds": 0.1794272090191953
+    },
+    "q_shortcuts": "Four constant-perturbed Q diagnostic cases only; reported negative coefficient lists are auxiliary failures, not source failures."
+  },
+  "next_row_probe": {
+    "q_values": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      12,
+      20,
+      32
+    ],
+    "counts": {
+      "source_cases": 20,
+      "source_coefficients": 728,
+      "source_triples": 688,
+      "excluded_negative_exponent_cases": 5,
+      "formula_source_cases": 15,
+      "formula_checks": 659,
+      "scalar_checks": 184
+    },
+    "saved_result": {
+      "status": "finite next-row experiment; source identity not proved in Lean",
+      "q_values": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        12,
+        20,
+        32
+      ],
+      "source_coefficients": 728,
+      "source_zeros": 345,
+      "source_triples": 688,
+      "formula_checks": 659,
+      "scalar_checks": 184,
+      "failures": [],
+      "mixed_negative_examples": [
+        {
+          "q": 3,
+          "r": false,
+          "i": 2,
+          "lower": [
+            0,
+            560,
+            3030
+          ],
+          "correction": [
+            24,
+            12,
+            0
+          ],
+          "mixed_gap": -59280,
+          "raw": [
+            24,
+            572,
+            3030
+          ]
+        },
+        {
+          "q": 3,
+          "r": false,
+          "i": 3,
+          "lower": [
+            560,
+            3030,
+            7140
+          ],
+          "correction": [
+            12,
+            0,
+            0
+          ],
+          "mixed_gap": -85680,
+          "raw": [
+            572,
+            3030,
+            7140
+          ]
+        },
+        {
+          "q": 4,
+          "r": false,
+          "i": 2,
+          "lower": [
+            0,
+            1092,
+            9918
+          ],
+          "correction": [
+            24,
+            40,
+            16
+          ],
+          "mixed_gap": -150672,
+          "raw": [
+            24,
+            1132,
+            9934
+          ]
+        },
+        {
+          "q": 4,
+          "r": false,
+          "i": 3,
+          "lower": [
+            1092,
+            9918,
+            40062
+          ],
+          "correction": [
+            40,
+            16,
+            0
+          ],
+          "mixed_gap": -1285104,
+          "raw": [
+            1132,
+            9934,
+            40062
+          ]
+        },
+        {
+          "q": 4,
+          "r": false,
+          "i": 4,
+          "lower": [
+            9918,
+            40062,
+            90580
+          ],
+          "correction": [
+            16,
+            0,
+            0
+          ],
+          "mixed_gap": -1449280,
+          "raw": [
+            9934,
+            40062,
+            90580
+          ]
+        },
+        {
+          "q": 4,
+          "r": true,
+          "i": 2,
+          "lower": [
+            0,
+            1092,
+            7860
+          ],
+          "correction": [
+            36,
+            24,
+            0
+          ],
+          "mixed_gap": -230544,
+          "raw": [
+            36,
+            1116,
+            7860
+          ]
+        },
+        {
+          "q": 4,
+          "r": true,
+          "i": 3,
+          "lower": [
+            1092,
+            7860,
+            25410
+          ],
+          "correction": [
+            24,
+            0,
+            0
+          ],
+          "mixed_gap": -609840,
+          "raw": [
+            1116,
+            7860,
+            25410
+          ]
+        },
+        {
+          "q": 5,
+          "r": false,
+          "i": 2,
+          "lower": [
+            0,
+            1968,
+            26202
+          ],
+          "correction": [
+            24,
+            68,
+            64
+          ],
+          "mixed_gap": -361200,
+          "raw": [
+            24,
+            2036,
+            26266
+          ]
+        }
+      ],
+      "completed_q": 32,
+      "seconds": 0.4442344169947319
+    },
+    "formula_domain": "false q>=3,d=q-3,c0=24,c1=4q; true q>=4,d=q-4,c0=36,c1=8q-8. Five negative-exponent source cases excluded from formula comparison.",
+    "zero_count_saved_only": 345,
+    "zero_count_independently_recomputed": false,
+    "zero_scope": "Do not apply the first-row i<2 mask to all exceptional next-row cases. Source zeros are reported value counts only, not independently evaluated.",
+    "mixed_example_limit": 8,
+    "source_formula_and_uniform_LC_unproved": true,
+    "actual_3_over_14_witness": "Saved q=4,false,i=2,j=6 lower[0,1092,9918], correction[24,40,16], mixed gap-150672, raw[24,1132,9934]; finite record only, not numerically recomputed or a Lean refutation.",
+    "progress_matches_final_except_seconds": true
+  },
+  "experiment_rerun": {
+    "record": {
+      "reason": "An interactive import of the current experiment script executed its top-level code, rerunning both subexperiments. Both completed with identical mathematical values and counts. First elapsed times and outputs reconstructed from the actual tool output are preserved separately; no inherited evidence was changed.",
+      "first": [
+        "first-margin-experiments.json",
+        "first-next-row-experiment.json"
+      ],
+      "second": [
+        "rerun-margin-experiments.json",
+        "rerun-next-row-experiment.json"
+      ]
+    },
+    "original_margin": {
+      "status": "finite exact computation only",
+      "scalar_checks": 1190,
+      "quantitative_border_checks": 9520,
+      "failures": [],
+      "rejected_shortcut_examples": [
+        {
+          "d": 5,
+          "t": 4,
+          "j": 7,
+          "c": 4,
+          "negative_Q_indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "constant_gap": "-112/5"
+        },
+        {
+          "d": 5,
+          "t": 4,
+          "j": 8,
+          "c": 8,
+          "negative_Q_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "constant_gap": "-256/5"
+        },
+        {
+          "d": 20,
+          "t": 4,
+          "j": 23,
+          "c": 8,
+          "negative_Q_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "constant_gap": "-784/5"
+        },
+        {
+          "d": 80,
+          "t": 4,
+          "j": 83,
+          "c": 8,
+          "negative_Q_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "constant_gap": "-11664/5"
+        }
+      ],
+      "seconds": 0.1738698750268668
+    },
+    "original_next": {
+      "status": "finite next-row experiment; source identity not proved in Lean",
+      "q_values": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        12,
+        20,
+        32
+      ],
+      "source_coefficients": 728,
+      "source_zeros": 345,
+      "source_triples": 688,
+      "formula_checks": 659,
+      "scalar_checks": 184,
+      "failures": [],
+      "mixed_negative_examples": [
+        {
+          "q": 3,
+          "r": false,
+          "i": 2,
+          "lower": [
+            0,
+            560,
+            3030
+          ],
+          "correction": [
+            24,
+            12,
+            0
+          ],
+          "mixed_gap": -59280,
+          "raw": [
+            24,
+            572,
+            3030
+          ]
+        },
+        {
+          "q": 3,
+          "r": false,
+          "i": 3,
+          "lower": [
+            560,
+            3030,
+            7140
+          ],
+          "correction": [
+            12,
+            0,
+            0
+          ],
+          "mixed_gap": -85680,
+          "raw": [
+            572,
+            3030,
+            7140
+          ]
+        },
+        {
+          "q": 4,
+          "r": false,
+          "i": 2,
+          "lower": [
+            0,
+            1092,
+            9918
+          ],
+          "correction": [
+            24,
+            40,
+            16
+          ],
+          "mixed_gap": -150672,
+          "raw": [
+            24,
+            1132,
+            9934
+          ]
+        },
+        {
+          "q": 4,
+          "r": false,
+          "i": 3,
+          "lower": [
+            1092,
+            9918,
+            40062
+          ],
+          "correction": [
+            40,
+            16,
+            0
+          ],
+          "mixed_gap": -1285104,
+          "raw": [
+            1132,
+            9934,
+            40062
+          ]
+        },
+        {
+          "q": 4,
+          "r": false,
+          "i": 4,
+          "lower": [
+            9918,
+            40062,
+            90580
+          ],
+          "correction": [
+            16,
+            0,
+            0
+          ],
+          "mixed_gap": -1449280,
+          "raw": [
+            9934,
+            40062,
+            90580
+          ]
+        },
+        {
+          "q": 4,
+          "r": true,
+          "i": 2,
+          "lower": [
+            0,
+            1092,
+            7860
+          ],
+          "correction": [
+            36,
+            24,
+            0
+          ],
+          "mixed_gap": -230544,
+          "raw": [
+            36,
+            1116,
+            7860
+          ]
+        },
+        {
+          "q": 4,
+          "r": true,
+          "i": 3,
+          "lower": [
+            1092,
+            7860,
+            25410
+          ],
+          "correction": [
+            24,
+            0,
+            0
+          ],
+          "mixed_gap": -609840,
+          "raw": [
+            1116,
+            7860,
+            25410
+          ]
+        },
+        {
+          "q": 5,
+          "r": false,
+          "i": 2,
+          "lower": [
+            0,
+            1968,
+            26202
+          ],
+          "correction": [
+            24,
+            68,
+            64
+          ],
+          "mixed_gap": -361200,
+          "raw": [
+            24,
+            2036,
+            26266
+          ]
+        }
+      ],
+      "completed_q": 32,
+      "seconds": 0.43263141700299457
+    },
+    "rerun_values_except_seconds_identical": true,
+    "scope": "Importing the current margin script executes both top-level experiments. Worker rerun outputs are separately retained; auditor imported/executed neither. Counts are not doubled into expanded domains."
+  },
+  "overrelaxed_next_margin": {
+    "saved_record": {
+      "status": "finite failure of a sufficient over-relaxed condition, not a source refutation",
+      "formula": "U=36*(j-t-5)/(t+1)+8*j",
+      "cases": [
+        {
+          "j": 9,
+          "t": 4,
+          "u": "72",
+          "full_margin": "-15778396",
+          "border_margin": "-4066530183144"
+        },
+        {
+          "j": 10,
+          "t": 4,
+          "u": "436/5",
+          "full_margin": "-377300076/25",
+          "border_margin": "530227066386160/9"
+        },
+        {
+          "j": 10,
+          "t": 5,
+          "u": "80",
+          "full_margin": "231459276",
+          "border_margin": "1743597486058480"
+        },
+        {
+          "j": 20,
+          "t": 4,
+          "u": "1196/5",
+          "full_margin": "16434144099659/25",
+          "border_margin": "895796376142769000900"
+        }
+      ]
+    },
+    "literal_case_count": 4,
+    "scope": "Four finite parameter cases of a sufficient over-relaxed bound; no formal source identity or source LC refutation."
+  },
+  "generation": {
+    "literal_certificate_shapes": [
+      {
+        "module": "MarkovMarginCertificateMA64",
+        "source_sha256": "e9f65e4584ef8b50b9f82b85c4a75c11118a72a2278dce2c8244e1dfd9b2c284",
+        "generated_line_sha256": "9d2bc5df6191553b78c708c3e26f6c44286887880474aab3d5414703781f1859",
+        "expression_characters": 3886,
+        "grammar": "Unsigned numeral tokens, literal unsigned fractions with nonzero literal denominator, x/g/z, addition, multiplication and parentheses. Parsed without evaluation.",
+        "integer_literal_count": 34,
+        "rational_literal_count": 195,
+        "coefficient_literal_count": 229,
+        "saved_term_count": 229,
+        "denominator_tokens": [
+          "10",
+          "100",
+          "12",
+          "120",
+          "1200",
+          "144",
+          "1440",
+          "14400",
+          "15",
+          "160",
+          "1600",
+          "1800",
+          "192",
+          "2",
+          "20",
+          "200",
+          "24",
+          "240",
+          "2400",
+          "288",
+          "2880",
+          "3",
+          "30",
+          "32",
+          "320",
+          "360",
+          "3600",
+          "4",
+          "40",
+          "400",
+          "450",
+          "48",
+          "480",
+          "4800",
+          "5",
+          "576",
+          "6",
+          "60",
+          "600",
+          "72",
+          "720",
+          "7200",
+          "800",
+          "90",
+          "96",
+          "960"
+        ],
+        "saved_degree_only": [
+          16,
+          12,
+          2
+        ],
+        "saved_negative_only": 0,
+        "outer_denominator_text": "(x+5)^2*(x+8)^2*(x+9)*(x+10)*(x+11)",
+        "long_literal_omitted_from_display": true,
+        "mathematical_values_recomputed": false
+      },
+      {
+        "module": "MarkovBorderScalarMA64",
+        "source_sha256": "feccf0feff03728d7c96c7fca117c55b8df7cca1a2954db62e995ecd2b9e997a",
+        "generated_line_sha256": "0324241dce0ceae325559f54569e91c60c2ba9b618d16aa97e711d62305b5c65",
+        "expression_characters": 1546,
+        "grammar": "Unsigned numeral tokens, literal unsigned fractions with nonzero literal denominator, x/g/z, addition, multiplication and parentheses. Parsed without evaluation.",
+        "integer_literal_count": 38,
+        "rational_literal_count": 69,
+        "coefficient_literal_count": 107,
+        "saved_term_count": 107,
+        "denominator_tokens": [
+          "10",
+          "12",
+          "120",
+          "15",
+          "2",
+          "20",
+          "24",
+          "30",
+          "40",
+          "5",
+          "6",
+          "60",
+          "8"
+        ],
+        "saved_degree_only": [
+          12,
+          8,
+          1
+        ],
+        "saved_negative_only": 0,
+        "outer_denominator_text": null,
+        "long_literal_omitted_from_display": true,
+        "mathematical_values_recomputed": false
+      }
+    ],
+    "records": [
+      {
+        "status": "generated candidate, requires Lean check",
+        "terms": 229,
+        "negative": 0,
+        "degrees": [
+          16,
+          12,
+          2
+        ]
+      },
+      {
+        "status": "candidate requires Lean",
+        "terms": 107,
+        "negative": 0,
+        "degrees": [
+          12,
+          8,
+          1
+        ]
+      }
+    ],
+    "scope": "Structural literal counts only; reported nonnegative counts/degrees not independently calculated. Generators are proposals, final ordinary Lean receipts supply proof credit."
+  },
+  "event_bindings": [
+    {
+      "record": "first-margin-experiments.json",
+      "exact_saved_JSON_or_literal_output_events": [
+        202
+      ],
+      "scope": "Static equality of retained event output and saved object only; a missing direct whole-object match does not create invocation authentication."
+    },
+    {
+      "record": "first-next-row-experiment.json",
+      "exact_saved_JSON_or_literal_output_events": [
+        202
+      ],
+      "scope": "Static equality of retained event output and saved object only; a missing direct whole-object match does not create invocation authentication."
+    },
+    {
+      "record": "margin-experiments.json",
+      "exact_saved_JSON_or_literal_output_events": [
+        207
+      ],
+      "scope": "Static equality of retained event output and saved object only; a missing direct whole-object match does not create invocation authentication."
+    },
+    {
+      "record": "next-row-experiment.json",
+      "exact_saved_JSON_or_literal_output_events": [
+        207
+      ],
+      "scope": "Static equality of retained event output and saved object only; a missing direct whole-object match does not create invocation authentication."
+    },
+    {
+      "record": "margin-generation.json",
+      "exact_saved_JSON_or_literal_output_events": [
+        54
+      ],
+      "scope": "Static equality of retained event output and saved object only; a missing direct whole-object match does not create invocation authentication."
+    },
+    {
+      "record": "border-margin-generation.json",
+      "exact_saved_JSON_or_literal_output_events": [
+        118
+      ],
+      "scope": "Static equality of retained event output and saved object only; a missing direct whole-object match does not create invocation authentication."
+    },
+    {
+      "record": "overrelaxed-next-margin.json",
+      "exact_saved_JSON_or_literal_output_events": [],
+      "scope": "Static equality of retained event output and saved object only; a missing direct whole-object match does not create invocation authentication."
+    },
+    {
+      "record": "source-run-1792204291853284000.json",
+      "wrapper_event": 176,
+      "stdout_prefix_characters": 200,
+      "complete_result_event": 188,
+      "complete_result_output_format": "Python literal, parsed without execution",
+      "full_receipt_retained": true,
+      "source_sha256_sampled_after_run": true
+    }
+  ],
+  "runtime_limits": {
+    "source_wrapper_timeout_seconds": 240,
+    "saved_source_outer_seconds": 7.736677875043824,
+    "scope": "Wrapper samples source hash after completion; event176 prints200 stdout characters. Complete receipt and event188 retain the result. No independent experiment rerun."
+  }
+}

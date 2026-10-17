@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovQuantitativeCutMA64.lean:16:65: warning: This simp argument is unused:\n  le_min_iff\n\nHint: Omit it from the simp argument list.\n  simp [\u0335h\u03351\u0335,\u0335h\u03352\u0335,\u0335l\u0335e\u0335_\u0335m\u0335i\u0335n\u0335_\u0335i\u0335f\u0335f\u0335]\u0335[\u0332h\u03321\u0332,\u0332 \u0332h\u03322\u0332]\u0332\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovQuantitativeCutMA64.lean:84:54: error(lean.unknownIdentifier): Unknown identifier `coeff_mul_zero`\n/Users/sasha/math_gkm/research/MarkovQuantitativeCutMA64.lean:84:1: error: Type mismatch: After simplification, term\n  h\n has type\n  ((qPolyM7E2 j (t + 1)).comp (X + 1) * (qPolyM7E2 j (t + 1)).comp (X + 1)).coeff m \u2264\n    ((qPolyM7E2 j (t + 1)).comp (X + 1) * (qPolyM7E2 j (t + 1)).comp (X + 1)).coeff 0 * \u2191((j + j).choose m)\nbut is expected to have type\n  ((qPolyM7E2 j (t + 1)).comp (X + 1) * (qPolyM7E2 j (t + 1)).comp (X + 1)).coeff m \u2264\n    ((qPolyM7E2 j (t + 1)).comp (X + 1)).coeff 0 * ((qPolyM7E2 j (t + 1)).comp (X + 1)).coeff 0 * \u2191((j + j).choose m)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovQuantitativeCutMA64": "a5f4f701191b62455bfc4ac694460345cf21912841e40d1a412d88d1ed30fdd6"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-a646848d/MarkovQuantitativeCutMA64.olean",
+    "/Users/sasha/math_gkm/research/MarkovQuantitativeCutMA64.lean"
+  ],
+  "seconds": 13.501730374991894,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

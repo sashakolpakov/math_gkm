@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovLiftMarginMA64.lean:12:23: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  reflect (j + j) ((qPolyM7E2 j (t + 1)).comp (X + 1) * (qPolyM7E2 j (t + 1)).comp (X + 1))\nin the target expression\n  ePolyM7E2 j (t + 1) * ePolyM7E2 j (t + 1) = reflect (j + j) (completeLiftMA64 j (t + 1) * completeLiftMA64 j (t + 1))\n\nj t k : \u2115\n\u22a2 ePolyM7E2 j (t + 1) * ePolyM7E2 j (t + 1) = reflect (j + j) (completeLiftMA64 j (t + 1) * completeLiftMA64 j (t + 1))\n/Users/sasha/math_gkm/research/MarkovLiftMarginMA64.lean:14:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ePolyM7E2 ?j (?t + 1) ^ 2 - ePolyM7E2 ?j ?t * ePolyM7E2 ?j (?t + 2)\nin the target expression\n  topGapMA64 j t * (reflect (j + j) (completeLiftMA64 j (t + 1) ^ 2)).coeff k \u2264\n    kernelScaleMA64 j t *\n      (reflect (j + j) (completeLiftMA64 j (t + 1) ^ 2) - ePolyM7E2 j t * ePolyM7E2 j (t + 2)).coeff k\n\nj t k : \u2115\nhB : ePolyM7E2 j (t + 1) ^ 2 = reflect (j + j) (completeLiftMA64 j (t + 1) ^ 2)\n\u22a2 topGapMA64 j t * (reflect (j + j) (completeLiftMA64 j (t + 1) ^ 2)).coeff k \u2264\n    kernelScaleMA64 j t *\n      (reflect (j + j) (completeLiftMA64 j (t + 1) ^ 2) - ePolyM7E2 j t * ePolyM7E2 j (t + 2)).coeff k\n/Users/sasha/math_gkm/research/MarkovLiftMarginMA64.lean:68:58: error: unsolved goals\ncase neg\nj t h : \u2115\nhh : h \u2264 t\nhtj : t \u2264 j\ni : \u2115\nh\u271d : \u00ach \u2264 i\n\u22a2 0 \u2264 0\n/Users/sasha/math_gkm/research/MarkovLiftMarginMA64.lean:78:51: error: `simp` made no progress\n",
+  "stderr": "",
+  "modules": {
+    "MarkovLiftMarginMA64": "acaf423174190c44b70c9ac9819e17fc385abf788e7090dfa3efacece5a9d298"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-a646848d/MarkovLiftMarginMA64.olean",
+    "/Users/sasha/math_gkm/research/MarkovLiftMarginMA64.lean"
+  ],
+  "seconds": 7.768405416980386,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

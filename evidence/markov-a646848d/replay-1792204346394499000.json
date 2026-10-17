@@ -1,0 +1,130 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovBinomialMarginMA64\ncollected MarkovMarginCertificateMA64\ncollected MarkovCompleteMarginMA64\ncollected MarkovMarginSourceMA64\ncollected MarkovAbsorbedCompleteMA64\ncollected MarkovAbsorbedHighMA64\ncollected MarkovQuantitativeCutMA64\ncollected MarkovBorderScalarMA64\ncollected MarkovBorderRatioMA64\ncollected MarkovLiftMarginMA64\ncollected MarkovBorderMarginScalarMA64\ncollected MarkovCorrectionClosedMA64\nreplay union of 12 modules over 2 inherited imports\nisolation checked for 61 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBinomialMarginMA64": "7ae38e2a93309d5e6d8b3f6cacf99c5a5947ea270d3f0560c603837b78a69625",
+    "MarkovMarginCertificateMA64": "e9f65e4584ef8b50b9f82b85c4a75c11118a72a2278dce2c8244e1dfd9b2c284",
+    "MarkovCompleteMarginMA64": "4ee1df7dbedc19add9a6e9c6cd9fce8dc410f8161ebcc0c13042876625b2c975",
+    "MarkovMarginSourceMA64": "159dc191c0033c06c7faec61befc87736d2a6f86b2718c8cbce668229870ea23",
+    "MarkovAbsorbedCompleteMA64": "117f83a3d613affd1b863245180d4225cd6844266315f5c40476e7d67ef6dcaf",
+    "MarkovAbsorbedHighMA64": "9bbcaaa10e961722be5c93369f76f379d6c6b5f244301ed2683927263f57d3f7",
+    "MarkovQuantitativeCutMA64": "fb8e63a921180ce33d7612af7dc7e34626357993dcc951a4bb6b6acb157adeb7",
+    "MarkovBorderScalarMA64": "feccf0feff03728d7c96c7fca117c55b8df7cca1a2954db62e995ecd2b9e997a",
+    "MarkovBorderRatioMA64": "6131e7b32c886f1403f042954cfe53ab88f55d4eca5cba44a7e560b028b55cfe",
+    "MarkovLiftMarginMA64": "8cc94cea9ad97a7167106557b6606937f379c1510ae95d2a6ba06de75a18b7ee",
+    "MarkovBorderMarginScalarMA64": "e0286305fdacfd3a2e05ad0c7d1b4b8fc304da6ae22f30c1f04a3cdb8e58b975",
+    "MarkovCorrectionClosedMA64": "5b55a8218dd38c58cf36853af57c7d0679fd0f75ff670f9018c5d465a2bb9096"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedMA64.lean",
+    "MarkovBinomialMarginMA64",
+    "MarkovMarginCertificateMA64",
+    "MarkovCompleteMarginMA64",
+    "MarkovMarginSourceMA64",
+    "MarkovAbsorbedCompleteMA64",
+    "MarkovAbsorbedHighMA64",
+    "MarkovQuantitativeCutMA64",
+    "MarkovBorderScalarMA64",
+    "MarkovBorderRatioMA64",
+    "MarkovLiftMarginMA64",
+    "MarkovBorderMarginScalarMA64",
+    "MarkovCorrectionClosedMA64"
+  ],
+  "seconds": 20.129945625027176,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "093b9212289c33f03dad699dee585ea6999c96baa27f7015bcf60b9d674f08cf",
+  "declared_names": {
+    "MarkovBinomialMarginMA64": [
+      "comp_binomial_upperMA64",
+      "comp_binomial_lowerMA64",
+      "q_coeff_nonnegMA64",
+      "q_topMA64",
+      "base_choose_fiveMA64"
+    ],
+    "MarkovMarginCertificateMA64": [
+      "marginBaseMA64",
+      "marginValueMA64",
+      "margin_certificateMA64",
+      "margin_nonnegMA64"
+    ],
+    "MarkovCompleteMarginMA64": [
+      "completeLiftMA64",
+      "topGapMA64",
+      "complete_coeffMA64",
+      "complete_nonnegMA64",
+      "complete_zero_monoMA64",
+      "complete_upperMA64",
+      "q_gap_topMA64",
+      "top_gap_nonnegMA64",
+      "complete_gap_lowerMA64",
+      "complete_perturb_nonnegMA64"
+    ],
+    "MarkovMarginSourceMA64": [
+      "perturbBoundMA64",
+      "kernel_margin_rationalMA64",
+      "kernel_marginMA64",
+      "absorbed_extra_boundMA64",
+      "complete_absorbed_nonnegMA64"
+    ],
+    "MarkovAbsorbedCompleteMA64": [
+      "absorbedCompleteMA64",
+      "complete_degreeMA64",
+      "absorbed_complete_reflectMA64",
+      "absorbed_complete_nonnegMA64",
+      "absorbed_complete_tailMA64",
+      "absorbed_complete_gapMA64",
+      "cut_shift_monomialMA64",
+      "absorbed_common_shiftMA64"
+    ],
+    "MarkovAbsorbedHighMA64": [
+      "absorbed_above_borderMA64",
+      "absorbed_middle_iff_borderMA64",
+      "first_correction_of_borderMA64"
+    ],
+    "MarkovQuantitativeCutMA64": [
+      "cut_den_sumMA64",
+      "cut_margin_sumMA64",
+      "quantitative_cutMA64",
+      "kernelScaleMA64",
+      "complete_square_upperMA64",
+      "complete_relative_marginMA64"
+    ],
+    "MarkovBorderScalarMA64": [
+      "borderScalarMA64",
+      "border_scalar_certificateMA64",
+      "border_scalar_nonnegMA64"
+    ],
+    "MarkovBorderRatioMA64": [
+      "pair_b_upperMA64",
+      "borderRatioMA64",
+      "lift_right_upperMA64"
+    ],
+    "MarkovLiftMarginMA64": [
+      "reversed_relative_marginMA64",
+      "shifted_relative_marginMA64",
+      "lift_cut_marginMA64",
+      "lift_border_lowerMA64"
+    ],
+    "MarkovBorderMarginScalarMA64": [
+      "border_kernel_scalar_rationalMA64",
+      "border_kernel_scalarMA64"
+    ],
+    "MarkovCorrectionClosedMA64": [
+      "absorbed_border_generalMA64",
+      "absorbed_border_closedMA64",
+      "absorbed_middle_closedMA64",
+      "absorbed_uncut_closedMA64",
+      "first_correction_closedMA64",
+      "lower_and_first_correctionMA64",
+      "source_lower_first_pathMA64",
+      "root_iff_beyond_correctionMA64"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed MA64; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

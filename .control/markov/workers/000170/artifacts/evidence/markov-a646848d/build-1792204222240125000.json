@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBorderMarginScalarMA64.lean:29:3: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovBorderMarginScalarMA64.lean:37:1: error: mod_cast has type\n  Rat.divInt (8 * (Int.subNatNat j t - 2)) \u2191(t + 1) * (\u2191(j * (t + j + 5)) / \u2191(t + 5)) *\n      \u2191(liftTermMAE9 j (t + 1) 0 ^ 2) \u2264\n    \u2191(Int.subNatNat ((t + 1 + j + 3).choose j ^ 2) ((t + j + 3).choose j * (t + 2 + j + 3).choose j) *\n        liftTermMAE9 j (t + 1) 1)\nbut is expected to have type\n  \u2191(Rat.divInt (8 * (Int.subNatNat j t - 2)) \u2191(t + 1)) * (\u2191(j * (t + j + 5)) / \u2191(t + 5)) *\n      \u2191(liftTermMAE9 j (t + 1) 0 ^ 2) \u2264\n    \u2191(Int.subNatNat ((t + 1 + j + 3).choose j ^ 2) ((t + j + 3).choose j * (t + 2 + j + 3).choose j) *\n        liftTermMAE9 j (t + 1) 1)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBorderMarginScalarMA64": "6de7e5e49754788d60281f80570e8b39ce6b81a3991c40412e3f40b17f458f49"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-a646848d/MarkovBorderMarginScalarMA64.olean",
+    "/Users/sasha/math_gkm/research/MarkovBorderMarginScalarMA64.lean"
+  ],
+  "seconds": 9.759647541039158,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBinomialMarginMA64.lean:31:57: error: failed to prove positivity/nonnegativity/nonzeroness\n/Users/sasha/math_gkm/research/MarkovBinomialMarginMA64.lean:31:3: error: Type mismatch\n  single_le_sum (fun k x => mul_nonneg (hp k) ?m.72) hj\nhas type\n  P.coeff j * ?m.71 j \u2264 \u2211 x \u2208 P.support, P.coeff x * ?m.71 x\nbut is expected to have type\n  P.coeff j * \u2191(j.choose m) \u2264 \u2211 x \u2208 P.support, P.coeff x * \u2191(x.choose m)\n/Users/sasha/math_gkm/research/MarkovBinomialMarginMA64.lean:32:7: error(lean.unknownIdentifier): Unknown constant `Polynomial.not_mem_support_iff.mp`\n/Users/sasha/math_gkm/research/MarkovBinomialMarginMA64.lean:53:3: error: Type mismatch: After simplification, term\n  Nat.choose_symm\n    (have this := Decidable.byContradiction fun a => base_choose_fiveMA64._proof_1_2 j t a;\n    this)\n has type\n  (j + 5).choose j = (j + 5).choose 5\nbut is expected to have type\n  (j + 5).choose 5 = (j + 5).choose j\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBinomialMarginMA64": "bbc36a32c7210174011986f62195ab8394e0f67a9c6bde947b83590b3f9770f0"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-a646848d/MarkovBinomialMarginMA64.olean",
+    "/Users/sasha/math_gkm/research/MarkovBinomialMarginMA64.lean"
+  ],
+  "seconds": 35.49918799998704,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

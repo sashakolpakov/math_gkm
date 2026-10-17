@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBorderRatioMA64.lean:27:29: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovBorderRatioMA64.lean:28:29: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovBorderRatioMA64.lean:48:28: error: `ring_nf` made no progress on the goal\n/Users/sasha/math_gkm/research/MarkovBorderRatioMA64.lean:50:1: error: mod_cast has type\n  @Int.cast \u211a Rat.instIntCast (liftTermMAE9 j (t + 2) (n + 1)) \u2264\n    \u2191(j * (t + j + 5)) / \u2191(t + 5) * \u2191(liftTermMAE9 j (t + 1) n)\nbut is expected to have type\n  @Int.cast \u211d Real.instIntCast (liftTermMAE9 j (t + 2) (n + 1)) \u2264\n    \u2191(j * (t + j + 5)) / \u2191(t + 5) * \u2191(liftTermMAE9 j (t + 1) n)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBorderRatioMA64": "31b6c318f9bf66dd42ab4d59cc2c8763b1fd9b55c1bc52be0e671c3832ce8f94"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-a646848d/MarkovBorderRatioMA64.olean",
+    "/Users/sasha/math_gkm/research/MarkovBorderRatioMA64.lean"
+  ],
+  "seconds": 27.78170516702812,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

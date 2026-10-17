@@ -1,0 +1,1462 @@
+{
+  "worker": 170,
+  "request": "a646848db8dc4dffbca4cc335370b378",
+  "created_at_utc": "2026-10-17T02:48:02.724795+00:00",
+  "historical_status": "Completed, return 0, delivered report; elapsed 1586.8477318286896 seconds. Twelve final mathematical modules compiled/replayed, 53 closures printed. First-correction horizontal row closed; full root remains open.",
+  "scope": "Archive-first closed 170 and explicitly named inherited/current counterparts only. Static hashes, source/record parsing, literal syntax comparison and finite index-domain counts. No mathematical-value recomputation, project/proof/checker/replay/experiment/generator/finalizer execution or import, project edit or proposer help/contact. Active 171 and later excluded. Earlier seals/windows unchanged.",
+  "new_modules": [
+    {
+      "module": "MarkovBinomialMarginMA64",
+      "path": "research/MarkovBinomialMarginMA64.lean",
+      "bytes": 2704,
+      "sha256": "7ae38e2a93309d5e6d8b3f6cacf99c5a5947ea270d3f0560c603837b78a69625",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "comp_binomial_upperMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "comp_binomial_lowerMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_coeff_nonnegMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_topMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "base_choose_fiveMA64"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792203497826347000.json",
+          "sha256": "9e0f14ed7e48c1776b9a0dae813c03da7d8332fa29230b9f3a92ce278f0a87b1",
+          "source_sha256": "bbc36a32c7210174011986f62195ab8394e0f67a9c6bde947b83590b3f9770f0",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "bbc36a32c7210174011986f62195ab8394e0f67a9c6bde947b83590b3f9770f0"
+        },
+        {
+          "path": "build-1792203544836465000.json",
+          "sha256": "3775cbf0ebf8597acb13efcf0698ace8f39bb8839269d88cb8222dd7a807efd2",
+          "source_sha256": "7ae38e2a93309d5e6d8b3f6cacf99c5a5947ea270d3f0560c603837b78a69625",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "7ae38e2a93309d5e6d8b3f6cacf99c5a5947ea270d3f0560c603837b78a69625"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in170": true,
+      "printed_in170": true,
+      "object_path": "evidence/markov-a646848d/MarkovBinomialMarginMA64.olean",
+      "object_sha256": "78ea67ad18f46a52937bff56d70273b22971414b97e427172f0079dd296dfe3a",
+      "successful_final_build": "evidence/markov-a646848d/build-1792203544836465000.json",
+      "historical_successful_source_versions": [
+        "7ae38e2a93309d5e6d8b3f6cacf99c5a5947ea270d3f0560c603837b78a69625"
+      ],
+      "earlier_ordinary_objects_not_separately_retained": false,
+      "imports": [
+        "MarkovBorderDominanceMF8F"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "comp_binomial_upperMA64",
+          "header": "theorem comp_binomial_upperMA64 (P : ℝ[X]) (j m : ℕ)\n (hp : ∀ k, 0 ≤ P.coeff k) (hd : P.natDegree ≤ j) :\n (P.comp (X+1)).coeff m ≤ (P.comp (X+1)).coeff 0 * (j.choose m:ℝ)",
+          "block_sha256": "1fc64d3e1b0da285d2bd111e19b91045368da72b9da8d869756d83a7e6dba243",
+          "block_characters": 647
+        },
+        {
+          "kind": "theorem",
+          "name": "comp_binomial_lowerMA64",
+          "header": "theorem comp_binomial_lowerMA64 (P : ℝ[X]) (j m : ℕ)\n (hp : ∀ k, 0 ≤ P.coeff k) :\n P.coeff j * (j.choose m:ℝ) ≤ (P.comp (X+1)).coeff m",
+          "block_sha256": "4e41866b49c40492892c18c90c52639fb3f714393d55af48401659a81f162121",
+          "block_characters": 639
+        },
+        {
+          "kind": "theorem",
+          "name": "q_coeff_nonnegMA64",
+          "header": "theorem q_coeff_nonnegMA64 (j t k : ℕ) : 0 ≤ (qPolyM7E2 j t).coeff k",
+          "block_sha256": "a41ca3fb5ad9ba5fff1a4c2c4a77fc4622007b66a27917be192edd1513443357",
+          "block_characters": 183
+        },
+        {
+          "kind": "theorem",
+          "name": "q_topMA64",
+          "header": "theorem q_topMA64 (j t : ℕ) :\n (qPolyM7E2 j t).coeff j=((t+j+3).choose j:ℝ)",
+          "block_sha256": "68e72df3de08e647152f519ea783daaa4e9c20e2d4f49ab2de9bfa6e3b4e3610",
+          "block_characters": 138
+        },
+        {
+          "kind": "theorem",
+          "name": "base_choose_fiveMA64",
+          "header": "theorem base_choose_fiveMA64 (j t : ℕ) (ht : 2 ≤ t) :\n ((j:ℚ)+1)*((j:ℚ)+2)*((j:ℚ)+3)*((j:ℚ)+4)*((j:ℚ)+5)/120 ≤\n ((t+j+3).choose j:ℚ)",
+          "block_sha256": "68a0216a3fcaaf33fe654ddb01a26ac831cbb7c6260a2b8db6cb0f266adc6e01",
+          "block_characters": 700
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovMarginCertificateMA64",
+      "path": "research/MarkovMarginCertificateMA64.lean",
+      "bytes": 5423,
+      "sha256": "e9f65e4584ef8b50b9f82b85c4a75c11118a72a2278dce2c8244e1dfd9b2c284",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "marginBaseMA64"
+        },
+        {
+          "kind": "def",
+          "name": "marginValueMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "margin_certificateMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "margin_nonnegMA64"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792203604991797000.json",
+          "sha256": "90825aaee7bd1be638fb127da33ee7e1eeca81e423da4722d214020f4c416a2c",
+          "source_sha256": "e9f65e4584ef8b50b9f82b85c4a75c11118a72a2278dce2c8244e1dfd9b2c284",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "e9f65e4584ef8b50b9f82b85c4a75c11118a72a2278dce2c8244e1dfd9b2c284"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in170": true,
+      "printed_in170": true,
+      "object_path": "evidence/markov-a646848d/MarkovMarginCertificateMA64.olean",
+      "object_sha256": "cab0dfd0f2235c4b26f418e2a75fd588ba4504d80865e3bfa53d6eec59bf3b8f",
+      "successful_final_build": "evidence/markov-a646848d/build-1792203604991797000.json",
+      "historical_successful_source_versions": [
+        "e9f65e4584ef8b50b9f82b85c4a75c11118a72a2278dce2c8244e1dfd9b2c284"
+      ],
+      "earlier_ordinary_objects_not_separately_retained": false,
+      "imports": [
+        "MarkovBinomialMarginMA64"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "margin_certificateMA64",
+          "header": "theorem margin_certificateMA64 (x g z : ℚ) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 ≤ marginValueMA64 (x+4) (x+7+g) (marginBaseMA64 (x+7+g)+z)",
+          "block_sha256": "3b6030c1827482c30fa899398578387b807effa664d5cf93c74b68e11f7de814",
+          "block_characters": 4603
+        },
+        {
+          "kind": "theorem",
+          "name": "margin_nonnegMA64",
+          "header": "theorem margin_nonnegMA64 (t j B : ℚ) (ht : 4 ≤ t) (hj : t+3 ≤ j)\n (hB : marginBaseMA64 j ≤ B) : 0 ≤ marginValueMA64 t j B",
+          "block_sha256": "cd5d78e30151eb09e71d797424be7b117c5f3ff6326ab255b6b0f2508797e982",
+          "block_characters": 287
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "marginBaseMA64",
+          "header": "def marginBaseMA64 (j : ℚ) : ℚ",
+          "block_sha256": "8fb624e30431fedb9f8f7df9fb6049f79c8355120f176ab4ea69841c3b18949d",
+          "block_characters": 67,
+          "definition_text": "def marginBaseMA64 (j : ℚ) : ℚ := (j+1)*(j+2)*(j+3)*(j+4)*(j+5)/120"
+        },
+        {
+          "kind": "def",
+          "name": "marginValueMA64",
+          "header": "def marginValueMA64 (t j B : ℚ) : ℚ",
+          "block_sha256": "7a7b10ca3b7f5a71f3eaa57d4c9017fa53ceb1ac7d97a837a01e1d4ba092b575",
+          "block_characters": 182,
+          "definition_text": "def marginValueMA64 (t j B : ℚ) : ℚ :=\n B^2*j*(t+j+4)/((t+4)^2*(t+5))-\n 16*(j-t-2)/(t+1)*B*(t+j+4)*(t+j+5)*\n ((t+6)*(t+7)+4*j*(t+j+6))/((t+4)*(t+5)*(t+6)*(t+7))-\n (8*(j-t-2)/(t+1))^2"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCompleteMarginMA64",
+      "path": "research/MarkovCompleteMarginMA64.lean",
+      "bytes": 4754,
+      "sha256": "4ee1df7dbedc19add9a6e9c6cd9fce8dc410f8161ebcc0c13042876625b2c975",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "completeLiftMA64"
+        },
+        {
+          "kind": "def",
+          "name": "topGapMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_coeffMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_nonnegMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_zero_monoMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_upperMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_gap_topMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_gap_nonnegMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_gap_lowerMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_perturb_nonnegMA64"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792203604993121000.json",
+          "sha256": "4f7ab4b4a46d7a7dbe03014a85eb46ad30b7759e0f542e2b7d7387d8ebccc641",
+          "source_sha256": "0b1c49774add8e3517070b8f43cb10a3bc800b9b898103a488cf9503721918db",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "0b1c49774add8e3517070b8f43cb10a3bc800b9b898103a488cf9503721918db"
+        },
+        {
+          "path": "build-1792203664669662000.json",
+          "sha256": "f98d2978d62c04958fa3c95e3f304c0ba9b00f8138ed5e7fb140372199959699",
+          "source_sha256": "88340d69048587a04e7cef8dbb5cc8e4c870462141b540b8dca63cee2c2bed06",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "88340d69048587a04e7cef8dbb5cc8e4c870462141b540b8dca63cee2c2bed06"
+        },
+        {
+          "path": "build-1792203708002690000.json",
+          "sha256": "76fe8f7fbe12a7097e3cc0c4d5e359becb208c9c2106f1f89db4eae684847ae5",
+          "source_sha256": "4ee1df7dbedc19add9a6e9c6cd9fce8dc410f8161ebcc0c13042876625b2c975",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "4ee1df7dbedc19add9a6e9c6cd9fce8dc410f8161ebcc0c13042876625b2c975"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in170": true,
+      "printed_in170": true,
+      "object_path": "evidence/markov-a646848d/MarkovCompleteMarginMA64.olean",
+      "object_sha256": "afd670426b8d4f9a596b076a43c0ee97aaefe2ec6f5b3e6c8fd6c15632e01c60",
+      "successful_final_build": "evidence/markov-a646848d/build-1792203708002690000.json",
+      "historical_successful_source_versions": [
+        "4ee1df7dbedc19add9a6e9c6cd9fce8dc410f8161ebcc0c13042876625b2c975"
+      ],
+      "earlier_ordinary_objects_not_separately_retained": false,
+      "imports": [
+        "MarkovBinomialMarginMA64"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "complete_coeffMA64",
+          "header": "theorem complete_coeffMA64 (j t m : ℕ) :\n (completeLiftMA64 j t).coeff m=(liftTermMAE9 j t m:ℝ)",
+          "block_sha256": "aa3d5d40d7975c354cc0a15a0605a60f7f3723c101abc89a284d4fce54b577b9",
+          "block_characters": 120
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_nonnegMA64",
+          "header": "theorem complete_nonnegMA64 (j t m : ℕ) : 0 ≤ (completeLiftMA64 j t).coeff m",
+          "block_sha256": "452f662533067dcc6bb38f58f677a9d572c87ccd8846f6644b177f12bc7d182b",
+          "block_characters": 127
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_zero_monoMA64",
+          "header": "theorem complete_zero_monoMA64 (j t s : ℕ) (hts : t ≤ s) :\n (completeLiftMA64 j t).coeff 0 ≤ (completeLiftMA64 j s).coeff 0",
+          "block_sha256": "aa228db3c71b2b9e8f148e7349c74a47872a4e599f52a2191cd8ca838bc22d8a",
+          "block_characters": 524
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_upperMA64",
+          "header": "theorem complete_upperMA64 (j t m : ℕ) :\n (completeLiftMA64 j t).coeff m ≤ (completeLiftMA64 j t).coeff 0*(j.choose m:ℝ)",
+          "block_sha256": "7bace81e2e092265bcbcbba069c295a3dd0304aff01c0102250b301d65cd287d",
+          "block_characters": 203
+        },
+        {
+          "kind": "theorem",
+          "name": "q_gap_topMA64",
+          "header": "theorem q_gap_topMA64 (j t : ℕ) :\n (qPolyM7E2 j (t+1)^2-qPolyM7E2 j t*qPolyM7E2 j (t+2)).coeff (j+j)=topGapMA64 j t",
+          "block_sha256": "4a810edee017e1a8565e8b74bc10aef192d399481ac57003a3adc8b948fde7d0",
+          "block_characters": 368
+        },
+        {
+          "kind": "theorem",
+          "name": "top_gap_nonnegMA64",
+          "header": "theorem top_gap_nonnegMA64 (j t : ℕ) : 0 ≤ topGapMA64 j t",
+          "block_sha256": "32b2d85ad852901306e199b05340d935c071e897fc4f68df69e5e1da37a0ebbb",
+          "block_characters": 118
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_gap_lowerMA64",
+          "header": "theorem complete_gap_lowerMA64 (j t m : ℕ) :\n topGapMA64 j t*((j+j).choose m:ℝ) ≤\n (completeLiftMA64 j (t+1)^2-completeLiftMA64 j t*completeLiftMA64 j (t+2)).coeff m",
+          "block_sha256": "9a095868de633056c358780fd642ef0981bff8c18cc0aae29740312b5962896e",
+          "block_characters": 388
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_perturb_nonnegMA64",
+          "header": "theorem complete_perturb_nonnegMA64 (j t m : ℕ) (a b c u : ℝ)\n (ha : 0 ≤ a) (hb : 0 ≤ b) (hc : 0 ≤ c) (hu : 0 ≤ u)\n (hau : a ≤ u) (hcu : c ≤ u)\n (hmargin : 2*u*(completeLiftMA64 j (t+2)).coeff 0+u^2 ≤ topGapMA64 j t) :\n 0 ≤ ((completeLiftMA64 j (t+1)+C b)^2-\n   (completeLiftMA64 j t+C a)*(completeLiftMA64 j (t+2)+C c)).coeff m",
+          "block_sha256": "03cfe88cc647337613c3155484961e810121761bbf00f99917c4eef3216b4688",
+          "block_characters": 2373
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "completeLiftMA64",
+          "header": "def completeLiftMA64 (j t : ℕ) : ℝ[X]",
+          "block_sha256": "3cc2243fcf02487a8846c624645c3585d44a2193f4429bbb81e4697210b078c0",
+          "block_characters": 67,
+          "definition_text": "def completeLiftMA64 (j t : ℕ) : ℝ[X] := (qPolyM7E2 j t).comp (X+1)"
+        },
+        {
+          "kind": "def",
+          "name": "topGapMA64",
+          "header": "def topGapMA64 (j t : ℕ) : ℝ",
+          "block_sha256": "2405023b1ea97a3005962f2dba20306ece8245e03a663b9b8c2d4480649a5f91",
+          "block_characters": 101,
+          "definition_text": "def topGapMA64 (j t : ℕ) : ℝ :=\n ((t+1+j+3).choose j:ℝ)^2-((t+j+3).choose j:ℝ)*((t+2+j+3).choose j:ℝ)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovMarginSourceMA64",
+      "path": "research/MarkovMarginSourceMA64.lean",
+      "bytes": 3682,
+      "sha256": "159dc191c0033c06c7faec61befc87736d2a6f86b2718c8cbce668229870ea23",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "perturbBoundMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_margin_rationalMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_marginMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_extra_boundMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_absorbed_nonnegMA64"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792203716792798000.json",
+          "sha256": "9f1ce2b9d389b9c7d383fa966901a14bf5004f75e49fe1b277b331eea84d6e83",
+          "source_sha256": "783f1dc9eb5df8c545b1f2a518cae52421ac84b123e75d873b15fd59977207e4",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "783f1dc9eb5df8c545b1f2a518cae52421ac84b123e75d873b15fd59977207e4"
+        },
+        {
+          "path": "build-1792203752220450000.json",
+          "sha256": "507d52b7a67831a2253657949743dca6083755d7130e3f2077347a9e99313d3e",
+          "source_sha256": "682b0995a48ee5ec988eb9db9ad762d4765e3d2e73fe42e7855635af82f6bad7",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "682b0995a48ee5ec988eb9db9ad762d4765e3d2e73fe42e7855635af82f6bad7"
+        },
+        {
+          "path": "build-1792203795503980000.json",
+          "sha256": "111f26a35e6ec6f13c40292f6e13f0d2067c641f0f860090fe540ea75ae114d2",
+          "source_sha256": "159dc191c0033c06c7faec61befc87736d2a6f86b2718c8cbce668229870ea23",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "159dc191c0033c06c7faec61befc87736d2a6f86b2718c8cbce668229870ea23"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in170": true,
+      "printed_in170": true,
+      "object_path": "evidence/markov-a646848d/MarkovMarginSourceMA64.olean",
+      "object_sha256": "9d2936355f99e61ec95387ace8147a765e0eed5ec0aed73aee9cb77f05dcb564",
+      "successful_final_build": "evidence/markov-a646848d/build-1792203795503980000.json",
+      "historical_successful_source_versions": [
+        "159dc191c0033c06c7faec61befc87736d2a6f86b2718c8cbce668229870ea23"
+      ],
+      "earlier_ordinary_objects_not_separately_retained": false,
+      "imports": [
+        "MarkovMarginCertificateMA64",
+        "MarkovCompleteMarginMA64"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "kernel_margin_rationalMA64",
+          "header": "theorem kernel_margin_rationalMA64 (j t : ℕ) (ht : 4 ≤ t) (hj : t+3 ≤ j) :\n 2*(8*((j:ℚ)-t-2)/(t+1))*(liftTermMAE9 j (t+2) 0:ℚ)+\n   (8*((j:ℚ)-t-2)/(t+1))^2 ≤\n ((t+1+j+3).choose j:ℚ)^2-((t+j+3).choose j:ℚ)*((t+2+j+3).choose j:ℚ)",
+          "block_sha256": "56b5a2467e21943379eab03f9d16a22dbbf29a7b541ab042d262a8a2ce4c3a2b",
+          "block_characters": 1023
+        },
+        {
+          "kind": "theorem",
+          "name": "kernel_marginMA64",
+          "header": "theorem kernel_marginMA64 (j t : ℕ) (ht : 4 ≤ t) (hj : t+3 ≤ j) :\n 2*perturbBoundMA64 j t*(completeLiftMA64 j (t+2)).coeff 0+\n   perturbBoundMA64 j t^2 ≤ topGapMA64 j t",
+          "block_sha256": "4d47d34fc134c48d6e101c7e990306f923762d45bd4671a13ff76e9097ee1b08",
+          "block_characters": 288
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_extra_boundMA64",
+          "header": "theorem absorbed_extra_boundMA64 (d j t s : ℕ) (c : ℝ)\n (hc : 0 ≤ c) (hc8 : c ≤ 8) (ht : t ≤ d) (hj : d+2 ≤ j) :\n absorbedExtraM418 d (t+s) c ≤ perturbBoundMA64 j t",
+          "block_sha256": "e16f49b715b274e57a1c3546f8d47756f3c003990090a9d43b883cafcb3ba237",
+          "block_characters": 1018
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_absorbed_nonnegMA64",
+          "header": "theorem complete_absorbed_nonnegMA64 (d j t m : ℕ) (c : ℝ)\n (ht : 4 ≤ t) (htd : t<d) (hj : d+2 ≤ j) (hc : 0 ≤ c) (hc8 : c ≤ 8) :\n 0 ≤ ((completeLiftMA64 j (t+1)+C (absorbedExtraM418 d (t+1) c))^2-\n   (completeLiftMA64 j t+C (absorbedExtraM418 d t c))*\n   (completeLiftMA64 j (t+2)+C (absorbedExtraM418 d (t+2) c))).coeff m",
+          "block_sha256": "eb5aa0239f80891d31701cbfbbfb08fa194c6cae0ba65d15b4bd0945dc1de04b",
+          "block_characters": 854
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "perturbBoundMA64",
+          "header": "def perturbBoundMA64 (j t : ℕ) : ℝ",
+          "block_sha256": "270cf8653475538ac31f32c9d212caabaeb594430cb00444a5d5621910995b03",
+          "block_characters": 57,
+          "definition_text": "def perturbBoundMA64 (j t : ℕ) : ℝ := 8*((j:ℝ)-t-2)/(t+1)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovAbsorbedCompleteMA64",
+      "path": "research/MarkovAbsorbedCompleteMA64.lean",
+      "bytes": 3018,
+      "sha256": "117f83a3d613affd1b863245180d4225cd6844266315f5c40476e7d67ef6dcaf",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "absorbedCompleteMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_degreeMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_complete_reflectMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_complete_nonnegMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_complete_tailMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_complete_gapMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_shift_monomialMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_common_shiftMA64"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792203778323760000.json",
+          "sha256": "88dc63e2690dc6dba6dd6fd11667627cb6ca95fc8b6c287f7460a567f462ece0",
+          "source_sha256": "23393838424a53ed4098595dee8e6e940da94e4c060a3f139e3ed7d89801123b",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "23393838424a53ed4098595dee8e6e940da94e4c060a3f139e3ed7d89801123b"
+        },
+        {
+          "path": "build-1792203826260547000.json",
+          "sha256": "3538d1e2ccc9489fe635e215204b6e55b87e1b8e9eae4b4acec04b8cccf61e37",
+          "source_sha256": "23393838424a53ed4098595dee8e6e940da94e4c060a3f139e3ed7d89801123b",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "23393838424a53ed4098595dee8e6e940da94e4c060a3f139e3ed7d89801123b"
+        },
+        {
+          "path": "build-1792203915676145000.json",
+          "sha256": "8b9eca6024583317c230d17018f13a434901a76c96e6440c5c11184b274edb5d",
+          "source_sha256": "117f83a3d613affd1b863245180d4225cd6844266315f5c40476e7d67ef6dcaf",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "117f83a3d613affd1b863245180d4225cd6844266315f5c40476e7d67ef6dcaf"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in170": true,
+      "printed_in170": true,
+      "object_path": "evidence/markov-a646848d/MarkovAbsorbedCompleteMA64.olean",
+      "object_sha256": "396be800141ca6da865e5e4a0145ef525d5fc97e8fb147f43300248ceae94d64",
+      "successful_final_build": "evidence/markov-a646848d/build-1792203915676145000.json",
+      "historical_successful_source_versions": [
+        "117f83a3d613affd1b863245180d4225cd6844266315f5c40476e7d67ef6dcaf"
+      ],
+      "earlier_ordinary_objects_not_separately_retained": false,
+      "imports": [
+        "MarkovMarginSourceMA64"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "complete_degreeMA64",
+          "header": "theorem complete_degreeMA64 (j t : ℕ) (a : ℝ) :\n (completeLiftMA64 j t+C a).natDegree ≤ j",
+          "block_sha256": "9b2b65a1c73f77ee3e9182a1db88f19e67bfcc7d3d24ff071504f6474307b5b2",
+          "block_characters": 179
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_complete_reflectMA64",
+          "header": "theorem absorbed_complete_reflectMA64 (d j t : ℕ) (c : ℝ) :\n absorbedCompleteMA64 d j c t=\n reflect j (completeLiftMA64 j t+C (absorbedExtraM418 d t c))",
+          "block_sha256": "ab09cc396ec90156960f36bd501d42cf38e684e41648a778d43fe0dda6a256c7",
+          "block_characters": 191
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_complete_nonnegMA64",
+          "header": "theorem absorbed_complete_nonnegMA64 (d j t k : ℕ) (c : ℝ) (hc : 0 ≤ c) :\n 0 ≤ (absorbedCompleteMA64 d j c t).coeff k",
+          "block_sha256": "d652a277269de79dbb47f92ed5cd946f37c1213509dca867dcf95955f06b9390",
+          "block_characters": 344
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_complete_tailMA64",
+          "header": "theorem absorbed_complete_tailMA64 (d j t k : ℕ) (c : ℝ) (hk : j<k) :\n (absorbedCompleteMA64 d j c t).coeff k=0",
+          "block_sha256": "b9aa42c773f0fa5ca5cf35f833c56c4bea17d26512db9591e19ae669f715bc28",
+          "block_characters": 227
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_complete_gapMA64",
+          "header": "theorem absorbed_complete_gapMA64 (d j t k : ℕ) (c : ℝ)\n (ht : 4 ≤ t) (htd : t<d) (hj : d+2 ≤ j) (hc : 0 ≤ c) (hc8 : c ≤ 8) :\n 0 ≤ (absorbedCompleteMA64 d j c (t+1)^2-\n   absorbedCompleteMA64 d j c t*absorbedCompleteMA64 d j c (t+2)).coeff k",
+          "block_sha256": "fe323df78691ed2a35dbd6c3c203118b5d48c0221f2e04a3e1d4069df44dbd22",
+          "block_characters": 905
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_shift_monomialMA64",
+          "header": "theorem cut_shift_monomialMA64 (h n : ℕ) (a : ℝ) (hn : h ≤ n) :\n cutPolyMFEE h (C a*X^n)=C a*X^n",
+          "block_sha256": "fb5100723de58a6bfb8d14cb7dca1d6c2885fb91c58e6539a5c3c7967d0102d4",
+          "block_characters": 125
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_common_shiftMA64",
+          "header": "theorem absorbed_common_shiftMA64 (d j t h s H : ℕ) (c : ℝ)\n (hH : H+t=j+h) (hht : h ≤ t) :\n X^j*cutPolyMFEE h (absorbedLiftM418 d j c (t+s))=\n X^t*cutPolyMFEE H (X^s*absorbedCompleteMA64 d j c (t+s))",
+          "block_sha256": "3ff97c9777787b77686e6a6e780f7fcb5a9ab7f397d62ee2b79544cb8c53a52d",
+          "block_characters": 573
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "absorbedCompleteMA64",
+          "header": "def absorbedCompleteMA64 (d j : ℕ) (c : ℝ) (t : ℕ) : ℝ[X]",
+          "block_sha256": "4eac972c2b23f024247a7488198e89775f6b5584890de9b62c254d0a98572c4b",
+          "block_characters": 107,
+          "definition_text": "def absorbedCompleteMA64 (d j : ℕ) (c : ℝ) (t : ℕ) : ℝ[X] :=\n ePolyM7E2 j t+C (absorbedExtraM418 d t c)*X^j"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovAbsorbedHighMA64",
+      "path": "research/MarkovAbsorbedHighMA64.lean",
+      "bytes": 3275,
+      "sha256": "9bbcaaa10e961722be5c93369f76f379d6c6b5f244301ed2683927263f57d3f7",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "absorbed_above_borderMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_middle_iff_borderMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_correction_of_borderMA64"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792203963737469000.json",
+          "sha256": "a4e7511c892d809cdaa45b87b344c61a652ef7646f83f5ead80aef96cfe32802",
+          "source_sha256": "9bbcaaa10e961722be5c93369f76f379d6c6b5f244301ed2683927263f57d3f7",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "9bbcaaa10e961722be5c93369f76f379d6c6b5f244301ed2683927263f57d3f7"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in170": true,
+      "printed_in170": true,
+      "object_path": "evidence/markov-a646848d/MarkovAbsorbedHighMA64.olean",
+      "object_sha256": "7723d275aa2e46534cad21fe8a339f6f1a64f2f43e9b7590f3e68a04f03b2618",
+      "successful_final_build": "evidence/markov-a646848d/build-1792203963737469000.json",
+      "historical_successful_source_versions": [
+        "9bbcaaa10e961722be5c93369f76f379d6c6b5f244301ed2683927263f57d3f7"
+      ],
+      "earlier_ordinary_objects_not_separately_retained": false,
+      "imports": [
+        "MarkovAbsorbedCompleteMA64"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "absorbed_above_borderMA64",
+          "header": "theorem absorbed_above_borderMA64 (d j t h k : ℕ) (c : ℝ)\n (ht : 4 ≤ t) (htd : t<d) (hj : d+2 ≤ j) (hc : 0 ≤ c) (hc8 : c ≤ 8)\n (hh : h ≤ t) (hk : t+h<k) : 0 ≤ (absorbedGapMF8F d j t h c).coeff k",
+          "block_sha256": "68b41a9cf9aef1bf0644d7b5815c9006d57078a14afb12a42ec9b13e56768b03",
+          "block_characters": 1999
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_middle_iff_borderMA64",
+          "header": "theorem absorbed_middle_iff_borderMA64 : AbsorbedMiddleM418 ↔ AbsorbedBorderMarginMF8F",
+          "block_sha256": "323818309d3fe81b2cb04d57e174a14543a6262a0ae551edbbbb5a11383a96a5",
+          "block_characters": 649
+        },
+        {
+          "kind": "theorem",
+          "name": "first_correction_of_borderMA64",
+          "header": "theorem first_correction_of_borderMA64 (H : AbsorbedBorderMarginMF8F)\n (q i : ℕ) (r : Bool) (hq : 1 ≤ q) :\n threeRawM9E2 q r i (q+1)*threeRawM9E2 q r (i+2) (q+1) ≤\n threeRawM9E2 q r (i+1) (q+1)^2",
+          "block_sha256": "a24e4f5d74e47b522f9a21114fb91db185834a44d67bde74733505ac1d89e695",
+          "block_characters": 289
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovQuantitativeCutMA64",
+      "path": "research/MarkovQuantitativeCutMA64.lean",
+      "bytes": 4276,
+      "sha256": "fb8e63a921180ce33d7612af7dc7e34626357993dcc951a4bb6b6acb157adeb7",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "cut_den_sumMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_margin_sumMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "quantitative_cutMA64"
+        },
+        {
+          "kind": "def",
+          "name": "kernelScaleMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_square_upperMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_relative_marginMA64"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792203879996277000.json",
+          "sha256": "e460f0cbd2e60820303a4a9056e7afb171775c7233589156ad1bb7af7d220289",
+          "source_sha256": "333d9411290e7697757d6edd6dde0c452c95ddc5657dddd7ef5fda17bcef2103",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "333d9411290e7697757d6edd6dde0c452c95ddc5657dddd7ef5fda17bcef2103"
+        },
+        {
+          "path": "build-1792203963737468000.json",
+          "sha256": "c2f53e76d3b14652729dc726a182614f398aaf85ef015a24049ecc4f059aaa04",
+          "source_sha256": "a5f4f701191b62455bfc4ac694460345cf21912841e40d1a412d88d1ed30fdd6",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "a5f4f701191b62455bfc4ac694460345cf21912841e40d1a412d88d1ed30fdd6"
+        },
+        {
+          "path": "build-1792204042897969000.json",
+          "sha256": "3f76b673bdf0a5cd7f42c214d9a8bd4be94c229ab2b5f6c080c602de05da8dba",
+          "source_sha256": "fb8e63a921180ce33d7612af7dc7e34626357993dcc951a4bb6b6acb157adeb7",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "fb8e63a921180ce33d7612af7dc7e34626357993dcc951a4bb6b6acb157adeb7"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in170": true,
+      "printed_in170": true,
+      "object_path": "evidence/markov-a646848d/MarkovQuantitativeCutMA64.olean",
+      "object_sha256": "a04168f153c0e2fbabb716b29d94329798a770aa74c1beaec4936cc478d08d2f",
+      "successful_final_build": "evidence/markov-a646848d/build-1792204042897969000.json",
+      "historical_successful_source_versions": [
+        "fb8e63a921180ce33d7612af7dc7e34626357993dcc951a4bb6b6acb157adeb7"
+      ],
+      "earlier_ordinary_objects_not_separately_retained": false,
+      "imports": [
+        "MarkovCompleteMarginMA64"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "cut_den_sumMA64",
+          "header": "theorem cut_den_sumMA64 (B : ℝ[X]) (h n : ℕ) :\n (∑ p ∈ antidiagonal n, if h ≤ min p.1 p.2 then pairDenMAD5 B p else 0)=\n ((cutPolyMFEE h B)^2).coeff n",
+          "block_sha256": "ee74f7fdbb655590361ece6fa67d6d219eed6147472458c06a1f0dac1f78d685",
+          "block_characters": 334
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_margin_sumMA64",
+          "header": "theorem cut_margin_sumMA64 (A B C : ℝ[X]) (M N : ℝ) (h n : ℕ) :\n (∑ p ∈ antidiagonal n, if h ≤ min p.1 p.2 then\n   M*pairGapMAD5 A B C p-2*N*pairDenMAD5 B p else 0)=\n 2*(M*((cutPolyMFEE h B)^2-cutPolyMFEE h A*cutPolyMFEE h C).coeff n-\n   N*((cutPolyMFEE h B)^2).coeff n)",
+          "block_sha256": "28c8a35ec6bd208965817fb5486decc4e28c74747970acc29dafce884aeae698",
+          "block_characters": 702
+        },
+        {
+          "kind": "theorem",
+          "name": "quantitative_cutMA64",
+          "header": "theorem quantitative_cutMA64 (A B C : ℝ[X]) (M N : ℝ) (hM : 0 ≤ M)\n (hA : ∀ k, 0 ≤ A.coeff k) (hB : ∀ k, 0 ≤ B.coeff k)\n (hC : ∀ k, 0 ≤ C.coeff k) (horder : PairOrderMAD5 A B C)\n (hfull : ∀ n, N*(B^2).coeff n ≤ M*(B^2-A*C).coeff n) (h n : ℕ) :\n N*((cutPolyMFEE h B)^2).coeff n ≤\n M*((cutPolyMFEE h B)^2-cutPolyMFEE h A*cutPolyMFEE h C).coeff n",
+          "block_sha256": "0d6a74bcc1f99863b9b2bb7f7814231ff761ff9acdfcd3573c1331fca4be9419",
+          "block_characters": 1542
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_square_upperMA64",
+          "header": "theorem complete_square_upperMA64 (j t m : ℕ) :\n (completeLiftMA64 j (t+1)^2).coeff m ≤ kernelScaleMA64 j t*((j+j).choose m:ℝ)",
+          "block_sha256": "c55e2abe58875d169df9c68b898727fc7a268a3f821247eb69be90b06c5be954",
+          "block_characters": 732
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_relative_marginMA64",
+          "header": "theorem complete_relative_marginMA64 (j t m : ℕ) :\n topGapMA64 j t*(completeLiftMA64 j (t+1)^2).coeff m ≤\n kernelScaleMA64 j t*(completeLiftMA64 j (t+1)^2-\n   completeLiftMA64 j t*completeLiftMA64 j (t+2)).coeff m",
+          "block_sha256": "e30d4b08aa9fea165dbfa6d28f390c80e0c624321e2c70f77e816569f0a91e88",
+          "block_characters": 486
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "kernelScaleMA64",
+          "header": "def kernelScaleMA64 (j t : ℕ) : ℝ",
+          "block_sha256": "c86212ddf35258a6e5d768c244d93747a8e14b25cc50ddf26319a6901e013786",
+          "block_characters": 73,
+          "definition_text": "def kernelScaleMA64 (j t : ℕ) : ℝ := (completeLiftMA64 j (t+1)).coeff 0^2"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBorderScalarMA64",
+      "path": "research/MarkovBorderScalarMA64.lean",
+      "bytes": 2574,
+      "sha256": "feccf0feff03728d7c96c7fca117c55b8df7cca1a2954db62e995ecd2b9e997a",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "borderScalarMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "border_scalar_certificateMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "border_scalar_nonnegMA64"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792203945089388000.json",
+          "sha256": "bc88d91614d27eb7881c444cae937f557a62b55e2fec3101b9a72839331f8b79",
+          "source_sha256": "feccf0feff03728d7c96c7fca117c55b8df7cca1a2954db62e995ecd2b9e997a",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "feccf0feff03728d7c96c7fca117c55b8df7cca1a2954db62e995ecd2b9e997a"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in170": true,
+      "printed_in170": true,
+      "object_path": "evidence/markov-a646848d/MarkovBorderScalarMA64.olean",
+      "object_sha256": "1a38115feba89275d3bfb7a9e3cabc8668102bae68110136d4d1a4e380f44edc",
+      "successful_final_build": "evidence/markov-a646848d/build-1792203945089388000.json",
+      "historical_successful_source_versions": [
+        "feccf0feff03728d7c96c7fca117c55b8df7cca1a2954db62e995ecd2b9e997a"
+      ],
+      "earlier_ordinary_objects_not_separately_retained": false,
+      "imports": [
+        "MarkovMarginCertificateMA64"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "border_scalar_certificateMA64",
+          "header": "theorem border_scalar_certificateMA64 (x g z : ℚ)\n (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 ≤ borderScalarMA64 (x+4) (x+7+g) (marginBaseMA64 (x+7+g)+z)",
+          "block_sha256": "b625cea877c80215ef0e9daad8b5073429afc980afaae18e3baceee877d9e224",
+          "block_characters": 1853
+        },
+        {
+          "kind": "theorem",
+          "name": "border_scalar_nonnegMA64",
+          "header": "theorem border_scalar_nonnegMA64 (t j B : ℚ) (ht : 4 ≤ t) (hj : t+3 ≤ j)\n (hB : marginBaseMA64 j ≤ B) : 0 ≤ borderScalarMA64 t j B",
+          "block_sha256": "5737fad794827d8a90eb326ee60c1e3236159ba3ea4fec521946c0c022400ebc",
+          "block_characters": 301
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "borderScalarMA64",
+          "header": "def borderScalarMA64 (t j B : ℚ) : ℚ",
+          "block_sha256": "c84494a32c3a4af40af8256adecba53077c497f6798b563f568323879f5857fa",
+          "block_characters": 154,
+          "definition_text": "def borderScalarMA64 (t j B : ℚ) : ℚ :=\n B*j*((t+6)*(t+7)+4*(j-1)*(t+j+5))*(t+5)^2*(t+6)*(t+1)-\n 8*(j-t-2)*(t+j+5)*((t+5)*(t+6)+4*j*(t+j+5))^2*(t+4)*(t+7)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBorderRatioMA64",
+      "path": "research/MarkovBorderRatioMA64.lean",
+      "bytes": 2260,
+      "sha256": "6131e7b32c886f1403f042954cfe53ab88f55d4eca5cba44a7e560b028b55cfe",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "pair_b_upperMA64"
+        },
+        {
+          "kind": "def",
+          "name": "borderRatioMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_right_upperMA64"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792204044122562000.json",
+          "sha256": "55c0cdae5fb35436b032dc89aa9a83914301c23b5d86a9f49e3e5e8bbdeeff69",
+          "source_sha256": "23ffe22ed0bc4d9616dac6d96672bd35d90a9399b6be8ac507849f017c6c78f2",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "23ffe22ed0bc4d9616dac6d96672bd35d90a9399b6be8ac507849f017c6c78f2"
+        },
+        {
+          "path": "build-1792204111926720000.json",
+          "sha256": "baa3507d4621c6d5acf479cbff16e192b0cd4cb2625f6ec340eb869a5780d8f0",
+          "source_sha256": "31b6c318f9bf66dd42ab4d59cc2c8763b1fd9b55c1bc52be0e671c3832ce8f94",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "31b6c318f9bf66dd42ab4d59cc2c8763b1fd9b55c1bc52be0e671c3832ce8f94"
+        },
+        {
+          "path": "build-1792204170454093000.json",
+          "sha256": "b794a9a66dfd3d7dd1825e3edfc655a869e3edf8d6b396e79293dc7ae2138dab",
+          "source_sha256": "6131e7b32c886f1403f042954cfe53ab88f55d4eca5cba44a7e560b028b55cfe",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "6131e7b32c886f1403f042954cfe53ab88f55d4eca5cba44a7e560b028b55cfe"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in170": true,
+      "printed_in170": true,
+      "object_path": "evidence/markov-a646848d/MarkovBorderRatioMA64.olean",
+      "object_sha256": "dc106ff0d56b4d3f11b025ce30e8027e765551951ac23f6817fcda00b5b88c6a",
+      "successful_final_build": "evidence/markov-a646848d/build-1792204170454093000.json",
+      "historical_successful_source_versions": [
+        "6131e7b32c886f1403f042954cfe53ab88f55d4eca5cba44a7e560b028b55cfe"
+      ],
+      "earlier_ordinary_objects_not_separately_retained": false,
+      "imports": [
+        "MarkovMarginSourceMA64"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "pair_b_upperMA64",
+          "header": "theorem pair_b_upperMA64 (j t n : ℚ) (ht : 0 ≤ t) (hn : 1 ≤ n) (hnj : n ≤ j) :\n pairBMAD5 j t n ≤ j",
+          "block_sha256": "cc6930b35fc16b93df356ea66121f4792e7bd936a441f6c51cc7574f0fa09c45",
+          "block_characters": 988
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_right_upperMA64",
+          "header": "theorem lift_right_upperMA64 (j t n : ℕ) (hn : 1 ≤ n) (hnj : n ≤ j) :\n (liftTermMAE9 j (t+2) (n+1):ℝ) ≤\n borderRatioMA64 j t*(liftTermMAE9 j (t+1) n:ℝ)",
+          "block_sha256": "188a9f09334ae9346238cfb0d2b6eefbcde4579816d48f3ea964be32a579ed02",
+          "block_characters": 852
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "borderRatioMA64",
+          "header": "def borderRatioMA64 (j t : ℕ) : ℝ",
+          "block_sha256": "776de9de4891e1cb47fa050904866cdf57811c4d9d0299860775005fc4d58df8",
+          "block_characters": 56,
+          "definition_text": "def borderRatioMA64 (j t : ℕ) : ℝ := (j:ℝ)*(t+j+5)/(t+5)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLiftMarginMA64",
+      "path": "research/MarkovLiftMarginMA64.lean",
+      "bytes": 4123,
+      "sha256": "8cc94cea9ad97a7167106557b6606937f379c1510ae95d2a6ba06de75a18b7ee",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "reversed_relative_marginMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "shifted_relative_marginMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_cut_marginMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_border_lowerMA64"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792204083235689000.json",
+          "sha256": "980982f3a95469eb8cd5176f8fad31954df87f74d6aed3d86feccd2c85f303a2",
+          "source_sha256": "acaf423174190c44b70c9ac9819e17fc385abf788e7090dfa3efacece5a9d298",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "acaf423174190c44b70c9ac9819e17fc385abf788e7090dfa3efacece5a9d298"
+        },
+        {
+          "path": "build-1792204141194114000.json",
+          "sha256": "039a63a27dcb305cab2c2c9a09a0f2abe350b6faa2288d81f3210d799b04ac14",
+          "source_sha256": "8cc94cea9ad97a7167106557b6606937f379c1510ae95d2a6ba06de75a18b7ee",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "8cc94cea9ad97a7167106557b6606937f379c1510ae95d2a6ba06de75a18b7ee"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in170": true,
+      "printed_in170": true,
+      "object_path": "evidence/markov-a646848d/MarkovLiftMarginMA64.olean",
+      "object_sha256": "af2e8124cff32af62fadbd94ec021365fa2d6d2ca294ecd2f725249e66138707",
+      "successful_final_build": "evidence/markov-a646848d/build-1792204141194114000.json",
+      "historical_successful_source_versions": [
+        "8cc94cea9ad97a7167106557b6606937f379c1510ae95d2a6ba06de75a18b7ee"
+      ],
+      "earlier_ordinary_objects_not_separately_retained": false,
+      "imports": [
+        "MarkovQuantitativeCutMA64"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "reversed_relative_marginMA64",
+          "header": "theorem reversed_relative_marginMA64 (j t k : ℕ) :\n topGapMA64 j t*(ePolyM7E2 j (t+1)^2).coeff k ≤\n kernelScaleMA64 j t*(ePolyM7E2 j (t+1)^2-ePolyM7E2 j t*ePolyM7E2 j (t+2)).coeff k",
+          "block_sha256": "24f16eaa1c6968a6c8698ac11b4573c098159f11521d813ab15603e27773d01d",
+          "block_characters": 559
+        },
+        {
+          "kind": "theorem",
+          "name": "shifted_relative_marginMA64",
+          "header": "theorem shifted_relative_marginMA64 (j t k : ℕ) :\n topGapMA64 j t*((X*ePolyM7E2 j (t+1))^2).coeff k ≤\n kernelScaleMA64 j t*((X*ePolyM7E2 j (t+1))^2-\n   ePolyM7E2 j t*(X^2*ePolyM7E2 j (t+2))).coeff k",
+          "block_sha256": "b8ae6fbb76ca0c21b515e891881af5ee70031e98d4247b7c83f88ed68105dbc2",
+          "block_characters": 464
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_cut_marginMA64",
+          "header": "theorem lift_cut_marginMA64 (j t h k : ℕ) (htj : t ≤ j) :\n topGapMA64 j t*(liftCutM7E2 j (t+1) h^2).coeff k ≤\n kernelScaleMA64 j t*(liftCutGapM7E2 j t h).coeff k",
+          "block_sha256": "085f5ac03522b6415f6f660ccba99cb4e43ebf167cd2cc4a247cafdccd26dc7e",
+          "block_characters": 1665
+        },
+        {
+          "kind": "theorem",
+          "name": "lift_border_lowerMA64",
+          "header": "theorem lift_border_lowerMA64 (j t h : ℕ) (hh : h ≤ t) (htj : t ≤ j) :\n topGapMA64 j t*(liftTermMAE9 j (t+1) 1:ℝ)*(liftTermMAE9 j (t+1) (t+1-h):ℝ) ≤\n kernelScaleMA64 j t*(liftCutGapM7E2 j t h).coeff (t+h)",
+          "block_sha256": "6fa0030faa8ff5c703a16757ffc03863a592568ef19ff87b48fe69e1fa772d5b",
+          "block_characters": 1131
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBorderMarginScalarMA64",
+      "path": "research/MarkovBorderMarginScalarMA64.lean",
+      "bytes": 1812,
+      "sha256": "e0286305fdacfd3a2e05ad0c7d1b4b8fc304da6ae22f30c1f04a3cdb8e58b975",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "border_kernel_scalar_rationalMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "border_kernel_scalarMA64"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792204222240125000.json",
+          "sha256": "fd22e70bf24ddd83b1895d0dda64caae70e303f4ff41343358fc5c275660ce8a",
+          "source_sha256": "6de7e5e49754788d60281f80570e8b39ce6b81a3991c40412e3f40b17f458f49",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "6de7e5e49754788d60281f80570e8b39ce6b81a3991c40412e3f40b17f458f49"
+        },
+        {
+          "path": "build-1792204255960956000.json",
+          "sha256": "b84d3ecb783859154ae836cf835c5f02c162d12539895f89f9ffed4597a0fbff",
+          "source_sha256": "e0286305fdacfd3a2e05ad0c7d1b4b8fc304da6ae22f30c1f04a3cdb8e58b975",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "e0286305fdacfd3a2e05ad0c7d1b4b8fc304da6ae22f30c1f04a3cdb8e58b975"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in170": true,
+      "printed_in170": true,
+      "object_path": "evidence/markov-a646848d/MarkovBorderMarginScalarMA64.olean",
+      "object_sha256": "e03a26ae5cf4df693b5e428492daca105b06856a09a993f34f0bbd3a96818a31",
+      "successful_final_build": "evidence/markov-a646848d/build-1792204255960956000.json",
+      "historical_successful_source_versions": [
+        "e0286305fdacfd3a2e05ad0c7d1b4b8fc304da6ae22f30c1f04a3cdb8e58b975"
+      ],
+      "earlier_ordinary_objects_not_separately_retained": false,
+      "imports": [
+        "MarkovBorderScalarMA64",
+        "MarkovBorderRatioMA64",
+        "MarkovQuantitativeCutMA64"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "border_kernel_scalar_rationalMA64",
+          "header": "theorem border_kernel_scalar_rationalMA64 (j t : ℕ) (ht : 4 ≤ t) (hj : t+3 ≤ j) :\n (8*((j:ℚ)-t-2)/(t+1))*((j:ℚ)*(t+j+5)/(t+5))*(liftTermMAE9 j (t+1) 0:ℚ)^2 ≤\n (((t+1+j+3).choose j:ℚ)^2-((t+j+3).choose j:ℚ)*((t+2+j+3).choose j:ℚ))*\n   (liftTermMAE9 j (t+1) 1:ℚ)",
+          "block_sha256": "70fa99ba8cf74f9c2bc549b4999ab509e3ceb9a0f7e702f5040b22429cb73102",
+          "block_characters": 1080
+        },
+        {
+          "kind": "theorem",
+          "name": "border_kernel_scalarMA64",
+          "header": "theorem border_kernel_scalarMA64 (j t : ℕ) (ht : 4 ≤ t) (hj : t+3 ≤ j) :\n perturbBoundMA64 j t*borderRatioMA64 j t*kernelScaleMA64 j t ≤\n topGapMA64 j t*(liftTermMAE9 j (t+1) 1:ℝ)",
+          "block_sha256": "810ad95e1b0604ee816e0c480e9eed75235c781b330562c226161014a7b6e5cf",
+          "block_characters": 393
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCorrectionClosedMA64",
+      "path": "research/MarkovCorrectionClosedMA64.lean",
+      "bytes": 4884,
+      "sha256": "a41a6b98ef8432bfe4bf537291978ae0a3d55656720073c02a770e42edaf299b",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "absorbed_border_generalMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_border_closedMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_middle_generalMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_middle_closedMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_uncut_closedMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_correction_closedMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_and_first_correctionMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_first_pathMA64"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_beyond_correctionMA64"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792204285389631000.json",
+          "sha256": "333f175c58e1271d9f69575a74fd65f3e9cde7ed7bc470d8eded837ddf00b643",
+          "source_sha256": "9863b838f60096596b6cf3ab761b96edaf3e0ea3ad93b6bea136f8dc259d68e5",
+          "final_identical": false,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "9863b838f60096596b6cf3ab761b96edaf3e0ea3ad93b6bea136f8dc259d68e5"
+        },
+        {
+          "path": "build-1792204325862830000.json",
+          "sha256": "078dc41a145bf68ccdab2b9edbc62ffd355ee512191f3fffcf05d515d86dce0b",
+          "source_sha256": "5b55a8218dd38c58cf36853af57c7d0679fd0f75ff670f9018c5d465a2bb9096",
+          "final_identical": false,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "5b55a8218dd38c58cf36853af57c7d0679fd0f75ff670f9018c5d465a2bb9096"
+        },
+        {
+          "path": "build-1792204489662768000.json",
+          "sha256": "d1afced0c190eaf2e7d069b1963530068c7c43c5f252e76fb83f46d445a7a401",
+          "source_sha256": "a41a6b98ef8432bfe4bf537291978ae0a3d55656720073c02a770e42edaf299b",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "a41a6b98ef8432bfe4bf537291978ae0a3d55656720073c02a770e42edaf299b"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in170": true,
+      "printed_in170": true,
+      "object_path": "evidence/markov-a646848d/MarkovCorrectionClosedMA64.olean",
+      "object_sha256": "27a6cc47ea66d7be5f5e4c0ce63f22d5ae1de3bce960b4e48a86772048486952",
+      "successful_final_build": "evidence/markov-a646848d/build-1792204489662768000.json",
+      "historical_successful_source_versions": [
+        "5b55a8218dd38c58cf36853af57c7d0679fd0f75ff670f9018c5d465a2bb9096",
+        "9863b838f60096596b6cf3ab761b96edaf3e0ea3ad93b6bea136f8dc259d68e5",
+        "a41a6b98ef8432bfe4bf537291978ae0a3d55656720073c02a770e42edaf299b"
+      ],
+      "earlier_ordinary_objects_not_separately_retained": true,
+      "imports": [
+        "MarkovAbsorbedHighMA64",
+        "MarkovLiftMarginMA64",
+        "MarkovBorderMarginScalarMA64"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "absorbed_border_generalMA64",
+          "header": "theorem absorbed_border_generalMA64 (d j t h : ℕ) (c : ℝ)\n (ht : 4 ≤ t) (hd : t<d) (hj : d+2 ≤ j) (hh : h ≤ t) (hc : 0 ≤ c) (hc8 : c ≤ 8) :\n absorbedExtraM418 d t c*(liftTermMAE9 j (t+2) (t+2-h):ℝ) ≤\n (liftCutGapM7E2 j t h).coeff (t+h)",
+          "block_sha256": "4a7f05b73dc8337e3eea16617e3de2230292150153a76cd25a5768827e1bd4c2",
+          "block_characters": 1491
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_border_closedMA64",
+          "header": "theorem absorbed_border_closedMA64 : AbsorbedBorderMarginMF8F",
+          "block_sha256": "4d115e18e151d00e721bbe5d825624600e9940e39e9f92f3a6ed9be08d24d792",
+          "block_characters": 501
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_middle_generalMA64",
+          "header": "theorem absorbed_middle_generalMA64 (d j t h k : ℕ) (c : ℝ)\n (ht : 4 ≤ t) (hd : t<d) (hj : d+2 ≤ j) (hh : h ≤ t) (hc : 0 ≤ c) (hc8 : c ≤ 8) :\n 0 ≤ (absorbedGapMF8F d j t h c).coeff k",
+          "block_sha256": "4a1b52f62da0d5bb81376a8e68331bed3a2fff3c8d5047038f93e9e55ca9a568",
+          "block_characters": 497
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_middle_closedMA64",
+          "header": "theorem absorbed_middle_closedMA64 : AbsorbedMiddleM418",
+          "block_sha256": "eda506bc098f37f8717409ea97a53d806bd379a0b623711a27d63a4c10047c2b",
+          "block_characters": 344
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_uncut_closedMA64",
+          "header": "theorem absorbed_uncut_closedMA64 : AbsorbedUncutMF8F",
+          "block_sha256": "349b8f1a2785d1fad5d8f62c4c98dab14d0e9af6588ce1e9786e466ddf3daf67",
+          "block_characters": 125
+        },
+        {
+          "kind": "theorem",
+          "name": "first_correction_closedMA64",
+          "header": "theorem first_correction_closedMA64 (q i : ℕ) (r : Bool) (hq : 1 ≤ q) :\n threeRawM9E2 q r i (q+1)*threeRawM9E2 q r (i+2) (q+1) ≤\n threeRawM9E2 q r (i+1) (q+1)^2",
+          "block_sha256": "946a72b1e5b98f89a56b748ea7fc1eac3752f29221eceade03ec7104a8e4378b",
+          "block_characters": 237
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_and_first_correctionMA64",
+          "header": "theorem lower_and_first_correctionMA64 (q i j : ℕ) (r : Bool)\n (hq : 1 ≤ q) (hj : j ≤ q+1) :\n threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2",
+          "block_sha256": "cb71f2a5ec4f900dec1d3e55ecb802cea81f7d7395a0fc7f82d3ab810561a831",
+          "block_characters": 460
+        },
+        {
+          "kind": "theorem",
+          "name": "source_lower_first_pathMA64",
+          "header": "theorem source_lower_first_pathMA64 (path : List Bool)\n (ha : (frame path).mid.a=3) (i j : ℕ) (hj : 3*j ≤ (frame path).mid.b+3) :\n coeff (frame path).mid.p i j*coeff (frame path).mid.p (i+2) j ≤\n coeff (frame path).mid.p (i+1) j^2",
+          "block_sha256": "165f0fb35f2026d7ff1da5a3c52c049b8cc4bb42f72713c4bf9c9f2616c9a9cd",
+          "block_characters": 432
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_beyond_correctionMA64",
+          "header": "theorem root_iff_beyond_correctionMA64 :\n Conjecture63 ↔ ThreeBeyondCorrectionM418 ∧ OtherFourM9E2",
+          "block_sha256": "7d18df7b06f7304dd58ff532a23225764d1cbc08c922e08ff591724f63edd5e7",
+          "block_characters": 313
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    }
+  ],
+  "excluded_modules": [],
+  "accepted_counts": {
+    "theorem": 53,
+    "def": 9
+  },
+  "excluded_counts": {},
+  "mathematical_values_recomputed": false,
+  "source_level_scope": {
+    "root_open": true,
+    "FirstCorrectionWindowM418_proved": true,
+    "AbsorbedMiddleM418_proved": true,
+    "AbsorbedUncutMF8F_proved": true,
+    "AbsorbedBorderMarginMF8F_proved": true,
+    "BorderDominanceMF8F_unproved": true,
+    "BorderDominance_used_as_premise": false,
+    "new_unconditional_raw_LC_region": true,
+    "actual_a3_H_range": "All natural i,j, actual frame numerator a=3, 3*j<=b+3. Both q>=1 residue families, equivalently j<=q+1; zeros and small parameters retained.",
+    "general_auxiliary_range": "Natural d,j,t,h,k; 4<=t<d, d+2<=j, h<=t; real 0<=c<=8; every coefficient k.",
+    "root_equivalence": "Conjecture63 iff ThreeBeyondCorrectionM418 and OtherFourM9E2",
+    "remaining_predicates_unproved": [
+      "ThreeBeyondCorrectionM418",
+      "OtherFourM9E2"
+    ],
+    "next_row_formula_unproved": true,
+    "next_row_universal_LC_claimed": false,
+    "actual_raw_source_counterexample": false,
+    "old212_recovery_claimed": false,
+    "old166_prefix_recovery_claimed": false,
+    "older_failed_versions_retroactively_recovered": false
+  },
+  "literal_raw_indices": [
+    "(i,j)",
+    "(i+1,j)",
+    "(i+2,j)"
+  ],
+  "residue_map": {
+    "true": "b=3*q+1",
+    "false": "b=3*q+2"
+  },
+  "source_bridge": "source_three_rawM9E2 -> inherited first-correction weighted output and window equivalence -> first_correction_closedMA64 -> lower_and_first_correctionMA64 -> source_lower_first_pathMA64",
+  "zero_and_endpoint_handling": [
+    "q=1 uses inherited small-source theorem; q>=2 factorization is not extrapolated to q=1.",
+    "i<=6 and tail i>d+2 handled by inherited source results; former remaining7<=i<=d+2 is now proved without a sign premise.",
+    "Natural correction d-(t+s) is clamped before casting; c in[0,8] and positive t+1 denominators explicit.",
+    "General middle result retains h<=t; inherited tail and h>t lemmas complete all-cut transport.",
+    "Quantitative finite-sum transport retains zero pair denominators with nonpositive signed terms; generic N is arbitrary real, M>=0.",
+    "Strict cancellation is only by kernelScale>0, proved from a fixed auxiliary coefficient; no raw zero coefficient is divided out.",
+    "Root polygon, three memberships, endpoint/path clauses and original coefficients unchanged; no normalization of final raw LC."
+  ],
+  "proof_chain": [
+    "Nonnegative Q coefficients and binomial composition upper/lower bounds.",
+    "Complete gap top coefficient supplies quantitative lower bound; two generated rational scalar certificates have ordinary Lean ring/positivity proofs.",
+    "First scalar margin controls arbitrary nonnegative central constant and bounded nonnegative endpoint constants.",
+    "Reflection/common-shift and above-border cut comparison preserve coefficient indices and zeros.",
+    "Quantitative PairOrder transport uses inherited zero-safe finite-sum theorem; order terms cancel algebraically without new normalized-order premise.",
+    "Exact kernel step bound plus second scalar margin gives the border. All source correction cuts then close, without BorderDominance."
+  ],
+  "remaining_root_clauses": {
+    "horizontal": "q<j, j!=5, j!=q+1, every natural starting i.",
+    "vertical": "All natural i,j outside ((i=3 or4) and j+1<=q) or (5<=i<=8 and j+2<=q).",
+    "diagonal": "All natural i,j outside 3<=i<=6 and j+2<=q; literal points(i,j+2),(i+1,j+1),(i+2,j).",
+    "other_sources": "Every actual path with numerator>=4 retains GlobalLC18."
+  },
+  "certificate_syntax": [
+    {
+      "module": "MarkovMarginCertificateMA64",
+      "source_sha256": "e9f65e4584ef8b50b9f82b85c4a75c11118a72a2278dce2c8244e1dfd9b2c284",
+      "generated_line_sha256": "9d2bc5df6191553b78c708c3e26f6c44286887880474aab3d5414703781f1859",
+      "expression_characters": 3886,
+      "grammar": "Unsigned numeral tokens, literal unsigned fractions with nonzero literal denominator, x/g/z, addition, multiplication and parentheses. Parsed without evaluation.",
+      "integer_literal_count": 34,
+      "rational_literal_count": 195,
+      "coefficient_literal_count": 229,
+      "saved_term_count": 229,
+      "denominator_tokens": [
+        "10",
+        "100",
+        "12",
+        "120",
+        "1200",
+        "144",
+        "1440",
+        "14400",
+        "15",
+        "160",
+        "1600",
+        "1800",
+        "192",
+        "2",
+        "20",
+        "200",
+        "24",
+        "240",
+        "2400",
+        "288",
+        "2880",
+        "3",
+        "30",
+        "32",
+        "320",
+        "360",
+        "3600",
+        "4",
+        "40",
+        "400",
+        "450",
+        "48",
+        "480",
+        "4800",
+        "5",
+        "576",
+        "6",
+        "60",
+        "600",
+        "72",
+        "720",
+        "7200",
+        "800",
+        "90",
+        "96",
+        "960"
+      ],
+      "saved_degree_only": [
+        16,
+        12,
+        2
+      ],
+      "saved_negative_only": 0,
+      "outer_denominator_text": "(x+5)^2*(x+8)^2*(x+9)*(x+10)*(x+11)",
+      "long_literal_omitted_from_display": true,
+      "mathematical_values_recomputed": false
+    },
+    {
+      "module": "MarkovBorderScalarMA64",
+      "source_sha256": "feccf0feff03728d7c96c7fca117c55b8df7cca1a2954db62e995ecd2b9e997a",
+      "generated_line_sha256": "0324241dce0ceae325559f54569e91c60c2ba9b618d16aa97e711d62305b5c65",
+      "expression_characters": 1546,
+      "grammar": "Unsigned numeral tokens, literal unsigned fractions with nonzero literal denominator, x/g/z, addition, multiplication and parentheses. Parsed without evaluation.",
+      "integer_literal_count": 38,
+      "rational_literal_count": 69,
+      "coefficient_literal_count": 107,
+      "saved_term_count": 107,
+      "denominator_tokens": [
+        "10",
+        "12",
+        "120",
+        "15",
+        "2",
+        "20",
+        "24",
+        "30",
+        "40",
+        "5",
+        "6",
+        "60",
+        "8"
+      ],
+      "saved_degree_only": [
+        12,
+        8,
+        1
+      ],
+      "saved_negative_only": 0,
+      "outer_denominator_text": null,
+      "long_literal_omitted_from_display": true,
+      "mathematical_values_recomputed": false
+    }
+  ],
+  "version_limit": "Final CorrectionClosed source is distinct from two earlier successful versions. Earlier replay/prints bind earlier sources only; no separately retained old ordinary object is assumed."
+}

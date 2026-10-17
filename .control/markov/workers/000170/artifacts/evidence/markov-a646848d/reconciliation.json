@@ -1,0 +1,53 @@
+{
+  "bindings": {
+    "RESUME.json": true,
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": true,
+    "evidence/independent-markov/markov_residual_scope_audit.md": true,
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": true,
+    "evidence/markov/research-run/state.json": true,
+    "requests/markov-next.json": true
+  },
+  "predecessor_artifacts": 142,
+  "mismatches": [],
+  "root_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+  "contract_sha256": "6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc",
+  "stop_file_present": false,
+  "predecessor_events_sha256": "69e16cd0b479f1b886243b9645e8dbcf0d87f3c956d3b5ec5fd6c486b5023cbf",
+  "predecessor_final_events": [
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_116",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc 'GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/finalize_f8f306c0.py'",
+        "aggregated_output": "{\n  \"modules\": 21,\n  \"theorem_closures\": 38,\n  \"rejected_builds\": 4,\n  \"preservation\": {\n    \"artifacts\": 142,\n    \"artifact_mismatches\": [],\n    \"unchanged_inputs\": 7179,\n    \"owned_files_created_before_snapshot\": [],\n    \"unchanged_predecessor_artifacts\": 116,\n    \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\",\n    \"contract_sha256\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\",\n    \"validation_sha256\": \"4800bdb032d7338184ac0f238ce2902b3cd1c12410f495134363a1a888e56d85\",\n    \"manifest_sha256\": \"3fb49f34a48413f23db527dd8d0304e70ad87cbe5ec00b8474e73c8c7ae03d98\",\n    \"stop_file_present\": false,\n    \"completion\": null\n  }\n}\n",
+        "exit_code": 0,
+        "status": "completed"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_117",
+        "type": "agent_message",
+        "text": "{\n  \"actions\": [\n    \"Verified inherited bindings and 116 predecessor artifacts: evidence/markov-f8f306c0/reconciliation.json.\",\n    \"Compiled and jointly kernel-replayed 21 modules; audited 38 theorem closures: evidence/markov-f8f306c0/validation.json.\",\n    \"Verified 142 artifacts, 7,179 unchanged inputs and pinned hashes: evidence/markov-f8f306c0/last-verification.json.\"\n  ],\n  \"agenda\": [\n    \"Investigate AbsorbedUncutMF8F and AbsorbedBorderMarginMF8F, or the sufficient BorderDominanceMF8F candidate: research/markov-f8f306c0-next.md.\",\n    \"Retain FirstCorrectionWindowM418, ThreeBeyondCorrectionM418 and OtherFourM9E2 completely.\",\n    \"Discharge every correspondence obligation and obtain the independent hash-bound audit before claiming completion.\"\n  ],\n  \"completion\": null,\n  \"observations\": [\n    \"Proved the complete absorbed-kernel h=t boundary for both source parameter relations, including the clamped endpoint: research/MarkovBoundaryClosedMF8F.lean.\",\n    \"Proved exact coefficient localization and reduced AbsorbedMiddleM418 to uncut gaps and one quantitative border condition. Both remain unproved: research/MarkovAbsorbedTwoTestsMF8F.lean and research/MarkovAbsorbedBorderMF8F.lean.\",\n    \"Proved conditional propagation from a source-independent border-dominance candidate to every first-correction horizontal inequality. The candidate remains open: research/MarkovBorderDominanceMF8F.lean.\",\n    \"Finite experiments passed 2,091 source coefficient comparisons, 2,074 source triples and 662,004 normalized-pair checks. These are not proofs: evidence/markov-f8f306c0/source-experiment.json and absorbed-structure.json.\",\n    \"A positive GAP expression remains unvalidated in Lean; its reduction timed out. Four rejected builds and an intentionally interrupted scan are preserved: research/markov-f8f306c0-operational.md.\",\n    \"All audited closures use permitted axioms. No fresh whole-source rebuild or independent completion audit occurred: research/markov-f8f306c0-correspondence.md.\"\n  ],\n  \"request_id\": \"f8f306c0701a4692b57e05ac3c809fa5\",\n  \"summary\": \"Closed the absorbed-kernel boundary and proved a sharper exact reduction. Full pinned Conjecture63 remains unresolved.\"\n}"
+      }
+    },
+    {
+      "type": "turn.completed",
+      "usage": {
+        "input_tokens": 6655649,
+        "cached_input_tokens": 6468992,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 41791,
+        "reasoning_output_tokens": 16256
+      }
+    }
+  ],
+  "reconciliation": "Worker 169 completed. Its source scan was explicitly interrupted and replaced by a completed bounded scan; GAP reduction timed out. Both are preserved and neither will be replayed. Prior failed Lean attempts are excluded from its validated selection. No unresolved inherited side effect was identified.",
+  "capabilities": {
+    "scratch": "Denied by developer policy; not accessed. A shell here-document failed to create its temporary file. Unique durable research/evidence files used.",
+    "sage": null,
+    "gap": "/opt/homebrew/bin/gap"
+  }
+}
