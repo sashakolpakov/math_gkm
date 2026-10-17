@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovTopParameterPolyM55C.lean:20:63: error: unsolved goals\nd i s : \u2115\nh : \u2191d + (\u2191s + \u2191i + 8) = \u2191d + \u2191s + \u2191i + 8\n\u22a2 eval (\u2191s) (descPochhammer \u211a i) * (\u2191i.factorial)\u207b\u00b9 * (\u2191(3 + i).factorial)\u207b\u00b9 *\n      eval (8 + \u2191d + \u2191s + \u2191i) (descPochhammer \u211a (3 + i)) =\n    eval (\u2191s) (descPochhammer \u211a i) * (\u2191i.factorial)\u207b\u00b9 * \u2191((8 + i + d + s).choose (3 + i))\n/Users/sasha/math_gkm/research/MarkovTopParameterPolyM55C.lean:32:59: error: unsolved goals\nd T i : \u2115\n\u22a2 eval (\u2191d) (\u2211 x \u2208 range T, (\u2191T - \u2191x) * topKernelPolyM55C i x) = \u2211 x \u2208 range T, (\u2191T - \u2191x) * \u2191(topKernelM55C d i x)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTopParameterPolyM55C": "4467beaf3fbe4b98ea481a8e7fe6fed33eead9d3daa1b8cb1b2ed52c69013c2d"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopParameterPolyM55C.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopParameterPolyM55C.lean"
+  ],
+  "seconds": 7.6822603329783306,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

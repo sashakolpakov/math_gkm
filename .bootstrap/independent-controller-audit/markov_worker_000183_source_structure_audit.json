@@ -1,0 +1,1667 @@
+{
+  "worker": 183,
+  "request": "55cf20d29efe4eebb6677e949f2beb36",
+  "created_at_utc": "2026-10-17T08:36:20.194985+00:00",
+  "historical_status": "uncertain_effects, interrupted controller/watchdog; report null; no receipt",
+  "scope": "Static closed183 archive-first; exact missing text counterparts from separate retained bundle; no research execution or mathematical-value recomputation",
+  "mathematical_values_recomputed": false,
+  "new_modules": [
+    {
+      "module": "MarkovTopFourthM55C",
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000183/artifacts/research/MarkovTopFourthM55C.lean",
+      "bytes": 2531,
+      "sha256": "bb18778d2a69c0d6e8398a7387626bddee556bd82227fd2f1174ff40208cc962",
+      "project_relative_path": "research/MarkovTopFourthM55C.lean",
+      "archive_available": true,
+      "initial_current": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopFourthM55C.lean",
+        "bytes": 2531,
+        "sha256": "bb18778d2a69c0d6e8398a7387626bddee556bd82227fd2f1174ff40208cc962",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792223836733816734
+      },
+      "imports": [
+        "MarkovTopSupportMB3E"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "weightedChooseM55C",
+          "line": 9,
+          "header": "def weightedChooseM55C (a k m : ℕ) : ℤ",
+          "body_sha256": "01fb604ce1ebc70ee4c4873bb1ed1e71cd5828ffbf1fc5a18fe7e9b74a3a2dbf"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_choose_sumM55C",
+          "line": 12,
+          "header": "theorem weighted_choose_sumM55C (a k m : ℕ) :\n (∑ s ∈ range m, ((m:ℤ)-s)*((a+s).choose k:ℤ))=weightedChooseM55C a k m",
+          "body_sha256": "f6b1f601594ba53d813c6273d3930054bc11adf1a3d74b90a7c0b58962e89c8b"
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_linearM55C",
+          "line": 16,
+          "header": "theorem choose_linearM55C (a s k : ℕ) (hk : k ≤ a) :\n (s:ℤ)*((a+s).choose k:ℤ)=\n (k+1)*((a+s).choose (k+1):ℤ)+((k:ℤ)-a)*((a+s).choose k:ℤ)",
+          "body_sha256": "2e0586ea67823c213aec4e7dee5e480733e51876aa5afc55148fdd699c6b8079"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_choose_linearM55C",
+          "line": 25,
+          "header": "theorem weighted_choose_linearM55C (a k m : ℕ) (hk : k ≤ a) :\n (∑ s ∈ range m, ((m:ℤ)-s)*s*((a+s).choose k:ℤ))=\n (k+1)*weightedChooseM55C a (k+1) m+((k:ℤ)-a)*weightedChooseM55C a k m",
+          "body_sha256": "5e0323da8309ec50c4da310dffdb9b7fff5fda9ce24c9b0352329d048ef5e02f"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_fourth_coeffM55C",
+          "line": 34,
+          "header": "theorem top_fourth_coeffM55C (n t : ℕ) (hn : 2*t ≤ n) (ht : 3 ≤ t) :\n (topTemplateMB3E n t).coeff 4=\n ((t:ℤ)-3)*((n+6-t).choose 4:ℤ)+4*(\n 5*weightedChooseM55C (n-2*t+9) 5 (t-3)+\n (4-((n-2*t+9:ℕ):ℤ))*weightedChooseM55C (n-2*t+9) 4 (t-3))",
+          "body_sha256": "f5c226c2284186e442c85787a5fadb8e2377edceb317d7287a235077220acf8d"
+        }
+      ],
+      "theorem_count": 4,
+      "definition_count": 1,
+      "status": "ordinary compiled-only; no selected/replayed/printed183 set",
+      "selected": null,
+      "replayed_in183": false,
+      "printed_in183": false,
+      "source_admission_token_occurrences": [],
+      "attempts": [
+        {
+          "receipt": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792223798615328000.json",
+            "bytes": 1998,
+            "sha256": "8e9d490ea778e6b0e8fedb0d32d9036323e891e38cb5954de2140dce3dedadd4"
+          },
+          "project_relative_path": "evidence/markov-55cf20d2/build-1792223798615328000.json",
+          "module": "MarkovTopFourthM55C",
+          "returncode": 1,
+          "timeout": false,
+          "seconds": 28.47893899999326,
+          "source_sha256": "ac3ca79c0992355467979b4fa2913ad3c4371b802efede058f5132a6f27cd3f7",
+          "snapshot": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792223798615328000.lean",
+            "bytes": 2530,
+            "sha256": "ac3ca79c0992355467979b4fa2913ad3c4371b802efede058f5132a6f27cd3f7"
+          },
+          "snapshot_matches_record": true,
+          "final_source_identical": false,
+          "command": [
+            "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+            "-j",
+            "1",
+            "-o",
+            "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopFourthM55C.olean",
+            "/Users/sasha/math_gkm/research/MarkovTopFourthM55C.lean"
+          ],
+          "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+          "diagnostic_sha256": "8dc2503caad0fc86925d70bc64aa72e81b07ce18d0e5cd2a5a917610664ff615",
+          "diagnostic_first_lines": [
+            "/Users/sasha/math_gkm/research/MarkovTopFourthM55C.lean:21:18: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+            "  ↑(a + s - k)",
+            "in the target expression",
+            "  ↑((a + s).choose (k + 1)) * ↑(k + 1) = ↑((a + s).choose k * (a + s - k))",
+            ""
+          ]
+        },
+        {
+          "receipt": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792223836799717000.json",
+            "bytes": 564,
+            "sha256": "fce7be71137e71b39318b801fa73ed284642db5bae8084c52840cbef13107a81"
+          },
+          "project_relative_path": "evidence/markov-55cf20d2/build-1792223836799717000.json",
+          "module": "MarkovTopFourthM55C",
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 8.6513282500091,
+          "source_sha256": "bb18778d2a69c0d6e8398a7387626bddee556bd82227fd2f1174ff40208cc962",
+          "snapshot": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792223836799717000.lean",
+            "bytes": 2531,
+            "sha256": "bb18778d2a69c0d6e8398a7387626bddee556bd82227fd2f1174ff40208cc962"
+          },
+          "snapshot_matches_record": true,
+          "final_source_identical": true,
+          "command": [
+            "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+            "-j",
+            "1",
+            "-o",
+            "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopFourthM55C.olean",
+            "/Users/sasha/math_gkm/research/MarkovTopFourthM55C.lean"
+          ],
+          "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+          "diagnostic_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "diagnostic_first_lines": []
+        }
+      ],
+      "ordinary_current_object": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopFourthM55C.olean",
+        "bytes": 445768,
+        "sha256": "344f8ad84c1d534790a08fa16682daeff8e4354e2285a3e151c7e36a5c133729",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792223845315001762
+      },
+      "archived_object": null
+    },
+    {
+      "module": "MarkovTopKernelM55C",
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000183/artifacts/research/MarkovTopKernelM55C.lean",
+      "bytes": 3445,
+      "sha256": "49c8efe8de8545ce61b04d988c3e0b5ccf54c64ffbd1c45652759d3056654fcd",
+      "project_relative_path": "research/MarkovTopKernelM55C.lean",
+      "archive_available": true,
+      "initial_current": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopKernelM55C.lean",
+        "bytes": 3445,
+        "sha256": "49c8efe8de8545ce61b04d988c3e0b5ccf54c64ffbd1c45652759d3056654fcd",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792224007540337061
+      },
+      "imports": [
+        "MarkovTopCoefficientsMB3E"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "topKernelM55C",
+          "line": 9,
+          "header": "def topKernelM55C (d i s : ℕ) : ℤ",
+          "body_sha256": "1746caae39dd46e56b60151c27699ecd714fd5608f082d42189684daf9429819"
+        },
+        {
+          "kind": "def",
+          "name": "topLinearM55C",
+          "line": 12,
+          "header": "def topLinearM55C (T : ℕ) (f : ℕ → ℤ) : ℤ",
+          "body_sha256": "33d1cd5f5e822d134cd8c3db14ff9d417a554adcc261f1792c6ffebef130b368"
+        },
+        {
+          "kind": "def",
+          "name": "topMassM55C",
+          "line": 15,
+          "header": "def topMassM55C (d T i : ℕ) : ℤ",
+          "body_sha256": "6ce410d0ee7f2ad61095b715a7c762c862518b3f9f43d80246916637548d3b7c"
+        },
+        {
+          "kind": "def",
+          "name": "topEigenM55C",
+          "line": 17,
+          "header": "def topEigenM55C (d s : ℕ) : ℤ",
+          "body_sha256": "b8f55fee998ebbe213220bff851c8bdc5200c1d7e65a2a49b3b5c0650d6599d5"
+        },
+        {
+          "kind": "def",
+          "name": "topScaleM55C",
+          "line": 19,
+          "header": "def topScaleM55C (i : ℕ) : ℤ",
+          "body_sha256": "0fc9d09598f13ea2ef340de26a0790af533dfd18ec77fae9506c287e005e2cb1"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_kernel_nonnegM55C",
+          "line": 21,
+          "header": "theorem top_kernel_nonnegM55C (d i s : ℕ) : 0 ≤ topKernelM55C d i s",
+          "body_sha256": "def17eaa57feb95c273a112359d2cf48bf8120b96400a4e9af66c08794e22fcd"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_linear_nonnegM55C",
+          "line": 25,
+          "header": "theorem top_linear_nonnegM55C (T : ℕ) (f : ℕ → ℤ) (hf : ∀ s, 0 ≤ f s) :\n 0 ≤ topLinearM55C T f",
+          "body_sha256": "715ddc28ab18e83e2368be308bd6150d2aa3912fdfe1d41ffaeb636ebf956167"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_linear_addM55C",
+          "line": 35,
+          "header": "theorem top_linear_addM55C (T : ℕ) (f g : ℕ → ℤ) :\n topLinearM55C T (fun s => f s+g s)=topLinearM55C T f+topLinearM55C T g",
+          "body_sha256": "4b05e2c7c00395559d5a5911663eab8bc6ce12eadbd148bc3b5b1a531ec4e28a"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_linear_smulM55C",
+          "line": 40,
+          "header": "theorem top_linear_smulM55C (T : ℕ) (a : ℤ) (f : ℕ → ℤ) :\n topLinearM55C T (fun s => a*f s)=a*topLinearM55C T f",
+          "body_sha256": "983508eb6a818c0c226042bddff9a6f46f7155defa623db092631d317a1e8968"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_coeffM55C",
+          "line": 50,
+          "header": "theorem top_mass_coeffM55C (d T i : ℕ) :\n (topTemplateMB3E (2*(T+3)+d) (T+3)).coeff (i+3)=topMassM55C d T i",
+          "body_sha256": "65e42dc9067e3c93ca9fe6aeca022ad58cd2585d5db1803882695945f986899a"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_kernel_stepM55C",
+          "line": 75,
+          "header": "theorem top_kernel_stepM55C (d i s : ℕ) :\n topScaleM55C i*topKernelM55C d (i+1) s=\n (topEigenM55C d s-topEigenM55C d i)*topKernelM55C d i s",
+          "body_sha256": "3bb9ed7f0032920af5dfb1f65308ab846af88353956f141d072186957e2cf5a1"
+        }
+      ],
+      "theorem_count": 6,
+      "definition_count": 5,
+      "status": "ordinary compiled-only; no selected/replayed/printed183 set",
+      "selected": null,
+      "replayed_in183": false,
+      "printed_in183": false,
+      "source_admission_token_occurrences": [],
+      "attempts": [
+        {
+          "receipt": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792223973013537000.json",
+            "bytes": 2862,
+            "sha256": "6d19edcd1f06890ad64e0b2879961625cf4543ff741d76c606a1a06ac1af357b"
+          },
+          "project_relative_path": "evidence/markov-55cf20d2/build-1792223973013537000.json",
+          "module": "MarkovTopKernelM55C",
+          "returncode": 1,
+          "timeout": false,
+          "seconds": 8.356107916973997,
+          "source_sha256": "b2c1497b791cfda6d7f9fe6f5413ea8216c6b3da202683f08e44b0b5e58ff4f2",
+          "snapshot": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792223973013537000.lean",
+            "bytes": 3425,
+            "sha256": "b2c1497b791cfda6d7f9fe6f5413ea8216c6b3da202683f08e44b0b5e58ff4f2"
+          },
+          "snapshot_matches_record": true,
+          "final_source_identical": false,
+          "command": [
+            "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+            "-j",
+            "1",
+            "-o",
+            "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopKernelM55C.olean",
+            "/Users/sasha/math_gkm/research/MarkovTopKernelM55C.lean"
+          ],
+          "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+          "diagnostic_sha256": "2253cb1dae5172f6c270bf0c6d51f582a4845d8094a0c6732f6c06c6b6f91675",
+          "diagnostic_first_lines": [
+            "/Users/sasha/math_gkm/research/MarkovTopKernelM55C.lean:72:1: warning: 'push_cast' tactic does nothing",
+            "",
+            "Note: This linter can be disabled with `set_option linter.unusedTactic false`",
+            "/Users/sasha/math_gkm/research/MarkovTopKernelM55C.lean:90:16: error: unexpected token ':='; expected term",
+            "/Users/sasha/math_gkm/research/MarkovTopKernelM55C.lean:81:45: warning: `Nat.succ_mul_choose_eq` has been deprecated: Use `Nat.add_one_mul_choose_eq` instead"
+          ]
+        },
+        {
+          "receipt": {
+            "path": "/Users/sasha/math_gkm/.control/markov/workers/000183/artifacts/evidence/markov-55cf20d2/build-1792224007673197000.json",
+            "bytes": 2192,
+            "sha256": "c5e6350265f58e8b6322e68d2f39816d9612654852891feabd9ab9e2cf86c8c4"
+          },
+          "project_relative_path": "evidence/markov-55cf20d2/build-1792224007673197000.json",
+          "module": "MarkovTopKernelM55C",
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 10.100294791976921,
+          "source_sha256": "49c8efe8de8545ce61b04d988c3e0b5ccf54c64ffbd1c45652759d3056654fcd",
+          "snapshot": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792224007673197000.lean",
+            "bytes": 3445,
+            "sha256": "49c8efe8de8545ce61b04d988c3e0b5ccf54c64ffbd1c45652759d3056654fcd"
+          },
+          "snapshot_matches_record": true,
+          "final_source_identical": true,
+          "command": [
+            "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+            "-j",
+            "1",
+            "-o",
+            "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopKernelM55C.olean",
+            "/Users/sasha/math_gkm/research/MarkovTopKernelM55C.lean"
+          ],
+          "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+          "diagnostic_sha256": "5907e82c06262c389e69e1c34833639ceb8d36c087313d487538f2c488b263bd",
+          "diagnostic_first_lines": [
+            "/Users/sasha/math_gkm/research/MarkovTopKernelM55C.lean:72:1: warning: 'push_cast' tactic does nothing",
+            "",
+            "Note: This linter can be disabled with `set_option linter.unusedTactic false`",
+            "/Users/sasha/math_gkm/research/MarkovTopKernelM55C.lean:82:84: warning: This simp argument is unused:",
+            "  Nat.succ_eq_add_one"
+          ]
+        }
+      ],
+      "ordinary_current_object": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopKernelM55C.olean",
+        "bytes": 503024,
+        "sha256": "255e16ec9a552c44dd03cda7d68ddb5eac567531ceecb710f8b870f24916cfb1",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792224017623987838
+      },
+      "archived_object": null
+    },
+    {
+      "module": "MarkovTopLeadingM55C",
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000183/artifacts/research/MarkovTopLeadingM55C.lean",
+      "bytes": 2935,
+      "sha256": "d94f9fcde275e43c2fed5a5d1fcf01df7385b2ca70659cff10da1f470f49f121",
+      "project_relative_path": "research/MarkovTopLeadingM55C.lean",
+      "archive_available": true,
+      "initial_current": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopLeadingM55C.lean",
+        "bytes": 2935,
+        "sha256": "d94f9fcde275e43c2fed5a5d1fcf01df7385b2ca70659cff10da1f470f49f121",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792224670954278409
+      },
+      "imports": [
+        "MarkovTopParameterPolyM55C"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "topLeadingNumerM55C",
+          "line": 9,
+          "header": "def topLeadingNumerM55C (T i : ℕ) : ℚ",
+          "body_sha256": "7a10a40e123c817f4a0b333b4563c68f377f9b591d492acfbba4c3417e985bee"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_leading_numer_nonnegM55C",
+          "line": 11,
+          "header": "theorem top_leading_numer_nonnegM55C (T i : ℕ) : 0 ≤ topLeadingNumerM55C T i",
+          "body_sha256": "acadcb3f8a0af9948e1ee41307e3599cabe06f120118577abd32f66b0a3d25cf"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_leading_numer_positiveM55C",
+          "line": 15,
+          "header": "theorem top_leading_numer_positiveM55C (T i : ℕ) (hi : i ≤ T) : 0 < topLeadingNumerM55C T i",
+          "body_sha256": "d08dc26a6e3b2b2812856bab307a5a7bec2a7c9e8dbbcdc00e54928de91d0727"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_leading_numer_lcM55C",
+          "line": 19,
+          "header": "theorem top_leading_numer_lcM55C (T i : ℕ) :\n topLeadingNumerM55C T i*topLeadingNumerM55C T (i+2) ≤ topLeadingNumerM55C T (i+1)^2",
+          "body_sha256": "08594ba4792b1f14045f28d65d8949a3bb298d232e22fb20bf7efa7ef823894f"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_leading_strictM55C",
+          "line": 38,
+          "header": "theorem top_leading_strictM55C (T i : ℕ) (hi : i+1 ≤ T) :\n topLeadingM55C T i*topLeadingM55C T (i+2) < topLeadingM55C T (i+1)^2",
+          "body_sha256": "1ab1eb0c7f5bbfd934de739f801906be9d9ce8242019164ccf8aac8cca9151fa"
+        }
+      ],
+      "theorem_count": 4,
+      "definition_count": 1,
+      "status": "ordinary compiled-only; no selected/replayed/printed183 set",
+      "selected": null,
+      "replayed_in183": false,
+      "printed_in183": false,
+      "source_admission_token_occurrences": [],
+      "attempts": [
+        {
+          "receipt": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792224645382781000.json",
+            "bytes": 1557,
+            "sha256": "57d4bdbf0c07ca1822f5413d56d7e31b3f634fb7704387382cfb932b7ed215cb"
+          },
+          "project_relative_path": "evidence/markov-55cf20d2/build-1792224645382781000.json",
+          "module": "MarkovTopLeadingM55C",
+          "returncode": 1,
+          "timeout": false,
+          "seconds": 11.955092291987967,
+          "source_sha256": "713fc3edcef280c1182222f996ae8b449ad336096f18a129c44afa9b97fa3e10",
+          "snapshot": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792224645382781000.lean",
+            "bytes": 2857,
+            "sha256": "713fc3edcef280c1182222f996ae8b449ad336096f18a129c44afa9b97fa3e10"
+          },
+          "snapshot_matches_record": true,
+          "final_source_identical": false,
+          "command": [
+            "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+            "-j",
+            "1",
+            "-o",
+            "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopLeadingM55C.olean",
+            "/Users/sasha/math_gkm/research/MarkovTopLeadingM55C.lean"
+          ],
+          "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+          "diagnostic_sha256": "16b5155096e41ad0a33f8c1ffe9db374fe325782eac643e6ecc7fda625a41921",
+          "diagnostic_first_lines": [
+            "Try this:",
+            "  [apply] ring_nf",
+            "  ",
+            "  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.",
+            "    "
+          ]
+        },
+        {
+          "receipt": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792224671054702000.json",
+            "bytes": 568,
+            "sha256": "2201b32cad449faf6646fd717c03aa70825147db56eb1d74aca5613f04251a2b"
+          },
+          "project_relative_path": "evidence/markov-55cf20d2/build-1792224671054702000.json",
+          "module": "MarkovTopLeadingM55C",
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 10.8740698749898,
+          "source_sha256": "d94f9fcde275e43c2fed5a5d1fcf01df7385b2ca70659cff10da1f470f49f121",
+          "snapshot": {
+            "path": "/Users/sasha/math_gkm/.control/markov/workers/000183/artifacts/evidence/markov-55cf20d2/build-1792224671054702000.lean",
+            "bytes": 2935,
+            "sha256": "d94f9fcde275e43c2fed5a5d1fcf01df7385b2ca70659cff10da1f470f49f121"
+          },
+          "snapshot_matches_record": true,
+          "final_source_identical": true,
+          "command": [
+            "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+            "-j",
+            "1",
+            "-o",
+            "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopLeadingM55C.olean",
+            "/Users/sasha/math_gkm/research/MarkovTopLeadingM55C.lean"
+          ],
+          "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+          "diagnostic_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "diagnostic_first_lines": []
+        }
+      ],
+      "ordinary_current_object": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopLeadingM55C.olean",
+        "bytes": 352408,
+        "sha256": "64bc162fe41a9756783f1adb7dfa244d99576307c1c8e9874cccec36927bac9c",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792224681777714345
+      },
+      "archived_object": null
+    },
+    {
+      "module": "MarkovTopMomentsM55C",
+      "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/research/MarkovTopMomentsM55C.lean",
+      "bytes": 4326,
+      "sha256": "c27e700323878787d7145c6afcb79d59ced210f3faac91a6bfbd35192fba0fdc",
+      "project_relative_path": "research/MarkovTopMomentsM55C.lean",
+      "archive_available": false,
+      "initial_current": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopMomentsM55C.lean",
+        "bytes": 4326,
+        "sha256": "c27e700323878787d7145c6afcb79d59ced210f3faac91a6bfbd35192fba0fdc",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792224059764274076
+      },
+      "imports": [
+        "MarkovTopKernelM55C"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "topMomentM55C",
+          "line": 9,
+          "header": "def topMomentM55C (d T i k : ℕ) : ℤ",
+          "body_sha256": "008a317a56d45e15a6abb363d673861f720ca430335865c2680368c1ac4c449a"
+        },
+        {
+          "kind": "def",
+          "name": "topExcessM55C",
+          "line": 12,
+          "header": "def topExcessM55C (d T i : ℕ) : ℤ",
+          "body_sha256": "62e899c43fd94c35201473a45995d6cf44be43227bab7b33812a50a07f89c62e"
+        },
+        {
+          "kind": "def",
+          "name": "topVarianceNumerM55C",
+          "line": 15,
+          "header": "def topVarianceNumerM55C (d T i : ℕ) : ℤ",
+          "body_sha256": "ce19294b434e1e5e63a648a624dc124de51424a58a969b3b499fb1d07ce97315"
+        },
+        {
+          "kind": "def",
+          "name": "topDriftM55C",
+          "line": 18,
+          "header": "def topDriftM55C (d T i : ℕ) : ℤ",
+          "body_sha256": "392c89b316746e96a4eb9ce1e10d79b28a27c451d54cc533f53d2394939b3c56"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_linear_subM55C",
+          "line": 23,
+          "header": "theorem top_linear_subM55C (T : ℕ) (f g : ℕ → ℤ) :\n topLinearM55C T (fun s => f s-g s)=topLinearM55C T f-topLinearM55C T g",
+          "body_sha256": "a0e3915a0fd9532a981b66cc61ce0e180f0421829456047a3e4bfbe0e03c72c6"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_moment_stepM55C",
+          "line": 28,
+          "header": "theorem top_moment_stepM55C (d T i k : ℕ) :\n topScaleM55C i*topMomentM55C d T (i+1) k=\n topMomentM55C d T i (k+1)-topEigenM55C d i*topMomentM55C d T i k",
+          "body_sha256": "c61cfa1e4d580da1abd75c699d4216eef7061bee347051146e2b487b95bb79b1"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_moment_zeroM55C",
+          "line": 39,
+          "header": "theorem top_moment_zeroM55C (d T i : ℕ) : topMomentM55C d T i 0=topMassM55C d T i",
+          "body_sha256": "8221b06771c79a01f75e18645fa3ca1ff3e9c798734def4a36a4a35e96f161ca"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_stepM55C",
+          "line": 42,
+          "header": "theorem top_mass_stepM55C (d T i : ℕ) :\n topScaleM55C i*topMassM55C d T (i+1)=topExcessM55C d T i",
+          "body_sha256": "22c52e5c2df1a4c1f1b287d6499056bf9fc00fa2e99d084a8ec1a5c366613227"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_two_stepM55C",
+          "line": 46,
+          "header": "theorem top_mass_two_stepM55C (d T i : ℕ) :\n topScaleM55C i*topScaleM55C (i+1)*topMassM55C d T (i+2)=\n topMomentM55C d T i 2-\n (topEigenM55C d i+topEigenM55C d (i+1))*topMomentM55C d T i 1+\n topEigenM55C d i*topEigenM55C d (i+1)*topMassM55C d T i",
+          "body_sha256": "634edbed6a29ebf930605969ce367c8e319aabf86d8507409c21bf60c44cb211"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_gap_driftM55C",
+          "line": 58,
+          "header": "theorem top_gap_driftM55C (d T i : ℕ) :\n topScaleM55C i^2*topScaleM55C (i+1)*\n (topMassM55C d T (i+1)^2-topMassM55C d T i*topMassM55C d T (i+2))=\n topDriftM55C d T i",
+          "body_sha256": "5370ddddaf95b9b1fcd8bdf51b04a7e552c3f49c7c1c8453e5503d7b21bca08f"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_scale_positiveM55C",
+          "line": 72,
+          "header": "theorem top_scale_positiveM55C (i : ℕ) : 0 < topScaleM55C i",
+          "body_sha256": "64d92db2fb0a98fe1ee939d15e17e56a9ef3b8b7c1936f2a35792e6f1d35a3e6"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_lc_iff_driftM55C",
+          "line": 76,
+          "header": "theorem top_lc_iff_driftM55C (d T i : ℕ) :\n topMassM55C d T i*topMassM55C d T (i+2) ≤ topMassM55C d T (i+1)^2 ↔\n 0 ≤ topDriftM55C d T i",
+          "body_sha256": "8bad36c957b244c9383bc09159657b3382366c5c3259d505b82c77aeae27ed79"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_nonnegM55C",
+          "line": 84,
+          "header": "theorem top_mass_nonnegM55C (d T i : ℕ) : 0 ≤ topMassM55C d T i",
+          "body_sha256": "441a5e4e46e5ca99fdb8c25692bd30e4a4bee9c288c536eee9b47819843b5214"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_excess_nonnegM55C",
+          "line": 87,
+          "header": "theorem top_excess_nonnegM55C (d T i : ℕ) : 0 ≤ topExcessM55C d T i",
+          "body_sha256": "aa9c8be340043970e91378e998650f33722f6cfc6f5ea48f1f0df695845426df"
+        },
+        {
+          "kind": "def",
+          "name": "TopMomentBoundM55C",
+          "line": 91,
+          "header": "def TopMomentBoundM55C : Prop",
+          "body_sha256": "749a26e282e6e37ba21fbbb9a2009e1fc0f2f0139659546781888d2235aca01c"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_high_of_momentM55C",
+          "line": 96,
+          "header": "theorem top_high_of_momentM55C (H : TopMomentBoundM55C) (n t i : ℕ)\n (hn : 2*t ≤ n) (ht : 3 ≤ t) (hnt : 3*t ≤ n+5) :\n (topTemplateMB3E n t).coeff (i+3)*(topTemplateMB3E n t).coeff (i+5) ≤\n (topTemplateMB3E n t).coeff (i+4)^2",
+          "body_sha256": "301f03b0c98e88c59e1de81303a35713c1182d7102495cd3ee9ad7f713e960f8"
+        }
+      ],
+      "theorem_count": 11,
+      "definition_count": 5,
+      "status": "ordinary compiled-only; no selected/replayed/printed183 set",
+      "selected": null,
+      "replayed_in183": false,
+      "printed_in183": false,
+      "source_admission_token_occurrences": [],
+      "attempts": [
+        {
+          "receipt": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792224064430968000.json",
+            "bytes": 570,
+            "sha256": "ba7c5d088f0638f5a4c4235f8b159e0349d14640efe5dcaaab2242bf3134c583"
+          },
+          "project_relative_path": "evidence/markov-55cf20d2/build-1792224064430968000.json",
+          "module": "MarkovTopMomentsM55C",
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 16.182773749984335,
+          "source_sha256": "c27e700323878787d7145c6afcb79d59ced210f3faac91a6bfbd35192fba0fdc",
+          "snapshot": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792224064430968000.lean",
+            "bytes": 4326,
+            "sha256": "c27e700323878787d7145c6afcb79d59ced210f3faac91a6bfbd35192fba0fdc"
+          },
+          "snapshot_matches_record": true,
+          "final_source_identical": true,
+          "command": [
+            "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+            "-j",
+            "1",
+            "-o",
+            "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopMomentsM55C.olean",
+            "/Users/sasha/math_gkm/research/MarkovTopMomentsM55C.lean"
+          ],
+          "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+          "diagnostic_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "diagnostic_first_lines": []
+        }
+      ],
+      "ordinary_current_object": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopMomentsM55C.olean",
+        "bytes": 886072,
+        "sha256": "97d2a513eb3d04258ed2e5884e28ced8360f6c642ab97831a7bf051d8eb64194",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792224080447985594
+      },
+      "archived_object": null
+    },
+    {
+      "module": "MarkovTopObstructionsM55C",
+      "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/research/MarkovTopObstructionsM55C.lean",
+      "bytes": 2904,
+      "sha256": "0ad469f9d19606e1774aab36a887bb20f82d06a4634c1b4ea0c77cd406d770d9",
+      "project_relative_path": "research/MarkovTopObstructionsM55C.lean",
+      "archive_available": false,
+      "initial_current": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopObstructionsM55C.lean",
+        "bytes": 2904,
+        "sha256": "0ad469f9d19606e1774aab36a887bb20f82d06a4634c1b4ea0c77cd406d770d9",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792224358639477105
+      },
+      "imports": [
+        "MarkovTopSectorM55C"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "topTermM55C",
+          "line": 10,
+          "header": "def topTermM55C (d T i s : ℕ) : ℤ",
+          "body_sha256": "91991f777aef2eeafd99654858e5552f0059c4d7809baccf0e5f599179095a52"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_midpoint_failureM55C",
+          "line": 13,
+          "header": "theorem top_midpoint_failureM55C :\n topTermM55C 2 4 0 0*topTermM55C 2 4 2 3=69189120 ∧\n topTermM55C 2 4 1 1*topTermM55C 2 4 1 2=67953600 ∧\n topTermM55C 2 4 1 1*topTermM55C 2 4 1 2 <\n topTermM55C 2 4 0 0*topTermM55C 2 4 2 3",
+          "body_sha256": "4f246a9a32ea7f5484258bab5cf054ef9e5e9901f372305359db42b46fc0c4ee"
+        },
+        {
+          "kind": "def",
+          "name": "geometricWeightM55C",
+          "line": 20,
+          "header": "def geometricWeightM55C (s : ℕ) : ℤ",
+          "body_sha256": "dfb756f793e41edd7b12a7cadb1a41b83d1545ac01c8f40b77ce3a7b519def7d"
+        },
+        {
+          "kind": "theorem",
+          "name": "geometric_weight_nonnegM55C",
+          "line": 22,
+          "header": "theorem geometric_weight_nonnegM55C (s : ℕ) : 0 ≤ geometricWeightM55C s",
+          "body_sha256": "23cee3b0a4d1cd16d740eb76b1e5640269aea43a8840e5becacc5c60d849c6e1"
+        },
+        {
+          "kind": "theorem",
+          "name": "geometric_weight_supportM55C",
+          "line": 26,
+          "header": "theorem geometric_weight_supportM55C (s : ℕ) :\n 0 < geometricWeightM55C s ↔ s ≤ 5",
+          "body_sha256": "c81119d451999f101afb0c8e40af8daa0b978c2172ba5612294c34b6b43033ea"
+        },
+        {
+          "kind": "theorem",
+          "name": "geometric_weight_crossM55C",
+          "line": 31,
+          "header": "theorem geometric_weight_crossM55C (i j : ℕ) (hij : i ≤ j) :\n geometricWeightM55C i*geometricWeightM55C (j+1) ≤\n geometricWeightM55C (i+1)*geometricWeightM55C j",
+          "body_sha256": "e814ce6413e79ab6117d4144705085e72ff68fb80282c060e83a343795aac8b8"
+        },
+        {
+          "kind": "def",
+          "name": "geometricOutputM55C",
+          "line": 42,
+          "header": "def geometricOutputM55C (i : ℕ) : ℤ",
+          "body_sha256": "ea640abf414936917a4f18cd6e675e8aaa42d95879e2ea73f5bf3b0a0526105c"
+        },
+        {
+          "kind": "theorem",
+          "name": "geometric_transform_failureM55C",
+          "line": 45,
+          "header": "theorem geometric_transform_failureM55C :\n geometricOutputM55C 0=6578986 ∧ geometricOutputM55C 1=2942105 ∧\n geometricOutputM55C 2=1328250 ∧\n geometricOutputM55C 1^2-geometricOutputM55C 0*geometricOutputM55C 2= -82556323475",
+          "body_sha256": "4bbdc39f2ba0d7585d47fe4b15e047fff0c5f8418e874e9f79218cb611b0c556"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_obstruction_rowM55C",
+          "line": 51,
+          "header": "theorem source_obstruction_rowM55C (i : ℕ) :\n threeRawM9E2 5 true (i+3) 11=topMassM55C 2 4 i",
+          "body_sha256": "331d439e4c5d6c40557d4f0eaa59b5c6a3dd6b2ef9f7a9f85e1169baaa3a9622"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_obstruction_gapM55C",
+          "line": 58,
+          "header": "theorem source_obstruction_gapM55C :\n threeRawM9E2 5 true 3 11=7168 ∧ threeRawM9E2 5 true 4 11=34852 ∧\n threeRawM9E2 5 true 5 11=78260 ∧\n threeRawM9E2 5 true 4 11^2-threeRawM9E2 5 true 3 11*threeRawM9E2 5 true 5 11=653694224",
+          "body_sha256": "f78880063db67a653c038eb724e4c159b09e8f4d3c45eabc02b93e16188a3fc5"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_obstruction_polygonM55C",
+          "line": 69,
+          "header": "theorem source_obstruction_polygonM55C :\n InPolygon 3 16 3 11 ∧ InPolygon 3 16 4 11 ∧ InPolygon 3 16 5 11",
+          "body_sha256": "d04689de6fd6820c58236fb810242a7e74130af1561eab020dfb96c490cb8251"
+        }
+      ],
+      "theorem_count": 8,
+      "definition_count": 3,
+      "status": "ordinary compiled-only; no selected/replayed/printed183 set",
+      "selected": null,
+      "replayed_in183": false,
+      "printed_in183": false,
+      "source_admission_token_occurrences": [],
+      "attempts": [
+        {
+          "receipt": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792224304386942000.json",
+            "bytes": 806,
+            "sha256": "96a05cdb58cab18c1b752e560991f163bb5f4aa4337c3c00ddabe6064542e2ca"
+          },
+          "project_relative_path": "evidence/markov-55cf20d2/build-1792224304386942000.json",
+          "module": "MarkovTopObstructionsM55C",
+          "returncode": 1,
+          "timeout": false,
+          "seconds": 13.12539179198211,
+          "source_sha256": "87f3f949f9c78fc59eac63f37384051be424e1760d86a6661c8f53818bb74a5c",
+          "snapshot": {
+            "path": "/Users/sasha/math_gkm/.control/markov/workers/000183/artifacts/evidence/markov-55cf20d2/build-1792224304386942000.lean",
+            "bytes": 2854,
+            "sha256": "87f3f949f9c78fc59eac63f37384051be424e1760d86a6661c8f53818bb74a5c"
+          },
+          "snapshot_matches_record": true,
+          "final_source_identical": false,
+          "command": [
+            "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+            "-j",
+            "1",
+            "-o",
+            "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopObstructionsM55C.olean",
+            "/Users/sasha/math_gkm/research/MarkovTopObstructionsM55C.lean"
+          ],
+          "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+          "diagnostic_sha256": "0b84541f48e4f49c8d76dfe2dc96469ca038c0417556f7911c926087801e8efd",
+          "diagnostic_first_lines": [
+            "/Users/sasha/math_gkm/research/MarkovTopObstructionsM55C.lean:37:7: error: Invalid rewrite argument: Expected an equality or iff proof or definition name, but `geometricWeightM55C",
+            "  (j + 1)` is a value of type",
+            "  ℤ"
+          ]
+        },
+        {
+          "receipt": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792224358713656000.json",
+            "bytes": 585,
+            "sha256": "60487dead853f00f27696498d9e2befde386c017bdc504c902742da4546c563d"
+          },
+          "project_relative_path": "evidence/markov-55cf20d2/build-1792224358713656000.json",
+          "module": "MarkovTopObstructionsM55C",
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 34.843663042003755,
+          "source_sha256": "0ad469f9d19606e1774aab36a887bb20f82d06a4634c1b4ea0c77cd406d770d9",
+          "snapshot": {
+            "path": "/Users/sasha/math_gkm/.control/markov/workers/000183/artifacts/evidence/markov-55cf20d2/build-1792224358713656000.lean",
+            "bytes": 2904,
+            "sha256": "0ad469f9d19606e1774aab36a887bb20f82d06a4634c1b4ea0c77cd406d770d9"
+          },
+          "snapshot_matches_record": true,
+          "final_source_identical": true,
+          "command": [
+            "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+            "-j",
+            "1",
+            "-o",
+            "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopObstructionsM55C.olean",
+            "/Users/sasha/math_gkm/research/MarkovTopObstructionsM55C.lean"
+          ],
+          "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+          "diagnostic_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "diagnostic_first_lines": []
+        }
+      ],
+      "ordinary_current_object": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopObstructionsM55C.olean",
+        "bytes": 847672,
+        "sha256": "fc97349428a4abce4690305beaf43569757ac53bb6382ae59bd160b5c9470386",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792224393410831669
+      },
+      "archived_object": null
+    },
+    {
+      "module": "MarkovTopParameterPolyM55C",
+      "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/research/MarkovTopParameterPolyM55C.lean",
+      "bytes": 3261,
+      "sha256": "b3e7cba28e4af3a9e6d5a9e84edd1126a946223acca63724457e8724ca22e031",
+      "project_relative_path": "research/MarkovTopParameterPolyM55C.lean",
+      "archive_available": false,
+      "initial_current": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopParameterPolyM55C.lean",
+        "bytes": 3261,
+        "sha256": "b3e7cba28e4af3a9e6d5a9e84edd1126a946223acca63724457e8724ca22e031",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792224611114040814
+      },
+      "imports": [
+        "MarkovTopSectorM55C"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "topKernelPolyM55C",
+          "line": 9,
+          "header": "def topKernelPolyM55C (i s : ℕ) : Polynomial ℚ",
+          "body_sha256": "2fff2dc5bf4c92de42fc8b41b697e8a7dd2015dbe30f5218f021ceef331be0fd"
+        },
+        {
+          "kind": "def",
+          "name": "topMassPolyM55C",
+          "line": 13,
+          "header": "def topMassPolyM55C (T i : ℕ) : Polynomial ℚ",
+          "body_sha256": "682fe4c94f2b2b769deb2ff4fc8282be5882883b2d0406f1907a0b3ab311bff4"
+        },
+        {
+          "kind": "def",
+          "name": "topLeadingM55C",
+          "line": 16,
+          "header": "def topLeadingM55C (T i : ℕ) : ℚ",
+          "body_sha256": "5b5c2b4a40377cbaca746578feabc6b80f6af3f79e970af136d0f7049f576915"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_kernel_poly_evalM55C",
+          "line": 19,
+          "header": "theorem top_kernel_poly_evalM55C (d i s : ℕ) :\n (topKernelPolyM55C i s).eval (d:ℚ)=(topKernelM55C d i s:ℚ)",
+          "body_sha256": "3485d42efcafa30fb23c29e5f43fa74369b5eafaba29b19d4ec6984baae77fd0"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_poly_evalM55C",
+          "line": 31,
+          "header": "theorem top_mass_poly_evalM55C (d T i : ℕ) :\n (topMassPolyM55C T i).eval (d:ℚ)=(topMassM55C d T i:ℚ)",
+          "body_sha256": "df1ba5597f8edd84bd05cad44fe9fa8d36641df24846d4137cdb37e81d381d85"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_kernel_poly_degreeM55C",
+          "line": 35,
+          "header": "theorem top_kernel_poly_degreeM55C (i s : ℕ) : (topKernelPolyM55C i s).natDegree ≤ i+3",
+          "body_sha256": "2874339568b50af32a5b1947676c4c3c4a703fc989651dd976e67fb4068ee189"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_kernel_poly_topM55C",
+          "line": 44,
+          "header": "theorem top_kernel_poly_topM55C (i s : ℕ) :\n (topKernelPolyM55C i s).coeff (i+3)=(s.choose i:ℚ)/(i+3).factorial",
+          "body_sha256": "8621825ec43daf53e2ba0b9dc9bda98e853906fa58acefa1e9f532ee594ef4d9"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_poly_degreeM55C",
+          "line": 55,
+          "header": "theorem top_mass_poly_degreeM55C (T i : ℕ) : (topMassPolyM55C T i).natDegree ≤ i+3",
+          "body_sha256": "3154c39b26c8702980845cd2b59bc1474b50b9447d39e0fbf3b920f2757215d8"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_choose_weightM55C",
+          "line": 64,
+          "header": "theorem top_choose_weightM55C (T i : ℕ) :\n (∑ s ∈ range T, ((T:ℤ)-s)*(s.choose i:ℤ))=((T+1).choose (i+2):ℤ)",
+          "body_sha256": "fc28a6f2f6820af602bba28aab67fa3fb4bc13d4722fd6967acb76e017f72c82"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_poly_topM55C",
+          "line": 70,
+          "header": "theorem top_mass_poly_topM55C (T i : ℕ) :\n (topMassPolyM55C T i).coeff (i+3)=topLeadingM55C T i",
+          "body_sha256": "22df71489338a0d806433196f52a2e82875e4acb3691c77e121e17e447d14936"
+        }
+      ],
+      "theorem_count": 7,
+      "definition_count": 3,
+      "status": "ordinary compiled-only; no selected/replayed/printed183 set",
+      "selected": null,
+      "replayed_in183": false,
+      "printed_in183": false,
+      "source_admission_token_occurrences": [],
+      "attempts": [
+        {
+          "receipt": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792224487824757000.json",
+            "bytes": 5080,
+            "sha256": "dba3aef97fbff52b2f3498fe6c915564c6378166afa1c9804484971813a65b09"
+          },
+          "project_relative_path": "evidence/markov-55cf20d2/build-1792224487824757000.json",
+          "module": "MarkovTopParameterPolyM55C",
+          "returncode": 1,
+          "timeout": false,
+          "seconds": 8.337280041945633,
+          "source_sha256": "7dee54ee9abb3e2ff8c4b22c7106b9956c961a7f40e0ffa8fd41c9e00dcd5438",
+          "snapshot": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792224487824757000.lean",
+            "bytes": 3182,
+            "sha256": "7dee54ee9abb3e2ff8c4b22c7106b9956c961a7f40e0ffa8fd41c9e00dcd5438"
+          },
+          "snapshot_matches_record": true,
+          "final_source_identical": false,
+          "command": [
+            "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+            "-j",
+            "1",
+            "-o",
+            "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopParameterPolyM55C.olean",
+            "/Users/sasha/math_gkm/research/MarkovTopParameterPolyM55C.lean"
+          ],
+          "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+          "diagnostic_sha256": "7c8ee76cd8d8098b246394e9e0dbb1feb5dd7b79bd16204b16df4e19119236c7",
+          "diagnostic_first_lines": [
+            "/Users/sasha/math_gkm/research/MarkovTopParameterPolyM55C.lean:20:1: error: Application type mismatch: The argument",
+            "  topKernelPolyM55C i s",
+            "has type",
+            "  ℚ[X]",
+            "but is expected to have type"
+          ]
+        },
+        {
+          "receipt": {
+            "path": "/Users/sasha/math_gkm/.control/markov/workers/000183/artifacts/evidence/markov-55cf20d2/build-1792224576612236000.json",
+            "bytes": 1681,
+            "sha256": "7658b25ff1d7b5e819a726ff32cab4865897dc6c1c4bbc3c87cb1ef1e364b991"
+          },
+          "project_relative_path": "evidence/markov-55cf20d2/build-1792224576612236000.json",
+          "module": "MarkovTopParameterPolyM55C",
+          "returncode": 1,
+          "timeout": false,
+          "seconds": 7.6822603329783306,
+          "source_sha256": "4467beaf3fbe4b98ea481a8e7fe6fed33eead9d3daa1b8cb1b2ed52c69013c2d",
+          "snapshot": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792224576612236000.lean",
+            "bytes": 3229,
+            "sha256": "4467beaf3fbe4b98ea481a8e7fe6fed33eead9d3daa1b8cb1b2ed52c69013c2d"
+          },
+          "snapshot_matches_record": true,
+          "final_source_identical": false,
+          "command": [
+            "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+            "-j",
+            "1",
+            "-o",
+            "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopParameterPolyM55C.olean",
+            "/Users/sasha/math_gkm/research/MarkovTopParameterPolyM55C.lean"
+          ],
+          "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+          "diagnostic_sha256": "e3ced3f675f4f58fc2d7a33c591c0d6039d25351e97ae73faa2a30ef250a1458",
+          "diagnostic_first_lines": [
+            "Try this:",
+            "  [apply] ring_nf",
+            "  ",
+            "  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.",
+            "    "
+          ]
+        },
+        {
+          "receipt": {
+            "path": "/Users/sasha/math_gkm/.control/markov/workers/000183/artifacts/evidence/markov-55cf20d2/build-1792224611195137000.json",
+            "bytes": 758,
+            "sha256": "7f80cdf07a4150b5a2309709d2939cded2a50c86c8b4bd01e507ea120919e8bf"
+          },
+          "project_relative_path": "evidence/markov-55cf20d2/build-1792224611195137000.json",
+          "module": "MarkovTopParameterPolyM55C",
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 12.844586000021081,
+          "source_sha256": "b3e7cba28e4af3a9e6d5a9e84edd1126a946223acca63724457e8724ca22e031",
+          "snapshot": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792224611195137000.lean",
+            "bytes": 3261,
+            "sha256": "b3e7cba28e4af3a9e6d5a9e84edd1126a946223acca63724457e8724ca22e031"
+          },
+          "snapshot_matches_record": true,
+          "final_source_identical": true,
+          "command": [
+            "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+            "-j",
+            "1",
+            "-o",
+            "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopParameterPolyM55C.olean",
+            "/Users/sasha/math_gkm/research/MarkovTopParameterPolyM55C.lean"
+          ],
+          "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+          "diagnostic_sha256": "e74c033927aedaf360a973d2e1f557892ef9270aafe4f3587cff7bdb1adc86d4",
+          "diagnostic_first_lines": [
+            "/Users/sasha/math_gkm/research/MarkovTopParameterPolyM55C.lean:33:49: warning: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead"
+          ]
+        }
+      ],
+      "ordinary_current_object": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopParameterPolyM55C.olean",
+        "bytes": 209672,
+        "sha256": "fe2ddc86531441a0702747337fbe065d823fe69f1690f82a6f6008b08e2621d4",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792224623856896992
+      },
+      "archived_object": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000183/artifacts/evidence/markov-55cf20d2/MarkovTopParameterPolyM55C.olean",
+        "bytes": 209672,
+        "sha256": "fe2ddc86531441a0702747337fbe065d823fe69f1690f82a6f6008b08e2621d4",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792224728415180291
+      }
+    },
+    {
+      "module": "MarkovTopRegionM55C",
+      "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/research/MarkovTopRegionM55C.lean",
+      "bytes": 2129,
+      "sha256": "27380c95fc714565727dc36c36ab7c3f4841f1cbab2651ca0553ffe1848e6568",
+      "project_relative_path": "research/MarkovTopRegionM55C.lean",
+      "archive_available": false,
+      "initial_current": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopRegionM55C.lean",
+        "bytes": 2129,
+        "sha256": "27380c95fc714565727dc36c36ab7c3f4841f1cbab2651ca0553ffe1848e6568",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792224597143687450
+      },
+      "imports": [
+        "MarkovTopSectorM55C"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "TopFinishedRegionM55C",
+          "line": 9,
+          "header": "def TopFinishedRegionM55C (q : ℕ) (r : Bool) (i j : ℕ) : Prop",
+          "body_sha256": "6aeb0cd87a739257fe985d0fa69c467e75c7d6db4392e1e5a3c682e711ab9dc4"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_finished_regionM55C",
+          "line": 12,
+          "header": "theorem source_top_finished_regionM55C (q i j : ℕ) (r : Bool) (hq : 1 ≤ q)\n (h : TopFinishedRegionM55C q r i j) :\n threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2",
+          "body_sha256": "5ba73fdeb245faaf92151b8938060e3ea014f8404c6c244f0ce8aba1458f8791"
+        },
+        {
+          "kind": "def",
+          "name": "ThreeRemainingM55C",
+          "line": 23,
+          "header": "def ThreeRemainingM55C : Prop",
+          "body_sha256": "49ab42e866f8bfb720b102f58d33f8d8c8236d0f9bee1c41d8cd6beccecd35e4"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_remainingM55C",
+          "line": 32,
+          "header": "theorem root_iff_remainingM55C : Conjecture63 ↔ ThreeRemainingM55C ∧ OtherFourM9E2",
+          "body_sha256": "d477136593809e664fb601bd422d1d264dcb4ca2e9622b988c6180ef60fcb949"
+        }
+      ],
+      "theorem_count": 2,
+      "definition_count": 2,
+      "status": "ordinary compiled-only; no selected/replayed/printed183 set",
+      "selected": null,
+      "replayed_in183": false,
+      "printed_in183": false,
+      "source_admission_token_occurrences": [],
+      "attempts": [
+        {
+          "receipt": {
+            "path": "/Users/sasha/math_gkm/.control/markov/workers/000183/artifacts/evidence/markov-55cf20d2/build-1792224597252065000.json",
+            "bytes": 567,
+            "sha256": "39623e755907bb0d58cdeecbd54946e077f9ad6cb586dc5bd2383c2dcc7ea8e1"
+          },
+          "project_relative_path": "evidence/markov-55cf20d2/build-1792224597252065000.json",
+          "module": "MarkovTopRegionM55C",
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 26.818256375030614,
+          "source_sha256": "27380c95fc714565727dc36c36ab7c3f4841f1cbab2651ca0553ffe1848e6568",
+          "snapshot": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792224597252065000.lean",
+            "bytes": 2129,
+            "sha256": "27380c95fc714565727dc36c36ab7c3f4841f1cbab2651ca0553ffe1848e6568"
+          },
+          "snapshot_matches_record": true,
+          "final_source_identical": true,
+          "command": [
+            "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+            "-j",
+            "1",
+            "-o",
+            "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopRegionM55C.olean",
+            "/Users/sasha/math_gkm/research/MarkovTopRegionM55C.lean"
+          ],
+          "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+          "diagnostic_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "diagnostic_first_lines": []
+        }
+      ],
+      "ordinary_current_object": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopRegionM55C.olean",
+        "bytes": 80240,
+        "sha256": "d9ee6dd71f724a73e8ace4330599927cdb0e67c8cb4821ab7814eb48933b67b5",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792224623854862520
+      },
+      "archived_object": null
+    },
+    {
+      "module": "MarkovTopSecondGapM55C",
+      "path": "/Users/sasha/math_gkm/.control/markov/workers/000183/artifacts/research/MarkovTopSecondGapM55C.lean",
+      "bytes": 3330,
+      "sha256": "cb6e6f208cc6f62bbc63c3e8dc0709d220fe96248d8e8766d2b43f75d42449f3",
+      "project_relative_path": "research/MarkovTopSecondGapM55C.lean",
+      "archive_available": true,
+      "initial_current": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopSecondGapM55C.lean",
+        "bytes": 3330,
+        "sha256": "cb6e6f208cc6f62bbc63c3e8dc0709d220fe96248d8e8766d2b43f75d42449f3",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792223995988758335
+      },
+      "imports": [
+        "MarkovTopFourthM55C"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "weightedChooseQM55C",
+          "line": 8,
+          "header": "def weightedChooseQM55C (a m : ℚ) (k : ℕ) : ℚ",
+          "body_sha256": "ccfc7a0781dfd56f0fc8e334080f1cddb24439c27773fb4570edbf183d8ae3f4"
+        },
+        {
+          "kind": "def",
+          "name": "topSecondQM55C",
+          "line": 10,
+          "header": "def topSecondQM55C (s d : ℚ) : ℚ",
+          "body_sha256": "37e3e71c0cec1d4e37ce1d820b8d766d0c3b55e8dfc3e43b81b627c6b6f2fcba"
+        },
+        {
+          "kind": "def",
+          "name": "topThirdQM55C",
+          "line": 11,
+          "header": "def topThirdQM55C (s d : ℚ) : ℚ",
+          "body_sha256": "c2eb3d9bc5cb7ea3c4254bee29c5e3b4ab855070dfbb04b6e474585c92734452"
+        },
+        {
+          "kind": "def",
+          "name": "topFourthQM55C",
+          "line": 13,
+          "header": "def topFourthQM55C (s d : ℚ) : ℚ",
+          "body_sha256": "03e34d40f7bf285ca155b743c8721f21f40834c314245a0c4c59d4bb12ca5198"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_second_gap_positiveM55C",
+          "line": 16,
+          "header": "theorem top_second_gap_positiveM55C (s d : ℚ) (hs : 0 ≤ s) (hd : 0 ≤ d) :\n topSecondQM55C s d*topFourthQM55C s d < topThirdQM55C s d^2",
+          "body_sha256": "6e64626fa0739cce59bb48381957bd5eab1dafaf178ce2db13152a9e97e14a0d"
+        }
+      ],
+      "theorem_count": 1,
+      "definition_count": 4,
+      "status": "ordinary compiled-only; no selected/replayed/printed183 set",
+      "selected": null,
+      "replayed_in183": false,
+      "printed_in183": false,
+      "source_admission_token_occurrences": [],
+      "attempts": [
+        {
+          "receipt": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792223879275728000.json",
+            "bytes": 6662,
+            "sha256": "4c0bba1f7e3fadc5ab82069b68e9a77d9b49f96f9eb0597baca259324cbdcb1e"
+          },
+          "project_relative_path": "evidence/markov-55cf20d2/build-1792223879275728000.json",
+          "module": "MarkovTopSecondGapM55C",
+          "returncode": 1,
+          "timeout": false,
+          "seconds": 12.275239375012461,
+          "source_sha256": "e591d4bc2dc61e733d02d4afd82d900af8c4efd61f43618212637dd0aceb15d6",
+          "snapshot": {
+            "path": "/Users/sasha/math_gkm/.control/markov/workers/000183/artifacts/evidence/markov-55cf20d2/build-1792223879275728000.lean",
+            "bytes": 3272,
+            "sha256": "e591d4bc2dc61e733d02d4afd82d900af8c4efd61f43618212637dd0aceb15d6"
+          },
+          "snapshot_matches_record": true,
+          "final_source_identical": false,
+          "command": [
+            "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+            "-j",
+            "1",
+            "-o",
+            "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopSecondGapM55C.olean",
+            "/Users/sasha/math_gkm/research/MarkovTopSecondGapM55C.lean"
+          ],
+          "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+          "diagnostic_sha256": "19b986304f815cb596c300aa93c74346281c13c994d4da4d92d5557fc7ef9cd5",
+          "diagnostic_first_lines": [
+            "/Users/sasha/math_gkm/research/MarkovTopSecondGapM55C.lean:77:3: error: Tactic `simp` failed with a nested error:",
+            "maximum recursion depth has been reached",
+            "use `set_option maxRecDepth <num>` to increase limit",
+            "use `set_option diagnostics true` to get diagnostic information",
+            "/Users/sasha/math_gkm/research/MarkovTopSecondGapM55C.lean:76:5: warning: This simp argument is unused:"
+          ]
+        },
+        {
+          "receipt": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792223919079614000.json",
+            "bytes": 15270,
+            "sha256": "672a22ee39746f5ee8dc457e94b60694c44048d2c9b4a7345e8fdc16cb1a0a66"
+          },
+          "project_relative_path": "evidence/markov-55cf20d2/build-1792223919079614000.json",
+          "module": "MarkovTopSecondGapM55C",
+          "returncode": 1,
+          "timeout": false,
+          "seconds": 13.23992854100652,
+          "source_sha256": "237b6d0bfac6b6f4878bb4865bb18f64ff2d815adf491ec4425a18f88f582494",
+          "snapshot": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792223919079614000.lean",
+            "bytes": 3301,
+            "sha256": "237b6d0bfac6b6f4878bb4865bb18f64ff2d815adf491ec4425a18f88f582494"
+          },
+          "snapshot_matches_record": true,
+          "final_source_identical": false,
+          "command": [
+            "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+            "-j",
+            "1",
+            "-o",
+            "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopSecondGapM55C.olean",
+            "/Users/sasha/math_gkm/research/MarkovTopSecondGapM55C.lean"
+          ],
+          "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+          "diagnostic_sha256": "0ded87d63655d826dfe07908cae47d7b8bf22c30919dfc558fd5f677f12d4cc0",
+          "diagnostic_first_lines": [
+            "Try this:",
+            "  [apply] ring_nf",
+            "  ",
+            "  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.",
+            "    "
+          ]
+        },
+        {
+          "receipt": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792223996054497000.json",
+            "bytes": 575,
+            "sha256": "387bdf3ab24990c927dfb2b9fb5dc6fed693fb5df62f6b2460a4e7df604b3bb4"
+          },
+          "project_relative_path": "evidence/markov-55cf20d2/build-1792223996054497000.json",
+          "module": "MarkovTopSecondGapM55C",
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 16.17858637496829,
+          "source_sha256": "cb6e6f208cc6f62bbc63c3e8dc0709d220fe96248d8e8766d2b43f75d42449f3",
+          "snapshot": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792223996054497000.lean",
+            "bytes": 3330,
+            "sha256": "cb6e6f208cc6f62bbc63c3e8dc0709d220fe96248d8e8766d2b43f75d42449f3"
+          },
+          "snapshot_matches_record": true,
+          "final_source_identical": true,
+          "command": [
+            "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+            "-j",
+            "1",
+            "-o",
+            "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopSecondGapM55C.olean",
+            "/Users/sasha/math_gkm/research/MarkovTopSecondGapM55C.lean"
+          ],
+          "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+          "diagnostic_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "diagnostic_first_lines": []
+        }
+      ],
+      "ordinary_current_object": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopSecondGapM55C.olean",
+        "bytes": 8976480,
+        "sha256": "8479d2dec1a7745767890e09efd7d3aa502b2602da691c9db827726bb9a89c02",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792224012064952397
+      },
+      "archived_object": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000183/artifacts/evidence/markov-55cf20d2/MarkovTopSecondGapM55C.olean",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792224728417629057
+      }
+    },
+    {
+      "module": "MarkovTopSecondSourceM55C",
+      "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/research/MarkovTopSecondSourceM55C.lean",
+      "bytes": 4429,
+      "sha256": "c86029699e559863c553fcd949ba98b364e844cc7548fcf1e7730fdba6c9a63a",
+      "project_relative_path": "research/MarkovTopSecondSourceM55C.lean",
+      "archive_available": false,
+      "initial_current": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopSecondSourceM55C.lean",
+        "bytes": 4429,
+        "sha256": "c86029699e559863c553fcd949ba98b364e844cc7548fcf1e7730fdba6c9a63a",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792223875871238235
+      },
+      "imports": [
+        "MarkovTopSecondGapM55C"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "weighted_choose_castM55C",
+          "line": 10,
+          "header": "theorem weighted_choose_castM55C (a k m : ℕ) :\n (weightedChooseM55C a k m:ℚ)=weightedChooseQM55C a m k",
+          "body_sha256": "36d84343d3a62021a0c8b41b9531458c45452bb456b652de2735c06717546ccf"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_template_second_strictM55C",
+          "line": 14,
+          "header": "theorem top_template_second_strictM55C (n t : ℕ) (hn : 2*t ≤ n)\n (ht : 5 ≤ t) (hnt : 3*t ≤ n+5) :\n (topTemplateMB3E n t).coeff 2*(topTemplateMB3E n t).coeff 4 <\n (topTemplateMB3E n t).coeff 3^2",
+          "body_sha256": "49058013e6380bffd7af8e8aff3ef7bfff85f1932cfa62ede6349c523a0b0ba0"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_second_strictM55C",
+          "line": 70,
+          "header": "theorem source_top_second_strictM55C (q t : ℕ) (r : Bool) (hq : 1 ≤ q)\n (ht0 : 5 ≤ t) (ht : t ≤ q+2) :\n threeRawM9E2 q r 2 (sourceNME9C q r+2-t)*\n threeRawM9E2 q r 4 (sourceNME9C q r+2-t) <\n threeRawM9E2 q r 3 (sourceNME9C q r+2-t)^2",
+          "body_sha256": "2a34e303ce536eaaf5dba5e5c2dcd6ddafea511b8afce12c17a93cdcb7e67086"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_second_polygonM55C",
+          "line": 82,
+          "header": "theorem source_top_second_polygonM55C (q t : ℕ) (r : Bool) (hq : 1 ≤ q)\n (ht0 : 5 ≤ t) (ht : t ≤ q+2) :\n InPolygon 3 (sourceNME9C q r) 2 (sourceNME9C q r+2-t) ∧\n InPolygon 3 (sourceNME9C q r) 3 (sourceNME9C q r+2-t) ∧\n InPolygon 3 (sourceNME9C q r) 4 (sourceNME9C q r+2-t)",
+          "body_sha256": "7ddbc9f1636c341e593cb256c1f2c55dc472d475af4498495451fc62b24d004b"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_second_pathM55C",
+          "line": 89,
+          "header": "theorem source_top_second_pathM55C (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1 ≤ q ∧ (frame path).mid.b=sourceNME9C q r ∧\n ∀ t, 5 ≤ t → t ≤ q+2 →\n coeff (frame path).mid.p 2 ((frame path).mid.b+2-t)*\n coeff (frame path).mid.p 4 ((frame path).mid.b+2-t) <\n coeff (frame path).mid.p 3 ((frame path).mid.b+2-t)^2",
+          "body_sha256": "2ec00ef868063bc3eb9aeec0ec23a8f21f13b45f6fbc2ebdaed384d4f6498dcf"
+        }
+      ],
+      "theorem_count": 5,
+      "definition_count": 0,
+      "status": "ordinary compiled-only; no selected/replayed/printed183 set",
+      "selected": null,
+      "replayed_in183": false,
+      "printed_in183": false,
+      "source_admission_token_occurrences": [],
+      "attempts": [
+        {
+          "receipt": {
+            "path": "/Users/sasha/math_gkm/.control/markov/workers/000183/artifacts/evidence/markov-55cf20d2/build-1792224064431385000.json",
+            "bytes": 585,
+            "sha256": "5db4342745ab093511d3397d13c953bc6325402b83566c1683d2d848765d6268"
+          },
+          "project_relative_path": "evidence/markov-55cf20d2/build-1792224064431385000.json",
+          "module": "MarkovTopSecondSourceM55C",
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 16.053933874994982,
+          "source_sha256": "c86029699e559863c553fcd949ba98b364e844cc7548fcf1e7730fdba6c9a63a",
+          "snapshot": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792224064431385000.lean",
+            "bytes": 4429,
+            "sha256": "c86029699e559863c553fcd949ba98b364e844cc7548fcf1e7730fdba6c9a63a"
+          },
+          "snapshot_matches_record": true,
+          "final_source_identical": true,
+          "command": [
+            "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+            "-j",
+            "1",
+            "-o",
+            "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopSecondSourceM55C.olean",
+            "/Users/sasha/math_gkm/research/MarkovTopSecondSourceM55C.lean"
+          ],
+          "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+          "diagnostic_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "diagnostic_first_lines": []
+        }
+      ],
+      "ordinary_current_object": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopSecondSourceM55C.olean",
+        "bytes": 604624,
+        "sha256": "c1ce186dac482ab247109acf1bdcf5d93c62ef2be32af810ebdd8ed2f5b26a00",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792224080315550321
+      },
+      "archived_object": null
+    },
+    {
+      "module": "MarkovTopSectorM55C",
+      "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/research/MarkovTopSectorM55C.lean",
+      "bytes": 3660,
+      "sha256": "8b79fa0b4774d408d52b37d1dd8cedc95ab1d0d894fe50f5d3491b36cae9651a",
+      "project_relative_path": "research/MarkovTopSectorM55C.lean",
+      "archive_available": false,
+      "initial_current": {
+        "path": "/Users/sasha/math_gkm/research/MarkovTopSectorM55C.lean",
+        "bytes": 3660,
+        "sha256": "8b79fa0b4774d408d52b37d1dd8cedc95ab1d0d894fe50f5d3491b36cae9651a",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792224238011367089
+      },
+      "imports": [
+        "MarkovTopMomentsM55C",
+        "MarkovTopSecondSourceM55C"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "top_mass_zeroM55C",
+          "line": 11,
+          "header": "theorem top_mass_zeroM55C (d T i : ℕ) (hi : T < i) : topMassM55C d T i=0",
+          "body_sha256": "9ff4f03d158ac7e2f899ca9326d67bd03aa22edc95952563d1207fe8ecc0403b"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_positiveM55C",
+          "line": 22,
+          "header": "theorem top_mass_positiveM55C (d T i : ℕ) (hi : i ≤ T) : 0 < topMassM55C d T i",
+          "body_sha256": "d4e0d32f471553f206c24bcf3c663f723febf150f8963b3bd0553098b48a42c1"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_drift_tailM55C",
+          "line": 35,
+          "header": "theorem top_drift_tailM55C (d T i : ℕ) (hi : T < i+2) : 0 ≤ topDriftM55C d T i",
+          "body_sha256": "d9f253ea663f2b07b0bc5f5c3653b242b40c8f8dfe0a4d993e467ef5ddc5b6f0"
+        },
+        {
+          "kind": "def",
+          "name": "TopSectorLCM55C",
+          "line": 40,
+          "header": "def TopSectorLCM55C : Prop",
+          "body_sha256": "1bfabe6a1d887e2b33d16c968081befcbc3660bae74b9721b02af19e6fc4f068"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_sector_iff_momentM55C",
+          "line": 44,
+          "header": "theorem top_sector_iff_momentM55C : TopSectorLCM55C ↔ TopMomentBoundM55C",
+          "body_sha256": "1224f784b65397fd7a34e012c79b832d5606b6d6a715116a3ca02e38d05b679b"
+        },
+        {
+          "kind": "def",
+          "name": "TopInteriorMomentM55C",
+          "line": 63,
+          "header": "def TopInteriorMomentM55C : Prop",
+          "body_sha256": "6cae822fe681b12bbbe8f28e991018840506af41509ed10c563d9f051d4746f8"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_moment_iff_interiorM55C",
+          "line": 66,
+          "header": "theorem top_moment_iff_interiorM55C : TopMomentBoundM55C ↔ TopInteriorMomentM55C",
+          "body_sha256": "b2ea4c95bd57cfd06a9ab004378fd38d0f1716eb65fb3b95221234409bc93771"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_sector_of_momentM55C",
+          "line": 77,
+          "header": "theorem source_top_sector_of_momentM55C (H : TopMomentBoundM55C)\n (q t i : ℕ) (r : Bool) (hq : 1 ≤ q) (ht0 : 5 ≤ t) (ht : t ≤ q+2) :\n threeRawM9E2 q r i (sourceNME9C q r+2-t)*\n threeRawM9E2 q r (i+2) (sourceNME9C q r+2-t) ≤\n threeRawM9E2 q r (i+1) (sourceNME9C q r+2-t)^2",
+          "body_sha256": "6cbdd05934817bf6a6c081e370b587b13f03465a02b922e9ce14e3ee10409e25"
+        }
+      ],
+      "theorem_count": 6,
+      "definition_count": 2,
+      "status": "ordinary compiled-only; no selected/replayed/printed183 set",
+      "selected": null,
+      "replayed_in183": false,
+      "printed_in183": false,
+      "source_admission_token_occurrences": [],
+      "attempts": [
+        {
+          "receipt": {
+            "path": "/private/tmp/math_gkm_godel_20261013/markov_worker_000183_partial_retention_bundle/evidence/markov-55cf20d2/build-1792224238093435000.json",
+            "bytes": 567,
+            "sha256": "3f4a8b05cdf79508753573b23b14a910862bdce1b7629aacedb4b8be218616d5"
+          },
+          "project_relative_path": "evidence/markov-55cf20d2/build-1792224238093435000.json",
+          "module": "MarkovTopSectorM55C",
+          "returncode": 0,
+          "timeout": false,
+          "seconds": 26.892945958999917,
+          "source_sha256": "8b79fa0b4774d408d52b37d1dd8cedc95ab1d0d894fe50f5d3491b36cae9651a",
+          "snapshot": {
+            "path": "/Users/sasha/math_gkm/.control/markov/workers/000183/artifacts/evidence/markov-55cf20d2/build-1792224238093435000.lean",
+            "bytes": 3660,
+            "sha256": "8b79fa0b4774d408d52b37d1dd8cedc95ab1d0d894fe50f5d3491b36cae9651a"
+          },
+          "snapshot_matches_record": true,
+          "final_source_identical": true,
+          "command": [
+            "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+            "-j",
+            "1",
+            "-o",
+            "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopSectorM55C.olean",
+            "/Users/sasha/math_gkm/research/MarkovTopSectorM55C.lean"
+          ],
+          "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+          "diagnostic_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "diagnostic_first_lines": []
+        }
+      ],
+      "ordinary_current_object": {
+        "path": "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopSectorM55C.olean",
+        "bytes": 250432,
+        "sha256": "29b8688bc0926cc4ca3eef1851238cb4dd8e3d14721660936c73a3435a2cb44b",
+        "mode": 420,
+        "uid": 501,
+        "gid": 20,
+        "mtime_ns": 1792224264854076374
+      },
+      "archived_object": null
+    }
+  ],
+  "compiled_counts": {
+    "ordinary_compiled_modules": 10,
+    "theorem_declarations": 54,
+    "definitions": 26,
+    "success_receipts": 10,
+    "failed_rc1_receipts": 8,
+    "timeout_receipts": 0,
+    "selected_modules": null,
+    "replayed183": 0,
+    "axiom_printed183": 0
+  },
+  "source_level_scope": {
+    "new_unconditional_compiled_source_statement": "Actual numerator-three q>=1, b=3q+1 for r=true or3q+2 for r=false;5<=t<=q+2,j=b+2-t: raw coeff2*coeff4<coeff3^2. All actual paths with a=3 have q,r source representation. No auxiliary sign premise; effective nonempty range q>=3. This is ordinary-compilation evidence, not fresh replay/print admission.",
+    "generic_strict_statement": "Natural n,t with2t<=n,5<=t,3t<=n+5: template coeff2*coeff4<coeff3^2. Rational certificate s=t-5,d=n+5-3t requires s,d>=0. Casts of Nat.sub use explicit bounds.",
+    "root_equivalence": "Compiled Conjecture63 iff ThreeRemainingM55C and OtherFourM9E2; neither predicate proved.",
+    "finished_region": "Exists t with5<=t<=q+2,j=b+2-t and(i<=2 or t<i+2). i0 zero and i1 inherited; i2 new strict; t<i+2 right endpoint zero. All retained natural-index triples, not just positive coefficients.",
+    "horizontal_remaining": "q>=1,all r,i,j; q+3<j,b<2j+1,j!=5,not TopFinishedRegionM55C: rawH(i,j),(i+1,j),(i+2,j).",
+    "vertical_remaining": "Allnatural i,j outside ((i=3 or4 and j+1<=q) or(5<=i<=8 and j+2<=q)); rawV(i,j),(i,j+1),(i,j+2). Unchanged.",
+    "diagonal_remaining": "Allnatural i,j outside3<=i<=6 andj+2<=q; rawD(i,j+2),(i+1,j+1),(i+2,j). Unchanged.",
+    "root_guards": "Root polygon guards/endpoints/raw coefficient convention inherited unchanged through root_iff_upper_residualM5BF; source subproblem is all natural indices, so zeros are retained. No new root definition.",
+    "kernel": "K(d,i,s)=choose(s,i)*choose(d+s+i+8,i+3); L_T(f)=f(T)+4 sum_{s<T}(T-s)f(s); Mass=L_T(K). Integer weights and endpoint f(T) retained. top_mass_coeff: template n=2(T+3)+d,t=T+3 atcolumni+3 equalsMass, all naturals.",
+    "moment_identity": "Eigen=s(s+d+9),Scale=(i+1)(i+4),Excess=moment1-Eigen(i)*Mass,VarianceNumer=Mass*moment2-moment1^2. Scale(i)^2*Scale(i+1)*(Mass(i+1)^2-Mass(i)*Mass(i+2))=Drift. Positive scale gives exact iff. Excess nonnegative follows recurrence; no general Drift sign theorem.",
+    "conditional_bound": "TopMomentBound: allnatural d,T,i,T<=d+2,Scale*VarianceNumer <=(2i+6)*Excess^2+Scale*(2i+d+10)*Mass*Excess. Unproved.",
+    "exact_sector_reduction": "TopSectorLC forallnatural n,t,2t<=n,5<=t,3t<=n+5,allnaturalstarts iff TopMomentBound iff TopInteriorMoment with2<=T<=d+2 andi+2<=T. T<2 and right-zero tails discharged; lowstarts0,1,2 discharged. Actualsource allstarts adapter remains conditional on TopMomentBound.",
+    "parameter_polynomials": "Rational polynomial in free natural d evaluates tointegerMass; degree<=i+3, coefficient(i+3)=Leading(T,i)=(choose(T,i)+4choose(T+1,i+2))/(i+3)!. No equality-of-degree or asymptotic inequality theorem asserted in finalsource.",
+    "leading": "LeadingNumer nonnegative allT,i and positivei<=T; LC allnaturalstarts via inherited quadratic/binomial theorem; Leading strict LC when i+1<=T usingpositive factorial scaling. Auxiliary leading coefficients, not actual raw LC or eventual-in-d theorem.",
+    "obstructions": "Finite midpoint and geometric-weight shortcuts fail; geometric weights formallynonnegative,intervalsupport andallCrossLC but outputfails. Actual3/16 row11 raw[7168,34852,78260] has saved positivegap653694224 and polygon proof. No source/root refutation.",
+    "prior_limits": "Allactuala2three directions152; a3H2j+1<=b plus priorbands,row5 retained. OtherFour>=4 open. Old121212incl195,separate19,WindowLC/Abel,166seven-prefix compiled-only,171malformedreport,180historicalversions unchanged. No inherited replay recovery in183."
+  },
+  "literal_raw_indices": {
+    "H": [
+      "(i,j)",
+      "(i+1,j)",
+      "(i+2,j)"
+    ],
+    "V": [
+      "(i,j)",
+      "(i,j+1)",
+      "(i,j+2)"
+    ],
+    "D": [
+      "(i,j+2)",
+      "(i+1,j+1)",
+      "(i+2,j)"
+    ],
+    "new_strict": [
+      "(2,b+2-t)",
+      "(3,b+2-t)",
+      "(4,b+2-t)"
+    ]
+  },
+  "zero_endpoint_handling": [
+    "Sourceclassification q>=1, both residues; t>=5 implies nonemptyq>=3, no q1/q2 strict claims.",
+    "Finite sums use guard3<=s or reindexs=3+u; Nat subtraction casts haveexplicit bounds.",
+    "topMass zero ifT<i, positive iff supporti<=T via two theorems; endpointK(T) not lost.",
+    "Moment tail i+2>T gives endpointzero; no division byMass,Excess orVariance. Scale factors strictlypositive.",
+    "Rootresidual includesallnaturalstarts andsame raw coefficients, not normalized orsupport-restricted."
+  ]
+}

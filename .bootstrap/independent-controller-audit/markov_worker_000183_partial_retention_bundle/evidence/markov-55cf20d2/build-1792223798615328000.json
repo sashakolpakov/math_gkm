@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTopFourthM55C.lean:21:18: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2191(a + s - k)\nin the target expression\n  \u2191((a + s).choose (k + 1)) * \u2191(k + 1) = \u2191((a + s).choose k * (a + s - k))\n\na s k : \u2115\nhk : k \u2264 a\nh : (a + s).choose (k + 1) * (k + 1) = (a + s).choose k * (a + s - k)\nhh : \u2191((a + s).choose (k + 1)) * \u2191(k + 1) = \u2191((a + s).choose k * (a + s - k))\n\u22a2 \u2191s * \u2191((a + s).choose k) = (\u2191k + 1) * \u2191((a + s).choose (k + 1)) + (\u2191k - \u2191a) * \u2191((a + s).choose k)\n/Users/sasha/math_gkm/research/MarkovTopFourthM55C.lean:28:55: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2211 i \u2208 ?s, ?a * ?f i\nin the target expression\n  \u2211 s \u2208 range m, (\u2191m - \u2191s) * \u2191s * \u2191((a + s).choose k) =\n    (\u2191k + 1) * \u2211 s \u2208 range m, (\u2191m - \u2191s) * \u2191((a + s).choose (k + 1)) +\n      (\u2191k - \u2191a) * \u2211 s \u2208 range m, (\u2191m - \u2191s) * \u2191((a + s).choose k)\n\na k m : \u2115\nhk : k \u2264 a\n\u22a2 \u2211 s \u2208 range m, (\u2191m - \u2191s) * \u2191s * \u2191((a + s).choose k) =\n    (\u2191k + 1) * \u2211 s \u2208 range m, (\u2191m - \u2191s) * \u2191((a + s).choose (k + 1)) +\n      (\u2191k - \u2191a) * \u2211 s \u2208 range m, (\u2191m - \u2191s) * \u2191((a + s).choose k)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTopFourthM55C": "ac3ca79c0992355467979b4fa2913ad3c4371b802efede058f5132a6f27cd3f7"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopFourthM55C.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopFourthM55C.lean"
+  ],
+  "seconds": 28.47893899999326,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

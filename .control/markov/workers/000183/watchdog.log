@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/sasha/math_gkm/machinery/worker.py", line 235, in <module>
+    main()
+    ~~~~^^
+  File "/Users/sasha/math_gkm/machinery/worker.py", line 231, in main
+    execute(args.directory)
+    ~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/sasha/math_gkm/machinery/worker.py", line 215, in execute
+    target.write_bytes((ROOT/name).read_bytes())
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 797, in write_bytes
+    return f.write(view)
+           ~~~~~~~^^^^^^
+OSError: [Errno 28] No space left on device

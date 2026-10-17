@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTopKernelM55C.lean:72:1: warning: 'push_cast' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n/Users/sasha/math_gkm/research/MarkovTopKernelM55C.lean:90:16: error: unexpected token ':='; expected term\n/Users/sasha/math_gkm/research/MarkovTopKernelM55C.lean:81:45: warning: `Nat.succ_mul_choose_eq` has been deprecated: Use `Nat.add_one_mul_choose_eq` instead\n/Users/sasha/math_gkm/research/MarkovTopKernelM55C.lean:88:86: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2191(s.choose (i + 1)) * (\u2191i + \u21911)\nin the target expression\n  \u2191(s.choose (i + 1)) * (\u2191i + 1) * (\u2191((d + s + i + 8 + 1).choose (i + 3 + 1)) * (\u2191i + 3 + 1)) =\n    \u2191(s.choose i) * (\u2191s - \u2191i) * ((\u2191d + \u2191s + \u2191i + 8 + 1) * \u2191((d + s + i + 8).choose (i + 3)))\n\nd i s : \u2115\nhi : i \u2264 s\nh0 : \u2191(s.choose (i + 1)) * (\u2191i + \u21911) = \u2191(s.choose i) * (\u2191s - \u2191i)\nh1 :\n  (\u2191d + \u2191s + \u2191i + 8 + \u21911) * \u2191((d + s + i + 8).choose (i + 3)) =\n    \u2191((d + s + i + 8 + 1).choose (i + 3 + 1)) * (\u2191i + 3 + \u21911)\n\u22a2 \u2191(s.choose (i + 1)) * (\u2191i + 1) * (\u2191((d + s + i + 8 + 1).choose (i + 3 + 1)) * (\u2191i + 3 + 1)) =\n    \u2191(s.choose i) * (\u2191s - \u2191i) * ((\u2191d + \u2191s + \u2191i + 8 + 1) * \u2191((d + s + i + 8).choose (i + 3)))\n/Users/sasha/math_gkm/research/MarkovTopKernelM55C.lean:90:13: error: Application type mismatch: The argument\n  s\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  Type ?u.284\nof sort `Type (?u.284 + 1)` in the application\n  @PrincipalSeg s\n/Users/sasha/math_gkm/research/MarkovTopKernelM55C.lean:90:1: error: unsolved goals\ncase h0\nd i s : \u2115\nhi : \u00aci \u2264 s\n\u22a2 PrincipalSeg (fun x1 x2 => sorry) fun x1 x2 => sorry\n\ncase neg\nd i s : \u2115\nhi : \u00aci \u2264 s\nh0 : PrincipalSeg (fun x1 x2 => sorry) fun x1 x2 => sorry\n\u22a2 (\u2191i + 1) * (\u2191i + 4) * (\u2191(s.choose (i + 1)) * \u2191((d + s + (i + 1) + 8).choose (i + 1 + 3))) =\n    (\u2191s * (\u2191s + \u2191d + 9) - \u2191i * (\u2191i + \u2191d + 9)) * (\u2191(s.choose i) * \u2191((d + s + i + 8).choose (i + 3)))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTopKernelM55C": "b2c1497b791cfda6d7f9fe6f5413ea8216c6b3da202683f08e44b0b5e58ff4f2"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopKernelM55C.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopKernelM55C.lean"
+  ],
+  "seconds": 8.356107916973997,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

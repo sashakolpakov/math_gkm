@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovTopLeadingM55C.lean:22:32: error: unsolved goals\nT i : \u2115\n\u22a2 X * C 4 * (1 + X) ^ T + X ^ 2 * (1 + X) ^ T + C 4 * (1 + X) ^ T =\n    X * (1 + X) ^ T * 4 + X ^ 2 * (1 + X) ^ T + (1 + X) ^ T * 4\n/Users/sasha/math_gkm/research/MarkovTopLeadingM55C.lean:27:46: error: unsolved goals\nT i : \u2115\nhp : (1 + X) ^ T * Quadratic 4 4 1 = 4 * (1 + X) ^ (T + 1) + (1 + X) ^ T * X ^ 2\nj : \u2115\n\u22a2 (if \u2191j + 2 < 0 then 0\n    else (if 2 \u2264 (\u2191j + 2).toNat then \u2191(T.choose ((\u2191j + 2).toNat - 2)) else 0) + 4 * \u2191((T + 1).choose (\u2191j + 2).toNat)) =\n    \u2191(T.choose j) + 4 * \u2191((T + 1).choose (j + 2))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTopLeadingM55C": "713fc3edcef280c1182222f996ae8b449ad336096f18a129c44afa9b97fa3e10"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-55cf20d2/MarkovTopLeadingM55C.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopLeadingM55C.lean"
+  ],
+  "seconds": 11.955092291987967,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
