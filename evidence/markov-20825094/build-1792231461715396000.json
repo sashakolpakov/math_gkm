@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTopSteinBalanceM208.lean:37:1: error: ring failed, ring expressions not equal\nd i k : \u2115\nhC : (\u2191k + 1) * \u2191((i + k + 1).choose i) = (\u2191i + \u2191k + 1) * \u2191((i + k).choose i)\nhQ : \u2191d + \u2191i + \u2191k + 6 \u2260 0\n\u22a2 -(\u2191k * \u2191((i + k + 1).choose i) * betaQSeqMDCB d i k * 9) - \u2191k * \u2191((i + k + 1).choose i) * betaQSeqMDCB d i k * \u2191d -\n                                \u2191k * \u2191((i + k + 1).choose i) * betaQSeqMDCB d i k * \u2191i * 2 +\n                              \u2191k * betaQSeqMDCB d i k * \u2191d * \u2191((i + k).choose i) +\n                            \u2191k * betaQSeqMDCB d i k * \u2191i * \u2191((i + k).choose i) * 3 +\n                          \u2191k * betaQSeqMDCB d i k * \u2191((i + k).choose i) * 9 -\n                        \u2191k ^ 2 * \u2191((i + k + 1).choose i) * betaQSeqMDCB d i k +\n                      \u2191k ^ 2 * betaQSeqMDCB d i k * \u2191((i + k).choose i) -\n                    \u2191((i + k + 1).choose i) * betaQSeqMDCB d i k * 8 -\n                  \u2191((i + k + 1).choose i) * betaQSeqMDCB d i k * \u2191d -\n                \u2191((i + k + 1).choose i) * betaQSeqMDCB d i k * \u2191i * 2 +\n              betaQSeqMDCB d i k * \u2191d * \u2191i * \u2191((i + k).choose i) +\n            betaQSeqMDCB d i k * \u2191d * \u2191((i + k).choose i) +\n          betaQSeqMDCB d i k * \u2191i * \u2191((i + k).choose i) * 10 +\n        betaQSeqMDCB d i k * \u2191i ^ 2 * \u2191((i + k).choose i) * 2 +\n      betaQSeqMDCB d i k * \u2191((i + k).choose i) * 8 =\n    0\n/Users/sasha/math_gkm/research/MarkovTopSteinBalanceM208.lean:80:3: error: Type mismatch\n  stein_pair_balanceM208 d i m\nhas type\n  \u2200 k < m,\n    steinPairM208 d i m k * steinBM208 (\u2191i + 1) (\u2191m) (\u2191d + 2 * \u2191i + 9) \u2191k =\n      steinPairM208 d i m (k + 1) * steinDM208 (\u2191i + 1) (\u2191m) (\u2191d + 2 * \u2191i + 9) (\u2191k + 1)\nbut is expected to have type\n  \u2200 k < m,\n    steinPairM208 d i m k * steinBM208 (\u2191i + 1) (\u2191m) (\u2191d + 2 * \u2191i + 9) \u2191k =\n      steinPairM208 d i m (k + 1) * steinDM208 (\u2191i + 1) (\u2191m) (\u2191d + 2 * \u2191i + 9) \u2191(k + 1)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTopSteinBalanceM208": "56274d491b060305613de14f5c3569691fc9c6ebaeb5eebafbbff3a72077e0f9"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-20825094/MarkovTopSteinBalanceM208.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopSteinBalanceM208.lean"
+  ],
+  "seconds": 31.841095874959137,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
