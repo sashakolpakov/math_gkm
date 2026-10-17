@@ -1,0 +1,41 @@
+{
+  "schema": "independent-acceptance-fixture-review.v1",
+  "observed_utc": "2026-10-17T23:17:11.506231+00:00",
+  "scope": "Static read-only source review; no test, candidate code, proof or role execution; no source edit.",
+  "manifest": {
+    "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/acceptance-pre-001/SOURCE_MANIFEST.json",
+    "sha256": "223ed73633b9d6ef4c4c7f3ae11fdac638e3d9483dd95bab3ec56050669fc99f"
+  },
+  "finding": {
+    "priority": "P1 current regression setup; not demonstrated runtime defect",
+    "title": "Killed-controller regression waits for a researcher job that the sleeping proposer prevents",
+    "references": [
+      "tests/test_study_v2.py:205-234",
+      "machinery/study_fixture.py:8-19",
+      "machinery/study.py:479-486",
+      "machinery/study.py:501"
+    ],
+    "reason": "The fixture selects fixture_behavior=sleep globally. study_fixture sleeps before dispatching role, so plan-0000, the first proposer, sleeps and times out. _research_round rejects a non-completed proposer before creating round-0000. The regression waits for round-0000/process.json and therefore cannot reach its intended controller kill, inherited watchdog lock, receipt recovery and call-count assertions.",
+    "required_disposition": "Preserve the real killed-controller/watchdog/lock/recovery scenario while targeting an actually launched role. Either target the first in-flight proposer job, or explicitly arrange a successful proposer followed by a sleeping researcher; adjust expected counts to that exact scenario. This is neutral fixture migration, not authority or mathematical gate relaxation.",
+    "runtime_result": "Acceptance lifecycle group was still running at this observation; no suite pass or observed test failure is claimed."
+  },
+  "pins": {
+    "tests/test_study_v2.py": {
+      "sha256": "9739e991706cecd3fac0875c7fd99950ccf67217e6477ca3cc3b2f802ecd2430",
+      "bytes": 23420
+    },
+    "machinery/study_fixture.py": {
+      "sha256": "64c9a4d2f80730d362860be6e89a920e098325d4464da48fb306f0b7ae4db64b",
+      "bytes": 7843
+    },
+    "machinery/study.py": {
+      "sha256": "e6803c8d6fc4b410325ce314b0f4fe182fe12c782c793dd954176e2aac6e639d",
+      "bytes": 49568
+    },
+    "docs/REGRESSION.md": {
+      "sha256": "a95f5b6aea89216c61f5d0f0d907a4afc6027649de33f008737dbd1202816dce",
+      "bytes": 5913
+    }
+  },
+  "supported_scope": "49 distinct neutral tests in documented five groups; no live LLM, Markov study or campaign activation."
+}

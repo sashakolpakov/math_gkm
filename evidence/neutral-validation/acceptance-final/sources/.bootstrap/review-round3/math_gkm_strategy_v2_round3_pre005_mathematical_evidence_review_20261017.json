@@ -1,0 +1,1537 @@
+{
+  "observed_at_utc": "2026-10-17T22:42:47.258695+00:00",
+  "scope": "Read-only mathematical evidence review, no candidate/test execution by reviewer",
+  "manifest": {
+    "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/pre-005/SOURCE_MANIFEST.json",
+    "bytes": 7525,
+    "sha256": "7e9ab7911641fd1c05b0266ef81a525bbde12ee77e6bde94830555a8227737b7"
+  },
+  "source_mismatches": [],
+  "runs": [
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/foundations-005.json",
+        "bytes": 788,
+        "sha256": "188e4f9745d59cad8847ded640073bea1c4308c74931960b10e5c3b9c3cf3bde"
+      },
+      "log": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/foundations-005.log",
+        "bytes": 1059,
+        "sha256": "e0be495f811f1f95d99a25b9c691bc0d5154489bc9e6a22ec633205cdb1289be"
+      },
+      "returncode": 0,
+      "elapsed_seconds": 38.09923815727234,
+      "source_mismatches_after": []
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/identity-005.json",
+        "bytes": 1618,
+        "sha256": "48e07d48e34be2a36e47855601b93ee70d169f2f1b89e75973341f186ed85941"
+      },
+      "log": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/identity-005.log",
+        "bytes": 3799,
+        "sha256": "839b1d6f3ee841e456d750ff0b3c30e33e88e1948323ac793df70eaa7216a656"
+      },
+      "returncode": 0,
+      "elapsed_seconds": 203.77498602867126,
+      "source_mismatches_after": []
+    }
+  ],
+  "retained_results": [
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-dqvruj3n/continuation/result.json",
+        "bytes": 1115885,
+        "sha256": "9ba8fb835c88d1aaf6203364c94dd5a7d5cb7729075e2cb83862c370feeb6bb8"
+      },
+      "checked": true,
+      "lean_exact_root_checked": null,
+      "valid_attempt": true,
+      "status": "checked_exact_obligation_and_interfaces",
+      "failure": null,
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.ContinuationObligations",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Target94afe328af2b18eb1a5e06b9",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.ContinuationObligations",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.Target94afe328af2b18eb1a5e06b9",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "trusted_premise_inspection",
+          "module": null,
+          "returncode": 0,
+          "termination": null
+        }
+      ],
+      "closures": [
+        {
+          "name": "StudyObligation",
+          "axioms": [],
+          "constants": 44,
+          "catalog": 195
+        },
+        {
+          "name": "StudyInterface",
+          "axioms": [],
+          "constants": 2,
+          "catalog": 0
+        },
+        {
+          "name": "StudyTransport",
+          "axioms": [],
+          "constants": 4,
+          "catalog": 0
+        }
+      ],
+      "declaration_artifact": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-dqvruj3n/continuation/source/declarations.json",
+        "bytes": 1077428,
+        "sha256": "639b8e7417641e3bce3a9cd1811228f5868189ba420df6eb0b08186aa5e2fb7b"
+      },
+      "artifact_sha_matches": true,
+      "all_parsed_rows_match_artifact": true
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-kets7jwm/bad-fiber/result.json",
+        "bytes": 2844,
+        "sha256": "740a0b02764d0a3cbcae0c19a3d419694ffb71079311fd37bec71fa825c2ae1e"
+      },
+      "checked": false,
+      "lean_exact_root_checked": null,
+      "valid_attempt": null,
+      "status": "invalid_comparison",
+      "failure": "failure within compilation/replay budget: MathGKM.Target3366e9579a34aa13a3097d8d",
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.ResearchSemantics",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Target3366e9579a34aa13a3097d8d",
+          "returncode": 1,
+          "termination": null
+        }
+      ],
+      "closures": []
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-kets7jwm/fiber/result.json",
+        "bytes": 472993,
+        "sha256": "a1ae48490ce307025e2417947a0cb4b8ec124d367203902a8847072b64739444"
+      },
+      "checked": true,
+      "lean_exact_root_checked": null,
+      "valid_attempt": true,
+      "status": "checked_exact_obligation_and_interfaces",
+      "failure": null,
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.ResearchSemantics",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Target7b3f400027b237a9d5afad71",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.ResearchSemantics",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.Target7b3f400027b237a9d5afad71",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "trusted_premise_inspection",
+          "module": null,
+          "returncode": 0,
+          "termination": null
+        }
+      ],
+      "closures": [
+        {
+          "name": "StudyObligation",
+          "axioms": [
+            "Quot.sound"
+          ],
+          "constants": 10,
+          "catalog": 55
+        },
+        {
+          "name": "StudyInterface",
+          "axioms": [],
+          "constants": 5,
+          "catalog": 0
+        },
+        {
+          "name": "StudyTransport",
+          "axioms": [],
+          "constants": 10,
+          "catalog": 0
+        }
+      ],
+      "declaration_artifact": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-kets7jwm/fiber/source/declarations.json",
+        "bytes": 457267,
+        "sha256": "0ff2c146cf229b6c1918e476c7da8a5ae4a2ebde4de4f2559af483ebbf651c1f"
+      },
+      "artifact_sha_matches": true,
+      "all_parsed_rows_match_artifact": true
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-h9co4n45/foundation/result.json",
+        "bytes": 4408,
+        "sha256": "b1491c07efbc481cebaa4be652b4a98e77deb47ad405fad88619c041ce8cda48"
+      },
+      "checked": false,
+      "lean_exact_root_checked": null,
+      "valid_attempt": null,
+      "status": "invalid_comparison",
+      "failure": "failure within compilation/replay budget: StudyCheck",
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.ResearchSemantics",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Target3b8f99c428605aca731f987f",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.FakeFoundation",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "StudyCheck",
+          "returncode": 1,
+          "termination": null
+        }
+      ],
+      "closures": []
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-h9co4n45/root-check/a28de43e71da745f3f722b1b11986b8d99973dead862ca386b11d7152eff1eb4/result.json",
+        "bytes": 2161,
+        "sha256": "2b1ca0ad99a6c6b7b1a6def9c2cd6e4df62d3bc038dc7dc512d29d239c2c9926"
+      },
+      "checked": false,
+      "lean_exact_root_checked": null,
+      "valid_attempt": null,
+      "status": "invalid_comparison",
+      "failure": "failure within compilation/replay budget: MathGKM.Target6dba77461a2c7413bdc2abe6",
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.Fake",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Target6dba77461a2c7413bdc2abe6",
+          "returncode": 1,
+          "termination": null
+        }
+      ],
+      "closures": []
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-bgsagdwn/fake/6c065696e7d9c46bae8c3db1afc778793f9a2fef3c12520f4667f5b1e26bd76b/result.json",
+        "bytes": 3691,
+        "sha256": "b1b83e3d7193bb18ed13a5ab02006784b754268d1da608d4229a01ca3b1024c5"
+      },
+      "checked": false,
+      "lean_exact_root_checked": null,
+      "valid_attempt": null,
+      "status": "invalid_comparison",
+      "failure": "failure within compilation/replay budget: MathGKM.Targeta4ad1d1f54e4af46a9ccdc38",
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.Counterfeit",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Original",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Target32ba58c788a1dba172cfa3ef",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Targeta4ad1d1f54e4af46a9ccdc38",
+          "returncode": 1,
+          "termination": null
+        }
+      ],
+      "closures": []
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-bgsagdwn/good/978dfc25202d7eaf25d3d0c57ef6ff830294f7922f74ebb5e552e9ad01c5be30/result.json",
+        "bytes": 18107,
+        "sha256": "b2b2979e7a6cb7b3fc3a471a44f812552a198cd28d9c6410aab3cc512dfd8856"
+      },
+      "checked": true,
+      "lean_exact_root_checked": null,
+      "valid_attempt": true,
+      "status": "checked_exact_obligation_and_interfaces",
+      "failure": null,
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.Original",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Target32ba58c788a1dba172cfa3ef",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Targetb26c52a943235334213d7ca6",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.Original",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.Target32ba58c788a1dba172cfa3ef",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.Targetb26c52a943235334213d7ca6",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "trusted_premise_inspection",
+          "module": null,
+          "returncode": 0,
+          "termination": null
+        }
+      ],
+      "closures": [
+        {
+          "name": "StudyObligation",
+          "axioms": [],
+          "constants": 6,
+          "catalog": 11
+        },
+        {
+          "name": "StudyInterface",
+          "axioms": [],
+          "constants": 2,
+          "catalog": 0
+        },
+        {
+          "name": "StudyTransport",
+          "axioms": [],
+          "constants": 4,
+          "catalog": 0
+        }
+      ],
+      "declaration_artifact": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-bgsagdwn/good/978dfc25202d7eaf25d3d0c57ef6ff830294f7922f74ebb5e552e9ad01c5be30/source/declarations.json",
+        "bytes": 6944,
+        "sha256": "f09c75020714286ea071c6d7e393ca752b610c50e9dc7807fe664adbccc31d9a"
+      },
+      "artifact_sha_matches": true,
+      "all_parsed_rows_match_artifact": true
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-bgsagdwn/reduction/c0c6e175cfed4a9ebc71832b49217d13dfb65e879e5f77c4c613542855f46059/result.json",
+        "bytes": 16719,
+        "sha256": "0871ee52a0dd7e9826e7086e96e775d69f6ed59546ccaf9f083551a17eb203e1"
+      },
+      "checked": true,
+      "lean_exact_root_checked": null,
+      "valid_attempt": true,
+      "status": "checked_exact_obligation_and_interfaces",
+      "failure": null,
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.Original",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Target32ba58c788a1dba172cfa3ef",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.Original",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.Target32ba58c788a1dba172cfa3ef",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "trusted_premise_inspection",
+          "module": null,
+          "returncode": 0,
+          "termination": null
+        }
+      ],
+      "closures": [
+        {
+          "name": "StudyObligation",
+          "axioms": [],
+          "constants": 11,
+          "catalog": 5
+        },
+        {
+          "name": "StudyInterface",
+          "axioms": [],
+          "constants": 2,
+          "catalog": 0
+        },
+        {
+          "name": "StudyTransport",
+          "axioms": [],
+          "constants": 4,
+          "catalog": 0
+        }
+      ],
+      "declaration_artifact": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-bgsagdwn/reduction/c0c6e175cfed4a9ebc71832b49217d13dfb65e879e5f77c4c613542855f46059/source/declarations.json",
+        "bytes": 6431,
+        "sha256": "ef67efe099d1fbfa04cfbb281c7a533b605825ecdc2a69648c0fc67fb260ba07"
+      },
+      "artifact_sha_matches": true,
+      "all_parsed_rows_match_artifact": true
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-bgsagdwn/shadow/e3266ed664a720a8acc397928e7308be7ff61716b60bef19b0586ec52e13d242/result.json",
+        "bytes": 4405,
+        "sha256": "b311d43cfbc1f028a465348c12d509078e5e8e296d6dd506bdc08218b88f5b4e"
+      },
+      "checked": false,
+      "lean_exact_root_checked": null,
+      "valid_attempt": null,
+      "status": "invalid_comparison",
+      "failure": "failure within compilation/replay budget: StudyCheck",
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.Original",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Target32ba58c788a1dba172cfa3ef",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Target30476de799d9ea74d7051f6f",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "StudyCheck",
+          "returncode": 1,
+          "termination": null
+        }
+      ],
+      "closures": []
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-h739n55s/easy/result.json",
+        "bytes": 1759,
+        "sha256": "dc17672aae6cc9490ef539641fe54f7db0f4cd33ca1695d21e3cb8bfd4dbafc7"
+      },
+      "checked": false,
+      "lean_exact_root_checked": null,
+      "valid_attempt": null,
+      "status": "invalid_comparison",
+      "failure": "failure within compilation/replay budget: MathGKM.Target19e75ab91cd7198527b210f4",
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Target19e75ab91cd7198527b210f4",
+          "returncode": 1,
+          "termination": null
+        }
+      ],
+      "closures": []
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-h739n55s/none/result.json",
+        "bytes": 1759,
+        "sha256": "ba08cafd3352dc9b77b4a287a27b0e9bcbb557720f71c1ca87c967d8c125e245"
+      },
+      "checked": false,
+      "lean_exact_root_checked": null,
+      "valid_attempt": null,
+      "status": "invalid_comparison",
+      "failure": "failure within compilation/replay budget: MathGKM.Target19e75ab91cd7198527b210f4",
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Target19e75ab91cd7198527b210f4",
+          "returncode": 1,
+          "termination": null
+        }
+      ],
+      "closures": []
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-h739n55s/valid/result.json",
+        "bytes": 11321,
+        "sha256": "078dbac84684cba6385bb139eb61ded5a7864422b211f691013d4df3feb85992"
+      },
+      "checked": true,
+      "lean_exact_root_checked": null,
+      "valid_attempt": true,
+      "status": "checked_exact_obligation_and_interfaces",
+      "failure": null,
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Target1aea1d01c7cc085ed6042bd5",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.Target1aea1d01c7cc085ed6042bd5",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "trusted_premise_inspection",
+          "module": null,
+          "returncode": 0,
+          "termination": null
+        }
+      ],
+      "closures": [
+        {
+          "name": "StudyObligation",
+          "axioms": [],
+          "constants": 5,
+          "catalog": 2
+        },
+        {
+          "name": "StudyInterface",
+          "axioms": [],
+          "constants": 2,
+          "catalog": 0
+        },
+        {
+          "name": "StudyTransport",
+          "axioms": [],
+          "constants": 4,
+          "catalog": 0
+        }
+      ],
+      "declaration_artifact": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-h739n55s/valid/source/declarations.json",
+        "bytes": 4360,
+        "sha256": "b5c013624a3b6d2b7ca994a30938d60e33e2278210e3ca7d338efb4ade97cfa1"
+      },
+      "artifact_sha_matches": true,
+      "all_parsed_rows_match_artifact": true
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-wtjjvuvq/left/d541e662bc7930150a443266828b715e5d88d7939677c0209a9bc822479f684e/result.json",
+        "bytes": 10943,
+        "sha256": "798a148c91dd6c41af816f103bb88190f22dfa2db5d8e6aaa8b2e7780d5c2a3e"
+      },
+      "checked": true,
+      "lean_exact_root_checked": null,
+      "valid_attempt": true,
+      "status": "checked_exact_obligation_and_interfaces",
+      "failure": null,
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Target7cfc263c9785df9a4aa45724",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.Target7cfc263c9785df9a4aa45724",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "trusted_premise_inspection",
+          "module": null,
+          "returncode": 0,
+          "termination": null
+        }
+      ],
+      "closures": [
+        {
+          "name": "StudyObligation",
+          "axioms": [],
+          "constants": 4,
+          "catalog": 2
+        },
+        {
+          "name": "StudyInterface",
+          "axioms": [],
+          "constants": 2,
+          "catalog": 0
+        },
+        {
+          "name": "StudyTransport",
+          "axioms": [],
+          "constants": 4,
+          "catalog": 0
+        }
+      ],
+      "declaration_artifact": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-wtjjvuvq/left/d541e662bc7930150a443266828b715e5d88d7939677c0209a9bc822479f684e/source/declarations.json",
+        "bytes": 4087,
+        "sha256": "ba1703d432c079fe6429708e1e7d2e720b5ea7f5686c7f7fb33b69cd9f5b6471"
+      },
+      "artifact_sha_matches": true,
+      "all_parsed_rows_match_artifact": true
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-wtjjvuvq/right/d541e662bc7930150a443266828b715e5d88d7939677c0209a9bc822479f684e/result.json",
+        "bytes": 13054,
+        "sha256": "268185c3ed4166363b54ab029c1d48e905ce50e4bd428003ad1b742e02e611b1"
+      },
+      "checked": true,
+      "lean_exact_root_checked": null,
+      "valid_attempt": true,
+      "status": "checked_exact_obligation_and_interfaces",
+      "failure": null,
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Target7cfc263c9785df9a4aa45724",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.Target7cfc263c9785df9a4aa45724",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "trusted_premise_inspection",
+          "module": null,
+          "returncode": 0,
+          "termination": null
+        }
+      ],
+      "closures": [
+        {
+          "name": "StudyObligation",
+          "axioms": [],
+          "constants": 4,
+          "catalog": 5
+        },
+        {
+          "name": "StudyInterface",
+          "axioms": [],
+          "constants": 2,
+          "catalog": 0
+        },
+        {
+          "name": "StudyTransport",
+          "axioms": [],
+          "constants": 4,
+          "catalog": 0
+        }
+      ],
+      "declaration_artifact": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-wtjjvuvq/right/d541e662bc7930150a443266828b715e5d88d7939677c0209a9bc822479f684e/source/declarations.json",
+        "bytes": 5403,
+        "sha256": "97c2028a30705e8dfc2d9b3ab1639c2640b3f5a394c06cb80e9e7bab452bfcb8"
+      },
+      "artifact_sha_matches": true,
+      "all_parsed_rows_match_artifact": true
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-m02fi3sk/attach/result.json",
+        "bytes": 372965,
+        "sha256": "2e6f0dbf6bfe5bafb3c886df2d4e2ab1c62bcd95aeb380fe4f80103f5ba2be34"
+      },
+      "checked": true,
+      "lean_exact_root_checked": null,
+      "valid_attempt": true,
+      "status": "checked_exact_obligation_and_interfaces",
+      "failure": null,
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.ResearchSemantics",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Targetf1a37a5203672ea19b0109d9",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.ResearchSemantics",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.Targetf1a37a5203672ea19b0109d9",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "trusted_premise_inspection",
+          "module": null,
+          "returncode": 0,
+          "termination": null
+        }
+      ],
+      "closures": [
+        {
+          "name": "StudyObligation",
+          "axioms": [],
+          "constants": 9,
+          "catalog": 55
+        },
+        {
+          "name": "StudyInterface",
+          "axioms": [],
+          "constants": 5,
+          "catalog": 0
+        },
+        {
+          "name": "StudyTransport",
+          "axioms": [],
+          "constants": 10,
+          "catalog": 0
+        }
+      ],
+      "declaration_artifact": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-m02fi3sk/attach/source/declarations.json",
+        "bytes": 358475,
+        "sha256": "7d4aec7b87c22d43e103ab07fb2730b8c7d9829c9ee88cb2fa550275871bc43f"
+      },
+      "artifact_sha_matches": true,
+      "all_parsed_rows_match_artifact": true
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-m02fi3sk/missing-section/result.json",
+        "bytes": 2901,
+        "sha256": "659bda4288e7476f165f2de48e7394a4b1d9578693647e8e9afb6fbd8a97f25a"
+      },
+      "checked": false,
+      "lean_exact_root_checked": null,
+      "valid_attempt": null,
+      "status": "invalid_comparison",
+      "failure": "failure within compilation/replay budget: StudyCheck",
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.ResearchSemantics",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Targetf1a37a5203672ea19b0109d9",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "StudyCheck",
+          "returncode": 1,
+          "termination": null
+        }
+      ],
+      "closures": []
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-58lvi9sa/direct/result.json",
+        "bytes": 11326,
+        "sha256": "55973c76218ac0be18673d3d678e353908afdfcf2d4639840231df291ac25136"
+      },
+      "checked": true,
+      "lean_exact_root_checked": null,
+      "valid_attempt": true,
+      "status": "checked_exact_obligation_and_interfaces",
+      "failure": null,
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Targetb0ce2513661c35d09ac6a618",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.Targetb0ce2513661c35d09ac6a618",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "trusted_premise_inspection",
+          "module": null,
+          "returncode": 0,
+          "termination": null
+        }
+      ],
+      "closures": [
+        {
+          "name": "StudyObligation",
+          "axioms": [],
+          "constants": 5,
+          "catalog": 2
+        },
+        {
+          "name": "StudyInterface",
+          "axioms": [],
+          "constants": 2,
+          "catalog": 0
+        },
+        {
+          "name": "StudyTransport",
+          "axioms": [],
+          "constants": 4,
+          "catalog": 0
+        }
+      ],
+      "declaration_artifact": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-58lvi9sa/direct/source/declarations.json",
+        "bytes": 4360,
+        "sha256": "4055959b597f624bdd6325f944677856d531ea842b33105a813d337cb44a2d92"
+      },
+      "artifact_sha_matches": true,
+      "all_parsed_rows_match_artifact": true
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-58lvi9sa/missing/result.json",
+        "bytes": 460,
+        "sha256": "45be231b4c1f9a2b4c70d5a38b0dfba1301cd7b416047b0772dd21fd051859ee"
+      },
+      "checked": false,
+      "lean_exact_root_checked": null,
+      "valid_attempt": null,
+      "status": "invalid_comparison",
+      "failure": "missing exact solution module",
+      "operations": [],
+      "closures": []
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-58lvi9sa/none/result.json",
+        "bytes": 7378,
+        "sha256": "bf2ae92ad9e0201daca4c97a6d20d4f8d8c0cb2af4d975307ebc2ff5cf808733"
+      },
+      "checked": false,
+      "lean_exact_root_checked": null,
+      "valid_attempt": true,
+      "status": "bounded_valid_non_solution",
+      "failure": null,
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Targetb0ce2513661c35d09ac6a618",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.Targetb0ce2513661c35d09ac6a618",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "trusted_premise_inspection",
+          "module": null,
+          "returncode": 0,
+          "termination": null
+        }
+      ],
+      "closures": [
+        {
+          "name": "StudyObligation",
+          "axioms": [],
+          "constants": 1,
+          "catalog": 2
+        },
+        {
+          "name": "StudyInterface",
+          "axioms": [],
+          "constants": 1,
+          "catalog": 0
+        },
+        {
+          "name": "StudyTransport",
+          "axioms": [],
+          "constants": 1,
+          "catalog": 0
+        }
+      ],
+      "declaration_artifact": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-58lvi9sa/none/source/declarations.json",
+        "bytes": 1508,
+        "sha256": "78cc411c1f15b3062fe2e7dd70b4b29b7b7a4a3a2bf0b2912151a99410ac9c82"
+      },
+      "artifact_sha_matches": true,
+      "all_parsed_rows_match_artifact": true
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-_1ok9ul9/hidden/result.json",
+        "bytes": 4393,
+        "sha256": "634044723146a738989a81ba0ae4252ba0bedc272da0f147dc4af46a021e5efe"
+      },
+      "checked": false,
+      "lean_exact_root_checked": null,
+      "valid_attempt": null,
+      "status": "invalid_comparison",
+      "failure": "trusted premise inspector failed",
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Targetda3c823a594b77c20b5eca47",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Hidden",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.Targetda3c823a594b77c20b5eca47",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.Hidden",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "trusted_premise_inspection",
+          "module": null,
+          "returncode": 1,
+          "termination": null
+        }
+      ],
+      "closures": []
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-_1ok9ul9/hidden-root/result.json",
+        "bytes": 3879,
+        "sha256": "ee95f0322227035390052103dca374e94013ed5ad1b3fe3dcbb7b357d32a84e2"
+      },
+      "checked": null,
+      "lean_exact_root_checked": null,
+      "valid_attempt": null,
+      "status": null,
+      "failure": "trusted premise inspector failed",
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Hidden",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "ControllerCompletion",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.Hidden",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "ControllerCompletion",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "trusted_premise_inspection",
+          "module": null,
+          "returncode": 1,
+          "termination": null
+        }
+      ],
+      "closures": []
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-l3ott98w/lossy/result.json",
+        "bytes": 3149,
+        "sha256": "b9a28d2128db04a040b625315957b93b261d1b8099a3225736d86fd218a50860"
+      },
+      "checked": false,
+      "lean_exact_root_checked": null,
+      "valid_attempt": null,
+      "status": "invalid_comparison",
+      "failure": "failure within compilation/replay budget: StudyCheck",
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.ResearchSemantics",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Targetfb55cd0766c856265c9e4d7b",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "StudyCheck",
+          "returncode": 1,
+          "termination": null
+        }
+      ],
+      "closures": []
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-tohgk4yb/bad/result.json",
+        "bytes": 2620,
+        "sha256": "828dc33c2a6cb3745bb8bfdb42de202d6a7b93261aeb9aadbe1e9f07d50e2930"
+      },
+      "checked": false,
+      "lean_exact_root_checked": null,
+      "valid_attempt": null,
+      "status": "invalid_comparison",
+      "failure": "failure within compilation/replay budget: StudyCheck",
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Targetda3c823a594b77c20b5eca47",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "StudyCheck",
+          "returncode": 1,
+          "termination": null
+        }
+      ],
+      "closures": []
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-tohgk4yb/good/result.json",
+        "bytes": 11302,
+        "sha256": "da3d77d391c60f58d91c24cb42c4bb84ce9d36169fd886e4e905d109d3a73041"
+      },
+      "checked": true,
+      "lean_exact_root_checked": null,
+      "valid_attempt": true,
+      "status": "checked_exact_obligation_and_interfaces",
+      "failure": null,
+      "operations": [
+        {
+          "operation": "compile",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "MathGKM.Target1aea1d01c7cc085ed6042bd5",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "compile",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.HarnessFixture",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "MathGKM.Target1aea1d01c7cc085ed6042bd5",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "kernel_replay",
+          "module": "StudyCheck",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "operation": "trusted_premise_inspection",
+          "module": null,
+          "returncode": 0,
+          "termination": null
+        }
+      ],
+      "closures": [
+        {
+          "name": "StudyObligation",
+          "axioms": [],
+          "constants": 5,
+          "catalog": 2
+        },
+        {
+          "name": "StudyInterface",
+          "axioms": [],
+          "constants": 2,
+          "catalog": 0
+        },
+        {
+          "name": "StudyTransport",
+          "axioms": [],
+          "constants": 4,
+          "catalog": 0
+        }
+      ],
+      "declaration_artifact": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-tohgk4yb/good/source/declarations.json",
+        "bytes": 4360,
+        "sha256": "b5c013624a3b6d2b7ca994a30938d60e33e2278210e3ca7d338efb4ade97cfa1"
+      },
+      "artifact_sha_matches": true,
+      "all_parsed_rows_match_artifact": true
+    }
+  ]
+}

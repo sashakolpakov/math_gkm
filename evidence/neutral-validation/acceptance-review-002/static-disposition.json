@@ -1,0 +1,18 @@
+{
+  "changed_files": [
+    "docs/HARNESS_CHECKPOINT.md",
+    "docs/REQUIREMENT_MAP.md",
+    "docs/STUDY_V2.md",
+    "tests/test_study_v2.py"
+  ],
+  "changed_test_methods": [
+    "test_killed_controller_watchdog_retains_lock_and_receipt_recovers",
+    "test_review_interruption_reuses_committed_inputs_and_receipt"
+  ],
+  "all_other_test_module_AST_identical": true,
+  "all_runtime_and_Lean_sources_identical_to_pre001": true,
+  "unchanged_path_argument": "Only two test method bodies and reporting docs changed. All other tests, shared support, imports, load_tests and all executed runtime/Lean sources are unchanged. The three changed docs are not seed inputs or runtime/test imports. Rerun both changed methods; retain the other 47 passing tests on exact unchanged executed paths.",
+  "failure_disposition": "Original watchdog test waited for round-0000; current first bounded role is plan-0000. Retained actual receipt proves failed proposer forbids the nonexistent researcher. Corrected test kills the controller during the actual proposer and keeps all lock/receipt/no-replay requirements, adding explicit charge/receipt checks.",
+  "review_strengthening": "Exact frozen review input bytes and reviewer receipt remain identical; only selector increments call/meta counters and review-pool charge.",
+  "validation": "PRE-VALIDATION for two changed methods; no pass claimed yet"
+}

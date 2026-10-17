@@ -1,0 +1,202 @@
+--- input/tests/test_study_v2.py
++++ current/tests/test_study_v2.py
+@@ -14,14 +14,15 @@
+ import unittest
+ from unittest.mock import patch
+ 
+-from machinery.study_common import (ROOT, PYTHON, SEED, ROOT_SHA, Invalid, read, write,
++from machinery.study_common import (ROOT, PYTHON, Invalid, read, write,
+     load_state, save_state, sha, digest, lock, snapshot, verify_snapshot, inventory)
+ from machinery import study, study_policy, study_worker, study_audit, completion
+-from machinery.study_transfer import check_task, evaluate_pair, copy_tasks, wrapper
++from machinery.study_transfer import bind_task, check_task, evaluate_pair, copy_tasks, wrapper
++from tests import test_revision_static_checkpoint as neutral
+ 
+ def task(**changes):
+     return {'id': 'toy', 'statement': '∀ n : Nat, Toy.component n = n', 'hypotheses': [],
+-        'scope': 'SYNTHETIC toy identity only; not a Markov result', 'source_sha256': ROOT_SHA,
++        'scope': 'SYNTHETIC neutral toy identity only', 'source_sha256': neutral.neutral_contract()['root_sha256'],
+         'kind': 'holdout', 'interface_type': 'Nat → Nat',
+         'transport_type': '∀ n : Nat, Toy.component n = n', 'required_constants': ['Toy.component'], **changes}
+ 
+@@ -29,15 +30,19 @@
+     return {'schema': 'math-gkm.suite.v2', 'selector': 'independent deterministic fixture selector',
+         'selection_basis': 'fixed before any fixture trial, toy only', 'independent': True, 'tasks': tasks or []}
+ 
+-class StudyFixtures(unittest.TestCase):
++class StudyFixtureSupport:
+     def setUp(self):
+-        tmp = tempfile.TemporaryDirectory(prefix='study-v2-', dir=ROOT/'.scratch')
+-        self.addCleanup(tmp.cleanup)
+-        self.base = Path(tmp.name)
++        self.base = Path(tempfile.mkdtemp(prefix='study-v2-neutral-', dir=ROOT/'.scratch'))
++        print('RETAINED', self.base, flush=True)
++        # Fixture tree identity only; compiler/checker binaries remain real.
++        identity = patch('machinery.study.dependency_identity', return_value={'fixture': 'fixed'})
++        identity.start()
++        self.addCleanup(identity.stop)
+         self.directory = self.base/'study'
+ 
+     def freeze(self, config=None, obligations=None):
+-        study.freeze(self.directory, {'rounds': 2, 'episode_rounds': 2, **(config or {})}, obligations)
++        study.freeze(self.directory, {'rounds': 2, 'episode_rounds': 2, **(config or {})}, obligations,
++                     neutral.neutral_contract())
+         return self.directory
+ 
+     def run_arm(self, mode):
+@@ -46,23 +51,20 @@
+             arm.run()
+         return load_state(arm.root/'state.json')
+ 
+-    def test_clean_paired_seed_and_legacy_contract_unchanged(self):
+-        original = sha(ROOT/'contracts/markov-goal.json')
++class StudyFixtures(StudyFixtureSupport, unittest.TestCase):
++    def test_clean_paired_seed_and_neutral_contract_unchanged(self):
++        expected = neutral.neutral_contract()
++        original = sha(ROOT/expected['root_file'])
+         self.freeze()
+         contract = read(self.directory/'seed/contract.json')
+-        self.assertEqual(contract['inherited'], [])
+-        self.assertEqual(len(contract['clean_start']['removed_inheritance_paths']), 6)
+-        old = read(ROOT/'contracts/markov-goal.json')
+-        for key in ('root_declaration', 'root_sha256', 'root_meaning', 'assumptions', 'completion', 'correspondence_obligations'):
+-            self.assertEqual(contract[key], old[key])
++        self.assertEqual(contract, expected)
+         for mode in ('baseline', 'exploration'):
+             ws = self.directory/'arms'/mode/'workspace'
+-            self.assertEqual(sha(ws/'MathGKM/Markov.lean'), ROOT_SHA)
+-            self.assertEqual(set(inventory(ws)), {'MathGKM/Markov.lean', 'MathGKM/Protocol.lean',
++            self.assertEqual(sha(ws/expected['root_file']), original)
++            self.assertEqual(set(inventory(ws)), {expected['root_file'], 'MathGKM/Protocol.lean',
+                 'MathGKM/ResearchSemantics.lean', 'MathGKM/ContinuationObligations.lean'})
+-            for path in old['inherited']:
+-                self.assertFalse((ws/path).exists())
+-        self.assertEqual(original, sha(ROOT/'contracts/markov-goal.json'))
++            self.assertFalse((ws/'MathGKM/Markov.lean').exists())
++        self.assertEqual(original, sha(ROOT/expected['root_file']))
+         self.assertEqual(read(self.directory/'arms/baseline/snapshots/initial/manifest.json')['files'],
+                          read(self.directory/'arms/exploration/snapshots/initial/manifest.json')['files'])
+ 
+@@ -91,7 +93,9 @@
+         self.assertFalse(read(root/'decisions/review-2.json')['certified_switch'])
+ 
+     def test_frozen_suite_answers_not_in_any_research_request(self):
+-        self.freeze(obligations=suite([task(reference_answer='SECRET-DO-NOT-LEAK')]))
++        self.freeze(obligations=suite([task(reference_answer='SECRET-DO-NOT-LEAK',
++            statement='∀ n : Nat, n = n', interface_type='True', transport_type='True',
++            fixture_strategy='component_or_bounded')]))
+         self.run_arm('exploration')
+         for p in (self.directory/'arms').glob('*/jobs/*/request.json'):
+             self.assertNotIn('SECRET-DO-NOT-LEAK', p.read_text())
+@@ -103,8 +107,8 @@
+     def test_protocol_suite_source_and_state_tampering_rejected(self):
+         self.freeze()
+         for path in [self.directory/'protocol.json', self.directory/'evaluation/suite.json',
+-                     self.directory/'seed/MathGKM/Markov.lean',
+-                     self.directory/'arms/exploration/workspace/MathGKM/Markov.lean',
++                     self.directory/'seed/MathGKM/HarnessFixture.lean',
++                     self.directory/'arms/exploration/workspace/MathGKM/HarnessFixture.lean',
+                      self.directory/'arms/baseline/state.json']:
+             before = path.read_bytes()
+             try:
+@@ -202,7 +206,9 @@
+         self.freeze({'call_seconds': 2, 'fixture_behavior': 'sleep'})
+         logfile = (self.base/'controller.log').open('wb')
+         self.addCleanup(logfile.close)
+-        child = subprocess.Popen([PYTHON, '-m', 'machinery.study', 'run', '--study', str(self.directory),
++        child = subprocess.Popen([PYTHON, '-c',
++            "from unittest.mock import patch; p=patch('machinery.study.dependency_identity', return_value={'fixture':'fixed'}); p.start(); from machinery import study; study.main()",
++            'run', '--study', str(self.directory),
+             '--arm', 'baseline'], cwd=ROOT, stdout=logfile, stderr=logfile, start_new_session=True)
+         self.addCleanup(lambda: child.poll() is None and child.kill())
+         job = self.directory/'arms/baseline/jobs/round-0000'
+@@ -307,53 +313,66 @@
+             self.assertEqual(recovered.s['reviewed_rounds'], [2])
+             self.assertTrue((arm.root/'jobs/plan-0000/validated-plan.json').exists())
+ 
+-class LeanTransferFixtures(StudyFixtures):
+-    # Inherit setup, not every lifecycle test (load_tests below avoids duplicates).
++class LeanTransferFixtures(StudyFixtureSupport, unittest.TestCase):
++    # Support has no test methods; explicit class loading is duplicate-free too.
+     def prepare_lean(self):
+         self.freeze()
+         ws = self.directory/'arms/exploration/workspace'
+-        (ws/'MathGKM/Toy.lean').write_text('import Lean\nnamespace Toy\ndef component (n : Nat) : Nat := n\ntheorem use (n : Nat) : component n = n := rfl\nend Toy\n')
++        (ws/'MathGKM/ToyContext.lean').write_text('import Lean\nnamespace Toy\ndef component (n : Nat) : Nat := n\nend Toy\n')
++        (ws/'MathGKM/Toy.lean').write_text('import MathGKM.ToyContext\nnamespace Toy\ntheorem use (n : Nat) : component n = n := rfl\ntheorem unrelated : True := True.intro\nend Toy\n')
+         return ws
+ 
+     def test_real_lean_use_transport_hypotheses_and_scope(self):
+         ws = self.prepare_lean()
+         solution = {'module': 'MathGKM.Toy', 'term': 'Toy.use', 'interface_term': 'Toy.component', 'transport_term': 'Toy.use'}
+-        accepted = check_task(ws, task(), solution, self.base/'pass', 120)
++        target = task(context_modules=['MathGKM.ToyContext'])
++        accepted = check_task(ws, target, solution, self.base/'pass', 120)
+         self.assertTrue(accepted['checked'], json.dumps(accepted)[-5000:])
+         self.assertTrue(accepted['component_use_checked'])
+-        write(ROOT/'evidence/revision-validation/lean-use-checked.json', accepted)
++        write(self.base/'lean-use-checked.json', accepted)
+         frozen_without_component = {name: hashed for name, hashed in inventory(ws).items() if name != 'MathGKM/Toy.lean'}
+-        invented = check_task(ws, task(), solution, self.base/'invented-during-adaptation', 120,
++        # Independently meaningful target, but helper was not frozen before adaptation.
++        invented = check_task(ws, {**target, 'required_constants': ['Toy.use']}, solution, self.base/'invented-during-adaptation', 120,
+                              frozen_files=frozen_without_component)
+         self.assertTrue(invented['checked'])  # correctness is independent of prior component use
+         self.assertFalse(invented['component_use_checked'])
+-        write(ROOT/'evidence/revision-validation/lean-adaptation-invention-rejected.json', invented)
+-        bad = check_task(ws, task(statement='∀ n : Nat, Toy.component n = n + 1'), solution, self.base/'bad-scope', 120)
++        write(self.base/'lean-adaptation-invention-rejected.json', invented)
++        bad = check_task(ws, {**target, 'statement': '∀ n : Nat, Toy.component n = n + 1'}, solution, self.base/'bad-scope', 120)
+         self.assertFalse(bad['checked'])
+         conditional = {**solution, 'term': 'fun h : False => False.elim h'}
+-        bad = check_task(ws, task(), conditional, self.base/'bad-hypothesis', 120)
++        bad = check_task(ws, target, conditional, self.base/'bad-hypothesis', 120)
+         self.assertFalse(bad['checked'])
+-        bad = check_task(ws, task(required_constants=['Toy.missing']), solution, self.base/'bad-use', 120)
++        bad = check_task(ws, {**target, 'required_constants': ['Toy.missing']}, solution, self.base/'bad-use', 120)
+         self.assertTrue(bad['checked'])
+         self.assertFalse(bad['component_use_checked'])
+-        bad = check_task(ws, task(source_sha256='forged'), solution, self.base/'bad-source', 120)
++        bad = check_task(ws, {**target, 'source_sha256': 'forged'}, solution, self.base/'bad-source', 120)
+         self.assertFalse(bad['checked'])
++        mandatory = check_task(ws, target, solution, self.base/'mandatory-missing', 120,
++                               required=['Toy.missing'])
++        self.assertFalse(mandatory['checked'])
++        self.assertTrue(any(c['operation'] == 'trusted_premise_inspection' for c in mandatory['checks']))
++        # Without original Toy context the adapter cannot give the target meaning.
++        absent = bind_task(ws, task())
++        invented_target = check_task(ws, absent, solution, self.base/'absent-target', 120,
++                                    frozen_files=frozen_without_component)
++        self.assertFalse(invented_target['checked'])
++        self.assertFalse(invented_target.get('valid_attempt', False))
+         frozen = inventory(ws)
+         (ws/'MathGKM/Toy.lean').write_text((ws/'MathGKM/Toy.lean').read_text()+'\n-- changed frozen artifact\n')
+-        bad = check_task(ws, task(), solution, self.base/'changed-frozen-source', 120, frozen_files=frozen)
++        bad = check_task(ws, target, solution, self.base/'changed-frozen-source', 120, frozen_files=frozen)
+         self.assertFalse(bad['checked'])
+         self.assertIn('altered frozen', bad['failure'])
+ 
+     def test_real_lean_exact_root_rejects_unrelated_and_mutated_source(self):
+         ws = self.prepare_lean()
+         (ws/'research/correspondence.md').write_text('Toy unrelated theorem has no source correspondence.')
+-        claim = {'kind': 'proof', 'module': 'MathGKM.Toy', 'declaration': 'Toy.use',
++        claim = {'kind': 'proof', 'module': 'MathGKM.Toy', 'declaration': 'Toy.unrelated',
+                  'correspondence': 'research/correspondence.md'}
+         with patch('machinery.completion.ROOT', ws):
+             result = completion.verify(read(ws/'contract.json'), claim, self.base/'root-rejection')
+             self.assertFalse(result['resolved'])
+             self.assertIn('Lean compile failed', result['rejection'])
+-            write(ROOT/'evidence/revision-validation/exact-root-negative.json', result)
++            write(self.base/'exact-root-negative.json', result)
+             contract = read(ws/'contract.json')
+             contract['root_sha256'] = 'forged'
+             with self.assertRaises(completion.Rejected):
+@@ -374,7 +393,7 @@
+         self.assertEqual(comparison['regressions'], [])
+         self.assertEqual(comparison['binding']['adaptation_seconds_each'], 30)
+         self.assertGreaterEqual(state['seconds'], 240)
+-        write(ROOT/'evidence/revision-validation/checked-policy-trial.json', decision)
++        write(self.base/'checked-policy-trial.json', decision)
+ 
+ def load_tests(loader, tests, pattern):
+     result = loader.loadTestsFromTestCase(StudyFixtures)

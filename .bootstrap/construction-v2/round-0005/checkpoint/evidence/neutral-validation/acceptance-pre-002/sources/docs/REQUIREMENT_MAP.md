@@ -1,0 +1,69 @@
+# Current requirement-to-evidence map
+
+Construction only. Neutral deterministic roles test the protocol; they are not a
+live Astra campaign. The acceptance report, validation summary and manifests in
+evidence/neutral-validation bind current commands, per-test outcomes and source
+dispositions. docs/REGRESSION.md defines the complete supported 49-test suite.
+Historical round-4 and initial campaign records remain unchanged and separately pinned.
+An implemented edge, a passing test and a mathematical theorem have distinct scope.
+OPEN means unavailable/unfulfilled, not a pass earned by documenting a gap.
+Fixture-tested means only the stated finite neutral protocol case. R2 publication
+and deployment are supervisor work and are not claimed completed here.
+
+| ID | Producer → artifact → consumer | Evidence and current scope/status |
+|---|---|---|
+| O1 | Arm.call / study_worker → request, spec, receipt, raw usage → controller/reviewer | PARTIAL: deterministic subprocess roles tested (lifecycle/connected groups). Independent live external Astra transport/provider behavior remains unvalidated; this live requirement is not fulfilled by fixtures. |
+| O2 | broker/role request → tool evidence or capability failure → next request | Broad action interfaces retained; broker regression evidence is historical pre-002. No new research campaign or unavailable-tool success claim. |
+| O3 | explicit contract → sealed seed/contract.json → admission/completion | Exact neutral contract used by tests; protected root and scientific objective unchanged. Separate costs, truth, relevance, usefulness and novelty; no universal score. |
+| P1 | policy.commit/record → competing portfolio + bound evidence → policy.request | Connected cycle retains alternative hypotheses and next-request consumption. |
+| P2 | policy.commit + episode_envelope/fund_many → prospective commitments, protected budget pools → main and branch researchers | Whole required episode through evaluation/review is prepaid with call/meta counters; impossible initial commitments rejected before any role. Tests check caps and actual roles. |
+| P3 | policy bounded invention → prospective trial → researcher/record | Existing pure tests retain invention without an immediate reduction; no artificial mathematical levels. |
+| P4 | Arm.research_round → durable research/evaluation/review pools → review at horizon | Delayed use and actual review tested. Optional policy trials cannot consume reserved reviewer opportunities. Operational failure/stop can still prevent completion; funding is not a success guarantee. |
+| M1 | check_task/proof_audit → compilation, kernel replay, actual premise closure → ingest | Strengthened inspector unchanged. Real positive and missing-premise/context tests retained, affected context tests rerun. |
+| M2 | completion.prepare/verify → exact bundle + independent correspondence audit → resolution/terminal | Exact root gate unchanged; neutral mathematical identity checked, correspondence remains independently required. Fixture transport cannot resolve mathematics. Terminal synthetic receipt tests certify serialization only. |
+| M3 | bind_task/ingest → captured residual constants + discharge bridge → remaining_obligations | Same-text/different-context and positive discharge tests use actual Lean. Unknown or impossible residual assumptions are never simplification claims. |
+| G1 | canonical ResearchSemantics + ingest → accepted attachment/family maps → later checked consumers | Connected real Lean reuse of family gluing and delayed component use. |
+| G2 | generic Lean definitions → section, factorization and uniqueness laws → checked transport consumers | Verified restricted structures; no claim of arbitrary source conservativity, a full model category or unrestricted cofibrations. Successful actual foundation compilation/replay/premise evidence preserved. |
+| T1 | freeze + independent selection provenance → sealed suite → evaluate_pair | Neutral panel frozen before comparison. Live independent mathematical curation remains unexercised. |
+| T2 | common snapshots/bind_task → paired original-context tasks → adapters/check_task | Exact same target context and equal upper adaptation caps; old solver may solve directly. Not equal actual costs. |
+| T3 | admitted_modules/catalog/required_constants → frozen declaration/body bindings → transfer credit | Fixture-tested Toy/current context and connected comparison. Correctness is distinct from task.required_constants use credit; separately supplied required= enforces mandatory inspector closure. Absent original targets cannot obtain adapter meaning; independent targets can remain correct without new-helper credit. ALL declared use constants required for credit. Dependency use is not indispensability. |
+| T4 | check_task/evaluate_pair → checked, bounded non-solution or invalid-comparison records → selector | Real positives/negatives distinguish failures from non-solutions. Ablation support retained; no broad causal claim or newly executed ablation campaign. |
+| T5 | admitted source closure + archive_sources → accepted catalog and retained failed drafts → subsequent branches | Connected test retains failed drafts while excluding them from accepted catalog; prior accepted source capabilities protected. |
+| S1 | proposer → candidate + matched bounded branch records → separate reviewer/selector jobs | Full connected experiment includes charged planning, validations and reviews. Equal rounds/caps, not matched measured cost. |
+| S2 | experimental selection → installed policy/program in state → next actual request | Connected test checks executable reverse_agenda in the next researcher subprocess. Baseline policy remains separate. |
+| S3 | bounded request-program DSL → versioned experimental program → interpreter | Executable change in restricted DSL demonstrated; arbitrary controller rewrite and certified installation remain open. |
+| D1 | WholeSemantics/run → whole-trace theorem → explicit continuation obligation | Verified abstract model only. Concrete install-and-continue versus WHOLE incumbent utility/cost comparison OPEN. |
+| D2 | study_bridge → bound host-transition receipts → explicit ImplementationBinding obligation | Lean protocol guard executes, but Python/OS/Astra transition/migration refinement OPEN. Hashes do not prove refinement. |
+| D3 | protected open obligation ledger → every next request → fail-closed certified-switch path | Common-time/deadline transport, response coupling, concrete certificate and independently guarded certified installation OPEN. No model theorem discharges these. |
+| K1 | checked reduction records → per-witness conditional descriptions + explicit holes → standalone observer | Each route is separately bound. Portfolio/cumulative storage is explicitly distinct; unused alternative derivations do not enlarge another witness's description. No current route is chosen by the audit. |
+| K2 | original seal/root/seed/panel + bound snapshots → fixed_inputs/conditional_pair → paired report | Mutation tests reject changed reference inputs. Full introduced dictionary/adapter/connecting source overhead charged separately and per standalone witness; shared overhead must not be summed across witnesses. |
+| K3 | sealed schedule including terminal → raw.json/conditional-paired.json → conditional-descriptions.svg, overhead.svg, costs.svg | ObserverAcceptance tests retain/validate a later or terminal witness despite a missing predecessor; missing-right also covered. No pair/delta/line bridges a gap. All scheduled missing points retained. Actual encodings/costs only; no forced sawtooth. |
+| K4 | reduction/residual ledger + separate completion receipt → unknown holes/direct encoding/minimum fields → audit output | ObserverAcceptance separates receipt/source-bound mathematical resolution from unmeasured direct proof encoding. Only supported reduction-ledger routes/captured discharges are encoded. Unknown encoding does not reopen a resolved root. Reference-panel encoding, minimum complexity and difficulty remain unknown; no lower bound from failure. |
+| K5 | write-only observer export → isolated audit files → standalone report | Actual fixture/Lean audit-invariance comparison; corrupt audit records do not reach proposal, admission, scheduling or selection. |
+| C1 | neutral contract/copy_seed → identical fresh arm seeds → independent arm workspaces | Fresh tests only; no old campaign resume, inherited project proofs or other-arm answers. |
+| C2 | seal/toolchain/permissions → source and input manifests → verification/worker containment | Required base permissions pinned. Fixture dependency-tree identity is explicitly mocked; compiler/checker binaries are real and pinned. Full host deployment attestation remains open. |
+| C3 | reserve/role receipts/validation receipts → caps, actual worker wall and raw usage → budgets/report | All added roles charged; protocol guard has separate bounded event allowance. Controller wall overlaps worker wall; never summed or provider-normalized. |
+| C4 | mission + authorization hold → fixed campaign provenance → activation boundary | Original campaign order unchanged. No Agoh/Markov rerun in this invocation. |
+| R1 | durable intent/pools/receipt/outbox → recovery → no uncertain replay | Current StudyFixtures coverage: real STOP/removal/resume, duplicate lock, killed controller with inherited watchdog lock and exact receipt recovery, interrupted reviewer-to-selector with frozen inputs and single selector charge. Orphan intent, finished validation and terminal export recovery are additional tests. Actual outcomes/correction pins in acceptance report. Full interruption/host deployment matrix OPEN. |
+| R2 | immutable pretest copies + retained raw runs → manifests/archive → supervisor reproduction | Current inputs, extensionless history, failures, interruptions, requests, receipts and logs retained uniquely; no overwrite of earlier evidence. Caches rebuildable from pins. Local preservation implemented; Git/publication/installation NOT performed and remain supervisor-owned. |
+| R3 | changed-source review → immutable source manifest/static dispositions → bounded affected neutral tests | Acceptance report binds exact commands, counts, hashes, source pre/post checks and method-level unchanged-path evidence. Supported full suite explicitly selected without duplicate expensive cases. Earlier failures remain tied to their snapshots. |
+| R4 | explicit authorization boundary → no live authorization artifact → live launch guard | No Markov researcher, curator, canary, study activation or nested external model call. Subsequent explicit USER OK still required. |
+
+## Current evidence locator and acceptance limits
+
+The named groups in `ACCEPTANCE_VALIDATION_SUMMARY.json` contain exact test IDs,
+argv, status, elapsed time, source/log hashes and retained-directory pointers.
+The report records any targeted correction separately from the original run.
+Use these locators with the producer/artifact/consumer table above:
+
+| Requirements | Current evidence producer/test group | Status boundary |
+|---|---|---|
+| O1, O3, P1–P4, C1, C3 | lifecycle; PureMechanisms in context; Round4 in observer; connected | Finite neutral fixtures; no live autonomous research claim. |
+| M1–M3, G1–G2, T2–T5 | LeanTransferFixtures in lifecycle; ContextRevision; six lean tests; connected | Actual Lean compile/replay/closure on the exact fixture propositions. Root correspondence still separately required; no new campaign resolution. |
+| T1, S1–S3 | sealed suite/provenance and paired trial artifacts in connected; exact-envelope in observer | Finite independent deterministic roles and restricted experimental program selection; live curation and certified executable change unavailable. |
+| K1–K5 | observer group; actual audit-invariance in context; connected observer report | Scoped route descriptions only, separate storage and overhead, no research decision consumer. Synthetic terminal fixtures certify serialization only. |
+| D1–D3 | unchanged formal source and continuation test; request open-obligation ledger and fail-closed installation path | Model results checked; actual host refinement, concrete whole-incumbent utility/cost proof and certified installation OPEN and unfulfilled. |
+| R1, R3 | lifecycle plus targeted recovery rerun; context; observer; connected; discovery/static manifests | Stated recovery transitions exercised, not an exhaustive interruption or deployment proof. |
+| C2, R2 | pre-validation copies, final source and retained artifact manifests, docs/REGRESSION.md | Local host-specific reproduction. Dependency-tree identity explicitly mocked in fixtures; no portable cold bootstrap or full deployment attestation. |
+| O2, C4 | historical broker/construction/campaign records and unchanged contracts | No fresh broad-tool campaign, Agoh exercise or Markov work in this invocation. Historical evidence is not current validation. |
+| R4 | fixed hold and absence of a new authorization artifact | Maintained constraint; later fresh Markov work needs explicit user approval after this report. |

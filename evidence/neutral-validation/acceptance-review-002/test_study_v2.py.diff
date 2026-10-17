@@ -1,0 +1,72 @@
+--- pre-001/tests/test_study_v2.py
++++ pre-002/tests/test_study_v2.py
+@@ -203,7 +203,7 @@
+         self.assertEqual(self.run_arm('baseline')['round'], 2)
+ 
+     def test_killed_controller_watchdog_retains_lock_and_receipt_recovers(self):
+-        self.freeze({'call_seconds': 2, 'fixture_behavior': 'sleep'})
++        self.freeze({'call_seconds': 5, 'fixture_behavior': 'sleep'})
+         logfile = (self.base/'controller.log').open('wb')
+         self.addCleanup(logfile.close)
+         child = subprocess.Popen([PYTHON, '-c',
+@@ -211,16 +211,21 @@
+             'run', '--study', str(self.directory),
+             '--arm', 'baseline'], cwd=ROOT, stdout=logfile, stderr=logfile, start_new_session=True)
+         self.addCleanup(lambda: child.poll() is None and child.kill())
+-        job = self.directory/'arms/baseline/jobs/round-0000'
+-        deadline = time.monotonic()+10
++        # Both arms now commit a proposer before any researcher. Interrupt the
++        # actual first subprocess, not a researcher that a failed plan forbids.
++        job = self.directory/'arms/baseline/jobs/plan-0000'
++        deadline = time.monotonic()+30
+         while not (job/'process.json').exists() and time.monotonic() < deadline:
+             time.sleep(.02)
+         self.assertTrue((job/'process.json').exists())
++        self.assertIsNone(child.poll())
++        self.assertFalse((job/'receipt.json').exists())
+         child.kill()
+         child.wait(timeout=3)
+         with self.assertRaises(Invalid):
+             with lock(self.directory/'controller.lock'):
+                 pass
++        deadline = time.monotonic()+10
+         while not (job/'receipt.json').exists() and time.monotonic() < deadline:
+             time.sleep(.05)
+         self.assertTrue((job/'receipt.json').exists())
+@@ -228,11 +233,19 @@
+         time.sleep(.1)
+         with lock(self.directory/'controller.lock') as fd:
+             arm = study.Arm(self.directory, 'baseline', fd)
++            charged = arm.s['seconds']
+             result = arm.recover()
+             self.assertEqual(result['outcome'], 'failure_within_time_budget')
+             self.assertEqual(arm.s['calls'], 1)
+             self.assertFalse(result['mathematical_resolution'])
+             self.assertIsNone(arm.s['active'])
++            self.assertEqual(arm.s['seconds'], charged)
++            receipt = (job/'receipt.json').read_bytes()
++            with patch('machinery.study.subprocess.Popen', side_effect=AssertionError('replayed job')):
++                self.assertIsNone(arm.recover())
++                self.assertEqual(arm.call(job.name, 'proposer', read(job/'request.json'), readonly=True), result)
++            self.assertEqual((job/'receipt.json').read_bytes(), receipt)
++            self.assertEqual((arm.s['calls'], arm.s['meta_calls'], arm.s['seconds']), (1, 1, charged))
+ 
+     def test_plot_empty_single_and_same_data_pair(self):
+         self.freeze()
+@@ -306,9 +319,16 @@
+                     arm.review()
+             reviewer = arm.root/'jobs/review-2/receipt.json'
+             before = reviewer.read_bytes()
++            inputs = arm.root/'review-inputs/review-2.json'
++            frozen_inputs = inputs.read_bytes()
++            calls, meta_calls = arm.s['calls'], arm.s['meta_calls']
++            spent = arm.s['budget_pools']['review-2']['spent']
+             recovered = study.Arm(self.directory, 'exploration', fd)
+             recovered.review()
+             self.assertEqual(before, reviewer.read_bytes())
++            self.assertEqual(frozen_inputs, inputs.read_bytes())
++            self.assertEqual((recovered.s['calls'], recovered.s['meta_calls']), (calls+1, meta_calls+1))
++            self.assertEqual(recovered.s['budget_pools']['review-2']['spent'], spent+arm.p['call_seconds'])
+             self.assertEqual(recovered.s['calls'], 6)
+             self.assertEqual(recovered.s['reviewed_rounds'], [2])
+             self.assertTrue((arm.root/'jobs/plan-0000/validated-plan.json').exists())

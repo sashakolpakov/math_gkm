@@ -1,0 +1,11 @@
+--- input/machinery/study_audit.py
++++ current/machinery/study_audit.py
+@@ -131,7 +131,7 @@
+             previous_policy = manifest['policy']
+             record = {'schema': 'math-gkm.audit.v2', 'synthetic': read(study/'protocol.json')['transport'] == 'fixture',
+                 'arm': arm, 'artifact': str(bundle), 'artifact_sha256': sha(bundle),
+-                'dataset_sha256': sha(study/'seed/MathGKM/Markov.lean'), 'reference_set': 'fixed-pinned-target-source',
++                'dataset_sha256': sha(study/'seed'/read(study/'seed/contract.json')['root_file']), 'reference_set': 'fixed-pinned-target-source',
+                 'representation': 'canonical active MathGKM source bundle at '+path.name,
+                 'pair_id': None, 'marker': marker, 'raw_bytes': len(raw), 'zlib9_bytes': len(zlib.compress(raw, 9)),
+                 'cumulative_research_seconds': cost, 'timestamp': manifest['created'],

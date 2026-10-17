@@ -1,0 +1,675 @@
+{
+  "schema": "independent-ptsk-static-review.v1",
+  "observed_utc": "2026-10-17T22:12:41.865252+00:00",
+  "disposition": "NOT_ACCEPTED_AS_COMPLETE; three substantive acceptance issues plus continuation-budget gap; static review only, not runtime validation",
+  "authority": "User conceptual requirements and latest no-research/test-hold boundaries are taken from parent messages; P/T/S/K labels and detailed implementation acceptance conditions are the supervisor requirements interpretation, not asserted verbatim user wording.",
+  "builder_manifest_sha256": "c1c945c2228cd13af34e337182fbd7755d48d82f101fb47d1c06c6e0ff085778",
+  "source_pins_sha256": "ba042950c4bc2c733f0ff9724d4c23b0e9dce753954e2c929850e6b10779f278",
+  "scope": "Read source, static text diffs and file hashes only. No candidate import/execution, Lean/checker/proof/experiment/test/model/curation run; no candidate/live/collatz edits; no builder/researcher contact or new delegation.",
+  "findings": [
+    {
+      "id": "B1",
+      "priority": "must_fix_before_acceptance",
+      "requirements": [
+        "M3",
+        "K1",
+        "K2"
+      ],
+      "title": "Residual discharge is textual, not semantic",
+      "evidence": [
+        {
+          "path": "machinery/study_knowledge.py",
+          "lines": "167-183",
+          "sha256": "ca56fbe272669b2e40de14b17af4cd75bb8c874afc5d220a4188cefd43639679",
+          "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round2_static_review_20261017/final_sources/machinery/study_knowledge.py"
+        }
+      ],
+      "finding": "The residual ledger stores an explicit proposition string but not its elaborated proposition and contextual meaning. A later mathematical_claims entry marks it checked solely when the statement string matches. Source-retention guards protect earlier files, but they do not establish that the same text elaborated in a different importing module has the same meaning. Added names/notation/context can differ without replacing retained files. Reuse of the same residual id also compares statement text only.",
+      "impact": "The next request and burden report can treat a residual as discharged without a checked bridge to the antecedent of the original reduction. This does not demonstrate false exact-root completion, which has a separate gate.",
+      "acceptance": "Bind the residual to the semantic proposition/context used by the checked reduction; admit discharge only with that same identity or an independently checked transport/composition."
+    },
+    {
+      "id": "B2",
+      "priority": "must_fix_before_acceptance",
+      "requirements": [
+        "T2",
+        "M1"
+      ],
+      "title": "Matched task identity is only source text plus catalogs",
+      "evidence": [
+        {
+          "path": "machinery/study_transfer.py",
+          "lines": "74-88,119-122,162-179,216-243,290-315",
+          "sha256": "573637c989c84f3c1ed9bba6613a4d07488cb4397908e7add04cb2c3c41f6c35",
+          "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round2_static_review_20261017/final_sources/machinery/study_transfer.py"
+        }
+      ],
+      "finding": "Task and binder strings are elaborated after importing each adapter-selected solution module. Pair binding fixes task JSON and frozen sources/catalogs, but no comparison binds the resulting proposition and its contextual dependencies to a prospectively frozen task meaning. Retaining old declaration bodies does not prevent newly added adapter declarations/notation from changing how task text elaborates.",
+      "impact": "Valid Lean proofs can answer different mathematical obligations while the comparison reports the same task. A bounded non-solution on the old side does not itself supply an elaborated old target to compare.",
+      "acceptance": "Establish a common prospective semantic target/hypothesis context, or a checked relation to it, independently of each adapter. Bind the full context rather than merely a printed proposition or declaration name."
+    },
+    {
+      "id": "B3",
+      "priority": "must_fix_full_K1_K2_claim",
+      "requirements": [
+        "K1",
+        "K2"
+      ],
+      "title": "Burden compares cumulative witnesses against initial knowledge, not remaining goal conditional on enlarged knowledge",
+      "evidence": [
+        {
+          "path": "machinery/study_burden.py",
+          "lines": "27-65,68-84,94-103",
+          "sha256": "60afcf75e79f50623c6592d3e6801de60e92e01e14941e5344b918d6199fa934",
+          "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round2_static_review_20261017/final_sources/machinery/study_burden.py"
+        }
+      ],
+      "finding": "The conditional dictionary is always snapshots/initial. The bundle accumulates every retained root-connected reduction, dependency and discharge; pairs require equal initial-dictionary digest. This measures the cumulative encoding of root-connected witnesses and overhead relative to the initial seed. It does not compare a fixed remaining goal/residual task conditional on old versus newly enlarged accepted theories.",
+      "impact": "The measure is a legitimate narrower storage/explicit-witness audit, but cannot be presented as implementing the user's K(goal | new step + previous knowledge) proxy. Accumulating ever more witnesses naturally increases this representation; no decrease or sawtooth should be manufactured to compensate.",
+      "acceptance": "Represent each bound theory and a current goal/residual witness conditional on that theory; separately expose new dictionary, gluing/adapter/connecting costs and unknown proof remainder. Keep the mathematical goal/reference panel fixed, charge abbreviation overhead, and make no inference of minimal proof complexity or difficulty from an encoding change."
+    },
+    {
+      "id": "S1",
+      "priority": "substantive_methodology_gap",
+      "requirements": [
+        "P4",
+        "S1",
+        "C3"
+      ],
+      "title": "Continuation commitments do not protect equal branch validation budgets",
+      "evidence": [
+        {
+          "path": "machinery/study_policy.py",
+          "lines": "117-140",
+          "sha256": "a9672dec84f2aba9348b5c882585dd76babea92e698339a561cb6adc9f1c8c6b",
+          "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round2_static_review_20261017/final_sources/machinery/study_policy.py"
+        },
+        {
+          "path": "machinery/study.py",
+          "lines": "533-544,554-616",
+          "sha256": "9ffa1f606ed5edf10e6d3502aa5c83818e6c11a414e2c01d4f71ad1ee30a3781",
+          "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round2_static_review_20261017/final_sources/machinery/study.py"
+        },
+        {
+          "path": "machinery/study_knowledge.py",
+          "lines": "114-127",
+          "sha256": "ca56fbe272669b2e40de14b17af4cd75bb8c874afc5d220a4188cefd43639679",
+          "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round2_static_review_20261017/final_sources/machinery/study_knowledge.py"
+        }
+      ],
+      "finding": "Final code durably records the policy trial candidate, rounds and plan/action-call caps. It does not reserve or partition all knowledge validation and terminal comparison costs for each continuation. The incumbent executes first and can consume the shared allowance through variable-size knowledge submissions before the candidate branch. Ordinary episode commitment likewise names only one call cap rather than a protected continuation allowance.",
+      "impact": "The global guard remains bounded and incomplete comparisons are ineligible; this is not an observed overspend or false positive. It is a missing fairness/completion guarantee behind explicit continuation-budget and equal-opportunity claims.",
+      "acceptance": "Either provide protected, symmetric continuation/validation allowances (including the concluding comparison) or narrow the documented guarantee and classify unequal budget exhaustion explicitly."
+    },
+    {
+      "id": "S2",
+      "priority": "workflow_limitation_not_false_proof",
+      "requirements": [
+        "T5"
+      ],
+      "title": "Catalog covers every current Lean draft rather than an accepted-module inventory",
+      "evidence": [
+        {
+          "path": "machinery/study_transfer.py",
+          "lines": "187-213,244-253",
+          "sha256": "573637c989c84f3c1ed9bba6613a4d07488cb4397908e7add04cb2c3c41f6c35",
+          "copy": "/private/tmp/math_gkm_godel_20261013/strategy_v2_round2_static_review_20261017/final_sources/machinery/study_transfer.py"
+        }
+      ],
+      "finding": "The catalog imports all MathGKM Lean files in the snapshot. A retained failed draft can invalidate the context despite usable accepted capabilities. This is conservative, but the live-tree workflow must move/exclude unaccepted drafts or provide an accepted-module catalog; archival retention and acceptance are different concepts.",
+      "impact": "No mathematical false positive follows; comparisons can fail for irrelevant drafts and the claim of acceptance-based regression coverage is too broad without the workflow distinction."
+    }
+  ],
+  "resolved_or_improved": [
+    "P/T/S major helpers are integrated: ordinary and branch proposer commitments precede action; reports feed checked ingestion, explicit residuals and next requests; policy/program selection reaches the next request.",
+    "if_open_obligations now checks for status == open rather than ledger nonemptiness.",
+    "Bounded non-solution now checks frozen source hashes before becoming a valid attempt; the prior bypass is resolved in these bytes.",
+    "Burden traversal now starts from root reductions, follows declared checked dependencies and includes later discharge records; prior unrelated-representation and omitted-discharge findings are superseded, subject to B1 and B3.",
+    "Live nonempty held-out suites now require retained curation receipt/suite hashes. A machine-owned curator exists separately before freeze; an empty suite honestly establishes no transfer.",
+    "Policy comparisons distinguish finite task gain from newly acquired-component transfer; invalid/missing/interrupted checks cannot authorize improvement. Retained declaration type/body catalogs improve over module-hash novelty.",
+    "Observer export now precedes durable round advancement; report enumerates missing scheduled checkpoints. Numeric burden records have no identified research/policy consumer. Audit input/plan integrity can still stop execution, which is operational failure control rather than a numerical reward channel."
+  ],
+  "scope_limits": [
+    "The executable proposal path is a bounded request-control DSL. It is more than four prose strings, but not arbitrary Python self-replacement or a certified Goedel switch.",
+    "Whole-continuation improvement and concrete Python/OS/model refinement remain explicit open obligations. Hash-bound transitions and generic Lean obligation types do not discharge them.",
+    "Component dependency use is not causal necessity; held-out finite-budget outcomes do not prove universal usefulness, long-term superiority or mathematical unprovability.",
+    "One-way burden outputs correctly retain unknown minimum/difficulty and no forced sawtooth. B3 concerns the conditioning target, not a request to compute uncomputable Kolmogorov complexity.",
+    "Final neutral tests are authored but unexecuted. The source suite has commitment, program, baseline, audit-projection, neutral recovery, premise, gluing, comparison and connected-loop cases. It does not yet establish the semantic context or asymmetric-validation-budget guarantees identified above.",
+    "No fresh Markov research, live curator, canary or study launch is authorized before explicit user OK. This source review neither runs nor authorizes them."
+  ],
+  "manifest_hash_checks": [
+    {
+      "path": "MISSION.md",
+      "expected": "9cfa1230bd2e0e92dfaec64f68ee72143dc1a17d1435d449cba0ff16da0ce727",
+      "actual": "9cfa1230bd2e0e92dfaec64f68ee72143dc1a17d1435d449cba0ff16da0ce727",
+      "matches": true
+    },
+    {
+      "path": "MathGKM/ContinuationObligations.lean",
+      "expected": "3817165d086a45a316d03d58d5dbcdf5cb6aa1e244cad2e67b162ae0aacb3c57",
+      "actual": "3817165d086a45a316d03d58d5dbcdf5cb6aa1e244cad2e67b162ae0aacb3c57",
+      "matches": true
+    },
+    {
+      "path": "MathGKM/HarnessFixture.lean",
+      "expected": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+      "actual": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+      "matches": true
+    },
+    {
+      "path": "MathGKM/Markov.lean",
+      "expected": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "actual": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "matches": true
+    },
+    {
+      "path": "MathGKM/Protocol.lean",
+      "expected": "60b543592c2dadac3aeefea7ea2dd664c36a7910723e65bfd4e9e2e179bcf97c",
+      "actual": "60b543592c2dadac3aeefea7ea2dd664c36a7910723e65bfd4e9e2e179bcf97c",
+      "matches": true
+    },
+    {
+      "path": "MathGKM/ResearchSemantics.lean",
+      "expected": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+      "actual": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+      "matches": true
+    },
+    {
+      "path": "contracts/markov-clean-v2.json",
+      "expected": "495cf67ff80de3f6265a52266d8d212fc6e4ec411b0b2c0384cda47e84d29da3",
+      "actual": "495cf67ff80de3f6265a52266d8d212fc6e4ec411b0b2c0384cda47e84d29da3",
+      "matches": true
+    },
+    {
+      "path": "contracts/markov-goal.json",
+      "expected": "10bc86a3043aefd4ff11978765bcc969e92c0a6731321b11f4c526d384f39ee7",
+      "actual": "10bc86a3043aefd4ff11978765bcc969e92c0a6731321b11f4c526d384f39ee7",
+      "matches": true
+    },
+    {
+      "path": "docs/CONTROLLER.md",
+      "expected": "991ab12e414975fad69584a3a4f6aadb55bd192c00db0901e8ddc2c33ba3b507",
+      "actual": "991ab12e414975fad69584a3a4f6aadb55bd192c00db0901e8ddc2c33ba3b507",
+      "matches": true
+    },
+    {
+      "path": "docs/DESIGN.md",
+      "expected": "47ebe858b2d7b06a9ac29527d74a7d65d7c39f988c399537b8da38bd24ce7d15",
+      "actual": "47ebe858b2d7b06a9ac29527d74a7d65d7c39f988c399537b8da38bd24ce7d15",
+      "matches": true
+    },
+    {
+      "path": "docs/HARNESS_CHECKPOINT.md",
+      "expected": "fa2f0edf12c4b789be71abe1e4d5dae873478bf9e0c5ee40c8b005e4ff462df9",
+      "actual": "fa2f0edf12c4b789be71abe1e4d5dae873478bf9e0c5ee40c8b005e4ff462df9",
+      "matches": true
+    },
+    {
+      "path": "docs/REQUIREMENT_MAP.md",
+      "expected": "bd3066c5aa7314dd173abc044e62cd58f25af180ff6f654edff4b364a20dc0e8",
+      "actual": "bd3066c5aa7314dd173abc044e62cd58f25af180ff6f654edff4b364a20dc0e8",
+      "matches": true
+    },
+    {
+      "path": "docs/STUDY_V2.md",
+      "expected": "26a8912489e26d3c747d10f3421bb489e468a2f0f2367e2675c56a83e6448717",
+      "actual": "26a8912489e26d3c747d10f3421bb489e468a2f0f2367e2675c56a83e6448717",
+      "matches": true
+    },
+    {
+      "path": "lake-manifest.json",
+      "expected": "b513f28de3996d022de1bad05cd06002dc5f21286f4cd26454fcfae26a745725",
+      "actual": "b513f28de3996d022de1bad05cd06002dc5f21286f4cd26454fcfae26a745725",
+      "matches": true
+    },
+    {
+      "path": "lakefile.toml",
+      "expected": "211507039f4919cdc9d54f87efaf7bebf53532272377623f75269c714fb5b575",
+      "actual": "211507039f4919cdc9d54f87efaf7bebf53532272377623f75269c714fb5b575",
+      "matches": true
+    },
+    {
+      "path": "lean-toolchain",
+      "expected": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+      "actual": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+      "matches": true
+    },
+    {
+      "path": "machinery/broker.py",
+      "expected": "539bdbf3cdba5a3587d98454de77ef59f3e26f86c5becb9514ff3d9966d6cbe7",
+      "actual": "539bdbf3cdba5a3587d98454de77ef59f3e26f86c5becb9514ff3d9966d6cbe7",
+      "matches": true
+    },
+    {
+      "path": "machinery/check.py",
+      "expected": "cb9d7da571b9ea52a0ebe2004187c925690ac4c388c921eaf864b9597f8a2fbf",
+      "actual": "cb9d7da571b9ea52a0ebe2004187c925690ac4c388c921eaf864b9597f8a2fbf",
+      "matches": true
+    },
+    {
+      "path": "machinery/completion.py",
+      "expected": "6707ab37a5a514bb58bc13c4475c4453f05cc18257df3b3499026ef12d8c5a5c",
+      "actual": "6707ab37a5a514bb58bc13c4475c4453f05cc18257df3b3499026ef12d8c5a5c",
+      "matches": true
+    },
+    {
+      "path": "machinery/controller.py",
+      "expected": "b6e4f1d8878c1459f8e9fda9de26409ca15daa633776b35247d15972874ecd7b",
+      "actual": "b6e4f1d8878c1459f8e9fda9de26409ca15daa633776b35247d15972874ecd7b",
+      "matches": true
+    },
+    {
+      "path": "machinery/engine.py",
+      "expected": "6b0a2eae4b1e919233a3ac99f0ecb2af22f6c0cca0691befbb23af7a6be811dc",
+      "actual": "6b0a2eae4b1e919233a3ac99f0ecb2af22f6c0cca0691befbb23af7a6be811dc",
+      "matches": true
+    },
+    {
+      "path": "machinery/experiment_worker.py",
+      "expected": "d522946605fd2b2752f842035e76bbb99a94f2ef8b0c9fdfaa673787b8f57a87",
+      "actual": "d522946605fd2b2752f842035e76bbb99a94f2ef8b0c9fdfaa673787b8f57a87",
+      "matches": true
+    },
+    {
+      "path": "machinery/fixture_worker.py",
+      "expected": "d342813b1b725e700f97aa2a84eaf9d94fa3846bea586821df5fe93e9621b2c3",
+      "actual": "d342813b1b725e700f97aa2a84eaf9d94fa3846bea586821df5fe93e9621b2c3",
+      "matches": true
+    },
+    {
+      "path": "machinery/gate.py",
+      "expected": "3a5e68d87fa2a27902e5daa56f67ef691cffe2ff6c28e8a8bb1f3ce100431129",
+      "actual": "3a5e68d87fa2a27902e5daa56f67ef691cffe2ff6c28e8a8bb1f3ce100431129",
+      "matches": true
+    },
+    {
+      "path": "machinery/process.py",
+      "expected": "e957b94c70634b9d21594f749e16c8955d759c77ce12eb16d763f7b979e336e9",
+      "actual": "e957b94c70634b9d21594f749e16c8955d759c77ce12eb16d763f7b979e336e9",
+      "matches": true
+    },
+    {
+      "path": "machinery/proof_audit.py",
+      "expected": "7eea1235f291514e7463f4748d6315142ce8db0f2f53f4e524722629f148c8ab",
+      "actual": "7eea1235f291514e7463f4748d6315142ce8db0f2f53f4e524722629f148c8ab",
+      "matches": true
+    },
+    {
+      "path": "machinery/protocol.py",
+      "expected": "d34e97fe45cbde9b6359215ff58d107f5655eea2dc1e8caad66d9df94eafc932",
+      "actual": "d34e97fe45cbde9b6359215ff58d107f5655eea2dc1e8caad66d9df94eafc932",
+      "matches": true
+    },
+    {
+      "path": "machinery/provenance.py",
+      "expected": "47ecc9acb217613bd86659bb184d03ef7a569fd301a1b0c54d9a8e7fc2631c49",
+      "actual": "47ecc9acb217613bd86659bb184d03ef7a569fd301a1b0c54d9a8e7fc2631c49",
+      "matches": true
+    },
+    {
+      "path": "machinery/source_checkpoint.py",
+      "expected": "6a76e3aede6002db06c55904ad37e94b3546e01437d81e685b8207c1318fd077",
+      "actual": "6a76e3aede6002db06c55904ad37e94b3546e01437d81e685b8207c1318fd077",
+      "matches": true
+    },
+    {
+      "path": "machinery/study.py",
+      "expected": "9ffa1f606ed5edf10e6d3502aa5c83818e6c11a414e2c01d4f71ad1ee30a3781",
+      "actual": "9ffa1f606ed5edf10e6d3502aa5c83818e6c11a414e2c01d4f71ad1ee30a3781",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_audit.py",
+      "expected": "8fda0fa744f6488cbbf016c038da5b771abc8fddf49b4ae64cb72bc9498ee146",
+      "actual": "8fda0fa744f6488cbbf016c038da5b771abc8fddf49b4ae64cb72bc9498ee146",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_bridge.py",
+      "expected": "027a153f074a4431da1b85b0d45857df5d1b040f878422b3c3506e789777cb9e",
+      "actual": "027a153f074a4431da1b85b0d45857df5d1b040f878422b3c3506e789777cb9e",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_burden.py",
+      "expected": "60afcf75e79f50623c6592d3e6801de60e92e01e14941e5344b918d6199fa934",
+      "actual": "60afcf75e79f50623c6592d3e6801de60e92e01e14941e5344b918d6199fa934",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_common.py",
+      "expected": "5296120fafed7685f5d67df674c1b33bfee5ee80c3a0802e978445136d2cfcb2",
+      "actual": "5296120fafed7685f5d67df674c1b33bfee5ee80c3a0802e978445136d2cfcb2",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_completion.py",
+      "expected": "5708fffc05cf3f85adeafd5b4fa2c719e28a4d6a73c274ca90162da5f3702c03",
+      "actual": "5708fffc05cf3f85adeafd5b4fa2c719e28a4d6a73c274ca90162da5f3702c03",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_curate.py",
+      "expected": "f108476b55439df56f4d3412ce319060ddb77f78e0f7f58bb5c02c45f3185aeb",
+      "actual": "f108476b55439df56f4d3412ce319060ddb77f78e0f7f58bb5c02c45f3185aeb",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_fixture.py",
+      "expected": "7438612dae2455a50d9b0a3dbdd92882951881505fac267426064ecdd504fc8c",
+      "actual": "7438612dae2455a50d9b0a3dbdd92882951881505fac267426064ecdd504fc8c",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_knowledge.py",
+      "expected": "ca56fbe272669b2e40de14b17af4cd75bb8c874afc5d220a4188cefd43639679",
+      "actual": "ca56fbe272669b2e40de14b17af4cd75bb8c874afc5d220a4188cefd43639679",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_manifest.py",
+      "expected": "2740ce1bb8464bd05b46cb8675937d50788f275280858cd04dab5cbaac32372c",
+      "actual": "2740ce1bb8464bd05b46cb8675937d50788f275280858cd04dab5cbaac32372c",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_observer.py",
+      "expected": "2bc680d07855c0cb3133a9a79c4537edfcb3988463d364d3cd787fb29b1a79b5",
+      "actual": "2bc680d07855c0cb3133a9a79c4537edfcb3988463d364d3cd787fb29b1a79b5",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_policy.py",
+      "expected": "a9672dec84f2aba9348b5c882585dd76babea92e698339a561cb6adc9f1c8c6b",
+      "actual": "a9672dec84f2aba9348b5c882585dd76babea92e698339a561cb6adc9f1c8c6b",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_program.py",
+      "expected": "b20bc591b8e7f1383e3c8331d977e9eec449a9904488e7df66b50075b924ff60",
+      "actual": "b20bc591b8e7f1383e3c8331d977e9eec449a9904488e7df66b50075b924ff60",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_transfer.py",
+      "expected": "573637c989c84f3c1ed9bba6613a4d07488cb4397908e7add04cb2c3c41f6c35",
+      "actual": "573637c989c84f3c1ed9bba6613a4d07488cb4397908e7add04cb2c3c41f6c35",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_worker.py",
+      "expected": "cea861dbbb4285fe71f91eeeb6cf68eac2176428ac6cc36efd49b4ca5b39993f",
+      "actual": "cea861dbbb4285fe71f91eeeb6cf68eac2176428ac6cc36efd49b4ca5b39993f",
+      "matches": true
+    },
+    {
+      "path": "machinery/switch.py",
+      "expected": "416ae2f3116f7babad38cdcb078c0e79248e6b9c8fff2554a108355ab5dcc0e1",
+      "actual": "416ae2f3116f7babad38cdcb078c0e79248e6b9c8fff2554a108355ab5dcc0e1",
+      "matches": true
+    },
+    {
+      "path": "machinery/toolchain.py",
+      "expected": "4e1ef9af43216c437246ae435b70b68d6d26d3823ef30421610ce05e2f207e68",
+      "actual": "4e1ef9af43216c437246ae435b70b68d6d26d3823ef30421610ce05e2f207e68",
+      "matches": true
+    },
+    {
+      "path": "machinery/trust.py",
+      "expected": "1a90f064a347d1beb983faa5222017f596e9aba08f5857d39b93fb3b282554c4",
+      "actual": "1a90f064a347d1beb983faa5222017f596e9aba08f5857d39b93fb3b282554c4",
+      "matches": true
+    },
+    {
+      "path": "machinery/validate.py",
+      "expected": "5ffb50c9218e60cbd8ca2ec9766f7b9db4bd9751d525f7b2b7b03a26da7a8d73",
+      "actual": "5ffb50c9218e60cbd8ca2ec9766f7b9db4bd9751d525f7b2b7b03a26da7a8d73",
+      "matches": true
+    },
+    {
+      "path": "machinery/worker.py",
+      "expected": "65a1130e2624d8cda679984c49a268e2ab8e00844f69b9c63bf451ada0a35779",
+      "actual": "65a1130e2624d8cda679984c49a268e2ab8e00844f69b9c63bf451ada0a35779",
+      "matches": true
+    },
+    {
+      "path": "studies/v2-canary.json",
+      "expected": "db115a9cc3c2cdc6085e7b1c83d8eaaad9fced0f6d67220178936c76da0d4546",
+      "actual": "db115a9cc3c2cdc6085e7b1c83d8eaaad9fced0f6d67220178936c76da0d4546",
+      "matches": true
+    },
+    {
+      "path": "studies/v2-fixture.json",
+      "expected": "bfe9647f4e51ab441a051e9cbcd7997eb0740a02b1a0516309cf52c55e62f145",
+      "actual": "bfe9647f4e51ab441a051e9cbcd7997eb0740a02b1a0516309cf52c55e62f145",
+      "matches": true
+    },
+    {
+      "path": "studies/v2-study.json",
+      "expected": "e263e7a7d10506633365351b5570bc114e195d7b4ec904b748717abe471d71c2",
+      "actual": "e263e7a7d10506633365351b5570bc114e195d7b4ec904b748717abe471d71c2",
+      "matches": true
+    },
+    {
+      "path": "tests/test_boundaries.py",
+      "expected": "495925ab29c1ee4cac28ef3d454fb1b1ee34ee0abb89e9be6d14c1cebd8262a6",
+      "actual": "495925ab29c1ee4cac28ef3d454fb1b1ee34ee0abb89e9be6d14c1cebd8262a6",
+      "matches": true
+    },
+    {
+      "path": "tests/test_controller.py",
+      "expected": "4333978ef8988e063c0b0cef5c55f3e79ad31b6b5a7e710e9c6014ecd619d2dd",
+      "actual": "4333978ef8988e063c0b0cef5c55f3e79ad31b6b5a7e710e9c6014ecd619d2dd",
+      "matches": true
+    },
+    {
+      "path": "tests/test_controller_history.py",
+      "expected": "ccb013ae7516465311175dfb375e102e6b72437e4ca6df486a6dadca96d6f6f7",
+      "actual": "ccb013ae7516465311175dfb375e102e6b72437e4ca6df486a6dadca96d6f6f7",
+      "matches": true
+    },
+    {
+      "path": "tests/test_revision_static_checkpoint.py",
+      "expected": "f32b685afd41f8fdc52fa5114c7d807d7728ef99eb8009d4056d3c971a826fbe",
+      "actual": "f32b685afd41f8fdc52fa5114c7d807d7728ef99eb8009d4056d3c971a826fbe",
+      "matches": true
+    },
+    {
+      "path": "tests/test_round2.py",
+      "expected": "8bdaaabea99f6eefeca6daaa7640f36f36127c4cb2cb5245b94a39d53bd56c7b",
+      "actual": "8bdaaabea99f6eefeca6daaa7640f36f36127c4cb2cb5245b94a39d53bd56c7b",
+      "matches": true
+    },
+    {
+      "path": "tests/test_study_v2.py",
+      "expected": "f08481b94fb781b9c0ea7ad88bd1fe3b6481c573d7b71fcc0647a5c497e5c325",
+      "actual": "f08481b94fb781b9c0ea7ad88bd1fe3b6481c573d7b71fcc0647a5c497e5c325",
+      "matches": true
+    },
+    {
+      "path": "evidence/revision-static/before.json",
+      "expected": "f46321474b88a8d13a40ef1ebb5fd09b45aa90642474b8a2b60429a0d15acd35",
+      "actual": "f46321474b88a8d13a40ef1ebb5fd09b45aa90642474b8a2b60429a0d15acd35",
+      "matches": true
+    },
+    {
+      "path": "evidence/revision-static/checkpoint.json",
+      "expected": "560eadc25cb20191a78d4efe1d84d99be2b8d87ceba0d96f32f06aca2d68b5e9",
+      "actual": "560eadc25cb20191a78d4efe1d84d99be2b8d87ceba0d96f32f06aca2d68b5e9",
+      "matches": true
+    },
+    {
+      "path": "evidence/revision-static/dispositions.json",
+      "expected": "b02f4b9d425aed664d14e10839dc7383865e09de64849a3bcdce8e32eff6fd64",
+      "actual": "b02f4b9d425aed664d14e10839dc7383865e09de64849a3bcdce8e32eff6fd64",
+      "matches": true
+    },
+    {
+      "path": "evidence/revision-static/source-inventory.json",
+      "expected": "306111aaf281cddba44dcfc0a85a497db9a261f970183908a13ea1c9aa18df58",
+      "actual": "306111aaf281cddba44dcfc0a85a497db9a261f970183908a13ea1c9aa18df58",
+      "matches": true
+    },
+    {
+      "path": "evidence/revision-static/test-plan.json",
+      "expected": "9028c4b2cbe4ddb962ad6ddf53458bfa668a02983c5b860873ca32c2f7d66e14",
+      "actual": "9028c4b2cbe4ddb962ad6ddf53458bfa668a02983c5b860873ca32c2f7d66e14",
+      "matches": true
+    },
+    {
+      "path": ".bootstrap/supervisor-review/requirements.md",
+      "expected": "57f400f7f9ef2295e3a4f57ab28e816f4fa33b43bd0368cb33162bbd54a33ac8",
+      "actual": "57f400f7f9ef2295e3a4f57ab28e816f4fa33b43bd0368cb33162bbd54a33ac8",
+      "matches": true
+    },
+    {
+      "path": ".bootstrap/supervisor-review/feedback.md",
+      "expected": "a65514b6a00bd33e54690613aa4905df2e0d08b8ff862a31ac787740cb9de35c",
+      "actual": "a65514b6a00bd33e54690613aa4905df2e0d08b8ff862a31ac787740cb9de35c",
+      "matches": true
+    },
+    {
+      "path": ".bootstrap/base-permissions.json",
+      "expected": "5263cab043f26560022bffc9ff3636b91a005afc59608c2d945176979a6c673c",
+      "actual": "5263cab043f26560022bffc9ff3636b91a005afc59608c2d945176979a6c673c",
+      "matches": true
+    }
+  ],
+  "reviewed_final_file_rechecks": [
+    {
+      "path": "machinery/study_worker.py",
+      "sha256": "cea861dbbb4285fe71f91eeeb6cf68eac2176428ac6cc36efd49b4ca5b39993f",
+      "current_sha256": "cea861dbbb4285fe71f91eeeb6cf68eac2176428ac6cc36efd49b4ca5b39993f",
+      "matches": true,
+      "manifest_matches": true
+    },
+    {
+      "path": "machinery/study_curate.py",
+      "sha256": "f108476b55439df56f4d3412ce319060ddb77f78e0f7f58bb5c02c45f3185aeb",
+      "current_sha256": "f108476b55439df56f4d3412ce319060ddb77f78e0f7f58bb5c02c45f3185aeb",
+      "matches": true,
+      "manifest_matches": true
+    },
+    {
+      "path": "machinery/study_program.py",
+      "sha256": "b20bc591b8e7f1383e3c8331d977e9eec449a9904488e7df66b50075b924ff60",
+      "current_sha256": "b20bc591b8e7f1383e3c8331d977e9eec449a9904488e7df66b50075b924ff60",
+      "matches": true,
+      "manifest_matches": true
+    },
+    {
+      "path": "machinery/study_transfer.py",
+      "sha256": "573637c989c84f3c1ed9bba6613a4d07488cb4397908e7add04cb2c3c41f6c35",
+      "current_sha256": "573637c989c84f3c1ed9bba6613a4d07488cb4397908e7add04cb2c3c41f6c35",
+      "matches": true,
+      "manifest_matches": true
+    },
+    {
+      "path": "machinery/proof_audit.py",
+      "sha256": "7eea1235f291514e7463f4748d6315142ce8db0f2f53f4e524722629f148c8ab",
+      "current_sha256": "7eea1235f291514e7463f4748d6315142ce8db0f2f53f4e524722629f148c8ab",
+      "matches": true,
+      "manifest_matches": true
+    },
+    {
+      "path": "machinery/study_audit.py",
+      "sha256": "8fda0fa744f6488cbbf016c038da5b771abc8fddf49b4ae64cb72bc9498ee146",
+      "current_sha256": "8fda0fa744f6488cbbf016c038da5b771abc8fddf49b4ae64cb72bc9498ee146",
+      "matches": true,
+      "manifest_matches": true
+    },
+    {
+      "path": "machinery/study_knowledge.py",
+      "sha256": "ca56fbe272669b2e40de14b17af4cd75bb8c874afc5d220a4188cefd43639679",
+      "current_sha256": "ca56fbe272669b2e40de14b17af4cd75bb8c874afc5d220a4188cefd43639679",
+      "matches": true,
+      "manifest_matches": true
+    },
+    {
+      "path": "machinery/study_bridge.py",
+      "sha256": "027a153f074a4431da1b85b0d45857df5d1b040f878422b3c3506e789777cb9e",
+      "current_sha256": "027a153f074a4431da1b85b0d45857df5d1b040f878422b3c3506e789777cb9e",
+      "matches": true,
+      "manifest_matches": true
+    },
+    {
+      "path": "machinery/study_policy.py",
+      "sha256": "a9672dec84f2aba9348b5c882585dd76babea92e698339a561cb6adc9f1c8c6b",
+      "current_sha256": "a9672dec84f2aba9348b5c882585dd76babea92e698339a561cb6adc9f1c8c6b",
+      "matches": true,
+      "manifest_matches": true
+    },
+    {
+      "path": "machinery/study_common.py",
+      "sha256": "5296120fafed7685f5d67df674c1b33bfee5ee80c3a0802e978445136d2cfcb2",
+      "current_sha256": "5296120fafed7685f5d67df674c1b33bfee5ee80c3a0802e978445136d2cfcb2",
+      "matches": true,
+      "manifest_matches": true
+    },
+    {
+      "path": "machinery/study_observer.py",
+      "sha256": "2bc680d07855c0cb3133a9a79c4537edfcb3988463d364d3cd787fb29b1a79b5",
+      "current_sha256": "2bc680d07855c0cb3133a9a79c4537edfcb3988463d364d3cd787fb29b1a79b5",
+      "matches": true,
+      "manifest_matches": true
+    },
+    {
+      "path": "machinery/study_burden.py",
+      "sha256": "60afcf75e79f50623c6592d3e6801de60e92e01e14941e5344b918d6199fa934",
+      "current_sha256": "60afcf75e79f50623c6592d3e6801de60e92e01e14941e5344b918d6199fa934",
+      "matches": true,
+      "manifest_matches": true
+    },
+    {
+      "path": "machinery/study_completion.py",
+      "sha256": "5708fffc05cf3f85adeafd5b4fa2c719e28a4d6a73c274ca90162da5f3702c03",
+      "current_sha256": "5708fffc05cf3f85adeafd5b4fa2c719e28a4d6a73c274ca90162da5f3702c03",
+      "matches": true,
+      "manifest_matches": true
+    },
+    {
+      "path": "machinery/study.py",
+      "sha256": "9ffa1f606ed5edf10e6d3502aa5c83818e6c11a414e2c01d4f71ad1ee30a3781",
+      "current_sha256": "9ffa1f606ed5edf10e6d3502aa5c83818e6c11a414e2c01d4f71ad1ee30a3781",
+      "matches": true,
+      "manifest_matches": true
+    },
+    {
+      "path": ".bootstrap/supervisor-review/requirements.md",
+      "sha256": "57f400f7f9ef2295e3a4f57ab28e816f4fa33b43bd0368cb33162bbd54a33ac8",
+      "current_sha256": "57f400f7f9ef2295e3a4f57ab28e816f4fa33b43bd0368cb33162bbd54a33ac8",
+      "matches": true,
+      "manifest_matches": true
+    },
+    {
+      "path": "docs/HARNESS_CHECKPOINT.md",
+      "sha256": "fa2f0edf12c4b789be71abe1e4d5dae873478bf9e0c5ee40c8b005e4ff462df9",
+      "current_sha256": "fa2f0edf12c4b789be71abe1e4d5dae873478bf9e0c5ee40c8b005e4ff462df9",
+      "matches": true,
+      "manifest_matches": true
+    },
+    {
+      "path": "docs/STUDY_V2.md",
+      "sha256": "26a8912489e26d3c747d10f3421bb489e468a2f0f2367e2675c56a83e6448717",
+      "current_sha256": "26a8912489e26d3c747d10f3421bb489e468a2f0f2367e2675c56a83e6448717",
+      "matches": true,
+      "manifest_matches": true
+    },
+    {
+      "path": "tests/test_revision_static_checkpoint.py",
+      "sha256": "f32b685afd41f8fdc52fa5114c7d807d7728ef99eb8009d4056d3c971a826fbe",
+      "current_sha256": "f32b685afd41f8fdc52fa5114c7d807d7728ef99eb8009d4056d3c971a826fbe",
+      "matches": true,
+      "manifest_matches": true
+    },
+    {
+      "path": "evidence/revision-static/SOURCE_MANIFEST.json",
+      "sha256": "c1c945c2228cd13af34e337182fbd7755d48d82f101fb47d1c06c6e0ff085778",
+      "current_sha256": "c1c945c2228cd13af34e337182fbd7755d48d82f101fb47d1c06c6e0ff085778",
+      "matches": true,
+      "manifest_matches": null
+    }
+  ],
+  "all_manifest_hashes_match": true,
+  "all_reviewed_copies_match_current": true
+}

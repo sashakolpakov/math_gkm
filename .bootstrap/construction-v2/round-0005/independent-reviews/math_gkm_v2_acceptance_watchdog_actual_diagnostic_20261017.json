@@ -1,0 +1,30 @@
+{
+  "scope": "Read-only retained neutral test diagnostics, no execution or mutation",
+  "observed_utc": "2026-10-17T23:23:22.555665+00:00",
+  "test_root": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/study-v2-neutral-2szs_1c4",
+  "initial_review": "/private/tmp/math_gkm_v2_acceptance_watchdog_fixture_review_20261017.json",
+  "pins": {
+    "controller.log": "0828db3824bb2a2164cc03d0711b0a04b7050817b18a4d61551870c8fc9d2e8d",
+    "study/arms/baseline/jobs/plan-0000/receipt.json": "f5d0e994bd15b691a57f49738f7f29a391de5a145a79da1af9adfa757084827b",
+    "study/arms/baseline/state.json": "574f016b69eaad8915e3d03365d23e9b7325dea175b7d674865e0352d273bd47"
+  },
+  "actual_proposer_receipt": {
+    "outcome": "failure_within_time_budget",
+    "role": "proposer",
+    "elapsed_seconds": 2.0516002920339815,
+    "mathematical_resolution": false,
+    "request_id": "plan-0000",
+    "started": 1792279031.620341,
+    "finished": 1792279033.671947
+  },
+  "actual_state": {
+    "status": "bounded_or_blocked",
+    "reason": "prospective proposer failed within budget; no trial authorized",
+    "round": 0,
+    "calls": 1,
+    "meta_calls": 1,
+    "active": null
+  },
+  "researcher_process_json_present": false,
+  "conclusion": "The saved run independently confirms the static fixture diagnosis: proposer timed out; controller stopped before launching the researcher job awaited by the test. The test has not exercised its intended killed-controller/watchdog-lock path."
+}

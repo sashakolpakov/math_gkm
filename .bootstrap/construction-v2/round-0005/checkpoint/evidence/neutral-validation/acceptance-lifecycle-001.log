@@ -1,0 +1,50 @@
+COMMAND ["/opt/homebrew/bin/python3", "-m", "unittest", "-v", "tests.test_study_v2"]
+MANIFEST /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/acceptance-pre-001/SOURCE_MANIFEST.json
+test_audit_only_metric_changes_cannot_change_requests_or_decisions (tests.test_study_v2.StudyFixtures.test_audit_only_metric_changes_cannot_change_requests_or_decisions) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/study-v2-neutral-iaeadcci
+ok
+test_clean_paired_seed_and_neutral_contract_unchanged (tests.test_study_v2.StudyFixtures.test_clean_paired_seed_and_neutral_contract_unchanged) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/study-v2-neutral-r7grsj_3
+ok
+test_finite_budget_failure_and_uncertain_recovery_without_replay (tests.test_study_v2.StudyFixtures.test_finite_budget_failure_and_uncertain_recovery_without_replay) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/study-v2-neutral-dzkay9v9
+ok
+test_frozen_suite_answers_not_in_any_research_request (tests.test_study_v2.StudyFixtures.test_frozen_suite_answers_not_in_any_research_request) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/study-v2-neutral-t2gwo43e
+ok
+test_full_lifecycle_portfolio_prospective_distinct_roles_delayed_horizon (tests.test_study_v2.StudyFixtures.test_full_lifecycle_portfolio_prospective_distinct_roles_delayed_horizon) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/study-v2-neutral-45cx64mo
+ok
+test_killed_controller_watchdog_retains_lock_and_receipt_recovers (tests.test_study_v2.StudyFixtures.test_killed_controller_watchdog_retains_lock_and_receipt_recovers) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/study-v2-neutral-2szs_1c4
+FAIL
+test_live_argv_constructed_only_and_read_grants_are_isolated (tests.test_study_v2.StudyFixtures.test_live_argv_constructed_only_and_read_grants_are_isolated) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/study-v2-neutral-4ut5q3gv
+ok
+test_no_evidence_and_exhausted_invention_are_rejected (tests.test_study_v2.StudyFixtures.test_no_evidence_and_exhausted_invention_are_rejected) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/study-v2-neutral-q7gvrud4
+ok
+test_no_praise_or_self_report_can_choose_policy (tests.test_study_v2.StudyFixtures.test_no_praise_or_self_report_can_choose_policy) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/study-v2-neutral-xlfg1htm
+ok
+test_plot_empty_single_and_same_data_pair (tests.test_study_v2.StudyFixtures.test_plot_empty_single_and_same_data_pair) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/study-v2-neutral-n48w4v4w
+ok
+test_protocol_suite_source_and_state_tampering_rejected (tests.test_study_v2.StudyFixtures.test_protocol_suite_source_and_state_tampering_rejected) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/study-v2-neutral-ucp7wuf6
+ok
+test_retrospective_audit_uses_actual_snapshots_and_costs (tests.test_study_v2.StudyFixtures.test_retrospective_audit_uses_actual_snapshots_and_costs) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/study-v2-neutral-7wvy1c_3
+ok
+test_review_interruption_reuses_committed_inputs_and_receipt (tests.test_study_v2.StudyFixtures.test_review_interruption_reuses_committed_inputs_and_receipt) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/study-v2-neutral-lppvjtuf
+ok
+test_stop_and_resume_and_duplicate_exclusion (tests.test_study_v2.StudyFixtures.test_stop_and_resume_and_duplicate_exclusion) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/study-v2-neutral-psf10va1
+ok
+test_real_lean_use_transport_hypotheses_and_scope (tests.test_study_v2.LeanTransferFixtures.test_real_lean_use_transport_hypotheses_and_scope) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/study-v2-neutral-nhx1k1n0
+ok
+test_real_lean_exact_root_rejects_unrelated_and_mutated_source (tests.test_study_v2.LeanTransferFixtures.test_real_lean_exact_root_rejects_unrelated_and_mutated_source) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/study-v2-neutral-pcnh7i78
+ok
+test_checked_transfer_drives_experimental_policy_change_with_equal_branches (tests.test_study_v2.LeanTransferFixtures.test_checked_transfer_drives_experimental_policy_change_with_equal_branches) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/study-v2-neutral-zqysn04o
+ok
+
+======================================================================
+FAIL: test_killed_controller_watchdog_retains_lock_and_receipt_recovers (tests.test_study_v2.StudyFixtures.test_killed_controller_watchdog_retains_lock_and_receipt_recovers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/tests/test_study_v2.py", line 218, in test_killed_controller_watchdog_retains_lock_and_receipt_recovers
+    self.assertTrue((job/'process.json').exists())
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 17 tests in 661.163s
+
+FAILED (failures=1)

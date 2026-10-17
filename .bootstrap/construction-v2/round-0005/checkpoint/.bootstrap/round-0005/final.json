@@ -1,0 +1,30 @@
+{
+  "phase": "construction",
+  "summary": "Completed the acceptance details: migrated active fixtures, corrected observer reporting, and finished reproduction instructions and evidence packaging.",
+  "files_changed": [
+    "tests/test_study_v2.py",
+    "tests/test_acceptance.py",
+    "machinery/study_burden.py",
+    "machinery/study_audit.py",
+    "machinery/study_manifest.py",
+    "machinery/neutral_checkpoint.py",
+    "docs/REGRESSION.md",
+    "docs/REQUIREMENT_MAP.md",
+    "docs/HARNESS_CHECKPOINT.md",
+    "docs/STUDY_V2.md",
+    "evidence/neutral-validation/ACCEPTANCE_REPORT.md",
+    "evidence/neutral-validation/ACCEPTANCE_VALIDATION_SUMMARY.json",
+    "evidence/neutral-validation/ACCEPTANCE_FINAL_SOURCE_MANIFEST.json"
+  ],
+  "checks": [
+    "49 distinct supported tests have passing evidence: 50 successful executions and one preserved initial fixture failure, subsequently corrected.",
+    "Four-round connected regression passed again; mathematical gates and Lean foundations remain unchanged.",
+    "Verified 93 source/copy hashes, 373 evidence hashes and 9,798 archived files; zero mismatches.",
+    "No live model or Markov execution occurred."
+  ],
+  "remaining": [
+    "Actual-host refinement, whole-continuation utility/cost proof and certified installation remain unavailable.",
+    "Live model transport and live independent curation remain unvalidated."
+  ],
+  "next_step": "Supervisor review of ACCEPTANCE_REPORT.md and the manifests. Any later fresh Markov run requires explicit user approval."
+}

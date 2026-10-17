@@ -55,7 +55,7 @@ class CompletionHistoryFixtures(unittest.TestCase):
         # prepare/verify code enforces bundle binding and audit obligations.
         compiler = patch('machinery.completion.run', return_value={
             'returncode': 0, 'termination': None,
-            'stdout': "'ControllerRootCheck' does not depend on any axioms\n",
+            'stdout': 'GKM_DECLARATIONS_V1:[{"name":"ControllerRootCheck","axioms":[],"constants":[]}]\n',
         })
         self.compiler = compiler.start()
         self.addCleanup(compiler.stop)

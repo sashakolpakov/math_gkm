@@ -77,7 +77,7 @@ def prepare(contract, claim):
         visiting.remove(module)
         sources[module] = {'sha256': sha(path), 'text': raw}
         ordered.append(module)
-    visit('MathGKM.Markov')
+    visit(contract['root_file'][:-5].replace('/', '.'))
     visit(claim['module'])
     correspondence = ROOT/claim['correspondence']
     if not correspondence.resolve().is_relative_to(ROOT) or any(x in correspondence.parts for x in ('.git', '.bootstrap')):
@@ -102,19 +102,26 @@ def verify(contract, claim, directory, *, audit=None, stop=lambda: False):
         result.update(bundle_hash=bundle['bundle_hash'], binding=bundle['binding'])
         atomic(directory/'bundle.json', bundle['binding'])
         source, build = directory/'source', directory/'build'
-        source.mkdir(exist_ok=True)
-        build.mkdir(exist_ok=True)
-        env = environment([build]+dependency_paths())
+        if source.exists() or build.exists():
+            raise Rejected('completion requires a fresh source/object directory')
+        source.mkdir()
+        build.mkdir()
+        from .study_transfer import validation_dependencies
+        env = environment([build]+validation_dependencies(ROOT, [v['text'] for v in bundle['sources'].values()]))
         for module in bundle['order']:
             relative = Path(module.replace('.', '/'))
             path = source/relative.with_suffix('.lean')
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(bundle['sources'][module]['text'])
-        wrapper = ('import '+claim['module']+'\nimport MathGKM.Markov\n'
+        wrapper = ('import '+claim['module']+'\nimport '+contract['root_file'][:-5].replace('/', '.')+'\n'
             'theorem ControllerRootCheck : '+('Not ' if claim['kind'] == 'refutation' else '')+
             contract['root_declaration']+' := @'+claim['declaration']+'\n'
             '#print axioms ControllerRootCheck\n')
         (source/'ControllerCompletion.lean').write_text(wrapper)
+        from . import proof_audit
+        inspector = proof_audit.inspector('ControllerCompletion', ('ControllerRootCheck',))
+        (source/'ControllerInspect.lean').write_text(inspector)
+        binaries = {str(p): sha(p) for p in (LEAN, CHECKER)}
         # Reject a wrong closed target before spending time on kernel replay.
         for operation in ('compile', 'kernel_replay'):
             for module in bundle['order']+['ControllerCompletion']:
@@ -130,15 +137,21 @@ def verify(contract, claim, directory, *, audit=None, stop=lambda: False):
                 atomic(directory/'result.json', result)
                 if record['returncode'] or record['termination']:
                     raise Rejected('Lean '+operation+' failed: '+module)
-                if module == 'ControllerCompletion' and operation == 'compile':
-                    match = re.search(r"'ControllerRootCheck' depends on axioms: \[([^\]]*)\]", record['stdout'])
-                    no_axioms = "'ControllerRootCheck' does not depend on any axioms" in record['stdout']
-                    if not match and not no_axioms:
-                        raise Rejected('missing exact-root axiom report')
-                    axioms = set(x.strip() for x in match[1].split(',') if x.strip()) if match else set()
-                    if not axioms <= ALLOWED:
-                        raise Rejected('unpermitted axiom closure')
-                    result['axioms'] = sorted(axioms)
+        objects = {str(p.relative_to(build)): sha(p) for p in build.rglob('*') if p.is_file()}
+        inspected = run([str(LEAN), '-j', '1', 'ControllerInspect.lean'], cwd=source,
+                        env=env, timeout=120, output_bytes=1048576)
+        result['checks'].append({'operation': 'trusted_premise_inspection', **inspected})
+        result['declarations'] = proof_audit.parse(inspected, ('ControllerRootCheck',))
+        result['axioms'] = result['declarations'][0]['axioms']
+        if objects != {str(p.relative_to(build)): sha(p) for p in build.rglob('*') if p.is_file()}:
+            raise Rejected('checked object changed during inspection')
+        if (source/'ControllerCompletion.lean').read_text() != wrapper or (source/'ControllerInspect.lean').read_text() != inspector:
+            raise Rejected('trusted validator source changed')
+        if any((source/(m.replace('.', '/')+'.lean')).read_text() != v['text'] for m, v in bundle['sources'].items()):
+            raise Rejected('staged candidate source changed')
+        if binaries != {str(p): sha(p) for p in (LEAN, CHECKER)}:
+            raise Rejected('validator binaries changed')
+        result.update(object_hashes=objects, binary_hashes=binaries, inspector_sha256=digest(inspector))
         if prepare(contract, claim)['bundle_hash'] != bundle['bundle_hash']:
             raise Rejected('candidate changed during validation')
         result['lean_exact_root_checked'] = True

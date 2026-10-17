@@ -1,0 +1,2378 @@
+{
+  "observed_at_utc": "2026-10-17T23:06:02.642710+00:00",
+  "scope": "Independent read-only mathematical review of round4 pre006/pre007 source and builder-retained neutral tests. No candidate import or code/Lean/test execution by reviewer, no Markov work.",
+  "manifests": {
+    "006": {
+      "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/pre-006/SOURCE_MANIFEST.json",
+      "bytes": 8463,
+      "sha256": "095c496b7aceb381b771455092ab21df3899e44ff5992ebd8901fa6dabc72481"
+    },
+    "007": {
+      "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/pre-007/SOURCE_MANIFEST.json",
+      "bytes": 8483,
+      "sha256": "241d7be7e0ae955bded56b16145737024c191500c386571162ec3773aba20b8d"
+    }
+  },
+  "saved_manifest_source_checks": {
+    "006": [
+      {
+        "path": ".bootstrap/base-permissions.json",
+        "expected": "5263cab043f26560022bffc9ff3636b91a005afc59608c2d945176979a6c673c",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round2/consolidated-review.md",
+        "expected": "364337c170448bd308b0608fc4a9107ae08966a0be4c6a960ea46360794f62f1",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round2/methodology-final.md",
+        "expected": "1b07a6618d261e742af61a47a4a3f05fc7664d501c1b82a26d209fab89c553a9",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round2/runtime-final.md",
+        "expected": "edd09780c16f640d007c1b9f505b851e724f7b846624e9ff306d5f8429cfa71c",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round3/math_gkm_strategy_v2_round3_mathematical_final_review_20261017.json",
+        "expected": "9988171db7809a08b8da4d07f7ccd2519655af716313d34857d5928f1f05b83f",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round3/math_gkm_strategy_v2_round3_pre005_mathematical_evidence_review_20261017.json",
+        "expected": "013cb766bf6891a91a7d7fb693a14ff2fb9cda76e3432ca16bf5db3512aa0d88",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round3/math_gkm_v2_round3_runtime_final_review_20261017.json",
+        "expected": "ba09f47b85037ab1eae3b890ef5e4d5699a662e1dfdbe0b2849af0bded330e26",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round3/math_gkm_v2_round3_runtime_final_review_20261017.md",
+        "expected": "d85c06e3026c2ac27f5265efb1f06c9fb12c3a2a67d9cb4d200ca6f094a649ef",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round3/math_gkm_v2_round3_runtime_review_20261017.json",
+        "expected": "38e6db16e43fd061382db12959d02c9b1270252a2ae5c6493c35a5396f37ee47",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round3/math_gkm_v2_round3_runtime_review_20261017.md",
+        "expected": "f34d59ff398022296134dde31596f446046cdbc154fb74ef01961c62679ca4f7",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round3/round3_current_ptsk_findings.json",
+        "expected": "589d3591804a8d8692851204535607841bf3757f8cd3a9a3fb02c4288768ebce",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round3/round3_current_ptsk_findings.md",
+        "expected": "b87191ff31d917716da62a7b12b3f7707ac7115f985dbff82c7f33ccfb3e8064",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/supervisor-review/requirements.md",
+        "expected": "57f400f7f9ef2295e3a4f57ab28e816f4fa33b43bd0368cb33162bbd54a33ac8",
+        "saved_source_matches": true
+      },
+      {
+        "path": "MISSION.md",
+        "expected": "9cfa1230bd2e0e92dfaec64f68ee72143dc1a17d1435d449cba0ff16da0ce727",
+        "saved_source_matches": true
+      },
+      {
+        "path": "MathGKM/ContinuationObligations.lean",
+        "expected": "18bbc446a91dc190f908ad6378f5e8e74f0c4d8be0ba8313f24cba3e04d33e8f",
+        "saved_source_matches": true
+      },
+      {
+        "path": "MathGKM/HarnessFixture.lean",
+        "expected": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+        "saved_source_matches": true
+      },
+      {
+        "path": "MathGKM/Markov.lean",
+        "expected": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+        "saved_source_matches": true
+      },
+      {
+        "path": "MathGKM/Protocol.lean",
+        "expected": "60b543592c2dadac3aeefea7ea2dd664c36a7910723e65bfd4e9e2e179bcf97c",
+        "saved_source_matches": true
+      },
+      {
+        "path": "MathGKM/ResearchSemantics.lean",
+        "expected": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+        "saved_source_matches": true
+      },
+      {
+        "path": "contracts/markov-clean-v2.json",
+        "expected": "495cf67ff80de3f6265a52266d8d212fc6e4ec411b0b2c0384cda47e84d29da3",
+        "saved_source_matches": true
+      },
+      {
+        "path": "contracts/markov-goal.json",
+        "expected": "10bc86a3043aefd4ff11978765bcc969e92c0a6731321b11f4c526d384f39ee7",
+        "saved_source_matches": true
+      },
+      {
+        "path": "docs/CONTROLLER.md",
+        "expected": "991ab12e414975fad69584a3a4f6aadb55bd192c00db0901e8ddc2c33ba3b507",
+        "saved_source_matches": true
+      },
+      {
+        "path": "docs/DESIGN.md",
+        "expected": "47ebe858b2d7b06a9ac29527d74a7d65d7c39f988c399537b8da38bd24ce7d15",
+        "saved_source_matches": true
+      },
+      {
+        "path": "docs/HARNESS_CHECKPOINT.md",
+        "expected": "99b5553649060dd39d7ffdeb0132d39f9deb15b515ef98e7515b6f98d1db6754",
+        "saved_source_matches": true
+      },
+      {
+        "path": "docs/REQUIREMENT_MAP.md",
+        "expected": "a9a984cb95f4809665c11d65321d3ba7fbafa1da627330d2e0a9f215e0ad33ef",
+        "saved_source_matches": true
+      },
+      {
+        "path": "docs/STUDY_V2.md",
+        "expected": "633fef6ed23b957145aa30a5362c37762e4d214fea0e8ad5cc7908888fbc6b8b",
+        "saved_source_matches": true
+      },
+      {
+        "path": "lake-manifest.json",
+        "expected": "b513f28de3996d022de1bad05cd06002dc5f21286f4cd26454fcfae26a745725",
+        "saved_source_matches": true
+      },
+      {
+        "path": "lakefile.toml",
+        "expected": "211507039f4919cdc9d54f87efaf7bebf53532272377623f75269c714fb5b575",
+        "saved_source_matches": true
+      },
+      {
+        "path": "lean-toolchain",
+        "expected": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/broker.py",
+        "expected": "539bdbf3cdba5a3587d98454de77ef59f3e26f86c5becb9514ff3d9966d6cbe7",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/check.py",
+        "expected": "cb9d7da571b9ea52a0ebe2004187c925690ac4c388c921eaf864b9597f8a2fbf",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/completion.py",
+        "expected": "9da9c1d5d45c8d100c6c329fbd5257e9278c52d1b9d2060b56404d69f896ba82",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/controller.py",
+        "expected": "b6e4f1d8878c1459f8e9fda9de26409ca15daa633776b35247d15972874ecd7b",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/engine.py",
+        "expected": "6b0a2eae4b1e919233a3ac99f0ecb2af22f6c0cca0691befbb23af7a6be811dc",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/experiment_worker.py",
+        "expected": "d522946605fd2b2752f842035e76bbb99a94f2ef8b0c9fdfaa673787b8f57a87",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/fixture_worker.py",
+        "expected": "d342813b1b725e700f97aa2a84eaf9d94fa3846bea586821df5fe93e9621b2c3",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/gate.py",
+        "expected": "3a5e68d87fa2a27902e5daa56f67ef691cffe2ff6c28e8a8bb1f3ce100431129",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/neutral_checkpoint.py",
+        "expected": "1311d0637d218cd8584fe7b4d230f0ef025296c0cb6ab1d8079652ee1867dd2b",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/neutral_validate.py",
+        "expected": "1a8ced62e8db0dc9ae4ce27aeed86f81ea37addad585787d89e8fa999d2560c4",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/process.py",
+        "expected": "e957b94c70634b9d21594f749e16c8955d759c77ce12eb16d763f7b979e336e9",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/proof_audit.py",
+        "expected": "d270be57f8cf0713677a032f6443f0d71d94e264696b7ff815c20a6b51d21b09",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/protocol.py",
+        "expected": "d34e97fe45cbde9b6359215ff58d107f5655eea2dc1e8caad66d9df94eafc932",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/provenance.py",
+        "expected": "47ecc9acb217613bd86659bb184d03ef7a569fd301a1b0c54d9a8e7fc2631c49",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/source_checkpoint.py",
+        "expected": "6a76e3aede6002db06c55904ad37e94b3546e01437d81e685b8207c1318fd077",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study.py",
+        "expected": "e6803c8d6fc4b410325ce314b0f4fe182fe12c782c793dd954176e2aac6e639d",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_audit.py",
+        "expected": "8fda0fa744f6488cbbf016c038da5b771abc8fddf49b4ae64cb72bc9498ee146",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_bridge.py",
+        "expected": "13d543cc4fb414d9e8a360f381d71eff8782fcc01a37c74923176e8b17ca862b",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_burden.py",
+        "expected": "1acd91ea3359c97698f3b9f27f92e15c9c531f4620d721308aef0b3b5833456c",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_common.py",
+        "expected": "23cfdf11a71698d6a05bff45e53ff4201bdb5b99aa0642759cab6e85d4177b95",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_completion.py",
+        "expected": "8f38248386e8b01cd59d39340540483bddca34edf94f4750cb00a28c70b76071",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_curate.py",
+        "expected": "f108476b55439df56f4d3412ce319060ddb77f78e0f7f58bb5c02c45f3185aeb",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_fixture.py",
+        "expected": "64c9a4d2f80730d362860be6e89a920e098325d4464da48fb306f0b7ae4db64b",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_knowledge.py",
+        "expected": "ac04d864110a0331d4346972d9bf4e9c5858da9779be1d7c0850ddeecedf5209",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_manifest.py",
+        "expected": "0810b442f2ae4be600a39020e3f39ecd4215667c09d4f21e49010a89131de174",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_observer.py",
+        "expected": "66d76553b5fa3f78741a0a615f1a91c0df32c55125ccc5beb355ab37923eca42",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_policy.py",
+        "expected": "8a2d7aaa5f05aa5682d7fb45fc7bef642d49899515697a38c6870b70c109eef2",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_program.py",
+        "expected": "b20bc591b8e7f1383e3c8331d977e9eec449a9904488e7df66b50075b924ff60",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_transfer.py",
+        "expected": "a1687f48b0ecbcc1a7dba1aab3fd63a1106dd22827e669b01bfdb8ceede98e08",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_worker.py",
+        "expected": "cea861dbbb4285fe71f91eeeb6cf68eac2176428ac6cc36efd49b4ca5b39993f",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/switch.py",
+        "expected": "416ae2f3116f7babad38cdcb078c0e79248e6b9c8fff2554a108355ab5dcc0e1",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/toolchain.py",
+        "expected": "4e1ef9af43216c437246ae435b70b68d6d26d3823ef30421610ce05e2f207e68",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/trust.py",
+        "expected": "1a90f064a347d1beb983faa5222017f596e9aba08f5857d39b93fb3b282554c4",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/validate.py",
+        "expected": "5ffb50c9218e60cbd8ca2ec9766f7b9db4bd9751d525f7b2b7b03a26da7a8d73",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/worker.py",
+        "expected": "65a1130e2624d8cda679984c49a268e2ab8e00844f69b9c63bf451ada0a35779",
+        "saved_source_matches": true
+      },
+      {
+        "path": "studies/v2-canary.json",
+        "expected": "244cfd600c60c510df474881332aef1a746f0e5037f8ee9642dc33cbe0be9dbe",
+        "saved_source_matches": true
+      },
+      {
+        "path": "studies/v2-fixture.json",
+        "expected": "72254b0f8ed93eb91d97355d1fc6f11cedd0c220c5ae4268e6d99850cb0254a3",
+        "saved_source_matches": true
+      },
+      {
+        "path": "studies/v2-study.json",
+        "expected": "e263e7a7d10506633365351b5570bc114e195d7b4ec904b748717abe471d71c2",
+        "saved_source_matches": true
+      },
+      {
+        "path": "tests/test_boundaries.py",
+        "expected": "495925ab29c1ee4cac28ef3d454fb1b1ee34ee0abb89e9be6d14c1cebd8262a6",
+        "saved_source_matches": true
+      },
+      {
+        "path": "tests/test_context_revision.py",
+        "expected": "ee454ab692822eb020b0babcb4574126346628ec97a962f075dbd0422ff32d85",
+        "saved_source_matches": true
+      },
+      {
+        "path": "tests/test_controller.py",
+        "expected": "4333978ef8988e063c0b0cef5c55f3e79ad31b6b5a7e710e9c6014ecd619d2dd",
+        "saved_source_matches": true
+      },
+      {
+        "path": "tests/test_controller_history.py",
+        "expected": "ccb013ae7516465311175dfb375e102e6b72437e4ca6df486a6dadca96d6f6f7",
+        "saved_source_matches": true
+      },
+      {
+        "path": "tests/test_revision_static_checkpoint.py",
+        "expected": "fd5117fec6288f65e51f96526d671d87b5453253edd3782a671f13661b6bdf04",
+        "saved_source_matches": true
+      },
+      {
+        "path": "tests/test_round2.py",
+        "expected": "8bdaaabea99f6eefeca6daaa7640f36f36127c4cb2cb5245b94a39d53bd56c7b",
+        "saved_source_matches": true
+      },
+      {
+        "path": "tests/test_round4.py",
+        "expected": "d69b42a165bab11ea7795bf603e96adbfecd39b8767585d5cb106b1dbaca9c1b",
+        "saved_source_matches": true
+      },
+      {
+        "path": "tests/test_study_v2.py",
+        "expected": "f08481b94fb781b9c0ea7ad88bd1fe3b6481c573d7b71fcc0647a5c497e5c325",
+        "saved_source_matches": true
+      }
+    ],
+    "007": [
+      {
+        "path": ".bootstrap/base-permissions.json",
+        "expected": "5263cab043f26560022bffc9ff3636b91a005afc59608c2d945176979a6c673c",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round2/consolidated-review.md",
+        "expected": "364337c170448bd308b0608fc4a9107ae08966a0be4c6a960ea46360794f62f1",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round2/methodology-final.md",
+        "expected": "1b07a6618d261e742af61a47a4a3f05fc7664d501c1b82a26d209fab89c553a9",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round2/runtime-final.md",
+        "expected": "edd09780c16f640d007c1b9f505b851e724f7b846624e9ff306d5f8429cfa71c",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round3/math_gkm_strategy_v2_round3_mathematical_final_review_20261017.json",
+        "expected": "9988171db7809a08b8da4d07f7ccd2519655af716313d34857d5928f1f05b83f",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round3/math_gkm_strategy_v2_round3_pre005_mathematical_evidence_review_20261017.json",
+        "expected": "013cb766bf6891a91a7d7fb693a14ff2fb9cda76e3432ca16bf5db3512aa0d88",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round3/math_gkm_v2_round3_runtime_final_review_20261017.json",
+        "expected": "ba09f47b85037ab1eae3b890ef5e4d5699a662e1dfdbe0b2849af0bded330e26",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round3/math_gkm_v2_round3_runtime_final_review_20261017.md",
+        "expected": "d85c06e3026c2ac27f5265efb1f06c9fb12c3a2a67d9cb4d200ca6f094a649ef",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round3/math_gkm_v2_round3_runtime_review_20261017.json",
+        "expected": "38e6db16e43fd061382db12959d02c9b1270252a2ae5c6493c35a5396f37ee47",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round3/math_gkm_v2_round3_runtime_review_20261017.md",
+        "expected": "f34d59ff398022296134dde31596f446046cdbc154fb74ef01961c62679ca4f7",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round3/round3_current_ptsk_findings.json",
+        "expected": "589d3591804a8d8692851204535607841bf3757f8cd3a9a3fb02c4288768ebce",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/review-round3/round3_current_ptsk_findings.md",
+        "expected": "b87191ff31d917716da62a7b12b3f7707ac7115f985dbff82c7f33ccfb3e8064",
+        "saved_source_matches": true
+      },
+      {
+        "path": ".bootstrap/supervisor-review/requirements.md",
+        "expected": "57f400f7f9ef2295e3a4f57ab28e816f4fa33b43bd0368cb33162bbd54a33ac8",
+        "saved_source_matches": true
+      },
+      {
+        "path": "MISSION.md",
+        "expected": "9cfa1230bd2e0e92dfaec64f68ee72143dc1a17d1435d449cba0ff16da0ce727",
+        "saved_source_matches": true
+      },
+      {
+        "path": "MathGKM/ContinuationObligations.lean",
+        "expected": "18bbc446a91dc190f908ad6378f5e8e74f0c4d8be0ba8313f24cba3e04d33e8f",
+        "saved_source_matches": true
+      },
+      {
+        "path": "MathGKM/HarnessFixture.lean",
+        "expected": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+        "saved_source_matches": true
+      },
+      {
+        "path": "MathGKM/Markov.lean",
+        "expected": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+        "saved_source_matches": true
+      },
+      {
+        "path": "MathGKM/Protocol.lean",
+        "expected": "60b543592c2dadac3aeefea7ea2dd664c36a7910723e65bfd4e9e2e179bcf97c",
+        "saved_source_matches": true
+      },
+      {
+        "path": "MathGKM/ResearchSemantics.lean",
+        "expected": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+        "saved_source_matches": true
+      },
+      {
+        "path": "contracts/markov-clean-v2.json",
+        "expected": "495cf67ff80de3f6265a52266d8d212fc6e4ec411b0b2c0384cda47e84d29da3",
+        "saved_source_matches": true
+      },
+      {
+        "path": "contracts/markov-goal.json",
+        "expected": "10bc86a3043aefd4ff11978765bcc969e92c0a6731321b11f4c526d384f39ee7",
+        "saved_source_matches": true
+      },
+      {
+        "path": "docs/CONTROLLER.md",
+        "expected": "991ab12e414975fad69584a3a4f6aadb55bd192c00db0901e8ddc2c33ba3b507",
+        "saved_source_matches": true
+      },
+      {
+        "path": "docs/DESIGN.md",
+        "expected": "47ebe858b2d7b06a9ac29527d74a7d65d7c39f988c399537b8da38bd24ce7d15",
+        "saved_source_matches": true
+      },
+      {
+        "path": "docs/HARNESS_CHECKPOINT.md",
+        "expected": "99b5553649060dd39d7ffdeb0132d39f9deb15b515ef98e7515b6f98d1db6754",
+        "saved_source_matches": true
+      },
+      {
+        "path": "docs/REQUIREMENT_MAP.md",
+        "expected": "a9a984cb95f4809665c11d65321d3ba7fbafa1da627330d2e0a9f215e0ad33ef",
+        "saved_source_matches": true
+      },
+      {
+        "path": "docs/STUDY_V2.md",
+        "expected": "633fef6ed23b957145aa30a5362c37762e4d214fea0e8ad5cc7908888fbc6b8b",
+        "saved_source_matches": true
+      },
+      {
+        "path": "lake-manifest.json",
+        "expected": "b513f28de3996d022de1bad05cd06002dc5f21286f4cd26454fcfae26a745725",
+        "saved_source_matches": true
+      },
+      {
+        "path": "lakefile.toml",
+        "expected": "211507039f4919cdc9d54f87efaf7bebf53532272377623f75269c714fb5b575",
+        "saved_source_matches": true
+      },
+      {
+        "path": "lean-toolchain",
+        "expected": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/broker.py",
+        "expected": "539bdbf3cdba5a3587d98454de77ef59f3e26f86c5becb9514ff3d9966d6cbe7",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/check.py",
+        "expected": "cb9d7da571b9ea52a0ebe2004187c925690ac4c388c921eaf864b9597f8a2fbf",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/completion.py",
+        "expected": "9da9c1d5d45c8d100c6c329fbd5257e9278c52d1b9d2060b56404d69f896ba82",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/controller.py",
+        "expected": "b6e4f1d8878c1459f8e9fda9de26409ca15daa633776b35247d15972874ecd7b",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/engine.py",
+        "expected": "6b0a2eae4b1e919233a3ac99f0ecb2af22f6c0cca0691befbb23af7a6be811dc",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/experiment_worker.py",
+        "expected": "d522946605fd2b2752f842035e76bbb99a94f2ef8b0c9fdfaa673787b8f57a87",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/fixture_worker.py",
+        "expected": "d342813b1b725e700f97aa2a84eaf9d94fa3846bea586821df5fe93e9621b2c3",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/gate.py",
+        "expected": "3a5e68d87fa2a27902e5daa56f67ef691cffe2ff6c28e8a8bb1f3ce100431129",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/neutral_checkpoint.py",
+        "expected": "1311d0637d218cd8584fe7b4d230f0ef025296c0cb6ab1d8079652ee1867dd2b",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/neutral_validate.py",
+        "expected": "1a8ced62e8db0dc9ae4ce27aeed86f81ea37addad585787d89e8fa999d2560c4",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/process.py",
+        "expected": "e957b94c70634b9d21594f749e16c8955d759c77ce12eb16d763f7b979e336e9",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/proof_audit.py",
+        "expected": "d270be57f8cf0713677a032f6443f0d71d94e264696b7ff815c20a6b51d21b09",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/protocol.py",
+        "expected": "d34e97fe45cbde9b6359215ff58d107f5655eea2dc1e8caad66d9df94eafc932",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/provenance.py",
+        "expected": "47ecc9acb217613bd86659bb184d03ef7a569fd301a1b0c54d9a8e7fc2631c49",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/source_checkpoint.py",
+        "expected": "6a76e3aede6002db06c55904ad37e94b3546e01437d81e685b8207c1318fd077",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study.py",
+        "expected": "e6803c8d6fc4b410325ce314b0f4fe182fe12c782c793dd954176e2aac6e639d",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_audit.py",
+        "expected": "8fda0fa744f6488cbbf016c038da5b771abc8fddf49b4ae64cb72bc9498ee146",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_bridge.py",
+        "expected": "13d543cc4fb414d9e8a360f381d71eff8782fcc01a37c74923176e8b17ca862b",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_burden.py",
+        "expected": "019ca98c57ba18677104fc7e6f0014a3c2e604bea79ecf71fbfd0c3839f70a74",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_common.py",
+        "expected": "23cfdf11a71698d6a05bff45e53ff4201bdb5b99aa0642759cab6e85d4177b95",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_completion.py",
+        "expected": "8f38248386e8b01cd59d39340540483bddca34edf94f4750cb00a28c70b76071",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_curate.py",
+        "expected": "f108476b55439df56f4d3412ce319060ddb77f78e0f7f58bb5c02c45f3185aeb",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_fixture.py",
+        "expected": "64c9a4d2f80730d362860be6e89a920e098325d4464da48fb306f0b7ae4db64b",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_knowledge.py",
+        "expected": "ac04d864110a0331d4346972d9bf4e9c5858da9779be1d7c0850ddeecedf5209",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_manifest.py",
+        "expected": "0810b442f2ae4be600a39020e3f39ecd4215667c09d4f21e49010a89131de174",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_observer.py",
+        "expected": "07d1aeead0f39c8e6de3ecfa53d06072f81bbb658aa7f9fdd4dece6dcb6cdae7",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_policy.py",
+        "expected": "8a2d7aaa5f05aa5682d7fb45fc7bef642d49899515697a38c6870b70c109eef2",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_program.py",
+        "expected": "b20bc591b8e7f1383e3c8331d977e9eec449a9904488e7df66b50075b924ff60",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_transfer.py",
+        "expected": "a1687f48b0ecbcc1a7dba1aab3fd63a1106dd22827e669b01bfdb8ceede98e08",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/study_worker.py",
+        "expected": "cea861dbbb4285fe71f91eeeb6cf68eac2176428ac6cc36efd49b4ca5b39993f",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/switch.py",
+        "expected": "416ae2f3116f7babad38cdcb078c0e79248e6b9c8fff2554a108355ab5dcc0e1",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/toolchain.py",
+        "expected": "4e1ef9af43216c437246ae435b70b68d6d26d3823ef30421610ce05e2f207e68",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/trust.py",
+        "expected": "1a90f064a347d1beb983faa5222017f596e9aba08f5857d39b93fb3b282554c4",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/validate.py",
+        "expected": "5ffb50c9218e60cbd8ca2ec9766f7b9db4bd9751d525f7b2b7b03a26da7a8d73",
+        "saved_source_matches": true
+      },
+      {
+        "path": "machinery/worker.py",
+        "expected": "65a1130e2624d8cda679984c49a268e2ab8e00844f69b9c63bf451ada0a35779",
+        "saved_source_matches": true
+      },
+      {
+        "path": "studies/v2-canary.json",
+        "expected": "244cfd600c60c510df474881332aef1a746f0e5037f8ee9642dc33cbe0be9dbe",
+        "saved_source_matches": true
+      },
+      {
+        "path": "studies/v2-fixture.json",
+        "expected": "72254b0f8ed93eb91d97355d1fc6f11cedd0c220c5ae4268e6d99850cb0254a3",
+        "saved_source_matches": true
+      },
+      {
+        "path": "studies/v2-study.json",
+        "expected": "e263e7a7d10506633365351b5570bc114e195d7b4ec904b748717abe471d71c2",
+        "saved_source_matches": true
+      },
+      {
+        "path": "tests/test_boundaries.py",
+        "expected": "495925ab29c1ee4cac28ef3d454fb1b1ee34ee0abb89e9be6d14c1cebd8262a6",
+        "saved_source_matches": true
+      },
+      {
+        "path": "tests/test_context_revision.py",
+        "expected": "ee454ab692822eb020b0babcb4574126346628ec97a962f075dbd0422ff32d85",
+        "saved_source_matches": true
+      },
+      {
+        "path": "tests/test_controller.py",
+        "expected": "4333978ef8988e063c0b0cef5c55f3e79ad31b6b5a7e710e9c6014ecd619d2dd",
+        "saved_source_matches": true
+      },
+      {
+        "path": "tests/test_controller_history.py",
+        "expected": "ccb013ae7516465311175dfb375e102e6b72437e4ca6df486a6dadca96d6f6f7",
+        "saved_source_matches": true
+      },
+      {
+        "path": "tests/test_revision_static_checkpoint.py",
+        "expected": "fd5117fec6288f65e51f96526d671d87b5453253edd3782a671f13661b6bdf04",
+        "saved_source_matches": true
+      },
+      {
+        "path": "tests/test_round2.py",
+        "expected": "8bdaaabea99f6eefeca6daaa7640f36f36127c4cb2cb5245b94a39d53bd56c7b",
+        "saved_source_matches": true
+      },
+      {
+        "path": "tests/test_round4.py",
+        "expected": "f63116f3164f144ef349f0f37d919998b59ace6f81bb078b85b9f32d8654a3d6",
+        "saved_source_matches": true
+      },
+      {
+        "path": "tests/test_study_v2.py",
+        "expected": "f08481b94fb781b9c0ea7ad88bd1fe3b6481c573d7b71fcc0647a5c497e5c325",
+        "saved_source_matches": true
+      }
+    ]
+  },
+  "current_pre007_checks": [
+    {
+      "path": ".bootstrap/base-permissions.json",
+      "expected": "5263cab043f26560022bffc9ff3636b91a005afc59608c2d945176979a6c673c",
+      "actual": "5263cab043f26560022bffc9ff3636b91a005afc59608c2d945176979a6c673c",
+      "matches": true
+    },
+    {
+      "path": ".bootstrap/review-round2/consolidated-review.md",
+      "expected": "364337c170448bd308b0608fc4a9107ae08966a0be4c6a960ea46360794f62f1",
+      "actual": "364337c170448bd308b0608fc4a9107ae08966a0be4c6a960ea46360794f62f1",
+      "matches": true
+    },
+    {
+      "path": ".bootstrap/review-round2/methodology-final.md",
+      "expected": "1b07a6618d261e742af61a47a4a3f05fc7664d501c1b82a26d209fab89c553a9",
+      "actual": "1b07a6618d261e742af61a47a4a3f05fc7664d501c1b82a26d209fab89c553a9",
+      "matches": true
+    },
+    {
+      "path": ".bootstrap/review-round2/runtime-final.md",
+      "expected": "edd09780c16f640d007c1b9f505b851e724f7b846624e9ff306d5f8429cfa71c",
+      "actual": "edd09780c16f640d007c1b9f505b851e724f7b846624e9ff306d5f8429cfa71c",
+      "matches": true
+    },
+    {
+      "path": ".bootstrap/review-round3/math_gkm_strategy_v2_round3_mathematical_final_review_20261017.json",
+      "expected": "9988171db7809a08b8da4d07f7ccd2519655af716313d34857d5928f1f05b83f",
+      "actual": "9988171db7809a08b8da4d07f7ccd2519655af716313d34857d5928f1f05b83f",
+      "matches": true
+    },
+    {
+      "path": ".bootstrap/review-round3/math_gkm_strategy_v2_round3_pre005_mathematical_evidence_review_20261017.json",
+      "expected": "013cb766bf6891a91a7d7fb693a14ff2fb9cda76e3432ca16bf5db3512aa0d88",
+      "actual": "013cb766bf6891a91a7d7fb693a14ff2fb9cda76e3432ca16bf5db3512aa0d88",
+      "matches": true
+    },
+    {
+      "path": ".bootstrap/review-round3/math_gkm_v2_round3_runtime_final_review_20261017.json",
+      "expected": "ba09f47b85037ab1eae3b890ef5e4d5699a662e1dfdbe0b2849af0bded330e26",
+      "actual": "ba09f47b85037ab1eae3b890ef5e4d5699a662e1dfdbe0b2849af0bded330e26",
+      "matches": true
+    },
+    {
+      "path": ".bootstrap/review-round3/math_gkm_v2_round3_runtime_final_review_20261017.md",
+      "expected": "d85c06e3026c2ac27f5265efb1f06c9fb12c3a2a67d9cb4d200ca6f094a649ef",
+      "actual": "d85c06e3026c2ac27f5265efb1f06c9fb12c3a2a67d9cb4d200ca6f094a649ef",
+      "matches": true
+    },
+    {
+      "path": ".bootstrap/review-round3/math_gkm_v2_round3_runtime_review_20261017.json",
+      "expected": "38e6db16e43fd061382db12959d02c9b1270252a2ae5c6493c35a5396f37ee47",
+      "actual": "38e6db16e43fd061382db12959d02c9b1270252a2ae5c6493c35a5396f37ee47",
+      "matches": true
+    },
+    {
+      "path": ".bootstrap/review-round3/math_gkm_v2_round3_runtime_review_20261017.md",
+      "expected": "f34d59ff398022296134dde31596f446046cdbc154fb74ef01961c62679ca4f7",
+      "actual": "f34d59ff398022296134dde31596f446046cdbc154fb74ef01961c62679ca4f7",
+      "matches": true
+    },
+    {
+      "path": ".bootstrap/review-round3/round3_current_ptsk_findings.json",
+      "expected": "589d3591804a8d8692851204535607841bf3757f8cd3a9a3fb02c4288768ebce",
+      "actual": "589d3591804a8d8692851204535607841bf3757f8cd3a9a3fb02c4288768ebce",
+      "matches": true
+    },
+    {
+      "path": ".bootstrap/review-round3/round3_current_ptsk_findings.md",
+      "expected": "b87191ff31d917716da62a7b12b3f7707ac7115f985dbff82c7f33ccfb3e8064",
+      "actual": "b87191ff31d917716da62a7b12b3f7707ac7115f985dbff82c7f33ccfb3e8064",
+      "matches": true
+    },
+    {
+      "path": ".bootstrap/supervisor-review/requirements.md",
+      "expected": "57f400f7f9ef2295e3a4f57ab28e816f4fa33b43bd0368cb33162bbd54a33ac8",
+      "actual": "57f400f7f9ef2295e3a4f57ab28e816f4fa33b43bd0368cb33162bbd54a33ac8",
+      "matches": true
+    },
+    {
+      "path": "MISSION.md",
+      "expected": "9cfa1230bd2e0e92dfaec64f68ee72143dc1a17d1435d449cba0ff16da0ce727",
+      "actual": "9cfa1230bd2e0e92dfaec64f68ee72143dc1a17d1435d449cba0ff16da0ce727",
+      "matches": true
+    },
+    {
+      "path": "MathGKM/ContinuationObligations.lean",
+      "expected": "18bbc446a91dc190f908ad6378f5e8e74f0c4d8be0ba8313f24cba3e04d33e8f",
+      "actual": "18bbc446a91dc190f908ad6378f5e8e74f0c4d8be0ba8313f24cba3e04d33e8f",
+      "matches": true
+    },
+    {
+      "path": "MathGKM/HarnessFixture.lean",
+      "expected": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+      "actual": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+      "matches": true
+    },
+    {
+      "path": "MathGKM/Markov.lean",
+      "expected": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "actual": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "matches": true
+    },
+    {
+      "path": "MathGKM/Protocol.lean",
+      "expected": "60b543592c2dadac3aeefea7ea2dd664c36a7910723e65bfd4e9e2e179bcf97c",
+      "actual": "60b543592c2dadac3aeefea7ea2dd664c36a7910723e65bfd4e9e2e179bcf97c",
+      "matches": true
+    },
+    {
+      "path": "MathGKM/ResearchSemantics.lean",
+      "expected": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+      "actual": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+      "matches": true
+    },
+    {
+      "path": "contracts/markov-clean-v2.json",
+      "expected": "495cf67ff80de3f6265a52266d8d212fc6e4ec411b0b2c0384cda47e84d29da3",
+      "actual": "495cf67ff80de3f6265a52266d8d212fc6e4ec411b0b2c0384cda47e84d29da3",
+      "matches": true
+    },
+    {
+      "path": "contracts/markov-goal.json",
+      "expected": "10bc86a3043aefd4ff11978765bcc969e92c0a6731321b11f4c526d384f39ee7",
+      "actual": "10bc86a3043aefd4ff11978765bcc969e92c0a6731321b11f4c526d384f39ee7",
+      "matches": true
+    },
+    {
+      "path": "docs/CONTROLLER.md",
+      "expected": "991ab12e414975fad69584a3a4f6aadb55bd192c00db0901e8ddc2c33ba3b507",
+      "actual": "991ab12e414975fad69584a3a4f6aadb55bd192c00db0901e8ddc2c33ba3b507",
+      "matches": true
+    },
+    {
+      "path": "docs/DESIGN.md",
+      "expected": "47ebe858b2d7b06a9ac29527d74a7d65d7c39f988c399537b8da38bd24ce7d15",
+      "actual": "47ebe858b2d7b06a9ac29527d74a7d65d7c39f988c399537b8da38bd24ce7d15",
+      "matches": true
+    },
+    {
+      "path": "docs/HARNESS_CHECKPOINT.md",
+      "expected": "99b5553649060dd39d7ffdeb0132d39f9deb15b515ef98e7515b6f98d1db6754",
+      "actual": "99b5553649060dd39d7ffdeb0132d39f9deb15b515ef98e7515b6f98d1db6754",
+      "matches": true
+    },
+    {
+      "path": "docs/REQUIREMENT_MAP.md",
+      "expected": "a9a984cb95f4809665c11d65321d3ba7fbafa1da627330d2e0a9f215e0ad33ef",
+      "actual": "a9a984cb95f4809665c11d65321d3ba7fbafa1da627330d2e0a9f215e0ad33ef",
+      "matches": true
+    },
+    {
+      "path": "docs/STUDY_V2.md",
+      "expected": "633fef6ed23b957145aa30a5362c37762e4d214fea0e8ad5cc7908888fbc6b8b",
+      "actual": "633fef6ed23b957145aa30a5362c37762e4d214fea0e8ad5cc7908888fbc6b8b",
+      "matches": true
+    },
+    {
+      "path": "lake-manifest.json",
+      "expected": "b513f28de3996d022de1bad05cd06002dc5f21286f4cd26454fcfae26a745725",
+      "actual": "b513f28de3996d022de1bad05cd06002dc5f21286f4cd26454fcfae26a745725",
+      "matches": true
+    },
+    {
+      "path": "lakefile.toml",
+      "expected": "211507039f4919cdc9d54f87efaf7bebf53532272377623f75269c714fb5b575",
+      "actual": "211507039f4919cdc9d54f87efaf7bebf53532272377623f75269c714fb5b575",
+      "matches": true
+    },
+    {
+      "path": "lean-toolchain",
+      "expected": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+      "actual": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+      "matches": true
+    },
+    {
+      "path": "machinery/broker.py",
+      "expected": "539bdbf3cdba5a3587d98454de77ef59f3e26f86c5becb9514ff3d9966d6cbe7",
+      "actual": "539bdbf3cdba5a3587d98454de77ef59f3e26f86c5becb9514ff3d9966d6cbe7",
+      "matches": true
+    },
+    {
+      "path": "machinery/check.py",
+      "expected": "cb9d7da571b9ea52a0ebe2004187c925690ac4c388c921eaf864b9597f8a2fbf",
+      "actual": "cb9d7da571b9ea52a0ebe2004187c925690ac4c388c921eaf864b9597f8a2fbf",
+      "matches": true
+    },
+    {
+      "path": "machinery/completion.py",
+      "expected": "9da9c1d5d45c8d100c6c329fbd5257e9278c52d1b9d2060b56404d69f896ba82",
+      "actual": "9da9c1d5d45c8d100c6c329fbd5257e9278c52d1b9d2060b56404d69f896ba82",
+      "matches": true
+    },
+    {
+      "path": "machinery/controller.py",
+      "expected": "b6e4f1d8878c1459f8e9fda9de26409ca15daa633776b35247d15972874ecd7b",
+      "actual": "b6e4f1d8878c1459f8e9fda9de26409ca15daa633776b35247d15972874ecd7b",
+      "matches": true
+    },
+    {
+      "path": "machinery/engine.py",
+      "expected": "6b0a2eae4b1e919233a3ac99f0ecb2af22f6c0cca0691befbb23af7a6be811dc",
+      "actual": "6b0a2eae4b1e919233a3ac99f0ecb2af22f6c0cca0691befbb23af7a6be811dc",
+      "matches": true
+    },
+    {
+      "path": "machinery/experiment_worker.py",
+      "expected": "d522946605fd2b2752f842035e76bbb99a94f2ef8b0c9fdfaa673787b8f57a87",
+      "actual": "d522946605fd2b2752f842035e76bbb99a94f2ef8b0c9fdfaa673787b8f57a87",
+      "matches": true
+    },
+    {
+      "path": "machinery/fixture_worker.py",
+      "expected": "d342813b1b725e700f97aa2a84eaf9d94fa3846bea586821df5fe93e9621b2c3",
+      "actual": "d342813b1b725e700f97aa2a84eaf9d94fa3846bea586821df5fe93e9621b2c3",
+      "matches": true
+    },
+    {
+      "path": "machinery/gate.py",
+      "expected": "3a5e68d87fa2a27902e5daa56f67ef691cffe2ff6c28e8a8bb1f3ce100431129",
+      "actual": "3a5e68d87fa2a27902e5daa56f67ef691cffe2ff6c28e8a8bb1f3ce100431129",
+      "matches": true
+    },
+    {
+      "path": "machinery/neutral_checkpoint.py",
+      "expected": "1311d0637d218cd8584fe7b4d230f0ef025296c0cb6ab1d8079652ee1867dd2b",
+      "actual": "1311d0637d218cd8584fe7b4d230f0ef025296c0cb6ab1d8079652ee1867dd2b",
+      "matches": true
+    },
+    {
+      "path": "machinery/neutral_validate.py",
+      "expected": "1a8ced62e8db0dc9ae4ce27aeed86f81ea37addad585787d89e8fa999d2560c4",
+      "actual": "1a8ced62e8db0dc9ae4ce27aeed86f81ea37addad585787d89e8fa999d2560c4",
+      "matches": true
+    },
+    {
+      "path": "machinery/process.py",
+      "expected": "e957b94c70634b9d21594f749e16c8955d759c77ce12eb16d763f7b979e336e9",
+      "actual": "e957b94c70634b9d21594f749e16c8955d759c77ce12eb16d763f7b979e336e9",
+      "matches": true
+    },
+    {
+      "path": "machinery/proof_audit.py",
+      "expected": "d270be57f8cf0713677a032f6443f0d71d94e264696b7ff815c20a6b51d21b09",
+      "actual": "d270be57f8cf0713677a032f6443f0d71d94e264696b7ff815c20a6b51d21b09",
+      "matches": true
+    },
+    {
+      "path": "machinery/protocol.py",
+      "expected": "d34e97fe45cbde9b6359215ff58d107f5655eea2dc1e8caad66d9df94eafc932",
+      "actual": "d34e97fe45cbde9b6359215ff58d107f5655eea2dc1e8caad66d9df94eafc932",
+      "matches": true
+    },
+    {
+      "path": "machinery/provenance.py",
+      "expected": "47ecc9acb217613bd86659bb184d03ef7a569fd301a1b0c54d9a8e7fc2631c49",
+      "actual": "47ecc9acb217613bd86659bb184d03ef7a569fd301a1b0c54d9a8e7fc2631c49",
+      "matches": true
+    },
+    {
+      "path": "machinery/source_checkpoint.py",
+      "expected": "6a76e3aede6002db06c55904ad37e94b3546e01437d81e685b8207c1318fd077",
+      "actual": "6a76e3aede6002db06c55904ad37e94b3546e01437d81e685b8207c1318fd077",
+      "matches": true
+    },
+    {
+      "path": "machinery/study.py",
+      "expected": "e6803c8d6fc4b410325ce314b0f4fe182fe12c782c793dd954176e2aac6e639d",
+      "actual": "e6803c8d6fc4b410325ce314b0f4fe182fe12c782c793dd954176e2aac6e639d",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_audit.py",
+      "expected": "8fda0fa744f6488cbbf016c038da5b771abc8fddf49b4ae64cb72bc9498ee146",
+      "actual": "8fda0fa744f6488cbbf016c038da5b771abc8fddf49b4ae64cb72bc9498ee146",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_bridge.py",
+      "expected": "13d543cc4fb414d9e8a360f381d71eff8782fcc01a37c74923176e8b17ca862b",
+      "actual": "13d543cc4fb414d9e8a360f381d71eff8782fcc01a37c74923176e8b17ca862b",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_burden.py",
+      "expected": "019ca98c57ba18677104fc7e6f0014a3c2e604bea79ecf71fbfd0c3839f70a74",
+      "actual": "019ca98c57ba18677104fc7e6f0014a3c2e604bea79ecf71fbfd0c3839f70a74",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_common.py",
+      "expected": "23cfdf11a71698d6a05bff45e53ff4201bdb5b99aa0642759cab6e85d4177b95",
+      "actual": "23cfdf11a71698d6a05bff45e53ff4201bdb5b99aa0642759cab6e85d4177b95",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_completion.py",
+      "expected": "8f38248386e8b01cd59d39340540483bddca34edf94f4750cb00a28c70b76071",
+      "actual": "8f38248386e8b01cd59d39340540483bddca34edf94f4750cb00a28c70b76071",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_curate.py",
+      "expected": "f108476b55439df56f4d3412ce319060ddb77f78e0f7f58bb5c02c45f3185aeb",
+      "actual": "f108476b55439df56f4d3412ce319060ddb77f78e0f7f58bb5c02c45f3185aeb",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_fixture.py",
+      "expected": "64c9a4d2f80730d362860be6e89a920e098325d4464da48fb306f0b7ae4db64b",
+      "actual": "64c9a4d2f80730d362860be6e89a920e098325d4464da48fb306f0b7ae4db64b",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_knowledge.py",
+      "expected": "ac04d864110a0331d4346972d9bf4e9c5858da9779be1d7c0850ddeecedf5209",
+      "actual": "ac04d864110a0331d4346972d9bf4e9c5858da9779be1d7c0850ddeecedf5209",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_manifest.py",
+      "expected": "0810b442f2ae4be600a39020e3f39ecd4215667c09d4f21e49010a89131de174",
+      "actual": "0810b442f2ae4be600a39020e3f39ecd4215667c09d4f21e49010a89131de174",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_observer.py",
+      "expected": "07d1aeead0f39c8e6de3ecfa53d06072f81bbb658aa7f9fdd4dece6dcb6cdae7",
+      "actual": "07d1aeead0f39c8e6de3ecfa53d06072f81bbb658aa7f9fdd4dece6dcb6cdae7",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_policy.py",
+      "expected": "8a2d7aaa5f05aa5682d7fb45fc7bef642d49899515697a38c6870b70c109eef2",
+      "actual": "8a2d7aaa5f05aa5682d7fb45fc7bef642d49899515697a38c6870b70c109eef2",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_program.py",
+      "expected": "b20bc591b8e7f1383e3c8331d977e9eec449a9904488e7df66b50075b924ff60",
+      "actual": "b20bc591b8e7f1383e3c8331d977e9eec449a9904488e7df66b50075b924ff60",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_transfer.py",
+      "expected": "a1687f48b0ecbcc1a7dba1aab3fd63a1106dd22827e669b01bfdb8ceede98e08",
+      "actual": "a1687f48b0ecbcc1a7dba1aab3fd63a1106dd22827e669b01bfdb8ceede98e08",
+      "matches": true
+    },
+    {
+      "path": "machinery/study_worker.py",
+      "expected": "cea861dbbb4285fe71f91eeeb6cf68eac2176428ac6cc36efd49b4ca5b39993f",
+      "actual": "cea861dbbb4285fe71f91eeeb6cf68eac2176428ac6cc36efd49b4ca5b39993f",
+      "matches": true
+    },
+    {
+      "path": "machinery/switch.py",
+      "expected": "416ae2f3116f7babad38cdcb078c0e79248e6b9c8fff2554a108355ab5dcc0e1",
+      "actual": "416ae2f3116f7babad38cdcb078c0e79248e6b9c8fff2554a108355ab5dcc0e1",
+      "matches": true
+    },
+    {
+      "path": "machinery/toolchain.py",
+      "expected": "4e1ef9af43216c437246ae435b70b68d6d26d3823ef30421610ce05e2f207e68",
+      "actual": "4e1ef9af43216c437246ae435b70b68d6d26d3823ef30421610ce05e2f207e68",
+      "matches": true
+    },
+    {
+      "path": "machinery/trust.py",
+      "expected": "1a90f064a347d1beb983faa5222017f596e9aba08f5857d39b93fb3b282554c4",
+      "actual": "1a90f064a347d1beb983faa5222017f596e9aba08f5857d39b93fb3b282554c4",
+      "matches": true
+    },
+    {
+      "path": "machinery/validate.py",
+      "expected": "5ffb50c9218e60cbd8ca2ec9766f7b9db4bd9751d525f7b2b7b03a26da7a8d73",
+      "actual": "5ffb50c9218e60cbd8ca2ec9766f7b9db4bd9751d525f7b2b7b03a26da7a8d73",
+      "matches": true
+    },
+    {
+      "path": "machinery/worker.py",
+      "expected": "65a1130e2624d8cda679984c49a268e2ab8e00844f69b9c63bf451ada0a35779",
+      "actual": "65a1130e2624d8cda679984c49a268e2ab8e00844f69b9c63bf451ada0a35779",
+      "matches": true
+    },
+    {
+      "path": "studies/v2-canary.json",
+      "expected": "244cfd600c60c510df474881332aef1a746f0e5037f8ee9642dc33cbe0be9dbe",
+      "actual": "244cfd600c60c510df474881332aef1a746f0e5037f8ee9642dc33cbe0be9dbe",
+      "matches": true
+    },
+    {
+      "path": "studies/v2-fixture.json",
+      "expected": "72254b0f8ed93eb91d97355d1fc6f11cedd0c220c5ae4268e6d99850cb0254a3",
+      "actual": "72254b0f8ed93eb91d97355d1fc6f11cedd0c220c5ae4268e6d99850cb0254a3",
+      "matches": true
+    },
+    {
+      "path": "studies/v2-study.json",
+      "expected": "e263e7a7d10506633365351b5570bc114e195d7b4ec904b748717abe471d71c2",
+      "actual": "e263e7a7d10506633365351b5570bc114e195d7b4ec904b748717abe471d71c2",
+      "matches": true
+    },
+    {
+      "path": "tests/test_boundaries.py",
+      "expected": "495925ab29c1ee4cac28ef3d454fb1b1ee34ee0abb89e9be6d14c1cebd8262a6",
+      "actual": "495925ab29c1ee4cac28ef3d454fb1b1ee34ee0abb89e9be6d14c1cebd8262a6",
+      "matches": true
+    },
+    {
+      "path": "tests/test_context_revision.py",
+      "expected": "ee454ab692822eb020b0babcb4574126346628ec97a962f075dbd0422ff32d85",
+      "actual": "ee454ab692822eb020b0babcb4574126346628ec97a962f075dbd0422ff32d85",
+      "matches": true
+    },
+    {
+      "path": "tests/test_controller.py",
+      "expected": "4333978ef8988e063c0b0cef5c55f3e79ad31b6b5a7e710e9c6014ecd619d2dd",
+      "actual": "4333978ef8988e063c0b0cef5c55f3e79ad31b6b5a7e710e9c6014ecd619d2dd",
+      "matches": true
+    },
+    {
+      "path": "tests/test_controller_history.py",
+      "expected": "ccb013ae7516465311175dfb375e102e6b72437e4ca6df486a6dadca96d6f6f7",
+      "actual": "ccb013ae7516465311175dfb375e102e6b72437e4ca6df486a6dadca96d6f6f7",
+      "matches": true
+    },
+    {
+      "path": "tests/test_revision_static_checkpoint.py",
+      "expected": "fd5117fec6288f65e51f96526d671d87b5453253edd3782a671f13661b6bdf04",
+      "actual": "fd5117fec6288f65e51f96526d671d87b5453253edd3782a671f13661b6bdf04",
+      "matches": true
+    },
+    {
+      "path": "tests/test_round2.py",
+      "expected": "8bdaaabea99f6eefeca6daaa7640f36f36127c4cb2cb5245b94a39d53bd56c7b",
+      "actual": "8bdaaabea99f6eefeca6daaa7640f36f36127c4cb2cb5245b94a39d53bd56c7b",
+      "matches": true
+    },
+    {
+      "path": "tests/test_round4.py",
+      "expected": "f63116f3164f144ef349f0f37d919998b59ace6f81bb078b85b9f32d8654a3d6",
+      "actual": "f63116f3164f144ef349f0f37d919998b59ace6f81bb078b85b9f32d8654a3d6",
+      "matches": true
+    },
+    {
+      "path": "tests/test_study_v2.py",
+      "expected": "f08481b94fb781b9c0ea7ad88bd1fe3b6481c573d7b71fcc0647a5c497e5c325",
+      "actual": "f08481b94fb781b9c0ea7ad88bd1fe3b6481c573d7b71fcc0647a5c497e5c325",
+      "matches": true
+    }
+  ],
+  "core_mathematical_gate_identity": {
+    "machinery/proof_audit.py": {
+      "pre005": "d270be57f8cf0713677a032f6443f0d71d94e264696b7ff815c20a6b51d21b09",
+      "pre006": "d270be57f8cf0713677a032f6443f0d71d94e264696b7ff815c20a6b51d21b09",
+      "pre007": "d270be57f8cf0713677a032f6443f0d71d94e264696b7ff815c20a6b51d21b09",
+      "unchanged": true
+    },
+    "machinery/completion.py": {
+      "pre005": "9da9c1d5d45c8d100c6c329fbd5257e9278c52d1b9d2060b56404d69f896ba82",
+      "pre006": "9da9c1d5d45c8d100c6c329fbd5257e9278c52d1b9d2060b56404d69f896ba82",
+      "pre007": "9da9c1d5d45c8d100c6c329fbd5257e9278c52d1b9d2060b56404d69f896ba82",
+      "unchanged": true
+    },
+    "machinery/study_knowledge.py": {
+      "pre005": "ac04d864110a0331d4346972d9bf4e9c5858da9779be1d7c0850ddeecedf5209",
+      "pre006": "ac04d864110a0331d4346972d9bf4e9c5858da9779be1d7c0850ddeecedf5209",
+      "pre007": "ac04d864110a0331d4346972d9bf4e9c5858da9779be1d7c0850ddeecedf5209",
+      "unchanged": true
+    },
+    "MathGKM/ResearchSemantics.lean": {
+      "pre005": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+      "pre006": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+      "pre007": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+      "unchanged": true
+    },
+    "MathGKM/ContinuationObligations.lean": {
+      "pre005": "18bbc446a91dc190f908ad6378f5e8e74f0c4d8be0ba8313f24cba3e04d33e8f",
+      "pre006": "18bbc446a91dc190f908ad6378f5e8e74f0c4d8be0ba8313f24cba3e04d33e8f",
+      "pre007": "18bbc446a91dc190f908ad6378f5e8e74f0c4d8be0ba8313f24cba3e04d33e8f",
+      "unchanged": true
+    }
+  },
+  "runs": [
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/connected-006.json",
+        "bytes": 686,
+        "sha256": "b2d8d1b8f67c1be9ec2e4a6ea53147c821633e474ae7fd654c46ba9c0ae922a7"
+      },
+      "log": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/connected-006.log",
+        "bytes": 714,
+        "sha256": "c1527b6c64f881d5c7661f0222a2b0f510e4700249c47b023977abfdd377b321"
+      },
+      "log_digest_matches": true,
+      "data": {
+        "command": [
+          "/opt/homebrew/bin/python3",
+          "-m",
+          "unittest",
+          "-v",
+          "tests.test_revision_static_checkpoint.RealLeanMechanisms.test_connected_cycle_delayed_use_policy_install_and_next_actual_request"
+        ],
+        "started": 1792277661.139176,
+        "elapsed_seconds": 413.19626331329346,
+        "returncode": 0,
+        "manifest_sha256": "095c496b7aceb381b771455092ab21df3899e44ff5992ebd8901fa6dabc72481",
+        "source_mismatches_after": [],
+        "log": "evidence/neutral-validation/connected-006.log",
+        "log_sha256": "c1527b6c64f881d5c7661f0222a2b0f510e4700249c47b023977abfdd377b321",
+        "scope": "neutral tests; deterministic roles explicitly fixtures; no live model or Markov research"
+      }
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/context-006.json",
+        "bytes": 642,
+        "sha256": "3fa702622f1e471b73b098831ba93e191ee4c74af59f0b00138efef359f1ac7d"
+      },
+      "log": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/context-006.log",
+        "bytes": 3634,
+        "sha256": "0d7b1487cae71430cc166ca3b1db8ac2594ef951a5e0ed75c87c3a216eb13f5b"
+      },
+      "log_digest_matches": true,
+      "data": {
+        "command": [
+          "/opt/homebrew/bin/python3",
+          "-m",
+          "unittest",
+          "-v",
+          "tests.test_context_revision",
+          "tests.test_revision_static_checkpoint.PureMechanisms"
+        ],
+        "started": 1792277661.139157,
+        "elapsed_seconds": 231.7996048927307,
+        "returncode": 0,
+        "manifest_sha256": "095c496b7aceb381b771455092ab21df3899e44ff5992ebd8901fa6dabc72481",
+        "source_mismatches_after": [],
+        "log": "evidence/neutral-validation/context-006.log",
+        "log_sha256": "0d7b1487cae71430cc166ca3b1db8ac2594ef951a5e0ed75c87c3a216eb13f5b",
+        "scope": "neutral tests; deterministic roles explicitly fixtures; no live model or Markov research"
+      }
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/round4-selected-006.json",
+        "bytes": 588,
+        "sha256": "50a29cb914127bdc48041a3ea672945f75ccc55ac8328e076cd34b9dc931bd00"
+      },
+      "log": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/round4-selected-006.log",
+        "bytes": 2031,
+        "sha256": "17189f38f3aa76eb09da78f440e708730624b9f4094431e94bfe66c933c458c8"
+      },
+      "log_digest_matches": true,
+      "data": {
+        "command": [
+          "/opt/homebrew/bin/python3",
+          "-m",
+          "unittest",
+          "-v",
+          "tests.test_round4.Round4"
+        ],
+        "started": 1792277683.7436988,
+        "elapsed_seconds": 64.60291314125061,
+        "returncode": 0,
+        "manifest_sha256": "095c496b7aceb381b771455092ab21df3899e44ff5992ebd8901fa6dabc72481",
+        "source_mismatches_after": [],
+        "log": "evidence/neutral-validation/round4-selected-006.log",
+        "log_sha256": "17189f38f3aa76eb09da78f440e708730624b9f4094431e94bfe66c933c458c8",
+        "scope": "neutral tests; deterministic roles explicitly fixtures; no live model or Markov research"
+      }
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/audit-terminal-007.json",
+        "bytes": 928,
+        "sha256": "cb59ae82a5ae648c4e1b58d26ee8c4f6f33de2e0cbcf5f70117407399a3e15fc"
+      },
+      "log": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/audit-terminal-007.log",
+        "bytes": 1631,
+        "sha256": "35062e2bb406760c8ab7005a49c76ec6c4825503bb3d56acccaea6fe7f0c2081"
+      },
+      "log_digest_matches": true,
+      "data": {
+        "command": [
+          "/opt/homebrew/bin/python3",
+          "-m",
+          "unittest",
+          "-v",
+          "tests.test_round4.Round4.test_terminal_schedule_receipt_binding_and_interrupted_export",
+          "tests.test_round4.Round4.test_terminal_rejects_source_change_after_finished_receipt",
+          "tests.test_round4.Round4.test_unused_route_does_not_inflate_fixed_witness_description",
+          "tests.test_round4.Round4.test_reference_mutations_invalidate_direct_and_report_audits"
+        ],
+        "started": 1792278182.5698938,
+        "elapsed_seconds": 0.24616718292236328,
+        "returncode": 0,
+        "manifest_sha256": "241d7be7e0ae955bded56b16145737024c191500c386571162ec3773aba20b8d",
+        "source_mismatches_after": [],
+        "log": "evidence/neutral-validation/audit-terminal-007.log",
+        "log_sha256": "35062e2bb406760c8ab7005a49c76ec6c4825503bb3d56acccaea6fe7f0c2081",
+        "scope": "neutral tests; deterministic roles explicitly fixtures; no live model or Markov research"
+      }
+    },
+    {
+      "record": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/exact-envelope-007.json",
+        "bytes": 650,
+        "sha256": "6a3e54604ffd2b9a71911ea64154bc726181f1732db1ad409c093f6c0ad31c99"
+      },
+      "log": {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/exact-envelope-007.log",
+        "bytes": 626,
+        "sha256": "7c7c80a8d2386fb545380695e9c7115ddca88e589d36b03ac40db8259f2a3c11"
+      },
+      "log_digest_matches": true,
+      "data": {
+        "command": [
+          "/opt/homebrew/bin/python3",
+          "-m",
+          "unittest",
+          "-v",
+          "tests.test_round4.Round4.test_exact_episode_allowance_reaches_real_evaluation_and_review"
+        ],
+        "started": 1792278182.569896,
+        "elapsed_seconds": 53.16742014884949,
+        "returncode": 0,
+        "manifest_sha256": "241d7be7e0ae955bded56b16145737024c191500c386571162ec3773aba20b8d",
+        "source_mismatches_after": [],
+        "log": "evidence/neutral-validation/exact-envelope-007.log",
+        "log_sha256": "7c7c80a8d2386fb545380695e9c7115ddca88e589d36b03ac40db8259f2a3c11",
+        "scope": "neutral tests; deterministic roles explicitly fixtures; no live model or Markov research"
+      }
+    }
+  ],
+  "connected": {
+    "state_pin": {
+      "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/state.json",
+      "bytes": 150099,
+      "sha256": "2ebcc935f691f006db4b9c3d113664ee1950d9320ec652a875308800a64be4a0"
+    },
+    "round": 4,
+    "status": "finite_budget_finished; root_open",
+    "resolution": null,
+    "reviewed_rounds": [
+      2,
+      4
+    ],
+    "role_receipts": [
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/plan-0000/receipt.json",
+          "bytes": 2760,
+          "sha256": "c2a1c8c87e5bb7a33bbd49a218a159499c9dccfe1626f3ef47164875c5fc5f27"
+        },
+        "request_id": "plan-0000",
+        "role": "proposer",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/round-0000/receipt.json",
+          "bytes": 3974,
+          "sha256": "dddd776f386e85a39787b78876b78300ec204e4683453303fd6f6c8e20fd8f6c"
+        },
+        "request_id": "round-0000",
+        "role": "researcher",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/plan-0001/receipt.json",
+          "bytes": 4125,
+          "sha256": "605427413b9ac3ec38b29ffb097d0d0d16a68a10665bfb005e9be26b4d8436a1"
+        },
+        "request_id": "plan-0001",
+        "role": "proposer",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/round-0001/receipt.json",
+          "bytes": 5179,
+          "sha256": "21aa22066b4d251c2f50527e2a2ad972ad3becc430383a9abf6d3145fe0b4578"
+        },
+        "request_id": "round-0001",
+        "role": "researcher",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/eval-episode-2-before/receipt.json",
+          "bytes": 1491,
+          "sha256": "0b44fdfc7d7815a32e15191a4f8a682e43650e10979dcfb0b3859acc3c8ba44a"
+        },
+        "request_id": "eval-episode-2-before",
+        "role": "adapter",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/eval-episode-2-after/receipt.json",
+          "bytes": 4783,
+          "sha256": "79b2552301b1b76d67117e414263da1e425bde4a61d9475088452e15080c174d"
+        },
+        "request_id": "eval-episode-2-after",
+        "role": "adapter",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/policy-c9bc9ff46e59b147-r2-incumbent-plan-0/receipt.json",
+          "bytes": 5703,
+          "sha256": "ea309c64bfed37e2805c0cdef05afae728e0a7069df053cee98d33a9baacbe87"
+        },
+        "request_id": "policy-c9bc9ff46e59b147-r2-incumbent-plan-0",
+        "role": "proposer",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/policy-c9bc9ff46e59b147-r2-incumbent-0/receipt.json",
+          "bytes": 6013,
+          "sha256": "5ccd89d12939b18a0366eba365cfe04c7c1051a7643d019860443318903b25df"
+        },
+        "request_id": "policy-c9bc9ff46e59b147-r2-incumbent-0",
+        "role": "researcher",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/policy-c9bc9ff46e59b147-r2-incumbent-plan-1/receipt.json",
+          "bytes": 5880,
+          "sha256": "7b7c63ea18d2e183419d446efe24def89fbc8b661cfe017da89dbe4b092f70e4"
+        },
+        "request_id": "policy-c9bc9ff46e59b147-r2-incumbent-plan-1",
+        "role": "proposer",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/policy-c9bc9ff46e59b147-r2-incumbent-1/receipt.json",
+          "bytes": 6191,
+          "sha256": "528ae757665b7487a9bdc4f6dcfd3c5748179aef990a2392a6a013f769f958a2"
+        },
+        "request_id": "policy-c9bc9ff46e59b147-r2-incumbent-1",
+        "role": "researcher",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/policy-c9bc9ff46e59b147-r2-candidate-plan-0/receipt.json",
+          "bytes": 5703,
+          "sha256": "3120bd7a42cf92ae36e08ec12c1a45d1a719b7769454f7964441821a2bf61a0c"
+        },
+        "request_id": "policy-c9bc9ff46e59b147-r2-candidate-plan-0",
+        "role": "proposer",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/policy-c9bc9ff46e59b147-r2-candidate-0/receipt.json",
+          "bytes": 6321,
+          "sha256": "8751d3290f70cdae704910ce4465a273bf8a63671b3b3b0cfa2f65662e9c20de"
+        },
+        "request_id": "policy-c9bc9ff46e59b147-r2-candidate-0",
+        "role": "researcher",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/policy-c9bc9ff46e59b147-r2-candidate-plan-1/receipt.json",
+          "bytes": 6532,
+          "sha256": "76cf0605ec1a129348a37b720bf60210d7d2efa91b873775511b27b564dc9b9c"
+        },
+        "request_id": "policy-c9bc9ff46e59b147-r2-candidate-plan-1",
+        "role": "proposer",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/policy-c9bc9ff46e59b147-r2-candidate-1/receipt.json",
+          "bytes": 7050,
+          "sha256": "1720106fda17ca6e305b69c9d8f2a02880985df9beecea9df749e9fd09f8979e"
+        },
+        "request_id": "policy-c9bc9ff46e59b147-r2-candidate-1",
+        "role": "researcher",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/eval-policy-c9bc9ff46e59b147-r2-before/receipt.json",
+          "bytes": 5154,
+          "sha256": "39899125f462d08b8096ad6d1ccc25e21700c5533814822eb2912d384758de52"
+        },
+        "request_id": "eval-policy-c9bc9ff46e59b147-r2-before",
+        "role": "adapter",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/eval-policy-c9bc9ff46e59b147-r2-after/receipt.json",
+          "bytes": 5816,
+          "sha256": "67cffb71d14dfa124c2e52d40cd5f8f6b982a183df7f283d3c5f9c2e60f9070d"
+        },
+        "request_id": "eval-policy-c9bc9ff46e59b147-r2-after",
+        "role": "adapter",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/review-2/receipt.json",
+          "bytes": 4961,
+          "sha256": "7e8fcf7b0e9350aba6129b3f8b3f5458e2bce19e26ccc4f62d474f379299bd58"
+        },
+        "request_id": "review-2",
+        "role": "reviewer",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/select-2/receipt.json",
+          "bytes": 1556,
+          "sha256": "6c61e7e29100664d99061a9ad5c658d15f6d7f5e9978c498c345e7a3b94eff36"
+        },
+        "request_id": "select-2",
+        "role": "selector",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/plan-0002/receipt.json",
+          "bytes": 5668,
+          "sha256": "3512ebb71b1923651fc976fe947a067c0d3911ff1d0af9c5a19cf11f0b69660d"
+        },
+        "request_id": "plan-0002",
+        "role": "proposer",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/round-0002/receipt.json",
+          "bytes": 6290,
+          "sha256": "0dfdcd409314d43570bf3ca248ec9070324224b688b3b4f2cd6801e88438b9a1"
+        },
+        "request_id": "round-0002",
+        "role": "researcher",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/plan-0003/receipt.json",
+          "bytes": 6499,
+          "sha256": "f68c3a97905eeea842254ae18e05ae253c4ee48465083006e3df366d2b303bf2"
+        },
+        "request_id": "plan-0003",
+        "role": "proposer",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/round-0003/receipt.json",
+          "bytes": 7020,
+          "sha256": "a64b2f9e27932e5c5d8ee1151ecff8a4fc58c61f12e72e90a4d7c8e3a4f940fc"
+        },
+        "request_id": "round-0003",
+        "role": "researcher",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/eval-episode-4-before/receipt.json",
+          "bytes": 4784,
+          "sha256": "60ace0fa9068d4635fb9e9023d160dcddd1fe5743c7dfcf1b76b2eb0917fabfa"
+        },
+        "request_id": "eval-episode-4-before",
+        "role": "adapter",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/eval-episode-4-after/receipt.json",
+          "bytes": 5798,
+          "sha256": "193660ce11842b4b02727bafdaf98113653c2eb47a40256f0cb48d9b7f58786e"
+        },
+        "request_id": "eval-episode-4-after",
+        "role": "adapter",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/review-4/receipt.json",
+          "bytes": 5968,
+          "sha256": "6f35b4699b8954b9f87754c90e478887fff37baeda5956cab80df2a7879175a3"
+        },
+        "request_id": "review-4",
+        "role": "reviewer",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/select-4/receipt.json",
+          "bytes": 1556,
+          "sha256": "1384f5abe6b8b74e7282c4cf2829c763d347985f89707855016ee22ba53562bf"
+        },
+        "request_id": "select-4",
+        "role": "selector",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/eval-final-4-before/receipt.json",
+          "bytes": 1490,
+          "sha256": "8dedf194b3195e4c6e007d7be68c57026c1730365bfa79e3b5533891ca15a200"
+        },
+        "request_id": "eval-final-4-before",
+        "role": "adapter",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/eval-final-4-after/receipt.json",
+          "bytes": 5794,
+          "sha256": "77a4ffa6d93d7e32ac023ad38021e7c19d54f9e450e1969fdc8e5ccf8e338187"
+        },
+        "request_id": "eval-final-4-after",
+        "role": "adapter",
+        "provider": "deterministic_fixture",
+        "transport": "fixture",
+        "outcome": "completed",
+        "returncode": 0,
+        "classification": "SYNTHETIC FIXTURE; no mathematical progress",
+        "mathematical_resolution": false
+      }
+    ],
+    "mathematical_checks": [
+      {
+        "record": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/rounds/0000/checks/19b5ba76b0f7693f0684470f09e9a2fae2cb09860e90599c3b0554d853dc8ab9/result.json",
+          "bytes": 473417,
+          "sha256": "5d683ada0962bd2ba73b12af84a509b0c36daa8e1d7b4b67612f828c4e72ef23"
+        },
+        "task_id": "fixture-family",
+        "checked": true,
+        "valid_attempt": true,
+        "actual_required_constants": [],
+        "all_required_in_actual_closure": true,
+        "component_use_checked": false,
+        "state_receipt_digest_matches": true,
+        "artifact": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/rounds/0000/checks/19b5ba76b0f7693f0684470f09e9a2fae2cb09860e90599c3b0554d853dc8ab9/source/declarations.json",
+          "bytes": 457267,
+          "sha256": "b6f40893509754329fee7eb509aaffe15d51c81e08a187d72821dbfbaa8fc316"
+        },
+        "artifact_hash_matches": true,
+        "complete_artifact_rows_match": true,
+        "axioms": {
+          "StudyObligation": [
+            "Quot.sound"
+          ],
+          "StudyInterface": [],
+          "StudyTransport": []
+        },
+        "operations": [
+          {
+            "operation": "compile",
+            "module": "MathGKM.ResearchSemantics",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "compile",
+            "module": "MathGKM.HarnessFixture",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "compile",
+            "module": "MathGKM.Target5cb68e7ec94706e91d3493ef",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "compile",
+            "module": "StudyCheck",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "MathGKM.ResearchSemantics",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "MathGKM.HarnessFixture",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "MathGKM.Target5cb68e7ec94706e91d3493ef",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "StudyCheck",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "trusted_premise_inspection",
+            "module": null,
+            "returncode": 0,
+            "termination": null
+          }
+        ]
+      },
+      {
+        "record": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/rounds/0001/checks/9aa1b42e6f5b7f07d5912777f2cef72d00f514670c129529070fb21f11c8e0c2/result.json",
+          "bytes": 402741,
+          "sha256": "ebd6bc3b02de1e71bb55e53023178ba39d78c9206ab65d3ffe062a3a181780c5"
+        },
+        "task_id": "fixture-family-reuse",
+        "checked": true,
+        "valid_attempt": true,
+        "actual_required_constants": [
+          "Accepted19b5ba76b0f7693f0684470f.transport"
+        ],
+        "all_required_in_actual_closure": true,
+        "component_use_checked": true,
+        "state_receipt_digest_matches": true,
+        "artifact": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/rounds/0001/checks/9aa1b42e6f5b7f07d5912777f2cef72d00f514670c129529070fb21f11c8e0c2/source/declarations.json",
+          "bytes": 383145,
+          "sha256": "8132c6f5402b44cd8ec1d3b663a68c4919b62d1287b57671c9a12fa1eaa27b06"
+        },
+        "artifact_hash_matches": true,
+        "complete_artifact_rows_match": true,
+        "axioms": {
+          "StudyObligation": [],
+          "StudyInterface": [],
+          "StudyTransport": []
+        },
+        "operations": [
+          {
+            "operation": "compile",
+            "module": "MathGKM.ResearchSemantics",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "compile",
+            "module": "MathGKM.HarnessFixture",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "compile",
+            "module": "MathGKM.Target5cb68e7ec94706e91d3493ef",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "compile",
+            "module": "MathGKM.Accepted19b5ba76b0f7693f0684470f",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "compile",
+            "module": "MathGKM.Target91114c123c384db802af698c",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "compile",
+            "module": "StudyCheck",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "MathGKM.ResearchSemantics",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "MathGKM.HarnessFixture",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "MathGKM.Target5cb68e7ec94706e91d3493ef",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "MathGKM.Accepted19b5ba76b0f7693f0684470f",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "MathGKM.Target91114c123c384db802af698c",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "StudyCheck",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "trusted_premise_inspection",
+            "module": null,
+            "returncode": 0,
+            "termination": null
+          }
+        ]
+      },
+      {
+        "record": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/rounds/0001/checks/a9c0744e54f0c01ba0375d644893a165779d77d26966cb58de9ff03beac00d89/result.json",
+          "bytes": 17248,
+          "sha256": "fdcaedde9bf7c05a4d18d8f569802b8b4fcfab0592d4796f2970bd4cdb13ddb1"
+        },
+        "task_id": "fixture-discharge",
+        "checked": true,
+        "valid_attempt": true,
+        "actual_required_constants": [],
+        "all_required_in_actual_closure": true,
+        "component_use_checked": false,
+        "state_receipt_digest_matches": true,
+        "artifact": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/rounds/0001/checks/a9c0744e54f0c01ba0375d644893a165779d77d26966cb58de9ff03beac00d89/source/declarations.json",
+          "bytes": 7646,
+          "sha256": "38f20c33da9e023e5530389b47b6038af37038a154333e03722d60b40251a9b1"
+        },
+        "artifact_hash_matches": true,
+        "complete_artifact_rows_match": true,
+        "axioms": {
+          "StudyObligation": [],
+          "StudyInterface": [],
+          "StudyTransport": []
+        },
+        "operations": [
+          {
+            "operation": "compile",
+            "module": "MathGKM.HarnessFixture",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "compile",
+            "module": "MathGKM.Targetf2352ca8ca74aa9ed619a0fb",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "compile",
+            "module": "MathGKM.Target109e0ed86b65c08c353a5c48",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "compile",
+            "module": "StudyCheck",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "MathGKM.HarnessFixture",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "MathGKM.Targetf2352ca8ca74aa9ed619a0fb",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "MathGKM.Target109e0ed86b65c08c353a5c48",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "StudyCheck",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "trusted_premise_inspection",
+            "module": null,
+            "returncode": 0,
+            "termination": null
+          }
+        ]
+      },
+      {
+        "record": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/rounds/0001/checks/aefd49fa1521554951c1cdb2d2c724005f9ac9801c2cfc19f0cddaa3cccb378f/result.json",
+          "bytes": 373226,
+          "sha256": "b5f7fc582ad414798c286939dc1c596681d432cea5fe8807aca3d9348dd3f7cb"
+        },
+        "task_id": "fixture-delayed-use",
+        "checked": true,
+        "valid_attempt": true,
+        "actual_required_constants": [
+          "Accepted850eb30550d569e2c57c5846.obligation"
+        ],
+        "all_required_in_actual_closure": true,
+        "component_use_checked": true,
+        "state_receipt_digest_matches": true,
+        "artifact": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/rounds/0001/checks/aefd49fa1521554951c1cdb2d2c724005f9ac9801c2cfc19f0cddaa3cccb378f/source/declarations.json",
+          "bytes": 353766,
+          "sha256": "e141d1c5abbc201f7bde1a8b132c31854b06eb2be3867f7a0ecd0ff732c098a5"
+        },
+        "artifact_hash_matches": true,
+        "complete_artifact_rows_match": true,
+        "axioms": {
+          "StudyObligation": [],
+          "StudyInterface": [],
+          "StudyTransport": []
+        },
+        "operations": [
+          {
+            "operation": "compile",
+            "module": "MathGKM.ResearchSemantics",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "compile",
+            "module": "MathGKM.HarnessFixture",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "compile",
+            "module": "MathGKM.Target9f0559c601a2a45c01e8bc86",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "compile",
+            "module": "MathGKM.Accepted850eb30550d569e2c57c5846",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "compile",
+            "module": "MathGKM.Targetcebba9251f16aa852b99e9eb",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "compile",
+            "module": "StudyCheck",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "MathGKM.ResearchSemantics",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "MathGKM.HarnessFixture",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "MathGKM.Target9f0559c601a2a45c01e8bc86",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "MathGKM.Accepted850eb30550d569e2c57c5846",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "MathGKM.Targetcebba9251f16aa852b99e9eb",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "kernel_replay",
+            "module": "StudyCheck",
+            "returncode": 0,
+            "termination": null
+          },
+          {
+            "operation": "trusted_premise_inspection",
+            "module": null,
+            "returncode": 0,
+            "termination": null
+          }
+        ]
+      }
+    ],
+    "original_context_residual": {
+      "connection": "checked implication to unchanged root; satisfiability/difficulty unknown",
+      "context_binding": "f336cdeed615ae9dfdf9804f4de34e1a4b6d457d10da9e2c1951634605cb3011",
+      "discharge": "fixture-discharge",
+      "id": "fixture-residual",
+      "source": "fixture-reduction",
+      "statement": "∀ n : Nat, n = n",
+      "status": "checked",
+      "target_constant": "MathGKM.Targetf2352ca8ca74aa9ed619a0fb.Residual0",
+      "target_module": "MathGKM.Targetf2352ca8ca74aa9ed619a0fb"
+    },
+    "comparisons": [
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/evaluations/episode-2/result.json",
+          "bytes": 110439,
+          "sha256": "b2a48680a70707d11056d8b9d37d99fabddc723bdd4581e010d9ed6d4892dbad"
+        },
+        "status": "valid_finite_budget_comparison",
+        "binding": {
+          "adaptation_seconds_each": 30,
+          "after": "e37a07dd147684e76369d5009c6375b025bb1267d432b6cf5aceeb48da2f8f89",
+          "before": "0c2c6ab16ffcb8f5cbda696d7ebb7fdac28aa1ce8da8cab8bd1029256ef946d1",
+          "policy_comparison": false,
+          "suite": "285949f6dfdf4db95ef483592405a4f7c68228c5969b9d953a5b3ffba31ffbac",
+          "validation_seconds_each_task": 120
+        },
+        "eligible": false,
+        "transfer": [],
+        "task_gains": [],
+        "regressions": [],
+        "all_frozen_declarations_retained": true,
+        "causal_limit": "dependency use is not indispensability; run a separately precommitted ablation where feasible"
+      },
+      {
+        "pin": {
+          "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/evaluations/policy-c9bc9ff46e59b147-r2/result.json",
+          "bytes": 127707,
+          "sha256": "bea14d9e3fc4d13f20c583cd3bc7a1e5cc1e17c47d2a01295a7060c1f45f248f"
+        },
+        "status": "valid_finite_budget_comparison",
+        "binding": {
+          "adaptation_seconds_each": 30,
+          "after": "e51949499dcfea952b42442540bbebef2e7e7d98989970d7f4f43ec01bfb9557",
+          "before": "8ba3121a2fe0960041523eec656cc01d566bbcfecde098b9907761db0a485453",
+          "policy_comparison": true,
+          "suite": "285949f6dfdf4db95ef483592405a4f7c68228c5969b9d953a5b3ffba31ffbac",
+          "validation_seconds_each_task": 120
+        },
+        "eligible": true,
+        "transfer": [
+          "heldout-identity"
+        ],
+        "task_gains": [
+          "heldout-identity"
+        ],
+        "regressions": [],
+        "all_frozen_declarations_retained": true,
+        "causal_limit": "dependency use is not indispensability; run a separately precommitted ablation where feasible"
+      }
+    ],
+    "decision_pin": {
+      "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/decisions/review-2.json",
+      "bytes": 127628,
+      "sha256": "613e869d082018e5e4f7d61ce461baa7409c90fab00848b4001c42ec85980b2c"
+    },
+    "accepted_experimental_change": true,
+    "certified_switch": false,
+    "next_request_pin": {
+      "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-ptjxd1yw/connected/arms/exploration/jobs/round-0002/request.json",
+      "bytes": 33430,
+      "sha256": "eefb4a04072d802c35495f1118c9ed4bd32351519eb32f960ca2fce984be83f3"
+    },
+    "next_program_execution": {
+      "executed": [
+        "reverse_agenda"
+      ],
+      "input_hash": "893842a33110daae68c7707cb5483b977e61d7594402b88e83f4a515920f78d5",
+      "program_hash": "e6758ad78cdee39a2ed6bbc6a8a14b6263404d887ad933e4b64fedbbc13009d6",
+      "status": "experimental interpreter; refinement unproved"
+    }
+  },
+  "terminal_source_review": {
+    "pre007_changed_paths": [
+      "machinery/study_observer.py",
+      "machinery/study_burden.py",
+      "tests/test_round4.py"
+    ],
+    "source_refs": [
+      "machinery/study_observer.py:9-19",
+      "machinery/study_observer.py:36-55",
+      "machinery/study_burden.py:41-57",
+      "machinery/study_completion.py:14-16",
+      "machinery/study_completion.py:20-37",
+      "tests/test_round4.py:90-145"
+    ],
+    "finding": "Finished result binding now checks resolved flag, finished field, exact bundle hash, sealed contract hash, every Lean source and correspondence against terminal snapshot. Observer outbox conflicts reject. Burden independently rechecks resolution and immutable seed/accepted source bindings. Existing mathematical completion gate unchanged; study_completion stores exact result path. Fixture transport still cannot resolve mathematics.",
+    "negative_test": "A synthetic finished receipt is made, then its correspondence file changes before terminal export; observer rejects before writing terminal outbox. Positive interrupted-export/resume and changed-receipt/outbox tests also run.",
+    "test_limit": "These terminal tests deliberately inject synthetic serialization receipts; they are not new exact-root proof admissions or end-to-end real mathematical completion. Neutral mathematical gate tests are separate.",
+    "artifact_pins": [
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/round4-neutral-8yoamh2q/study/arms/exploration/completion/synthetic/result.json",
+        "bytes": 521,
+        "sha256": "648b54cbb3f1c60a8475bfc90df139d31135afa3894bef9082515689efb1f387"
+      },
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/round4-neutral-8yoamh2q/study/arms/exploration/observer-outbox/terminal.json",
+        "bytes": 1286,
+        "sha256": "a883374ff7ea905e57e956fb746a9fcaed2d53aed30d760dd86c3d98dd76fae9"
+      },
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/round4-neutral-8yoamh2q/study/arms/exploration/snapshots/terminal/manifest.json",
+        "bytes": 1070,
+        "sha256": "ff72d0fd8c58cf7eb339db08ffba8b79b53f5493ac4ab53d8ae78e2e16d5c29c"
+      },
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/round4-neutral-8yoamh2q/terminal-report/raw.json",
+        "bytes": 6421,
+        "sha256": "c734e82655abaa06372d072fd8774ab641def21899e10304f2fc2a3fa37f3c21"
+      },
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/round4-neutral-ggjvtul7/study/arms/exploration/completion/synthetic/result.json",
+        "bytes": 521,
+        "sha256": "648b54cbb3f1c60a8475bfc90df139d31135afa3894bef9082515689efb1f387"
+      },
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/round4-neutral-ggjvtul7/study/arms/exploration/snapshots/terminal/manifest.json",
+        "bytes": 1069,
+        "sha256": "c1a395cd207e1a534f74eb7d5453246b342172a61c6c5c1274a70e63c935a8d3"
+      }
+    ]
+  },
+  "disposition": {
+    "full_connected_cycle": "PASS on pre006: four rounds, reviewed2/4,28 deterministic role subprocess receipts completed, family/cell subsequent-use proofs and original-context residual discharge checked, experimental selection affects later actual request. Unlike round3 connected005, no unfinished-test substitution.",
+    "mathematical_gate": "Core premise inspector, canonical completion verifier, knowledge admission and both Lean foundations unchanged from tested pre005; transfer changed call-reservation integration only. Source-level context and required-constant checks remain.",
+    "causal_limit": "Fixture adapter explicitly declines the before-side identity and uses available component afterward. It demonstrates plumbing, exact proof/dependency use and bounded comparison; not proof indispensability, live model superiority, scientific progress or generalization. Episode-only component comparison correctly reports no gain.",
+    "D1": "Concrete strict utility improvement against the entire incumbent continuation is unavailable; WholeSwitch is a definition of that obligation, not a proof.",
+    "D2": "Generic local-to-whole-trace simulation theorem is checked, but real Python/OS/model/cost/environment refinement remains unavailable. modelBinding is only the identity model.",
+    "certified_installation": "Always rejected; genuinely unavailable, not a completed requirement. Experimental selection is labeled certified_switch=false.",
+    "launch": "No live Markov canary/curation/research authorized by this audit; explicit later USER OK required.",
+    "remaining_review": "Scope is mathematical gate, proof use and terminal meaning. Other independent reviewers own runtime/configuration/accounting and conditional-description adequacy. Final builder manifest may add documentation/evidence; recheck any later executable changes."
+  },
+  "prior_review": {
+    "path": "/private/tmp/math_gkm_strategy_v2_round3_mathematical_final_review_20261017.json",
+    "bytes": 99389,
+    "sha256": "9988171db7809a08b8da4d07f7ccd2519655af716313d34857d5928f1f05b83f"
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "schema": "independent-static-runtime-review.v1",
+  "observed_utc": "2026-10-17T22:40:37.409859+00:00",
+  "root": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017",
+  "status": "round3 in-progress exact-source handoff; later builder edits require recheck",
+  "scope": "Independent read-only static source and retained-result review. No candidate imports, execution, tests, proofs, model calls, source edits or builder contact. Only this review is written under /private/tmp.",
+  "authorization_hold": "No fresh Markov research, curation, canary or activation before explicit user OK.",
+  "findings": [
+    {
+      "id": "R3-C1",
+      "priority": "P1",
+      "title": "Committed episode does not reserve its evaluation and review",
+      "refs": [
+        "machinery/study.py:417-428",
+        "machinery/study.py:524-550",
+        "machinery/study_transfer.py:289-296"
+      ],
+      "finding": "The first episode reservation covers only research calls, up to k validations and one completion validation per round. Required episode evaluation and two review/selector calls are funded only after the promised research horizon finishes. A cap sufficient for research alone starts the episode, then blocks evaluation/review. Call/meta-call checks likewise cover only research at the horizon start. Symmetric policy-trial branch pools are repaired; this remaining defect concerns the main episode-to-review edge.",
+      "required": "Before accepting a delayed episode, admit the complete required horizon through its review/evaluation (including call counters), or explicitly expose a different horizon contract. This is a comparison/accounting requirement, not a mathematical strategy."
+    },
+    {
+      "id": "R3-C2",
+      "priority": "P1",
+      "title": "Shipped fixture and canary protocols cannot start under the new envelope",
+      "refs": [
+        "machinery/study.py:22-30",
+        "machinery/study.py:41-64",
+        "machinery/study.py:417-426",
+        "studies/v2-fixture.json:3-13",
+        "studies/v2-canary.json:3-13"
+      ],
+      "finding": "Both inherit k=6 and validation_seconds=120. The fixture first episode requires 2*(2*5+7*120)=1700 reserved seconds against arm_seconds=1200. The canary requires 2*(2*120+7*120)=2160 against 1800. validate_protocol accepts both; research_round fails before its first role call. DEFAULT arm_seconds was corrected to 12000, so the earlier default-dictionary failure is superseded. The named profiles remain broken.",
+      "required": "Make shipped neutral profile(s) viable and statically reject impossible commitments at freeze. The live canary remains explicitly unauthorized; no execution or activation is proposed."
+    },
+    {
+      "id": "R3-R1",
+      "priority": "P2",
+      "title": "Terminal completion export is not included or bound in the audit result",
+      "refs": [
+        "machinery/study_completion.py:67-73",
+        "machinery/study_observer.py:9-22",
+        "machinery/study.py:149-155",
+        "machinery/study_burden.py:94-121"
+      ],
+      "finding": "The producer now creates/reconciles terminal snapshots and outbox, fixing the missing producer. The report only checks terminal export conflicts; raw measurement and conditional pairs still iterate the initial+rounds schedule, excluding terminal. The terminal observer record also omits the checked resolution/result-bundle identity. Thus a separate exact-root completion between scheduled rounds is absent from the measured audit sequence and is not tied to its finished completion receipt there.",
+      "required": "Represent a terminal point in the consumer schedule, preserve absent-terminal semantics, and bind the terminal export to its exact finished resolution receipt/bundle. No complexity-based control feedback should be introduced."
+    },
+    {
+      "id": "R3-C3",
+      "priority": "P2",
+      "title": "New enforced knowledge limit is not disclosed in role request limits",
+      "refs": [
+        "machinery/study_policy.py:27-39",
+        "machinery/study_knowledge.py:90-104"
+      ],
+      "finding": "ingest rejects the entire report before checking anything when the aggregate across proposal kinds exceeds knowledge_checks_per_round. The request limits projection lists only rounds, episode_rounds, invention_rounds and call_seconds. It does not tell ordinary proposer/researcher roles the newly enforced aggregate cap or validation timeout. The precheck also counts repeated already-accepted identities before the later skip, so its exact semantics need to be stated.",
+      "required": "Expose the enforced limit and its counting semantics in the same prospective request/schema the role consumes. No change to proof claims or research priorities is involved."
+    },
+    {
+      "id": "R3-R2",
+      "priority": "P2",
+      "title": "Install/static manifests overstate historical protection and omit a required permissions input",
+      "refs": [
+        "machinery/study_manifest.py:9-22",
+        "machinery/study_manifest.py:48",
+        "machinery/neutral_checkpoint.py:12-16",
+        "machinery/study_common.py:151-153",
+        "machinery/study_worker.py:22-24"
+      ],
+      "finding": "study_manifest sets before={} and constructs each protected before/after SHA by hashing the same current file twice, then announces protected inputs unchanged. This is only a current identity check, not comparison to an approved baseline. Its source enumeration and neutral_checkpoint omit .bootstrap/base-permissions.json, although runtime implementation() pins it and worker permissions reads it. The separate runtime seal provides some later protection; the pre-test/source-install manifest alone is incomplete.",
+      "required": "Use an approved baseline for historical unchanged assertions or label current pins honestly, and include the required permissions input in the review/reproduction manifest."
+    }
+  ],
+  "repaired_or_qualified": [
+    "Distinct validation invocations now reserve by resolved destination path, separating branch/round executions while retaining same-operation recovery.",
+    "Finished completion receipt binding is checked and reused before reserving fresh budget; terminal reconciliation is also invoked on resolved run recovery.",
+    "Policy trial prepays separate incumbent/candidate/evaluation/review pools and debits actual branch operations within their own pool.",
+    "Snapshot publication uses a staging directory followed by rename; research-owned observer outbox prevents reading corrupt audit outputs as control input.",
+    "Docs explicitly distinguish fixed-round equal upper caps from matched actual-cost efficiency. Protocol transitions have separate 30-second event bounds and observed totals, so they are no longer silently claimed to fit inside arm_seconds.",
+    "Docs accurately limit executable changes to a bounded request-transform DSL, conditional formal models, and unproved actual host refinement; no certified switch or fresh Markov activation is claimed."
+  ],
+  "source_pins": {
+    "machinery/study.py": {
+      "sha256": "79e3fbc85c0757f8e6bdc0689a80e97db455aaed8288939b15d1c41ab36074be",
+      "bytes": 46986
+    },
+    "machinery/study_policy.py": {
+      "sha256": "92101c48d318723a97f1a6a42fadfdec964d7a1e1d929c1e664f7aa7b207df75",
+      "bytes": 15940
+    },
+    "machinery/study_knowledge.py": {
+      "sha256": "ac04d864110a0331d4346972d9bf4e9c5858da9779be1d7c0850ddeecedf5209",
+      "bytes": 15360
+    },
+    "machinery/study_transfer.py": {
+      "sha256": "279f299e1d72d4cabd463c7253f9984353c8bd04a265b96c16e5365ed061085d",
+      "bytes": 27501
+    },
+    "machinery/study_completion.py": {
+      "sha256": "4894c36c39aa06999eca011721777066660d1c3901e929d80f2137e7d759c7bd",
+      "bytes": 3855
+    },
+    "machinery/study_observer.py": {
+      "sha256": "c05a528c8b4e2beb718c02d2d7a471a3c14096262b06357e266a60e6583f174d",
+      "bytes": 1779
+    },
+    "machinery/study_burden.py": {
+      "sha256": "e0530b64947bcfbd8176a762df3836f9711777c815be9cf97db324cdaf3b8378",
+      "bytes": 14854
+    },
+    "machinery/study_bridge.py": {
+      "sha256": "13d543cc4fb414d9e8a360f381d71eff8782fcc01a37c74923176e8b17ca862b",
+      "bytes": 4243
+    },
+    "machinery/study_manifest.py": {
+      "sha256": "76ecef6cf0aef7f31dc730438b7873f2acfc7b335aeb3e96d7a7400eebb8236d",
+      "bytes": 3094
+    },
+    "machinery/neutral_checkpoint.py": {
+      "sha256": "6c4fec5e79ab095d64c44bb7834bf10c8dfa7049f81939a244c9e1d706e2460b",
+      "bytes": 1965
+    },
+    "machinery/study_common.py": {
+      "sha256": "23cfdf11a71698d6a05bff45e53ff4201bdb5b99aa0642759cab6e85d4177b95",
+      "bytes": 7583
+    },
+    "machinery/study_worker.py": {
+      "sha256": "cea861dbbb4285fe71f91eeeb6cf68eac2176428ac6cc36efd49b4ca5b39993f",
+      "bytes": 8417
+    },
+    "studies/v2-fixture.json": {
+      "sha256": "bfe9647f4e51ab441a051e9cbcd7997eb0740a02b1a0516309cf52c55e62f145",
+      "bytes": 284
+    },
+    "studies/v2-canary.json": {
+      "sha256": "db115a9cc3c2cdc6085e7b1c83d8eaaad9fced0f6d67220178936c76da0d4546",
+      "bytes": 281
+    },
+    "docs/HARNESS_CHECKPOINT.md": {
+      "sha256": "dcc2a0d1065b0ac7fb59f5ead427dae7ff3e4a7c9e5d8379309efe71fcfac7e0",
+      "bytes": 2583
+    },
+    "docs/REQUIREMENT_MAP.md": {
+      "sha256": "d256e3bfb576c9192ed4a1b4287f093028672df7dbd49839f12cc65b7b9b329e",
+      "bytes": 5163
+    },
+    ".bootstrap/base-permissions.json": {
+      "sha256": "5263cab043f26560022bffc9ff3636b91a005afc59608c2d945176979a6c673c",
+      "bytes": 1357
+    }
+  },
+  "retained_test_records_read_only": [
+    {
+      "path": "evidence/neutral-validation/regressions-002.json",
+      "sha256": "a9e937d56954e55a3cffeccdc537f0cf5772cb5f819651077a2eb301f658a11a",
+      "returncode": 0,
+      "tested_manifest_sha256": "50887c719b8b8f4ce3ba9103709494203996f643f9d5be20d18a0bc4e2ea7b6e",
+      "source_mismatches_after": []
+    },
+    {
+      "path": "evidence/neutral-validation/mechanisms-002.json",
+      "sha256": "68009115b7534d9fbd03f861320c271627d998df7cbc5f9dd7dd231343e40f2c",
+      "returncode": 1,
+      "tested_manifest_sha256": "50887c719b8b8f4ce3ba9103709494203996f643f9d5be20d18a0bc4e2ea7b6e",
+      "source_mismatches_after": []
+    },
+    {
+      "path": "evidence/neutral-validation/context-002.json",
+      "sha256": "6c9ab3f1188392064d1bf3f7ff588fa14a59169e87bf37eb32041a96f054080f",
+      "returncode": 1,
+      "tested_manifest_sha256": "50887c719b8b8f4ce3ba9103709494203996f643f9d5be20d18a0bc4e2ea7b6e",
+      "source_mismatches_after": []
+    },
+    {
+      "path": "evidence/neutral-validation/foundations-003.json",
+      "sha256": "8dc0dc0810fbc4ee3d4bec065db15bacf75f5e494af8ebfb88dac7136301b7c5",
+      "returncode": 1,
+      "tested_manifest_sha256": "e15c1ae9336e4f3b993d6bd094f6df535c8c99232db51bea0b8e95ebc46823e3",
+      "source_mismatches_after": []
+    },
+    {
+      "path": "evidence/neutral-validation/foundations-004.json",
+      "sha256": "4c02e54541715f26060b6dedcf276d4938174b6ab9b4ea7a966486d7226d3979",
+      "returncode": 1,
+      "tested_manifest_sha256": "8b78f3241391e956d8cbc21d36875b63eb9e312b191b9f9823d815f6d2ebdc49",
+      "source_mismatches_after": []
+    },
+    {
+      "path": "evidence/neutral-validation/identity-003.json",
+      "sha256": "484e3cbaaf12d47668632af079b7c5e1e1fa74963ca81e474ee03c0342124e1e",
+      "returncode": 130,
+      "tested_manifest_sha256": "e15c1ae9336e4f3b993d6bd094f6df535c8c99232db51bea0b8e95ebc46823e3",
+      "source_mismatches_after": []
+    }
+  ],
+  "validation_limit": "Only regressions-002 in this listed record set returned zero (26 tests per retained log). Other listed suites failed or were interrupted, tied to their own source snapshots. These are builder records, not independent executions. Further tests may be running; this report does not assert final suite success."
+}
