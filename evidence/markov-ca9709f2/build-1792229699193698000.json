@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTopBetaGroupingMCA9.lean:61:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2211 m \u2208 range (2 * r + 1), \u2211 k \u2208 range (m + 1), ?m.27 k (m - k)\nin the target expression\n  \u2211 x \u2208 range (2 * r + 1),\n      \u2211 k \u2208 range (x + 1),\n        betaDensityMCA9 d i r k * betaDensityMCA9 d i r (x - k) *\n          \u2191(betaScalarMCA9 (\u2191i + 1) (\u2191d + 2 * \u2191i + 9) \u2191k \u2191(x - k)) =\n    2 * betaDensityGapMCA9 d i r\n\nd i r : \u2115\n\u22a2 \u2211 x \u2208 range (2 * r + 1),\n      \u2211 k \u2208 range (x + 1),\n        betaDensityMCA9 d i r k * betaDensityMCA9 d i r (x - k) *\n          \u2191(betaScalarMCA9 (\u2191i + 1) (\u2191d + 2 * \u2191i + 9) \u2191k \u2191(x - k)) =\n    2 * betaDensityGapMCA9 d i r\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTopBetaGroupingMCA9": "8043e77f27125613651eae0c556e1178aa3fad6da5fb4f6e551463f0fe599d36"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ca9709f2/MarkovTopBetaGroupingMCA9.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopBetaGroupingMCA9.lean"
+  ],
+  "seconds": 37.554003625002224,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
