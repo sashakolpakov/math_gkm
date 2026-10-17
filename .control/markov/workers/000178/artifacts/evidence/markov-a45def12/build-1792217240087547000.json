@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovWeightRepresentationMA45.lean:71:51: error: unsolved goals\n\u22a2 144 * Matrix.vecCons (![12, 16, 20] 2) (fun i => Matrix.vecCons (![8, 12, 16] 2) (fun i => ![4, 8, 12] 2) i) 2 -\n              12 * ![8, 12, 16] 2 * Matrix.vecCons 16 (fun i => Matrix.vecCons 12 (fun i => 8) i) 2 -\n            128 *\n              Matrix.vecCons (![12, 16, 20] 2) (fun i => Matrix.vecCons (![8, 12, 16] 2) (fun i => ![4, 8, 12] 2) i) 2 +\n          16 * ![8, 12, 16] 2 * Matrix.vecCons 12 (fun i => Matrix.vecCons 8 (fun i => 4) i) 2 +\n        ![12, 16, 20] 2 * 8 * Matrix.vecCons 16 (fun i => Matrix.vecCons 12 (fun i => 8) i) 2 -\n      ![12, 16, 20] 2 * 12 * Matrix.vecCons 12 (fun i => Matrix.vecCons 8 (fun i => 4) i) 2 =\n    0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovWeightRepresentationMA45": "adce2633da1a8ab6ffe37d1de19a94ebe1c1cdb982c8d45c98c1fdfdfdd4d938"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-a45def12/MarkovWeightRepresentationMA45.olean",
+    "/Users/sasha/math_gkm/research/MarkovWeightRepresentationMA45.lean"
+  ],
+  "seconds": 24.390797375002876,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

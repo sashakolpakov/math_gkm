@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovDoubleChooseMA45.lean:43:3: error: linarith failed to find a contradiction\ncase neg.succ\np q\u271d : \u2115\nhp : 3 \u2264 p\nq : \u2115\nhq : 2 \u2264 q\nih : \u00acq = 0 \u2192 \u00acq = 1 \u2192 \u2191((p + q).choose q) * (\u2191q + 1) * (\u2191q + 2) \u2264 4 * \u2191((2 * p + q + 1).choose q)\nhq0 : \u00acq + 1 = 0\nhq1 : \u00acq + 1 = 1\nha : (p + q + 1) * (p + q).choose q = (p + q + 1).choose (q + 1) * (q + 1)\nhb : (2 * p + q + 1 + 1) * (2 * p + q + 1).choose q = (2 * p + q + 1 + 1).choose (q + 1) * (q + 1)\nha' : \u2191((p + (q + 1)).choose (q + 1)) * (\u2191q + 1) = \u2191((p + q).choose q) * (\u2191p + \u2191q + 1)\nhb' : \u2191((2 * p + (q + 1) + 1).choose (q + 1)) * (\u2191q + 1) = \u2191((2 * p + q + 1).choose q) * (2 * \u2191p + \u2191q + 2)\nhp' : 3 \u2264 \u2191p\nhq' : 2 \u2264 \u2191q\nhpn : 0 \u2264 \u2191p - 3\nhqn : 0 \u2264 \u2191q - 1\nhqn' : 0 \u2264 \u2191q - 2\nhm : 0 \u2264 (\u2191p - 3) * (\u2191q - 1) + 2 * (\u2191q - 2)\nhe : 0 \u2264 (2 * \u2191p + \u2191q + 2) * (\u2191q + 1) - (\u2191p + \u2191q + 1) * (\u2191q + 3)\nhi : \u2191((p + q).choose q) * (\u2191q + 1) * (\u2191q + 2) * (2 * \u2191p + \u2191q + 2) \u2264 4 * \u2191((2 * p + q + 1).choose q) * (2 * \u2191p + \u2191q + 2)\nhh : 0 \u2264 \u2191((p + q).choose q) * (\u2191q + 2) * ((2 * \u2191p + \u2191q + 2) * (\u2191q + 1) - (\u2191p + \u2191q + 1) * (\u2191q + 3))\na\u271d :\n  4 * \u2191((2 * p + (q + 1) + 1).choose (q + 1)) * (\u2191q + 1) <\n    \u2191((p + (q + 1)).choose (q + 1)) * (\u2191q + 1 + 1) * (\u2191q + 1 + 2) * (\u2191q + 1)\n\u22a2 False\nfailed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovDoubleChooseMA45": "443ddf14de754c9df26627dabd31cc198eae6766f9213ddc0d40b5ba64bcc942"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-a45def12/MarkovDoubleChooseMA45.olean",
+    "/Users/sasha/math_gkm/research/MarkovDoubleChooseMA45.lean"
+  ],
+  "seconds": 8.328961166960653,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovDoubleChooseMA45.lean:34:55: error: failed to prove positivity/nonnegativity/nonzeroness\n/Users/sasha/math_gkm/research/MarkovDoubleChooseMA45.lean:36:41: error: Application type mismatch: The argument\n  ih\nhas type\n  \u00acq = 0 \u2192 \u00acq = 1 \u2192 \u2191((p + q).choose q) * (\u2191q + 1) * (\u2191q + 2) \u2264 4 * \u2191((2 * p + q + 1).choose q)\nbut is expected to have type\n  ?m.803 \u2264 ?m.804\nin the application\n  mul_le_mul_of_nonneg_right ih\n/Users/sasha/math_gkm/research/MarkovDoubleChooseMA45.lean:45:15: error: omega could not prove the goal:\nNo usable constraints found. You may need to unfold definitions so `omega` can see linear arithmetic facts about `Nat` and `Int`, which may also involve multiplication, division, and modular remainder by constants.\n/Users/sasha/math_gkm/research/MarkovDoubleChooseMA45.lean:45:15: error: omega could not prove the goal:\nNo usable constraints found. You may need to unfold definitions so `omega` can see linear arithmetic facts about `Nat` and `Int`, which may also involve multiplication, division, and modular remainder by constants.\n",
+  "stderr": "",
+  "modules": {
+    "MarkovDoubleChooseMA45": "d5ce0eed449328157ad91fafca4149754d3142313652e67485afc0eb36c73422"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-a45def12/MarkovDoubleChooseMA45.olean",
+    "/Users/sasha/math_gkm/research/MarkovDoubleChooseMA45.lean"
+  ],
+  "seconds": 8.070346958003938,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

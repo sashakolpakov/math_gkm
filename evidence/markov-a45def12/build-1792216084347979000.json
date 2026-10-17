@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBinomialMomentsMA45.lean:21:9: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovBinomialMomentsMA45.lean:30:59: error(lean.unknownIdentifier): Unknown constant `PowerSeries.coeff_mul_X`\n/Users/sasha/math_gkm/research/MarkovBinomialMomentsMA45.lean:29:10: error: unsolved goals\ncase e'_3\nt n : \u2115\nh : (t + n + 1).choose (n + 1) * (n + 1) = (t + n + 1).choose n * (t + 1)\nh' : \u2191((t + n + 1).choose (n + 1)) * (\u2191n + 1) = \u2191((t + n + 1).choose n) * (\u2191t + 1)\n\u22a2 \u2191t * (PowerSeries.coeff (1 + n)) (negBinMA45 (1 + t) * PowerSeries.X) +\n      (PowerSeries.coeff (1 + n)) (negBinMA45 (1 + t) * PowerSeries.X) =\n    \u2191t * \u2191((1 + n + t).choose n) + \u2191((1 + n + t).choose n)\n/Users/sasha/math_gkm/research/MarkovBinomialMomentsMA45.lean:48:58: error(lean.unknownIdentifier): Unknown constant `PowerSeries.map_mul`\n/Users/sasha/math_gkm/research/MarkovBinomialMomentsMA45.lean:61:4: error: linarith failed to find a contradiction\ncase h1\nj t u n : \u2115\nA : PowerSeries \u211d := PowerSeries.mk fun i => \u2191i * (PowerSeries.coeff i) (negBinMA45 t)\nB : PowerSeries \u211d := PowerSeries.mk fun i => \u2191i * (PowerSeries.coeff i) (negBinMA45 u)\nhm : A * B = PowerSeries.C ((\u2191t + 1) * (\u2191u + 1)) * (negBinMA45 (t + u + 3) * PowerSeries.X ^ 2)\nh :\n  \u2211 p \u2208 HasAntidiagonal.antidiagonal n, (PowerSeries.coeff p.1) A * (PowerSeries.coeff p.2) B =\n    \u2211 x \u2208 HasAntidiagonal.antidiagonal n,\n      (PowerSeries.coeff x.1) (PowerSeries.C ((\u2191t + 1) * (\u2191u + 1))) *\n        \u2211 p \u2208 HasAntidiagonal.antidiagonal x.2,\n          (PowerSeries.coeff p.1) (negBinMA45 (t + u + 3)) * (PowerSeries.coeff p.2) (PowerSeries.X ^ 2)\np : \u2115 \u00d7 \u2115\nhp : p \u2208 HasAntidiagonal.antidiagonal n\nhp' : \u2191p.1 + \u2191p.2 = \u2191n\na\u271d :\n  (\u2191j - \u2191p.1) * (\u2191j - \u2191p.2) * (PowerSeries.coeff p.1) (negBinMA45 t) * (PowerSeries.coeff p.2) (negBinMA45 u) <\n    \u2191j * (\u2191j - \u2191n) * ((PowerSeries.coeff p.1) (negBinMA45 t) * (PowerSeries.coeff p.2) (negBinMA45 u)) +\n      \u2191p.1 * (PowerSeries.coeff p.1) (negBinMA45 t) * (\u2191p.2 * (PowerSeries.coeff p.2) (negBinMA45 u))\n\u22a2 False\nfailed\n/Users/sasha/math_gkm/research/MarkovBinomialMomentsMA45.lean:51:34: warning: This simp argument is unused:\n  PowerSeries.coeff_mk\n\nHint: Omit it from the simp argument list.\n  simp only [PowerSeries.coeff_mul,\u0335P\u0335o\u0335w\u0335e\u0335r\u0335S\u0335e\u0335r\u0335i\u0335e\u0335s\u0335.\u0335c\u0335o\u0335e\u0335f\u0335f\u0335_\u0335m\u0335k\u0335] at h\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBinomialMomentsMA45": "00752336bc85f7a6c8a07c9f817f96e459699e9681a4b4a8df098f768d5a40e8"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-a45def12/MarkovBinomialMomentsMA45.olean",
+    "/Users/sasha/math_gkm/research/MarkovBinomialMomentsMA45.lean"
+  ],
+  "seconds": 40.798919291002676,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

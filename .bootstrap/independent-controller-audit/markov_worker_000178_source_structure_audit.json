@@ -1,0 +1,973 @@
+{
+  "worker": 178,
+  "request": "a45def12b7c24d888741ec0c6895391b",
+  "created_at_utc": "2026-10-17T06:16:44.690386+00:00",
+  "historical_status": "Completed host outcome / return0 / structured report present / elapsed1615.2113001346588. Ten final mathematical modules compiled and jointly replayed,38 distinct theorem closures printed;8 rejected compiler attempts retained. Full root open.",
+  "scope": "Archive-first closed178 and explicit named inherited/current counterparts only. Static hashes, source/record parsing, literal comparison and finite index-domain counts. No mathematical-value recomputation, project/proof/checker/replay/experiment/generator/finalizer execution/import, project edit or proposer help/contact. Active179 and later excluded. Earlier seals/windows unchanged.",
+  "new_modules": [
+    {
+      "module": "MarkovBinomialMomentsMA45",
+      "path": "research/MarkovBinomialMomentsMA45.lean",
+      "bytes": 2727,
+      "sha256": "79d96b90c408c41550e1560c71dd26460b4884fca4f1de1885fd4118557da2b9",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "geomMA45"
+        },
+        {
+          "kind": "def",
+          "name": "negBinMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "negBin_coeffMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "negBin_mulMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "negBin_weightMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "binomial_momentMA45"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792216084347979000.json",
+          "sha256": "2c0528233a8a0875a063e16fbcdf99a1caabe16b178ac5ba7bc28cb82987f32b",
+          "source_sha256": "00752336bc85f7a6c8a07c9f817f96e459699e9681a4b4a8df098f768d5a40e8",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "00752336bc85f7a6c8a07c9f817f96e459699e9681a4b4a8df098f768d5a40e8"
+        },
+        {
+          "path": "build-1792216137963332000.json",
+          "sha256": "1936a7fddc3b7175a3da77191cd730c50f72b2119ccc8a7d64c34e47f46c2ef1",
+          "source_sha256": "79d96b90c408c41550e1560c71dd26460b4884fca4f1de1885fd4118557da2b9",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "79d96b90c408c41550e1560c71dd26460b4884fca4f1de1885fd4118557da2b9"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in178": true,
+      "printed_in178": true,
+      "object_path": "evidence/markov-a45def12/MarkovBinomialMomentsMA45.olean",
+      "object_sha256": "65e940f08efb19a1b8a1e2b8d24fa5697cd94231fc3a8f9af7361aca1108efbe",
+      "successful_final_build": "evidence/markov-a45def12/build-1792216137963332000.json",
+      "historical_successful_source_versions": [
+        "79d96b90c408c41550e1560c71dd26460b4884fca4f1de1885fd4118557da2b9"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovAdjacentConvolutionM09F",
+        "Mathlib.RingTheory.PowerSeries.WellKnown"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "negBin_coeffMA45",
+          "header": "theorem negBin_coeffMA45 (t n : ℕ) :\n PowerSeries.coeff n (negBinMA45 t) = ((t+n).choose n : ℝ)",
+          "block_sha256": "17a39a4bcff72be9dfd71a7fd2900bfbf7240a2a93e8e5afa72a14213b2138a1",
+          "block_characters": 214
+        },
+        {
+          "kind": "theorem",
+          "name": "negBin_mulMA45",
+          "header": "theorem negBin_mulMA45 (t u : ℕ) :\n negBinMA45 t*negBinMA45 u = negBinMA45 (t+u+1)",
+          "block_sha256": "f16cf9015420f13e409a1f822d2890b77654630730643d45718f4f1ce9d9924d",
+          "block_characters": 142
+        },
+        {
+          "kind": "theorem",
+          "name": "negBin_weightMA45",
+          "header": "theorem negBin_weightMA45 (t : ℕ) :\n PowerSeries.mk (fun n => (n:ℝ)*PowerSeries.coeff n (negBinMA45 t)) =\n PowerSeries.C (t+1:ℝ)* (negBinMA45 (t+1)*PowerSeries.X)",
+          "block_sha256": "000e0861e26b040a58477c8dd67a4b705bd03ae17aef1b92ec8ba1869edcc1eb",
+          "block_characters": 621
+        },
+        {
+          "kind": "theorem",
+          "name": "binomial_momentMA45",
+          "header": "theorem binomial_momentMA45 (j t u n : ℕ) :\n (∑ p ∈ antidiagonal n, ((j:ℝ)-p.1)*((j:ℝ)-p.2)*\n   PowerSeries.coeff p.1 (negBinMA45 t)*PowerSeries.coeff p.2 (negBinMA45 u)) =\n (j:ℝ)*(j-n)*PowerSeries.coeff n (negBinMA45 (t+u+1)) +\n (t+1:ℝ)*(u+1)*PowerSeries.coeff n (negBinMA45 (t+u+3)*PowerSeries.X^2)",
+          "block_sha256": "f0ceba9bba5381cda4350f677e08abfbe2595b0dfd304f6553f7477883ac7b3b",
+          "block_characters": 1296
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "geomMA45",
+          "header": "def geomMA45 : PowerSeries ℝ",
+          "block_sha256": "86f68a71606b1210fe683bab196e7f86d19afcbc06e367f7fde54b04b26348de",
+          "block_characters": 48,
+          "definition_text": "def geomMA45 : PowerSeries ℝ := PowerSeries.mk 1"
+        },
+        {
+          "kind": "def",
+          "name": "negBinMA45",
+          "header": "def negBinMA45 (t : ℕ) : PowerSeries ℝ",
+          "block_sha256": "776c6b930ef0430d623356ea38fbb2f95c7537d4fa9a1fae6ebb966da84b9c27",
+          "block_characters": 56,
+          "definition_text": "def negBinMA45 (t : ℕ) : PowerSeries ℝ := geomMA45^(t+1)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCutoffAdjacentMA45",
+      "path": "research/MarkovCutoffAdjacentMA45.lean",
+      "bytes": 3311,
+      "sha256": "30b20271257b6afe2e8de9cdd845508cc0b4e50974bce43238e100a0788867a1",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "q_cutoff_adjacent_succMA45"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792216685922166000.json",
+          "sha256": "daa9f81ac2e400d2f2593df2dea817bac3d0d1739858f8f4e25867b370e3cbc7",
+          "source_sha256": "30b20271257b6afe2e8de9cdd845508cc0b4e50974bce43238e100a0788867a1",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "30b20271257b6afe2e8de9cdd845508cc0b4e50974bce43238e100a0788867a1"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in178": true,
+      "printed_in178": true,
+      "object_path": "evidence/markov-a45def12/MarkovCutoffAdjacentMA45.olean",
+      "object_sha256": "247a57efc71d08ed58d5893e73fee708aa1e8465814e8df6fbde9820f3f8a604",
+      "successful_final_build": "evidence/markov-a45def12/build-1792216685922166000.json",
+      "historical_successful_source_versions": [
+        "30b20271257b6afe2e8de9cdd845508cc0b4e50974bce43238e100a0788867a1"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovEndpointBinomialsMA45"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "q_cutoff_adjacent_succMA45",
+          "header": "theorem q_cutoff_adjacent_succMA45 (k s : ℕ) :\n (qPolyM7E2 (k+2) (s+1)^2).coeff (k+1)*\n   (qPolyM7E2 (k+2) s*qPolyM7E2 (k+2) (s+2)).coeff (k+2) ≤\n (qPolyM7E2 (k+2) (s+1)^2).coeff (k+2)*\n   (qPolyM7E2 (k+2) s*qPolyM7E2 (k+2) (s+2)).coeff (k+1)",
+          "block_sha256": "74f63b8da3193a58171092823ae433dc6cdd7ac223a37b3ed63099eb674a42f7",
+          "block_characters": 3005
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCutoffFormulaMA45",
+      "path": "research/MarkovCutoffFormulaMA45.lean",
+      "bytes": 2638,
+      "sha256": "415603fa7cfcf1d874be87a483371fdc3072cac07bc90675a771b8c78b77a4f0",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "q_endpoint_coeffMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_zero_coeffMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_product_cutoffMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_product_cutoff_succMA45"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792216395852648000.json",
+          "sha256": "b344b1c16489c2d52864e8da98dafa48c6e1fb09fd23b02fca033225647f8d3b",
+          "source_sha256": "68008e0fc2564a4faa48b7c7c12f4936570de27a475645ca74f2744e7b5cabd1",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "68008e0fc2564a4faa48b7c7c12f4936570de27a475645ca74f2744e7b5cabd1"
+        },
+        {
+          "path": "build-1792216464286454000.json",
+          "sha256": "a024b0d1c79f6ef4ae885fd441aaa58b8c3525c85a8ac107c48660a22ab44d8a",
+          "source_sha256": "415603fa7cfcf1d874be87a483371fdc3072cac07bc90675a771b8c78b77a4f0",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "415603fa7cfcf1d874be87a483371fdc3072cac07bc90675a771b8c78b77a4f0"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in178": true,
+      "printed_in178": true,
+      "object_path": "evidence/markov-a45def12/MarkovCutoffFormulaMA45.olean",
+      "object_sha256": "3ae2eadcd9653b5a011888a17618f373216219c0d7f4fb8b3d1790ee422e098f",
+      "successful_final_build": "evidence/markov-a45def12/build-1792216464286454000.json",
+      "historical_successful_source_versions": [
+        "415603fa7cfcf1d874be87a483371fdc3072cac07bc90675a771b8c78b77a4f0"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovLowAdjacentMA45"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "q_endpoint_coeffMA45",
+          "header": "theorem q_endpoint_coeffMA45 (j s : ℕ) :\n (qPolyM7E2 j s).coeff j = ((s+j+3).choose j:ℝ)",
+          "block_sha256": "b2073d7a9aadb4a1c1a596b5d5e4b447c420927d178ee929d24be7d14060c577",
+          "block_characters": 151
+        },
+        {
+          "kind": "theorem",
+          "name": "q_zero_coeffMA45",
+          "header": "theorem q_zero_coeffMA45 (j s : ℕ) (hj : 0 < j) :\n (qPolyM7E2 j s).coeff 0 = 4*(j:ℝ)",
+          "block_sha256": "e1c11f7d4db763c54f4e25e9d851401ead56265d63320828729b9803062b56e2",
+          "block_characters": 149
+        },
+        {
+          "kind": "theorem",
+          "name": "q_product_cutoffMA45",
+          "header": "theorem q_product_cutoffMA45 (j s t : ℕ) (hj : 0 < j) :\n (qPolyM7E2 j s*qPolyM7E2 j t).coeff j =\n 16*(s+4:ℝ)*(t+4)*PowerSeries.coeff j (negBinMA45 (s+t+9)*PowerSeries.X^2) +\n 4*(j:ℝ)*(((s+j+3).choose j:ℝ)+((t+j+3).choose j:ℝ))",
+          "block_sha256": "d69f73dc48313b6656afa771463f065d0be410f252e1e79934eb89eee51aff15",
+          "block_characters": 1605
+        },
+        {
+          "kind": "theorem",
+          "name": "q_product_cutoff_succMA45",
+          "header": "theorem q_product_cutoff_succMA45 (k s t : ℕ) :\n (qPolyM7E2 (k+2) s*qPolyM7E2 (k+2) t).coeff (k+2) =\n 16*(s+4:ℝ)*(t+4)*((s+t+k+9).choose k:ℝ) +\n 4*(k+2:ℝ)*(((s+k+5).choose (k+2):ℝ)+((t+k+5).choose (k+2):ℝ))",
+          "block_sha256": "927f44f0a32b381da89a18b4b1aa4533d782d73c9b2ddb8f582fa776da364161",
+          "block_characters": 427
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovDoubleChooseMA45",
+      "path": "research/MarkovDoubleChooseMA45.lean",
+      "bytes": 2451,
+      "sha256": "9c396a544711b68d052b4cfeda52110cbf28dcede4db738548105d7f3d7e1f35",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "double_choose_quadraticMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "cutoff_binomial_boundMA45"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792216488599813000.json",
+          "sha256": "035f440e6a16013eaf3d39912d27b94301308870de882b2dda4cf3b3c870d4e3",
+          "source_sha256": "d5ce0eed449328157ad91fafca4149754d3142313652e67485afc0eb36c73422",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "d5ce0eed449328157ad91fafca4149754d3142313652e67485afc0eb36c73422"
+        },
+        {
+          "path": "build-1792216508063209000.json",
+          "sha256": "fbc9f53591f84004de10273317abb2fcd4adc2c7972278400a66effff75ae9d4",
+          "source_sha256": "443ddf14de754c9df26627dabd31cc198eae6766f9213ddc0d40b5ba64bcc942",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "443ddf14de754c9df26627dabd31cc198eae6766f9213ddc0d40b5ba64bcc942"
+        },
+        {
+          "path": "build-1792216560944037000.json",
+          "sha256": "fcaed723427e7d8c0489737fd411fc7b8d1cf8acc89a5196b2c5af2356843dbc",
+          "source_sha256": "9c396a544711b68d052b4cfeda52110cbf28dcede4db738548105d7f3d7e1f35",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "9c396a544711b68d052b4cfeda52110cbf28dcede4db738548105d7f3d7e1f35"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in178": true,
+      "printed_in178": true,
+      "object_path": "evidence/markov-a45def12/MarkovDoubleChooseMA45.olean",
+      "object_sha256": "dbe0872d8cd814069eb217a1c3fd0fa483c5f2afbd4344ce1d7d6f399f1a046c",
+      "successful_final_build": "evidence/markov-a45def12/build-1792216560944037000.json",
+      "historical_successful_source_versions": [
+        "9c396a544711b68d052b4cfeda52110cbf28dcede4db738548105d7f3d7e1f35"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovCutoffFormulaMA45"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "double_choose_quadraticMA45",
+          "header": "theorem double_choose_quadraticMA45 (p q : ℕ) (hp : 3 ≤ p) :\n ((p+q).choose q:ℝ)*(q+1)*(q+2) ≤ 4*((2*p+q+1).choose q:ℝ)",
+          "block_sha256": "1932411b75ca627e808ca807cc8d7ac5531f9cf93261cee7c38cedc59b9874a9",
+          "block_characters": 1895
+        },
+        {
+          "kind": "theorem",
+          "name": "cutoff_binomial_boundMA45",
+          "header": "theorem cutoff_binomial_boundMA45 (s k : ℕ) :\n ((s+k+5).choose k:ℝ)*(k+1)*(k+2) ≤ 4*((2*s+k+11).choose k:ℝ)",
+          "block_sha256": "92ab0bf74cdbff82a6827afeb668e43dd936bf2d83473d43882ea6236f26cda5",
+          "block_characters": 249
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovEndpointBinomialsMA45",
+      "path": "research/MarkovEndpointBinomialsMA45.lean",
+      "bytes": 1927,
+      "sha256": "833b55182776c17ae053074c87c8f2009a2f6faace09dc26064ade4fb52fce7e",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "choose_second_differenceMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "endpoint_sum_scaledMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "cutoff_scalar_positiveMA45"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792216590646528000.json",
+          "sha256": "29e16691063e9b3ed48d43c2347b2057b79b12b860a093b1c1ab69b375e7288e",
+          "source_sha256": "deef1edb7100e42d1028cd85da3b64361a37aa003367fb2f324da51627b0fa1a",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "deef1edb7100e42d1028cd85da3b64361a37aa003367fb2f324da51627b0fa1a"
+        },
+        {
+          "path": "build-1792216641222554000.json",
+          "sha256": "f39abcd734bc8429844c5b8bfb8ee7acd5e49223a899d8c48ebbd647a5eb98e6",
+          "source_sha256": "833b55182776c17ae053074c87c8f2009a2f6faace09dc26064ade4fb52fce7e",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "833b55182776c17ae053074c87c8f2009a2f6faace09dc26064ade4fb52fce7e"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in178": true,
+      "printed_in178": true,
+      "object_path": "evidence/markov-a45def12/MarkovEndpointBinomialsMA45.olean",
+      "object_sha256": "ab65ef3c4160bc0ad38175e95931c6177d0d444ff193866c6022dbf9ebf80823",
+      "successful_final_build": "evidence/markov-a45def12/build-1792216641222554000.json",
+      "historical_successful_source_versions": [
+        "833b55182776c17ae053074c87c8f2009a2f6faace09dc26064ade4fb52fce7e"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovDoubleChooseMA45"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "choose_second_differenceMA45",
+          "header": "theorem choose_second_differenceMA45 (N k : ℕ) :\n ((N+2).choose (k+2):ℝ)-2*((N+1).choose (k+2):ℝ)+(N.choose (k+2):ℝ) =\n (N.choose k:ℝ)",
+          "block_sha256": "09b24c2a0b1f5e3dc0018919fc6cb5c9299bbcec5b4d2f03bada32cab0dc17b3",
+          "block_characters": 282
+        },
+        {
+          "kind": "theorem",
+          "name": "endpoint_sum_scaledMA45",
+          "header": "theorem endpoint_sum_scaledMA45 (s k : ℕ) :\n (k+2:ℝ)*(k+1)*(((s+k+5).choose (k+2):ℝ)+((s+k+7).choose (k+2):ℝ)) =\n ((s+k+5).choose k:ℝ)*((s+4:ℝ)*(s+5)+(s+k+6:ℝ)*(s+k+7))",
+          "block_sha256": "17416ffcdaae5dcb1f5b0c4e6967566044fefc27209ecaa6d967185e6a5e1296",
+          "block_characters": 1018
+        },
+        {
+          "kind": "theorem",
+          "name": "cutoff_scalar_positiveMA45",
+          "header": "theorem cutoff_scalar_positiveMA45 (s k : ℝ) (hs : 0 ≤ s) (hk : 0 ≤ k) :\n 0 ≤ (k+2)^2*((2*s+10)*(2*s+11))-\n   ((s+4)*(s+5)+(s+k+6)*(s+k+7))-(s+4)*(s+6)*(k+2)*(k+1)",
+          "block_sha256": "3dd61c1d36713b53a6fd3f8ed52f215d4f26c3d2b432529e7c1e59f52ec25086",
+          "block_characters": 366
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLowAdjacentMA45",
+      "path": "research/MarkovLowAdjacentMA45.lean",
+      "bytes": 1871,
+      "sha256": "ba01a396461197e9bf00c2293bb81527002c070ebca2cc23d6855347a58a1248",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "q_low_adjacentMA45"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792216246092064000.json",
+          "sha256": "a3c89d28a24ef03aec832c0e964d45a5fc6f08bc80b991981e47d5430884b984",
+          "source_sha256": "ba01a396461197e9bf00c2293bb81527002c070ebca2cc23d6855347a58a1248",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "ba01a396461197e9bf00c2293bb81527002c070ebca2cc23d6855347a58a1248"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in178": true,
+      "printed_in178": true,
+      "object_path": "evidence/markov-a45def12/MarkovLowAdjacentMA45.olean",
+      "object_sha256": "2dd1c387a3845b035be9b7b4ed4eb967b03dc0e8b3157f063f2d8f6a8dc48443",
+      "successful_final_build": "evidence/markov-a45def12/build-1792216246092064000.json",
+      "historical_successful_source_versions": [
+        "ba01a396461197e9bf00c2293bb81527002c070ebca2cc23d6855347a58a1248"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovLowConvolutionMA45"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "q_low_adjacentMA45",
+          "header": "theorem q_low_adjacentMA45 (j s n : ℕ) (hn : n+1 < j) :\n (qPolyM7E2 j (s+1)^2).coeff n*(qPolyM7E2 j s*qPolyM7E2 j (s+2)).coeff (n+1) ≤\n (qPolyM7E2 j (s+1)^2).coeff (n+1)*(qPolyM7E2 j s*qPolyM7E2 j (s+2)).coeff n",
+          "block_sha256": "5eaf75024ff1659bacc25380b87cc1f43e3a407edd54b078b80bdf79e211ac9e",
+          "block_characters": 1587
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovLowConvolutionMA45",
+      "path": "research/MarkovLowConvolutionMA45.lean",
+      "bytes": 2737,
+      "sha256": "c63d3d8c22425367f328b7dab4ccca7c7cbadd1fc416a750f230edc636fd928d",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "q_interior_coeffMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_product_interiorMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "second_moment_scaleMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_product_scaledMA45"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792216184688617000.json",
+          "sha256": "8af2af45aa91442470f13c51dbbdd7892c35b4537204868a739afeee5ff47360",
+          "source_sha256": "f3e9c366d205916283177d0c8998d023f432658e547c2fb6350d5cb155176f49",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "f3e9c366d205916283177d0c8998d023f432658e547c2fb6350d5cb155176f49"
+        },
+        {
+          "path": "build-1792216213293235000.json",
+          "sha256": "87a28a1bd29ef6a28f5048a46f71b123608e078c28c62707e15f5045c0ff0397",
+          "source_sha256": "c63d3d8c22425367f328b7dab4ccca7c7cbadd1fc416a750f230edc636fd928d",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "c63d3d8c22425367f328b7dab4ccca7c7cbadd1fc416a750f230edc636fd928d"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in178": true,
+      "printed_in178": true,
+      "object_path": "evidence/markov-a45def12/MarkovLowConvolutionMA45.olean",
+      "object_sha256": "fcf8509455f8b4a47731b05574cddd33f93faadf0258c81d7e411e367bbe1e54",
+      "successful_final_build": "evidence/markov-a45def12/build-1792216213293235000.json",
+      "historical_successful_source_versions": [
+        "c63d3d8c22425367f328b7dab4ccca7c7cbadd1fc416a750f230edc636fd928d"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBinomialMomentsMA45"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "q_interior_coeffMA45",
+          "header": "theorem q_interior_coeffMA45 (j s n : ℕ) (hn : n < j) :\n (qPolyM7E2 j s).coeff n = 4*((j:ℝ)-n)*PowerSeries.coeff n (negBinMA45 (s+3))",
+          "block_sha256": "25553d0561b2656c4977d3979b9ec386c915361d55e3193493eecfd3c8e6a892",
+          "block_characters": 352
+        },
+        {
+          "kind": "theorem",
+          "name": "q_product_interiorMA45",
+          "header": "theorem q_product_interiorMA45 (j s t n : ℕ) (hn : n < j) :\n (qPolyM7E2 j s*qPolyM7E2 j t).coeff n =\n 16*((j:ℝ)*(j-n)*PowerSeries.coeff n (negBinMA45 (s+t+7)) +\n (s+4:ℝ)*(t+4)*PowerSeries.coeff n (negBinMA45 (s+t+9)*PowerSeries.X^2))",
+          "block_sha256": "7d0af7d201f4cd90a15d7d0121f786a9f9261bad791ca23dcf5020266e600a8d",
+          "block_characters": 661
+        },
+        {
+          "kind": "theorem",
+          "name": "second_moment_scaleMA45",
+          "header": "theorem second_moment_scaleMA45 (t n : ℕ) :\n (t+1:ℝ)*(t+2)*PowerSeries.coeff n (negBinMA45 (t+2)*PowerSeries.X^2) =\n (n:ℝ)*(n-1)*PowerSeries.coeff n (negBinMA45 t)",
+          "block_sha256": "e0f4059370a4254d8bf9edd59b725b39f790095b0ce7c6608f83f0671f5d0456",
+          "block_characters": 945
+        },
+        {
+          "kind": "theorem",
+          "name": "q_product_scaledMA45",
+          "header": "theorem q_product_scaledMA45 (j s t n : ℕ) (hn : n < j) :\n (s+t+8:ℝ)*(s+t+9)*(qPolyM7E2 j s*qPolyM7E2 j t).coeff n =\n 16*((s+t+n+7).choose n:ℝ)*\n   ((s+t+8:ℝ)*(s+t+9)*(j:ℝ)*(j-n)+(s+4:ℝ)*(t+4)*(n:ℝ)*(n-1))",
+          "block_sha256": "90e90d5415724279bc609f17e48c070213d8a818810d3b4e284e2c47d220397c",
+          "block_characters": 475
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovTopAdjacentMA45",
+      "path": "research/MarkovTopAdjacentMA45.lean",
+      "bytes": 3235,
+      "sha256": "07d9303bc2d41d76240cb10b222d9988a39b9cbfbc3ba99e9e36372d380ee6e0",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "q_top_coeffMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_pretop_coeffMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_product_topMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_product_pretopMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_last_adjacentMA45"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792216642378056000.json",
+          "sha256": "ea33bc7153416b9d72ef5ccae622368d7c73bf3ac274a951d5f36385bf205466",
+          "source_sha256": "07d9303bc2d41d76240cb10b222d9988a39b9cbfbc3ba99e9e36372d380ee6e0",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "07d9303bc2d41d76240cb10b222d9988a39b9cbfbc3ba99e9e36372d380ee6e0"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in178": true,
+      "printed_in178": true,
+      "object_path": "evidence/markov-a45def12/MarkovTopAdjacentMA45.olean",
+      "object_sha256": "c2d27fed12c02414aac31c73197aa30ba4a7eab1f4cf8951eb695cdf44e3e9aa",
+      "successful_final_build": "evidence/markov-a45def12/build-1792216642378056000.json",
+      "historical_successful_source_versions": [
+        "07d9303bc2d41d76240cb10b222d9988a39b9cbfbc3ba99e9e36372d380ee6e0"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovLowAdjacentMA45"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "q_top_coeffMA45",
+          "header": "theorem q_top_coeffMA45 (k s : ℕ) :\n (qPolyM7E2 (k+1) s).coeff (k+1)=((s+k+4).choose (k+1):ℝ)",
+          "block_sha256": "2195a09e24b6bdc1ec0c1595576df9cb7ec9917a56063975e904c1f0f3380086",
+          "block_characters": 254
+        },
+        {
+          "kind": "theorem",
+          "name": "q_pretop_coeffMA45",
+          "header": "theorem q_pretop_coeffMA45 (k s : ℕ) :\n (qPolyM7E2 (k+1) s).coeff k=4*((s+k+3).choose k:ℝ)",
+          "block_sha256": "9b0367a42d348eeb687631df0fe7a780d97e6bef6dd8b3e57c0b2f5a36c756cf",
+          "block_characters": 210
+        },
+        {
+          "kind": "theorem",
+          "name": "q_product_topMA45",
+          "header": "theorem q_product_topMA45 (k s t : ℕ) :\n (qPolyM7E2 (k+1) s*qPolyM7E2 (k+1) t).coeff (2*k+2) =\n ((s+k+4).choose (k+1):ℝ)*((t+k+4).choose (k+1):ℝ)",
+          "block_sha256": "5bdec8ffbff56969d1513bccad74ce023d2fbe19955151ff47b9dd2132a5063c",
+          "block_characters": 310
+        },
+        {
+          "kind": "theorem",
+          "name": "q_product_pretopMA45",
+          "header": "theorem q_product_pretopMA45 (k s t : ℕ) :\n (qPolyM7E2 (k+1) s*qPolyM7E2 (k+1) t).coeff (2*k+1) =\n 4*(((s+k+4).choose (k+1):ℝ)*((t+k+3).choose k:ℝ)+\n   ((s+k+3).choose k:ℝ)*((t+k+4).choose (k+1):ℝ))",
+          "block_sha256": "0a0935da438f06ab1f91852370858d8ffe7f61bc870afa28cb82edad676ed55b",
+          "block_characters": 716
+        },
+        {
+          "kind": "theorem",
+          "name": "q_last_adjacentMA45",
+          "header": "theorem q_last_adjacentMA45 (k s : ℕ) :\n (qPolyM7E2 (k+1) (s+1)^2).coeff (2*k+1)*\n   (qPolyM7E2 (k+1) s*qPolyM7E2 (k+1) (s+2)).coeff (2*k+2) ≤\n (qPolyM7E2 (k+1) (s+1)^2).coeff (2*k+2)*\n   (qPolyM7E2 (k+1) s*qPolyM7E2 (k+1) (s+2)).coeff (2*k+1)",
+          "block_sha256": "b3d335d1ab5f29f9bbfdc098bd1099b29805cdb5c4e46b024d3f24f202826c61",
+          "block_characters": 1431
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovUpperReductionMA45",
+      "path": "research/MarkovUpperReductionMA45.lean",
+      "bytes": 2386,
+      "sha256": "9d9a8ea17878f42caa8eabfce07750d9100eeccb3cd7c10e36c4dedc88d9ad14",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "q_one_firstMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_below_cutoffMA45"
+        },
+        {
+          "kind": "def",
+          "name": "UpperAdjacentMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_adjacent_iffMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_ratio_iffMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "sharp_margin_of_upperMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_of_upperMA45"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792216743167178000.json",
+          "sha256": "bc0ecd974e3acb3a92e6f4c286167bfa6f6fccd8ab0813118f0a4bff3aaf8ce3",
+          "source_sha256": "9d9a8ea17878f42caa8eabfce07750d9100eeccb3cd7c10e36c4dedc88d9ad14",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "9d9a8ea17878f42caa8eabfce07750d9100eeccb3cd7c10e36c4dedc88d9ad14"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in178": true,
+      "printed_in178": true,
+      "object_path": "evidence/markov-a45def12/MarkovUpperReductionMA45.olean",
+      "object_sha256": "d0e5796235dd86146d834a1e6a8df6b79f3fff2bd9bcffe9a4838bb4f12c0681",
+      "successful_final_build": "evidence/markov-a45def12/build-1792216743167178000.json",
+      "historical_successful_source_versions": [
+        "9d9a8ea17878f42caa8eabfce07750d9100eeccb3cd7c10e36c4dedc88d9ad14"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovCutoffAdjacentMA45",
+        "MarkovTopAdjacentMA45"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "q_one_firstMA45",
+          "header": "theorem q_one_firstMA45 (s : ℕ) :\n (qPolyM7E2 1 (s+1)^2).coeff 0*(qPolyM7E2 1 s*qPolyM7E2 1 (s+2)).coeff 1 ≤\n (qPolyM7E2 1 (s+1)^2).coeff 1*(qPolyM7E2 1 s*qPolyM7E2 1 (s+2)).coeff 0",
+          "block_sha256": "a5952134f19be11e782f9e1d7e98b51540450ea7fd7e8807ba5a35e93eec368e",
+          "block_characters": 337
+        },
+        {
+          "kind": "theorem",
+          "name": "q_below_cutoffMA45",
+          "header": "theorem q_below_cutoffMA45 (j s n : ℕ) (hn : n < j) :\n (qPolyM7E2 j (s+1)^2).coeff n*(qPolyM7E2 j s*qPolyM7E2 j (s+2)).coeff (n+1) ≤\n (qPolyM7E2 j (s+1)^2).coeff (n+1)*(qPolyM7E2 j s*qPolyM7E2 j (s+2)).coeff n",
+          "block_sha256": "87e1345005b5bcc52c9ec60d46c0a2aeda4ceac946f112a8de4e94877ffc33a0",
+          "block_characters": 438
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_adjacent_iffMA45",
+          "header": "theorem upper_adjacent_iffMA45 : UpperAdjacentMA45 ↔ UnshiftedAdjacentM09F",
+          "block_sha256": "39627fb8d3e90ca3db713068fc90de0e6ebc8717cfc8b828a951d0973ce2333b",
+          "block_characters": 490
+        },
+        {
+          "kind": "theorem",
+          "name": "upper_ratio_iffMA45",
+          "header": "theorem upper_ratio_iffMA45 : UpperAdjacentMA45 ↔ UnshiftedRatioM09F",
+          "block_sha256": "f3dfcc6d647ab1b44032ece079af26f0783da8f8ade01f1aa173583dab55e44f",
+          "block_characters": 128
+        },
+        {
+          "kind": "theorem",
+          "name": "sharp_margin_of_upperMA45",
+          "header": "theorem sharp_margin_of_upperMA45 (H : UpperAdjacentMA45) : SharpCompleteMarginMBE3",
+          "block_sha256": "e472e05d0c462e0eaed080bb8cf1acb7247f6049cb5df94901ee7e2f5417c7cc",
+          "block_characters": 144
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_of_upperMA45",
+          "header": "theorem source_band_of_upperMA45 (H : UpperAdjacentMA45)\n (q k i : ℕ) (r : Bool) (hq : 2 ≤ q) (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n threeRawM9E2 q r i (q+k+1)*threeRawM9E2 q r (i+2) (q+k+1) ≤\n threeRawM9E2 q r (i+1) (q+k+1)^2",
+          "block_sha256": "9059b037e7e06629228e7cac2c6b11f8f8ddeaf206032e227ae2e39d861627cd",
+          "block_characters": 308
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "UpperAdjacentMA45",
+          "header": "def UpperAdjacentMA45 : Prop",
+          "block_sha256": "c7625a86507873b42768513387a2cb0028288fb3605e7307bcff21caa6a6a03e",
+          "block_characters": 220,
+          "definition_text": "def UpperAdjacentMA45 : Prop := ∀ j s n : ℕ, j ≤ n → n+1 < 2*j →\n (qPolyM7E2 j (s+1)^2).coeff n*(qPolyM7E2 j s*qPolyM7E2 j (s+2)).coeff (n+1) ≤\n (qPolyM7E2 j (s+1)^2).coeff (n+1)*(qPolyM7E2 j s*qPolyM7E2 j (s+2)).coeff n"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovWeightRepresentationMA45",
+      "path": "research/MarkovWeightRepresentationMA45.lean",
+      "bytes": 3073,
+      "sha256": "36a612dcbda01e69c9f1dc9ebcb96fcd8948ef453bd37609fbf323f3aca722ce",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "q_weight_nat_positiveMA45"
+        },
+        {
+          "kind": "def",
+          "name": "weightSeriesMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_series_splitMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "geom_squared_inverseMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_series_factorMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_series_rationalMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "affine_three_det_zeroMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "affine_four_det_zeroMA45"
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_333_det_zeroMA45"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792217063821138000.json",
+          "sha256": "7e2f5a9e4f2129ff138dc729c2f569b9130a96b703ee3ec6344a450d189db812",
+          "source_sha256": "07346fac862bbf2a55b43d0b832afed9ad483feefff48b01e0e1f0f4f02389b9",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "07346fac862bbf2a55b43d0b832afed9ad483feefff48b01e0e1f0f4f02389b9"
+        },
+        {
+          "path": "build-1792217240087547000.json",
+          "sha256": "6147c88ed1d989961f42e378ec445b8e824faf99521350212803c845ee258284",
+          "source_sha256": "adce2633da1a8ab6ffe37d1de19a94ebe1c1cdb982c8d45c98c1fdfdfdd4d938",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "adce2633da1a8ab6ffe37d1de19a94ebe1c1cdb982c8d45c98c1fdfdfdd4d938"
+        },
+        {
+          "path": "build-1792217276731948000.json",
+          "sha256": "31224750ef0564e1a2b863f138d88dd6dc6f5fbddccb014edb99f7fca4e77d37",
+          "source_sha256": "36a612dcbda01e69c9f1dc9ebcb96fcd8948ef453bd37609fbf323f3aca722ce",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "36a612dcbda01e69c9f1dc9ebcb96fcd8948ef453bd37609fbf323f3aca722ce"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in178": true,
+      "printed_in178": true,
+      "object_path": "evidence/markov-a45def12/MarkovWeightRepresentationMA45.olean",
+      "object_sha256": "e697116365906c789a705bdeff4c911a294a91bde63b59345f2df081a5a8577b",
+      "successful_final_build": "evidence/markov-a45def12/build-1792217276731948000.json",
+      "historical_successful_source_versions": [
+        "36a612dcbda01e69c9f1dc9ebcb96fcd8948ef453bd37609fbf323f3aca722ce"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovUpperReductionMA45"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "q_weight_nat_positiveMA45",
+          "header": "theorem q_weight_nat_positiveMA45 (n : ℕ) : qWeightM7E2 (n+1) = 4*(n+1:ℝ)",
+          "block_sha256": "00e7e70f60d45d3711a84acf10068baf4d58f1e5c87416466d454a605f84da7a",
+          "block_characters": 212
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_series_splitMA45",
+          "header": "theorem weight_series_splitMA45 : weightSeriesMA45 =\n 1+PowerSeries.C (4:ℝ)*(negBinMA45 1*PowerSeries.X)",
+          "block_sha256": "835eae214a8c3854f88720229deb675b90cbb1720377badee06c8b73e7ec9b55",
+          "block_characters": 595
+        },
+        {
+          "kind": "theorem",
+          "name": "geom_squared_inverseMA45",
+          "header": "theorem geom_squared_inverseMA45 : negBinMA45 1*(1-PowerSeries.X)^2=1",
+          "block_sha256": "820fe25691a9b842fbcc7b410649d9241b1e9133b1fa0e3cb272614a994e00b6",
+          "block_characters": 239
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_series_factorMA45",
+          "header": "theorem weight_series_factorMA45 : weightSeriesMA45 =\n (1+PowerSeries.X)^2*negBinMA45 1",
+          "block_sha256": "850c719a386f1b1b8592c9a3348dbb80dceb75238698548431812b12897a927e",
+          "block_characters": 342
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_series_rationalMA45",
+          "header": "theorem weight_series_rationalMA45 :\n weightSeriesMA45*(1-PowerSeries.X)^2=(1+PowerSeries.X)^2",
+          "block_sha256": "f87b2aa94f68803613ab42912765b660ed07188a232bef2b7b6911d8ea8af975",
+          "block_characters": 174
+        },
+        {
+          "kind": "theorem",
+          "name": "affine_three_det_zeroMA45",
+          "header": "theorem affine_three_det_zeroMA45 (a b c x y z : ℝ) :\n Matrix.det !![a+x,a+y,a+z; b+x,b+y,b+z; c+x,c+y,c+z]=0",
+          "block_sha256": "b2e0b09074cbac5a922e4bef424514182a076bcd0088336faf36c2924e608642",
+          "block_characters": 273
+        },
+        {
+          "kind": "theorem",
+          "name": "affine_four_det_zeroMA45",
+          "header": "theorem affine_four_det_zeroMA45 (a b c x y z t d e f g : ℝ) :\n Matrix.det !![a+x,a+y,a+z,a+t; b+x,b+y,b+z,b+t; c+x,c+y,c+z,c+t; d,e,f,g]=0",
+          "block_sha256": "1c94ded465467bbff384cdc19ba43676c5ecd765079a36ab9d7db28b2bf39f7b",
+          "block_characters": 543
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_333_det_zeroMA45",
+          "header": "theorem weight_333_det_zeroMA45 :\n Matrix.det !![qWeightM7E2 3,qWeightM7E2 4,qWeightM7E2 5;\n   qWeightM7E2 2,qWeightM7E2 3,qWeightM7E2 4;\n   qWeightM7E2 1,qWeightM7E2 2,qWeightM7E2 3]=0",
+          "block_sha256": "1e845b149dd5777303951928698685418a783ae49bca356cf07b745e8fa52406",
+          "block_characters": 279
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "weightSeriesMA45",
+          "header": "def weightSeriesMA45 : PowerSeries ℝ",
+          "block_sha256": "addd6848b8555ef3d3388380c762a7e36ce08b7b64a36ce9770ecd4233c48138",
+          "block_characters": 79,
+          "definition_text": "def weightSeriesMA45 : PowerSeries ℝ := PowerSeries.mk (fun n => qWeightM7E2 n)"
+        }
+      ],
+      "forbidden_tokens": []
+    }
+  ],
+  "excluded_modules": [],
+  "accepted_counts": {
+    "def": 4,
+    "theorem": 38
+  },
+  "excluded_counts": {},
+  "mathematical_values_recomputed": false,
+  "source_level_scope": {
+    "root_open": true,
+    "new_unconditional_raw_LC_region": false,
+    "new_unconditional_source_estimate": false,
+    "root_equivalence": "Conjecture63 iff ThreeBeyondBandM657 and OtherFourM9E2",
+    "remaining_predicates_unproved": [
+      "ThreeBeyondBandM657",
+      "OtherFourM9E2"
+    ],
+    "UpperAdjacentMA45_proved": false,
+    "SharpCompleteMargin_proved": false,
+    "UnshiftedAdjacent_proved": false,
+    "UnshiftedRatio_proved": false,
+    "closed_auxiliary_ranges": "All natural j,s,n: n<j (including n=j-1 cutoff) and last n=2j-1 for j>=1. j0 imposes no adjacency; j1 first step separate and final step covered.",
+    "remaining_auxiliary_range": "UpperAdjacentMA45: forall natural j,s,n, j<=n and n+1<2*j imply B_n*A_(n+1)<=B_(n+1)*A_n. No finite bound; remains unproved.",
+    "exact_auxiliary_equivalences": "UpperAdjacentMA45 iff UnshiftedAdjacentM09F iff UnshiftedRatioM09F. Not an equivalence with the root or SharpCompleteMargin.",
+    "conditional_source_LC": "UpperAdjacentMA45 implies sharp margin and raw H LC for q,k,i natural,r Boolean,q>=2,2*(q+k+1)+1<=N. Indices(i,q+k+1),(i+1,q+k+1),(i+2,q+k+1),allnaturalstarts/zeros. No extra polygon guard needed for this conditional stronger row conclusion.",
+    "source_residues": "r=false:N=3q+2; r=true:N=3q+1; actual paths false^(q-1)++[true,r]. q1 remains outside this adapter.",
+    "general_weight_or_Schur_result_proved": false,
+    "specific_weight_series_and_determinants_proved": true,
+    "actual_raw_source_counterexample": false,
+    "old212_recovery_claimed": false,
+    "old166_prefix_recovery_claimed": false,
+    "older_failed_versions_retroactively_recovered": false,
+    "prior_source_scope_unchanged": "Allactuala2 all3directions152;a3H3j<=N+9 inherited172;175bandprefixi<=5 or strict tailN<i+j+q,withq>=2,q<j,2j+1<=N. No clause removed178."
+  },
+  "literal_raw_indices": {
+    "horizontal": [
+      "(i,q+k+1)",
+      "(i+1,q+k+1)",
+      "(i+2,q+k+1)"
+    ]
+  },
+  "zero_and_endpoint_handling": "Formal power series shifted n0/1 zeros; distinct cutoff endpoints j>0;j1 explicit;j0 vacuous adjacency. Inherited complete interval support/tails proved, raw natural zeros retained. Original root polygon and0/1,1/1 endpoints unchanged.",
+  "proof_chain_details": {
+    "formal_moments": "geom=PowerSeries.mk1, negBin(t)=geom^(t+1). CommRing formal identities and Nat.choose recurrences, no convergence. Weighted antidiagonal identity uses i+k=n and coefficient multiplication.",
+    "lower_formula": "q_product_interior for natural n<j. Shifted coefficient negBin(s+t+9)*X^2 has zero coefficients n0/1; no Nat(n-2) substitution without guards. Second moment scale separates n0,n1,n>=2.",
+    "lower_adjacent": "n+1<j; D=(2s+10)(2s+11)>0. Denominator-free identity with256*C_n*C_(n+1)*D*j*n*(2j-n-1); only D^2 positive canceled, no coefficient division.",
+    "cutoff": "j>0 restores both distinct endpoint contributions(0,j),(j,0) with weight1 at q indexj. j0 excluded here; j1first handled separately. j=k+2,k>=0 uses exact Pascal second difference/endpoint sum, universal quadratic choose bound p>=3, and nonnegative scalar certificate.",
+    "top": "j=k+1>=1; polynomial reflection at supplied degree upper bound j, not unguarded natural-degree reversal. Positive x(x+1)(x+2),x=s+j+3, clears last-step identity; no possibly-zero coefficient division.",
+    "zero_support": "Inherited q coefficients positive0..j, products positive0..2j and zero beyond. Adjacent-to-ordered proof uses this proven interval support, includes j0 and zero tails. Actual raw zeros never removed.",
+    "series_scope": "weightSeries*(1-X)^2=(1+X)^2 via exact formal inverse; no analytic division. Affine3det and affine4det with arbitrary fourth row, plus explicit weight333det zero. General Schur evaluation/positivity/expansion not formalized.",
+    "source_bridge": "New source_band_of_upper invokes named177 source_band_of_adjacent; retains global UpperAdjacent premise and exact q>=2/nonnegative-exponent band. Original raw integer coefficients unchanged; no ratio normalization of target."
+  }
+}

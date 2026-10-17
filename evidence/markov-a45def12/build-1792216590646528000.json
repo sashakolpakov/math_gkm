@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovEndpointBinomialsMA45.lean:26:78: error: mod_cast has type\n  (s + k + 5 + 1).choose (k + 1) * (k + 1) = (s + k + 5 + 1) * (s + k + 5).choose k\nbut is expected to have type\n  (s + k + 6).choose (k + 1) * (k + 1) = (s + k + 5).choose k * (s + k + 6)\n/Users/sasha/math_gkm/research/MarkovEndpointBinomialsMA45.lean:27:82: error: mod_cast has type\n  (s + k + 6 + 1).choose (k + 1 + 1) * (k + 1 + 1) = (s + k + 6 + 1) * (s + k + 6).choose (k + 1)\nbut is expected to have type\n  (s + k + 7).choose (k + 2) * (k + 2) = (s + k + 6).choose (k + 1) * (s + k + 7)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovEndpointBinomialsMA45": "deef1edb7100e42d1028cd85da3b64361a37aa003367fb2f324da51627b0fa1a"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-a45def12/MarkovEndpointBinomialsMA45.olean",
+    "/Users/sasha/math_gkm/research/MarkovEndpointBinomialsMA45.lean"
+  ],
+  "seconds": 8.841044583008625,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
