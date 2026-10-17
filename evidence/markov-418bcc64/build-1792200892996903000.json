@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovWeightedObstructionM418.lean:33:22: error(lean.unknownIdentifier): Unknown constant `Int.toNat_ofNat`\n/Users/sasha/math_gkm/research/MarkovWeightedObstructionM418.lean:21:99: error: unsolved goals\nh0 : augmentedLiftM7A3 7 8 0 = C 8\nh1 : augmentedLiftM7A3 7 8 1 = C 1968 + C 8 * X\nh2 : augmentedLiftM7A3 7 8 2 = C 18150 + C 4026 * X + C 8 * X ^ 2\nhw : \u2200 (a : \u211d), weightPolyMFEE (fun k => zchooseM37B 4 \u2191k) (C a) = C a\nh1' : weightPolyMFEE (fun k => if \u2191k < 0 then 0 else \u2191(Nat.choose 4 k)) (C 8 * X) = C 32 * X\nh2' : weightPolyMFEE (fun k => if \u2191k < 0 then 0 else \u2191(Nat.choose 4 k)) (C 4026 * X) = C 16104 * X\nh3' :\n  weightPolyMFEE (fun k => if \u2191k < 0 then 0 else \u2191(Nat.choose 4 k)) (C 8 * X ^ 2) =\n    \u2191(Nat.choose 4 (Int.toNat 2)) * C 8 * X ^ 2\n\u22a2 \u2191(Nat.choose 4 (Int.toNat 2)) * C 8 = C 48\n",
+  "stderr": "",
+  "modules": {
+    "MarkovWeightedObstructionM418": "fe43aa43bd01cc14eb48bed7e850558d1d3ff6128ce926461c604aaffb79cf23"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovWeightedObstructionM418.olean",
+    "/Users/sasha/math_gkm/research/MarkovWeightedObstructionM418.lean"
+  ],
+  "seconds": 15.86659241700545,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovWeightedObstructionM418.lean:26:3: error: Type mismatch: After simplification, term\n  h\n has type\n  weightPolyMFEE (fun k => \u2191(Nat.choose 4 k)) (C a) = C (zchooseM37B 4 0) * C a\nbut is expected to have type\n  weightPolyMFEE (fun k => \u2191(Nat.choose 4 k)) (C a) = C a\n/Users/sasha/math_gkm/research/MarkovWeightedObstructionM418.lean:32:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  weightPolyMFEE (fun k => \u2191(Nat.choose 4 k)) (C 8 * X)\nin the target expression\n  True \u2227\n    C 1968 + weightPolyMFEE (fun k => zchooseM37B 4 \u2191k) (C 8 * X) = C 1968 + C 32 * X \u2227\n      C 18150 + weightPolyMFEE (fun k => zchooseM37B 4 \u2191k) (C 4026 * X) +\n          weightPolyMFEE (fun k => zchooseM37B 4 \u2191k) (C 8 * X ^ 2) =\n        C 18150 + C 16104 * X + C 48 * X ^ 2\n\nh0 : augmentedLiftM7A3 7 8 0 = C 8\nh1 : augmentedLiftM7A3 7 8 1 = C 1968 + C 8 * X\nh2 : augmentedLiftM7A3 7 8 2 = C 18150 + C 4026 * X + C 8 * X ^ 2\nhw : \u2200 (a : \u211d), weightPolyMFEE (fun k => zchooseM37B 4 \u2191k) (C a) = C a\nh1' : weightPolyMFEE (fun k => \u2191(Nat.choose 4 k)) (C 8 * X) = C (zchooseM37B 4 1) * C 8 * X\nh2' : weightPolyMFEE (fun k => \u2191(Nat.choose 4 k)) (C 4026 * X) = C (zchooseM37B 4 1) * C 4026 * X\nh3' : weightPolyMFEE (fun k => \u2191(Nat.choose 4 k)) (C 8 * X ^ 2) = C (zchooseM37B 4 2) * C 8 * X ^ 2\n\u22a2 True \u2227\n    C 1968 + weightPolyMFEE (fun k => zchooseM37B 4 \u2191k) (C 8 * X) = C 1968 + C 32 * X \u2227\n      C 18150 + weightPolyMFEE (fun k => zchooseM37B 4 \u2191k) (C 4026 * X) +\n          weightPolyMFEE (fun k => zchooseM37B 4 \u2191k) (C 8 * X ^ 2) =\n        C 18150 + C 16104 * X + C 48 * X ^ 2\n",
+  "stderr": "",
+  "modules": {
+    "MarkovWeightedObstructionM418": "dc5770a2a31fb35539e2b068ba659891fae9c12e2c49afb5c584bdfd5994ac6a"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovWeightedObstructionM418.olean",
+    "/Users/sasha/math_gkm/research/MarkovWeightedObstructionM418.lean"
+  ],
+  "seconds": 107.59752574999584,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

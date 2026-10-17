@@ -1,0 +1,1779 @@
+{
+  "worker": 168,
+  "request": "418bcc643df14f6f8cfd3b6b16eb3aef",
+  "created_at_utc": "2026-10-17T02:01:22.874706+00:00",
+  "historical_status": "Completed/return0/report,1633.0466740131378 seconds. Ten selected modules compiled,replayed,61 theorem closures printed. Two excluded candidate modules remain unvalidated. Root open.",
+  "scope": "Closed168 archive and explicitly named inherited/current counterparts only. Static parsing, hashes, literal syntax comparison and domain-index counts. No project/compiler/checker/proof/replay/experiment/CAS/generator/finalizer execution or mathematical-value recomputation. No source edits/proposer contact/research help. Active169 and later excluded; prior seals/windows unchanged.",
+  "new_modules": [
+    {
+      "module": "MarkovCorrectionTailM418",
+      "path": "research/MarkovCorrectionTailM418.lean",
+      "bytes": 1416,
+      "sha256": "787fda4db7a4caaa93a72ce1fb8ebdeedb7baa8ffe22bc26a8ffd5d25e52378a",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "augmented_tail_valueM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "augmented_tail_lcM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_tailM418"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792200164927747000.json",
+          "sha256": "bd953983e0c2e611b7f9e4a0d1f0c2200e96b4c3eae88004fb9fd50ef5088e36",
+          "source_sha256": "787fda4db7a4caaa93a72ce1fb8ebdeedb7baa8ffe22bc26a8ffd5d25e52378a",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "787fda4db7a4caaa93a72ce1fb8ebdeedb7baa8ffe22bc26a8ffd5d25e52378a"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in168": true,
+      "printed_in168": true,
+      "object_path": "evidence/markov-418bcc64/MarkovCorrectionTailM418.olean",
+      "object_sha256": "5bdd0ff2b2d4996129f49a5152e52b8bca292d66cfd7207de8c88deb225bbc88",
+      "successful_build": "evidence/markov-418bcc64/build-1792200164927747000.json",
+      "imports": [
+        "MarkovAugmentedSourceM7A3"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "augmented_tail_valueM418",
+          "header": "theorem augmented_tail_valueM418 (d j t : ℕ) (c : ℤ) (ht : d < t+1) :\n augmentedOutputM7A3 d j c (t+1)=liftOutputMAE9 d j t",
+          "block_sha256": "53abe6a906b524e8660fbfcbd8b78d5ccb21ec295325751fa3b9e8215750cf30",
+          "block_characters": 185
+        },
+        {
+          "kind": "theorem",
+          "name": "augmented_tail_lcM418",
+          "header": "theorem augmented_tail_lcM418 (d j t : ℕ) (c : ℤ) (ht : d < t+1) :\n augmentedOutputM7A3 d j c (t+1)*augmentedOutputM7A3 d j c (t+3) ≤\n   augmentedOutputM7A3 d j c (t+2)^2",
+          "block_sha256": "374100a793b3c47d623fdeeee49692ce27b494d5c8628c9906d72290de0c2814",
+          "block_characters": 406
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_tailM418",
+          "header": "theorem source_correction_tailM418 (q t : ℕ) (r : Bool) (hq : 2 ≤ q)\n (ht : correctionExponentMDB2 q r < t+1) :\n threeRawM9E2 q r (t+3) (q+1)*threeRawM9E2 q r (t+5) (q+1) ≤\n   threeRawM9E2 q r (t+4) (q+1)^2",
+          "block_sha256": "a981764f6f0fe482383c84ad4818bf0d7bdbf405ccb3860b6c8f328ad399cf88",
+          "block_characters": 509
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCorrectionColumnsM418",
+      "path": "research/MarkovCorrectionColumnsM418.lean",
+      "bytes": 7564,
+      "sha256": "19073312c89abe266c5a9b2e6b61307bd710a5fcad092195823284bafda0bdc3",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "columnZeroM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "column_zero_explicitM418"
+        },
+        {
+          "kind": "def",
+          "name": "correctionColumn2M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_column2M418"
+        },
+        {
+          "kind": "def",
+          "name": "correctionColumn3M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_column3M418"
+        },
+        {
+          "kind": "def",
+          "name": "correctionColumn4M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_column4M418"
+        },
+        {
+          "kind": "def",
+          "name": "correctionColumn5M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_column5M418"
+        },
+        {
+          "kind": "def",
+          "name": "correctionColumn6M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_column6M418"
+        },
+        {
+          "kind": "def",
+          "name": "correctionColumn7M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_column7M418"
+        },
+        {
+          "kind": "def",
+          "name": "correctionColumn8M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_column8M418"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792200317154793000.json",
+          "sha256": "e9d622ae24f2cc073579057e2ff98dac8464aa9fe5577231c65ae95542dc74a9",
+          "source_sha256": "ae85d7cedf4c3255b9f405a27251e76c01432020a51b38be2de53456aff243e7",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "ae85d7cedf4c3255b9f405a27251e76c01432020a51b38be2de53456aff243e7"
+        },
+        {
+          "path": "build-1792200374347360000.json",
+          "sha256": "a545f2e6686d5418afaaf2b864a7326225b3555b7a4fdeac3ff01ffc40ef8f86",
+          "source_sha256": "19073312c89abe266c5a9b2e6b61307bd710a5fcad092195823284bafda0bdc3",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "19073312c89abe266c5a9b2e6b61307bd710a5fcad092195823284bafda0bdc3"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in168": true,
+      "printed_in168": true,
+      "object_path": "evidence/markov-418bcc64/MarkovCorrectionColumnsM418.olean",
+      "object_sha256": "3d0bbd49b1d8d18137e530519ccec13b81e1c1854af8968369c84cdf3154be32",
+      "successful_build": "evidence/markov-418bcc64/build-1792200374347360000.json",
+      "imports": [
+        "MarkovAugmentedSourceM7A3",
+        "MarkovColumn1MAE9",
+        "MarkovColumn2MAE9",
+        "MarkovColumn3MAE9",
+        "MarkovColumn4MAE9",
+        "MarkovColumn5MAE9"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "column_zero_explicitM418",
+          "header": "theorem column_zero_explicitM418 (n x : ℚ) : lowColumnMAE9 n x 0=columnZeroM418 n x",
+          "block_sha256": "e4112ecae556946d2c2020be7d979e37bb531c635e869fd032c6bc114490be49",
+          "block_characters": 448
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_column2M418",
+          "header": "theorem source_correction_column2M418 (q : ℕ) (r : Bool) :\n (threeRawM9E2 (q+2) r 2 (q+3):ℚ)=correctionColumn2M418 q r",
+          "block_sha256": "8ea9d1b760a5b163c817e7a268c534006394de4a6843be7f27844887ce3e2ec8",
+          "block_characters": 341
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_column3M418",
+          "header": "theorem source_correction_column3M418 (q : ℕ) (r : Bool) :\n (threeRawM9E2 (q+2) r 3 (q+3):ℚ)=correctionColumn3M418 q r",
+          "block_sha256": "00a601335f20124b64aa3d532c4d5c03a5a9eb526d2c8411000f50a3e8fd2eb4",
+          "block_characters": 514
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_column4M418",
+          "header": "theorem source_correction_column4M418 (q : ℕ) (r : Bool) :\n (threeRawM9E2 (q+2) r 4 (q+3):ℚ)=correctionColumn4M418 q r",
+          "block_sha256": "27bb46dbe3fd10e1a557325af774bc40e2ddd6921ebc2e4e5b73a9826d6ab57b",
+          "block_characters": 527
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_column5M418",
+          "header": "theorem source_correction_column5M418 (q : ℕ) (r : Bool) :\n (threeRawM9E2 (q+2) r 5 (q+3):ℚ)=correctionColumn5M418 q r",
+          "block_sha256": "9e8b3f79f4af169444f98cbe649fd565d34f8b74cff220dd235c9b3dd4037ec0",
+          "block_characters": 547
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_column6M418",
+          "header": "theorem source_correction_column6M418 (q : ℕ) (r : Bool) :\n (threeRawM9E2 (q+2) r 6 (q+3):ℚ)=correctionColumn6M418 q r",
+          "block_sha256": "d6246a43043524b7cd33142c1dbf5eb3e94a953630141808736036224c241114",
+          "block_characters": 567
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_column7M418",
+          "header": "theorem source_correction_column7M418 (q : ℕ) (r : Bool) :\n (threeRawM9E2 (q+2) r 7 (q+3):ℚ)=correctionColumn7M418 q r",
+          "block_sha256": "d67e1fc64546400c0dadf91d86ccc877c75545cc06e5176c6f5df55f4a085e89",
+          "block_characters": 587
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_column8M418",
+          "header": "theorem source_correction_column8M418 (q : ℕ) (r : Bool) :\n (threeRawM9E2 (q+2) r 8 (q+3):ℚ)=correctionColumn8M418 q r",
+          "block_sha256": "020f9595e6beb92dfa0aebbb477f91623deb8343d23dd25a11c8f5ffa85619c1",
+          "block_characters": 612
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "columnZeroM418",
+          "header": "def columnZeroM418 (n x : ℚ) : ℚ",
+          "block_sha256": "b250fe41cab9ca7501896cf78e4034e43e0d52281c13c1742fbfc317ab03db0d",
+          "block_characters": 70
+        },
+        {
+          "kind": "def",
+          "name": "correctionColumn2M418",
+          "header": "def correctionColumn2M418 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "44d2c09850e1bd028cf61f5af1a1ac911bf0353c6d1ea205dff76f39d67dcdbc",
+          "block_characters": 71
+        },
+        {
+          "kind": "def",
+          "name": "correctionColumn3M418",
+          "header": "def correctionColumn3M418 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "3d8aa72fbdb156935d5b2ba6f4db5a910a9f2de853d4c16d1e69cf4659fc1b74",
+          "block_characters": 191
+        },
+        {
+          "kind": "def",
+          "name": "correctionColumn4M418",
+          "header": "def correctionColumn4M418 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "bf521c77db386dd6993f3b34b7e877d687e48202e3fea81271c7f07bf6d52837",
+          "block_characters": 268
+        },
+        {
+          "kind": "def",
+          "name": "correctionColumn5M418",
+          "header": "def correctionColumn5M418 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "04cfdee19c5f5810fa52ec5e07a82a965d2aa4db1ddb7b7eef9f4be9dd70f097",
+          "block_characters": 368
+        },
+        {
+          "kind": "def",
+          "name": "correctionColumn6M418",
+          "header": "def correctionColumn6M418 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "36a350c9088728443a0724ef5bb9551d9372c319fabc20951f80a2c819cd245a",
+          "block_characters": 470
+        },
+        {
+          "kind": "def",
+          "name": "correctionColumn7M418",
+          "header": "def correctionColumn7M418 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "8fab05c3947c67a81a4eea6c174cefa61e6ee1b13ad846be98f19c827fb4de23",
+          "block_characters": 631
+        },
+        {
+          "kind": "def",
+          "name": "correctionColumn8M418",
+          "header": "def correctionColumn8M418 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "fbb5cbd187de7d96b2b7343b0a30178ccd9bb513980e240185c50cbd55ef0b19",
+          "block_characters": 765
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCorrectionGapsM418",
+      "path": "research/MarkovCorrectionGapsM418.lean",
+      "bytes": 11738,
+      "sha256": "56aeb73887a80f87d87b8eefbe0f286082a121895d3dd5e8a5cf8098dfb54160",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "correctionGap2M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_gap_identity2M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_gap_nonneg2M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_horizontal2M418"
+        },
+        {
+          "kind": "def",
+          "name": "correctionGap3M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_gap_identity3M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_gap_nonneg3M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_horizontal3M418"
+        },
+        {
+          "kind": "def",
+          "name": "correctionGap4M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_gap_identity4M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_gap_nonneg4M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_horizontal4M418"
+        },
+        {
+          "kind": "def",
+          "name": "correctionGap5M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_gap_identity5M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_gap_nonneg5M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_horizontal5M418"
+        },
+        {
+          "kind": "def",
+          "name": "correctionGap6M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_gap_identity6M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_gap_nonneg6M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_horizontal6M418"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792200454038376000.json",
+          "sha256": "301612229e789f5375134e23201e6ce3526ea9f9c519f4a6f4f4925507ad8bed",
+          "source_sha256": "56aeb73887a80f87d87b8eefbe0f286082a121895d3dd5e8a5cf8098dfb54160",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "56aeb73887a80f87d87b8eefbe0f286082a121895d3dd5e8a5cf8098dfb54160"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in168": true,
+      "printed_in168": true,
+      "object_path": "evidence/markov-418bcc64/MarkovCorrectionGapsM418.olean",
+      "object_sha256": "2c9d7a9da540b9f7be3fadf7e92e9abeb0e918138c8b506b189b3d326d0a2cea",
+      "successful_build": "evidence/markov-418bcc64/build-1792200454038376000.json",
+      "imports": [
+        "MarkovCorrectionColumnsM418"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "correction_gap_identity2M418",
+          "header": "theorem correction_gap_identity2M418 (x : ℚ) (r : Bool) :\n correctionColumn3M418 x r^2-correctionColumn2M418 x r*correctionColumn4M418 x r=\n correctionGap2M418 x r",
+          "block_sha256": "2a5ff1a5c6073546364f4f10f0bccc532aebe24435cfba90e4e3ba163d189050",
+          "block_characters": 328
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_gap_nonneg2M418",
+          "header": "theorem correction_gap_nonneg2M418 (x : ℚ) (r : Bool) (hx : 0 ≤ x) :\n 0 ≤ correctionGap2M418 x r",
+          "block_sha256": "fa8d44a67c00810457487cdea9a994cb703fc8b7b0a9454cdd01678581d7abbf",
+          "block_characters": 197
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_horizontal2M418",
+          "header": "theorem source_correction_horizontal2M418 (q : ℕ) (r : Bool) :\n threeRawM9E2 (q+2) r 2 (q+3)*threeRawM9E2 (q+2) r 4 (q+3) ≤\n   threeRawM9E2 (q+2) r 3 (q+3)^2",
+          "block_sha256": "15edce5f49936fe09ee53945ac19b3bc4436ad4f4dfef8c7ec0c8252dea2ae7e",
+          "block_characters": 548
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_gap_identity3M418",
+          "header": "theorem correction_gap_identity3M418 (x : ℚ) (r : Bool) :\n correctionColumn4M418 x r^2-correctionColumn3M418 x r*correctionColumn5M418 x r=\n correctionGap3M418 x r",
+          "block_sha256": "7dcba2e3d2d68e55ce56029b957b248760ffd49298efece9ba664bea09bcce60",
+          "block_characters": 328
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_gap_nonneg3M418",
+          "header": "theorem correction_gap_nonneg3M418 (x : ℚ) (r : Bool) (hx : 0 ≤ x) :\n 0 ≤ correctionGap3M418 x r",
+          "block_sha256": "9f6f59ccd401f34e4281ab943747ded02b54e44194ff3b726f2bc08bec4fa237",
+          "block_characters": 197
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_horizontal3M418",
+          "header": "theorem source_correction_horizontal3M418 (q : ℕ) (r : Bool) :\n threeRawM9E2 (q+2) r 3 (q+3)*threeRawM9E2 (q+2) r 5 (q+3) ≤\n   threeRawM9E2 (q+2) r 4 (q+3)^2",
+          "block_sha256": "2724c9acff987f96fd67fbc67e7bc4dfce72bf3682e8eca2ac8afa943e904293",
+          "block_characters": 548
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_gap_identity4M418",
+          "header": "theorem correction_gap_identity4M418 (x : ℚ) (r : Bool) :\n correctionColumn5M418 x r^2-correctionColumn4M418 x r*correctionColumn6M418 x r=\n correctionGap4M418 x r",
+          "block_sha256": "e30eee9a608f8cb38b58da739d6aa30c282d827d05016f7f2ac7804d77c697ed",
+          "block_characters": 328
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_gap_nonneg4M418",
+          "header": "theorem correction_gap_nonneg4M418 (x : ℚ) (r : Bool) (hx : 0 ≤ x) :\n 0 ≤ correctionGap4M418 x r",
+          "block_sha256": "184f8aee8e8c8bff5eecc4ada02dc2b65f01f94944b548c671cbd34c42b8f685",
+          "block_characters": 197
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_horizontal4M418",
+          "header": "theorem source_correction_horizontal4M418 (q : ℕ) (r : Bool) :\n threeRawM9E2 (q+2) r 4 (q+3)*threeRawM9E2 (q+2) r 6 (q+3) ≤\n   threeRawM9E2 (q+2) r 5 (q+3)^2",
+          "block_sha256": "d1c90d9aed0773fbe59ff0edad28fb315727a8c836ebf5373e99e53b15a2ee4e",
+          "block_characters": 548
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_gap_identity5M418",
+          "header": "theorem correction_gap_identity5M418 (x : ℚ) (r : Bool) :\n correctionColumn6M418 x r^2-correctionColumn5M418 x r*correctionColumn7M418 x r=\n correctionGap5M418 x r",
+          "block_sha256": "19c2a3583ad5a8e566e8cc5c0e3ac3fa06ff676569a576dcfc48f196abcc1249",
+          "block_characters": 328
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_gap_nonneg5M418",
+          "header": "theorem correction_gap_nonneg5M418 (x : ℚ) (r : Bool) (hx : 0 ≤ x) :\n 0 ≤ correctionGap5M418 x r",
+          "block_sha256": "a98a50c94d9493d7753517b8c994cd7f022c0d4bb9518fa72ec68376f5fe1336",
+          "block_characters": 197
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_horizontal5M418",
+          "header": "theorem source_correction_horizontal5M418 (q : ℕ) (r : Bool) :\n threeRawM9E2 (q+2) r 5 (q+3)*threeRawM9E2 (q+2) r 7 (q+3) ≤\n   threeRawM9E2 (q+2) r 6 (q+3)^2",
+          "block_sha256": "28268975821e9ee5e82333c6df55f1b0abc46c1e85e84c42b22b6b8d8b95f145",
+          "block_characters": 548
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_gap_identity6M418",
+          "header": "theorem correction_gap_identity6M418 (x : ℚ) (r : Bool) :\n correctionColumn7M418 x r^2-correctionColumn6M418 x r*correctionColumn8M418 x r=\n correctionGap6M418 x r",
+          "block_sha256": "167921ba4574cd2315232b102bcb0f3584b564df953db650db918e453809eb67",
+          "block_characters": 328
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_gap_nonneg6M418",
+          "header": "theorem correction_gap_nonneg6M418 (x : ℚ) (r : Bool) (hx : 0 ≤ x) :\n 0 ≤ correctionGap6M418 x r",
+          "block_sha256": "000534ce1839bd665d55dc0cf077b35ade36c8a238fe5d5b5f69fe46ec5436b7",
+          "block_characters": 197
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_horizontal6M418",
+          "header": "theorem source_correction_horizontal6M418 (q : ℕ) (r : Bool) :\n threeRawM9E2 (q+2) r 6 (q+3)*threeRawM9E2 (q+2) r 8 (q+3) ≤\n   threeRawM9E2 (q+2) r 7 (q+3)^2",
+          "block_sha256": "e72dbd57acba85cfc6242ebe8d350ac7a30804857f5ce14b0c287eb6657046e6",
+          "block_characters": 553
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "correctionGap2M418",
+          "header": "def correctionGap2M418 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "093d84174ab87e55e2e488415af820dfb7984c8e2cbea40eeaf0c9bec0eca122",
+          "block_characters": 355
+        },
+        {
+          "kind": "def",
+          "name": "correctionGap3M418",
+          "header": "def correctionGap3M418 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "96423597cd617d913b035cc778a14056981623c5225fa100e8ee4a930866681e",
+          "block_characters": 670
+        },
+        {
+          "kind": "def",
+          "name": "correctionGap4M418",
+          "header": "def correctionGap4M418 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "3783b2837017fb60f8316cf49eb4637daa0a7d439bc4e5bed01d85918d35d181",
+          "block_characters": 1088
+        },
+        {
+          "kind": "def",
+          "name": "correctionGap5M418",
+          "header": "def correctionGap5M418 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "18a6066183addf6b0adfe9500da5a48c83b7f4946734903af50b039bbc513d8e",
+          "block_characters": 1587
+        },
+        {
+          "kind": "def",
+          "name": "correctionGap6M418",
+          "header": "def correctionGap6M418 (x : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "21e58aa82955f2ee1095ae21991545e5274351eab8fc1e221ac1db69159bdc0b",
+          "block_characters": 2114
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCorrectionRegionM418",
+      "path": "research/MarkovCorrectionRegionM418.lean",
+      "bytes": 3371,
+      "sha256": "5d5378fe539141f4fa5238b23b76ea279757242536322f3af848ec53d5492222",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_correction_prefixM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_outside_windowM418"
+        },
+        {
+          "kind": "def",
+          "name": "FirstCorrectionWindowM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_correction_all_iff_windowM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_small_parametersM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_first_correction_pathM418"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792200526252222000.json",
+          "sha256": "9b2ccd89ed4e4d3b9c8db1c0ed779d5350ba695f28e1f820089c21a2b348f11b",
+          "source_sha256": "5d5378fe539141f4fa5238b23b76ea279757242536322f3af848ec53d5492222",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "5d5378fe539141f4fa5238b23b76ea279757242536322f3af848ec53d5492222"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in168": true,
+      "printed_in168": true,
+      "object_path": "evidence/markov-418bcc64/MarkovCorrectionRegionM418.olean",
+      "object_sha256": "c37551da88fb9691413e62bb6f7d109008fd35fe455733307f505619d5c82963",
+      "successful_build": "evidence/markov-418bcc64/build-1792200526252222000.json",
+      "imports": [
+        "MarkovCorrectionTailM418",
+        "MarkovCorrectionGapsM418",
+        "MarkovSmallHorizontalMAE9"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "source_correction_prefixM418",
+          "header": "theorem source_correction_prefixM418 (q i : ℕ) (r : Bool) (hq : 1 ≤ q) (hi : i ≤ 6) :\n threeRawM9E2 q r i (q+1)*threeRawM9E2 q r (i+2) (q+1) ≤\n   threeRawM9E2 q r (i+1) (q+1)^2",
+          "block_sha256": "c69315189bcd558fbfdf4219945efda5a8c18cd8c2f82e3bcb57ae0f50c720a2",
+          "block_characters": 723
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_outside_windowM418",
+          "header": "theorem source_correction_outside_windowM418 (q i : ℕ) (r : Bool) (hq : 1 ≤ q)\n (hi : i ≤ 6 ∨ correctionExponentMDB2 q r+2 < i) :\n threeRawM9E2 q r i (q+1)*threeRawM9E2 q r (i+2) (q+1) ≤\n   threeRawM9E2 q r (i+1) (q+1)^2",
+          "block_sha256": "987087a955c86aee0cb0cfdbb7314c916daed443350a881ba5afbb2b4fa7284c",
+          "block_characters": 546
+        },
+        {
+          "kind": "theorem",
+          "name": "first_correction_all_iff_windowM418",
+          "header": "theorem first_correction_all_iff_windowM418 :\n (∀ q : ℕ, 1 ≤ q → ∀ r i,\n   threeRawM9E2 q r i (q+1)*threeRawM9E2 q r (i+2) (q+1) ≤\n     threeRawM9E2 q r (i+1) (q+1)^2) ↔ FirstCorrectionWindowM418",
+          "block_sha256": "570c9912fb79e45c05cd76be139810b1db0f4f95ebbfba7cea655a1a78448e14",
+          "block_characters": 559
+        },
+        {
+          "kind": "theorem",
+          "name": "source_correction_small_parametersM418",
+          "header": "theorem source_correction_small_parametersM418 (q i : ℕ) (r : Bool)\n (hq : 1 ≤ q) (hq5 : q ≤ 5) :\n threeRawM9E2 q r i (q+1)*threeRawM9E2 q r (i+2) (q+1) ≤\n   threeRawM9E2 q r (i+1) (q+1)^2",
+          "block_sha256": "3326cbb26dcb4988fb8b673353e523f80236a536c2346457008561d1740014e4",
+          "block_characters": 349
+        },
+        {
+          "kind": "theorem",
+          "name": "source_first_correction_pathM418",
+          "header": "theorem source_first_correction_pathM418 (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1 ≤ q ∧ (frame path).mid.b=sourceNME9C q r ∧\n ∀ i, (i ≤ 6 ∨ correctionExponentMDB2 q r+2 < i) →\n   coeff (frame path).mid.p i (q+1)*coeff (frame path).mid.p (i+2) (q+1) ≤\n     coeff (frame path).mid.p (i+1) (q+1)^2",
+          "block_sha256": "57209ee7fb7ee3af84e9af10837aacab72efe63085b639fe9a9d3f9b12bd7656",
+          "block_characters": 485
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "FirstCorrectionWindowM418",
+          "header": "def FirstCorrectionWindowM418 : Prop",
+          "block_sha256": "ca14de14dab78bc9e93d020d2061fbb49060b66a557f164e6c018f23ebabde9c",
+          "block_characters": 198
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCorrectionRootM418",
+      "path": "research/MarkovCorrectionRootM418.lean",
+      "bytes": 1514,
+      "sha256": "6386d44e7836dc9bed1aeda88c6f924299ca2e4495cff23792e161496b07f544",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "ThreeBeyondCorrectionM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_correction_windowM418"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792200593223542000.json",
+          "sha256": "bfe846729fd57ce7fc5c2697bd5bf448c0cf85efdc2f8452ab5d2658c6213cca",
+          "source_sha256": "6386d44e7836dc9bed1aeda88c6f924299ca2e4495cff23792e161496b07f544",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "6386d44e7836dc9bed1aeda88c6f924299ca2e4495cff23792e161496b07f544"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in168": true,
+      "printed_in168": true,
+      "object_path": "evidence/markov-418bcc64/MarkovCorrectionRootM418.olean",
+      "object_sha256": "ea52f03592200b333d1dd89fae4b78e9fde9d6dc5069f21b230869cdac1f50db",
+      "successful_build": "evidence/markov-418bcc64/build-1792200593223542000.json",
+      "imports": [
+        "MarkovCorrectionRegionM418"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "root_iff_correction_windowM418",
+          "header": "theorem root_iff_correction_windowM418 :\n Conjecture63 ↔ FirstCorrectionWindowM418 ∧ ThreeBeyondCorrectionM418 ∧ OtherFourM9E2",
+          "block_sha256": "5746aa09d2507967507b5e2bd72cca0aa6dd08436ac2c515b664722a0415d53c",
+          "block_characters": 724
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "ThreeBeyondCorrectionM418",
+          "header": "def ThreeBeyondCorrectionM418 : Prop",
+          "block_sha256": "039d3605f3c76cedbb5ea65b7ef1fea5c3a3242b8365b5225f251910de12b444",
+          "block_characters": 448
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovAbsorbedKernelM418",
+      "path": "research/MarkovAbsorbedKernelM418.lean",
+      "bytes": 3097,
+      "sha256": "acc1d6a1d1dd3606b7450fed151d6b1672a1ebc734ee5e2e7d487e14b74b9731",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "absorbedExtraM418"
+        },
+        {
+          "kind": "def",
+          "name": "absorbedLiftM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_addM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_monomialM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_chooseM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_weighted_outputM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_nonnegM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_tailM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_output_lc_of_cutsM418"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792200419505930000.json",
+          "sha256": "e8d9aaa1c270ca8b79e5a3826c87b8b2d68039152a4bcdfc93350a9d4d4c160b",
+          "source_sha256": "b757f4cdb9c40dc80dc30e654b3a057b9e66b1859a544b1b16d0b7e8232abd91",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "b757f4cdb9c40dc80dc30e654b3a057b9e66b1859a544b1b16d0b7e8232abd91"
+        },
+        {
+          "path": "build-1792200465063978000.json",
+          "sha256": "bcec1f0cbedab6c2885ad7a09d3b1b7bbfd0f0525a35fd1865301d24c00bef60",
+          "source_sha256": "291599fd5924654544aee7d77cc9f2846f8fa7efc0dbafbdec443feac6d4a750",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "291599fd5924654544aee7d77cc9f2846f8fa7efc0dbafbdec443feac6d4a750"
+        },
+        {
+          "path": "build-1792200526252240000.json",
+          "sha256": "5c182e389379de67776f28db2a0761c912d2a68253343683d8f4711b1e4c4ef3",
+          "source_sha256": "acc1d6a1d1dd3606b7450fed151d6b1672a1ebc734ee5e2e7d487e14b74b9731",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "acc1d6a1d1dd3606b7450fed151d6b1672a1ebc734ee5e2e7d487e14b74b9731"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in168": true,
+      "printed_in168": true,
+      "object_path": "evidence/markov-418bcc64/MarkovAbsorbedKernelM418.olean",
+      "object_sha256": "129fe61182dd976985dd1d678dcd332761a7d947e9d3be7be143469b8c1fac1c",
+      "successful_build": "evidence/markov-418bcc64/build-1792200526252240000.json",
+      "imports": [
+        "MarkovAugmentedSourceM7A3"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "weight_addM418",
+          "header": "theorem weight_addM418 (w : ℕ → ℝ) (P Q : ℝ[X]) :\n weightPolyMFEE w (P+Q)=weightPolyMFEE w P+weightPolyMFEE w Q",
+          "block_sha256": "c99da3ff067b27eb96099cce62400840f93c3c619164a141886b6b06fe45ce61",
+          "block_characters": 175
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_monomialM418",
+          "header": "theorem weight_monomialM418 (w : ℕ → ℝ) (a : ℝ) (t : ℕ) :\n weightPolyMFEE w (C a*X^t)=C (w t*a)*X^t",
+          "block_sha256": "5ca9266e537bdbcb21361ef774dc01507bfd62b834d2cc31b2697cb3e48d06da",
+          "block_characters": 214
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_chooseM418",
+          "header": "theorem absorbed_chooseM418 (d t : ℕ) (c : ℝ) :\n (d.choose t:ℝ)*absorbedExtraM418 d t c=c*(d.choose (t+1):ℝ)",
+          "block_sha256": "979e6df9a432d830b0cd23c40a151a96dedd7dd3c7338a166279186a9d4e3eda",
+          "block_characters": 306
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_weighted_outputM418",
+          "header": "theorem absorbed_weighted_outputM418 (d j t : ℕ) (c : ℤ) :\n (weightPolyMFEE (fun k => zchooseM37B d k) (absorbedLiftM418 d j c t)).eval 1=\n (augmentedOutputM7A3 d j c (t+1):ℝ)",
+          "block_sha256": "f149a27e309ee885a9d2b3ff0f795f77a9195e0aae8116c4d3699378d7ac487b",
+          "block_characters": 408
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_nonnegM418",
+          "header": "theorem absorbed_nonnegM418 (d j t k : ℕ) (c : ℝ) (hc : 0 ≤ c) :\n 0 ≤ (absorbedLiftM418 d j c t).coeff k",
+          "block_sha256": "787415b5d3555cba7ef764ec6ba03b0e6561c462d754079a8c88eda666030626",
+          "block_characters": 409
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_tailM418",
+          "header": "theorem absorbed_tailM418 (d j t : ℕ) (c : ℝ) (ht : d ≤ t) :\n absorbedLiftM418 d j c t=liftPolyM7E2 j t",
+          "block_sha256": "0ae1905418c3bce3f735689363b04a20af6e99c3b551b3e742ab4a5b9849b00b",
+          "block_characters": 177
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_output_lc_of_cutsM418",
+          "header": "theorem absorbed_output_lc_of_cutsM418 (d j t : ℕ) (c : ℤ)\n (H : ∀ h n, 0 ≤ ((cutPolyMFEE h (absorbedLiftM418 d j c (t+1)))^2-\n   cutPolyMFEE h (absorbedLiftM418 d j c t)*\n     cutPolyMFEE h (absorbedLiftM418 d j c (t+2))).coeff n) :\n augmentedOutputM7A3 d j c (t+1)*augmentedOutputM7A3 d j c (t+3) ≤\n   augmentedOutputM7A3 d j c (t+2)^2",
+          "block_sha256": "b9ed8362c3f31e2144b3f6ff4a4bf50a4e89bcac9174b309cbca857d2d437fd6",
+          "block_characters": 741
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "absorbedExtraM418",
+          "header": "def absorbedExtraM418 (d t : ℕ) (c : ℝ) : ℝ",
+          "block_sha256": "ea90037e64e90a66d0db4580efe41edc404c835095bd9a4e67e15c65e0dc588e",
+          "block_characters": 66
+        },
+        {
+          "kind": "def",
+          "name": "absorbedLiftM418",
+          "header": "def absorbedLiftM418 (d j : ℕ) (c : ℝ) (t : ℕ) : ℝ[X]",
+          "block_sha256": "efdaeb5dddd13fd5fe0398d402399d19838aebc471446f6f22e8054757797f42",
+          "block_characters": 106
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovAbsorbedReductionM418",
+      "path": "research/MarkovAbsorbedReductionM418.lean",
+      "bytes": 4152,
+      "sha256": "34f752c0dc421d8eafa55595df2ec44691218f5c19b70b3536c9b7ccc0de366f",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "absorbed_coeff_tailM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_cut_zeroM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_cut_highM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_cut_tailM418"
+        },
+        {
+          "kind": "def",
+          "name": "absorbedSourceJM418"
+        },
+        {
+          "kind": "def",
+          "name": "AbsorbedMiddleM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_source_output_lcM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "first_window_of_absorbedM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "all_first_correction_of_absorbedM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_of_absorbed_and_remainingM418"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792200693776517000.json",
+          "sha256": "485db0f67e46d8718e9eb69131346e40c3f9415079c12e3fb41772ea88dbec8a",
+          "source_sha256": "34f752c0dc421d8eafa55595df2ec44691218f5c19b70b3536c9b7ccc0de366f",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "34f752c0dc421d8eafa55595df2ec44691218f5c19b70b3536c9b7ccc0de366f"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in168": true,
+      "printed_in168": true,
+      "object_path": "evidence/markov-418bcc64/MarkovAbsorbedReductionM418.olean",
+      "object_sha256": "955ef8b502d58244c7b6b1a3237f6e4c003f1a45f6cc95aef143eb04d635d678",
+      "successful_build": "evidence/markov-418bcc64/build-1792200693776517000.json",
+      "imports": [
+        "MarkovAbsorbedKernelM418",
+        "MarkovCorrectionRootM418"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "absorbed_coeff_tailM418",
+          "header": "theorem absorbed_coeff_tailM418 (d j t k : ℕ) (c : ℝ) (hk : t<k) :\n (absorbedLiftM418 d j c t).coeff k=0",
+          "block_sha256": "6284ad61faf83b7bfb3814eb941a018d9e7f915d23f2b4ee4c22a7e679b9e1e4",
+          "block_characters": 248
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_cut_zeroM418",
+          "header": "theorem absorbed_cut_zeroM418 (d j t h : ℕ) (c : ℝ) (ht : t<h) :\n cutPolyMFEE h (absorbedLiftM418 d j c t)=0",
+          "block_sha256": "262227e8deac6de9413be3832b96ad7063b0824199a82ac2245c9d54df837b99",
+          "block_characters": 237
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_cut_highM418",
+          "header": "theorem absorbed_cut_highM418 (d j t h k : ℕ) (c : ℝ) (hc : 0 ≤ c) (ht : t<h) :\n 0 ≤ ((cutPolyMFEE h (absorbedLiftM418 d j c (t+1)))^2-\n   cutPolyMFEE h (absorbedLiftM418 d j c t)*\n     cutPolyMFEE h (absorbedLiftM418 d j c (t+2))).coeff k",
+          "block_sha256": "a7a4aa368bb39336c4815feee477b1c6a4f32af8de37f559c5b44650dbb7a0df",
+          "block_characters": 574
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_cut_tailM418",
+          "header": "theorem absorbed_cut_tailM418 (d j t h k : ℕ) (c : ℝ) (ht : d ≤ t) :\n 0 ≤ ((cutPolyMFEE h (absorbedLiftM418 d j c (t+1)))^2-\n   cutPolyMFEE h (absorbedLiftM418 d j c t)*\n     cutPolyMFEE h (absorbedLiftM418 d j c (t+2))).coeff k",
+          "block_sha256": "948d8fe0b4e8e1a40e5baab15b5a751da170ea7f0e89fae39bef14624a1f463c",
+          "block_characters": 438
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_source_output_lcM418",
+          "header": "theorem absorbed_source_output_lcM418 (H : AbsorbedMiddleM418) (d t : ℕ)\n (r : Bool) (ht : 4 ≤ t) :\n augmentedOutputM7A3 d (absorbedSourceJM418 d r) (correctionConstantMDB2 r) (t+1)*\n   augmentedOutputM7A3 d (absorbedSourceJM418 d r) (correctionConstantMDB2 r) (t+3) ≤\n augmentedOutputM7A3 d (absorbedSourceJM418 d r) (correctionConstantMDB2 r) (t+2)^2",
+          "block_sha256": "06686c033ac6cf3b19ad5ceed6e6c71df8b8f861ceb995f398eda2bae37aa9f4",
+          "block_characters": 626
+        },
+        {
+          "kind": "theorem",
+          "name": "first_window_of_absorbedM418",
+          "header": "theorem first_window_of_absorbedM418 (H : AbsorbedMiddleM418) : FirstCorrectionWindowM418",
+          "block_sha256": "8e9b799f87e868d16322b1e35436e7afcc7b157138493c3383af66f4a05e03c1",
+          "block_characters": 602
+        },
+        {
+          "kind": "theorem",
+          "name": "all_first_correction_of_absorbedM418",
+          "header": "theorem all_first_correction_of_absorbedM418 (H : AbsorbedMiddleM418)\n (q i : ℕ) (r : Bool) (hq : 1 ≤ q) :\n threeRawM9E2 q r i (q+1)*threeRawM9E2 q r (i+2) (q+1) ≤\n   threeRawM9E2 q r (i+1) (q+1)^2",
+          "block_sha256": "978786f6c64f754845edd5f24ea57569498125ee52be2833d8bc5aa4eb61bd07",
+          "block_characters": 283
+        },
+        {
+          "kind": "theorem",
+          "name": "root_of_absorbed_and_remainingM418",
+          "header": "theorem root_of_absorbed_and_remainingM418 (H : AbsorbedMiddleM418)\n (hb : ThreeBeyondCorrectionM418) (h4 : OtherFourM9E2) : Conjecture63",
+          "block_sha256": "11f3724c1b70e3a29b1404f211a7efb191070c687ec582b78ff27c40a242910f",
+          "block_characters": 220
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "absorbedSourceJM418",
+          "header": "def absorbedSourceJM418 (d : ℕ) (r : Bool) : ℕ",
+          "block_sha256": "25621c48c4ee503abf8985996022284be9de62607e06af8ddb78771235f54d89",
+          "block_characters": 72
+        },
+        {
+          "kind": "def",
+          "name": "AbsorbedMiddleM418",
+          "header": "def AbsorbedMiddleM418 : Prop",
+          "block_sha256": "085dfefb5784927444cec0cf52255615c10b320abc41425513b1c82baa74cb94",
+          "block_characters": 402
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovWeightedObstructionM418",
+      "path": "research/MarkovWeightedObstructionM418.lean",
+      "bytes": 3459,
+      "sha256": "fa0dd00427e0d07120eafb986764ccc2457d57c461ca833b5a460be422af0198",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "augmented_seven_valuesM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_augmented_valuesM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_augmented_negativeM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_source_valuesM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_source_witnessM418"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792200697126152000.json",
+          "sha256": "fbcded8078121853fca98b984f351bdd0f76e8e21b134520a05977b94c0dae3c",
+          "source_sha256": "dc5770a2a31fb35539e2b068ba659891fae9c12e2c49afb5c584bdfd5994ac6a",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "dc5770a2a31fb35539e2b068ba659891fae9c12e2c49afb5c584bdfd5994ac6a"
+        },
+        {
+          "path": "build-1792200822123275000.json",
+          "sha256": "ca6ea4b26360b433e1a6dc73453966462eb209a57c2c84485d2f5c52c8fa4183",
+          "source_sha256": "d0af2c96c178f204290d7379065e644bb8a5886cbe7fda151a069fcec02cb69c",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "d0af2c96c178f204290d7379065e644bb8a5886cbe7fda151a069fcec02cb69c"
+        },
+        {
+          "path": "build-1792200892996903000.json",
+          "sha256": "a0c8bb1191543134163c50d3d2a69f99f7b24e375d1ca8fa685694fc0c746746",
+          "source_sha256": "fe43aa43bd01cc14eb48bed7e850558d1d3ff6128ce926461c604aaffb79cf23",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "fe43aa43bd01cc14eb48bed7e850558d1d3ff6128ce926461c604aaffb79cf23"
+        },
+        {
+          "path": "build-1792200950178765000.json",
+          "sha256": "f6bf6d2449030f90a5f356960c0c52faa9d720f49a7a440b28f8531f6524d7d2",
+          "source_sha256": "fa0dd00427e0d07120eafb986764ccc2457d57c461ca833b5a460be422af0198",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "fa0dd00427e0d07120eafb986764ccc2457d57c461ca833b5a460be422af0198"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in168": true,
+      "printed_in168": true,
+      "object_path": "evidence/markov-418bcc64/MarkovWeightedObstructionM418.olean",
+      "object_sha256": "bc3835510da93badf87670bef7e99f4af27e9e93d03b8ba30a9d49fcc8a41357",
+      "successful_build": "evidence/markov-418bcc64/build-1792200950178765000.json",
+      "imports": [
+        "MarkovAugmentedObstructionM7A3",
+        "MarkovAbsorbedKernelM418"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "augmented_seven_valuesM418",
+          "header": "theorem augmented_seven_valuesM418 :\n augmentedLiftM7A3 7 8 0=C 8 ∧\n augmentedLiftM7A3 7 8 1=C 1968+C 8*X ∧\n augmentedLiftM7A3 7 8 2=C 18150+C 4026*X+C 8*X^2",
+          "block_sha256": "6fb5edcb403071c69bca84b2a70224123bd00c67e2a6264119f394f8fdc70847",
+          "block_characters": 302
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_augmented_valuesM418",
+          "header": "theorem weighted_augmented_valuesM418 :\n weightPolyMFEE (fun k => zchooseM37B 4 k) (augmentedLiftM7A3 7 8 0)=C 8 ∧\n weightPolyMFEE (fun k => zchooseM37B 4 k) (augmentedLiftM7A3 7 8 1)=C 1968+C 32*X ∧\n weightPolyMFEE (fun k => zchooseM37B 4 k) (augmentedLiftM7A3 7 8 2)=C 18150+C 16104*X+C 48*X^2",
+          "block_sha256": "1812d561570917473a7a34f099011785a8d45b87becdf9371fcbe011bb8c9988",
+          "block_characters": 905
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_augmented_negativeM418",
+          "header": "theorem weighted_augmented_negativeM418 :\n ((weightPolyMFEE (fun k => zchooseM37B 4 k) (augmentedLiftM7A3 7 8 1))^2-\n   weightPolyMFEE (fun k => zchooseM37B 4 k) (augmentedLiftM7A3 7 8 0)*\n   weightPolyMFEE (fun k => zchooseM37B 4 k) (augmentedLiftM7A3 7 8 2)).coeff 1= -2880",
+          "block_sha256": "0f3c59f739bed5c44e201beaa822d51268eb0b1981fdb1a9bd17408c4c5e36b1",
+          "block_characters": 536
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_source_valuesM418",
+          "header": "theorem weighted_source_valuesM418 :\n threeRawM9E2 6 true 2 7=8 ∧ threeRawM9E2 6 true 3 7=2000 ∧\n threeRawM9E2 6 true 4 7=34302",
+          "block_sha256": "cef8024a9b1f29c39edc574ceb933e81674885c767b425d42a178728e1c2569c",
+          "block_characters": 476
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_source_witnessM418",
+          "header": "theorem weighted_source_witnessM418 :\n (frame (threePathM9E2 5 true)).mid.a=3 ∧ (frame (threePathM9E2 5 true)).mid.b=19 ∧\n InPolygon 3 19 2 7 ∧ InPolygon 3 19 3 7 ∧ InPolygon 3 19 4 7 ∧\n coeff (frame (threePathM9E2 5 true)).mid.p 2 7=8 ∧\n coeff (frame (threePathM9E2 5 true)).mid.p 3 7=2000 ∧\n coeff (frame (threePathM9E2 5 true)).mid.p 4 7=34302 ∧\n coeff (frame (threePathM9E2 5 true)).mid.p 3 7^2-\n   coeff (frame (threePathM9E2 5 true)).mid.p 2 7*\n   coeff (frame (threePathM9E2 5 true)).mid.p 4 7=3725584",
+          "block_sha256": "b1fdf18718442b49af211ea287592882688c1e218e9f36739c106cff424589dd",
+          "block_characters": 761
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovAbsorbedBoundaryBridgeM418",
+      "path": "research/MarkovAbsorbedBoundaryBridgeM418.lean",
+      "bytes": 3359,
+      "sha256": "28f963492a2059621d7a5c652da2471f3f0c06da7669c25f6c6eade1888c98f9",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "base_choose_lowerM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_addM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_monomialM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_absorbedM418"
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundaryGap0M418"
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundaryGap1M418"
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundaryGap2M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_boundary_identityM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_boundary_of_threeM418"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792201133515296000.json",
+          "sha256": "3c9166ac4485c261aac1938b52abd5616c376f80de52fffd6787cecd8ffc2b1c",
+          "source_sha256": "28f963492a2059621d7a5c652da2471f3f0c06da7669c25f6c6eade1888c98f9",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "28f963492a2059621d7a5c652da2471f3f0c06da7669c25f6c6eade1888c98f9"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in168": true,
+      "printed_in168": true,
+      "object_path": "evidence/markov-418bcc64/MarkovAbsorbedBoundaryBridgeM418.olean",
+      "object_sha256": "78ba35ad874bfb7fa7e388a9145f0426fcbecd50bcc8d9ffa1866d6b57f56a80",
+      "successful_build": "evidence/markov-418bcc64/build-1792201133515296000.json",
+      "imports": [
+        "MarkovAbsorbedReductionM418"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "base_choose_lowerM418",
+          "header": "theorem base_choose_lowerM418 (j t : ℕ) : j+1 ≤ (t+j+3).choose j",
+          "block_sha256": "679f369aadd37373ba923f63bf2ed18bcbce86b23da53f0b1f986a2382709a29",
+          "block_characters": 178
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_addM418",
+          "header": "theorem cut_addM418 (h : ℕ) (P Q : ℝ[X]) :\n cutPolyMFEE h (P+Q)=cutPolyMFEE h P+cutPolyMFEE h Q",
+          "block_sha256": "983f4217c533a157304cbb28f5bfa0352df8cb46325aab233d7c208229a76dae",
+          "block_characters": 129
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_monomialM418",
+          "header": "theorem cut_monomialM418 (h t : ℕ) (c : ℝ) (ht : h ≤ t) :\n cutPolyMFEE h (C c*X^t)=C c*X^t",
+          "block_sha256": "6210c0e7dd3c0b11c0436e092dfb37de82b153cc3182aec79efa1618e56146fd",
+          "block_characters": 223
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_absorbedM418",
+          "header": "theorem cut_absorbedM418 (d j t h : ℕ) (c : ℝ) (ht : h ≤ t) :\n cutPolyMFEE h (absorbedLiftM418 d j c t)=\n liftCutM7E2 j t h+C (absorbedExtraM418 d t c)*X^t",
+          "block_sha256": "72f76af0313b21a6338698cc61439e509b759150d90123b46998113b40d670f7",
+          "block_characters": 244
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_boundary_identityM418",
+          "header": "theorem absorbed_boundary_identityM418 (d j t : ℕ) (c : ℝ) :\n (cutPolyMFEE t (absorbedLiftM418 d j c (t+1)))^2-\n   cutPolyMFEE t (absorbedLiftM418 d j c t)*cutPolyMFEE t (absorbedLiftM418 d j c (t+2))=\n X^(2*t)*(C (absorbedBoundaryGap0M418 d j t c)+\n   C (absorbedBoundaryGap1M418 d j t c)*X+C (absorbedBoundaryGap2M418 d j t c)*X^2)",
+          "block_sha256": "a11ebff6b92abee9c3a1c966bda32984095e3d0614ee911817f6c014046f00e4",
+          "block_characters": 993
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_boundary_of_threeM418",
+          "header": "theorem absorbed_boundary_of_threeM418 (d j t k : ℕ) (c : ℝ)\n (h0 : 0 ≤ absorbedBoundaryGap0M418 d j t c)\n (h1 : 0 ≤ absorbedBoundaryGap1M418 d j t c)\n (h2 : 0 ≤ absorbedBoundaryGap2M418 d j t c) :\n 0 ≤ ((cutPolyMFEE t (absorbedLiftM418 d j c (t+1)))^2-\n   cutPolyMFEE t (absorbedLiftM418 d j c t)*cutPolyMFEE t (absorbedLiftM418 d j c (t+2))).coeff k",
+          "block_sha256": "b9c67dd95e8192cbe957b04f5c197a39d6d80c319716b692ce92fa314af38990",
+          "block_characters": 549
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "absorbedBoundaryGap0M418",
+          "header": "def absorbedBoundaryGap0M418 (d j t : ℕ) (c : ℝ) : ℝ",
+          "block_sha256": "4ca7d4d99a259779cfab71acba4a51d73de245fe9ce46c8af093a258a94fe38a",
+          "block_characters": 163
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundaryGap1M418",
+          "header": "def absorbedBoundaryGap1M418 (d j t : ℕ) (c : ℝ) : ℝ",
+          "block_sha256": "32d9e771e2b21bc9128295293779b143620b3fc0bc6d92b1a5158b05c20c1cf7",
+          "block_characters": 220
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundaryGap2M418",
+          "header": "def absorbedBoundaryGap2M418 (d j t : ℕ) (c : ℝ) : ℝ",
+          "block_sha256": "d9b41efc0d66bafe46b1ba9afe57335e69cb6b5d8677e6dfd03b0ecff1f7685b",
+          "block_characters": 227
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovAbsorbedBoundaryModelM418",
+      "path": "research/MarkovAbsorbedBoundaryModelM418.lean",
+      "bytes": 3002,
+      "sha256": "db8b63a57e0f9f05d2d05621565dc588981c09105461e19f7f6735762f4739ad",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "cutLast0M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_last_zero_valueM418"
+        },
+        {
+          "kind": "def",
+          "name": "absorbedExtraQM418"
+        },
+        {
+          "kind": "def",
+          "name": "boundaryModel0M418"
+        },
+        {
+          "kind": "def",
+          "name": "boundaryModel1M418"
+        },
+        {
+          "kind": "def",
+          "name": "boundaryModel2M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_boundary_modelsM418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_boundary_of_modelM418"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792201223044404000.json",
+          "sha256": "7ebbffcf602e9612eade10d029b22294835586930b57deb5aec4251d6727f297",
+          "source_sha256": "db8b63a57e0f9f05d2d05621565dc588981c09105461e19f7f6735762f4739ad",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "db8b63a57e0f9f05d2d05621565dc588981c09105461e19f7f6735762f4739ad"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in168": true,
+      "printed_in168": true,
+      "object_path": "evidence/markov-418bcc64/MarkovAbsorbedBoundaryModelM418.olean",
+      "object_sha256": "da8b1caf85ecb6307e29e2c9a40b9dcc6a679d0387aea9b27a5a225ddac4256c",
+      "successful_build": "evidence/markov-418bcc64/build-1792201223044404000.json",
+      "imports": [
+        "MarkovAbsorbedBoundaryBridgeM418"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "cut_last_zero_valueM418",
+          "header": "theorem cut_last_zero_valueM418 (j t : ℕ) :\n (liftTermMAE9 j (t+2) 0:ℚ)=((t+j+3).choose j:ℚ)*cutLast0M418 j t",
+          "block_sha256": "f76067df1471e7c478a1606bf3f8cc29be9a3ccef14f95df19c13a1e4129ecbb",
+          "block_characters": 362
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_boundary_modelsM418",
+          "header": "theorem absorbed_boundary_modelsM418 (d j t : ℕ) (c : ℤ) (hj : 2 ≤ j) :\n (boundaryModel0M418 j t ((t+j+3).choose j) (absorbedExtraQM418 d t c):ℝ)=\n   absorbedBoundaryGap0M418 d j t c ∧\n (boundaryModel1M418 j t ((t+j+3).choose j) (absorbedExtraQM418 d t c)\n   (absorbedExtraQM418 d (t+1) c):ℝ)=absorbedBoundaryGap1M418 d j t c ∧\n (boundaryModel2M418 j t ((t+j+3).choose j) (absorbedExtraQM418 d t c)\n   (absorbedExtraQM418 d (t+1) c) (absorbedExtraQM418 d (t+2) c):ℝ)=\n   absorbedBoundaryGap2M418 d j t c",
+          "block_sha256": "83a35102c1835837806870d7a648f88e3052ff8c75daf2cc1453fe5f8d1cecd9",
+          "block_characters": 840
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_boundary_of_modelM418",
+          "header": "theorem absorbed_boundary_of_modelM418 (d j t k : ℕ) (c : ℤ) (hj : 2 ≤ j)\n (h0 : 0 ≤ boundaryModel0M418 j t ((t+j+3).choose j) (absorbedExtraQM418 d t c))\n (h1 : 0 ≤ boundaryModel1M418 j t ((t+j+3).choose j) (absorbedExtraQM418 d t c)\n   (absorbedExtraQM418 d (t+1) c))\n (h2 : 0 ≤ boundaryModel2M418 j t ((t+j+3).choose j) (absorbedExtraQM418 d t c)\n   (absorbedExtraQM418 d (t+1) c) (absorbedExtraQM418 d (t+2) c)) :\n 0 ≤ ((cutPolyMFEE t (absorbedLiftM418 d j c (t+1)))^2-\n   cutPolyMFEE t (absorbedLiftM418 d j c t)*cutPolyMFEE t (absorbedLiftM418 d j c (t+2))).coeff k",
+          "block_sha256": "1231a5a3cbd1a6c4ef7a43580e46ed34c2f43a887fffb3e27bc506d79ecd907b",
+          "block_characters": 777
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "cutLast0M418",
+          "header": "def cutLast0M418 (j t : ℚ) : ℚ",
+          "block_sha256": "4bad3174f6125a373f4d71f66ce56b472a69d1d1e6559c8cc4505139d5235427",
+          "block_characters": 111
+        },
+        {
+          "kind": "def",
+          "name": "absorbedExtraQM418",
+          "header": "def absorbedExtraQM418 (d t : ℕ) (c : ℤ) : ℚ",
+          "block_sha256": "2b6eb222ddc2e1e8133c0486794ef065781afe8be5e03706044e3c5cb1563d03",
+          "block_characters": 71
+        },
+        {
+          "kind": "def",
+          "name": "boundaryModel0M418",
+          "header": "def boundaryModel0M418 (j t B a0 : ℚ) : ℚ",
+          "block_sha256": "df1dac8545ef863e20f111c6eaa9c881591a98f70c2534590aa7c8fbefff193f",
+          "block_characters": 112
+        },
+        {
+          "kind": "def",
+          "name": "boundaryModel1M418",
+          "header": "def boundaryModel1M418 (j t B a0 a1 : ℚ) : ℚ",
+          "block_sha256": "aba7b47482c5ba401f49433e8faed5cb1d446ddf11c5b00176f355eae4c4b658",
+          "block_characters": 141
+        },
+        {
+          "kind": "def",
+          "name": "boundaryModel2M418",
+          "header": "def boundaryModel2M418 (j t B a0 a1 a2 : ℚ) : ℚ",
+          "block_sha256": "ab0b492593501d17e7b05f3643f7046ff8ed5839c2399e722f8966a8cf9c40e6",
+          "block_characters": 124
+        }
+      ],
+      "forbidden_tokens": []
+    }
+  ],
+  "excluded_modules": [
+    {
+      "module": "MarkovAbsorbedBoundaryCertificateM418",
+      "path": "research/MarkovAbsorbedBoundaryCertificateM418.lean",
+      "bytes": 58119,
+      "sha256": "41c8ee222dba4ff2e56348cdafa97685e7fd1a398368a508adb0a0cb9d26cbc1",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "absorbedBoundary201M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary201_nonnegM418"
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary202M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary202_nonnegM418"
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary203M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary203_nonnegM418"
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary211M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary211_nonnegM418"
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary212M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary212_nonnegM418"
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary213M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary213_nonnegM418"
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary301M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary301_nonnegM418"
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary302M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary302_nonnegM418"
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary303M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary303_nonnegM418"
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary311M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary311_nonnegM418"
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary312M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary312_nonnegM418"
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary313M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary313_nonnegM418"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792201043516697000.json",
+          "sha256": "92a1353591bbebe9c72e0afa085f828a166d50709caf4b66c235e2c6f9e48e64",
+          "source_sha256": "7d4baddbc762f4e8f84cd5c350ca0906ebc3588a709dc4705d041868b3aa8b79",
+          "final_identical": false,
+          "returncode": null,
+          "timeout": true,
+          "snapshot_sha256": "7d4baddbc762f4e8f84cd5c350ca0906ebc3588a709dc4705d041868b3aa8b79"
+        },
+        {
+          "path": "build-1792201294289742000.json",
+          "sha256": "29c50b861245a3c5bda01201c78018ad0691a6d0e39ca59f92dd0a1481093f9c",
+          "source_sha256": "41c8ee222dba4ff2e56348cdafa97685e7fd1a398368a508adb0a0cb9d26cbc1",
+          "final_identical": true,
+          "returncode": null,
+          "timeout": true,
+          "snapshot_sha256": "41c8ee222dba4ff2e56348cdafa97685e7fd1a398368a508adb0a0cb9d26cbc1"
+        }
+      ],
+      "status": "timeout_only",
+      "selected": false,
+      "replayed_in168": false,
+      "printed_in168": false,
+      "object_scope": "No object credited; delegate records exact bounded absence observations. No historical absence extended by this helper.",
+      "imports": [
+        "MarkovAbsorbedReductionM418"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary201_nonnegM418",
+          "header": "theorem absorbedBoundary201_nonnegM418 (x g z : ℚ) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 ≤ absorbedBoundary201M418 x g z",
+          "block_sha256": "01e1216cef88b5739b09a5277e3b4e886922b2fe405d630d338472d0e6a78418",
+          "block_characters": 7077
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary202_nonnegM418",
+          "header": "theorem absorbedBoundary202_nonnegM418 (x g z : ℚ) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 ≤ absorbedBoundary202M418 x g z",
+          "block_sha256": "84264707aefbdd2b8a2c300877bc2b300ace9f8243998aa9c73e9bb230984610",
+          "block_characters": 6656
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary203_nonnegM418",
+          "header": "theorem absorbedBoundary203_nonnegM418 (x g z : ℚ) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 ≤ absorbedBoundary203M418 x g z",
+          "block_sha256": "99fab1a22ff1a65f7cd8806d6ba8ad2c00c929f47ab61537cf6352083104f32b",
+          "block_characters": 6095
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary211_nonnegM418",
+          "header": "theorem absorbedBoundary211_nonnegM418 (x g z : ℚ) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 ≤ absorbedBoundary211M418 x g z",
+          "block_sha256": "1e24a88805d8aa10321fa24fccb90d860174bb9c385326be05625d619965b594",
+          "block_characters": 1776
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary212_nonnegM418",
+          "header": "theorem absorbedBoundary212_nonnegM418 (x g z : ℚ) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 ≤ absorbedBoundary212M418 x g z",
+          "block_sha256": "5715d9c059cb6b45d67c863da852769d3163c74beae81dc0948747eecdc5912e",
+          "block_characters": 1675
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary213_nonnegM418",
+          "header": "theorem absorbedBoundary213_nonnegM418 (x g z : ℚ) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 ≤ absorbedBoundary213M418 x g z",
+          "block_sha256": "205487fae77c12d9fe9bcbb50fa0d390121b60bf02b07a45b1b65e0e0c01f1ef",
+          "block_characters": 1488
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary301_nonnegM418",
+          "header": "theorem absorbedBoundary301_nonnegM418 (x g z : ℚ) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 ≤ absorbedBoundary301M418 x g z",
+          "block_sha256": "222725e31115dfd4ceadca8ec6857c22dcb069b45710866a2e772c63a7a0f7f8",
+          "block_characters": 7115
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary302_nonnegM418",
+          "header": "theorem absorbedBoundary302_nonnegM418 (x g z : ℚ) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 ≤ absorbedBoundary302M418 x g z",
+          "block_sha256": "69ecbda328cddaccda69fea208850e8c75b89b5f335f21e8ba0abcd4b42f244d",
+          "block_characters": 6681
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary303_nonnegM418",
+          "header": "theorem absorbedBoundary303_nonnegM418 (x g z : ℚ) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 ≤ absorbedBoundary303M418 x g z",
+          "block_sha256": "97dba6d9a969478baa78fb93e14a0b9e9572a65b07eccfb8357ae10ac0a26832",
+          "block_characters": 6113
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary311_nonnegM418",
+          "header": "theorem absorbedBoundary311_nonnegM418 (x g z : ℚ) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 ≤ absorbedBoundary311M418 x g z",
+          "block_sha256": "9e25488cd197e39e201f770dbac86661c2f0a1edaf254b20420c5cbddbba2dca",
+          "block_characters": 1780
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary312_nonnegM418",
+          "header": "theorem absorbedBoundary312_nonnegM418 (x g z : ℚ) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 ≤ absorbedBoundary312M418 x g z",
+          "block_sha256": "fcd963a13531492644036367a6070d85a62f6f99d33560c5366f504edf9d12e0",
+          "block_characters": 1685
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbedBoundary313_nonnegM418",
+          "header": "theorem absorbedBoundary313_nonnegM418 (x g z : ℚ) (hx : 0 ≤ x) (hg : 0 ≤ g) (hz : 0 ≤ z) :\n 0 ≤ absorbedBoundary313M418 x g z",
+          "block_sha256": "872e3cfdd1eec1405a0517f5e91fb1445dbcab5bdb18e6906ecdc1ac220dc45a",
+          "block_characters": 1502
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "absorbedBoundary201M418",
+          "header": "def absorbedBoundary201M418 (x g z : ℚ) : ℚ",
+          "block_sha256": "758884b60013f17b091b59b281560c1c75667acc76497bbd0c4589b548f3c4d2",
+          "block_characters": 634
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary202M418",
+          "header": "def absorbedBoundary202M418 (x g z : ℚ) : ℚ",
+          "block_sha256": "23b666f07f9ed7e0b78818ff77fd005fe2bb74888570de828b85eafc2a51277d",
+          "block_characters": 643
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary203M418",
+          "header": "def absorbedBoundary203M418 (x g z : ℚ) : ℚ",
+          "block_sha256": "d45d3796576be56dc24d84d5058ecde82f7ebfdb8d55e4723bcbbfa209f6e26a",
+          "block_characters": 644
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary211M418",
+          "header": "def absorbedBoundary211M418 (x g z : ℚ) : ℚ",
+          "block_sha256": "34da6f81529820fba046ee380fe6166fece43b7571e01b239be5ed223009f61e",
+          "block_characters": 618
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary212M418",
+          "header": "def absorbedBoundary212M418 (x g z : ℚ) : ℚ",
+          "block_sha256": "c6e6cd98883b14b3a014d7d8c3ccdce79fa4b124dca95d766b1d5175e18bd721",
+          "block_characters": 627
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary213M418",
+          "header": "def absorbedBoundary213M418 (x g z : ℚ) : ℚ",
+          "block_sha256": "34374b671bfcf102f40cdcdf7b8d695282fbe429ba784582e5e66315ac80d79e",
+          "block_characters": 628
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary301M418",
+          "header": "def absorbedBoundary301M418 (x g z : ℚ) : ℚ",
+          "block_sha256": "b17c5a19177a77d7b05dabb06bd02d7705d513c1f8b41927a7fdd43fc42803fd",
+          "block_characters": 634
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary302M418",
+          "header": "def absorbedBoundary302M418 (x g z : ℚ) : ℚ",
+          "block_sha256": "47419dfd2a6295f15de0e2a2f503ea5908f4c458943c74d3865ae29da22e7b88",
+          "block_characters": 643
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary303M418",
+          "header": "def absorbedBoundary303M418 (x g z : ℚ) : ℚ",
+          "block_sha256": "77b08a028779a9eaf2d7bab8bd8a9ac05411e16dccde8325e9e787eb080e63ce",
+          "block_characters": 644
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary311M418",
+          "header": "def absorbedBoundary311M418 (x g z : ℚ) : ℚ",
+          "block_sha256": "4c47c6278bc739fecc2a9ece36d350f6f083ca390ec5f8f5439f26ea448eafc9",
+          "block_characters": 618
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary312M418",
+          "header": "def absorbedBoundary312M418 (x g z : ℚ) : ℚ",
+          "block_sha256": "d61445860ab7c19ba5225be6d4c9e19391ddd3230482811a08e4eabc35a7a253",
+          "block_characters": 627
+        },
+        {
+          "kind": "def",
+          "name": "absorbedBoundary313M418",
+          "header": "def absorbedBoundary313M418 (x g z : ℚ) : ℚ",
+          "block_sha256": "a98305b7d6613d311522840f5064546c7a92378dae62f281a442a4af9087acee",
+          "block_characters": 628
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovAbsorbedBoundarySourceM418",
+      "path": "research/MarkovAbsorbedBoundarySourceM418.lean",
+      "bytes": 7657,
+      "sha256": "96c1973dac663d901f4d19bcf58d3011711facbd1fb1f7b9d81a15f461245e3d",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "absorbed_boundary_case20M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_boundary_case21M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_boundary_case30M418"
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_boundary_case31M418"
+        }
+      ],
+      "attempts": [],
+      "status": "unbuilt",
+      "selected": false,
+      "replayed_in168": false,
+      "printed_in168": false,
+      "object_scope": "No object credited; delegate records exact bounded absence observations. No historical absence extended by this helper.",
+      "imports": [
+        "MarkovAbsorbedBoundaryCertificateM418",
+        "MarkovAbsorbedBoundaryModelM418"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "absorbed_boundary_case20M418",
+          "header": "theorem absorbed_boundary_case20M418 (v g k : ℕ) :\n let t",
+          "block_sha256": "a5d859d43d1db457df7a2259b1ed9cfa6087b7e121c58fdd316ffa3f9522e980",
+          "block_characters": 1790
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_boundary_case21M418",
+          "header": "theorem absorbed_boundary_case21M418 (v g k : ℕ) :\n let t",
+          "block_sha256": "340e190c120de5a9c6ea6a2794c1e9e6869cf70dfe01389264404a653cd6f776",
+          "block_characters": 1782
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_boundary_case30M418",
+          "header": "theorem absorbed_boundary_case30M418 (v g k : ℕ) :\n let t",
+          "block_sha256": "d68e74cfc09e24a4e4fffb071cfee30726c0ece65548216f5977e057b2483f70",
+          "block_characters": 1790
+        },
+        {
+          "kind": "theorem",
+          "name": "absorbed_boundary_case31M418",
+          "header": "theorem absorbed_boundary_case31M418 (v g k : ℕ) :\n let t",
+          "block_sha256": "a5cb26c138b723b41d9c52cb18264b7cb1a05797d58aacf78e642e6949fd2a2e",
+          "block_characters": 1787
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    }
+  ],
+  "accepted_counts": {
+    "theorem": 61,
+    "def": 27
+  },
+  "excluded_counts": {
+    "def": 12,
+    "theorem": 16
+  },
+  "source_scope": "All actual numerator-three q>=1,bothr,rowq+1,starting i<=6 or correctionExponent(q,r)+2<i; all natural zero tails. All starts whenq<=5.",
+  "prefix_scope": "Exact raw columns2..8 foractualq>=2 encodedq=x+2; gap identities/nonnegative Horner forms for rationalx>=0; integer casts without renormalization. Columns0/1 actual zeros, q1 separately inherited small-row theorem. No strict positivity claim for every gap.",
+  "tail_scope": "Binomial correction vanishes only at its support cutoff; remaining lift output may be nonzero. For arbitrary integerc,d<t+1 the augmented successor triple equals proved lift-output triple. Source starti=t+3>d+2; no sign premise on c is needed in tail.",
+  "absorbed_scope": "Real kernel liftPoly(j,t)+C(c*((d-t:Nat):Real)/(t+1))*X^t. Natural subtraction clamps; denominator positive at all naturalt. choose(d,t)*extra=c*choose(d,t+1) and weighted evaluation=augmentedOutput(t+1), including outside binomial support. Coefficient nonnegativity assumesc>=0; conditional output transport assumes all lower-cut coefficient gaps, with any integerc.",
+  "middle_scope": "AbsorbedMiddleforall naturald,t,h,k,bothr,4<=t<d,h<=t; j=d+3,c8 true orj=d+2,c4 false. Highcuts h>t and tailt>=d proved. No global sign premise discharged; it suffices for FirstCorrectionWindow and whole correctionrow, with other two root predicates still needed.",
+  "boundary_scope": "At h=t exact polynomial gap=X^(2t)*(Cgap0+Cgap1X+Cgap2X²), allnaturald,j,t,realc. Conditional sign fromthree scalar signs; rational normalization needsj>=2 andintegerc. choose(t+j+3,j)>=j+1 proved. No general h=t positivity theorem accepted.",
+  "pending_scope": "Certificate12defs/12theorem candidates twice timeout, finalfactoreddenominator; Source4theorem candidates unbuilt, casesd=t+2+g or d=t+1,t=v+4,s2/3. No compiler/replay/print credit. Generator/GAP positivity assertions not proof.",
+  "obstruction_scope": "Weighted augmented j7,d4,c8 coefficientgap1=-2880; actualpaththreePath5true labels3/19, row7columns2,3,4 gives[8,2000,34302], threepolygon guards and positivegap3725584 formally checked. Auxiliary coefficientwise obstruction only, no raw/root refutation.",
+  "root_scope": "FirstCorrectionWindowq>=2,bothr,7<=i<=d+2,rowq+1. ThreeBeyond Hq<j,j!=5,j!=q+1; V/D exactly prior MFEE exclusions; OtherFoura>=4GlobalLC unchanged. Endpoints/alreadydischarged families remain handled by inherited iff, not new open clauses.",
+  "column0_literal_comparison": {
+    "original_module": "MarkovColumn0MAE9",
+    "original_status": "Historical unbuilt module; unchanged.",
+    "new_module": "MarkovCorrectionColumnsM418",
+    "renamed_definition": "columnZeroM418",
+    "renamed_theorem": "column_zero_explicitM418",
+    "literal_renaming_comparison_passed": true,
+    "original_source_column0_theorem_ported": false,
+    "qualification": "Only this definition/general identity is newly compiled/replayed/printed under new names. No whole old module recovery."
+  },
+  "mathematical_values_recomputed": false
+}
