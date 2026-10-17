@@ -1,0 +1,66 @@
+"""Reuse the unchanged exact-root verifier with explicit isolated workspace binding.
+
+The legacy source-to-root and independent correspondence requirements are not
+weakened. Fixture transport cannot resolve mathematics, even with a fake audit.
+"""
+import argparse
+from pathlib import Path
+import time
+from . import completion
+from .study_common import Invalid, read, write, canonical, lock, digest
+from .study import Arm, verify
+from .study_transfer import sandbox_prefix, dependency_paths
+
+def check(arm, claim, audit=None):
+    if arm.p['transport'] == 'fixture':
+        return {'resolved': False, 'rejection': 'fixture can never resolve mathematics'}
+    seconds = arm.p['validation_seconds']
+    if arm.s['seconds'] + seconds > arm.p['arm_seconds']:
+        raise Invalid('completion validation allowance exhausted')
+    key = digest({'claim': claim, 'audit': audit, 'round': arm.s['round']})
+    directory = arm.root/'completion'/key
+    if (directory/'result.json').exists():
+        return read(directory/'result.json')
+    if directory.exists():
+        raise Invalid('interrupted completion validation; new independently reviewed attempt required')
+    arm.s['seconds'] += seconds
+    arm.save()
+    directory.mkdir(parents=True)
+    start = time.monotonic()
+    old_root, old_run = completion.ROOT, completion.run
+    prefix = sandbox_prefix(directory, dependency_paths(arm.workspace))
+    def bounded(argv, **kwargs):
+        remaining = seconds - (time.monotonic()-start)
+        if remaining <= 0:
+            raise completion.Rejected('failure within completion validation budget')
+        kwargs['timeout'] = min(kwargs['timeout'], remaining)
+        kwargs['env'] = {**kwargs['env'], 'TMPDIR': str(directory)}
+        return old_run(prefix+argv, **kwargs)
+    try:
+        completion.ROOT = arm.workspace
+        completion.run = bounded
+        result = completion.verify(read(arm.workspace/'contract.json'), claim, directory,
+                                   audit=audit, stop=arm.stopped)
+    finally:
+        completion.ROOT, completion.run = old_root, old_run
+    if result['resolved']:
+        arm.s['resolution'] = result
+        arm.s['status'] = 'mathematically_resolved'
+        arm.save()
+    return result
+
+def main():
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--study', type=Path, required=True)
+    p.add_argument('--arm', choices=['baseline', 'exploration'], required=True)
+    p.add_argument('--claim', type=Path, required=True)
+    p.add_argument('--audit', type=Path)
+    a = p.parse_args()
+    directory = a.study.resolve()
+    verify(directory)
+    with lock(directory/'controller.lock') as fd:
+        result = check(Arm(directory, a.arm, fd), read(a.claim), read(a.audit) if a.audit else None)
+    print(canonical(result))
+
+if __name__ == '__main__':
+    main()
