@@ -7,15 +7,16 @@ retained records and independent review distinguish what was proposed, executed,
 compiled, replayed and actually proved. The fixed [mission](MISSION.md) and
 [design](docs/DESIGN.md) govern the project.
 
-**Research status, through closed worker 181 (17 October 2026):** the Agoh
-exercise is complete. For Markov polynomials, all three raw-coefficient
-log-concavity directions are proved at all natural indices for every
-numerator-two source. Every numerator-three source has horizontal
-raw-coefficient log-concavity for all natural column and row indices `i, j`
-satisfying `2*j + 1 ≤ b`, where `b` is the source denominator, including zeros
-and both denominator residues. The earlier lower-region, correction-row and
-`j = 5` results remain in force. **Full Conjecture 6.3 remains open.** See
-the dated [research status and exact remaining scope](RESEARCH_STATUS.md).
+**Research status, through closed worker 188 (17 October 2026):** the Agoh
+exercise is complete. For Markov polynomials, every numerator-two source has
+all three raw-coefficient log-concavity directions at all natural indices.
+Every numerator-three source has horizontal log-concavity throughout the
+lower half-plane and in upper rows satisfying the explicit linear bound,
+including zeros. Earlier rows and additional strict column regions are also
+proved, including the single upper-row triple at columns 4, 5 and 6 under
+its stated depth conditions. **Full Conjecture 6.3 remains open.** See the
+dated [research status and exact remaining scope](RESEARCH_STATUS.md) for the
+precise domains, residual obligations and validation limits.
 
 ## The three ideas behind the name and architecture
 
