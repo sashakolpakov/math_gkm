@@ -1,0 +1,3656 @@
+{
+  "atime_observation": {
+    "qualification": "Atime is read before each content hash. A pre-existing atime difference would be compatible with intervening reads and is not evidence of byte or stable-metadata mutation; no producing reader is inferred. Reading during this postcheck may advance atime. Inventory atime is not asserted immutable; operation records preserve each target at operation entry.",
+    "targets_changed_during_this_postcheck_hash": [],
+    "targets_differing_before_hash": [],
+    "targets_matching_recorded_operation_atime_before_postcheck_hash": 188
+  },
+  "checks": {
+    "all_expected_source_target_hashes_and_sizes_match": true,
+    "all_ordinary_single_link_distinct_same_volume_files": true,
+    "all_recorded_new_inodes_match_current_targets": true,
+    "all_source_paths_match_closed_worker_tags": true,
+    "all_target_inodes_differ_from_inventory_old_inodes": true,
+    "all_target_mode_uid_gid_mtime_match_inventory_and_result": true,
+    "current_script_matches_reviewed_script_sha256": true,
+    "exact_result_target_set_and_order_matches_inventory": true,
+    "input_records_unchanged_during_postcheck": true,
+    "inventory_review_result_digest_chain_valid": true,
+    "no_source_current_evidence_replacement_target": true
+  },
+  "finished_utc": "2026-10-17T02:36:31.317969+00:00",
+  "free_space": {
+    "observed_change_bytes": 2396028928,
+    "qualification": "These are operation-window free-space observations, not an independent attribution of every free byte to cloning. Logical duplicate size is not a guaranteed physical reclaim amount; unrelated concurrent changes are not attributed.",
+    "reported_after_bytes": 6138343424,
+    "reported_before_bytes": 3742314496
+  },
+  "independent_helper": {
+    "path": "/private/tmp/math_gkm_storage_postcheck_20261017_0224_independent.py",
+    "sha256": "8d38e426fc293973f58c8ef2f99fe682188ba54e73d954f731f688990f300a50"
+  },
+  "input_pins": [
+    {
+      "bytes": 101187,
+      "path": "/private/tmp/math_gkm_storage_inventory_20261017_0224.json",
+      "sha256": "0bcd386de67cf2b08868b5c14c9d6413b1a023675749be90d161767e874cea80"
+    },
+    {
+      "bytes": 5896,
+      "path": "/private/tmp/math_gkm_storage_clone_20261017_0224.py",
+      "sha256": "2c5f2b4c72a47e278029399fbd7276a59ae681f04eee75441224d1fc0e308e53"
+    },
+    {
+      "bytes": 17376,
+      "path": "/private/tmp/math_gkm_storage_inventory_20261017_0224_independent_review.json",
+      "sha256": "6b51ac0e85b2eebe8d56da1a05c9233d6327de1b7c95513871a3849581e9757a"
+    },
+    {
+      "bytes": 112061,
+      "path": "/private/tmp/math_gkm_storage_clone_20261017_0224_result.json",
+      "sha256": "ec1a2897ffac5757794f84271744a379e635f3cf82606d54a8c07093a01f14a0"
+    }
+  ],
+  "logical_duplicate_bytes": 2394524272,
+  "metadata_limitations": "Inode changes are intended and verified; ctime and birth time may change. This postcheck authenticates retained bytes and required stable metadata at its bounded observation, not future immutability or compiler/proof provenance.",
+  "necessary_corrections": [],
+  "operation_finished_utc": "2026-10-17T02:34:16.069311+00:00",
+  "operation_started_utc": "2026-10-17T02:34:05.500465+00:00",
+  "processed": 188,
+  "required_preservation_companions": [
+    "/private/tmp/math_gkm_storage_inventory_20261017_0224.json",
+    "/private/tmp/math_gkm_storage_clone_20261017_0224.py",
+    "/private/tmp/math_gkm_storage_inventory_20261017_0224_independent_review.json",
+    "/private/tmp/math_gkm_storage_clone_20261017_0224_result.json",
+    "/private/tmp/math_gkm_storage_clone_20261017_0224_independent_postcheck.json",
+    "/private/tmp/math_gkm_storage_preflight_20261017_0224_independent.py",
+    "/private/tmp/math_gkm_storage_postcheck_20261017_0224_independent.py"
+  ],
+  "rows": [
+    {
+      "atime_after_postcheck_hash_ns": 1792194275294198032,
+      "atime_before_postcheck_hash_ns": 1792194275294198032,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2272,
+      "observed_new_inode": 106455816,
+      "old_inode": 106314121,
+      "recorded_new_inode": 106455816,
+      "recorded_operation_atime_ns": 1792194275294198032,
+      "sha256": "17ba803f606aea604021aad205c22f1f98cf44a07456a2a9e73262c5cc5ace5c",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovAudit1792193590526107000MAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194164326509342,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000164/artifacts/evidence/markov-ad504da6/MarkovAudit1792193590526107000MAD5.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203781481858079,
+      "atime_before_postcheck_hash_ns": 1792203781481858079,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2272,
+      "observed_new_inode": 106455820,
+      "old_inode": 106318487,
+      "recorded_new_inode": 106455820,
+      "recorded_operation_atime_ns": 1792203781481858079,
+      "sha256": "17ba803f606aea604021aad205c22f1f98cf44a07456a2a9e73262c5cc5ace5c",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovAudit1792193590526107000MAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194540093391728,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/17ba803f606aea604021aad205c22f1f98cf44a07456a2a9e73262c5cc5ace5c"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792194275294946544,
+      "atime_before_postcheck_hash_ns": 1792194275294946544,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2520,
+      "observed_new_inode": 106455821,
+      "old_inode": 106314117,
+      "recorded_new_inode": 106455821,
+      "recorded_operation_atime_ns": 1792194275294946544,
+      "sha256": "c63980014b66b373f6695b2d5bee4702e54a867d65a8fd06bbecc4ba5ac8db0c",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovAudit1792193996612067000MAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194164325395492,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000164/artifacts/evidence/markov-ad504da6/MarkovAudit1792193996612067000MAD5.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203781482401960,
+      "atime_before_postcheck_hash_ns": 1792203781482401960,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2520,
+      "observed_new_inode": 106455822,
+      "old_inode": 106318497,
+      "recorded_new_inode": 106455822,
+      "recorded_operation_atime_ns": 1792203781482401960,
+      "sha256": "c63980014b66b373f6695b2d5bee4702e54a867d65a8fd06bbecc4ba5ac8db0c",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovAudit1792193996612067000MAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194540129741510,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/c63980014b66b373f6695b2d5bee4702e54a867d65a8fd06bbecc4ba5ac8db0c"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792194275296672029,
+      "atime_before_postcheck_hash_ns": 1792194275296672029,
+      "atime_matches_operation_before_read": true,
+      "bytes": 536376,
+      "observed_new_inode": 106455823,
+      "old_inode": 106314217,
+      "recorded_new_inode": 106455823,
+      "recorded_operation_atime_ns": 1792194275296672029,
+      "sha256": "24fef25e6001df53196ef4068568fb4bb69f3172c97d18165886c066b56c926c",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovCenteredBridgeMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194168872264278,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000164/artifacts/evidence/markov-ad504da6/MarkovCenteredBridgeMAD5.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203781484321149,
+      "atime_before_postcheck_hash_ns": 1792203781484321149,
+      "atime_matches_operation_before_read": true,
+      "bytes": 536376,
+      "observed_new_inode": 106455825,
+      "old_inode": 106318494,
+      "recorded_new_inode": 106455825,
+      "recorded_operation_atime_ns": 1792203781484321149,
+      "sha256": "24fef25e6001df53196ef4068568fb4bb69f3172c97d18165886c066b56c926c",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovCenteredBridgeMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194540117178770,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/24fef25e6001df53196ef4068568fb4bb69f3172c97d18165886c066b56c926c"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792194275298229595,
+      "atime_before_postcheck_hash_ns": 1792194275298229595,
+      "atime_matches_operation_before_read": true,
+      "bytes": 457448,
+      "observed_new_inode": 106455826,
+      "old_inode": 106314179,
+      "recorded_new_inode": 106455826,
+      "recorded_operation_atime_ns": 1792194275298229595,
+      "sha256": "ac8b8c8fca29a76df55727e01970ab9160dd6c8c48334d83bae83c98867291c0",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovClearingBridgeMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194167305433624,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000164/artifacts/evidence/markov-ad504da6/MarkovClearingBridgeMAD5.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203781485967419,
+      "atime_before_postcheck_hash_ns": 1792203781485967419,
+      "atime_matches_operation_before_read": true,
+      "bytes": 457448,
+      "observed_new_inode": 106455827,
+      "old_inode": 106318529,
+      "recorded_new_inode": 106455827,
+      "recorded_operation_atime_ns": 1792203781485967419,
+      "sha256": "ac8b8c8fca29a76df55727e01970ab9160dd6c8c48334d83bae83c98867291c0",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovClearingBridgeMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194540517839554,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/ac8b8c8fca29a76df55727e01970ab9160dd6c8c48334d83bae83c98867291c0"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792194275310412955,
+      "atime_before_postcheck_hash_ns": 1792194275310412955,
+      "atime_matches_operation_before_read": true,
+      "bytes": 8565416,
+      "observed_new_inode": 106455828,
+      "old_inode": 106314065,
+      "recorded_new_inode": 106455828,
+      "recorded_operation_atime_ns": 1792194275310412955,
+      "sha256": "5b216637b5fe590948b00d448b82d15715a4273d44de11236102cf9fefd323fc",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovFactorBridgeMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194163242436686,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000164/artifacts/evidence/markov-ad504da6/MarkovFactorBridgeMAD5.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203781497980599,
+      "atime_before_postcheck_hash_ns": 1792203781497980599,
+      "atime_matches_operation_before_read": true,
+      "bytes": 8565416,
+      "observed_new_inode": 106455830,
+      "old_inode": 106318562,
+      "recorded_new_inode": 106455830,
+      "recorded_operation_atime_ns": 1792203781497980599,
+      "sha256": "5b216637b5fe590948b00d448b82d15715a4273d44de11236102cf9fefd323fc",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovFactorBridgeMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194540775256284,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/5b216637b5fe590948b00d448b82d15715a4273d44de11236102cf9fefd323fc"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792194275311323594,
+      "atime_before_postcheck_hash_ns": 1792194275311323594,
+      "atime_matches_operation_before_read": true,
+      "bytes": 151536,
+      "observed_new_inode": 106455833,
+      "old_inode": 106314256,
+      "recorded_new_inode": 106455833,
+      "recorded_operation_atime_ns": 1792194275311323594,
+      "sha256": "43d521176c45a671e64c801621501656f012e1c71dd8f7fb542aaf6fe550616e",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovKernelSupportMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194169781329380,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000164/artifacts/evidence/markov-ad504da6/MarkovKernelSupportMAD5.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203781498960403,
+      "atime_before_postcheck_hash_ns": 1792203781498960403,
+      "atime_matches_operation_before_read": true,
+      "bytes": 151536,
+      "observed_new_inode": 106455834,
+      "old_inode": 106318518,
+      "recorded_new_inode": 106455834,
+      "recorded_operation_atime_ns": 1792203781498960403,
+      "sha256": "43d521176c45a671e64c801621501656f012e1c71dd8f7fb542aaf6fe550616e",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovKernelSupportMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194540487864581,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/43d521176c45a671e64c801621501656f012e1c71dd8f7fb542aaf6fe550616e"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792194275312179982,
+      "atime_before_postcheck_hash_ns": 1792194275312179982,
+      "atime_matches_operation_before_read": true,
+      "bytes": 254264,
+      "observed_new_inode": 106455835,
+      "old_inode": 106314061,
+      "recorded_new_inode": 106455835,
+      "recorded_operation_atime_ns": 1792194275312179982,
+      "sha256": "a821c52c616b3bf452ac2d7268a57a1a1c75ec192369221ec3307a018b1c8a5a",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovKernelValuesMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194162826707456,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000164/artifacts/evidence/markov-ad504da6/MarkovKernelValuesMAD5.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203781500022957,
+      "atime_before_postcheck_hash_ns": 1792203781500022957,
+      "atime_matches_operation_before_read": true,
+      "bytes": 254264,
+      "observed_new_inode": 106455836,
+      "old_inode": 106318507,
+      "recorded_new_inode": 106455836,
+      "recorded_operation_atime_ns": 1792203781500022957,
+      "sha256": "a821c52c616b3bf452ac2d7268a57a1a1c75ec192369221ec3307a018b1c8a5a",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovKernelValuesMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194540280134302,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/a821c52c616b3bf452ac2d7268a57a1a1c75ec192369221ec3307a018b1c8a5a"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792194275591739688,
+      "atime_before_postcheck_hash_ns": 1792194275591739688,
+      "atime_matches_operation_before_read": true,
+      "bytes": 186964096,
+      "observed_new_inode": 106455841,
+      "old_inode": 106314138,
+      "recorded_new_inode": 106455841,
+      "recorded_operation_atime_ns": 1792194275591739688,
+      "sha256": "2558c8f6224c9c819e19c78565511ac38f0e6154f308c235bfeaaf9ec5d34173",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovPairHalf00MAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194165108197226,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000164/artifacts/evidence/markov-ad504da6/MarkovPairHalf00MAD5.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203781795574802,
+      "atime_before_postcheck_hash_ns": 1792203781795574802,
+      "atime_matches_operation_before_read": true,
+      "bytes": 186964096,
+      "observed_new_inode": 106455866,
+      "old_inode": 106318502,
+      "recorded_new_inode": 106455866,
+      "recorded_operation_atime_ns": 1792203781795574802,
+      "sha256": "2558c8f6224c9c819e19c78565511ac38f0e6154f308c235bfeaaf9ec5d34173",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovPairHalf00MAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194540265007646,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/2558c8f6224c9c819e19c78565511ac38f0e6154f308c235bfeaaf9ec5d34173"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792194275937085348,
+      "atime_before_postcheck_hash_ns": 1792194275937085348,
+      "atime_matches_operation_before_read": true,
+      "bytes": 230444672,
+      "observed_new_inode": 106455879,
+      "old_inode": 106314085,
+      "recorded_new_inode": 106455879,
+      "recorded_operation_atime_ns": 1792194275937085348,
+      "sha256": "d90e40e0fb107c4b098ae49fd184dc532ca171a277e18e3b135aff07671f8ce1",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovPairHalf01MAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194164128309213,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000164/artifacts/evidence/markov-ad504da6/MarkovPairHalf01MAD5.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203782201217341,
+      "atime_before_postcheck_hash_ns": 1792203782201217341,
+      "atime_matches_operation_before_read": true,
+      "bytes": 230444672,
+      "observed_new_inode": 106455913,
+      "old_inode": 106318484,
+      "recorded_new_inode": 106455913,
+      "recorded_operation_atime_ns": 1792203782201217341,
+      "sha256": "d90e40e0fb107c4b098ae49fd184dc532ca171a277e18e3b135aff07671f8ce1",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovPairHalf01MAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194540084871469,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/d90e40e0fb107c4b098ae49fd184dc532ca171a277e18e3b135aff07671f8ce1"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792194276014958827,
+      "atime_before_postcheck_hash_ns": 1792194276014958827,
+      "atime_matches_operation_before_read": true,
+      "bytes": 50831216,
+      "observed_new_inode": 106455924,
+      "old_inode": 106314035,
+      "recorded_new_inode": 106455924,
+      "recorded_operation_atime_ns": 1792194276014958827,
+      "sha256": "dab4e841399e7dbbc0bb01e812d653c467b4614b74b749235c2c14713b9a03ff",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovPairHalf10MAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194162713658129,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000164/artifacts/evidence/markov-ad504da6/MarkovPairHalf10MAD5.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203782267419400,
+      "atime_before_postcheck_hash_ns": 1792203782267419400,
+      "atime_matches_operation_before_read": true,
+      "bytes": 50831216,
+      "observed_new_inode": 106455928,
+      "old_inode": 106318568,
+      "recorded_new_inode": 106455928,
+      "recorded_operation_atime_ns": 1792203782267419400,
+      "sha256": "dab4e841399e7dbbc0bb01e812d653c467b4614b74b749235c2c14713b9a03ff",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovPairHalf10MAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194540859299945,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/dab4e841399e7dbbc0bb01e812d653c467b4614b74b749235c2c14713b9a03ff"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792194276402788617,
+      "atime_before_postcheck_hash_ns": 1792194276402788617,
+      "atime_matches_operation_before_read": true,
+      "bytes": 236153064,
+      "observed_new_inode": 106455937,
+      "old_inode": 106314159,
+      "recorded_new_inode": 106455937,
+      "recorded_operation_atime_ns": 1792194276402788617,
+      "sha256": "157ed4e268ee5350393920a5d888285bc2f9e00fbaa19f4b137a182e205b0b17",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovPairHalf11MAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194167209886824,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000164/artifacts/evidence/markov-ad504da6/MarkovPairHalf11MAD5.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203782674032493,
+      "atime_before_postcheck_hash_ns": 1792203782674032493,
+      "atime_matches_operation_before_read": true,
+      "bytes": 236153064,
+      "observed_new_inode": 106455969,
+      "old_inode": 106318543,
+      "recorded_new_inode": 106455969,
+      "recorded_operation_atime_ns": 1792203782674032493,
+      "sha256": "157ed4e268ee5350393920a5d888285bc2f9e00fbaa19f4b137a182e205b0b17",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovPairHalf11MAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194540715294588,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/157ed4e268ee5350393920a5d888285bc2f9e00fbaa19f4b137a182e205b0b17"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792194276526135439,
+      "atime_before_postcheck_hash_ns": 1792194276526135439,
+      "atime_matches_operation_before_read": true,
+      "bytes": 64362136,
+      "observed_new_inode": 106455981,
+      "old_inode": 106314227,
+      "recorded_new_inode": 106455981,
+      "recorded_operation_atime_ns": 1792194276526135439,
+      "sha256": "c242a6a509a569ea5704c8df892bdd23ecfa14ae253ab5a2a6520b1d55ff06fb",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovPairHalf21MAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194169724171728,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000164/artifacts/evidence/markov-ad504da6/MarkovPairHalf21MAD5.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203782798272142,
+      "atime_before_postcheck_hash_ns": 1792203782798272142,
+      "atime_matches_operation_before_read": true,
+      "bytes": 64362136,
+      "observed_new_inode": 106455995,
+      "old_inode": 106318513,
+      "recorded_new_inode": 106455995,
+      "recorded_operation_atime_ns": 1792203782798272142,
+      "sha256": "c242a6a509a569ea5704c8df892bdd23ecfa14ae253ab5a2a6520b1d55ff06fb",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovPairHalf21MAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194540470390764,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/c242a6a509a569ea5704c8df892bdd23ecfa14ae253ab5a2a6520b1d55ff06fb"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792194276592847784,
+      "atime_before_postcheck_hash_ns": 1792194276592847784,
+      "atime_matches_operation_before_read": true,
+      "bytes": 37631248,
+      "observed_new_inode": 106455999,
+      "old_inode": 106314212,
+      "recorded_new_inode": 106455999,
+      "recorded_operation_atime_ns": 1792194276592847784,
+      "sha256": "4ee59a2de9f40a6ed05a79205184610a73ffdb438a4a9aaccf1033a68fcc2c9e",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovPairHalf31MAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194168717522627,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000164/artifacts/evidence/markov-ad504da6/MarkovPairHalf31MAD5.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203782853542284,
+      "atime_before_postcheck_hash_ns": 1792203782853542284,
+      "atime_matches_operation_before_read": true,
+      "bytes": 37631248,
+      "observed_new_inode": 106456007,
+      "old_inode": 106318570,
+      "recorded_new_inode": 106456007,
+      "recorded_operation_atime_ns": 1792203782853542284,
+      "sha256": "4ee59a2de9f40a6ed05a79205184610a73ffdb438a4a9aaccf1033a68fcc2c9e",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovPairHalf31MAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194540917970621,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/4ee59a2de9f40a6ed05a79205184610a73ffdb438a4a9aaccf1033a68fcc2c9e"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792194276598007824,
+      "atime_before_postcheck_hash_ns": 1792194276598007824,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2509888,
+      "observed_new_inode": 106456008,
+      "old_inode": 106314076,
+      "recorded_new_inode": 106456008,
+      "recorded_operation_atime_ns": 1792194276598007824,
+      "sha256": "ec5aa7d22ce4f40812f6d0d7cf7c5cc4b0fe10081415cfd268955b13e87fe857",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovPairRatiosMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194163394038954,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000164/artifacts/evidence/markov-ad504da6/MarkovPairRatiosMAD5.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203782859849565,
+      "atime_before_postcheck_hash_ns": 1792203782859849565,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2509888,
+      "observed_new_inode": 106456010,
+      "old_inode": 106318481,
+      "recorded_new_inode": 106456010,
+      "recorded_operation_atime_ns": 1792203782859849565,
+      "sha256": "ec5aa7d22ce4f40812f6d0d7cf7c5cc4b0fe10081415cfd268955b13e87fe857",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovPairRatiosMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194539895525396,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/ec5aa7d22ce4f40812f6d0d7cf7c5cc4b0fe10081415cfd268955b13e87fe857"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792194276599854895,
+      "atime_before_postcheck_hash_ns": 1792194276599854895,
+      "atime_matches_operation_before_read": true,
+      "bytes": 464448,
+      "observed_new_inode": 106456012,
+      "old_inode": 106314252,
+      "recorded_new_inode": 106456012,
+      "recorded_operation_atime_ns": 1792194276599854895,
+      "sha256": "7895410ecf31a14561dd9fbef469b8a9e0be1558261cdf563806ba79da2bafdf",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovPairStepMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194169778516752,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000164/artifacts/evidence/markov-ad504da6/MarkovPairStepMAD5.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203782861562793,
+      "atime_before_postcheck_hash_ns": 1792203782861562793,
+      "atime_matches_operation_before_read": true,
+      "bytes": 464448,
+      "observed_new_inode": 106456013,
+      "old_inode": 106318540,
+      "recorded_new_inode": 106456013,
+      "recorded_operation_atime_ns": 1792203782861562793,
+      "sha256": "7895410ecf31a14561dd9fbef469b8a9e0be1558261cdf563806ba79da2bafdf",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovPairStepMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194540524269948,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/7895410ecf31a14561dd9fbef469b8a9e0be1558261cdf563806ba79da2bafdf"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792194276602164140,
+      "atime_before_postcheck_hash_ns": 1792194276602164140,
+      "atime_matches_operation_before_read": true,
+      "bytes": 822272,
+      "observed_new_inode": 106456014,
+      "old_inode": 106314201,
+      "recorded_new_inode": 106456014,
+      "recorded_operation_atime_ns": 1792194276602164140,
+      "sha256": "06cdcf9a515f7967be8d1c7ed6472c97b150e0b5ecd785e965148ab5274abdea",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovRationalBridgeMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194168206626435,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000164/artifacts/evidence/markov-ad504da6/MarkovRationalBridgeMAD5.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203782863635359,
+      "atime_before_postcheck_hash_ns": 1792203782863635359,
+      "atime_matches_operation_before_read": true,
+      "bytes": 822272,
+      "observed_new_inode": 106456015,
+      "old_inode": 106318508,
+      "recorded_new_inode": 106456015,
+      "recorded_operation_atime_ns": 1792203782863635359,
+      "sha256": "06cdcf9a515f7967be8d1c7ed6472c97b150e0b5ecd785e965148ab5274abdea",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovRationalBridgeMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194540284214783,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/06cdcf9a515f7967be8d1c7ed6472c97b150e0b5ecd785e965148ab5274abdea"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792194276602998861,
+      "atime_before_postcheck_hash_ns": 1792194276602998861,
+      "atime_matches_operation_before_read": true,
+      "bytes": 160432,
+      "observed_new_inode": 106456018,
+      "old_inode": 106314148,
+      "recorded_new_inode": 106456018,
+      "recorded_operation_atime_ns": 1792194276602998861,
+      "sha256": "4b8fdd079821d10e5345862d7980e795d56a7534a87c1489d7427724d6aed18e",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovSymmetricCutMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194165227307731,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000164/artifacts/evidence/markov-ad504da6/MarkovSymmetricCutMAD5.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203782864533703,
+      "atime_before_postcheck_hash_ns": 1792203782864533703,
+      "atime_matches_operation_before_read": true,
+      "bytes": 160432,
+      "observed_new_inode": 106456019,
+      "old_inode": 106318565,
+      "recorded_new_inode": 106456019,
+      "recorded_operation_atime_ns": 1792203782864533703,
+      "sha256": "4b8fdd079821d10e5345862d7980e795d56a7534a87c1489d7427724d6aed18e",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovSymmetricCutMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194540787100888,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/4b8fdd079821d10e5345862d7980e795d56a7534a87c1489d7427724d6aed18e"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792194276603866625,
+      "atime_before_postcheck_hash_ns": 1792194276603866625,
+      "atime_matches_operation_before_read": true,
+      "bytes": 167888,
+      "observed_new_inode": 106456020,
+      "old_inode": 106314146,
+      "recorded_new_inode": 106456020,
+      "recorded_operation_atime_ns": 1792194276603866625,
+      "sha256": "f4ed9a31a239bee87576b37a6a81345045b917fb8308a48a3397dc18667dc52e",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovZeroNormalizedMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194165145175477,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000164/artifacts/evidence/markov-ad504da6/MarkovZeroNormalizedMAD5.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203782865349546,
+      "atime_before_postcheck_hash_ns": 1792203782865349546,
+      "atime_matches_operation_before_read": true,
+      "bytes": 167888,
+      "observed_new_inode": 106456021,
+      "old_inode": 106318546,
+      "recorded_new_inode": 106456021,
+      "recorded_operation_atime_ns": 1792203782865349546,
+      "sha256": "f4ed9a31a239bee87576b37a6a81345045b917fb8308a48a3397dc18667dc52e",
+      "source": "/Users/sasha/math_gkm/evidence/markov-ad504da6/MarkovZeroNormalizedMAD5.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792194540723124211,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/f4ed9a31a239bee87576b37a6a81345045b917fb8308a48a3397dc18667dc52e"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196541561385935,
+      "atime_before_postcheck_hash_ns": 1792196541561385935,
+      "atime_matches_operation_before_read": true,
+      "bytes": 5200,
+      "observed_new_inode": 106456022,
+      "old_inode": 106349456,
+      "recorded_new_inode": 106456022,
+      "recorded_operation_atime_ns": 1792196541561385935,
+      "sha256": "e3a15f68d0981bd4041d0c1a8b883ab0e1e4b54cd5625069b2940382f9dea022",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovAudit1792196006273400000MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196398904891102,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovAudit1792196006273400000MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203782868541124,
+      "atime_before_postcheck_hash_ns": 1792203782868541124,
+      "atime_matches_operation_before_read": true,
+      "bytes": 5200,
+      "observed_new_inode": 106456023,
+      "old_inode": 106350349,
+      "recorded_new_inode": 106456023,
+      "recorded_operation_atime_ns": 1792203782868541124,
+      "sha256": "e3a15f68d0981bd4041d0c1a8b883ab0e1e4b54cd5625069b2940382f9dea022",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovAudit1792196006273400000MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478372486272,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/e3a15f68d0981bd4041d0c1a8b883ab0e1e4b54cd5625069b2940382f9dea022"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196541562670205,
+      "atime_before_postcheck_hash_ns": 1792196541562670205,
+      "atime_matches_operation_before_read": true,
+      "bytes": 178456,
+      "observed_new_inode": 106456024,
+      "old_inode": 106349531,
+      "recorded_new_inode": 106456024,
+      "recorded_operation_atime_ns": 1792196541562670205,
+      "sha256": "e1b871c2f23ef024c717c3619aeb8da8a149d9ec2d8f6ea976ad27614dedbd5a",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovCorrectionObstructionMC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196398973315099,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovCorrectionObstructionMC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203782869744138,
+      "atime_before_postcheck_hash_ns": 1792203782869744138,
+      "atime_matches_operation_before_read": true,
+      "bytes": 178456,
+      "observed_new_inode": 106456025,
+      "old_inode": 106350420,
+      "recorded_new_inode": 106456025,
+      "recorded_operation_atime_ns": 1792203782869744138,
+      "sha256": "e1b871c2f23ef024c717c3619aeb8da8a149d9ec2d8f6ea976ad27614dedbd5a",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovCorrectionObstructionMC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478598287812,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/e1b871c2f23ef024c717c3619aeb8da8a149d9ec2d8f6ea976ad27614dedbd5a"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196541633002566,
+      "atime_before_postcheck_hash_ns": 1792196541633002566,
+      "atime_matches_operation_before_read": true,
+      "bytes": 40081608,
+      "observed_new_inode": 106456027,
+      "old_inode": 106349578,
+      "recorded_new_inode": 106456027,
+      "recorded_operation_atime_ns": 1792196541633002566,
+      "sha256": "d297d8da5cf6ac16730af30fad1d8718ffe2dc3dcf2726f86099f2784d9f6465",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch0S14MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196399022129369,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseBatch0S14MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203782916044592,
+      "atime_before_postcheck_hash_ns": 1792203782916044592,
+      "atime_matches_operation_before_read": true,
+      "bytes": 40081608,
+      "observed_new_inode": 106456032,
+      "old_inode": 106350394,
+      "recorded_new_inode": 106456032,
+      "recorded_operation_atime_ns": 1792203782916044592,
+      "sha256": "d297d8da5cf6ac16730af30fad1d8718ffe2dc3dcf2726f86099f2784d9f6465",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch0S14MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478494208828,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/d297d8da5cf6ac16730af30fad1d8718ffe2dc3dcf2726f86099f2784d9f6465"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196541649720954,
+      "atime_before_postcheck_hash_ns": 1792196541649720954,
+      "atime_matches_operation_before_read": true,
+      "bytes": 7954072,
+      "observed_new_inode": 106456036,
+      "old_inode": 106349457,
+      "recorded_new_inode": 106456036,
+      "recorded_operation_atime_ns": 1792196541649720954,
+      "sha256": "ae4908ac7809ff35b5b635c717b793d2fd31d6c4d05ac780f463803d5c2f80ca",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch0S18MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196398909311546,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseBatch0S18MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203782926793217,
+      "atime_before_postcheck_hash_ns": 1792203782926793217,
+      "atime_matches_operation_before_read": true,
+      "bytes": 7954072,
+      "observed_new_inode": 106456037,
+      "old_inode": 106350428,
+      "recorded_new_inode": 106456037,
+      "recorded_operation_atime_ns": 1792203782926793217,
+      "sha256": "ae4908ac7809ff35b5b635c717b793d2fd31d6c4d05ac780f463803d5c2f80ca",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch0S18MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478631762718,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/ae4908ac7809ff35b5b635c717b793d2fd31d6c4d05ac780f463803d5c2f80ca"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196541672819486,
+      "atime_before_postcheck_hash_ns": 1792196541672819486,
+      "atime_matches_operation_before_read": true,
+      "bytes": 11360048,
+      "observed_new_inode": 106456038,
+      "old_inode": 106349556,
+      "recorded_new_inode": 106456038,
+      "recorded_operation_atime_ns": 1792196541672819486,
+      "sha256": "04dd13b6c9cb0f4f089e80e91f039fd54867c59ae558c2c29d9df04c854ef962",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch0S9MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196398988493671,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseBatch0S9MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203782941570930,
+      "atime_before_postcheck_hash_ns": 1792203782941570930,
+      "atime_matches_operation_before_read": true,
+      "bytes": 11360048,
+      "observed_new_inode": 106456040,
+      "old_inode": 106350305,
+      "recorded_new_inode": 106456040,
+      "recorded_operation_atime_ns": 1792203782941570930,
+      "sha256": "04dd13b6c9cb0f4f089e80e91f039fd54867c59ae558c2c29d9df04c854ef962",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch0S9MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478272178014,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/04dd13b6c9cb0f4f089e80e91f039fd54867c59ae558c2c29d9df04c854ef962"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196541713394543,
+      "atime_before_postcheck_hash_ns": 1792196541713394543,
+      "atime_matches_operation_before_read": true,
+      "bytes": 21991368,
+      "observed_new_inode": 106456044,
+      "old_inode": 106349471,
+      "recorded_new_inode": 106456044,
+      "recorded_operation_atime_ns": 1792196541713394543,
+      "sha256": "46d0750339f618fd8e0137b3b245f98cb1161ce442cc934974c558ec16167b32",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch1S14MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196398932042489,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseBatch1S14MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203782967675233,
+      "atime_before_postcheck_hash_ns": 1792203782967675233,
+      "atime_matches_operation_before_read": true,
+      "bytes": 21991368,
+      "observed_new_inode": 106456045,
+      "old_inode": 106350379,
+      "recorded_new_inode": 106456045,
+      "recorded_operation_atime_ns": 1792203782967675233,
+      "sha256": "46d0750339f618fd8e0137b3b245f98cb1161ce442cc934974c558ec16167b32",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch1S14MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478445093048,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/46d0750339f618fd8e0137b3b245f98cb1161ce442cc934974c558ec16167b32"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196541828365817,
+      "atime_before_postcheck_hash_ns": 1792196541828365817,
+      "atime_matches_operation_before_read": true,
+      "bytes": 63524120,
+      "observed_new_inode": 106456049,
+      "old_inode": 106349711,
+      "recorded_new_inode": 106456049,
+      "recorded_operation_atime_ns": 1792196541828365817,
+      "sha256": "e745007a737b55036bd40c83c1af555a2b25a96f484819f76b64e4c306b25ef7",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch1S18MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196399225150866,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseBatch1S18MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783040690330,
+      "atime_before_postcheck_hash_ns": 1792203783040690330,
+      "atime_matches_operation_before_read": true,
+      "bytes": 63524120,
+      "observed_new_inode": 106456054,
+      "old_inode": 106350408,
+      "recorded_new_inode": 106456054,
+      "recorded_operation_atime_ns": 1792203783040690330,
+      "sha256": "e745007a737b55036bd40c83c1af555a2b25a96f484819f76b64e4c306b25ef7",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch1S18MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478572609488,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/e745007a737b55036bd40c83c1af555a2b25a96f484819f76b64e4c306b25ef7"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196541839434158,
+      "atime_before_postcheck_hash_ns": 1792196541839434158,
+      "atime_matches_operation_before_read": true,
+      "bytes": 4602832,
+      "observed_new_inode": 106456058,
+      "old_inode": 106349707,
+      "recorded_new_inode": 106456058,
+      "recorded_operation_atime_ns": 1792196541839434158,
+      "sha256": "185873d5e55b17e6989a3d5ba0681b3efbd7aeb63c2a0635a0f915b5d4be23cb",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch1S9MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196399189034838,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseBatch1S9MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783047614910,
+      "atime_before_postcheck_hash_ns": 1792203783047614910,
+      "atime_matches_operation_before_read": true,
+      "bytes": 4602832,
+      "observed_new_inode": 106456060,
+      "old_inode": 106350385,
+      "recorded_new_inode": 106456060,
+      "recorded_operation_atime_ns": 1792203783047614910,
+      "sha256": "185873d5e55b17e6989a3d5ba0681b3efbd7aeb63c2a0635a0f915b5d4be23cb",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch1S9MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478461464058,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/185873d5e55b17e6989a3d5ba0681b3efbd7aeb63c2a0635a0f915b5d4be23cb"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196541931588530,
+      "atime_before_postcheck_hash_ns": 1792196541931588530,
+      "atime_matches_operation_before_read": true,
+      "bytes": 49807280,
+      "observed_new_inode": 106456061,
+      "old_inode": 106349643,
+      "recorded_new_inode": 106456061,
+      "recorded_operation_atime_ns": 1792196541931588530,
+      "sha256": "7dfef74001630ff482719b778140cbaa017d640c0bc7a01abae227925ba27abb",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch2S14MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196399133098663,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseBatch2S14MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783105523874,
+      "atime_before_postcheck_hash_ns": 1792203783105523874,
+      "atime_matches_operation_before_read": true,
+      "bytes": 49807280,
+      "observed_new_inode": 106456065,
+      "old_inode": 106350333,
+      "recorded_new_inode": 106456065,
+      "recorded_operation_atime_ns": 1792203783105523874,
+      "sha256": "7dfef74001630ff482719b778140cbaa017d640c0bc7a01abae227925ba27abb",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch2S14MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478324917725,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/7dfef74001630ff482719b778140cbaa017d640c0bc7a01abae227925ba27abb"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196541953569294,
+      "atime_before_postcheck_hash_ns": 1792196541953569294,
+      "atime_matches_operation_before_read": true,
+      "bytes": 10646928,
+      "observed_new_inode": 106456071,
+      "old_inode": 106349597,
+      "recorded_new_inode": 106456071,
+      "recorded_operation_atime_ns": 1792196541953569294,
+      "sha256": "60db00c34bef43afcd9d30f356f67335f111dff80a74b6d391502e3ac025ab4b",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch2S9MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196399088247080,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseBatch2S9MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783119375618,
+      "atime_before_postcheck_hash_ns": 1792203783119375618,
+      "atime_matches_operation_before_read": true,
+      "bytes": 10646928,
+      "observed_new_inode": 106456072,
+      "old_inode": 106350423,
+      "recorded_new_inode": 106456072,
+      "recorded_operation_atime_ns": 1792203783119375618,
+      "sha256": "60db00c34bef43afcd9d30f356f67335f111dff80a74b6d391502e3ac025ab4b",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch2S9MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478618556341,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/60db00c34bef43afcd9d30f356f67335f111dff80a74b6d391502e3ac025ab4b"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542031867780,
+      "atime_before_postcheck_hash_ns": 1792196542031867780,
+      "atime_matches_operation_before_read": true,
+      "bytes": 45052400,
+      "observed_new_inode": 106456074,
+      "old_inode": 106349581,
+      "recorded_new_inode": 106456074,
+      "recorded_operation_atime_ns": 1792196542031867780,
+      "sha256": "0d22fff8f39db8a9cc168589d9e6b22397782eb258f44a886f04db27eabb4f20",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch3S14MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196399061533158,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseBatch3S14MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783171522098,
+      "atime_before_postcheck_hash_ns": 1792203783171522098,
+      "atime_matches_operation_before_read": true,
+      "bytes": 45052400,
+      "observed_new_inode": 106456078,
+      "old_inode": 106350364,
+      "recorded_new_inode": 106456078,
+      "recorded_operation_atime_ns": 1792203783171522098,
+      "sha256": "0d22fff8f39db8a9cc168589d9e6b22397782eb258f44a886f04db27eabb4f20",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch3S14MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478401485857,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/0d22fff8f39db8a9cc168589d9e6b22397782eb258f44a886f04db27eabb4f20"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542048786755,
+      "atime_before_postcheck_hash_ns": 1792196542048786755,
+      "atime_matches_operation_before_read": true,
+      "bytes": 8790184,
+      "observed_new_inode": 106456082,
+      "old_inode": 106349644,
+      "recorded_new_inode": 106456082,
+      "recorded_operation_atime_ns": 1792196542048786755,
+      "sha256": "1bbcbff202b73b8f019cfa1fd533daab319b4bc4008e766577c7ab30b2160987",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch3S9MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196399148728118,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseBatch3S9MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783183577154,
+      "atime_before_postcheck_hash_ns": 1792203783183577154,
+      "atime_matches_operation_before_read": true,
+      "bytes": 8790184,
+      "observed_new_inode": 106456083,
+      "old_inode": 106350345,
+      "recorded_new_inode": 106456083,
+      "recorded_operation_atime_ns": 1792203783183577154,
+      "sha256": "1bbcbff202b73b8f019cfa1fd533daab319b4bc4008e766577c7ab30b2160987",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBatch3S9MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478362499988,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/1bbcbff202b73b8f019cfa1fd533daab319b4bc4008e766577c7ab30b2160987"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542049871189,
+      "atime_before_postcheck_hash_ns": 1792196542049871189,
+      "atime_matches_operation_before_read": true,
+      "bytes": 189024,
+      "observed_new_inode": 106456084,
+      "old_inode": 106349639,
+      "recorded_new_inode": 106456084,
+      "recorded_operation_atime_ns": 1792196542049871189,
+      "sha256": "fd047a12e156a08cca34840e1f3d64c82a27d2aca51e1da5d7126d4d6d84e7ef",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBooleanMC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196399109473248,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseBooleanMC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783184509790,
+      "atime_before_postcheck_hash_ns": 1792203783184509790,
+      "atime_matches_operation_before_read": true,
+      "bytes": 189024,
+      "observed_new_inode": 106456085,
+      "old_inode": 106350421,
+      "recorded_new_inode": 106456085,
+      "recorded_operation_atime_ns": 1792203783184509790,
+      "sha256": "fd047a12e156a08cca34840e1f3d64c82a27d2aca51e1da5d7126d4d6d84e7ef",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseBooleanMC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478599985505,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/fd047a12e156a08cca34840e1f3d64c82a27d2aca51e1da5d7126d4d6d84e7ef"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542052659275,
+      "atime_before_postcheck_hash_ns": 1792196542052659275,
+      "atime_matches_operation_before_read": true,
+      "bytes": 505576,
+      "observed_new_inode": 106456086,
+      "old_inode": 106349676,
+      "recorded_new_inode": 106456086,
+      "recorded_operation_atime_ns": 1792196542052659275,
+      "sha256": "b8e3e9e9d202b5e94a5c90346ea2e837516e5f1b085d771c2f326f6382322ec2",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseCertificateMC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196399171400309,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseCertificateMC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783186027724,
+      "atime_before_postcheck_hash_ns": 1792203783186027724,
+      "atime_matches_operation_before_read": true,
+      "bytes": 505576,
+      "observed_new_inode": 106456088,
+      "old_inode": 106350387,
+      "recorded_new_inode": 106456088,
+      "recorded_operation_atime_ns": 1792203783186027724,
+      "sha256": "b8e3e9e9d202b5e94a5c90346ea2e837516e5f1b085d771c2f326f6382322ec2",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseCertificateMC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478466549139,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/b8e3e9e9d202b5e94a5c90346ea2e837516e5f1b085d771c2f326f6382322ec2"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542053740292,
+      "atime_before_postcheck_hash_ns": 1792196542053740292,
+      "atime_matches_operation_before_read": true,
+      "bytes": 144576,
+      "observed_new_inode": 106456089,
+      "old_inode": 106349572,
+      "recorded_new_inode": 106456089,
+      "recorded_operation_atime_ns": 1792196542053740292,
+      "sha256": "da0435efbaab27227e92e3c57892266a85d96c3094e5554331bd1e16b9a17d3d",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseDataMC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196399000768740,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseDataMC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783186882651,
+      "atime_before_postcheck_hash_ns": 1792203783186882651,
+      "atime_matches_operation_before_read": true,
+      "bytes": 144576,
+      "observed_new_inode": 106456090,
+      "old_inode": 106350432,
+      "recorded_new_inode": 106456090,
+      "recorded_operation_atime_ns": 1792203783186882651,
+      "sha256": "da0435efbaab27227e92e3c57892266a85d96c3094e5554331bd1e16b9a17d3d",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseDataMC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478643201482,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/da0435efbaab27227e92e3c57892266a85d96c3094e5554331bd1e16b9a17d3d"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542060267062,
+      "atime_before_postcheck_hash_ns": 1792196542060267062,
+      "atime_matches_operation_before_read": true,
+      "bytes": 1231824,
+      "observed_new_inode": 106456091,
+      "old_inode": 106349699,
+      "recorded_new_inode": 106456091,
+      "recorded_operation_atime_ns": 1792196542060267062,
+      "sha256": "2126819702b975b6f0a05131adec6ff6df83c3231caac2a8b639d5bd89f9af50",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseFactorsMC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196399182950867,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseFactorsMC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783189974645,
+      "atime_before_postcheck_hash_ns": 1792203783189974645,
+      "atime_matches_operation_before_read": true,
+      "bytes": 1231824,
+      "observed_new_inode": 106456094,
+      "old_inode": 106350334,
+      "recorded_new_inode": 106456094,
+      "recorded_operation_atime_ns": 1792203783189974645,
+      "sha256": "2126819702b975b6f0a05131adec6ff6df83c3231caac2a8b639d5bd89f9af50",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseFactorsMC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478329043499,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/2126819702b975b6f0a05131adec6ff6df83c3231caac2a8b639d5bd89f9af50"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542061175201,
+      "atime_before_postcheck_hash_ns": 1792196542061175201,
+      "atime_matches_operation_before_read": true,
+      "bytes": 47200,
+      "observed_new_inode": 106456096,
+      "old_inode": 106349466,
+      "recorded_new_inode": 106456096,
+      "recorded_operation_atime_ns": 1792196542061175201,
+      "sha256": "aa40bf3e5d5f0e12d725645e00a6c36a7ca260b0d3810f77cf91504b5c4eb0b1",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct0S1MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196398918890197,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseProduct0S1MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783190685528,
+      "atime_before_postcheck_hash_ns": 1792203783190685528,
+      "atime_matches_operation_before_read": true,
+      "bytes": 47200,
+      "observed_new_inode": 106456097,
+      "old_inode": 106350350,
+      "recorded_new_inode": 106456097,
+      "recorded_operation_atime_ns": 1792203783190685528,
+      "sha256": "aa40bf3e5d5f0e12d725645e00a6c36a7ca260b0d3810f77cf91504b5c4eb0b1",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct0S1MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478373310701,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/aa40bf3e5d5f0e12d725645e00a6c36a7ca260b0d3810f77cf91504b5c4eb0b1"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542062334136,
+      "atime_before_postcheck_hash_ns": 1792196542062334136,
+      "atime_matches_operation_before_read": true,
+      "bytes": 149392,
+      "observed_new_inode": 106456098,
+      "old_inode": 106349664,
+      "recorded_new_inode": 106456098,
+      "recorded_operation_atime_ns": 1792196542062334136,
+      "sha256": "4d7683d8fa7fe5d982290981c7ef13bb93e095fba029a59dd3a34b0a93bc2b9c",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct0S2MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196399167224910,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseProduct0S2MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783191601622,
+      "atime_before_postcheck_hash_ns": 1792203783191601622,
+      "atime_matches_operation_before_read": true,
+      "bytes": 149392,
+      "observed_new_inode": 106456100,
+      "old_inode": 106350386,
+      "recorded_new_inode": 106456100,
+      "recorded_operation_atime_ns": 1792203783191601622,
+      "sha256": "4d7683d8fa7fe5d982290981c7ef13bb93e095fba029a59dd3a34b0a93bc2b9c",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct0S2MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478464609275,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/4d7683d8fa7fe5d982290981c7ef13bb93e095fba029a59dd3a34b0a93bc2b9c"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542064567755,
+      "atime_before_postcheck_hash_ns": 1792196542064567755,
+      "atime_matches_operation_before_read": true,
+      "bytes": 309624,
+      "observed_new_inode": 106456101,
+      "old_inode": 106349436,
+      "recorded_new_inode": 106456101,
+      "recorded_operation_atime_ns": 1792196542064567755,
+      "sha256": "5158382f9f86cce689731531d2ba5c6292649239d7a726b3f06d1ab74903da30",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct0S3MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196398891830770,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseProduct0S3MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783192823345,
+      "atime_before_postcheck_hash_ns": 1792203783192823345,
+      "atime_matches_operation_before_read": true,
+      "bytes": 309624,
+      "observed_new_inode": 106456102,
+      "old_inode": 106350425,
+      "recorded_new_inode": 106456102,
+      "recorded_operation_atime_ns": 1792203783192823345,
+      "sha256": "5158382f9f86cce689731531d2ba5c6292649239d7a726b3f06d1ab74903da30",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct0S3MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478625248781,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/5158382f9f86cce689731531d2ba5c6292649239d7a726b3f06d1ab74903da30"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542067074419,
+      "atime_before_postcheck_hash_ns": 1792196542067074419,
+      "atime_matches_operation_before_read": true,
+      "bytes": 486056,
+      "observed_new_inode": 106456103,
+      "old_inode": 106349414,
+      "recorded_new_inode": 106456103,
+      "recorded_operation_atime_ns": 1792196542067074419,
+      "sha256": "81f7460993b23d6dba2e56c7a0d5e5091cbcb1170b6998851540e6678bb0a228",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct0S4MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196398878275765,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseProduct0S4MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783194130026,
+      "atime_before_postcheck_hash_ns": 1792203783194130026,
+      "atime_matches_operation_before_read": true,
+      "bytes": 486056,
+      "observed_new_inode": 106456106,
+      "old_inode": 106350374,
+      "recorded_new_inode": 106456106,
+      "recorded_operation_atime_ns": 1792203783194130026,
+      "sha256": "81f7460993b23d6dba2e56c7a0d5e5091cbcb1170b6998851540e6678bb0a228",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct0S4MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478414712233,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/81f7460993b23d6dba2e56c7a0d5e5091cbcb1170b6998851540e6678bb0a228"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542072486630,
+      "atime_before_postcheck_hash_ns": 1792196542072486630,
+      "atime_matches_operation_before_read": true,
+      "bytes": 1385576,
+      "observed_new_inode": 106456107,
+      "old_inode": 106349443,
+      "recorded_new_inode": 106456107,
+      "recorded_operation_atime_ns": 1792196542072486630,
+      "sha256": "299b41c4f818dd90a36bc741c712c9cc215090a3f4dde749f0690c559a47f7f2",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct0S5MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196398896092463,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseProduct0S5MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783197772361,
+      "atime_before_postcheck_hash_ns": 1792203783197772361,
+      "atime_matches_operation_before_read": true,
+      "bytes": 1385576,
+      "observed_new_inode": 106456108,
+      "old_inode": 106350405,
+      "recorded_new_inode": 106456108,
+      "recorded_operation_atime_ns": 1792203783197772361,
+      "sha256": "299b41c4f818dd90a36bc741c712c9cc215090a3f4dde749f0690c559a47f7f2",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct0S5MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478520318867,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/299b41c4f818dd90a36bc741c712c9cc215090a3f4dde749f0690c559a47f7f2"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542073400977,
+      "atime_before_postcheck_hash_ns": 1792196542073400977,
+      "atime_matches_operation_before_read": true,
+      "bytes": 34664,
+      "observed_new_inode": 106456109,
+      "old_inode": 106349476,
+      "recorded_new_inode": 106456109,
+      "recorded_operation_atime_ns": 1792196542073400977,
+      "sha256": "abfc059ab3543b7f64db3c5e2f9dd4c31edda822173ceb86f6c74663faac92d6",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct1S1MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196398936178762,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseProduct1S1MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783198421493,
+      "atime_before_postcheck_hash_ns": 1792203783198421493,
+      "atime_matches_operation_before_read": true,
+      "bytes": 34664,
+      "observed_new_inode": 106456110,
+      "old_inode": 106350413,
+      "recorded_new_inode": 106456110,
+      "recorded_operation_atime_ns": 1792203783198421493,
+      "sha256": "abfc059ab3543b7f64db3c5e2f9dd4c31edda822173ceb86f6c74663faac92d6",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct1S1MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478582507061,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/abfc059ab3543b7f64db3c5e2f9dd4c31edda822173ceb86f6c74663faac92d6"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542074431619,
+      "atime_before_postcheck_hash_ns": 1792196542074431619,
+      "atime_matches_operation_before_read": true,
+      "bytes": 91752,
+      "observed_new_inode": 106456111,
+      "old_inode": 106349584,
+      "recorded_new_inode": 106456111,
+      "recorded_operation_atime_ns": 1792196542074431619,
+      "sha256": "c903706760985f2fa62c70f7d182649bf0f345005f763077de06d830c86ab4f1",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct1S2MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196399065901810,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseProduct1S2MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783199161085,
+      "atime_before_postcheck_hash_ns": 1792203783199161085,
+      "atime_matches_operation_before_read": true,
+      "bytes": 91752,
+      "observed_new_inode": 106456112,
+      "old_inode": 106350311,
+      "recorded_new_inode": 106456112,
+      "recorded_operation_atime_ns": 1792203783199161085,
+      "sha256": "c903706760985f2fa62c70f7d182649bf0f345005f763077de06d830c86ab4f1",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct1S2MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478284606044,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/c903706760985f2fa62c70f7d182649bf0f345005f763077de06d830c86ab4f1"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542075295507,
+      "atime_before_postcheck_hash_ns": 1792196542075295507,
+      "atime_matches_operation_before_read": true,
+      "bytes": 108480,
+      "observed_new_inode": 106456113,
+      "old_inode": 106349417,
+      "recorded_new_inode": 106456113,
+      "recorded_operation_atime_ns": 1792196542075295507,
+      "sha256": "6f02c462d07802d1c5049d811d2d4584174f47dc2b5006740c79d91f3e76cab3",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct1S3MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196398879559910,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseProduct1S3MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783199893927,
+      "atime_before_postcheck_hash_ns": 1792203783199893927,
+      "atime_matches_operation_before_read": true,
+      "bytes": 108480,
+      "observed_new_inode": 106456115,
+      "old_inode": 106350336,
+      "recorded_new_inode": 106456115,
+      "recorded_operation_atime_ns": 1792203783199893927,
+      "sha256": "6f02c462d07802d1c5049d811d2d4584174f47dc2b5006740c79d91f3e76cab3",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct1S3MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478331752084,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/6f02c462d07802d1c5049d811d2d4584174f47dc2b5006740c79d91f3e76cab3"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542076571361,
+      "atime_before_postcheck_hash_ns": 1792196542076571361,
+      "atime_matches_operation_before_read": true,
+      "bytes": 205896,
+      "observed_new_inode": 106456116,
+      "old_inode": 106349585,
+      "recorded_new_inode": 106456116,
+      "recorded_operation_atime_ns": 1792196542076571361,
+      "sha256": "b68e1544887a1d6cc269252089400ff5c752c92a564f84ada1582578d2b24ce8",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct1S4MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196399067146538,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseProduct1S4MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783200765437,
+      "atime_before_postcheck_hash_ns": 1792203783200765437,
+      "atime_matches_operation_before_read": true,
+      "bytes": 205896,
+      "observed_new_inode": 106456117,
+      "old_inode": 106350320,
+      "recorded_new_inode": 106456117,
+      "recorded_operation_atime_ns": 1792203783200765437,
+      "sha256": "b68e1544887a1d6cc269252089400ff5c752c92a564f84ada1582578d2b24ce8",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct1S4MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478288238685,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/b68e1544887a1d6cc269252089400ff5c752c92a564f84ada1582578d2b24ce8"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542077257705,
+      "atime_before_postcheck_hash_ns": 1792196542077257705,
+      "atime_matches_operation_before_read": true,
+      "bytes": 47200,
+      "observed_new_inode": 106456118,
+      "old_inode": 106349441,
+      "recorded_new_inode": 106456118,
+      "recorded_operation_atime_ns": 1792196542077257705,
+      "sha256": "5b77e507c4e618847c475305313a78e3d9019e53cb933c3527e3e4b694906860",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct2S1MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196398894311893,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseProduct2S1MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783201370110,
+      "atime_before_postcheck_hash_ns": 1792203783201370110,
+      "atime_matches_operation_before_read": true,
+      "bytes": 47200,
+      "observed_new_inode": 106456121,
+      "old_inode": 106350392,
+      "recorded_new_inode": 106456121,
+      "recorded_operation_atime_ns": 1792203783201370110,
+      "sha256": "5b77e507c4e618847c475305313a78e3d9019e53cb933c3527e3e4b694906860",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct2S1MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478472425399,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/5b77e507c4e618847c475305313a78e3d9019e53cb933c3527e3e4b694906860"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542078277013,
+      "atime_before_postcheck_hash_ns": 1792196542078277013,
+      "atime_matches_operation_before_read": true,
+      "bytes": 145008,
+      "observed_new_inode": 106456123,
+      "old_inode": 106349569,
+      "recorded_new_inode": 106456123,
+      "recorded_operation_atime_ns": 1792196542078277013,
+      "sha256": "8e09688845f07dc3e319604db007e4dbdaeca08d2c980a3429e877a5e778deea",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct2S2MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196398998587122,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseProduct2S2MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783202213079,
+      "atime_before_postcheck_hash_ns": 1792203783202213079,
+      "atime_matches_operation_before_read": true,
+      "bytes": 145008,
+      "observed_new_inode": 106456124,
+      "old_inode": 106350343,
+      "recorded_new_inode": 106456124,
+      "recorded_operation_atime_ns": 1792203783202213079,
+      "sha256": "8e09688845f07dc3e319604db007e4dbdaeca08d2c980a3429e877a5e778deea",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct2S2MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478346085019,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/8e09688845f07dc3e319604db007e4dbdaeca08d2c980a3429e877a5e778deea"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542080067708,
+      "atime_before_postcheck_hash_ns": 1792196542080067708,
+      "atime_matches_operation_before_read": true,
+      "bytes": 308112,
+      "observed_new_inode": 106456125,
+      "old_inode": 106349683,
+      "recorded_new_inode": 106456125,
+      "recorded_operation_atime_ns": 1792196542080067708,
+      "sha256": "23df915091c79e0782d64b23fb01a2814453e4c21ccb3bddb452600de55c3843",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct2S3MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196399175649918,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseProduct2S3MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783203149756,
+      "atime_before_postcheck_hash_ns": 1792203783203149756,
+      "atime_matches_operation_before_read": true,
+      "bytes": 308112,
+      "observed_new_inode": 106456126,
+      "old_inode": 106350315,
+      "recorded_new_inode": 106456126,
+      "recorded_operation_atime_ns": 1792203783203149756,
+      "sha256": "23df915091c79e0782d64b23fb01a2814453e4c21ccb3bddb452600de55c3843",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct2S3MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478286463949,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/23df915091c79e0782d64b23fb01a2814453e4c21ccb3bddb452600de55c3843"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542082067989,
+      "atime_before_postcheck_hash_ns": 1792196542082067989,
+      "atime_matches_operation_before_read": true,
+      "bytes": 487848,
+      "observed_new_inode": 106456127,
+      "old_inode": 106349478,
+      "recorded_new_inode": 106456127,
+      "recorded_operation_atime_ns": 1792196542082067989,
+      "sha256": "29bb16fc3b2cf27dccf08161eea0904295d24c3f491dcde9ffba19a55bf4d95d",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct2S4MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196398942555363,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseProduct2S4MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783204453771,
+      "atime_before_postcheck_hash_ns": 1792203783204453771,
+      "atime_matches_operation_before_read": true,
+      "bytes": 487848,
+      "observed_new_inode": 106456128,
+      "old_inode": 106350325,
+      "recorded_new_inode": 106456128,
+      "recorded_operation_atime_ns": 1792203783204453771,
+      "sha256": "29bb16fc3b2cf27dccf08161eea0904295d24c3f491dcde9ffba19a55bf4d95d",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct2S4MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478290222758,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/29bb16fc3b2cf27dccf08161eea0904295d24c3f491dcde9ffba19a55bf4d95d"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542082693916,
+      "atime_before_postcheck_hash_ns": 1792196542082693916,
+      "atime_matches_operation_before_read": true,
+      "bytes": 40288,
+      "observed_new_inode": 106456129,
+      "old_inode": 106349536,
+      "recorded_new_inode": 106456129,
+      "recorded_operation_atime_ns": 1792196542082693916,
+      "sha256": "17d6c55b5b0aff3b91a8997b69fedc85ac6b54a2e57bf0ce947ab0cb4f3bc3a8",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct3S1MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196398974922749,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseProduct3S1MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783204993278,
+      "atime_before_postcheck_hash_ns": 1792203783204993278,
+      "atime_matches_operation_before_read": true,
+      "bytes": 40288,
+      "observed_new_inode": 106456131,
+      "old_inode": 106350300,
+      "recorded_new_inode": 106456131,
+      "recorded_operation_atime_ns": 1792203783204993278,
+      "sha256": "17d6c55b5b0aff3b91a8997b69fedc85ac6b54a2e57bf0ce947ab0cb4f3bc3a8",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct3S1MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478263703088,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/17d6c55b5b0aff3b91a8997b69fedc85ac6b54a2e57bf0ce947ab0cb4f3bc3a8"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542083498887,
+      "atime_before_postcheck_hash_ns": 1792196542083498887,
+      "atime_matches_operation_before_read": true,
+      "bytes": 123656,
+      "observed_new_inode": 106456132,
+      "old_inode": 106349514,
+      "recorded_new_inode": 106456132,
+      "recorded_operation_atime_ns": 1792196542083498887,
+      "sha256": "e7d5511941ec0c8108503ce83a1e98891ec1ee62964ca036c1cba82d646fced8",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct3S2MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196398963520236,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseProduct3S2MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783205843579,
+      "atime_before_postcheck_hash_ns": 1792203783205843579,
+      "atime_matches_operation_before_read": true,
+      "bytes": 123656,
+      "observed_new_inode": 106456133,
+      "old_inode": 106350419,
+      "recorded_new_inode": 106456133,
+      "recorded_operation_atime_ns": 1792203783205843579,
+      "sha256": "e7d5511941ec0c8108503ce83a1e98891ec1ee62964ca036c1cba82d646fced8",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct3S2MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478596195903,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/e7d5511941ec0c8108503ce83a1e98891ec1ee62964ca036c1cba82d646fced8"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542084417318,
+      "atime_before_postcheck_hash_ns": 1792196542084417318,
+      "atime_matches_operation_before_read": true,
+      "bytes": 183728,
+      "observed_new_inode": 106456134,
+      "old_inode": 106349448,
+      "recorded_new_inode": 106456134,
+      "recorded_operation_atime_ns": 1792196542084417318,
+      "sha256": "00d2fe1cc94fbb2bec97e489ca72ce70051d26152c8090d8c86086da2072b886",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct3S3MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196398901910263,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseProduct3S3MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783206740006,
+      "atime_before_postcheck_hash_ns": 1792203783206740006,
+      "atime_matches_operation_before_read": true,
+      "bytes": 183728,
+      "observed_new_inode": 106456137,
+      "old_inode": 106350383,
+      "recorded_new_inode": 106456137,
+      "recorded_operation_atime_ns": 1792203783206740006,
+      "sha256": "00d2fe1cc94fbb2bec97e489ca72ce70051d26152c8090d8c86086da2072b886",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct3S3MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478450715846,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/00d2fe1cc94fbb2bec97e489ca72ce70051d26152c8090d8c86086da2072b886"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542086047552,
+      "atime_before_postcheck_hash_ns": 1792196542086047552,
+      "atime_matches_operation_before_read": true,
+      "bytes": 353344,
+      "observed_new_inode": 106456138,
+      "old_inode": 106349492,
+      "recorded_new_inode": 106456138,
+      "recorded_operation_atime_ns": 1792196542086047552,
+      "sha256": "23371907a1cb3e472e082bd9310554fc8a05d46e83314ee67bb3933fc15220c2",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct3S4MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196398953444701,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseProduct3S4MC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783207838019,
+      "atime_before_postcheck_hash_ns": 1792203783207838019,
+      "atime_matches_operation_before_read": true,
+      "bytes": 353344,
+      "observed_new_inode": 106456139,
+      "old_inode": 106350433,
+      "recorded_new_inode": 106456139,
+      "recorded_operation_atime_ns": 1792203783207838019,
+      "sha256": "23371907a1cb3e472e082bd9310554fc8a05d46e83314ee67bb3933fc15220c2",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseProduct3S4MC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478643824825,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/23371907a1cb3e472e082bd9310554fc8a05d46e83314ee67bb3933fc15220c2"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792196542090091491,
+      "atime_before_postcheck_hash_ns": 1792196542090091491,
+      "atime_matches_operation_before_read": true,
+      "bytes": 1570040,
+      "observed_new_inode": 106456140,
+      "old_inode": 106349627,
+      "recorded_new_inode": 106456140,
+      "recorded_operation_atime_ns": 1792196542090091491,
+      "sha256": "c5d096dfd5688f8f8542a357c3d7dcc52d75132949c0b16a4d6a16fb1483265b",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseRflTestMC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196399103963328,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000165/artifacts/evidence/markov-c9f23b44/MarkovDenseRflTestMC9F.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783211187474,
+      "atime_before_postcheck_hash_ns": 1792203783211187474,
+      "atime_matches_operation_before_read": true,
+      "bytes": 1570040,
+      "observed_new_inode": 106456141,
+      "old_inode": 106350307,
+      "recorded_new_inode": 106456141,
+      "recorded_operation_atime_ns": 1792203783211187474,
+      "sha256": "c5d096dfd5688f8f8542a357c3d7dcc52d75132949c0b16a4d6a16fb1483265b",
+      "source": "/Users/sasha/math_gkm/evidence/markov-c9f23b44/MarkovDenseRflTestMC9F.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792196478278410446,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/c5d096dfd5688f8f8542a357c3d7dcc52d75132949c0b16a4d6a16fb1483265b"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792198402166510779,
+      "atime_before_postcheck_hash_ns": 1792198402166510779,
+      "atime_matches_operation_before_read": true,
+      "bytes": 143656,
+      "observed_new_inode": 106456142,
+      "old_inode": 106372599,
+      "recorded_new_inode": 106456142,
+      "recorded_operation_atime_ns": 1792198402166510779,
+      "sha256": "ddd5a6b270b9c552a3f4abcb7b1c32dad0644f3b39711b116fe70a128dc11398",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/KernelRflMDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198298653438879,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000166/artifacts/evidence/markov-db238071/KernelRflMDB2.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783214560014,
+      "atime_before_postcheck_hash_ns": 1792203783214560014,
+      "atime_matches_operation_before_read": true,
+      "bytes": 143656,
+      "observed_new_inode": 106456143,
+      "old_inode": 106373906,
+      "recorded_new_inode": 106456143,
+      "recorded_operation_atime_ns": 1792203783214560014,
+      "sha256": "ddd5a6b270b9c552a3f4abcb7b1c32dad0644f3b39711b116fe70a128dc11398",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/KernelRflMDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198360402424442,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/ddd5a6b270b9c552a3f4abcb7b1c32dad0644f3b39711b116fe70a128dc11398"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792198402167167991,
+      "atime_before_postcheck_hash_ns": 1792198402167167991,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2768,
+      "observed_new_inode": 106456144,
+      "old_inode": 106372596,
+      "recorded_new_inode": 106456144,
+      "recorded_operation_atime_ns": 1792198402167167991,
+      "sha256": "6ea65410faf4e017a4408a16bce727871b79cf025465476f959d511c6ed1476d",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovAudit1792198116956325000MDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198298652141955,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000166/artifacts/evidence/markov-db238071/MarkovAudit1792198116956325000MDB2.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783215195396,
+      "atime_before_postcheck_hash_ns": 1792203783215195396,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2768,
+      "observed_new_inode": 106456146,
+      "old_inode": 106373870,
+      "recorded_new_inode": 106456146,
+      "recorded_operation_atime_ns": 1792203783215195396,
+      "sha256": "6ea65410faf4e017a4408a16bce727871b79cf025465476f959d511c6ed1476d",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovAudit1792198116956325000MDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198360387567361,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/6ea65410faf4e017a4408a16bce727871b79cf025465476f959d511c6ed1476d"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792198402168372873,
+      "atime_before_postcheck_hash_ns": 1792198402168372873,
+      "atime_matches_operation_before_read": true,
+      "bytes": 339296,
+      "observed_new_inode": 106456147,
+      "old_inode": 106372585,
+      "recorded_new_inode": 106456147,
+      "recorded_operation_atime_ns": 1792198402168372873,
+      "sha256": "9c2814be29968f5d18d2ec3763a1f2ff55007c38b6a60740ceebfc9daefeac54",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovCorrectionFactorMDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198298649041438,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000166/artifacts/evidence/markov-db238071/MarkovCorrectionFactorMDB2.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783216379160,
+      "atime_before_postcheck_hash_ns": 1792203783216379160,
+      "atime_matches_operation_before_read": true,
+      "bytes": 339296,
+      "observed_new_inode": 106456150,
+      "old_inode": 106373849,
+      "recorded_new_inode": 106456150,
+      "recorded_operation_atime_ns": 1792203783216379160,
+      "sha256": "9c2814be29968f5d18d2ec3763a1f2ff55007c38b6a60740ceebfc9daefeac54",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovCorrectionFactorMDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198360374504497,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/9c2814be29968f5d18d2ec3763a1f2ff55007c38b6a60740ceebfc9daefeac54"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792198402169340795,
+      "atime_before_postcheck_hash_ns": 1792198402169340795,
+      "atime_matches_operation_before_read": true,
+      "bytes": 239712,
+      "observed_new_inode": 106456151,
+      "old_inode": 106372687,
+      "recorded_new_inode": 106456151,
+      "recorded_operation_atime_ns": 1792198402169340795,
+      "sha256": "14d9aac1d32cc948f07b7e8c5dcf9fcc975b5879bd73da95ad7ff41241d428c1",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovCorrectionSupportMDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198298684703091,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000166/artifacts/evidence/markov-db238071/MarkovCorrectionSupportMDB2.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783217488381,
+      "atime_before_postcheck_hash_ns": 1792203783217488381,
+      "atime_matches_operation_before_read": true,
+      "bytes": 239712,
+      "observed_new_inode": 106456154,
+      "old_inode": 106373902,
+      "recorded_new_inode": 106456154,
+      "recorded_operation_atime_ns": 1792203783217488381,
+      "sha256": "14d9aac1d32cc948f07b7e8c5dcf9fcc975b5879bd73da95ad7ff41241d428c1",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovCorrectionSupportMDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198360401209810,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/14d9aac1d32cc948f07b7e8c5dcf9fcc975b5879bd73da95ad7ff41241d428c1"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792198402169875298,
+      "atime_before_postcheck_hash_ns": 1792198402169875298,
+      "atime_matches_operation_before_read": true,
+      "bytes": 40768,
+      "observed_new_inode": 106456155,
+      "old_inode": 106372544,
+      "recorded_new_inode": 106456155,
+      "recorded_operation_atime_ns": 1792198402169875298,
+      "sha256": "1aa3fa43fb28017824ea2a6c211427e62ea5c62e24a4cb36aa6fec9559765b64",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovDenseTransportMDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198298630259961,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000166/artifacts/evidence/markov-db238071/MarkovDenseTransportMDB2.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783218291640,
+      "atime_before_postcheck_hash_ns": 1792203783218291640,
+      "atime_matches_operation_before_read": true,
+      "bytes": 40768,
+      "observed_new_inode": 106456156,
+      "old_inode": 106373893,
+      "recorded_new_inode": 106456156,
+      "recorded_operation_atime_ns": 1792203783218291640,
+      "sha256": "1aa3fa43fb28017824ea2a6c211427e62ea5c62e24a4cb36aa6fec9559765b64",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovDenseTransportMDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198360399226675,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/1aa3fa43fb28017824ea2a6c211427e62ea5c62e24a4cb36aa6fec9559765b64"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792198402173637110,
+      "atime_before_postcheck_hash_ns": 1792198402173637110,
+      "atime_matches_operation_before_read": true,
+      "bytes": 1870312,
+      "observed_new_inode": 106456157,
+      "old_inode": 106372573,
+      "recorded_new_inode": 106456157,
+      "recorded_operation_atime_ns": 1792198402173637110,
+      "sha256": "da566a553d95f70e4b5e32e9c12e3590830fe41bc71e893f34f90c4f14c3f50b",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovDirect2S15MDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198298641546522,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000166/artifacts/evidence/markov-db238071/MarkovDirect2S15MDB2.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783222242228,
+      "atime_before_postcheck_hash_ns": 1792203783222242228,
+      "atime_matches_operation_before_read": true,
+      "bytes": 1870312,
+      "observed_new_inode": 106456158,
+      "old_inode": 106373862,
+      "recorded_new_inode": 106456158,
+      "recorded_operation_atime_ns": 1792203783222242228,
+      "sha256": "da566a553d95f70e4b5e32e9c12e3590830fe41bc71e893f34f90c4f14c3f50b",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovDirect2S15MDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198360383348754,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/da566a553d95f70e4b5e32e9c12e3590830fe41bc71e893f34f90c4f14c3f50b"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792198402177790800,
+      "atime_before_postcheck_hash_ns": 1792198402177790800,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2200544,
+      "observed_new_inode": 106456159,
+      "old_inode": 106372610,
+      "recorded_new_inode": 106456159,
+      "recorded_operation_atime_ns": 1792198402177790800,
+      "sha256": "71ddc72678c1e1d915eaf6e74805ff07f9484fc31749cffa01f2ebabae445b66",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovDirect2S16MDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198298657157149,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000166/artifacts/evidence/markov-db238071/MarkovDirect2S16MDB2.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783226728113,
+      "atime_before_postcheck_hash_ns": 1792203783226728113,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2200544,
+      "observed_new_inode": 106456161,
+      "old_inode": 106373923,
+      "recorded_new_inode": 106456161,
+      "recorded_operation_atime_ns": 1792203783226728113,
+      "sha256": "71ddc72678c1e1d915eaf6e74805ff07f9484fc31749cffa01f2ebabae445b66",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovDirect2S16MDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198360411629618,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/71ddc72678c1e1d915eaf6e74805ff07f9484fc31749cffa01f2ebabae445b66"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792198402178502470,
+      "atime_before_postcheck_hash_ns": 1792198402178502470,
+      "atime_matches_operation_before_read": true,
+      "bytes": 57016,
+      "observed_new_inode": 106456162,
+      "old_inode": 106372615,
+      "recorded_new_inode": 106456162,
+      "recorded_operation_atime_ns": 1792198402178502470,
+      "sha256": "ba9bedf949996381f815ecc157a988b1b92788a2cb3b40a183b23d947fe70289",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovPackedConvolutionMDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198298659806455,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000166/artifacts/evidence/markov-db238071/MarkovPackedConvolutionMDB2.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783227530706,
+      "atime_before_postcheck_hash_ns": 1792203783227530706,
+      "atime_matches_operation_before_read": true,
+      "bytes": 57016,
+      "observed_new_inode": 106456163,
+      "old_inode": 106373852,
+      "recorded_new_inode": 106456163,
+      "recorded_operation_atime_ns": 1792203783227530706,
+      "sha256": "ba9bedf949996381f815ecc157a988b1b92788a2cb3b40a183b23d947fe70289",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovPackedConvolutionMDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198360375467544,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/ba9bedf949996381f815ecc157a988b1b92788a2cb3b40a183b23d947fe70289"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792198402179007431,
+      "atime_before_postcheck_hash_ns": 1792198402179007431,
+      "atime_matches_operation_before_read": true,
+      "bytes": 40112,
+      "observed_new_inode": 106456164,
+      "old_inode": 106372545,
+      "recorded_new_inode": 106456164,
+      "recorded_operation_atime_ns": 1792198402179007431,
+      "sha256": "6e53e293e26dedb245d7ac25e20f5694f67e606e9a0f7107a47f82b824bf9461",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovPackedExamplesMDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198298630576087,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000166/artifacts/evidence/markov-db238071/MarkovPackedExamplesMDB2.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783228236214,
+      "atime_before_postcheck_hash_ns": 1792203783228236214,
+      "atime_matches_operation_before_read": true,
+      "bytes": 40112,
+      "observed_new_inode": 106456167,
+      "old_inode": 106373879,
+      "recorded_new_inode": 106456167,
+      "recorded_operation_atime_ns": 1792203783228236214,
+      "sha256": "6e53e293e26dedb245d7ac25e20f5694f67e606e9a0f7107a47f82b824bf9461",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovPackedExamplesMDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198360393209183,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/6e53e293e26dedb245d7ac25e20f5694f67e606e9a0f7107a47f82b824bf9461"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792198402184386086,
+      "atime_before_postcheck_hash_ns": 1792198402184386086,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2925832,
+      "observed_new_inode": 106456168,
+      "old_inode": 106372538,
+      "recorded_new_inode": 106456168,
+      "recorded_operation_atime_ns": 1792198402184386086,
+      "sha256": "ce988c75b498fddc356d68f40491db127b141993e675f7fae6407778afa7cbd9",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovProduct0S19MDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198298626404440,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000166/artifacts/evidence/markov-db238071/MarkovProduct0S19MDB2.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783234569371,
+      "atime_before_postcheck_hash_ns": 1792203783234569371,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2925832,
+      "observed_new_inode": 106456169,
+      "old_inode": 106373871,
+      "recorded_new_inode": 106456169,
+      "recorded_operation_atime_ns": 1792203783234569371,
+      "sha256": "ce988c75b498fddc356d68f40491db127b141993e675f7fae6407778afa7cbd9",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovProduct0S19MDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198360388868076,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/ce988c75b498fddc356d68f40491db127b141993e675f7fae6407778afa7cbd9"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792198402190382244,
+      "atime_before_postcheck_hash_ns": 1792198402190382244,
+      "atime_matches_operation_before_read": true,
+      "bytes": 3346680,
+      "observed_new_inode": 106456170,
+      "old_inode": 106372657,
+      "recorded_new_inode": 106456170,
+      "recorded_operation_atime_ns": 1792198402190382244,
+      "sha256": "51111aadcbd553ef4dc1fc4a040540be8aa8955e16cc7783d8ba26ae79c2e935",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovProduct0S20MDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198298674661286,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000166/artifacts/evidence/markov-db238071/MarkovProduct0S20MDB2.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783240598316,
+      "atime_before_postcheck_hash_ns": 1792203783240598316,
+      "atime_matches_operation_before_read": true,
+      "bytes": 3346680,
+      "observed_new_inode": 106456172,
+      "old_inode": 106373844,
+      "recorded_new_inode": 106456172,
+      "recorded_operation_atime_ns": 1792203783240598316,
+      "sha256": "51111aadcbd553ef4dc1fc4a040540be8aa8955e16cc7783d8ba26ae79c2e935",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovProduct0S20MDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198360369869972,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/51111aadcbd553ef4dc1fc4a040540be8aa8955e16cc7783d8ba26ae79c2e935"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792198402194392141,
+      "atime_before_postcheck_hash_ns": 1792198402194392141,
+      "atime_matches_operation_before_read": true,
+      "bytes": 1966888,
+      "observed_new_inode": 106456174,
+      "old_inode": 106372663,
+      "recorded_new_inode": 106456174,
+      "recorded_operation_atime_ns": 1792198402194392141,
+      "sha256": "294e668e63231000d2370d4f75825d55a4df38bd3cba7f9ecf23d5a5e70d56ce",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovProduct1S19MDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198298678987268,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000166/artifacts/evidence/markov-db238071/MarkovProduct1S19MDB2.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783245200952,
+      "atime_before_postcheck_hash_ns": 1792203783245200952,
+      "atime_matches_operation_before_read": true,
+      "bytes": 1966888,
+      "observed_new_inode": 106456175,
+      "old_inode": 106373882,
+      "recorded_new_inode": 106456175,
+      "recorded_operation_atime_ns": 1792203783245200952,
+      "sha256": "294e668e63231000d2370d4f75825d55a4df38bd3cba7f9ecf23d5a5e70d56ce",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovProduct1S19MDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198360394678983,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/294e668e63231000d2370d4f75825d55a4df38bd3cba7f9ecf23d5a5e70d56ce"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792198402198829707,
+      "atime_before_postcheck_hash_ns": 1792198402198829707,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2271320,
+      "observed_new_inode": 106456176,
+      "old_inode": 106372576,
+      "recorded_new_inode": 106456176,
+      "recorded_operation_atime_ns": 1792198402198829707,
+      "sha256": "f27947648ed69c48f518a3ba459aec0f143ce23b066b20d6d04aafbd2a521973",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovProduct1S20MDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198298645107958,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000166/artifacts/evidence/markov-db238071/MarkovProduct1S20MDB2.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783249759005,
+      "atime_before_postcheck_hash_ns": 1792203783249759005,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2271320,
+      "observed_new_inode": 106456179,
+      "old_inode": 106373855,
+      "recorded_new_inode": 106456179,
+      "recorded_operation_atime_ns": 1792203783249759005,
+      "sha256": "f27947648ed69c48f518a3ba459aec0f143ce23b066b20d6d04aafbd2a521973",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovProduct1S20MDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198360376994011,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/f27947648ed69c48f518a3ba459aec0f143ce23b066b20d6d04aafbd2a521973"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792198402202323976,
+      "atime_before_postcheck_hash_ns": 1792198402202323976,
+      "atime_matches_operation_before_read": true,
+      "bytes": 1725528,
+      "observed_new_inode": 106456180,
+      "old_inode": 106372571,
+      "recorded_new_inode": 106456180,
+      "recorded_operation_atime_ns": 1792198402202323976,
+      "sha256": "1246acfec5467e4a3abc0690fa022f467324c9ef5693887fc6363b1f40c59a4f",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovSwap3S15MDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198298637560834,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000166/artifacts/evidence/markov-db238071/MarkovSwap3S15MDB2.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783253897470,
+      "atime_before_postcheck_hash_ns": 1792203783253897470,
+      "atime_matches_operation_before_read": true,
+      "bytes": 1725528,
+      "observed_new_inode": 106456181,
+      "old_inode": 106373916,
+      "recorded_new_inode": 106456181,
+      "recorded_operation_atime_ns": 1792203783253897470,
+      "sha256": "1246acfec5467e4a3abc0690fa022f467324c9ef5693887fc6363b1f40c59a4f",
+      "source": "/Users/sasha/math_gkm/evidence/markov-db238071/MarkovSwap3S15MDB2.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792198360407012926,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/1246acfec5467e4a3abc0690fa022f467324c9ef5693887fc6363b1f40c59a4f"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792200079175600478,
+      "atime_before_postcheck_hash_ns": 1792200079175600478,
+      "atime_matches_operation_before_read": true,
+      "bytes": 1904,
+      "observed_new_inode": 106456182,
+      "old_inode": 106403920,
+      "recorded_new_inode": 106456182,
+      "recorded_operation_atime_ns": 1792200079175600478,
+      "sha256": "f733865f58b1f7bee796c31b7f48b37f5aadb96c97c784e3ed48a47484c5f608",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovAudit1792198993006986000M7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792199931269353198,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000167/artifacts/evidence/markov-7a344181/MarkovAudit1792198993006986000M7A3.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783256518959,
+      "atime_before_postcheck_hash_ns": 1792203783256518959,
+      "atime_matches_operation_before_read": true,
+      "bytes": 1904,
+      "observed_new_inode": 106456183,
+      "old_inode": 106404300,
+      "recorded_new_inode": 106456183,
+      "recorded_operation_atime_ns": 1792203783256518959,
+      "sha256": "f733865f58b1f7bee796c31b7f48b37f5aadb96c97c784e3ed48a47484c5f608",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovAudit1792198993006986000M7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792200004186105184,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/f733865f58b1f7bee796c31b7f48b37f5aadb96c97c784e3ed48a47484c5f608"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792200079176249643,
+      "atime_before_postcheck_hash_ns": 1792200079176249643,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2776,
+      "observed_new_inode": 106456184,
+      "old_inode": 106403823,
+      "recorded_new_inode": 106456184,
+      "recorded_operation_atime_ns": 1792200079176249643,
+      "sha256": "12a5a811924778e3418e64f79de5c671eb54e1d88345899bd4b4b6e7601c4c6b",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovAudit1792199486415198000M7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792199931202485618,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000167/artifacts/evidence/markov-7a344181/MarkovAudit1792199486415198000M7A3.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783257022965,
+      "atime_before_postcheck_hash_ns": 1792203783257022965,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2776,
+      "observed_new_inode": 106456185,
+      "old_inode": 106404384,
+      "recorded_new_inode": 106456185,
+      "recorded_operation_atime_ns": 1792203783257022965,
+      "sha256": "12a5a811924778e3418e64f79de5c671eb54e1d88345899bd4b4b6e7601c4c6b",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovAudit1792199486415198000M7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792200004288671879,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/12a5a811924778e3418e64f79de5c671eb54e1d88345899bd4b4b6e7601c4c6b"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792200079176688266,
+      "atime_before_postcheck_hash_ns": 1792200079176688266,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2904,
+      "observed_new_inode": 106456186,
+      "old_inode": 106403938,
+      "recorded_new_inode": 106456186,
+      "recorded_operation_atime_ns": 1792200079176688266,
+      "sha256": "ca11b4b82d71ae341febee62b6a298020cf259b0bbec6c780e94b8475288a37e",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovAudit1792199750952602000M7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792199931292608652,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000167/artifacts/evidence/markov-7a344181/MarkovAudit1792199750952602000M7A3.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783257464053,
+      "atime_before_postcheck_hash_ns": 1792203783257464053,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2904,
+      "observed_new_inode": 106456187,
+      "old_inode": 106404375,
+      "recorded_new_inode": 106456187,
+      "recorded_operation_atime_ns": 1792203783257464053,
+      "sha256": "ca11b4b82d71ae341febee62b6a298020cf259b0bbec6c780e94b8475288a37e",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovAudit1792199750952602000M7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792200004285585307,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/ca11b4b82d71ae341febee62b6a298020cf259b0bbec6c780e94b8475288a37e"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792200079178974924,
+      "atime_before_postcheck_hash_ns": 1792200079178974924,
+      "atime_matches_operation_before_read": true,
+      "bytes": 640160,
+      "observed_new_inode": 106456188,
+      "old_inode": 106403827,
+      "recorded_new_inode": 106456188,
+      "recorded_operation_atime_ns": 1792200079178974924,
+      "sha256": "f3db858650f4985ea214afc3419a39ca7907a60239fadc0c6e3773c00b95f109",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovAugmentedObstructionM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792199931204204778,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000167/artifacts/evidence/markov-7a344181/MarkovAugmentedObstructionM7A3.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783259215823,
+      "atime_before_postcheck_hash_ns": 1792203783259215823,
+      "atime_matches_operation_before_read": true,
+      "bytes": 640160,
+      "observed_new_inode": 106456189,
+      "old_inode": 106404345,
+      "recorded_new_inode": 106456189,
+      "recorded_operation_atime_ns": 1792203783259215823,
+      "sha256": "f3db858650f4985ea214afc3419a39ca7907a60239fadc0c6e3773c00b95f109",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovAugmentedObstructionM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792200004243989131,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/f3db858650f4985ea214afc3419a39ca7907a60239fadc0c6e3773c00b95f109"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792200079180342294,
+      "atime_before_postcheck_hash_ns": 1792200079180342294,
+      "atime_matches_operation_before_read": true,
+      "bytes": 276504,
+      "observed_new_inode": 106456190,
+      "old_inode": 106403874,
+      "recorded_new_inode": 106456190,
+      "recorded_operation_atime_ns": 1792200079180342294,
+      "sha256": "839fa00a6c36e8673c8f90ddf37f76db9c52ac0b93be1f78745f141a98ada1c0",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovAugmentedSourceM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792199931221690587,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000167/artifacts/evidence/markov-7a344181/MarkovAugmentedSourceM7A3.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783260231585,
+      "atime_before_postcheck_hash_ns": 1792203783260231585,
+      "atime_matches_operation_before_read": true,
+      "bytes": 276504,
+      "observed_new_inode": 106456192,
+      "old_inode": 106404351,
+      "recorded_new_inode": 106456192,
+      "recorded_operation_atime_ns": 1792203783260231585,
+      "sha256": "839fa00a6c36e8673c8f90ddf37f76db9c52ac0b93be1f78745f141a98ada1c0",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovAugmentedSourceM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792200004257373997,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/839fa00a6c36e8673c8f90ddf37f76db9c52ac0b93be1f78745f141a98ada1c0"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792200079180891792,
+      "atime_before_postcheck_hash_ns": 1792200079180891792,
+      "atime_matches_operation_before_read": true,
+      "bytes": 27112,
+      "observed_new_inode": 106456193,
+      "old_inode": 106403930,
+      "recorded_new_inode": 106456193,
+      "recorded_operation_atime_ns": 1792200079180891792,
+      "sha256": "e5ecae0178d6d5de0855161d9f2bfecfbd129de6fd1b77303a25a52020acca72",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovExpressionBoundsM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792199931286384051,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000167/artifacts/evidence/markov-7a344181/MarkovExpressionBoundsM7A3.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783260661132,
+      "atime_before_postcheck_hash_ns": 1792203783260661132,
+      "atime_matches_operation_before_read": true,
+      "bytes": 27112,
+      "observed_new_inode": 106456195,
+      "old_inode": 106404338,
+      "recorded_new_inode": 106456195,
+      "recorded_operation_atime_ns": 1792203783260661132,
+      "sha256": "e5ecae0178d6d5de0855161d9f2bfecfbd129de6fd1b77303a25a52020acca72",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovExpressionBoundsM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792200004203619826,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/e5ecae0178d6d5de0855161d9f2bfecfbd129de6fd1b77303a25a52020acca72"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792200079182562869,
+      "atime_before_postcheck_hash_ns": 1792200079182562869,
+      "atime_matches_operation_before_read": true,
+      "bytes": 428424,
+      "observed_new_inode": 106456196,
+      "old_inode": 106403923,
+      "recorded_new_inode": 106456196,
+      "recorded_operation_atime_ns": 1792200079182562869,
+      "sha256": "6246fd7d480eb6b4ae4a980e9373eed5cc54cee35fc43404402a5c261f38e951",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovExpressionClosedM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792199931273294142,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000167/artifacts/evidence/markov-7a344181/MarkovExpressionClosedM7A3.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783261980647,
+      "atime_before_postcheck_hash_ns": 1792203783261980647,
+      "atime_matches_operation_before_read": true,
+      "bytes": 428424,
+      "observed_new_inode": 106456197,
+      "old_inode": 106404333,
+      "recorded_new_inode": 106456197,
+      "recorded_operation_atime_ns": 1792203783261980647,
+      "sha256": "6246fd7d480eb6b4ae4a980e9373eed5cc54cee35fc43404402a5c261f38e951",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovExpressionClosedM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792200004201018586,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/6246fd7d480eb6b4ae4a980e9373eed5cc54cee35fc43404402a5c261f38e951"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792200079183405199,
+      "atime_before_postcheck_hash_ns": 1792200079183405199,
+      "atime_matches_operation_before_read": true,
+      "bytes": 175904,
+      "observed_new_inode": 106456198,
+      "old_inode": 106403849,
+      "recorded_new_inode": 106456198,
+      "recorded_operation_atime_ns": 1792200079183405199,
+      "sha256": "bedec03cfa91f94dce4779e62ded8bd9386913c79a7ea3e0a66796477be4c64b",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovExpressionDataM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792199931212122540,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000167/artifacts/evidence/markov-7a344181/MarkovExpressionDataM7A3.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783263031576,
+      "atime_before_postcheck_hash_ns": 1792203783263031576,
+      "atime_matches_operation_before_read": true,
+      "bytes": 175904,
+      "observed_new_inode": 106456199,
+      "old_inode": 106404367,
+      "recorded_new_inode": 106456199,
+      "recorded_operation_atime_ns": 1792203783263031576,
+      "sha256": "bedec03cfa91f94dce4779e62ded8bd9386913c79a7ea3e0a66796477be4c64b",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovExpressionDataM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792200004282782901,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/bedec03cfa91f94dce4779e62ded8bd9386913c79a7ea3e0a66796477be4c64b"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792200079185765815,
+      "atime_before_postcheck_hash_ns": 1792200079185765815,
+      "atime_matches_operation_before_read": true,
+      "bytes": 761744,
+      "observed_new_inode": 106456200,
+      "old_inode": 106403821,
+      "recorded_new_inode": 106456200,
+      "recorded_operation_atime_ns": 1792200079185765815,
+      "sha256": "cc981aead28bb47e2afb2067b892418a88d359703ceeffcdf6fd5646a25cc8ed",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovExpressionFactorsM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792199931201974828,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000167/artifacts/evidence/markov-7a344181/MarkovExpressionFactorsM7A3.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783264683470,
+      "atime_before_postcheck_hash_ns": 1792203783264683470,
+      "atime_matches_operation_before_read": true,
+      "bytes": 761744,
+      "observed_new_inode": 106456201,
+      "old_inode": 106404326,
+      "recorded_new_inode": 106456201,
+      "recorded_operation_atime_ns": 1792203783264683470,
+      "sha256": "cc981aead28bb47e2afb2067b892418a88d359703ceeffcdf6fd5646a25cc8ed",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovExpressionFactorsM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792200004198361304,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/cc981aead28bb47e2afb2067b892418a88d359703ceeffcdf6fd5646a25cc8ed"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792200079295109443,
+      "atime_before_postcheck_hash_ns": 1792200079295109443,
+      "atime_matches_operation_before_read": true,
+      "bytes": 61895384,
+      "observed_new_inode": 106456204,
+      "old_inode": 106403903,
+      "recorded_new_inode": 106456204,
+      "recorded_operation_atime_ns": 1792200079295109443,
+      "sha256": "37e71e3e8c72fd5bc93319bc8c44ee4a0051e1636e0f737ae3f11a06de3d3ef6",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovExpressionGapM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792199931254625337,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000167/artifacts/evidence/markov-7a344181/MarkovExpressionGapM7A3.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783338772205,
+      "atime_before_postcheck_hash_ns": 1792203783338772205,
+      "atime_matches_operation_before_read": true,
+      "bytes": 61895384,
+      "observed_new_inode": 106456209,
+      "old_inode": 106404339,
+      "recorded_new_inode": 106456209,
+      "recorded_operation_atime_ns": 1792203783338772205,
+      "sha256": "37e71e3e8c72fd5bc93319bc8c44ee4a0051e1636e0f737ae3f11a06de3d3ef6",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovExpressionGapM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792200004235152540,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/37e71e3e8c72fd5bc93319bc8c44ee4a0051e1636e0f737ae3f11a06de3d3ef6"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792200079297011894,
+      "atime_before_postcheck_hash_ns": 1792200079297011894,
+      "atime_matches_operation_before_read": true,
+      "bytes": 323504,
+      "observed_new_inode": 106456212,
+      "old_inode": 106403913,
+      "recorded_new_inode": 106456212,
+      "recorded_operation_atime_ns": 1792200079297011894,
+      "sha256": "611f9bd56989e872e1800e4d35eee874991bd2d3fb21cf69f85db16d84c3be1e",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovExpressionM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792199931263404138,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000167/artifacts/evidence/markov-7a344181/MarkovExpressionM7A3.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783339933176,
+      "atime_before_postcheck_hash_ns": 1792203783339933176,
+      "atime_matches_operation_before_read": true,
+      "bytes": 323504,
+      "observed_new_inode": 106456213,
+      "old_inode": 106404316,
+      "recorded_new_inode": 106456213,
+      "recorded_operation_atime_ns": 1792203783339933176,
+      "sha256": "611f9bd56989e872e1800e4d35eee874991bd2d3fb21cf69f85db16d84c3be1e",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovExpressionM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792200004191259248,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/611f9bd56989e872e1800e4d35eee874991bd2d3fb21cf69f85db16d84c3be1e"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792200079297677558,
+      "atime_before_postcheck_hash_ns": 1792200079297677558,
+      "atime_matches_operation_before_read": true,
+      "bytes": 10208,
+      "observed_new_inode": 106456215,
+      "old_inode": 106403845,
+      "recorded_new_inode": 106456215,
+      "recorded_operation_atime_ns": 1792200079297677558,
+      "sha256": "d384702903a7670dcde69c8ca799235271e99676a1467f8b971395d71486857a",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovExpressionPackedM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792199931210798337,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000167/artifacts/evidence/markov-7a344181/MarkovExpressionPackedM7A3.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783340398432,
+      "atime_before_postcheck_hash_ns": 1792203783340398432,
+      "atime_matches_operation_before_read": true,
+      "bytes": 10208,
+      "observed_new_inode": 106456216,
+      "old_inode": 106404335,
+      "recorded_new_inode": 106456216,
+      "recorded_operation_atime_ns": 1792203783340398432,
+      "sha256": "d384702903a7670dcde69c8ca799235271e99676a1467f8b971395d71486857a",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovExpressionPackedM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792200004202817787,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/d384702903a7670dcde69c8ca799235271e99676a1467f8b971395d71486857a"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792200079299588343,
+      "atime_before_postcheck_hash_ns": 1792200079299588343,
+      "atime_matches_operation_before_read": true,
+      "bytes": 320704,
+      "observed_new_inode": 106456217,
+      "old_inode": 106403915,
+      "recorded_new_inode": 106456217,
+      "recorded_operation_atime_ns": 1792200079299588343,
+      "sha256": "2f487ef7cdd415e45336f2c5f15e434feeb5eabf82f9cc216e77d5edd491c837",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovFourEncodingM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792199931265871337,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000167/artifacts/evidence/markov-7a344181/MarkovFourEncodingM7A3.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783341426902,
+      "atime_before_postcheck_hash_ns": 1792203783341426902,
+      "atime_matches_operation_before_read": true,
+      "bytes": 320704,
+      "observed_new_inode": 106456218,
+      "old_inode": 106404303,
+      "recorded_new_inode": 106456218,
+      "recorded_operation_atime_ns": 1792203783341426902,
+      "sha256": "2f487ef7cdd415e45336f2c5f15e434feeb5eabf82f9cc216e77d5edd491c837",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovFourEncodingM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792200004187194513,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/2f487ef7cdd415e45336f2c5f15e434feeb5eabf82f9cc216e77d5edd491c837"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792200079300464631,
+      "atime_before_postcheck_hash_ns": 1792200079300464631,
+      "atime_matches_operation_before_read": true,
+      "bytes": 64992,
+      "observed_new_inode": 106456221,
+      "old_inode": 106403839,
+      "recorded_new_inode": 106456221,
+      "recorded_operation_atime_ns": 1792200079300464631,
+      "sha256": "2c0be5e6f34920640f6fa0b18d8f4ac63aba2c0430f783dc31449959b2de90e8",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovKroneckerM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792199931209011427,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000167/artifacts/evidence/markov-7a344181/MarkovKroneckerM7A3.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783341915116,
+      "atime_before_postcheck_hash_ns": 1792203783341915116,
+      "atime_matches_operation_before_read": true,
+      "bytes": 64992,
+      "observed_new_inode": 106456223,
+      "old_inode": 106404325,
+      "recorded_new_inode": 106456223,
+      "recorded_operation_atime_ns": 1792203783341915116,
+      "sha256": "2c0be5e6f34920640f6fa0b18d8f4ac63aba2c0430f783dc31449959b2de90e8",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovKroneckerM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792200004197532932,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/2c0be5e6f34920640f6fa0b18d8f4ac63aba2c0430f783dc31449959b2de90e8"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792200079301261878,
+      "atime_before_postcheck_hash_ns": 1792200079301261878,
+      "atime_matches_operation_before_read": true,
+      "bytes": 77488,
+      "observed_new_inode": 106456224,
+      "old_inode": 106403846,
+      "recorded_new_inode": 106456224,
+      "recorded_operation_atime_ns": 1792200079301261878,
+      "sha256": "cfbbc3359ca3cc7f5a47abb1c4aeefd3ce81001a2c271a932a6d9e7e320995ef",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovLowerClosedM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792199931211384001,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000167/artifacts/evidence/markov-7a344181/MarkovLowerClosedM7A3.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783342483289,
+      "atime_before_postcheck_hash_ns": 1792203783342483289,
+      "atime_matches_operation_before_read": true,
+      "bytes": 77488,
+      "observed_new_inode": 106456226,
+      "old_inode": 106404344,
+      "recorded_new_inode": 106456226,
+      "recorded_operation_atime_ns": 1792203783342483289,
+      "sha256": "cfbbc3359ca3cc7f5a47abb1c4aeefd3ce81001a2c271a932a6d9e7e320995ef",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovLowerClosedM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792200004242236346,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/cfbbc3359ca3cc7f5a47abb1c4aeefd3ce81001a2c271a932a6d9e7e320995ef"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792200079303064371,
+      "atime_before_postcheck_hash_ns": 1792200079303064371,
+      "atime_matches_operation_before_read": true,
+      "bytes": 364544,
+      "observed_new_inode": 106456227,
+      "old_inode": 106403896,
+      "recorded_new_inode": 106456227,
+      "recorded_operation_atime_ns": 1792200079303064371,
+      "sha256": "c61ce6593a24f3b0929ae30a40e60e2b685cfbc5c1bb642a5d0d377374d98822",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovLowerCrossM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792199931226763026,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000167/artifacts/evidence/markov-7a344181/MarkovLowerCrossM7A3.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783343867264,
+      "atime_before_postcheck_hash_ns": 1792203783343867264,
+      "atime_matches_operation_before_read": true,
+      "bytes": 364544,
+      "observed_new_inode": 106456228,
+      "old_inode": 106404368,
+      "recorded_new_inode": 106456228,
+      "recorded_operation_atime_ns": 1792203783343867264,
+      "sha256": "c61ce6593a24f3b0929ae30a40e60e2b685cfbc5c1bb642a5d0d377374d98822",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovLowerCrossM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792200004283352524,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/c61ce6593a24f3b0929ae30a40e60e2b685cfbc5c1bb642a5d0d377374d98822"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792200079304038617,
+      "atime_before_postcheck_hash_ns": 1792200079304038617,
+      "atime_matches_operation_before_read": true,
+      "bytes": 132600,
+      "observed_new_inode": 106456229,
+      "old_inode": 106403926,
+      "recorded_new_inode": 106456229,
+      "recorded_operation_atime_ns": 1792200079304038617,
+      "sha256": "31ff78e165a08adaa14d66155113443516f89249a58d77d1aadde79f3d4930d1",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovPackedPolynomialM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792199931280300449,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000167/artifacts/evidence/markov-7a344181/MarkovPackedPolynomialM7A3.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783344517855,
+      "atime_before_postcheck_hash_ns": 1792203783344517855,
+      "atime_matches_operation_before_read": true,
+      "bytes": 132600,
+      "observed_new_inode": 106456230,
+      "old_inode": 106404327,
+      "recorded_new_inode": 106456230,
+      "recorded_operation_atime_ns": 1792203783344517855,
+      "sha256": "31ff78e165a08adaa14d66155113443516f89249a58d77d1aadde79f3d4930d1",
+      "source": "/Users/sasha/math_gkm/evidence/markov-7a344181/MarkovPackedPolynomialM7A3.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792200004198767886,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/31ff78e165a08adaa14d66155113443516f89249a58d77d1aadde79f3d4930d1"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792201744797150777,
+      "atime_before_postcheck_hash_ns": 1792201744797150777,
+      "atime_matches_operation_before_read": true,
+      "bytes": 369272,
+      "observed_new_inode": 106456231,
+      "old_inode": 106419434,
+      "recorded_new_inode": 106456231,
+      "recorded_operation_atime_ns": 1792201744797150777,
+      "sha256": "78ba35ad874bfb7fa7e388a9145f0426fcbecd50bcc8d9ffa1866d6b57f56a80",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovAbsorbedBoundaryBridgeM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201637561780475,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000168/artifacts/evidence/markov-418bcc64/MarkovAbsorbedBoundaryBridgeM418.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783347458514,
+      "atime_before_postcheck_hash_ns": 1792203783347458514,
+      "atime_matches_operation_before_read": true,
+      "bytes": 369272,
+      "observed_new_inode": 106456233,
+      "old_inode": 106419987,
+      "recorded_new_inode": 106456233,
+      "recorded_operation_atime_ns": 1792203783347458514,
+      "sha256": "78ba35ad874bfb7fa7e388a9145f0426fcbecd50bcc8d9ffa1866d6b57f56a80",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovAbsorbedBoundaryBridgeM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201698560462173,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/78ba35ad874bfb7fa7e388a9145f0426fcbecd50bcc8d9ffa1866d6b57f56a80"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792201744798590188,
+      "atime_before_postcheck_hash_ns": 1792201744798590188,
+      "atime_matches_operation_before_read": true,
+      "bytes": 352752,
+      "observed_new_inode": 106456234,
+      "old_inode": 106419471,
+      "recorded_new_inode": 106456234,
+      "recorded_operation_atime_ns": 1792201744798590188,
+      "sha256": "da8b1caf85ecb6307e29e2c9a40b9dcc6a679d0387aea9b27a5a225ddac4256c",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovAbsorbedBoundaryModelM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201637568601866,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000168/artifacts/evidence/markov-418bcc64/MarkovAbsorbedBoundaryModelM418.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783348546235,
+      "atime_before_postcheck_hash_ns": 1792203783348546235,
+      "atime_matches_operation_before_read": true,
+      "bytes": 352752,
+      "observed_new_inode": 106456235,
+      "old_inode": 106419945,
+      "recorded_new_inode": 106456235,
+      "recorded_operation_atime_ns": 1792203783348546235,
+      "sha256": "da8b1caf85ecb6307e29e2c9a40b9dcc6a679d0387aea9b27a5a225ddac4256c",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovAbsorbedBoundaryModelM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201698545388646,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/da8b1caf85ecb6307e29e2c9a40b9dcc6a679d0387aea9b27a5a225ddac4256c"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792201744799427810,
+      "atime_before_postcheck_hash_ns": 1792201744799427810,
+      "atime_matches_operation_before_read": true,
+      "bytes": 246008,
+      "observed_new_inode": 106456236,
+      "old_inode": 106419384,
+      "recorded_new_inode": 106456236,
+      "recorded_operation_atime_ns": 1792201744799427810,
+      "sha256": "129fe61182dd976985dd1d678dcd332761a7d947e9d3be7be143469b8c1fac1c",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovAbsorbedKernelM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201637541119220,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000168/artifacts/evidence/markov-418bcc64/MarkovAbsorbedKernelM418.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783349394078,
+      "atime_before_postcheck_hash_ns": 1792203783349394078,
+      "atime_matches_operation_before_read": true,
+      "bytes": 246008,
+      "observed_new_inode": 106456239,
+      "old_inode": 106419978,
+      "recorded_new_inode": 106456239,
+      "recorded_operation_atime_ns": 1792203783349394078,
+      "sha256": "129fe61182dd976985dd1d678dcd332761a7d947e9d3be7be143469b8c1fac1c",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovAbsorbedKernelM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201698550143087,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/129fe61182dd976985dd1d678dcd332761a7d947e9d3be7be143469b8c1fac1c"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792201744800469181,
+      "atime_before_postcheck_hash_ns": 1792201744800469181,
+      "atime_matches_operation_before_read": true,
+      "bytes": 273184,
+      "observed_new_inode": 106456240,
+      "old_inode": 106419441,
+      "recorded_new_inode": 106456240,
+      "recorded_operation_atime_ns": 1792201744800469181,
+      "sha256": "955ef8b502d58244c7b6b1a3237f6e4c003f1a45f6cc95aef143eb04d635d678",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovAbsorbedReductionM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201637562971012,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000168/artifacts/evidence/markov-418bcc64/MarkovAbsorbedReductionM418.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783350382923,
+      "atime_before_postcheck_hash_ns": 1792203783350382923,
+      "atime_matches_operation_before_read": true,
+      "bytes": 273184,
+      "observed_new_inode": 106456241,
+      "old_inode": 106419963,
+      "recorded_new_inode": 106456241,
+      "recorded_operation_atime_ns": 1792203783350382923,
+      "sha256": "955ef8b502d58244c7b6b1a3237f6e4c003f1a45f6cc95aef143eb04d635d678",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovAbsorbedReductionM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201698548138178,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/955ef8b502d58244c7b6b1a3237f6e4c003f1a45f6cc95aef143eb04d635d678"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792201744800800097,
+      "atime_before_postcheck_hash_ns": 1792201744800800097,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2576,
+      "observed_new_inode": 106456242,
+      "old_inode": 106419391,
+      "recorded_new_inode": 106456242,
+      "recorded_operation_atime_ns": 1792201744800800097,
+      "sha256": "e774f522e04d77a3da5136ca5e2c847a80ed4e5c820c0bcf1bd25655a94ba53b",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovAudit1792201320612579000M418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201637541929009,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000168/artifacts/evidence/markov-418bcc64/MarkovAudit1792201320612579000M418.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783350838386,
+      "atime_before_postcheck_hash_ns": 1792203783350838386,
+      "atime_matches_operation_before_read": true,
+      "bytes": 2576,
+      "observed_new_inode": 106456243,
+      "old_inode": 106419996,
+      "recorded_new_inode": 106456243,
+      "recorded_operation_atime_ns": 1792203783350838386,
+      "sha256": "e774f522e04d77a3da5136ca5e2c847a80ed4e5c820c0bcf1bd25655a94ba53b",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovAudit1792201320612579000M418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201698561641252,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/e774f522e04d77a3da5136ca5e2c847a80ed4e5c820c0bcf1bd25655a94ba53b"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792201744815941831,
+      "atime_before_postcheck_hash_ns": 1792201744815941831,
+      "atime_matches_operation_before_read": true,
+      "bytes": 7856568,
+      "observed_new_inode": 106456244,
+      "old_inode": 106419480,
+      "recorded_new_inode": 106456244,
+      "recorded_operation_atime_ns": 1792201744815941831,
+      "sha256": "3d0bbd49b1d8d18137e530519ccec13b81e1c1854af8968369c84cdf3154be32",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovCorrectionColumnsM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201637574054137,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000168/artifacts/evidence/markov-418bcc64/MarkovCorrectionColumnsM418.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783361852847,
+      "atime_before_postcheck_hash_ns": 1792203783361852847,
+      "atime_matches_operation_before_read": true,
+      "bytes": 7856568,
+      "observed_new_inode": 106456246,
+      "old_inode": 106419984,
+      "recorded_new_inode": 106456246,
+      "recorded_operation_atime_ns": 1792203783361852847,
+      "sha256": "3d0bbd49b1d8d18137e530519ccec13b81e1c1854af8968369c84cdf3154be32",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovCorrectionColumnsM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201698555990315,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/3d0bbd49b1d8d18137e530519ccec13b81e1c1854af8968369c84cdf3154be32"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792201744838348121,
+      "atime_before_postcheck_hash_ns": 1792201744838348121,
+      "atime_matches_operation_before_read": true,
+      "bytes": 11916960,
+      "observed_new_inode": 106456248,
+      "old_inode": 106419395,
+      "recorded_new_inode": 106456248,
+      "recorded_operation_atime_ns": 1792201744838348121,
+      "sha256": "2c9d7a9da540b9f7be3fadf7e92e9abeb0e918138c8b506b189b3d326d0a2cea",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovCorrectionGapsM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201637548510025,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000168/artifacts/evidence/markov-418bcc64/MarkovCorrectionGapsM418.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783377554405,
+      "atime_before_postcheck_hash_ns": 1792203783377554405,
+      "atime_matches_operation_before_read": true,
+      "bytes": 11916960,
+      "observed_new_inode": 106456251,
+      "old_inode": 106420003,
+      "recorded_new_inode": 106456251,
+      "recorded_operation_atime_ns": 1792203783377554405,
+      "sha256": "2c9d7a9da540b9f7be3fadf7e92e9abeb0e918138c8b506b189b3d326d0a2cea",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovCorrectionGapsM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201698569694846,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/2c9d7a9da540b9f7be3fadf7e92e9abeb0e918138c8b506b189b3d326d0a2cea"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792201744839287451,
+      "atime_before_postcheck_hash_ns": 1792201744839287451,
+      "atime_matches_operation_before_read": true,
+      "bytes": 252416,
+      "observed_new_inode": 106456252,
+      "old_inode": 106419425,
+      "recorded_new_inode": 106456252,
+      "recorded_operation_atime_ns": 1792201744839287451,
+      "sha256": "c37551da88fb9691413e62bb6f7d109008fd35fe455733307f505619d5c82963",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovCorrectionRegionM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201637559879149,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000168/artifacts/evidence/markov-418bcc64/MarkovCorrectionRegionM418.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783378571208,
+      "atime_before_postcheck_hash_ns": 1792203783378571208,
+      "atime_matches_operation_before_read": true,
+      "bytes": 252416,
+      "observed_new_inode": 106456253,
+      "old_inode": 106419943,
+      "recorded_new_inode": 106456253,
+      "recorded_operation_atime_ns": 1792203783378571208,
+      "sha256": "c37551da88fb9691413e62bb6f7d109008fd35fe455733307f505619d5c82963",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovCorrectionRegionM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201698544734315,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/c37551da88fb9691413e62bb6f7d109008fd35fe455733307f505619d5c82963"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792201744839768282,
+      "atime_before_postcheck_hash_ns": 1792201744839768282,
+      "atime_matches_operation_before_read": true,
+      "bytes": 48952,
+      "observed_new_inode": 106456254,
+      "old_inode": 106419398,
+      "recorded_new_inode": 106456254,
+      "recorded_operation_atime_ns": 1792201744839768282,
+      "sha256": "ea52f03592200b333d1dd89fae4b78e9fde9d6dc5069f21b230869cdac1f50db",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovCorrectionRootM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201637550538559,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000168/artifacts/evidence/markov-418bcc64/MarkovCorrectionRootM418.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783379031547,
+      "atime_before_postcheck_hash_ns": 1792203783379031547,
+      "atime_matches_operation_before_read": true,
+      "bytes": 48952,
+      "observed_new_inode": 106456256,
+      "old_inode": 106419999,
+      "recorded_new_inode": 106456256,
+      "recorded_operation_atime_ns": 1792203783379031547,
+      "sha256": "ea52f03592200b333d1dd89fae4b78e9fde9d6dc5069f21b230869cdac1f50db",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovCorrectionRootM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201698562228374,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/ea52f03592200b333d1dd89fae4b78e9fde9d6dc5069f21b230869cdac1f50db"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792201744840261405,
+      "atime_before_postcheck_hash_ns": 1792201744840261405,
+      "atime_matches_operation_before_read": true,
+      "bytes": 75680,
+      "observed_new_inode": 106456257,
+      "old_inode": 106419453,
+      "recorded_new_inode": 106456257,
+      "recorded_operation_atime_ns": 1792201744840261405,
+      "sha256": "5bdd0ff2b2d4996129f49a5152e52b8bca292d66cfd7207de8c88deb225bbc88",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovCorrectionTailM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201637565219712,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000168/artifacts/evidence/markov-418bcc64/MarkovCorrectionTailM418.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783379473260,
+      "atime_before_postcheck_hash_ns": 1792203783379473260,
+      "atime_matches_operation_before_read": true,
+      "bytes": 75680,
+      "observed_new_inode": 106456258,
+      "old_inode": 106419997,
+      "recorded_new_inode": 106456258,
+      "recorded_operation_atime_ns": 1792203783379473260,
+      "sha256": "5bdd0ff2b2d4996129f49a5152e52b8bca292d66cfd7207de8c88deb225bbc88",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovCorrectionTailM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201698561782126,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/5bdd0ff2b2d4996129f49a5152e52b8bca292d66cfd7207de8c88deb225bbc88"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792201744841923982,
+      "atime_before_postcheck_hash_ns": 1792201744841923982,
+      "atime_matches_operation_before_read": true,
+      "bytes": 565928,
+      "observed_new_inode": 106456259,
+      "old_inode": 106419458,
+      "recorded_new_inode": 106456259,
+      "recorded_operation_atime_ns": 1792201744841923982,
+      "sha256": "bc3835510da93badf87670bef7e99f4af27e9e93d03b8ba30a9d49fcc8a41357",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovWeightedObstructionM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201637566090126,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/workers/000168/artifacts/evidence/markov-418bcc64/MarkovWeightedObstructionM418.olean"
+    },
+    {
+      "atime_after_postcheck_hash_ns": 1792203783381021403,
+      "atime_before_postcheck_hash_ns": 1792203783381021403,
+      "atime_matches_operation_before_read": true,
+      "bytes": 565928,
+      "observed_new_inode": 106456260,
+      "old_inode": 106419981,
+      "recorded_new_inode": 106456260,
+      "recorded_operation_atime_ns": 1792203783381021403,
+      "sha256": "bc3835510da93badf87670bef7e99f4af27e9e93d03b8ba30a9d49fcc8a41357",
+      "source": "/Users/sasha/math_gkm/evidence/markov-418bcc64/MarkovWeightedObstructionM418.olean",
+      "stable_metadata": {
+        "gid": 20,
+        "mode": 420,
+        "mtime_ns": 1792201698550958459,
+        "uid": 501
+      },
+      "target": "/Users/sasha/math_gkm/.control/markov/objects/bc3835510da93badf87670bef7e99f4af27e9e93d03b8ba30a9d49fcc8a41357"
+    }
+  ],
+  "scope": "Separate read-only operational postcheck of exactly 188 retained compiled targets and their 94 canonical sources from closed workers 164\u2013168. No 169+ file read, project program/proof/checker/replay/experiment execution, mathematical computation, object interpretation, clone, deletion, chmod, chown, utime or replacement. Does not extend any mathematical audit observation window.",
+  "started_utc": "2026-10-17T02:36:29.190677+00:00",
+  "status": "postcheck_passed",
+  "target_classes": {
+    "archive_000164": 18,
+    "archive_000165": 34,
+    "archive_000166": 14,
+    "archive_000167": 17,
+    "archive_000168": 11,
+    "content_addressed_objects": 94
+  },
+  "unique_canonical_sources": 94,
+  "unique_named_files_hashed": 282
+}
