@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovFixedZeroClosedM1C6.lean:18:1: error: Type mismatch: After simplification, term\n  Hp\n has type\n  0 \u2264\n    closedBM1C6 (\u2191u + 2 + \u2191k) (\u2191u + 1) * closedAM1C6 (\u2191u + 2 + \u2191k) (\u2191u + 2) -\n      closedBM1C6 (\u2191u + 2 + \u2191k) (\u2191u + 2) * closedAM1C6 (\u2191u + 2 + \u2191k) (\u2191u + 1)\nbut is expected to have type\n  0 \u2264\n    closedBM1C6 (\u2191u + 2 + \u2191k) (\u2191u + 2 - 1) * closedAM1C6 (\u2191u + 2 + \u2191k) (\u2191u + 2) -\n      closedBM1C6 (\u2191u + 2 + \u2191k) (\u2191u + 2) * closedAM1C6 (\u2191u + 2 + \u2191k) (\u2191u + 2 - 1)\n/Users/sasha/math_gkm/research/MarkovFixedZeroClosedM1C6.lean:26:3: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  closedAM1C6 \u2191j \u2191(h - 1)\nin the target expression\n  0 \u2264\n    closedBM1C6 (\u2191j) (\u2191h - 1) * (720 * (qPolyM7E2 j 0 * qPolyM7E2 j 2).coeff (2 * j - h)) -\n      576 * (qPolyM7E2 j 1 * qPolyM7E2 j 1).coeff (2 * j - h) * closedAM1C6 (\u2191j) (\u2191h - 1)\n\nj h : \u2115\nh0 : 2 \u2264 h\nhh : h \u2264 j\nH :\n  0 \u2264\n    closedBM1C6 (\u2191j) (\u2191h - 1) * (720 * (qPolyM7E2 j 0 * qPolyM7E2 j 2).coeff (2 * j - h)) -\n      576 * (qPolyM7E2 j 1 * qPolyM7E2 j 1).coeff (2 * j - h) * closedAM1C6 (\u2191j) (\u2191h - 1)\n\u22a2 reverseConvMBEC j 1 1 h * reverseConvMBEC j 0 2 (h - 1) \u2264 reverseConvMBEC j 1 1 (h - 1) * reverseConvMBEC j 0 2 h\n",
+  "stderr": "",
+  "modules": {
+    "MarkovFixedZeroClosedM1C6": "4c958ff196627c8b2ac8400978459ccee0b0229933adaa23f34c311b903a9695"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-1c65a306/MarkovFixedZeroClosedM1C6.olean",
+    "/Users/sasha/math_gkm/research/MarkovFixedZeroClosedM1C6.lean"
+  ],
+  "seconds": 10.158915749983862,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

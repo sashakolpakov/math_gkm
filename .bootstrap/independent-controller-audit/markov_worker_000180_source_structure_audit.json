@@ -1,0 +1,1552 @@
+{
+  "worker": 180,
+  "request": "1c65a30634f843b1b22e83fb453dc26d",
+  "created_at_utc": "2026-10-17T07:10:50.654117+00:00",
+  "historical_status": "Completed host outcome / return0 / structured report present / elapsed1544.4578330516815. Twelve final mathematical modules compiled and jointly replayed,66 distinct theorem closures printed;10 rejected compiler attempts retained. Full root open.",
+  "scope": "Archive-first closed180 and explicit named inherited/current counterparts only. Static hashes, source/record parsing, literal comparison and finite index-domain counts. No mathematical-value recomputation, project/proof/checker/replay/experiment/generator/finalizer execution/import, project edit or proposer help/contact. Active181 and later excluded. Earlier seals/windows unchanged.",
+  "new_modules": [
+    {
+      "module": "MarkovCertificate4M1C6",
+      "path": "research/MarkovCertificate4M1C6.lean",
+      "bytes": 2255,
+      "sha256": "5e6b9c57f1cd5029196d8bba50c71b92950cf1ea3a8d95f4b5599d3132bf2475",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "core4M1C6"
+        },
+        {
+          "kind": "def",
+          "name": "factored4M1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "certificate_4_factorM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "certificate_4_evalM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "certificate_4_positiveM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_4M1C6"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792219445861911000.json",
+          "sha256": "cde503bd8d21c0736a5a16d88af244012a9f44c8cfc9d178b6546d586f2dc814",
+          "source_sha256": "9528523f6e7fb89624568cb25975267f6d4e1beebce1528275446d41b1bcd776",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "9528523f6e7fb89624568cb25975267f6d4e1beebce1528275446d41b1bcd776"
+        },
+        {
+          "path": "build-1792219564121186000.json",
+          "sha256": "2f6161a031422c188bb8e3234054e201ff555e494f774e465053f33dae88c211",
+          "source_sha256": "5e6b9c57f1cd5029196d8bba50c71b92950cf1ea3a8d95f4b5599d3132bf2475",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "5e6b9c57f1cd5029196d8bba50c71b92950cf1ea3a8d95f4b5599d3132bf2475"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in180": true,
+      "printed_in180": true,
+      "object_path": "evidence/markov-1c65a306/MarkovCertificate4M1C6.olean",
+      "object_sha256": "0f92b161085aaeb8b3a5f2b1d70a9fa2301d6530ff5f2f31a31a31ab70c0dce0",
+      "successful_final_build": "evidence/markov-1c65a306/build-1792219564121186000.json",
+      "historical_successful_source_versions": [
+        "5e6b9c57f1cd5029196d8bba50c71b92950cf1ea3a8d95f4b5599d3132bf2475"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovPolynomialCertificateMBEC"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "certificate_4_factorM1C6",
+          "header": "theorem certificate_4_factorM1C6 :\n certificateGapMBEC 4 = factored4M1C6 U V",
+          "block_sha256": "f9bd52b3953665f72b92b2cbaf671742161e1387fa0aa3c1c34c02f003bdb301",
+          "block_characters": 613
+        },
+        {
+          "kind": "theorem",
+          "name": "certificate_4_evalM1C6",
+          "header": "theorem certificate_4_evalM1C6 (k s : ℕ) :\n clearedGapMBEC (4+k) s 4=factored4M1C6 (k:ℤ) (s:ℤ)",
+          "block_sha256": "32c516392b70295e260c1896efbaa9ff68875dd7085d5c4b05c01449b4c713d2",
+          "block_characters": 273
+        },
+        {
+          "kind": "theorem",
+          "name": "certificate_4_positiveM1C6",
+          "header": "theorem certificate_4_positiveM1C6 (k s : ℕ) :\n 0 < clearedGapMBEC (4+k) s 4",
+          "block_sha256": "aebf0dae3a14492115293f195b1c1170848cecc94ff75bedb5d138e4681e38cb",
+          "block_characters": 155
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_4M1C6",
+          "header": "theorem reverse_4M1C6 (j s : ℕ) (hj : 4 ≤ j) :\n reverseConvMBEC j (s+1) (s+1) 4*reverseConvMBEC j s (s+2) 3 ≤\n reverseConvMBEC j (s+1) (s+1) 3*reverseConvMBEC j s (s+2) 4",
+          "block_sha256": "239fdf56950fdee52e4b5f053ab6507fe9068e2f9cd8ff5b66ccecef936eab63",
+          "block_characters": 319
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "core4M1C6",
+          "header": "def core4M1C6 {R : Type*} [CommRing R] (u v : R) : R",
+          "block_sha256": "7fce1bd4f4e4eb206caacba8618409e5601603f2078dc293886d406a6da93e08",
+          "block_characters": 348,
+          "definition_text": "def core4M1C6 {R : Type*} [CommRing R] (u v : R) : R :=\n  28327936 +\n  15100928*v +\n  2677760*v^2 +\n  157696*v^3 +\n  40686592*u +\n  18197504*u*v +\n  2615296*u*v^2 +\n  118784*u*v^3 +\n  20564992*u^2 +\n  7201024*u^2*v +\n  749312*u^2*v^2 +\n  20992*u^2*v^3 +\n  4743424*u^3 +\n  1142272*u^3*v +\n  62976*u^3*v^2 +\n  511744*u^4 +\n  62976*u^4*v +\n  20992*u^5"
+        },
+        {
+          "kind": "def",
+          "name": "factored4M1C6",
+          "header": "def factored4M1C6 {R : Type*} [CommRing R] (u v : R) : R",
+          "block_sha256": "e2c69be29d7bc2106f4af3557ca7e04f2b673a48e6125b0280ebf946828423ec",
+          "block_characters": 137,
+          "definition_text": "def factored4M1C6 {R : Type*} [CommRing R] (u v : R) : R :=\n  (u+2)*(u+3)*(u+3)*(u+4)*(u+4)*(u+v+5)*(u+v+6)*(u+v+6)*(u+v+7)*core4M1C6 u v"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovCertificate5M1C6",
+      "path": "research/MarkovCertificate5M1C6.lean",
+      "bytes": 2643,
+      "sha256": "93cafb365ce11fcac7020bf1b567f5b18fba61d536c7ad51149993cd18ef3897",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "core5M1C6"
+        },
+        {
+          "kind": "def",
+          "name": "factored5M1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "certificate_5_factorM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "certificate_5_evalM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "certificate_5_positiveM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_5M1C6"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792219465384456000.json",
+          "sha256": "a869675d2fdac4368ef82d45b06161d38ed9c8015e5d733150fe411fa931cf54",
+          "source_sha256": "fe44eb7eec1230f40b639355ed72e43409bc80d73f5e40416aff2d5231494a8c",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "fe44eb7eec1230f40b639355ed72e43409bc80d73f5e40416aff2d5231494a8c"
+        },
+        {
+          "path": "build-1792219564121177000.json",
+          "sha256": "bfe39e04d90b6fecc986729eeebe8049015b67bcb8109908bf4d5763aff7b4f6",
+          "source_sha256": "93cafb365ce11fcac7020bf1b567f5b18fba61d536c7ad51149993cd18ef3897",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "93cafb365ce11fcac7020bf1b567f5b18fba61d536c7ad51149993cd18ef3897"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in180": true,
+      "printed_in180": true,
+      "object_path": "evidence/markov-1c65a306/MarkovCertificate5M1C6.olean",
+      "object_sha256": "2ca2bc41550b7cb2c1b5b48a0c3450c01713b69aa2ca8be0cd0a0f7adc433059",
+      "successful_final_build": "evidence/markov-1c65a306/build-1792219564121177000.json",
+      "historical_successful_source_versions": [
+        "93cafb365ce11fcac7020bf1b567f5b18fba61d536c7ad51149993cd18ef3897"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovPolynomialCertificateMBEC"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "certificate_5_factorM1C6",
+          "header": "theorem certificate_5_factorM1C6 :\n certificateGapMBEC 5 = factored5M1C6 U V",
+          "block_sha256": "0ac724d3782da57d88611052419c38c0bd5473d850e2728c7e5207c3b3f69b45",
+          "block_characters": 613
+        },
+        {
+          "kind": "theorem",
+          "name": "certificate_5_evalM1C6",
+          "header": "theorem certificate_5_evalM1C6 (k s : ℕ) :\n clearedGapMBEC (5+k) s 5=factored5M1C6 (k:ℤ) (s:ℤ)",
+          "block_sha256": "7d0f69607fa4ca495a4f09c46b3f3c63115fdc13155424e826ef0a592427f596",
+          "block_characters": 273
+        },
+        {
+          "kind": "theorem",
+          "name": "certificate_5_positiveM1C6",
+          "header": "theorem certificate_5_positiveM1C6 (k s : ℕ) :\n 0 < clearedGapMBEC (5+k) s 5",
+          "block_sha256": "9fa990d8ff79078edcc9f034b22e203031df1de3907adfcd84e3e831fb298e17",
+          "block_characters": 155
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_5M1C6",
+          "header": "theorem reverse_5M1C6 (j s : ℕ) (hj : 5 ≤ j) :\n reverseConvMBEC j (s+1) (s+1) 5*reverseConvMBEC j s (s+2) 4 ≤\n reverseConvMBEC j (s+1) (s+1) 4*reverseConvMBEC j s (s+2) 5",
+          "block_sha256": "c4d53c8c22ac6b9a4ecb1f042812b98dbcae26f0592f2381a0e5d9b4741a71dc",
+          "block_characters": 319
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "core5M1C6",
+          "header": "def core5M1C6 {R : Type*} [CommRing R] (u v : R) : R",
+          "block_sha256": "af59f40354aabde0f54a38f38e9aefc6807d1757ab678544439e9731a79261e7",
+          "block_characters": 728,
+          "definition_text": "def core5M1C6 {R : Type*} [CommRing R] (u v : R) : R :=\n  12367872000 +\n  8412948480*v +\n  2131084800*v^2 +\n  238018560*v^3 +\n  9884160*v^4 +\n  26610370560*u +\n  16223809536*u*v +\n  3647159040*u*v^2 +\n  357292032*u*v^3 +\n  12824832*u*v^4 +\n  23902480896*u^2 +\n  12831493632*u^2*v +\n  2499497472*u^2*v^2 +\n  207725568*u^2*v^3 +\n  6139392*u^2*v^4 +\n  11698950912*u^3 +\n  5379010560*u^3*v +\n  873284352*u^3*v^2 +\n  58066944*u^3*v^3 +\n  1281792*u^3*v^4 +\n  3418613760*u^4 +\n  1290843648*u^4*v +\n  163636224*u^4*v^2 +\n  7756800*u^4*v^3 +\n  98304*u^4*v^4 +\n  612460032*u^5 +\n  177629184*u^5*v +\n  15579648*u^5*v^2 +\n  393216*u^5*v^3 +\n  65920512*u^6 +\n  13016064*u^6*v +\n  589824*u^6*v^2 +\n  3911424*u^7 +\n  393216*u^7*v +\n  98304*u^8"
+        },
+        {
+          "kind": "def",
+          "name": "factored5M1C6",
+          "header": "def factored5M1C6 {R : Type*} [CommRing R] (u v : R) : R",
+          "block_sha256": "291751c01080783c209db99b97e14139ec553204cf25828a2b5ad771733dfc54",
+          "block_characters": 145,
+          "definition_text": "def factored5M1C6 {R : Type*} [CommRing R] (u v : R) : R :=\n  (u+3)*(u+4)*(u+4)*(u+5)*(u+5)*(u+v+5)*(u+v+6)*(u+v+6)*(u+v+7)*(u+v+7)*core5M1C6 u v"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovReverseMomentsM1C6",
+      "path": "research/MarkovReverseMomentsM1C6.lean",
+      "bytes": 5270,
+      "sha256": "b6cbaf65b7e1627a9a00630fbfd288bdc4974125fadf61b11b4b46b24aaa2418",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "reverse_kernel_positiveM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_mass_positiveM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_kernel_shiftM1C6"
+        },
+        {
+          "kind": "def",
+          "name": "reverseMomentM1C6"
+        },
+        {
+          "kind": "def",
+          "name": "reverseVarianceM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_moment_nonnegM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_variance_nonnegM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "symmetric_sumM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_balanced_momentM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_unbalanced_momentM1C6"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792219536097996000.json",
+          "sha256": "c51830b7ca0d3db68e006eea7fe9ddd96d1e869eaf4db223171af5aa51946e8c",
+          "source_sha256": "166f28fffca38dd092c05e408b8c978cdb28fba913de43cc1ac3a9eeb6ea43f5",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "166f28fffca38dd092c05e408b8c978cdb28fba913de43cc1ac3a9eeb6ea43f5"
+        },
+        {
+          "path": "build-1792219557075911000.json",
+          "sha256": "ff802dfed411fb8755af3ffa474b2ed8e370840fdddc1b9bdf7a638fbfa4c639",
+          "source_sha256": "b6cbaf65b7e1627a9a00630fbfd288bdc4974125fadf61b11b4b46b24aaa2418",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "b6cbaf65b7e1627a9a00630fbfd288bdc4974125fadf61b11b4b46b24aaa2418"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in180": true,
+      "printed_in180": true,
+      "object_path": "evidence/markov-1c65a306/MarkovReverseMomentsM1C6.olean",
+      "object_sha256": "639ea03fed877b18ec7132935df3f76ca9b90e93578f77c7c6e5c060f06641a4",
+      "successful_final_build": "evidence/markov-1c65a306/build-1792219557075911000.json",
+      "historical_successful_source_versions": [
+        "b6cbaf65b7e1627a9a00630fbfd288bdc4974125fadf61b11b4b46b24aaa2418"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovPolynomialCertificateMBEC"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "reverse_kernel_positiveM1C6",
+          "header": "theorem reverse_kernel_positiveM1C6 (j s r : ℕ) (hr : r ≤ j) :\n 0 < reverseKernelMBEC j s r",
+          "block_sha256": "b0753f08f30c5cb86f745263f4a273f29f385271ccd336081b2b41a0d9d6e950",
+          "block_characters": 538
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_mass_positiveM1C6",
+          "header": "theorem reverse_mass_positiveM1C6 (j s h : ℕ) (hh : h ≤ j) :\n 0 < reverseConvMBEC j s s h",
+          "block_sha256": "398d9a34343dc718c43ec800a0c7d00921017ac6800d25de8d68110840ce0172",
+          "block_characters": 347
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_kernel_shiftM1C6",
+          "header": "theorem reverse_kernel_shiftM1C6 (j s r : ℕ) (hr : r ≤ j) :\n reverseKernelMBEC j (s+1) r =\n reverseKernelMBEC j s r*((s+j+4:ℝ)-r)/(s+j+4)",
+          "block_sha256": "bf9bb9f21a20fc538ca3293269c0a1c8bebfce427f8a069416b58710844149ee",
+          "block_characters": 918
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_moment_nonnegM1C6",
+          "header": "theorem reverse_moment_nonnegM1C6 (j s h : ℕ) (hh : h ≤ j) :\n 0 ≤ reverseMomentM1C6 j s h",
+          "block_sha256": "521d0ef7df707cc3f6b4936be621ce2cd3aace8d8c8d9b574d4c6ef2f98a1529",
+          "block_characters": 316
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_variance_nonnegM1C6",
+          "header": "theorem reverse_variance_nonnegM1C6 (j s h : ℕ) (hh : h ≤ j) :\n 0 ≤ reverseVarianceM1C6 j s h",
+          "block_sha256": "1a1b1d39e1194ddfb4660d773fba0f6aed39331a8e75fe44a536d57cb230a98b",
+          "block_characters": 185
+        },
+        {
+          "kind": "theorem",
+          "name": "symmetric_sumM1C6",
+          "header": "theorem symmetric_sumM1C6 (h : ℕ) (f : ℕ → ℝ) :\n (∑ r ∈ range (h+1), f (h-r))=∑ r ∈ range (h+1), f r",
+          "block_sha256": "a69ae7c1e96f5922e87416956caca34b658af9ccb20bc2a7ccb6c75370bb7183",
+          "block_characters": 145
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_balanced_momentM1C6",
+          "header": "theorem reverse_balanced_momentM1C6 (j s h : ℕ) (hh : h ≤ j) :\n ((s+j+4:ℝ))^2*reverseConvMBEC j (s+1) (s+1) h =\n ((s+j+4:ℝ)-(h:ℝ)/2)^2*reverseConvMBEC j s s h-reverseMomentM1C6 j s h",
+          "block_sha256": "71af39069d66a45cdd90ffb837bedf7c37416bb6c75ee6c3b8ea98b8dce78372",
+          "block_characters": 523
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_unbalanced_momentM1C6",
+          "header": "theorem reverse_unbalanced_momentM1C6 (j s h : ℕ) (hh : h ≤ j) :\n ((s+j+4:ℝ))*((s+j+5:ℝ))*reverseConvMBEC j s (s+2) h =\n (((s+j+4:ℝ)-(h:ℝ)/2)^2+((s+j+4:ℝ)-(h:ℝ)/2))*\n   reverseConvMBEC j s s h+reverseMomentM1C6 j s h",
+          "block_sha256": "9f50ae5f1175d0f39115973a1c2ef3398327403aad3dfea299defda29d01b0dd",
+          "block_characters": 1571
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "reverseMomentM1C6",
+          "header": "def reverseMomentM1C6 (j s h : ℕ) : ℝ",
+          "block_sha256": "83da2162238bef61fc0931fbf2b4b51c65421eaf747dd2c7cd743ae74da12f41",
+          "block_characters": 134,
+          "definition_text": "def reverseMomentM1C6 (j s h : ℕ) : ℝ :=\n ∑ r ∈ range (h+1), ((r:ℝ)-(h:ℝ)/2)^2*\n   reverseKernelMBEC j s r*reverseKernelMBEC j s (h-r)"
+        },
+        {
+          "kind": "def",
+          "name": "reverseVarianceM1C6",
+          "header": "def reverseVarianceM1C6 (j s h : ℕ) : ℝ",
+          "block_sha256": "921b28c988cfedd4f855ee26395d5f0a653e358a4d6ec256ad9350ded307d175",
+          "block_characters": 93,
+          "definition_text": "def reverseVarianceM1C6 (j s h : ℕ) : ℝ :=\n reverseMomentM1C6 j s h / reverseConvMBEC j s s h"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovVarianceDriftM1C6",
+      "path": "research/MarkovVarianceDriftM1C6.lean",
+      "bytes": 3948,
+      "sha256": "61ca2aac88d7e2a9b818080459a905980bd89fa08c641e187c9e222b55943a50",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "reverseCenterM1C6"
+        },
+        {
+          "kind": "def",
+          "name": "momentDriftM1C6"
+        },
+        {
+          "kind": "def",
+          "name": "varianceDriftM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_center_positiveM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_gap_driftM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "moment_variance_driftM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_adjacent_drift_iffM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_adjacent_of_variance_monoM1C6"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792219637451200000.json",
+          "sha256": "e59d65c23f68f1b84e4bbe253dde3afb78c66187dd14b5aa2fda277a53bfa0d9",
+          "source_sha256": "b3921a8c0180b927c50ce67f6b49331f8a3121b28c9f85045d58724fa8d136a0",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "b3921a8c0180b927c50ce67f6b49331f8a3121b28c9f85045d58724fa8d136a0"
+        },
+        {
+          "path": "build-1792219721881143000.json",
+          "sha256": "5b3da59ba0d31cfcad572dcd4abe48db7ecc0b8afbc50e23f0da44a120768af7",
+          "source_sha256": "3b06f9c0266e1562419e9bee9cca70c017a2996d9d638bb3301c7c15bc2bb7fd",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "3b06f9c0266e1562419e9bee9cca70c017a2996d9d638bb3301c7c15bc2bb7fd"
+        },
+        {
+          "path": "build-1792219809680135000.json",
+          "sha256": "3f49162cda63d068e4c248fefb6b1da173f350bbf2bec95547e95aa0d689ae63",
+          "source_sha256": "61ca2aac88d7e2a9b818080459a905980bd89fa08c641e187c9e222b55943a50",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "61ca2aac88d7e2a9b818080459a905980bd89fa08c641e187c9e222b55943a50"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in180": true,
+      "printed_in180": true,
+      "object_path": "evidence/markov-1c65a306/MarkovVarianceDriftM1C6.olean",
+      "object_sha256": "bdcb0f77d7ad40bde8b8ace8d804c9d96185b973acfa5af82d226a7245f83926",
+      "successful_final_build": "evidence/markov-1c65a306/build-1792219809680135000.json",
+      "historical_successful_source_versions": [
+        "61ca2aac88d7e2a9b818080459a905980bd89fa08c641e187c9e222b55943a50"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovReverseMomentsM1C6"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "reverse_center_positiveM1C6",
+          "header": "theorem reverse_center_positiveM1C6 (j s h : ℕ) (hh : h ≤ j) :\n 0 < reverseCenterM1C6 j s h",
+          "block_sha256": "30d879ae1e14de6974386f48e543bf50d276bceca58f76638f4c9fc062e55bb4",
+          "block_characters": 261
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_gap_driftM1C6",
+          "header": "theorem reverse_gap_driftM1C6 (j s h : ℕ) (h0 : 1 ≤ h) (hh : h ≤ j) :\n (s+j+4:ℝ)^3*(s+j+5)*\n  (reverseConvMBEC j (s+1) (s+1) (h-1)*reverseConvMBEC j s (s+2) h-\n   reverseConvMBEC j (s+1) (s+1) h*reverseConvMBEC j s (s+2) (h-1))=\n (2*reverseCenterM1C6 j s h+1)*momentDriftM1C6 j s h",
+          "block_sha256": "e93d07608c415870f3366f227dbce75fd0e03811685bbf9fb0a592ef7eb53567",
+          "block_characters": 896
+        },
+        {
+          "kind": "theorem",
+          "name": "moment_variance_driftM1C6",
+          "header": "theorem moment_variance_driftM1C6 (j s h : ℕ) (hh : h ≤ j) :\n momentDriftM1C6 j s h=reverseConvMBEC j s s h*reverseConvMBEC j s s (h-1)*\n   varianceDriftM1C6 j s h",
+          "block_sha256": "f551e3c53087629695948e2470f752b224cfc1dd8c0e2b12d1f93c582bf8797c",
+          "block_characters": 381
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_adjacent_drift_iffM1C6",
+          "header": "theorem reverse_adjacent_drift_iffM1C6 (j s h : ℕ) (h0 : 1 ≤ h) (hh : h ≤ j) :\n (reverseConvMBEC j (s+1) (s+1) h*reverseConvMBEC j s (s+2) (h-1) ≤\n  reverseConvMBEC j (s+1) (s+1) (h-1)*reverseConvMBEC j s (s+2) h) ↔\n 0 ≤ varianceDriftM1C6 j s h",
+          "block_sha256": "7590334965840017625ce827170f9ed235de74d729a32b608f1d255242c97b16",
+          "block_characters": 983
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_adjacent_of_variance_monoM1C6",
+          "header": "theorem reverse_adjacent_of_variance_monoM1C6 (j s h : ℕ) (h0 : 1 ≤ h) (hh : h ≤ j)\n (H : reverseVarianceM1C6 j s (h-1) ≤ reverseVarianceM1C6 j s h) :\n reverseConvMBEC j (s+1) (s+1) h*reverseConvMBEC j s (s+2) (h-1) ≤\n reverseConvMBEC j (s+1) (s+1) (h-1)*reverseConvMBEC j s (s+2) h",
+          "block_sha256": "142025979d82d11f4668b7fad6e78b923b80da791ce8d63553f5511cae9d61cc",
+          "block_characters": 532
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "reverseCenterM1C6",
+          "header": "def reverseCenterM1C6 (j s h : ℕ) : ℝ",
+          "block_sha256": "7028243c05379ac7c849c6a0f775257b62b0cfc8227812fd4708d8c641bde8c1",
+          "block_characters": 58,
+          "definition_text": "def reverseCenterM1C6 (j s h : ℕ) : ℝ := (s:ℝ)+j+4-(h:ℝ)/2"
+        },
+        {
+          "kind": "def",
+          "name": "momentDriftM1C6",
+          "header": "def momentDriftM1C6 (j s h : ℕ) : ℝ",
+          "block_sha256": "0342651f436fb2661a30d940ca1002a4d9a6ed732a0253f9ded97b0b0e46dcd3",
+          "block_characters": 277,
+          "definition_text": "def momentDriftM1C6 (j s h : ℕ) : ℝ :=\n (reverseCenterM1C6 j s h+1)*reverseMomentM1C6 j s h*reverseConvMBEC j s s (h-1)-\n reverseCenterM1C6 j s h*reverseMomentM1C6 j s (h-1)*reverseConvMBEC j s s h+\n reverseCenterM1C6 j s h/4*reverseConvMBEC j s s h*reverseConvMBEC j s s (h-1)"
+        },
+        {
+          "kind": "def",
+          "name": "varianceDriftM1C6",
+          "header": "def varianceDriftM1C6 (j s h : ℕ) : ℝ",
+          "block_sha256": "1ef8b69b5397fb1e5e4d0223732bc0fe6e05a1669a859a4009ec127926504fa0",
+          "block_characters": 177,
+          "definition_text": "def varianceDriftM1C6 (j s h : ℕ) : ℝ :=\n (reverseCenterM1C6 j s h+1)*reverseVarianceM1C6 j s h-\n reverseCenterM1C6 j s h*reverseVarianceM1C6 j s (h-1)+reverseCenterM1C6 j s h/4"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovUpperTailM1C6",
+      "path": "research/MarkovUpperTailM1C6.lean",
+      "bytes": 3027,
+      "sha256": "4a6874ace5b7d0865f12835f54b873188b18c8516279206a96eb97e2f6bc59cb",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "ReverseTailM1C6"
+        },
+        {
+          "kind": "def",
+          "name": "VarianceTailM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_tail_iffM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "variance_tail_iffM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_of_varianceM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_small_adjacentM1C6"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792219835987017000.json",
+          "sha256": "530bb06a6e7fd448f80b331b48fd794a9c14a9f16ac1b73aaccecd7bd9b05f03",
+          "source_sha256": "4a6874ace5b7d0865f12835f54b873188b18c8516279206a96eb97e2f6bc59cb",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "4a6874ace5b7d0865f12835f54b873188b18c8516279206a96eb97e2f6bc59cb"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in180": true,
+      "printed_in180": true,
+      "object_path": "evidence/markov-1c65a306/MarkovUpperTailM1C6.olean",
+      "object_sha256": "022a379f7c26be4441c01498650038bb1612a4fc81391ac90e37491f25c86f9c",
+      "successful_final_build": "evidence/markov-1c65a306/build-1792219835987017000.json",
+      "historical_successful_source_versions": [
+        "4a6874ace5b7d0865f12835f54b873188b18c8516279206a96eb97e2f6bc59cb"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovCertificate4M1C6",
+        "MarkovCertificate5M1C6",
+        "MarkovVarianceDriftM1C6"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "reverse_tail_iffM1C6",
+          "header": "theorem reverse_tail_iffM1C6 : ReverseTailM1C6 ↔ UpperAdjacentMA45",
+          "block_sha256": "0dd8de1a04111ffcb95a7c99e0a86ddea7e53a267bd8b12b96a11ef2f17ee0c9",
+          "block_characters": 363
+        },
+        {
+          "kind": "theorem",
+          "name": "variance_tail_iffM1C6",
+          "header": "theorem variance_tail_iffM1C6 : VarianceTailM1C6 ↔ UpperAdjacentMA45",
+          "block_sha256": "4fc70dd80b73ed1caca09b3bdf8e483de9f1f894bd337566c1a0374d2ad04baf",
+          "block_characters": 324
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_of_varianceM1C6",
+          "header": "theorem source_band_of_varianceM1C6 (H : VarianceTailM1C6)\n (q k i : ℕ) (r : Bool) (hq : 2 ≤ q) (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n threeRawM9E2 q r i (q+k+1)*threeRawM9E2 q r (i+2) (q+k+1) ≤\n threeRawM9E2 q r (i+1) (q+k+1)^2",
+          "block_sha256": "789653e2c07d1ea149834b4c281bda240bebe4c5a79fde35b90121b40508a4b8",
+          "block_characters": 301
+        },
+        {
+          "kind": "theorem",
+          "name": "q_small_adjacentM1C6",
+          "header": "theorem q_small_adjacentM1C6 (j s n : ℕ) (hj : j ≤ 5) (hn : n < 2*j) :\n (qPolyM7E2 j (s+1)^2).coeff n*(qPolyM7E2 j s*qPolyM7E2 j (s+2)).coeff (n+1) ≤\n (qPolyM7E2 j (s+1)^2).coeff (n+1)*(qPolyM7E2 j s*qPolyM7E2 j (s+2)).coeff n",
+          "block_sha256": "b7d044c73c9e08a0ba42d2b123d91d475c50d7d15f6f84a7e3076d9e2bf944ed",
+          "block_characters": 1322
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "ReverseTailM1C6",
+          "header": "def ReverseTailM1C6 : Prop",
+          "block_sha256": "97252f7c89446d8a1ec3697966777c9ea06fef0b813705d46fb258397d70c78a",
+          "block_characters": 190,
+          "definition_text": "def ReverseTailM1C6 : Prop := ∀ j s h : ℕ, 6 ≤ h → h ≤ j →\n reverseConvMBEC j (s+1) (s+1) h*reverseConvMBEC j s (s+2) (h-1) ≤\n reverseConvMBEC j (s+1) (s+1) (h-1)*reverseConvMBEC j s (s+2) h"
+        },
+        {
+          "kind": "def",
+          "name": "VarianceTailM1C6",
+          "header": "def VarianceTailM1C6 : Prop",
+          "block_sha256": "f7f8fbf1a09c464929df9e578a1b0dea6e88831510afd9f9fb2b6e1d7e3ab2a2",
+          "block_characters": 87,
+          "definition_text": "def VarianceTailM1C6 : Prop := ∀ j s h : ℕ, 6 ≤ h → h ≤ j → 0 ≤ varianceDriftM1C6 j s h"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovVarianceContractionM1C6",
+      "path": "research/MarkovVarianceContractionM1C6.lean",
+      "bytes": 4634,
+      "sha256": "676612c3da4b7a1257ee20a5f6c179ea598f0e0c8e754f51bf462a75a3088b88",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "reverseFourthM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_second_momentM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_fourth_boundM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_moment_shiftM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_variance_contraction_identityM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_variance_decreasingM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_variance_upperM1C6"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792219835986659000.json",
+          "sha256": "863d4346d8e70603559fb1b59f698a49fd503994b91f13cc4f85a70d1c3cde20",
+          "source_sha256": "676612c3da4b7a1257ee20a5f6c179ea598f0e0c8e754f51bf462a75a3088b88",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "676612c3da4b7a1257ee20a5f6c179ea598f0e0c8e754f51bf462a75a3088b88"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in180": true,
+      "printed_in180": true,
+      "object_path": "evidence/markov-1c65a306/MarkovVarianceContractionM1C6.olean",
+      "object_sha256": "74f03e78f666f8ea08f48a5e1667d456a0d55b1eb7c3505e51ea387b80f3076f",
+      "successful_final_build": "evidence/markov-1c65a306/build-1792219835986659000.json",
+      "historical_successful_source_versions": [
+        "676612c3da4b7a1257ee20a5f6c179ea598f0e0c8e754f51bf462a75a3088b88"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovVarianceDriftM1C6"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "weighted_second_momentM1C6",
+          "header": "theorem weighted_second_momentM1C6 (N : ℕ) (w x : ℕ → ℝ)\n (hw : ∀ i, i < N → 0 ≤ w i) :\n (∑ i ∈ range N, w i*x i)^2 ≤\n (∑ i ∈ range N, w i)*(∑ i ∈ range N, w i*(x i)^2)",
+          "block_sha256": "242edf602a41f0b0b9b3c0dc8916abab7d97ad7b549807732bb21df5526e5f05",
+          "block_characters": 888
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_fourth_boundM1C6",
+          "header": "theorem reverse_fourth_boundM1C6 (j s h : ℕ) (hh : h ≤ j) :\n reverseMomentM1C6 j s h^2 ≤ reverseConvMBEC j s s h*reverseFourthM1C6 j s h",
+          "block_sha256": "37b758fe4809b823e3e7b283697d5de6154d4d2887cf2d0a31b08fb71c775200",
+          "block_characters": 561
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_moment_shiftM1C6",
+          "header": "theorem reverse_moment_shiftM1C6 (j s h : ℕ) (hh : h ≤ j) :\n (s+j+4:ℝ)^2*reverseMomentM1C6 j (s+1) h=\n   reverseCenterM1C6 j s h^2*reverseMomentM1C6 j s h-reverseFourthM1C6 j s h",
+          "block_sha256": "447443569dc318249e81641d3d4c6525f8669e4dcf10090b99bb4b24dda28697",
+          "block_characters": 539
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_variance_contraction_identityM1C6",
+          "header": "theorem reverse_variance_contraction_identityM1C6 (j s h : ℕ) (hh : h ≤ j) :\n (s+j+4:ℝ)^2*reverseConvMBEC j (s+1) (s+1) h*reverseConvMBEC j s s h*\n   (reverseVarianceM1C6 j s h-reverseVarianceM1C6 j (s+1) h)=\n reverseConvMBEC j s s h*reverseFourthM1C6 j s h-reverseMomentM1C6 j s h^2",
+          "block_sha256": "105e3645c30d5941c1aae3c467b719445f48af6f1f0b3912b90be6d34a068c6d",
+          "block_characters": 868
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_variance_decreasingM1C6",
+          "header": "theorem reverse_variance_decreasingM1C6 (j s h : ℕ) (hh : h ≤ j) :\n reverseVarianceM1C6 j (s+1) h ≤ reverseVarianceM1C6 j s h",
+          "block_sha256": "44f42c9c262530e2db68c4c3fc88b055dc3b3c7f29026fe77c2b9c07dbf10cfc",
+          "block_characters": 546
+        },
+        {
+          "kind": "theorem",
+          "name": "reverse_variance_upperM1C6",
+          "header": "theorem reverse_variance_upperM1C6 (j s h : ℕ) (hh : h ≤ j) :\n reverseVarianceM1C6 j s h ≤ (h:ℝ)^2/4",
+          "block_sha256": "9e2f77e06fc8ffbc962eb3ae59717dd2a9666b471bdfae6bfdf1abc1c8821e2e",
+          "block_characters": 635
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "reverseFourthM1C6",
+          "header": "def reverseFourthM1C6 (j s h : ℕ) : ℝ",
+          "block_sha256": "fbe82627d8f351ab723a2ce2ff33d2a9f16d80ddfa1bd3dfcd8620887a04fd37",
+          "block_characters": 134,
+          "definition_text": "def reverseFourthM1C6 (j s h : ℕ) : ℝ :=\n ∑ r ∈ range (h+1), ((r:ℝ)-(h:ℝ)/2)^4*\n   reverseKernelMBEC j s r*reverseKernelMBEC j s (h-r)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovMomentObstructionM1C6",
+      "path": "research/MarkovMomentObstructionM1C6.lean",
+      "bytes": 1778,
+      "sha256": "a17848c0545049d805c936cb182ea890fa62ddd35cfb11abef12c9eb7255ddcc",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "variance_witness_beforeM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "variance_witness_afterM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "variance_decreases_in_hM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "variance_monotone_h_falseM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "witness_drift_positiveM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "witness_adjacent_holdsM1C6"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792220019916254000.json",
+          "sha256": "87171fbeb2172a5ef855ed8be98e37ec365d137b4d5adfa1a01d0f093be3d52e",
+          "source_sha256": "764a4ab60395daa0cb69fa07f4c4a695fa3f88f90ac3f66ec61ba05ab8c527d2",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "764a4ab60395daa0cb69fa07f4c4a695fa3f88f90ac3f66ec61ba05ab8c527d2"
+        },
+        {
+          "path": "build-1792220133416673000.json",
+          "sha256": "e2536ac44f8d8f091f9f29062e50182a8898d690f1c1af3cade56e3235312b5b",
+          "source_sha256": "a17848c0545049d805c936cb182ea890fa62ddd35cfb11abef12c9eb7255ddcc",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "a17848c0545049d805c936cb182ea890fa62ddd35cfb11abef12c9eb7255ddcc"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in180": true,
+      "printed_in180": true,
+      "object_path": "evidence/markov-1c65a306/MarkovMomentObstructionM1C6.olean",
+      "object_sha256": "76831ec294b53aa921c9d7472c133008d758e7cf161efbf2d0a6c94facf1f45f",
+      "successful_final_build": "evidence/markov-1c65a306/build-1792220133416673000.json",
+      "historical_successful_source_versions": [
+        "a17848c0545049d805c936cb182ea890fa62ddd35cfb11abef12c9eb7255ddcc"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovVarianceDriftM1C6"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "variance_witness_beforeM1C6",
+          "header": "theorem variance_witness_beforeM1C6 : reverseVarianceM1C6 15 2 14=152528/25937",
+          "block_sha256": "bd2b04cdde349488ee9ac4039cf33332f44fb33bdf7c88f3dec8b7d8d356bf68",
+          "block_characters": 222
+        },
+        {
+          "kind": "theorem",
+          "name": "variance_witness_afterM1C6",
+          "header": "theorem variance_witness_afterM1C6 : reverseVarianceM1C6 15 2 15=75573/12884",
+          "block_sha256": "d778ab87357c1452ce4faad36a8d6d60f9486d2d7c9c999ac02c0ddc39feab42",
+          "block_characters": 220
+        },
+        {
+          "kind": "theorem",
+          "name": "variance_decreases_in_hM1C6",
+          "header": "theorem variance_decreases_in_hM1C6 : reverseVarianceM1C6 15 2 15 < reverseVarianceM1C6 15 2 14",
+          "block_sha256": "0b0662d4fd792b4c5de0d34493910ea6358c6e653d42d0eeed4cde16b8611caa",
+          "block_characters": 172
+        },
+        {
+          "kind": "theorem",
+          "name": "variance_monotone_h_falseM1C6",
+          "header": "theorem variance_monotone_h_falseM1C6 : ¬ (∀ j s h : ℕ, 1 ≤ h → h ≤ j →\n reverseVarianceM1C6 j s (h-1) ≤ reverseVarianceM1C6 j s h)",
+          "block_sha256": "d5f9e6264f60b0dcf74c2e85cdf023fcb4ef2f84dd3faabea958128ebeb4a94a",
+          "block_characters": 243
+        },
+        {
+          "kind": "theorem",
+          "name": "witness_drift_positiveM1C6",
+          "header": "theorem witness_drift_positiveM1C6 : 0 < varianceDriftM1C6 15 2 15",
+          "block_sha256": "ea646a22385163bb2910ab9c7ffab79af4e459b999d1991dfd4b1e90d8a53639",
+          "block_characters": 198
+        },
+        {
+          "kind": "theorem",
+          "name": "witness_adjacent_holdsM1C6",
+          "header": "theorem witness_adjacent_holdsM1C6 :\n (qPolyM7E2 15 3^2).coeff 15*(qPolyM7E2 15 2*qPolyM7E2 15 4).coeff 16 ≤\n (qPolyM7E2 15 3^2).coeff 16*(qPolyM7E2 15 2*qPolyM7E2 15 4).coeff 15",
+          "block_sha256": "69ebd0c056df6c82ca78f11681ec40b092328c01fd8681fa5ed48856bc90af45",
+          "block_characters": 370
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovRisingConvolutionM1C6",
+      "path": "research/MarkovRisingConvolutionM1C6.lean",
+      "bytes": 3983,
+      "sha256": "eda7d6968eba325afb3d7b44f7945ededb11922bad721bda89a9090d1117e06c",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "riseM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "rise_natM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "scaled_reverse_coeffM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "scaled_reverse_productM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_product_splitM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "rising_weighted_sumM1C6"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792220064109730000.json",
+          "sha256": "9ed22d1f432ecd87f63c648dec84138c53f97f04ddcaaced2eacd51ae7ec301b",
+          "source_sha256": "37a89ae7e435061fe9ce73849a2e67ac5ca8b654da793a7a7d8bcd79819e1f93",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "37a89ae7e435061fe9ce73849a2e67ac5ca8b654da793a7a7d8bcd79819e1f93"
+        },
+        {
+          "path": "build-1792220126863604000.json",
+          "sha256": "af5241019017fdb6de7aca7ee346c60a2daed3883b6ecd0d4409f5aacc68ef8a",
+          "source_sha256": "6d0c7845c84d759759591ea8b14fa7fef4fa0d162ab460e4ebd17136fec20306",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "6d0c7845c84d759759591ea8b14fa7fef4fa0d162ab460e4ebd17136fec20306"
+        },
+        {
+          "path": "build-1792220146005248000.json",
+          "sha256": "603ef321e241a72c2a29d5d09a9cc12bfe9ef5642f96a23d8fb43312bee165bf",
+          "source_sha256": "eda7d6968eba325afb3d7b44f7945ededb11922bad721bda89a9090d1117e06c",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "eda7d6968eba325afb3d7b44f7945ededb11922bad721bda89a9090d1117e06c"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in180": true,
+      "printed_in180": true,
+      "object_path": "evidence/markov-1c65a306/MarkovRisingConvolutionM1C6.olean",
+      "object_sha256": "f2ae509d5df9c5e37493da93da9b6f71ca12499aef82c51f1bb4ddf6d7bd7dc6",
+      "successful_final_build": "evidence/markov-1c65a306/build-1792220146005248000.json",
+      "historical_successful_source_versions": [
+        "eda7d6968eba325afb3d7b44f7945ededb11922bad721bda89a9090d1117e06c"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovUpperTailM1C6"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "rise_natM1C6",
+          "header": "theorem rise_natM1C6 (n x : ℕ) : riseM1C6 n (x:ℝ)=((x+1).ascFactorial n:ℝ)",
+          "block_sha256": "b41d1c300a4e77ed99190a1de6131518197247efff52697cd7c190454e2e03d9",
+          "block_characters": 185
+        },
+        {
+          "kind": "theorem",
+          "name": "scaled_reverse_coeffM1C6",
+          "header": "theorem scaled_reverse_coeffM1C6 (j s r : ℕ) (hr : r ≤ j) :\n ((s+3).factorial:ℝ)*(qPolyM7E2 j s).coeff (j-r)=\n qWeightM7E2 r*riseM1C6 (s+3) ((j:ℝ)-r)",
+          "block_sha256": "def8837f58d1305a23aa5fcc3dbef5533575f3d02d4cedeaca1532785469b06b",
+          "block_characters": 636
+        },
+        {
+          "kind": "theorem",
+          "name": "scaled_reverse_productM1C6",
+          "header": "theorem scaled_reverse_productM1C6 (j s t h : ℕ) (hh : h ≤ j) :\n ((s+3).factorial:ℝ)*((t+3).factorial:ℝ)*(qPolyM7E2 j s*qPolyM7E2 j t).coeff (2*j-h)=\n ∑ r ∈ range (h+1), qWeightM7E2 r*qWeightM7E2 (h-r)*\n   riseM1C6 (s+3) ((j:ℝ)-r)*riseM1C6 (t+3) ((j:ℝ)-h+r)",
+          "block_sha256": "2fc525ea4a3a9053c96be458765dc42da4f479d5272e99c71456c2dcc740d364",
+          "block_characters": 1063
+        },
+        {
+          "kind": "theorem",
+          "name": "weight_product_splitM1C6",
+          "header": "theorem weight_product_splitM1C6 (h r : ℕ) (h0 : 1 ≤ h) (hr : r ≤ h) :\n qWeightM7E2 r*qWeightM7E2 (h-r)=\n 16*(r:ℝ)*((h:ℝ)-r)+(if r=0 then 4*(h:ℝ) else 0)+(if r=h then 4*(h:ℝ) else 0)",
+          "block_sha256": "688f1279571d8c19a9aa2ff7de88b3612e2d4b1bdca8a22ff77a979655d6d18f",
+          "block_characters": 644
+        },
+        {
+          "kind": "theorem",
+          "name": "rising_weighted_sumM1C6",
+          "header": "theorem rising_weighted_sumM1C6 (a b j h : ℕ) (h0 : 1 ≤ h) :\n (∑ r ∈ range (h+1), qWeightM7E2 r*qWeightM7E2 (h-r)*\n   riseM1C6 a ((j:ℝ)-r)*riseM1C6 b ((j:ℝ)-h+r))=\n (∑ r ∈ range (h+1), 16*(r:ℝ)*((h:ℝ)-r)*\n   riseM1C6 a ((j:ℝ)-r)*riseM1C6 b ((j:ℝ)-h+r))+\n 4*(h:ℝ)*(riseM1C6 a j*riseM1C6 b ((j:ℝ)-h)+\n   riseM1C6 a ((j:ℝ)-h)*riseM1C6 b j)",
+          "block_sha256": "35c4be045dcb3f6ad0086612478a217ac4d0c528d86a60ec3f70644a0cf9c453",
+          "block_characters": 910
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "riseM1C6",
+          "header": "def riseM1C6 (n : ℕ) (x : ℝ) : ℝ",
+          "block_sha256": "951558488dea073f18b2fe37081c7f0c0fdf24067ff3c6292b031ab78a9f74fb",
+          "block_characters": 58,
+          "definition_text": "def riseM1C6 (n : ℕ) (x : ℝ) : ℝ := ∏ i ∈ range n, (x+i+1)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovPowerSumsM1C6",
+      "path": "research/MarkovPowerSumsM1C6.lean",
+      "bytes": 3482,
+      "sha256": "7b9f457bc675b2a9686920c48fa3fa6bc1fd5b0ff6a1f28c92b47856f2c574e4",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "power_sum_0M1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_1M1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_2M1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_3M1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_4M1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_5M1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_6M1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_7M1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_8M1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_9M1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_10M1C6"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792220182915998000.json",
+          "sha256": "b2c34abee89435439c2cf59aab9f087898e05ba25060700820373a9d00cf808b",
+          "source_sha256": "7b9f457bc675b2a9686920c48fa3fa6bc1fd5b0ff6a1f28c92b47856f2c574e4",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "7b9f457bc675b2a9686920c48fa3fa6bc1fd5b0ff6a1f28c92b47856f2c574e4"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in180": true,
+      "printed_in180": true,
+      "object_path": "evidence/markov-1c65a306/MarkovPowerSumsM1C6.olean",
+      "object_sha256": "c4fb82c6f827fe581c8312354b83f308749b733f4e0a11f931ed48aaf2f9ac2b",
+      "successful_final_build": "evidence/markov-1c65a306/build-1792220182915998000.json",
+      "historical_successful_source_versions": [
+        "7b9f457bc675b2a9686920c48fa3fa6bc1fd5b0ff6a1f28c92b47856f2c574e4"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovRisingConvolutionM1C6"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "power_sum_0M1C6",
+          "header": "theorem power_sum_0M1C6 (h : ℕ) :\n (∑ r ∈ range (h+1), (r:ℝ)^0)=1 +\n   1*(h:ℝ)",
+          "block_sha256": "05a2cb2da31df7a5fd28ca63d7cdf270552a2836b8d3dd479688a2da940b5659",
+          "block_characters": 213
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_1M1C6",
+          "header": "theorem power_sum_1M1C6 (h : ℕ) :\n (∑ r ∈ range (h+1), (r:ℝ)^1)=(1/2)*(h:ℝ) +\n   (1/2)*(h:ℝ)^2",
+          "block_sha256": "32b37bfe0bd206cec3e5ab8d2a226240a82e9fc7ffabf7f1bd6624db3e1a945a",
+          "block_characters": 229
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_2M1C6",
+          "header": "theorem power_sum_2M1C6 (h : ℕ) :\n (∑ r ∈ range (h+1), (r:ℝ)^2)=(1/6)*(h:ℝ) +\n   (1/2)*(h:ℝ)^2 +\n   (1/3)*(h:ℝ)^3",
+          "block_sha256": "ec049624789d81f24d882a1349e548a7856bdb12f6b9dbaa62c741f2fdfcc6d3",
+          "block_characters": 248
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_3M1C6",
+          "header": "theorem power_sum_3M1C6 (h : ℕ) :\n (∑ r ∈ range (h+1), (r:ℝ)^3)=(1/4)*(h:ℝ)^2 +\n   (1/2)*(h:ℝ)^3 +\n   (1/4)*(h:ℝ)^4",
+          "block_sha256": "7fdfd8ee7209b96217c5b394bf4ec60a2bd7f4901aabb88e5f0e557877fa87e9",
+          "block_characters": 250
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_4M1C6",
+          "header": "theorem power_sum_4M1C6 (h : ℕ) :\n (∑ r ∈ range (h+1), (r:ℝ)^4)=(-1/30)*(h:ℝ) +\n   (1/3)*(h:ℝ)^3 +\n   (1/2)*(h:ℝ)^4 +\n   (1/5)*(h:ℝ)^5",
+          "block_sha256": "16a4e773004dfa37b22fb116f719fdb0910389bf7b867f4ebf5f360e514aae16",
+          "block_characters": 269
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_5M1C6",
+          "header": "theorem power_sum_5M1C6 (h : ℕ) :\n (∑ r ∈ range (h+1), (r:ℝ)^5)=(-1/12)*(h:ℝ)^2 +\n   (5/12)*(h:ℝ)^4 +\n   (1/2)*(h:ℝ)^5 +\n   (1/6)*(h:ℝ)^6",
+          "block_sha256": "84173969cad8012cd9f29a78302d3e8067ba6bcf482a46a3a16fab65fe641e61",
+          "block_characters": 272
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_6M1C6",
+          "header": "theorem power_sum_6M1C6 (h : ℕ) :\n (∑ r ∈ range (h+1), (r:ℝ)^6)=(1/42)*(h:ℝ) +\n   (-1/6)*(h:ℝ)^3 +\n   (1/2)*(h:ℝ)^5 +\n   (1/2)*(h:ℝ)^6 +\n   (1/7)*(h:ℝ)^7",
+          "block_sha256": "8673420598edae4b9b39665383f6f12b62dc8272ddf71b09d1e9df4184eb611d",
+          "block_characters": 288
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_7M1C6",
+          "header": "theorem power_sum_7M1C6 (h : ℕ) :\n (∑ r ∈ range (h+1), (r:ℝ)^7)=(1/12)*(h:ℝ)^2 +\n   (-7/24)*(h:ℝ)^4 +\n   (7/12)*(h:ℝ)^6 +\n   (1/2)*(h:ℝ)^7 +\n   (1/8)*(h:ℝ)^8",
+          "block_sha256": "cc423860c569af5b1962d30ca0083488a4089c3fd6eafdf72908dc6e1e68cd86",
+          "block_characters": 292
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_8M1C6",
+          "header": "theorem power_sum_8M1C6 (h : ℕ) :\n (∑ r ∈ range (h+1), (r:ℝ)^8)=(-1/30)*(h:ℝ) +\n   (2/9)*(h:ℝ)^3 +\n   (-7/15)*(h:ℝ)^5 +\n   (2/3)*(h:ℝ)^7 +\n   (1/2)*(h:ℝ)^8 +\n   (1/9)*(h:ℝ)^9",
+          "block_sha256": "6a495d0ffa6dd858d1f89cc76925e9acd7e791a5719cf23997095bc2a300778d",
+          "block_characters": 309
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_9M1C6",
+          "header": "theorem power_sum_9M1C6 (h : ℕ) :\n (∑ r ∈ range (h+1), (r:ℝ)^9)=(-3/20)*(h:ℝ)^2 +\n   (1/2)*(h:ℝ)^4 +\n   (-7/10)*(h:ℝ)^6 +\n   (3/4)*(h:ℝ)^8 +\n   (1/2)*(h:ℝ)^9 +\n   (1/10)*(h:ℝ)^10",
+          "block_sha256": "813e4f6368a6e59470a02b134114d246869899ef44b67e86458bb68952d74fa0",
+          "block_characters": 313
+        },
+        {
+          "kind": "theorem",
+          "name": "power_sum_10M1C6",
+          "header": "theorem power_sum_10M1C6 (h : ℕ) :\n (∑ r ∈ range (h+1), (r:ℝ)^10)=(5/66)*(h:ℝ) +\n   (-1/2)*(h:ℝ)^3 +\n   1*(h:ℝ)^5 +\n   -1*(h:ℝ)^7 +\n   (5/6)*(h:ℝ)^9 +\n   (1/2)*(h:ℝ)^10 +\n   (1/11)*(h:ℝ)^11",
+          "block_sha256": "f1a5896fa50777eea3fb27935d1ab56c161454807f058134bc8c2058bcd175eb",
+          "block_characters": 329
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovFixedZeroFormulaM1C6",
+      "path": "research/MarkovFixedZeroFormulaM1C6.lean",
+      "bytes": 16412,
+      "sha256": "3735be872f78abec5aa9db3244b29814dcffba3ff7a42f438277798693ca4b74",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "closedAM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "interior_A_sumM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "closed_A_coeffM1C6"
+        },
+        {
+          "kind": "def",
+          "name": "closedBM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "interior_B_sumM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "closed_B_coeffM1C6"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792220201991364000.json",
+          "sha256": "00a1885c651ed6825d4b36eb84545f91688e18c3c4226594c5bbbdf2f446ab1f",
+          "source_sha256": "63d603642ff039a8dcca32e549267a4ac8fb6cf9b41406c3c8f1999054c8f3e7",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "63d603642ff039a8dcca32e549267a4ac8fb6cf9b41406c3c8f1999054c8f3e7"
+        },
+        {
+          "path": "build-1792220288074671000.json",
+          "sha256": "d87e52a95f813a2507366e142ab11d892f46f652621b3bb3c9d244edd4969d4d",
+          "source_sha256": "3735be872f78abec5aa9db3244b29814dcffba3ff7a42f438277798693ca4b74",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "3735be872f78abec5aa9db3244b29814dcffba3ff7a42f438277798693ca4b74"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in180": true,
+      "printed_in180": true,
+      "object_path": "evidence/markov-1c65a306/MarkovFixedZeroFormulaM1C6.olean",
+      "object_sha256": "6ef8664b57b1f211d0b5938a7ef0f476f7f40b8f9b6bb54b3c7616254ec622f5",
+      "successful_final_build": "evidence/markov-1c65a306/build-1792220288074671000.json",
+      "historical_successful_source_versions": [
+        "3735be872f78abec5aa9db3244b29814dcffba3ff7a42f438277798693ca4b74"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovPowerSumsM1C6"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "interior_A_sumM1C6",
+          "header": "theorem interior_A_sumM1C6 (j : ℝ) (h : ℕ) :\n (∑ r ∈ range (h+1),16*(r:ℝ)*((h:ℝ)-r)*riseM1C6 3 (j-r)*riseM1C6 5 (j-h+r))=\n (-27648/11)*(h:ℝ) +\n   (-321792/35)*(h:ℝ)*j +\n   (-516256/35)*(h:ℝ)*j^2 +\n   (-92720/7)*(h:ℝ)*j^3 +\n   (-21656/3)*(h:ℝ)*j^4 +\n   (-12184/5)*(h:ℝ)*j^5 +\n   (-7456/15)*(h:ℝ)*j^6 +\n   -56*(h:ℝ)*j^7 +\n   (-8/3)*(h:ℝ)*j^8 +\n   (160896/35)*(h:ℝ)^2 +\n   (516256/35)*(h:ℝ)^2*j +\n   (139080/7)*(h:ℝ)^2*j^2 +\n   (43312/3)*(h:ℝ)^2*j^3 +\n   6092*(h:ℝ)^2*j^4 +\n   (7456/5)*(h:ℝ)^2*j^5 +\n   196*(h:ℝ)^2*j^6 +\n   (32/3)*(h:ℝ)^2*j^7 +\n   (-35424/35)*(h:ℝ)^3 +\n   (-1208/3)*(h:ℝ)^3*j +\n   (266264/63)*(h:ℝ)^3*j^2 +\n   7300*(h:ℝ)^3*j^3 +\n   (16180/3)*(h:ℝ)^3*j^4 +\n   2148*(h:ℝ)^3*j^5 +\n   (1436/3)*(h:ℝ)^3*j^6 +\n   56*(h:ℝ)^3*j^7 +\n   (8/3)*(h:ℝ)^3*j^8 +\n   (-65312/21)*(h:ℝ)^4 +\n   (-721040/63)*(h:ℝ)^4*j +\n   -17042*(h:ℝ)^4*j^2 +\n   -13272*(h:ℝ)^4*j^3 +\n   -5860*(h:ℝ)^4*j^4 +\n   (-4420/3)*(h:ℝ)^4*j^5 +\n   -196*(h:ℝ)^4*j^6 +\n   (-32/3)*(h:ℝ)^4*j^7 +\n   (66088/21)*(h:ℝ)^5 +\n   (44706/5)*(h:ℝ)^5*j +\n   (151714/15)*(h:ℝ)^5*j^2 +\n   5836*(h:ℝ)^5*j^3 +\n   (5444/3)*(h:ℝ)^5*j^4 +\n   (1444/5)*(h:ℝ)^5*j^5 +\n   (92/5)*(h:ℝ)^5*j^6 +\n   (-7136/5)*(h:ℝ)^6 +\n   (-48446/15)*(h:ℝ)^6*j +\n   -2796*(h:ℝ)^6*j^2 +\n   (-3484/3)*(h:ℝ)^6*j^3 +\n   -232*(h:ℝ)^6*j^4 +\n   (-268/15)*(h:ℝ)^6*j^5 +\n   (1864/5)*(h:ℝ)^7 +\n   (4556/7)*(h:ℝ)^7*j +\n   (2860/7)*(h:ℝ)^7*j^2 +\n   (768/7)*(h:ℝ)^7*j^3 +\n   (32/3)*(h:ℝ)^7*j^4 +\n   (-416/7)*(h:ℝ)^8 +\n   (-1580/21)*(h:ℝ)^8*j +\n   (-214/7)*(h:ℝ)^8*j^2 +\n   -4*(h:ℝ)^8*j^3 +\n   (40/7)*(h:ℝ)^9 +\n   (14/3)*(h:ℝ)^9*j +\n   (58/63)*(h:ℝ)^9*j^2 +\n   (-32/105)*(h:ℝ)^10 +\n   (-38/315)*(h:ℝ)^10*j +\n   (8/1155)*(h:ℝ)^11",
+          "block_sha256": "03faf271a1d2f37333c92d5642cf9ba191fa5c979e5739e51b5024aa68bab80d",
+          "block_characters": 5955
+        },
+        {
+          "kind": "theorem",
+          "name": "closed_A_coeffM1C6",
+          "header": "theorem closed_A_coeffM1C6 (j h : ℕ) (h0 : 1 ≤ h) (hh : h ≤ j) :\n (720:ℝ)*(qPolyM7E2 j 0*qPolyM7E2 j 2).coeff (2*j-h)=closedAM1C6 j h",
+          "block_sha256": "c7f90aacfe531a0d8512e1fb0c13ab168b7ece14a0517b0b73d7ea50bb1095c9",
+          "block_characters": 502
+        },
+        {
+          "kind": "theorem",
+          "name": "interior_B_sumM1C6",
+          "header": "theorem interior_B_sumM1C6 (j : ℝ) (h : ℕ) :\n (∑ r ∈ range (h+1),16*(r:ℝ)*((h:ℝ)-r)*riseM1C6 4 (j-r)*riseM1C6 4 (j-h+r))=\n (-23040/11)*(h:ℝ) +\n   (-53632/7)*(h:ℝ)*j +\n   (-433632/35)*(h:ℝ)*j^2 +\n   (-236800/21)*(h:ℝ)*j^3 +\n   (-131480/21)*(h:ℝ)*j^4 +\n   (-6496/3)*(h:ℝ)*j^5 +\n   (-6832/15)*(h:ℝ)*j^6 +\n   (-160/3)*(h:ℝ)*j^7 +\n   (-8/3)*(h:ℝ)*j^8 +\n   (26816/7)*(h:ℝ)^2 +\n   (433632/35)*(h:ℝ)^2*j +\n   (118400/7)*(h:ℝ)^2*j^2 +\n   (262960/21)*(h:ℝ)^2*j^3 +\n   (16240/3)*(h:ℝ)^2*j^4 +\n   (6832/5)*(h:ℝ)^2*j^5 +\n   (560/3)*(h:ℝ)^2*j^6 +\n   (32/3)*(h:ℝ)^2*j^7 +\n   (-5904/7)*(h:ℝ)^3 +\n   (-28640/63)*(h:ℝ)^3*j +\n   (209312/63)*(h:ℝ)^3*j^2 +\n   6032*(h:ℝ)^3*j^3 +\n   (23016/5)*(h:ℝ)^3*j^4 +\n   (5680/3)*(h:ℝ)^3*j^5 +\n   (1312/3)*(h:ℝ)^3*j^6 +\n   (160/3)*(h:ℝ)^3*j^7 +\n   (8/3)*(h:ℝ)^3*j^8 +\n   (-163280/63)*(h:ℝ)^4 +\n   (-603752/63)*(h:ℝ)^4*j +\n   (-43384/3)*(h:ℝ)^4*j^2 +\n   (-172256/15)*(h:ℝ)^4*j^3 +\n   -5200*(h:ℝ)^4*j^4 +\n   (-4048/3)*(h:ℝ)^4*j^5 +\n   (-560/3)*(h:ℝ)^4*j^6 +\n   (-32/3)*(h:ℝ)^4*j^7 +\n   (165220/63)*(h:ℝ)^5 +\n   7560*(h:ℝ)^5*j +\n   8712*(h:ℝ)^5*j^2 +\n   (15440/3)*(h:ℝ)^5*j^3 +\n   1648*(h:ℝ)^5*j^4 +\n   272*(h:ℝ)^5*j^5 +\n   (272/15)*(h:ℝ)^5*j^6 +\n   (-3568/3)*(h:ℝ)^6 +\n   (-13712/5)*(h:ℝ)^6*j +\n   (-7280/3)*(h:ℝ)^6*j^2 +\n   (-3104/3)*(h:ℝ)^6*j^3 +\n   (-640/3)*(h:ℝ)^6*j^4 +\n   (-256/15)*(h:ℝ)^6*j^5 +\n   (932/3)*(h:ℝ)^7 +\n   (11600/21)*(h:ℝ)^7*j +\n   (2480/7)*(h:ℝ)^7*j^2 +\n   (2048/21)*(h:ℝ)^7*j^3 +\n   (1024/105)*(h:ℝ)^7*j^4 +\n   (-1040/21)*(h:ℝ)^8 +\n   (-1336/21)*(h:ℝ)^8*j +\n   (-184/7)*(h:ℝ)^8*j^2 +\n   (-368/105)*(h:ℝ)^8*j^3 +\n   (100/21)*(h:ℝ)^9 +\n   (248/63)*(h:ℝ)^9*j +\n   (248/315)*(h:ℝ)^9*j^2 +\n   (-16/63)*(h:ℝ)^10 +\n   (-32/315)*(h:ℝ)^10*j +\n   (4/693)*(h:ℝ)^11",
+          "block_sha256": "e3cc72911fe2fd539264c0c4e39844f1033f6a9be4819635c3e405fb976c5be2",
+          "block_characters": 5556
+        },
+        {
+          "kind": "theorem",
+          "name": "closed_B_coeffM1C6",
+          "header": "theorem closed_B_coeffM1C6 (j h : ℕ) (h0 : 1 ≤ h) (hh : h ≤ j) :\n (576:ℝ)*(qPolyM7E2 j 1*qPolyM7E2 j 1).coeff (2*j-h)=closedBM1C6 j h",
+          "block_sha256": "7d0d34185123f66f7060dcdd05e994f729e6a21917cc1e4dfc718f6b8b5f59e5",
+          "block_characters": 507
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "closedAM1C6",
+          "header": "def closedAM1C6 (j h : ℝ) : ℝ",
+          "block_sha256": "b941a6a774a5cb5ce751ad69e73eb833b607a3a6f14c557893b525bd40bdc208",
+          "block_characters": 1308,
+          "definition_text": "def closedAM1C6 (j h : ℝ) : ℝ :=\n (35712/11)*h +\n   (508128/35)*h*j +\n   (907264/35)*h*j^2 +\n   (173224/7)*h*j^3 +\n   (41920/3)*h*j^4 +\n   (24056/5)*h*j^5 +\n   (14864/15)*h*j^6 +\n   112*h*j^7 +\n   (16/3)*h*j^8 +\n   (-254064/35)*h^2 +\n   (-907264/35)*h^2*j +\n   (-259836/7)*h^2*j^2 +\n   (-83840/3)*h^2*j^3 +\n   -12028*h^2*j^4 +\n   (-14864/5)*h^2*j^5 +\n   -392*h^2*j^6 +\n   (-64/3)*h^2*j^7 +\n   (254376/35)*h^3 +\n   (70900/3)*h^3*j +\n   (1996748/63)*h^3*j^2 +\n   23260*h^3*j^3 +\n   (31180/3)*h^3*j^4 +\n   2952*h^3*j^5 +\n   (1592/3)*h^3*j^6 +\n   56*h^3*j^7 +\n   (8/3)*h^3*j^8 +\n   (-118232/21)*h^4 +\n   (-1116428/63)*h^4*j +\n   -22862*h^4*j^2 +\n   -15832*h^4*j^3 +\n   -6400*h^4*j^4 +\n   (-4552/3)*h^4*j^5 +\n   -196*h^4*j^6 +\n   (-32/3)*h^4*j^7 +\n   (73648/21)*h^5 +\n   (48606/5)*h^5*j +\n   (160414/15)*h^5*j^2 +\n   6016*h^5*j^3 +\n   (5504/3)*h^5*j^4 +\n   (1444/5)*h^5*j^5 +\n   (92/5)*h^5*j^6 +\n   (-7256/5)*h^6 +\n   (-49106/15)*h^6*j +\n   -2820*h^6*j^2 +\n   (-3496/3)*h^6*j^3 +\n   -232*h^6*j^4 +\n   (-268/15)*h^6*j^5 +\n   (1864/5)*h^7 +\n   (4556/7)*h^7*j +\n   (2860/7)*h^7*j^2 +\n   (768/7)*h^7*j^3 +\n   (32/3)*h^7*j^4 +\n   (-416/7)*h^8 +\n   (-1580/21)*h^8*j +\n   (-214/7)*h^8*j^2 +\n   -4*h^8*j^3 +\n   (40/7)*h^9 +\n   (14/3)*h^9*j +\n   (58/63)*h^9*j^2 +\n   (-32/105)*h^10 +\n   (-38/315)*h^10*j +\n   (8/1155)*h^11"
+        },
+        {
+          "kind": "def",
+          "name": "closedBM1C6",
+          "header": "def closedBM1C6 (j h : ℝ) : ℝ",
+          "block_sha256": "53cbd966f767879114aedc711cf1433d9e17896500fef0528bf5129f2d1d708c",
+          "block_characters": 1360,
+          "definition_text": "def closedBM1C6 (j h : ℝ) : ℝ :=\n (27648/11)*h +\n   (80768/7)*h*j +\n   (736768/35)*h*j^2 +\n   (431840/21)*h*j^3 +\n   (250384/21)*h*j^4 +\n   (12704/3)*h*j^5 +\n   (13568/15)*h*j^6 +\n   (320/3)*h*j^7 +\n   (16/3)*h*j^8 +\n   (-40384/7)*h^2 +\n   (-736768/35)*h^2*j +\n   (-215920/7)*h^2*j^2 +\n   (-500768/21)*h^2*j^3 +\n   (-31760/3)*h^2*j^4 +\n   (-13568/5)*h^2*j^5 +\n   (-1120/3)*h^2*j^6 +\n   (-64/3)*h^2*j^7 +\n   (41136/7)*h^3 +\n   (1216240/63)*h^3*j +\n   (1655288/63)*h^3*j^2 +\n   19632*h^3*j^3 +\n   (44816/5)*h^3*j^4 +\n   (7840/3)*h^3*j^5 +\n   (1456/3)*h^3*j^6 +\n   (160/3)*h^3*j^7 +\n   (8/3)*h^3*j^8 +\n   (-284240/63)*h^4 +\n   (-904136/63)*h^4*j +\n   (-56584/3)*h^4*j^2 +\n   (-201056/15)*h^4*j^3 +\n   -5600*h^4*j^4 +\n   (-4144/3)*h^4*j^5 +\n   (-560/3)*h^4*j^6 +\n   (-32/3)*h^4*j^7 +\n   (177316/63)*h^5 +\n   7960*h^5*j +\n   8992*h^5*j^2 +\n   (15680/3)*h^5*j^3 +\n   1656*h^5*j^4 +\n   272*h^5*j^5 +\n   (272/15)*h^5*j^6 +\n   (-3568/3)*h^6 +\n   (-13712/5)*h^6*j +\n   (-7280/3)*h^6*j^2 +\n   (-3104/3)*h^6*j^3 +\n   (-640/3)*h^6*j^4 +\n   (-256/15)*h^6*j^5 +\n   (932/3)*h^7 +\n   (11600/21)*h^7*j +\n   (2480/7)*h^7*j^2 +\n   (2048/21)*h^7*j^3 +\n   (1024/105)*h^7*j^4 +\n   (-1040/21)*h^8 +\n   (-1336/21)*h^8*j +\n   (-184/7)*h^8*j^2 +\n   (-368/105)*h^8*j^3 +\n   (100/21)*h^9 +\n   (248/63)*h^9*j +\n   (248/315)*h^9*j^2 +\n   (-16/63)*h^10 +\n   (-32/315)*h^10*j +\n   (4/693)*h^11"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovFixedZeroPositiveM1C6",
+      "path": "research/MarkovFixedZeroPositiveM1C6.lean",
+      "bytes": 6000,
+      "sha256": "a41d25145ff70b7a2cc0a7d9a7ff87577943e5ea17aa4c730c92965c0cbabcdf",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "zeroGapCoreM1C6"
+        },
+        {
+          "kind": "def",
+          "name": "zeroGapFactorM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "zero_gap_factorM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "zero_gap_positiveM1C6"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792220358868370000.json",
+          "sha256": "f6872ba31add965f30f2f8ef27c2462e45cd537130155c097c5f922b4efe3d08",
+          "source_sha256": "a41d25145ff70b7a2cc0a7d9a7ff87577943e5ea17aa4c730c92965c0cbabcdf",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "a41d25145ff70b7a2cc0a7d9a7ff87577943e5ea17aa4c730c92965c0cbabcdf"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in180": true,
+      "printed_in180": true,
+      "object_path": "evidence/markov-1c65a306/MarkovFixedZeroPositiveM1C6.olean",
+      "object_sha256": "dabd6b80a24be6a3c19a83fa67e4619d0f73d877b62fde97441066780d8db15e",
+      "successful_final_build": "evidence/markov-1c65a306/build-1792220358868370000.json",
+      "historical_successful_source_versions": [
+        "a41d25145ff70b7a2cc0a7d9a7ff87577943e5ea17aa4c730c92965c0cbabcdf"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovFixedZeroFormulaM1C6"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "zero_gap_factorM1C6",
+          "header": "theorem zero_gap_factorM1C6 (h k : ℝ) :\n closedBM1C6 (h+2+k) (h+1)*closedAM1C6 (h+2+k) (h+2)-\n closedBM1C6 (h+2+k) (h+2)*closedAM1C6 (h+2+k) (h+1)=zeroGapFactorM1C6 h k",
+          "block_sha256": "3fcb03679b760692633cef7bc0a156552aa9a7f9147971686000aef22f2f80da",
+          "block_characters": 246
+        },
+        {
+          "kind": "theorem",
+          "name": "zero_gap_positiveM1C6",
+          "header": "theorem zero_gap_positiveM1C6 (h k : ℝ) (hh : 0 ≤ h) (hk : 0 ≤ k) :\n 0 < zeroGapFactorM1C6 h k",
+          "block_sha256": "df150d5f60dda530e8bf5eab855cc483bc6e6e4095fc39920840488fc76835bd",
+          "block_characters": 159
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "zeroGapCoreM1C6",
+          "header": "def zeroGapCoreM1C6 (h k : ℝ) : ℝ",
+          "block_sha256": "229a73d55fa55223936c3271ce507d8befead3a630152819b23bfa298312ec68",
+          "block_characters": 5209,
+          "definition_text": "def zeroGapCoreM1C6 (h k : ℝ) : ℝ :=\n 199065600 +\n   925655040*k +\n   1929222144*k^2 +\n   2396477952*k^3 +\n   1985621760*k^4 +\n   1161437824*k^5 +\n   494258112*k^6 +\n   155149376*k^7 +\n   35962560*k^8 +\n   6084672*k^9 +\n   730944*k^10 +\n   59072*k^11 +\n   2880*k^12 +\n   64*k^13 +\n   (51610337280/77)*h +\n   (20853866496/7)*h*k +\n   (456077919232/77)*h*k^2 +\n   (2695804982272/385)*h*k^3 +\n   (578129033344/105)*h*k^4 +\n   (1173025839232/385)*h*k^5 +\n   (1411698784288/1155)*h*k^6 +\n   (138678008512/385)*h*k^7 +\n   (546170272/7)*h*k^8 +\n   (429504832/35)*h*k^9 +\n   (143009312/105)*h*k^10 +\n   (3534016/35)*h*k^11 +\n   (67168/15)*h*k^12 +\n   (448/5)*h*k^13 +\n   (595219884032/539)*h^2 +\n   (12644104318464/2695)*h^2*k +\n   (359910423907072/40425)*h^2*k^2 +\n   (405297836228864/40425)*h^2*k^3 +\n   (181722143674816/24255)*h^2*k^4 +\n   (43320400355744/11025)*h^2*k^5 +\n   (25803015655072/17325)*h^2*k^6 +\n   (7160658708704/17325)*h^2*k^7 +\n   (8818997248/105)*h^2*k^8 +\n   (6479428576/525)*h^2*k^9 +\n   (80263136/63)*h^2*k^10 +\n   (27537248/315)*h^2*k^11 +\n   (32128/9)*h^2*k^12 +\n   (2944/45)*h^2*k^13 +\n   (453464569856/385)*h^3 +\n   (193132702833152/40425)*h^3*k +\n   (1048228730073344/121275)*h^3*k^2 +\n   (20420220161728/2205)*h^3*k^3 +\n   (796538057333152/121275)*h^3*k^4 +\n   (79061814506144/24255)*h^3*k^5 +\n   (20187048748016/17325)*h^3*k^6 +\n   (1052574529504/3465)*h^3*k^7 +\n   (6062207936/105)*h^3*k^8 +\n   (1776213568/225)*h^3*k^9 +\n   (33920368/45)*h^3*k^10 +\n   (427552/9)*h^3*k^11 +\n   (8832/5)*h^3*k^12 +\n   (1312/45)*h^3*k^13 +\n   (109710995177984/121275)*h^4 +\n   (1539570744064/441)*h^4*k +\n   (2182206354723776/363825)*h^4*k^2 +\n   (2214531723587872/363825)*h^4*k^3 +\n   (1482600570106112/363825)*h^4*k^4 +\n   (138341683738736/72765)*h^4*k^5 +\n   (4720158410336/7425)*h^4*k^6 +\n   (8008412405824/51975)*h^4*k^7 +\n   (405304288/15)*h^4*k^8 +\n   (1772406064/525)*h^4*k^9 +\n   (13086752/45)*h^4*k^10 +\n   (1023296/63)*h^4*k^11 +\n   (23456/45)*h^4*k^12 +\n   (64/9)*h^4*k^13 +\n   (9111219245824/17325)*h^5 +\n   (698331320155136/363825)*h^5*k +\n   (1131752468392096/363825)*h^5*k^2 +\n   (1079363408951984/363825)*h^5*k^3 +\n   (675829056066464/363825)*h^5*k^4 +\n   (26644519238768/33075)*h^5*k^5 +\n   (860869020016/3465)*h^5*k^6 +\n   (2858172891328/51975)*h^5*k^7 +\n   (130369568/15)*h^5*k^8 +\n   (504604448/525)*h^5*k^9 +\n   (3211888/45)*h^5*k^10 +\n   (1038208/315)*h^5*k^11 +\n   (1216/15)*h^5*k^12 +\n   (32/45)*h^5*k^13 +\n   (258784182962432/1091475)*h^6 +\n   (5064577359904/6237)*h^6*k +\n   (447635718519536/363825)*h^6*k^2 +\n   (132355499003072/121275)*h^6*k^3 +\n   (25518049122512/40425)*h^6*k^4 +\n   (30398168416016/121275)*h^6*k^5 +\n   (519507820864/7425)*h^6*k^6 +\n   (239111944864/17325)*h^6*k^7 +\n   (13317728/7)*h^6*k^8 +\n   (31107408/175)*h^6*k^9 +\n   (476672/45)*h^6*k^10 +\n   (5344/15)*h^6*k^11 +\n   (224/45)*h^6*k^12 +\n   (19367523712/231)*h^7 +\n   (8325334421024/31185)*h^7*k +\n   (136131283193552/363825)*h^7*k^2 +\n   (110910794070976/363825)*h^7*k^3 +\n   (58370177048608/363825)*h^7*k^4 +\n   (6942476991008/121275)*h^7*k^5 +\n   (34944096544/2475)*h^7*k^6 +\n   (41636389664/17325)*h^7*k^7 +\n   (5796544/21)*h^7*k^8 +\n   (10658288/525)*h^7*k^9 +\n   (269632/315)*h^7*k^10 +\n   (544/35)*h^7*k^11 +\n   (8492719963424/363825)*h^8 +\n   (74631226773424/1091475)*h^8*k +\n   (31854577172576/363825)*h^8*k^2 +\n   (7828574350816/121275)*h^8*k^3 +\n   (11041375297696/363825)*h^8*k^4 +\n   (384202418272/40425)*h^8*k^5 +\n   (3160713632/1575)*h^8*k^6 +\n   (1627674304/5775)*h^8*k^7 +\n   (2642096/105)*h^8*k^8 +\n   (675616/525)*h^8*k^9 +\n   (8992/315)*h^8*k^10 +\n   (127733136/25)*h^9 +\n   (593863237960/43659)*h^9*k +\n   (90567119696/5775)*h^9*k^2 +\n   (339893188976/33075)*h^9*k^3 +\n   (170487585088/40425)*h^9*k^4 +\n   (27260334128/24255)*h^9*k^5 +\n   (673687456/3465)*h^9*k^6 +\n   (52079872/2475)*h^9*k^7 +\n   (45216/35)*h^9*k^8 +\n   (53936/1575)*h^9*k^9 +\n   (318062246968/363825)*h^10 +\n   (455210359952/218295)*h^10*k +\n   (70343278064/33075)*h^10*k^2 +\n   (440535189728/363825)*h^10*k^3 +\n   (153091766224/363825)*h^10*k^4 +\n   (1329778976/14553)*h^10*k^5 +\n   (629170816/51975)*h^10*k^6 +\n   (4225216/4725)*h^10*k^7 +\n   (592/21)*h^10*k^8 +\n   (401345024/3465)*h^11 +\n   (265513600768/1091475)*h^11*k +\n   (15615345808/72765)*h^11*k^2 +\n   (37476765184/363825)*h^11*k^3 +\n   (960472256/33075)*h^11*k^4 +\n   (1748598416/363825)*h^11*k^5 +\n   (7488896/17325)*h^11*k^6 +\n   (846848/51975)*h^11*k^7 +\n   (12801683648/1091475)*h^12 +\n   (472379408/22275)*h^12*k +\n   (228522880/14553)*h^12*k^2 +\n   (147685504/24255)*h^12*k^3 +\n   (52669328/40425)*h^12*k^4 +\n   (17678624/121275)*h^12*k^5 +\n   (346112/51975)*h^12*k^6 +\n   (5153504/5775)*h^13 +\n   (210098288/155925)*h^13*k +\n   (291828016/363825)*h^13*k^2 +\n   (17102752/72765)*h^13*k^3 +\n   (12319904/363825)*h^13*k^4 +\n   (77488/40425)*h^13*k^5 +\n   (18162352/363825)*h^14 +\n   (2629712/43659)*h^14*k +\n   (890912/33075)*h^14*k^2 +\n   (128224/24255)*h^14*k^3 +\n   (12688/33075)*h^14*k^4 +\n   (768/385)*h^15 +\n   (1959008/1091475)*h^15*k +\n   (64672/121275)*h^15*k^2 +\n   (544/10395)*h^15*k^3 +\n   (19808/363825)*h^16 +\n   (35264/1091475)*h^16*k +\n   (64/13475)*h^16*k^2 +\n   (16/17325)*h^17 +\n   (296/1091475)*h^17*k +\n   (8/1091475)*h^18"
+        },
+        {
+          "kind": "def",
+          "name": "zeroGapFactorM1C6",
+          "header": "def zeroGapFactorM1C6 (h k : ℝ) : ℝ",
+          "block_sha256": "7f71c4a66bac40501540ed585ae3717b87f4649e1cf3f9a5eac47a9907506c80",
+          "block_characters": 95,
+          "definition_text": "def zeroGapFactorM1C6 (h k : ℝ) : ℝ := (1*h+0*k+1)*(1*h+0*k+2)*(1*h+2*k+11)*zeroGapCoreM1C6 h k"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovFixedZeroClosedM1C6",
+      "path": "research/MarkovFixedZeroClosedM1C6.lean",
+      "bytes": 4208,
+      "sha256": "5b43c396762611f40870322878c42f053505ed5ffcb2840d5adee8f4136c042a",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fixed_zero_closed_gapM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "fixed_zero_reverseM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_zero_adjacentM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "q_zero_orderedM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "sharp_zero_marginM1C6"
+        },
+        {
+          "kind": "def",
+          "name": "PositiveParameterTailM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "positive_parameter_tail_iffM1C6"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_of_positive_parameter_tailM1C6"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792220438874111000.json",
+          "sha256": "93c2bc3afd61acda1fa8163d7b0e4583144e4f69c72e8610db06f04a17ec5ca8",
+          "source_sha256": "4c958ff196627c8b2ac8400978459ccee0b0229933adaa23f34c311b903a9695",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "4c958ff196627c8b2ac8400978459ccee0b0229933adaa23f34c311b903a9695"
+        },
+        {
+          "path": "build-1792220489593352000.json",
+          "sha256": "26e863521fb3c54699e54004b91534534aeb76f15caa6eaedd26ed6938596ff7",
+          "source_sha256": "5b43c396762611f40870322878c42f053505ed5ffcb2840d5adee8f4136c042a",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "5b43c396762611f40870322878c42f053505ed5ffcb2840d5adee8f4136c042a"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in180": true,
+      "printed_in180": true,
+      "object_path": "evidence/markov-1c65a306/MarkovFixedZeroClosedM1C6.olean",
+      "object_sha256": "42e0cf74f0d417d27a1f783632bb73b91e50103af2b0f94bfad8e039b5545b80",
+      "successful_final_build": "evidence/markov-1c65a306/build-1792220489593352000.json",
+      "historical_successful_source_versions": [
+        "5b43c396762611f40870322878c42f053505ed5ffcb2840d5adee8f4136c042a"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovFixedZeroPositiveM1C6"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "fixed_zero_closed_gapM1C6",
+          "header": "theorem fixed_zero_closed_gapM1C6 (j h : ℕ) (h0 : 2 ≤ h) (hh : h ≤ j) :\n 0 ≤ closedBM1C6 j ((h-1:ℕ):ℝ)*closedAM1C6 j h-\n   closedBM1C6 j h*closedAM1C6 j ((h-1:ℕ):ℝ)",
+          "block_sha256": "4dfedafc9fc79f2a5883815bd8691a42d3a2bb1bf57d9625615204241c7d3d87",
+          "block_characters": 588
+        },
+        {
+          "kind": "theorem",
+          "name": "fixed_zero_reverseM1C6",
+          "header": "theorem fixed_zero_reverseM1C6 (j h : ℕ) (h0 : 2 ≤ h) (hh : h ≤ j) :\n reverseConvMBEC j 1 1 h*reverseConvMBEC j 0 2 (h-1) ≤\n reverseConvMBEC j 1 1 (h-1)*reverseConvMBEC j 0 2 h",
+          "block_sha256": "ec6a6ee5ba15da806c3ddc4c4b0753195435afcdceb7b0676c9c24ae0c095214",
+          "block_characters": 595
+        },
+        {
+          "kind": "theorem",
+          "name": "q_zero_adjacentM1C6",
+          "header": "theorem q_zero_adjacentM1C6 (j n : ℕ) (hn : n < 2*j) :\n (qPolyM7E2 j 1^2).coeff n*(qPolyM7E2 j 0*qPolyM7E2 j 2).coeff (n+1) ≤\n (qPolyM7E2 j 1^2).coeff (n+1)*(qPolyM7E2 j 0*qPolyM7E2 j 2).coeff n",
+          "block_sha256": "56d6d533d27a65521e23fea50b3134a6ff941ab38972f37a87b68d8140f14766",
+          "block_characters": 647
+        },
+        {
+          "kind": "theorem",
+          "name": "q_zero_orderedM1C6",
+          "header": "theorem q_zero_orderedM1C6 (j i n : ℕ) (hi : i ≤ n) :\n (qPolyM7E2 j 1^2).coeff i*(qPolyM7E2 j 0*qPolyM7E2 j 2).coeff n ≤\n (qPolyM7E2 j 1^2).coeff n*(qPolyM7E2 j 0*qPolyM7E2 j 2).coeff i",
+          "block_sha256": "7b02fcd8ff8582e8278ef532cb81b70fa59b225f38a0ea4ea1faecad5c8c55cf",
+          "block_characters": 443
+        },
+        {
+          "kind": "theorem",
+          "name": "sharp_zero_marginM1C6",
+          "header": "theorem sharp_zero_marginM1C6 (j n : ℕ) :\n (liftTermMAE9 j 1 0:ℝ)^2*(completeLiftMA64 j 0*completeLiftMA64 j 2).coeff n ≤\n (liftTermMAE9 j 0 0:ℝ)*(liftTermMAE9 j 2 0:ℝ)*(completeLiftMA64 j 1^2).coeff n",
+          "block_sha256": "0c8d94a934754d481018f334baf4b7d15d6d82d7f14f9a29425b2a3a0537d07b",
+          "block_characters": 634
+        },
+        {
+          "kind": "theorem",
+          "name": "positive_parameter_tail_iffM1C6",
+          "header": "theorem positive_parameter_tail_iffM1C6 : PositiveParameterTailM1C6 ↔ UpperAdjacentMA45",
+          "block_sha256": "89c7c22a64bdf1661190e842710a506160234ecffcd787452a315576897ef6c0",
+          "block_characters": 394
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_of_positive_parameter_tailM1C6",
+          "header": "theorem source_band_of_positive_parameter_tailM1C6 (H : PositiveParameterTailM1C6)\n (q k i : ℕ) (r : Bool) (hq : 2 ≤ q) (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n threeRawM9E2 q r i (q+k+1)*threeRawM9E2 q r (i+2) (q+k+1) ≤\n threeRawM9E2 q r (i+1) (q+k+1)^2",
+          "block_sha256": "216b8b16be38f395098978f2fd8de796b45b5d34b40ff1fffb15680546e7da19",
+          "block_characters": 340
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "PositiveParameterTailM1C6",
+          "header": "def PositiveParameterTailM1C6 : Prop",
+          "block_sha256": "51ea185f7b3e47eb7dcf8301645ac7b14a97a524f0972a1314ca5b3696dd13f7",
+          "block_characters": 105,
+          "definition_text": "def PositiveParameterTailM1C6 : Prop := ∀ j s h : ℕ, 1 ≤ s → 6 ≤ h → h ≤ j →\n 0 ≤ varianceDriftM1C6 j s h"
+        }
+      ],
+      "forbidden_tokens": []
+    }
+  ],
+  "excluded_modules": [],
+  "accepted_counts": {
+    "def": 18,
+    "theorem": 66
+  },
+  "excluded_counts": {},
+  "mathematical_values_recomputed": false,
+  "source_level_scope": {
+    "root_open": true,
+    "new_unconditional_raw_LC_region": false,
+    "new_unconditional_source_estimate": false,
+    "root_equivalence": "Conjecture63 iff ThreeBeyondBandM657 and OtherFourM9E2",
+    "remaining_predicates_unproved": [
+      "ThreeBeyondBandM657",
+      "OtherFourM9E2"
+    ],
+    "UpperAdjacentMA45_proved": false,
+    "PositiveParameterTailM1C6_proved": false,
+    "VarianceTailM1C6_proved": false,
+    "ReverseTailM1C6_proved": false,
+    "CertificatePositiveMBEC_proved": false,
+    "SharpCompleteMargin_proved": false,
+    "new_unconditional_auxiliary_results": "Alladjacent andorderedratio comparisons at s0 for allnaturaldegree/indices withprovedzero tails;translatedsharpzeromargin for allnaturalj,n. Allnaturalj,s h4/h5 reversedcomparisons. Variancecontractionins for h<=j andexactdriftiff.",
+    "remaining_auxiliary_range": "PositiveParameterTailM1C6 forallnaturalj,s,h,1<=s,6<=h<=j -> varianceDrift>=0; exactiffUpperAdjacentMA45. Notrootiff.",
+    "conditional_source_LC": "GlobalPositiveParameterTail (orVarianceTail) implies rawH allnaturalstarts i in row q+k+1, naturalq,k,rBool,q>=2,2*(q+k+1)+1<=sourceNME9C(q,r). No premise discharged byfiniteevidence.",
+    "source_residues": "rfalse:N=3q+2;rtrue:N=3q+1,actualpathfalse^(q-1)++[true,r];q1excludedfromadapter.",
+    "small_auxiliary_degree": "q_small_adjacent for j<=5 allnaturals,n<2j. jauxiliarydegree is notsource numerator.",
+    "variance_scope": "decreases acrosss->s+1, h<=j;0<=v<=h^2/4. Normalizeddriftmonotonicity/limitidentification/limitsign unproved; contractionalone noDriftsign.",
+    "formal_auxiliary_obstruction": "v(15,2,14)=152528/25937;v(15,2,15)=75573/12884 anddecreases. Universalhmonotonicityfalse;positiveDrift/witnessadjacentproved. Notactualsourcefailure.",
+    "actual_raw_source_counterexample": false,
+    "old212_recovery_claimed": false,
+    "old166_prefix_recovery_claimed": false,
+    "prior_source_scope_unchanged": "Allactuala2all3directions152;a3H3j<=N+9 inherited172;175bandprefixi<=5 orstrictN<i+j+q underq>=2,q<j,2j+1<=N;no clause removed180."
+  },
+  "proof_chain_details": {
+    "masses": "K(j,s,r)>0 forr<=j; symmetricS=sumK*K>0 forh<=j includingh0. M=sum(r-h/2)^2K*K nonnegative;v=M/S. h-r naturalcast justified r<=h. Every canceledmass/fallingdenominator positive.",
+    "moments": "y=s+j+4,z=y-h/2 positiveh<=j. K(s+1,r)=K(s,r)*(y-r)/y. Exactreflectionr->h-r balancesunbalancedconvolution. y^2B_h=z^2S_h-T_h; y(y+1)A_h=(z^2+z)S_h+T_h.",
+    "drift": "For1<=h<=j, y^3(y+1)(B_(h-1)A_h-B_hA_(h-1))=(2z+1)S_hS_(h-1)D, D=(z+1)v_h-zv_(h-1)+z/4. Positivefactorcancellation givesiff;Nat(h-1)cast usesh>=1. Moment-vsvariancedriftidentity onlyneedsh<=j,includingh0.",
+    "h4h5": "CertificateGap4/5 exactBiPoly ring identities factor positiveintegerlinearforms and18/35termcores. Eval(k,s)givesclearedGap(h+k,s,h)>0 forallnatural k,s; connectsviainheritedpositiveclearance. No finitegeneratorcoefficienttrusted.",
+    "contraction": "Weightedsecondmomentinequality via explicitfinite doublesumofw_iw_k(x_i-x_k)^2>=0. y^2S_(s+1)S_s(v_s-v_(s+1))=S*U-T^2>=0. ZeroNallowedweightedlemma;positiveactualmassprovesdecreasingvariance forfixedh. Boundv<=h^2/4 uses0<=r<=h.",
+    "rising": "rise(n,x)=prod_(i<n)(x+i+1). (s+3)!Q_s[j-r]=w(r)rise(s+3,j-r),r<=j. Fixedboundreflectiongivesproductat2j-h for h<=j. Weightsplit h>=1 preservesdistinctendpointsr0,rh with4h corrections;h0excludedfromsplit,notignoredglobally.",
+    "finite_symbolic_sums": "Eleven power_sum_m m0..10 theorems forrange0..h provedbynaturalinduction/ring,notfiniteevaluation. Interiorexpansions realj/naturalh validunrestricted;finalsourcecoefficientbridges require1<=h<=j.",
+    "fixed_zero": "closedA=720Q0Q2 coefficient2j-h,closedB=576Q1Q1 coefficient2j-h. Bothscaledbypositivefactorials. h=u+2,j=u+2+k givesclosedgap=(u+1)(u+2)(u+2k+11)*175termcore,strictpositiveforreal u,k>=0,degree18 stated. Noaudit expansion/evaluation.",
+    "zero_assembly": "Naturalh-1 explicitlycast inacceptedfixed_zero_closed_gap. h>=2 ensuresh-1>=1 forbothformulaapplications. n<j inherited;uppern+1<2j viah2j-n;lastn2j-1separateafterj>0;j0adjacencyvacuous. Orderedall i<=n usespositiveproductinterval andbothtails,includingzeroentries.",
+    "translated_margin": "q_zero_ordered fedtotranslated_zero_ratio, polynomialcomposition andcoeffzero products convertto liftTerm(j,1,0)^2*(completeLiftj0*completeLiftj2)[n] <= liftTerm(j,0,0)*liftTerm(j,2,0)*(completeLiftj1^2)[n]. s0only; notgeneralsharpmargin/sourceLC.",
+    "residual": "h4/h5 plus179h2/h3 leavesh>=6; s0closed viafixedzero, s>=1remains. Exactiff withUpperAdjacent,sourceattachmentstillconditional.Originalraw/polygon/endpoints/otherdirectionsunchanged."
+  },
+  "literal_raw_indices": {
+    "horizontal": [
+      "(i,q+k+1)",
+      "(i+1,q+k+1)",
+      "(i+2,q+k+1)"
+    ]
+  },
+  "zero_and_endpoint_handling": "Endpointweight1 retainedatbothr0/rh forpositiveh;h0splitnotused;real/naturalh-1correctedversionexplicit;allnaturals0orderedzero-tailcoverage;j0andlaststepguarded;rootzeros/polygon/endpointsunchanged."
+}

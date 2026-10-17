@@ -1,0 +1,153 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovCertificate4M1C6\ncollected MarkovCertificate5M1C6\ncollected MarkovReverseMomentsM1C6\ncollected MarkovVarianceDriftM1C6\ncollected MarkovUpperTailM1C6\ncollected MarkovVarianceContractionM1C6\ncollected MarkovMomentObstructionM1C6\ncollected MarkovRisingConvolutionM1C6\ncollected MarkovPowerSumsM1C6\ncollected MarkovFixedZeroFormulaM1C6\ncollected MarkovFixedZeroPositiveM1C6\ncollected MarkovFixedZeroClosedM1C6\nreplay union of 12 modules over 2 inherited imports\nisolation checked for 84 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCertificate4M1C6": "5e6b9c57f1cd5029196d8bba50c71b92950cf1ea3a8d95f4b5599d3132bf2475",
+    "MarkovCertificate5M1C6": "93cafb365ce11fcac7020bf1b567f5b18fba61d536c7ad51149993cd18ef3897",
+    "MarkovReverseMomentsM1C6": "b6cbaf65b7e1627a9a00630fbfd288bdc4974125fadf61b11b4b46b24aaa2418",
+    "MarkovVarianceDriftM1C6": "61ca2aac88d7e2a9b818080459a905980bd89fa08c641e187c9e222b55943a50",
+    "MarkovUpperTailM1C6": "4a6874ace5b7d0865f12835f54b873188b18c8516279206a96eb97e2f6bc59cb",
+    "MarkovVarianceContractionM1C6": "676612c3da4b7a1257ee20a5f6c179ea598f0e0c8e754f51bf462a75a3088b88",
+    "MarkovMomentObstructionM1C6": "a17848c0545049d805c936cb182ea890fa62ddd35cfb11abef12c9eb7255ddcc",
+    "MarkovRisingConvolutionM1C6": "eda7d6968eba325afb3d7b44f7945ededb11922bad721bda89a9090d1117e06c",
+    "MarkovPowerSumsM1C6": "7b9f457bc675b2a9686920c48fa3fa6bc1fd5b0ff6a1f28c92b47856f2c574e4",
+    "MarkovFixedZeroFormulaM1C6": "3735be872f78abec5aa9db3244b29814dcffba3ff7a42f438277798693ca4b74",
+    "MarkovFixedZeroPositiveM1C6": "a41d25145ff70b7a2cc0a7d9a7ff87577943e5ea17aa4c730c92965c0cbabcdf",
+    "MarkovFixedZeroClosedM1C6": "5b43c396762611f40870322878c42f053505ed5ffcb2840d5adee8f4136c042a"
+  },
+  "mode": "kernel",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM1C6.lean",
+    "MarkovCertificate4M1C6",
+    "MarkovCertificate5M1C6",
+    "MarkovReverseMomentsM1C6",
+    "MarkovVarianceDriftM1C6",
+    "MarkovUpperTailM1C6",
+    "MarkovVarianceContractionM1C6",
+    "MarkovMomentObstructionM1C6",
+    "MarkovRisingConvolutionM1C6",
+    "MarkovPowerSumsM1C6",
+    "MarkovFixedZeroFormulaM1C6",
+    "MarkovFixedZeroPositiveM1C6",
+    "MarkovFixedZeroClosedM1C6"
+  ],
+  "seconds": 34.93094683304662,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "6b6fe53ff85a87412bddb65b92bf738d7a64a309abf40bbaf6e9dd04ae6e7202",
+  "declared_names": {
+    "MarkovCertificate4M1C6": [
+      "core4M1C6",
+      "factored4M1C6",
+      "certificate_4_factorM1C6",
+      "certificate_4_evalM1C6",
+      "certificate_4_positiveM1C6",
+      "reverse_4M1C6"
+    ],
+    "MarkovCertificate5M1C6": [
+      "core5M1C6",
+      "factored5M1C6",
+      "certificate_5_factorM1C6",
+      "certificate_5_evalM1C6",
+      "certificate_5_positiveM1C6",
+      "reverse_5M1C6"
+    ],
+    "MarkovReverseMomentsM1C6": [
+      "reverse_kernel_positiveM1C6",
+      "reverse_mass_positiveM1C6",
+      "reverse_kernel_shiftM1C6",
+      "reverseMomentM1C6",
+      "reverseVarianceM1C6",
+      "reverse_moment_nonnegM1C6",
+      "reverse_variance_nonnegM1C6",
+      "symmetric_sumM1C6",
+      "reverse_balanced_momentM1C6",
+      "reverse_unbalanced_momentM1C6"
+    ],
+    "MarkovVarianceDriftM1C6": [
+      "reverseCenterM1C6",
+      "momentDriftM1C6",
+      "varianceDriftM1C6",
+      "reverse_center_positiveM1C6",
+      "reverse_gap_driftM1C6",
+      "moment_variance_driftM1C6",
+      "reverse_adjacent_drift_iffM1C6",
+      "reverse_adjacent_of_variance_monoM1C6"
+    ],
+    "MarkovUpperTailM1C6": [
+      "ReverseTailM1C6",
+      "VarianceTailM1C6",
+      "reverse_tail_iffM1C6",
+      "variance_tail_iffM1C6",
+      "source_band_of_varianceM1C6",
+      "q_small_adjacentM1C6"
+    ],
+    "MarkovVarianceContractionM1C6": [
+      "reverseFourthM1C6",
+      "weighted_second_momentM1C6",
+      "reverse_fourth_boundM1C6",
+      "reverse_moment_shiftM1C6",
+      "reverse_variance_contraction_identityM1C6",
+      "reverse_variance_decreasingM1C6",
+      "reverse_variance_upperM1C6"
+    ],
+    "MarkovMomentObstructionM1C6": [
+      "variance_witness_beforeM1C6",
+      "variance_witness_afterM1C6",
+      "variance_decreases_in_hM1C6",
+      "variance_monotone_h_falseM1C6",
+      "witness_drift_positiveM1C6",
+      "witness_adjacent_holdsM1C6"
+    ],
+    "MarkovRisingConvolutionM1C6": [
+      "riseM1C6",
+      "rise_natM1C6",
+      "scaled_reverse_coeffM1C6",
+      "scaled_reverse_productM1C6",
+      "weight_product_splitM1C6",
+      "rising_weighted_sumM1C6"
+    ],
+    "MarkovPowerSumsM1C6": [
+      "power_sum_0M1C6",
+      "power_sum_1M1C6",
+      "power_sum_2M1C6",
+      "power_sum_3M1C6",
+      "power_sum_4M1C6",
+      "power_sum_5M1C6",
+      "power_sum_6M1C6",
+      "power_sum_7M1C6",
+      "power_sum_8M1C6",
+      "power_sum_9M1C6",
+      "power_sum_10M1C6"
+    ],
+    "MarkovFixedZeroFormulaM1C6": [
+      "closedAM1C6",
+      "interior_A_sumM1C6",
+      "closed_A_coeffM1C6",
+      "closedBM1C6",
+      "interior_B_sumM1C6",
+      "closed_B_coeffM1C6"
+    ],
+    "MarkovFixedZeroPositiveM1C6": [
+      "zeroGapCoreM1C6",
+      "zeroGapFactorM1C6",
+      "zero_gap_factorM1C6",
+      "zero_gap_positiveM1C6"
+    ],
+    "MarkovFixedZeroClosedM1C6": [
+      "fixed_zero_closed_gapM1C6",
+      "fixed_zero_reverseM1C6",
+      "q_zero_adjacentM1C6",
+      "q_zero_orderedM1C6",
+      "sharp_zero_marginM1C6",
+      "PositiveParameterTailM1C6",
+      "positive_parameter_tail_iffM1C6",
+      "source_band_of_positive_parameter_tailM1C6"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed M1C6; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}
