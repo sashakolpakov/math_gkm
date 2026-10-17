@@ -49,19 +49,32 @@ def preflight(root,manifest,profile):
         p=contained(root,row['path'])
         if not p.is_file() or p.is_symlink() or sha(p)!=row['sha256']:raise ValueError('missing/changed input: '+row['path'])
     return order
-def checkout_exact(url,revision,destination,parent):
+def checkout_exact(url,revision,destination,parent,paths=None):
     if not re.fullmatch('[0-9a-f]{40}',revision):raise ValueError('exact Git commit required')
     execute(['git','init','--quiet',destination],parent)
     execute(['git','remote','add','origin',url],destination)
-    execute(['git','fetch','--depth','1','origin',revision],destination,timeout=1800)
+    fetch=['git','fetch','--depth','1']
+    if paths is not None:
+        paths=sorted(set(paths))
+        for name in paths:
+            relative(name)
+            if any(c in name for c in '*?[]!\n\r'):raise ValueError('unsupported sparse path')
+        execute(['git','config','core.sparseCheckout','true'],destination)
+        execute(['git','config','core.sparseCheckoutCone','false'],destination)
+        execute(['git','config','remote.origin.promisor','true'],destination)
+        execute(['git','config','remote.origin.partialclonefilter','blob:none'],destination)
+        (Path(destination)/'.git/info/sparse-checkout').write_text(''.join('/'+p+'\n' for p in paths))
+        fetch.append('--filter=blob:none')
+    execute(fetch+['origin',revision],destination,timeout=1800)
     execute(['git','checkout','--detach','FETCH_HEAD'],destination)
     if execute(['git','rev-parse','HEAD'],destination).strip()!=revision:raise ValueError('commit mismatch')
 def bootstrap(args,manifest):
     root=Path(args.workspace).absolute()
     if root.exists():raise ValueError('bootstrap requires a new, absent workspace')
-    checkout_exact(manifest['repository'],manifest['published_commit'],root,root.parent)
-    tc=manifest['toolchain'];execute([args.elan,'toolchain','install',tc],root,timeout=1800)
-    lean=Path(execute([args.elan,'run',tc,args.elan,'which','lean'],root).strip()).resolve()
+    paths=[r['path'] for r in manifest['sources'].values()]+[r['path'] for r in manifest['fixed_inputs']]+['.gitignore']
+    checkout_exact(manifest['repository'],manifest['published_commit'],root,root.parent,paths)
+    tc=manifest['toolchain']
+    lean=Path(execute([args.elan,'run','--install',tc,args.elan,'which','lean'],root,timeout=1800).strip()).resolve()
     prefix=lean.parent.parent;checker=prefix/'bin/leanchecker';lake=prefix/'bin/lake'
     for p in [lean,checker,lake]:
         if not p.is_file():raise ValueError('missing pinned executable: '+str(p))

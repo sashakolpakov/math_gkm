@@ -1,0 +1,47 @@
+{
+  "recorded_utc": "2026-10-17T12:30:19.600980+00:00",
+  "profiles": {
+    "agoh": {
+      "modules": 4,
+      "compiled": 4,
+      "replayed": 4,
+      "result_file": "agoh-result.json",
+      "result_sha256": "128c3729f90a6e2d06a1d5bf5cc892ae3ca87e3298dcfd8b3882bc43822d73f4",
+      "axiom_checks": []
+    },
+    "construction": {
+      "modules": 12,
+      "compiled": 12,
+      "replayed": 12,
+      "result_file": "construction-result.json",
+      "result_sha256": "f9a43e0e642721dc6a4f5e423f8f0ce725610adcafd62eb089654a86ab3ee66e",
+      "axiom_checks": []
+    },
+    "initial-markov": {
+      "modules": 6,
+      "compiled": 6,
+      "replayed": 6,
+      "result_file": "initial-markov-result.json",
+      "result_sha256": "62fc8749c60444fd056306cebe31e70e06addde60867a7c2acaca491d13ef72f",
+      "axiom_checks": [
+        {
+          "allowed_axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declarations": 48,
+          "module": "MathGKM.MarkovAudit"
+        }
+      ]
+    }
+  },
+  "fresh_project_and_dependency_checkouts": true,
+  "dependency_mode": "All nine pinned dependencies have separate new nonsymlink checkouts and new build trees populated by lake exe cache get. The existing exact Lean installation was reused; the upstream download cache was not forced empty, so not every archive is claimed to have been downloaded anew.",
+  "initial_markov_named_axiom_closures": 48,
+  "source_and_input_hashes_verified": 2877,
+  "full_later_campaign_rebuilt": false,
+  "first_attempt": "Preserved failed bootstrap: explicit elan toolchain install rejects an already installed toolchain. Corrected to elan run --install and retried in another absent workspace.",
+  "runner_sha256": "0bbf41ea88f170b869edc8f65a21e658803bf42caee2a5cb3373990be1923e6d",
+  "manifest_sha256": "f33a91df059a53b83d1751ff30a642038ea17b9d32e34626afa2c64be4461c26"
+}

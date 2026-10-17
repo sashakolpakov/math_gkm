@@ -6,7 +6,7 @@ The pinned source snapshot is public commit `ca0cb5c1151a11237f11e7c759b81e8a84b
 
 ## Build and check
 
-With Python 3, Git and Elan installed, run from the repository root:
+With Python 3.9+, Git and Elan installed, run from the repository root:
 
 ```sh
 python3 repro/repro.py bootstrap --workspace /path/to/new-repro-checkout
@@ -15,7 +15,7 @@ python3 repro/repro.py run --workspace /path/to/new-repro-checkout --profile ago
 python3 repro/repro.py run --workspace /path/to/new-repro-checkout --profile initial-markov
 ```
 
-Bootstrap requires an absent destination. It fetches each exact Git commit with depth 1, installs the exact Lean toolchain without changing the Elan default, and runs `lake exe cache get`. `--dependencies build` builds Mathlib from its pinned sources instead; `--dependencies none` restores source dependencies only and cannot run proof profiles. The dependency lock and Git revisions must remain unchanged. Tool paths come from Elan rather than an author's home directory.
+Bootstrap requires an absent destination. It fetches each exact Git commit with depth 1 and uses Git sparse checkout for the project sources and build inputs. Historical records remain in GitHub and can be fetched when needed; their local absence is not a Git deletion. It installs the exact Lean toolchain without changing the Elan default, and runs `lake exe cache get`. `--dependencies build` builds Mathlib from its pinned sources instead; `--dependencies none` restores source dependencies only and cannot run proof profiles. The dependency lock and Git revisions must remain unchanged. Tool paths come from Elan rather than an author's home directory.
 
 | Profile | Project modules | Checks and scope |
 | --- | ---: | --- |
@@ -26,7 +26,9 @@ Bootstrap requires an absent destination. It fetches each exact Git commit with 
 
 All three baseline profiles passed fresh compilation and independent `leanchecker` replay on 2026-10-17, using the existing pinned dependency binaries read-only. The initial Markov output also passed the 48-declaration axiom audit. Twelve orchestration, Git-checkout, archive and failure-handling tests passed. Records are under `checks/2026-10-17/`.
 
-**A cold dependency download/bootstrap and the entire later research campaign have not been rebuilt in this check.** These profiles do not run the full `machinery.check` Python runtime suite or finite scan/stress programs. Historical validation limits remain unchanged. The existing historical wrappers remain preserved; their author-specific paths are not the portable entry point.
+A second test fetched the public project snapshot and all nine exact dependency commits into a new isolated workspace, populated fresh dependency build trees with `lake exe cache get`, and passed all three baseline profiles again (22 compilations, 22 kernel replays and the 48-declaration axiom audit). All 2,877 pinned source/build-input hashes matched. See `checks/2026-10-17/fresh-dependencies/`. The existing exact Lean installation was reused; the upstream download cache was not forced empty. The first failed bootstrap and its Elan-command fix are recorded. The manifest remains unchanged so earlier records keep their hash binding; its `validation` block describes the original tests, while the later results are recorded separately.
+
+**The entire later research campaign has not been rebuilt in this check.** These profiles do not run the full `machinery.check` Python runtime suite or finite scan/stress programs. Historical validation limits remain unchanged. The existing historical wrappers remain preserved; their author-specific paths are not the portable entry point.
 
 For a source-hash check without compilation:
 
@@ -51,9 +53,9 @@ Necessary sources, scripts, inputs, pins and manifests stay in ordinary Git. Loc
 python3 repro/repro.py recover --recovery-manifest repro/cache-2026-10-17.json --destination /path/to/new-cache-restore
 ```
 
-Recovery downloads the five archives, verifies archive sizes/checksums and every object digest, then restores the original current paths into a separate directory. `--historical-copies` also restores the recorded archive/CAS paths. A different existing file is never overwritten. Only listed ordinary files are accepted; path traversal, links, duplicate members and incomplete coverage fail. The cache is specific to Darwin ARM64 and Lean 4.32.2. Its historical validation status is unchanged by restoration. Original filesystem metadata is not reconstructed.
+Use a separate destination: the cache archive binds public worker-187 snapshot `07374c32`, while the proof bootstrap binds worker-188 snapshot `ca0cb5c1`. Recovery downloads the five archives, verifies archive sizes/checksums and every object digest, then restores the original current paths into a separate directory. `--historical-copies` also restores the recorded archive/CAS paths. A different existing file is never overwritten. Only listed ordinary files are accepted; path traversal, links, duplicate members and incomplete coverage fail. The cache is specific to Darwin ARM64 and Lean 4.32.2. Its historical validation status is unchanged by restoration. Original filesystem metadata is not reconstructed.
 
-The manifest covers 621 distinct objects representing 622 inactive current objects; all have matching public sources. All accepted 188 dependencies and interrupted 189 material were excluded from this cleanup batch and kept local. Archive/download verification records and the local deletion inventory remain separate evidence. The pinned dependency commits and Lean release were also checked on GitHub; see `dependencies-remote-2026-10-17.json`.
+The manifest covers 621 distinct objects representing 622 inactive current objects; all have matching public sources. All accepted 188 dependencies and interrupted 189 material were excluded from this cleanup batch and kept local. The [completed cleanup records](../.bootstrap/storage-offload-20261017/README.md) retain the independent public-download verification and exact local deletion inventory. All protected objects remained unchanged; no tracked file was removed. The pinned dependency commits and Lean release were also checked on GitHub; see `dependencies-remote-2026-10-17.json`.
 
 GitHub blocks ordinary Git blobs over 100 MiB, while these release assets are each below 2 GiB. Releases avoid putting large compiled objects into normal Git history or relying on LFS pointers without their payloads. See [GitHub file limits](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github) and [release asset limits](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases).
 

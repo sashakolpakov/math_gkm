@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/sasha/math_gkm/repro/repro.py", line 240, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/sasha/math_gkm/repro/repro.py", line 236, in main
+    if a.command=='bootstrap':bootstrap(a,m)
+                              ~~~~~~~~~^^^^^
+  File "/Users/sasha/math_gkm/repro/repro.py", line 76, in bootstrap
+    tc=manifest['toolchain'];execute([args.elan,'toolchain','install',tc],root,timeout=1800)
+                             ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sasha/math_gkm/repro/repro.py", line 29, in execute
+    if p.returncode: raise RuntimeError(json.dumps({'argv':list(map(str,argv)),'returncode':p.returncode,'stdout':p.stdout,'stderr':p.stderr}))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: {"argv": ["/Users/sasha/.elan/bin/elan", "toolchain", "install", "leanprover/lean4:v4.32.2"], "returncode": 1, "stdout": "", "stderr": "error: 'leanprover/lean4:v4.32.2' is already installed\n"}

@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "recorded_utc": "2026-10-17T12:34:13.363507+00:00",
+  "reviewer": "/root/monitoring_audit/sealed136_review/method138",
+  "scope": "Read-only operational implementation, retained-result and documentation review. No research sources or active-worker material reviewed; no project/helper/test/proof execution.",
+  "repository": "/Users/sasha/math_gkm",
+  "reviewed_sha256": {
+    "repro/repro.py": "0bbf41ea88f170b869edc8f65a21e658803bf42caee2a5cb3373990be1923e6d",
+    "repro/README.md": "f663e394357aefa1ad7df2909d1e2f15403b315a9c4e8c7fb077c48f77bd6b61",
+    "repro/checks/2026-10-17/fresh-dependencies/summary.json": "f851c4978255ad1c0a1a8bcb6e4ad3e2b6f2080da211b8f5ec420da9baa90c9f",
+    "repro/checks/2026-10-17/fresh-dependencies/attempt2/input-verification.json": "7beeba8cb24a81e794cf5a67885888b5cb24685b0f38e9155086881958cd04e4",
+    ".bootstrap/storage-offload-20261017/README.md": "93b1dd506bb017e8c1eec6db56c1a5a063fbb032462bc044b4672dad6fa0d361",
+    ".bootstrap/storage-offload-20261017/local-cleanup.json": "94507a75a92a6d874120ee22b3c6124d732c9d223f70b8d40b90ee91e45b6daa",
+    ".bootstrap/storage-offload-20261017/protected-after.json": "0c852199b34a5edb1ca2c6b7991601bb8c12b30f6ce7e12b9a58404cc9ba33fe"
+  },
+  "result_sha256": {
+    "agoh-result.json": "128c3729f90a6e2d06a1d5bf5cc892ae3ca87e3298dcfd8b3882bc43822d73f4",
+    "construction-result.json": "f9a43e0e642721dc6a4f5e423f8f0ce725610adcafd62eb089654a86ab3ee66e",
+    "initial-markov-result.json": "62fc8749c60444fd056306cebe31e70e06addde60867a7c2acaca491d13ef72f"
+  },
+  "checks": {
+    "only_implementation_delta_from_prior_review": "Replacing explicit elan toolchain install plus lookup with elan run --install TC elan which lean; reversing this replacement reproduces prior helper SHA f7b91422f61760540d78df325e0120e8fb30b58b12f9e79adfa67f4947e1c2e7 exactly.",
+    "summary_runner_pin_matches": true,
+    "recorded_compile_and_replay_counts": {
+      "construction": [
+        12,
+        12
+      ],
+      "agoh": [
+        4,
+        4
+      ],
+      "initial-markov": [
+        6,
+        6
+      ]
+    },
+    "all_recorded_commands_return_zero": true,
+    "compile_replay_object_digests_match": true,
+    "retained_initial_markov_prints": 48,
+    "distinct_print_names_and_permitted_axioms_checked": true,
+    "input_record_counts": {
+      "project_sources": 2874,
+      "fixed_inputs": 3,
+      "matched_hashes": 2877,
+      "separate_dependency_checkouts": 9
+    },
+    "completed_cleanup_planned_and_removed_sets_equal": 1864,
+    "protected_after_metadata_count": 2882,
+    "recorded_tracked_deletions": 0,
+    "local_markdown_links_and_recovery_anchor_resolve": true,
+    "referenced_storage_record_files_present": true
+  },
+  "documentation_concurrence": "Final README distinguishes initial existing-dependency tests from the later fresh project/dependency checkout run; discloses existing Lean and possible upstream cache reuse; leaves sealed188/full campaign, full machinery.check and finite scans unexecuted. The immutable manifest validation block is explicitly dated original-test metadata, with later results separately bound. Recovery uses the separate older snapshot destination and does not upgrade historical validation.",
+  "limitations": [
+    "Result files and recorded observations were checked; this reviewer did not rerun compilation, replay, bootstrap, helper tests, downloads or deletion.",
+    "The 2877 input hashes and nine checkout facts are retained verification observations; project source files were not reread here.",
+    "Protected-after evidence is a metadata comparison, not a new full object-byte hash pass.",
+    "External URLs were checked for target identity and syntax, not fetched again; local links and the recovery heading were checked directly.",
+    "No new GitHub publication, Git-history or source-tree verification was performed; prior public retention and cleanup reviews remain separately recorded."
+  ],
+  "necessary_corrections": [],
+  "repository_modified_by_reviewer": false
+}

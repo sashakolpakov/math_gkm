@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "recorded_utc": "2026-10-17T12:20:57.428819+00:00",
+  "reviewer": "/root/monitoring_audit/sealed136_review/method138",
+  "scope": "Independent read-only operational review of the exact cache-deletion helper, pinned plan, recovery manifest and referenced protection/verification metadata. This record does not authorize or report deletion.",
+  "reviewed_files": [
+    {
+      "path": "/private/tmp/math_gkm_remove_verified_cache_20261017.py",
+      "bytes": 3346,
+      "sha256": "703a79d9978d334aa1a910b9ea8326ec95f448882fee3910809b377026be0719"
+    },
+    {
+      "path": "/private/tmp/math_gkm_cleanup_public_source_plan_20261017_1130.json",
+      "bytes": 983572,
+      "sha256": "a5cf811953a60072acce235dbe0c05335d75fc2f759d7a208ec137fed50b0851"
+    },
+    {
+      "path": "/private/tmp/math_gkm_recovery_20261017/manifest.json",
+      "bytes": 612384,
+      "sha256": "438434916fee6f6986f7ebbe569e39d9a78dc7769a2f23957bf5e6d6e1ad8817"
+    }
+  ],
+  "referenced_metadata": [
+    {
+      "path": "/private/tmp/math_gkm_cleanup_189_protection_20261017.json",
+      "bytes": 1745066,
+      "sha256": "93b8ffdbc4b7438c4c9010f2f11bb0b0340d6a3df4649bb541a19bfe0f490bc7",
+      "qualification": "Matches the input pin in the reviewed plan; includes accepted188 and interrupted189 protection."
+    },
+    {
+      "path": "/private/tmp/math_gkm_recovery_20261017/archive-content-verification.json",
+      "bytes": 618,
+      "sha256": "be3bfb3dc10a2bdae05abb40dbac22da2c54cf65d72efd8c3c2a091a9cf8ef26",
+      "qualification": "Read retained metadata only; this reviewer did not reopen or verify archive payloads."
+    }
+  ],
+  "counted_sets": {
+    "unique_deletion_paths": 1864,
+    "current_cache_paths": 622,
+    "archive_cache_paths": 621,
+    "CAS_paths": 621,
+    "unique_recovery_objects": 621,
+    "release_assets": 5,
+    "archive_worker_min": 1,
+    "archive_worker_max": 187,
+    "protected_current_object_paths": 2882,
+    "protected_object_digests": 2882,
+    "protected_path_intersections": 0,
+    "protected_digest_intersections": 0,
+    "Git_tracked_path_intersections": 0,
+    "public_source_bindings_compared": 622,
+    "all_deletion_paths_equal_manifest_restore_path_union": true,
+    "all_manifest_current_paths_covered_by_the_plan": true
+  },
+  "checks": {
+    "helper_plan_pin_matches": true,
+    "manifest_local_plan_sha256_matches": true,
+    "protection_metadata_pin_matches": true,
+    "all_plan_object_keys_digests_and_sizes_match_manifest": true,
+    "all_candidate_source_path_SHA256_and_Git_blob_metadata_match_manifest": true,
+    "all_candidate_source_metadata_records_match_pinned_public_tree_and_local_index_blobs": true,
+    "all_current_and_archive_targets_are_olean_or_ilean_cache_paths": true,
+    "all_CAS_target_basenames_equal_object_digests": true,
+    "no_worker188_or189_archive_targets": true,
+    "no_188_or189_request_evidence_targets": true,
+    "protected_entire_directory_and_external_tree_intersections": 0,
+    "helper_AST_parses": true
+  },
+  "reviewed_helper_behavior": [
+    "Takes a nonblocking exclusive workspace lock.",
+    "Requires the exact pinned deletion plan and matching recovery-manifest digest in both remote-download and archive-content verification records.",
+    "For each of five assets, requires matching remote SHA256 and downloaded byte count plus the recorded local verified-object count.",
+    "Before any unlink, checks all planned paths are untracked, ordinary nonsymlink files in the permitted roots, and freshly matches their size and SHA256 to recovery metadata.",
+    "Records the full planned path/digest/size/inode/mtime set, manifest and plan hashes, release URL, Git HEAD and free-space observation before unlinking.",
+    "Before each unlink, rechecks inode, mtime and size; deletes only the prepared exact path set.",
+    "Writes final removed-path results and checks absence on successful completion.",
+    "Contains no Git index write, commit, history rewrite, source deletion or GitHub mutation."
+  ],
+  "remote_verification_at_review": {
+    "path": "/private/tmp/math_gkm_recovery_20261017/remote-download-verification.json",
+    "present": false,
+    "deletion_gate_satisfied_at_review": false,
+    "qualification": "The record was absent during this review. The helper would stop before any unlink. This reviewer did not independently download release assets. Root subsequent download progress is outside this observation."
+  },
+  "conclusion": "No necessary correction found in the exact reviewed helper and data. Execution remains conditional on the complete successful independent remote-download verification and the helper runtime checks.",
+  "limitations": [
+    "Static helper/schema review and audit-owned metadata comparisons only; the deletion helper was not executed.",
+    "Git tracked-path membership was checked with read-only git ls-files; no Git HEAD pin was independently captured in this review.",
+    "No compiled cache payloads were read or freshly hashed by this reviewer; the reviewed helper performs those checks before deletion.",
+    "Public source equality was checked against the retained plan/manifest blob metadata; no new GitHub tree or asset verification was performed.",
+    "Inactive/protected scope derives from the pinned protection inventory and exact plan; no new process inspection or active research inspection occurred.",
+    "Recovery records preserve exact object bytes and path mappings, not original filesystem metadata.",
+    "Per-path removed progress is accumulated in memory and written at successful completion. An interrupted deletion may leave the initial full plan record; the manifest still maps every planned path for restoration.",
+    "No repository mutation, deletion, project execution, proof checking, mathematical computation or researcher contact occurred.",
+    "This JSON was written afterward from the completed review findings, without additional repository reads."
+  ],
+  "deletion_executed_by_reviewer": false
+}
