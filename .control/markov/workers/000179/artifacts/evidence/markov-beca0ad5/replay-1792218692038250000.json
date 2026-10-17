@@ -1,0 +1,119 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovWeightDeterminantsMBEC\ncollected MarkovWeightObstructionMBEC\ncollected MarkovSecondTopMBEC\ncollected MarkovSecondTopClosedMBEC\ncollected MarkovReverseKernelMBEC\ncollected MarkovUpperResidualMBEC\ncollected MarkovReverseThreeMBEC\ncollected MarkovReverseCoreMBEC\ncollected MarkovClearedKernelMBEC\nreplay union of 9 modules over 3 inherited imports\nisolation checked for 62 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovWeightDeterminantsMBEC": "d3a6365022a9bc70f56d4b8280252a6f4a4b4199966fd2b735bf1f78430ea218",
+    "MarkovWeightObstructionMBEC": "acd009b54a21211827319ec8f6e0abec8da6fa5b3a3ade30b8c4b8e2f342ad49",
+    "MarkovSecondTopMBEC": "464642303774e3eeef9b5cf8cb9898b029715747ce344ab700a9b0938edb901d",
+    "MarkovSecondTopClosedMBEC": "438bc6d06b4c9897eb2f815047e4933ba0fd859167e388e428cc9b910b0cb72b",
+    "MarkovReverseKernelMBEC": "e19bc0438db648e1b3fe37682c9fe3c3be0f142da80b7c6c2bf3ed44aa060159",
+    "MarkovUpperResidualMBEC": "d75c20b4b0a0fac5c7d8f3fceaaf9350ab35586d7fc25d9afb17421be7fa3658",
+    "MarkovReverseThreeMBEC": "ab10da16a1d26332dbf1e97381d4da22e680b7b3d95e8ccfff23e9f7867a3921",
+    "MarkovReverseCoreMBEC": "22d895f27ff778a15993b54ca2d7bfa4b5f61aded8f439cea90505e0d92c2e1f",
+    "MarkovClearedKernelMBEC": "354386eda582402b96db1a3a5a2700174c11d53ed6adb8b46448ebdec25fde5f"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedMBEC.lean",
+    "MarkovWeightDeterminantsMBEC",
+    "MarkovWeightObstructionMBEC",
+    "MarkovSecondTopMBEC",
+    "MarkovSecondTopClosedMBEC",
+    "MarkovReverseKernelMBEC",
+    "MarkovUpperResidualMBEC",
+    "MarkovReverseThreeMBEC",
+    "MarkovReverseCoreMBEC",
+    "MarkovClearedKernelMBEC"
+  ],
+  "seconds": 33.68827720801346,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "3143edb34ab86889556eef39b6ee589f4f89293774a1924d931b51f973f0b285",
+  "declared_names": {
+    "MarkovWeightDeterminantsMBEC": [
+      "weightDetMBEC",
+      "weight_positive_indexMBEC",
+      "weight_det_forbiddenMBEC",
+      "weight_det_rectangleMBEC",
+      "weight_det_hookMBEC",
+      "weight_det_emptyMBEC",
+      "weight_det_positiveMBEC",
+      "weight_det_nonnegMBEC",
+      "weight_det_zero_iffMBEC"
+    ],
+    "MarkovWeightObstructionMBEC": [
+      "badWeightMBEC",
+      "bad_weight_nonnegMBEC",
+      "bad_weight_crossLCMBEC",
+      "weightedQMBEC",
+      "weighted_q_actualMBEC",
+      "bad_weight_gapMBEC",
+      "arbitrary_lc_weight_shortcut_falseMBEC"
+    ],
+    "MarkovSecondTopMBEC": [
+      "second_top_scalarMBEC",
+      "q_second_top_coeffMBEC",
+      "q_product_second_topMBEC"
+    ],
+    "MarkovSecondTopClosedMBEC": [
+      "topBinMBEC",
+      "top_bin_nonnegMBEC",
+      "top_choose_ratiosMBEC",
+      "q_product_pre_normalizedMBEC",
+      "q_product_second_normalizedMBEC",
+      "q_second_last_adjacentMBEC"
+    ],
+    "MarkovReverseKernelMBEC": [
+      "reverseKernelMBEC",
+      "reverseConvMBEC",
+      "choose_desc_ratioMBEC",
+      "reverse_coeffMBEC",
+      "reverse_product_coeffMBEC",
+      "reverse_adjacent_iffMBEC",
+      "ReverseUpperMBEC",
+      "reverse_upper_iffMBEC"
+    ],
+    "MarkovUpperResidualMBEC": [
+      "reverse_twoMBEC",
+      "ReverseInteriorMBEC",
+      "reverse_interior_iffMBEC",
+      "sharp_margin_of_reverseMBEC",
+      "source_band_of_reverseMBEC"
+    ],
+    "MarkovReverseThreeMBEC": [
+      "reverse_kernel_zeroMBEC",
+      "reverse_kernel_oneMBEC",
+      "reverse_kernel_twoMBEC",
+      "reverse_kernel_threeMBEC",
+      "threeCertificateMBEC",
+      "three_certificate_positiveMBEC",
+      "reverse_three_gapMBEC",
+      "reverse_threeMBEC"
+    ],
+    "MarkovReverseCoreMBEC": [
+      "ReverseCoreMBEC",
+      "reverse_core_iffMBEC",
+      "sharp_margin_of_coreMBEC",
+      "source_band_of_coreMBEC",
+      "q_small_adjacentMBEC"
+    ],
+    "MarkovClearedKernelMBEC": [
+      "integerWeightMBEC",
+      "clearedKernelMBEC",
+      "clearedConvMBEC",
+      "clearedGapMBEC",
+      "integer_weight_castMBEC",
+      "cleared_kernel_castMBEC",
+      "cleared_conv_castMBEC",
+      "cleared_gap_iffMBEC",
+      "ClearedCoreMBEC",
+      "cleared_core_iffMBEC",
+      "source_band_of_clearedMBEC"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed MBEC; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

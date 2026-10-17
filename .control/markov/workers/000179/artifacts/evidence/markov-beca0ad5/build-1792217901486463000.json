@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovWeightObstructionMBEC.lean:18:18: error: unexpected token '\u2227'; expected term\n/Users/sasha/math_gkm/research/MarkovWeightObstructionMBEC.lean:18:15: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  OfNat (Type ?u.3) 0\nnumerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is\n  Type ?u.3\ndue to the absence of the instance above\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovWeightObstructionMBEC.lean:16:58: error: unsolved goals\ncase pos\ni j : \u2124\nhij : i \u2264 j\nhi : sorry\n\u22a2 badWeightMBEC i * badWeightMBEC (j + 1) \u2264 badWeightMBEC (i + 1) * badWeightMBEC j\n\ncase neg\ni j : \u2124\nhij : i \u2264 j\nhi : \u00acsorry\n\u22a2 badWeightMBEC i * badWeightMBEC (j + 1) \u2264 badWeightMBEC (i + 1) * badWeightMBEC j\n",
+  "stderr": "",
+  "modules": {
+    "MarkovWeightObstructionMBEC": "09edbeffe0ca51cc8e3e6bbc04b1a4e9dd2ed6e207e74c90c1b238a05bbbecc9"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-beca0ad5/MarkovWeightObstructionMBEC.olean",
+    "/Users/sasha/math_gkm/research/MarkovWeightObstructionMBEC.lean"
+  ],
+  "seconds": 9.907843958993908,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

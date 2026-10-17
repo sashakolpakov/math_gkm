@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovUpperResidualMBEC.lean:9:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached\n\nNote: Use `set_option maxHeartbeats <num>` to set the limit.\n\nHint: Additional diagnostic information may be available using the `set_option diagnostics true` command.\n/Users/sasha/math_gkm/research/MarkovUpperResidualMBEC.lean:21:8: error: (kernel) unknown constant 'MathGKM.Markov.reverse_twoMBEC'\n/Users/sasha/math_gkm/research/MarkovUpperResidualMBEC.lean:37:41: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  HAdd \u2115 \u2115 (Graph ?m.6 ?m.7)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovUpperResidualMBEC.lean:37:54: error: Function expected at\n  ourceNME9C\nbut this term has type\n  ?m.1\n\nNote: Expected a function because this term is being applied to the argument\n  q\n\nHint: The identifier `ourceNME9C` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.\n",
+  "stderr": "",
+  "modules": {
+    "MarkovUpperResidualMBEC": "fbe270dd6a0e63fe33e76137d0dd0b2f0eb50bd610786dee10d82a648d683b15"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-beca0ad5/MarkovUpperResidualMBEC.olean",
+    "/Users/sasha/math_gkm/research/MarkovUpperResidualMBEC.lean"
+  ],
+  "seconds": 11.788803791976534,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

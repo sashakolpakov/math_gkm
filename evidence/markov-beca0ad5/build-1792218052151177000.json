@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSecondTopMBEC.lean:20:3: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovSecondTopMBEC.lean:49:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  k + 2 + (k + 2) - 2\nin the target expression\n  (qPolyM7E2 (k + 2) s * qPolyM7E2 (k + 2) t).coeff ((revAt (k + 2 + (k + 2))) 2) =\n    (qPolyM7E2 (k + 2) s).coeff (k + 2 - 0) * (qPolyM7E2 (k + 2) t).coeff (k + 2 - 2) +\n        (qPolyM7E2 (k + 2) s).coeff (k + 2 - 1) * (qPolyM7E2 (k + 2) t).coeff (k + 2 - 1) +\n      (qPolyM7E2 (k + 2) s).coeff (k + 2 - 2) * (qPolyM7E2 (k + 2) t).coeff (k + 2 - 0)\n\nk s t : \u2115\nh :\n  (qPolyM7E2 (k + 2) s * qPolyM7E2 (k + 2) t).coeff ((revAt (k + 2 + (k + 2))) 2) =\n    (qPolyM7E2 (k + 2) s).coeff (k + 2 - 0) * (qPolyM7E2 (k + 2) t).coeff (k + 2 - 2) +\n        (qPolyM7E2 (k + 2) s).coeff (k + 2 - 1) * (qPolyM7E2 (k + 2) t).coeff (k + 2 - 1) +\n      (qPolyM7E2 (k + 2) s).coeff (k + 2 - 2) * (qPolyM7E2 (k + 2) t).coeff (k + 2 - 0)\n\u22a2 (qPolyM7E2 (k + 2) s * qPolyM7E2 (k + 2) t).coeff (2 * k + 2) =\n    8 * \u2191((s + k + 5).choose (k + 2)) * \u2191((t + k + 3).choose k) +\n        16 * \u2191((s + k + 4).choose (k + 1)) * \u2191((t + k + 4).choose (k + 1)) +\n      8 * \u2191((s + k + 3).choose k) * \u2191((t + k + 5).choose (k + 2))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSecondTopMBEC": "d29b4d5e2636c1b46450577643fbba7901716091c9215823dfd18989bf62b246"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-beca0ad5/MarkovSecondTopMBEC.olean",
+    "/Users/sasha/math_gkm/research/MarkovSecondTopMBEC.lean"
+  ],
+  "seconds": 8.34125054103788,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

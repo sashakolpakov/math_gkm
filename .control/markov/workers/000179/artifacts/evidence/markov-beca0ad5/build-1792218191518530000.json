@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSecondTopClosedMBEC.lean:21:22: error: Type mismatch: After simplification, term\n  h0\n has type\n  (t + (k + 5)) * (t + (k + 4)).choose (k + 1) = (t + (k + 5)).choose (k + 2) * (k + 2)\nbut is expected to have type\n  (t + (k + 5)) * (t + (k + 4)).choose (k + 1) = (k + 2) * (t + (k + 5)).choose (k + 2)\n/Users/sasha/math_gkm/research/MarkovSecondTopClosedMBEC.lean:23:22: error: Type mismatch: After simplification, term\n  h1\n has type\n  (t + (k + 4)) * (t + (k + 3)).choose k = (t + (k + 4)).choose (k + 1) * (k + 1)\nbut is expected to have type\n  (t + (k + 4)) * (t + (k + 3)).choose k = (k + 1) * (t + (k + 4)).choose (k + 1)\n/Users/sasha/math_gkm/research/MarkovSecondTopClosedMBEC.lean:43:27: warning: This simp argument is unused:\n  mul_inv_rev\n\nHint: Omit it from the simp argument list.\n  simp only [div_eq_mul_inv,\u0335m\u0335u\u0335l\u0335_\u0335i\u0335n\u0335v\u0335_\u0335r\u0335e\u0335v\u0335]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovSecondTopClosedMBEC.lean:73:24: error: `ring_nf` made no progress on the goal\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSecondTopClosedMBEC": "e4f350e77f2da761a6bacdfc2a5f2ed21cfa2dc8cd5befa4c501a56809fdd588"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-beca0ad5/MarkovSecondTopClosedMBEC.olean",
+    "/Users/sasha/math_gkm/research/MarkovSecondTopClosedMBEC.lean"
+  ],
+  "seconds": 10.026317916985136,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

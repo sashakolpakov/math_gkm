@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSecondTopMBEC.lean:20:3: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovSecondTopMBEC.lean:48:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  k + 2 + (k + 2) - 2\nin the target expression\n  \u2211 x \u2208 Finset.range ((revAt (k + 2 + (k + 2))) 2),\n        (qPolyM7E2 (k + 2) s).coeff x * (qPolyM7E2 (k + 2) t).coeff ((revAt (k + 2 + (k + 2))) 2 - x) +\n      (qPolyM7E2 (k + 2) s).coeff ((revAt (k + 2 + (k + 2))) 2) *\n        (qPolyM7E2 (k + 2) t).coeff ((revAt (k + 2 + (k + 2))) 2 - (revAt (k + 2 + (k + 2))) 2) =\n    (reflect (k + 2) (qPolyM7E2 (k + 2) s) * reflect (k + 2) (qPolyM7E2 (k + 2) t)).coeff 2\n\nk s t : \u2115\nh :\n  \u2211 x \u2208 Finset.range ((revAt (k + 2 + (k + 2))) 2),\n        (qPolyM7E2 (k + 2) s).coeff x * (qPolyM7E2 (k + 2) t).coeff ((revAt (k + 2 + (k + 2))) 2 - x) +\n      (qPolyM7E2 (k + 2) s).coeff ((revAt (k + 2 + (k + 2))) 2) *\n        (qPolyM7E2 (k + 2) t).coeff ((revAt (k + 2 + (k + 2))) 2 - (revAt (k + 2 + (k + 2))) 2) =\n    (reflect (k + 2) (qPolyM7E2 (k + 2) s) * reflect (k + 2) (qPolyM7E2 (k + 2) t)).coeff 2\n\u22a2 (qPolyM7E2 (k + 2) s * qPolyM7E2 (k + 2) t).coeff (2 * k + 2) =\n    8 * \u2191((s + k + 5).choose (k + 2)) * \u2191((t + k + 3).choose k) +\n        16 * \u2191((s + k + 4).choose (k + 1)) * \u2191((t + k + 4).choose (k + 1)) +\n      8 * \u2191((s + k + 3).choose k) * \u2191((t + k + 5).choose (k + 2))\n/Users/sasha/math_gkm/research/MarkovSecondTopMBEC.lean:45:34: warning: This simp argument is unused:\n  Finset.sum_range_zero\n\nHint: Omit it from the simp argument list.\n  simp only [\u0335F\u0335i\u0335n\u0335s\u0335e\u0335t\u0335.\u0335s\u0335u\u0335m\u0335_\u0335r\u0335a\u0335n\u0335g\u0335e\u0335_\u0335s\u0335u\u0335c\u0335c\u0335,\u0335F\u0335i\u0335n\u0335s\u0335e\u0335t\u0335.\u0335s\u0335u\u0335m\u0335_\u0335r\u0335a\u0335n\u0335g\u0335e\u0335_\u0335z\u0335e\u0335r\u0335o\u0335,\u0335z\u0335e\u0335r\u0335o\u0335_\u0335a\u0335d\u0335d\u0335]\u0335[\u0332F\u0332i\u0332n\u0332s\u0332e\u0332t\u0332.\u0332s\u0332u\u0332m\u0332_\u0332r\u0332a\u0332n\u0332g\u0332e\u0332_\u0332s\u0332u\u0332c\u0332c\u0332,\u0332 \u0332z\u0332e\u0332r\u0332o\u0332_\u0332a\u0332d\u0332d\u0332]\u0332 at h\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovSecondTopMBEC.lean:45:56: warning: This simp argument is unused:\n  zero_add\n\nHint: Omit it from the simp argument list.\n  simp only [Finset.sum_range_succ, \u0332Finset.sum_range_zero,\u0335z\u0335e\u0335r\u0335o\u0335_\u0335a\u0335d\u0335d\u0335] at h\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSecondTopMBEC": "804adf2a9134c8217b94364300dab939f489edbd02060cbfebeb601d797752a0"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-beca0ad5/MarkovSecondTopMBEC.olean",
+    "/Users/sasha/math_gkm/research/MarkovSecondTopMBEC.lean"
+  ],
+  "seconds": 13.06688962498447,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
