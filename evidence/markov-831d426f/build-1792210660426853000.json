@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBoundaryLCM831.lean:73:5: error: mod_cast has type\n  (0 : \u2124) \u2264 (bandAtM139 0 k r).coeff s\nbut is expected to have type\n  (0 : \u211a) \u2264 boundaryCoeffM831 k s r\n/Users/sasha/math_gkm/research/MarkovBoundaryLCM831.lean:83:84: error: No goals to be solved\n/Users/sasha/math_gkm/research/MarkovBoundaryLCM831.lean:83:34: error: unsolved goals\nk m : \u2115\nr : Bool\nhm : m + 2 \u2264 k\nhn : \u2200 (s : \u2115), 0 \u2264 boundaryCoeffM831 k s r\nh :\n  boundaryNumerM831 (\u2191k) (\u2191m + 1) r * boundaryDenomM831 (\u2191k) (\u2191m) r \u2264\n      boundaryNumerM831 (\u2191k) (\u2191m) r * boundaryDenomM831 (\u2191k) (\u2191m + 1) r \u2192\n    boundaryCoeffM831 k m r * boundaryCoeffM831 k (m + 2) r \u2264\n      boundaryCoeffM831 k (m + 1) r * boundaryCoeffM831 k (m + 1) r\nhh : \u2191m + 2 \u2264 \u2191k\n\u22a2 0 \u2264 \u2191k - \u2191m - 2\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBoundaryLCM831": "88300a64a5536869d23485565d35703a72111e57d028aa36397319c464c3ab7d"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-831d426f/MarkovBoundaryLCM831.olean",
+    "/Users/sasha/math_gkm/research/MarkovBoundaryLCM831.lean"
+  ],
+  "seconds": 8.052080749999732,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

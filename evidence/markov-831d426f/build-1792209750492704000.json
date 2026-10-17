@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovFibCoeffM831.lean:13:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  (j - s).choose (j - s - (m - s))\nin the target expression\n  (j + 1).choose (j - s) * (j - s).choose (m - s) = (j + 1).choose (m + 1) * (m + 1).choose (m - s)\n\nj m s : \u2115\nhm : m \u2264 j\nhs : s \u2264 m\nh :\n  (j + 1).choose (j - s) * (j - s).choose (j - m) = (j + 1).choose (j - m) * (j + 1 - (j - m)).choose (j - s - (j - m))\n\u22a2 (j + 1).choose (j - s) * (j - s).choose (m - s) = (j + 1).choose (m + 1) * (m + 1).choose (m - s)\n/Users/sasha/math_gkm/research/MarkovFibCoeffM831.lean:27:38: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b \u2265 0\n  a \u2265 0\n  a - b \u2265 1\nwhere\n a := \u2191j\n b := \u2191m\n/Users/sasha/math_gkm/research/MarkovFibCoeffM831.lean:49:7: error(lean.unknownIdentifier): Unknown constant `Finset.sum_antidiagonal_eq_sum_range_succ_mk`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovFibCoeffM831": "292eeca401e89407e212039abd767549c2e9a6c955764a5908c35868d74e4a94"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-831d426f/MarkovFibCoeffM831.olean",
+    "/Users/sasha/math_gkm/research/MarkovFibCoeffM831.lean"
+  ],
+  "seconds": 27.485193541040644,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

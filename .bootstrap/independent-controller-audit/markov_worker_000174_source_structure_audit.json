@@ -1,0 +1,1514 @@
+{
+  "worker": 174,
+  "request": "831d426f49894488b2803a879f0bf56a",
+  "created_at_utc": "2026-10-17T04:36:55.693053+00:00",
+  "historical_status": "Completed host outcome / return0 / structured report present / elapsed1597.433841228485. Eleven mathematical modules compiled and jointly replayed,67 theorem closures printed. Full root open.",
+  "scope": "Archive-first closed174 and explicit named inherited/current counterparts only. Static hashes, source/record parsing, literal comparison and finite index-domain counts. No mathematical-value recomputation, project/proof/checker/replay/experiment/generator/finalizer execution/import, project edit or proposer help/contact. Active175 and later excluded. Earlier seals/windows unchanged.",
+  "new_modules": [
+    {
+      "module": "MarkovFibCoeffM831",
+      "path": "research/MarkovFibCoeffM831.lean",
+      "bytes": 2464,
+      "sha256": "77a51fadc9bb1a988f54eff3415f83cd769cc23228f24b7625c6d9a1e53f16ce",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "choose_splitM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_closed_coeffM831"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792209750492704000.json",
+          "sha256": "ffe8f62cdf6de8d31f947cc3c13be36b9987965294ca0759f6d08327f24cf834",
+          "source_sha256": "292eeca401e89407e212039abd767549c2e9a6c955764a5908c35868d74e4a94",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "292eeca401e89407e212039abd767549c2e9a6c955764a5908c35868d74e4a94"
+        },
+        {
+          "path": "build-1792209789463660000.json",
+          "sha256": "6268092a7d46c3bcfb73b22cd3b7a813625e608f62d75968369e239a11773ec7",
+          "source_sha256": "77a51fadc9bb1a988f54eff3415f83cd769cc23228f24b7625c6d9a1e53f16ce",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "77a51fadc9bb1a988f54eff3415f83cd769cc23228f24b7625c6d9a1e53f16ce"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in174": true,
+      "printed_in174": true,
+      "object_path": "evidence/markov-831d426f/MarkovFibCoeffM831.olean",
+      "object_sha256": "b5c12b866820f33e9601ac7f1f56e215dc5e3846511140949a62391d5a2048ca",
+      "successful_final_build": "evidence/markov-831d426f/build-1792209789463660000.json",
+      "historical_successful_source_versions": [
+        "77a51fadc9bb1a988f54eff3415f83cd769cc23228f24b7625c6d9a1e53f16ce"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandBoundaryReductionM139"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "choose_splitM831",
+          "header": "theorem choose_splitM831 (j m s : ℕ) (hm : m ≤ j) (hs : s ≤ m) :\n (j+1).choose (j-s)*(j-s).choose (m-s)=\n (j+1).choose (m+1)*(m+1).choose (m-s)",
+          "block_sha256": "d8a114cd6d4d688a1e410ebd28512496161944742604ea052752bfa77f5de037",
+          "block_characters": 366
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_closed_coeffM831",
+          "header": "theorem fib_band_closed_coeffM831 (n j m : ℕ) :\n (fibBandM139 n j).coeff m=\n ((j+1).choose (m+1):ℤ)*((n-j-1+m+1).choose m:ℤ)",
+          "block_sha256": "00f11ed6ef5cc1b9a9607df321b6a534ca09fe981dc3022143be8cf0741bf76c",
+          "block_characters": 1724
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovFibShapeM831",
+      "path": "research/MarkovFibShapeM831.lean",
+      "bytes": 3086,
+      "sha256": "23722a660f6200d94ef3bd6d5c6c0d4258153c87f5acf8e0f293f894801e26e9",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fib_band_nonnegM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_pos_iffM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_adjacentM831"
+        },
+        {
+          "kind": "def",
+          "name": "fibBandSeqM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_seq_nonnegM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_seq_pos_iffM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_crossM831"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792210186915479000.json",
+          "sha256": "a65346e3c2f287df5f5cbd913c7a63a489f0e887b2af5bd409c6d56d079f999e",
+          "source_sha256": "23722a660f6200d94ef3bd6d5c6c0d4258153c87f5acf8e0f293f894801e26e9",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "23722a660f6200d94ef3bd6d5c6c0d4258153c87f5acf8e0f293f894801e26e9"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in174": true,
+      "printed_in174": true,
+      "object_path": "evidence/markov-831d426f/MarkovFibShapeM831.olean",
+      "object_sha256": "a5168b680bd2a68edf937482cbec23fcc4b282db0e6a1a5569284d3a110d359b",
+      "successful_final_build": "evidence/markov-831d426f/build-1792210186915479000.json",
+      "historical_successful_source_versions": [
+        "23722a660f6200d94ef3bd6d5c6c0d4258153c87f5acf8e0f293f894801e26e9"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovFibCoeffM831",
+        "MarkovBinomialLC6ade",
+        "MarkovCross774"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "fib_band_nonnegM831",
+          "header": "theorem fib_band_nonnegM831 (n j m : ℕ) : 0 ≤ (fibBandM139 n j).coeff m",
+          "block_sha256": "f1d3c7fbd1646884739cbac86232fc9f5f4771581a65596d52e910ce505a81ec",
+          "block_characters": 121
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_pos_iffM831",
+          "header": "theorem fib_band_pos_iffM831 (n j m : ℕ) :\n 0 < (fibBandM139 n j).coeff m ↔ m ≤ j",
+          "block_sha256": "f4e89d4bbad3b8cc9b641d7e9a4bdc4e0b7c68ac4b62911010a8198d94d5446f",
+          "block_characters": 392
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_adjacentM831",
+          "header": "theorem fib_band_adjacentM831 (n j m : ℕ) :\n (fibBandM139 n j).coeff m*(fibBandM139 n j).coeff (m+2) ≤\n   (fibBandM139 n j).coeff (m+1)^2",
+          "block_sha256": "2d91086eace2f5ea1bca76b94c01f9a74ed063879f95864e66712ccaeb26e8a1",
+          "block_characters": 575
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_seq_nonnegM831",
+          "header": "theorem fib_band_seq_nonnegM831 (n j : ℕ) (i : ℤ) : 0 ≤ fibBandSeqM831 n j i",
+          "block_sha256": "e9fa40e26a1c117ef53a3b7377d4296052ba36494b0c93acd52cf9a8a5d24c93",
+          "block_characters": 236
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_seq_pos_iffM831",
+          "header": "theorem fib_band_seq_pos_iffM831 (n j : ℕ) (i : ℤ) :\n 0 < fibBandSeqM831 n j i ↔ 0 ≤ i ∧ i ≤ j",
+          "block_sha256": "91d4fbf1cd099d3487c681d65475e029aba71465d967449dd1ab9cf1271c3720",
+          "block_characters": 395
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_crossM831",
+          "header": "theorem fib_band_crossM831 (n j : ℕ) : CrossLC (fibBandSeqM831 n j)",
+          "block_sha256": "3a7b92b632f64d04d29e6c62e63553fdb23e933b4213692fd7da80fa6f26601d",
+          "block_characters": 832
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "fibBandSeqM831",
+          "header": "def fibBandSeqM831 (n j : ℕ) : ℤ → ℝ",
+          "block_sha256": "7508ce455f831a623f84ec86939bb281e40a6295859357b4304b88e9fd855d31",
+          "block_characters": 93,
+          "definition_text": "def fibBandSeqM831 (n j : ℕ) : ℤ → ℝ :=\n CoeffSeq ((fibBandM139 n j).map (Int.castRingHom ℝ))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBoundaryPositiveM831",
+      "path": "research/MarkovBoundaryPositiveM831.lean",
+      "bytes": 2698,
+      "sha256": "e70bc618da4bd7439a77256e4f8c40aefced0d9d0cda00c08ba84c4d028a6333",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "boundaryBinomialM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_binomial_nonnegM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_binomial_tailM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_binomial_clearedM831"
+        },
+        {
+          "kind": "def",
+          "name": "BandBoundaryPositiveFormulaM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_formula_iff_positiveM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_nonnegative_of_positive_formulaM831"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792210114138071000.json",
+          "sha256": "e8ab350159d3d4950b11be8c8f554343704dca807630d42917326eb3bbd4cf81",
+          "source_sha256": "b0c62efc4bd31fc7ada614947bc14f8132e7bc097922f20e31d6b5d9601027c5",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "b0c62efc4bd31fc7ada614947bc14f8132e7bc097922f20e31d6b5d9601027c5"
+        },
+        {
+          "path": "build-1792210185745845000.json",
+          "sha256": "fa18b1313cdf50b9e55eedda25f1538fb4d004430e111510999d5729c2ac7cf0",
+          "source_sha256": "e70bc618da4bd7439a77256e4f8c40aefced0d9d0cda00c08ba84c4d028a6333",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "e70bc618da4bd7439a77256e4f8c40aefced0d9d0cda00c08ba84c4d028a6333"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in174": true,
+      "printed_in174": true,
+      "object_path": "evidence/markov-831d426f/MarkovBoundaryPositiveM831.olean",
+      "object_sha256": "b8a9ae64d334e035a59838f628fb75690c7c6a0b722e9a3e9ae7e412daaf6f77",
+      "successful_final_build": "evidence/markov-831d426f/build-1792210185745845000.json",
+      "historical_successful_source_versions": [
+        "e70bc618da4bd7439a77256e4f8c40aefced0d9d0cda00c08ba84c4d028a6333"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovFibCoeffM831"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "boundary_binomial_nonnegM831",
+          "header": "theorem boundary_binomial_nonnegM831 (k m : ℕ) (r : Bool) :\n 0 ≤ boundaryBinomialM831 k m r",
+          "block_sha256": "5a4e360a82a4fe93310c50a44712bdc965a221fc080170b30348328c0d6e3abd",
+          "block_characters": 194
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_binomial_tailM831",
+          "header": "theorem boundary_binomial_tailM831 (k m : ℕ) (r : Bool) (hm : k < m) :\n boundaryBinomialM831 k m r=0",
+          "block_sha256": "e02735d176af6797456ad6b1397642bdbebac62bcf31dbb7aeddfb5a7f372a8a",
+          "block_characters": 243
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_binomial_clearedM831",
+          "header": "theorem boundary_binomial_clearedM831 (k m : ℕ) (r : Bool) (hm : m ≤ k) :\n (2*(m:ℤ)+3)*boundaryBinomialM831 k m r=\n 2*(if r then 3*(k:ℤ)+m+6 else 3*(k:ℤ)+3-m)*\n   ((k+m+2).choose (2*m+2):ℤ)*((2*m+2).choose (m+1):ℤ)",
+          "block_sha256": "d333696c5ab9b5b3ef00b7426244bada06f79ae5431cf518e59b6eb811c93193",
+          "block_characters": 837
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_formula_iff_positiveM831",
+          "header": "theorem boundary_formula_iff_positiveM831 :\n BandBoundaryFormulaM139 ↔ BandBoundaryPositiveFormulaM831",
+          "block_sha256": "35ad3dcabc955c67f2915fae623b97c0c18583fd1a5aa0f6ad603a651e258083",
+          "block_characters": 512
+        },
+        {
+          "kind": "theorem",
+          "name": "band_nonnegative_of_positive_formulaM831",
+          "header": "theorem band_nonnegative_of_positive_formulaM831 (h : BandBoundaryPositiveFormulaM831) :\n ∀ d k i r, 0 ≤ (bandAtM139 d k r).coeff i",
+          "block_sha256": "535673180b0cc5b80dcc06f88df79c45ca58fd3fe152136e17a7c082a16b31d4",
+          "block_characters": 250
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "boundaryBinomialM831",
+          "header": "def boundaryBinomialM831 (k m : ℕ) (r : Bool) : ℤ",
+          "block_sha256": "0a868eb8f119ef0fb79c2a1e582e771a16d6804ae0dd927501553dcc6e5a1b54",
+          "block_characters": 185,
+          "definition_text": "def boundaryBinomialM831 (k m : ℕ) (r : Bool) : ℤ :=\n 2*((2*m+2).choose (m+1):ℤ)*\n  ((if r then 2 else 1)*((k+m+3).choose (2*m+3):ℤ)+\n   (if r then 1 else 2)*((k+m+2).choose (2*m+3):ℤ))"
+        },
+        {
+          "kind": "def",
+          "name": "BandBoundaryPositiveFormulaM831",
+          "header": "def BandBoundaryPositiveFormulaM831 : Prop",
+          "block_sha256": "7a7e6b4c1057ecc4fb3849ca45b242b47bc6c57613d6fc66acd47ba4a2ecad00",
+          "block_characters": 109,
+          "definition_text": "def BandBoundaryPositiveFormulaM831 : Prop :=\n ∀ k m r, (bandAtM139 0 k r).coeff m=boundaryBinomialM831 k m r"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandShiftM831",
+      "path": "research/MarkovBandShiftM831.lean",
+      "bytes": 4264,
+      "sha256": "be6581e5bb5a77bdcaef0939ad54ef81adee92863f3933487f296ec91e931d7e",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fib_band_shiftM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_shiftM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_shiftM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_diagonalM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_at_diagonalM831"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792210315852761000.json",
+          "sha256": "76c475ca457fac75ea9cad9eb30c3064a31b3fd84f621b4f56139a2fa156b479",
+          "source_sha256": "306219ca5d0b3fd415c1607e91ad62e4a903bdb5e59852f5804973be12df30dd",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "306219ca5d0b3fd415c1607e91ad62e4a903bdb5e59852f5804973be12df30dd"
+        },
+        {
+          "path": "build-1792210374582527000.json",
+          "sha256": "044d812cd4caec2295f13baa99357bd808a741870d8fbfd46100a204ac794053",
+          "source_sha256": "be6581e5bb5a77bdcaef0939ad54ef81adee92863f3933487f296ec91e931d7e",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "be6581e5bb5a77bdcaef0939ad54ef81adee92863f3933487f296ec91e931d7e"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in174": true,
+      "printed_in174": true,
+      "object_path": "evidence/markov-831d426f/MarkovBandShiftM831.olean",
+      "object_sha256": "0e959bfc694327de7df2ce6d0042a8b866998ceb9bb6b230fa8a2aeec322ec8a",
+      "successful_final_build": "evidence/markov-831d426f/build-1792210374582527000.json",
+      "historical_successful_source_versions": [
+        "be6581e5bb5a77bdcaef0939ad54ef81adee92863f3933487f296ec91e931d7e"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovFibShapeM831",
+        "MarkovDiagonalRowsMDAB"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "fib_band_shiftM831",
+          "header": "theorem fib_band_shiftM831 (n j : ℕ) (hn : j+1 ≤ n) :\n fibBandM139 (n+2) (j+1)+fibBandM139 n j=\n fibBandM139 (n+1) (j+1)+(X+1)*fibBandM139 (n+1) j",
+          "block_sha256": "09724d271e61bbb1461ef45466f78a078ce591fec627c98ac8eaf028a0e84bd6",
+          "block_characters": 944
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_shiftM831",
+          "header": "theorem band_gain_shiftM831 (q k : ℕ) (r : Bool) (hq : k+1 ≤ q) :\n bandGainM139 (q+2) r (k+1)=bandGainM139 (q+1) r (k+1)+\n   (X+1)*bandGainM139 (q+1) r k-bandGainM139 q r k",
+          "block_sha256": "5c23dd49db5ed55d42598d3fa9b49d7a7228695e9dad113578494ccaf5416dd8",
+          "block_characters": 871
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_shiftM831",
+          "header": "theorem band_Q_shiftM831 (q k : ℕ) (r : Bool) (hq : k+1 ≤ q) :\n bandQM139 (q+2) r (k+1)+bandQM139 q r k=\n   bandQM139 (q+1) r (k+1)+(X+1)*bandQM139 (q+1) r k",
+          "block_sha256": "5056d6cf3c0876d09e8ff88782afe38f67899d6c0ed25491179428d399f29d9f",
+          "block_characters": 1062
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_diagonalM831",
+          "header": "theorem band_Q_diagonalM831 (q k : ℕ) (r : Bool) (hq : k+1 ≤ q) :\n bandQM139 (q+4) r (k+2)-2*bandQM139 (q+2) r (k+1)+bandQM139 q r k=\n   4*bandGainM139 (q+2) r (k+2)",
+          "block_sha256": "4d9fa72ec33748ad117b1dcb637a58a320056d191336eb1286cc4b4d0a64f739",
+          "block_characters": 569
+        },
+        {
+          "kind": "theorem",
+          "name": "band_at_diagonalM831",
+          "header": "theorem band_at_diagonalM831 (d k : ℕ) (r : Bool) :\n bandAtM139 d (k+2) r-2*bandAtM139 d (k+1) r+bandAtM139 d k r=\n 4*bandGainM139 (d+2*k+(if r then 2 else 1)+2) r (k+2)",
+          "block_sha256": "059982597f6683f4dd84fd900bd39349b801b1269e92f6481ddf819cd65778f8",
+          "block_characters": 465
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandPositiveM831",
+      "path": "research/MarkovBandPositiveM831.lean",
+      "bytes": 5380,
+      "sha256": "155d9b01af77cf3240ba7c81c4e3bb56acda28ca7f25848f7e68089932dca9ba",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "band_gain_nonnegM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_posM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_at_zeroM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_at_initial_monoM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_at_nonneg_monoM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_boundary_nonnegativeM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_at_nonnegativeM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_at_monotone_dM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_at_positiveM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_nonnegativeM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_positive_iffM831"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792210409935333000.json",
+          "sha256": "27e6e8e9af41c665091e0b7c8dc13f4e6e39f7c2650ba1231e8200854277c672",
+          "source_sha256": "47ee6685ef51ca6d9888f957cf4a7dd1b7d861d4d9e3ded62127839d3c337804",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "47ee6685ef51ca6d9888f957cf4a7dd1b7d861d4d9e3ded62127839d3c337804"
+        },
+        {
+          "path": "build-1792210467302085000.json",
+          "sha256": "8ab8b83bc0cea19ea688dc535958be7ec63748726f6064aab54c7b7dfe047b20",
+          "source_sha256": "155d9b01af77cf3240ba7c81c4e3bb56acda28ca7f25848f7e68089932dca9ba",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "155d9b01af77cf3240ba7c81c4e3bb56acda28ca7f25848f7e68089932dca9ba"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in174": true,
+      "printed_in174": true,
+      "object_path": "evidence/markov-831d426f/MarkovBandPositiveM831.olean",
+      "object_sha256": "3f0e6334e162ca187e609a539f60767639211fef4a5f742fbe6190ac6c144b7e",
+      "successful_final_build": "evidence/markov-831d426f/build-1792210467302085000.json",
+      "historical_successful_source_versions": [
+        "155d9b01af77cf3240ba7c81c4e3bb56acda28ca7f25848f7e68089932dca9ba"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandShiftM831",
+        "MarkovBandBudgetCoeffsM139"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "band_gain_nonnegM831",
+          "header": "theorem band_gain_nonnegM831 (q k m : ℕ) (r : Bool) :\n 0 ≤ (bandGainM139 q r k).coeff m",
+          "block_sha256": "496e8bf6eaab1626c200fb23652c6b0e267f26763d2525657627f9f7661cd773",
+          "block_characters": 629
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_posM831",
+          "header": "theorem band_gain_posM831 (q k m : ℕ) (r : Bool) (hm : m ≤ k) :\n 0 < (bandGainM139 q r k).coeff m",
+          "block_sha256": "6f275f487dba73e60d97d22546e58f10532ac00d98230b1445e7743e33c1a216",
+          "block_characters": 755
+        },
+        {
+          "kind": "theorem",
+          "name": "band_at_zeroM831",
+          "header": "theorem band_at_zeroM831 (d : ℕ) (r : Bool) :\n bandAtM139 d 0 r=if r then 8 else 4",
+          "block_sha256": "47ec1abe3059f29b387c736d9cbcedabf3cc2afa6cf493fe900a2e84cfa0c8ee",
+          "block_characters": 146
+        },
+        {
+          "kind": "theorem",
+          "name": "band_at_initial_monoM831",
+          "header": "theorem band_at_initial_monoM831 (d i : ℕ) (r : Bool) :\n (bandAtM139 d 0 r).coeff i ≤ (bandAtM139 d 1 r).coeff i",
+          "block_sha256": "6143df398755fb2f9eef93a894b5fb79071bac96b83c7818601711fa6ccfc116",
+          "block_characters": 589
+        },
+        {
+          "kind": "theorem",
+          "name": "band_at_nonneg_monoM831",
+          "header": "theorem band_at_nonneg_monoM831 (d k i : ℕ) (r : Bool) :\n 0 ≤ (bandAtM139 d k r).coeff i ∧\n (bandAtM139 d k r).coeff i ≤ (bandAtM139 d (k+1) r).coeff i",
+          "block_sha256": "35c2e896b0064ef64f59cd901c0c42c364cbb17cd3f3a94dda0a69d4fd1dbd5a",
+          "block_characters": 587
+        },
+        {
+          "kind": "theorem",
+          "name": "band_boundary_nonnegativeM831",
+          "header": "theorem band_boundary_nonnegativeM831 : BandBoundaryNonnegM139",
+          "block_sha256": "5431b304a483145ce9028be088c235bc232560a72a17b703bfacff31f7316fb7",
+          "block_characters": 124
+        },
+        {
+          "kind": "theorem",
+          "name": "band_at_nonnegativeM831",
+          "header": "theorem band_at_nonnegativeM831 (d k i : ℕ) (r : Bool) :\n 0 ≤ (bandAtM139 d k r).coeff i",
+          "block_sha256": "07045766c1264ac37307507d2613b1516500e84c6adedf99499eaa182346d1ac",
+          "block_characters": 127
+        },
+        {
+          "kind": "theorem",
+          "name": "band_at_monotone_dM831",
+          "header": "theorem band_at_monotone_dM831 (d k i : ℕ) (r : Bool) :\n (bandAtM139 d k r).coeff i ≤ (bandAtM139 (d+1) k r).coeff i",
+          "block_sha256": "0c5bdc3b119166a0b73e464fd7cc092872a291c082960e78dfe64bee1e1005f4",
+          "block_characters": 183
+        },
+        {
+          "kind": "theorem",
+          "name": "band_at_positiveM831",
+          "header": "theorem band_at_positiveM831 (d k i : ℕ) (r : Bool) (hi : i ≤ k) :\n 0 < (bandAtM139 d k r).coeff i",
+          "block_sha256": "8960d80074d287aefcb04b394377b3c4e9bc9d8e5a7096d725a7c97c8a08c6f3",
+          "block_characters": 801
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_nonnegativeM831",
+          "header": "theorem band_Q_nonnegativeM831 (q k i : ℕ) (r : Bool)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) : 0 ≤ (bandQM139 q r k).coeff i",
+          "block_sha256": "a3454235388400e775e1878caf7442964d6920a403043309dacac017d9624779",
+          "block_characters": 441
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_positive_iffM831",
+          "header": "theorem band_Q_positive_iffM831 (q k i : ℕ) (r : Bool)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n 0 < (bandQM139 q r k).coeff i ↔ i ≤ k",
+          "block_sha256": "2a927db3a476a828368d8b73108922b6886e619fb6bc3339482ceb33f80b3ef3",
+          "block_characters": 576
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandSumM831",
+      "path": "research/MarkovBandSumM831.lean",
+      "bytes": 4909,
+      "sha256": "4f73eaba5555af8ce358e14f0975e0374fd02309452d39bb9f26a27c3431655a",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "diagonalFibM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_oneM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "diagonal_fib_zeroM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_diagonalM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_at_oneM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_at_positive_sumM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "diagonal_fib_min_coeffM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "diagonal_fib_prefix_coeffM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "central_doubleM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_boundary_positive_formulaM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_boundary_formulaM831"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792210499891441000.json",
+          "sha256": "98aed9add2a11a0411c48358e10d6e69d55f50cf967962572feb086aa00e4a7a",
+          "source_sha256": "14cdd5668c277c3f603de3ce6b02626f1558f952140c5007cab608b1b4a161d6",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "14cdd5668c277c3f603de3ce6b02626f1558f952140c5007cab608b1b4a161d6"
+        },
+        {
+          "path": "build-1792210552242138000.json",
+          "sha256": "9455553afec7d1d9f8dae6ed8a262d30dbdd19baa6cdffa386b6a861ee4ae277",
+          "source_sha256": "32fae7c9ccf222e46f7112423b2b394cf129708b55418464d8497e0922c3bfa1",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "32fae7c9ccf222e46f7112423b2b394cf129708b55418464d8497e0922c3bfa1"
+        },
+        {
+          "path": "build-1792210585578599000.json",
+          "sha256": "b6d7721d0ecc13414e6508567d3d72c312726519798496b156f80ad339e7518a",
+          "source_sha256": "d2cfbfedc2bf7cea939b005799cf06441e379e84d62293a1d626548e95366d07",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "d2cfbfedc2bf7cea939b005799cf06441e379e84d62293a1d626548e95366d07"
+        },
+        {
+          "path": "build-1792210639905127000.json",
+          "sha256": "1909d5828ba89ec0c4822eb8e8d5d9ca0ecd5fc436d3f9e2723ecff6c2b028a8",
+          "source_sha256": "4f73eaba5555af8ce358e14f0975e0374fd02309452d39bb9f26a27c3431655a",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "4f73eaba5555af8ce358e14f0975e0374fd02309452d39bb9f26a27c3431655a"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in174": true,
+      "printed_in174": true,
+      "object_path": "evidence/markov-831d426f/MarkovBandSumM831.olean",
+      "object_sha256": "cc504355472748b2218046b6ab8e5d04c471cf3c5b7d63ca780bacb42fc27e0d",
+      "successful_final_build": "evidence/markov-831d426f/build-1792210639905127000.json",
+      "historical_successful_source_versions": [
+        "4f73eaba5555af8ce358e14f0975e0374fd02309452d39bb9f26a27c3431655a"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandPositiveM831",
+        "MarkovBoundaryPositiveM831",
+        "MarkovPositiveRowsMDAB"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "fib_band_oneM831",
+          "header": "theorem fib_band_oneM831 (n : ℕ) (hn : 2 ≤ n) :\n fibBandM139 n 1=2+C (n:ℤ)*X",
+          "block_sha256": "4f630d93da86adacaab7a240c7da24284c59f845904518ac86a0ffc7e3cde967",
+          "block_characters": 324
+        },
+        {
+          "kind": "theorem",
+          "name": "diagonal_fib_zeroM831",
+          "header": "theorem diagonal_fib_zeroM831 (d : ℕ) : diagonalFibM831 d 0=1",
+          "block_sha256": "0ed6ddce6adb43f7e4ebe3b6bd35bc4bc8f26857e19e2f1f179230edfcb81ca2",
+          "block_characters": 109
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_diagonalM831",
+          "header": "theorem band_gain_diagonalM831 (d k : ℕ) (r : Bool) :\n bandGainM139 (d+2*k+(if r then 2 else 1)+2) r (k+2)=\n (if r then 2 else 1)*diagonalFibM831 d (k+2)+\n (if r then 1 else 2)*diagonalFibM831 d (k+1)",
+          "block_sha256": "f3f05fe36f93ec7ecaa4ec7bfd2094b59ebc26a7723f6def1a578ffa515c5baf",
+          "block_characters": 692
+        },
+        {
+          "kind": "theorem",
+          "name": "band_at_oneM831",
+          "header": "theorem band_at_oneM831 (d : ℕ) (r : Bool) :\n bandAtM139 d 1 r=\n 4*((if r then 2 else 1)*diagonalFibM831 d 1+(if r then 5 else 4))",
+          "block_sha256": "13c6501121821069aec64cbe45c383b2120cb63a42050c4db93e56629fd9317b",
+          "block_characters": 404
+        },
+        {
+          "kind": "theorem",
+          "name": "band_at_positive_sumM831",
+          "header": "theorem band_at_positive_sumM831 (d k : ℕ) (r : Bool) :\n bandAtM139 d k r=4*((if r then 2 else 1)*doublePrefixMDAB (diagonalFibM831 d) (k+1)+\n   (if r then 1 else 2)*doublePrefixMDAB (diagonalFibM831 d) k)",
+          "block_sha256": "d0e8f76378c87721b59efa2f7df6c8f46ec7dc03dc2338ef6ba5f82e72235246",
+          "block_characters": 844
+        },
+        {
+          "kind": "theorem",
+          "name": "diagonal_fib_min_coeffM831",
+          "header": "theorem diagonal_fib_min_coeffM831 (k m : ℕ) :\n (diagonalFibM831 0 k).coeff m=\n ((2*m+1).choose m:ℤ)*((k+m+1).choose (2*m+1):ℤ)",
+          "block_sha256": "504c96c71b608688eb8eb73eafade31921ca8ad0b2944542879002113d1c153b",
+          "block_characters": 484
+        },
+        {
+          "kind": "theorem",
+          "name": "diagonal_fib_prefix_coeffM831",
+          "header": "theorem diagonal_fib_prefix_coeffM831 (k m : ℕ) :\n (doublePrefixMDAB (diagonalFibM831 0) k).coeff m=\n ((2*m+1).choose m:ℤ)*((k+m+2).choose (2*m+3):ℤ)",
+          "block_sha256": "8577c3e2d115ca71739135277ba629059df75d847a8b312233c56037c289c2df",
+          "block_characters": 591
+        },
+        {
+          "kind": "theorem",
+          "name": "central_doubleM831",
+          "header": "theorem central_doubleM831 (m : ℕ) :\n ((2*m+2).choose (m+1):ℤ)=2*((2*m+1).choose m:ℤ)",
+          "block_sha256": "53096c3ee6671e1d5784139e9625c3054af1c3aeedab5ac4c4cf9de84c718307",
+          "block_characters": 454
+        },
+        {
+          "kind": "theorem",
+          "name": "band_boundary_positive_formulaM831",
+          "header": "theorem band_boundary_positive_formulaM831 : BandBoundaryPositiveFormulaM831",
+          "block_sha256": "d11e4f2ba162c490165546ab5ab8bd2656cc4623e5d5003895e61df4eedca03c",
+          "block_characters": 344
+        },
+        {
+          "kind": "theorem",
+          "name": "band_boundary_formulaM831",
+          "header": "theorem band_boundary_formulaM831 : BandBoundaryFormulaM139",
+          "block_sha256": "d2a65f479e47bc76e0d06fad2e76b864e50068797fb40783eea340152f0cfe0e",
+          "block_characters": 141
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "diagonalFibM831",
+          "header": "def diagonalFibM831 (d k : ℕ) : Polynomial ℤ",
+          "block_sha256": "daac51fdf3c8bec032d14522b9fb78c7a9ad1119e7e4d2d690d78772ce915e80",
+          "block_characters": 71,
+          "definition_text": "def diagonalFibM831 (d k : ℕ) : Polynomial ℤ := fibBandM139 (d+2*k+1) k"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBoundaryLCM831",
+      "path": "research/MarkovBoundaryLCM831.lean",
+      "bytes": 5002,
+      "sha256": "9b21b6b210f49164712ebe414aab19130e486db9a88ba7f12b1477f1a2e4a334",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "boundaryBaseM831"
+        },
+        {
+          "kind": "def",
+          "name": "boundaryWeightM831"
+        },
+        {
+          "kind": "def",
+          "name": "boundaryNumerM831"
+        },
+        {
+          "kind": "def",
+          "name": "boundaryDenomM831"
+        },
+        {
+          "kind": "def",
+          "name": "boundaryCoeffM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_base_stepM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_coeff_scaledM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_coeff_stepM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_ratio_decreasingM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_denom_posM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_coeff_adjacentM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_raw_adjacentM831"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792210660426853000.json",
+          "sha256": "a3e59b79f2e1daa3bb61c2d6baeee0596165a512b492cbb0fa8a271b392207ef",
+          "source_sha256": "88300a64a5536869d23485565d35703a72111e57d028aa36397319c464c3ab7d",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "88300a64a5536869d23485565d35703a72111e57d028aa36397319c464c3ab7d"
+        },
+        {
+          "path": "build-1792210692546513000.json",
+          "sha256": "2efa1c97fbd4d0fa751abcccc6bbea0d6b8640d58aab9d8fce6260b073f734ce",
+          "source_sha256": "9b21b6b210f49164712ebe414aab19130e486db9a88ba7f12b1477f1a2e4a334",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "9b21b6b210f49164712ebe414aab19130e486db9a88ba7f12b1477f1a2e4a334"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in174": true,
+      "printed_in174": true,
+      "object_path": "evidence/markov-831d426f/MarkovBoundaryLCM831.olean",
+      "object_sha256": "9c388f0381742e62987d206c927d07c6008d6fdcdc17dd74617719f6931d22e0",
+      "successful_final_build": "evidence/markov-831d426f/build-1792210692546513000.json",
+      "historical_successful_source_versions": [
+        "9b21b6b210f49164712ebe414aab19130e486db9a88ba7f12b1477f1a2e4a334"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandSumM831",
+        "MarkovAdjacent67c3"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "boundary_base_stepM831",
+          "header": "theorem boundary_base_stepM831 (k m : ℕ) (hm : m ≤ k) :\n boundaryBaseM831 k (m+1)*((m:ℚ)+2)^2=\n boundaryBaseM831 k m*((k:ℚ)-m)*(k+m+3)",
+          "block_sha256": "fdf7117e6c46206715afd8cf2dca54f108ef58403bf807307a43ab3cd1587124",
+          "block_characters": 464
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_coeff_scaledM831",
+          "header": "theorem boundary_coeff_scaledM831 (k m : ℕ) (r : Bool) (hm : m ≤ k) :\n (2*(m:ℚ)+3)*boundaryCoeffM831 k m r=\n 2*boundaryWeightM831 k m r*boundaryBaseM831 k m",
+          "block_sha256": "bef8b57cba303263096e333e8bfc5481e08a9ce2aeacd090e738f57ab566426a",
+          "block_characters": 703
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_coeff_stepM831",
+          "header": "theorem boundary_coeff_stepM831 (k m : ℕ) (r : Bool) (hm : m+1 ≤ k) :\n boundaryCoeffM831 k (m+1) r*boundaryDenomM831 k m r=\n boundaryCoeffM831 k m r*boundaryNumerM831 k m r",
+          "block_sha256": "8b23d52d3e5a8c3f3f9017d01659c86c859bf686812e9a63fc79bfa2b7d6cee4",
+          "block_characters": 572
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_ratio_decreasingM831",
+          "header": "theorem boundary_ratio_decreasingM831 (m t : ℚ) (r : Bool) (hm : 0 ≤ m) (ht : 0 ≤ t) :\n boundaryNumerM831 (m+t+2) (m+1) r*boundaryDenomM831 (m+t+2) m r ≤\n boundaryNumerM831 (m+t+2) m r*boundaryDenomM831 (m+t+2) (m+1) r",
+          "block_sha256": "7445c8ea7a63e09877a424e7cf2e0e006570419566d34b153f2613bf48ec498b",
+          "block_characters": 392
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_denom_posM831",
+          "header": "theorem boundary_denom_posM831 (k m : ℚ) (r : Bool) (hm : 0 ≤ m) (hk : m ≤ k) :\n 0 < boundaryDenomM831 k m r",
+          "block_sha256": "422e469e8ca80bb1e67d8c77d749409ba7cec8526ac55e007f4ceeea1c2f5400",
+          "block_characters": 307
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_coeff_adjacentM831",
+          "header": "theorem boundary_coeff_adjacentM831 (k m : ℕ) (r : Bool) :\n boundaryCoeffM831 k m r*boundaryCoeffM831 k (m+2) r ≤ boundaryCoeffM831 k (m+1) r^2",
+          "block_sha256": "94b4ec36aceb6bdf4690b50f5bc6569e1d0d21622b527387a774577b9e9c3cc4",
+          "block_characters": 1409
+        },
+        {
+          "kind": "theorem",
+          "name": "boundary_raw_adjacentM831",
+          "header": "theorem boundary_raw_adjacentM831 (k m : ℕ) (r : Bool) :\n (bandAtM139 0 k r).coeff m*(bandAtM139 0 k r).coeff (m+2) ≤\n   (bandAtM139 0 k r).coeff (m+1)^2",
+          "block_sha256": "9ac3d70f7b0ea0f9990dfe2ad033c1ddda62ad1361cd2d864b96dbe122d03440",
+          "block_characters": 258
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "boundaryBaseM831",
+          "header": "def boundaryBaseM831 (k m : ℕ) : ℚ",
+          "block_sha256": "285254ffa86d465a4fc8ce70496c9cda2eff95afa5793ed207aa7a95fe173724",
+          "block_characters": 86,
+          "definition_text": "def boundaryBaseM831 (k m : ℕ) : ℚ :=\n ((k+1).choose (m+1):ℚ)*((k+m+2).choose (m+1):ℚ)"
+        },
+        {
+          "kind": "def",
+          "name": "boundaryWeightM831",
+          "header": "def boundaryWeightM831 (k m : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "a18fa87cd511fa393a6a924072798fcc171ef5c2436a85bf4f0d16b9e93c3ab9",
+          "block_characters": 81,
+          "definition_text": "def boundaryWeightM831 (k m : ℚ) (r : Bool) : ℚ := if r then 3*k+m+6 else 3*k+3-m"
+        },
+        {
+          "kind": "def",
+          "name": "boundaryNumerM831",
+          "header": "def boundaryNumerM831 (k m : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "d60191466df820b1aa81699734541ee61f8ef93dce5e5d4bc115cc3e1bf1139c",
+          "block_characters": 101,
+          "definition_text": "def boundaryNumerM831 (k m : ℚ) (r : Bool) : ℚ :=\n (2*m+3)*(k-m)*(k+m+3)*boundaryWeightM831 k (m+1) r"
+        },
+        {
+          "kind": "def",
+          "name": "boundaryDenomM831",
+          "header": "def boundaryDenomM831 (k m : ℚ) (r : Bool) : ℚ",
+          "block_sha256": "12c4068ebca6f70beb3a95754447125e7076401a274774dd5f39692843b0fb61",
+          "block_characters": 91,
+          "definition_text": "def boundaryDenomM831 (k m : ℚ) (r : Bool) : ℚ :=\n (2*m+5)*(m+2)^2*boundaryWeightM831 k m r"
+        },
+        {
+          "kind": "def",
+          "name": "boundaryCoeffM831",
+          "header": "def boundaryCoeffM831 (k m : ℕ) (r : Bool) : ℚ",
+          "block_sha256": "796003edd4e95ed0438d76cbb7d0e575ba34e17d7e158c2e7efde096abbf734b",
+          "block_characters": 76,
+          "definition_text": "def boundaryCoeffM831 (k m : ℕ) (r : Bool) : ℚ := (bandAtM139 0 k r).coeff m"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandSourceM831",
+      "path": "research/MarkovBandSourceM831.lean",
+      "bytes": 3075,
+      "sha256": "202cd010ae8117e8d1cbadcbf64614b155c782490131b47cdb67ce314f66ff38",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "band_correction_nonnegM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_above_lowerM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_lc_budgetM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_boundary_coeffM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_path_above_lowerM831"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792210684815438000.json",
+          "sha256": "fbf599ed0a9a8fad6258b392b2dae798ff1395608211ebaf196dc3255ec68f2d",
+          "source_sha256": "43173f525fbef9e54c94f4efe0df94405561c274948838f543f822827e044a68",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "43173f525fbef9e54c94f4efe0df94405561c274948838f543f822827e044a68"
+        },
+        {
+          "path": "build-1792210727083347000.json",
+          "sha256": "d2602f08aae5cf74828a3ff74aa095a355d126840d520540e0b8771798c31fff",
+          "source_sha256": "202cd010ae8117e8d1cbadcbf64614b155c782490131b47cdb67ce314f66ff38",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "202cd010ae8117e8d1cbadcbf64614b155c782490131b47cdb67ce314f66ff38"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in174": true,
+      "printed_in174": true,
+      "object_path": "evidence/markov-831d426f/MarkovBandSourceM831.olean",
+      "object_sha256": "2ddeaae823d99c0a9c9872e7cde1a58b5cb830339bdf5dcad2ab785bf7ad26b2",
+      "successful_final_build": "evidence/markov-831d426f/build-1792210727083347000.json",
+      "historical_successful_source_versions": [
+        "202cd010ae8117e8d1cbadcbf64614b155c782490131b47cdb67ce314f66ff38"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandSumM831",
+        "MarkovBandTransportM139",
+        "MarkovBandSupportM139"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "band_correction_nonnegM831",
+          "header": "theorem band_correction_nonnegM831 (q k i : ℕ) (r : Bool)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n 0 ≤ (bandCorrectionM139 q k r).coeff i",
+          "block_sha256": "d6e52d9f9d0a7dc3f8372b37e46a54af69b0c496b51ba04e154c2ddd1895c4a1",
+          "block_characters": 391
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_above_lowerM831",
+          "header": "theorem source_band_above_lowerM831 (q k i : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n lowerRawME9C (sourceNME9C q r) i (q+k+1) ≤ threeRawM9E2 q r i (q+k+1)",
+          "block_sha256": "e0338314f05a3e379176c36a3b840161b30fe81502cb6946469b525d99bfe504",
+          "block_characters": 284
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_lc_budgetM831",
+          "header": "theorem source_band_lc_budgetM831 (q k s : ℕ) (r : Bool) (c : ℝ) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) (hs : s ≤ q+k+1)\n (hc : 0 ≤ c)\n (hbudget : ∀ m, ((bandQM139 q r k).coeff (m+1):ℝ) ≤ c*((q+k+1).choose m:ℝ))\n (hmargin : let B : ℝ := (s+(q+k+1)+3).choose (q+k+1)\n   let U := ((bandQM139 q r k).coeff 0:ℝ)*bandExponentM139 q k r/(s+1)+c\n   (B+U)^2*kernelScaleMA64 (q+k+1) s ≤\n     B^2*kernelScaleMA64 (q+k+1) s+(B+U)^2*topGapMA64 (q+k+1) s) :\n threeRawM9E2 q r (s+3) (q+k+1)*threeRawM9E2 q r (s+5) (q+k+1) ≤\n threeRawM9E2 q r (s+4) (q+k+1)^2",
+          "block_sha256": "27119f0747c1c64baecb870b5ff86d4c770701a496f250caf076cea1fbe8f677",
+          "block_characters": 664
+        },
+        {
+          "kind": "theorem",
+          "name": "source_boundary_coeffM831",
+          "header": "theorem source_boundary_coeffM831 (k i : ℕ) (r : Bool)\n (hq : 2 ≤ 2*k+(if r then 2 else 1)) :\n let q := 2*k+(if r then 2 else 1)\n threeRawM9E2 q r i (q+k+1)=lowerRawME9C (sourceNME9C q r) i (q+k+1)+\n   if 2 ≤ i then boundaryBinomialM831 k (i-2) r else 0",
+          "block_sha256": "550e02f312e5621293ddee1e6ff19dcbac66ff5b18d9440a31205eadf066dbfb",
+          "block_characters": 856
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_path_above_lowerM831",
+          "header": "theorem source_band_path_above_lowerM831 (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1 ≤ q ∧ (frame path).mid.b=sourceNME9C q r ∧\n ∀ k i, 2 ≤ q → 2*(q+k+1)+1 ≤ sourceNME9C q r →\n lowerRawME9C (sourceNME9C q r) i (q+k+1) ≤ coeff (frame path).mid.p i (q+k+1)",
+          "block_sha256": "1b593dbe970d3f4697910666d071582244e186e2067430f0cf1c934b7fce9ef8",
+          "block_characters": 435
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandCrossM831",
+      "path": "research/MarkovBandCrossM831.lean",
+      "bytes": 3214,
+      "sha256": "1ed2ceebabe0726073d2ae64bbec8b12e91ac3deac17addc9afb220f1ad0101c",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "bandSeqM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_seq_zeroM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_seq_nonnegM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_seq_posM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_seq_intervalM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_cross_iff_adjacentM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_boundary_crossM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_boundary_smoothed_crossM831"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792210727083381000.json",
+          "sha256": "78406470f778c9ac35f5f45cfbfcee807930d15019670e8d5a0174a7e2180cd6",
+          "source_sha256": "f508748e0f94e9517e762e4fed83443b5c792db183948a53dd9befaacb76507e",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "f508748e0f94e9517e762e4fed83443b5c792db183948a53dd9befaacb76507e"
+        },
+        {
+          "path": "build-1792210775372261000.json",
+          "sha256": "09ec7c6466a95b5aeaddaed60b39619f423358052ffbf126b2e668bbd99e8eda",
+          "source_sha256": "1ed2ceebabe0726073d2ae64bbec8b12e91ac3deac17addc9afb220f1ad0101c",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "1ed2ceebabe0726073d2ae64bbec8b12e91ac3deac17addc9afb220f1ad0101c"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in174": true,
+      "printed_in174": true,
+      "object_path": "evidence/markov-831d426f/MarkovBandCrossM831.olean",
+      "object_sha256": "e9076b3f7a3dec95efe99fc60a030b620cf4526781f1ec0c643817663fd62d39",
+      "successful_final_build": "evidence/markov-831d426f/build-1792210775372261000.json",
+      "historical_successful_source_versions": [
+        "1ed2ceebabe0726073d2ae64bbec8b12e91ac3deac17addc9afb220f1ad0101c"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBoundaryLCM831"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "band_seq_zeroM831",
+          "header": "theorem band_seq_zeroM831 (d k : ℕ) (r : Bool) (i : ℤ)\n (hi : i < 0 ∨ (k : ℤ) < i) : bandSeqM831 d k r i = 0",
+          "block_sha256": "cc4c1bdd4687fd4150ad139085035f2b4ce9c29a3232097e459e8d869302dd5a",
+          "block_characters": 308
+        },
+        {
+          "kind": "theorem",
+          "name": "band_seq_nonnegM831",
+          "header": "theorem band_seq_nonnegM831 (d k : ℕ) (r : Bool) (i : ℤ) : 0 ≤ bandSeqM831 d k r i",
+          "block_sha256": "408789017f15572517074105650250f6641859bc39ad9fb1f3f9a3330645fe50",
+          "block_characters": 245
+        },
+        {
+          "kind": "theorem",
+          "name": "band_seq_posM831",
+          "header": "theorem band_seq_posM831 (d k : ℕ) (r : Bool) (i : ℤ) (h0 : 0 ≤ i) (hk : i ≤ k) :\n 0 < bandSeqM831 d k r i",
+          "block_sha256": "fc2b3fd8737d81b4105b922ad55d4512fde59a81be38d1b4bccf43931e5cc5bb",
+          "block_characters": 263
+        },
+        {
+          "kind": "theorem",
+          "name": "band_seq_intervalM831",
+          "header": "theorem band_seq_intervalM831 (d k : ℕ) (r : Bool) : IntervalSupport774 (bandSeqM831 d k r)",
+          "block_sha256": "caad7895cb1fb63b0ea98764bb9a2cad50ab0b86a55829d226d2045d53455372",
+          "block_characters": 398
+        },
+        {
+          "kind": "theorem",
+          "name": "band_cross_iff_adjacentM831",
+          "header": "theorem band_cross_iff_adjacentM831 (d k : ℕ) (r : Bool) :\n CrossLC (bandSeqM831 d k r) ↔\n ∀ i, (bandAtM139 d k r).coeff i*(bandAtM139 d k r).coeff (i+2) ≤\n   (bandAtM139 d k r).coeff (i+1)^2",
+          "block_sha256": "4cb1ce1209522103c804cfff2f4570ae5e37fc2ccccf843a9621916829de9309",
+          "block_characters": 1119
+        },
+        {
+          "kind": "theorem",
+          "name": "band_boundary_crossM831",
+          "header": "theorem band_boundary_crossM831 (k : ℕ) (r : Bool) : CrossLC (bandSeqM831 0 k r)",
+          "block_sha256": "2b9dab4ae258fd91c57672c3da3042b773e8beca96e2475ca10bceca1322ef4a",
+          "block_characters": 167
+        },
+        {
+          "kind": "theorem",
+          "name": "band_boundary_smoothed_crossM831",
+          "header": "theorem band_boundary_smoothed_crossM831 (k n : ℕ) (r : Bool) :\n CrossLC (CoeffSeq ((1+X)^n*((bandAtM139 0 k r).map (Int.castRingHom ℝ))))",
+          "block_sha256": "e273e2dcd534aa0dd208cbbe9e974d956383c38d88473ee0d716bbf5c9216b53",
+          "block_characters": 231
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "bandSeqM831",
+          "header": "def bandSeqM831 (d k : ℕ) (r : Bool) : ℤ → ℝ",
+          "block_sha256": "cffbf16e24d625b3c3337135cc48c0ab94371d4fe093f2937456d78956332a00",
+          "block_characters": 102,
+          "definition_text": "def bandSeqM831 (d k : ℕ) (r : Bool) : ℤ → ℝ :=\n CoeffSeq ((bandAtM139 d k r).map (Int.castRingHom ℝ))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandObstructionM831",
+      "path": "research/MarkovBandObstructionM831.lean",
+      "bytes": 1275,
+      "sha256": "211a467f2310b9ca29e4b4a1791117946fcc56add5c02a9893c34a52fa6eb04d",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "band_boundary_twoM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_boundary_two_eval_positiveM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_boundary_two_gapM831"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792210792968071000.json",
+          "sha256": "19a6a4a0cdb79aacf2f7156aea41319971e150d11879faee3987511668272ac7",
+          "source_sha256": "a466b3465f716ed53a09e62ab2266da837e9a6e4d2aa7e05e300486e31c88e75",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "a466b3465f716ed53a09e62ab2266da837e9a6e4d2aa7e05e300486e31c88e75"
+        },
+        {
+          "path": "build-1792210809915696000.json",
+          "sha256": "505cb1c3ba98d885ddd75b0abd5c8adf90ce033c9297ce664065ec6dbd4311a3",
+          "source_sha256": "8ddbad8ae51525c4189016fc16a8f0b8a1316399fb1ac38619d82f6e60311b43",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "8ddbad8ae51525c4189016fc16a8f0b8a1316399fb1ac38619d82f6e60311b43"
+        },
+        {
+          "path": "build-1792210851183562000.json",
+          "sha256": "a3432b889d78c1c2d60e904c60695b40bd7b1f992cd24b2ad92aee3977cb3f25",
+          "source_sha256": "dcf58c1fac57223333ac9363706ffc3aeddb4133728d006cd18bc3d5957cc537",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "dcf58c1fac57223333ac9363706ffc3aeddb4133728d006cd18bc3d5957cc537"
+        },
+        {
+          "path": "build-1792210907756456000.json",
+          "sha256": "c0337bd10cf1c0bbda11b3433da3adf8f8223e10e3718ddc943e2682467bd8ed",
+          "source_sha256": "368c70cab9cb7d3003cb347aca7a04698a07a35c835ef1baa3bcbfe280077ceb",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "368c70cab9cb7d3003cb347aca7a04698a07a35c835ef1baa3bcbfe280077ceb"
+        },
+        {
+          "path": "build-1792210958801687000.json",
+          "sha256": "0bec31df3a57320368bbba2ca673f387d99b637363676bf8529bbceb85f92a7d",
+          "source_sha256": "211a467f2310b9ca29e4b4a1791117946fcc56add5c02a9893c34a52fa6eb04d",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "211a467f2310b9ca29e4b4a1791117946fcc56add5c02a9893c34a52fa6eb04d"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in174": true,
+      "printed_in174": true,
+      "object_path": "evidence/markov-831d426f/MarkovBandObstructionM831.olean",
+      "object_sha256": "6a01ceef84a68fbe8a0a8a3e3ebd9eb9ea81a0ce0ab4734f79713816e86b8ca1",
+      "successful_final_build": "evidence/markov-831d426f/build-1792210958801687000.json",
+      "historical_successful_source_versions": [
+        "211a467f2310b9ca29e4b4a1791117946fcc56add5c02a9893c34a52fa6eb04d"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandSumM831"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "band_boundary_twoM831",
+          "header": "theorem band_boundary_twoM831 :\n bandAtM139 0 2 false=72+96*X+40*X^2",
+          "block_sha256": "7f11bde16d36dc151554b79c54ad352b57dfb34f21c5fe26fc6addef72325d1b",
+          "block_characters": 537
+        },
+        {
+          "kind": "theorem",
+          "name": "band_boundary_two_eval_positiveM831",
+          "header": "theorem band_boundary_two_eval_positiveM831 (x : ℝ) :\n 0 < ((bandAtM139 0 2 false).map (Int.castRingHom ℝ)).eval x",
+          "block_sha256": "d0f3c353581025b48d5b5b9624796e6713dc0dbeef335b25de1039caf0580d30",
+          "block_characters": 189
+        },
+        {
+          "kind": "theorem",
+          "name": "band_boundary_two_gapM831",
+          "header": "theorem band_boundary_two_gapM831 :\n (bandAtM139 0 2 false).coeff 1^2-\n (bandAtM139 0 2 false).coeff 0*(bandAtM139 0 2 false).coeff 2=6336",
+          "block_sha256": "025acfbce46cf487df8636362948cf2db5311c66d1773ef65f8763b99098a64c",
+          "block_characters": 235
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandResidualM831",
+      "path": "research/MarkovBandResidualM831.lean",
+      "bytes": 3309,
+      "sha256": "b2f30dd418bd6bac80dcee50505c7bb457f0a7c1c708e0fbb26db3e5668e02db",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "bandResidualM831"
+        },
+        {
+          "kind": "def",
+          "name": "bandRowM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_residual_coeffM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_residual_nonnegM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_residual_posM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_residual_tailM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_row_crossM831"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_lc_of_residualM831"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792210949023875000.json",
+          "sha256": "4225c0212a1fabca6f67aa0707e7f379aead1a1b72fed7fb7070fe413542c757",
+          "source_sha256": "b2f30dd418bd6bac80dcee50505c7bb457f0a7c1c708e0fbb26db3e5668e02db",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "b2f30dd418bd6bac80dcee50505c7bb457f0a7c1c708e0fbb26db3e5668e02db"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in174": true,
+      "printed_in174": true,
+      "object_path": "evidence/markov-831d426f/MarkovBandResidualM831.olean",
+      "object_sha256": "148427666565afae5e4761b0ed6449b7f7313a458cd2bf76c518594002733190",
+      "successful_final_build": "evidence/markov-831d426f/build-1792210949023875000.json",
+      "historical_successful_source_versions": [
+        "b2f30dd418bd6bac80dcee50505c7bb457f0a7c1c708e0fbb26db3e5668e02db"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandSourceM831",
+        "MarkovBandCrossM831"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "source_band_residual_coeffM831",
+          "header": "theorem source_band_residual_coeffM831 (q k i : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n threeRawM9E2 q r i (q+k+1)=(bandRowM831 q k r).coeff i",
+          "block_sha256": "2d40b6a13d60afbc6c2dada437a75d85e965f8a3e95218287d07b8d7b11ae5ab",
+          "block_characters": 360
+        },
+        {
+          "kind": "theorem",
+          "name": "band_residual_nonnegM831",
+          "header": "theorem band_residual_nonnegM831 (q k i : ℕ) (r : Bool)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n 0 ≤ (bandResidualM831 q k r).coeff i",
+          "block_sha256": "a3369adfbbfee3e2a320b9fbf2f0ca2fce5ca42190dba7ac046a6f8f1a898431",
+          "block_characters": 330
+        },
+        {
+          "kind": "theorem",
+          "name": "band_residual_posM831",
+          "header": "theorem band_residual_posM831 (q k i : ℕ) (r : Bool)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) (hi : i ≤ q+k+2) :\n 0 < (bandResidualM831 q k r).coeff i",
+          "block_sha256": "732690407830d37698a59ab2f3f13ba1c5a030bafea278025ca82292bafd9fa2",
+          "block_characters": 472
+        },
+        {
+          "kind": "theorem",
+          "name": "band_residual_tailM831",
+          "header": "theorem band_residual_tailM831 (q k i : ℕ) (r : Bool) (hi : q+k+2 < i) :\n (bandResidualM831 q k r).coeff i=0",
+          "block_sha256": "0c036a2a28613606ec3844dccdacd71bef7b6811c19e541ce9d92782bfb792bd",
+          "block_characters": 289
+        },
+        {
+          "kind": "theorem",
+          "name": "band_row_crossM831",
+          "header": "theorem band_row_crossM831 (q k : ℕ) (r : Bool)\n (h : CrossLC (CoeffSeq ((bandResidualM831 q k r).map (Int.castRingHom ℝ)))) :\n CrossLC (CoeffSeq ((bandRowM831 q k r).map (Int.castRingHom ℝ)))",
+          "block_sha256": "8d56512da5b6568044d1d8af9fbf733caf0431e0bfc0214e880ac593db6dfb31",
+          "block_characters": 478
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_lc_of_residualM831",
+          "header": "theorem source_band_lc_of_residualM831 (q k i : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r)\n (h : CrossLC (CoeffSeq ((bandResidualM831 q k r).map (Int.castRingHom ℝ)))) :\n threeRawM9E2 q r i (q+k+1)*threeRawM9E2 q r (i+2) (q+k+1) ≤\n   threeRawM9E2 q r (i+1) (q+k+1)^2",
+          "block_sha256": "4e78d07171b1c6602138e8489570960f2de01ce5a92544429e4ab858abb8ecd6",
+          "block_characters": 753
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "bandResidualM831",
+          "header": "def bandResidualM831 (q k : ℕ) (r : Bool) : Polynomial ℤ",
+          "block_sha256": "70e39b18001634123a6470801afddf9bcd7307ea26b066a99bb0c363d59633e1",
+          "block_characters": 113,
+          "definition_text": "def bandResidualM831 (q k : ℕ) (r : Bool) : Polynomial ℤ :=\n bandQM139 q r k+X*rowHMFFD (sourceNME9C q r) (q+k+1)"
+        },
+        {
+          "kind": "def",
+          "name": "bandRowM831",
+          "header": "def bandRowM831 (q k : ℕ) (r : Bool) : Polynomial ℤ",
+          "block_sha256": "afc892a2a0646e23761d6f029bd574eb0c490a0efa3ac572c78aa220c925ca4a",
+          "block_characters": 113,
+          "definition_text": "def bandRowM831 (q k : ℕ) (r : Bool) : Polynomial ℤ :=\n X^2*((X+1)^bandExponentM139 q k r*bandResidualM831 q k r)"
+        }
+      ],
+      "forbidden_tokens": []
+    }
+  ],
+  "excluded_modules": [],
+  "accepted_counts": {
+    "theorem": 67,
+    "def": 12
+  },
+  "excluded_counts": {},
+  "mathematical_values_recomputed": false,
+  "source_level_scope": {
+    "root_open": true,
+    "new_unconditional_raw_LC_region": false,
+    "actual_source_formula": "Actual numerator-three source classification q>=1,r; new source identities retain q>=2,k>=0,j=q+k+1 and literal2*j+1<=b. b=3*q+1 fortrue,3*q+2 forfalse.",
+    "q1_new_source_formula": false,
+    "negative_exponent_region_new_source_formula": false,
+    "band_parameterization": "a=2(true),1(false); bweight=3-a. q=d+2*k+a; P(d,k,r)=Q(q,r,k). Source exponent d=b-2j-1 is guarded.",
+    "boundary_formula_now_proved": true,
+    "boundary_nonnegativity_now_proved": true,
+    "full_band_Q_nonnegative": "Every natural d,k,i,r P(d,k,r).coeff i>=0; positive exactly0<=i<=k in integer CoeffSeq, zero outside. Hence every band-guarded Q is nonnegative with support0..k.",
+    "full_band_Q_CrossLC_proved": false,
+    "boundary_d0_Q_CrossLC_proved": true,
+    "positive_sum": "P=4*(a*doublePrefix(diagonalFib,k+1)+bweight*doublePrefix(diagonalFib,k)); finite polynomial theorem. Expanded single coefficient-sum display is prose expansion, not a separately named theorem.",
+    "conditional_budget_LC": "Old Q nonnegativity premise discharged, but s<=j,c>=0,all coefficient budgets and explicit scalar margin remain.",
+    "augmented_factor": "R=Q+X*rowH(b,j); bandRow=X^2*(X+1)^d*R. Nonnegative with positive coefficients through j+1=q+k+2 and zero beyond; source identity q>=2 plus band guard.",
+    "augmented_CrossLC_proved": false,
+    "conditional_augmented_LC": "Assumed CrossLC of augmented R gives allnatural rawhorizontal starts, includingzero tails. No hidden proof of this premise.",
+    "auxiliary_obstruction": "P(0,2,false)=72+96X+40X^2, positive at every real argument, yet its coefficient adjacent gap is positive. Obstructs a proposed real-rooted certificate, not source/root LC.",
+    "root_equivalence": "Conjecture63 iff ThreeBeyondThirdM964 and OtherFourM9E2",
+    "remaining_predicates_unproved": [
+      "ThreeBeyondThirdM964",
+      "OtherFourM9E2"
+    ],
+    "inherited_actual_a3_H": "All natural starts/zeros with3*j<=b+9; not enlarged universally here.",
+    "residual_H": "q<j,j!=5,j!=q+1,j!=q+2,j!=q+3,all natural i.",
+    "residual_V": "Outside the union of ((i=3 or4) and j+1<=q) and (5<=i<=8 and j+2<=q).",
+    "residual_D": "Outside3<=i<=6 andj+2<=q; indices(i,j+2),(i+1,j+1),(i+2,j).",
+    "new_vertical_or_diagonal_region": false,
+    "actual_raw_source_counterexample": false,
+    "old212_recovery_claimed": false,
+    "old166_prefix_recovery_claimed": false,
+    "older_failed_versions_retroactively_recovered": false,
+    "prior171_host_outcome_unchanged": "missing_or_malformed_report / return1 / reportnull; not timeout or completed.",
+    "prior173_boundary_status_unchanged": "Boundary formula/positivity were unproved at173 cutoff;174 supplies new proofs without rewriting173 history."
+  },
+  "literal_raw_indices": [
+    "(i,j)",
+    "(i+1,j)",
+    "(i+2,j)"
+  ],
+  "budget_raw_indices": [
+    "(s+3,j)",
+    "(s+4,j)",
+    "(s+5,j)"
+  ],
+  "residue_map": {
+    "true": "b=3*q+1,a=2,bweight=1",
+    "false": "b=3*q+2,a=1,bweight=2"
+  },
+  "zero_and_endpoint_handling": [
+    "Fib closed coefficient alln,j,m retains literal natural n-j-1; no replacement by algebraically simplified expression without guard.",
+    "Fcoeff positive iffm<=j; integer sequence zero atnegative indices. Q coefficient support is0..k; tails and internal positivity are formally established this round.",
+    "Actual source factorization retainsq>=2 and2j+1<=b; natural exponent subtraction is valid only under this guard. Auxiliaryq1,false,d0,k0 does not extend actual source theorem.",
+    "Boundary allm formula includesm>k zero tails. Cleared factor2m+3 positive; ratio denominators positive onlyinrange0<=m<=k; adjacentoff-support cases handled separately.",
+    "Source boundary correction is if2<=i thenboundaryBinomial(k,i-2) else0; natural underflow cannot aliasi0/1 withconstant term.",
+    "Augmented factorization and conditional CrossLC transport retain allnaturalstarts includingleadingzeros andzerotails. Rootpolygon guards andall3directions unchanged."
+  ],
+  "proof_chain_details": {
+    "fib": "Finite Vandermonde and choose_split prove exactproduct coefficient; offsupport usesdegree/choose zero. Adjacent LC of two binomialsequences and intervalsupport yield CrossLC.",
+    "shift": "Extended Fibshift usesn>=j+1; Qshift q>=k+1. Inherited generic row_diagonal_operator plus signedQrecurrence gives second-difference4G, an exact identity.",
+    "positive": "Gcoeff nonnegative, initialP0constant4/8, initialdifference nonnegative. Induction givesPnonnegative andmonotoneink; oldboundary-to-all reduction thenmonotoneind. Strictpositivei<=k plusoldtail closes support.",
+    "sum": "TwoStep induction withinitialpolynomials anddiagonalsecond-difference provesdoublePrefix formula. Atboundaryd0, weightedchoose evaluatesprefix; central_double relatesbinomial coefficients. Both formerBoundaryFormula props nowdischarged.",
+    "boundaryLC": "Exact rationalratio steps, denominatorpositivity, ring_nf/positivity at k=m+t+2; ratio_cross givesin-supportadjacency, zero tailhandlesremainingcases; exactcasts andintervalsupport giveCrossLC.",
+    "source": "Inherited actual numerator-three sourceclassification andbandrowfactorization; coefficientnonnegative correction givesraw>=lower. Budgettheorem merelyremoves oldhQnonnegative premise.",
+    "residual": "R=Q+X*rowH withnonnegativepieces; shifted rowH fills0..j+1 andQfillsconstant. Productidentity followslowerRowfactorization, polynomialring andexactcasts. CrossLC ofR remainsassumed.",
+    "obstruction": "Ordinary Lean proves exactauxquadratic, forallreal positiveevaluation andpositivecoefficientgap. No actualrawsource counterexample ornew sourcewitness theorem.",
+    "root": "No newroot residualtheorem orunconditionalrawLCregion. Same exactrootiff inherited."
+  }
+}

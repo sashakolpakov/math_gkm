@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBandSourceM831.lean:60:3: error: Type mismatch: After simplification, term\n  h\n has type\n  (bandQM139 (2 * k + if r = true then 2 else 1) r k).coeff (i - 2) = boundaryBinomialM831 k (i - 2) r\nbut is expected to have type\n  (bandQM139 (2 * k + 2) r k).coeff (i - 2) = boundaryBinomialM831 k (i - 2) r\n/Users/sasha/math_gkm/research/MarkovBandSourceM831.lean:61:3: error: Tactic `rfl` failed: The left-hand side\n  (bandQM139 (2 * k + 1) r k).coeff (i - 2)\nis not definitionally equal to the right-hand side\n  boundaryBinomialM831 k (i - 2) r\n\ncase neg\nk i : \u2115\nr : Bool\nhq : 2 \u2264 2 * k + if r = true then 2 else 1\nhn : 2 * ((2 * k + if r = true then 2 else 1) + k + 1) + 1 \u2264 sourceNME9C (2 * k + if r = true then 2 else 1) r\nhe : bandExponentM139 (2 * k + if r = true then 2 else 1) k r = 0\nhi : 2 \u2264 i\nh\u271d : \u00acr = true\n\u22a2 (bandQM139 (2 * k + 1) r k).coeff (i - 2) = boundaryBinomialM831 k (i - 2) r\n/Users/sasha/math_gkm/research/MarkovBandSourceM831.lean:48:58: error: unsolved goals\ncase neg\nk i : \u2115\nr : Bool\nhq : 2 \u2264 2 * k + if r = true then 2 else 1\nhn : 2 * ((2 * k + if r = true then 2 else 1) + k + 1) + 1 \u2264 sourceNME9C (2 * k + if r = true then 2 else 1) r\nhe : bandExponentM139 (2 * k + if r = true then 2 else 1) k r = 0\nhi : \u00ac2 \u2264 i\n\u22a2 0 = 0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBandSourceM831": "43173f525fbef9e54c94f4efe0df94405561c274948838f543f822827e044a68"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-831d426f/MarkovBandSourceM831.olean",
+    "/Users/sasha/math_gkm/research/MarkovBandSourceM831.lean"
+  ],
+  "seconds": 7.265499250032008,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,352 @@
+{
+  "module": "MarkovAudit1792210973835905000M831",
+  "sources": {
+    "MarkovFibCoeffM831": "77a51fadc9bb1a988f54eff3415f83cd769cc23228f24b7625c6d9a1e53f16ce",
+    "MarkovFibShapeM831": "23722a660f6200d94ef3bd6d5c6c0d4258153c87f5acf8e0f293f894801e26e9",
+    "MarkovBoundaryPositiveM831": "e70bc618da4bd7439a77256e4f8c40aefced0d9d0cda00c08ba84c4d028a6333",
+    "MarkovBandShiftM831": "be6581e5bb5a77bdcaef0939ad54ef81adee92863f3933487f296ec91e931d7e",
+    "MarkovBandPositiveM831": "155d9b01af77cf3240ba7c81c4e3bb56acda28ca7f25848f7e68089932dca9ba",
+    "MarkovBandSumM831": "4f73eaba5555af8ce358e14f0975e0374fd02309452d39bb9f26a27c3431655a",
+    "MarkovBoundaryLCM831": "9b21b6b210f49164712ebe414aab19130e486db9a88ba7f12b1477f1a2e4a334",
+    "MarkovBandSourceM831": "202cd010ae8117e8d1cbadcbf64614b155c782490131b47cdb67ce314f66ff38",
+    "MarkovBandCrossM831": "1ed2ceebabe0726073d2ae64bbec8b12e91ac3deac17addc9afb220f1ad0101c",
+    "MarkovBandObstructionM831": "211a467f2310b9ca29e4b4a1791117946fcc56add5c02a9893c34a52fa6eb04d",
+    "MarkovBandResidualM831": "b2f30dd418bd6bac80dcee50505c7bb457f0a7c1c708e0fbb26db3e5668e02db"
+  },
+  "declarations": {
+    "choose_splitM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "fib_band_closed_coeffM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "fib_band_nonnegM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "fib_band_pos_iffM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "fib_band_adjacentM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "fib_band_seq_nonnegM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "fib_band_seq_pos_iffM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "fib_band_crossM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "boundary_binomial_nonnegM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "boundary_binomial_tailM831": [
+      "propext",
+      "Quot.sound"
+    ],
+    "boundary_binomial_clearedM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "boundary_formula_iff_positiveM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_nonnegative_of_positive_formulaM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "fib_band_shiftM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_gain_shiftM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_Q_shiftM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_Q_diagonalM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_at_diagonalM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_gain_nonnegM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_gain_posM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_at_zeroM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_at_initial_monoM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_at_nonneg_monoM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_boundary_nonnegativeM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_at_nonnegativeM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_at_monotone_dM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_at_positiveM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_Q_nonnegativeM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_Q_positive_iffM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "fib_band_oneM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "diagonal_fib_zeroM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_gain_diagonalM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_at_oneM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_at_positive_sumM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "diagonal_fib_min_coeffM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "diagonal_fib_prefix_coeffM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "central_doubleM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_boundary_positive_formulaM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_boundary_formulaM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "boundary_base_stepM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "boundary_coeff_scaledM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "boundary_coeff_stepM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "boundary_ratio_decreasingM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "boundary_denom_posM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "boundary_coeff_adjacentM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "boundary_raw_adjacentM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_correction_nonnegM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "source_band_above_lowerM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "source_band_lc_budgetM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "source_boundary_coeffM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "source_band_path_above_lowerM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_seq_zeroM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_seq_nonnegM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_seq_posM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_seq_intervalM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_cross_iff_adjacentM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_boundary_crossM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_boundary_smoothed_crossM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_boundary_twoM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_boundary_two_eval_positiveM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_boundary_two_gapM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "source_band_residual_coeffM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_residual_nonnegM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_residual_posM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_residual_tailM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "band_row_crossM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "source_band_lc_of_residualM831": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  }
+}

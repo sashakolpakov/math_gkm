@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBandPositiveM831.lean:13:8: error: unsolved goals\ncase zero.false.succ\nq n\u271d : \u2115\n\u22a2 0 \u2264 Polynomial.coeff 1 (n\u271d + 1)\n/Users/sasha/math_gkm/research/MarkovBandPositiveM831.lean:27:35: error: No goals to be solved\n/Users/sasha/math_gkm/research/MarkovBandPositiveM831.lean:27:8: error: unsolved goals\ncase zero\nq m : \u2115\nr : Bool\nhm : m \u2264 0\nthis : m = 0\n\u22a2 0 < (bandGainM139 q r 0).coeff m\n/Users/sasha/math_gkm/research/MarkovBandPositiveM831.lean:56:30: warning: this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`\n/Users/sasha/math_gkm/research/MarkovBandPositiveM831.lean:56:30: warning: 'omega' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n/Users/sasha/math_gkm/research/MarkovBandPositiveM831.lean:73:19: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  c \u2265 0\n  a - b + 4*c \u2264 0\n  a - e \u2265 1\n  2*a - b + 4*c \u2265 0\nwhere\n a := (bandAtM139 d (k + 1) r).coeff i\n b := (bandAtM139 d (k + 2) r).coeff i\n c := (bandGainM139 ((d + 2 * k + if r = true then 2 else 1) + 2) r (k + 2)).coeff i\n e := (bandAtM139 d (k + 1 + 1) r).coeff i\n/Users/sasha/math_gkm/research/MarkovBandPositiveM831.lean:106:3: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  g \u2264 0\n  f \u2265 1\n  e \u2265 0\n  c - e \u2265 0\n  b \u2265 0\n  a \u2265 0\n  a - b \u2265 -2\nwhere\n a := \u2191k\n b := \u2191i\n c := (bandAtM139 d (k + 1) r).coeff i\n e := (bandAtM139 d k r).coeff i\n f := (bandGainM139 ((d + 2 * k + if r = true then 2 else 1) + 2) r (k + 2)).coeff i\n g := (bandAtM139 d (k + 1 + 1) r).coeff i\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBandPositiveM831": "47ee6685ef51ca6d9888f957cf4a7dd1b7d861d4d9e3ded62127839d3c337804"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-831d426f/MarkovBandPositiveM831.olean",
+    "/Users/sasha/math_gkm/research/MarkovBandPositiveM831.lean"
+  ],
+  "seconds": 8.128195792029146,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
