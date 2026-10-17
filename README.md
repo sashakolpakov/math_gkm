@@ -7,11 +7,14 @@ retained records and independent review distinguish what was proposed, executed,
 compiled, replayed and actually proved. The fixed [mission](MISSION.md) and
 [design](docs/DESIGN.md) govern the project.
 
-**Research status, through completed worker 158 (16 October 2026):** the Agoh
+**Research status, through closed worker 167 (17 October 2026):** the Agoh
 exercise is complete. For Markov polynomials, all three raw-coefficient
 log-concavity directions are proved at all natural indices for every
-numerator-two source. Numerator-three results remain partial, and **full
-Conjecture 6.3 is open**. See the dated [research status and exact scope](docs/RESEARCH_STATUS.md).
+numerator-two source. Every numerator-three source now also has horizontal
+log-concavity for all natural columns and rows satisfying `3*j ≤ b`, where `b`
+is the source denominator, including zeros and both denominator residues.
+**Full Conjecture 6.3 remains open.** See
+the dated [research status and exact remaining scope](RESEARCH_STATUS.md).
 
 ## The three ideas behind the name and architecture
 
@@ -45,7 +48,7 @@ switch, and permission to edit the host controller are three different things.
 
 ## Reading the repository
 
-- [Current research scope](docs/RESEARCH_STATUS.md), with exact source links and
+- [Current research scope](RESEARCH_STATUS.md), with exact source links and
   evidence limits; [Agoh account](docs/round2/AGOH.md) for the completed exercise.
 - [Construction mathematics](docs/CONSTRUCTION_MATHEMATICS.md) for the precise
   continuation theorem and counterexamples to missing assumptions.
