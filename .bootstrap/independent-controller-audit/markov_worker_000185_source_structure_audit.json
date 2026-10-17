@@ -1,0 +1,841 @@
+{
+  "worker": 185,
+  "request": "dcb6402998ac4eed9feb37199e0f0cee",
+  "created_at_utc": "2026-10-17T09:27:58.306959+00:00",
+  "historical_status": "completed0, delivered report, mathematical_resolution false",
+  "scope": "Closed185 archive-first static review only; no later-worker reads, project execution, mathematical-value computation, source edits or proposer assistance.",
+  "mathematical_values_recomputed": false,
+  "modules": [
+    {
+      "module": "MarkovTopTailRepresentationMDCB",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/research/MarkovTopTailRepresentationMDCB.lean",
+        "bytes": 6614,
+        "sha256": "6c10b3e94842ff196a356e6f8f2fe87f725e97f55222cab555ea987aafd34cd4"
+      },
+      "project_relative_source": "research/MarkovTopTailRepresentationMDCB.lean",
+      "imports": [
+        "MarkovTopTailKernelMEB6"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "tailNumMDCB",
+          "line": 9,
+          "header": "def tailNumMDCB (i d : ℤ) (k : ℕ) : ℤ",
+          "body_sha256": "bd82d288262ac9661753663d1f209cb61a1e95619290c812bfaece9cd0cf7496"
+        },
+        {
+          "kind": "def",
+          "name": "tailDenMDCB",
+          "line": 11,
+          "header": "def tailDenMDCB (i d : ℤ) (k : ℕ) : ℤ",
+          "body_sha256": "416e595b4f695bf9ae9fd13ef4b918329be4f3b99b3df9ae20a8ad98cc3aecf0"
+        },
+        {
+          "kind": "def",
+          "name": "tailRestMDCB",
+          "line": 13,
+          "header": "def tailRestMDCB (i d : ℤ) (r k : ℕ) : ℤ",
+          "body_sha256": "3265ca4bc0a6636de9bf2db1604cac187f2978f22683c083a12f03be33bb6d5d"
+        },
+        {
+          "kind": "def",
+          "name": "tailTermMDCB",
+          "line": 15,
+          "header": "def tailTermMDCB (i d : ℤ) (r k : ℕ) : ℤ",
+          "body_sha256": "5eb244a6e9e26030fbd2330837ee0c454c7e654e83b277566f230a794044fbbb"
+        },
+        {
+          "kind": "def",
+          "name": "tailAMDCB",
+          "line": 17,
+          "header": "def tailAMDCB (i d : ℤ) (r : ℕ) : ℤ",
+          "body_sha256": "1e1c9148c0b1f0dfd3fcdebe5fdf754cc371c682eaa99ca6138f7c2a092b2fc3"
+        },
+        {
+          "kind": "def",
+          "name": "tailEMDCB",
+          "line": 19,
+          "header": "def tailEMDCB (i d : ℤ) (r : ℕ) : ℤ",
+          "body_sha256": "fc01abd2232d2747036441be7162ebc2defe11916916b3d207e59246bc1a5ff5"
+        },
+        {
+          "kind": "def",
+          "name": "tailCMDCB",
+          "line": 21,
+          "header": "def tailCMDCB (i d : ℤ) (r : ℕ) : ℤ",
+          "body_sha256": "3f05c8cfbdd5f0723dc5f6638eaf4881cadf1de67e6122251c044a98d17db0f2"
+        },
+        {
+          "kind": "def",
+          "name": "tailGapMDCB",
+          "line": 23,
+          "header": "def tailGapMDCB (i d : ℤ) (r : ℕ) : ℤ",
+          "body_sha256": "c19658b6c9bd62779fdbc747a25ea171f674031882fd5b46390d5899eab451dd"
+        },
+        {
+          "kind": "theorem",
+          "name": "tail_den_splitMDCB",
+          "line": 26,
+          "header": "theorem tail_den_splitMDCB (i d : ℤ) (r k : ℕ) (hk : k ≤ r) :\n tailDenMDCB i d k*tailRestMDCB i d r k=tailDenMDCB i d r",
+          "body_sha256": "4fc4676a780ebb6f5a44f01f2eed74d05743e2360f9c19258951c202e36e3905"
+        },
+        {
+          "kind": "theorem",
+          "name": "tail_kernel_scaledMDCB",
+          "line": 31,
+          "header": "theorem tail_kernel_scaledMDCB (d i k : ℕ) :\n tailDenMDCB i d k*topKernelM55C d i (i+k)=tailNumMDCB i d k*topKernelM55C d i i",
+          "body_sha256": "5bb8190eccbfb8b107b616c8ed43fcd56bdd7532db89601cb2441c42bd561b3a"
+        },
+        {
+          "kind": "theorem",
+          "name": "tail_term_scaledMDCB",
+          "line": 43,
+          "header": "theorem tail_term_scaledMDCB (d i r k : ℕ) (hk : k ≤ r) :\n tailDenMDCB i d r*topKernelM55C d i (i+k)=tailTermMDCB i d r k*topKernelM55C d i i",
+          "body_sha256": "077a22694e49a79283446c3bcfc81bea9f963283dd845a9056ae2a9e618f2ec9"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_linear_congrMDCB",
+          "line": 49,
+          "header": "theorem top_linear_congrMDCB (r : ℕ) (f g : ℕ → ℤ) (h : ∀ k, k ≤ r → f k=g k) :\n topLinearM55C r f=topLinearM55C r g",
+          "body_sha256": "fc9804fe261c7918e788cd9d4a9ea7193c7e54398aeeec7efaf751d342b84aa1"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_column_shiftMDCB",
+          "line": 58,
+          "header": "theorem top_mass_column_shiftMDCB (d i r j : ℕ) :\n topMassM55C d (i+r) (i+j)=topLinearM55C r (fun k => topKernelM55C d (i+j) (i+k))",
+          "body_sha256": "97b51a3f0f7324d08274a308a9928f440356ac481694142237dc381694c85268"
+        },
+        {
+          "kind": "theorem",
+          "name": "tail_mass_scaledMDCB",
+          "line": 74,
+          "header": "theorem tail_mass_scaledMDCB (d i r : ℕ) :\n tailDenMDCB i d r*topMassM55C d (i+r) i=tailAMDCB i d r*topKernelM55C d i i ∧\n tailDenMDCB i d r*topScaleM55C i*topMassM55C d (i+r) (i+1)=tailEMDCB i d r*topKernelM55C d i i ∧\n tailDenMDCB i d r*topScaleM55C i*topScaleM55C (i+1)*topMassM55C d (i+r) (i+2)=\n   tailCMDCB i d r*topKernelM55C d i i",
+          "body_sha256": "6459d3908aafe68ac342f4dc57ec1b842efedefd1e176f689780e171a5312e9f"
+        },
+        {
+          "kind": "theorem",
+          "name": "tail_den_positiveMDCB",
+          "line": 114,
+          "header": "theorem tail_den_positiveMDCB (i d r : ℕ) : 0 < tailDenMDCB i d r",
+          "body_sha256": "6e35136e0496ec2c52345cf5a72bfcc60bd3d811f0fde723cf8375aa74b36444"
+        },
+        {
+          "kind": "theorem",
+          "name": "tail_base_positiveMDCB",
+          "line": 120,
+          "header": "theorem tail_base_positiveMDCB (d i : ℕ) : 0 < topKernelM55C d i i",
+          "body_sha256": "0b04dd12c104924e5404e63347bce8db6db793feb1d52201561e06ccccdf448f"
+        },
+        {
+          "kind": "theorem",
+          "name": "tail_gap_identityMDCB",
+          "line": 125,
+          "header": "theorem tail_gap_identityMDCB (d i r : ℕ) :\n tailDenMDCB i d r^2*topScaleM55C i^2*topScaleM55C (i+1)*\n   (topMassM55C d (i+r) (i+1)^2-topMassM55C d (i+r) i*topMassM55C d (i+r) (i+2))=\n   topKernelM55C d i i^2*tailGapMDCB i d r",
+          "body_sha256": "f80766302985d01817762c77618e48e7e663076b5091b82cc80cdd1bc29a4a7c"
+        },
+        {
+          "kind": "theorem",
+          "name": "tail_lc_iffMDCB",
+          "line": 140,
+          "header": "theorem tail_lc_iffMDCB (d i r : ℕ) :\n topMassM55C d (i+r) i*topMassM55C d (i+r) (i+2) ≤ topMassM55C d (i+r) (i+1)^2 ↔\n 0 ≤ tailGapMDCB i d r",
+          "body_sha256": "2ade4561230db7fa635dbf8f49920d77bc6a7900b9edad83c86e8083701483c0"
+        },
+        {
+          "kind": "theorem",
+          "name": "tail_strict_iffMDCB",
+          "line": 152,
+          "header": "theorem tail_strict_iffMDCB (d i r : ℕ) :\n topMassM55C d (i+r) i*topMassM55C d (i+r) (i+2) < topMassM55C d (i+r) (i+1)^2 ↔\n 0 < tailGapMDCB i d r",
+          "body_sha256": "546ff9f7e0a3da69f586ca01a31ca1bb695e8388f7d06dad48355baedd36bc67"
+        }
+      ],
+      "theorem_count": 11,
+      "definition_count": 8,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/evidence/markov-dcb64029/build-1792227568368516000.json",
+        "bytes": 986,
+        "sha256": "208e11f15471e446eba18e39ce65e46cb33447e1237d4c5d1041d05ffb3759b1"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/evidence/markov-dcb64029/build-1792227568368516000.lean",
+        "bytes": 6614,
+        "sha256": "6c10b3e94842ff196a356e6f8f2fe87f725e97f55222cab555ea987aafd34cd4"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopTail3MDCB",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/research/MarkovTopTail3MDCB.lean",
+        "bytes": 3323,
+        "sha256": "15d21f8d5e21494fb518d7f53c8fc9eb3e750460d6559c5fc00707db5209dfa3"
+      },
+      "project_relative_source": "research/MarkovTopTail3MDCB.lean",
+      "imports": [
+        "MarkovTopTailRepresentationMDCB"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "tail_3_positiveMDCB",
+          "line": 10,
+          "header": "theorem tail_3_positiveMDCB (i d : ℤ) (hi : 0 ≤ i) (hd : 0 ≤ d) :\n 0 < tailGapMDCB i d 3",
+          "body_sha256": "ca8e4214b9362a96e78471447ead7fe4296c1f4d5692104340b6950d96e1dc25"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_tail_3_strictMDCB",
+          "line": 136,
+          "header": "theorem top_mass_tail_3_strictMDCB (d i : ℕ) :\n topMassM55C d (i+3) i*topMassM55C d (i+3) (i+2) < topMassM55C d (i+3) (i+1)^2",
+          "body_sha256": "dfa0aa778d8fa59140b10b9b11468b80788cb7cbbd1d9848bb0f18a5e2b3b35a"
+        }
+      ],
+      "theorem_count": 2,
+      "definition_count": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/evidence/markov-dcb64029/build-1792227631169474000.json",
+        "bytes": 563,
+        "sha256": "72f9ab67cfc76bf7cfa57fb9ff3f3540a3586818e15b6967db9696997234791e"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/evidence/markov-dcb64029/build-1792227631169474000.lean",
+        "bytes": 3323,
+        "sha256": "15d21f8d5e21494fb518d7f53c8fc9eb3e750460d6559c5fc00707db5209dfa3"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopTail4MDCB",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/research/MarkovTopTail4MDCB.lean",
+        "bytes": 5092,
+        "sha256": "243f20e47fb2ad1bb59679058c27ed0e0df6af5f816a135678ab718e0adb8761"
+      },
+      "project_relative_source": "research/MarkovTopTail4MDCB.lean",
+      "imports": [
+        "MarkovTopTailRepresentationMDCB"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "tail_4_positiveMDCB",
+          "line": 10,
+          "header": "theorem tail_4_positiveMDCB (i d : ℤ) (hi : 0 ≤ i) (hd : 0 ≤ d) :\n 0 < tailGapMDCB i d 4",
+          "body_sha256": "db80feb3e2ab012985314b266c948cd2c1a1e790ec6ba85cad42ff475634ee9e"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_mass_tail_4_strictMDCB",
+          "line": 195,
+          "header": "theorem top_mass_tail_4_strictMDCB (d i : ℕ) :\n topMassM55C d (i+4) i*topMassM55C d (i+4) (i+2) < topMassM55C d (i+4) (i+1)^2",
+          "body_sha256": "1b7f619fa67b6005aebb078651ec81d4bdf89955fe94c01eb74f5e994ea52021"
+        }
+      ],
+      "theorem_count": 2,
+      "definition_count": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/evidence/markov-dcb64029/build-1792227631169462000.json",
+        "bytes": 562,
+        "sha256": "af511e596ed595231783c6035a94ef884dd69f9724a38b7338e9d90915bd511c"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/evidence/markov-dcb64029/build-1792227631169462000.lean",
+        "bytes": 5092,
+        "sha256": "243f20e47fb2ad1bb59679058c27ed0e0df6af5f816a135678ab718e0adb8761"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopTailResidualMDCB",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/research/MarkovTopTailResidualMDCB.lean",
+        "bytes": 6111,
+        "sha256": "43d6e290385b08f8f418131f176da0c3782e298f1c4c72c1d6d8ef60a049fd89"
+      },
+      "project_relative_source": "research/MarkovTopTailResidualMDCB.lean",
+      "imports": [
+        "MarkovTopTail3MDCB",
+        "MarkovTopTail4MDCB",
+        "MarkovTopFrontierMEB6"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "TopTailResidualMDCB",
+          "line": 11,
+          "header": "def TopTailResidualMDCB : Prop",
+          "body_sha256": "4c88aa761852490e3d86393bfdfb433ad8d1dcc2b8539290c5383d72cd614665"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_moment_iff_tail_residualMDCB",
+          "line": 14,
+          "header": "theorem top_moment_iff_tail_residualMDCB : TopMomentBoundM55C ↔ TopTailResidualMDCB",
+          "body_sha256": "fccddcdca7d11e93effbcd30e0d5f5569cd1cf3f05ef4836b285eba690c2d5a9"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_template_tail_3_strictMDCB",
+          "line": 38,
+          "header": "theorem top_template_tail_3_strictMDCB (n t : ℕ) (ht : 6 ≤ t) (hn : 2*t ≤ n) :\n (topTemplateMB3E n t).coeff (t-3)*(topTemplateMB3E n t).coeff (t-1) <\n (topTemplateMB3E n t).coeff (t-2)^2",
+          "body_sha256": "2cdfc5abb80883f07ebf51eeec80140a0da8dee86817edad296de66e172b13d9"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_template_tail_4_strictMDCB",
+          "line": 48,
+          "header": "theorem top_template_tail_4_strictMDCB (n t : ℕ) (ht : 7 ≤ t) (hn : 2*t ≤ n) :\n (topTemplateMB3E n t).coeff (t-4)*(topTemplateMB3E n t).coeff (t-2) <\n (topTemplateMB3E n t).coeff (t-3)^2",
+          "body_sha256": "213e9d03990749cbe4f3fb8ff209c7722b675198e1f0ba14ea0a18f85a605c7b"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_tail_3_strictMDCB",
+          "line": 58,
+          "header": "theorem source_top_tail_3_strictMDCB (q t : ℕ) (r : Bool)\n (hq : 1 ≤ q) (ht : 6 ≤ t) (htq : t ≤ q+2) :\n threeRawM9E2 q r (t-3) (sourceNME9C q r+2-t)*threeRawM9E2 q r (t-1) (sourceNME9C q r+2-t) <\n threeRawM9E2 q r (t-2) (sourceNME9C q r+2-t)^2",
+          "body_sha256": "51d14830755a72bb49a661ae14c66200e44d1351b132a5231eb7f21b28822d67"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_tail_4_strictMDCB",
+          "line": 67,
+          "header": "theorem source_top_tail_4_strictMDCB (q t : ℕ) (r : Bool)\n (hq : 1 ≤ q) (ht : 7 ≤ t) (htq : t ≤ q+2) :\n threeRawM9E2 q r (t-4) (sourceNME9C q r+2-t)*threeRawM9E2 q r (t-2) (sourceNME9C q r+2-t) <\n threeRawM9E2 q r (t-3) (sourceNME9C q r+2-t)^2",
+          "body_sha256": "1e843a9a4f1f4429b63d7c446c5d30418eb5ab908221338779f4be98793e9d6e"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_new_tail_polygonMDCB",
+          "line": 76,
+          "header": "theorem source_top_new_tail_polygonMDCB (q t : ℕ) (r : Bool)\n (hq : 1 ≤ q) (ht : 7 ≤ t) (htq : t ≤ q+2) :\n ∀ i, t-4 ≤ i → i ≤ t-1 → InPolygon 3 (sourceNME9C q r) i (sourceNME9C q r+2-t)",
+          "body_sha256": "d5d6158343d649f56eb2bf0a139a15dbb41e5c340f785dc9111b8d5e91b988f6"
+        },
+        {
+          "kind": "def",
+          "name": "TopClosedRegionMDCB",
+          "line": 83,
+          "header": "def TopClosedRegionMDCB (q : ℕ) (r : Bool) (i j : ℕ) : Prop",
+          "body_sha256": "db116d6911427921fa5272270fca8bd5dbda6a752b1be9dc2e808d655f8b11fc"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_closedMDCB",
+          "line": 87,
+          "header": "theorem source_top_closedMDCB (q i j : ℕ) (r : Bool) (hq : 1 ≤ q)\n (h : TopClosedRegionMDCB q r i j) :\n threeRawM9E2 q r i j*threeRawM9E2 q r (i+2) j ≤ threeRawM9E2 q r (i+1) j^2",
+          "body_sha256": "94d8ff59624f98e4329d85349bdccfa64a302f7a6c096d9200a57b55f8f89b44"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_depths_through_eightMDCB",
+          "line": 100,
+          "header": "theorem source_top_depths_through_eightMDCB (q t i : ℕ) (r : Bool) (hq : 1 ≤ q)\n (ht0 : 5 ≤ t) (ht1 : t ≤ 8) (htq : t ≤ q+2) :\n threeRawM9E2 q r i (sourceNME9C q r+2-t)*\n threeRawM9E2 q r (i+2) (sourceNME9C q r+2-t) ≤\n threeRawM9E2 q r (i+1) (sourceNME9C q r+2-t)^2",
+          "body_sha256": "8888ac4f67dca41fa6ed44ac7ecbaa74199023a05613d4f4ed312d3a06ea185a"
+        },
+        {
+          "kind": "def",
+          "name": "ThreeFrontierMDCB",
+          "line": 112,
+          "header": "def ThreeFrontierMDCB : Prop",
+          "body_sha256": "786a1e6f7926ab5fa1a507ce19f287c5b8c02b6aba7cde221840e2f4c4a15aa1"
+        },
+        {
+          "kind": "theorem",
+          "name": "root_iff_frontierMDCB",
+          "line": 121,
+          "header": "theorem root_iff_frontierMDCB : Conjecture63 ↔ ThreeFrontierMDCB ∧ OtherFourM9E2",
+          "body_sha256": "2d704def3a516f8463985b2bd35fe46f98bebbd4e711feefaaeb303205d7a3fa"
+        }
+      ],
+      "theorem_count": 9,
+      "definition_count": 3,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/evidence/markov-dcb64029/build-1792227790146761000.json",
+        "bytes": 584,
+        "sha256": "047790f3b553f6815a682843d2c971d49500a860ea2f93e83ea25035e985f479"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/evidence/markov-dcb64029/build-1792227790146761000.lean",
+        "bytes": 6111,
+        "sha256": "43d6e290385b08f8f418131f176da0c3782e298f1c4c72c1d6d8ef60a049fd89"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopTailPolynomialMDCB",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/research/MarkovTopTailPolynomialMDCB.lean",
+        "bytes": 3314,
+        "sha256": "32ebec7653235efd5b468c6c465bb95788b7d5fe796712a6e44091dcfa9e490b"
+      },
+      "project_relative_source": "research/MarkovTopTailPolynomialMDCB.lean",
+      "imports": [
+        "MarkovTopTailResidualMDCB",
+        "MarkovPolynomialCertificateMBEC"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "tailNumPolyMDCB",
+          "line": 10,
+          "header": "def tailNumPolyMDCB (k : ℕ) : BiPoly",
+          "body_sha256": "852683a2b3bc8a76f84f8b726283dd15e0a040cca29c5f5b7a2339b299e1f8ec"
+        },
+        {
+          "kind": "def",
+          "name": "tailRestPolyMDCB",
+          "line": 12,
+          "header": "def tailRestPolyMDCB (r k : ℕ) : BiPoly",
+          "body_sha256": "02347db2d7d061876d418f3a8e4d9f9e0319ff1e36ee2c70d8f13ad129b02aea"
+        },
+        {
+          "kind": "def",
+          "name": "tailTermPolyMDCB",
+          "line": 14,
+          "header": "def tailTermPolyMDCB (r k : ℕ) : BiPoly",
+          "body_sha256": "b10b5c2631195dc09ee08fb1805fb0bce912ca26d5297cf14bc3e5193371de98"
+        },
+        {
+          "kind": "def",
+          "name": "tailLinearPolyMDCB",
+          "line": 15,
+          "header": "def tailLinearPolyMDCB (r : ℕ) (f : ℕ → BiPoly) : BiPoly",
+          "body_sha256": "9ee186750d757f662c422745e231f7d3fbf14f90d18c59870f7eb94445c59cab"
+        },
+        {
+          "kind": "def",
+          "name": "tailAPolyMDCB",
+          "line": 17,
+          "header": "def tailAPolyMDCB (r : ℕ) : BiPoly",
+          "body_sha256": "ddf1a54150ac6104ff2f11e6205b10ad0fbac37ab1d5aa300c49d711b1a08d1f"
+        },
+        {
+          "kind": "def",
+          "name": "tailEPolyMDCB",
+          "line": 18,
+          "header": "def tailEPolyMDCB (r : ℕ) : BiPoly",
+          "body_sha256": "6b85cbb43b416d6a4d2538f89b6077b9400df8a55f871a2b2368bb2287b8f70e"
+        },
+        {
+          "kind": "def",
+          "name": "tailCPolyMDCB",
+          "line": 20,
+          "header": "def tailCPolyMDCB (r : ℕ) : BiPoly",
+          "body_sha256": "56683520798c9299fc29dc1f7f012c73bd9e6542127b0300108e043f0c47baec"
+        },
+        {
+          "kind": "def",
+          "name": "tailGapPolyMDCB",
+          "line": 22,
+          "header": "def tailGapPolyMDCB (r : ℕ) : BiPoly",
+          "body_sha256": "be207cd9a81ec8a636a43ee972e8710f1af23ac34b7a58e602d9b442dd9be7cc"
+        },
+        {
+          "kind": "theorem",
+          "name": "tail_num_poly_evalMDCB",
+          "line": 25,
+          "header": "theorem tail_num_poly_evalMDCB (i d k : ℕ) :\n certificateEvalMBEC i d (tailNumPolyMDCB k)=tailNumMDCB i d k",
+          "body_sha256": "4232ed8b0a69d4dd65e95b9de7c3a6e96c615f1075ef7c60c408bfda594fa686"
+        },
+        {
+          "kind": "theorem",
+          "name": "tail_rest_poly_evalMDCB",
+          "line": 29,
+          "header": "theorem tail_rest_poly_evalMDCB (i d r k : ℕ) :\n certificateEvalMBEC i d (tailRestPolyMDCB r k)=tailRestMDCB i d r k",
+          "body_sha256": "ba4bfe8080d85e180a17b296b4a72298e4f5bf8b9a4b4913dd070081cd26a153"
+        },
+        {
+          "kind": "theorem",
+          "name": "tail_term_poly_evalMDCB",
+          "line": 33,
+          "header": "theorem tail_term_poly_evalMDCB (i d r k : ℕ) :\n certificateEvalMBEC i d (tailTermPolyMDCB r k)=tailTermMDCB i d r k",
+          "body_sha256": "0f9b1006d8d00386c219e75099fc0ca9e3c8c71a08c11ce79c944561230f9d88"
+        },
+        {
+          "kind": "theorem",
+          "name": "tail_linear_poly_evalMDCB",
+          "line": 37,
+          "header": "theorem tail_linear_poly_evalMDCB (i d r : ℕ) (f : ℕ → BiPoly) :\n certificateEvalMBEC i d (tailLinearPolyMDCB r f)=\n topLinearM55C r (fun k => certificateEvalMBEC i d (f k))",
+          "body_sha256": "4f93e556c751b4e1e12783be724884601367564ede1a96878de2e1f04af221a5"
+        },
+        {
+          "kind": "theorem",
+          "name": "tail_gap_poly_evalMDCB",
+          "line": 42,
+          "header": "theorem tail_gap_poly_evalMDCB (i d r : ℕ) :\n certificateEvalMBEC i d (tailGapPolyMDCB r)=tailGapMDCB i d r",
+          "body_sha256": "66287fe233bbca343d39f244e53dd38f72470a10ccbe579a220b6036061b4f63"
+        },
+        {
+          "kind": "def",
+          "name": "TailCoefficientPositiveMDCB",
+          "line": 48,
+          "header": "def TailCoefficientPositiveMDCB : Prop",
+          "body_sha256": "51ae46598d3d064ab5cb7b3953cbd7c290b83747b894c040c509dd03cbef56fe"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_tail_of_coefficient_positiveMDCB",
+          "line": 51,
+          "header": "theorem top_tail_of_coefficient_positiveMDCB (H : TailCoefficientPositiveMDCB) : TopTailResidualMDCB",
+          "body_sha256": "03a2399b956e2a7ca58872d18dee882f59def08fdfe8ec974c462bc09dedfa0a"
+        },
+        {
+          "kind": "theorem",
+          "name": "top_moment_of_tail_coefficient_positiveMDCB",
+          "line": 56,
+          "header": "theorem top_moment_of_tail_coefficient_positiveMDCB (H : TailCoefficientPositiveMDCB) : TopMomentBoundM55C",
+          "body_sha256": "9661c5f5c873ee691bceec873513571e65ca24490397ef752d2fd3fb722353c0"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_top_of_tail_coefficient_positiveMDCB",
+          "line": 59,
+          "header": "theorem source_top_of_tail_coefficient_positiveMDCB (H : TailCoefficientPositiveMDCB)\n (q t i : ℕ) (r : Bool) (hq : 1 ≤ q) (ht0 : 5 ≤ t) (ht : t ≤ q+2) :\n threeRawM9E2 q r i (sourceNME9C q r+2-t)*\n threeRawM9E2 q r (i+2) (sourceNME9C q r+2-t) ≤\n threeRawM9E2 q r (i+1) (sourceNME9C q r+2-t)^2",
+          "body_sha256": "bccd2af5ae1367c16c919aa883ec37e1231255398f9f2736df2fabc7b11ea681"
+        }
+      ],
+      "theorem_count": 8,
+      "definition_count": 9,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/evidence/markov-dcb64029/build-1792227895881093000.json",
+        "bytes": 590,
+        "sha256": "f0195e5587897db48c0b17b9da5253331f7a7bdcbf362fb8450c225315545d14"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/evidence/markov-dcb64029/build-1792227895881093000.lean",
+        "bytes": 3314,
+        "sha256": "32ebec7653235efd5b468c6c465bb95788b7d5fe796712a6e44091dcfa9e490b"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopBetaScalarMDCB",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/research/MarkovTopBetaScalarMDCB.lean",
+        "bytes": 1574,
+        "sha256": "59b55f61e4dced0b33b63e7a79fd0d1c0a2403c53c97dc6778ab56d4b101b0a0"
+      },
+      "project_relative_source": "research/MarkovTopBetaScalarMDCB.lean",
+      "imports": [
+        "MarkovTopTailRepresentationMDCB"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "betaGapMDCB",
+          "line": 8,
+          "header": "def betaGapMDCB (a m H : ℤ) : ℤ",
+          "body_sha256": "1cbed9c03294bca8758d35d49f5e9b24bb1f04ba50333f13203ee78b20b36fe6"
+        },
+        {
+          "kind": "theorem",
+          "name": "beta_gap_shift_positiveMDCB",
+          "line": 13,
+          "header": "theorem beta_gap_shift_positiveMDCB (x y z : ℤ)\n (hx : 0 ≤ x) (hy : 0 ≤ y) (hz : 0 ≤ z) :\n 0 < betaGapMDCB (x+1) (y+2) (3*(x+1)+2*(y+2)+5+z)",
+          "body_sha256": "074f1dfd3bf03eabd35ba7ce12c275f12943705894e2b0d2e098e6ed601e7caf"
+        },
+        {
+          "kind": "theorem",
+          "name": "beta_gap_positiveMDCB",
+          "line": 41,
+          "header": "theorem beta_gap_positiveMDCB (a m H : ℤ)\n (ha : 1 ≤ a) (hm : 2 ≤ m) (hH : 3*a+2*m+5 ≤ H) :\n 0 < betaGapMDCB a m H",
+          "body_sha256": "4769d1ec668798d18b486fe4408958456fb1f01e82e6a9339dd01d8894747e0f"
+        },
+        {
+          "kind": "theorem",
+          "name": "beta_gap_tail_regionMDCB",
+          "line": 48,
+          "header": "theorem beta_gap_tail_regionMDCB (d i r m : ℕ)\n (hd : i+4*r ≤ d+1) (hm : 2 ≤ m) (hmr : m ≤ 2*r) :\n 0 < betaGapMDCB ((i:ℤ)+1) m ((d:ℤ)+2*i+9)",
+          "body_sha256": "c337d8f0bd52748da8dab01053164bda80006bf2bfad05c70b5769a2ffc3883d"
+        }
+      ],
+      "theorem_count": 3,
+      "definition_count": 1,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/evidence/markov-dcb64029/build-1792228226802234000.json",
+        "bytes": 1105,
+        "sha256": "b80f20a9e0d8a3ffad631ca748f3ef1d53dec70eea4c0ef4d4b6f306dc8a46b3"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/evidence/markov-dcb64029/build-1792228226802234000.lean",
+        "bytes": 1574,
+        "sha256": "59b55f61e4dced0b33b63e7a79fd0d1c0a2403c53c97dc6778ab56d4b101b0a0"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopLikelihoodMDCB",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/research/MarkovTopLikelihoodMDCB.lean",
+        "bytes": 4359,
+        "sha256": "9fceba74c14176511f1bbfcd7d0f0342fec2df56c328ceeee8e93102101743b5"
+      },
+      "project_relative_source": "research/MarkovTopLikelihoodMDCB.lean",
+      "imports": [
+        "MarkovTopTailRepresentationMDCB"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "betaQSeqMDCB",
+          "line": 8,
+          "header": "def betaQSeqMDCB (d i : ℕ) : ℕ → ℝ\n | 0 => 1\n | k+1 => betaQSeqMDCB d i k*((d:ℝ)+2*i+k+9)/((d:ℝ)+i+k+6)",
+          "body_sha256": "63de02938560f156fb1803c8e1c8addfd2f2eec9cf74de552dcdf484a4e6566d"
+        },
+        {
+          "kind": "def",
+          "name": "betaWeightMDCB",
+          "line": 12,
+          "header": "def betaWeightMDCB (r k : ℕ) : ℝ",
+          "body_sha256": "645b8ad243ba4378d4113ffa68a4c61cf94476e77ad88821616cb1c6c8d8005e"
+        },
+        {
+          "kind": "def",
+          "name": "betaLikelihoodMDCB",
+          "line": 15,
+          "header": "def betaLikelihoodMDCB (d i r k : ℕ) : ℝ",
+          "body_sha256": "8856702ea4642971bb3307d5e427baa4faedc19a7124e380e5ee3c55ff1e0c23"
+        },
+        {
+          "kind": "theorem",
+          "name": "beta_q_positiveMDCB",
+          "line": 17,
+          "header": "theorem beta_q_positiveMDCB (d i k : ℕ) : 0 < betaQSeqMDCB d i k",
+          "body_sha256": "fbe3b8d29e835a3af448cded57e064cbe8338290b83f5c926742f46b8a4f2ef4"
+        },
+        {
+          "kind": "theorem",
+          "name": "beta_q_crossMDCB",
+          "line": 22,
+          "header": "theorem beta_q_crossMDCB (d i k l : ℕ) (hkl : k ≤ l) :\n betaQSeqMDCB d i k*betaQSeqMDCB d i (l+1) ≤\n betaQSeqMDCB d i (k+1)*betaQSeqMDCB d i l",
+          "body_sha256": "a5364be83ae1259098360ebd9ca6fd2c048b0a69da5cd8c69e20385bb2195cb8"
+        },
+        {
+          "kind": "theorem",
+          "name": "beta_weight_nonnegMDCB",
+          "line": 42,
+          "header": "theorem beta_weight_nonnegMDCB (r k : ℕ) : 0 ≤ betaWeightMDCB r k",
+          "body_sha256": "954cd39a30984c50bcd47236fa581bef1beac48f21034d9a3e903d5a1c9701a3"
+        },
+        {
+          "kind": "theorem",
+          "name": "beta_weight_crossMDCB",
+          "line": 50,
+          "header": "theorem beta_weight_crossMDCB (r k l : ℕ) (hkl : k ≤ l) :\n betaWeightMDCB r k*betaWeightMDCB r (l+1) ≤\n betaWeightMDCB r (k+1)*betaWeightMDCB r l",
+          "body_sha256": "ee305466b13425c6c090c96345e4a5942701ad72ac0bae5d1a79be362b3ef9c7"
+        },
+        {
+          "kind": "theorem",
+          "name": "beta_likelihood_nonnegMDCB",
+          "line": 80,
+          "header": "theorem beta_likelihood_nonnegMDCB (d i r k : ℕ) : 0 ≤ betaLikelihoodMDCB d i r k",
+          "body_sha256": "7bfd1d1679d3fedd47f6a38577faa0e4506c871e97597e53aa1d623bb0d5a125"
+        },
+        {
+          "kind": "theorem",
+          "name": "beta_likelihood_crossMDCB",
+          "line": 83,
+          "header": "theorem beta_likelihood_crossMDCB (d i r k l : ℕ) (hkl : k ≤ l) :\n betaLikelihoodMDCB d i r k*betaLikelihoodMDCB d i r (l+1) ≤\n betaLikelihoodMDCB d i r (k+1)*betaLikelihoodMDCB d i r l",
+          "body_sha256": "8f91713d55e8e576b0175d3edb9991724fa35dc238a59fc3bf5e3893feee5567"
+        },
+        {
+          "kind": "theorem",
+          "name": "beta_likelihood_inwardMDCB",
+          "line": 96,
+          "header": "theorem beta_likelihood_inwardMDCB (d i r m k : ℕ) (hk : 2*k+1 ≤ m) :\n betaLikelihoodMDCB d i r k*betaLikelihoodMDCB d i r (m-k) ≤\n betaLikelihoodMDCB d i r (k+1)*betaLikelihoodMDCB d i r (m-(k+1))",
+          "body_sha256": "fe4829cb62ab3ff7f400bdabed97f1850d76c7bbdc2a7851775d9017304d8cf8"
+        }
+      ],
+      "theorem_count": 7,
+      "definition_count": 3,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/evidence/markov-dcb64029/build-1792228305543808000.json",
+        "bytes": 578,
+        "sha256": "8f3efbcc4f8932839de7757c6839b56204febbf6274e6562da45f42f3c4e1f88"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/evidence/markov-dcb64029/build-1792228305543808000.lean",
+        "bytes": 4359,
+        "sha256": "9fceba74c14176511f1bbfcd7d0f0342fec2df56c328ceeee8e93102101743b5"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopBetaMomentsMDCB",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/research/MarkovTopBetaMomentsMDCB.lean",
+        "bytes": 3631,
+        "sha256": "404e6c59f1e6c459a9c18174c5961fe74ea588e0a5223d801b62981a10e7a3f2"
+      },
+      "project_relative_source": "research/MarkovTopBetaMomentsMDCB.lean",
+      "imports": [
+        "MarkovTopLikelihoodMDCB",
+        "MarkovUpperDifferenceM4F4"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "betaMomentMDCB",
+          "line": 10,
+          "header": "def betaMomentMDCB (i m u v : ℕ) : ℤ",
+          "body_sha256": "7523bbbb571c11af1f66091cdfe221463141db47033e5e52df632de6405ffa48"
+        },
+        {
+          "kind": "theorem",
+          "name": "beta_choose_factorialMDCB",
+          "line": 14,
+          "header": "theorem beta_choose_factorialMDCB (i k u : ℕ) :\n ((i+k).choose i:ℤ)*(k.descFactorial u:ℤ)=\n ((i+u).descFactorial u:ℤ)*((i+k).choose (i+u):ℤ)",
+          "body_sha256": "3abf269456c90218b9a36d554ea9b0dc48b426772f531fae245b1ddc627bf5e0"
+        },
+        {
+          "kind": "theorem",
+          "name": "beta_convolutionMDCB",
+          "line": 24,
+          "header": "theorem beta_convolutionMDCB (A B N : ℕ) :\n (∑ k ∈ range (N+1), ((A+k).choose A:ℤ)*((B+(N-k)).choose B:ℤ))=\n ((A+B+N+1).choose (A+B+1):ℤ)",
+          "body_sha256": "b73b075c53bbb49db8e7df870d108ef304247dc1c443d46ecaa6ede0d5bf193c"
+        },
+        {
+          "kind": "theorem",
+          "name": "beta_shifted_convolutionMDCB",
+          "line": 31,
+          "header": "theorem beta_shifted_convolutionMDCB (i u v N : ℕ) :\n (∑ k ∈ range (u+v+N+1), ((i+k).choose (i+u):ℤ)*\n   ((i+(u+v+N-k)).choose (i+v):ℤ))=\n ((2*i+u+v+N+1).choose (2*i+u+v+1):ℤ)",
+          "body_sha256": "2a43973175d1f7884c5682d0a872dbfb12dcca13651d3c9e16cd165633c4a957"
+        },
+        {
+          "kind": "theorem",
+          "name": "beta_moment_explicitMDCB",
+          "line": 61,
+          "header": "theorem beta_moment_explicitMDCB (i u v N : ℕ) :\n betaMomentMDCB i (u+v+N) u v=\n ((i+u).descFactorial u:ℤ)*((i+v).descFactorial v:ℤ)*\n ((2*i+u+v+N+1).choose (2*i+u+v+1):ℤ)",
+          "body_sha256": "693c9fc7e35938db61651cea4d4ead62f38c8d095ec6bfff8da043e598d9757b"
+        },
+        {
+          "kind": "theorem",
+          "name": "beta_moment_zeroMDCB",
+          "line": 80,
+          "header": "theorem beta_moment_zeroMDCB (i m u v : ℕ) (hm : m<u+v) :\n betaMomentMDCB i m u v=0",
+          "body_sha256": "f1527f8c2e0ea3aeca99278ac3cb6527c53dcf6e6a21056c78823ffa8b78b3bc"
+        }
+      ],
+      "theorem_count": 5,
+      "definition_count": 1,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/evidence/markov-dcb64029/build-1792228455997703000.json",
+        "bytes": 582,
+        "sha256": "d77f4397348478d79292013a7691fa359f7a74826b061a325b43db75e1db4092"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/evidence/markov-dcb64029/build-1792228455997703000.lean",
+        "bytes": 3631,
+        "sha256": "404e6c59f1e6c459a9c18174c5961fe74ea588e0a5223d801b62981a10e7a3f2"
+      },
+      "admission_literal_tokens": []
+    },
+    {
+      "module": "MarkovTopBetaClearedMDCB",
+      "source_pin": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/research/MarkovTopBetaClearedMDCB.lean",
+        "bytes": 2203,
+        "sha256": "9e0ef043feef09894fad8792370df9f2c84ae972aeeaaba2d46848e4b086f731"
+      },
+      "project_relative_source": "research/MarkovTopBetaClearedMDCB.lean",
+      "imports": [
+        "MarkovTopBetaMomentsMDCB"
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "beta_massMDCB",
+          "line": 8,
+          "header": "theorem beta_massMDCB (i m : ℕ) :\n betaMomentMDCB i m 0 0=((2*i+m+1).choose (2*i+1):ℤ)",
+          "body_sha256": "6ec197db8f0f39addd7df0db21d288c76299d4639178e80b20d822ed842433a3"
+        },
+        {
+          "kind": "theorem",
+          "name": "beta_mass_positiveMDCB",
+          "line": 12,
+          "header": "theorem beta_mass_positiveMDCB (i m : ℕ) : 0 < betaMomentMDCB i m 0 0",
+          "body_sha256": "15e15a04929a5e312eb22987be1c38500d0ffca53642dd5beda399c49f04b65f"
+        },
+        {
+          "kind": "theorem",
+          "name": "beta_moment_clearedMDCB",
+          "line": 16,
+          "header": "theorem beta_moment_clearedMDCB (i m u v : ℕ) :\n ((2*i+1+(u+v)).descFactorial (u+v):ℤ)*betaMomentMDCB i m u v=\n ((i+u).descFactorial u:ℤ)*((i+v).descFactorial v:ℤ)*\n (m.descFactorial (u+v):ℤ)*betaMomentMDCB i m 0 0",
+          "body_sha256": "155c408950e0c10fa3c2fc29063ab3219684db36fc43c5ec51bf8fae392af3d2"
+        },
+        {
+          "kind": "theorem",
+          "name": "beta_moment_normalizedMDCB",
+          "line": 33,
+          "header": "theorem beta_moment_normalizedMDCB (i m u v : ℕ) :\n (betaMomentMDCB i m u v:ℝ)/(betaMomentMDCB i m 0 0:ℝ)=\n ((i+u).descFactorial u:ℝ)*((i+v).descFactorial v:ℝ)*\n (m.descFactorial (u+v):ℝ)/((2*i+1+(u+v)).descFactorial (u+v):ℝ)",
+          "body_sha256": "611bbb45b4c59acfc1e79e98997c2316855d79206d8b10a3a36692326b94a288"
+        }
+      ],
+      "theorem_count": 4,
+      "definition_count": 0,
+      "successful_build": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/evidence/markov-dcb64029/build-1792228543254512000.json",
+        "bytes": 582,
+        "sha256": "dc5fdf4919fd502076cb680440137b10470febab4e8cbdd7bd31982dd7dcad56"
+      },
+      "build_snapshot": {
+        "path": "/Users/sasha/math_gkm/.control/markov/workers/000185/artifacts/evidence/markov-dcb64029/build-1792228543254512000.lean",
+        "bytes": 2203,
+        "sha256": "9e0ef043feef09894fad8792370df9f2c84ae972aeeaaba2d46848e4b086f731"
+      },
+      "admission_literal_tokens": []
+    }
+  ],
+  "counts": {
+    "selected_modules": 9,
+    "theorems": 51,
+    "definitions": 25
+  },
+  "source_level_scope": {
+    "source_family": "All actual a=3 generated paths represented by q>=1 and Bool residue, b=3q+1(true) or3q+2(false), exact threeRawM9E2 via inherited source_three_rawM9E2. No new source formula premise.",
+    "new_raw_edges": "At rowj=b+2-t: strict H startt-3 for6<=t<=q+2; strict H startt-4 for7<=t<=q+2. Allq>=1,bothresidues. Generictemplate requires2t<=n withsame tminimum; no3t<=n+5neededforindividualnewedge.",
+    "whole_depths": "source_top_depths_through_eightMDCB quantifies allnaturali with5<=t<=8,t<=q+2,q>=1,bothresidues; allzero positions andtails retained. Exactnewtheorem startsatdepth5; do not paraphrase italone as0<=t<=8.",
+    "polygon": "source_top_new_tail_polygonMDCB gives t-4<=i<=t-1 for t>=7. At t=6 the r3triple coincides with oldfirsthightriple and inheritedpolygoniff applies. No validtriple omitted.",
+    "denominator_free": "tailNum productj<k(i+j+1)(d+2i+j+9);tailDen productj<r(j+1)(d+i+j+6);tailRest productk<=j<r denominatorfactors;tailTerm=tailNum*tailRest. Definedforintegeri,d; scaledkernel/source identitiesfornatural d,i,r,k withk<=r asneeded.",
+    "mass_scaling": "AtT=i+r, D Mass_i=A K_i(i),D S_i Mass_i+1=E K_i(i),D S_i S_i+1 Mass_i+2=C K_i(i). L_r=f(r)+4sumk<r(r-k)f(k);A=L(V),E=L(k(d+2i+k+9)V),C=L(k(k-1)(d+2i+k+9)(d+2i+k+10)V). Allparametersnatural,includingr0/1andkernelzeros.",
+    "gap_equivalence": "D^2 S_i^2 S_i+1*(Mass_i+1^2-Mass_i Mass_i+2)=K_i(i)^2*G_r(i,d),G=(i+2)(i+5)E^2-(i+1)(i+4)AC. D,scales,baseKpositive explicitly. Bothstrict/nonstrictiff universal in naturald,i,r; no divisionbyrawmass andno positive-supportfilter.",
+    "tail_certificates": "r3and4 strict G for allintegeri,d>=0 by117and176literaltermpositive expansions; transfer tonaturalmasses andrawsource. Genericallr gap signnotproved.",
+    "tail_residual": "TopMomentBoundM55C iffTopTailResidualMDCB:forallnatural d,i,r,1<=i,5<=r,i+r<=d+2 imply0<=G_r(i,d). Proofforward/reverse retainsi0,r2,r3,r4dischargedbranches; interiori+2<=Tforcesr>=2. Newresidualunproved.",
+    "polynomial_condition": "Two-variableintegerBiPoly evaluates exactlytoG atallnatural i,d,r. TailCoefficientPositiveMDCB forallr>=5,alla,b rawpolynomialcoeff>=0 impliesTopTailResidual,TopMomentBound andactualsourceallstarts5<=t<=q+2. Hypothesisunproved,onlysufficient,notnewrootiff.",
+    "likelihood": "Realqseq q0=1,q(k+1)=qk*(d+2i+k+9)/(d+i+k+6),positiveallnatural d,i,k. w=1 atk=r,4(r-k) fork<r,0 beyond. Both CrossLC andnonnegativeproduct; beta_likelihood_inward onlysingleinwardstep2k+1<=m. No completed covariance/globalgap/sourceadapter theorem.",
+    "beta_moments": "Integer betaMoment sumk0..m choose(i+k,i)choose(i+m-k,i)*(k descendingfactorialu)*((m-k) descendingfactorialv). Allnatural indices. Explicitconvolutionformula form=u+v+N; zerofor m<u+v. BetaCleared gives universalclearedandrealnormalizedformula includingzeroorders/oversizedorders; masschoose(2i+m+1,2i+1)>0 anddenominator descendingfactorial(2i+1+u+v,u+v)>0.",
+    "beta_scalar": "21literalterms proveinteger betaGap(a,m,H)>0 for a>=1,m>=2,H>=3a+2m+5. Tailparameteradapter formallyassumesi+4r<=d+1,2<=m<=2r, concludesonly betaGap>0,notactualMassgap.",
+    "unformalized_beta": "Written proposed d>=i+4r-1 / d>=4T-1 / n>=6t-13 sourcecutoff isnotformal in185. Missingexpectationassembly,covariancecomparison,symmetrizedactualgapidentityandsourceattachment areexplicitlyrecorded. Noauditproofcompletion ormathematicalassessmentofthatwrittenroute.",
+    "root": "Conjecture63 iffThreeFrontierMDCB andOtherFourM9E2; bothopen. TopClosedRegion extends184 bynewtailstarts. Previous184depth-dependentdenominatorbound retained unchanged.",
+    "horizontal_residual": "forallq>=1,r,i,j withq+3<j,b<2j+1,j!=5,notTopClosedRegionMDCB =>rawH.",
+    "vertical_residual": "Unchanged exclusion((i3or4 andj+1<=q)or(5<=i<=8 andj+2<=q));allnaturalstarts.",
+    "diagonal_residual": "Unchanged exclusion3<=i<=6 andj+2<=q;literal(i,j+2),(i+1,j+1),(i+2,j).",
+    "guards": "Originalroot/rawcoefficient/polygon/naturalzero/endpoints unchangedthrough exactprior184rootiff. No coefficientnormalizationtarget,probabilityreplacement ordiscardedzero.",
+    "auxiliary_failures": "Parametergap-ratiomonotonicitybothdirections,strongerNewton/factorialLC andpositiveantidiagonalpiece shortcuts fail inretainedfiniteexperiments. r11,i0,d0,m3 negativeconstantpiece isoutsidesourcesectorT=i+r<=d+2; notactualrawrootrefutation.",
+    "inherited_limits": "Worker183 remains historically uncertain with no replay. Worker184 separately recovered all ten modules/54 closures; worker185 imports nine of those bodies, with TopObstructionsM55C absent, and supplies no new recovery. Old121212 including195, separate19, WindowLC/Abel,166 seven unreplayed prefixes,171 failed report and180 source-version limits remain. No fresh whole-source rebuild/root completion."
+  },
+  "literal_indices": {
+    "H": [
+      "(i,j)",
+      "(i+1,j)",
+      "(i+2,j)"
+    ],
+    "V": [
+      "(i,j)",
+      "(i,j+1)",
+      "(i,j+2)"
+    ],
+    "D": [
+      "(i,j+2)",
+      "(i+1,j+1)",
+      "(i+2,j)"
+    ]
+  },
+  "zero_boundaries": [
+    "Masscolumnshift discards only s<i<=i+j kernelzeros; remainingfiniteweightendpointretained.",
+    "C usesintegerk(k-1);k0/1terms vanish throughfactors/chooseidentities, no unguardednatural-subtraction replacement.",
+    "Emptyproductsr0positive1;signiffincludesdegeneratecaseswithoutclaimingstrictpositivitythere.",
+    "Newsourcebounds t6/7 justifyallNatsub rewrites; allstartsdepth5..8useslowcolumns/firsthigh/oldlast/newtails/rightzeros.",
+    "Momentordersabove m split explicitlyzero; normalizationdividesonlyprovenpositiveauxiliarymass/denominator."
+  ]
+}

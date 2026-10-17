@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTopTailPolynomialMDCB.lean:26:66: error: unsolved goals\ni d k : \u2115\n\u22a2 \u220f x \u2208 range k, (\u2191i + \u2191x + 1) * (\u2191d + (certificateEvalMBEC i d) 2 * \u2191i + \u2191x + (certificateEvalMBEC i d) 9) =\n    \u220f j \u2208 range k, (\u2191i + \u2191j + 1) * (\u2191d + 2 * \u2191i + \u2191j + 9)\n/Users/sasha/math_gkm/research/MarkovTopTailPolynomialMDCB.lean:30:72: error: unsolved goals\ni d r k : \u2115\n\u22a2 \u220f x \u2208 Ico k r, (\u2191x + 1) * (\u2191d + \u2191i + \u2191x + (certificateEvalMBEC i d) 6) = \u220f j \u2208 Ico k r, (\u2191j + 1) * (\u2191d + \u2191i + \u2191j + 6)\n/Users/sasha/math_gkm/research/MarkovTopTailPolynomialMDCB.lean:39:61: error: unsolved goals\ni d r : \u2115\nf : \u2115 \u2192 BiPoly\n\u22a2 (certificateEvalMBEC i d) 4 = 4 \u2228 \u2211 x \u2208 range r, (\u2191r - \u2191x) * (certificateEvalMBEC i d) (f x) = 0\n/Users/sasha/math_gkm/research/MarkovTopTailPolynomialMDCB.lean:43:66: error: unsolved goals\ni d r : \u2115\n\u22a2 ((\u2191i + (certificateEvalMBEC i d) 2) * (\u2191i + (certificateEvalMBEC i d) 5) *\n        (topLinearM55C r fun k =>\n            \u2191k * (\u2191d + (certificateEvalMBEC i d) 2 * \u2191i + \u2191k + (certificateEvalMBEC i d) 9) *\n              tailTermMDCB (\u2191i) (\u2191d) r k) ^\n          2 -\n      ((\u2191i + 1) * (\u2191i + (certificateEvalMBEC i d) 4) * topLinearM55C r fun k => tailTermMDCB (\u2191i) (\u2191d) r k) *\n        topLinearM55C r fun k =>\n          \u2191k * (\u2191k - 1) * (\u2191d + (certificateEvalMBEC i d) 2 * \u2191i + \u2191k + (certificateEvalMBEC i d) 9) *\n              (\u2191d + (certificateEvalMBEC i d) 2 * \u2191i + \u2191k + (certificateEvalMBEC i d) 10) *\n            tailTermMDCB (\u2191i) (\u2191d) r k) =\n    (\u2191i + 2) * (\u2191i + 5) * (topLinearM55C r fun k => \u2191k * (\u2191d + 2 * \u2191i + \u2191k + 9) * tailTermMDCB (\u2191i) (\u2191d) r k) ^ 2 -\n      (\u2191i + 1) * (\u2191i + 4) * topLinearM55C r (tailTermMDCB (\u2191i) (\u2191d) r) *\n        topLinearM55C r fun k =>\n          \u2191k * (\u2191k - 1) * (\u2191d + 2 * \u2191i + \u2191k + 9) * (\u2191d + 2 * \u2191i + \u2191k + 10) * tailTermMDCB (\u2191i) (\u2191d) r k\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTopTailPolynomialMDCB": "5b256bc167ed7de0410df62d12f91e5b5eb34a75a9b6de8c4700ae632693807b"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-dcb64029/MarkovTopTailPolynomialMDCB.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopTailPolynomialMDCB.lean"
+  ],
+  "seconds": 7.548396957980003,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
