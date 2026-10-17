@@ -1,0 +1,53 @@
+{
+  "bindings": {
+    "RESUME.json": true,
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": true,
+    "evidence/independent-markov/markov_residual_scope_audit.md": true,
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": true,
+    "evidence/markov/research-run/state.json": true,
+    "requests/markov-next.json": true
+  },
+  "predecessor_artifacts": 116,
+  "mismatches": [],
+  "root_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+  "contract_sha256": "6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc",
+  "stop_file_present": false,
+  "predecessor_events_sha256": "e01302562fde25961aea84d8ce05927e597043f2d921a2c21027ae627f7f5579",
+  "predecessor_final_events": [
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_123",
+        "type": "command_execution",
+        "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/finalize_418bcc64.py'",
+        "aggregated_output": "{\n  \"modules\": 10,\n  \"theorem_closures\": 61,\n  \"rejected_builds\": 8,\n  \"preservation\": {\n    \"artifacts\": 116,\n    \"artifact_mismatches\": [],\n    \"unchanged_inputs\": 7136,\n    \"owned_files_created_before_snapshot\": [\n      \"research/markov-418bcc64-checkpoint.md\",\n      \"research/setup_418bcc64.py\"\n    ],\n    \"unchanged_predecessor_artifacts\": 123,\n    \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\",\n    \"contract_sha256\": \"6dda768a25577c126e6b98a9fb645837f77bdee3ea3a6e5ef5f2937438c2eefc\",\n    \"validation_sha256\": \"0477c3f4719218e46110f46ef88dd6a5860e2f35ba4c15977a494a80095b7272\",\n    \"manifest_sha256\": \"5f3ac3e6e6017b64b9c79d289f630eda4096aba67138faec8415180cff3ccb48\",\n    \"stop_file_present\": false,\n    \"completion\": null\n  }\n}\n",
+        "exit_code": 0,
+        "status": "completed"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_124",
+        "type": "agent_message",
+        "text": "{\n  \"actions\": [\n    \"Verified six inherited bindings and 123 predecessor artifacts: evidence/markov-418bcc64/reconciliation.json.\",\n    \"Compiled and jointly kernel-replayed ten modules; audited 61 theorem closures: evidence/markov-418bcc64/validation.json.\",\n    \"Verified 116 new artifacts, 7,136 unchanged inherited inputs, and pinned hashes: evidence/markov-418bcc64/last-verification.json.\"\n  ],\n  \"agenda\": [\n    \"Investigate AbsorbedMiddleM418 using the exact weighted-output and source bridges: research/markov-418bcc64-next.md. Inspect both boundary-certificate timeouts before further certificate work.\",\n    \"Retain FirstCorrectionWindowM418, ThreeBeyondCorrectionM418 and OtherFourM9E2 completely, including all directions, zeros, endpoints and universal scope.\",\n    \"Discharge every correspondence obligation and obtain the independent hash-bound audit before claiming completion.\"\n  ],\n  \"completion\": null,\n  \"observations\": [\n    \"Proved numerator-three first-correction horizontal inequalities at every starting column i\u22646 and i>d+2, including q=1 and zero tails. This covers every column for q\u22645: research/MarkovCorrectionRegionM418.lean.\",\n    \"Proved Conjecture63 iff FirstCorrectionWindowM418, ThreeBeyondCorrectionM418 and OtherFourM9E2. All three residual predicates remain open: research/MarkovCorrectionRootM418.lean.\",\n    \"Proved an absorbed-kernel weighted-output identity, support-cut and tail inequalities, and conditional transport to the entire first correction row. AbsorbedMiddleM418 remains unproved: research/MarkovAbsorbedKernelM418.lean and research/MarkovAbsorbedReductionM418.lean.\",\n    \"Proved a weighted auxiliary gap coefficient of -2880 while the corresponding polygon-valid 3/19 source triple [8,2000,34302] has positive raw gap 3725584: research/MarkovWeightedObstructionM418.lean.\",\n    \"Proved exact boundary-gap identities, rational normalization bridges and the required binomial lower bound. Both optional positivity-certificate builds timed out; their source-substitution candidate remains unvalidated: research/markov-418bcc64-mathematics.md.\",\n    \"Finite experiments passed 13,545 source coefficient comparisons, 13,312 source triples, and 1,394,328 absorbed cut-gap coefficient checks. These are experiments, not proofs: evidence/markov-418bcc64/source-experiment.json and absorbed-clamped-probe.json.\",\n    \"All audited closures use permitted axioms. Eight rejected builds and capability failures are preserved. No fresh whole-source rebuild or independent completion audit occurred: research/markov-418bcc64-operational.md and research/markov-418bcc64-correspondence.md.\"\n  ],\n  \"request_id\": \"418bcc643df14f6f8cfd3b6b16eb3aef\",\n  \"summary\": \"Proved universal first-correction prefixes and tails and established a new exact kernel route. Full pinned Conjecture63 remains unresolved.\"\n}"
+      }
+    },
+    {
+      "type": "turn.completed",
+      "usage": {
+        "input_tokens": 9858360,
+        "cached_input_tokens": 9638016,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 60264,
+        "reasoning_output_tokens": 22482
+      }
+    }
+  ],
+  "reconciliation": "Worker 168 completed. Its 180s and 150s certificate timeouts and generated uncompiled source bridge were inspected. They are not admitted results. No interrupted action is replayed; smaller new certificates will use new names. Older interruption reconciliation is inherited unchanged.",
+  "capabilities": {
+    "scratch": "Denied by developer policy; not accessed. Unique durable research/evidence files used.",
+    "sage": null,
+    "gap": "/opt/homebrew/bin/gap"
+  }
+}

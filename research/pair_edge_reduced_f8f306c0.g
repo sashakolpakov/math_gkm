@@ -1,0 +1,22 @@
+# Machine-authored f8f306c0. A stronger edge inequality candidate; no proof.
+TT:=Indeterminate(Rationals,"TT");;
+MM:=Indeterminate(Rationals,"MM");;
+JJ:=Indeterminate(Rationals,"JJ");;
+ZZ:=Indeterminate(Rationals,"ZZ");;
+t:=TT+4;; m:=MM+2;; j:=m+JJ;; B:=j+1+ZZ;;
+W:=function(v,n) return (v+n+4)*(v+n+5)+4*(j-n)*(v+j+4); end;;
+D:=function(v,n) return (v+n+4)*(v+n+5); end;;
+pa:=function(n) return n*D(t+1,n)*(W(t+1,n)-2)/((j-n+1)*(t+n+3)*(t+n+4)*W(t+1,n));end;;
+pb:=function(n) return (j-n)*D(t+1,n)*(W(t+1,n)+2)/((n+1)*(t+n+7)*(t+n+8)*W(t+1,n));end;;
+extraA:=8*(t+6)*(t+7)/((t+1)*B*W(t+1,1));;
+extraB:=8*j*(t+4)*(t+5)*(t+6)/((t+1)*B*(t+j+4)*W(t+1,0));;
+gap:=pa(m)*pb(0)-(1+extraB)*(pa(m-1)*pb(1)+(pa(1)+extraA)*pb(m-1));;
+num:=NumeratorOfRationalFunction(gap);;
+den:=DenominatorOfRationalFunction(gap);;
+Print("computing gcd\n");;
+gcdpoly:=Gcd(num,den);;
+Print("gcd done\n");;
+rn:=num/gcdpoly;;rd:=den/gcdpoly;;
+Print("rn polynomial=",IsPolynomial(rn)," rd polynomial=",IsPolynomial(rd),"\n");;
+Print("rn=",ExtRepPolynomialRatFun(rn),"\nrd=",ExtRepPolynomialRatFun(rd),"\n");;
+QUIT;
