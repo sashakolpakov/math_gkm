@@ -1,0 +1,18 @@
+--- pre-005/machinery/study_completion.py
++++ machinery/study_completion.py
+@@ -32,6 +32,7 @@
+             completion.ROOT = old_root
+         if result['resolved']:
+             arm.s.update(resolution=result, status='mathematically_resolved')
++            arm.s['resolution_receipt'] = str((directory/'result.json').relative_to(arm.study))
+             arm.save()
+             terminal(arm)
+         return result
+@@ -58,6 +59,7 @@
+         completion.ROOT, completion.run = old_root, old_run
+     if result['resolved']:
+         arm.s['resolution'] = result
++        arm.s['resolution_receipt'] = str((directory/'result.json').relative_to(arm.study))
+         arm.s['status'] = 'mathematically_resolved'
+         arm.save()
+         terminal(arm)

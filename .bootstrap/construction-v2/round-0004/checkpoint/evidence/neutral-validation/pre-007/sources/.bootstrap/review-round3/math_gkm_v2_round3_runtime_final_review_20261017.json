@@ -1,0 +1,252 @@
+{
+  "schema": "independent-static-runtime-review-final.v1",
+  "observed_utc": "2026-10-17T22:48:35.381679+00:00",
+  "root": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017",
+  "scope": "Independent read-only static source and retained-result review. No candidate imports, execution, tests, proofs, model calls, source edits or builder contact. Only this review is written under /private/tmp.",
+  "authorization_hold": "No fresh Markov research, curation, canary or activation before explicit user OK.",
+  "earlier_handoff": {
+    "path": "/private/tmp/math_gkm_v2_round3_runtime_review_20261017.json",
+    "sha256": "38e6db16e43fd061382db12959d02c9b1270252a2ae5c6493c35a5396f37ee47"
+  },
+  "disposition": "Concrete runtime/configuration/audit-accuracy corrections remain; no candidate execution or independent test run was performed. Documented experimental limitations are not treated as repair blockers.",
+  "findings": [
+    {
+      "id": "R3-C1",
+      "priority": "P2: horizon-contract correctness",
+      "title": "Committed episode does not reserve its evaluation and review",
+      "refs": [
+        "machinery/study.py:417-428",
+        "machinery/study.py:524-550",
+        "machinery/study_transfer.py:289-296"
+      ],
+      "finding": "The first episode reservation covers only research calls, up to k validations and one completion validation per round. Required episode evaluation and two review/selector calls are funded only after the promised research horizon finishes. A cap sufficient for research alone starts the episode, then blocks evaluation/review. Call/meta-call checks likewise cover only research at the horizon start. Symmetric policy-trial branch pools are repaired; this remaining defect concerns the main episode-to-review edge.",
+      "required": "Either reserve the complete required continuation through evaluation/review, or accurately describe the promised protected horizon as research-only with downstream review potentially unavailable. No matched-cost redesign is requested."
+    },
+    {
+      "id": "R3-C2",
+      "priority": "P1",
+      "title": "Shipped fixture and canary protocols cannot start under the new envelope",
+      "refs": [
+        "machinery/study.py:22-30",
+        "machinery/study.py:41-64",
+        "machinery/study.py:417-426",
+        "studies/v2-fixture.json:3-13",
+        "studies/v2-canary.json:3-13"
+      ],
+      "finding": "Both inherit k=6 and validation_seconds=120. The fixture first episode requires 2*(2*5+7*120)=1700 reserved seconds against arm_seconds=1200. The canary requires 2*(2*120+7*120)=2160 against 1800. validate_protocol accepts both; research_round fails before its first role call. DEFAULT arm_seconds was corrected to 12000, so the earlier default-dictionary failure is superseded. The named profiles remain broken.",
+      "required": "Make shipped neutral profile(s) viable and statically reject impossible commitments at freeze. The live canary remains explicitly unauthorized; no execution or activation is proposed."
+    },
+    {
+      "id": "R3-R1",
+      "priority": "P2",
+      "title": "Terminal completion export is not included or bound in the audit result",
+      "refs": [
+        "machinery/study_completion.py:67-73",
+        "machinery/study_observer.py:9-22",
+        "machinery/study.py:149-155",
+        "machinery/study_burden.py:94-121"
+      ],
+      "finding": "The producer now creates/reconciles terminal snapshots and outbox, fixing the missing producer. The report only checks terminal export conflicts; raw measurement and conditional pairs still iterate the initial+rounds schedule, excluding terminal. The terminal observer record also omits the checked resolution/result-bundle identity. Thus a separate exact-root completion between scheduled rounds is absent from the measured audit sequence and is not tied to its finished completion receipt there.",
+      "required": "Represent a terminal point in the consumer schedule, preserve absent-terminal semantics, and bind the terminal export to its exact finished resolution receipt/bundle. No complexity-based control feedback should be introduced."
+    },
+    {
+      "id": "R3-C3",
+      "priority": "P2",
+      "title": "New enforced knowledge limit is not disclosed in role request limits",
+      "refs": [
+        "machinery/study_policy.py:27-39",
+        "machinery/study_knowledge.py:90-104"
+      ],
+      "finding": "ingest rejects the entire report before checking anything when the aggregate across proposal kinds exceeds knowledge_checks_per_round. The request limits projection lists only rounds, episode_rounds, invention_rounds and call_seconds. It does not tell ordinary proposer/researcher roles the newly enforced aggregate cap or validation timeout. The precheck also counts repeated already-accepted identities before the later skip, so its exact semantics need to be stated.",
+      "required": "Expose the enforced limit and its counting semantics in the same prospective request/schema the role consumes. No change to proof claims or research priorities is involved."
+    },
+    {
+      "id": "R3-R2",
+      "priority": "P2: manifest claim; permissions coverage repaired by supplement",
+      "title": "Install/static manifests overstate historical protection and omit a required permissions input",
+      "refs": [
+        "machinery/study_manifest.py:9-22",
+        "machinery/study_manifest.py:48",
+        "machinery/neutral_checkpoint.py:12-16",
+        "machinery/study_common.py:151-153",
+        "machinery/study_worker.py:22-24"
+      ],
+      "finding": "study_manifest sets before={} and constructs each protected before/after SHA by hashing the same current file twice, then announces protected inputs unchanged. This is only a current identity check, not comparison to an approved baseline. Its source enumeration and neutral_checkpoint omit .bootstrap/base-permissions.json, although runtime implementation() pins it and worker permissions reads it. The separate runtime seal provides some later protection; the pre-test/source-install manifest alone is incomplete. AFTER THE INITIAL HANDOFF: SUPPLEMENTAL_INPUT_MANIFEST.json now pins base-permissions and other required inputs; those hashes independently match current files, and each fixture seal also binds the permissions input. Thus the evidence-package omission is covered without requiring a rerun solely to relocate the pin. The generic generator still does not make a meaningful historical before/after comparison.",
+      "required": "Keep the supplemental input manifest in preservation/reproduction scope; change generic historical unchanged wording or compare an actual approved baseline when that generator is used. This is no longer a missing-input blocker for the present package."
+    }
+  ],
+  "repaired_or_qualified": [
+    "Distinct validation invocations now reserve by resolved destination path, separating branch/round executions while retaining same-operation recovery.",
+    "Finished completion receipt binding is checked and reused before reserving fresh budget; terminal reconciliation is also invoked on resolved run recovery.",
+    "Policy trial prepays separate incumbent/candidate/evaluation/review pools and debits actual branch operations within their own pool.",
+    "Snapshot publication uses a staging directory followed by rename; research-owned observer outbox prevents reading corrupt audit outputs as control input.",
+    "Docs explicitly distinguish fixed-round equal upper caps from matched actual-cost efficiency. Protocol transitions have separate 30-second event bounds and observed totals, so they are no longer silently claimed to fit inside arm_seconds.",
+    "Docs accurately limit executable changes to a bounded request-transform DSL, conditional formal models, and unproved actual host refinement; no certified switch or fresh Markov activation is claimed."
+  ],
+  "non_blocking_disclosed_limits": [
+    "Fixed research-round counts and equal upper caps are a valid labeled bounded comparison, not claimed matched actual-cost efficiency.",
+    "Protocol control overhead has separate per-event bounds and observed totals; arm_seconds is not a whole-process wall deadline.",
+    "The program DSL remains deliberately restricted and actual host refinement/certified switching are open.",
+    "Host-specific paths and no portable cold bootstrap are explicitly disclosed; no new portability implementation is demanded in this review."
+  ],
+  "final_source_manifest": {
+    "sha256": "bcc6defb56dd3d21031eb8dae8c16ab95bf8be701b4123a51b8dc03781d68b02",
+    "count": 119,
+    "missing_or_mismatch": []
+  },
+  "pre005_source_manifest": {
+    "sha256": "7e9ab7911641fd1c05b0266ef81a525bbde12ee77e6bde94830555a8227737b7",
+    "count": 65,
+    "current_differences": [
+      "docs/HARNESS_CHECKPOINT.md",
+      "docs/REQUIREMENT_MAP.md",
+      "docs/STUDY_V2.md"
+    ]
+  },
+  "supplemental_input_manifest": {
+    "sha256": "65b2a3e19b5844a70ef78682d1c136f4cd28aedbcdf087e6fd1fbcd88fd09229",
+    "count": 6,
+    "missing_or_mismatch": []
+  },
+  "current_pins": {
+    "machinery/study.py": {
+      "sha256": "79e3fbc85c0757f8e6bdc0689a80e97db455aaed8288939b15d1c41ab36074be",
+      "bytes": 46986
+    },
+    "machinery/study_policy.py": {
+      "sha256": "92101c48d318723a97f1a6a42fadfdec964d7a1e1d929c1e664f7aa7b207df75",
+      "bytes": 15940
+    },
+    "machinery/study_knowledge.py": {
+      "sha256": "ac04d864110a0331d4346972d9bf4e9c5858da9779be1d7c0850ddeecedf5209",
+      "bytes": 15360
+    },
+    "machinery/study_transfer.py": {
+      "sha256": "279f299e1d72d4cabd463c7253f9984353c8bd04a265b96c16e5365ed061085d",
+      "bytes": 27501
+    },
+    "machinery/study_completion.py": {
+      "sha256": "4894c36c39aa06999eca011721777066660d1c3901e929d80f2137e7d759c7bd",
+      "bytes": 3855
+    },
+    "machinery/study_observer.py": {
+      "sha256": "c05a528c8b4e2beb718c02d2d7a471a3c14096262b06357e266a60e6583f174d",
+      "bytes": 1779
+    },
+    "machinery/study_burden.py": {
+      "sha256": "e0530b64947bcfbd8176a762df3836f9711777c815be9cf97db324cdaf3b8378",
+      "bytes": 14854
+    },
+    "machinery/study_bridge.py": {
+      "sha256": "13d543cc4fb414d9e8a360f381d71eff8782fcc01a37c74923176e8b17ca862b",
+      "bytes": 4243
+    },
+    "machinery/study_manifest.py": {
+      "sha256": "76ecef6cf0aef7f31dc730438b7873f2acfc7b335aeb3e96d7a7400eebb8236d",
+      "bytes": 3094
+    },
+    "machinery/neutral_checkpoint.py": {
+      "sha256": "6c4fec5e79ab095d64c44bb7834bf10c8dfa7049f81939a244c9e1d706e2460b",
+      "bytes": 1965
+    },
+    "machinery/study_common.py": {
+      "sha256": "23cfdf11a71698d6a05bff45e53ff4201bdb5b99aa0642759cab6e85d4177b95",
+      "bytes": 7583
+    },
+    "machinery/study_worker.py": {
+      "sha256": "cea861dbbb4285fe71f91eeeb6cf68eac2176428ac6cc36efd49b4ca5b39993f",
+      "bytes": 8417
+    },
+    "studies/v2-fixture.json": {
+      "sha256": "bfe9647f4e51ab441a051e9cbcd7997eb0740a02b1a0516309cf52c55e62f145",
+      "bytes": 284
+    },
+    "studies/v2-canary.json": {
+      "sha256": "db115a9cc3c2cdc6085e7b1c83d8eaaad9fced0f6d67220178936c76da0d4546",
+      "bytes": 281
+    },
+    "docs/HARNESS_CHECKPOINT.md": {
+      "sha256": "99b5553649060dd39d7ffdeb0132d39f9deb15b515ef98e7515b6f98d1db6754",
+      "bytes": 3075
+    },
+    "docs/REQUIREMENT_MAP.md": {
+      "sha256": "a9a984cb95f4809665c11d65321d3ba7fbafa1da627330d2e0a9f215e0ad33ef",
+      "bytes": 6063
+    },
+    ".bootstrap/base-permissions.json": {
+      "sha256": "5263cab043f26560022bffc9ff3636b91a005afc59608c2d945176979a6c673c",
+      "bytes": 1357
+    }
+  },
+  "builder_test_records": [
+    {
+      "name": "regressions-002",
+      "result_sha256": "a9e937d56954e55a3cffeccdc537f0cf5772cb5f819651077a2eb301f658a11a",
+      "returncode": 0,
+      "test_count": 26,
+      "tested_manifest_sha256": "50887c719b8b8f4ce3ba9103709494203996f643f9d5be20d18a0bc4e2ea7b6e",
+      "log_sha256": "f48901486d7ed376ed401c9797a726ae0998ef38d178b5fc909e726d206c895a",
+      "post_run_source_mismatches": []
+    },
+    {
+      "name": "foundations-005",
+      "result_sha256": "188e4f9745d59cad8847ded640073bea1c4308c74931960b10e5c3b9c3cf3bde",
+      "returncode": 0,
+      "test_count": 2,
+      "tested_manifest_sha256": "7e9ab7911641fd1c05b0266ef81a525bbde12ee77e6bde94830555a8227737b7",
+      "log_sha256": "e0be495f811f1f95d99a25b9c691bc0d5154489bc9e6a22ec633205cdb1289be",
+      "post_run_source_mismatches": []
+    },
+    {
+      "name": "identity-005",
+      "result_sha256": "48e07d48e34be2a36e47855601b93ee70d169f2f1b89e75973341f186ed85941",
+      "returncode": 0,
+      "test_count": 9,
+      "tested_manifest_sha256": "7e9ab7911641fd1c05b0266ef81a525bbde12ee77e6bde94830555a8227737b7",
+      "log_sha256": "839b1d6f3ee841e456d750ff0b3c30e33e88e1948323ac793df70eaa7216a656",
+      "post_run_source_mismatches": []
+    },
+    {
+      "name": "recovery-005",
+      "result_sha256": "5362b3e223d48a49bd0c1b69977cb482da4f1fe4e1e63534d1c0b8667380516a",
+      "returncode": 0,
+      "test_count": 8,
+      "tested_manifest_sha256": "7e9ab7911641fd1c05b0266ef81a525bbde12ee77e6bde94830555a8227737b7",
+      "log_sha256": "79b0959f993596a80b35868ed847b00f9dfda2b5b490dfda4ee86b509b9ab67a",
+      "post_run_source_mismatches": []
+    },
+    {
+      "name": "invariance-005",
+      "result_sha256": "6dc5617b832eccf53f37f3d37b2adfe9038dc85916dd382bb195e16fddef2e18",
+      "returncode": 0,
+      "test_count": 1,
+      "tested_manifest_sha256": "7e9ab7911641fd1c05b0266ef81a525bbde12ee77e6bde94830555a8227737b7",
+      "log_sha256": "57f502119d3e2c8f91371f21aa4f38032ff757a501033f4b3feacc24708386b2",
+      "post_run_source_mismatches": []
+    },
+    {
+      "name": "connected-005",
+      "result_sha256": "d73d9df36b3d6c02701ab5bfbda63b455429bd7e1d6899be0343efe815e6289c",
+      "returncode": 130,
+      "test_count": null,
+      "tested_manifest_sha256": "7e9ab7911641fd1c05b0266ef81a525bbde12ee77e6bde94830555a8227737b7",
+      "log_sha256": "b76fe43b85657a513aeecc05fdfd649f853ff917cd441d19d63d8b7fcfa540d9",
+      "post_run_source_mismatches": []
+    }
+  ],
+  "builder_completed_test_total": 46,
+  "connected_endpoint": {
+    "sha256": "0da908545de6906df59d17e5f652a22b2c9f8cfb26fa278cbe645ca0f00eadaa",
+    "status": "passed",
+    "assertions": 11,
+    "scope": "connected neutral endpoint; not completion of the longer four-round regression",
+    "four_support_hashes_match": {
+      ".scratch/revision-lean-fphi3c0q/connected/arms/exploration/decisions/review-2.json": true,
+      ".scratch/revision-lean-fphi3c0q/connected/arms/exploration/jobs/round-0002/request.json": true,
+      ".scratch/revision-lean-fphi3c0q/connected/arms/exploration/jobs/round-0002/receipt.json": true,
+      ".scratch/revision-lean-fphi3c0q/connected/arms/exploration/snapshots/round-0001/manifest.json": true
+    }
+  },
+  "full_connected_regression_passed": false,
+  "test_claim_limit": "46 completed passing tests across two tested source snapshots. The separate connected endpoint reports11 passing assertions with four unchanged support hashes; the full four-round connected regression was interrupted(return130), not passed. Earlier failures/interruption logs remain retained. These are reviewed builder records, not reviewer executions."
+}

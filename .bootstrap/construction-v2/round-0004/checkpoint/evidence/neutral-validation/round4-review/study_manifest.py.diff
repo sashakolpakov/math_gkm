@@ -1,0 +1,32 @@
+--- pre-005/machinery/study_manifest.py
++++ machinery/study_manifest.py
+@@ -6,8 +6,7 @@
+ from .study_common import ROOT, SEED, read, write, sha
+ 
+ def generate(output):
+-    before = {}
+-    paths = set(SEED)
++    paths = set(SEED) | {'.bootstrap/base-permissions.json'}
+     for folder in ('machinery', 'tests', 'contracts', 'docs', 'studies', 'MathGKM'):
+         paths.update(str(p.relative_to(ROOT)) for p in (ROOT/folder).glob('*')
+                      if p.is_file() and p.suffix in ('.py', '.json', '.md', '.lean'))
+@@ -15,11 +14,8 @@
+     for name in sorted(paths):
+         p = ROOT/name
+         after = sha(p) if p.is_file() else None
+-        files.append({'path': name, 'before_sha256': before.get(name), 'after_sha256': after,
+-                      'status': 'unchanged' if before.get(name) == after else 'new' if name not in before else 'changed'})
+-    protected = {name: {'before_sha256': sha(ROOT/name), 'after_sha256': sha(ROOT/name)} for name in SEED}
+-    if any(v['before_sha256'] != v['after_sha256'] for v in protected.values()):
+-        raise ValueError('protected input changed')
++        files.append({'path': name, 'sha256': after, 'status': 'current_pin'})
++    protected = {name: {'sha256': sha(ROOT/name), 'status': 'current_pin; no historical baseline comparison'} for name in SEED}
+     logs = {str(p.relative_to(ROOT)): sha(p) for p in (ROOT/'evidence/neutral-validation').glob('*.log')}
+     result = {'schema': 'math-gkm.install-manifest.v2', 'phase': 'construction',
+         'status': 'reviewable experimental sources; no live installation/migration/publication',
+@@ -45,4 +41,4 @@
+     parser.add_argument('--out', type=Path, default=ROOT/'evidence/construction-v2/install-manifest.json')
+     args = parser.parse_args()
+     result = generate(args.out)
+-    print('Wrote', args.out, 'with', len(result['source_files']), 'source hashes; protected inputs unchanged.')
++    print('Wrote', args.out, 'with', len(result['source_files']), 'source hashes; protected inputs pinned (no historical comparison).')

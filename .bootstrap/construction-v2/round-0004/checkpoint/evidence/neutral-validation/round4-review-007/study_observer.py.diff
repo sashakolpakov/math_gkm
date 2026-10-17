@@ -1,0 +1,30 @@
+--- pre-006/machinery/study_observer.py
++++ machinery/study_observer.py
+@@ -4,6 +4,19 @@
+ No observer output is read by this module or any research/control role.
+ """
+ from .study_common import Invalid, digest, read, write, verify_snapshot, sha, inside
++
++
++def validate_resolution(study, manifest, resolution):
++    """Bind the terminal source snapshot to the exact finished checked bundle."""
++    binding = resolution.get('binding')
++    if (not resolution.get('resolved') or 'finished' not in resolution or
++        not isinstance(binding, dict) or digest(binding) != resolution.get('bundle_hash') or
++        binding.get('contract_hash') != digest(read(study/'seed/contract.json'))):
++        raise Invalid('terminal requires exact finished resolution bundle')
++    expected = {m.replace('.', '/')+'.lean': h for m,h in binding['sources'].items()}
++    expected[binding['claim']['correspondence']] = binding['correspondence_sha256']
++    if any(manifest['files'].get(n) != h for n,h in expected.items()):
++        raise Invalid('terminal snapshot differs from finished resolution sources')
+ 
+ 
+ def checkpoint(study, arm, key, state, snapshot):
+@@ -26,6 +39,7 @@
+         if (not resolution.get('resolved') or 'finished' not in resolution or
+             not resolution.get('bundle_hash') or resolution != state['resolution']):
+             raise Invalid('terminal requires exact finished resolution receipt')
++        validate_resolution(study, manifest, resolution)
+         record['resolution'] = {'receipt': str(receipt.relative_to(study)),
+             'receipt_sha256': sha(receipt), 'bundle_hash': resolution['bundle_hash'],
+             'result_binding': digest(resolution)}

@@ -1,0 +1,42 @@
+COMMAND ["/opt/homebrew/bin/python3", "-m", "unittest", "-v", "tests.test_context_revision"]
+MANIFEST /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/pre-002/SOURCE_MANIFEST.json
+test_audit_corruption_does_not_change_actual_fixture_requests (tests.test_context_revision.ContextRevision.test_audit_corruption_does_not_change_actual_fixture_requests) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-lzuct6r2
+FAIL
+test_canonical_root_and_foundation_cannot_be_substituted (tests.test_context_revision.ContextRevision.test_canonical_root_and_foundation_cannot_be_substituted) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-lqcq1_1k
+ok
+test_continuation_foundation_compilation_replay_and_trace_theorem (tests.test_context_revision.ContextRevision.test_continuation_foundation_compilation_replay_and_trace_theorem) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-f0cmu5am
+FAIL
+test_distinct_real_validations_charged_once_each_and_protected_sides (tests.test_context_revision.ContextRevision.test_distinct_real_validations_charged_once_each_and_protected_sides) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-eeaq_v9w
+ok
+test_finished_completion_reused_without_new_allowance (tests.test_context_revision.ContextRevision.test_finished_completion_reused_without_new_allowance) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-d_ttnl0s
+ok
+test_only_actual_open_obligations_select_open_branch (tests.test_context_revision.ContextRevision.test_only_actual_open_obligations_select_open_branch) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-99nsz9gx
+ok
+test_residual_same_text_different_context_and_positive_discharge (tests.test_context_revision.ContextRevision.test_residual_same_text_different_context_and_positive_discharge) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-lm2ia50x
+ok
+test_task_absent_before_cannot_acquire_adapter_meaning (tests.test_context_revision.ContextRevision.test_task_absent_before_cannot_acquire_adapter_meaning) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-nkqb5586
+ok
+
+======================================================================
+FAIL: test_audit_corruption_does_not_change_actual_fixture_requests (tests.test_context_revision.ContextRevision.test_audit_corruption_does_not_change_actual_fixture_requests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/tests/test_context_revision.py", line 153, in test_audit_corruption_does_not_change_actual_fixture_requests
+    self.assertEqual(requests[0], requests[1])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'age[417 chars]h': 'f4b3269591791af7e25666f56c0a29093a124ed7a[628 chars]3'}}} != {'age[417 chars]h': 'eb31ffc62ccbc3145ed6b651834c96d1bff9179bb[628 chars]3'}}}
+Diff is 2111 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_continuation_foundation_compilation_replay_and_trace_theorem (tests.test_context_revision.ContextRevision.test_continuation_foundation_compilation_replay_and_trace_theorem)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/tests/test_context_revision.py", line 76, in test_continuation_foundation_compilation_replay_and_trace_theorem
+    self.assertTrue(result['checked'], result)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : {'task_id': 'neutral', 'task_hash': 'd052fb6710be8a3778c773bc7a1ca59ff7bdabb0bc0e9f50fa61ab77bf2567e3', 'checked': False, 'source_sha256': 'c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd', 'scope': 'neutral mechanism', 'hypotheses': [], 'budget_seconds': 120, 'checks': [{'module': 'MathGKM.ContinuationObligations', 'operation': 'compile', 'argv': ['/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean', '-j', '1', '-o', '/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-f0cmu5am/continuation/build/MathGKM/ContinuationObligations.olean', 'MathGKM/ContinuationObligations.lean'], 'returncode': 1, 'stdout': "MathGKM/ContinuationObligations.lean:38:40: error: unexpected identifier; expected '}'\nMathGKM/ContinuationObligations.lean:74:2: error: unexpected token 'continue'; expected command\nMathGKM/ContinuationObligations.lean:79:2: error: unexpected token 'continue'; expected command\nMathGKM/ContinuationObligations.lean:85:20: error(lean.invalidField): Invalid field `continue`: The environment does not contain `MathGKM.ContinuationObligations.WholeSemantics.continue`, so it is not possible to project the field `continue` from an expression\n  sem\nof type `WholeSemantics`\nMathGKM/ContinuationObligations.lean:87:22: error(lean.invalidField): Invalid field `initial`: The environment does not contain `MathGKM.ContinuationObligations.WholeSemantics.initial`, so it is not possible to project the field `initial` from an expression\n  sem\nof type `WholeSemantics`\nMathGKM/ContinuationObligations.lean:88:25: error(lean.invalidField): Invalid field `successor`: The environment does not contain `MathGKM.ContinuationObligations.WholeSemantics.successor`, so it is not possible to project the field `successor` from an expression\n  sem\nof type `WholeSemantics`\nMathGKM/ContinuationObligations.lean:93:47: error(lean.invalidField): Invalid field `continue`: The environment does not contain `MathGKM.ContinuationObligations.WholeSemantics.continue`, so it is not possible to project the field `continue` from an expression\n  sem\nof type `WholeSemantics`\nMathGKM/ContinuationObligations.lean:93:78: error(lean.invalidField): Invalid field `continue`: The environment does not contain `MathGKM.ContinuationObligations.WholeSemantics.continue`, so it is not possible to project the field `continue` from an expression\n  sem\nof type `WholeSemantics`\nMathGKM/ContinuationObligations.lean:121:10: error(lean.invalidField): Invalid field `continue`: The environment does not contain `MathGKM.ContinuationObligations.WholeSemantics.continue`, so it is not possible to project the field `continue` from an expression\n  sem\nof type `WholeSemantics`\nMathGKM/ContinuationObligations.lean:124:12: error: Tactic `rfl` failed: The left-hand side\n  b.encode (hostRun b.hostStep 0 s env)\nis not definitionally equal to the right-hand side\n  run (?m.23 0) (?m.24 0) (?m.25 0)\n\ncase zero\nS I : Type\nsem : WholeSemantics\nb : ImplementationBinding S I sem\ns : S\nenv : Nat → I\n⊢ b.encode (hostRun b.hostStep 0 s env) = run (?m.23 0) (?m.24 0) (?m.25 0)\nMathGKM/ContinuationObligations.lean:128:4: error: Tactic `rfl` failed: The left-hand side\n  step (run (?m.23 n) (?m.24 n) (?m.25 n)) (b.encodeInput (env n))\nis not definitionally equal to the right-hand side\n  run (?m.23 (n + 1)) (?m.24 (n + 1)) (?m.25 (n + 1))\n\ncase succ\nS I : Type\nsem : WholeSemantics\nb : ImplementationBinding S I sem\ns : S\nenv : Nat → I\nn : Nat\nih : b.encode (hostRun b.hostStep n s env) = run (?m.23 n) (?m.24 n) (?m.25 n)\n⊢ step (run (?m.23 n) (?m.24 n) (?m.25 n)) (b.encodeInput (env n)) = run (?m.23 (n + 1)) (?m.24 (n + 1)) (?m.25 (n + 1))\nMathGKM/ContinuationObligations.lean:121:70: error: unsolved goals\ncase sem\nS I : Type\nsem : WholeSemantics\nb : ImplementationBinding S I sem\ns : S\nenv : Nat → I\nn : Nat\n⊢ WholeSemantics\n", 'stderr': '', 'termination': None, 'captured_bytes': 3191, 'elapsed_ns': 929291416}], 'status': 'invalid_comparison', 'required_constants': [], 'failure': 'failure within compilation/replay budget: MathGKM.ContinuationObligations', 'elapsed_seconds': 0.9348964999662712, 'finished': 1792276426.3814971}
+
+----------------------------------------------------------------------
+Ran 8 tests in 253.380s
+
+FAILED (failures=2)

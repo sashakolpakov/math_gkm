@@ -1,0 +1,14 @@
+--- pre-005/machinery/study_policy.py
++++ machinery/study_policy.py
+@@ -34,8 +34,10 @@
+         'remaining_obligations': state.get('remaining_obligations', {}),
+         'formal_obligations': state.get('formal_obligations', OBLIGATIONS),
+         'delayed_use_links': state['use_links'],
+-        'limits': {k: protocol[k] for k in ('rounds', 'episode_rounds', 'invention_rounds', 'call_seconds')},
++        'limits': {k: protocol[k] for k in ('rounds', 'episode_rounds', 'invention_rounds', 'call_seconds', 'knowledge_checks_per_round', 'validation_seconds')},
+         'status': 'experimental; no certified continuation improvement'}
++    projected['limits']['knowledge_counting'] = 'Aggregate entries across mathematical_claims, reductions, attachments, representations and fiber_gluings; repeated accepted identities count before skipping. Over-limit reports are rejected in full before checking.'
++    projected['limits']['validation_scope'] = 'Per knowledge proposal validation timeout; separate exact-root completion timeout of validation_seconds. Episode reserves research, paired evaluation and reviewer/selector calls before execution.'
+     return study_program.execute(state.get('program', study_program.REFERENCE), projected)
+ 
+ def record(state, report, workspace, round_index, protocol, *, prospective=None):

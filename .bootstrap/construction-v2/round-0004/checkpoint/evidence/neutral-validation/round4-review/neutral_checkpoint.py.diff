@@ -1,0 +1,12 @@
+--- pre-005/machinery/neutral_checkpoint.py
++++ machinery/neutral_checkpoint.py
+@@ -13,7 +13,8 @@
+          for p in (root/folder).glob('*') if p.is_file() and p.suffix in ('.py','.lean','.md','.json')]
+ files += [root/n for n in ('MISSION.md','lean-toolchain','lakefile.toml','lake-manifest.json')]
+ files += list((root/'.bootstrap/review-round2').glob('*.md'))
+-files += [root/'.bootstrap/supervisor-review/requirements.md']
++files += [root/'.bootstrap/supervisor-review/requirements.md', root/'.bootstrap/base-permissions.json']
++files += list((root/'.bootstrap/review-round3').glob('*'))
+ hashes, errors = {}, []
+ for path in sorted(files):
+     name = str(path.relative_to(root))

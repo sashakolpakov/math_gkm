@@ -1,0 +1,83 @@
+--- pre-006/tests/test_round4.py
++++ tests/test_round4.py
+@@ -6,7 +6,8 @@
+ from unittest.mock import patch
+ from machinery import study, study_burden, study_observer, study_policy, study_completion
+ from machinery.study_common import ROOT, Invalid, read, write, sha, digest, lock, snapshot, load_state
+-from tests.test_revision_static_checkpoint import neutral_contract, RealLeanMechanisms
++from tests import test_revision_static_checkpoint as previous
++neutral_contract = previous.neutral_contract
+ 
+ 
+ class Round4(unittest.TestCase):
+@@ -27,7 +28,7 @@
+             with self.assertRaises(Invalid), patch.object(study.Arm, 'call', side_effect=AssertionError('role executed')):
+                 self.freeze({**read(ROOT/'studies/v2-fixture.json'), **bad})
+             self.assertFalse(self.directory.exists())
+-        task = RealLeanMechanisms.task(self, id='neutral-panel')
++        task = previous.RealLeanMechanisms.task(self, id='neutral-panel')
+         suite = {'schema': 'math-gkm.suite.v2', 'selector': 'fixture', 'selection_basis': 'neutral fixed panel', 'independent': True, 'tasks': [task]}
+         with self.assertRaises(Invalid):
+             self.freeze({'arm_seconds': 1900}, suite)
+@@ -90,7 +91,7 @@
+         self.freeze()
+         with lock(self.directory/'controller.lock') as fd:
+             arm = study.Arm(self.directory, 'exploration', fd)
+-            result = {'resolved': True, 'finished': 1, 'bundle_hash': 'SYNTHETIC-protocol-only'}
++            result = self.synthetic_resolution(arm)
+             receipt = arm.root/'completion/synthetic/result.json'
+             write(receipt, result)
+             arm.s.update(resolution=result, resolution_receipt=str(receipt.relative_to(self.directory)))
+@@ -119,6 +120,52 @@
+             write(arm.root/'observer-outbox/terminal.json', changed)
+             with self.assertRaises(Invalid):
+                 study_completion.terminal(arm)
++
++    def synthetic_resolution(self, arm):
++        correspondence = 'research/terminal-fixture.md'
++        (arm.workspace/correspondence).write_text('SYNTHETIC receipt fixture; never a mathematical approval.')
++        binding = {'contract_hash': digest(read(arm.workspace/'contract.json')),
++            'claim': {'correspondence': correspondence},
++            'sources': {'MathGKM.HarnessFixture': sha(arm.workspace/'MathGKM/HarnessFixture.lean')},
++            'correspondence_sha256': sha(arm.workspace/correspondence)}
++        return {'resolved': True, 'finished': 1, 'bundle_hash': digest(binding), 'binding': binding,
++                'scope': 'synthetic serialization fixture; not a gate result'}
++
++    def test_terminal_rejects_source_change_after_finished_receipt(self):
++        self.freeze()
++        with lock(self.directory/'controller.lock') as fd:
++            arm = study.Arm(self.directory, 'exploration', fd)
++            result = self.synthetic_resolution(arm)
++            receipt = arm.root/'completion/synthetic/result.json'
++            write(receipt, result)
++            arm.s.update(resolution=result, resolution_receipt=str(receipt.relative_to(self.directory)))
++            (arm.workspace/'research/terminal-fixture.md').write_text('changed after receipt')
++            with self.assertRaisesRegex(Invalid, 'snapshot differs'):
++                study_completion.terminal(arm)
++            self.assertFalse((arm.root/'observer-outbox/terminal.json').exists())
++
++    def test_exact_episode_allowance_reaches_real_evaluation_and_review(self):
++        config = {**read(ROOT/'studies/v2-fixture.json'), 'rounds': 2, 'policy_trials': 0,
++                  'fixture_policy_trial': False, 'max_calls': 8, 'meta_calls': 4}
++        p = {**study.DEFAULT, **config}
++        config['arm_seconds'] = sum(v[0] for v in study.episode_envelope(p, 2, 1).values())
++        task = previous.RealLeanMechanisms.task(self, fixture_module='MathGKM.HarnessFixture',
++            fixture_term='fun n => rfl', fixture_interface_term='True.intro', fixture_transport_term='True.intro')
++        suite = {'schema': 'math-gkm.suite.v2', 'selector': 'neutral fixture',
++            'selection_basis': 'same fixed identity', 'independent': True, 'tasks': [task]}
++        self.freeze(config, suite)
++        with patch('machinery.study.dependency_identity', return_value={'fixture': 'fixed'}):
++            with lock(self.directory/'controller.lock') as fd:
++                arm = study.Arm(self.directory, 'exploration', fd)
++                arm.run()
++        self.assertEqual(arm.s['reviewed_rounds'], [2], arm.s)
++        self.assertEqual((arm.s['calls'], arm.s['meta_calls']), (8,4))
++        self.assertEqual(arm.s['seconds'], config['arm_seconds'])
++        pair = read(arm.root/'evaluations/episode-2/result.json')
++        self.assertEqual(pair['status'], 'valid_finite_budget_comparison')
++        self.assertTrue(all(c['checked'] for side in pair['sides'].values() for c in side['checks']))
++        self.assertEqual(read(arm.root/'jobs/select-2/receipt.json')['outcome'], 'completed')
++        self.assertEqual(arm.s['final_evaluation']['status'], 'not_demonstrated_within_budget')
+ 
+     def test_unused_route_does_not_inflate_fixed_witness_description(self):
+         self.freeze()

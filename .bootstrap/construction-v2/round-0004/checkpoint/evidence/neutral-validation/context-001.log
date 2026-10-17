@@ -1,0 +1,68 @@
+COMMAND ["/opt/homebrew/bin/python3", "-m", "unittest", "-v", "tests.test_context_revision"]
+MANIFEST /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/pre-001/SOURCE_MANIFEST.json
+test_audit_corruption_does_not_change_actual_fixture_requests (tests.test_context_revision.ContextRevision.test_audit_corruption_does_not_change_actual_fixture_requests) ... RETAINED /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/context-validation-s_rte3hl
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+    ~~~~^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/main.py", line 104, in __init__
+    self.runTests()
+    ~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/main.py", line 270, in runTests
+    self.result = testRunner.run(self.test)
+                  ~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/runner.py", line 257, in run
+    test(result)
+    ~~~~^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           ~~~~~~~~^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/suite.py", line 122, in run
+    test(result)
+    ~~~~^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           ~~~~~~~~^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/suite.py", line 122, in run
+    test(result)
+    ~~~~^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           ~~~~~~~~^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/suite.py", line 122, in run
+    test(result)
+    ~~~~^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/case.py", line 725, in __call__
+    return self.run(*args, **kwds)
+           ~~~~~~~~^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/case.py", line 669, in run
+    self._callTestMethod(testMethod)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/case.py", line 615, in _callTestMethod
+    result = method()
+  File "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/tests/test_context_revision.py", line 141, in test_audit_corruption_does_not_change_actual_fixture_requests
+    arm.run()
+    ~~~~~~~^^
+  File "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study.py", line 720, in run
+    self.research_round()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study.py", line 428, in research_round
+    self._research_round()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study.py", line 460, in _research_round
+    ingest(self, updated, result['payload'], self.workspace, transaction/'checks')
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study_knowledge.py", line 146, in ingest
+    checked = check_task(workspace, task, solution, dest, arm.p['validation_seconds'],
+        live=arm.p['transport'] == 'live', stop=arm.stopped,
+        required=item.get('required_constants', []), contract=contract)
+  File "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/study_transfer.py", line 198, in check_task
+    record = run(prefix+argv, cwd=source, env=env, timeout=min(180, remaining), output_bytes=1048576)
+  File "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/machinery/process.py", line 35, in run
+    for key, _ in selector.select(0.02):
+                  ~~~~~~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/selectors.py", line 548, in select
+    kev_list = self._selector.control(None, max_ev, timeout)
+KeyboardInterrupt

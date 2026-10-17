@@ -1,0 +1,93 @@
+--- pre-006/machinery/study_burden.py
++++ machinery/study_burden.py
+@@ -41,6 +41,9 @@
+         feed['snapshot_binding'] != manifest['binding'] or
+         digest(feed['mathematics']) != feed['mathematics_binding']):
+         raise Invalid('observer binding changed')
++    sealed = read(study/'seal.json')['seed']
++    if any(manifest['files'].get(n) != h for n,h in sealed.items() if n.endswith('.lean')):
++        raise Invalid('observer snapshot changed immutable seed theory')
+     if key == 'terminal':
+         binding = feed.get('resolution', {})
+         receipt = inside(study, binding['receipt'])
+@@ -49,6 +52,8 @@
+             not result.get('resolved') or 'finished' not in result or
+             result.get('bundle_hash') != binding['bundle_hash']):
+             raise Invalid('terminal resolution binding changed')
++        from .study_observer import validate_resolution
++        validate_resolution(study, manifest, result)
+     return feed, snapshot, manifest
+ 
+ 
+@@ -198,6 +203,14 @@
+     """Measured series only; missing points break trajectories. No optimization."""
+     order = {r['key']: i for i,r in enumerate(r for r in records if r['arm'] == 'baseline')}
+     theories, overhead = {}, []
++    events, previous_markers = {}, {}
++    for r in records:
++        if 'marker' not in r:
++            continue
++        previous = previous_markers.get(r['arm'])
++        events[(r['arm'], r['key'])] = ['initial snapshot'] if previous is None else [
++            k+' changed' for k,v in r['marker'].items() if previous.get(k) != v]
++        previous_markers[r['arm']] = r['marker']
+     for pair in pairs:
+         for key, theory in pair.get('theories', {}).items():
+             theories[(pair['arm'], key)] = theory
+@@ -212,7 +225,7 @@
+         for identifier, witness in theory['per_witness'].items():
+             points.append({'series': arm+' / '+identifier+' / '+witness['witness_binding'][:8],
+                 'key': key, 'x': theory['costs']['worker_observed_seconds'],
+-                'y': witness['description_bytes'], 'marker': 'snapshot '+key,
++                'y': witness['description_bytes'], 'marker': events.get((arm,key), []),
+                 'details': witness})
+     costs = []
+     for r in records:
+@@ -247,7 +260,7 @@
+                 x,y = 90+1050*p['x']/xmax, 430-340*p['y']/ymax
+                 if previous and order[p['key']] == order[previous[0]['key']]+1:
+                     svg.append(f'<path d="M {previous[1]} {previous[2]} L {x} {y}" stroke="{color}" fill="none"/>')
+-                changed = previous is None or p['y'] != previous[0]['y']
++                changed = previous is None or p['y'] != previous[0]['y'] or bool(p['marker'])
+                 if changed:
+                     svg.append(f'<path d="M {x} 80 V 430" stroke="{color}" stroke-dasharray="2,5" opacity="0.3"/>')
+                 svg.append(f'<circle cx="{x}" cy="{y}" r="4" fill="{color}"><title>{html.escape(canonical(p))}</title></circle>')
+@@ -256,7 +269,7 @@
+             svg.append(f'<text x="20" y="{580+18*index}" fill="{color}" font-size="11">{html.escape(name)}</text>')
+         if not rows:
+             svg.append('<text x="180" y="240">Insufficient measured witnesses; no curve inferred.</text>')
+-        svg += ['<text x="20" y="505">Vertical markers: first measurement or measured value change. Flat/rising/irregular series are retained.</text>',
++        svg += ['<text x="20" y="505">Markers: first/value change or recorded program/policy/component change (tooltip). Flat/rising/irregular retained.</text>',
+             '<text x="20" y="525">Missing points break lines; unknown proof holes are not zero. Overhead is separate and charged in per-witness pairs.</text>',
+             f'<text x="20" y="545" font-size="10">Missing: {html.escape(", ".join(missing))}</text>', '</svg>']
+         (output/filename).write_text('\n'.join(svg))
+@@ -273,9 +286,9 @@
+     seal, contract, suite, seed = fixed_inputs(study)
+     references = [{'id': 'exact-root', 'declaration': contract['root_declaration'],
+         'context': {n: sha(study/'seed'/n) for n in seed if n.endswith('.lean')}}] + suite['tasks']
+-    result = {'schema': 'math-gkm.conditional-remaining.v2', 'arm': arm, 'before': old, 'after': new,
++    result = {'schema': 'math-gkm.conditional-portfolio-and-witness.v3', 'arm': arm, 'before': old, 'after': new,
+         'reference_tasks': references, 'reference_binding': digest(references),
+-        'encoding': 'canonical UTF-8 JSON partial Lean application descriptions v2',
++        'encoding': 'canonical UTF-8 JSON separately bound partial Lean application descriptions v3',
+         'minimum_proof_complexity': None, 'proof_difficulty_change': None,
+         'status': 'audit_only', 'theories': {}}
+     dictionaries = {}
+@@ -287,6 +300,8 @@
+         feed, snap, manifest = bound_feed(study, arm, key)
+         data = feed['mathematics']
+         records = {**data['knowledge'], **data['components']}
++        if any(manifest['files'].get(n) != h for r in records.values() for n,h in r['source_files'].items()):
++            raise Invalid('conditional dictionary differs from accepted source bindings')
+         paths = {n for n in seed if n.endswith('.lean')}
+         paths |= {n for r in records.values() for n in r['source_files']}
+         dictionary = {n: (snap/'source'/n).read_text() for n in sorted(paths)}
+@@ -311,7 +326,7 @@
+                  for t in references if t['id'] != 'exact-root' or not descriptions]
+         payload = {'descriptions': descriptions, 'unwitnessed_reference_tasks': fixed}
+         result['theories'][key] = {'theory_binding': digest(dictionary),
+-            'snapshot_binding': manifest['binding'], 'dictionary_source_hashes': {n: digest(v) for n,v in dictionary.items()},
++            'snapshot_binding': manifest['binding'], 'dictionary_source_hashes': {n: manifest['files'][n] for n in dictionary},
+             'conditional_portfolio_description': payload, 'conditional_portfolio_description_bytes': len(canonical(payload).encode()),
+             'resolution': feed.get('resolution'),
+             'per_witness': {d['witness_id']: {'description': d,

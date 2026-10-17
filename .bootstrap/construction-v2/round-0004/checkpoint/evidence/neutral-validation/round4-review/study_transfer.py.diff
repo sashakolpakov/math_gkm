@@ -1,0 +1,11 @@
+--- pre-005/machinery/study_transfer.py
++++ machinery/study_transfer.py
+@@ -318,7 +318,7 @@
+     # Reserve symmetric entire comparison before any adaptation call.
+     reserve = 2*arm.p['adaptation_seconds'] + 2*(len(suite['tasks'])+1)*arm.p['validation_seconds']
+     if not (directory/'commitment.json').exists():
+-        if reserve > arm.available() or arm.s['calls'] + 2 > arm.p['max_calls']:
++        if reserve > arm.available() or arm.available_calls() < 2:
+             raise Invalid('insufficient equal adaptation/validation reservation for pair')
+         write(directory/'commitment.json', {'binding': binding, 'reservation': reserve,
+             'outcomes': ['checked solution', 'explicit bounded non-solution', 'invalid comparison'],

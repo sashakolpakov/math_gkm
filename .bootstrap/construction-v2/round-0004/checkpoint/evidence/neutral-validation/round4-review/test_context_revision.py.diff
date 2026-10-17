@@ -1,0 +1,12 @@
+--- pre-005/tests/test_context_revision.py
++++ tests/test_context_revision.py
+@@ -156,7 +156,8 @@
+                 if side == 'clean':
+                     study_burden.report(directory, directory/'audit/report')
+                     pairs = read(directory/'audit/report/conditional-paired.json')
+-                    measured = [p for p in pairs if p['arm'] == 'exploration']
++                    measured = [p for p in pairs if p['arm'] == 'exploration' and p['status'] == 'audit_only']
++                    self.assertTrue(any(p['after'] == 'terminal' and p['status'] == 'missing_scheduled_checkpoint' for p in pairs))
+                     self.assertTrue(all(p['enlargement'] for p in measured), measured)
+                     self.assertEqual(measured[0]['reference_binding'], measured[1]['reference_binding'])
+         self.assertEqual(requests[0], requests[1])

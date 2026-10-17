@@ -1,0 +1,145 @@
+--- pre-005/machinery/study.py
++++ machinery/study.py
+@@ -37,6 +37,18 @@
+ 
+ def public_comparison(result):
+     return {k: v for k, v in result.items() if k not in ('sides', 'outcomes')}
++
++def episode_envelope(p, count, tasks):
++    evaluation = 2*p['adaptation_seconds'] + 2*(tasks+1)*p['validation_seconds'] if tasks else 0
++    return {'research': (count*(2*p['call_seconds'] + (p['knowledge_checks_per_round']+1)*p['validation_seconds']), 2*count, count),
++            'evaluation': (evaluation, 2 if tasks else 0, 0),
++            'review': (2*p['call_seconds'], 2, 2)}
++
++def validate_commitment(p, tasks=0):
++    pools = episode_envelope(p, min(p['episode_rounds'], p['rounds']), tasks)
++    for index, limit in enumerate(('arm_seconds', 'max_calls', 'meta_calls')):
++        if sum(v[index] for v in pools.values()) > p[limit]:
++            raise Invalid('impossible episode through evaluation/review: '+limit)
+ 
+ def validate_protocol(p):
+     if set(p) != set(DEFAULT) or p['schema'] != DEFAULT['schema']:
+@@ -63,6 +75,8 @@
+         if path in SEED or not path.startswith(('MathGKM/', 'research/')):
+             raise Invalid('ablation may remove only an experimental component')
+ 
++    validate_commitment(p)
++
+ def validate_suite(suite, contract=None):
+     if set(suite) != {'schema', 'selector', 'selection_basis', 'independent', 'tasks'} or suite['schema'] != 'math-gkm.suite.v2':
+         raise Invalid('invalid evaluation suite')
+@@ -106,6 +120,7 @@
+         'selection_basis': 'No independent holdout available; no transfer claim authorized.',
+         'independent': False, 'tasks': []}
+     validate_suite(suite, contract)
++    validate_commitment(p, len(suite['tasks']))
+     if p['transport'] == 'live' and suite['tasks']:
+         if not curation:
+             raise Invalid('live heldout suite requires retained pretrial curation provenance')
+@@ -148,7 +163,7 @@
+     write(directory/'seal.json', seal)
+     write(directory/'audit/plan.json', {'encoding': 'conditional-source-witness-v1',
+         'root': contract['root_sha256'], 'panel_hash': digest(suite),
+-        'checkpoints': ['initial']+[f'round-{r:04d}' for r in range(p['rounds'])],
++        'checkpoints': ['initial']+[f'round-{r:04d}' for r in range(p['rounds'])]+['terminal'],
+         'measurements': 'explicit checked witnesses and full definition/adapter/bridge overhead; unknown minimum stays unknown',
+         'decision_channel': 'none'})
+     seal['audit_plan_sha256'] = sha(directory/'audit/plan.json')
+@@ -222,15 +237,40 @@
+             return pool['cap'] - pool['spent']
+         return self.p['arm_seconds'] - self.s['seconds']
+ 
++    def available_calls(self, meta=False):
++        field, cap = ('meta_calls', 'meta_calls') if meta else ('calls', 'max_calls')
++        pools = self.s.get('budget_pools', {})
++        if self.active_budget and field in pools[self.active_budget]:
++            pool = pools[self.active_budget]
++            return pool[field] - pool.get(field+'_spent', 0)
++        protected = sum(p.get(field, 0)-p.get(field+'_spent', 0) for p in pools.values())
++        return self.p[cap] - self.s[field] - protected
++
++    def fund_many(self, entries):
++        # One durable commitment before any role effects, including call counters.
++        pools = self.s.setdefault('budget_pools', {})
++        fresh = {k: v for k,v in entries.items() if k not in pools}
++        for k,(seconds,calls,meta) in entries.items():
++            if k in pools and (pools[k]['cap'] != seconds or
++                (calls is not None and pools[k].get('calls') != calls) or
++                (meta is not None and pools[k].get('meta_calls') != meta)):
++                raise Invalid('protected envelope changed')
++        if sum(v[0] for v in fresh.values()) > self.available() or any(
++            sum(v[i] or 0 for v in fresh.values()) > self.available_calls(meta=(i==2)) for i in (1,2)):
++            raise Invalid('declared delayed horizon cannot be funded through review')
++        for k,(seconds,calls,meta) in fresh.items():
++            self.s.setdefault('reservations', {})['pool-'+k] = seconds
++            if self.active_budget:
++                pools[self.active_budget]['spent'] += seconds
++            else:
++                self.s['seconds'] += seconds
++            pools[k] = {'cap': seconds, 'spent': 0}
++            if calls is not None:
++                pools[k].update(calls=calls, calls_spent=0, meta_calls=meta, meta_calls_spent=0)
++        self.save()
++
+     def fund(self, key, seconds):
+-        pools = self.s.setdefault('budget_pools', {})
+-        if key in pools:
+-            if pools[key]['cap'] != seconds:
+-                raise Invalid('protected envelope changed')
+-            return
+-        self.reserve('pool-'+key, seconds)
+-        pools[key] = {'cap': seconds, 'spent': 0}
+-        self.save()
++        self.fund_many({key: (seconds, None, None)})
+ 
+     @contextlib.contextmanager
+     def budget(self, key):
+@@ -251,9 +291,9 @@
+         return (self.study/'STOP.json').exists()
+ 
+     def permitted(self, role, seconds):
+-        return (not self.stopped() and self.s['calls'] < self.p['max_calls'] and
++        return (not self.stopped() and self.available_calls() > 0 and
+             seconds <= self.available() and
+-            (role not in ('proposer', 'reviewer', 'selector') or self.s['meta_calls'] < self.p['meta_calls']))
++            (role not in ('proposer', 'reviewer', 'selector') or self.available_calls(meta=True) > 0))
+ 
+     def reserve(self, key, seconds):
+         reservations = self.s.setdefault('reservations', {})
+@@ -361,6 +401,11 @@
+         self.s['active'] = str(job)
+         self.s['active_intent'] = {'spec': spec, 'request': req}
+         self.s['calls'] += 1
++        if self.active_budget and 'calls' in self.s['budget_pools'][self.active_budget]:
++            pool = self.s['budget_pools'][self.active_budget]
++            pool['calls_spent'] += 1
++            if role in ('proposer', 'reviewer', 'selector'):
++                pool['meta_calls_spent'] += 1
+         self.s.setdefault('counted_jobs', []).append(key)
+         if role in ('proposer', 'reviewer', 'selector'):
+             self.s['meta_calls'] += 1
+@@ -420,10 +465,11 @@
+         count = min(self.p['episode_rounds'], self.p['rounds']-first)
+         key = 'episode-research-'+str(first)
+         if key not in self.s.get('budget_pools', {}):
+-            if self.s['calls'] + 2*count > self.p['max_calls'] or self.s['meta_calls'] + count > self.p['meta_calls']:
+-                raise Invalid('declared delayed horizon cannot be funded')
+-            self.fund(key, count*(2*self.p['call_seconds'] +
+-                (self.p['knowledge_checks_per_round']+1)*self.p['validation_seconds']))
++            pools = episode_envelope(self.p, count, len(read(self.study/'evaluation/suite.json')['tasks']))
++            end = first+count
++            self.fund_many({key: pools['research'],
++                'paired-evaluation-episode-'+str(end): pools['evaluation'],
++                'review-'+str(end): pools['review']})
+         with self.budget(key):
+             self._research_round()
+ 
+@@ -594,7 +640,7 @@
+         if not trial_commitment.exists():
+             if budget > self.available():
+                 return {'eligible': False, 'status': 'insufficient_predetermined_continuation_budget'}
+-            if self.s['calls'] + calls + 4 > self.p['max_calls'] or self.s['meta_calls'] + 2*self.p['policy_trial_rounds'] + 2 > self.p['meta_calls']:
++            if calls + 2 > self.available_calls() or 2*self.p['policy_trial_rounds'] > self.available_calls(meta=True):
+                 return {'eligible': False, 'status': 'insufficient_predetermined_call_or_meta_budget'}
+             write(trial_commitment, {'candidate': candidate, 'calls': calls, 'seconds': budget,
+                 'rounds_each': self.p['policy_trial_rounds'], 'state_binding': digest(self.s['research'])})
