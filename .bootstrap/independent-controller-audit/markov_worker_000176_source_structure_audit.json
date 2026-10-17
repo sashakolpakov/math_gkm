@@ -1,0 +1,1066 @@
+{
+  "worker": 176,
+  "request": "be35517714ad4fa2a3e9e4312d96ce0a",
+  "created_at_utc": "2026-10-17T05:23:50.929924+00:00",
+  "historical_status": "Completed host outcome / return0 / structured report present / elapsed1414.709665775299. Eight final mathematical modules compiled and jointly replayed,46 distinct theorem closures printed; one superseded successful mathematical version retained. Full root open.",
+  "scope": "Archive-first closed176 and explicit named inherited/current counterparts only. Static hashes, source/record parsing, literal comparison and finite index-domain counts. No mathematical-value recomputation, project/proof/checker/replay/experiment/generator/finalizer execution/import, project edit or proposer help/contact. Active177 and later excluded. Earlier seals/windows unchanged.",
+  "new_modules": [
+    {
+      "module": "MarkovTransposedBoundsMBE3",
+      "path": "research/MarkovTransposedBoundsMBE3.lean",
+      "bytes": 7120,
+      "sha256": "f1bb6298336c8ffcce84361beef414aa8570577527deee55c84fc05d95304b2c",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "choose_ratio_crossMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_successor_boundMBE3"
+        },
+        {
+          "kind": "def",
+          "name": "transposedBaseMBE3"
+        },
+        {
+          "kind": "def",
+          "name": "transposedBudgetMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_second_relativeMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_term_nonnegMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "shifted_choose_budgetMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_choose_budgetMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_relativeMBE3"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792213183348932000.json",
+          "sha256": "4856b11fb8b482ff232f38b71d267362c17b28a9fd19991335c15ba1ab396d8c",
+          "source_sha256": "598e42e913e7451f0dd52c29e57c260e2d95ea759cb99c4d1327e6eb221e6081",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "598e42e913e7451f0dd52c29e57c260e2d95ea759cb99c4d1327e6eb221e6081"
+        },
+        {
+          "path": "build-1792213274385751000.json",
+          "sha256": "1cc6359692c7b78d4d4ac7ea4daaaa163ba3dd9046589c1433c28f79f844d497",
+          "source_sha256": "11f670523971ea457917d7f397b2678061c0961f2928f2e8c51203d8a3a4eb26",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "11f670523971ea457917d7f397b2678061c0961f2928f2e8c51203d8a3a4eb26"
+        },
+        {
+          "path": "build-1792213319154834000.json",
+          "sha256": "8052e0f5533fa01ad99b10b03872ed986afe51b20a342da56d519480fea0265c",
+          "source_sha256": "f1bb6298336c8ffcce84361beef414aa8570577527deee55c84fc05d95304b2c",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "f1bb6298336c8ffcce84361beef414aa8570577527deee55c84fc05d95304b2c"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in176": true,
+      "printed_in176": true,
+      "object_path": "evidence/markov-be355177/MarkovTransposedBoundsMBE3.olean",
+      "object_sha256": "5b6ec93ec95d8ecf0d6cb3676cb8aba1cc516037bb405a53cc309ad6a3fbd5f4",
+      "successful_final_build": "evidence/markov-be355177/build-1792213319154834000.json",
+      "historical_successful_source_versions": [
+        "f1bb6298336c8ffcce84361beef414aa8570577527deee55c84fc05d95304b2c"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovTransposedKernelM657"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "choose_ratio_crossMBE3",
+          "header": "theorem choose_ratio_crossMBE3 (A B N m : ℕ) (hAB : A ≤ B) :\n (A.choose (N+m):ℝ)*(B.choose N:ℝ) ≤\n (A.choose N:ℝ)*(B.choose (N+m):ℝ)",
+          "block_sha256": "1b4520c33d6c2d3b3417e6e938cb837ce33f662f3dcc1f992509d62f8aa6716e",
+          "block_characters": 1047
+        },
+        {
+          "kind": "theorem",
+          "name": "choose_successor_boundMBE3",
+          "header": "theorem choose_successor_boundMBE3 (s m : ℕ) :\n ((s+m+3).choose (m+1):ℝ) ≤ (s+3)*((s+m+3).choose m:ℝ)",
+          "block_sha256": "1fd42f0cd5db10a541d9239df154888292700c8c1ace047dfecb72d166d4cd46",
+          "block_characters": 394
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_second_relativeMBE3",
+          "header": "theorem correction_second_relativeMBE3 (j k s m : ℕ) (r : Bool) (hkj : k ≤ j) :\n transposedBaseMBE3 j s*(correctionTermM657 k (s+1) (m+1) r:ℝ) ≤\n (correctionTermM657 k (s+1) 1 r:ℝ)*\n   (4*((s+m+3).choose m:ℝ)*((j+s+4).choose (s+m+5):ℝ))",
+          "block_sha256": "f6163352e2df8c59639f6576b5fbe365ec367808277ef347163088665d36a803",
+          "block_characters": 1682
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_term_nonnegMBE3",
+          "header": "theorem correction_term_nonnegMBE3 (k t m : ℕ) (r : Bool) :\n 0 ≤ (correctionTermM657 k t m r:ℝ)",
+          "block_sha256": "d97c35e56c943174a476ab6d90f1b3461b450821db295cfdf3b4415bc741c88c",
+          "block_characters": 204
+        },
+        {
+          "kind": "theorem",
+          "name": "shifted_choose_budgetMBE3",
+          "header": "theorem shifted_choose_budgetMBE3 (A j s m : ℕ) (hAj : A-(s+5) ≤ j) :\n ((s+m+3).choose (m+1):ℝ)*(A.choose (s+m+5):ℝ) ≤\n (s+3)*(A.choose (s+5):ℝ)*(j.choose m:ℝ)",
+          "block_sha256": "fe8f510f4202f4d523c4e28a538f8318a9f61608385d827c406ddb47bb2c8ffd",
+          "block_characters": 1084
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_choose_budgetMBE3",
+          "header": "theorem correction_choose_budgetMBE3 (j k s m : ℕ) (r : Bool) (hkj : k ≤ j) :\n (correctionTermM657 k (s+1) (m+1) r:ℝ) ≤\n (correctionTermM657 k (s+1) 1 r:ℝ)*(j.choose m:ℝ)",
+          "block_sha256": "9e907545390a56c8f1030d61e0acf9f7c42bc8d2d4079f0de28e785126381069",
+          "block_characters": 656
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_relativeMBE3",
+          "header": "theorem correction_relativeMBE3 (j k s m : ℕ) (r : Bool) (hkj : k ≤ j) :\n (liftTermMAE9 j s 0:ℝ)*(correctionTermM657 k (s+1) (m+1) r:ℝ) ≤\n (correctionTermM657 k (s+1) 1 r:ℝ)*(liftTermMAE9 j s m:ℝ)",
+          "block_sha256": "dc8c978877da0296730ed850fe79d97c59f1995f23fd2ef9c9d27caa8862c0bb",
+          "block_characters": 1233
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "transposedBaseMBE3",
+          "header": "def transposedBaseMBE3 (j s : ℕ) : ℝ",
+          "block_sha256": "ee93e0be14a1dd1bb4218b6067b2f4ec17f766767478678e496cdcc29a217b8a",
+          "block_characters": 66,
+          "definition_text": "def transposedBaseMBE3 (j s : ℕ) : ℝ := 4*((j+s+4).choose (s+5):ℝ)"
+        },
+        {
+          "kind": "def",
+          "name": "transposedBudgetMBE3",
+          "header": "def transposedBudgetMBE3 (d k s : ℕ) (r : Bool) : ℝ",
+          "block_sha256": "bc3a6168a690cc1205fe7ab9adb0a46e3713cf4143367019d10a5a9ffc5c386f",
+          "block_characters": 147,
+          "definition_text": "def transposedBudgetMBE3 (d k s : ℕ) (r : Bool) : ℝ :=\n absorbedExtraM418 d s (correctionTermM657 k (s+1) 0 r)+\n (correctionTermM657 k (s+1) 1 r:ℝ)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovTransposedSharpMBE3",
+      "path": "research/MarkovTransposedSharpMBE3.lean",
+      "bytes": 4581,
+      "sha256": "fc2b965ecef4320f4b928939d3397d9a5ba4c6828c688254e3d517a385388efe",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "bandJMBE3"
+        },
+        {
+          "kind": "def",
+          "name": "bandBaseMBE3"
+        },
+        {
+          "kind": "def",
+          "name": "bandTopMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_base_posMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "transposed_budget_nonnegMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_top_posMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_kernel_topMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_kernel_tailMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_kernel_ge_lowerMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_kernel_scaledMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_kernel_bound_iffMBE3"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792213481424387000.json",
+          "sha256": "497df01693efd414f3abadc2fe4ad158ed2df9be3dca24254398129ffaead649",
+          "source_sha256": "b2da9a8b5d4a8d0bb3d4af2084a14bd5a1d1c7d4a109858b6bd02ae7be1b9a96",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "b2da9a8b5d4a8d0bb3d4af2084a14bd5a1d1c7d4a109858b6bd02ae7be1b9a96"
+        },
+        {
+          "path": "build-1792213534731679000.json",
+          "sha256": "81fb1eeff023a87e16ac2e099a9e82d908c3c94ae2db2af1a97d55210c5c19db",
+          "source_sha256": "fc2b965ecef4320f4b928939d3397d9a5ba4c6828c688254e3d517a385388efe",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "fc2b965ecef4320f4b928939d3397d9a5ba4c6828c688254e3d517a385388efe"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in176": true,
+      "printed_in176": true,
+      "object_path": "evidence/markov-be355177/MarkovTransposedSharpMBE3.olean",
+      "object_sha256": "28c664df27ab3e535dc707a01bca1853ca97ad8ec5d6c148b765dce1f977861c",
+      "successful_final_build": "evidence/markov-be355177/build-1792213534731679000.json",
+      "historical_successful_source_versions": [
+        "fc2b965ecef4320f4b928939d3397d9a5ba4c6828c688254e3d517a385388efe"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovTransposedBoundsMBE3"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "band_base_posMBE3",
+          "header": "theorem band_base_posMBE3 (d k s : ℕ) (r : Bool) : 0 < bandBaseMBE3 d k s r",
+          "block_sha256": "0ecb95fe802498f2182d7e3c86f75d83e9cc0fd3c1bdded5c709c8151162ed67",
+          "block_characters": 174
+        },
+        {
+          "kind": "theorem",
+          "name": "transposed_budget_nonnegMBE3",
+          "header": "theorem transposed_budget_nonnegMBE3 (d k s : ℕ) (r : Bool) :\n 0 ≤ transposedBudgetMBE3 d k s r",
+          "block_sha256": "afb79eb7e6763c0e16c1c2b3ab40e38d7aa592d0cad27bde0c596236dc7372f7",
+          "block_characters": 304
+        },
+        {
+          "kind": "theorem",
+          "name": "band_top_posMBE3",
+          "header": "theorem band_top_posMBE3 (d k s : ℕ) (r : Bool) : 0 < bandTopMBE3 d k s r",
+          "block_sha256": "fd35da1c08e80c364e8787d7c037a3b1a6a189e867331b9b28e79806ea5ce11f",
+          "block_characters": 169
+        },
+        {
+          "kind": "theorem",
+          "name": "band_kernel_topMBE3",
+          "header": "theorem band_kernel_topMBE3 (d k s : ℕ) (r : Bool) :\n (bandKernelM657 d k s r).coeff s=bandTopMBE3 d k s r",
+          "block_sha256": "e06adc31bc88af7591526a32007c430974e8a48987ca2dc49fc750ed3c88656a",
+          "block_characters": 287
+        },
+        {
+          "kind": "theorem",
+          "name": "band_kernel_tailMBE3",
+          "header": "theorem band_kernel_tailMBE3 (d k s h : ℕ) (r : Bool) (hh : s<h) :\n (bandKernelM657 d k s r).coeff h=0",
+          "block_sha256": "d629093f82f2da6801ab511aa6a7bedcfb216e67618909198e600457872d23ac",
+          "block_characters": 199
+        },
+        {
+          "kind": "theorem",
+          "name": "band_kernel_ge_lowerMBE3",
+          "header": "theorem band_kernel_ge_lowerMBE3 (d k s h : ℕ) (r : Bool) :\n (liftPolyM7E2 (bandJMBE3 d k r) s).coeff h ≤ (bandKernelM657 d k s r).coeff h",
+          "block_sha256": "23d33d466ca91fe2498dab0fb66591ccbca247442f70cf73d804ba712f7f4cf7",
+          "block_characters": 570
+        },
+        {
+          "kind": "theorem",
+          "name": "band_kernel_scaledMBE3",
+          "header": "theorem band_kernel_scaledMBE3 (d k s h : ℕ) (r : Bool) :\n bandBaseMBE3 d k s r*(bandKernelM657 d k s r).coeff h ≤\n bandTopMBE3 d k s r*(liftPolyM7E2 (bandJMBE3 d k r) s).coeff h",
+          "block_sha256": "d8b02c1c2cf85d8a007e2b8dffdf74e396a2b2a7fb87972af834a2c091756894",
+          "block_characters": 1553
+        },
+        {
+          "kind": "theorem",
+          "name": "band_kernel_bound_iffMBE3",
+          "header": "theorem band_kernel_bound_iffMBE3 (d k s : ℕ) (r : Bool) (v : ℝ) :\n (∀ h, (bandKernelM657 d k s r).coeff h ≤\n   v*(liftPolyM7E2 (bandJMBE3 d k r) s).coeff h) ↔\n bandTopMBE3 d k s r ≤ v*bandBaseMBE3 d k s r",
+          "block_sha256": "c3657804f6290eaeae5b626d15d1a05f11a5be17ab5123f8700236b25622c09e",
+          "block_characters": 661
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "bandJMBE3",
+          "header": "def bandJMBE3 (d k : ℕ) (r : Bool) : ℕ",
+          "block_sha256": "fe9ddcc9bea11e94a3c7e802c8eab5bd4786a37fcf2adb527f3fa50335df7ba5",
+          "block_characters": 68,
+          "definition_text": "def bandJMBE3 (d k : ℕ) (r : Bool) : ℕ := d+3*k+(if r then 3 else 2)"
+        },
+        {
+          "kind": "def",
+          "name": "bandBaseMBE3",
+          "header": "def bandBaseMBE3 (d k s : ℕ) (r : Bool) : ℝ",
+          "block_sha256": "1050400d118d3f6578466340ad614d5a9839ddec77df92b1ece6e27f381fff83",
+          "block_characters": 86,
+          "definition_text": "def bandBaseMBE3 (d k s : ℕ) (r : Bool) : ℝ :=\n (liftTermMAE9 (bandJMBE3 d k r) s 0:ℝ)"
+        },
+        {
+          "kind": "def",
+          "name": "bandTopMBE3",
+          "header": "def bandTopMBE3 (d k s : ℕ) (r : Bool) : ℝ",
+          "block_sha256": "05780f238fe8a1d9f900448dc188e2cf90e6cbdee2794f672c863fe5f0cb92f8",
+          "block_characters": 96,
+          "definition_text": "def bandTopMBE3 (d k s : ℕ) (r : Bool) : ℝ :=\n bandBaseMBE3 d k s r+transposedBudgetMBE3 d k s r"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovSeparatedChooseMBE3",
+      "path": "research/MarkovSeparatedChooseMBE3.lean",
+      "bytes": 3511,
+      "sha256": "b4cf75026c5d4276a8658fc75b6caf7b48cc3bf995a2a3a6365e81a900a3b9b3",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "choose_rise_threeMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "separated_step_certificateMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "separated_chooseMBE3"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792213527241400000.json",
+          "sha256": "e9e1ed06afca1dc0de570be3d9809eb66b83110e5d5bfe521c4a4307a2d7166c",
+          "source_sha256": "e6638e3760c5dc18ff1d4b7d8564db239fadae1e45798cf9a814c058fa468f96",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "e6638e3760c5dc18ff1d4b7d8564db239fadae1e45798cf9a814c058fa468f96"
+        },
+        {
+          "path": "build-1792213592840214000.json",
+          "sha256": "3823779759c8be21979af40682514bcf9b8363781d172beedaffd272fba24fbb",
+          "source_sha256": "b4cf75026c5d4276a8658fc75b6caf7b48cc3bf995a2a3a6365e81a900a3b9b3",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "b4cf75026c5d4276a8658fc75b6caf7b48cc3bf995a2a3a6365e81a900a3b9b3"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in176": true,
+      "printed_in176": true,
+      "object_path": "evidence/markov-be355177/MarkovSeparatedChooseMBE3.olean",
+      "object_sha256": "686572155f38b8a5e598833669bd0cecd40a1a95cc2f041eb49cee87f4fe8480",
+      "successful_final_build": "evidence/markov-be355177/build-1792213592840214000.json",
+      "historical_successful_source_versions": [
+        "b4cf75026c5d4276a8658fc75b6caf7b48cc3bf995a2a3a6365e81a900a3b9b3"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovTransposedBoundsMBE3"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "choose_rise_threeMBE3",
+          "header": "theorem choose_rise_threeMBE3 (p q : ℕ) :\n ((p+q+3).choose q:ℝ)*(p+1)*(p+2)*(p+3)=\n ((p+q).choose q:ℝ)*(p+q+1)*(p+q+2)*(p+q+3)",
+          "block_sha256": "b59d984dc3312c0faf36f43fc8af7d5fc383996de6f06388e15c6bbe1bcc0179",
+          "block_characters": 794
+        },
+        {
+          "kind": "theorem",
+          "name": "separated_step_certificateMBE3",
+          "header": "theorem separated_step_certificateMBE3 (u s : ℝ) (hu : 0 ≤ u) (hs : 0 ≤ s) :\n (u+1+s+5)*(3*(u+1)+2)*(3*(u+1)+3)*(3*(u+1)+4) ≤\n (u+1)*(3*(u+1)+s+7)*(3*(u+1)+s+8)*(3*(u+1)+s+9)",
+          "block_sha256": "cf733bc2bfeb174279cf4bbc92987208dca75a0d474a1d2811d300fee590f259",
+          "block_characters": 504
+        },
+        {
+          "kind": "theorem",
+          "name": "separated_chooseMBE3",
+          "header": "theorem separated_chooseMBE3 (k s : ℕ) (hk : 1 ≤ k) :\n ((s+9).choose 4:ℝ)*((k+s+4).choose (s+5):ℝ) ≤\n ((3*k+s+6).choose (s+5):ℝ)",
+          "block_sha256": "51dcca666674b1eb296caeec430b76ebf93787085202119f6c1a5c4b88ad37b3",
+          "block_characters": 1838
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovSharpMarginMBE3",
+      "path": "research/MarkovSharpMarginMBE3.lean",
+      "bytes": 3863,
+      "sha256": "a82f97ea84cd99a93293bb348624c0e291e60d748e952085a47d6cc02bee05fb",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "SharpCompleteMarginMBE3"
+        },
+        {
+          "kind": "def",
+          "name": "sharpGapMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "sharp_complete_marginMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "sharp_reversed_marginMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "sharp_shifted_marginMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "sharp_cut_marginMBE3"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792213618939808000.json",
+          "sha256": "e7456ba1b9a6016ad7a4cb393cb83a46277a5bb93d452ffcf8d08dffe7a5cc5a",
+          "source_sha256": "4a9e69a9ca9082f501a3e01d184e66dd94363fe5543b8e0bf69b87a73898a6e1",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "4a9e69a9ca9082f501a3e01d184e66dd94363fe5543b8e0bf69b87a73898a6e1"
+        },
+        {
+          "path": "build-1792213685413240000.json",
+          "sha256": "46877905c6a5a8f47425c11c40cb9ac6bb692f793681e44ba2d95f475b3a76b6",
+          "source_sha256": "a82f97ea84cd99a93293bb348624c0e291e60d748e952085a47d6cc02bee05fb",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "a82f97ea84cd99a93293bb348624c0e291e60d748e952085a47d6cc02bee05fb"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in176": true,
+      "printed_in176": true,
+      "object_path": "evidence/markov-be355177/MarkovSharpMarginMBE3.olean",
+      "object_sha256": "1f64b0d2afbc00313b79e50a539c027a6457bc5e3e8b94a28b40bca2a04c772d",
+      "successful_final_build": "evidence/markov-be355177/build-1792213685413240000.json",
+      "historical_successful_source_versions": [
+        "a82f97ea84cd99a93293bb348624c0e291e60d748e952085a47d6cc02bee05fb"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovTransposedSharpMBE3"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "sharp_complete_marginMBE3",
+          "header": "theorem sharp_complete_marginMBE3 (H : SharpCompleteMarginMBE3) (j s n : ℕ) :\n sharpGapMBE3 j s*(completeLiftMA64 j (s+1)^2).coeff n ≤\n kernelScaleMA64 j s*(completeLiftMA64 j (s+1)^2-\n   completeLiftMA64 j s*completeLiftMA64 j (s+2)).coeff n",
+          "block_sha256": "6f3c8e4b5cfd2e910a17137f94698b8e9d51e7243ac16726fe3f4f828e1864df",
+          "block_characters": 351
+        },
+        {
+          "kind": "theorem",
+          "name": "sharp_reversed_marginMBE3",
+          "header": "theorem sharp_reversed_marginMBE3 (H : SharpCompleteMarginMBE3) (j t k : ℕ) :\n sharpGapMBE3 j t*(ePolyM7E2 j (t+1)^2).coeff k ≤\n kernelScaleMA64 j t*(ePolyM7E2 j (t+1)^2-ePolyM7E2 j t*ePolyM7E2 j (t+2)).coeff k",
+          "block_sha256": "634d6877873b825ea38229b98a6acc000c609b4dc75c784bf5c72cf0735a24fa",
+          "block_characters": 587
+        },
+        {
+          "kind": "theorem",
+          "name": "sharp_shifted_marginMBE3",
+          "header": "theorem sharp_shifted_marginMBE3 (H : SharpCompleteMarginMBE3) (j t k : ℕ) :\n sharpGapMBE3 j t*((X*ePolyM7E2 j (t+1))^2).coeff k ≤\n kernelScaleMA64 j t*((X*ePolyM7E2 j (t+1))^2-\n   ePolyM7E2 j t*(X^2*ePolyM7E2 j (t+2))).coeff k",
+          "block_sha256": "5ad780c455cf449c6df5a3942f34a097ce53ae21fc2e142852f53a8b5f606b30",
+          "block_characters": 492
+        },
+        {
+          "kind": "theorem",
+          "name": "sharp_cut_marginMBE3",
+          "header": "theorem sharp_cut_marginMBE3 (HM : SharpCompleteMarginMBE3) (j t h k : ℕ) (htj : t ≤ j) :\n sharpGapMBE3 j t*(liftCutM7E2 j (t+1) h^2).coeff k ≤\n kernelScaleMA64 j t*(liftCutGapM7E2 j t h).coeff k",
+          "block_sha256": "c2d1d5e3dc1cb72575ff545dc34f105a93e5e55e9acacee67c5154c4b5c7f207",
+          "block_characters": 1705
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "SharpCompleteMarginMBE3",
+          "header": "def SharpCompleteMarginMBE3 : Prop",
+          "block_sha256": "6374745fe37c513529a208a31d75e8fca7027a7b17575d8aeea853f6f910afe6",
+          "block_characters": 234,
+          "definition_text": "def SharpCompleteMarginMBE3 : Prop := ∀ j s n : ℕ,\n (liftTermMAE9 j (s+1) 0:ℝ)^2*\n   (completeLiftMA64 j s*completeLiftMA64 j (s+2)).coeff n ≤\n (liftTermMAE9 j s 0:ℝ)*(liftTermMAE9 j (s+2) 0:ℝ)*\n   (completeLiftMA64 j (s+1)^2).coeff n"
+        },
+        {
+          "kind": "def",
+          "name": "sharpGapMBE3",
+          "header": "def sharpGapMBE3 (j s : ℕ) : ℝ",
+          "block_sha256": "57c93ea8b3712da2d6645297116268a2c4e7b2a89641b7366536a06020893555",
+          "block_characters": 114,
+          "definition_text": "def sharpGapMBE3 (j s : ℕ) : ℝ := (liftTermMAE9 j (s+1) 0:ℝ)^2-\n (liftTermMAE9 j s 0:ℝ)*(liftTermMAE9 j (s+2) 0:ℝ)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovSharpTransportMBE3",
+      "path": "research/MarkovSharpTransportMBE3.lean",
+      "bytes": 6259,
+      "sha256": "4273e5e8eb56b1c80eaf0d84685efa33fe617178b58f3f2de3cb23b56c4d9c41",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "asymmetric_product_boundMBE3"
+        },
+        {
+          "kind": "def",
+          "name": "SharpTopScalarsMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_robust_cutMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_cuts_of_sharpMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_output_of_sharpMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_middle_of_sharpMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_all_of_sharpMBE3"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792213698035521000.json",
+          "sha256": "be2ecb04872c7de2765ce2f12e79ec997e1162ed60048a196e69fcddde822458",
+          "source_sha256": "3101161fa9342df9ecf2188723482611f228309d1295362b11b6885ba2423bf5",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "3101161fa9342df9ecf2188723482611f228309d1295362b11b6885ba2423bf5"
+        },
+        {
+          "path": "build-1792213762601210000.json",
+          "sha256": "70dbe18e04efe795a1a4cd7c9c967a15310cdc345bb5e5da0b365d7df9262346",
+          "source_sha256": "4273e5e8eb56b1c80eaf0d84685efa33fe617178b58f3f2de3cb23b56c4d9c41",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "4273e5e8eb56b1c80eaf0d84685efa33fe617178b58f3f2de3cb23b56c4d9c41"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in176": true,
+      "printed_in176": true,
+      "object_path": "evidence/markov-be355177/MarkovSharpTransportMBE3.olean",
+      "object_sha256": "681e58f9b5c180e564a2f0c0105d87dd040ec99278be7924988892f52e56b78d",
+      "successful_final_build": "evidence/markov-be355177/build-1792213762601210000.json",
+      "historical_successful_source_versions": [
+        "4273e5e8eb56b1c80eaf0d84685efa33fe617178b58f3f2de3cb23b56c4d9c41"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovSharpMarginMBE3"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "asymmetric_product_boundMBE3",
+          "header": "theorem asymmetric_product_boundMBE3 (A B P Q : ℝ[X]) (a b x y : ℝ)\n (ha : 0 ≤ a) (hy : 0 ≤ y) (hP : ∀ i, 0 ≤ P.coeff i) (hB : ∀ i, 0 ≤ B.coeff i)\n (h0 : ∀ i, a*P.coeff i ≤ x*A.coeff i)\n (h2 : ∀ i, b*Q.coeff i ≤ y*B.coeff i) (n : ℕ) :\n a*b*(P*Q).coeff n ≤ x*y*(A*B).coeff n",
+          "block_sha256": "fc36d73e3991b58af1f715861ce7888765e7a382ab638bd15ed99ee456e9da3b",
+          "block_characters": 464
+        },
+        {
+          "kind": "theorem",
+          "name": "band_robust_cutMBE3",
+          "header": "theorem band_robust_cutMBE3 (HM : SharpCompleteMarginMBE3)\n (d k s : ℕ) (r : Bool) (hs : s ≤ bandJMBE3 d k r)\n (HT : bandTopMBE3 d k s r*bandTopMBE3 d k (s+2) r ≤ bandBaseMBE3 d k (s+1) r^2)\n (h n : ℕ) :\n 0 ≤ ((cutPolyMFEE h (liftPolyM7E2 (bandJMBE3 d k r) (s+1)))^2-\n   cutPolyMFEE h (bandKernelM657 d k s r)*cutPolyMFEE h (bandKernelM657 d k (s+2) r)).coeff n",
+          "block_sha256": "88f88e3ba0e86dbf14b5454db9f1ccf48762137471c045955630785733e2494f",
+          "block_characters": 2122
+        },
+        {
+          "kind": "theorem",
+          "name": "band_cuts_of_sharpMBE3",
+          "header": "theorem band_cuts_of_sharpMBE3 (HM : SharpCompleteMarginMBE3) (HT : SharpTopScalarsMBE3)\n (d k s : ℕ) (r : Bool) (hs : 3 ≤ s) (hsj : s ≤ bandJMBE3 d k r) (h n : ℕ) :\n 0 ≤ ((cutPolyMFEE h (bandKernelM657 d k (s+1) r))^2-\n   cutPolyMFEE h (bandKernelM657 d k s r)*cutPolyMFEE h (bandKernelM657 d k (s+2) r)).coeff n",
+          "block_sha256": "c50c0d6fcf2861ee20b29bd29954e2008f8bfd59fea753ab53c215a4af78a52a",
+          "block_characters": 1123
+        },
+        {
+          "kind": "theorem",
+          "name": "band_output_of_sharpMBE3",
+          "header": "theorem band_output_of_sharpMBE3 (HM : SharpCompleteMarginMBE3) (HT : SharpTopScalarsMBE3)\n (d k s : ℕ) (r : Bool) (hs : 3 ≤ s) (hsj : s ≤ bandJMBE3 d k r) :\n bandOutputM657 d k s r*bandOutputM657 d k (s+2) r ≤ bandOutputM657 d k (s+1) r^2",
+          "block_sha256": "5022f71d4d34cc66aa5d1b8baa80c85531a89820203ffcd105350a86b9d395b5",
+          "block_characters": 669
+        },
+        {
+          "kind": "theorem",
+          "name": "band_middle_of_sharpMBE3",
+          "header": "theorem band_middle_of_sharpMBE3 (HM : SharpCompleteMarginMBE3) (HT : SharpTopScalarsMBE3) :\n BandMiddleM657",
+          "block_sha256": "50d9a36f944776b3676d4f3b74eb091f3f01afeb6b9ca7b7aa1716ddd8a1658d",
+          "block_characters": 930
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_all_of_sharpMBE3",
+          "header": "theorem source_band_all_of_sharpMBE3 (HM : SharpCompleteMarginMBE3) (HT : SharpTopScalarsMBE3)\n (q k i : ℕ) (r : Bool) (hq : 2 ≤ q) (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n threeRawM9E2 q r i (q+k+1)*threeRawM9E2 q r (i+2) (q+k+1) ≤\n threeRawM9E2 q r (i+1) (q+k+1)^2",
+          "block_sha256": "d5f8947f71e15cd60eb2ec5e8e63d1d6ea9508cd4366df114bdc065df25d51b3",
+          "block_characters": 349
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "SharpTopScalarsMBE3",
+          "header": "def SharpTopScalarsMBE3 : Prop",
+          "block_sha256": "427a892d8ba68876f802439625330e2f8ae62e2ae46f8e907e72172f8f5da990",
+          "block_characters": 156,
+          "definition_text": "def SharpTopScalarsMBE3 : Prop := ∀ d k s : ℕ, ∀ r,\n 3 ≤ s → s ≤ bandJMBE3 d k r →\n bandTopMBE3 d k s r*bandTopMBE3 d k (s+2) r ≤ bandBaseMBE3 d k (s+1) r^2"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovSharpObstructionsMBE3",
+      "path": "research/MarkovSharpObstructionsMBE3.lean",
+      "bytes": 3329,
+      "sha256": "09340dca34ccc77fb35ae59e618e374e1e52745385cb85c0df104014e14bbc67",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "old_margin_negativeMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "sharp_top_positiveMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "normalized_pair_negativeMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "normalized_complete_positiveMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_three_eleven_valuesMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_three_eleven_polygonMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_three_eleven_gapMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_three_eleven_pathMBE3"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792213781265187000.json",
+          "sha256": "9ba9690400623ea5bcce96da859f1ab0a5aa543dd007b9dd85a7c7a4b55665aa",
+          "source_sha256": "75fb874fe2fd3959f40add01b980605c34e6a2786b09fa762bcf4eac6e3fe65e",
+          "final_identical": false,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "75fb874fe2fd3959f40add01b980605c34e6a2786b09fa762bcf4eac6e3fe65e"
+        },
+        {
+          "path": "build-1792213863547046000.json",
+          "sha256": "aa6ff71d46e9160a37b07b44f007d8600363aef5517aff0cba4305f1bd8ff8db",
+          "source_sha256": "09340dca34ccc77fb35ae59e618e374e1e52745385cb85c0df104014e14bbc67",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "09340dca34ccc77fb35ae59e618e374e1e52745385cb85c0df104014e14bbc67"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in176": true,
+      "printed_in176": true,
+      "object_path": "evidence/markov-be355177/MarkovSharpObstructionsMBE3.olean",
+      "object_sha256": "aa37997266b4731369860395f97fe9ad743a72546818a5c7fe2e1ca5547be8e0",
+      "successful_final_build": "evidence/markov-be355177/build-1792213863547046000.json",
+      "historical_successful_source_versions": [
+        "09340dca34ccc77fb35ae59e618e374e1e52745385cb85c0df104014e14bbc67",
+        "75fb874fe2fd3959f40add01b980605c34e6a2786b09fa762bcf4eac6e3fe65e"
+      ],
+      "earlier_successful_differing_source_versions": true,
+      "imports": [
+        "MarkovSharpTransportMBE3"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "old_margin_negativeMBE3",
+          "header": "theorem old_margin_negativeMBE3 :\n bandBaseMBE3 0 1 3 false*bandBaseMBE3 0 1 5 false*kernelScaleMA64 5 3-\n bandTopMBE3 0 1 3 false*bandTopMBE3 0 1 5 false*\n   (kernelScaleMA64 5 3-topGapMA64 5 3) = -2317213022124",
+          "block_sha256": "12047e6c2b6707cb327ca470d3aa784cbf2fa4fbfc8fad4c3d96620191c25b30",
+          "block_characters": 454
+        },
+        {
+          "kind": "theorem",
+          "name": "sharp_top_positiveMBE3",
+          "header": "theorem sharp_top_positiveMBE3 :\n bandBaseMBE3 0 1 4 false^2-bandTopMBE3 0 1 3 false*bandTopMBE3 0 1 5 false=210586",
+          "block_sha256": "4bd9b5eb198ec5505d02e62f466f11c1ba8913dd8ff1a6ba8b35c95a4c30114f",
+          "block_characters": 311
+        },
+        {
+          "kind": "theorem",
+          "name": "normalized_pair_negativeMBE3",
+          "header": "theorem normalized_pair_negativeMBE3 :\n 2*(liftTermMAE9 6 0 0:ℝ)*liftTermMAE9 6 2 0*liftTermMAE9 6 1 0*liftTermMAE9 6 1 6-\n (liftTermMAE9 6 1 0:ℝ)^2*\n   ((liftTermMAE9 6 0 0:ℝ)*liftTermMAE9 6 2 6+(liftTermMAE9 6 0 6:ℝ)*liftTermMAE9 6 2 0)\n = -1916804736",
+          "block_sha256": "4ba2ddcd6aaaac3b1e341a0a49a84a7c91b88151221b66a38104733145019ae7",
+          "block_characters": 348
+        },
+        {
+          "kind": "theorem",
+          "name": "normalized_complete_positiveMBE3",
+          "header": "theorem normalized_complete_positiveMBE3 :\n (liftTermMAE9 6 0 0:ℝ)*liftTermMAE9 6 2 0*(completeLiftMA64 6 1^2).coeff 6-\n (liftTermMAE9 6 1 0:ℝ)^2*(completeLiftMA64 6 0*completeLiftMA64 6 2).coeff 6\n = 52158473438400",
+          "block_sha256": "ec1734560abecf3d0b27e7bbc4d370c761534a7cba9d4a669f76cd47eceeeaf0",
+          "block_characters": 432
+        },
+        {
+          "kind": "theorem",
+          "name": "source_three_eleven_valuesMBE3",
+          "header": "theorem source_three_eleven_valuesMBE3 :\n threeRawM9E2 3 false 6 5=8652 ∧ threeRawM9E2 3 false 7 5=5280 ∧\n threeRawM9E2 3 false 8 5=1287",
+          "block_sha256": "d00996415cb2a6c56a628d56eee62b98608d90649abfdab33417922499a85b34",
+          "block_characters": 475
+        },
+        {
+          "kind": "theorem",
+          "name": "source_three_eleven_polygonMBE3",
+          "header": "theorem source_three_eleven_polygonMBE3 :\n InPolygon 3 11 6 5 ∧ InPolygon 3 11 7 5 ∧ InPolygon 3 11 8 5",
+          "block_sha256": "6291e3be40e8e6d08b0bc9a1dd3247570fc6bfdb8aacb5d9f54d2a6a69daa536",
+          "block_characters": 131
+        },
+        {
+          "kind": "theorem",
+          "name": "source_three_eleven_gapMBE3",
+          "header": "theorem source_three_eleven_gapMBE3 :\n threeRawM9E2 3 false 7 5^2-threeRawM9E2 3 false 6 5*threeRawM9E2 3 false 8 5=16743276",
+          "block_sha256": "7e77b3d104fa99b19b7ff5109047a0e191f3b39ece45f8a7f6311f7246a97389",
+          "block_characters": 210
+        },
+        {
+          "kind": "theorem",
+          "name": "source_three_eleven_pathMBE3",
+          "header": "theorem source_three_eleven_pathMBE3 :\n (frame (threePathM9E2 2 false)).mid.a=3 ∧\n (frame (threePathM9E2 2 false)).mid.b=11 ∧\n coeff (frame (threePathM9E2 2 false)).mid.p 6 5=8652 ∧\n coeff (frame (threePathM9E2 2 false)).mid.p 7 5=5280 ∧\n coeff (frame (threePathM9E2 2 false)).mid.p 8 5=1287",
+          "block_sha256": "46760b326ee2fce60d0f3b0d318921d7623ab38357375ee9d78d8f7839187326",
+          "block_characters": 577
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovUniformCorrectionMBE3",
+      "path": "research/MarkovUniformCorrectionMBE3.lean",
+      "bytes": 5930,
+      "sha256": "fabaa6f1fd479f0bd0b2f49f7cdd0e116af5f42061c00fef86626790068b3c7c",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "separated_choose_offsetMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_uniform_relativeMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_uniform_scaledMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_value_boundMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_output_uniformMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_uniformMBE3"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792213830219975000.json",
+          "sha256": "134de8c244c2cdf0dbbfd4db53597a68df969c4cdbfc4c079c9464229d094c6b",
+          "source_sha256": "1e68cbdfcdf5abf9dc8f13c6f5ab8fc4bb91637ad19a0795b05a401816938140",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "1e68cbdfcdf5abf9dc8f13c6f5ab8fc4bb91637ad19a0795b05a401816938140"
+        },
+        {
+          "path": "build-1792213884003566000.json",
+          "sha256": "e5dc476e9d0ef2f6db184824ba1c87315861936b0e7130a4b1b70ac13225a60e",
+          "source_sha256": "fabaa6f1fd479f0bd0b2f49f7cdd0e116af5f42061c00fef86626790068b3c7c",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "fabaa6f1fd479f0bd0b2f49f7cdd0e116af5f42061c00fef86626790068b3c7c"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in176": true,
+      "printed_in176": true,
+      "object_path": "evidence/markov-be355177/MarkovUniformCorrectionMBE3.olean",
+      "object_sha256": "1a3ff857ab9b432fd740fa59dda8c84de5f339904388201cb3879e1038632112",
+      "successful_final_build": "evidence/markov-be355177/build-1792213884003566000.json",
+      "historical_successful_source_versions": [
+        "fabaa6f1fd479f0bd0b2f49f7cdd0e116af5f42061c00fef86626790068b3c7c"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovSeparatedChooseMBE3",
+        "MarkovTransposedSharpMBE3"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "separated_choose_offsetMBE3",
+          "header": "theorem separated_choose_offsetMBE3 (j k s m : ℕ) (hj : 3*k+2 ≤ j) :\n ((s+9).choose 4:ℝ)*((k+s+4).choose (s+5+m):ℝ) ≤\n ((j+s+4).choose (s+5+m):ℝ)",
+          "block_sha256": "9f28069707b3457c3528e9a9c70147573954c19b44adcb436419aa8f1c64bc2d",
+          "block_characters": 952
+        },
+        {
+          "kind": "theorem",
+          "name": "correction_uniform_relativeMBE3",
+          "header": "theorem correction_uniform_relativeMBE3 (j k s m : ℕ) (r : Bool) (hj : 3*k+2 ≤ j) :\n ((s+9).choose 4:ℝ)*(correctionTermM657 k (s+1) (m+1) r:ℝ) ≤\n 3*(s+3)*(liftTermMAE9 j s m:ℝ)",
+          "block_sha256": "80f496117f0a3700cb294c627b5743e83c79442acb37cf2bca30fe9ea9684665",
+          "block_characters": 1498
+        },
+        {
+          "kind": "theorem",
+          "name": "band_uniform_scaledMBE3",
+          "header": "theorem band_uniform_scaledMBE3 (d k s h : ℕ) (r : Bool) (hd : d ≤ s) :\n ((s+9).choose 4:ℝ)*(bandKernelM657 d k s r).coeff h ≤\n (((s+9).choose 4:ℝ)+3*(s+3))*(liftPolyM7E2 (bandJMBE3 d k r) s).coeff h",
+          "block_sha256": "a7f48f4363096f9911c0e9b65abc77b4de82fbed36ae722cdc47738a260935cb",
+          "block_characters": 951
+        },
+        {
+          "kind": "theorem",
+          "name": "weighted_value_boundMBE3",
+          "header": "theorem weighted_value_boundMBE3 (P Q : ℝ[X]) (w : ℕ → ℝ) (a b : ℝ)\n (hw : ∀ h, 0 ≤ w h) (H : ∀ h, a*P.coeff h ≤ b*Q.coeff h) :\n a*(weightPolyMFEE w P).eval 1 ≤ b*(weightPolyMFEE w Q).eval 1",
+          "block_sha256": "9b79bd91d47693bc92fd70a9c58e38e0b4d085de208b51371d12f105252bcdeb",
+          "block_characters": 638
+        },
+        {
+          "kind": "theorem",
+          "name": "band_output_uniformMBE3",
+          "header": "theorem band_output_uniformMBE3 (d k s : ℕ) (r : Bool) (hd : d ≤ s) :\n ((s+9).choose 4:ℤ)*bandOutputM657 d k s r ≤\n (((s+9).choose 4:ℤ)+3*(s+3))*liftOutputMAE9 d (bandJMBE3 d k r) s",
+          "block_sha256": "f9dd56b4113ade799aad07af26d202a5c6f0047b9158e2dcb176fa776eee3543",
+          "block_characters": 571
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_uniformMBE3",
+          "header": "theorem source_band_uniformMBE3 (q k s : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) (hd : bandExponentM139 q k r ≤ s) :\n ((s+9).choose 4:ℤ)*threeRawM9E2 q r (s+3) (q+k+1) ≤\n (((s+9).choose 4:ℤ)+3*(s+3))*liftOutputMAE9 (bandExponentM139 q k r) (q+k+1) s",
+          "block_sha256": "85ec6783598fa2ce624ab4ca796be388ae4b4dee82fccc41d36360e771fc66f5",
+          "block_characters": 793
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovSharpScalarMBE3",
+      "path": "research/MarkovSharpScalarMBE3.lean",
+      "bytes": 2434,
+      "sha256": "f04dd93d45d8ade7273073a991390fcd6fe5e0f64188780d591a6bc2ebd8cce8",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "band_cut_degreeMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_cut_degreeMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "robust_cut_top_identityMBE3"
+        },
+        {
+          "kind": "theorem",
+          "name": "robust_cuts_iff_scalarMBE3"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792214014634455000.json",
+          "sha256": "2ba1be7670e69eb8631a2aa38954a8cf564a5e85ae0c9f1d1d57e9326d04d563",
+          "source_sha256": "53892a591a120f7b6ae8f5bcab55688bca2e9ed13adebecae6637fe7334198d6",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "53892a591a120f7b6ae8f5bcab55688bca2e9ed13adebecae6637fe7334198d6"
+        },
+        {
+          "path": "build-1792214068207388000.json",
+          "sha256": "ce1b665a9c2937b1e3cfbe701ae163969d4120a97ec11cdfe8b83720a32dcd66",
+          "source_sha256": "f04dd93d45d8ade7273073a991390fcd6fe5e0f64188780d591a6bc2ebd8cce8",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "f04dd93d45d8ade7273073a991390fcd6fe5e0f64188780d591a6bc2ebd8cce8"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in176": true,
+      "printed_in176": true,
+      "object_path": "evidence/markov-be355177/MarkovSharpScalarMBE3.olean",
+      "object_sha256": "90b3635b6ab51439c89aea6e2a5bbdc97ec38642a3a2f93dc75f6df82006b11d",
+      "successful_final_build": "evidence/markov-be355177/build-1792214068207388000.json",
+      "historical_successful_source_versions": [
+        "f04dd93d45d8ade7273073a991390fcd6fe5e0f64188780d591a6bc2ebd8cce8"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovSharpTransportMBE3"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "band_cut_degreeMBE3",
+          "header": "theorem band_cut_degreeMBE3 (d k s h : ℕ) (r : Bool) :\n (cutPolyMFEE h (bandKernelM657 d k s r)).natDegree ≤ s",
+          "block_sha256": "4d61d0a62f6aa7753992991703e7da95a5f9d58fe111628d08c3efeb0d0ff041",
+          "block_characters": 252
+        },
+        {
+          "kind": "theorem",
+          "name": "lower_cut_degreeMBE3",
+          "header": "theorem lower_cut_degreeMBE3 (j s h : ℕ) :\n (cutPolyMFEE h (liftPolyM7E2 j s)).natDegree ≤ s",
+          "block_sha256": "d33c6f399076502d5dae643c5bf0ad7ac90493ee8d376299d609bea662ffbe71",
+          "block_characters": 270
+        },
+        {
+          "kind": "theorem",
+          "name": "robust_cut_top_identityMBE3",
+          "header": "theorem robust_cut_top_identityMBE3 (d k s h : ℕ) (r : Bool) (hh : h ≤ s) :\n ((cutPolyMFEE h (liftPolyM7E2 (bandJMBE3 d k r) (s+1)))^2-\n   cutPolyMFEE h (bandKernelM657 d k s r)*cutPolyMFEE h (bandKernelM657 d k (s+2) r)).coeff (2*s+2)=\n bandBaseMBE3 d k (s+1) r^2-bandTopMBE3 d k s r*bandTopMBE3 d k (s+2) r",
+          "block_sha256": "7b1be419d11e0874b23920308ce0c9f893b8084a2a0ec2d3af56bd327ec470ab",
+          "block_characters": 926
+        },
+        {
+          "kind": "theorem",
+          "name": "robust_cuts_iff_scalarMBE3",
+          "header": "theorem robust_cuts_iff_scalarMBE3 (HM : SharpCompleteMarginMBE3)\n (d k s : ℕ) (r : Bool) (hs : s ≤ bandJMBE3 d k r) :\n (∀ h n, 0 ≤ ((cutPolyMFEE h (liftPolyM7E2 (bandJMBE3 d k r) (s+1)))^2-\n   cutPolyMFEE h (bandKernelM657 d k s r)*cutPolyMFEE h (bandKernelM657 d k (s+2) r)).coeff n) ↔\n bandTopMBE3 d k s r*bandTopMBE3 d k (s+2) r ≤ bandBaseMBE3 d k (s+1) r^2",
+          "block_sha256": "e491492753dcbdfdb3aaf65c9b3b2ee6b7afa16e796833a059bea497785d2ffa",
+          "block_characters": 573
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    }
+  ],
+  "excluded_modules": [],
+  "accepted_counts": {
+    "theorem": 46,
+    "def": 8
+  },
+  "excluded_counts": {},
+  "mathematical_values_recomputed": false,
+  "source_level_scope": {
+    "root_open": true,
+    "new_unconditional_raw_LC_region": false,
+    "root_equivalence": "Conjecture63 iff ThreeBeyondBandM657 and OtherFourM9E2",
+    "remaining_predicates_unproved": [
+      "ThreeBeyondBandM657",
+      "OtherFourM9E2"
+    ],
+    "new_unconditional_source_estimate": true,
+    "source_estimate_guard": "q>=2, j=q+k+1, 2*j+1<=sourceN(q,r), d=bandExponent(q,k,r)<=s; column s+3, all natural q,k,s and both residues.",
+    "source_estimate": "choose(s+9,4)*raw(s+3,j) <= (choose(s+9,4)+3*(s+3))*liftOutput(d,j,s), integer raw coefficients, no denominator bound.",
+    "sharp_coefficient_bound": "For all natural d,k,s,h and both residues, B_s*K_s[h] <= V_s*L_s[h]. B_s>0; equality at h=s. Includes natural clamp and zero tails.",
+    "optimality": "For every real v, (forall h,K_s[h]<=v*L_s[h]) iff V_s<=v*B_s. No division by a potentially zero coefficient.",
+    "separated_choose": "All natural k>=1 and s; shifted uniform estimate handles k=0 by binomial zeros and requires j>=3*k+2.",
+    "SharpCompleteMargin_proved": false,
+    "SharpTopScalars_proved": false,
+    "SharpCompleteMargin_scope": "forall natural j,s,n; B_(s+1)^2*(P_s*P_(s+2))[n] <= B_s*B_(s+2)*(P_(s+1)^2)[n]. No s<=j guard in this candidate.",
+    "SharpTopScalars_scope": "forall natural d,k,s and both residues;3<=s<=bandJ(d,k,r) -> V_s*V_(s+2)<=B_(s+1)^2. Auxiliary parameter domain, not identified with every source without source guards.",
+    "cut_transport": "Complete margin plus s<=j transports through inherited ordered symmetric-pair theorem to all lower tail cuts; zero denominator terms retained.",
+    "robust_cuts_iff_scalar": "Under SharpCompleteMargin and s<=bandJ, all robust tail-cut coefficients nonnegative iff V_s*V_(s+2)<=B_(s+1)^2. Necessity at h=s,n=2*s+2; no s>=3 needed for this equivalence.",
+    "robust_vs_complete": "Robust gap uses lower L_(s+1)^2 minus K_s*K_(s+2), discarding the nonnegative middle correction. Stronger than complete-kernel gap; no converse from source LC asserted.",
+    "conditional_source_LC": "Both universal unproved candidates imply every natural horizontal start in actual guarded q>=2 correction band, via prefix/tail split, s=i-3, weighted CrossLC binomial sequence and exact source identity.",
+    "conditional_is_root_equivalence": false,
+    "actual_raw_source_counterexample": false,
+    "obstructions": "Formal old margin deficit, negative individual symmetric pair and positive full convolution are auxiliary. Actual3/11 path/labels/raw[8652,5280,1287]/polygon/gap16743276 are formal accepted final statements.",
+    "path_vs_q": "threePath2false gives raw q3false and denominator11; path=[false,false,true,false]. No indexing conflation.",
+    "q1_new_source_gain": false,
+    "new_vertical_or_diagonal_region": false,
+    "old212_recovery_claimed": false,
+    "old166_prefix_recovery_claimed": false,
+    "older_failed_versions_retroactively_recovered": false,
+    "prior175_scope_unchanged": "Raw band prefix i<=5 or strict tail N<i+j+q remains the last unconditional region improvement; no clause removed in176."
+  },
+  "literal_raw_indices": [
+    "(i,j)",
+    "(i+1,j)",
+    "(i+2,j)"
+  ],
+  "kernel_output_indices": [
+    "(s+3,j)",
+    "(s+4,j)",
+    "(s+5,j)"
+  ],
+  "residue_map": {
+    "true": "N=3*q+1,c=2",
+    "false": "N=3*q+2,c=1"
+  },
+  "zero_and_endpoint_handling": [
+    "Sharp bound allnatural indices, clamped d-s retained, h>s kernels zero; top coefficient equality and positive B avoid zero division.",
+    "Uniform source estimate requires d<=s, making absorbed top term zero; q>=2 and literal2*j+1<=N retain natural exponent interpretation.",
+    "Separated choose proof cancels positive index factors only; k0 shifted case vanishes by natural binomial convention.",
+    "Complete margin candidate allj,s,n; cut transport requires s<=j. Top candidate additionally s>=3. Auxiliary equivalence itself does not require s>=3.",
+    "All cuts keep indices>=h, including empty cuts and support zeros. Quantitative cut retains zero-denominator pairs with nonpositive transformed terms.",
+    "Source prefix/tail case split retains all natural i, middle s=i-3. No original polygon, endpoint, vertical, diagonal or other-numerator residual removed."
+  ],
+  "proof_chain_details": {
+    "relative": "Choose cross-ratio and successor inequalities bound both lower-kernel terms; exact finite binomial-product identity combines them.",
+    "uniform": "Universal induction on k with a displayed positive polynomial step; offset cross-ratio plus top monotonicity; no interpolation or finite empirical premise.",
+    "sharp": "K top equals V; nonnegative absorption and correction-relative inequality give B*K<=V*L. Equality top proves optimality among scalar coefficientwise bounds.",
+    "transport": "Exact reflected complete kernel and common shifts feed inherited quantitative_cut with proved ordering/nonnegativity and explicit HM, s<=j; denominator-zero cases stay.",
+    "robust": "Asymmetric product bound and positive B_s*B_s2 cancellation yield robust coefficient gap under HM and top scalar; middle monotonicity gives complete gap.",
+    "weighted_source": "CrossLC zero-extended binomial weights give output LC; exact source formula, prefix/tail split and natural i-3 identities attach to actual families.",
+    "scalar": "Degree upper bounds and top product coefficient identity give necessity at h=s,n=2s+2; sufficiency reuses robust transport under HM and s<=j.",
+    "obstructions": "Ordinary Lean exact numeral certificates distinguish old sufficient-margin/pair failures from positive complete convolution and actual polygon-valid3/11 raw gap."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTransposedSharpMBE3.lean:33:1: error: Tactic `rfl` failed: The left-hand side\n  \u2191(liftTermMAE9 (d + 3 * k + if r = true then 3 else 2) s 0) +\n      absorbedExtraM418 d s \u2191(correctionTermM657 k (s + 1) 0 r) +\n    \u2191(correctionTermM657 k (s + 1) 1 r)\nis not definitionally equal to the right-hand side\n  bandTopMBE3 d k s r\n\nd k s : \u2115\nr : Bool\n\u22a2 \u2191(liftTermMAE9 (d + 3 * k + if r = true then 3 else 2) s 0) +\n        absorbedExtraM418 d s \u2191(correctionTermM657 k (s + 1) 0 r) +\n      \u2191(correctionTermM657 k (s + 1) 1 r) =\n    bandTopMBE3 d k s r\n/Users/sasha/math_gkm/research/MarkovTransposedSharpMBE3.lean:74:5: error: linarith failed to find a contradiction\ncase neg\nd k s h : \u2115\nr : Bool\nhh : h \u2264 s\nhe : \u00ach = s\nhkj : k \u2264 bandJMBE3 d k r\nhr :\n  \u2191(liftTermMAE9 (bandJMBE3 d k r) s 0) * \u2191(correctionTermM657 k (s + 1) (s - h + 1) r) \u2264\n    \u2191(correctionTermM657 k (s + 1) 1 r) * \u2191(liftTermMAE9 (bandJMBE3 d k r) s (s - h))\nhn : 0 \u2264 \u2191(liftTermMAE9 (bandJMBE3 d k r) s (s - h))\nha : 0 \u2264 absorbedExtraM418 d s \u2191(correctionTermM657 k (s + 1) 0 r)\na\u271d :\n  (bandBaseMBE3 d k s r +\n        (absorbedExtraM418 d s \u2191(correctionTermM657 k (s + 1) 0 r) + \u2191(correctionTermM657 k (s + 1) 1 r))) *\n      \u2191(liftTermMAE9 (bandJMBE3 d k r) s (s - h)) <\n    \u2191(liftTermMAE9 (bandJMBE3 d k r) s 0) *\n      (\u2191(liftTermMAE9 (bandJMBE3 d k r) s (s - h)) + \u2191(correctionTermM657 k (s + 1) (s - h + 1) r))\n\u22a2 False\nfailed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTransposedSharpMBE3": "b2da9a8b5d4a8d0bb3d4af2084a14bd5a1d1c7d4a109858b6bd02ae7be1b9a96"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-be355177/MarkovTransposedSharpMBE3.olean",
+    "/Users/sasha/math_gkm/research/MarkovTransposedSharpMBE3.lean"
+  ],
+  "seconds": 26.077504083979875,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSharpScalarMBE3.lean:42:1: error: Tactic `rfl` failed: The left-hand side\n  \u2191(liftTermMAE9 (bandJMBE3 d k r) (s + 1) 0) * \u2191(liftTermMAE9 (bandJMBE3 d k r) (s + 1) 0) -\n    bandTopMBE3 d k s r * bandTopMBE3 d k (s + 2) r\nis not definitionally equal to the right-hand side\n  bandBaseMBE3 d k (s + 1) r ^ 2 - bandTopMBE3 d k s r * bandTopMBE3 d k (s + 2) r\n\nd k s h : \u2115\nr : Bool\nhh : h \u2264 s\nhB :\n  (cutPolyMFEE h (liftPolyM7E2 (bandJMBE3 d k r) (s + 1)) *\n          cutPolyMFEE h (liftPolyM7E2 (bandJMBE3 d k r) (s + 1))).coeff\n      (2 * s + 2) =\n    (cutPolyMFEE h (liftPolyM7E2 (bandJMBE3 d k r) (s + 1))).coeff (s + 1) *\n      (cutPolyMFEE h (liftPolyM7E2 (bandJMBE3 d k r) (s + 1))).coeff (s + 1)\nhAC :\n  (cutPolyMFEE h (bandKernelM657 d k s r) * cutPolyMFEE h (bandKernelM657 d k (s + 2) r)).coeff (2 * s + 2) =\n    (cutPolyMFEE h (bandKernelM657 d k s r)).coeff s * (cutPolyMFEE h (bandKernelM657 d k (s + 2) r)).coeff (s + 2)\n\u22a2 \u2191(liftTermMAE9 (bandJMBE3 d k r) (s + 1) 0) * \u2191(liftTermMAE9 (bandJMBE3 d k r) (s + 1) 0) -\n      bandTopMBE3 d k s r * bandTopMBE3 d k (s + 2) r =\n    bandBaseMBE3 d k (s + 1) r ^ 2 - bandTopMBE3 d k s r * bandTopMBE3 d k (s + 2) r\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSharpScalarMBE3": "53892a591a120f7b6ae8f5bcab55688bca2e9ed13adebecae6637fe7334198d6"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-be355177/MarkovSharpScalarMBE3.olean",
+    "/Users/sasha/math_gkm/research/MarkovSharpScalarMBE3.lean"
+  ],
+  "seconds": 6.391572249995079,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
