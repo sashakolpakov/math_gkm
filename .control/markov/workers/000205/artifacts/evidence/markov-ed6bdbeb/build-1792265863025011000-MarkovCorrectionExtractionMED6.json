@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCorrectionExtractionMED6.lean:12:65: error: unsolved goals\nq j : \u2115\nf : (Polynomial \u2124)\u27e6X\u27e7\n\u22a2 4 * C Polynomial.X * (rescale Polynomial.X) f = 4 * (C Polynomial.X * (rescale Polynomial.X) f)\n/Users/sasha/math_gkm/research/MarkovCorrectionExtractionMED6.lean:21:3: error: No goals to be solved\n/Users/sasha/math_gkm/research/MarkovCorrectionExtractionMED6.lean:32:16: error: Insufficient number of fields for `\u27e8...\u27e9` constructor: Constructor `Eq.refl` does not have explicit fields, but 2 were provided\n/Users/sasha/math_gkm/research/MarkovCorrectionExtractionMED6.lean:35:9: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2191(((PowerSeries.coeff q) (correctionCoreMED6 ?m.174 (t + 2 + if r = true then 1 else 0) ?m.177)).coeff (j - q - 1))\nin the target expression\n  4 * \u2191(((PowerSeries.coeff q) (correctionCoreMED6 t (t + 2 + 1) (if r = true then 2 else 1))).coeff (j - q - 1)) =\n    if q + 1 \u2264 j \u2227 t + 3 + j + q \u2264 sourceNME9C q r then\n      4 *\n        affineKernelM13E (correctionEpsilonM13E r) (t + 3 - 1) (t + 3 - 2) (j - q - 1)\n          (sourceNME9C q r - q - (t + 3) - j)\n    else 0\n\ncase pos\nq t j : \u2115\nr : Bool\nhj : q + 1 \u2264 j\nhk : t + 3 + j + q \u2264 sourceNME9C q r\nhd : (t + 2 + if r = true then 1 else 0) + (j - q - 1) \u2264 q\n\u22a2 4 * \u2191(((PowerSeries.coeff q) (correctionCoreMED6 t (t + 2 + 1) (if r = true then 2 else 1))).coeff (j - q - 1)) =\n    if q + 1 \u2264 j \u2227 t + 3 + j + q \u2264 sourceNME9C q r then\n      4 *\n        affineKernelM13E (correctionEpsilonM13E r) (t + 3 - 1) (t + 3 - 2) (j - q - 1)\n          (sourceNME9C q r - q - (t + 3) - j)\n    else 0\n/Users/sasha/math_gkm/research/MarkovCorrectionExtractionMED6.lean:41:20: error: Tactic `tauto` failed\n\nq t j : \u2115\nr : Bool\nhj : q + 1 \u2264 j\nhk : \u00act + 3 + j + q \u2264 sourceNME9C q r\n\u22a2 \u00acr = true\n/Users/sasha/math_gkm/research/MarkovCorrectionExtractionMED6.lean:44:9: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2191(((PowerSeries.coeff q) (correctionCoreMED6 ?m.276 (t + 2 + if r = true then 1 else 0) ?m.279)).coeff (j - q - 1))\nin the target expression\n  4 * \u2191(((PowerSeries.coeff q) (correctionCoreMED6 t (t + 2 + 0) (if r = true then 2 else 1))).coeff (j - q - 1)) =\n    if q + 1 \u2264 j \u2227 t + 3 + j + q \u2264 sourceNME9C q r then\n      4 *\n        affineKernelM13E (correctionEpsilonM13E r) (t + 3 - 1) (t + 3 - 2) (j - q - 1)\n          (sourceNME9C q r - q - (t + 3) - j)\n    else 0\n\ncase neg\nq t j : \u2115\nr : Bool\nhj : q + 1 \u2264 j\nhk : \u00act + 3 + j + q \u2264 sourceNME9C q r\nhd : q < (t + 2 + if r = true then 1 else 0) + (j - q - 1)\n\u22a2 4 * \u2191(((PowerSeries.coeff q) (correctionCoreMED6 t (t + 2 + 0) (if r = true then 2 else 1))).coeff (j - q - 1)) =\n    if q + 1 \u2264 j \u2227 t + 3 + j + q \u2264 sourceNME9C q r then\n      4 *\n        affineKernelM13E (correctionEpsilonM13E r) (t + 3 - 1) (t + 3 - 2) (j - q - 1)\n          (sourceNME9C q r - q - (t + 3) - j)\n    else 0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCorrectionExtractionMED6": "17286619f6a530e78ac90de62370c1b962ac83519876c3993c9c91b05aa22e0a"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ed6bdbeb/MarkovCorrectionExtractionMED6.olean",
+    "/Users/sasha/math_gkm/research/MarkovCorrectionExtractionMED6.lean"
+  ],
+  "seconds": 13.155261208012234,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

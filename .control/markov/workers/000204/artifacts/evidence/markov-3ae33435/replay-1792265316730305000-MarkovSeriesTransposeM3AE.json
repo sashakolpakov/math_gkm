@@ -1,0 +1,87 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovSeriesTransposeM3AE\ncollected MarkovColumnSolveM3AE\ncollected MarkovTransposeGeoM3AE\ncollected MarkovRampGeoM3AE\ncollected MarkovMasterColumnM3AE\ncollected MarkovMasterSumM3AE\ncollected MarkovMasterExtractionM3AE\ncollected MarkovMasterSourceM3AE\nreplay union of 8 modules over 4 inherited imports\nisolation checked for 34 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSeriesTransposeM3AE": "29ca96eb9d1d0872c6b47ab8c21e1f0d14adc13ab27e493cada45ceec7fa5111",
+    "MarkovColumnSolveM3AE": "55ea58b81f8d9416c454fdbea8d35220ab8678db8cb7d1a1d59558b39287668d",
+    "MarkovTransposeGeoM3AE": "1639f1e674faa84f357e5e8c5646d285ca4260e2462b1ad3be031476c22f3efd",
+    "MarkovRampGeoM3AE": "2be9439c296610467c82ae33d51141f36996fc4ff1719db818199303131c8419",
+    "MarkovMasterColumnM3AE": "56a1c6c984ec3b69836a24e3679c36c3e4ddbe783e5c7a8b67b9a13aa139862b",
+    "MarkovMasterSumM3AE": "4fa22eec00a492804e25dc95872c02336691bb711845ea71f396572a4f1646e9",
+    "MarkovMasterExtractionM3AE": "576966c630cee0ad4439684e09b2045f15ccdd051b7492cd24186b4e9f50004a",
+    "MarkovMasterSourceM3AE": "0bb1469af12d30ba818e49aa85856370603382ded36dace57ccc6a2912cf3ae2"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM3AE.lean",
+    "MarkovSeriesTransposeM3AE",
+    "MarkovColumnSolveM3AE",
+    "MarkovTransposeGeoM3AE",
+    "MarkovRampGeoM3AE",
+    "MarkovMasterColumnM3AE",
+    "MarkovMasterSumM3AE",
+    "MarkovMasterExtractionM3AE",
+    "MarkovMasterSourceM3AE"
+  ],
+  "seconds": 24.39541645901045,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "261c427e9635e806334b32f35e3945aacf4cbad258c6e4ef063834715bacc920",
+  "declared_names": {
+    "MarkovSeriesTransposeM3AE": [
+      "seriesTransposeM3AE",
+      "series_transpose_coeffM3AE",
+      "series_transpose_XM3AE",
+      "series_transpose_CM3AE",
+      "series_transpose_uM3AE",
+      "series_transpose_vM3AE"
+    ],
+    "MarkovColumnSolveM3AE": [
+      "column_solveM3AE",
+      "column_coeffM3AE",
+      "geoTwoM3AE",
+      "geo_two_inverseM3AE",
+      "geo_inverse_leftM3AE"
+    ],
+    "MarkovTransposeGeoM3AE": [
+      "series_transpose_geoM3AE",
+      "series_transpose_geo_twoM3AE",
+      "series_transpose_geo_oneM3AE",
+      "series_transpose_innerXM3AE"
+    ],
+    "MarkovRampGeoM3AE": [
+      "rampGeoM3AE",
+      "ramp_geo_expandM3AE",
+      "ramp_geo_coeffM3AE"
+    ],
+    "MarkovMasterColumnM3AE": [
+      "masterColumnM3AE",
+      "master_columnM3AE",
+      "master_raw_columnM3AE"
+    ],
+    "MarkovMasterSumM3AE": [
+      "rampNatM3AE",
+      "ramp_geo_coeff_natM3AE",
+      "master_transpose_columnM3AE",
+      "master_v_coefficientM3AE",
+      "geo_shift_realM3AE",
+      "master_sum_realM3AE"
+    ],
+    "MarkovMasterExtractionM3AE": [
+      "master_sum_kernelM3AE",
+      "master_sum_zeroM3AE",
+      "master_formulaM3AE",
+      "master_kernel_extractionM3AE"
+    ],
+    "MarkovMasterSourceM3AE": [
+      "source_master_kernelM3AE",
+      "source_two_kernel_of_correctionM3AE",
+      "source_path_master_kernelM3AE"
+    ]
+  },
+  "isolation_scope": "Selected new and restored mathematical names are suffixed M3AE or M3AE; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

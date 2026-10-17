@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovMiddleRelativeSourceM41B.lean:36:1: error: Type mismatch: After simplification, term\n  source_middle_relativeM41B x k c r\n has type\n  middleTemplateMD02 x k r c \u2264\n      threeRawM9E2 (x + 2 * k + middleBaseMD02 r) r (c + 3)\n        (sourceNME9C (x + 2 * k + middleBaseMD02 r) r + 2 - (x + 2 * k + middleBaseMD02 r + 3 + k)) \u2227\n    3 ^ (c + 2) *\n        threeRawM9E2 (x + 2 * k + middleBaseMD02 r) r (c + 3)\n          (sourceNME9C (x + 2 * k + middleBaseMD02 r) r + 2 - (x + 2 * k + middleBaseMD02 r + 3 + k)) \u2264\n      (3 ^ (c + 2) + 21) * middleTemplateMD02 x k r c\nbut is expected to have type\n  middleTemplateMD02 (x + 2 * k + middleBaseMD02 r - (2 * k + middleBaseMD02 r)) k r c \u2264\n      threeRawM9E2 (x + 2 * k + middleBaseMD02 r) r (c + 3)\n        (sourceNME9C (x + 2 * k + middleBaseMD02 r) r + 2 - (x + 2 * k + middleBaseMD02 r + 3 + k)) \u2227\n    3 ^ (c + 2) *\n        threeRawM9E2 (x + 2 * k + middleBaseMD02 r) r (c + 3)\n          (sourceNME9C (x + 2 * k + middleBaseMD02 r) r + 2 - (x + 2 * k + middleBaseMD02 r + 3 + k)) \u2264\n      (3 ^ (c + 2) + 21) * middleTemplateMD02 (x + 2 * k + middleBaseMD02 r - (2 * k + middleBaseMD02 r)) k r c\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMiddleRelativeSourceM41B": "23a398fae2696d9cd86be3cf4645968aaab2a3bd02770955534a32b06404aa59"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-41b38611/MarkovMiddleRelativeSourceM41B.olean",
+    "/Users/sasha/math_gkm/research/MarkovMiddleRelativeSourceM41B.lean"
+  ],
+  "seconds": 13.780513709003571,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

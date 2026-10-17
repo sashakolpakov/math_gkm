@@ -1,0 +1,139 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovGeneralMassM9C28\ncollected MarkovGeneralCrossM9C28\ncollected MarkovGeneralDiagonalM9C28\ncollected MarkovMassBridgeM9C28\ncollected MarkovVerticalMassM9C28\ncollected MarkovVerticalBoundaryM9C28\ncollected MarkovVerticalExpressionM9C28\ncollected MarkovVerticalCertificateM9C28\ncollected MarkovVerticalSourceM9C28\ncollected MarkovResidualM9C28\nreplay union of 10 modules over 6 inherited imports\nisolation checked for 78 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovGeneralMassM9C28": "eeb23b36b8f9ab7dd3cf5739f975866816b1c5b6b674fa2a597741cb868af2c1",
+    "MarkovGeneralCrossM9C28": "70cbb1241601368a158bb760c4dfc7ddf45deb0db2ddd714af5ee03e3a584cfa",
+    "MarkovGeneralDiagonalM9C28": "02f13a8d086781f4b145285ff1246c0174e3fc4a5b300c568eb81b9e44d1eac1",
+    "MarkovMassBridgeM9C28": "8f3c36efebbefc5d671611131f489688b49d3cffc753e00c397f35db79a622b9",
+    "MarkovVerticalMassM9C28": "b226025de99aff51430f0444476e84e6d6bf12012a455a9803475bd4bc5df2a1",
+    "MarkovVerticalBoundaryM9C28": "c5d5b4a4f4c9bb086ba85ffe3524d8c591d615d7a5cc1fa4d8dd1560c489368d",
+    "MarkovVerticalExpressionM9C28": "14e5b2935f9f01d57c616e1122a9973e4098b0a22a4c68682f0360ce1522e2e7",
+    "MarkovVerticalCertificateM9C28": "9dd506bf8d08ad86c0f841a88124fefd537998e5d3d7de76b137468fa3b46029",
+    "MarkovVerticalSourceM9C28": "a47c2013ac611853e9bdef8e3bb5097e59b404e658a7cfbdb9775bd6694b61e7",
+    "MarkovResidualM9C28": "c2e129e7f79bc5a60970c6a36b8d1f20f45bb9103af92d3460768c1d6dc9f47d"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM9C28.lean",
+    "MarkovGeneralMassM9C28",
+    "MarkovGeneralCrossM9C28",
+    "MarkovGeneralDiagonalM9C28",
+    "MarkovMassBridgeM9C28",
+    "MarkovVerticalMassM9C28",
+    "MarkovVerticalBoundaryM9C28",
+    "MarkovVerticalExpressionM9C28",
+    "MarkovVerticalCertificateM9C28",
+    "MarkovVerticalSourceM9C28",
+    "MarkovResidualM9C28"
+  ],
+  "seconds": 69.73851704096887,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "59d01e1e9764ca4601c15cc25d02ab3fb08963a098f1ff8c3cbdbbcc20e4fc9a",
+  "declared_names": {
+    "MarkovGeneralMassM9C28": [
+      "lowQM9C28",
+      "lowJM9C28",
+      "upperQM9C28",
+      "upperJM9C28",
+      "upperKM9C28",
+      "lowMassM9C28",
+      "upperMassM9C28",
+      "source_low_massM9C28",
+      "source_upper_massM9C28"
+    ],
+    "MarkovGeneralCrossM9C28": [
+      "crossQM9C28",
+      "crossJM9C28",
+      "crossCorrectionM9C28",
+      "crossMassM9C28",
+      "cross_baseM9C28",
+      "cross_correctionM9C28",
+      "source_cross_massM9C28"
+    ],
+    "MarkovGeneralDiagonalM9C28": [
+      "source_low_diagonalM9C28",
+      "source_upper_diagonalM9C28",
+      "source_cross_diagonalM9C28",
+      "DiagonalMassLCM9C28",
+      "source_three_diagonalM9C28",
+      "mass_of_high_diagonalM9C28",
+      "mass_iff_high_diagonalM9C28"
+    ],
+    "MarkovMassBridgeM9C28": [
+      "base_liftM9C28",
+      "base_shortM9C28",
+      "correction_liftM9C28",
+      "correction_shortM9C28"
+    ],
+    "MarkovVerticalMassM9C28": [
+      "vLowMassM9C28",
+      "vUpperQM9C28",
+      "vUpperJM9C28",
+      "vUpperKM9C28",
+      "vUpperMassM9C28",
+      "source_vlow_massM9C28",
+      "source_vupper_massM9C28"
+    ],
+    "MarkovVerticalBoundaryM9C28": [
+      "vEntryQM9C28",
+      "vEntryJM9C28",
+      "vEntryCorrectionM9C28",
+      "vEntryMassM9C28",
+      "vExitQM9C28",
+      "vExitJM9C28",
+      "vExitCorrectionM9C28",
+      "vExitMassM9C28",
+      "ventry_baseM9C28",
+      "ventry_correctionM9C28",
+      "source_ventry_massM9C28",
+      "vexit_baseM9C28",
+      "vexit_correctionM9C28",
+      "source_vexit_massM9C28"
+    ],
+    "MarkovVerticalExpressionM9C28": [
+      "vLowExprM9C28",
+      "vUpperExprM9C28",
+      "vlow_expr_natM9C28",
+      "vupper_expr_natM9C28",
+      "vEntryCorrectionExprM9C28",
+      "vExitCorrectionExprM9C28",
+      "vEntryExprM9C28",
+      "vExitExprM9C28",
+      "ventry_correction_exprM9C28",
+      "vexit_correction_exprM9C28",
+      "ventry_expr_natM9C28",
+      "vexit_expr_natM9C28",
+      "vGapExprM9C28",
+      "vBoundaryGapExprM9C28"
+    ],
+    "MarkovVerticalCertificateM9C28": [
+      "VerticalMassLCM9C28",
+      "VerticalSignsM9C28",
+      "vertical_signs_zeroM9C28",
+      "vertical_signs_to_massM9C28",
+      "vertical_mass_zeroM9C28"
+    ],
+    "MarkovVerticalSourceM9C28": [
+      "vertical_center_onlyM9C28",
+      "vlow_verticalM9C28",
+      "vupper_verticalM9C28",
+      "ventry_verticalM9C28",
+      "vexit_verticalM9C28",
+      "source_vertical_of_massM9C28",
+      "source_four_verticalM9C28",
+      "path_four_verticalM9C28"
+    ],
+    "MarkovResidualM9C28": [
+      "ThreeRemainingM9C28",
+      "remaining_iffM9C28",
+      "root_iff_remainingM9C28"
+    ]
+  },
+  "isolation_scope": "Selected new mathematical names are suffixed M9C28; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

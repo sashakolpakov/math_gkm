@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCorrectionExtractionMED6.lean:19:1: error: unsolved goals\ncase pos\nq j : \u2115\nf : (Polynomial \u2124)\u27e6X\u27e7\nhe : 4 * C Polynomial.X * (rescale Polynomial.X) f = C 4 * (C Polynomial.X * (rescale Polynomial.X) f)\nhp :\n  4 * (Polynomial.X * (Polynomial.X ^ q * (PowerSeries.coeff q) f)) =\n    Polynomial.C 4 * (Polynomial.X ^ (q + 1) * (PowerSeries.coeff q) f)\nh : q + 1 \u2264 j\n\u22a2 4 * \u2191(((PowerSeries.coeff q) f).coeff (j - (q + 1))) = 4 * \u2191(((PowerSeries.coeff q) f).coeff (j - q - 1))\n/Users/sasha/math_gkm/research/MarkovCorrectionExtractionMED6.lean:35:5: error: unsolved goals\ncase pos.e_a.false\nq t j : \u2115\nhj : q + 1 \u2264 j\nhk : t + 3 + j + q \u2264 sourceNME9C q false\nhd : (t + 2 + if false = true then 1 else 0) + (j - q - 1) \u2264 q\n\u22a2 affineKernelM13E 1 (t + 2) (t + 1) (j - q - 1) (q - (t + 2) - (j - q - 1)) =\n    affineKernelM13E 1 (t + 2) (t + 3 - 2) (j - q - 1) (sourceNME9C q false - q - (t + 3) - j)\n\ncase pos.e_a.true\nq t j : \u2115\nhj : q + 1 \u2264 j\nhk : t + 3 + j + q \u2264 sourceNME9C q true\nhd : (t + 2 + if true = true then 1 else 0) + (j - q - 1) \u2264 q\n\u22a2 affineKernelM13E 2 (t + 2) (t + 1) (j - q - 1) (q - (t + 2 + 1) - (j - q - 1)) =\n    affineKernelM13E 2 (t + 2) (t + 3 - 2) (j - q - 1) (sourceNME9C q true - q - (t + 3) - j)\n/Users/sasha/math_gkm/research/MarkovCorrectionExtractionMED6.lean:36:5: error: No goals to be solved\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCorrectionExtractionMED6": "d0c0b2e31f6495bbef5f09498c95620407af3a9884eef89e0e823cb6a6519cee"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ed6bdbeb/MarkovCorrectionExtractionMED6.olean",
+    "/Users/sasha/math_gkm/research/MarkovCorrectionExtractionMED6.lean"
+  ],
+  "seconds": 17.10378554102499,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

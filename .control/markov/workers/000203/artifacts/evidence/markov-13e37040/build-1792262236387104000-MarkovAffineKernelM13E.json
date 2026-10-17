@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovAffineKernelM13E.lean:39:1: error: Tactic `apply` failed: could not unify the conclusion of `@sum_nonneg`\n  0 \u2264 \u2211 i \u2208 ?s, ?f i\nwith the goal\n  0 \u2264 affineKernelM13E e a b j k\n\nNote: The full type of `@sum_nonneg` is\n  \u2200 {\u03b9 : Type ?u.15} {N : Type ?u.14} [inst : AddCommMonoid N] [inst_1 : Preorder N] {f : \u03b9 \u2192 N} {s : Finset \u03b9}\n    [AddLeftMono N], (\u2200 i \u2208 s, 0 \u2264 f i) \u2192 0 \u2264 \u2211 i \u2208 s, f i\n\ne : \u211d\nhe : 0 \u2264 e\na b j k : \u2115\n\u22a2 0 \u2264 affineKernelM13E e a b j k\n/Users/sasha/math_gkm/research/MarkovAffineKernelM13E.lean:99:52: error: unsolved goals\ne : \u211d\na b k : \u2115\n\u22a2 e * nbSeqMDB9 a 0 = e \u2228 (k + b).choose b = 0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovAffineKernelM13E": "e36dbe7c75506a9fd37a9cb488b301b4b76b5a6da8c6b9f88795de9dc4ae07ec"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-13e37040/MarkovAffineKernelM13E.olean",
+    "/Users/sasha/math_gkm/research/MarkovAffineKernelM13E.lean"
+  ],
+  "seconds": 33.602755667001475,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

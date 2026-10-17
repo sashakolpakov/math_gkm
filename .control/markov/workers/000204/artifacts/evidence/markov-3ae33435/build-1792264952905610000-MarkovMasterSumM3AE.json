@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovMasterSumM3AE.lean:24:1: error: `simp` made no progress\n/Users/sasha/math_gkm/research/MarkovMasterSumM3AE.lean:43:11: error: unsolved goals\nt j s : \u2115\nhs\u271d : s \u2208 range j.succ\nhs : s \u2264 j\nhex : t + 1 + (2 * s + (j - s)) = t + 1 + j + s\n\u22a2 X ^ (t + 1 + j + s) * C (\u2191(rampNatM3AE s) * \u2191((t + 3 + (j - s)).choose (t + 3))) * geoM679 1 ^ (t + 1) =\n    X ^ (t + 1 + j + s) * (C \u2191(rampNatM3AE s) * C \u2191((t + 3 + (j - s)).choose (t + 3))) * geoM679 1 ^ (t + 1)\n/Users/sasha/math_gkm/research/MarkovMasterSumM3AE.lean:46:23: error: typeclass instance problem is stuck\n  Semiring ?m.4\n\nNote: Lean will not try to resolve this typeclass instance problem because the type argument to `Semiring` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.\n\nHint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.\n/Users/sasha/math_gkm/research/MarkovMasterSumM3AE.lean:67:33: error(lean.unknownIdentifier): Unknown identifier `geo_shift_realM3AE`\n/Users/sasha/math_gkm/research/MarkovMasterSumM3AE.lean:60:36: error: unsolved goals\nn t j s : \u2115\nhs\u271d : s \u2208 range (j + 1)\nhs : s \u2264 j\nhe :\n  X ^ (t + 1 + j + s) * C (\u2191(rampNatM3AE s) * \u2191((t + 3 + (j - s)).choose (t + 3))) * geoM679 1 ^ (t + 1) =\n    C (\u2191(rampNatM3AE s) * \u2191((t + 3 + (j - s)).choose (t + 3))) * (X ^ (t + 1 + j + s) * geoM679 1 ^ (t + 1))\n\u22a2 \u2191(\u2191(rampNatM3AE s) * \u2191((t + 3 + (j - s)).choose (t + 3))) *\n      \u2191((PowerSeries.coeff n) (X ^ (t + 1 + j + s) * geoM679 1 ^ (t + 1))) =\n    rampWeightMF88 \u2191s * nbSeqMDB9 (t + 3) (\u2191j - \u2191s) * nbSeqMDB9 t (\u2191n - (\u2191t + 1 + \u2191j + \u2191s))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMasterSumM3AE": "933ab08bb4888aa1d784f147004a61b8912814ed0b26aa69735c4df5bd3ba323"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-3ae33435/MarkovMasterSumM3AE.olean",
+    "/Users/sasha/math_gkm/research/MarkovMasterSumM3AE.lean"
+  ],
+  "seconds": 15.608016999962274,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

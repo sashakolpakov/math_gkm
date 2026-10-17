@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovMiddleFixedDepthM6C0.lean:41:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  middleQMF8D \u2191?x \u2191?k ?r ?c\nin the target expression\n  0 \u2264 middleQMF8D (\u2191x) 2 r (c + 1) ^ 2 - middleQMF8D (\u2191x) 2 r c * middleQMF8D (\u2191x) 2 r (c + 2)\n\ncase pos\nc : \u2115\nr : Bool\nh : denseNonnegM6C0 (exprDenseM6C0 (fixedTwoExprM6C0 c r))\nx : \u2115\nhx : fixedTwoShiftM6C0 c r \u2264 x\nhp : 0 \u2264 middleQMF8D (\u2191x) 2 r (c + 1) ^ 2 - middleQMF8D (\u2191x) 2 r c * middleQMF8D (\u2191x) 2 r (c + 2)\n\u22a2 0 \u2264 middleGapMD02 r c x 2\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMiddleFixedDepthM6C0": "5b9f06520d1fd9e6edfa462fcc0948ef0952ea7f1d36f79e73cca4014b06c244"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-6c0f2afd/MarkovMiddleFixedDepthM6C0.olean",
+    "/Users/sasha/math_gkm/research/MarkovMiddleFixedDepthM6C0.lean"
+  ],
+  "seconds": 35.06400345801376,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

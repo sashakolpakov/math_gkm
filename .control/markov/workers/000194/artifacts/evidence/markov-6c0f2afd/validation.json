@@ -1,0 +1,61 @@
+{
+  "modules": {
+    "MarkovDenseCertificateM6C0": "8dfaa0da7cb8ec68f295632d6dffe9476c1375da36203c26679c43629b6a6637",
+    "MarkovMiddleExpressionM6C0": "afcd2d2141f0d82cddc7e8123d3afe37812b7363f062dfc3cb888c18c4b8887a",
+    "MarkovMiddleDenseC6M6C0": "40c9037af00a483c6a903e44f4bd04475a54e936718af36415e86bd79748ec7b",
+    "MarkovMiddleFixedDepthM6C0": "9fdbabe4246931f15df3f53efb748dcadb31a59f3340909115f8ef807a9df679",
+    "MarkovMiddleThirdBatch6M6C0": "483fddde6cf1dbe444e477429728a78fbf41f0fde2977a868ea21296b46aa27f",
+    "MarkovMiddleCachedC7M6C0": "eea81a66a9057b2be5d2c4cecaeddafe0d586944f1e43801c1d02e73173a367e",
+    "MarkovMiddleSixResidualM6C0": "c4c9f0aeadcb4f320fcd3b396d7b0fa64d6a96d0b16fb67ee1e15a6653b12f66",
+    "MarkovMiddleThirdPartialM6C0": "d83ad3f5a4464d73d9e191a93daaa81df999e9c575a87dd516fe559a2716c070",
+    "MarkovMiddleRemainingM6C0": "c8979fd24c0f47fa08ac9234a8849e0fd659e16210b9d05fef82567c47d516b8"
+  },
+  "compilation": {
+    "MarkovDenseCertificateM6C0": "evidence/markov-6c0f2afd/build-1792246745739394000-MarkovDenseCertificateM6C0.json",
+    "MarkovMiddleExpressionM6C0": "evidence/markov-6c0f2afd/build-1792246806764561000-MarkovMiddleExpressionM6C0.json",
+    "MarkovMiddleDenseC6M6C0": "evidence/markov-6c0f2afd/build-1792246872283995000-MarkovMiddleDenseC6M6C0.json",
+    "MarkovMiddleFixedDepthM6C0": "evidence/markov-6c0f2afd/build-1792247401565726000-MarkovMiddleFixedDepthM6C0.json",
+    "MarkovMiddleThirdBatch6M6C0": "evidence/markov-6c0f2afd/build-1792247461871522000-MarkovMiddleThirdBatch6M6C0.json",
+    "MarkovMiddleCachedC7M6C0": "evidence/markov-6c0f2afd/build-1792247342365990000-MarkovMiddleCachedC7M6C0.json",
+    "MarkovMiddleSixResidualM6C0": "evidence/markov-6c0f2afd/build-1792247520419682000-MarkovMiddleSixResidualM6C0.json",
+    "MarkovMiddleThirdPartialM6C0": "evidence/markov-6c0f2afd/build-1792247794206931000-MarkovMiddleThirdPartialM6C0.json",
+    "MarkovMiddleRemainingM6C0": "evidence/markov-6c0f2afd/build-1792247849600412000-MarkovMiddleRemainingM6C0.json"
+  },
+  "replays": [
+    "evidence/markov-6c0f2afd/replay-1792247670340255000-MarkovDenseCertificateM6C0.json",
+    "evidence/markov-6c0f2afd/replay-1792247961412766000-MarkovMiddleThirdPartialM6C0.json"
+  ],
+  "replay_stages": [
+    {
+      "modules": [
+        "MarkovDenseCertificateM6C0",
+        "MarkovMiddleExpressionM6C0",
+        "MarkovMiddleDenseC6M6C0",
+        "MarkovMiddleFixedDepthM6C0",
+        "MarkovMiddleThirdBatch6M6C0",
+        "MarkovMiddleCachedC7M6C0",
+        "MarkovMiddleSixResidualM6C0"
+      ],
+      "boundary": "Inherited compiled imports only"
+    },
+    {
+      "modules": [
+        "MarkovMiddleThirdPartialM6C0",
+        "MarkovMiddleRemainingM6C0"
+      ],
+      "boundary": "Inherited imports and locally checked stage A",
+      "stage_A_hashes": {
+        "MarkovDenseCertificateM6C0": "8dfaa0da7cb8ec68f295632d6dffe9476c1375da36203c26679c43629b6a6637",
+        "MarkovMiddleExpressionM6C0": "afcd2d2141f0d82cddc7e8123d3afe37812b7363f062dfc3cb888c18c4b8887a",
+        "MarkovMiddleDenseC6M6C0": "40c9037af00a483c6a903e44f4bd04475a54e936718af36415e86bd79748ec7b",
+        "MarkovMiddleFixedDepthM6C0": "9fdbabe4246931f15df3f53efb748dcadb31a59f3340909115f8ef807a9df679",
+        "MarkovMiddleThirdBatch6M6C0": "483fddde6cf1dbe444e477429728a78fbf41f0fde2977a868ea21296b46aa27f",
+        "MarkovMiddleCachedC7M6C0": "eea81a66a9057b2be5d2c4cecaeddafe0d586944f1e43801c1d02e73173a367e",
+        "MarkovMiddleSixResidualM6C0": "c4c9f0aeadcb4f320fcd3b396d7b0fa64d6a96d0b16fb67ee1e15a6653b12f66"
+      }
+    }
+  ],
+  "axioms": "evidence/markov-6c0f2afd/axioms-1792247976651735000.json",
+  "theorem_closures": 60,
+  "scope": "Nine local source compilations; two staged kernel replays with selected names absent from each replay import environment; all stage-A source hashes bound when stage B imports them. Pinned inherited compiled dependencies reused. No fresh whole-source rebuild or independent completion audit."
+}

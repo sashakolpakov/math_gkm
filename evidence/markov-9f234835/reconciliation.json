@@ -1,0 +1,155 @@
+{
+  "bindings": {
+    "RESUME.json": true,
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": true,
+    "evidence/independent-markov/markov_residual_scope_audit.md": true,
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": true,
+    "evidence/markov/research-run/state.json": true,
+    "requests/markov-next.json": true
+  },
+  "logs": {
+    "000198": {
+      "sha256": "68b638b894348785647a726d63444c023f5604a79ad17dbc4c1f4f234b97ebde",
+      "events": 236,
+      "pending": {},
+      "last_events": [
+        {
+          "type": "item.completed",
+          "item": {
+            "id": "item_120",
+            "type": "file_change",
+            "changes": [
+              {
+                "path": "/Users/sasha/math_gkm/research/central_bounds_e8743310.py",
+                "kind": "add"
+              }
+            ],
+            "status": "completed"
+          }
+        },
+        {
+          "type": "item.started",
+          "item": {
+            "id": "item_121",
+            "type": "command_execution",
+            "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/central_bounds_e8743310.py'",
+            "aggregated_output": "",
+            "exit_code": null,
+            "status": "in_progress"
+          }
+        },
+        {
+          "type": "item.completed",
+          "item": {
+            "id": "item_121",
+            "type": "command_execution",
+            "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/central_bounds_e8743310.py'",
+            "aggregated_output": "{\"scalar_shift_thresholds\": [{\"shift\": 0, \"cutoff\": 10, \"terms\": 64, \"minimum\": 32}, {\"shift\": 1, \"cutoff\": 10, \"terms\": 64, \"minimum\": 32}, {\"shift\": 2, \"cutoff\": 10, \"terms\": 64, \"minimum\": 32}, {\"shift\": 3, \"cutoff\": 10, \"terms\": 64, \"minimum\": 32}, {\"shift\": 4, \"cutoff\": 10, \"terms\": 64, \"minimum\": 32}], \"relative_checks\": 12064, \"failures\": [], \"seconds\": 0.5955794579931535, \"status\": \"Finite exact experiments and symbolic coefficient sign observations only. Signed source and weighted-moment bridges remain unproved.\"}\n",
+            "exit_code": 0,
+            "status": "completed"
+          }
+        }
+      ]
+    },
+    "000199": {
+      "sha256": "691111c6e6dae51d1672117c7ec810256e9a4d74d72b224f85615e91c1472f34",
+      "events": 274,
+      "pending": {},
+      "last_events": [
+        {
+          "type": "item.completed",
+          "item": {
+            "id": "item_140",
+            "type": "command_execution",
+            "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/finalize_e108e0e2.py'",
+            "aggregated_output": "{\"modules\": 24, \"closures\": 96, \"failed_builds\": 11, \"unaccepted_sources\": 9}\n{\"artifacts\": 168, \"unchanged_inputs\": 23886, \"predecessor_artifacts\": 158, \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\", \"contract_sha256\": \"cc930bda09aaaa16b0662e9c0afa3c48167b1a07f2087eb6c2106c73c4a16068\", \"stop_file\": false, \"completion\": null}\n",
+            "exit_code": 0,
+            "status": "completed"
+          }
+        },
+        {
+          "type": "item.started",
+          "item": {
+            "id": "item_141",
+            "type": "command_execution",
+            "command": "/bin/zsh -lc 'cat evidence/markov-e108e0e2/last-verification.json research/markov-e108e0e2-checkpoint-final.md; cat evidence/markov-e108e0e2/validation.json | head -n 8'",
+            "aggregated_output": "",
+            "exit_code": null,
+            "status": "in_progress"
+          }
+        },
+        {
+          "type": "item.completed",
+          "item": {
+            "id": "item_141",
+            "type": "command_execution",
+            "command": "/bin/zsh -lc 'cat evidence/markov-e108e0e2/last-verification.json research/markov-e108e0e2-checkpoint-final.md; cat evidence/markov-e108e0e2/validation.json | head -n 8'",
+            "aggregated_output": "{\n  \"artifacts\": 168,\n  \"unchanged_inputs\": 23886,\n  \"predecessor_artifacts\": 158,\n  \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\",\n  \"contract_sha256\": \"cc930bda09aaaa16b0662e9c0afa3c48167b1a07f2087eb6c2106c73c4a16068\",\n  \"stop_file\": false,\n  \"completion\": null\n}# Final checkpoint\n\nMachine-authored request e108e0e26f6d456c97155a7914deaabe.\nFull pinned root and exact negation remain open; completion=null.\n\n24 modules compiled and jointly kernel-replayed; 96 theorem closures use only permitted axioms. See evidence/markov-e108e0e2/validation.json. Inherited compiled imports reused; no fresh whole-source rebuild or independent completion audit.\n\nProved the exact shifted central source formula, complete correction domination, actual-weight centered variance attachment, all physical starting columns>=13 on every numerator-three horizontal row, and the exact root residual ThreeCentralFiniteME10 (central starts2..12). The strongest exact residual is ThreeCentralNineME10: physical starts4..12 in the two central rows; root_iff_central_nineME10 retains all other directions and families. The physical-column-two gap is closed; root_iff_central_tenME10 leaves starting columns3..12 in the two central rows. The c=0 shifted raw gap is also proved for every h<=3 and k+h>=3; use central_low_0ME10 with central_source_formulaME10. All vertical and diagonal residuals and OtherFourM9E2 remain open.\n\nFinite source experiment:7016 coefficient comparisons retaining645 zeros;590991 polygon-valid triples across all directions. No failure; these are experiments, not proofs. Eighty univariate low-gap symbolic probes had nonnegative coefficients; unvalidated certificates remain drafts.\n\n11 rejected builds and 9 source files outside the validated bundle are preserved. No launched foreground work remains pending.\n{\n  \"modules\": {\n    \"MarkovCenteredScalarME10\": \"455f9976d7f781c2590828df8935c601123256c22783c7c4b0ef25824b06b49f\",\n    \"MarkovCentralAxesME10\": \"568160b5c4580b59ec36a3598e509f911123c8d98216e0b07c9b9231d6358011\",\n    \"MarkovCentralHighME10\": \"fec801ee9300bc79a0d3cf7356c10eb1d28441515a22f24158743692b969624b\",\n    \"MarkovCentralLow0ME10\": \"3ccd768b9f86092c35b1d4bdf64b6b647234fc76c52cc363a2bba57f4dcbfcc3\",\n    \"MarkovCentralNineME10\": \"37b6e22202847603f7f5bab0d7fdc8715b971caee9551f06d3bb1e551a01e64c\",\n    \"MarkovCentralRationalME10\": \"d298f4d843801cb49f0465dcb542aec6832d158af3e6fee8f9919cca57a3b60b\",\n",
+            "exit_code": 0,
+            "status": "completed"
+          }
+        }
+      ]
+    },
+    "000200": {
+      "sha256": "c4bf2bb851672df7337f1532c6fe1802dfe280de478f898f335aeeba00ec5cc4",
+      "events": 305,
+      "pending": {},
+      "last_events": [
+        {
+          "type": "item.completed",
+          "item": {
+            "id": "item_155",
+            "type": "command_execution",
+            "command": "/bin/zsh -lc \"env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 -c 'from pathlib import Path; import hashlib,json; r=Path(\\\".\\\"); o=r/\\\"evidence/markov-f88f6a75\\\"; m=json.loads((o/\\\"manifest.json\\\").read_text()); bad=[p for p,h in m.items() if hashlib.sha256((r/p).read_bytes()).hexdigest()\"'!=h]; assert not bad,bad; v=json.loads((o/\"validation.json\").read_text()); a=json.loads((r/v[\"axioms\"]).read_text()); rp=json.loads((r/v[\"replay\"]).read_text()); report=json.loads((o/\"report.json\").read_text()); assert rp[\"returncode\"]==0 and len(a[\"declarations\"])==118 and report[\"completion\"] is None; print(json.dumps({\"manifest_artifacts_checked\":len(m),\"mismatches\":bad,\"modules\":len(v[\"modules\"]),\"closures\":len(a[\"declarations\"]),\"replay_seconds\":rp[\"seconds\"],\"completion\":report[\"completion\"],\"stop_file\":(r/\".control/markov/STOP.json\").exists()}))'\"'\"",
+            "aggregated_output": "{\"manifest_artifacts_checked\": 132, \"mismatches\": [], \"modules\": 18, \"closures\": 118, \"replay_seconds\": 190.28619708301267, \"completion\": null, \"stop_file\": false}\n",
+            "exit_code": 0,
+            "status": "completed"
+          }
+        },
+        {
+          "type": "item.completed",
+          "item": {
+            "id": "item_156",
+            "type": "agent_message",
+            "text": "{\n  \"actions\": [\n    \"Read required documents and audits; reconciled interrupted workers: evidence/markov-f88f6a75/reconciliation.json.\",\n    \"Compiled and jointly kernel-replayed 18 modules; audited 118 theorem closures using only permitted axioms: evidence/markov-f88f6a75/validation.json.\",\n    \"Verified 132 artifacts, 24,031 unchanged inputs and pinned bindings: evidence/markov-f88f6a75/last-verification.json.\"\n  ],\n  \"agenda\": [\n    \"Investigate ThreeUpperVerticalDiagonalMF88 or OtherFourM9E2: research/markov-f88f6a75-next.md.\",\n    \"Investigate parameter variation in the exact lower convolution; retain the proved auxiliary minor obstruction.\",\n    \"Preserve all remaining families, directions, zeros and endpoints. Completion requires universal proofs and independent source correspondence validation.\"\n  ],\n  \"completion\": null,\n  \"observations\": [\n    \"Proved complete numerator-three horizontal raw log-concavity, with unbounded parameters and path/polygon transport: research/MarkovThreeHorizontalMF88.lean.\",\n    \"Proved the exact lower convolution representation and every lower vertical inequality with j+2\u2264q, at every column: research/MarkovLowerDiagonalMF88.lean and research/MarkovLowerVerticalMF88.lean.\",\n    \"Proved Conjecture63 iff ThreeUpperVerticalDiagonalMF88 and OtherFourM9E2. Both remain open: research/MarkovUpperVerticalResidualMF88.lean.\",\n    \"Finite experiments passed 77,964 coefficient comparisons retaining 1,929 zeros, 1,661,420 polygon-valid triples and 72,243 additional lower vertical checks. These are experiments, not proofs: evidence/markov-f88f6a75/source-experiment.json and lower-source-experiment.json.\",\n    \"Preserved four rejected builds and capability failures. Inherited compiled imports were reused; no fresh whole-source rebuild or independent completion audit occurred: research/markov-f88f6a75-operational.md and markov-f88f6a75-correspondence.md.\"\n  ],\n  \"request_id\": \"f88f6a75cab54deb828cd05d7806b3e4\",\n  \"summary\": \"Closed the complete numerator-three horizontal direction and its lower vertical region. Full pinned Conjecture63 remains unresolved.\"\n}"
+          }
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 8810387,
+            "cached_input_tokens": 8536960,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 48305,
+            "reasoning_output_tokens": 15011
+          }
+        }
+      ]
+    }
+  },
+  "predecessor_manifest_artifacts": 132,
+  "predecessor_manifest_failures": [],
+  "validated_modules": {
+    "MarkovCentralExprMF88": "9f5ec7ad19d06e24fd8ae86ca18a122c985bc38e886a4973088b0ebbbe0707bc",
+    "MarkovCentralLow1MF88": "578d5adddf20c622f9a794bbc8ee34b5c1bd559f51cfc5b664c0fa9136ae5a49",
+    "MarkovCentralLow2MF88": "8213b99bf0a3244e17f9d066a4b10eb177758f44dd741ce3f1bb75c5a5b7fc1c",
+    "MarkovCentralLow3MF88": "f081b57b006ebdb4fcda012cdc7f63b76e7e5ba0bec7da59057d2e401f47a397",
+    "MarkovCentralLow4MF88": "52d11775b9201fc836e8a141701dc47f6ce97c27824214ed20d4b17c023e70f9",
+    "MarkovCentralLow5MF88": "44e743fc83bf4e4f88992b88826712f3a52ae830c6d462b8a303d20c4905b9aa",
+    "MarkovCentralLow6MF88": "0a19e363362be75a04b090a49507213a48918fc927e1a998669f6e5b13f660a7",
+    "MarkovCentralLow7MF88": "831da14abf67716eb13163b8d0a3eeaa89e98c9ea7259b9f9b3a39ef39e9c8fd",
+    "MarkovCentralLow8MF88": "cd7b12998dc762011679f87300458a5ad7441136d51e83244c3278c742f1656a",
+    "MarkovCentralLow9MF88": "8fed3628a2eabe612a481130b4f49ac335726616c5c2d61f81442a5bf4d15dc5",
+    "MarkovCentralProbeMF88": "72e057399751b09c4b40f2e2e9d47df2ac14bb8b6d0dc9d84b0c8cdcb550bc45",
+    "MarkovThreeHorizontalMF88": "8832418cbe0e03c8231436475624352d637fe628378c62f1722bfa1a4126c5ef",
+    "MarkovTransverseResidualMF88": "f745a6daccc10c0148617f2302923cb74f3c77a7a6601351973c1b652663b9d7",
+    "MarkovLowerKernelLiftMF88": "d581f0347fa92156e059573f1893895cd0db1b650eef4319f5c8effaebc1c849",
+    "MarkovLowerDiagonalMF88": "804b9c664f92e3215e6ef1f4c3ec8d1178c78ec15f9e318315542ce35d69a0f6",
+    "MarkovLowerVerticalMF88": "cf9aa54323e10b354d4b0d3b6f7bf1a8a6fb5bc0f97ae82e2118bbafa510a895",
+    "MarkovUpperVerticalResidualMF88": "dbb6768569140d0d3e4e4811909a91447583087829d8cafd900611dea00887fb",
+    "MarkovLowerDiagnosticsMF88": "c084921726dc3510ebe61b3c6daf2876408983acc24254c5305ffe4bea89be20"
+  },
+  "decision": "Interrupted 198 and 199 reconciled from raw logs and successor receipts. Finalizer 199 completed; do not replay it. Worker 200 complete. Select new lower-diagonal parameter investigation.",
+  "scratch": "Denied by higher-priority filesystem profile; not accessed. New evidence directory used for working artifacts."
+}

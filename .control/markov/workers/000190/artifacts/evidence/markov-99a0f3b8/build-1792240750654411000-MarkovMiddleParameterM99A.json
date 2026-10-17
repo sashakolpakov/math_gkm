@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovMiddleParameterM99A.lean:29:1: error: unsolved goals\ncase false\nq k : \u2115\nhk : k + 1 \u2264 q\n\u22a2 (fibRowsMC3E q (q - k) + X * fibRowsMC3E (1 + q) (1 + q - k) + fibRowsMC3E (1 + q) (1 + q - k) +\n      if 1 \u2264 1 + q - k then fibRowsMC3E (1 + q) (q - k) else 0) =\n    fibRowsMC3E q (q - k) + X * fibRowsMC3E (1 + q) (1 + q - k) + fibRowsMC3E (1 + q) (1 + q - k) +\n      fibRowsMC3E (1 + q) (q - k)\n/Users/sasha/math_gkm/research/MarkovMiddleParameterM99A.lean:49:58: error(lean.unknownIdentifier): Unknown identifier `h2`\n/Users/sasha/math_gkm/research/MarkovMiddleParameterM99A.lean:49:58: error(lean.unknownIdentifier): Unknown identifier `h2`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMiddleParameterM99A": "d1c7ab0351b26b29170ef4f2af05139bee63b4bea98dea4e1c8abeb99ccee6a1"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-99a0f3b8/MarkovMiddleParameterM99A.olean",
+    "/Users/sasha/math_gkm/research/MarkovMiddleParameterM99A.lean"
+  ],
+  "seconds": 29.396386999986134,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

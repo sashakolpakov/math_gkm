@@ -1,0 +1,91 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovBinomialDilationM41B\ncollected MarkovCorrectionDominationM41B\ncollected MarkovMiddlePerturbationM41B\ncollected MarkovTemplateStrongMomentM41B\ncollected MarkovMiddleRelativeSourceM41B\ncollected MarkovDeficitScalarM41B\ncollected MarkovDeficitControlM41B\nreplay union of 7 modules over 3 inherited imports\nisolation checked for 42 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBinomialDilationM41B": "815959c2bbfcc7f4ba627cdc0c63419f90cbdc3abaaa4d1240258559de2671d5",
+    "MarkovCorrectionDominationM41B": "53159d01077d0db786a1896dc486239504c6d45a5d26816df079da0e14810ec0",
+    "MarkovMiddlePerturbationM41B": "94d6ad7880926c77d8245969ac4ac3d73d467387dead379f29f64aaa8a4c1eae",
+    "MarkovTemplateStrongMomentM41B": "27e0ec97fbd7618de110571161fde1b471dd1b7eef3f033c33ac0b10fa917c72",
+    "MarkovMiddleRelativeSourceM41B": "5d36b422bfc2608cc914bb4668fac6bdd60cc520501b9d3f7993f5ff4727cfde",
+    "MarkovDeficitScalarM41B": "42b7fc90796913d7ef2c4404f5835d4163c98a37c92e99d2262e4de9b2a94adb",
+    "MarkovDeficitControlM41B": "63fbce041af273d10d0bcd91d5f2f684c7c9e4fc801441b2d0803ed44d7c8550"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM41B.lean",
+    "MarkovBinomialDilationM41B",
+    "MarkovCorrectionDominationM41B",
+    "MarkovMiddlePerturbationM41B",
+    "MarkovTemplateStrongMomentM41B",
+    "MarkovMiddleRelativeSourceM41B",
+    "MarkovDeficitScalarM41B",
+    "MarkovDeficitControlM41B"
+  ],
+  "seconds": 12.392003666027449,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "54e6d005d2f0c8fe9d1bb1a41b241d205d054d063665202b8e11ccd7240d30bc",
+  "declared_names": {
+    "MarkovBinomialDilationM41B": [
+      "desc_dilationM41B",
+      "choose_dilationM41B",
+      "choose_dilation_leM41B",
+      "choose_lower_stepM41B",
+      "choose_upper_stepM41B",
+      "choose_weight_shiftM41B"
+    ],
+    "MarkovCorrectionDominationM41B": [
+      "templateTermM41B",
+      "templateMassM41B",
+      "template_term_nonnegM41B",
+      "template_mass_nonnegM41B",
+      "template_mass_leM41B",
+      "diluted_chooseM41B",
+      "kernel_same_boundM41B",
+      "kernel_shift_boundM41B",
+      "correction_exponential_boundM41B"
+    ],
+    "MarkovMiddlePerturbationM41B": [
+      "exponential_linearM41B",
+      "correction_relative_boundM41B",
+      "template_nonnegM41B",
+      "positive_perturbationM41B",
+      "TemplateStrongM41B",
+      "middle_gap_of_template_strongM41B",
+      "middle_after_third_of_template_strongM41B",
+      "root_of_template_strongM41B"
+    ],
+    "MarkovTemplateStrongMomentM41B": [
+      "strongDriftM41B",
+      "strong_gap_identityM41B",
+      "template_strong_iff_momentM41B",
+      "TemplateVarianceM41B",
+      "template_strong_iff_varianceM41B",
+      "root_of_template_varianceM41B"
+    ],
+    "MarkovMiddleRelativeSourceM41B": [
+      "middle_raw_relativeM41B",
+      "source_middle_relativeM41B",
+      "source_middle_relative_allM41B",
+      "path_middle_relativeM41B"
+    ],
+    "MarkovDeficitScalarM41B": [
+      "deficitLowerM41B",
+      "deficitSecondM41B",
+      "deficitScalarM41B",
+      "deficit_scalar_shiftM41B",
+      "deficit_lower_shiftM41B",
+      "deficit_scalar_positiveM41B",
+      "deficit_lower_positiveM41B"
+    ],
+    "MarkovDeficitControlM41B": [
+      "deficit_control_algebraM41B",
+      "deficit_controlM41B"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed M41B; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

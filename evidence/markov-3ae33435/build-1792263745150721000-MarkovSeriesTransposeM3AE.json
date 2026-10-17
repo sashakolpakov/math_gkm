@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSeriesTransposeM3AE.lean:13:13: error: unsolved goals\ncase neg\nR : Type u_1\ninst\u271d : CommRing R\ni n : \u2115\nh\u271d\u00b9 : n = 0\nh\u271d : \u00aci = 0\n\u22a2 Polynomial.coeff 1 i = 0\n/Users/sasha/math_gkm/research/MarkovSeriesTransposeM3AE.lean:16:32: warning: This simp argument is unused:\n  Polynomial.coeff_one\n\nHint: Omit it from the simp argument list.\n  simp only [\u0335c\u0335o\u0335e\u0335f\u0335f\u0335_\u0335m\u0335k\u0335,\u0335c\u0335o\u0335e\u0335f\u0335f\u0335_\u0335o\u0335n\u0335e\u0335,\u0335P\u0335o\u0335l\u0335y\u0335n\u0335o\u0335m\u0335i\u0335a\u0335l\u0335.\u0335c\u0335o\u0335e\u0335f\u0335f\u0335_\u0335o\u0335n\u0335e\u0335]\u0335[\u0332c\u0332o\u0332e\u0332f\u0332f\u0332_\u0332m\u0332k\u0332,\u0332 \u0332c\u0332o\u0332e\u0332f\u0332f\u0332_\u0332o\u0332n\u0332e\u0332]\u0332\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovSeriesTransposeM3AE.lean:36:39: error: Tactic `rfl` failed: The left-hand side\n  (PowerSeries.coeff n) ((PowerSeries.coeff i) (seriesTransposeM3AE f))\nis not definitionally equal to the right-hand side\n  ((PowerSeries.coeff n) f).coeff i\n\nR : Type u_1\ninst\u271d : CommRing R\nf : (Polynomial R)\u27e6X\u27e7\ni n : \u2115\n\u22a2 (PowerSeries.coeff n) ((PowerSeries.coeff i) (seriesTransposeM3AE f)) = ((PowerSeries.coeff n) f).coeff i\n/Users/sasha/math_gkm/research/MarkovSeriesTransposeM3AE.lean:39:79: error: unsolved goals\ncase neg\nR : Type u_1\ninst\u271d : CommRing R\ni n : \u2115\nh\u271d\u00b9 : n = 1\nh\u271d : \u00aci = 0\n\u22a2 Polynomial.coeff 1 i = 0\n\ncase pos\nR : Type u_1\ninst\u271d : CommRing R\ni n : \u2115\nh\u271d\u00b9 : \u00acn = 1\nh\u271d : i = 0\n\u22a2 0 = (PowerSeries.coeff n) X\n/Users/sasha/math_gkm/research/MarkovSeriesTransposeM3AE.lean:42:50: warning: This simp argument is unused:\n  Polynomial.coeff_one\n\nHint: Omit it from the simp argument list.\n  simp [\u0335s\u0335e\u0335r\u0335i\u0335e\u0335s\u0335_\u0335t\u0335r\u0335a\u0335n\u0335s\u0335p\u0335o\u0335s\u0335e\u0335_\u0335c\u0335o\u0335e\u0335f\u0335f\u0335M\u03353\u0335A\u0335E\u0335,\u0335c\u0335o\u0335e\u0335f\u0335f\u0335_\u0335X\u0335,\u0335c\u0335o\u0335e\u0335f\u0335f\u0335_\u0335C\u0335,\u0335P\u0335o\u0335l\u0335y\u0335n\u0335o\u0335m\u0335i\u0335a\u0335l\u0335.\u0335c\u0335o\u0335e\u0335f\u0335f\u0335_\u0335o\u0335n\u0335e\u0335]\u0335[\u0332s\u0332e\u0332r\u0332i\u0332e\u0332s\u0332_\u0332t\u0332r\u0332a\u0332n\u0332s\u0332p\u0332o\u0332s\u0332e\u0332_\u0332c\u0332o\u0332e\u0332f\u0332f\u0332M\u03323\u0332A\u0332E\u0332,\u0332 \u0332c\u0332o\u0332e\u0332f\u0332f\u0332_\u0332X\u0332,\u0332 \u0332c\u0332o\u0332e\u0332f\u0332f\u0332_\u0332C\u0332]\u0332\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSeriesTransposeM3AE": "be446c7dc8497c78e7fea8c6013f4cbf554b63326eacd1b444cc2bbb2d7c1e82"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-3ae33435/MarkovSeriesTransposeM3AE.olean",
+    "/Users/sasha/math_gkm/research/MarkovSeriesTransposeM3AE.lean"
+  ],
+  "seconds": 30.025578457978554,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

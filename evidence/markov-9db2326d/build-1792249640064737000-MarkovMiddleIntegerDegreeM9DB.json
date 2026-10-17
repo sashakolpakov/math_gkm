@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovMiddleIntegerDegreeM9DB.lean:12:1: error: Type mismatch: After simplification, term\n  natDegree_comp_le\n has type\n  ((descPochhammer \u2124 n).comp (X + C \u2191A)).natDegree \u2264 n * (X + C \u2191A).natDegree\nbut is expected to have type\n  ((descPochhammer \u2124 n).comp (X + C \u2191A)).natDegree \u2264 n\n/Users/sasha/math_gkm/research/MarkovMiddleIntegerDegreeM9DB.lean:25:12: error: don't know how to synthesize implicit argument `a`\n  @LE.le.trans \u2115 Nat.instPreorder (C ?m.12 * fallingPolyM9DB A a).natDegree (fallingPolyM9DB A a).natDegree a\n    (const_mul_degreeM9DB ?m.12 (fallingPolyM9DB A a)) (falling_poly_degreeM9DB A a)\ncontext:\nN A a B b : \u2115\n\u22a2 \u2115\n/Users/sasha/math_gkm/research/MarkovMiddleIntegerDegreeM9DB.lean:25:34: error: don't know how to synthesize placeholder for argument `a`\ncontext:\nN A a B b : \u2115\n\u22a2 \u2124\n/Users/sasha/math_gkm/research/MarkovMiddleIntegerDegreeM9DB.lean:25:6: error: failed to infer `have` declaration type\n/Users/sasha/math_gkm/research/MarkovMiddleIntegerDegreeM9DB.lean:23:56: error: unsolved goals\nN A a B b : \u2115\n\u22a2 (C \u2191(N.factorial / (a.factorial * b.factorial)) * fallingPolyM9DB A a * fallingPolyM9DB B b).natDegree \u2264 a + b\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMiddleIntegerDegreeM9DB": "c7e0ea7dcd20f15f60a8526ba94a0baf2cabd73e7f4ef4deb554c1aa62f4291d"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-9db2326d/MarkovMiddleIntegerDegreeM9DB.olean",
+    "/Users/sasha/math_gkm/research/MarkovMiddleIntegerDegreeM9DB.lean"
+  ],
+  "seconds": 33.23278937500436,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

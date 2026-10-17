@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovWeightedDeficitM41B.lean:41:50: error: unsolved goals\nT i : \u2115\nf : \u2115 \u2192 \u2124\nhe : \u2211 s \u2208 range T, baseWeightM41B T i s * f s = 4 * \u2211 s \u2208 range T, (\u2191T - \u2191s) * (\u2191(s.choose i) * f s)\n\u22a2 (\u2211 x \u2208 range T, (\u2191T * \u2191(x.choose i) * f x - \u2191x * \u2191(x.choose i) * f x)) * 4 +\n      (if True then 1 else 0) * \u2191(T.choose i) * f T =\n    (\u2211 x \u2208 range T, (\u2191T * \u2191(x.choose i) * f x - \u2191x * \u2191(x.choose i) * f x)) * 4 + \u2191(T.choose i) * f T\n/Users/sasha/math_gkm/research/MarkovWeightedDeficitM41B.lean:53:27: warning: This simp argument is unused:\n  if_pos rfl\n\nHint: Omit it from the simp argument list.\n  simp only [\u0335b\u0335a\u0335s\u0335e\u0335W\u0335e\u0335i\u0335g\u0335h\u0335t\u0335M\u03354\u03351\u0335B\u0335,\u0335i\u0335f\u0335_\u0335p\u0335o\u0335s\u0335 \u0335r\u0335f\u0335l\u0335,\u0335o\u0335n\u0335e\u0335_\u0335m\u0335u\u0335l\u0335]\u0335[\u0332b\u0332a\u0332s\u0332e\u0332W\u0332e\u0332i\u0332g\u0332h\u0332t\u0332M\u03324\u03321\u0332B\u0332,\u0332 \u0332o\u0332n\u0332e\u0332_\u0332m\u0332u\u0332l\u0332]\u0332\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovWeightedDeficitM41B.lean:53:38: warning: This simp argument is unused:\n  one_mul\n\nHint: Omit it from the simp argument list.\n  simp only [\u0335b\u0335a\u0335s\u0335e\u0335W\u0335e\u0335i\u0335g\u0335h\u0335t\u0335M\u03354\u03351\u0335B\u0335,\u0335i\u0335f\u0335_\u0335p\u0335o\u0335s\u0335 \u0335r\u0335f\u0335l\u0335,\u0335o\u0335n\u0335e\u0335_\u0335m\u0335u\u0335l\u0335]\u0335[\u0332b\u0332a\u0332s\u0332e\u0332W\u0332e\u0332i\u0332g\u0332h\u0332t\u0332M\u03324\u03321\u0332B\u0332,\u0332 \u0332i\u0332f\u0332_\u0332p\u0332o\u0332s\u0332 \u0332r\u0332f\u0332l\u0332]\u0332\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovWeightedDeficitM41B.lean:74:3: error: mod_cast has type\n  (d + s + i + 8).choose (i + 3) \u2264 (d + t + i + 8).choose (i + 3)\nbut is expected to have type\n  g s \u2264 g t\n/Users/sasha/math_gkm/research/MarkovWeightedDeficitM41B.lean:118:1: warning: 'norm_num only [Nat.reduceSub] at hc' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n/Users/sasha/math_gkm/research/MarkovWeightedDeficitM41B.lean:143:1: warning: 'norm_num only [Nat.reduceSub] at hc' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovWeightedDeficitM41B": "98f6ab939297d63eb10414ede93c1f2dbb01dac78a5dfbd17fe87374845ea9e9"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-41b38611/MarkovWeightedDeficitM41B.olean",
+    "/Users/sasha/math_gkm/research/MarkovWeightedDeficitM41B.lean"
+  ],
+  "seconds": 10.125518042012118,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

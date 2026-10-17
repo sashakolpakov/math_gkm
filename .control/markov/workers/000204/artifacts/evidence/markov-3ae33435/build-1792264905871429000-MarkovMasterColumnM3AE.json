@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "inverses done\n/Users/sasha/math_gkm/research/MarkovMasterColumnM3AE.lean:44:2: error: inspect normalized equation\nt : \u2115\nv : (Polynomial \u2124)\u27e6X\u27e7 := C Polynomial.X\nz : (Polynomial \u2124)\u27e6X\u27e7 := X\na : (Polynomial \u2124)\u27e6X\u27e7 := (1 - z) * (1 - v * z)\nd : (Polynomial \u2124)\u27e6X\u27e7 := (1 - v * z ^ 2) ^ 2 * (1 - v * z) ^ 3\nai : (Polynomial \u2124)\u27e6X\u27e7 := geoM679 1 * geoM679 Polynomial.X\ndi : (Polynomial \u2124)\u27e6X\u27e7 := geoTwoM3AE Polynomial.X ^ 2 * geoM679 Polynomial.X ^ 3\nh0 : (1 - z) * geoM679 1 = 1\nh1 : (1 - v * z) * geoM679 Polynomial.X = 1\nh2 : (1 - v * z ^ 2) * geoTwoM3AE Polynomial.X = 1\nha : a * ai = 1\nhd : d * di = 1\nh :\n  (1 - C (C Polynomial.X) * C X ^ 2) ^ 2 * (1 - C (C Polynomial.X) * C X) ^ 3 *\n        ((1 - C X) * (1 - C (C Polynomial.X) * C X) - X * C X) *\n      seriesTransposeM3AE gfMasterSeriesM13E =\n    X ^ 3 * C X * (1 + C (C Polynomial.X) * C X ^ 2) ^ 2\n\u22a2 (1 - C (C Polynomial.X) * C X ^ 2) ^ 2 * (1 - C (C Polynomial.X) * C X) ^ 3 *\n        ((1 - C X) * (1 - C (C Polynomial.X) * C X) - X * C X) *\n      seriesTransposeM3AE gfMasterSeriesM13E =\n    X ^ 3 * (C X * (1 + C (C Polynomial.X) * C X ^ 2) ^ 2)\nequation done\nsimplified final\nt : \u2115\nv : (Polynomial \u2124)\u27e6X\u27e7 := C Polynomial.X\nz : (Polynomial \u2124)\u27e6X\u27e7 := X\na : (Polynomial \u2124)\u27e6X\u27e7 := (1 - z) * (1 - v * z)\nd : (Polynomial \u2124)\u27e6X\u27e7 := (1 - v * z ^ 2) ^ 2 * (1 - v * z) ^ 3\nai : (Polynomial \u2124)\u27e6X\u27e7 := geoM679 1 * geoM679 Polynomial.X\ndi : (Polynomial \u2124)\u27e6X\u27e7 := geoTwoM3AE Polynomial.X ^ 2 * geoM679 Polynomial.X ^ 3\nh0 : (1 - z) * geoM679 1 = 1\nh1 : (1 - v * z) * geoM679 Polynomial.X = 1\nh2 : (1 - v * z ^ 2) * geoTwoM3AE Polynomial.X = 1\nha : a * ai = 1\nhd : d * di = 1\nh :\n  (1 - C (C Polynomial.X) * C X ^ 2) ^ 2 * (1 - C (C Polynomial.X) * C X) ^ 3 *\n        ((1 - C X) * (1 - C (C Polynomial.X) * C X) - X * C X) *\n      seriesTransposeM3AE gfMasterSeriesM13E =\n    X ^ 3 * C X * (1 + C (C Polynomial.X) * C X ^ 2) ^ 2\n\u22a2 (1 - C (C Polynomial.X) * C X ^ 2) ^ 2 * (1 - C (C Polynomial.X) * C X) ^ 3 *\n        ((1 - C X) * (1 - C (C Polynomial.X) * C X) - X * C X) *\n      seriesTransposeM3AE gfMasterSeriesM13E =\n    X ^ 3 * (C X * (1 + C (C Polynomial.X) * C X ^ 2) ^ 2)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMasterColumnM3AE": "2b3bcfc6d15482d378e78358c8fc1a038b7c1f33d4ea4e589d72ed8471dcb398"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-3ae33435/MarkovMasterColumnM3AE.olean",
+    "/Users/sasha/math_gkm/research/MarkovMasterColumnM3AE.lean"
+  ],
+  "seconds": 17.302487083012238,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

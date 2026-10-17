@@ -1,0 +1,155 @@
+{
+  "bindings": {
+    "RESUME.json": true,
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": true,
+    "evidence/independent-markov/markov_residual_scope_audit.md": true,
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": true,
+    "evidence/markov/research-run/state.json": true,
+    "requests/markov-next.json": true
+  },
+  "logs": {
+    "000198": {
+      "sha256": "68b638b894348785647a726d63444c023f5604a79ad17dbc4c1f4f234b97ebde",
+      "events": 236,
+      "pending": {},
+      "last_events": [
+        {
+          "type": "item.completed",
+          "item": {
+            "id": "item_120",
+            "type": "file_change",
+            "changes": [
+              {
+                "path": "/Users/sasha/math_gkm/research/central_bounds_e8743310.py",
+                "kind": "add"
+              }
+            ],
+            "status": "completed"
+          }
+        },
+        {
+          "type": "item.started",
+          "item": {
+            "id": "item_121",
+            "type": "command_execution",
+            "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/central_bounds_e8743310.py'",
+            "aggregated_output": "",
+            "exit_code": null,
+            "status": "in_progress"
+          }
+        },
+        {
+          "type": "item.completed",
+          "item": {
+            "id": "item_121",
+            "type": "command_execution",
+            "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/central_bounds_e8743310.py'",
+            "aggregated_output": "{\"scalar_shift_thresholds\": [{\"shift\": 0, \"cutoff\": 10, \"terms\": 64, \"minimum\": 32}, {\"shift\": 1, \"cutoff\": 10, \"terms\": 64, \"minimum\": 32}, {\"shift\": 2, \"cutoff\": 10, \"terms\": 64, \"minimum\": 32}, {\"shift\": 3, \"cutoff\": 10, \"terms\": 64, \"minimum\": 32}, {\"shift\": 4, \"cutoff\": 10, \"terms\": 64, \"minimum\": 32}], \"relative_checks\": 12064, \"failures\": [], \"seconds\": 0.5955794579931535, \"status\": \"Finite exact experiments and symbolic coefficient sign observations only. Signed source and weighted-moment bridges remain unproved.\"}\n",
+            "exit_code": 0,
+            "status": "completed"
+          }
+        }
+      ]
+    },
+    "000199": {
+      "sha256": "691111c6e6dae51d1672117c7ec810256e9a4d74d72b224f85615e91c1472f34",
+      "events": 274,
+      "pending": {},
+      "last_events": [
+        {
+          "type": "item.completed",
+          "item": {
+            "id": "item_140",
+            "type": "command_execution",
+            "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/finalize_e108e0e2.py'",
+            "aggregated_output": "{\"modules\": 24, \"closures\": 96, \"failed_builds\": 11, \"unaccepted_sources\": 9}\n{\"artifacts\": 168, \"unchanged_inputs\": 23886, \"predecessor_artifacts\": 158, \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\", \"contract_sha256\": \"cc930bda09aaaa16b0662e9c0afa3c48167b1a07f2087eb6c2106c73c4a16068\", \"stop_file\": false, \"completion\": null}\n",
+            "exit_code": 0,
+            "status": "completed"
+          }
+        },
+        {
+          "type": "item.started",
+          "item": {
+            "id": "item_141",
+            "type": "command_execution",
+            "command": "/bin/zsh -lc 'cat evidence/markov-e108e0e2/last-verification.json research/markov-e108e0e2-checkpoint-final.md; cat evidence/markov-e108e0e2/validation.json | head -n 8'",
+            "aggregated_output": "",
+            "exit_code": null,
+            "status": "in_progress"
+          }
+        },
+        {
+          "type": "item.completed",
+          "item": {
+            "id": "item_141",
+            "type": "command_execution",
+            "command": "/bin/zsh -lc 'cat evidence/markov-e108e0e2/last-verification.json research/markov-e108e0e2-checkpoint-final.md; cat evidence/markov-e108e0e2/validation.json | head -n 8'",
+            "aggregated_output": "{\n  \"artifacts\": 168,\n  \"unchanged_inputs\": 23886,\n  \"predecessor_artifacts\": 158,\n  \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\",\n  \"contract_sha256\": \"cc930bda09aaaa16b0662e9c0afa3c48167b1a07f2087eb6c2106c73c4a16068\",\n  \"stop_file\": false,\n  \"completion\": null\n}# Final checkpoint\n\nMachine-authored request e108e0e26f6d456c97155a7914deaabe.\nFull pinned root and exact negation remain open; completion=null.\n\n24 modules compiled and jointly kernel-replayed; 96 theorem closures use only permitted axioms. See evidence/markov-e108e0e2/validation.json. Inherited compiled imports reused; no fresh whole-source rebuild or independent completion audit.\n\nProved the exact shifted central source formula, complete correction domination, actual-weight centered variance attachment, all physical starting columns>=13 on every numerator-three horizontal row, and the exact root residual ThreeCentralFiniteME10 (central starts2..12). The strongest exact residual is ThreeCentralNineME10: physical starts4..12 in the two central rows; root_iff_central_nineME10 retains all other directions and families. The physical-column-two gap is closed; root_iff_central_tenME10 leaves starting columns3..12 in the two central rows. The c=0 shifted raw gap is also proved for every h<=3 and k+h>=3; use central_low_0ME10 with central_source_formulaME10. All vertical and diagonal residuals and OtherFourM9E2 remain open.\n\nFinite source experiment:7016 coefficient comparisons retaining645 zeros;590991 polygon-valid triples across all directions. No failure; these are experiments, not proofs. Eighty univariate low-gap symbolic probes had nonnegative coefficients; unvalidated certificates remain drafts.\n\n11 rejected builds and 9 source files outside the validated bundle are preserved. No launched foreground work remains pending.\n{\n  \"modules\": {\n    \"MarkovCenteredScalarME10\": \"455f9976d7f781c2590828df8935c601123256c22783c7c4b0ef25824b06b49f\",\n    \"MarkovCentralAxesME10\": \"568160b5c4580b59ec36a3598e509f911123c8d98216e0b07c9b9231d6358011\",\n    \"MarkovCentralHighME10\": \"fec801ee9300bc79a0d3cf7356c10eb1d28441515a22f24158743692b969624b\",\n    \"MarkovCentralLow0ME10\": \"3ccd768b9f86092c35b1d4bdf64b6b647234fc76c52cc363a2bba57f4dcbfcc3\",\n    \"MarkovCentralNineME10\": \"37b6e22202847603f7f5bab0d7fdc8715b971caee9551f06d3bb1e551a01e64c\",\n    \"MarkovCentralRationalME10\": \"d298f4d843801cb49f0465dcb542aec6832d158af3e6fee8f9919cca57a3b60b\",\n",
+            "exit_code": 0,
+            "status": "completed"
+          }
+        }
+      ]
+    }
+  },
+  "predecessor_validation": {
+    "modules": {
+      "MarkovCenteredScalarME10": "455f9976d7f781c2590828df8935c601123256c22783c7c4b0ef25824b06b49f",
+      "MarkovCentralAxesME10": "568160b5c4580b59ec36a3598e509f911123c8d98216e0b07c9b9231d6358011",
+      "MarkovCentralHighME10": "fec801ee9300bc79a0d3cf7356c10eb1d28441515a22f24158743692b969624b",
+      "MarkovCentralLow0ME10": "3ccd768b9f86092c35b1d4bdf64b6b647234fc76c52cc363a2bba57f4dcbfcc3",
+      "MarkovCentralNineME10": "37b6e22202847603f7f5bab0d7fdc8715b971caee9551f06d3bb1e551a01e64c",
+      "MarkovCentralRationalME10": "d298f4d843801cb49f0465dcb542aec6832d158af3e6fee8f9919cca57a3b60b",
+      "MarkovCentralResidualME10": "1d9f5f164b2635fdff4c1159e97f94ecac4101ef9c8c290bbcbb8a6908f9264d",
+      "MarkovCentralSecondGapME10": "b7479f37059616759045c2f12ef8b9d70a9bdd9142de043781655c0d00d44e8a",
+      "MarkovCentralSecondME10": "2c56ca6210e0706e3b8d286181b8d775d81b35109fa13a6ba6da2409d3661e95",
+      "MarkovCentralSecondSourceME10": "1d39a53cbc8905f7d0820def970ab0df41101d440606745bf5aad2edf6e4a5e8",
+      "MarkovCentralSourceME10": "4d4d8514ec3e7ddb22dad73b8c8d4b14379f01a9be9a94ebf6402d73e6f30e02",
+      "MarkovCorrectionParameterME10": "f551588cc90b49c29460719ec8d88e0c7c121b3e4ba038a7a0bd59083a15f707",
+      "MarkovCorrectionShiftME10": "e42f3dd230ef4b2aea962ca08835f87774b101a01aa5be2a2fe1e3564a483809",
+      "MarkovNearChooseME10": "723c54a818c285992a9f29c27f87d46387941f5aa6bb4a3bb775239818c00933",
+      "MarkovShiftAttachmentME10": "c70dd356148676b1889707cd1c54196148a19ab63cec97f7412e3c6866681489",
+      "MarkovShiftDeficitME10": "0d50365de842908a868b53158319ac301c2e4ff035b9cbad97c8a413cdc4e509",
+      "MarkovShiftDominationME10": "46b4c21400bac2eb030101e7644bbbdea49133f949644414b032228f6a798450",
+      "MarkovShiftMarginME10": "ceb6ee55e628a70a2957e25a4ce0cbdb08ab728c6faf79bcf41d1060fca3e887",
+      "MarkovShiftMomentsME10": "60bd85f848d718dc90e5144cb7af339d84d869ad00d1f7405caf49aae7c13108",
+      "MarkovShiftTailClosedME10": "766dcb68e3aacdb5964e30e84925438fa2eaa0c3676bce3b95f0373c362fcc35",
+      "MarkovShiftTailKernelME10": "67d20413ff2401566f4ab05f13b31cd4700b7f3b1189966f8bd3baa914a892ea",
+      "MarkovShiftTailScalarME10": "817df042f118c3d8b2a8f2e6ea4868bd4b012ec3bca2404308b74677a1ca27bf",
+      "MarkovTopParameterME10": "93c9415db5962d3908bace5561ab3bc18f2298b4e6419bc6db14b9fbd9ec9b8e",
+      "MarkovTopShiftME10": "d30468fc96534f37d3dccc0d61fbe5cce22125faa6de925c735f654c8c10e6a4"
+    },
+    "compilation": {
+      "MarkovCenteredScalarME10": "evidence/markov-e108e0e2/build-1792255699917031000-MarkovCenteredScalarME10.json",
+      "MarkovCentralAxesME10": "evidence/markov-e108e0e2/build-1792256130284677000-MarkovCentralAxesME10.json",
+      "MarkovCentralHighME10": "evidence/markov-e108e0e2/build-1792256094064391000-MarkovCentralHighME10.json",
+      "MarkovCentralLow0ME10": "evidence/markov-e108e0e2/build-1792256705467088000-MarkovCentralLow0ME10.json",
+      "MarkovCentralNineME10": "evidence/markov-e108e0e2/build-1792256813013300000-MarkovCentralNineME10.json",
+      "MarkovCentralRationalME10": "evidence/markov-e108e0e2/build-1792256289243440000-MarkovCentralRationalME10.json",
+      "MarkovCentralResidualME10": "evidence/markov-e108e0e2/build-1792256194587444000-MarkovCentralResidualME10.json",
+      "MarkovCentralSecondGapME10": "evidence/markov-e108e0e2/build-1792256624729213000-MarkovCentralSecondGapME10.json",
+      "MarkovCentralSecondME10": "evidence/markov-e108e0e2/build-1792256372358856000-MarkovCentralSecondME10.json",
+      "MarkovCentralSecondSourceME10": "evidence/markov-e108e0e2/build-1792256738121589000-MarkovCentralSecondSourceME10.json",
+      "MarkovCentralSourceME10": "evidence/markov-e108e0e2/build-1792255926645485000-MarkovCentralSourceME10.json",
+      "MarkovCorrectionParameterME10": "evidence/markov-e108e0e2/build-1792255328970147000-MarkovCorrectionParameterME10.json",
+      "MarkovCorrectionShiftME10": "evidence/markov-e108e0e2/build-1792255548800840000-MarkovCorrectionShiftME10.json",
+      "MarkovNearChooseME10": "evidence/markov-e108e0e2/build-1792255745175860000-MarkovNearChooseME10.json",
+      "MarkovShiftAttachmentME10": "evidence/markov-e108e0e2/build-1792256013724295000-MarkovShiftAttachmentME10.json",
+      "MarkovShiftDeficitME10": "evidence/markov-e108e0e2/build-1792255827840259000-MarkovShiftDeficitME10.json",
+      "MarkovShiftDominationME10": "evidence/markov-e108e0e2/build-1792256013724279000-MarkovShiftDominationME10.json",
+      "MarkovShiftMarginME10": "evidence/markov-e108e0e2/build-1792255926645461000-MarkovShiftMarginME10.json",
+      "MarkovShiftMomentsME10": "evidence/markov-e108e0e2/build-1792255761721172000-MarkovShiftMomentsME10.json",
+      "MarkovShiftTailClosedME10": "evidence/markov-e108e0e2/build-1792256013724296000-MarkovShiftTailClosedME10.json",
+      "MarkovShiftTailKernelME10": "evidence/markov-e108e0e2/build-1792255827840325000-MarkovShiftTailKernelME10.json",
+      "MarkovShiftTailScalarME10": "evidence/markov-e108e0e2/build-1792255926645495000-MarkovShiftTailScalarME10.json",
+      "MarkovTopParameterME10": "evidence/markov-e108e0e2/build-1792255328970123000-MarkovTopParameterME10.json",
+      "MarkovTopShiftME10": "evidence/markov-e108e0e2/build-1792255699917067000-MarkovTopShiftME10.json"
+    },
+    "replay": "evidence/markov-e108e0e2/replay-1792256861171439000-MarkovCenteredScalarME10.json",
+    "axioms": "evidence/markov-e108e0e2/axioms-1792256898133454000.json",
+    "theorem_closures": 96,
+    "scope": "Local builds, isolated joint kernel replay, allowed axiom closures. Compiled inherited imports reused; no fresh whole-source rebuild or independent completion audit."
+  },
+  "prior_manifest_artifacts": 158,
+  "decision": "Both interrupted raw logs inspected. Current 24-module validation, joint replay and 96 axiom closures match saved sources. No predecessor side effect replayed; use ThreeCentralNineME10. New one-variable certificate action selected."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovFirstDiagonalTemplateM2C6.lean:36:3: error: linarith failed to find a contradiction\nn : \u2115\nh0 : (topTemplateMB3E (3 * (n + 7) + 1) (n + 8)).coeff 1 = 4 * (\u2191(3 * (n + 7) + 1) + 6 - 3 * \u2191(n + 8))\nh1 : (topTemplateMB3E (3 * (n + 7) + 1) (n + 9)).coeff 2 = 4 * (\u2191(n + 9) - 2) * \u2191((n + 10).choose 2)\nh2 :\n  (topTemplateMB3E (3 * (n + 7) + 1) (n + 10)).coeff 3 =\n    \u2191((2 * n + 17).choose 3) +\n      4 * (\u2191((2 * n + 18).choose 5) - \u2191((n + 11).choose 5) - (\u2191(n + 10) - 3) * \u2191((n + 10).choose 4))\nhe :\n  0 \u2264\n    4 * (\u2191n + 7) * choosePolyM0D3 (\u2191n + 10) 2 * (4 * (\u2191n + 7) * choosePolyM0D3 (\u2191n + 10) 2) +\n      -1 *\n        (16 *\n          (choosePolyM0D3 (2 * \u2191n + 17) 3 +\n            4 *\n              (choosePolyM0D3 (2 * \u2191n + 18) 5 + -1 * choosePolyM0D3 (\u2191n + 11) 5 +\n                -1 * (\u2191n + 7) * choosePolyM0D3 (\u2191n + 10) 4)))\na\u271d :\n  (4 * (\u2191n + 7) * choosePolyM0D3 (\u2191n + 10) 2) ^ 2 <\n    (4 * (3 * (\u2191n + 7) + \u21911) + 24 - 12 * (\u2191n + 8)) *\n      (choosePolyM0D3 (2 * \u2191n + 17) 3 +\n        4 * (choosePolyM0D3 (2 * \u2191n + 18) 5 - choosePolyM0D3 (\u2191n + 11) 5 - (\u2191n + 7) * choosePolyM0D3 (\u2191n + 10) 4))\n\u22a2 False\nfailed\n/Users/sasha/math_gkm/research/MarkovFirstDiagonalTemplateM2C6.lean:104:3: error: linarith failed to find a contradiction\nn : \u2115\nh0 : (topTemplateMB3E (3 * (n + 7) + 1) (n + 9)).coeff 1 = 4 * (\u2191(3 * (n + 7) + 1) + 6 - 3 * \u2191(n + 9))\nh1 : (topTemplateMB3E (3 * (n + 7) + 1) (n + 10)).coeff 2 = 4 * (\u2191(n + 10) - 2) * \u2191((n + 8).choose 2)\nh2 :\n  (topTemplateMB3E (3 * (n + 7) + 1) (n + 11)).coeff 3 =\n    \u2191((2 * n + 16).choose 3) +\n      4 * (\u2191((2 * n + 17).choose 5) - \u2191((n + 9).choose 5) - (\u2191(n + 11) - 3) * \u2191((n + 8).choose 4))\nhe :\n  0 \u2264\n    4 * (\u2191n + 8) * choosePolyM0D3 (\u2191n + 8) 2 * (4 * (\u2191n + 8) * choosePolyM0D3 (\u2191n + 8) 2) +\n      -1 *\n        (4 *\n          (choosePolyM0D3 (2 * \u2191n + 16) 3 +\n            4 *\n              (choosePolyM0D3 (2 * \u2191n + 17) 5 + -1 * choosePolyM0D3 (\u2191n + 9) 5 +\n                -1 * (\u2191n + 8) * choosePolyM0D3 (\u2191n + 8) 4)))\na\u271d :\n  (4 * (\u2191n + 8) * choosePolyM0D3 (\u2191n + 8) 2) ^ 2 <\n    (4 * (3 * (\u2191n + 7) + \u21911) + 24 - 12 * (\u2191n + 9)) *\n      (choosePolyM0D3 (2 * \u2191n + 16) 3 +\n        4 * (choosePolyM0D3 (2 * \u2191n + 17) 5 - choosePolyM0D3 (\u2191n + 9) 5 - (\u2191n + 8) * choosePolyM0D3 (\u2191n + 8) 4))\n\u22a2 False\nfailed\n/Users/sasha/math_gkm/research/MarkovFirstDiagonalTemplateM2C6.lean:144:0: error: Unexpected name `MathGKM.Markov` after `end`: The current section is unnamed\n\nHint: Delete the name `MathGKM.Markov` to end the current unnamed scope; outer named scopes can then be closed using additional `end` command(s):\n  end \u0335M\u0335a\u0335t\u0335h\u0335G\u0335K\u0335M\u0335.\u0335M\u0335a\u0335r\u0335k\u0335o\u0335v\u0335\n",
+  "stderr": "",
+  "modules": {
+    "MarkovFirstDiagonalTemplateM2C6": "0d728c8ceede7b7a0fb7e67359f2b1a3ef808256fa07899cf92f229bce7702c3"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-2c6e5ef0/MarkovFirstDiagonalTemplateM2C6.olean",
+    "/Users/sasha/math_gkm/research/MarkovFirstDiagonalTemplateM2C6.lean"
+  ],
+  "seconds": 20.248652082984336,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

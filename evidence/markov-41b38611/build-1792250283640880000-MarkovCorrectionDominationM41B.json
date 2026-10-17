@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCorrectionDominationM41B.lean:70:3: error: linarith failed to find a contradiction\nx T k c D : \u2115\nhT : 3 * k \u2264 T + 1\nhD : D + (c + 1) \u2264 x + 2 * c + 9\nthis : 0 \u2264 templateTermM41B x T c 0\na\u271d :\n  \u2211 l \u2208 range (c + 3 + 1), templateTermM41B x T c l <\n    \u2211 k \u2208 range (c + 2), templateTermM41B x T c (k + 1 + 1) + templateTermM41B x T c (0 + 1)\n\u22a2 False\nfailed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCorrectionDominationM41B": "c0a5c54631c0cf07f4ab53ee8913b85ee2d50d521481f25ace6bfcab326cbef1"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-41b38611/MarkovCorrectionDominationM41B.olean",
+    "/Users/sasha/math_gkm/research/MarkovCorrectionDominationM41B.lean"
+  ],
+  "seconds": 12.001801291015,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

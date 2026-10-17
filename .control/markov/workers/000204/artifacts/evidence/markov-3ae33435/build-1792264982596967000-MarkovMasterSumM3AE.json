@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovMasterSumM3AE.lean:45:23: error: Type mismatch\n  X ^ a * geoM679 1 ^ (t + 1)\nhas type\n  \u2124\u27e6X\u27e7\nbut is expected to have type\n  \u211d\u27e6X\u27e7\n/Users/sasha/math_gkm/research/MarkovMasterSumM3AE.lean:56:8: warning: declaration uses `sorry`\n/Users/sasha/math_gkm/research/MarkovMasterSumM3AE.lean:67:1: warning: this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`\n/Users/sasha/math_gkm/research/MarkovMasterSumM3AE.lean:69:1: warning: this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`\n/Users/sasha/math_gkm/research/MarkovMasterSumM3AE.lean:73:1: warning: this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`\n/Users/sasha/math_gkm/research/MarkovMasterSumM3AE.lean:67:1: warning: 'have hr : (rampNatM3AE s : \u211d) = rampWeightMF88 s := by\n  by_cases h : s = 0 <;> simp [rampNatM3AE, rampWeightMF88, h]' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n/Users/sasha/math_gkm/research/MarkovMasterSumM3AE.lean:69:1: warning: 'have hb : nbSeqMDB9 (t + 3) ((j : \u2124) - s) = ((t + 3 + (j - s)).choose (t + 3) : \u211d) :=\n  by\n  rw [nbSeqMDB9, if_neg (by omega)]\n  congr 2\n  omega' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n/Users/sasha/math_gkm/research/MarkovMasterSumM3AE.lean:73:1: warning: 'simp only [Int.cast_mul, Int.cast_natCast, hr, hb]' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMasterSumM3AE": "a1e7828d0fe7527a13ebbadefcf8f0b73b450901f8c38e5dfc4741e3b65ae7fa"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-3ae33435/MarkovMasterSumM3AE.olean",
+    "/Users/sasha/math_gkm/research/MarkovMasterSumM3AE.lean"
+  ],
+  "seconds": 10.450071375002153,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

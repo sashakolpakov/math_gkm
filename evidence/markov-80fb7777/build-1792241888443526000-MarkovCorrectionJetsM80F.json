@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovCorrectionJetsM80F.lean:22:3: error: unsolved goals\ncase h.succ.zero.false\nq : \u2115\nhq : 1 \u2264 q\nhk : 0 + 1 \u2264 q\nih :\n  \u2200 m < 0 + 1,\n    m \u2264 q \u2192\n      (middleCorrectionM99A q false m).coeff 0 = 0 \u2227\n        \u2191((middleCorrectionM99A q false m).coeff 1) = correctionJet1M80F (\u2191q) (\u2191m) false \u2227\n          \u2191((middleCorrectionM99A q false m).coeff 2) = correctionJet2M80F (\u2191q) (\u2191m) false \u2227\n            \u2191((middleCorrectionM99A q false m).coeff 3) = correctionJet3M80F (\u2191q) (\u2191m) false \u2227\n              \u2191((middleCorrectionM99A q false m).coeff 4) = correctionJet4M80F (\u2191q) (\u2191m) false\n\u22a2 True \u2227 True \u2227 True\n\ncase h.succ.zero.true\nq : \u2115\nhq : 1 \u2264 q\nhk : 0 + 1 \u2264 q\nih :\n  \u2200 m < 0 + 1,\n    m \u2264 q \u2192\n      (middleCorrectionM99A q true m).coeff 0 = 0 \u2227\n        \u2191((middleCorrectionM99A q true m).coeff 1) = correctionJet1M80F (\u2191q) (\u2191m) true \u2227\n          \u2191((middleCorrectionM99A q true m).coeff 2) = correctionJet2M80F (\u2191q) (\u2191m) true \u2227\n            \u2191((middleCorrectionM99A q true m).coeff 3) = correctionJet3M80F (\u2191q) (\u2191m) true \u2227\n              \u2191((middleCorrectionM99A q true m).coeff 4) = correctionJet4M80F (\u2191q) (\u2191m) true\n\u22a2 True \u2227 True \u2227 True\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCorrectionJetsM80F": "b00d45f7709a803d18eda0548aa61d066908ab1d991646a17583d8ceab73bec5"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-80fb7777/MarkovCorrectionJetsM80F.olean",
+    "/Users/sasha/math_gkm/research/MarkovCorrectionJetsM80F.lean"
+  ],
+  "seconds": 32.92364216700662,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

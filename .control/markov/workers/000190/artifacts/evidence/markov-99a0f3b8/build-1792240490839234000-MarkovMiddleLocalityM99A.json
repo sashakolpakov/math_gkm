@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovMiddleLocalityM99A.lean:20:12: error: unsolved goals\ncase false.zero.succ\nq j : \u2115\nh : q + 2 < 0 + (j + 1)\n\u22a2 (fibRowsMC3E q j).coeff 0 + ((fibRowsMC3E (q + 1) j).coeff 0 + (fibRowsMC3E (q + 1) (j + 1)).coeff 0) = 0\n/Users/sasha/math_gkm/research/MarkovMiddleLocalityM99A.lean:28:10: error: unsolved goals\ncase false.succ.zero\nq i : \u2115\nh : q + 2 < i + 1 + 0\n\u22a2 (fibRowsMC3E (q + 1) 0).coeff i + (fibRowsMC3E (q + 1) 0).coeff (i + 1) = 0\n/Users/sasha/math_gkm/research/MarkovMiddleLocalityM99A.lean:39:5: error: `simp` made no progress\n/Users/sasha/math_gkm/research/MarkovMiddleLocalityM99A.lean:20:12: error: unsolved goals\ncase true.zero.succ\nq j : \u2115\nh : q + 1 < 0 + (j + 1)\n\u22a2 (fibRowsMC3E q j).coeff 0 + (fibRowsMC3E q (j + 1)).coeff 0 + 0 = 0\n/Users/sasha/math_gkm/research/MarkovMiddleLocalityM99A.lean:28:10: error: unsolved goals\ncase true.succ.zero\nq i : \u2115\nh : q + 1 < i + 1 + 0\n\u22a2 (fibRowsMC3E q 0).coeff i + (fibRowsMC3E q 0).coeff (i + 1) = 0\n/Users/sasha/math_gkm/research/MarkovMiddleLocalityM99A.lean:34:12: error: unsolved goals\ncase true.succ.succ\nq i j : \u2115\nh : q + 1 < i + 1 + (j + 1)\n\u22a2 (fibRowsMC3E q (j + 1)).coeff i + (fibRowsMC3E q j).coeff (i + 1) + (fibRowsMC3E q (j + 1)).coeff (i + 1) = 0\n/Users/sasha/math_gkm/research/MarkovMiddleLocalityM99A.lean:39:56: warning: This simp argument is unused:\n  zero_add\n\nHint: Omit it from the simp argument list.\n  simp only [fib_row_total_zeroM99A _ _ _ (by omega),z\u0335e\u0335r\u0335o\u0335_\u0335 \u0332add,\u0335a\u0335d\u0335d\u0335_zero]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovMiddleLocalityM99A.lean:77:18: error: Function expected at\n  natDegree_pow_le\nbut this term has type\n  (?m.480 ^ ?m.481).natDegree \u2264 ?m.481 * natDegree ?m.480\n\nNote: Expected a function because this term is being applied to the argument\n  (X + 1 : Polynomial \u2124)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMiddleLocalityM99A": "e1554c4bb3282916d0a3fedce46513d087bf5968ba67e71a42af36ebe02d0cce"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-99a0f3b8/MarkovMiddleLocalityM99A.olean",
+    "/Users/sasha/math_gkm/research/MarkovMiddleLocalityM99A.lean"
+  ],
+  "seconds": 31.445609500049613,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

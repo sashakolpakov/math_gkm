@@ -1,0 +1,90 @@
+import MarkovMiddleWideDeltaM99A
+import MarkovMiddleWideAM99A
+import MarkovMiddleWideCM99A
+import MarkovMiddleWideKM99A
+import MarkovMiddleWideReducedM99A
+import MarkovMiddleFirstDeltaM99A
+import MarkovMiddleFirstAM99A
+import MarkovMiddleFirstCM99A
+import MarkovMiddleFirstKM99A
+import MarkovMiddleFirstReducedM99A
+import MarkovMiddleCorrectionM99A
+import MarkovMiddleLocalityM99A
+import MarkovMiddleSecondM99A
+import MarkovMiddleSixthGroupsM99A
+import MarkovMiddleTemplateM99A
+import MarkovMiddleSourceM99A
+import MarkovMiddleFirstAllM99A
+import MarkovMiddleRegionM99A
+import MarkovMiddleParameterM99A
+import MarkovMiddlePositiveM99A
+import MarkovMiddlePositiveSourceM99A
+import MarkovMiddleObstructionM99A
+#print axioms MathGKM.Markov.middle_wide_delta_shiftM99A
+#print axioms MathGKM.Markov.middle_wide_delta_positiveM99A
+#print axioms MathGKM.Markov.middle_wide_a_shiftM99A
+#print axioms MathGKM.Markov.middle_wide_a_positiveM99A
+#print axioms MathGKM.Markov.middle_wide_c_shiftM99A
+#print axioms MathGKM.Markov.middle_wide_c_positiveM99A
+#print axioms MathGKM.Markov.middle_wide_k_shiftM99A
+#print axioms MathGKM.Markov.middle_wide_k_positiveM99A
+#print axioms MathGKM.Markov.middle_wide_reduced_shiftM99A
+#print axioms MathGKM.Markov.middle_wide_reduced_positiveM99A
+#print axioms MathGKM.Markov.middle_first_delta_shiftM99A
+#print axioms MathGKM.Markov.middle_first_delta_positiveM99A
+#print axioms MathGKM.Markov.middle_first_a_shiftM99A
+#print axioms MathGKM.Markov.middle_first_a_positiveM99A
+#print axioms MathGKM.Markov.middle_first_c_shiftM99A
+#print axioms MathGKM.Markov.middle_first_c_positiveM99A
+#print axioms MathGKM.Markov.middle_first_k_shiftM99A
+#print axioms MathGKM.Markov.middle_first_k_positiveM99A
+#print axioms MathGKM.Markov.middle_first_reduced_shiftM99A
+#print axioms MathGKM.Markov.middle_first_reduced_positiveM99A
+#print axioms MathGKM.Markov.source_middle_equationM99A
+#print axioms MathGKM.Markov.source_middle_formulaM99A
+#print axioms MathGKM.Markov.fib_row_total_zeroM99A
+#print axioms MathGKM.Markov.gain_row_total_zeroM99A
+#print axioms MathGKM.Markov.middle_gain_degreeM99A
+#print axioms MathGKM.Markov.middle_correction_degreeM99A
+#print axioms MathGKM.Markov.source_middle_high_coeffM99A
+#print axioms MathGKM.Markov.middle_second_gapM99A
+#print axioms MathGKM.Markov.middle_template_second_strictM99A
+#print axioms MathGKM.Markov.middle_sixth_sumM99A
+#print axioms MathGKM.Markov.middle_sixth_group_positiveM99A
+#print axioms MathGKM.Markov.middle_sixth_tail_gap_positiveM99A
+#print axioms MathGKM.Markov.middle_mass_strictM99A
+#print axioms MathGKM.Markov.middle_mass_weakM99A
+#print axioms MathGKM.Markov.middle_template_highM99A
+#print axioms MathGKM.Markov.middle_template_high_strictM99A
+#print axioms MathGKM.Markov.middle_gain_topM99A
+#print axioms MathGKM.Markov.source_middle_first_axesM99A
+#print axioms MathGKM.Markov.source_middle_firstM99A
+#print axioms MathGKM.Markov.source_middle_wideM99A
+#print axioms MathGKM.Markov.source_middle_wide_strictM99A
+#print axioms MathGKM.Markov.middle_polygonM99A
+#print axioms MathGKM.Markov.middle_first_exception_boundedM99A
+#print axioms MathGKM.Markov.source_middle_first_allM99A
+#print axioms MathGKM.Markov.source_middle_first_polygonM99A
+#print axioms MathGKM.Markov.source_middle_closedM99A
+#print axioms MathGKM.Markov.source_middle_pathM99A
+#print axioms MathGKM.Markov.source_middle_wide_polygonM99A
+#print axioms MathGKM.Markov.root_iff_after_middleM99A
+#print axioms MathGKM.Markov.middle_fib_zeroM99A
+#print axioms MathGKM.Markov.middle_fib_parameterM99A
+#print axioms MathGKM.Markov.middle_gain_succM99A
+#print axioms MathGKM.Markov.middle_gain_parameterM99A
+#print axioms MathGKM.Markov.middle_correction_parameterM99A
+#print axioms MathGKM.Markov.middle_correction_diagonalM99A
+#print axioms MathGKM.Markov.middle_fib_oneM99A
+#print axioms MathGKM.Markov.middle_correction_oneM99A
+#print axioms MathGKM.Markov.gain_coeff_nonnegM99A
+#print axioms MathGKM.Markov.middle_at_diagonalM99A
+#print axioms MathGKM.Markov.middle_at_initialM99A
+#print axioms MathGKM.Markov.middle_at_nonneg_monoM99A
+#print axioms MathGKM.Markov.middle_correction_nonnegM99A
+#print axioms MathGKM.Markov.source_middle_majorizesM99A
+#print axioms MathGKM.Markov.source_middle_high_positiveM99A
+#print axioms MathGKM.Markov.source_middle_second_positiveM99A
+#print axioms MathGKM.Markov.middle_group_obstruction_valueM99A
+#print axioms MathGKM.Markov.middle_unrestricted_groups_falseM99A
+#print axioms MathGKM.Markov.middle_obstruction_total_positiveM99A

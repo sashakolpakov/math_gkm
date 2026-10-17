@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovMiddlePerturbationM41B.lean:52:39: error(lean.invalidField): Invalid field `mp`: The environment does not contain `Function.mp`, so it is not possible to project the field `mp` from an expression\n  mul_le_mul_left ?m.580\nof type\n  \u2200 (a : ?m.574), ?m.578 * a \u2264 ?m.579 * a\n/Users/sasha/math_gkm/research/MarkovMiddlePerturbationM41B.lean:52:32: error: Application type mismatch: The argument\n  hprod\nhas type\n  0 < n * (4 * (n + 1)) ^ 2\nbut is expected to have type\n  ?m.578 \u2264 ?m.579\nin the application\n  mul_le_mul_left hprod\n/Users/sasha/math_gkm/research/MarkovMiddlePerturbationM41B.lean:77:48: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovMiddlePerturbationM41B.lean:78:26: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovMiddlePerturbationM41B.lean:78:60: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMiddlePerturbationM41B": "db0737952acd84def1c955badd640fadd7597550deb7a8bb278793db5d0a6cc9"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-41b38611/MarkovMiddlePerturbationM41B.olean",
+    "/Users/sasha/math_gkm/research/MarkovMiddlePerturbationM41B.lean"
+  ],
+  "seconds": 16.88653208402684,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

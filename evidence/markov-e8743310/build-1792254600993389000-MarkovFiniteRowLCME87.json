@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovFiniteRowLCME87.lean:18:1: error: unsolved goals\ncase succ.succ.succ.zero\na b c d e : \u2124\nh0 : a * c \u2264 b ^ 2\nh1 : b * d \u2264 c ^ 2\nh2 : c * e \u2264 d ^ 2\n\u22a2 0 \u2264 e ^ 2\n/Users/sasha/math_gkm/research/MarkovFiniteRowLCME87.lean:25:3: error: Type mismatch\n  sq_nonneg ?m.551\nhas type\n  0 \u2264 ?m.551 ^ 2\nbut is expected to have type\n  (((((if i + 4 = 0 then a else 0) + b * if 1 = i + 4 then 1 else 0) + c * if i + 4 = 2 then 1 else 0) +\n          d * if i + 4 = 3 then 1 else 0) +\n        e * if i + 4 = 4 then 1 else 0) *\n      (0 + b * if 1 = i + 4 + 2 then 1 else 0) \u2264\n    (((((if i + 4 + 1 = 0 then a else 0) + b * if 1 = i + 4 + 1 then 1 else 0) + c * if i + 4 + 1 = 2 then 1 else 0) +\n          d * if i + 4 + 1 = 3 then 1 else 0) +\n        e * if i + 4 + 1 = 4 then 1 else 0) ^\n      2\n/Users/sasha/math_gkm/research/MarkovFiniteRowLCME87.lean:24:52: warning: This simp argument is unused:\n  if_neg h1\n\nHint: Omit it from the simp argument list.\n  simp only [show i\u0335+\u03351\u0335+\u03351\u0335+\u03351\u0335+\u03351\u0335=\u0335i\u0335+\u03354\u0335i\u0332 \u0332+\u0332 \u03321\u0332 \u0332+\u0332 \u03321\u0332 \u0332+\u0332 \u03321\u0332 \u0332+\u0332 \u03321\u0332 \u0332=\u0332 \u0332i\u0332 \u0332+\u0332 \u03324\u0332 by o\u0335m\u0335e\u0335g\u0335a\u0335,\u0335i\u0335f\u0335_\u0335n\u0335e\u0335g\u0335 \u0335h\u03350\u0335,\u0335i\u0335f\u0335_\u0335n\u0335e\u0335g\u0335 \u0335h\u03351\u0335,\u0335i\u0335f\u0335_\u0335n\u0335e\u0335g\u0335 \u0335h\u03352\u0335,\u0335i\u0335f\u0335_\u0335n\u0335e\u0335g\u0335 \u0335h\u03353\u0335,\u0335i\u0335f\u0335_\u0335n\u0335e\u0335g\u0335 \u0335h\u03354\u0335,\u0335m\u0335u\u0335l\u0335_\u0335z\u0335e\u0335r\u0335o\u0335,\u0335a\u0335d\u0335d\u0335_\u0335z\u0335e\u0335r\u0335o\u0335]\u0335o\u0332m\u0332e\u0332g\u0332a\u0332,\u0332 \u0332i\u0332f\u0332_\u0332n\u0332e\u0332g\u0332 \u0332h\u03320\u0332,\u0332 \u0332i\u0332f\u0332_\u0332n\u0332e\u0332g\u0332 \u0332h\u03322\u0332,\u0332 \u0332i\u0332f\u0332_\u0332n\u0332e\u0332g\u0332 \u0332h\u03323\u0332,\u0332 \u0332i\u0332f\u0332_\u0332n\u0332e\u0332g\u0332 \u0332h\u03324\u0332,\u0332\n  \u0332 \u0332 \u0332 \u0332 \u0332 \u0332m\u0332u\u0332l\u0332_\u0332z\u0332e\u0332r\u0332o\u0332,\u0332 \u0332a\u0332d\u0332d\u0332_\u0332z\u0332e\u0332r\u0332o\u0332]\u0332\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovFiniteRowLCME87": "ff6036b534bacd7469fd04dc5af6811fc18c4073ed6c2f66e73829c72e0a5f53"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-e8743310/MarkovFiniteRowLCME87.olean",
+    "/Users/sasha/math_gkm/research/MarkovFiniteRowLCME87.lean"
+  ],
+  "seconds": 34.6089399579796,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

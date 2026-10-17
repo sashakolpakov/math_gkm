@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovMiddleCrossingM50C.lean:19:77: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  d \u2265 0\n  c \u2265 0\n  b \u2265 0\n  a \u2265 0\n  a - c - 2*d \u2265 3\n  a - c - d \u2265 2\n  a + b - 2*c - d \u2265 1\n  2*a - 3*c - 3*d \u2264 2\nwhere\n a := \u2191(sourceNME9C q r)\n b := \u2191(if r = true then 1 else 2)\n c := \u2191k\n d := \u2191(sourceNME9C q r + 2 - (q + 3 + k))\n/Users/sasha/math_gkm/research/MarkovMiddleCrossingM50C.lean:41:79: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  c \u2265 0\n  b \u2265 0\n  a \u2265 0\n  a - c \u2265 3\n  a + b - 2*c \u2265 4\n  2*a - 3*c \u2264 5\nwhere\n a := \u2191(sourceNME9C q r)\n b := \u2191(if r = true then 1 else 2)\n c := \u2191k\n/Users/sasha/math_gkm/research/MarkovMiddleCrossingM50C.lean:42:73: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  0 \u2264 d \u2264 1\n  c \u2265 0\n  b \u2265 0\n  a \u2265 0\n  a - c - d \u2265 2\n  a + b - 2*c - d \u2265 3\n  2*a - 3*c - 3*d \u2264 2\nwhere\n a := \u2191(sourceNME9C q r)\n b := \u2191(if r = true then 1 else 2)\n c := \u2191k\n d := \u2191(sourceNME9C q r + 2 - (q + 3 + k))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMiddleCrossingM50C": "3e66b6c4e24a79762da76ca3044bcaac87c0218ed09e5bac3e9fb9b91e9b33d1"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-50c262c5/MarkovMiddleCrossingM50C.olean",
+    "/Users/sasha/math_gkm/research/MarkovMiddleCrossingM50C.lean"
+  ],
+  "seconds": 14.3884549170034,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

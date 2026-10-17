@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovMasterExtractionM3AE.lean:36:69: error: unsolved goals\ncase pos\nq : \u2115\nhq : 1 \u2264 q\nr : Bool\ni j : \u2115\nhi : 3 \u2264 i\nhh :\n  \u2191(coeff ((PowerSeries.coeff (3 * q + if r = true then 1 else 2)) gfMasterSeriesM13E) i j) =\n    if i - 3 + 1 + j \u2264 3 * q + if r = true then 1 else 2 then\n      lowerDiagMF88 (i - 3) j ((3 * q + if r = true then 1 else 2) - (i - 3) - 1 - j)\n    else 0\nhn : sourceNME9C q r = 3 * q + if r = true then 1 else 2\nhg : (i - 3 + 1 + j \u2264 3 * q + if r = true then 1 else 2) \u2194 i + j \u2264 (3 * q + if r = true then 1 else 2) + 2\nh : \u00acr = true\nh\u271d : i + j \u2264 3 * q + 2 + 2\n\u22a2 lowerDiagMF88 (i - 3) j (3 * q + 2 - (i - 3) - 1 - j) = lowerDiagMF88 (i - 3) j (3 * q + 2 + 2 - i - j)\n\ncase neg\nq : \u2115\nhq : 1 \u2264 q\nr : Bool\ni j : \u2115\nhi : 3 \u2264 i\nhh :\n  \u2191(coeff ((PowerSeries.coeff (3 * q + if r = true then 1 else 2)) gfMasterSeriesM13E) i j) =\n    if i - 3 + 1 + j \u2264 3 * q + if r = true then 1 else 2 then\n      lowerDiagMF88 (i - 3) j ((3 * q + if r = true then 1 else 2) - (i - 3) - 1 - j)\n    else 0\nhn : sourceNME9C q r = 3 * q + if r = true then 1 else 2\nhg : (i - 3 + 1 + j \u2264 3 * q + if r = true then 1 else 2) \u2194 i + j \u2264 (3 * q + if r = true then 1 else 2) + 2\nh : \u00acr = true\nh\u271d : \u00aci + j \u2264 3 * q + 2 + 2\n\u22a2 0 = 0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMasterExtractionM3AE": "9ff015ce09eb9e57b8ffb0a4ab2f03e87bf0c4a316408a5a6c778ccbaf4160f6"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-3ae33435/MarkovMasterExtractionM3AE.olean",
+    "/Users/sasha/math_gkm/research/MarkovMasterExtractionM3AE.lean"
+  ],
+  "seconds": 26.37887833302375,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

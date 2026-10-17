@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovThreeMassMBEB.lean:37:41: error(lean.unknownIdentifier): Unknown identifier `ourceNME9C`\n/Users/sasha/math_gkm/research/MarkovThreeMassMBEB.lean:37:11: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  HAdd \u2115 \u2115 (Graph ?m.159 ?m.160)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovThreeMassMBEB.lean:32:85: error: unsolved goals\nx h t : \u2115\nr : Bool\nht : t \u2264 2\nhq : 1 \u2264 lowQMBEB x h r\nhn :\n  sourceNME9C (lowQMBEB x h r) r + 2 - (t + 3) - (lowJMBEB x h r + (2 - t)) = 3 * x + 2 * h + if r = true then 9 else 8\n\u22a2 threeRawM9E2 (lowQMBEB x h r) r (t + 3) (lowJMBEB x h r + (2 - t)) = lowMassMBEB x h t r\n/Users/sasha/math_gkm/research/MarkovThreeMassMBEB.lean:64:43: error(lean.unknownIdentifier): Unknown identifier `ourceNME9C`\n/Users/sasha/math_gkm/research/MarkovThreeMassMBEB.lean:64:11: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  HAdd \u2115 \u2115 (Graph ?m.132 ?m.133)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovThreeMassMBEB.lean:60:91: error: unsolved goals\nx h t : \u2115\nr : Bool\nht : t \u2264 2\nhq : 1 \u2264 upperQMBEB x h r\nhn : sourceNME9C (upperQMBEB x h r) r + 2 - (t + 3) - (upperJMBEB x h r + (2 - t)) = upperKMBEB x h r\n\u22a2 threeRawM9E2 (upperQMBEB x h r) r (t + 3) (upperJMBEB x h r + (2 - t)) = upperMassMBEB x h t r\n",
+  "stderr": "",
+  "modules": {
+    "MarkovThreeMassMBEB": "fcf055738fbda70bad8e9c072a802644bc01f940135270f5d4b88256b102d40e"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-bebe7940/MarkovThreeMassMBEB.olean",
+    "/Users/sasha/math_gkm/research/MarkovThreeMassMBEB.lean"
+  ],
+  "seconds": 8.025635249970946,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

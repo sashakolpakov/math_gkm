@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovMiddleCrossObstructionMD02.lean:64:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  \u2211 k \u2208 range n, (-1) ^ (n - k) * \u2191(n.choose k) * f k\nin the target expression\n  \u2211 x \u2208 range n, \u2191((-1) ^ (n - x) * \u2191(n.choose x)) * f \u2191x + \u2191((-1) ^ (n - n) * \u2191(n.choose n)) * f \u2191n = f n\n\nf : \u2115 \u2192 \u2124\nn : \u2115\nhz : \u2200 k < n, f k = 0\nh : \u2211 k \u2208 range n, (-1) ^ (n - k) * \u2191(n.choose k) * f k = 0\n\u22a2 \u2211 x \u2208 range n, \u2191((-1) ^ (n - x) * \u2191(n.choose x)) * f \u2191x + \u2191((-1) ^ (n - n) * \u2191(n.choose n)) * f \u2191n = f n\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMiddleCrossObstructionMD02": "d2959d1efd2c1df3ba48ea884f6435e84fdae994966e431d03f149360947deba"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-d0292f14/MarkovMiddleCrossObstructionMD02.olean",
+    "/Users/sasha/math_gkm/research/MarkovMiddleCrossObstructionMD02.lean"
+  ],
+  "seconds": 7.0631057499558665,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCorrectionModelM13E.lean:47:9: error: Invalid rewrite argument: Expected an equality or iff proof or definition name, but\n  correctionValueM13E q r i (j + 2)\nis a value of type\n  \u211d\n/Users/sasha/math_gkm/research/MarkovCorrectionModelM13E.lean:49:7: error: Invalid rewrite argument: Expected an equality or iff proof or definition name, but `correctionValueM13E q r i\n  j` is a value of type\n  \u211d\n/Users/sasha/math_gkm/research/MarkovCorrectionModelM13E.lean:68:3: error: unsolved goals\ncase neg.false\nq i : \u2115\nhq : 2 \u2264 q\nhi : 3 \u2264 i\nhq1 : q \u2260 1\nhi2 : 2 \u2264 i\nhc : \u00aci + (q + 1) + q \u2264 3 * q + 2\n\u22a2 (q - 1).choose (i - 2) = 0\n/Users/sasha/math_gkm/research/MarkovCorrectionModelM13E.lean:69:3: error: unsolved goals\ncase neg.true\nq i : \u2115\nhq : 2 \u2264 q\nhi : 3 \u2264 i\nhq1 : q \u2260 1\nhi2 : 2 \u2264 i\nhc : \u00aci + (q + 1) + q \u2264 3 * q + 1\n\u22a2 (q - 2).choose (i - 2) = 0\n/Users/sasha/math_gkm/research/MarkovCorrectionModelM13E.lean:62:60: warning: This simp argument is unused:\n  hq1\n\nHint: Omit it from the simp argument list.\n  simp [he, \u0332correctionEpsilonM13E, \u0332firstCorrectionM1BB, \u0332hi2,\u0335h\u0335q\u03351\u0335]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCorrectionModelM13E": "065431f27151565ed2bd90e889719789865603066fd0fc6fe4ca72f65cc8d5f6"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-13e37040/MarkovCorrectionModelM13E.olean",
+    "/Users/sasha/math_gkm/research/MarkovCorrectionModelM13E.lean"
+  ],
+  "seconds": 11.503534957999364,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

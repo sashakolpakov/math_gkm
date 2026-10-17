@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCorrectionGainM80F.lean:21:9: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  (c + 1 + (n - (t + 1))).choose (c + 1 + (n - (t + 1)) - (n - (t + 1)))\nin the target expression\n  \u2191(\u2191(t.choose c) * \u2191((c + 1 + (n - (t + 1))).choose (n - (t + 1)))) =\n    choosePolyM0D3 (\u2191t) c * choosePolyM0D3 (\u2191n - \u2191t - 1 + \u2191(c + 1)) (c + 1)\n\ncase pos\nn t : \u2115\nht : t + 1 \u2264 n\nc : \u2115\nhc : c \u2264 t\n\u22a2 \u2191(\u2191(t.choose c) * \u2191((c + 1 + (n - (t + 1))).choose (n - (t + 1)))) =\n    choosePolyM0D3 (\u2191t) c * choosePolyM0D3 (\u2191n - \u2191t - 1 + \u2191(c + 1)) (c + 1)\n/Users/sasha/math_gkm/research/MarkovCorrectionGainM80F.lean:50:60: error: linarith failed to find a contradiction\ncase zero.false.h1\nq k : \u2115\nhq : k + 2 \u2264 q\nh0 : (middleFibM99A q (k + 1)).coeff 0 = 0\nh1 : (middleFibM99A q (k + 1 + 1)).coeff 0 = 0\nh2 : (middleFibM99A (q + 1) (k + 1)).coeff 0 = 0\nh3 : (middleFibM99A (q + 1) (k + 1 + 1)).coeff 0 = 0\na\u271d :\n  \u2191((middleFibM99A q (k + 1)).coeff 0) + \u2191((middleFibM99A (q + 1) (k + 1)).coeff 0) +\n      \u2191((middleFibM99A (q + 1) (k + 1 + 1)).coeff 0) <\n    0\n\u22a2 False\nfailed\n/Users/sasha/math_gkm/research/MarkovCorrectionGainM80F.lean:50:60: error: linarith failed to find a contradiction\ncase zero.true.h1\nq k : \u2115\nhq : k + 2 \u2264 q\nh0 : (middleFibM99A q (k + 1)).coeff 0 = 0\nh1 : (middleFibM99A q (k + 1 + 1)).coeff 0 = 0\nh2 : (middleFibM99A (q + 1) (k + 1)).coeff 0 = 0\nh3 : (middleFibM99A (q + 1) (k + 1 + 1)).coeff 0 = 0\na\u271d :\n  \u2191((middleFibM99A q (k + 1)).coeff 0) + \u2191((middleFibM99A q (k + 1 + 1)).coeff 0) +\n      \u2191((middleFibM99A (q + 1) (k + 1 + 1)).coeff 0) <\n    0\n\u22a2 False\nfailed\n/Users/sasha/math_gkm/research/MarkovCorrectionGainM80F.lean:57:26: warning: This simp argument is unused:\n  Nat.cast_add\n\nHint: Omit it from the simp argument list.\n  simp only [gainJetM80F, \u0332Bool.false_eq_true, \u0332if_false, \u0332if_true, \u0332Nat.succ_ne_zero,\n         Nat.add_sub_cancel, \u0332Nat.cast_a\u0335d\u0335d\u0335,\u0335N\u0335a\u0335t\u0335.\u0335c\u0335a\u0335s\u0335t\u0335_\u0335one]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovCorrectionGainM80F.lean:57:39: warning: This simp argument is unused:\n  Nat.cast_one\n\nHint: Omit it from the simp argument list.\n  simp only [gainJetM80F, \u0332Bool.false_eq_true, \u0332if_false, \u0332if_true, \u0332Nat.succ_ne_zero,\n         Nat.add_sub_cancel, \u0332Nat.cast_a\u0335d\u0335d\u0335,\u0335N\u0335a\u0335t\u0335.\u0335c\u0335a\u0335s\u0335t\u0335_\u0335o\u0335n\u0335e\u0335a\u0332d\u0332d\u0332]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCorrectionGainM80F": "bef0cb0614c98d3c47cc45899782e3d5ba3ec17147d021bab7812cf087856c06"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-80fb7777/MarkovCorrectionGainM80F.olean",
+    "/Users/sasha/math_gkm/research/MarkovCorrectionGainM80F.lean"
+  ],
+  "seconds": 8.827912333013956,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

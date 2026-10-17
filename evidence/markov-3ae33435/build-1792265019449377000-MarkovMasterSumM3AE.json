@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovMasterSumM3AE.lean:59:36: error: unsolved goals\nn t j s : \u2115\nhs\u271d : s \u2208 range (j + 1)\nhs : s \u2264 j\nhe :\n  X ^ (t + 1 + j + s) * C (\u2191(rampNatM3AE s) * \u2191((t + 3 + (j - s)).choose (t + 3))) * geoM679 1 ^ (t + 1) =\n    C (\u2191(rampNatM3AE s) * \u2191((t + 3 + (j - s)).choose (t + 3))) * (X ^ (t + 1 + j + s) * geoM679 1 ^ (t + 1))\nhr : \u2191(rampNatM3AE s) = rampWeightMF88 \u2191s\nhb : nbSeqMDB9 (t + 3) (\u2191j - \u2191s) = \u2191((t + 3 + (j - s)).choose (t + 3))\n\u22a2 rampWeightMF88 \u2191s * \u2191((t + 3 + (j - s)).choose (t + 3)) * nbSeqMDB9 t (\u2191n - \u2191(t + 1 + j + s)) =\n    rampWeightMF88 \u2191s * \u2191((t + 3 + (j - s)).choose (t + 3)) * nbSeqMDB9 t (\u2191n - (\u2191t + 1 + \u2191j + \u2191s))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMasterSumM3AE": "cdd47b7b610b79ddb47f1cc35e3cef927eeee86118f2f211e9702ad187c8d741"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-3ae33435/MarkovMasterSumM3AE.olean",
+    "/Users/sasha/math_gkm/research/MarkovMasterSumM3AE.lean"
+  ],
+  "seconds": 12.963049333018716,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

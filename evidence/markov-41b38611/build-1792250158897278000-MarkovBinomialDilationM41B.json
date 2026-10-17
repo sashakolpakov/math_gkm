@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBinomialDilationM41B.lean:19:30: error: linarith failed to find a contradiction\nm k n : \u2115\nih : m ^ n * k.descFactorial n \u2264 (m * k).descFactorial n\nhn : n \u2264 k\nhm : \u00acm = 0\na\u271d : m * n < n\n\u22a2 False\nfailed\n/Users/sasha/math_gkm/research/MarkovBinomialDilationM41B.lean:39:7: error(lean.unknownIdentifier): Unknown constant `Nat.choose_le_choose_left`\n/Users/sasha/math_gkm/research/MarkovBinomialDilationM41B.lean:47:60: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  c \u2265 0\n  b \u2265 0\n  2 \u2264 b - 2*c \u2264 3\nwhere\n b := \u2191N\n c := \u2191a\n/Users/sasha/math_gkm/research/MarkovBinomialDilationM41B.lean:48:3: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  f \u2265 0\n  e \u2265 0\n  d \u2265 0\n  d - e \u2265 0\n  2*d - e - f \u2264 -1\n  c \u2265 0\n  b \u2265 0\n  b - 2*c \u2265 2\nwhere\n b := \u2191N\n c := \u2191a\n d := \u2191(N.choose (a + 1))\n e := \u2191(N.choose a)\n f := \u2191(N.choose a.succ)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBinomialDilationM41B": "44c5472b41c6fedf0caf26ea1275e687b11c168c1f315e4f3639b1151e0c47ef"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-41b38611/MarkovBinomialDilationM41B.olean",
+    "/Users/sasha/math_gkm/research/MarkovBinomialDilationM41B.lean"
+  ],
+  "seconds": 29.684163665981032,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

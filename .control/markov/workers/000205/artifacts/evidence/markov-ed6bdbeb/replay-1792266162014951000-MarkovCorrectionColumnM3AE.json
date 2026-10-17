@@ -1,0 +1,66 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovCorrectionColumnM3AE\ncollected MarkovCorrectionGeoMED6\ncollected MarkovCorrectionSumMED6\ncollected MarkovCorrectionExtractionMED6\ncollected MarkovTwoKernelSourceMED6\nreplay union of 5 modules over 4 inherited imports\nisolation checked for 25 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCorrectionColumnM3AE": "251294cb5af4ca713ac00f419fe23e5df82470d03f6ca34749ca998975f70933",
+    "MarkovCorrectionGeoMED6": "3df2388c21a517d86691277a90d268a44006fd557d3229547779a2d60a65c6ea",
+    "MarkovCorrectionSumMED6": "1d0a3d071bf366079ead8cb922ca3ebf1dd0f5b62a7e7028914c2d8b1a1657e4",
+    "MarkovCorrectionExtractionMED6": "ddc6b2e57b18338c4fa9ead14e588db433b47c47b42d2c06fa31505432e5c0d3",
+    "MarkovTwoKernelSourceMED6": "41f27e08e6d110ee13ed827e3af8b00c4ed7f2a7f120961e00cd56a736c0f4d6"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedMED6.lean",
+    "MarkovCorrectionColumnM3AE",
+    "MarkovCorrectionGeoMED6",
+    "MarkovCorrectionSumMED6",
+    "MarkovCorrectionExtractionMED6",
+    "MarkovTwoKernelSourceMED6"
+  ],
+  "seconds": 10.62506549997488,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "d8f639afc3d81cdbf6dba0400c3968557db027792f1661ef0572be972b14d18a",
+  "declared_names": {
+    "MarkovCorrectionColumnM3AE": [
+      "correctionColumnM3AE",
+      "correction_columnM3AE",
+      "correction_raw_columnM3AE"
+    ],
+    "MarkovCorrectionGeoMED6": [
+      "affineGeoMED6",
+      "affine_geo_expandMED6",
+      "affine_geo_coeffMED6",
+      "rescale_geoMED6",
+      "rescale_constMED6",
+      "rescale_geo_twoMED6",
+      "correctionCoreMED6",
+      "correction_column_rescaleMED6"
+    ],
+    "MarkovCorrectionSumMED6": [
+      "C_intMED6",
+      "correction_core_transposeMED6",
+      "correction_core_v_coeffMED6",
+      "correction_core_sumMED6",
+      "correction_core_kernelMED6",
+      "correction_core_zeroMED6"
+    ],
+    "MarkovCorrectionExtractionMED6": [
+      "correction_rescale_coeffMED6",
+      "correction_formulaMED6",
+      "correction_kernel_extractionMED6"
+    ],
+    "MarkovTwoKernelSourceMED6": [
+      "source_two_kernelMED6",
+      "source_path_two_kernelMED6",
+      "correction_positive_iffMED6",
+      "source_above_base_iffMED6",
+      "source_excess_verticalMED6"
+    ]
+  },
+  "isolation_scope": "Selected new and restored mathematical names are suffixed M3AE or M3AE; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

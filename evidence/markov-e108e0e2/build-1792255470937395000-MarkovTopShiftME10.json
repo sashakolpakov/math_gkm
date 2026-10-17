@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovTopShiftME10.lean:61:48: error: unexpected token '+'; expected term\n/Users/sasha/math_gkm/research/MarkovTopShiftME10.lean:48:8: error: unsolved goals\ncase zero.zero\nh : \u2115\nhe :\n  topTemplateMB3E (h + 2) 3 =\n    C (4 * (\u2191(h + 2) - 3)) * X + C (4 * \u2191((h + 2).choose 2)) * X ^ 2 + C \u2191((h + 2 + 2).choose 3) * X ^ 3\n\u22a2 (4 * \u2191((h + 2).choose 2) * X ^ 2).coeff 3 = 0\n/Users/sasha/math_gkm/research/MarkovTopShiftME10.lean:61:31: error: unexpected syntax\n  failed to pretty print term (use 'set_option pp.rawOnError true' for raw representation)\n/Users/sasha/math_gkm/research/MarkovTopShiftME10.lean:61:31: error: unexpected syntax\n  failed to pretty print term (use 'set_option pp.rawOnError true' for raw representation)\n/Users/sasha/math_gkm/research/MarkovTopShiftME10.lean:61:31: error: unexpected syntax\n  failed to pretty print term (use 'set_option pp.rawOnError true' for raw representation)\n/Users/sasha/math_gkm/research/MarkovTopShiftME10.lean:54:7: error: unsolved goals\ncase one.zero\nh : \u2115\nhe :\n  topTemplateMB3E (h + 4) 4 =\n    C (4 * (\u2191(h + 4) - 6)) * X + C (8 * \u2191((h + 4 - 2).choose 2)) * X ^ 2 +\n        C (\u2191((h + 4 + 1).choose 3) + 4 * \u2191((h + 4).choose 3)) * X ^ 3 +\n      C \u2191((h + 4 + 2).choose 4) * X ^ 4\n\u22a2 (8 * \u2191((h + 2).choose 2) * X ^ 2).coeff 3 + ((\u2191((h + 4 + 1).choose 3) + 4 * \u2191((h + 4).choose 3)) * X ^ 3).coeff 3 =\n    \u2191((h + 1 + 4).choose 3) + 4 * \u2191((h + 4).choose 3)\n\ncase one.succ.zero\nh : \u2115\nhe :\n  topTemplateMB3E (h + 4) 4 =\n    C (4 * (\u2191(h + 4) - 6)) * X + C (8 * \u2191((h + 4 - 2).choose 2)) * X ^ 2 +\n        C (\u2191((h + 4 + 1).choose 3) + 4 * \u2191((h + 4).choose 3)) * X ^ 3 +\n      C \u2191((h + 4 + 2).choose 4) * X ^ 4\n\u22a2 (8 * \u2191((h + 2).choose 2) * X ^ 2).coeff 4 + ((\u2191((h + 4 + 1).choose 3) + 4 * \u2191((h + 4).choose 3)) * X ^ 3).coeff 4 = 0\n/Users/sasha/math_gkm/research/MarkovTopShiftME10.lean:47:1: error: Alternative `more` has not been provided\n/Users/sasha/math_gkm/research/MarkovTopShiftME10.lean:93:47: error: unexpected token ')'; expected term\n/Users/sasha/math_gkm/research/MarkovTopShiftME10.lean:93:44: error: Application type mismatch: The argument\n  s\nhas type\n  \u2115\nof sort `Type` but is expected to have type\n  Type ?u.166\nof sort `Type (?u.166 + 1)` in the application\n  @PrincipalSeg s\n/Users/sasha/math_gkm/research/MarkovTopShiftME10.lean:93:36: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b \u2265 0\n  a \u2265 0\n  a - b \u2265 1\nwhere\n a := \u2191i\n b := \u2191s\n",
+  "stderr": "",
+  "modules": {
+    "MarkovTopShiftME10": "2fb14c07186a52ac54393f44d99e5b172483be8f4a8516053d45df5b7034de21"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-e108e0e2/MarkovTopShiftME10.olean",
+    "/Users/sasha/math_gkm/research/MarkovTopShiftME10.lean"
+  ],
+  "seconds": 45.16250862501329,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

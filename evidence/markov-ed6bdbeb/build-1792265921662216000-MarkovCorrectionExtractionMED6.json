@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCorrectionExtractionMED6.lean:39:9: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  if r = true then \u21912 else 1\nin the target expression\n  4 *\n      affineKernelM13E (\u2191(if r = true then 2 else 1)) (t + 2) (t + 1) (j - q - 1)\n        (q - (t + 2 + if r = true then 1 else 0) - (j - q - 1)) =\n    4 *\n      affineKernelM13E (correctionEpsilonM13E r) (t + 3 - 1) (t + 3 - 2) (j - q - 1) (sourceNME9C q r - q - (t + 3) - j)\n\ncase pos\nq t j : \u2115\nr : Bool\nhj : q + 1 \u2264 j\nhk : t + 3 + j + q \u2264 sourceNME9C q r\nhd : (t + 2 + if r = true then 1 else 0) + (j - q - 1) \u2264 q\nhe : (if r = true then \u21912 else 1) = correctionEpsilonM13E r\nhk' : q - (t + 2 + if r = true then 1 else 0) - (j - q - 1) = sourceNME9C q r - q - (t + 3) - j\n\u22a2 4 *\n      affineKernelM13E (\u2191(if r = true then 2 else 1)) (t + 2) (t + 1) (j - q - 1)\n        (q - (t + 2 + if r = true then 1 else 0) - (j - q - 1)) =\n    4 *\n      affineKernelM13E (correctionEpsilonM13E r) (t + 3 - 1) (t + 3 - 2) (j - q - 1) (sourceNME9C q r - q - (t + 3) - j)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCorrectionExtractionMED6": "c1b280baba850c1ebeadcbbf754c5ebb71fbd8fc826f553b94e6bad7da4102ff"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-ed6bdbeb/MarkovCorrectionExtractionMED6.olean",
+    "/Users/sasha/math_gkm/research/MarkovCorrectionExtractionMED6.lean"
+  ],
+  "seconds": 35.52718570904108,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

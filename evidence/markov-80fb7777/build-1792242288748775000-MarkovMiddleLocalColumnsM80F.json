@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovMiddleLocalColumnsM80F.lean:27:37: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  0 \u2264 d \u2264 5\n  b \u2265 0\n  0 \u2264 b - d \u2264 1\n  a \u2265 0\n  a - 2*b \u2265 6\nwhere\n a := \u2191n\n b := \u2191(t - 3)\n d := \u2191(c - 3)\n/Users/sasha/math_gkm/research/MarkovMiddleLocalColumnsM80F.lean:27:44: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ?a * 0\nin the target expression\n  0 * topMassM55C (n - 2 * t) (t - 3) (c - 3 + 2) \u2264 topMassM55C (n - 2 * t) (t - 3) (c - 3 + 1) ^ 2\n\ncase neg\nn t c : \u2115\nhn : 2 * t \u2264 n\nht : 3 \u2264 t\nhc : 3 \u2264 c\nhc8 : c \u2264 8\nhct : \u00acc + 2 \u2264 t\n\u22a2 0 * topMassM55C (n - 2 * t) (t - 3) (c - 3 + 2) \u2264 topMassM55C (n - 2 * t) (t - 3) (c - 3 + 1) ^ 2\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMiddleLocalColumnsM80F": "b3da5dcaa4a176b695973e10f880ce98ebc7bf779846d882c1951d2f1f7bb240"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-80fb7777/MarkovMiddleLocalColumnsM80F.olean",
+    "/Users/sasha/math_gkm/research/MarkovMiddleLocalColumnsM80F.lean"
+  ],
+  "seconds": 30.97511504101567,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovUpperCompleteM9F23.lean:17:37: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  f \u2265 0\n  e \u2265 3\n  e \u2265 0\n  c \u2265 0\n  0 \u2264 c + e - f \u2264 2\n  b \u2265 0\n  b + e - f \u2264 0\n  a \u2265 0\nwhere\n a := \u2191s\n b := \u2191j\n c := \u2191(sourceNME9C s.succ r)\n e := \u2191(sourceNME9C (s + 1) r + 2 - (i + j + 2))\n f := \u2191(sourceNME9C (s + 1) r)\n/Users/sasha/math_gkm/research/MarkovUpperCompleteM9F23.lean:37:73: warning: this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`\n/Users/sasha/math_gkm/research/MarkovUpperCompleteM9F23.lean:37:73: warning: 'omega' tactic does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovUpperCompleteM9F23": "335fa40725c2d13be132d6e35a7b2e617deeba32456bdde3544f5931f1948779"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-9f234835/MarkovUpperCompleteM9F23.olean",
+    "/Users/sasha/math_gkm/research/MarkovUpperCompleteM9F23.lean"
+  ],
+  "seconds": 14.996150500024669,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

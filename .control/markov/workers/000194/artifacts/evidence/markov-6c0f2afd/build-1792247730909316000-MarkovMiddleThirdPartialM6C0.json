@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovMiddleThirdPartialM6C0.lean:24:35: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  d \u2265 0\n  b \u2265 0\n  3 \u2264 a \u2264 5\n  5 \u2264 a - b - d \u2264 6\nwhere\n a := \u2191c\n b := \u2191x\n d := \u2191(middleBaseMD02 r)\n/Users/sasha/math_gkm/research/MarkovMiddleThirdPartialM6C0.lean:24:42: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  ?a * 0\nin the target expression\n  0 * topMassM55C x (x + 3 * 2 + middleBaseMD02 r) (c + 2) \u2264 topMassM55C x (x + 3 * 2 + middleBaseMD02 r) (c + 1) ^ 2\n\ncase neg\nx c : \u2115\nr : Bool\nhc : c \u2264 5\nhc2 : \u00acc \u2264 2\nhe : \u2200 (j : \u2115), 1 \u2264 j \u2192 middleRawMD02 x 2 r j = topMassM55C x (x + 3 * 2 + middleBaseMD02 r) j\nht : \u00acc + 2 \u2264 x + 3 * 2 + middleBaseMD02 r\n\u22a2 0 * topMassM55C x (x + 3 * 2 + middleBaseMD02 r) (c + 2) \u2264 topMassM55C x (x + 3 * 2 + middleBaseMD02 r) (c + 1) ^ 2\n",
+  "stderr": "",
+  "modules": {
+    "MarkovMiddleThirdPartialM6C0": "430a42d9f9b9607fe82e549b35d7795a9ae6d370154cd7f2564e6712331f88f6"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-6c0f2afd/MarkovMiddleThirdPartialM6C0.olean",
+    "/Users/sasha/math_gkm/research/MarkovMiddleThirdPartialM6C0.lean"
+  ],
+  "seconds": 37.06051625002874,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovUpperConvolutionM9F23.lean:62:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  threeRawM9E2 q r (i - 3 + 3) j\nin the target expression\n  \u2191(threeRawM9E2 q r i j) = lowerDiagMF88 (i - 3) j (sourceNME9C q r + 2 - i - j)\n\nq i j : \u2115\nr : Bool\nhq : 1 \u2264 q\nhi : 3 \u2264 i\nhj : sourceNME9C q r \u2264 j + q\nhd : i + j \u2264 sourceNME9C q r + 2\nn : \u2115 := sourceNME9C q r\nhn : 3 * q + 1 \u2264 n\nT : \u2115 := n - j - 1\nh : \u2115 := 2 * j - n\nhjn : n \u2264 j + q\nhdn : i + j \u2264 n + 2\nht : T + 3 \u2264 q + 2\nheN : n = 2 * T + h + 2\nheJ : n + 2 - (T + 3) = j\nheT : i - 3 \u2264 T\nhc : threeRawM9E2 q r (i - 3 + 3) j = topMassME10 h T (i - 3)\n\u22a2 \u2191(threeRawM9E2 q r i j) = lowerDiagMF88 (i - 3) j (sourceNME9C q r + 2 - i - j)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovUpperConvolutionM9F23": "e43b11a746f26749cbcadb8e645a366066b2d9e0b231e859fd6d8c70f7a125f4"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-9f234835/MarkovUpperConvolutionM9F23.olean",
+    "/Users/sasha/math_gkm/research/MarkovUpperConvolutionM9F23.lean"
+  ],
+  "seconds": 19.878536415984854,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,118 @@
+{
+  "bindings": {
+    "RESUME.json": true,
+    "evidence/independent-markov/MATHEMATICAL_REVIEW.md": true,
+    "evidence/independent-markov/markov_residual_scope_audit.md": true,
+    "evidence/independent-markov/markov_round5_target_definition_audit.md": true,
+    "evidence/markov/research-run/state.json": true,
+    "requests/markov-next.json": true
+  },
+  "logs": {
+    "000198": {
+      "sha256": "68b638b894348785647a726d63444c023f5604a79ad17dbc4c1f4f234b97ebde",
+      "events": 236,
+      "pending": {},
+      "last_events": [
+        {
+          "type": "item.started",
+          "item": {
+            "id": "item_121",
+            "type": "command_execution",
+            "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/central_bounds_e8743310.py'",
+            "aggregated_output": "",
+            "exit_code": null,
+            "status": "in_progress"
+          }
+        },
+        {
+          "type": "item.completed",
+          "item": {
+            "id": "item_121",
+            "type": "command_execution",
+            "command": "/bin/zsh -lc 'env GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null /opt/homebrew/bin/python3 research/central_bounds_e8743310.py'",
+            "aggregated_output": "{\"scalar_shift_thresholds\": [{\"shift\": 0, \"cutoff\": 10, \"terms\": 64, \"minimum\": 32}, {\"shift\": 1, \"cutoff\": 10, \"terms\": 64, \"minimum\": 32}, {\"shift\": 2, \"cutoff\": 10, \"terms\": 64, \"minimum\": 32}, {\"shift\": 3, \"cutoff\": 10, \"terms\": 64, \"minimum\": 32}, {\"shift\": 4, \"cutoff\": 10, \"terms\": 64, \"minimum\": 32}], \"relative_checks\": 12064, \"failures\": [], \"seconds\": 0.5955794579931535, \"status\": \"Finite exact experiments and symbolic coefficient sign observations only. Signed source and weighted-moment bridges remain unproved.\"}\n",
+            "exit_code": 0,
+            "status": "completed"
+          }
+        }
+      ]
+    },
+    "000199": {
+      "sha256": "691111c6e6dae51d1672117c7ec810256e9a4d74d72b224f85615e91c1472f34",
+      "events": 274,
+      "pending": {},
+      "last_events": [
+        {
+          "type": "item.started",
+          "item": {
+            "id": "item_141",
+            "type": "command_execution",
+            "command": "/bin/zsh -lc 'cat evidence/markov-e108e0e2/last-verification.json research/markov-e108e0e2-checkpoint-final.md; cat evidence/markov-e108e0e2/validation.json | head -n 8'",
+            "aggregated_output": "",
+            "exit_code": null,
+            "status": "in_progress"
+          }
+        },
+        {
+          "type": "item.completed",
+          "item": {
+            "id": "item_141",
+            "type": "command_execution",
+            "command": "/bin/zsh -lc 'cat evidence/markov-e108e0e2/last-verification.json research/markov-e108e0e2-checkpoint-final.md; cat evidence/markov-e108e0e2/validation.json | head -n 8'",
+            "aggregated_output": "{\n  \"artifacts\": 168,\n  \"unchanged_inputs\": 23886,\n  \"predecessor_artifacts\": 158,\n  \"root_sha256\": \"8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe\",\n  \"contract_sha256\": \"cc930bda09aaaa16b0662e9c0afa3c48167b1a07f2087eb6c2106c73c4a16068\",\n  \"stop_file\": false,\n  \"completion\": null\n}# Final checkpoint\n\nMachine-authored request e108e0e26f6d456c97155a7914deaabe.\nFull pinned root and exact negation remain open; completion=null.\n\n24 modules compiled and jointly kernel-replayed; 96 theorem closures use only permitted axioms. See evidence/markov-e108e0e2/validation.json. Inherited compiled imports reused; no fresh whole-source rebuild or independent completion audit.\n\nProved the exact shifted central source formula, complete correction domination, actual-weight centered variance attachment, all physical starting columns>=13 on every numerator-three horizontal row, and the exact root residual ThreeCentralFiniteME10 (central starts2..12). The strongest exact residual is ThreeCentralNineME10: physical starts4..12 in the two central rows; root_iff_central_nineME10 retains all other directions and families. The physical-column-two gap is closed; root_iff_central_tenME10 leaves starting columns3..12 in the two central rows. The c=0 shifted raw gap is also proved for every h<=3 and k+h>=3; use central_low_0ME10 with central_source_formulaME10. All vertical and diagonal residuals and OtherFourM9E2 remain open.\n\nFinite source experiment:7016 coefficient comparisons retaining645 zeros;590991 polygon-valid triples across all directions. No failure; these are experiments, not proofs. Eighty univariate low-gap symbolic probes had nonnegative coefficients; unvalidated certificates remain drafts.\n\n11 rejected builds and 9 source files outside the validated bundle are preserved. No launched foreground work remains pending.\n{\n  \"modules\": {\n    \"MarkovCenteredScalarME10\": \"455f9976d7f781c2590828df8935c601123256c22783c7c4b0ef25824b06b49f\",\n    \"MarkovCentralAxesME10\": \"568160b5c4580b59ec36a3598e509f911123c8d98216e0b07c9b9231d6358011\",\n    \"MarkovCentralHighME10\": \"fec801ee9300bc79a0d3cf7356c10eb1d28441515a22f24158743692b969624b\",\n    \"MarkovCentralLow0ME10\": \"3ccd768b9f86092c35b1d4bdf64b6b647234fc76c52cc363a2bba57f4dcbfcc3\",\n    \"MarkovCentralNineME10\": \"37b6e22202847603f7f5bab0d7fdc8715b971caee9551f06d3bb1e551a01e64c\",\n    \"MarkovCentralRationalME10\": \"d298f4d843801cb49f0465dcb542aec6832d158af3e6fee8f9919cca57a3b60b\",\n",
+            "exit_code": 0,
+            "status": "completed"
+          }
+        }
+      ]
+    },
+    "000201": {
+      "sha256": "45dc98125c0747da2645bbcfb1ef72e09e9738e50322ed3569c19dee561781c6",
+      "events": 267,
+      "pending": {},
+      "last_events": [
+        {
+          "type": "item.completed",
+          "item": {
+            "id": "item_136",
+            "type": "agent_message",
+            "text": "{\n  \"actions\": [\n    \"Read required documents and audits; reconciled workers 198\u2013200 without replaying completed effects: evidence/markov-9f234835/reconciliation.json.\",\n    \"Compiled and jointly kernel-replayed 16 modules; audited 77 theorem closures using only permitted axioms: evidence/markov-9f234835/validation.json.\",\n    \"Verified 122 artifacts, 8,437 unchanged inputs and pinned bindings; preserved eight rejected builds: evidence/markov-9f234835/last-verification.json.\"\n  ],\n  \"agenda\": [\n    \"Investigate ThreeMiddleOnlyM9F23 or OtherFourM9E2: research/markov-9f234835-next.md.\",\n    \"Retain the complete middle correction and boundary-crossing triples.\",\n    \"Completion still requires universal root closure, every correspondence bridge and independent hash-bound validation.\"\n  ],\n  \"completion\": null,\n  \"observations\": [\n    \"Proved every numerator-three lower diagonal inequality with j+2\u2264q: research/MarkovLowerSourceM9F23.lean.\",\n    \"Proved every upper vertical and diagonal inequality with b\u2264j+q, including exceptional columns and zeros: research/MarkovUpperCompleteM9F23.lean. Exact path/polygon transport: research/MarkovOuterPathM9F23.lean.\",\n    \"Proved Conjecture63 iff ThreeMiddleOnlyM9F23 and OtherFourM9E2. Both remain open.\",\n    \"Finite experiments passed 105,280 coefficient comparisons retaining 8,420 zeros and 506,338 polygon-valid triples. These are experiments, not proofs: evidence/markov-9f234835/source-experiment.json and upper-edges-experiment.json.\",\n    \"Inherited compiled imports were reused. No fresh whole-source rebuild or independent completion audit occurred: research/markov-9f234835-correspondence.md.\"\n  ],\n  \"request_id\": \"9f234835b0cf47d395d489f5776d690b\",\n  \"summary\": \"Closed all numerator-three lower diagonal and upper vertical/diagonal inequalities. Full pinned Conjecture63 remains unresolved.\"\n}"
+          }
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 10532351,
+            "cached_input_tokens": 10120576,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 65054,
+            "reasoning_output_tokens": 19706
+          }
+        }
+      ]
+    }
+  },
+  "predecessor_manifest_artifacts": 122,
+  "predecessor_manifest_failures": [],
+  "validated_modules": {
+    "MarkovRampPrefixM9F23": "a0e156955adaefba843c516a55ada7e29409c59c6a0a1643a96b90973508bfb4",
+    "MarkovIncrementPrefixM9F23": "679c4ef0ad7e8712fabea82e90997820cd6289601695a712cd58336180dda1ed",
+    "MarkovRampRatiosM9F23": "fb5abaf3342d1dc859c3778019d65664ea654f9db9e4bf3196701dbe08f645a3",
+    "MarkovRampScalarM9F23": "7a62656bd3255c188f35338696a7b7ecaed0fd5a76d80fd33c577b77a7b99deb",
+    "MarkovRampOrderM9F23": "b3c57fbf3fb965d957ac10d6f253b7417948d642560d2959aacc13fd0df351e7",
+    "MarkovRampShapeM9F23": "66c4d5fbd5185e3c8e339bee53f3c9ae9148a068579f81555d03e38bc5c22619",
+    "MarkovLowerParameterM9F23": "e48945eb0c549d18fe222cbad713fc4aa3fd87449e6e1f8dd53006812d3f1904",
+    "MarkovLowerSourceM9F23": "bc801f342c2edadc27e95ccfee065a2fddb0020f51479ec520f3a6adcd7396cf",
+    "MarkovUpperConvolutionM9F23": "2bb3a10fb6957d56808669d76e5092e485f92c5887e16c02b727ff313dc9b00c",
+    "MarkovUpperSourceM9F23": "ec02b7f247bfb086f605c74803176f11f752b4d6799ec46adb38640d6f2f6955",
+    "MarkovUpperLowCertificateM9F23": "d592e0dc00fe6152afdda3375cee081e57f8726924a69776a5f46063366877b5",
+    "MarkovUpperThreeM9F23": "34067e4b5632f6ebd5205879912ab50feb9f92b8fec2e9a572dba466099176e4",
+    "MarkovUpperEdgesM9F23": "acc877a4851aab533c85dedd02b64379da8c69aa948d7d51f25e71d6777dd516",
+    "MarkovUpperCompleteM9F23": "16dad2dcf3fa368c6982e4a1b384f6b818418c3d11f216684a34595d629c12e2",
+    "MarkovOuterPathM9F23": "159d1149197e4b7dd69c4172b9f4caeed104391ffbd289839017105e20a6dfda",
+    "MarkovRampDiagnosticsM9F23": "c86e5c1223595db23a306ffb33e027d8d738e64b9a52400e2d65341a18253fd8"
+  },
+  "decision": "Raw logs confirm interrupted 198/199 side effects completed and were reconciled by successors. Latest 201 completed. No replay of prior mutations. Investigate middle transverse inequalities.",
+  "scratch": "Denied by developer filesystem profile; not accessed. Work files remain in this new evidence directory.",
+  "capability_failure": "zsh heredoc failed because implicit temporary-file creation is denied; use explicit research scripts."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovVerticalExpressionM9C28.lean:29:6: error: unsolved goals\nc x h t : \u2115\nr : Bool\nht : t \u2264 2\nhd : c + h + 4 - 2 * t = h + (c + 4 - 2 * t)\n\u22a2 \u2191c + 4 - 2 * \u2191t = \u2191(c + 4 - 2 * t)\n/Users/sasha/math_gkm/research/MarkovVerticalExpressionM9C28.lean:31:31: error: unsolved goals\nc x h t : \u2115\nr : Bool\nht : t \u2264 2\nhd : c + h + 4 - 2 * t = h + (c + 4 - 2 * t)\n\u22a2 \u2191c + 4 - 2 * \u2191t = \u2191(c + 4 - 2 * t)\n/Users/sasha/math_gkm/research/MarkovVerticalExpressionM9C28.lean:42:37: error: unsolved goals\nc x h t : \u2115\nr : Bool\nht : t \u2264 2\nhT : vUpperKM9C28 c x h r + c + 1 - t = 3 * x + h + ((2 * c + if r = true then 12 else 11) - t)\nhJ : x + 2 - t = x + (2 - t)\n\u22a2 (2 * \u2191c + if r = true then 12 else 11) - \u2191t = \u2191((2 * c + if r = true then 12 else 11) - t)\n/Users/sasha/math_gkm/research/MarkovVerticalExpressionM9C28.lean:74:61: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovVerticalExpressionM9C28.lean:82:61: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovVerticalExpressionM9C28.lean:90:6: error: unsolved goals\nc n t : \u2115\ns r : Bool\nht : t \u2264 2\nhd : (c + n + if s = true then 5 else 6) - 2 * t = n + ((c + if s = true then 5 else 6) - 2 * t)\n\u22a2 (\u2191c + if s = true then 5 else 6) - 2 * \u2191t = \u2191((c + if s = true then 5 else 6) - 2 * t)\n/Users/sasha/math_gkm/research/MarkovVerticalExpressionM9C28.lean:102:37: error: unsolved goals\nc n t : \u2115\ns r : Bool\nht : t \u2264 2\nhT :\n  (vExitQM9C28 c n s r + c + if s = true then 4 else 3) - t =\n    n + ((2 * c + if s = true then if r = true then 9 else 8 else if r = true then 7 else 6) - t)\n\u22a2 (2 * \u2191c + if s = true then if r = true then 9 else 8 else if r = true then 7 else 6) - \u2191t =\n    \u2191((2 * c + if s = true then if r = true then 9 else 8 else if r = true then 7 else 6) - t)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovVerticalExpressionM9C28": "2f3ec1a512c9e6bd66ba03f3c10067e2186b2b93c3e64ee636a78212e83496d7"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-9c28b628/MarkovVerticalExpressionM9C28.olean",
+    "/Users/sasha/math_gkm/research/MarkovVerticalExpressionM9C28.lean"
+  ],
+  "seconds": 10.367112915962934,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

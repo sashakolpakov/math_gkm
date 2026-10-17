@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCorrectionNewtonMD02.lean:90:5: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  fun d k => \u2191((a + l).choose a) * \u2191((D + a).choose (b - l - p)) * ?m.146 * ?m.147\nin the target expression\n  newtonCoeffMD02\n      (fun x y => \u2191((a + l).choose a) * \u2191((D + a).choose (b - l - p)) * \u2191(x.choose p) * \u2191(y.choose (a + l + 2))) m n =\n    (\u2191((a + l).choose a) * \u2191((D + a).choose (b - l - p)) * if m = p then 1 else 0) * if n = a + l + 2 then 1 else 0\n\nD a b m n l : \u2115\nhl : l \u2208 range (b + 1)\np : \u2115\nhp : p \u2208 range (b - l + 1)\n\u22a2 newtonCoeffMD02\n      (fun x y => \u2191((a + l).choose a) * \u2191((D + a).choose (b - l - p)) * \u2191(x.choose p) * \u2191(y.choose (a + l + 2))) m n =\n    (\u2191((a + l).choose a) * \u2191((D + a).choose (b - l - p)) * if m = p then 1 else 0) * if n = a + l + 2 then 1 else 0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCorrectionNewtonMD02": "311d0d27bb2a098f42f6cfe3582f0bbda80ff9b78fd41501b9642dee0f9b1bd2"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-d0292f14/MarkovCorrectionNewtonMD02.olean",
+    "/Users/sasha/math_gkm/research/MarkovCorrectionNewtonMD02.lean"
+  ],
+  "seconds": 24.33958570798859,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

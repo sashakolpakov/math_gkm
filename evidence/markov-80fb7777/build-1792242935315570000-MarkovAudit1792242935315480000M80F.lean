@@ -1,0 +1,57 @@
+import MarkovCorrectionJetDefsM80F
+import MarkovCorrectionGainM80F
+import MarkovCorrectionJetsM80F
+import MarkovMiddleGapM80F
+import MarkovMiddleJetSourceM80F
+import MarkovMiddleLowSourceM80F
+import MarkovCorrectionHighDefsM80F
+import MarkovCorrectionHighJetsM80F
+import MarkovMiddleHighDefsM80F
+import MarkovMiddleGap3FM80F
+import MarkovMiddleGap3TM80F
+import MarkovMiddleGap4FM80F
+import MarkovMiddleGap4TM80F
+import MarkovMiddleHighSourceM80F
+import MarkovMiddleLocalColumnsM80F
+import MarkovMiddleThreeGapsM80F
+import MarkovMiddleJetResidualM80F
+import MarkovFractionalObstructionM80F
+import MarkovCorrectionPositiveSumM80F
+import MarkovMiddleTwoSumM80F
+#print axioms MathGKM.Markov.middle_fib_coeffM80F
+#print axioms MathGKM.Markov.middle_gain_coeffM80F
+#print axioms MathGKM.Markov.middle_correction_jetsM80F
+#print axioms MathGKM.Markov.source_gap_falseM80F
+#print axioms MathGKM.Markov.source_gap_trueM80F
+#print axioms MathGKM.Markov.top_template_jetsM80F
+#print axioms MathGKM.Markov.source_middle_jetsM80F
+#print axioms MathGKM.Markov.source_middle_second_strictM80F
+#print axioms MathGKM.Markov.source_middle_axesM80F
+#print axioms MathGKM.Markov.source_middle_lowM80F
+#print axioms MathGKM.Markov.source_middle_second_polygonM80F
+#print axioms MathGKM.Markov.middle_correction_high_jetsM80F
+#print axioms MathGKM.Markov.source_gap_3_falseM80F
+#print axioms MathGKM.Markov.source_gap_3_trueM80F
+#print axioms MathGKM.Markov.source_gap_4_falseM80F
+#print axioms MathGKM.Markov.source_gap_4_trueM80F
+#print axioms MathGKM.Markov.top_template_shortM80F
+#print axioms MathGKM.Markov.source_middle_high_jetsM80F
+#print axioms MathGKM.Markov.middle_small_mass_strictM80F
+#print axioms MathGKM.Markov.middle_small_templateM80F
+#print axioms MathGKM.Markov.source_middle_local_smallM80F
+#print axioms MathGKM.Markov.source_middle_3_strictM80F
+#print axioms MathGKM.Markov.source_middle_4_strictM80F
+#print axioms MathGKM.Markov.source_middle_jets_strictM80F
+#print axioms MathGKM.Markov.source_middle_jet_closedM80F
+#print axioms MathGKM.Markov.source_middle_jet_pathM80F
+#print axioms MathGKM.Markov.source_middle_jet_polygonM80F
+#print axioms MathGKM.Markov.root_iff_after_jetsM80F
+#print axioms MathGKM.Markov.fractional_gap_exactM80F
+#print axioms MathGKM.Markov.fractional_unrestricted_falseM80F
+#print axioms MathGKM.Markov.weighted_correction_stepM80F
+#print axioms MathGKM.Markov.positive_correction_formulaM80F
+#print axioms MathGKM.Markov.correction_positive_sumM80F
+#print axioms MathGKM.Markov.correction_sum_terms_nonnegM80F
+#print axioms MathGKM.Markov.source_middle_positive_formulaM80F
+#print axioms MathGKM.Markov.correction_high_sumM80F
+#print axioms MathGKM.Markov.source_middle_two_sumM80F

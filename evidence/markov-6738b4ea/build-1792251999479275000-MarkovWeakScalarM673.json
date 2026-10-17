@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovWeakScalarM673.lean:28:19: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovWeakScalarM673.lean:33:19: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovWeakScalarM673.lean:57:14: error: Application type mismatch: The argument\n  LT.lt.le hS\nhas type\n  0 \u2264 weakScalarM673 i r H\nbut is expected to have type\n  0 \u2264\n    (15 * i + 47) * deficitLowerM41B i r H ^ 2 * (i + 4) +\n        (H - r + 1) * deficitLowerM41B i r H * ((i + 1) * (8 * (i + 4) + 1)) * (i + 3) * (i + 4) -\n      (H + r) ^ 2 * deficitSecondM41B i r * ((i + 1) * (8 * (i + 4) + 1)) * (i + 3)\nin the application\n  weak_control_algebraM673 (i + 3) (i + 4) (deficitLowerM41B i r H) (deficitSecondM41B i r) (H + r)\n    ((i + 1) * (8 * (i + 4) + 1)) (H - r + 1) (15 * i + 47) M E V ?m.554 ?m.555 (LT.lt.le hL) ?m.560 ?m.561 ?m.562 hM\n    hE' hV' (LT.lt.le hS)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovWeakScalarM673": "7a99a52cfcaea1c38cb7542ea24c5271b81facb4a1e90ab423051f4203984240"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-6738b4ea/MarkovWeakScalarM673.olean",
+    "/Users/sasha/math_gkm/research/MarkovWeakScalarM673.lean"
+  ],
+  "seconds": 36.39779254200403,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

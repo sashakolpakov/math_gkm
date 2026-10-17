@@ -1,0 +1,70 @@
+{
+  "returncode": 0,
+  "stdout": "collected MarkovIntegerPolynomialM9DB\ncollected MarkovMiddleIntegerPolyM9DB\ncollected MarkovMiddleIntegerSignsM9DB\ncollected MarkovMiddleIntegerDegreeM9DB\nreplay union of 4 modules over 3 inherited imports\nisolation checked for 33 mathematical constants\nreplay union passed\n",
+  "stderr": "",
+  "modules": {
+    "MarkovIntegerPolynomialM9DB": "cd81849833fe9672d8b484afbbf519be58ce072450bd65947e1bee1cc6d69915",
+    "MarkovMiddleIntegerPolyM9DB": "382a9cf19b9b362bd05adcd162b866808cc093a2f201fa29b8bf3af970565ea7",
+    "MarkovMiddleIntegerSignsM9DB": "7beeeb554373cc8e3b443512666c91b7d35fc51528175a1a3987654468ad52eb",
+    "MarkovMiddleIntegerDegreeM9DB": "5c70fa1c98e915207c4ecbae02224a5eccb329103a2e18afe54b52da61eaf3c9"
+  },
+  "mode": "replay",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-s",
+    "131072",
+    "--run",
+    "/Users/sasha/math_gkm/research/ReplayIsolatedM9DB.lean",
+    "MarkovIntegerPolynomialM9DB",
+    "MarkovMiddleIntegerPolyM9DB",
+    "MarkovMiddleIntegerSignsM9DB",
+    "MarkovMiddleIntegerDegreeM9DB"
+  ],
+  "seconds": 20.9047856250545,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild.",
+  "checker_sha256": "4d1ad8d4cb2524471a938038adb58aad09167bcc50396c4e5e61be635b011b88",
+  "declared_names": {
+    "MarkovIntegerPolynomialM9DB": [
+      "fallingPolyM9DB",
+      "falling_poly_evalM9DB",
+      "binomialPolyM9DB",
+      "binomial_poly_evalM9DB",
+      "binomialProductPolyM9DB",
+      "binomial_product_poly_evalM9DB",
+      "topPolyM9DB",
+      "top_poly_evalM9DB",
+      "kernelPolyM9DB",
+      "kernel_poly_evalM9DB"
+    ],
+    "MarkovMiddleIntegerPolyM9DB": [
+      "correctionPolyM9DB",
+      "correction_poly_evalM9DB",
+      "middlePolyM9DB",
+      "middle_poly_evalM9DB",
+      "integerGapPolyM9DB",
+      "integerGapScaleM9DB",
+      "integer_gap_scale_positiveM9DB",
+      "integer_gap_poly_evalM9DB",
+      "polynomial_eval_nonnegM9DB",
+      "integer_gap_transferM9DB"
+    ],
+    "MarkovMiddleIntegerSignsM9DB": [
+      "IntegerSignsM9DB",
+      "middle_after_third_of_integer_signsM9DB",
+      "root_of_integer_signsM9DB"
+    ],
+    "MarkovMiddleIntegerDegreeM9DB": [
+      "falling_poly_degreeM9DB",
+      "const_mul_degreeM9DB",
+      "binomial_poly_degreeM9DB",
+      "binomial_product_poly_degreeM9DB",
+      "top_poly_degreeM9DB",
+      "kernel_poly_degreeM9DB",
+      "correction_poly_degreeM9DB",
+      "middle_poly_degreeM9DB",
+      "integer_gap_poly_degreeM9DB",
+      "integer_gap_coeff_sign_iffM9DB"
+    ]
+  },
+  "isolation_scope": "Every explicitly declared mathematical name is suffixed M9DB; all such names must be absent from the imported environment. Inherited compiler-generated equation duplicates retain the ordinary Lean replay handling."
+}

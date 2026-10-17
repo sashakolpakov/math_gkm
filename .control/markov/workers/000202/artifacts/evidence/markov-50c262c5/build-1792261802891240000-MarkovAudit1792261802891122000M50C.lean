@@ -1,0 +1,52 @@
+import MarkovMiddleModelM50C
+import MarkovMiddleHighTransverseM50C
+import MarkovTemplateBoundaryM50C
+import MarkovTemplateDefectM50C
+import MarkovTemplateDiagonalM50C
+import MarkovMiddleCrossingM50C
+import MarkovMiddleCrossingDegreeM50C
+import MarkovMiddleTriangleModelM50C
+import MarkovMiddleTriangleLCM50C
+import MarkovMiddleZeroDiagonalM50C
+import MarkovMiddleTriangleResidualM50C
+import MarkovMiddleTrianglePathM50C
+import MarkovThreeHighColumnsM50C
+import MarkovMiddleMixedDiagnosticM50C
+#print axioms MathGKM.Markov.source_high_templateM50C
+#print axioms MathGKM.Markov.source_high_modelM50C
+#print axioms MathGKM.Markov.source_high_verticalM50C
+#print axioms MathGKM.Markov.source_high_diagonalM50C
+#print axioms MathGKM.Markov.top_delta_boundaryM50C
+#print axioms MathGKM.Markov.top_template_boundaryM50C
+#print axioms MathGKM.Markov.top_defect_zeroM50C
+#print axioms MathGKM.Markov.top_defect_recM50C
+#print axioms MathGKM.Markov.top_defect_leadingM50C
+#print axioms MathGKM.Markov.top_template_penultimateM50C
+#print axioms MathGKM.Markov.top_delta_diagonalM50C
+#print axioms MathGKM.Markov.top_template_diagonalM50C
+#print axioms MathGKM.Markov.diagonal_mass_modelM50C
+#print axioms MathGKM.Markov.top_template_modelM50C
+#print axioms MathGKM.Markov.source_middle_crossing_formulaM50C
+#print axioms MathGKM.Markov.middle_gain_crossing_degreeM50C
+#print axioms MathGKM.Markov.middle_correction_crossing_degreeM50C
+#print axioms MathGKM.Markov.source_middle_crossing_highM50C
+#print axioms MathGKM.Markov.source_triangle_templateM50C
+#print axioms MathGKM.Markov.source_triangle_modelM50C
+#print axioms MathGKM.Markov.source_triangle_verticalM50C
+#print axioms MathGKM.Markov.source_triangle_diagonalM50C
+#print axioms MathGKM.Markov.source_three_outsideM50C
+#print axioms MathGKM.Markov.source_zero_diagonalM50C
+#print axioms MathGKM.Markov.middle_iff_triangleM50C
+#print axioms MathGKM.Markov.root_iff_triangleM50C
+#print axioms MathGKM.Markov.path_triangle_verticalM50C
+#print axioms MathGKM.Markov.path_triangle_diagonalM50C
+#print axioms MathGKM.Markov.path_triangle_polygonM50C
+#print axioms MathGKM.Markov.source_high_column_verticalM50C
+#print axioms MathGKM.Markov.source_high_column_diagonalM50C
+#print axioms MathGKM.Markov.path_high_column_verticalM50C
+#print axioms MathGKM.Markov.path_high_column_diagonalM50C
+#print axioms MathGKM.Markov.source_small_valuesM50C
+#print axioms MathGKM.Markov.model_small_valuesM50C
+#print axioms MathGKM.Markov.source_mixed_vertical_negativeM50C
+#print axioms MathGKM.Markov.source_mixed_diagonal_negativeM50C
+#print axioms MathGKM.Markov.source_mixed_example_validM50C

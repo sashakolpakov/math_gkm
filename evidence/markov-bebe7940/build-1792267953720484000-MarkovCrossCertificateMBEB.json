@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovCrossCertificateMBEB.lean:28:54: error: unsolved goals\nn t : \u2115\ns r : Bool\nh\u271d\u00b2 : s = true\nh\u271d\u00b9 : t = 0\nh\u271d : \u00acr = true\n\u22a2 False\n/Users/sasha/math_gkm/research/MarkovCrossCertificateMBEB.lean:28:49: error: Application type mismatch: The argument\n  rfl\nhas type\n  ?m.129 = ?m.129\nbut is expected to have type\n  exprEvalM6C0 (\u2191n) 0 (PolyExprM6C0.c 1) = \u21910\nin the application\n  affine_expr_natMBEB (\u2191n) 0 1 2 1 0 (n + 2) (PolyExprM6C0.c 1) PolyExprM6C0.x rfl\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovCrossCertificateMBEB.lean:30:1: error: unsolved goals\ncase pos.false\nn t : \u2115\ns : Bool\nh\u271d\u00b3 : s = true\nh\u271d\u00b2 : \u00act = 0\nh\u271d\u00b9 : t = 1\nh\u271d : false = true\n\u22a2 exprEvalM6C0 (\u2191n) 0 (affineExprMBEB 2 3 2 (PolyExprM6C0.c 0) (PolyExprM6C0.x +\u2091 PolyExprM6C0.c 2)) =\n    \u2191(affineIntMBEB 2 3 2 0 (2 + n))\n\ncase pos.true\nn t : \u2115\ns : Bool\nh\u271d\u00b3 : s = true\nh\u271d\u00b2 : \u00act = 0\nh\u271d\u00b9 : t = 1\nh\u271d : true = true\n\u22a2 exprEvalM6C0 (\u2191n) 0 (affineExprMBEB 2 3 2 (PolyExprM6C0.c 0) (PolyExprM6C0.x +\u2091 PolyExprM6C0.c 2)) =\n    \u2191(affineIntMBEB 2 3 2 0 (2 + n))\n/Users/sasha/math_gkm/research/MarkovCrossCertificateMBEB.lean:23:85: error: unsolved goals\ncase neg\nn t : \u2115\ns r : Bool\nh\u271d\u00b3 : s = true\nh\u271d\u00b2 : \u00act = 0\nh\u271d\u00b9 : t = 1\nh\u271d : \u00acr = true\n\u22a2 4 * exprEvalM6C0 (\u2191n) 0 (affineExprMBEB 1 3 2 (PolyExprM6C0.c 0) (PolyExprM6C0.x +\u2091 PolyExprM6C0.c 2)) =\n    \u21914 * \u2191(affineIntMBEB 1 3 2 0 (n + 2))\n\ncase pos\nn t : \u2115\ns r : Bool\nh\u271d\u00b2 : \u00acs = true\nh\u271d\u00b9 : t = 0\nh\u271d : r = true\n\u22a2 4 * 2 * (\u2191n + 1) = \u21914 * \u2191\u21912 * \u2191(\u2191n + 1)\n\ncase neg\nn t : \u2115\ns r : Bool\nh\u271d\u00b2 : \u00acs = true\nh\u271d\u00b9 : t = 0\nh\u271d : \u00acr = true\n\u22a2 4 * 1 * (\u2191n + 1) = \u21914 * \u2191\u21911 * \u2191(\u2191n + 1)\n/Users/sasha/math_gkm/research/MarkovCrossCertificateMBEB.lean:37:39: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovCrossCertificateMBEB": "c3130058240ee487b53b142759c148bb0b0083c99ddf8f54a87fa0d216a7fd0e"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-bebe7940/MarkovCrossCertificateMBEB.olean",
+    "/Users/sasha/math_gkm/research/MarkovCrossCertificateMBEB.lean"
+  ],
+  "seconds": 28.375801958027296,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
