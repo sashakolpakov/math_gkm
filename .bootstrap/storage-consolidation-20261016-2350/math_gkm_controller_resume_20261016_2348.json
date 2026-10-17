@@ -1,0 +1,26 @@
+{
+  "kind": "supervisor operational resume; no mathematical intervention",
+  "recorded_utc": "2026-10-16T23:49:15.062418+00:00",
+  "old_pid": 932,
+  "old_pid_absent_ps_exit_code": 1,
+  "old_status_was_stale_running": true,
+  "error_log_mtime_utc": "2026-10-16T23:43:03.069459+00:00",
+  "error_log_sha256": "7b83a5ce80b1b8515b8e36001dae01d9ca3bce5fb26f8da4b4f17dba952cde11",
+  "error_log": "{\"error\": \"[Errno 28] No space left on device\"}\n{\"error\": \"[Errno 28] No space left on device: '/Users/sasha/math_gkm/.control/markov/state.next'\"}\n",
+  "stop_file_absent_before_resume": true,
+  "resume_command": "/opt/homebrew/bin/python3 -m machinery.controller resume --goal markov --worker-seconds 1800",
+  "resume_exit_code": 0,
+  "resume_started_unix": 1792194496.023277,
+  "new_status": {
+    "pid": 15718,
+    "status": "running",
+    "reason": "controller active",
+    "active_worker": "/Users/sasha/math_gkm/.control/markov/workers/000165",
+    "failures": 0,
+    "workers_completed": 165,
+    "last_activity": 1792194554.892381
+  },
+  "free_bytes": 3250585600,
+  "goal_or_research_source_changes": false,
+  "mathematical_guidance_supplied": false
+}
