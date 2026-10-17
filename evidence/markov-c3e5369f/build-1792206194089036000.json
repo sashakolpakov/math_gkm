@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovThirdRowFormulaMC3E.lean:52:1: error: unsolved goals\ncase true\nq : \u2115\nhq5 : 5 \u2264 q\nhq : 6 \u2264 q\n\u22a2 X ^ 2 * (1 + X) ^ (q - 6) * 32 + X ^ 3 * \u2191q * (1 + X) ^ (q - 6) * 28 + X ^ 3 * (1 + X) ^ (q - 6) * 60 +\n                          X ^ 4 * \u2191q * (1 + X) ^ (q - 6) * 60 +\n                        X ^ 4 * \u2191(q.choose 2) * (1 + X) ^ (q - 6) * 4 +\n                      X ^ 4 * \u2191((1 + q).choose 2) * (1 + X) ^ (q - 6) * 4 +\n                    X ^ 4 * (1 + X) ^ (q - 6) * 24 +\n                  X ^ 5 * \u2191q * (1 + X) ^ (q - 6) * 36 +\n                X ^ 5 * \u2191(q.choose 2) * (1 + X) ^ (q - 6) * 8 +\n              X ^ 5 * \u2191((1 + q).choose 2) * (1 + X) ^ (q - 6) * 8 -\n            X ^ 5 * (1 + X) ^ (q - 6) * 4 +\n          X ^ 6 * \u2191q * (1 + X) ^ (q - 6) * 4 +\n        X ^ 6 * \u2191(q.choose 2) * (1 + X) ^ (q - 6) * 4 +\n      X ^ 6 * \u2191((1 + q).choose 2) * (1 + X) ^ (q - 6) * 4 =\n    X ^ 2 * (1 + X) ^ (q - 6) * 32 + X ^ 3 * \u2191q * (1 + X) ^ (q - 6) * 16 +\n                                  X ^ 3 * \u2191(1 + q - 1) * (1 + X) ^ (q - 6) * 12 +\n                                X ^ 3 * (1 + X) ^ (q - 6) * 60 +\n                              X ^ 4 * \u2191q * (1 + X) ^ (q - 6) * 36 +\n                            X ^ 4 * \u2191(q.choose 2) * (1 + X) ^ (q - 6) * 4 +\n                          X ^ 4 * \u2191((1 + q).choose 2) * (1 + X) ^ (q - 6) * 4 +\n                        X ^ 4 * \u2191(1 + q - 1) * (1 + X) ^ (q - 6) * 24 +\n                      X ^ 4 * (1 + X) ^ (q - 6) * 24 +\n                    X ^ 5 * \u2191q * (1 + X) ^ (q - 6) * 24 +\n                  X ^ 5 * \u2191(q.choose 2) * (1 + X) ^ (q - 6) * 8 +\n                X ^ 5 * \u2191((1 + q).choose 2) * (1 + X) ^ (q - 6) * 8 +\n              X ^ 5 * \u2191(1 + q - 1) * (1 + X) ^ (q - 6) * 12 -\n            X ^ 5 * (1 + X) ^ (q - 6) * 4 +\n          X ^ 6 * \u2191q * (1 + X) ^ (q - 6) * 4 +\n        X ^ 6 * \u2191(q.choose 2) * (1 + X) ^ (q - 6) * 4 +\n      X ^ 6 * \u2191((1 + q).choose 2) * (1 + X) ^ (q - 6) * 4\n/Users/sasha/math_gkm/research/MarkovThirdRowFormulaMC3E.lean:46:42: warning: This simp argument is unused:\n  map_add\n\nHint: Omit it from the simp argument list.\n  simp only [Bool.false_eq_true, \u0332if_false, \u0332map_a\u0335d\u0335d\u0335,\u0335m\u0335a\u0335p\u0335_\u0335sub, \u0332map_mul, \u0332map_natCast, \u0332map_ofNat]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovThirdRowFormulaMC3E.lean:60:22: warning: This simp argument is unused:\n  Nat.cast_add\n\nHint: Omit it from the simp argument list.\n  simp only [pow_add, \u0332Nat.cast_a\u0335d\u0335d\u0335,\u0335N\u0335a\u0335t\u0335.\u0335c\u0335a\u0335s\u0335t\u0335_\u0335one, \u0332Nat.cast_sub (by omega : 1 \u2264 q), \u0332Nat.cast_one]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovThirdRowFormulaMC3E": "d7c41c51ac17e78ae5e1884bef8046e87f93a5717cb38b22d06c6ae8a93ec7f1"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-c3e5369f/MarkovThirdRowFormulaMC3E.olean",
+    "/Users/sasha/math_gkm/research/MarkovThirdRowFormulaMC3E.lean"
+  ],
+  "seconds": 8.089908249967266,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

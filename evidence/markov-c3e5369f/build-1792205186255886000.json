@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovSecondRowEquationMC3E.lean:25:46: warning: This simp argument is unused:\n  coeff_X_mul\n\nHint: Omit it from the simp argument list.\n  simp [\u0335f\u0335i\u0335b\u0335R\u0335a\u0335w\u0335M\u03359\u0335E\u03352\u0335,\u0335s\u0335h\u0335o\u0335w\u0335 \u03350\u0335\u2260\u0335n\u0335[\u0332f\u0332i\u0332b\u0332R\u0332a\u0332w\u0332M\u03329\u0332E\u03322\u0332,\u0332 \u0332s\u0332h\u0332o\u0332w\u0332 \u03320\u0332 \u0332\u2260\u0332 \u0332n\u0332 by o\u0335m\u0335e\u0335g\u0335a\u0335,\u0335c\u0335o\u0335e\u0335f\u0335f\u0335_\u0335X\u0335_\u0335m\u0335u\u0335l\u0335]\u0335o\u0332m\u0332e\u0332g\u0332a\u0332]\u0332\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/sasha/math_gkm/research/MarkovSecondRowEquationMC3E.lean:66:3: error: Type mismatch\n  Eq.symm (gain_rows_coeffMC3E q (i - 1) (j - (q + 1)) r)\nhas type\n  (if r = true then fun a b => addSRawM9E2 (fibRawM9E2 q) a b + fibRawM9E2 (q + 1) a b\n      else fun a b => shiftRawM9E2 0 1 (fibRawM9E2 q) a b + addSRawM9E2 (fibRawM9E2 (q + 1)) a b)\n      (i - 1) (j - (q + 1)) =\n    (gainRowsMC3E q r (j - (q + 1))).coeff (i - 1)\nbut is expected to have type\n  (fun i j => addSRawM9E2 (fibRawM9E2 q) i j + fibRawM9E2 (q + 1) i j) (i - 1) (j - (q + 1)) =\n    rowCoeffsMFFD (gainRowsMC3E q r) (i - 1) (j - (q + 1))\n/Users/sasha/math_gkm/research/MarkovSecondRowEquationMC3E.lean:67:3: error: Tactic `rfl` failed: The left-hand side\n  (fun i j => (if 0 \u2264 i \u2227 1 \u2264 j then fibRawM9E2 q (i - 0) (j - 1) else 0) + addSRawM9E2 (fibRawM9E2 (q + 1)) i j)\n    (i - 1) (j - (q + 1))\nis not definitionally equal to the right-hand side\n  rowCoeffsMFFD (gainRowsMC3E q r) (i - 1) (j - (q + 1))\n\ncase neg\nq j : \u2115\nr : Bool\nhj : 2 * j + 1 \u2264 sourceNME9C q r\ni : \u2115\nhs : rowCoeffsMFFD (rawRowMC3E (threePolyM9E2 q r)) = threeRawM9E2 q r\nh : 1 \u2264 i \u2227 q + 1 \u2264 j\nh\u271d : \u00acr = true\n\u22a2 (fun i j => (if 0 \u2264 i \u2227 1 \u2264 j then fibRawM9E2 q (i - 0) (j - 1) else 0) + addSRawM9E2 (fibRawM9E2 (q + 1)) i j)\n      (i - 1) (j - (q + 1)) =\n    rowCoeffsMFFD (gainRowsMC3E q r) (i - 1) (j - (q + 1))\n/Users/sasha/math_gkm/research/MarkovSecondRowEquationMC3E.lean:55:48: error: unsolved goals\ncase neg\nq j : \u2115\nr : Bool\nhj : 2 * j + 1 \u2264 sourceNME9C q r\ni : \u2115\nhs : rowCoeffsMFFD (rawRowMC3E (threePolyM9E2 q r)) = threeRawM9E2 q r\nh : \u00ac(1 \u2264 i \u2227 q + 1 \u2264 j)\n\u22a2 0 = 0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovSecondRowEquationMC3E": "29469361b154946caf65c871b65807eb7a81d264241dfa1f19dad5def09ced50"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-c3e5369f/MarkovSecondRowEquationMC3E.olean",
+    "/Users/sasha/math_gkm/research/MarkovSecondRowEquationMC3E.lean"
+  ],
+  "seconds": 12.830770166998263,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
