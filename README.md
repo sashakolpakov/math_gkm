@@ -67,8 +67,9 @@ The historical bootstrap checks are described in the construction/controller
 pages. With the supplied pinned dependencies, `python3 -m machinery.check`
 runs bounded construction checks, and `python3 evidence/markov/reproduce.py`
 reproduces the initial Markov experiments. Neither command validates the entire
-later campaign. Compiled `.olean` caches and `.lake` dependencies are
-intentionally untracked. A public clone needs the compatible pinned Lean/Mathlib
+later campaign. Ordinary working `.olean` caches and `.lake` dependencies are
+intentionally untracked. Explicitly sealed partial-evidence copies may be retained
+and carry only their recorded validation status. A public clone needs the compatible pinned Lean/Mathlib
 setup; retained commands also contain environment-specific library paths. There
 is no advertised one-command fresh rebuild of every later research result.
 Consult the recorded commands and import/validation scope for a particular result.
