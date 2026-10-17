@@ -1,27 +1,26 @@
-# Research status: audited snapshot through worker 184
+# Research status: audited snapshot through worker 186
 
-**Cutoff: closed worker 184, 17 October 2026. Full Markov Conjecture 6.3 remains open.**
+**Cutoff: closed worker 186, 17 October 2026. Full Markov Conjecture 6.3 remains open.**
 
-Every actual numerator-three source now has **raw horizontal log-concavity at
-all natural columns and every row satisfying `2*j+1 ≤ N`**, where `N` is its
-denominator. This includes zero coefficients, with no denominator bound or
-unproved auxiliary premise. The earlier lower rows, first three correction
-rows and exceptional row five remain proved. The earlier result for every
-numerator-two source still covers all three directions at all natural indices.
-Workers 182–184 additionally establish strict upper-row edge inequalities,
-complete upper depths five and six, and an explicit denominator threshold for
-all columns at each fixed upper depth. The threshold depends on depth; no
-uniform upper-sector or full-root conclusion follows. The Agoh exercise
-remains complete.
+Every actual numerator-three source has **raw horizontal log-concavity at
+every natural starting column in row `j=N+2−t` whenever `t≥5` and
+`6*t≤N+16`**, where `N` is its denominator. This explicit linear theorem
+includes zero coefficients and has no extra sector, formula or positivity
+premise. It supplements the proved lower half-plane `2*j+1≤N`, earlier lower
+and correction rows, row five, and upper depths five through eight in their
+stated sector. Every numerator-two source still has all three directions at
+all natural indices. The exact remaining numerator-three and numerator-at-least-four
+obligations are open; the Agoh exercise remains complete.
 
 This page summarizes closed, independently audited records. It is not a live
 controller report, a fresh proof run or a claim of mathematical novelty. The
-[worker 184 audit](.bootstrap/independent-controller-audit/markov_worker_000184_monitoring_audit.md)
+[worker 186 audit](.bootstrap/independent-controller-audit/markov_worker_000186_monitoring_audit.md)
 gives the current source and validation qualifications. The
-[worker 181 audit](.bootstrap/independent-controller-audit/markov_worker_000181_monitoring_audit.md)
-retains the lower-half-plane result. The
-[worker 167 audit](.bootstrap/independent-controller-audit/markov_worker_000167_monitoring_audit.md)
-retains the earlier lower-row certificate review, and the
+[worker 185 audit](.bootstrap/independent-controller-audit/markov_worker_000185_monitoring_audit.md)
+retains the depth-five-through-eight result, and the
+[worker 184 audit](.bootstrap/independent-controller-audit/markov_worker_000184_monitoring_audit.md)
+retains its earlier coefficient-derived threshold and later recovery of the
+interrupted worker 183 modules. The
 [status page through worker 158](docs/RESEARCH_STATUS.md) remains a historical
 snapshot. The [mission](MISSION.md), [design](docs/DESIGN.md) and pinned
 [Markov contract](contracts/markov-goal.json) are unchanged.
@@ -39,14 +38,15 @@ coefficient statements below retain zeros.
 
 | Source family or region | Established scope | Principal source declaration |
 | --- | --- | --- |
+| Every numerator-three source, linear upper-row bound | Horizontal inequality at every natural start in row `j=N+2−t`, for `t≥5` and `6*t≤N+16`, including zeros | `source_top_path_linearMCA9` in [LinearSource](research/MarkovTopLinearSourceMCA9.lean) |
+| Every numerator-three source, strict upper-row columns | Strict inequality at start `c≥3` when `5≤t≤q+2`, `c+1≤t` and `6*t≤N+3*c+4`; the three-point polygon condition additionally needs `c+2≤t` | `source_top_linear_columnMCA9` and `source_top_linear_polygonMCA9` in [LinearSource](research/MarkovTopLinearSourceMCA9.lean) |
 | Every numerator-two source | All three raw-coefficient inequalities at every natural pair of indices | `source_two_globalM8F7` in [TwoComplete](research/MarkovTwoCompleteM8F7.lean) |
-| Every numerator-three source, lower half-plane | Horizontal inequality for every natural `i,j` with `2*j+1 ≤ N` | `source_lower_half_pathM5BF` in [HalfPlane](research/MarkovHalfPlaneM5BF.lean) |
-| Every numerator-three source, earlier lower and correction rows | Horizontal inequality at every natural column for `j ≤ q+3`, in the exhaustive source parametrization below | Inherited lower-and-three-correction result used by [HalfPlane](research/MarkovHalfPlaneM5BF.lean); the original lower-row declaration is `source_lower_horizontal_pathM7A3` in [LowerClosed](research/MarkovLowerClosedM7A3.lean) |
+| Every numerator-three source, lower half-plane | Horizontal inequality for every natural `i,j` with `2*j+1≤N` | `source_lower_half_pathM5BF` in [HalfPlane](research/MarkovHalfPlaneM5BF.lean) |
+| Every numerator-three source, earlier lower and correction rows | Horizontal inequality at every natural column for `j≤q+3`, in the exhaustive source parametrization below | Inherited lower-and-three-correction result used by [HalfPlane](research/MarkovHalfPlaneM5BF.lean); the original lower-row declaration is `source_lower_horizontal_pathM7A3` in [LowerClosed](research/MarkovLowerClosedM7A3.lean) |
 | Every numerator-three source, row five | Horizontal inequality at `j=5`, including parameters for which it lies outside the half-plane | `source_three_horizontal_fifthMFFD` in [FifthSource](research/MarkovFifthSourceMFFD.lean) |
-| Every numerator-three source, upper-sector edges | Strict horizontal inequalities at starts `1`, `2`, `3` and `t−2`, in row `j=N+2−t` for `5≤t≤q+2` | [First edge](research/MarkovTopEdgeSourceMB3E.lean), [second edge](research/MarkovTopSecondSourceM55C.lean), and `source_top_third_strictMEB6` / `source_top_last_strictMEB6` in [TwoEdges](research/MarkovTopTwoEdgesMEB6.lean) |
-| Every numerator-three source, upper depths five and six | Horizontal inequality at every natural start for `5≤t≤6` and `t≤q+2`, including zeros | `source_top_small_depthsMEB6` in [Frontier](research/MarkovTopFrontierMEB6.lean) |
-| Every fixed upper depth `t≥5` | An explicit `B(t)` gives horizontal inequality at every natural start for every actual numerator-three path with `N≥B(t)` | `source_top_path_eventualMEB6` in [SourceRegion](research/MarkovTopSourceRegionMEB6.lean) |
-| Previously discharged endpoints and numerator families | Preserved by the inherited exact root reductions | [TwoComplete](research/MarkovTwoCompleteM8F7.lean), [ThreeSource](research/MarkovThreeSourceM9E2.lean) and the [current root equivalence](research/MarkovTopFrontierMEB6.lean) |
+| Every numerator-three source, upper depths five through eight | Horizontal inequality at every natural start for `5≤t≤8` and `t≤q+2`, including zeros | `source_top_depths_through_eightMDCB` in [TailResidual](research/MarkovTopTailResidualMDCB.lean) |
+| Every fixed upper depth `t≥5`, earlier coefficient bound | An explicit depth-dependent `B(t)` gives horizontal inequality at every natural start for every actual numerator-three path with `N≥B(t)` | `source_top_path_eventualMEB6` in [SourceRegion](research/MarkovTopSourceRegionMEB6.lean) |
+| Previously discharged endpoints and numerator families | Preserved by the inherited exact root reductions | [TwoComplete](research/MarkovTwoCompleteM8F7.lean), [ThreeSource](research/MarkovThreeSourceM9E2.lean) and the [current root equivalence](research/MarkovTopLinearResidualMCA9.lean) |
 
 ### The numerator-three lower-half-plane theorem
 
@@ -82,111 +82,109 @@ The numerator-two result is likewise uniform in its source parameter.
 that earlier assembly. Later workers reuse its inherited dependencies; the
 new selected checks do not revalidate every old body from source.
 
-## Upper rows through worker 184
+## The explicit linear upper-row theorem
 
-Use the same exhaustive actual-source parametrization `q≥1`, `r : Bool`, with
-`N=3q+1` for `r=true` and `N=3q+2` for `r=false`. For a natural depth
-`5≤t≤q+2`, set `j=N+2−t`. The whole row has positive coefficients exactly at
-columns `1..t`; column zero and the right tail are zero. The corresponding
-polygon condition is exactly `1≤i≤t`. The source equality and support are
-proved in [TopTemplate](research/MarkovTopTemplateMB3E.lean) and
-[TopSupport](research/MarkovTopSupportMB3E.lean), with the polygon equivalence
-in [SourceRegion](research/MarkovTopSourceRegionMEB6.lean).
-
-Worker 184 proves the two strict raw inequalities
+For **every actual Farey path** whose middle numerator is `a=3`, every natural
+depth `t≥5` with `6*t≤N+16`, and every `i : ℕ`, the declaration
+[`source_top_path_linearMCA9`](research/MarkovTopLinearSourceMCA9.lean) proves
 
 $$
-\begin{aligned}
-A(3,j)A(5,j)&<A(4,j)^2,\\
-A(t-2,j)A(t,j)&<A(t-1,j)^2.
-\end{aligned}
+A(i,N+2-t)\,A(i+2,N+2-t)\le A(i+1,N+2-t)^2.
 $$
 
-These are starts `3` and `t−2`; the latter is the last three nonzero positions.
-They have no empirical formula or unproved sign premise. Both residues and
-every actual source in the stated sector are covered, and all six displayed
-points satisfy the original polygon guards. The sector is empty for `q=1,2`.
-At `t=5` the two triples coincide. Together with the earlier strict starts
-`1` and `2` and explicit zero handling, they give **every natural starting
-column at depths five and six**, subject to `t≤q+2`.
+The path theorem has no additional `t≤q+2` premise: it derives that sector
+condition from the actual-source classification and the linear bound. The
+family-level theorem `source_top_linear_allMCA9` states the sector explicitly.
+Its source adapter also discharges the generic template's conditions
+`2*t≤N` and `3*t≤N+5`. There is no unproved moment, gap, formula or
+positive-coefficient assumption. Column zero, boundary zeros and arbitrarily
+far zero tails remain in the conclusion. No polygon premise is imposed on
+this all-natural-index inequality.
 
-The first edge was checked in
-[worker 182](.bootstrap/independent-controller-audit/markov_worker_000182_monitoring_audit.md).
-The second edge was ordinarily compiled in the interrupted
-[worker 183](.bootstrap/independent-controller-audit/markov_worker_000183_monitoring_audit.md)
-and receives later joint replay and axiom-print coverage in worker 184. The
-historical status distinction is retained below.
+### Strict columns and the polygon boundary
 
-### An explicit bound at each fixed depth
+In the exhaustive parametrization `q≥1`, `r : Bool`, with `N=3q+1` for
+`r=true` and `N=3q+2` for `r=false`, fix `5≤t≤q+2` and `j=N+2−t`.
+Then `source_top_linear_columnMCA9` proves
 
-The declaration `source_top_path_eventualMEB6` proves
+$$
+A(c,j)A(c+2,j)<A(c+1,j)^2
+\quad\text{if }c\ge3,\ c+1\le t,\ 6t\le N+3c+4.
+$$
 
-```text
-∀ t≥5, ∃ B(t), ∀ actual paths with numerator a=3 and denominator N≥B(t),
-  ∀ i : ℕ, A(i,N+2−t) A(i+2,N+2−t) ≤ A(i+1,N+2−t)^2.
-```
+The separate `source_top_linear_polygonMCA9` places **all three points** in
+the original polygon when `1≤c` and **`c+2≤t`**. Thus the strict theorem's
+allowed endpoint `c=t−1` is a zero-tail algebraic triple, outside that
+three-point polygon range. It is not an extra polygon-valid root triple.
+The row's positive coefficients occupy exactly columns `1..t`; the source
+identity and support are in [TopTemplate](research/MarkovTopTemplateMB3E.lean)
+and [TopSupport](research/MarkovTopSupportMB3E.lean).
 
-The bound is explicit and derived from polynomial coefficients. For a rational
-polynomial `P`, define
+Earlier strict edge results remain available at starts `1`, `2`, `3` and
+`t−2` throughout `5≤t≤q+2`. Worker 185 adds start `t−3` for `6≤t≤q+2`
+and start `t−4` for `7≤t≤q+2`. These are
+`source_top_tail_3_strictMDCB` and `source_top_tail_4_strictMDCB` in
+[TailResidual](research/MarkovTopTailResidualMDCB.lean). Together with the
+earlier edges and exact zero handling, `source_top_depths_through_eightMDCB`
+proves **every natural starting column at depths five through eight**, subject
+to `t≤q+2`. This result is retained without imposing the new linear cutoff.
 
-```text
-negativeMass(P) = Σ(k < natDegree(P)) max(0, −coeff(P,k))
-positiveThreshold(P) = Nat.ceil(negativeMass(P) / leadingCoeff(P)) + 1.
-```
+### Why the bound is universal
 
-For positive leading coefficient, every natural argument at least this threshold
-has positive evaluation. This general theorem is
-`polynomial_positive_afterMEB6` in
-[PolynomialBound](research/MarkovPolynomialBoundMEB6.lean).
+Worker 186 combines exact beta moment identities with a finite weighted
+covariance comparison. Symmetric weights and inward-ordered functions give
+the comparison without requiring each function to be nonnegative. The
+endpoint-sensitive weights and zero cases are retained. Exact regrouping
+then relates the auxiliary sums to the inherited kernel mass, using positive
+clearing factors rather than division by raw coefficients. See
+[BetaMean](research/MarkovTopBetaMeanMCA9.lean),
+[RadialCompare](research/MarkovTopRadialCompareMCA9.lean),
+[BetaComparison](research/MarkovTopBetaComparisonMCA9.lean),
+[BetaGrouping](research/MarkovTopBetaGroupingMCA9.lean) and
+[BetaTransport](research/MarkovTopBetaTransportMCA9.lean).
 
-Let `Mass(d,T,i)` be the inherited finite kernel mass, identified with the
-template coefficient at column `i+3`, depth `T+3` and denominator parameter
-`2*(T+3)+d`. Its rational gap polynomial is
+The resulting whole-mass-row criterion is `T≥2` and `4*T≤d+4`.
+With `T=t−3` and `d=N−2*t`, the proved source transport yields precisely
+`6*t≤N+16`; the first column is handled separately by its inherited strict
+theorem. This is a universal finite-sum argument, not a conclusion drawn from
+the saved source scans or auxiliary experiments.
 
-```text
-G(T,i)(d) = Mass(d,T,i+1)^2 − Mass(d,T,i) Mass(d,T,i+2)
-gapThreshold(T,i) = positiveThreshold(G(T,i))
-rowThreshold(T) = sup { gapThreshold(T,i) | i < T }
-sourceThreshold(t) = 2*t + rowThreshold(t−3) + 1
-B(t) = 3*sourceThreshold(t) + 2.
-```
-
-The finite supremum is the natural-number `Finset.sup`, with empty value zero.
-The gap's leading coefficient is proved positive when `i+1≤T`; the remaining
-indices use exact zero tails. See
-[GapPolynomial](research/MarkovTopGapPolynomialMEB6.lean),
+Worker 184's earlier fixed-depth theorem remains historical context. Its
+coefficient-derived bound is
+`B(t)=3*(2*t+rowThreshold(t−3)+1)+2`, where `rowThreshold` is the finite
+supremum of the gap-polynomial positivity thresholds. The definitions and
+proof are in [PolynomialBound](research/MarkovPolynomialBoundMEB6.lean),
 [FiniteStrip](research/MarkovTopFiniteStripMEB6.lean) and
-[SourceRegion](research/MarkovTopSourceRegionMEB6.lean) for the definitions and
-source transport. The argument uses the recovered leading-coefficient theorem
-as a premise of a new polynomial bound; leading-coefficient positivity alone
-was not an eventual-source theorem in worker 183.
+[SourceRegion](research/MarkovTopSourceRegionMEB6.lean). It supplies a separate
+bound for each fixed depth. The new linear theorem gives the explicit joint
+condition on `N` and `t` stated above; it does not provide one fixed denominator
+cutoff covering every depth. No formal strict-set-difference witness against
+every earlier sufficient criterion is claimed here.
 
-All natural starts and zero coefficients remain in the conclusion. This is
-**a separate bound for each fixed depth**, not one denominator cutoff covering
-all depths. No numerical threshold was evaluated by the audit, and no uniform
-depth bound or full upper-sector log-concavity is claimed.
+### The unresolved scalar strip and sufficient group condition
 
-### The remaining finite-by-depth condition is still open
-
-The two edge proofs use exact symbolic identities: one certificate has 99
-positive integer terms and the other 70. Their identities and positivity
-arguments are covered by the recorded Lean compilation/replay/axiom chain.
-Finite polynomial and source scans remain separate evidence and do not prove
-the unresolved universal sign condition.
-
-The proved `top_moment_iff_inner_stripMEB6` in
-[TwoEdges](research/MarkovTopTwoEdgesMEB6.lean) identifies the older upper-sector
-moment condition with `TopInnerFiniteStripMEB6`. It requires, for all natural
-`T,i,d`,
+The proved `top_moment_iff_linear_stripMCA9` in
+[LinearResidual](research/MarkovTopLinearResidualMCA9.lean) identifies the
+inherited upper-sector moment condition with `TopLinearStripMCA9`:
 
 ```text
-1≤i, i+3≤T, T≤d+2, d<gapThreshold(T,i)  ⇒  0≤G(T,i)(d).
+∀ d i r : ℕ,
+  1≤i, 5≤r, i+r≤d+2, d+1<i+4*r  ⇒  0≤tailGapMDCB i d r.
 ```
 
-For each fixed `T`, this leaves a finite index set. **Depth `T` is still
-universally unbounded, and this predicate is unproved.** It is an exact
-reduction of the upper-sector auxiliary condition, not a completed finite
-verification or a replacement for the full root residual.
+This predicate is **unproved**. For fixed `i,r`, its allowed `d` range is
+bounded, but `i` and `r` remain universally unbounded. The equivalence is not
+a completed finite verification or a proof of the full root.
+
+The unproved `CentralBetaMCA9` in
+[CentralGroups](research/MarkovTopCentralGroupsMCA9.lean) asks for
+nonnegative `betaGroupMCA9 d i r m` under those same guards, with
+`r≤m` and `m+2≤2*r`. It is equivalent to the auxiliary group condition
+`UpperHalfBetaMCA9`, and is **sufficient** for the scalar condition and all
+upper-sector source rows. It is not asserted equivalent to raw log-concavity
+or the root: signed groups can cancel in their sum. The antidiagonals used to
+group this auxiliary beta double sum do **not** give new raw diagonal-direction
+coverage. The new results add no unconditional raw vertical or diagonal region.
 
 ## Earlier half-plane mechanism: worker 181
 
@@ -286,39 +284,38 @@ for the experimental ranges and their limits.
 
 ## The exact remaining conjecture
 
-The proved declaration `root_iff_frontierMEB6` states
+The proved declaration `root_iff_frontierMCA9` states
 
 ```text
-Conjecture63 ↔ ThreeFrontierMEB6 ∧ OtherFourM9E2
+Conjecture63 ↔ ThreeFrontierMCA9 ∧ OtherFourM9E2
 ```
 
-It is in [Frontier](research/MarkovTopFrontierMEB6.lean).
+It is in [LinearResidual](research/MarkovTopLinearResidualMCA9.lean).
 **Both predicates on the right remain unproved.** The equivalence is a proved
 reduction, not a proof of either remaining predicate.
 
-`ThreeFrontierMEB6` quantifies over `q≥1`, both denominator residues and all
+`ThreeFrontierMCA9` quantifies over `q≥1`, both denominator residues and all
 natural indices. Its exact obligations are below; `N=sourceN(q,r)` and the
 conditions refer to the displayed starting indices.
 
 | Direction and triple | Remaining region |
 | --- | --- |
-| Horizontal: `(i,j), (i+1,j), (i+2,j)` | `q+3<j`, `N<2*j+1`, `j≠5`, and outside `TopClosedRegionMEB6` |
+| Horizontal: `(i,j), (i+1,j), (i+2,j)` | `q+3<j`, `N<2*j+1`, `j≠5`, and outside `TopClosedRegionMCA9` |
 | Vertical: `(i,j), (i,j+1), (i,j+2)` | Outside the union of `((i=3 or i=4) and j+1≤q)` and `(5≤i≤8 and j+2≤q)` |
 | Diagonal: `(i,j+2), (i+1,j+1), (i+2,j)` | Outside `3≤i≤6 and j+2≤q` |
 
-`TopClosedRegionMEB6` is the exact union of these proved upper-row cases,
-always with some `t` satisfying `5≤t≤q+2` and `j=N+2−t`:
+`TopClosedRegionMCA9` is exactly the inherited `TopClosedRegionMDCB` union
+the following cases, with some `t` satisfying `5≤t≤q+2` and `j=N+2−t`:
 
-- The inherited finished region: `i≤2` or `t<i+2`, including zero right endpoints.
-- Every natural start when `rowThreshold(t−3)≤N−2*t`.
-- The two new starts `i=3` or `i+2=t`.
+- Every natural start when `6*t≤N+16`.
+- Starts with `3≤i`, `i+1≤t` and `6*t≤N+3*i+4`.
 
-The denominator-threshold theorem above supplies a sufficient explicit bound
-for the second case; the residual uses the stated less coarse row threshold.
-The already proved horizontal region also includes the lower half-plane, earlier lower
-and three correction rows, and row five. The vertical and diagonal regions
-are unchanged: their complementary bands were already discharged, so it would
-be inaccurate to describe every vertical or diagonal case as still open.
+The inherited region retains the earlier finished columns, coefficient-derived
+row thresholds and strict edge/tail results, and proves the depth-five-through-eight
+rows described above. The already proved horizontal region also includes the
+lower half-plane, earlier lower and three correction rows, and row five.
+The vertical and diagonal regions are unchanged: their complementary bands
+were already discharged, so not every vertical or diagonal case is still open.
 [`OtherFourM9E2`](research/MarkovThreeSourceM9E2.lean) still requires all three
 directions (`GlobalLC18`) for every actual generated source with numerator
 `a≥4`.
@@ -327,7 +324,8 @@ The original root still includes its endpoints. **Those endpoints and the
 earlier discharged numerator families are already handled by inherited
 results; they are not additional open conjuncts.** The residual is precisely
 the stated numerator-three regions together with the sources of numerator at
-least four. Workers 182–184 add no unconditional vertical or diagonal region.
+least four. The auxiliary scalar-strip equivalence and sufficient central-group
+condition do not replace these two root obligations.
 
 The earlier packed certificate and smoothed lower-row result retain their
 own domains. In particular,
@@ -339,23 +337,28 @@ correction-row representation alone was not such a proof.
 
 ## Validation and inherited limits
 
-The final worker 184 selection consists of **21 mathematical modules and
-94 theorem closures**, with 46 definitions: **eleven new modules contribute
-40 theorems; ten unchanged worker 183 modules contribute 54**. Every selected
-final source matches a retained successful compilation and the final joint
-replay source map. All 94 theorem names are explicitly printed in the axiom
-audit. The printed sets contain only `propext`, `Classical.choice` and
-`Quot.sound` (two omit `Classical.choice`).
+Worker 186's final selection has **twelve mathematical modules, 73 theorem
+closures and 20 definitions**. The first recorded joint stage covers seven
+modules, 45 theorems and 14 definitions; the final stage covers all twelve.
+Every selected final source matches its retained successful compilation and
+final replay source map. The two stages produce 118 axiom-print rows covering
+73 distinct theorem names. In the final stage, 71 print `propext`,
+`Classical.choice` and `Quot.sound`; `beta_scalar_radialMCA9` and
+`beta_scalar_symmetricMCA9` omit `Classical.choice`.
 
-The replay reports 140 guarded mathematical constants, matching 94 theorems
-and 46 definitions. Its actual guard covers collected mathematical names with
-either suffix `M55C` or `MEB6`; the receipt's stale prose mentions only `M55C`.
-This is not a claim that every differently named generated or private constant
-received a separate guard or axiom print. Twenty-nine compiler attempts comprise
-22 successes, including the Audit, and seven return-code-1 failures; none timed
-out. All successful snapshots match final sources. The first TailClosed attempt
-failed on a dependency still compiling; its unchanged retry succeeded later.
-Rejected attempts do not receive proof credit.
+The final replay reports 93 guarded mathematical constants, matching the
+theorem/definition count. Its extra absence and unsafe/partial guard applies
+to every collected `MathGKM.Markov` name ending `MCA9`. Ordinary replay still
+handles the collected selected constants; the suffix guard does not establish
+separate guard or axiom-print coverage for every generated/private name.
+The 22 compiler attempts comprise twelve successful mathematical builds,
+two successful Audit builds and eight return-code-1 failures, with no timeout.
+All successful snapshots match final sources. One rejected BetaMean version
+required a definition-level correction from implicit `m−k` to explicit
+`((m−k:ℕ):ℤ)`; no equivalence to that rejected definition is asserted.
+WeightedBetaMean's rejected-to-final change adds `maxRecDepth 8000`.
+The other six rejected versions have proof edits. Rejected attempts receive
+no accepted proof credit.
 
 The [worker 183 audit](.bootstrap/independent-controller-audit/markov_worker_000183_monitoring_audit.md)
 remains a closed interrupted attempt with `uncertain_effects`, a null report,
@@ -363,22 +366,23 @@ no receipt and no recorded replay or axiom prints. Its ten final modules had
 ordinary successful compilations only. Separate retention preserved missing
 text and nine ordinary binary copies, while the original partial archive,
 including its zero-byte object, remained unchanged. **Worker 184 later rebuilt
-those ten unchanged sources and jointly replayed and printed their closures.**
-This later recovery does not rewrite worker 183's outcome, archive or audit
-windows. An Audit-named file that was only opaque late evidence for worker 183
-is attributed through worker 184's own closed records, not through its suffix.
+those ten unchanged sources and jointly replayed and printed their 54 closures.**
+That recovery formed part of its 21-module/94-theorem selection: eleven new
+modules contributed 40 theorems. It does not rewrite worker 183's outcome,
+archive or audit windows. Worker 186 imports nine of those recovered modules,
+with `MarkovTopObstructionsM55C` outside the current graph; it does not perform
+a new recovery of them.
 
-The 2,797 inherited project source/object pairs exclude the ten recovered
-modules, which are selected targets in worker 184. They include the historical
-**212 worker 121 compiled-but-unreplayed modules**, including their
-**195-module subset**. The separate **nineteen-module accepted set** is a
-distinct historical group. Twenty project-dependent selected endpoints import
-these groups; the general PolynomialBound endpoint has no inherited project
-module. Importing old bodies does not recover that backlog. The seven worker
-166 prefixes that compiled and printed but did not replay remain **outside the
-current selected dependency graph** and receive no retroactive credit.
-Worker 166's host completed successfully; its large combined replay was the
-operation that timed out.
+The current graph has 2,837 modules: twelve selected and **2,825 inherited
+source/object pairs**, including eight of worker 185's nine selected modules.
+`MarkovTopTailPolynomialMDCB` is absent. Every current selected endpoint imports
+the historical **212 worker 121 compiled-but-unreplayed modules**, including
+their **195-module subset**, and the separate **nineteen-module accepted set**.
+These are distinct historical groups, not newly replayed bodies. The seven
+worker 166 prefixes that compiled and printed but did not replay remain
+**outside the current selected dependency graph** and receive no retroactive
+credit. Worker 166's host completed successfully; its large combined replay
+was the operation that timed out.
 
 WindowLC retains its historical empty-checker and two-print boundary; Abel
 retains its distinct source/object and two-print boundary. Worker 157's recovery
@@ -386,33 +390,45 @@ of twelve final worker 156 modules remains separate from worker 156's original
 timeout and null-report history. Worker 171 retains its failed-report host
 outcome despite later preservation and reconciliation. The inherited worker
 180 source-edit overlap and corrected natural-subtraction statement keep their
-recorded qualifications. The [current method review](.bootstrap/independent-controller-audit/markov_worker_000184_replay_method.md)
+recorded qualifications. The [current method review](.bootstrap/independent-controller-audit/markov_worker_000186_replay_method.md)
 records these boundaries.
 
-These are **recorded checks of the selected new and recovered modules**, not a
-fresh build and replay of the entire campaign. Compiler snapshots precede
-compilation of live paths, and receipts do not attest an object-output digest
-at completion. Later archive/current hashes are bounded observations. Ordinary
-compiled-import trust remains relevant; no fresh whole-source rebuild of
-inherited project or library bodies is claimed. The independent audit itself
-was static and did not rerun Lean, replay, experiments or generators. The final
-third-gap generator was edited after its recorded invocation, so its final hash
-does not authenticate that earlier script version; final generated source and
-certificate bindings are checked separately.
+These are **recorded checks of the selected worker 186 modules**, not a fresh
+build and replay of the entire campaign. Compiler snapshots precede compilation
+of live paths, and receipts do not attest an object-output digest at completion.
+Later archive/current hashes are bounded observations. Ordinary compiled-import
+trust remains relevant; no fresh whole-source rebuild of inherited project or
+library bodies is claimed. The independent audit was static and did not rerun
+Lean, replay, experiments or generators. The initial finish wrapper and
+overwritten first-stage validation record are not separately archived; retained
+replay/Audit records and completed outputs bind that stage.
 
-The worker 184 manifest has 139 entries: 129 archived entries plus ten unchanged
-recovered source paths already preserved by worker 183. Two further archived
-administrative files are outside the manifest. Three unindexed Python caches
-are separately retained as opaque bytes. This preservation adds no proof credit,
-source-version or producing-process attribution and does not extend older
-observation windows.
+The weighted-mean generator explicitly calls the symbolic routine after import;
+the import alone does not rerun it. The generator was edited after its recorded
+invocation, so its final hash does not authenticate invocation-time script
+bytes. Rejected and final generated Lean snapshots are retained separately.
+The accepted 176-term positive-literal identity and its sign proof are covered
+by the recorded Lean checks. Saved experiments, unsuccessful auxiliary sign
+tests and earlier certificate shifts remain separate evidence; they do not
+establish or refute the universal raw-source result by themselves.
+
+The worker 186 manifest has 115 entries, all in the 117-file archive; the two
+additional archived files are administrative. The initial exact current
+inventory has 121 paths, including four unindexed opaque caches retained
+separately. The closing inventory finds 122 paths with the original 121
+unchanged. Its one additional cache, `stein_symbolic_ca9709f2.cpython-314.pyc`,
+is retained in a separately authorized one-path observation after the original
+hash window. The late cache's name, discovery and metadata establish neither
+its producing process nor creation time, source version or mathematical
+acceptance. This retention does not extend or replace either original audit
+window and adds no validation credit.
 
 The principal current evidence links are:
 
-- [Independent monitoring audit](.bootstrap/independent-controller-audit/markov_worker_000184_monitoring_audit.md), including exact source scope and finite-experiment limits.
-- [Validation review](.bootstrap/independent-controller-audit/markov_worker_000184_validation_audit.md) and [method/import review](.bootstrap/independent-controller-audit/markov_worker_000184_replay_method.md).
-- [Source and hash inventory](.bootstrap/independent-controller-audit/markov_worker_000184_mathematical_source_hashes.json) and [sealed audit integrity record](.bootstrap/independent-controller-audit/markov_worker_000184_audit_integrity.json).
-- [Worker validation record](evidence/markov-eb6a9001/validation.json), [joint replay](evidence/markov-eb6a9001/replay-1792226814467883000.json) and [axiom audit](evidence/markov-eb6a9001/axioms-1792226830853968000.json).
+- [Independent monitoring audit](.bootstrap/independent-controller-audit/markov_worker_000186_monitoring_audit.md), including exact source scope and finite-experiment limits.
+- [Validation review](.bootstrap/independent-controller-audit/markov_worker_000186_validation_audit.md) and [method/import review](.bootstrap/independent-controller-audit/markov_worker_000186_replay_method.md).
+- [Source and hash inventory](.bootstrap/independent-controller-audit/markov_worker_000186_mathematical_source_hashes.json) and [sealed audit integrity record](.bootstrap/independent-controller-audit/markov_worker_000186_audit_integrity.json).
+- [Worker validation record](evidence/markov-ca9709f2/validation.json), [final joint replay](evidence/markov-ca9709f2/replay-1792230612754560000.json) and [final axiom audit](evidence/markov-ca9709f2/axioms-1792230636010725000.json).
 
 The [worker 181 audit](.bootstrap/independent-controller-audit/markov_worker_000181_monitoring_audit.md)
 retains its eight-module/39-closure half-plane checks. The earlier
