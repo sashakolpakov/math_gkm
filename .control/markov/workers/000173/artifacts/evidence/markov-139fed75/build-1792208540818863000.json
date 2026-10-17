@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBandLinearM139.lean:18:13: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovBandLinearM139.lean:36:8: error: unsolved goals\ncase zero.false\nq : \u2115\nhq : 2 \u2264 q\nhn : 2 * (q + 0 + 1) + 1 \u2264 sourceNME9C q false\n\u22a2 Polynomial.coeff 1 1 = 0\n/Users/sasha/math_gkm/research/MarkovBandLinearM139.lean:45:5: error: ring failed, ring expressions not equal\nq : \u2115\nhq : 2 \u2264 q\nk : \u2115\nhqk : 2 * (k + 1) + 1 \u2264 q\nh0 : 2 * (fibBandM139 q k).coeff 1 = \u2191k * (\u2191k + 1) * (\u2191q - \u2191k + 1)\nhn : 2 * (q + (k + 1) + 1) + 1 \u2264 sourceNME9C q false\nh1 : 2 * (fibBandM139 q (k + 1)).coeff 1 = (\u2191k + 1) * (\u2191k + 1 + 1) * (\u2191q - (\u2191k + 1) + 1)\nh2 : 2 * (fibBandM139 (q + 1) k).coeff 1 = \u2191k * (\u2191k + 1) * (\u2191q + 1 - \u2191k + 1)\nh3 : 2 * (fibBandM139 (q + 1) (k + 1)).coeff 1 = (\u2191k + 1) * (\u2191k + 1 + 1) * (\u2191q + 1 - (\u2191k + 1) + 1)\n\u22a2 Polynomial.coeff 1 1 * 2 + Polynomial.coeff 1 1 * \u2191k * 2 = 0\n/Users/sasha/math_gkm/research/MarkovBandLinearM139.lean:46:5: error: ring failed, ring expressions not equal\nq : \u2115\nhq : 2 \u2264 q\nk : \u2115\nhqk : 2 * (k + 1) + 1 \u2264 q\nh0 : 2 * (fibBandM139 q k).coeff 1 = \u2191k * (\u2191k + 1) * (\u2191q - \u2191k + 1)\nhn : 2 * (q + (k + 1) + 1) + 1 \u2264 sourceNME9C q true\nh1 : 2 * (fibBandM139 q (k + 1)).coeff 1 = (\u2191k + 1) * (\u2191k + 1 + 1) * (\u2191q - (\u2191k + 1) + 1)\nh2 : 2 * (fibBandM139 (q + 1) k).coeff 1 = \u2191k * (\u2191k + 1) * (\u2191q + 1 - \u2191k + 1)\nh3 : 2 * (fibBandM139 (q + 1) (k + 1)).coeff 1 = (\u2191k + 1) * (\u2191k + 1 + 1) * (\u2191q + 1 - (\u2191k + 1) + 1)\n\u22a2 Polynomial.coeff 1 1 * 2 + Polynomial.coeff 1 1 * \u2191k * 2 = 0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBandLinearM139": "4fe400bdb8435f3df1f06da28509368f855ce4e0bba69c2357add309f369bf43"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-139fed75/MarkovBandLinearM139.olean",
+    "/Users/sasha/math_gkm/research/MarkovBandLinearM139.lean"
+  ],
+  "seconds": 9.41603716701502,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

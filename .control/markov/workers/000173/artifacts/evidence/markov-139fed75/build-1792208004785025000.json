@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovFibBandM139.lean:43:62: error: unexpected token ')'; expected term\n/Users/sasha/math_gkm/research/MarkovFibBandM139.lean:42:17: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  e \u2265 0\n  d \u2265 0\n  d - e \u2265 1\n  c \u2265 0\n  b \u2265 0\n  a \u2265 0\n  a - 2*b \u2265 1\n  a - b - c \u2265 1\nwhere\n a := \u2191n\n b := \u2191j\n c := \u2191i\n d := \u2191((i + j + 1).choose j)\n e := \u2191((i + 1 + j).choose j)\n/Users/sasha/math_gkm/research/MarkovFibBandM139.lean:43:55: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  LT (n - j - 1)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovFibBandM139.lean:43:55: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  HSub \u2115 \u2115 (Type ?u.71)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n/Users/sasha/math_gkm/research/MarkovFibBandM139.lean:43:47: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  c \u2265 0\n  b \u2265 0\n  a \u2265 0\n  a - 2*b \u2265 1\n  a - b - c \u2264 0\nwhere\n a := \u2191n\n b := \u2191j\n c := \u2191i\n",
+  "stderr": "",
+  "modules": {
+    "MarkovFibBandM139": "2d02009e9b98218101b8c11662edac0633623507d06584a6daf926ea1fcc7d4d"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-139fed75/MarkovFibBandM139.olean",
+    "/Users/sasha/math_gkm/research/MarkovFibBandM139.lean"
+  ],
+  "seconds": 30.44101245899219,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

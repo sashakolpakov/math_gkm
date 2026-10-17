@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBandRecurrenceM139.lean:18:53: warning: Variable name `hq` is not explicitly referenced.\n\nThe binding can be removed (if unused) or named `_` (if used implicitly).\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n/Users/sasha/math_gkm/research/MarkovBandRecurrenceM139.lean:63:5: error: Type mismatch: After simplification, term\n  sub_eq_iff_eq_add.mp h\n has type\n  rawRowMC3E (threePolyM9E2 q r) (q + 1) =\n    C (correctionConstantMDB2 r) * (X ^ 2 * (X + 1) ^ correctionExponentMDB2 q r) +\n      lowerRowMFFD (sourceNME9C q r) (q + 1)\nbut is expected to have type\n  rawRowMC3E (threePolyM9E2 q r) (q + 1) =\n    lowerRowMFFD (sourceNME9C q r) (q + 1) +\n      C (correctionConstantMDB2 r) * (X ^ 2 * (X + 1) ^ correctionExponentMDB2 q r)\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBandRecurrenceM139": "4fbf23db7c0b54dbd5991c92732b6eff23c43a81b0ca7b9ad3c446cc42150a9d"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-139fed75/MarkovBandRecurrenceM139.olean",
+    "/Users/sasha/math_gkm/research/MarkovBandRecurrenceM139.lean"
+  ],
+  "seconds": 7.469147625030018,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,1575 @@
+{
+  "worker": 173,
+  "request": "139fed75c29240ba95427717b28c29a7",
+  "created_at_utc": "2026-10-17T04:10:50.137607+00:00",
+  "historical_status": "Completed host outcome / return0 / structured report present / elapsed1658.4703290462494. Sixteen mathematical modules compiled and jointly replayed,56 theorem closures printed. Full root open.",
+  "scope": "Archive-first closed173 and explicit named inherited/current counterparts only. Static hashes, source/record parsing, literal comparison and finite index-domain counts. No mathematical-value recomputation, project/proof/checker/replay/experiment/generator/finalizer execution/import, project edit or proposer help/contact. Active174 and later excluded. Earlier seals/windows unchanged.",
+  "new_modules": [
+    {
+      "module": "MarkovFibBandM139",
+      "path": "research/MarkovFibBandM139.lean",
+      "bytes": 2010,
+      "sha256": "d2b4f5d745bd83e6ad981719f6de81a5a3953e8189273550c8a4b76810749792",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "fibBandM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_coeffM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_factorM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_zeroM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_constantM139"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792208004785025000.json",
+          "sha256": "de4362773018470de5153e9bebeaa00b9a057a35aa8d5016332552808bce1641",
+          "source_sha256": "2d02009e9b98218101b8c11662edac0633623507d06584a6daf926ea1fcc7d4d",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "2d02009e9b98218101b8c11662edac0633623507d06584a6daf926ea1fcc7d4d"
+        },
+        {
+          "path": "build-1792208059633343000.json",
+          "sha256": "9aa8271f8257a7dbb482146ea50c6cc44d14560ea7dd7f3cb4a9a590d78dd6f4",
+          "source_sha256": "d2b4f5d745bd83e6ad981719f6de81a5a3953e8189273550c8a4b76810749792",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "d2b4f5d745bd83e6ad981719f6de81a5a3953e8189273550c8a4b76810749792"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in173": true,
+      "printed_in173": true,
+      "object_path": "evidence/markov-139fed75/MarkovFibBandM139.olean",
+      "object_sha256": "739b1c471731ef1d8fb0054a5360e4a5c8354ea68e413c3d873a3ae784e77ce6",
+      "successful_final_build": "evidence/markov-139fed75/build-1792208059633343000.json",
+      "historical_successful_source_versions": [
+        "d2b4f5d745bd83e6ad981719f6de81a5a3953e8189273550c8a4b76810749792"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovFibSecondRowMC3E"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "fib_band_coeffM139",
+          "header": "theorem fib_band_coeffM139 (n j t : ℕ) (hn : 2*j+1 ≤ n) :\n ((X+1)^(n-2*j-1)*fibBandM139 n j).coeff t=\n ((n-j-1).choose t:ℤ)*((t+j+1).choose j:ℤ)",
+          "block_sha256": "6f44fe23045a7c08e1b30fb23364d009f6c2e00bddc0d2e00e8f715d0539f862",
+          "block_characters": 600
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_factorM139",
+          "header": "theorem fib_band_factorM139 (n j : ℕ) (hn : 2*j+1 ≤ n) :\n fibRowsMC3E n j=X*((X+1)^(n-2*j-1)*fibBandM139 n j)",
+          "block_sha256": "df49c9862aa717df70267eb95e283eb03ecfdadbe132b78814e80dc0b9f8617e",
+          "block_characters": 522
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_zeroM139",
+          "header": "theorem fib_band_zeroM139 (n : ℕ) : fibBandM139 n 0=1",
+          "block_sha256": "faa9f23382e32a8a26cc25e677161e76b6260b65927e0befc5109b650e959c29",
+          "block_characters": 79
+        },
+        {
+          "kind": "theorem",
+          "name": "fib_band_constantM139",
+          "header": "theorem fib_band_constantM139 (n j : ℕ) : (fibBandM139 n j).coeff 0=j+1",
+          "block_sha256": "228f2ae64bf8766e8de8d569265c262c61102cccec5972a332d78acddf2ca6d9",
+          "block_characters": 321
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "fibBandM139",
+          "header": "def fibBandM139 (n j : ℕ) : Polynomial ℤ",
+          "block_sha256": "ace4663bcc48722321c7892c571a413cf5799069b265e7790d1a69cbd8d62126",
+          "block_characters": 131,
+          "definition_text": "def fibBandM139 (n j : ℕ) : Polynomial ℤ :=\n ∑ s ∈ range (j+1), C (((j+1).choose (j-s):ℤ)*((n-j-1).choose s:ℤ))*\n   X^s*(X+1)^(j-s)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandGainM139",
+      "path": "research/MarkovBandGainM139.lean",
+      "bytes": 3209,
+      "sha256": "cc070f6988007c2394981bdbf78599914878fe13965c180f7e352b592eeb4e2c",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "bandExponentM139"
+        },
+        {
+          "kind": "def",
+          "name": "bandGainM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_exponent_falseM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_exponent_trueM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_factorM139"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792208113757896000.json",
+          "sha256": "245e17e44ec3d44ca7c7521866a28be76ea6c04e591c6834f24baa3ecb5dfc9a",
+          "source_sha256": "e7cb96b7b549597f59b94de123edce83b302a804cdb092947c0f48ee7978f0e4",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "e7cb96b7b549597f59b94de123edce83b302a804cdb092947c0f48ee7978f0e4"
+        },
+        {
+          "path": "build-1792208139705563000.json",
+          "sha256": "5f1a7dc4a9811bafd27588f1365c7d2d0275a94a4098f5ea3a899ab2af201161",
+          "source_sha256": "cc070f6988007c2394981bdbf78599914878fe13965c180f7e352b592eeb4e2c",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "cc070f6988007c2394981bdbf78599914878fe13965c180f7e352b592eeb4e2c"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in173": true,
+      "printed_in173": true,
+      "object_path": "evidence/markov-139fed75/MarkovBandGainM139.olean",
+      "object_sha256": "a466578e0edf4caf43744221232f9776f26e09ff10d6a53a30685c8a4f6adca5",
+      "successful_final_build": "evidence/markov-139fed75/build-1792208139705563000.json",
+      "historical_successful_source_versions": [
+        "cc070f6988007c2394981bdbf78599914878fe13965c180f7e352b592eeb4e2c"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovFibBandM139"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "band_exponent_falseM139",
+          "header": "theorem band_exponent_falseM139 (q k : ℕ) :\n bandExponentM139 q k false=q-(2*k+1)",
+          "block_sha256": "41ede0e9055167ca7e062f938fc1004dd9a4c99ed92a2e052ad1957a31c70cfb",
+          "block_characters": 164
+        },
+        {
+          "kind": "theorem",
+          "name": "band_exponent_trueM139",
+          "header": "theorem band_exponent_trueM139 (q k : ℕ) :\n bandExponentM139 q k true=q-(2*k+2)",
+          "block_sha256": "71dfb9685e24145f55f728c05cae5e6fa1811ec19c8746f13a75c3557e89beaf",
+          "block_characters": 142
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_factorM139",
+          "header": "theorem band_gain_factorM139 (q k : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n gainRowsMC3E q r k=X*(X+1)^(bandExponentM139 q k r+2)*bandGainM139 q r k",
+          "block_sha256": "57252f13e48fedc7d695bacd68e64c8ba016a5f7e1fad78873f482d5ae00bc0a",
+          "block_characters": 2240
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "bandExponentM139",
+          "header": "def bandExponentM139 (q k : ℕ) (r : Bool) : ℕ",
+          "block_sha256": "27ffeee95fcba65a091348de0daddd08bf87621b5efdf48e16835f8e25830a8b",
+          "block_characters": 76,
+          "definition_text": "def bandExponentM139 (q k : ℕ) (r : Bool) : ℕ := sourceNME9C q r-2*(q+k+1)-1"
+        },
+        {
+          "kind": "def",
+          "name": "bandGainM139",
+          "header": "def bandGainM139 (q : ℕ) (r : Bool) : ℕ → Polynomial ℤ\n | 0 => if r then 2 else 1\n | k+1 => if r then fibBandM139 q (k+1)+fibBandM139 (q+1) (k+1)+(X+1)*fibBandM139 q k\n   else fibBandM139 q k+fibBandM139 (q+1) (k+1)+(X+1)*fibBandM139 (q+1) k",
+          "block_sha256": "a9faa0fca32e8f0fbc717edd44c9d228e26b2f81553dc6c723af41e6354d0efc",
+          "block_characters": 241,
+          "definition_text": "def bandGainM139 (q : ℕ) (r : Bool) : ℕ → Polynomial ℤ\n | 0 => if r then 2 else 1\n | k+1 => if r then fibBandM139 q (k+1)+fibBandM139 (q+1) (k+1)+(X+1)*fibBandM139 q k\n   else fibBandM139 q k+fibBandM139 (q+1) (k+1)+(X+1)*fibBandM139 (q+1) k"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandRecurrenceM139",
+      "path": "research/MarkovBandRecurrenceM139.lean",
+      "bytes": 3992,
+      "sha256": "31990db6a8fc3298cbf4aa46da8371e056f7e76cfb4ceee560d26fbea40a1381",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "bandQM139"
+        },
+        {
+          "kind": "def",
+          "name": "bandCorrectionM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_correction_zeroM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_forcing_oneM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_forcing_stepM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_factorM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_coeffM139"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792208172829649000.json",
+          "sha256": "4e9fae91002363ff86aa0cfed4e932fd5edb4dee1f62548c11c1c9f99aac4e2e",
+          "source_sha256": "4fbf23db7c0b54dbd5991c92732b6eff23c43a81b0ca7b9ad3c446cc42150a9d",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "4fbf23db7c0b54dbd5991c92732b6eff23c43a81b0ca7b9ad3c446cc42150a9d"
+        },
+        {
+          "path": "build-1792208229976883000.json",
+          "sha256": "b686cbb83cf6c08fdb6f0b71681ee422923bba8c877e2758edcb937969f3b8c8",
+          "source_sha256": "31990db6a8fc3298cbf4aa46da8371e056f7e76cfb4ceee560d26fbea40a1381",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "31990db6a8fc3298cbf4aa46da8371e056f7e76cfb4ceee560d26fbea40a1381"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in173": true,
+      "printed_in173": true,
+      "object_path": "evidence/markov-139fed75/MarkovBandRecurrenceM139.olean",
+      "object_sha256": "0597f7c9f142faa12013245986e724880b82a9eed2db752b0550736848a8f601",
+      "successful_final_build": "evidence/markov-139fed75/build-1792208229976883000.json",
+      "historical_successful_source_versions": [
+        "31990db6a8fc3298cbf4aa46da8371e056f7e76cfb4ceee560d26fbea40a1381"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandGainM139"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "band_correction_zeroM139",
+          "header": "theorem band_correction_zeroM139 (q : ℕ) (r : Bool) (hq : 2 ≤ q) :\n bandCorrectionM139 q 0 r=\n C (correctionConstantMDB2 r)*(X^2*(X+1)^correctionExponentMDB2 q r)",
+          "block_sha256": "0fdd7b1fc7ea124ddee913c00628e630b2c17bdb13dba2f54015b35539981aaf",
+          "block_characters": 397
+        },
+        {
+          "kind": "theorem",
+          "name": "band_forcing_oneM139",
+          "header": "theorem band_forcing_oneM139 (q : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+1+1)+1 ≤ sourceNME9C q r) :\n (X+1)^2*bandCorrectionM139 q 1 r+2*(X-1)*bandCorrectionM139 q 0 r=\n 4*X*gainRowsMC3E q r 1",
+          "block_sha256": "af8e680579bdb6bda4e4635c6e9696ea5bf935e015099e462020e5a0aa1722c1",
+          "block_characters": 395
+        },
+        {
+          "kind": "theorem",
+          "name": "band_forcing_stepM139",
+          "header": "theorem band_forcing_stepM139 (q k : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+(k+2)+1)+1 ≤ sourceNME9C q r) :\n (X+1)^2*bandCorrectionM139 q (k+2) r+\n 2*(X-1)*bandCorrectionM139 q (k+1) r+bandCorrectionM139 q k r=\n 4*X*gainRowsMC3E q r (k+2)",
+          "block_sha256": "1e79a5b6f59b2002ebc6f5f8fc9c6665aae1ab07c081a37af8920431e11dcfdf",
+          "block_characters": 559
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_factorM139",
+          "header": "theorem source_band_factorM139 (q k : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n rawRowMC3E (threePolyM9E2 q r) (q+k+1)=\n lowerRowMFFD (sourceNME9C q r) (q+k+1)+bandCorrectionM139 q k r",
+          "block_sha256": "9ba440903095fd3769eafddc62a7af71463b2413dea30b0bffb50523d9867d40",
+          "block_characters": 1572
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_coeffM139",
+          "header": "theorem source_band_coeffM139 (q k i : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n threeRawM9E2 q r i (q+k+1)=lowerRawME9C (sourceNME9C q r) i (q+k+1)+\n (bandCorrectionM139 q k r).coeff i",
+          "block_sha256": "7f8148e22dec75f37620222a624228f4b35c6fa4cb9c0927fdaf8f4494cfbd4b",
+          "block_characters": 371
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "bandQM139",
+          "header": "def bandQM139 (q : ℕ) (r : Bool) : ℕ → Polynomial ℤ\n | 0 => 4*bandGainM139 q r 0\n | 1 => 4*bandGainM139 q r 1+2*(1-X)*bandQM139 q r 0\n | k+2 => 4*bandGainM139 q r (k+2)+2*(1-X)*bandQM139 q r (k+1)-\n   (X+1)^2*bandQM139 q r k",
+          "block_sha256": "a12cbd4ff2f70e645835b1ade41ca5681cffa2c9e6d36c79b4b45bef7ba8158d",
+          "block_characters": 224,
+          "definition_text": "def bandQM139 (q : ℕ) (r : Bool) : ℕ → Polynomial ℤ\n | 0 => 4*bandGainM139 q r 0\n | 1 => 4*bandGainM139 q r 1+2*(1-X)*bandQM139 q r 0\n | k+2 => 4*bandGainM139 q r (k+2)+2*(1-X)*bandQM139 q r (k+1)-\n   (X+1)^2*bandQM139 q r k"
+        },
+        {
+          "kind": "def",
+          "name": "bandCorrectionM139",
+          "header": "def bandCorrectionM139 (q k : ℕ) (r : Bool) : Polynomial ℤ",
+          "block_sha256": "e91571857c742076988430bab7952f0c705893abd28669c6720df7326dbedd65",
+          "block_characters": 111,
+          "definition_text": "def bandCorrectionM139 (q k : ℕ) (r : Bool) : Polynomial ℤ :=\n X^2*(X+1)^bandExponentM139 q k r*bandQM139 q r k"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandShapeM139",
+      "path": "research/MarkovBandShapeM139.lean",
+      "bytes": 3756,
+      "sha256": "5094632b00ad9a954a11eba0720b779ec8fea1fe666adfdadc03e185cf6c19f2",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fib_band_degreeM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_degreeM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_constantM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_degreeM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_constantM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_tailM139"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792208274981715000.json",
+          "sha256": "7e35c4327f4ac534fba0f0f69940fd49c5af4ad8af1eec2b3c33567709196492",
+          "source_sha256": "cef5a1efa5d71eb1a48dfba8990bdd9c895ce969f3b7293e71e0a2dbbf53bf42",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "cef5a1efa5d71eb1a48dfba8990bdd9c895ce969f3b7293e71e0a2dbbf53bf42"
+        },
+        {
+          "path": "build-1792208304535029000.json",
+          "sha256": "ce67837d09011f16a9dfad467ed72dca1a30bde002b813c0d1253d5ae3d66499",
+          "source_sha256": "c84a60ceb748863dade5f33a91c421809f8aa7708a3adb5864911b5205c015d6",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "c84a60ceb748863dade5f33a91c421809f8aa7708a3adb5864911b5205c015d6"
+        },
+        {
+          "path": "build-1792208325394488000.json",
+          "sha256": "c0064fbe127d1ca1a50279f559390fe222237cf837be3bafc2a7d7f1a44d6779",
+          "source_sha256": "d70ca57a989e260cbbfdfe4e43ff2716052a85eb34596218fded3f0d01c16801",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "d70ca57a989e260cbbfdfe4e43ff2716052a85eb34596218fded3f0d01c16801"
+        },
+        {
+          "path": "build-1792208359452919000.json",
+          "sha256": "ec00e402d4e87893ab97dedb9f74aadb0e8a64865ff044972ea8606d2e758d93",
+          "source_sha256": "5094632b00ad9a954a11eba0720b779ec8fea1fe666adfdadc03e185cf6c19f2",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "5094632b00ad9a954a11eba0720b779ec8fea1fe666adfdadc03e185cf6c19f2"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in173": true,
+      "printed_in173": true,
+      "object_path": "evidence/markov-139fed75/MarkovBandShapeM139.olean",
+      "object_sha256": "bc0270be3c60848840a649051800a4ed866fcb2021d8a76005124243809cb51a",
+      "successful_final_build": "evidence/markov-139fed75/build-1792208359452919000.json",
+      "historical_successful_source_versions": [
+        "5094632b00ad9a954a11eba0720b779ec8fea1fe666adfdadc03e185cf6c19f2"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandRecurrenceM139"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "fib_band_degreeM139",
+          "header": "theorem fib_band_degreeM139 (n j : ℕ) : (fibBandM139 n j).natDegree ≤ j",
+          "block_sha256": "9ae074d980396dc5b10cb524692c685f301d98b5557e5ac887be0cd6ee4f2bc3",
+          "block_characters": 415
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_degreeM139",
+          "header": "theorem band_gain_degreeM139 (q k : ℕ) (r : Bool) :\n (bandGainM139 q r k).natDegree ≤ k",
+          "block_sha256": "3277a714f16793f48f1d2f50f62b69cc3e4c4737cfcfd493defd3ef474d1970f",
+          "block_characters": 826
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_constantM139",
+          "header": "theorem band_gain_constantM139 (q k : ℕ) (r : Bool) :\n (bandGainM139 q r k).coeff 0=3*(k:ℤ)+(if r then 2 else 1)",
+          "block_sha256": "d446930a57396a5019d797ee5bbdf86cdb639484ef7caa96cbe066a25d1dbb1b",
+          "block_characters": 273
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_degreeM139",
+          "header": "theorem band_Q_degreeM139 (q k : ℕ) (r : Bool) : (bandQM139 q r k).natDegree ≤ k",
+          "block_sha256": "26d17b2d59bbc9ba54e19238c3425ba92c7ae6dd83e81e82b904945efe4a0b31",
+          "block_characters": 1056
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_constantM139",
+          "header": "theorem band_Q_constantM139 (q k : ℕ) (r : Bool) :\n (bandQM139 q r k).coeff 0=\n if r then 2*((k:ℤ)+1)*((k:ℤ)+2)^2 else 2*((k:ℤ)+1)^2*((k:ℤ)+2)",
+          "block_sha256": "c1cb354710baa2689d9d5b0982915a9560cba7a6cdc8e71001d8437505897461",
+          "block_characters": 634
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_tailM139",
+          "header": "theorem band_Q_tailM139 (q k i : ℕ) (r : Bool) (hi : k < i) :\n (bandQM139 q r k).coeff i=0",
+          "block_sha256": "d6fb63d5a8477c54018438f49cf742e3475132ea406b495f58620656a2256721",
+          "block_characters": 169
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandTransportM139",
+      "path": "research/MarkovBandTransportM139.lean",
+      "bytes": 2999,
+      "sha256": "5207aa931669c8ccf887de410573fb9579b6b891036b369ebbd75c8171a27399",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "source_band_valueM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_lcM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_pathM139"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792208399097931000.json",
+          "sha256": "a75b6c7e570c1798c1903fa71997ce0a28bac580eb38ceedf657fb6105d3419c",
+          "source_sha256": "5207aa931669c8ccf887de410573fb9579b6b891036b369ebbd75c8171a27399",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "5207aa931669c8ccf887de410573fb9579b6b891036b369ebbd75c8171a27399"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in173": true,
+      "printed_in173": true,
+      "object_path": "evidence/markov-139fed75/MarkovBandTransportM139.olean",
+      "object_sha256": "24626660cea3e1be2eccd82e9be3b976d8117f6b8362c63fdde96191d66adce4",
+      "successful_final_build": "evidence/markov-139fed75/build-1792208399097931000.json",
+      "historical_successful_source_versions": [
+        "5207aa931669c8ccf887de410573fb9579b6b891036b369ebbd75c8171a27399"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandShapeM139",
+        "MarkovFactoredRowM964"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "source_band_valueM139",
+          "header": "theorem source_band_valueM139 (q k s : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n (threeRawM9E2 q r (s+3) (q+k+1):ℝ)=\n factoredValueM964 (bandExponentM139 q k r) (q+k+1) s\n   ((bandQM139 q r k).map (Int.castRingHom ℝ))",
+          "block_sha256": "e94a04ac53f12e85f30d843aa4b230c35c6a14aa1efd97ffdd83c93c8474fe07",
+          "block_characters": 978
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_lcM139",
+          "header": "theorem source_band_lcM139 (q k s : ℕ) (r : Bool) (c : ℝ) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) (hs : s ≤ q+k+1)\n (hc : 0 ≤ c) (hQ : ∀ m, 0 ≤ (bandQM139 q r k).coeff m)\n (hbudget : ∀ m, ((bandQM139 q r k).coeff (m+1):ℝ) ≤ c*((q+k+1).choose m:ℝ))\n (hmargin : let B : ℝ := (s+(q+k+1)+3).choose (q+k+1)\n   let U := ((bandQM139 q r k).coeff 0:ℝ)*bandExponentM139 q k r/(s+1)+c\n   (B+U)^2*kernelScaleMA64 (q+k+1) s ≤\n     B^2*kernelScaleMA64 (q+k+1) s+(B+U)^2*topGapMA64 (q+k+1) s) :\n threeRawM9E2 q r (s+3) (q+k+1)*threeRawM9E2 q r (s+5) (q+k+1) ≤\n threeRawM9E2 q r (s+4) (q+k+1)^2",
+          "block_sha256": "a833752bdcd5b28f0afb4d54efb70df518997095f9f028871586c21d13e2da7b",
+          "block_characters": 1155
+        },
+        {
+          "kind": "theorem",
+          "name": "source_band_pathM139",
+          "header": "theorem source_band_pathM139 (path : List Bool) (ha : (frame path).mid.a=3) :\n ∃ q r, 1 ≤ q ∧ (frame path).mid.b=sourceNME9C q r ∧\n   ∀ k i, 2 ≤ q → 2*(q+k+1)+1 ≤ sourceNME9C q r →\n   coeff (frame path).mid.p i (q+k+1)=lowerRawME9C (sourceNME9C q r) i (q+k+1)+\n     (bandCorrectionM139 q k r).coeff i",
+          "block_sha256": "570d4d23005f7869dfa6b14fa165db7983a1f3edf9f349a1561e60fb5bb2c34d",
+          "block_characters": 453
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandLinearM139",
+      "path": "research/MarkovBandLinearM139.lean",
+      "bytes": 1961,
+      "sha256": "ec42865e27516be4f41a49a71e9df5fc20c7a726fbdc30c619d3c257b866778d",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fib_band_linearM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_linearM139"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792208469216739000.json",
+          "sha256": "642dbc565bda21852fe7993490eb45defa0042a8e4ff7f8699e73bab0da9690f",
+          "source_sha256": "d09378d13a231d4eb1464118c3460ead542f397e2dff5c6a19c0c2f584d77ebc",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "d09378d13a231d4eb1464118c3460ead542f397e2dff5c6a19c0c2f584d77ebc"
+        },
+        {
+          "path": "build-1792208498051948000.json",
+          "sha256": "5fafad5a380612a6660f3b05ad9585ce9578741e464f3c114f9dbfd536a4c295",
+          "source_sha256": "256525c29d662f07d91e7c7280014980853f35369536f246fe3a66b375ee3fa6",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "256525c29d662f07d91e7c7280014980853f35369536f246fe3a66b375ee3fa6"
+        },
+        {
+          "path": "build-1792208540818863000.json",
+          "sha256": "fe11bb513b638d08472909a748e007a12a45ec0c9bbd00d94b95bd64884ea045",
+          "source_sha256": "4fe400bdb8435f3df1f06da28509368f855ce4e0bba69c2357add309f369bf43",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "4fe400bdb8435f3df1f06da28509368f855ce4e0bba69c2357add309f369bf43"
+        },
+        {
+          "path": "build-1792208624725018000.json",
+          "sha256": "3e4b2bfba6d202040595cd217d55c9221b2aaccf6d959102b6102e7ac2ae4d37",
+          "source_sha256": "ec42865e27516be4f41a49a71e9df5fc20c7a726fbdc30c619d3c257b866778d",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "ec42865e27516be4f41a49a71e9df5fc20c7a726fbdc30c619d3c257b866778d"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in173": true,
+      "printed_in173": true,
+      "object_path": "evidence/markov-139fed75/MarkovBandLinearM139.olean",
+      "object_sha256": "9feb6803e2155530c44f6048c67d51ae80ff5cb15fccb52ba2cc89351ad5a1bb",
+      "successful_final_build": "evidence/markov-139fed75/build-1792208624725018000.json",
+      "historical_successful_source_versions": [
+        "ec42865e27516be4f41a49a71e9df5fc20c7a726fbdc30c619d3c257b866778d"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandShapeM139"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "fib_band_linearM139",
+          "header": "theorem fib_band_linearM139 (n j : ℕ) (hn : 2*j+1 ≤ n) :\n 2*(fibBandM139 n j).coeff 1=(j:ℤ)*((j:ℤ)+1)*((n:ℤ)-j+1)",
+          "block_sha256": "134a9f5a97056d9aa591094c4ed3d876efd4dcac5c7c05b9c87c2bc3bdda6285",
+          "block_characters": 823
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_linearM139",
+          "header": "theorem band_gain_linearM139 (q k : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n 2*(bandGainM139 q r k).coeff 1=\n if r then (k:ℤ)*((3*(k:ℤ)+1)*q-3*(k:ℤ)^2+4*(k:ℤ)+3)\n else (k:ℤ)*((3*(k:ℤ)-1)*q-3*(k:ℤ)^2+8*(k:ℤ)-1)",
+          "block_sha256": "6c01a00fb90b3f8d8779c96557c1996098eaba8daa9dd31a53237265a720c27e",
+          "block_characters": 786
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandBudgetCoeffsM139",
+      "path": "research/MarkovBandBudgetCoeffsM139.lean",
+      "bytes": 3326,
+      "sha256": "4b7ee45f1ad44f196fdade127703d33d9b660e33e5768bc642b489d11d8d2c6a",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "bandLinearM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_linearM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_linear_positive_formM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_linear_nonnegM139"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792208697690203000.json",
+          "sha256": "ec22356248e311f07d8175cede1971b2be9c1a95d5e398f7b6e2813ba0c2dfd6",
+          "source_sha256": "3159cbd22af848914254ea82a7067f12dcc352fb6f0e27618f50d9cb59b73777",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "3159cbd22af848914254ea82a7067f12dcc352fb6f0e27618f50d9cb59b73777"
+        },
+        {
+          "path": "build-1792208763092953000.json",
+          "sha256": "14aba69cc1b706f8f000500b7933f205f7f27dc392a528d224629713b209a9b3",
+          "source_sha256": "4b7ee45f1ad44f196fdade127703d33d9b660e33e5768bc642b489d11d8d2c6a",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "4b7ee45f1ad44f196fdade127703d33d9b660e33e5768bc642b489d11d8d2c6a"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in173": true,
+      "printed_in173": true,
+      "object_path": "evidence/markov-139fed75/MarkovBandBudgetCoeffsM139.olean",
+      "object_sha256": "99415a3625c0faa60a06b3998d558cb15ebd62ad6d91dd27a615e44406ac7d45",
+      "successful_final_build": "evidence/markov-139fed75/build-1792208763092953000.json",
+      "historical_successful_source_versions": [
+        "4b7ee45f1ad44f196fdade127703d33d9b660e33e5768bc642b489d11d8d2c6a"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandLinearM139"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "band_Q_linearM139",
+          "header": "theorem band_Q_linearM139 (q k : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n 30*(bandQM139 q r k).coeff 1=bandLinearM139 q k r",
+          "block_sha256": "5767d694ecb8fc6a06096a35165173835744c3aa99d49917de2fd5f662f01a76",
+          "block_characters": 1521
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_linear_positive_formM139",
+          "header": "theorem band_Q_linear_positive_formM139 (d k : ℕ) (r : Bool)\n (hq : 2 ≤ d+2*k+(if r then 2 else 1)) :\n 30*(bandQM139 (d+2*k+(if r then 2 else 1)) r k).coeff 1=\n (k:ℤ)*((k:ℤ)+1)*((k:ℤ)+2)*\n   (5*(3*(k:ℤ)+(if r then 5 else 1))*d+\n     3*(3*(k:ℤ)+(if r then 7 else 2))*((k:ℤ)+3))",
+          "block_sha256": "087cab747ac3fcaf0586c5bdbd2716ff131c8a703e8e9b73ab230865fcce1781",
+          "block_characters": 504
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_linear_nonnegM139",
+          "header": "theorem band_Q_linear_nonnegM139 (q k : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n 0 ≤ (bandQM139 q r k).coeff 1",
+          "block_sha256": "14feded43f38c04cee3216c5e52def1fdea2d31404204c9fe1fb0bc3746b2b2f",
+          "block_characters": 700
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "bandLinearM139",
+          "header": "def bandLinearM139 (q k : ℕ) (r : Bool) : ℤ",
+          "block_sha256": "877c8b33955b80655003ec6536e21971bfb26bb373ee92e53cbae811d4730734",
+          "block_characters": 208,
+          "definition_text": "def bandLinearM139 (q k : ℕ) (r : Bool) : ℤ :=\n if r then (k:ℤ)*((k:ℤ)+1)*((k:ℤ)+2)*\n   (5*(3*(k:ℤ)+5)*q-(3*(k:ℤ)-1)*(7*(k:ℤ)+13))\n else (k:ℤ)*((k:ℤ)+1)*((k:ℤ)+2)*\n   (5*(3*(k:ℤ)+1)*q-((k:ℤ)-1)*(21*(k:ℤ)+13))"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandTopM139",
+      "path": "research/MarkovBandTopM139.lean",
+      "bytes": 2099,
+      "sha256": "b3bf18058f1e8cb151e7883c5d3cf77b4bac354e5c2b9b0600f3b59b864884cb",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fib_band_topM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_topM139"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792208625949117000.json",
+          "sha256": "95be507c90c703f80dcb8af4489a1498c1e42ac521987ceae8832ea4aa936fd7",
+          "source_sha256": "ef0a824518931ddba5b40d4a1adc61a28c05caddc39440d3c8a39d9c271d4ea0",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "ef0a824518931ddba5b40d4a1adc61a28c05caddc39440d3c8a39d9c271d4ea0"
+        },
+        {
+          "path": "build-1792208696459725000.json",
+          "sha256": "074fdcd2b3489e2fa2721bda536d354be792a7d22be1b025900109198de7afd5",
+          "source_sha256": "b3bf18058f1e8cb151e7883c5d3cf77b4bac354e5c2b9b0600f3b59b864884cb",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "b3bf18058f1e8cb151e7883c5d3cf77b4bac354e5c2b9b0600f3b59b864884cb"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in173": true,
+      "printed_in173": true,
+      "object_path": "evidence/markov-139fed75/MarkovBandTopM139.olean",
+      "object_sha256": "a8e7bd3c2cd48d261b3c41030d5d97d31f176df4b199726e76821ec250e2f4d9",
+      "successful_final_build": "evidence/markov-139fed75/build-1792208696459725000.json",
+      "historical_successful_source_versions": [
+        "b3bf18058f1e8cb151e7883c5d3cf77b4bac354e5c2b9b0600f3b59b864884cb"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandShapeM139"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "fib_band_topM139",
+          "header": "theorem fib_band_topM139 (n j : ℕ) (hn : 2*j+1 ≤ n) :\n (fibBandM139 n j).coeff j=(n.choose j:ℤ)",
+          "block_sha256": "3e74e46bb0bfbecf105c672f274429ced243b29da616f4cb327345e48845c14c",
+          "block_characters": 589
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_topM139",
+          "header": "theorem band_gain_topM139 (q k : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n (bandGainM139 q r k).coeff k=\n if r then 2*((q+1).choose k:ℤ) else ((q+2).choose k:ℤ)",
+          "block_sha256": "0ec6d5cff1134a267554653bdd6ec9a45e7df54e7c93cc1dca10580256d80059",
+          "block_characters": 1251
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandLeadingM139",
+      "path": "research/MarkovBandLeadingM139.lean",
+      "bytes": 2851,
+      "sha256": "da88d7dc08b009f79ab46ebb83706498ab9b28d0ea267ea9cffcd71182e99788",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "choose_add_twoM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_topM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_top_posM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_exact_degreeM139"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792208757566738000.json",
+          "sha256": "ef8085bf54489f37f3485814b1393990c8356a5fe1c27b8b589882536c3130a7",
+          "source_sha256": "da88d7dc08b009f79ab46ebb83706498ab9b28d0ea267ea9cffcd71182e99788",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "da88d7dc08b009f79ab46ebb83706498ab9b28d0ea267ea9cffcd71182e99788"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in173": true,
+      "printed_in173": true,
+      "object_path": "evidence/markov-139fed75/MarkovBandLeadingM139.olean",
+      "object_sha256": "594274a1456a2e3dc798e9fe010f9acd9b265e1a1d6e902180f30ceaa66b5b20",
+      "successful_final_build": "evidence/markov-139fed75/build-1792208757566738000.json",
+      "historical_successful_source_versions": [
+        "da88d7dc08b009f79ab46ebb83706498ab9b28d0ea267ea9cffcd71182e99788"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandTopM139"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "choose_add_twoM139",
+          "header": "theorem choose_add_twoM139 (n k : ℕ) :\n ((n+2).choose (k+2):ℤ)=(n.choose k:ℤ)+2*(n.choose (k+1):ℤ)+(n.choose (k+2):ℤ)",
+          "block_sha256": "4183b183ee8c95bd427a27f0301328684f8e39c858318b13d15f81beda28d494",
+          "block_characters": 226
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_topM139",
+          "header": "theorem band_Q_topM139 (q k : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n (bandQM139 q r k).coeff k=\n if r then 8*((q-1).choose k:ℤ) else 4*(q.choose k:ℤ)",
+          "block_sha256": "359b42be6209149b34395899fc3254e83b9c54f72c1938e11ffede399f85c9b7",
+          "block_characters": 1597
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_top_posM139",
+          "header": "theorem band_Q_top_posM139 (q k : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n 0 < (bandQM139 q r k).coeff k",
+          "block_sha256": "f10164d95ddf04b9e934c709df473d3e027ca56bd33035f86d5b8a7eb4e627d3",
+          "block_characters": 481
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_exact_degreeM139",
+          "header": "theorem band_Q_exact_degreeM139 (q k : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n (bandQM139 q r k).natDegree=k",
+          "block_sha256": "7cfe5eef227fc61b1fc3cf7b39b3e5e60dce3889f3c4c37ae910ef8ef2936008",
+          "block_characters": 254
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovFibShiftM139",
+      "path": "research/MarkovFibShiftM139.lean",
+      "bytes": 2122,
+      "sha256": "a813ed62b7ccb384f4873df96de11eb9ae7b68890b1cf32f49f2d4b542229f2a",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fib_band_shiftM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_shiftM139"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792208888079179000.json",
+          "sha256": "40f88bbd49404d6cac50ced4eb8310931d7df30a7f7d572ea2435c1c7aaf0235",
+          "source_sha256": "a813ed62b7ccb384f4873df96de11eb9ae7b68890b1cf32f49f2d4b542229f2a",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "a813ed62b7ccb384f4873df96de11eb9ae7b68890b1cf32f49f2d4b542229f2a"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in173": true,
+      "printed_in173": true,
+      "object_path": "evidence/markov-139fed75/MarkovFibShiftM139.olean",
+      "object_sha256": "1fec81a6da41c6dcf478c33c385a7c331b53ff99982dbb08e4bf02454ef2cf10",
+      "successful_final_build": "evidence/markov-139fed75/build-1792208888079179000.json",
+      "historical_successful_source_versions": [
+        "a813ed62b7ccb384f4873df96de11eb9ae7b68890b1cf32f49f2d4b542229f2a"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandLeadingM139"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "fib_band_shiftM139",
+          "header": "theorem fib_band_shiftM139 (n k : ℕ) (hn : 2*(k+1) ≤ n) :\n fibBandM139 (n+2) (k+1)=fibBandM139 (n+1) (k+1)+\n   (X+1)*fibBandM139 (n+1) k-fibBandM139 n k",
+          "block_sha256": "5efbe0c51d4d94e7fa1e5f91295aa9f53be0f1cb27138ec3595412d42639a0ba",
+          "block_characters": 988
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_shiftM139",
+          "header": "theorem band_gain_shiftM139 (q k : ℕ) (r : Bool) (hq : 2*(k+1) ≤ q) :\n bandGainM139 (q+2) r (k+1)=bandGainM139 (q+1) r (k+1)+\n   (X+1)*bandGainM139 (q+1) r k-bandGainM139 q r k",
+          "block_sha256": "4f8e5bed6557e327d69b68feba859e888c943bb1783f78cd5033108697025b8e",
+          "block_characters": 880
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandShiftM139",
+      "path": "research/MarkovBandShiftM139.lean",
+      "bytes": 2243,
+      "sha256": "b5fc65de9bd9de33765f83e1e7a7d787a663788c600681e5b798c982fc9722e1",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "band_Q_shiftM139"
+        },
+        {
+          "kind": "def",
+          "name": "bandAtM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_differenceM139"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792208935314318000.json",
+          "sha256": "a26247b68fa1b3f1f83bb95f05e7c5741fc00f8ec9f4a82263a59ec5ea9f7417",
+          "source_sha256": "b5fc65de9bd9de33765f83e1e7a7d787a663788c600681e5b798c982fc9722e1",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "b5fc65de9bd9de33765f83e1e7a7d787a663788c600681e5b798c982fc9722e1"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in173": true,
+      "printed_in173": true,
+      "object_path": "evidence/markov-139fed75/MarkovBandShiftM139.olean",
+      "object_sha256": "f4d28377c2339fae3b3cfd1254e792d83a06690de5ecfdebc57131a790274379",
+      "successful_final_build": "evidence/markov-139fed75/build-1792208935314318000.json",
+      "historical_successful_source_versions": [
+        "b5fc65de9bd9de33765f83e1e7a7d787a663788c600681e5b798c982fc9722e1"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovFibShiftM139"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "band_Q_shiftM139",
+          "header": "theorem band_Q_shiftM139 (q k : ℕ) (r : Bool) (hq : 2*(k+1) ≤ q) :\n bandQM139 (q+2) r (k+1)=bandQM139 (q+1) r (k+1)+\n   (X+1)*bandQM139 (q+1) r k-bandQM139 q r k",
+          "block_sha256": "00a083d6fe154984e31b9335f602292805580838593ba300b84c989c10df6d4c",
+          "block_characters": 1066
+        },
+        {
+          "kind": "theorem",
+          "name": "band_differenceM139",
+          "header": "theorem band_differenceM139 (d k : ℕ) (r : Bool) :\n bandAtM139 (d+1) (k+1) r-bandAtM139 d (k+1) r=\n   bandAtM139 (d+2) k r-bandAtM139 (d+1) k r+X*bandAtM139 (d+2) k r",
+          "block_sha256": "853da6aee9f681b8719bdcc7e33e9cb8a9bb245c44c57d54f13ec4c0a36862fc",
+          "block_characters": 757
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "bandAtM139",
+          "header": "def bandAtM139 (d k : ℕ) (r : Bool) : Polynomial ℤ",
+          "block_sha256": "ae9d3c028faa44762aa5cb86b0c2859e233f111b6b2733c2c67475b4aaec74c9",
+          "block_characters": 97,
+          "definition_text": "def bandAtM139 (d k : ℕ) (r : Bool) : Polynomial ℤ :=\n bandQM139 (d+2*k+(if r then 2 else 1)) r k"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandBoundaryReductionM139",
+      "path": "research/MarkovBandBoundaryReductionM139.lean",
+      "bytes": 2829,
+      "sha256": "85a006372930ac1e8d46d6e5ba7deb7bad844a85912198256c2dfbd469e41697",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "BandBoundaryNonnegM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_nonneg_monoM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_nonnegative_iff_boundaryM139"
+        },
+        {
+          "kind": "def",
+          "name": "BandBoundaryFormulaM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_boundary_nonneg_of_formulaM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_nonnegative_of_formulaM139"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792209002328017000.json",
+          "sha256": "93921a9787f660717fae45ec0d4af241ad6b170428c05149201d5f46eefdfe6b",
+          "source_sha256": "7d4183c1b5536eee05837633db152cb1ecf9084e96767614e33b759eef206609",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "7d4183c1b5536eee05837633db152cb1ecf9084e96767614e33b759eef206609"
+        },
+        {
+          "path": "build-1792209044407990000.json",
+          "sha256": "3ea15973b101327fa5b0f900a75852f379ad2eb56beeaa9e68fe9d69a4b97db2",
+          "source_sha256": "85a006372930ac1e8d46d6e5ba7deb7bad844a85912198256c2dfbd469e41697",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "85a006372930ac1e8d46d6e5ba7deb7bad844a85912198256c2dfbd469e41697"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in173": true,
+      "printed_in173": true,
+      "object_path": "evidence/markov-139fed75/MarkovBandBoundaryReductionM139.olean",
+      "object_sha256": "04728832ccdbb382383cb366111678dd8d5d3ce00a47cf82c4d20b0269c5949c",
+      "successful_final_build": "evidence/markov-139fed75/build-1792209044407990000.json",
+      "historical_successful_source_versions": [
+        "85a006372930ac1e8d46d6e5ba7deb7bad844a85912198256c2dfbd469e41697"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandShiftM139"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "band_nonneg_monoM139",
+          "header": "theorem band_nonneg_monoM139 (hb : BandBoundaryNonnegM139) (k : ℕ) (r : Bool) :\n (∀ d i, 0 ≤ (bandAtM139 d k r).coeff i) ∧\n (∀ d i, (bandAtM139 d k r).coeff i ≤ (bandAtM139 (d+1) k r).coeff i)",
+          "block_sha256": "056bbe50467661207fa3e1e5ba64449156167794e4f40131c165a07c6e4d9518",
+          "block_characters": 1070
+        },
+        {
+          "kind": "theorem",
+          "name": "band_nonnegative_iff_boundaryM139",
+          "header": "theorem band_nonnegative_iff_boundaryM139 :\n (∀ d k i r, 0 ≤ (bandAtM139 d k r).coeff i) ↔ BandBoundaryNonnegM139",
+          "block_sha256": "79357ccf7da2d55c6751fa3758b0514aa1b61439ee02476b883172e52ba51223",
+          "block_characters": 227
+        },
+        {
+          "kind": "theorem",
+          "name": "band_boundary_nonneg_of_formulaM139",
+          "header": "theorem band_boundary_nonneg_of_formulaM139 (hf : BandBoundaryFormulaM139) :\n BandBoundaryNonnegM139",
+          "block_sha256": "852256b44c7e17125a316ce543916ba367e8f8b9e83809b8edc17057869f984a",
+          "block_characters": 622
+        },
+        {
+          "kind": "theorem",
+          "name": "band_nonnegative_of_formulaM139",
+          "header": "theorem band_nonnegative_of_formulaM139 (hf : BandBoundaryFormulaM139) :\n ∀ d k i r, 0 ≤ (bandAtM139 d k r).coeff i",
+          "block_sha256": "1ce1bc0ae7dfeb538dbc34200f8af85220ee0e8b216877b66a77fd80d8fd870b",
+          "block_characters": 203
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "BandBoundaryNonnegM139",
+          "header": "def BandBoundaryNonnegM139 : Prop",
+          "block_sha256": "a488fa45b2fa466b593f2dd9bd454bf5397e936b4ab21d0f5110a0ca86446ff6",
+          "block_characters": 92,
+          "definition_text": "def BandBoundaryNonnegM139 : Prop :=\n ∀ (k i : ℕ) (r : Bool), 0 ≤ (bandAtM139 0 k r).coeff i"
+        },
+        {
+          "kind": "def",
+          "name": "BandBoundaryFormulaM139",
+          "header": "def BandBoundaryFormulaM139 : Prop",
+          "block_sha256": "bfbf630ab403205dea63e4e7bf3d87cf8acf7d81e9b8d32735c53f1d725d2f4b",
+          "block_characters": 214,
+          "definition_text": "def BandBoundaryFormulaM139 : Prop := ∀ (k m : ℕ) (r : Bool), m ≤ k →\n (2*(m:ℤ)+3)*(bandAtM139 0 k r).coeff m=\n   2*(if r then 3*(k:ℤ)+m+6 else 3*(k:ℤ)+3-m)*\n     ((k+m+2).choose (2*m+2):ℤ)*((2*m+2).choose (m+1):ℤ)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandQuadraticM139",
+      "path": "research/MarkovBandQuadraticM139.lean",
+      "bytes": 2678,
+      "sha256": "b367c75bed787eecc01945c74b5619e51f459a40eaf06d57a46541d03fa0371b",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "fib_band_quadraticM139"
+        },
+        {
+          "kind": "def",
+          "name": "bandGainQuadraticM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_quadraticM139"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792209166869056000.json",
+          "sha256": "bfabd6ec022b68feff59399b7e28efb1abdd4ca295bf050cf10d0de3fa311e34",
+          "source_sha256": "bee8f722548505b811940dc5c09db6ff03048140fcac64726982904b686f06b3",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "bee8f722548505b811940dc5c09db6ff03048140fcac64726982904b686f06b3"
+        },
+        {
+          "path": "build-1792209209148574000.json",
+          "sha256": "1772d3fd23c74507027c80efdb763f5bdaab1c5f1c0da8a0358aa78e999a50aa",
+          "source_sha256": "b367c75bed787eecc01945c74b5619e51f459a40eaf06d57a46541d03fa0371b",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "b367c75bed787eecc01945c74b5619e51f459a40eaf06d57a46541d03fa0371b"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in173": true,
+      "printed_in173": true,
+      "object_path": "evidence/markov-139fed75/MarkovBandQuadraticM139.olean",
+      "object_sha256": "6ede26d75b3f2794af11d2bb20177bf545f2dc8f1006e07069d68469ee56b6d6",
+      "successful_final_build": "evidence/markov-139fed75/build-1792209209148574000.json",
+      "historical_successful_source_versions": [
+        "b367c75bed787eecc01945c74b5619e51f459a40eaf06d57a46541d03fa0371b"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandBudgetCoeffsM139",
+        "MarkovSecondJet8934"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "fib_band_quadraticM139",
+          "header": "theorem fib_band_quadraticM139 (n j : ℕ) (hn : 2*j+1 ≤ n) :\n 12*(fibBandM139 n j).coeff 2=\n ((j:ℤ)-1)*j*((j:ℤ)+1)*((n:ℤ)-j+1)*((n:ℤ)-j+2)",
+          "block_sha256": "dde2bf08d42f1f3958d429d2b4f3f20faf86fae984678d878ba1b26cb89dd29d",
+          "block_characters": 1068
+        },
+        {
+          "kind": "theorem",
+          "name": "band_gain_quadraticM139",
+          "header": "theorem band_gain_quadraticM139 (q k : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n 12*(bandGainM139 q r k).coeff 2=bandGainQuadraticM139 q k r",
+          "block_sha256": "c4a20a7bd2befce7aa07d45c9cec03c33f20a11861921ae0985e3795e958ba46",
+          "block_characters": 1003
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "bandGainQuadraticM139",
+          "header": "def bandGainQuadraticM139 (q k : ℕ) (r : Bool) : ℤ",
+          "block_sha256": "0c5c3330000836a273edf6b53a823bb08dc877fdbce591dc4e007d92dbadf904",
+          "block_characters": 264,
+          "definition_text": "def bandGainQuadraticM139 (q k : ℕ) (r : Bool) : ℤ :=\n let f (n j : ℤ) := (j-1)*j*(j+1)*(n-j+1)*(n-j+2)\n if r then f q k+f ((q:ℤ)+1) k+f q ((k:ℤ)-1)+\n   6*((k:ℤ)-1)*k*((q:ℤ)-k+2)\n else f q ((k:ℤ)-1)+f ((q:ℤ)+1) k+f ((q:ℤ)+1) ((k:ℤ)-1)+\n   6*((k:ℤ)-1)*k*((q:ℤ)-k+3)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandBudgetObstructionM139",
+      "path": "research/MarkovBandBudgetObstructionM139.lean",
+      "bytes": 3320,
+      "sha256": "36bc1ea8b42234900cc9f4dca44c411544d53b9769ea51173930584007c936ec",
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "bandQuadraticM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_Q_quadraticM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_witness_linearM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_witness_quadraticM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_witness_strictM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "proposed_band_budget_falseM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_witness_source_factorM139"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792209230024113000.json",
+          "sha256": "a0f31ed65a8f028362b4f2cc4ba3b01074629c4a2c8ef61a3035e7e1f31ba2c6",
+          "source_sha256": "36bc1ea8b42234900cc9f4dca44c411544d53b9769ea51173930584007c936ec",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "36bc1ea8b42234900cc9f4dca44c411544d53b9769ea51173930584007c936ec"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in173": true,
+      "printed_in173": true,
+      "object_path": "evidence/markov-139fed75/MarkovBandBudgetObstructionM139.olean",
+      "object_sha256": "b726de4c65f96a0b672efb7933c92483b164a19b51daebb8e2a5999df550548c",
+      "successful_final_build": "evidence/markov-139fed75/build-1792209230024113000.json",
+      "historical_successful_source_versions": [
+        "36bc1ea8b42234900cc9f4dca44c411544d53b9769ea51173930584007c936ec"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandQuadraticM139"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "band_Q_quadraticM139",
+          "header": "theorem band_Q_quadraticM139 (q k : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n 1260*(bandQM139 q r k).coeff 2=bandQuadraticM139 q k r",
+          "block_sha256": "a7c313dc19a133ee78dc66917117bc63f7a3a15ae89f1b38a84f7d54f3a6e3b2",
+          "block_characters": 1311
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_witness_linearM139",
+          "header": "theorem budget_witness_linearM139 : (bandQM139 73 false 36).coeff 1=21714264",
+          "block_sha256": "ffe16a0e5ecb0232cc91f5e023880c1099c4310feafc3c2287027c37831f273b",
+          "block_characters": 201
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_witness_quadraticM139",
+          "header": "theorem budget_witness_quadraticM139 : (bandQM139 73 false 36).coeff 2=2390762400",
+          "block_sha256": "a6ff1d41932e8c47cad77193501957a87b7f8f7d810abd01a0bb4fb421c9c394",
+          "block_characters": 212
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_witness_strictM139",
+          "header": "theorem budget_witness_strictM139 :\n (bandQM139 73 false 36).coeff 1*(110:ℤ)<(bandQM139 73 false 36).coeff 2",
+          "block_sha256": "ebe038376d9ef843c12009a46ad849923759d5a316492c2850ac0822144d9c4a",
+          "block_characters": 185
+        },
+        {
+          "kind": "theorem",
+          "name": "proposed_band_budget_falseM139",
+          "header": "theorem proposed_band_budget_falseM139 :\n ¬(∀ q k r, 2 ≤ q → 2*(q+k+1)+1 ≤ sourceNME9C q r →\n   ∀ m, (bandQM139 q r k).coeff (m+1) ≤\n     (bandQM139 q r k).coeff 1*((q+k+1).choose m:ℤ))",
+          "block_sha256": "1e056227e32d3a9b78996a5c663dd289f148f7371190b499a84a00bdd4a18c89",
+          "block_characters": 376
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_witness_source_factorM139",
+          "header": "theorem budget_witness_source_factorM139 :\n rawRowMC3E (threePolyM9E2 73 false) 110=\n lowerRowMFFD 221 110+X^2*bandQM139 73 false 36",
+          "block_sha256": "017b6f52fa65c83c9e071185bdeb182293a6e5413cdb36f82b3043abb64c76f4",
+          "block_characters": 389
+        }
+      ],
+      "definition_bindings": [
+        {
+          "kind": "def",
+          "name": "bandQuadraticM139",
+          "header": "def bandQuadraticM139 (q k : ℕ) (r : Bool) : ℤ",
+          "block_sha256": "64d4d4dcba3dbee35c04ccbb419d19e44402bc766351dbc74dd152f722ec97c3",
+          "block_characters": 284,
+          "definition_text": "def bandQuadraticM139 (q k : ℕ) (r : Bool) : ℤ :=\n (k:ℤ)*((k:ℤ)-1)*((k:ℤ)+1)*((k:ℤ)+2)*\n (if r then (84+63*(k:ℤ))*q^2+(252-105*(k:ℤ)-168*(k:ℤ)^2)*q+\n   120-298*(k:ℤ)-4*(k:ℤ)^2+114*(k:ℤ)^3\n else (-21+63*(k:ℤ))*q^2+(21+273*(k:ℤ)-168*(k:ℤ)^2)*q+\n   120+136*(k:ℤ)-326*(k:ℤ)^2+114*(k:ℤ)^3)"
+        }
+      ],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandSourceWitnessM139",
+      "path": "research/MarkovBandSourceWitnessM139.lean",
+      "bytes": 3515,
+      "sha256": "823650b893b6ac490d61ecb33d06bd1dce044e8e310e300f2b89aac85d99921a",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "budget_witness_lower3M139"
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_witness_lower4M139"
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_witness_rawM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_witness_actual_pathM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_witness_valid_tripleM139"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792209275411393000.json",
+          "sha256": "d997b4522eb0e9530b60466b2dded0f0ccdeea15b4a0e46a6a15c636118a416f",
+          "source_sha256": "ee66ef69c9883082bec97352e61198c1339386fc2adc4e12f554263e66ec03fc",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "ee66ef69c9883082bec97352e61198c1339386fc2adc4e12f554263e66ec03fc"
+        },
+        {
+          "path": "build-1792209327326850000.json",
+          "sha256": "252f70f772eb651cdf867186205f2c2fce365f5cdbaae49825443d14dba96c11",
+          "source_sha256": "d60ea7ffe04335e9aab7bfdb42831f3676d2bfc7bd4285ce7548e6d261eaa8b4",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "d60ea7ffe04335e9aab7bfdb42831f3676d2bfc7bd4285ce7548e6d261eaa8b4"
+        },
+        {
+          "path": "build-1792209380783669000.json",
+          "sha256": "ab984b53e6323adbcb66f14f1fa5c5640349b77f02530772f656c16a64e74726",
+          "source_sha256": "f86cf6b1523a85cc5424082ca1b510f4c621172ceca1a4983b8be4c5fd15198c",
+          "final_identical": false,
+          "returncode": 1,
+          "timeout": false,
+          "snapshot_sha256": "f86cf6b1523a85cc5424082ca1b510f4c621172ceca1a4983b8be4c5fd15198c"
+        },
+        {
+          "path": "build-1792209429741173000.json",
+          "sha256": "edde133604966ac3016a1e20d19e7e783fe2c6a2aa3958d53b19e49324c52ac0",
+          "source_sha256": "823650b893b6ac490d61ecb33d06bd1dce044e8e310e300f2b89aac85d99921a",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "823650b893b6ac490d61ecb33d06bd1dce044e8e310e300f2b89aac85d99921a"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in173": true,
+      "printed_in173": true,
+      "object_path": "evidence/markov-139fed75/MarkovBandSourceWitnessM139.olean",
+      "object_sha256": "129e809101e85556f5881c81b51218bf389436232089ef98f87e8619a535cfb3",
+      "successful_final_build": "evidence/markov-139fed75/build-1792209429741173000.json",
+      "historical_successful_source_versions": [
+        "823650b893b6ac490d61ecb33d06bd1dce044e8e310e300f2b89aac85d99921a"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandBudgetObstructionM139",
+        "MarkovBandTransportM139"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "budget_witness_lower3M139",
+          "header": "theorem budget_witness_lower3M139 : (lowerRowMFFD 221 110).coeff 3=587447224",
+          "block_sha256": "26467a715f985ddc562ef5c0ac0c76ce493aff73921532b4fd48ade33f5d3697",
+          "block_characters": 679
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_witness_lower4M139",
+          "header": "theorem budget_witness_lower4M139 : (lowerRowMFFD 221 110).coeff 4=877009737560",
+          "block_sha256": "0349168df828d15bc024810b94d350331da4d7a86fcdf6c4035636a2b4f9ede9",
+          "block_characters": 685
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_witness_rawM139",
+          "header": "theorem budget_witness_rawM139 :\n threeRawM9E2 73 false 2 110=104044 ∧\n threeRawM9E2 73 false 3 110=609161488 ∧\n threeRawM9E2 73 false 4 110=879400499960",
+          "block_sha256": "37807ad7dd2ccaecfb5917a0ab78b7f073199e1fb53bde281a4f20f982926413",
+          "block_characters": 817
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_witness_actual_pathM139",
+          "header": "theorem budget_witness_actual_pathM139 :\n (frame (threePathM9E2 72 false)).mid.a=3 ∧\n (frame (threePathM9E2 72 false)).mid.b=221 ∧\n coeff (frame (threePathM9E2 72 false)).mid.p 2 110=104044 ∧\n coeff (frame (threePathM9E2 72 false)).mid.p 3 110=609161488 ∧\n coeff (frame (threePathM9E2 72 false)).mid.p 4 110=879400499960",
+          "block_sha256": "26d5cf4af6b1935bb77b66c3fee27ce201d9477456376b64d7c16f24e9a720ac",
+          "block_characters": 595
+        },
+        {
+          "kind": "theorem",
+          "name": "budget_witness_valid_tripleM139",
+          "header": "theorem budget_witness_valid_tripleM139 :\n InPolygon 3 221 2 110 ∧ InPolygon 3 221 3 110 ∧ InPolygon 3 221 4 110 ∧\n threeRawM9E2 73 false 3 110^2-\n   threeRawM9E2 73 false 2 110*threeRawM9E2 73 false 4 110=279581372844535904",
+          "block_sha256": "a2a409b8d18752b602f8715d9a1885ce4c922347cfd114b751e9f8343228d538",
+          "block_characters": 317
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    },
+    {
+      "module": "MarkovBandSupportM139",
+      "path": "research/MarkovBandSupportM139.lean",
+      "bytes": 1679,
+      "sha256": "e458b667567b4e44ab15306f44116115f17c1f22e4928b02883bdda2fe2e6bfd",
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "band_correction_tailM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_correction_endpointM139"
+        },
+        {
+          "kind": "theorem",
+          "name": "band_correction_endpoint_posM139"
+        }
+      ],
+      "attempts": [
+        {
+          "path": "build-1792209357623252000.json",
+          "sha256": "65e3211bddd10d78bad20b426858271c9397142cac8dece0fc38076a8e7237f0",
+          "source_sha256": "e458b667567b4e44ab15306f44116115f17c1f22e4928b02883bdda2fe2e6bfd",
+          "final_identical": true,
+          "returncode": 0,
+          "timeout": false,
+          "snapshot_sha256": "e458b667567b4e44ab15306f44116115f17c1f22e4928b02883bdda2fe2e6bfd"
+        }
+      ],
+      "status": "selected_replayed_printed",
+      "selected": true,
+      "replayed_in173": true,
+      "printed_in173": true,
+      "object_path": "evidence/markov-139fed75/MarkovBandSupportM139.olean",
+      "object_sha256": "484de953ded3edfdafd99418224a0135b2a42c2a1ee39ce19d22fa4892018bae",
+      "successful_final_build": "evidence/markov-139fed75/build-1792209357623252000.json",
+      "historical_successful_source_versions": [
+        "e458b667567b4e44ab15306f44116115f17c1f22e4928b02883bdda2fe2e6bfd"
+      ],
+      "earlier_successful_differing_source_versions": false,
+      "imports": [
+        "MarkovBandLeadingM139"
+      ],
+      "theorem_statements": [
+        {
+          "kind": "theorem",
+          "name": "band_correction_tailM139",
+          "header": "theorem band_correction_tailM139 (q k i : ℕ) (r : Bool)\n (hi : bandExponentM139 q k r+k+2 < i) :\n (bandCorrectionM139 q k r).coeff i=0",
+          "block_sha256": "0e454678648eaaed62662c09b3a87c0408f6907e11ab21d0307f52b8e5d38e00",
+          "block_characters": 498
+        },
+        {
+          "kind": "theorem",
+          "name": "band_correction_endpointM139",
+          "header": "theorem band_correction_endpointM139 (q k : ℕ) (r : Bool) :\n (bandCorrectionM139 q k r).coeff (bandExponentM139 q k r+k+2)=\n (bandQM139 q r k).coeff k",
+          "block_sha256": "95c552ca15343352a81e8668e8d6aeb0394c71366529adef037da2bee1da79fb",
+          "block_characters": 662
+        },
+        {
+          "kind": "theorem",
+          "name": "band_correction_endpoint_posM139",
+          "header": "theorem band_correction_endpoint_posM139 (q k : ℕ) (r : Bool) (hq : 2 ≤ q)\n (hn : 2*(q+k+1)+1 ≤ sourceNME9C q r) :\n 0 < (bandCorrectionM139 q k r).coeff (bandExponentM139 q k r+k+2)",
+          "block_sha256": "2f3815b33d6c44202cb94c3870cc4d45f688fd5985a9d6064a194f34a661e812",
+          "block_characters": 265
+        }
+      ],
+      "definition_bindings": [],
+      "forbidden_tokens": []
+    }
+  ],
+  "excluded_modules": [],
+  "accepted_counts": {
+    "def": 11,
+    "theorem": 56
+  },
+  "excluded_counts": {},
+  "mathematical_values_recomputed": false,
+  "source_level_scope": {
+    "root_open": true,
+    "new_unconditional_raw_LC_region": false,
+    "actual_source_formula": "Every actual numerator-three path classified q>=1,r; identity applies q>=2,k>=0,j=q+k+1 with literal2*j+1<=b. b=3*q+1 fortrue,3*q+2 forfalse.",
+    "q1_new_source_formula": false,
+    "negative_exponent_region_new_source_formula": false,
+    "band_factor": "rawRow(threePoly(q,r),q+k+1)=lowerRow(b,q+k+1)+X^2*(X+1)^d*Q(q,r,k),d=b-2j-1.",
+    "conditional_LC": "Starts(s+3,s+4,s+5),s<=j,c>=0,all Q coefficients nonnegative,allm Q_(m+1)<=c*choose(j,m),explicit scalar robustness margin. No shape/budget/margin assumed silently.",
+    "band_boundary_equivalence": "All d,k,i,r coefficients of bandAt(d,k,r) nonnegative iff all k,i,r boundaryd0 coefficients nonnegative.",
+    "boundary_formula_is_unproved_Prop": true,
+    "boundary_nonnegativity_is_unproved": true,
+    "proposed_budget_c_equals_Q1_formally_refuted": true,
+    "single_actual_witness": "threePathM9E2 72 false,actual3/221,q73,k36,j110; formal coefficients and allthreepolygon guards plus positive rawgap. Auxiliary budget false; rawLC holds.",
+    "root_equivalence": "Conjecture63 iff ThreeBeyondThirdM964 and OtherFourM9E2",
+    "remaining_predicates_unproved": [
+      "ThreeBeyondThirdM964",
+      "OtherFourM9E2"
+    ],
+    "inherited_actual_a3_H": "Allnaturalstarts/zeros with3*j<=b+9; not enlarged universally here.",
+    "residual_H": "q<j,j!=5,j!=q+1,j!=q+2,j!=q+3,allnaturali.",
+    "residual_V": "Outside((i=3 or4) andj+1<=q) or(5<=i<=8 andj+2<=q).",
+    "residual_D": "Outside3<=i<=6 andj+2<=q;indices(i,j+2),(i+1,j+1),(i+2,j).",
+    "new_vertical_or_diagonal_region": false,
+    "actual_raw_source_counterexample": false,
+    "old212_recovery_claimed": false,
+    "old166_prefix_recovery_claimed": false,
+    "older_failed_versions_retroactively_recovered": false,
+    "prior171_host_outcome_unchanged": "missing_or_malformed_report / return1 / reportnull; not timeout or completed."
+  },
+  "literal_raw_indices": [
+    "(s+3,j)",
+    "(s+4,j)",
+    "(s+5,j)"
+  ],
+  "witness_raw_indices": [
+    "(2,110)",
+    "(3,110)",
+    "(4,110)"
+  ],
+  "residue_map": {
+    "true": "b=3*q+1",
+    "false": "b=3*q+2"
+  },
+  "source_bridge": "Inherited exact source discriminant row equation plus first/second row equations -> strong induction with nonzero(X+1)^2 cancellation -> exact polynomial/coefficient identity -> inherited actualpath classification. Conditional LC separately maps integer Q to real polynomial and back exactly.",
+  "zero_and_endpoint_handling": [
+    "Exponent is natural subtraction but literal2j+1<=b required before sourcefactorization; q>=2 separately required. q1 andd<0 notcovered bynewidentity.",
+    "Fibonacci factorization checks zerocolumni0,guardedi+j<=n,andbinomialzero tail; no division by raw coefficient or binomial.",
+    "Q natDegree<=k allq,k,r; Qconstant exactallq,k,r; Qlinear/quadratic/top formulas requireq>=2 andbandguard. Top strictlypositive andexactdegree onlythere.",
+    "Correction coefficient equalsQtop atd+k+2,zero foralllateri; universalauxiliaryendpoint/tail identities hold even outsideband but positivity/sourceattachment retainbandguards. No claim everyintermediateQ coefficient positive or full intervalsupport.",
+    "ConditionalrawLC starts s+3, s<=j; sourceidentityallnaturali. Casts exact; nofactorial/binomialnormalizedsource.",
+    "Boundary auxiliaryparameterization includesd0,k0,falseq1;constantbasehandlesit. New actualsourcebridge stillq>=2.",
+    "Rootpolygon/endpoints/zeros/directions unchanged; singletonwitness checksallthreeInPolygonconditions."
+  ],
+  "proof_chain_details": {
+    "fib_factor": "Finite sum over s<=j. Vandermonde-style weighted_binomial_coeffMFFD yieldsproductcoeff under2j+1<=n; factor X; allzerosguarded.",
+    "forcing": "bandGain base1(false)/2(true); higher sum of3fibBandpieces. Exactforcing exponent d+2; no positivity inferred fromsignedrecurrence.",
+    "recurrence": "Q0=4G0,Q1=4G1+2(1-X)Q0,Q(k+2)=4G(k+2)+2(1-X)Q(k+1)-(X+1)^2Qk.",
+    "source_induction": "basefirstrow; second row forcing; stronginductionk+2 with inheriteddiscriminant recurrence. Cancel polynomial(X+1)^2 nonzero via coeff0,never pointwisevalues.",
+    "degree": "Degree estimates sums/products/subtraction. Exactconstantintegercubic. Leading4choose(q,k)false/8choose(q-1,k)true; choose positivity establishedbybandindices.",
+    "first_coefficients": "Cleared integerfactor30 forlinear,1260forquadratic; intermediateFiblinear2/Fibquadratic12, rationalbinomialpolynomialidentities andexactcasts. Quadraticinterpolationonlyproposedformula; acceptedordinaryLeanrecurrenceproofindependent.",
+    "boundary": "Shiftuses2(k+1)<=q thenbandAtparameteridentityunconditional. Inductk: monotonicityfrompreviousnonnegativeandmonotone; inductdfromboundary. Explicitformula isonlyProp premise; tailm>k handled separately.",
+    "budget_obstruction": "Universalnegation instantiatedq73,false,k36,m1; sourcefactor d0. Actualpath72false andrawtripleprovenby inheritedlowerlift pluscheckedQcoefficients; failingearlysmallbinomialproofversionsnotcredited.",
+    "root": "No newroot theorem; inheritedexactroot residual unchanged."
+  }
+}

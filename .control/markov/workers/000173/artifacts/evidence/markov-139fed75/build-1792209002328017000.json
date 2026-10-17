@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBandBoundaryReductionM139.lean:34:5: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  c \u2265 0\n  b - e \u2264 0\n  a - b + c \u2264 -1\nwhere\n a := (bandAtM139 (d + 2) k r).coeff i\n b := (bandAtM139 (d + 1) k r).coeff i\n c := (X * bandAtM139 (d + 2) k r).coeff i\n e := (bandAtM139 (d + 1 + 1) k r).coeff i\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBandBoundaryReductionM139": "7d4183c1b5536eee05837633db152cb1ecf9084e96767614e33b759eef206609"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-139fed75/MarkovBandBoundaryReductionM139.olean",
+    "/Users/sasha/math_gkm/research/MarkovBandBoundaryReductionM139.lean"
+  ],
+  "seconds": 6.254002958012279,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovBandGainM139.lean:39:3: error: unsolved goals\ncase zero.true\nq : \u2115\nhq : 2 \u2264 q\nhn : 2 * (q + 0 + 1) + 1 \u2264 sourceNME9C q true\n\u22a2 X * (1 + X) ^ (q - 1) + X * (1 + X) ^ (1 + (q - 1) - 1) + X ^ 2 * (1 + X) ^ (q - 1) +\n      X ^ 2 * (1 + X) ^ (1 + (q - 1) - 1) =\n    X * (1 + X) ^ (q - 1) * 2 + X ^ 2 * (1 + X) ^ (q - 1) * 2\n/Users/sasha/math_gkm/research/MarkovBandGainM139.lean:32:56: warning: This simp argument is unused:\n  mul_zero\n\nHint: Omit it from the simp argument list.\n  simp only [gainRowsMC3E, \u0332rowSMFFD, \u0332rowShiftMFFD, \u0332Nat.zero_le, \u0332if_true, \u0332Nat.sub_zero,\n       show \u00ac1 \u2264 (0 \u0332: \u0332\u2115) by omega, \u0332if_false, \u0332pow_zero, \u0332pow_one,m\u0335u\u0335l\u0335_\u0335z\u0335e\u0335r\u0335o\u0335,\u0335 \u0332add_zero, \u0332zero_add]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBandGainM139": "e7cb96b7b549597f59b94de123edce83b302a804cdb092947c0f48ee7978f0e4"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-139fed75/MarkovBandGainM139.olean",
+    "/Users/sasha/math_gkm/research/MarkovBandGainM139.lean"
+  ],
+  "seconds": 12.496987875027116,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

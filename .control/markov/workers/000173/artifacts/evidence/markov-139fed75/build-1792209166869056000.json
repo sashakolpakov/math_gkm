@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBandQuadraticM139.lean:19:11: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n/Users/sasha/math_gkm/research/MarkovBandQuadraticM139.lean:58:5: error: ring failed, ring expressions not equal\nq : \u2115\nhq : 2 \u2264 q\nk : \u2115\nhqk : 2 * (k + 1) + 1 \u2264 q\nh0 : 12 * (fibBandM139 q k).coeff 2 = (\u2191k - 1) * \u2191k * (\u2191k + 1) * (\u2191q - \u2191k + 1) * (\u2191q - \u2191k + 2)\nl0 : 2 * (fibBandM139 q k).coeff 1 = \u2191k * (\u2191k + 1) * (\u2191q - \u2191k + 1)\nhn : 2 * (q + (k + 1) + 1) + 1 \u2264 sourceNME9C q false\nh1 :\n  12 * (fibBandM139 q (k + 1)).coeff 2 =\n    (\u2191k + 1 - 1) * (\u2191k + 1) * (\u2191k + 1 + 1) * (\u2191q - (\u2191k + 1) + 1) * (\u2191q - (\u2191k + 1) + 2)\nh2 : 12 * (fibBandM139 (q + 1) k).coeff 2 = (\u2191k - 1) * \u2191k * (\u2191k + 1) * (\u2191q + 1 - \u2191k + 1) * (\u2191q + 1 - \u2191k + 2)\nh3 :\n  12 * (fibBandM139 (q + 1) (k + 1)).coeff 2 =\n    (\u2191k + 1 - 1) * (\u2191k + 1) * (\u2191k + 1 + 1) * (\u2191q + 1 - (\u2191k + 1) + 1) * (\u2191q + 1 - (\u2191k + 1) + 2)\nl1 : 2 * (fibBandM139 (q + 1) k).coeff 1 = \u2191k * (\u2191k + 1) * (\u2191q + 1 - \u2191k + 1)\n\u22a2 X.coeff 2 * (fibBandM139 (q + 1) k).coeff 0 * 12 = 0\n/Users/sasha/math_gkm/research/MarkovBandQuadraticM139.lean:59:5: error: ring failed, ring expressions not equal\nq : \u2115\nhq : 2 \u2264 q\nk : \u2115\nhqk : 2 * (k + 1) + 1 \u2264 q\nh0 : 12 * (fibBandM139 q k).coeff 2 = (\u2191k - 1) * \u2191k * (\u2191k + 1) * (\u2191q - \u2191k + 1) * (\u2191q - \u2191k + 2)\nl0 : 2 * (fibBandM139 q k).coeff 1 = \u2191k * (\u2191k + 1) * (\u2191q - \u2191k + 1)\nhn : 2 * (q + (k + 1) + 1) + 1 \u2264 sourceNME9C q true\nh1 :\n  12 * (fibBandM139 q (k + 1)).coeff 2 =\n    (\u2191k + 1 - 1) * (\u2191k + 1) * (\u2191k + 1 + 1) * (\u2191q - (\u2191k + 1) + 1) * (\u2191q - (\u2191k + 1) + 2)\nh2 : 12 * (fibBandM139 (q + 1) k).coeff 2 = (\u2191k - 1) * \u2191k * (\u2191k + 1) * (\u2191q + 1 - \u2191k + 1) * (\u2191q + 1 - \u2191k + 2)\nh3 :\n  12 * (fibBandM139 (q + 1) (k + 1)).coeff 2 =\n    (\u2191k + 1 - 1) * (\u2191k + 1) * (\u2191k + 1 + 1) * (\u2191q + 1 - (\u2191k + 1) + 1) * (\u2191q + 1 - (\u2191k + 1) + 2)\nl1 : 2 * (fibBandM139 (q + 1) k).coeff 1 = \u2191k * (\u2191k + 1) * (\u2191q + 1 - \u2191k + 1)\n\u22a2 X.coeff 2 * (fibBandM139 q k).coeff 0 * 12 = 0\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBandQuadraticM139": "bee8f722548505b811940dc5c09db6ff03048140fcac64726982904b686f06b3"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-139fed75/MarkovBandQuadraticM139.olean",
+    "/Users/sasha/math_gkm/research/MarkovBandQuadraticM139.lean"
+  ],
+  "seconds": 7.051032541960012,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}

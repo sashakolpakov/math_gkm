@@ -1,0 +1,19 @@
+{
+  "returncode": 1,
+  "stdout": "/Users/sasha/math_gkm/research/MarkovBandTopM139.lean:16:1: error: Type mismatch: After simplification, term\n  h\n has type\n  (fibBandM139 n j).coeff j = \u2191((n - j - 1 + j + 1).choose j)\nbut is expected to have type\n  (fibBandM139 n j).coeff j = \u2191(n.choose j)\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n/Users/sasha/math_gkm/research/MarkovBandTopM139.lean:34:3: error: unsolved goals\ncase succ.false\nq : \u2115\nhq : 2 \u2264 q\nk : \u2115\nhqk : 2 * (k + 1) + 1 \u2264 q\nhz : \u2200 (n : \u2115), (fibBandM139 n k).coeff (k + 1) = 0\nhm : \u2200 (n : \u2115), ((X + 1) * fibBandM139 n k).coeff (k + 1) = (fibBandM139 n k).coeff k\nhn : 2 * (q + (k + 1) + 1) + 1 \u2264 sourceNME9C q false\n\u22a2 \u2191(q.choose k) + \u2191(q.choose k.succ) + \u2191((1 + q).choose k) = \u2191((2 + q).choose (1 + k))\n",
+  "stderr": "",
+  "modules": {
+    "MarkovBandTopM139": "ef0a824518931ddba5b40d4a1adc61a28c05caddc39440d3c8a39d9c271d4ea0"
+  },
+  "mode": "build",
+  "command": [
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "-j",
+    "1",
+    "-o",
+    "/Users/sasha/math_gkm/evidence/markov-139fed75/MarkovBandTopM139.olean",
+    "/Users/sasha/math_gkm/research/MarkovBandTopM139.lean"
+  ],
+  "seconds": 31.945654415991157,
+  "limits": "Inherited compiled imports reused; not fresh whole-source rebuild."
+}
