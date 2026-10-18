@@ -1,5 +1,7 @@
 # Fresh Sol study and preserved Astra reference
 
+Progress record: [matched eight-round baseline checkpoint](SOL_BASELINE_EIGHT_ROUNDS.md), observed at 14:07 UTC. The earlier cutoff below remains a historical launch record.
+
 Status cutoff: **2026-10-18 12:35:56 UTC**. This is observational status and reproduction documentation for the user. It is not a research prompt or input to the Sol roles and supplies no new mathematical ideas or advice.
 
 A fresh study launched at **12:31:32 UTC**, using separate Codex roles configured as **`gpt-6.1-sol`, high reasoning effort**. It starts with zero inherited knowledge or research calls. The frozen-input audit records the same seed files, evaluation panel, dependencies and opportunity/budget protocol as the Astra reference, except for the configured model. The reference checkpoints are **eight baseline rounds and two exploration rounds**. These are comparison targets, not eight-versus-two completed Sol results. See [launch record](SOL_LAUNCH.json), [frozen-input audit](SOL_FROZEN_INPUT_AUDIT.json) and [Sol configuration](../../studies/markov-v2-sol-20261018.json).
