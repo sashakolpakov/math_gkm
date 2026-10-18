@@ -7,6 +7,25 @@ BASELINE = {'search': 'single revisable agenda; choose and execute next useful a
             'memory': 'latest eight observations and full own retained history',
             'allocation': 'one bounded research invocation per round',
             'reassessment': 'revise agenda from observed results; no forced portfolio'}
+
+FINDING_REFERENCE_RULE = ('Expected an immutable HYPOTHESIS CONTENT REFERENCE in the exact staged portfolio, '
+    'including retained historic versions and valid hypotheses staged from this report; '
+    'not a source filename, hypothesis id or arbitrary hash. Use findings:[] when no hypothesis finding is reported.')
+
+class FindingReferenceInvalid(Invalid):
+    """Local schema failure; never carries submitted values or evaluator details."""
+    def __init__(self, index):
+        if type(index) is not int or not 0 <= index < 2**63:
+            raise Invalid('invalid finding index')
+        self.index = index
+        super().__init__('finding references unknown immutable hypothesis')
+
+def report_diagnostic(exc):
+    """Allowlist one typed error; all unclassified failures keep generic feedback."""
+    if type(exc) is FindingReferenceInvalid:
+        return dict(code='finding_reference_not_staged', field=f'findings[{exc.index}].reference',
+                    expected=FINDING_REFERENCE_RULE)
+    return None
 EXPLORATION = {'search': 'retain competing obstacle, capability and strategy hypotheses',
                'memory': 'retain alternatives, evidence and reasons; consult own history',
                'allocation': 'consequential uncertainty trials and bounded invention episodes',
@@ -60,6 +79,7 @@ def record(state, report, workspace, round_index, protocol, *, prospective=None)
         if item['kind'] not in ('experiment', 'source', 'representation', 'proof_candidate', 'capability_failure'):
             raise Invalid('reports cannot self-certify a theorem')
         evidence.append(item)
+    evidence_paths = {item['path'] for item in evidence}
     # Fixed predictions live under immutable identities; findings are separate.
     fixed=('id','kind','claim','uncertainty','outcomes')
     for h in report.get('hypotheses',[]):
@@ -67,6 +87,10 @@ def record(state, report, workspace, round_index, protocol, *, prospective=None)
             raise Invalid('hypothesis identity, claim and predictions required')
         if h['kind'] not in ('obstacle','capability','strategy') or not h['id'] or not h['claim']:
             raise Invalid('invalid hypothesis identity or kind')
+        hypothesis_evidence = h.get('evidence', [])
+        if not isinstance(hypothesis_evidence, list) or not all(
+                isinstance(path, str) and path in evidence_paths for path in hypothesis_evidence):
+            raise Invalid('hypothesis evidence not bound to actual artifacts')
         original=state['portfolio'].get(h['id'])
         core={k:h[k] for k in fixed}
         if original:
@@ -107,9 +131,14 @@ def record(state, report, workspace, round_index, protocol, *, prospective=None)
         state['decisions'].append(dict(round=round_index,trial=trial,reference=selected['reference'],evidence=evidence))
     else:
         state['decisions'].append(dict(round=round_index,work_kind='ordinary',evidence=evidence))
-    for finding in report.get('findings',[]):
-        if finding.get('reference') not in {h['reference'] for h in state['portfolio'].values()}:
-            raise Invalid('finding references unknown immutable hypothesis')
+    findings = report.get('findings', [])
+    if not isinstance(findings, list):
+        raise Invalid('findings must be a list')
+    for index, finding in enumerate(findings):
+        if not isinstance(finding, dict):
+            raise Invalid('finding must be an object')
+        if not isinstance(finding.get('reference'), str) or finding['reference'] not in {h['reference'] for h in state['portfolio'].values()}:
+            raise FindingReferenceInvalid(index)
         state.setdefault('findings',[]).append({**finding,'round':round_index})
     for link in report.get('use_links', []):
         if set(link) != {'artifact', 'consumer', 'claim'}:
@@ -216,12 +245,15 @@ def prompt(req):
                  'only with cited records; unknown/failed validation cannot authorize a change. No universal score or theorem count. '
                  'A selected change is experimental, never a certified switch.')
     if req['role'] in ('proposer', 'researcher'):
-        report_fields = '''agenda:[strings], summary:string, hypotheses:[{id,kind,claim,uncertainty,outcomes:[{check,changes_next_choice}],status,reason,evidence:[paths]}], evidence:[{path,sha256,kind}], trial:null or {hypothesis,invention}, work_kind:ordinary/exploration/strategy, findings:[{reference,observation,uncertainty}], commitment_ref:null or immutable hash, use_links:[{artifact,consumer,claim}], policy_proposal:null or {search,memory,allocation,reassessment}, executable_proposal:null or {schema:"math-gkm.request-program.v1",code:[instructions]}'''
+        report_fields = '''agenda:[strings], summary:string, hypotheses:[{id,kind,claim,uncertainty,outcomes:[{check,changes_next_choice}],status,reason,evidence:[paths],parent?:null or hypothesis content reference,revision?:integer,reference?:exact version content hash}], evidence:[{path,sha256,kind}], trial:null or {hypothesis,invention}, work_kind:ordinary/exploration/strategy, findings:[{reference:immutable HYPOTHESIS CONTENT REFERENCE,observation,uncertainty}], commitment_ref:null or immutable hash, use_links:[{artifact,consumer,claim}], policy_proposal:null or {search,memory,allocation,reassessment}, executable_proposal:null or {schema:"math-gkm.request-program.v1",code:[instructions]}'''
         if req['role'] == 'proposer':
             schema = 'Proposer payload: {' + report_fields + ', completion:null}.'
         else:
             schema = 'Researcher payload: {' + report_fields + ', discovery_rechecks:[pending discovery bindings; charged within knowledge_checks_per_round], discovery_completion:null or pending completion binding, prospective_binding:request.prospective_binding, mathematical_claims:[], attachments:[], representations:[], reductions:[], fiber_gluings:[], completion:null or {kind,module,declaration,correspondence}}.'
         schema += '''
+Hypothesis findings contract (both proposer and researcher): findings[i].reference must be an immutable HYPOTHESIS CONTENT REFERENCE in the exact staged portfolio, NOT a source filename, ordinary hypothesis id or arbitrary hash. Existing references are visible in request.portfolio; the researcher also receives commitment.selected_reference. Known retained historic/version references remain valid. Unknown references, including stale or changed references absent from that exact registry, are rejected. Valid new hypotheses are staged before explicit findings, so their exact deterministic content references are legal in the same report.
+Version rules: id, kind, claim, uncertainty and outcomes form the immutable core. New root hypotheses default to parent:null and revision:0. A changed prediction needs a fresh id, parent equal to a known hypothesis content reference, and revision equal to that parent's revision plus one. Parents must already be in the portfolio or precede the child in hypotheses. The version hash is lowercase SHA256 of UTF-8 JSON for exactly {id,kind,claim,uncertainty,outcomes,parent,revision}, with keys sorted, separators comma/colon without spaces, and ensure_ascii=false. Array order is preserved. Optional reference on a new hypothesis must equal this hash; status, reason and evidence are not hashed. Existing ids must preserve core and ancestry; omit optional reference rather than trying to change identity. The controller computes references and records hypothesis status/reason/evidence automatically. It is valid to omit explicit findings in an initial plan (or use findings:[]) without computing any new hash yourself.
+Use findings:[] whenever no hypothesis finding is reported, including ordinary source observations. Put source-file observations in summary plus evidence entries naming actual existing paths and their actual sha256. Ordinary work requires no artificial hypothesis or forced exploration. findings must be a list of objects with the hypothesis reference above; never translate a file path into a finding reference.
 Pending discoveries are immutable RESEARCHER-origin branch candidates from either side, independent of policy selection. They are not main accepted mathematics. Inspect exact inbox source_paths and provenance. Request discovery_rechecks in dependency order for ordinary paid compile/replay/premise admission, or discovery_completion for the unchanged exact-root and independent audit gate. No automatic imports, hidden answers, usefulness certification or extra allowance. When budget is unavailable they remain pending.\nArtifact reporting contract (both proposer and researcher): use_links reports observed reuse, never intended future reuse. Each entry has exactly artifact, consumer and claim. Both artifact and consumer must name files that already exist in your workspace at report validation, using safe workspace-relative paths. Missing endpoints are rejected even in a prospective plan. Do not fabricate files to satisfy this requirement. Empty use_links is valid. File existence does not establish the claim: accepted links remain reported_use_pending_checked_interface until separately checked. Checked delayed_use_links in the request are controller-produced records, not the report entry schema; do not copy their status, receipt_hash or declaration identifiers into use_links.
 Evidence likewise requires an existing file and its actual sha256; kind must be experiment/source/representation/proof_candidate/capability_failure. Hypothesis evidence references must be bound in evidence. Intentions belong in agenda/summary/hypothesis claims/outcome checks, not evidence or use_links. Reports cannot self-certify theorems.
 Executable instructions: select_obligation {id}; reuse_library {ids}; allocate {exploration_percent}; budgets {tool_seconds,validation_seconds}; reassess {after_rounds}; reverse_agenda, reverse_portfolio; rotate_agenda/keep_observations with integer n; if_open_obligations with then/else instruction lists. These cannot edit admission, contract, costs or authority.'''

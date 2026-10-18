@@ -1,0 +1,11 @@
+# Report-contract engineering history008–010
+
+Checkpoint010 passed all16 pure regression tests. Checkpoint008 remains a failed run (15/16passed);009 remains a failed run with two positive subtest assertions selecting the wrong hypothesis.010 corrects that test selection while keeping its runtime identical to009. These are synthetic report/provenance checks, with **no real-model repair result, new mathematical action, theorem admission or paired research comparison**.
+
+The source-only archive preserves all320/333/347 frozen sources, raw constructor rounds7/8/9, original test outcomes and all48 explicit fixture roots (321selected regular source files), independent reviews, pins and final010 installation records. [VERIFICATION.json](VERIFICATION.json) records independent streaming member/source/fixture checks; [MANIFEST.json](MANIFEST.json) maps all1471 source members. Three negative-fixture symlinks are excluded; their tests and regular inputs are retained for regeneration. Evaluation directories, including generated synthetic fixture suites, are excluded by the declared policy and regenerated from retained test sources on rerun. No claim is made that every raw fixture file is archived. No dependency cache or compiled object is included.
+
+No curator, held-out suite or current Markov study source path is selected. Known private task/selection fields and common publication-leak patterns were checked, including decoded compressed JSON receipts, with zero findings. The separate [failedstudy0003 archive](../blended-harness-v3-study0003-failed-20261018/README.md) retains its original two invalid plans, zero mathematical progress and unstarted baseline. Earlier [007 resource evidence](../blended-harness-v3-pressure-20261018/README.md) and [installed006 validation](../blended-harness-v3-installed-20261018/VERIFICATION.json) remain unchanged.
+
+The installed010 review verifies121 files and its four accepted overlays. Actual fresh-study startup/full-verification results are separate evidence and are not asserted here. Original absolute paths in receipts are host provenance; rebuild pinned sources and regenerate fixtures in a fresh workspace.
+
+Archive SHA256: `e164c426cb48ba26a467e29c7a4717498b7285d3fb80a76579bf1c1d724eba96`.

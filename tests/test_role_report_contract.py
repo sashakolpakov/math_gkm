@@ -124,6 +124,44 @@ class RoleReportContract(unittest.TestCase):
         with self.assertRaisesRegex(Invalid, 'hypothesis evidence not bound to actual artifacts'):
             study_policy.commit(study_policy.initial('exploration'), report, self.base, 0, study.DEFAULT)
 
+        for mode in ('baseline', 'exploration'):
+            for declared in (False, True):
+                for present, value in ((False, None), (True, []), (True, ['artifact.txt']),
+                                       (True, ['future.txt']), (True, None), (True, 'artifact.txt'),
+                                       (True, {}), (True, ['artifact.txt', 7]), (True, [{}])):
+                    candidate = neutral.plan()
+                    candidate['hypotheses'][0].pop('evidence', None)
+                    if present:
+                        candidate['hypotheses'][0]['evidence'] = value
+                    candidate['evidence'] = ([{'path': 'artifact.txt', 'sha256': sha(self.base / 'artifact.txt'),
+                                               'kind': 'experiment'}] if declared else [])
+                    valid = not present or value == [] or (declared and value == ['artifact.txt'])
+                    state = study_policy.initial(mode)
+                    staged, commitment = study_policy.commit(state, neutral.plan(), self.base, 0, study.DEFAULT)
+                    original = copy.deepcopy(candidate)
+                    with self.subTest(mode=mode, declared=declared, present=present, value=value):
+                        if valid:
+                            accepted, _ = study_policy.commit(state, candidate, self.base, 0, study.DEFAULT)
+                            reference = accepted['portfolio'][candidate['hypotheses'][0]['id']]['reference']
+                            finding = next(f for f in reversed(accepted['findings']) if f['reference'] == reference)
+                            self.assertEqual(finding['evidence'], value if present else [])
+                            study_policy.record(staged, {**candidate, 'prospective_binding': digest(commitment)},
+                                                self.base, 0, study.DEFAULT, prospective=commitment)
+                            reference = staged['portfolio'][candidate['hypotheses'][0]['id']]['reference']
+                            finding = next(f for f in reversed(staged['findings']) if f['reference'] == reference)
+                            self.assertEqual(finding['evidence'], value if present else [])
+                        else:
+                            before = copy.deepcopy(state)
+                            with self.assertRaisesRegex(Invalid, 'hypothesis evidence not bound to actual artifacts'):
+                                study_policy.commit(state, candidate, self.base, 0, study.DEFAULT)
+                            self.assertEqual(state, before)
+                            before = copy.deepcopy(staged)
+                            with self.assertRaisesRegex(Invalid, 'hypothesis evidence not bound to actual artifacts'):
+                                study_policy.record(staged, {**candidate, 'prospective_binding': digest(commitment)},
+                                                    self.base, 0, study.DEFAULT, prospective=commitment)
+                            self.assertEqual(staged, before)
+                        self.assertEqual(candidate, original)
+
     def test_cached_invalid_plan_is_not_repaired_replayed_or_recharged(self):
         directory = self.base / 'study'
         with patch('machinery.study.dependency_identity', return_value={'fixture': 'fixed'}):

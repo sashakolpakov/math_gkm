@@ -33,7 +33,20 @@ is used.
 
 ## Acceptance evidence and status
 
-Reviewed source checkpoint 007 is bound by SHA256
+Current installed source checkpoint 010 is bound by SHA256
+`91849c3534793fc2c9b0c77303816bc3d7c322b310eb09d5a9745734953cbd7b`.
+All 347 frozen/live source hashes were independently verified. The
+[installed 010 manifest](evidence/harness-v3-install/20261018-010/INSTALLED_SOURCE_MANIFEST.json),
+SHA256 `129b46ead1a23a1926c19ea988f0ce94646348daca102692c4d5c1ee44c1f027`,
+contains 121 verified entries. Its four-file overlay clarifies hypothesis
+references and own-plan repair diagnostics, enforces hypothesis evidence binding,
+and supplies the affected tests. Historical Lean sources, dependency pins,
+mathematical admission rules and the resource profile remain unchanged. The
+[accepted 010 source manifest](evidence/harness-v3-install/20261018-010/ACCEPTED_SOURCE_MANIFEST.json)
+retains the exact reviewed source. All 16 selected pure report-contract tests
+passed on 010; its next fresh study must perform its own deployment verification.
+
+The preceding resource release, source checkpoint 007, is bound by SHA256
 `3e39e2efd9a0f3fa092bfe4b0305cd836156adb7de37d11bf19bfc45f5374310`.
 All 307 frozen/live source hashes were independently verified. Every Lean source,
 root, context and mathematical admission rule is byte-identical to 006. The
@@ -57,7 +70,12 @@ Passing evidence is attributed to the source version actually executed:
 |006 installed|Construction passed; manual full-Mathlib positive, real wrong-target and missing-dependency negatives, and completion controls passed in 519.73 seconds|Neutral identity proof; no Markov result|
 |006 first study freeze|Real deployment verification stopped safely at the raw-VM byte headroom check before completing kernel replay|Failed freeze retained; no Markov arms initialized|
 |007|Fifteen focused resource checks passed; installed five-file overlay independently verified|No new mathematical admission or research outcome inferred|
-|007 study-0002|Full-Mathlib positive, wrong-target and mandatory-use controls passed; completion control then rejected a correspondence path with a `.bootstrap` ancestor after 312.607 seconds|Safe failed freeze with no resource failure or initialized Markov arms; fresh `.scratch` attempt pending|
+|007 study-0002|Full-Mathlib positive, wrong-target and mandatory-use controls passed; completion control then rejected a correspondence path with a `.bootstrap` ancestor after 312.607 seconds|Safe failed freeze retained; no resource failure or initialized Markov arms|
+|007 study-0003|Fresh deployment under `.scratch`: full-Mathlib positive, actual wrong-target and mandatory-use negatives, and completion controls passed in 369.75 seconds; all 63 receipt files and 44 implementation source hashes independently verified|Neutral identity proof; completion remains unresolved pending the independent English audit; no Markov admission|
+|007 study-0003 research launch|The combined arm stopped at round zero after two own proposer plans were rejected: `findings.reference` named source files rather than immutable hypothesis hashes; the charged repair repeated the error|No researcher invocation, admitted theorem or component; baseline never launched, so no mathematical comparison result|
+|008|All seven new report-reference tests passed; one existing hypothesis-evidence negative failed among 16 selected methods|15/16 passed; pre-existing provenance gap retained, not accepted as all-pass|
+|009|Strict hypothesis-evidence binding made the original negative pass; two new positive subtests selected the other hypothesis's finding|Fixture assertion failure retained; runtime unchanged by the subsequent test correction|
+|010|All 16 selected pure report-contract methods passed in 0.034 seconds, with no source mismatch or resource fault; four-file installed overlay independently verified|Synthetic role fixtures; no demonstrated real-model repair, new theorem or Markov comparison result|
 |Portable formal profile|Seven modules freshly compiled and independently replayed from the exact public source pin|Compilation/replay profile; separate premise and host checks above|
 
 Earlier failing launches, syntax/context errors, artifact-size rejection and
@@ -125,11 +143,13 @@ aggregate RSS 5,799,034,880 bytes and charged physical footprint 1,001,361,336 b
 with no resource termination or source mismatch. These are actual receipt
 observations, not a continuous maximum or a hard memory guarantee.
 
-Current checkpoint (18 October 2026): reviewed 007 is installed. Study-0002
-stopped safely after its completion control rejected a correspondence path whose
-absolute ancestry included `.bootstrap`; the preceding mathematical controls
-passed and no resource failure occurred. A genuinely fresh study under `.scratch`
-is pending, using the same independently selected pretrial two-task suite and
-unchanged runtime/proof gates. No Markov research arm has been initialized, and
-no new Markov theorem or completed 007 deployment is claimed. Both failed study
-freezes remain retained rather than retried in place.
+Current checkpoint (18 October 2026): reviewed 010 is installed and all 16
+selected pure report-contract methods passed. Independent installed-source review
+authorizes a genuinely fresh study-0004 official freeze with its own deployment
+verification; no extra manual preflight is required. This does not relabel the
+successful 007 study-0003 neutral check as a 010 check. Study-0003's actual
+research launch remains a round-zero failure after two charged proposer calls,
+with no researcher invocation, admission or baseline run. Failed 008/009 tests
+and earlier failed freezes remain retained. No new Markov theorem or mathematical
+comparison result is claimed; actual new research outcomes require their own
+checked records and English/source audit.

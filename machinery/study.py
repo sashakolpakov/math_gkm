@@ -484,9 +484,12 @@ class Arm:
                     original_final_sha256=sha(invalid.parent/'final.json') if (invalid.parent/'final.json').exists() else None,
                     error_class=type(exc).__name__,safe_error='Invalid plan schema, identity, artifact binding or prospective commitment. Correct your own retained payload; no action executed.',
                     attempt=attempt,new_request_required=True)
+                diagnostic=policy.report_diagnostic(exc)
+                if diagnostic is not None: record['diagnostic']=diagnostic
                 if not invalid.exists(): write(invalid,record)
                 repair=dict(previous_request=logical,receipt_hash=digest(receipt),error=record['safe_error'],
                     previous_payload=receipt.get('payload'),invalid_receipt_sha256=sha(invalid))
+                if diagnostic is not None: repair['diagnostic']=diagnostic
                 continue
             write(path,dict(receipt_hash=digest(receipt),research=staged,commitment=commitment))
             return staged,commitment
