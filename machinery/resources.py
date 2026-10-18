@@ -1,9 +1,10 @@
 """Shared host admission and ownership-scoped observation, never proof evidence.
 
 One heavy lease covers validators, replay, inspectors and external proposers.
-Limits can only be lowered by callers. Darwin charges native birth-bound
+Caps can only be lowered and headroom floors raised by callers. Darwin charges native birth-bound
 phys_footprint plus bounded observer RSS, with a separate absolute RSS cap.
-Linux retains historical RSS caps. Missing observations fail closed.
+Linux retains historical RSS caps and MemAvailable byte floors. Darwin requires
+kernel free percentage; raw VM bytes are audit-only. Required observations fail closed.
 """
 import contextlib
 import fcntl
@@ -24,9 +25,13 @@ ROOT = Path(__file__).resolve().parents[1]
 LIMITS = dict(rss_sustained=4*GiB, rss_hard=5*GiB, sustained_seconds=3,
               footprint_sustained=4*GiB, footprint_hard=5*GiB, rss_absolute=8*GiB,
               admit_free=8*GiB, memory_admit_free=8*GiB, hard_free=5*GiB, growth=GiB,
-              processes=24, poll_seconds=1, timeout=1800, output_bytes=GiB)
-PROFILE_SHA256 = 'feada5a82c264d2ad98824a2ecd884b0b8242c7a6b6effb2b37c52228488abd4'
-PROFILE_PATH = 'config/darwin-memory-profile-006.json'
+              processes=24, poll_seconds=1, timeout=1800, output_bytes=GiB,
+              os_pressure_admission_percent=30, os_pressure_dynamic_percent=25)
+# memory_admit_free is Linux-only; hard_free covers Linux memory and BOTH disks.
+FLOORS = ('admit_free', 'memory_admit_free', 'hard_free',
+          'os_pressure_admission_percent', 'os_pressure_dynamic_percent')
+PROFILE_SHA256 = 'fa7318100cea3a6bd4f06f96a2dd87249bb18339a9d259333ac3f40ac5c9411a'
+PROFILE_PATH = 'config/darwin-memory-profile-007.json'
 
 def darwin_profile():
     return os.uname().sysname == 'Darwin'
@@ -51,13 +56,14 @@ def cleanup_hold(reason, owned=None):
 
 def limits(overrides=None):
     out = dict(LIMITS)
-    if darwin_profile(): out['memory_admit_free'] = 7*GiB
     for k,v in (overrides or {}).items():
         if (k not in out or isinstance(v, bool) or not isinstance(v, (int,float))
                 or (isinstance(v, float) and not math.isfinite(v)) or v <= 0):
             raise ResourceFailure('invalid resource limit')
+        if k.startswith('os_pressure_') and v > 100:
+            raise ResourceFailure('invalid percentage floor')
         # Headroom floors may be raised, all other caps may only be reduced.
-        if (k in ('admit_free','memory_admit_free','hard_free') and v < out[k]) or (k not in ('admit_free','memory_admit_free','hard_free') and v > out[k]):
+        if (k in FLOORS and v < out[k]) or (k not in FLOORS and v > out[k]):
             raise ResourceFailure('resource override increases immutable global bound')
         out[k] = v
     return out
@@ -232,7 +238,11 @@ def headroom(cap):
     if (ROOT/'.scratch/resources/UNRESOLVED_CLEANUP.json').exists():
         raise ResourceFailure('unresolved_owned_cleanup_hold')
     if shutil.disk_usage(ROOT).free<cap['admit_free']: raise ResourceFailure('admission_disk_headroom')
-    if available_memory()<cap['memory_admit_free']: raise ResourceFailure('admission_memory_headroom')
+    memory=memory_observation()
+    if (memory['os_free_percent'] < cap['os_pressure_admission_percent'] if darwin_profile()
+            else memory['linux_mem_available_bytes'] < cap['memory_admit_free']):
+        raise ResourceFailure('admission_memory_headroom')
+    return memory
 
 def child_exited(p):
     # Caller must keep SIGCHLD at SIG_DFL and must not poll()/wait() until cleanup.
@@ -273,7 +283,28 @@ def cleanup_private_group(p):
             raise ResourceFailure('unresolved cleanup: live private group '+str(live))
         time.sleep(.02)
 
+def required_os_free_percent():
+    """Kernel percentage is a capacity signal, never guaranteed allocatable bytes."""
+    import re
+    text=observation(['/usr/bin/memory_pressure','-Q'])
+    lines=[line.strip() for line in text.splitlines() if 'System-wide memory free percentage' in line]
+    match=re.fullmatch(r'System-wide memory free percentage: ([0-9]{1,3})%',lines[0]) if len(lines)==1 else None
+    if not match or not 0 <= int(match[1]) <= 100:
+        raise ResourceFailure('monitor_unavailable: required Darwin OS free percentage')
+    return int(match[1])
+
+def memory_observation():
+    if not darwin_profile():
+        return dict(linux_mem_available_bytes=available_memory())
+    percent=required_os_free_percent()  # required; no VM fallback or synthetic value
+    audit=dict(raw_vm_audit_bytes=None,raw_vm_audit_failure=None)
+    try: audit['raw_vm_audit_bytes']=available_memory()
+    except (ResourceFailure,OSError,ValueError) as exc:
+        audit['raw_vm_audit_failure']=str(exc)
+    return dict(os_free_percent=percent,**audit)
+
 def available_memory():
+    """Linux required MemAvailable bytes; Darwin raw VM estimate AUDIT-ONLY."""
     if os.uname().sysname == 'Darwin':
         import re
         text = observation(['/usr/bin/vm_stat'])
@@ -327,13 +358,13 @@ def admission(kind='validator', overrides=None):
         except BlockingIOError: raise ResourceFailure('shared_heavy_reservation_busy')
         if (base/'UNRESOLVED_CLEANUP.json').exists(): raise ResourceFailure('unresolved_owned_cleanup_hold')
         try:
-            headroom(cap)
+            memory=headroom(cap)
         except (OSError,ValueError) as exc: raise ResourceFailure('monitor_unavailable: admission: '+str(exc)) from exc
         # Reservation is not measured RSS, elapsed time, or provider usage.
         receipt=base/(str(os.getpid())+'-'+str(time.time_ns())+'.json')
         from .study_common import write
         start=time.monotonic()
-        record=dict(kind=kind,pid=os.getpid(),allocated_caps=cap,profile=profile_identity(),status='reserved',time=time.time())
+        record=dict(kind=kind,pid=os.getpid(),allocated_caps=cap,profile=profile_identity(),status='reserved',time=time.time(),memory_observation=memory)
         write(receipt,record)
         try:
             yield cap
@@ -416,10 +447,10 @@ class Guard:
         helper_charge=sum(h['rss'] for h in helpers.values())+sum(v['rss'] for v in own_observers)
         charged=sum(r['phys_footprint_bytes'] for r in native)+helper_charge if darwin_profile() else None
         process_count=len(owned)+len(helpers)+len(own_observers)
-        available=available_memory(); free=shutil.disk_usage(self.scope).free
+        memory=memory_observation(); free=shutil.disk_usage(self.scope).free
         growth=disk_bytes(self.scope)-self.baseline
         compilers=sum(Path(table[p]['command']).name in ('lean','leanchecker') for p in owned)
-        sample=dict(rss_sum=rss,available_memory_estimate=available,free_disk=free,growth=growth,owned_processes=process_count,compilers=compilers,privileged_observers=list(helpers.values()))
+        sample=dict(rss_sum=rss,memory_observation=memory,free_disk=free,growth=growth,owned_processes=process_count,compilers=compilers,privileged_observers=list(helpers.values()))
         sample.update(charged_phys_footprint=charged,native_birth_owned=native,helper_rss_charge=helper_charge)
         self.samples=(self.samples+[sample])[-8:]
         self.peak_rss=max(self.peak_rss,rss)
@@ -433,7 +464,8 @@ class Guard:
                   prefix+'_hard' if metric>self.cap[prefix+'_hard'] else
                   prefix+'_sustained' if self.over_since is not None and now-self.over_since>=self.cap['sustained_seconds'] else
                   'disk_headroom' if free<self.cap['hard_free'] else
-                  'memory_pressure_or_low_available' if available<self.cap['hard_free'] else
+                  'memory_pressure_or_low_available' if (memory['os_free_percent'] < self.cap['os_pressure_dynamic_percent'] if darwin_profile()
+                      else memory['linux_mem_available_bytes'] < self.cap['hard_free']) else
                   'disk_growth' if growth>self.cap['growth'] else
                   'process_limit' if process_count>self.cap['processes'] else
                   'compiler_concurrency' if compilers>1 else None)
@@ -461,4 +493,4 @@ class Guard:
         return dict(limits=self.cap,last_samples=self.samples,peak_rss_observed=self.peak_rss,
             peak_charged_phys_footprint_observed=self.peak_footprint if darwin_profile() else None,
             profile=self.profile,termination_cause=self.termination_cause,
-            owned_identities=self.owned,scope=str(self.scope),monitor='Darwin native birth-bound phys_footprint plus conservative bounded helper RSS; separate raw RSS; Linux RSS; available memory estimate; OS pressure level unavailable',ownership='birth-bound descendants plus narrowly verified bounded public /bin/ps observers; private unreaped-leader group cleanup; hostile detached escape requires OS sandbox')
+            owned_identities=self.owned,scope=str(self.scope),monitor='Darwin native birth-bound phys_footprint plus conservative bounded helper RSS; separate raw RSS; Linux RSS and required MemAvailable bytes; Darwin required kernel OS free percentage; raw VM bytes AUDIT-ONLY value or failure, never allocatable byte guarantee',ownership='birth-bound descendants plus narrowly verified bounded public /bin/ps observers; private unreaped-leader group cleanup; hostile detached escape requires OS sandbox')

@@ -64,3 +64,35 @@ Run the small helper tests without executing project proofs:
 ```sh
 python3 -B -m unittest discover -s repro -p test_repro.py -v
 ```
+
+
+## Blended V3 formal Construction profile
+
+`manifest-construction-v3.json` is a separate, seven-module source closure bound
+to public source commit `4915b7c6cfa50c2c66c33155d944e13d2f067f84`.
+It preserves the historical manifest unchanged and avoids importing historical
+Agoh or Markov results through the top-level aggregate.
+
+For an isolated workspace using explicitly supplied pinned toolchain/package
+binaries, run from this repository (replace the example paths for your host):
+
+```sh
+python3 repro/repro.py --manifest repro/manifest-construction-v3.json prepare \
+  --source "$PWD" --workspace /ABSOLUTE/NEW/WORKSPACE \
+  --profile construction-v3 --toolchain-dir /ABSOLUTE/PINNED/TOOLCHAIN \
+  --packages-dir /ABSOLUTE/PINNED/PACKAGES
+python3 repro/repro.py --manifest repro/manifest-construction-v3.json run \
+  --workspace /ABSOLUTE/NEW/WORKSPACE --profile construction-v3 --timeout 300
+```
+
+Alternatively use the same manifest with the runner's `bootstrap` command to
+fetch its exact public source and dependency revisions. The manifest lists only
+the necessary seven project modules and three fixed inputs; dependency packages
+are pinned separately. `prepare` reuses existing dependency binaries and does
+not by itself establish a cold bootstrap.
+
+This formal profile compiles and independently replays the mathematical
+Construction closure. Actual Python-harness positive/negative controls, premise
+inspection and English/source audits have separate versioned receipts in the
+[V3 release record](../STRATEGY_V3_RELEASE.md). A generic continuation theorem is
+not a certified arbitrary host edit; D1/D2/D3 remain open.

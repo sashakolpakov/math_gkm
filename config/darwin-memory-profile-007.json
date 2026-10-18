@@ -1,0 +1,40 @@
+{
+  "schema": "math-gkm.prospective-darwin-memory-profile.v1",
+  "approved_utc": "2026-10-18T19:04:07.777599+00:00",
+  "authority": "Root prospective DARWIN_PRESSURE_METRIC_DECISION_007.json; operational metric repair only",
+  "darwin": {
+    "charged_phys_footprint_sustained_bytes": 4294967296,
+    "charged_phys_footprint_hard_bytes": 5368709120,
+    "aggregate_rss_absolute_bytes": 8589934592,
+    "sustained_seconds": 3,
+    "poll_seconds": 1,
+    "required_os_free_percent_admission": 30,
+    "required_os_free_percent_dynamic": 25,
+    "required_observer": [
+      "/usr/bin/memory_pressure",
+      "-Q"
+    ],
+    "required_observer_failure": "fail closed; unique integer 0..100; no fallback",
+    "raw_vm_estimate": "audit-only value or failure"
+  },
+  "linux": "Retain historical RSS4GiB sustained/5GiB hard.",
+  "other_bounds": "unchanged; one j1 compiler; strict bounded privileged ps helper; source-bound profile, never worker-chosen; unavailable native metric fails closed",
+  "scope": "operational observation/cost capacity only; no mathematical target or premise change",
+  "linux_memory_admission_bytes": 8589934592,
+  "disk_admission_bytes": 8589934592,
+  "disk_dynamic_bytes": 5368709120,
+  "os_pressure_admission_percent": 30,
+  "os_pressure_dynamic_percent": 25,
+  "available_memory_estimator": "Darwin free + inactive + speculative VM pages: AUDIT-ONLY value or failure; never admission/dynamic rule or allocatable byte guarantee",
+  "approval_provenance": {
+    "path": "evidence/construction-v3/source-audit-007/inputs/DARWIN_PRESSURE_METRIC_DECISION_007.json",
+    "sha256": "870f61dff564a205b212c7dd5d918091c9ac413fb105d37124dc67a23b925269"
+  },
+  "prior_profile": {
+    "path": "config/darwin-memory-profile-006.json",
+    "sha256": "feada5a82c264d2ad98824a2ecd884b0b8242c7a6b6effb2b37c52228488abd4",
+    "disposition": "immutable006; failed installed freeze preserved, never retried"
+  },
+  "linux_memory_dynamic_bytes": 5368709120,
+  "byte_floor_scope": "memory_admit_free Linux-only MemAvailable; hard_free memory Linux-only and disk BOTH platforms; admit_free disk BOTH platforms"
+}

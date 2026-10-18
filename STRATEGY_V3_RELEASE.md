@@ -1,10 +1,10 @@
 # Blended strategy V3: acceptance and comparison
 
 The current mathematical target is the original, pinned Markov Conjecture 6.3.
-Fresh research uses its own external Codex/gpt-6.1-sol proposer with high
-reasoning. The supervising session develops and audits the machinery, without
-supplying a mathematical strategy. Historical Markov results are not imported
-into either fresh arm.
+Fresh research is configured to use its own external Codex/gpt-6.1-sol proposer
+with high reasoning. A separate external Codex constructor authored the harness;
+the supervising session operates and audits it without supplying a mathematical
+strategy. Historical Markov results are not imported into either fresh arm.
 
 ## Connected research loop
 
@@ -33,12 +33,17 @@ is used.
 
 ## Acceptance evidence and status
 
-Source checkpoint 006 is bound by SHA256
-`47757e16d92b964d58af75538e83c40d7956f6d3a94832a6feb37075dd983c8f`.
-Both independent reviews verified all 294 frozen/live source hashes. Every Lean
-source, root, context and mathematical admission rule is byte-identical to 005.
-The final changes reject nonfinite/bool resource limits and distinguish the
-Darwin memory admission reserve from the disk reserve.
+Reviewed source checkpoint 007 is bound by SHA256
+`3e39e2efd9a0f3fa092bfe4b0305cd836156adb7de37d11bf19bfc45f5374310`.
+All 307 frozen/live source hashes were independently verified. Every Lean source,
+root, context and mathematical admission rule is byte-identical to 006. The
+[installed 007 manifest](evidence/harness-v3-install/20261018-007/INSTALLED_SOURCE_MANIFEST.json)
+is bound by SHA256
+`03fb1f0307fbfe68ac78a25837a520074b30a9bd764adff5e99cfdfb00e12532`.
+Its five changed files implement the reviewed operational metric and focused
+tests; historical Lean sources, the top aggregate and dependency pins remain
+unchanged. The [accepted source manifest](evidence/harness-v3-install/20261018-007/ACCEPTED_SOURCE_MANIFEST.json)
+retains the prospective source and profile evidence.
 
 Passing evidence is attributed to the source version actually executed:
 
@@ -48,12 +53,17 @@ Passing evidence is attributed to the source version actually executed:
 |004|Actual two-by-two deterministic strategy continuation, reviewed selection, changed next request, pending discovery and paid fresh main admission|No live LLM discovery, later main consumer, or Markov result|
 |005|Nine affected checks, eleven resource checks and the full Construction consumer passed|These executions are not relabeled as 006|
 |005|Four full-Mathlib compilations and four independent kernel replays passed; premise-inspector launch then refused by the startup memory reserve|The complete preflight failed; no admission claimed|
-|006|Independent source approval complete; affected checks and installed deployment outcomes recorded separately below|No pass inferred from inspection|
+|006|Five affected controls and the actual two-inspector hidden-premise rejection passed|No mathematical gates changed|
+|006 installed|Construction passed; manual full-Mathlib positive, real wrong-target and missing-dependency negatives, and completion controls passed in 519.73 seconds|Neutral identity proof; no Markov result|
+|006 first study freeze|Real deployment verification stopped safely at the raw-VM byte headroom check before completing kernel replay|Failed freeze retained; no Markov arms initialized|
+|007|Fifteen focused resource checks passed; installed five-file overlay independently verified|No new mathematical admission or research outcome inferred|
+|007 study-0002|Full-Mathlib positive, wrong-target and mandatory-use controls passed; completion control then rejected a correspondence path with a `.bootstrap` ancestor after 312.607 seconds|Safe failed freeze with no resource failure or initialized Markov arms; fresh `.scratch` attempt pending|
+|Portable formal profile|Seven modules freshly compiled and independently replayed from the exact public source pin|Compilation/replay profile; separate premise and host checks above|
 
 Earlier failing launches, syntax/context errors, artifact-size rejection and
 resource refusals remain retained. The versioned validation inventory records
 exact selectors, counts, receipt hashes and unchanged-source regression
-dispositions. No claim is made that all historical tests were rerun on 006.
+dispositions. No claim is made that all historical tests were rerun on 006 or 007.
 
 The Construction consumer checks the concrete formal-model chain through
 `verified_change`, continuation installation and the gluing universal map.
@@ -61,14 +71,17 @@ Fresh-consumer fixtures also check conservative attachment, exact representation
 with its condition retained, and dependent push transport. These are unbounded
 neutral mathematical examples, not proofs of the Markov conjecture.
 
-The reviewed Darwin profile keeps one heavy worker, charged-footprint limits
-of 4/5 GiB, an 8 GiB aggregate RSS ceiling, a 7 GiB memory startup reserve and 5 GiB
-running reserve, with disk reserves 8/5 GiB. The existing conservative VM estimator
-is retained; file cache is not assumed immediately reclaimable. Linux retains
-its prior RSS and 8 GiB memory startup rules. The 7 GiB Darwin startup choice was
-approved prospectively after successful imports/replays charged under 1 GiB and
-macOS reported 65% memory free. Sampled resource observations are not a hard OOM
-guarantee. No worker can raise the fixed caps or lower the admission floors.
+The reviewed 007 Darwin profile uses the actual OS-reported system-wide memory
+free percentage directly: at least 30% for admission and 25% while running.
+The raw VM page estimate is audit-only, recorded as a value or observation
+failure; it is neither an admission rule nor a guaranteed allocatable byte count.
+Missing, ambiguous or invalid required OS observations stop execution safely.
+One heavy worker, charged native-footprint limits of 4/5 GiB, the 8 GiB aggregate
+RSS ceiling and disk reserves of 8/5 GiB remain unchanged. Linux retains its prior
+RSS limits and MemAvailable reserves of 8/5 GiB. Sampled resource observations
+are not a hard OOM guarantee. No worker can raise fixed caps or lower admission
+floors. The successful manual 006 preflight and its later failed study freeze
+remain distinct historical observations, not relabeled 007 passes.
 
 ## Fresh comparison
 
@@ -93,9 +106,10 @@ Neutral acceptance tests establish no new Markov theorem.
 ## Reproduction and preservation
 
 The [construction history](evidence/blended-harness-v3-20261018/README.md) retains
-source-only checkpoints, failed diagnostics and independent reviews. Final
-validation sources, receipts, profiles and reconstruction recipes are retained
-separately. The exact Lean 4.32.2/mathlib pins remain unchanged. Necessary sources,
+source-only checkpoints, failed diagnostics and independent reviews. The [candidate validation archive](evidence/blended-harness-v3-validation-20261018/README.md)
+retains final source checkpoints, generated Lean proofs, receipts, profiles,
+failures and reconstruction inputs. All 2,381 evidence members were independently
+verified; no compiled objects or package caches were included. The exact Lean 4.32.2/mathlib pins remain unchanged. Necessary sources,
 inputs, scripts and receipts are published before derived caches are removed.
 
 The [portable runner](repro/README.md) reconstructs isolated closed Lean profiles.
@@ -106,5 +120,16 @@ records are not reusable approval certificates. Deterministic fixture tests do
 not require a live LLM call. The broad historical worker entrypoint is disabled;
 V3 uses the study controller and study worker.
 
-Current checkpoint: source-approved 006; installed deployment and fresh Markov
-comparison have not yet run. This line is updated only from actual receipts.
+The historical successful manual 006 full-Mathlib preflight observed peak
+aggregate RSS 5,799,034,880 bytes and charged physical footprint 1,001,361,336 bytes,
+with no resource termination or source mismatch. These are actual receipt
+observations, not a continuous maximum or a hard memory guarantee.
+
+Current checkpoint (18 October 2026): reviewed 007 is installed. Study-0002
+stopped safely after its completion control rejected a correspondence path whose
+absolute ancestry included `.bootstrap`; the preceding mathematical controls
+passed and no resource failure occurred. A genuinely fresh study under `.scratch`
+is pending, using the same independently selected pretrial two-task suite and
+unchanged runtime/proof gates. No Markov research arm has been initialized, and
+no new Markov theorem or completed 007 deployment is claimed. Both failed study
+freezes remain retained rather than retried in place.

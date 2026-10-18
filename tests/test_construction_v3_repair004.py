@@ -81,6 +81,7 @@ class Resources004(v3.Retained):
             raise PermissionError('full BSDINFO EPERM')
         with patch.object(resources,'disk_bytes',return_value=0),patch.object(resources,'process_table',return_value=table), \
              patch.object(resources,'current_process',side_effect=current),patch.object(resources,'cleanup_hold') as held, \
+             patch.object(resources,'required_os_free_percent',return_value=61), \
              patch.object(resources,'available_memory',return_value=16*resources.GiB), \
              patch.object(resources.shutil,'disk_usage',return_value=SimpleNamespace(free=16*resources.GiB)), \
              patch.object(resources,'privileged_observer',return_value=dict(pid=124,ppid=123,executable='/bin/ps')) as helper:
@@ -96,7 +97,7 @@ class Resources004(v3.Retained):
             self.assertTrue(held.called)
 
     def test_tree_only_admission_floor_without_heavy_lease(self):
-        with patch.object(resources,'available_memory',return_value=resources.limits()['memory_admit_free']-1):
+        with patch.object(resources,'required_os_free_percent',return_value=29), patch.object(resources,'available_memory',return_value=resources.limits()['memory_admit_free']-1):
             result=run([PYTHON,'-c','print(1)'],cwd=ROOT,env=os.environ.copy(),tree_only=True)
         self.assertIn('admission_memory_headroom',result['termination'])
 
@@ -114,7 +115,7 @@ class Resources004(v3.Retained):
             with patch.object(resources,'darwin_profile',return_value=darwin):
                 cap=resources.limits()
                 for key,bound in cap.items():
-                    floor=key in ('admit_free','memory_admit_free','hard_free')
+                    floor=key in resources.FLOORS
                     with self.subTest(darwin=darwin,key=key),self.assertRaises(resources.ResourceFailure):
                         resources.limits({key:bound-1 if floor else bound+1})
                     value=bound+1 if floor else bound/2
@@ -122,20 +123,26 @@ class Resources004(v3.Retained):
 
     def test_distinct_memory_disk_admission_floors006(self):
         GiB=resources.GiB
-        with patch.object(Path,'exists',return_value=False), \
-             patch.object(resources.shutil,'disk_usage',return_value=SimpleNamespace(free=8*GiB)) as disk, \
-             patch.object(resources,'available_memory',return_value=7*GiB) as memory:
-            for darwin,floor in ((True,7*GiB),(False,8*GiB)):
+        from contextlib import ExitStack
+        with ExitStack() as stack:
+            stack.enter_context(patch.object(Path,'exists',return_value=False))
+            disk=stack.enter_context(patch.object(resources.shutil,'disk_usage',return_value=SimpleNamespace(free=8*GiB)))
+            memory=stack.enter_context(patch.object(resources,'available_memory',return_value=8*GiB))
+            pressure=stack.enter_context(patch.object(resources,'required_os_free_percent',return_value=30))
+            for darwin in (True,False):
                 with patch.object(resources,'darwin_profile',return_value=darwin):
                     cap=resources.limits()
-                    self.assertEqual(cap['memory_admit_free'],floor)
+                    self.assertEqual(cap['memory_admit_free'],8*GiB)  # Linux-only
                     self.assertEqual(cap['admit_free'],8*GiB)
-                    memory.return_value=floor; disk.return_value=SimpleNamespace(free=8*GiB)
+                    memory.return_value=8*GiB; pressure.return_value=30
+                    disk.return_value=SimpleNamespace(free=8*GiB)
                     resources.headroom(cap)
-                    memory.return_value=floor-1
+                    if darwin: pressure.return_value=29
+                    else: memory.return_value=8*GiB-1
                     with self.assertRaisesRegex(resources.ResourceFailure,'admission_memory_headroom'):
                         resources.headroom(cap)
-                    memory.return_value=floor; disk.return_value=SimpleNamespace(free=8*GiB-1)
+                    memory.return_value=8*GiB; pressure.return_value=30
+                    disk.return_value=SimpleNamespace(free=8*GiB-1)
                     with self.assertRaisesRegex(resources.ResourceFailure,'admission_disk_headroom'):
                         resources.headroom(cap)
 

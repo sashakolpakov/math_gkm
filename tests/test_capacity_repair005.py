@@ -62,6 +62,7 @@ class Resource005(unittest.TestCase):
              patch.object(resources,'disk_bytes',return_value=0), \
              patch.object(resources,'process_table',return_value=table), \
              patch.object(resources,'current_process',return_value=dict(identity='birth',ppid=1)), \
+             patch.object(resources,'required_os_free_percent',return_value=61), \
              patch.object(resources,'available_memory',return_value=16*GiB), \
              patch.object(resources.shutil,'disk_usage',return_value=SimpleNamespace(free=16*GiB)), \
              patch.object(resources,'native_footprint',side_effect=lambda *_:dict(native)) as metric, \
