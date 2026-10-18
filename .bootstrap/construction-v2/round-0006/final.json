@@ -1,0 +1,29 @@
+{
+  "phase": "construction",
+  "summary": "Repaired role-specific prompts and schemas so prospective intentions use existing planning fields without claiming observed reuse. Strict endpoint validation remains unchanged.",
+  "files_changed": [
+    "machinery/study_policy.py",
+    "tests/test_role_report_contract.py",
+    "evidence/neutral-validation/repair-role-report-20261018/AFFECTED_PATH_AUDIT.md",
+    "evidence/neutral-validation/repair-role-report-20261018/pretest/SOURCE_MANIFEST.json",
+    "evidence/neutral-validation/repair-role-report-20261018/final/SOURCE_MANIFEST.json",
+    "evidence/neutral-validation/repair-role-report-20261018/SOURCE_CHANGES.diff",
+    "evidence/neutral-validation/repair-role-report-20261018/VALIDATION_SUMMARY.json",
+    "evidence/neutral-validation/repair-role-report-20261018/RETAINED_ARTIFACTS.json",
+    "evidence/neutral-validation/repair-role-report-20261018/DIAGNOSTICS.md",
+    "evidence/neutral-validation/repair-role-report-20261018/FINAL_MANIFEST.json",
+    "evidence/neutral-validation/repair-role-report-20261018/REPORT.md"
+  ],
+  "checks": [
+    "31 tests passed: 13 focused, 17 lifecycle/Lean, 1 connected regression.",
+    "Real Lean compilation, kernel replay and premise checks retained.",
+    "Only prompt() changed in production; validators and budgets unchanged.",
+    "Final sources match tested sources; all evidence hashes verified."
+  ],
+  "remaining": [
+    "Cached invalid plans remain rejected on resume; recovery requires a fresh paired study.",
+    "Live proposer compliance remains untested.",
+    "Host refinement and concrete whole-continuation proof remain open; this is not a certified Goedel self-switch."
+  ],
+  "next_step": "Supervisor reviews and installs the exact FINAL_MANIFEST.json inputs, then starts the separately authorized fresh paired study."
+}

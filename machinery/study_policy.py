@@ -182,7 +182,12 @@ def prompt(req):
                  'kind (experiment/source/representation/proof_candidate/capability_failure). '
                  'Commit alternative observable outcomes and what changes next; invention is bounded by the episode. '
                  'Baseline keeps a single agenda and need not retain competing hypotheses; still explicitly commit its selected claim and outcome checks. '
-                 'No execution or invented success. Proposed policy/program changes are experimental candidates.')
+                 'No execution or invented success. Do not create research artifacts or endpoints while planning. '
+                 'Describe intended future work and intended reuse in agenda, summary, hypothesis claims and outcome checks. '
+                 'Future artifact paths may appear there as intentions, even when they do not exist yet. '
+                 'Use use_links:[] when no existing reuse is being reported. '
+                 'No prospective_binding is supplied to the proposer; the controller creates it after validating this plan. '
+                 'Proposed policy/program changes are experimental candidates.')
     elif req['role'] == 'researcher':
         extra = ('Execute the committed_trial in this request. Its hypotheses/outcomes were recorded by a separate proposer before this call. '
                  'Return the same trial identity and hypothesis claims, with actual evidence and updated status. A bounded invention round may precede a formal root reduction. '
@@ -197,8 +202,19 @@ def prompt(req):
                  'Independent selector: consume actual checked comparison records and reviewer findings. Choose incumbent or candidate '
                  'only with cited records; unknown/failed validation cannot authorize a change. No universal score or theorem count. '
                  'A selected change is experimental, never a certified switch.')
-    return COMMON + '\n' + extra + '''\nThe output envelope has request_id and payload_json (a JSON-encoded object).
-Researcher payload: {agenda:[strings], summary:string, hypotheses:[{id,kind,claim,uncertainty,outcomes:[{check,changes_next_choice}],status,reason,evidence:[paths]}], evidence:[{path,sha256,kind}], trial:{hypothesis,invention}, prospective_binding:request.prospective_binding, use_links:[{artifact,consumer,claim}], policy_proposal:null or {search,memory,allocation,reassessment}, executable_proposal:null or {schema:"math-gkm.request-program.v1",code:[instructions]}, mathematical_claims:[], attachments:[], representations:[], reductions:[], completion:null or {kind,module,declaration,correspondence}}. Executable instructions: reverse_agenda, reverse_portfolio; rotate_agenda/keep_observations with integer n; if_open_obligations with then/else instruction lists. These cannot edit admission, contract, costs or authority.
-Reviewer payload: {findings:[{path,sha256,finding}], correctness,scope,transfer,costs,recommendation}.
-Selector payload: {choice:"incumbent" or "candidate",reason,evidence:[{path,sha256}]}.
-REQUEST:\n''' + __import__('json').dumps(req, indent=2)
+    if req['role'] in ('proposer', 'researcher'):
+        report_fields = '''agenda:[strings], summary:string, hypotheses:[{id,kind,claim,uncertainty,outcomes:[{check,changes_next_choice}],status,reason,evidence:[paths]}], evidence:[{path,sha256,kind}], trial:{hypothesis,invention}, use_links:[{artifact,consumer,claim}], policy_proposal:null or {search,memory,allocation,reassessment}, executable_proposal:null or {schema:"math-gkm.request-program.v1",code:[instructions]}'''
+        if req['role'] == 'proposer':
+            schema = 'Proposer payload: {' + report_fields + ', completion:null}.'
+        else:
+            schema = 'Researcher payload: {' + report_fields + ', prospective_binding:request.prospective_binding, mathematical_claims:[], attachments:[], representations:[], reductions:[], fiber_gluings:[], completion:null or {kind,module,declaration,correspondence}}.'
+        schema += '''
+Artifact reporting contract (both proposer and researcher): use_links reports observed reuse, never intended future reuse. Each entry has exactly artifact, consumer and claim. Both artifact and consumer must name files that already exist in your workspace at report validation, using safe workspace-relative paths. Missing endpoints are rejected even in a prospective plan. Do not fabricate files to satisfy this requirement. Empty use_links is valid. File existence does not establish the claim: accepted links remain reported_use_pending_checked_interface until separately checked. Checked delayed_use_links in the request are controller-produced records, not the report entry schema; do not copy their status, receipt_hash or declaration identifiers into use_links.
+Evidence likewise requires an existing file and its actual sha256; kind must be experiment/source/representation/proof_candidate/capability_failure. Hypothesis evidence references must be bound in evidence. Intentions belong in agenda/summary/hypothesis claims/outcome checks, not evidence or use_links. Reports cannot self-certify theorems.
+Executable instructions: reverse_agenda, reverse_portfolio; rotate_agenda/keep_observations with integer n; if_open_obligations with then/else instruction lists. These cannot edit admission, contract, costs or authority.'''
+    elif req['role'] == 'reviewer':
+        schema = 'Reviewer payload: {findings:[{path,sha256,finding}], correctness,scope,transfer,costs,recommendation}.'
+    else:
+        schema = 'Selector payload: {choice:"incumbent" or "candidate",reason,evidence:[{path,sha256}]}.'
+    return (COMMON + '\n' + extra + '\nThe output envelope has request_id and payload_json (a JSON-encoded object).\n'
+            + schema + '\nREQUEST:\n' + __import__('json').dumps(req, indent=2))
