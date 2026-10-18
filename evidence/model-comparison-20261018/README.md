@@ -1,5 +1,7 @@
 # Fresh Sol study and preserved Astra reference
 
+Final run record: [Sol study status and harness limitations](SOL_FINAL_REPORT.md), including the complete archive, matched exploration comparison and observer plots. The run is stopped; the conjecture remains open.
+
 Progress record: [matched eight-round baseline checkpoint](SOL_BASELINE_EIGHT_ROUNDS.md), observed at 14:07 UTC. The earlier cutoff below remains a historical launch record.
 
 Status cutoff: **2026-10-18 12:35:56 UTC**. This is observational status and reproduction documentation for the user. It is not a research prompt or input to the Sol roles and supplies no new mathematical ideas or advice.
