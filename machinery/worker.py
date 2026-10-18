@@ -42,7 +42,7 @@ REPORT_SCHEMA['required'] = list(REPORT_SCHEMA['properties'])
 
 def command(directory, request):
     """Construct only; callers/tests can inspect without starting Codex."""
-    profile = json.loads((ROOT/'.bootstrap/base-permissions.json').read_text())
+    profile = json.loads((ROOT/'config/study-base-permissions.json').read_text())
     protected = profile['filesystem'][':workspace_roots']
     protected.update({p: 'read' for p in [
         'MISSION.md', 'docs/DESIGN.md', 'lean-toolchain', 'lake-manifest.json',
@@ -105,12 +105,28 @@ def inventory():
                        not (Path(directory)/d).is_symlink()]
             for name in files:
                 path = Path(directory)/name
-                if not path.is_symlink() and path.is_file():
+                if not path.is_symlink() and path.is_file() and path.suffix not in ('.olean','.ilean','.o','.so','.dylib','.pyc'):
                     result[str(path.relative_to(ROOT))] = sha(path)
     return result
 
 
 def execute(directory):
+    # This historical root-workspace worker can read broad campaign history and
+    # hardcodes an older proposer. V3 only supports isolated study_worker jobs.
+    # Keep inline()/argv construction available for historical source consumers.
+    from .study_common import Invalid
+    raise Invalid('legacy worker execution disabled for V3; use isolated machinery.study_worker')
+    # Historical implementation retained below for source provenance only.
+    from .resources import admission,ResourceFailure
+    try:
+        with admission('legacy-external-worker') as cap:
+            return _execute(directory,cap)
+    except ResourceFailure as exc:
+        request=json.loads((directory/'request.json').read_text())
+        atomic(directory/'receipt.json',dict(outcome='resource_guard: '+str(exc),
+            request_id=request['id'],elapsed_seconds=0,report=None,mathematical_resolution=False))
+
+def _execute(directory,cap):
     request = json.loads((directory/'request.json').read_text())
     before = inventory()
     atomic(directory/'before.json', before)
@@ -121,13 +137,15 @@ def execute(directory):
     for name, hashed in before.items():
         target = objects/hashed
         if not target.exists():
-            target.write_bytes((ROOT/name).read_bytes())
+            __import__('shutil').copyfile(ROOT/name,target)
     argv = command(directory, request)
     if request['transport'] == 'fixture':
         argv = ['/opt/homebrew/bin/python3', '-m', 'machinery.fixture_worker', str(directory)]
     atomic(directory/'command.json', argv)
     started = time.time()
     deadline = time.monotonic() + request['seconds']
+    from .resources import Guard,ResourceFailure
+    guard=Guard(0,ROOT/'.scratch',cap)
     error, p = None, None
     usage, total, last_heartbeat = [], 0, 0
     try:
@@ -136,12 +154,14 @@ def execute(directory):
         with (directory/'prompt.txt').open('rb') as prompt:
             p = subprocess.Popen(argv, cwd=ROOT, env=env, stdin=prompt,
                 stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)
+            guard.bind(p.pid)
         atomic(directory/'process.json', {'pid': p.pid, 'watchdog_pid': os.getpid(),
                                          'started': started})
         with selectors.DefaultSelector() as selector, (directory/'events.jsonl').open('wb') as events, (directory/'stderr.log').open('wb') as errors:
             selector.register(p.stdout, selectors.EVENT_READ, events)
             selector.register(p.stderr, selectors.EVENT_READ, errors)
             while selector.get_map() or p.poll() is None:
+                guard.check()
                 now = time.time()
                 if now-last_heartbeat >= 1:
                     atomic(directory/'activity.json', {'time': now, 'bytes': total, 'pid': p.pid})
@@ -169,18 +189,9 @@ def execute(directory):
         error = type(exc).__name__+': '+str(exc)
     finally:
         if p is not None:
-            try:
-                os.killpg(p.pid, signal.SIGTERM)
-            except ProcessLookupError:
-                pass
-            try:
-                p.wait(timeout=2)
-            except subprocess.TimeoutExpired:
-                pass
-            try:
-                os.killpg(p.pid, signal.SIGKILL)
-            except ProcessLookupError:
-                pass
+            try: guard.cleanup()
+            except ResourceFailure as exc: error=error or str(exc)
+            if p.poll() is None: p.kill()
             p.wait()
             p.stdout.close()
             p.stderr.close()
@@ -198,13 +209,10 @@ def execute(directory):
         error = error or 'nonzero_exit'
     events_path = directory/'events.jsonl'
     if events_path.exists():
-        for line in events_path.read_text(errors='replace').splitlines():
-            try:
-                event = json.loads(line)
-                if isinstance(event, dict) and 'usage' in event:
-                    usage.append(event['usage'])
-            except ValueError:
-                pass  # partial JSON stream is retained as evidence
+        from .event_stream import events
+        for event in events(events_path):
+            if 'usage' in event:
+                usage.append(event['usage'])
     after = inventory()
     changes = {name: {'before': before.get(name), 'after': after.get(name)}
                for name in before.keys() | after.keys() if before.get(name) != after.get(name)}
@@ -212,7 +220,7 @@ def execute(directory):
         if change['after']:
             target = directory/'artifacts'/name
             target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_bytes((ROOT/name).read_bytes())
+            __import__('shutil').copyfile(ROOT/name,target)
     result = {'evidence': 'bounded_worker_observation', 'transport': request['transport'],
         'classification': 'explicit_deterministic_transport_fixture' if request['transport'] == 'fixture' else 'live_gpt-6-astra_experimental_research',
         'request_id': request['id'], 'outcome': error or 'completed',

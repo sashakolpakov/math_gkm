@@ -6,9 +6,12 @@ messages are diagnostics only and NEVER authorize admission. General Lean
 elaborators still require OS isolation and a protected validator deployment.
 """
 import json
+import os
+import stat
 from .study_common import Invalid, digest
 
 MARKER = 'GKM_DECLARATIONS_V1:'
+ARTIFACT_BYTES = 32*1024**2
 
 
 def inspector(module, declarations, required=(), catalog_modules=(), artifact=None):
@@ -94,9 +97,37 @@ def parse_artifact(record, declarations, path):
     markers = [line for line in record['stdout'].splitlines() if line.startswith('GKM_DECLARATIONS')]
     if markers != ['GKM_DECLARATIONS_FILE_V1:declarations.json']:
         raise Invalid('missing or ambiguous inspector artifact marker')
-    if path.is_symlink() or not path.is_file() or path.stat().st_size > 16777216:
+    if path.name != 'declarations.json' or path.is_symlink() or not path.is_file():
         raise Invalid('missing/oversized inspector artifact')
-    return parse({**record, 'stdout': MARKER+path.read_text()}, declarations)
+    try:
+        fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW)
+        with os.fdopen(fd, 'rb') as source:
+            before = os.fstat(source.fileno())
+            if not stat.S_ISREG(before.st_mode) or before.st_size > ARTIFACT_BYTES:
+                raise Invalid('missing/oversized inspector artifact')
+            # Read at most the finite capacity plus one byte, including on growth.
+            # No stdout marker concatenation, splitlines, or duplicate full text.
+            data = json.load(_BoundedJSONFile(source, ARTIFACT_BYTES))
+            after = os.fstat(source.fileno())
+            if (before.st_size, before.st_mtime_ns, before.st_ctime_ns) != (after.st_size, after.st_mtime_ns, after.st_ctime_ns):
+                raise Invalid('inspector artifact changed during parsing')
+            named = path.stat(follow_symlinks=False)
+            if (named.st_dev,named.st_ino) != (before.st_dev,before.st_ino):
+                raise Invalid('inspector artifact path changed during parsing')
+        return _validate(data, declarations)
+    except (OSError, ValueError, KeyError, TypeError, UnicodeError, RecursionError) as exc:
+        raise Invalid('malformed or oversized inspector artifact') from exc
+
+
+class _BoundedJSONFile:
+    def __init__(self, source, capacity):
+        self.source, self.capacity = source, capacity
+
+    def read(self):
+        raw = self.source.read(self.capacity+1)
+        if len(raw) > self.capacity:
+            raise Invalid('oversized inspector artifact')
+        return raw
 
 
 def parse(record, declarations):
@@ -106,7 +137,13 @@ def parse(record, declarations):
     if len(rows) != 1:
         raise Invalid('missing or ambiguous inspector output')
     try:
-        data = json.loads(rows[0])
+        return _validate(json.loads(rows[0]), declarations)
+    except (ValueError, KeyError, TypeError, UnicodeError, RecursionError) as exc:
+        raise Invalid('malformed inspector output') from exc
+
+
+def _validate(data, declarations):
+    try:
         if [d['name'] for d in data] != list(declarations):
             raise Invalid('inspected declaration mismatch')
         for d in data:

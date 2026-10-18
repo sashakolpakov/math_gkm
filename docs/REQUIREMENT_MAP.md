@@ -1,4 +1,12 @@
-# Current requirement-to-evidence map
+# V3 source-only status
+
+`CONSTRUCTION_V3_AUDIT.json` and `docs/CONSTRUCTION_V3.md` describe this candidate.
+The frozen manifest includes all changed scripts, docs and acceptance sources.
+Tests have not run on V3. The table below is historical design/evidence context,
+not a claim that this candidate passes. D1–D3 remain OPEN; no campaign starts
+before later explicit USER OK.
+
+# Historical requirement-to-evidence map
 
 Construction only. Neutral deterministic roles test the protocol; they are not a
 live Astra campaign. The acceptance report, validation summary and manifests in
@@ -67,3 +75,10 @@ Use these locators with the producer/artifact/consumer table above:
 | C2, R2 | pre-validation copies, final source and retained artifact manifests, docs/REGRESSION.md | Local host-specific reproduction. Dependency-tree identity explicitly mocked in fixtures; no portable cold bootstrap or full deployment attestation. |
 | O2, C4 | historical broker/construction/campaign records and unchanged contracts | No fresh broad-tool campaign, Agoh exercise or Markov work in this invocation. Historical evidence is not current validation. |
 | R4 | fixed hold and absence of a new authorization artifact | Maintained constraint; later fresh Markov work needs explicit user approval after this report. |
+# V3 repair-003 status
+
+This historical requirement map's validation results are not current-source
+evidence. See `docs/STUDY_V3.md` and `CONSTRUCTION_V3_AUDIT.json` for repair
+dispositions and prepared acceptance commands. All current tests remain NOT RUN;
+D1/D2/D3 remain OPEN. No campaign is launched during construction.
+

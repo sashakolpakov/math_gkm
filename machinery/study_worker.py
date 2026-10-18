@@ -15,13 +15,15 @@ import time
 from .study_common import (ROOT, PYTHON, read, write, inventory, sha, authorize_live,
                            validate_model, REASONING_EFFORT, Invalid)
 from .worker import inline
+from .resources import admission, Guard, ResourceFailure, cleanup_hold, child_exited, cleanup_private_group
+from .event_stream import events
 
 SCHEMA = {'type': 'object', 'additionalProperties': False, 'properties': {
     'request_id': {'type': 'string'}, 'payload_json': {'type': 'string'}},
     'required': ['request_id', 'payload_json']}
 
 def permissions(workspace, *, readonly=False, retained_sources=None):
-    profile = read(ROOT/'.bootstrap/base-permissions.json')
+    profile = read(ROOT/'config/study-base-permissions.json')
     fs = profile['filesystem']
     fs[str(ROOT)] = 'deny'
     # No inherited workspace, bootstrap, old history or evaluator read grant.
@@ -71,6 +73,16 @@ def command(job, spec):
     return argv + ['-c', 'features.skip_host_skill_discovery=true', '-c', 'project_doc_max_bytes=0', '-']
 
 def execute(job):
+    try:
+        with admission('external-proposer-or-fixture') as cap:
+            return _execute(job, cap)
+    except ResourceFailure as exc:
+        spec = read(job/'spec.json')
+        write(job/'receipt.json', dict(request_id=spec['request_id'], role=spec['role'],
+            outcome='resource_guard: '+str(exc), payload=None, usage_raw=[],
+            elapsed_seconds=0, mathematical_resolution=False, operationally_incomplete=True))
+
+def _execute(job, cap):
     spec = read(job/'spec.json')
     workspace = Path(spec['workspace'])
     if spec['transport'] == 'live':
@@ -83,18 +95,39 @@ def execute(job):
     write(job/'argv.json', argv)
     start = time.monotonic()
     wall_start = time.time()
-    p, error, total = None, None, 0
+    p, error, total, guard = None, None, 0, None
     try:
         env = os.environ.copy()
         env.update(GIT_CONFIG_NOSYSTEM='1', GIT_CONFIG_GLOBAL='/dev/null', TMPDIR=str(workspace/'.scratch'))
+        guard = Guard(0, job.parent.parent, cap)
         with (job/'prompt.txt').open('rb') as prompt:
+            if signal.getsignal(signal.SIGCHLD)!=signal.SIG_DFL:
+                raise ResourceFailure('default SIGCHLD required for unreaped private group')
             p = subprocess.Popen(argv, cwd=ROOT, env=env, stdin=prompt,
                 stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)
+            guard.bind(p.pid)
         write(job/'process.json', {'pid': p.pid, 'watchdog_pid': os.getpid(), 'started': wall_start})
         with selectors.DefaultSelector() as selector, (job/'events.jsonl').open('wb') as out, (job/'stderr.log').open('wb') as err:
             selector.register(p.stdout, selectors.EVENT_READ, out)
             selector.register(p.stderr, selectors.EVENT_READ, err)
-            while selector.get_map() or p.poll() is None:
+            while True:
+                if child_exited(p):
+                    for stream,target in ((p.stdout,out),(p.stderr,err)):
+                        while True:
+                            # Finite drain: ordinary orphan writers cannot keep
+                            # a normal parent exit alive or escape final cleanup.
+                            os.set_blocking(stream.fileno(),False)
+                            try: data=os.read(stream.fileno(),65536)
+                            except BlockingIOError: break
+                            if not data: break
+                            available=max(0,spec['output_bytes']-total)
+                            target.write(data[:available]); target.flush()
+                            total+=len(data)
+                            if total>spec['output_bytes']:
+                                error='output_budget_exceeded'; break
+                        if error: break
+                    break
+                guard.check()
                 if Path(spec['stop']).exists():
                     error = 'stopped'
                     break
@@ -118,25 +151,26 @@ def execute(job):
                     break
     except BaseException as exc:
         error = type(exc).__name__+': '+str(exc)
+        if p and (not guard or not guard.owned): cleanup_hold(error,guard.owned if guard else {})
     finally:
         if p:
-            try:
-                os.killpg(p.pid, signal.SIGTERM)
-            except ProcessLookupError:
-                pass
-            try:
-                p.wait(timeout=1)
-            except subprocess.TimeoutExpired:
-                pass
-            try:
-                os.killpg(p.pid, signal.SIGKILL)
-            except ProcessLookupError:
-                pass
+            cleanup_errors=[]
+            try: cleanup_private_group(p)
+            except (ResourceFailure,OSError,ValueError) as exc:
+                error=error or 'unresolved_cleanup: '+str(exc)
+                cleanup_errors.append(str(exc))
+            if guard:
+                try: guard.cleanup()
+                except (ResourceFailure,OSError,ValueError) as exc: error = error or 'cleanup_monitor_unavailable: '+str(exc)
+            if p.returncode is None: p.kill()
             p.wait()
             p.stdout.close()
             p.stderr.close()
+            if cleanup_errors: cleanup_hold('; '.join(cleanup_errors),guard.owned if guard else {})
     payload, usage = None, []
     try:
+        if (job/'final.json').stat().st_size > min(spec['output_bytes'],4*1024**2):
+            raise ValueError('final payload exceeds bounded parser capacity')
         final = read(job/'final.json')
         if final['request_id'] != spec['request_id']:
             raise ValueError('request mismatch')
@@ -147,13 +181,9 @@ def execute(job):
         error = error or 'invalid_report: '+str(exc)
     if not p or p.returncode:
         error = error or 'nonzero_exit'
-    for line in (job/'events.jsonl').read_text(errors='replace').splitlines() if (job/'events.jsonl').exists() else []:
-        try:
-            event = json.loads(line)
-            if 'usage' in event:
-                usage.append({'event_type': event.get('type'), 'raw': event['usage']})
-        except (ValueError, TypeError):
-            pass
+    for event in events(job/'events.jsonl'):
+        if 'usage' in event and len(usage)<1024:
+            usage.append({'event_type': event.get('type'), 'raw': event['usage']})
     try:
         after = inventory(workspace)
         if any(after.get(p) != h for p, h in spec.get('retained_sources', {}).items()):
@@ -170,6 +200,7 @@ def execute(job):
         'elapsed_seconds': time.monotonic()-start, 'usage_semantics': spec['usage_semantics'],
         'money': None, 'normalized_tokens': None, 'mathematical_resolution': False,
         'before': before, 'after': after, 'returncode': p.returncode if p else None}
+    result['resources'] = guard.receipt() if guard else {'monitor': 'not started'}
     write(job/'receipt.json', result)
 
 if __name__ == '__main__':

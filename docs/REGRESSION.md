@@ -1,4 +1,26 @@
-# Supported current harness regression
+# Current repair-004 source checkpoint
+
+Current changed-source validation is incomplete: tests_run=false. Historical
+results below retain their own source/date scope. The actual checkpoint003
+six-pass/one-error pure run and two failed direct diagnostics are preserved.
+Use docs/STUDY_V3.md, CONSTRUCTION_V3_AUDIT.json and source-audit-004's sequential
+VALIDATION_PLAN.json; independent source review precedes all execution.
+No old 49-test evidence is current V3 acceptance. D1/D2/D3 remain OPEN.
+
+# V3 validation hold
+
+Repair-003 sources and exact sequential commands are in `CONSTRUCTION_V3_AUDIT.json`
+and `docs/STUDY_V3.md`. Current acceptance is **NOT RUN**. Use only the new frozen
+manifest with a matching protected source review. Earlier counts and parallel
+instructions below are historical; all V3 heavy validation is sequential.
+
+The V3 source manifest and `CONSTRUCTION_V3_AUDIT.json` supersede the execution
+instructions below. No tests have run on V3. First independently review the
+frozen sources. Use `machinery.v3_validate` with the supervisor-owned review
+binding; run each planned group sequentially. Never run the broad historical
+49-test suite in parallel. Old results are historical, not V3 evidence.
+
+# Historical harness regression plan
 
 Run from the workspace root with the existing pinned dependencies. Use
 `/opt/homebrew/bin/python3`; the system `python3` shim is unavailable on this host.

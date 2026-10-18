@@ -21,14 +21,14 @@ from .study_common import (ROOT, PYTHON, SEED, Invalid, canonical, digest, sha, 
 from . import study_policy as policy
 
 DEFAULT = {'schema': 'math-gkm.study.v2', 'transport': 'fixture',
-    'model': 'gpt-6-astra', 'provider': 'codex-configured-provider',
+    'model': 'gpt-6.1-sol', 'provider': 'codex-configured-provider',
     'usage_semantics': 'unverified_raw_only', 'rounds': 4, 'episode_rounds': 2,
     'invention_rounds': 1, 'call_seconds': 30, 'adaptation_seconds': 30,
     'arm_seconds': 12000, 'max_calls': 24, 'meta_calls': 8,
     'policy_trials': 1, 'policy_trial_rounds': 2, 'output_bytes': 2097152,
-    'validation_seconds': 120, 'failure_limit': 3, 'fixture_policy_trial': False,
+    'validation_seconds': 600, 'failure_limit': 3, 'fixture_policy_trial': False,
     'fixture_behavior': 'normal', 'ablations': [], 'fixture_connected': False,
-    'knowledge_checks_per_round': 6}
+    'knowledge_checks_per_round': 6, 'proposal_repairs': 1}
 
 def public_receipt(receipt):
     """Evaluation answers and compiler diagnostics never enter research roles."""
@@ -41,7 +41,7 @@ def public_comparison(result):
 
 def episode_envelope(p, count, tasks):
     evaluation = 2*p['adaptation_seconds'] + 2*(tasks+1)*p['validation_seconds'] if tasks else 0
-    return {'research': (count*(2*p['call_seconds'] + (p['knowledge_checks_per_round']+1)*p['validation_seconds']), 2*count, count),
+    return {'research': (count*((2+p['proposal_repairs'])*p['call_seconds'] + (p['knowledge_checks_per_round']+1)*p['validation_seconds']), (2+p['proposal_repairs'])*count, (1+p['proposal_repairs'])*count),
             'evaluation': (evaluation, 2 if tasks else 0, 0),
             'review': (2*p['call_seconds'], 2, 2)}
 
@@ -65,8 +65,10 @@ def validate_protocol(p):
             raise Invalid('invalid positive budget: '+k)
     if not 0 <= p['invention_rounds'] < p['episode_rounds'] or p['policy_trials'] < 0:
         raise Invalid('invention must be a minority of episode rounds')
-    if p['call_seconds'] > 1800 or p['adaptation_seconds'] > 1800 or p['validation_seconds'] > 180:
+    if p['call_seconds'] > 1800 or p['adaptation_seconds'] > 1800 or p['validation_seconds'] > 1800:
         raise Invalid('call or validation timeout too large')
+    if p['output_bytes'] > 1024**3:
+        raise Invalid('output exceeds immutable global bound')
     if p['usage_semantics'] != 'unverified_raw_only':
         raise Invalid('no provider token normalization has been independently validated')
     if not isinstance(p['ablations'], list):
@@ -77,6 +79,8 @@ def validate_protocol(p):
         if path in SEED or not path.startswith(('MathGKM/', 'research/')):
             raise Invalid('ablation may remove only an experimental component')
 
+    if type(p['proposal_repairs']) is not int or not 0 <= p['proposal_repairs'] <= 2:
+        raise Invalid('proposal repair bound must be 0..2')
     validate_commitment(p)
 
 def validate_suite(suite, contract=None):
@@ -123,7 +127,7 @@ def freeze(directory, config=None, suite=None, contract=None, curation=None):
         'independent': False, 'tasks': []}
     validate_suite(suite, contract)
     validate_commitment(p, len(suite['tasks']))
-    if p['transport'] == 'live' and suite['tasks']:
+    if p['transport'] == 'live' and (suite['tasks'] or curation):
         if not curation:
             raise Invalid('live heldout suite requires retained pretrial curation provenance')
         receipt_path = Path(curation['receipt'])
@@ -132,7 +136,8 @@ def freeze(directory, config=None, suite=None, contract=None, curation=None):
         receipt = read(receipt_path)
         if (sha(receipt_path) != curation['receipt_sha256'] or receipt.get('role') != 'curator' or
             receipt.get('outcome') != 'completed' or receipt.get('payload', {}).get('suite') != suite or
-            digest(suite) != curation['suite_sha256']):
+            digest(suite) != curation['suite_sha256'] or receipt.get('model')!=p['model'] or
+            curation.get('model')!=p['model'] or receipt.get('reasoning_effort')!=REASONING_EFFORT):
             raise Invalid('curation receipt/suite mismatch')
     if p['transport'] == 'live' and any(any(k.startswith('fixture_') for k in t) for t in suite['tasks']):
         raise Invalid('fixture answers cannot enter a live suite')
@@ -221,9 +226,8 @@ def verify(directory):
             if sha(arm/'workspace'/name) != expected:
                 raise Invalid('protected arm seed changed')
         for record in list(state['research'].get('knowledge', {}).values()) + list(state['research'].get('components', {}).values()):
-            for name, expected in record['source_files'].items():
-                if sha(arm/'workspace'/name) != expected:
-                    raise Invalid('retained checked source capability changed')
+            from .study_knowledge import verify_record
+            verify_record(record,arm/'workspace')
     return read(directory/'protocol.json')
 
 class Arm:
@@ -456,6 +460,41 @@ class Arm:
                 time.sleep(.1)
         return self.recover()
 
+    def plan_with_repair(self,key,req,state,workspace,index,protocol):
+        """New charged IDs only. Uncertain operational actions are never repaired/replayed."""
+        repair=None
+        for attempt in range(protocol['proposal_repairs']+1):
+            logical=key if attempt==0 else key+'-repair-'+str(attempt)
+            request={**req,'role':'proposer'}
+            if repair: request['repair']=repair
+            receipt=self.call(logical,'proposer',request,workspace,True)
+            path=self.root/'jobs'/logical/'validated-plan.json'
+            if path.exists():
+                binding=read(path)
+                if binding['receipt_hash']!=digest(receipt): raise Invalid('immutable plan receipt changed')
+                return binding['research'],binding['commitment']
+            # Parsing errors from a completed, read-only proposer are safe to repair.
+            if receipt['outcome']!='completed' and not receipt['outcome'].startswith('invalid_report:'):
+                raise Invalid('operational proposer failure; no uncertain action replay')
+            try:
+                staged,commitment=policy.commit(state,receipt.get('payload'),workspace,index,protocol)
+            except (Invalid,KeyError,TypeError,ValueError) as exc:
+                invalid=self.root/'jobs'/logical/'invalid-plan.json'
+                record=dict(status='invalid_proposer_payload',receipt_hash=digest(receipt),
+                    original_final_sha256=sha(invalid.parent/'final.json') if (invalid.parent/'final.json').exists() else None,
+                    error_class=type(exc).__name__,safe_error='Invalid plan schema, identity, artifact binding or prospective commitment. Correct your own retained payload; no action executed.',
+                    attempt=attempt,new_request_required=True)
+                if not invalid.exists(): write(invalid,record)
+                repair=dict(previous_request=logical,receipt_hash=digest(receipt),error=record['safe_error'],
+                    previous_payload=receipt.get('payload'),invalid_receipt_sha256=sha(invalid))
+                continue
+            write(path,dict(receipt_hash=digest(receipt),research=staged,commitment=commitment))
+            return staged,commitment
+        failure=dict(status='operational_repair_exhausted; root remains open',request=key,attempts=protocol['proposal_repairs']+1)
+        path=self.root/'repair-failures'/(key+'.json')
+        if not path.exists(): write(path,failure)
+        raise Invalid(failure['status'])
+
     def role_workspace(self, key, records, source=None):
         workspace = self.root/'roles'/key
         if not workspace.exists():
@@ -466,7 +505,8 @@ class Arm:
                     p.parent.mkdir(parents=True, exist_ok=True)
                     shutil.copyfile(source/name, p)
                 if (source/'history').exists():
-                    shutil.copytree(source/'history', workspace/'history', dirs_exist_ok=True)
+                    from .study_common import history_view
+                    history_view(source/'history', workspace/'history')
             write(workspace/'inbox/records.json', records)
         elif read(workspace/'inbox/records.json') != records:
             raise Invalid('independent role input changed')
@@ -507,34 +547,19 @@ class Arm:
             write(transaction/'start.json', {'research': self.s['research'], 'source': inventory(self.workspace)})
         start = read(transaction/'start.json')
         req = policy.request(start['research'], r, self.p)
-        planned = self.call(f'plan-{r:04d}', 'proposer', {**req, 'role': 'proposer'}, readonly=True)
-        if planned['outcome'] != 'completed':
-            raise Invalid('prospective proposer failed within budget; no trial authorized')
-        committed = self.root/'jobs'/f'plan-{r:04d}'/'validated-plan.json'
-        if committed.exists():
-            binding = read(committed)
-            if binding['receipt_hash'] != digest(planned):
-                raise Invalid('committed prospective plan changed')
-            staged, commitment = binding['research'], binding['commitment']
-        else:
-            staged, commitment = policy.commit(start['research'], planned['payload'], self.workspace, r, self.p)
-            write(committed, {'receipt_hash': digest(planned), 'research': staged, 'commitment': commitment})
+        staged, commitment = self.plan_with_repair(f'plan-{r:04d}', req, start['research'], self.workspace, r, self.p)
         req = policy.request(staged, r, self.p)
         req.update(committed_trial=commitment['trial'], prospective_binding=digest(commitment),
                    commitment=commitment)
         from .study_knowledge import SCHEMAS, ingest
         req['checked_submission_schemas'] = SCHEMAS
-        result = self.call(f'round-{r:04d}', 'researcher', req)
+        result = self.call(f'round-{r:04d}', 'researcher', req,
+                           seconds=req.get('execution_budget',{}).get('tool_seconds'))
         updated = copy.deepcopy(staged)
+        updated['execution_budget'] = req.get('execution_budget',{})
         if result['outcome'] == 'completed':
-            try:
-                policy.record(updated, result['payload'], self.workspace, r, self.p, prospective=commitment)
-                ingest(self, updated, result['payload'], self.workspace, transaction/'checks')
-                updated['next_trial'] = result['payload'].get('trial')
-            except (Invalid, KeyError, TypeError) as exc:
-                updated = copy.deepcopy(staged)
-                updated['observations'].append({'round': r, 'validation_failure': str(exc),
-                    'status': 'report_rejected; no theorem or refutation established'})
+            from .study_reports import accept_report
+            accept_report(self, updated, result['payload'], self.workspace, transaction/'checks', r, self.p, commitment)
         else:
             updated['observations'].append({'round': r, 'outcome': result['outcome'],
                 'meaning': 'failure within budget; no unprovability conclusion'})
@@ -543,7 +568,12 @@ class Arm:
                     {'receipt': digest(result), 'commitment': digest(commitment)})
         self.s['research'] = updated
         write(self.workspace/f'history/round-{r:04d}.json', result)
-        claim = result.get('payload', {}).get('completion') if result['outcome'] == 'completed' else None
+        from .study_discoveries import completion_candidate
+        try:
+            claim = completion_candidate(self,updated,result['payload'],self.workspace) if result['outcome']=='completed' else None
+        except (Invalid,KeyError,TypeError,ValueError,OSError) as exc:
+            claim=None
+            write(transaction/'pending-completion-rejection.json',dict(reason=str(exc),status='pending; main math retained'))
         if claim:
             from .study_completion import check
             checked = check(self, claim)
@@ -556,6 +586,8 @@ class Arm:
         self.archive_sources()
         self.s['round'] += 1
         self.s['phase'] = 'review' if self.s['round'] % self.p['episode_rounds'] == 0 or self.s['round'] == self.p['rounds'] else 'research'
+        if self.s['round'] % req.get('reassess_after_rounds', self.p['episode_rounds']) == 0:
+            self.s['phase'] = 'review'
         from .study_observer import checkpoint
         checkpoint(self.study, self.mode, f'round-{r:04d}', self.s, target)
         self.save()
@@ -563,11 +595,17 @@ class Arm:
     def archive_sources(self):
         """All old mathematical artifacts remain available read-only to their arm."""
         files = inventory(self.workspace)
+        from .study_common import retention_room
+        retention_room(self.root,sum((self.workspace/n).stat().st_size for n,h in files.items()
+            if not (self.workspace/'history/objects'/h).exists()))
         for name, hashed in files.items():
             target = self.workspace/'history/objects'/hashed
             if not target.exists():
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(self.workspace/name, target)
+                if sha(target)!=hashed: raise Invalid('source changed while archiving')
+                target.chmod(0o444)
+            elif sha(target)!=hashed: raise Invalid('retained history object changed')
         write(self.workspace/f'history/manifests/round-{self.s["round"]:04d}.json', files)
 
     def review(self):
@@ -656,8 +694,8 @@ class Arm:
                 self.s['policy_trials'] = len(self.s['completed_policy_trials'])
                 self.save()
             return read(destination/'result.json')
-        calls = 4*self.p['policy_trial_rounds']
-        side_budget = self.p['policy_trial_rounds'] * (2*self.p['call_seconds'] +
+        calls = 2*(2+self.p['proposal_repairs'])*self.p['policy_trial_rounds']
+        side_budget = self.p['policy_trial_rounds'] * ((2+self.p['proposal_repairs'])*self.p['call_seconds'] +
             self.p['knowledge_checks_per_round']*self.p['validation_seconds'])
         tasks = len(read(self.study/'evaluation/suite.json')['tasks'])
         downstream = 2*self.p['adaptation_seconds'] + 2*(tasks+1)*self.p['validation_seconds'] + 2*self.p['call_seconds']
@@ -666,7 +704,7 @@ class Arm:
         if not trial_commitment.exists():
             if budget > self.available():
                 return {'eligible': False, 'status': 'insufficient_predetermined_continuation_budget'}
-            if calls + 2 > self.available_calls() or 2*self.p['policy_trial_rounds'] > self.available_calls(meta=True):
+            if calls + 2 > self.available_calls() or 2*(1+self.p['proposal_repairs'])*self.p['policy_trial_rounds'] > self.available_calls(meta=True):
                 return {'eligible': False, 'status': 'insufficient_predetermined_call_or_meta_budget'}
             write(trial_commitment, {'candidate': candidate, 'calls': calls, 'seconds': budget,
                 'rounds_each': self.p['policy_trial_rounds'], 'state_binding': digest(self.s['research'])})
@@ -695,13 +733,14 @@ class Arm:
                     target.parent.mkdir(parents=True, exist_ok=True)
                     shutil.copyfile(seed/'source'/name, target)
                 if (self.workspace/'history').exists():
-                    shutil.copytree(self.workspace/'history', ws/'history', dirs_exist_ok=True)
+                    from .study_common import history_view
+                    history_view(self.workspace/'history', ws/'history')
             branch_state = destination/f'{side}-state.json'
             if branch_state.exists():
                 progress = load_state(branch_state)
             else:
                 local = copy.deepcopy(decision['research'])
-                local.update(policy=p, program=program, pending_policy=None, pending_program=None)
+                local.update(policy=p, program=program, pending_policy=None, pending_program=None, pending_discoveries={})
                 progress = {'research': local, 'next': 0, 'receipts': [], 'valid': True}
                 save_state(branch_state, progress)
             for n in range(progress['next'], self.p['policy_trial_rounds']):
@@ -710,35 +749,31 @@ class Arm:
                 req = policy.request(local, index, branch_protocol)
                 req['comparison_branch'] = 'blinded-policy-continuation'
                 with self.budget(key+'-'+side):
-                    plan = self.call(f'{key}-{side}-plan-{n}', 'proposer', {**req, 'role': 'proposer'}, ws, True)
-                if plan['outcome'] != 'completed':
-                    raise Invalid('branch prospective proposer failed within budget')
-                committed = destination/f'{side}-commit-{n}.json'
-                if committed.exists():
-                    binding = read(committed)
-                    if binding['receipt_hash'] != digest(plan):
-                        raise Invalid('branch prospective receipt changed')
-                    staged, commitment = binding['research'], binding['commitment']
-                else:
-                    staged, commitment = policy.commit(local, plan['payload'], ws, index, branch_protocol)
-                    write(committed, {'receipt_hash': digest(plan), 'research': staged, 'commitment': commitment})
+                    staged, commitment = self.plan_with_repair(f'{key}-{side}-plan-{n}', req, local, ws, index, branch_protocol)
                 req = policy.request(staged, index, branch_protocol)
                 from .study_knowledge import SCHEMAS, ingest
                 req.update(committed_trial=commitment['trial'], prospective_binding=digest(commitment),
                            commitment=commitment, checked_submission_schemas=SCHEMAS)
                 with self.budget(key+'-'+side):
-                    result = self.call(f'{key}-{side}-{n}', 'researcher', req, ws)
+                    result = self.call(f'{key}-{side}-{n}', 'researcher', req, ws,
+                                       seconds=req.get('execution_budget',{}).get('tool_seconds'))
                 progress['receipts'].append(result)
                 if result['outcome'] == 'completed':
-                    try:
-                        local = copy.deepcopy(staged)
-                        policy.record(local, result['payload'], ws, index, branch_protocol, prospective=commitment)
-                        with self.budget(key+'-'+side):
-                            ingest(self, local, result['payload'], ws, destination/f'{side}-checks-{n}')
-                    except (Invalid, KeyError, TypeError) as exc:
-                        progress['valid'] = False
-                        local = copy.deepcopy(staged)
-                        local['observations'].append({'status': 'invalid_branch_report', 'reason': str(exc)})
+                    from .study_reports import accept_report
+                    local = copy.deepcopy(staged)
+                    local['execution_budget'] = req.get('execution_budget',{})
+                    with self.budget(key+'-'+side):
+                        metadata_ok = accept_report(self, local, result['payload'], ws, destination/f'{side}-checks-{n}', index, branch_protocol, commitment)
+                    from .study_discoveries import retain
+                    retain(self,ws,local,result['payload'],result,f'{key}-{side}-{n}',key,side,index)
+                    progress['valid'] = progress['valid'] and metadata_ok
+                    # Both continuations can propose and execute later bounded strategies.
+                    if local.get('pending_program'):
+                        local['program'] = local.pop('pending_program')['program']
+                        local['pending_program'] = None
+                    if local.get('pending_policy'):
+                        local['policy'] = local.pop('pending_policy')['policy']
+                        local['pending_policy'] = None
                 else:
                     progress['valid'] = False
                     local = copy.deepcopy(staged)

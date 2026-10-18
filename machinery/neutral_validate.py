@@ -1,10 +1,13 @@
 """Bounded neutral validation with exact-byte pre/post checks and durable logs."""
-import hashlib
 import json
+import os
 from pathlib import Path
-import subprocess
 import sys
 import time
+if not __package__:
+    sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from machinery.study_common import sha
+from machinery.process import run
 
 root = Path.cwd()
 checkpoint, label, *tests = sys.argv[1:]
@@ -12,29 +15,22 @@ manifest_path = root/'evidence/neutral-validation'/checkpoint/'SOURCE_MANIFEST.j
 manifest = json.loads(manifest_path.read_text())
 def mismatches():
     return [p for p,h in manifest['files_sha256'].items()
-            if hashlib.sha256((root/p).read_bytes()).hexdigest() != h]
+            if sha(root/p) != h]
 if mismatches():
     raise SystemExit('source changed before execution: '+repr(mismatches()))
 command = ['/opt/homebrew/bin/python3', '-m', 'unittest', '-v', *tests]
 out = root/'evidence/neutral-validation'
 log = out/(label+'.log')
 start = time.time()
-with log.open('x') as handle:
-    handle.write('COMMAND '+json.dumps(command)+'\nMANIFEST '+str(manifest_path)+'\n')
-    handle.flush()
-    try:
-        result = subprocess.run(command, stdout=handle, stderr=subprocess.STDOUT,
-            cwd=root, timeout=720, env={**__import__('os').environ, 'TMPDIR': str(root/'.scratch'),
-                                      'PYTHONDONTWRITEBYTECODE': '1'})
-        code = result.returncode
-    except subprocess.TimeoutExpired:
-        code = 124
-    except KeyboardInterrupt:
-        code = 130
+result=run(command,cwd=root,timeout=720,output_bytes=8*1024**2,tree_only=True,
+    scope=root/'.scratch',log_path=log,env={**os.environ,'TMPDIR':str(root/'.scratch'),
+        'PATH':'/opt/homebrew/bin:/Users/sasha/.elan/bin:/usr/bin:/bin','PYTHONDONTWRITEBYTECODE':'1'})
+code=124 if result.get('termination') else result['returncode']
 record = {'command': command, 'started': start, 'elapsed_seconds': time.time()-start,
-    'returncode': code, 'manifest_sha256': hashlib.sha256(manifest_path.read_bytes()).hexdigest(),
+    'returncode': code, 'termination':result.get('termination'),'resources':result.get('resources'),
+    'manifest_sha256': sha(manifest_path),
     'source_mismatches_after': mismatches(), 'log': str(log.relative_to(root)),
-    'log_sha256': hashlib.sha256(log.read_bytes()).hexdigest(),
+    'log_sha256': sha(log) if log.exists() else None,
     'scope': 'neutral tests; deterministic roles explicitly fixtures; no live model or Markov research'}
 (out/(label+'.json')).write_text(json.dumps(record, indent=2)+'\n')
 print(json.dumps(record), flush=True)

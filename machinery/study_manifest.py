@@ -9,13 +9,9 @@ from .study_common import ROOT, SEED, read, write, sha
 def generate(output):
     if output.exists():
         raise FileExistsError('preserve earlier evidence; choose a new manifest path: '+str(output))
-    paths = set(SEED) | {'.bootstrap/base-permissions.json', '.bootstrap/supervisor-review/requirements.md'}
-    for folder in ('review-round2', 'review-round3', 'review-round4'):
-        paths.update(str(p.relative_to(ROOT)) for p in (ROOT/'.bootstrap'/folder).glob('*')
-                     if p.is_file() and p.suffix in ('.md', '.json'))
-    for folder in ('machinery', 'tests', 'contracts', 'docs', 'studies', 'MathGKM'):
-        paths.update(str(p.relative_to(ROOT)) for p in (ROOT/folder).glob('*')
-                     if p.is_file() and p.suffix in ('.py', '.json', '.md', '.lean'))
+    disposition=read(ROOT/'INSTALLATION_SOURCE_DISPOSITION.json')
+    paths=set(disposition['artifacts'])
+    paths.add('INSTALLATION_SOURCE_DISPOSITION.json')
     files = []
     for name in sorted(paths):
         p = ROOT/name
@@ -32,7 +28,7 @@ def generate(output):
         'reproduce': [line for line in (ROOT/'docs/REGRESSION.md').read_text().splitlines()
                       if line.startswith('/opt/homebrew/bin/python3 ')],
         'reproduction_scope': 'Complete supported neutral harness suite; fresh checkpoint/log labels required. Each test group has a 720-second bound. See docs/REGRESSION.md for roles, real Lean and historical exclusions.',
-        'install': 'No live activation. Explicit USER OK after the final harness report remains required. No old run resumes.',
+        'install': 'No installation/activation here. Root has user authorization for fresh matched trials only after meaningful audit and actual acceptance. Preserve installed aggregate/historical modules.',
         'limitations': ['No live Codex invocation tested by builder',
             'Nested sandbox-exec denied by managed builder environment; live validator fails closed',
             'Provider token semantics/prices unverified; only raw usage and time/call caps',

@@ -11,9 +11,10 @@ from pathlib import Path
 import platform
 import sys
 import time
+import shutil
 from types import SimpleNamespace
 
-from .study_common import ROOT, Invalid, digest, read, sha, write
+from .study_common import ROOT, Invalid, digest, read, sha, write, dependencies, dependency_identity
 from .study_transfer import check_task, sandbox_prefix
 from .trust import CORE, LEAN, CHECKER, environment
 from .process import run
@@ -43,11 +44,11 @@ def accepted_controls(positive, wrong_target, missing_premise, completion):
             'independent source/English correspondence audit required for this exact bundle')
 
 
-def preflight(directory, seconds=120):
+def preflight(directory, seconds=1200):
     directory = Path(directory).resolve()
     if (not directory.is_relative_to(ROOT) or directory == ROOT or
-        directory.exists() or type(seconds) is not int or not 10 <= seconds <= 180):
-        raise Invalid('fresh local output and 10..180 second total preflight bound required')
+        directory.exists() or type(seconds) is not int or not 10 <= seconds <= 1800):
+        raise Invalid('fresh local output and 10..1800 second total preflight bound required')
     directory.mkdir(parents=True)
     start = time.monotonic()
     report = {'schema': 'math-gkm.deployment-preflight.v1', 'ready': False,
@@ -68,6 +69,7 @@ def preflight(directory, seconds=120):
         report['source_hashes'] = {str(p.relative_to(ROOT)): sha(p) for p in
             sorted((ROOT/'machinery').glob('*.py'))}
         report['binary_hashes'] = {str(p): sha(p) for p in (LEAN, CHECKER)}
+        report['dependency_identity'] = dependency_identity()
         startup = directory/'startup'
         startup.mkdir()
         env = environment([CORE])
@@ -108,23 +110,27 @@ def preflight(directory, seconds=120):
         workspace = directory/'workspace'
         (workspace/'MathGKM').mkdir(parents=True)
         (workspace/'.lake/packages').mkdir(parents=True)
+        dependencies(workspace)
         (workspace/'research').mkdir()
+        for name in ('lean-toolchain','lakefile.toml','lake-manifest.json'):
+            shutil.copyfile(ROOT/name,workspace/name)
         foundation = 'MathGKM/ResearchSemantics.lean'
         (workspace/foundation).write_bytes((ROOT/foundation).read_bytes())
         root = workspace/'MathGKM/DeploymentRoot.lean'
-        root.write_text('import MathGKM.ResearchSemantics\n'
+        root.write_text('import MathGKM.ResearchSemantics\nimport Mathlib\n'
             'namespace MathGKM.DeploymentRoot\n'
-            'def Root : Prop := ∀ n : Nat, n = n\n'
-            'theorem identity (n : Nat) : n = n := rfl\n'
+            'def Root : Prop := ∀ n : Nat, n + 0 = n\n'
+            'theorem identity (n : Nat) : n + 0 = n := Nat.add_zero n\n'
             'end MathGKM.DeploymentRoot\n')
         contract = {'id': 'neutral-deployment-v1', 'root_file': str(root.relative_to(workspace)),
             'root_sha256': sha(root), 'root_declaration': 'MathGKM.DeploymentRoot.Root',
             'assumptions': ['propext', 'Classical.choice', 'Quot.sound'],
             'correspondence_obligations': ['neutral_identity']}
         write(workspace/'contract.json', contract)
+        report['deployment_import_scope']='Full Mathlib through actual sandbox, compile, independent leanchecker and trusted premise inspector; unchanged global caps'
         report['neutral_sources'] = {foundation: sha(workspace/foundation),
                                     contract['root_file']: sha(root)}
-        task = {'id': 'neutral-identity', 'statement': '∀ n : Nat, n = n',
+        task = {'id': 'neutral-identity', 'statement': '∀ n : Nat, n + 0 = n',
             'hypotheses': [], 'scope': 'Neutral deployment check only',
             'source_sha256': sha(root), 'kind': 'regression', 'interface_type': 'True',
             'transport_type': 'True', 'required_constants': ['MathGKM.DeploymentRoot.identity']}
@@ -133,6 +139,10 @@ def preflight(directory, seconds=120):
         positive = check_task(workspace, task, solution, directory/'positive', remaining(),
                               live=True, required=task['required_constants'])
         report['positive'] = positive
+        report['positive_resource_evidence']=dict(
+            peak_rss_observed=max((c.get('resources',{}).get('peak_rss_observed',0) for c in positive.get('checks',[])),default=0),
+            phase_elapsed_ns=[dict(operation=c['operation'],module=c.get('module'),elapsed_ns=c.get('elapsed_ns')) for c in positive.get('checks',[])],
+            interpretation='Observed RSS samples, not a continuous bound or provider cost; raw per-process resource receipts retained')
         if not positive.get('checked'):
             raise Invalid('neutral actual-wrapper compilation/replay/premise inspection failed')
         wrong = check_task(workspace, {**task, 'id': 'wrong-target', 'statement': 'False'},
@@ -201,7 +211,7 @@ def verify_receipt(binding):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--out', type=Path, required=True)
-    parser.add_argument('--seconds', type=int, default=120)
+    parser.add_argument('--seconds', type=int, default=1200)
     args = parser.parse_args()
     try:
         result = preflight(args.out, args.seconds)

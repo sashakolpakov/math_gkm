@@ -18,7 +18,8 @@ def check(arm, claim, audit=None):
     key = digest({'claim': claim, 'audit': audit, 'round': arm.s['round']})
     directory = arm.root/'completion'/key
     if (directory/'result.json').exists():
-        result = read(directory/'result.json')
+        from .validation_receipts import reuse
+        result = reuse(directory,{'contract':read(arm.workspace/'contract.json'),'claim':claim,'audit':audit},claim,())
         # A result file is written during validation too. Only a finished exact
         # bundle may be reused, and resolution survives recovery.
         if 'finished' not in result:

@@ -7,15 +7,36 @@ retained records and independent review distinguish what was proposed, executed,
 compiled, replayed and actually proved. The fixed [mission](MISSION.md) and
 [design](docs/DESIGN.md) govern the project.
 
-## Experimental strategy v2 — fresh research on hold
+## Blended strategy V3
 
-The connected harness records competing hypotheses before trials, checks transfer on matched targets, allows delayed benefits over multiround episodes, and tests strategy changes before feeding them into the next request. Typed interfaces and checked gluing/transport laws make component reuse explicit. A one-way goal-relative audit plots supported proof-route descriptions and separate overhead; it neither estimates minimum proof complexity nor rewards a required sawtooth.
+The combined harness keeps ordinary theorem development as its default. The
+researcher can also investigate a consequential uncertainty, change a
+representation, or test a research strategy. Typed interfaces and checked
+gluing/transport laws support reuse. Matched continuation trials can return
+researcher-discovered facts to the main run through fresh, paid proof checks,
+including facts from a strategy that was not selected. Outcomes can change the
+next actual request. Complexity and supported proof-route descriptions remain
+one-way audit observations; they do not select actions or reward theorem counts.
 
-A separate external Codex/gpt-6-astra builder constructed this version. All 49 distinct supported neutral tests have passing evidence: 51 executions, 50 passes and one retained initial failure. These tests use deterministic research roles and real Lean, not a live conjecture campaign. Concrete whole-continuation improvement, actual-host refinement and certified installation (D1/D2/D3) remain open.
+Separate external Codex invocations using `gpt-6.1-sol` with high reasoning
+constructed V3. Independent reviews and real Lean acceptance checks distinguish
+source inspection, compilation, kernel replay, premise inspection, composition
+and autonomous strategy execution. See the [V3 acceptance and comparison record](STRATEGY_V3_RELEASE.md)
+for exact versions, outcomes and limits. Neutral fixture proofs are known
+integration examples, not Markov discoveries. Concrete whole-host continuation,
+refinement and certified installation obligations D1/D2/D3 remain open.
 
-See the [full release note](STRATEGY_V2_RELEASE.md), [requirement/evidence map](docs/REQUIREMENT_MAP.md), [regression commands](docs/REGRESSION.md), and [exact acceptance report](evidence/neutral-validation/ACCEPTANCE_REPORT.md).
+The user authorized a fresh Markov comparison after acceptance testing. Both
+arms start with identical clean definitions, dependency pins, model and upper
+allowances, without inherited campaign proofs or agendas. Exploitation uses a
+revisable agenda; the combined arm also has optional exploration and tested
+strategy reassessment. Report observed mathematical scope, actual checked reuse,
+strategy decisions and costs; one sequential pair does not establish causal
+superiority. The supervising session supplies no mathematical proof strategy.
 
-The original campaign is stopped at worker 209; research-status material below remains historical. Fresh Markov work requires explicit user approval after the report. Any later paired comparison starts both arms from identical clean inputs and declared budgets, without inherited campaign results or agendas.
+The original campaign is stopped at worker 209. Research-status material below
+is historical. The [V2 release](STRATEGY_V2_RELEASE.md) and its dated evidence
+remain preserved; its test counts are not relabeled as V3 runs.
 
 **Research status, through closed worker 188 (17 October 2026):** the Agoh
 exercise is complete. For Markov polynomials, every numerator-two source has

@@ -29,7 +29,8 @@ def digest(value):
 
 
 def file_digest(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+    from .study_common import sha
+    return sha(path)
 
 
 def bounded(tree):

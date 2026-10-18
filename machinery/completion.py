@@ -108,6 +108,10 @@ def verify(contract, claim, directory, *, audit=None, stop=lambda: False):
         build.mkdir()
         from .study_transfer import validation_dependencies
         env = environment([build]+validation_dependencies(ROOT, [v['text'] for v in bundle['sources'].values()]))
+        env['TMPDIR'] = str(directory)
+        from .study_common import ROOT as pinned_root
+        result.update(launch_environment=env,dependency_paths=env['LEAN_PATH'].split(':')[1:],
+            pin_hashes={n:sha(pinned_root/n) for n in ('lean-toolchain','lakefile.toml','lake-manifest.json')})
         for module in bundle['order']:
             relative = Path(module.replace('.', '/'))
             path = source/relative.with_suffix('.lean')
@@ -132,14 +136,14 @@ def verify(contract, claim, directory, *, audit=None, stop=lambda: False):
                 output.parent.mkdir(parents=True, exist_ok=True)
                 argv = ([str(LEAN), '-j', '1', '-o', str(output), str(relative.with_suffix('.lean'))]
                         if operation == 'compile' else [str(CHECKER), module])
-                record = run(argv, cwd=source, env=env, timeout=120, output_bytes=1048576)
+                record = run(argv, cwd=source, env=env, timeout=1800, output_bytes=1048576)
                 result['checks'].append({'module': module, 'operation': operation, **record})
                 atomic(directory/'result.json', result)
                 if record['returncode'] or record['termination']:
                     raise Rejected('Lean '+operation+' failed: '+module)
         objects = {str(p.relative_to(build)): sha(p) for p in build.rglob('*') if p.is_file()}
         inspected = run([str(LEAN), '-j', '1', 'ControllerInspect.lean'], cwd=source,
-                        env=env, timeout=120, output_bytes=1048576)
+                        env=env, timeout=1800, output_bytes=1048576)
         result['checks'].append({'operation': 'trusted_premise_inspection', **inspected})
         result['declarations'] = proof_audit.parse(inspected, ('ControllerRootCheck',))
         result['axioms'] = result['declarations'][0]['axioms']
@@ -170,4 +174,8 @@ def verify(contract, claim, directory, *, audit=None, stop=lambda: False):
         result['traceback'] = traceback.format_exc()
     result['finished'] = time.time()
     atomic(directory/'result.json', result)
+    from .retention import retire_build
+    retire_build(directory,result)
+    from .validation_receipts import finish
+    finish(directory,{'contract':contract,'claim':claim,'audit':audit},claim,())
     return result

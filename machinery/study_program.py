@@ -23,6 +23,16 @@ def validate(program):
             if count > 64 or not isinstance(ins, dict):
                 raise Invalid('request program instruction bound')
             op = ins.get('op')
+            if op == 'select_obligation' and set(ins)=={'op','id'} and isinstance(ins['id'],str) and ins['id']:
+                continue
+            if op == 'reuse_library' and set(ins)=={'op','ids'} and isinstance(ins['ids'],list) and len(ins['ids'])<=64 and all(isinstance(x,str) for x in ins['ids']):
+                continue
+            if op == 'allocate' and set(ins)=={'op','exploration_percent'} and type(ins['exploration_percent']) is int and 0<=ins['exploration_percent']<=100:
+                continue
+            if op == 'budgets' and set(ins)=={'op','tool_seconds','validation_seconds'} and all(type(ins[k]) is int and 1<=ins[k]<=1800 for k in ('tool_seconds','validation_seconds')):
+                continue
+            if op == 'reassess' and set(ins)=={'op','after_rounds'} and type(ins['after_rounds']) is int and 1<=ins['after_rounds']<=64:
+                continue
             if op in ('reverse_agenda', 'reverse_portfolio') and set(ins) == {'op'}:
                 continue
             if op in ('rotate_agenda', 'keep_observations') and set(ins) == {'op', 'n'}:
@@ -45,7 +55,31 @@ def execute(program, request):
         for ins in code:
             op = ins['op']
             trace.append(op)
-            if op == 'reverse_agenda':
+            if op == 'select_obligation':
+                obligations=out.get('remaining_obligations',{})
+                if ins['id']!='root' and ins['id'] not in obligations:
+                    raise Invalid('strategy selected unknown exact obligation')
+                if ins['id']!='root' and obligations[ins['id']]['status']!='open':
+                    out['strategy_reassessment']={'reason':'selected obligation closed after checked proof',
+                        'previous_focus':ins['id'],'action':'own proposer reassess within next ordinary allowance'}
+                    out['research_focus']='root'
+                    out['reassess_after_rounds']=1
+                else:
+                    out['research_focus']=ins['id']
+            elif op == 'reuse_library':
+                library={**out.get('knowledge',{}),**out.get('components',{})}
+                if any(k not in library for k in ins['ids']): raise Invalid('strategy selected unaccepted library')
+                out['reuse_interfaces']={k:library[k] for k in ins['ids']}
+            elif op == 'allocate':
+                # A repeatable allocation, without claiming random-trial evidence.
+                out['work_mode']='exploration' if (out['round']*37)%100<ins['exploration_percent'] else 'exploitation'
+            elif op == 'budgets':
+                out['execution_budget']={
+                    'tool_seconds':min(ins['tool_seconds'],out['limits']['call_seconds']),
+                    'validation_seconds':min(ins['validation_seconds'],out['limits']['validation_seconds'])}
+            elif op == 'reassess':
+                out['reassess_after_rounds']=min(ins['after_rounds'],out['limits']['episode_rounds'],out.get('reassess_after_rounds',64))
+            elif op == 'reverse_agenda':
                 out['agenda'].reverse()
             elif op == 'reverse_portfolio':
                 out['portfolio'].reverse()

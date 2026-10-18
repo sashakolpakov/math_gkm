@@ -10,6 +10,7 @@ from pathlib import Path
 import re
 import shutil
 import time
+from textwrap import indent
 
 from .study_common import (ROOT, Invalid, read, write, digest, sha, verify_snapshot,
                            copy_seed, inventory)
@@ -125,32 +126,42 @@ def bind_task(workspace, task, modules=None):
     return task
 
 
+def lean_expr(term):
+    """A delimited term with its original relative layout, including by blocks."""
+    return '(\n'+indent(term.strip(),'  ')+'\n)'
+
+
+def lean_structure(fields):
+    return '{\n'+'\n'.join('  '+name+' := '+indent(lean_expr(value),'  ').lstrip()
+        for name,value in fields)+'\n}'
+
+
 def target_source(task):
     target = task['target_module']
     statement = exact_type(task, 'statement')
     if task.get('reduction_root'):
-        statement = '('+' ∧ '.join(target+'.Residual'+str(n) for n in range(len(task['residuals'])))+') → '+task['reduction_root']
-    # Qualified declarations keep the elaboration namespace unchanged. Capture
-    # residuals ONCE and use those constants in the implication itself.
+        statement = '('+' ∧ '.join(r.get('existing_constant',target+'.Residual'+str(n))
+            for n,r in enumerate(task['residuals']))+') → '+task['reduction_root']
+    def definition(name,typ,value):
+        return f'def {name}{typ} :=\n'+indent(lean_expr(value),'  ')+'\n'
     return ('\n'.join('import '+m for m in task['context_modules'])+'\n'+
-        ''.join(f"def {target}.Residual{n} : Prop := {r['statement']}\n" for n,r in enumerate(task.get('residuals', [])))+
-        f"def {target}.Interface := {exact_type(task, 'interface_type')}\n"+
-        f"def {target}.Transport (StudyInterface : {target}.Interface) : Prop := {exact_type(task, 'transport_type')}\n"+
-        f"def {target}.Goal (StudyInterface : {target}.Interface) : Prop := {statement}\n")
+        ''.join(definition(f'{target}.Residual{n}',' : Prop',r['statement'])
+            for n,r in enumerate(task.get('residuals', [])) if not r.get('existing_constant'))+
+        definition(target+'.Interface','',exact_type(task,'interface_type'))+
+        definition(target+'.Transport',f' (StudyInterface : {target}.Interface) : Prop',exact_type(task,'transport_type'))+
+        definition(target+'.Goal',f' (StudyInterface : {target}.Interface) : Prop',statement))
 
 
 def wrapper(task, solution, frozen_modules=None, transfer_modules=None):
-    # Correctness is independent of component use. Interface and transport types
-    # may mention StudyInterface, so a curation can require a genuine law about
-    # this very map. Unconnected auxiliary propositions receive no gluing credit.
     target = task['target_module']
-    return f'''import {target}
-import {solution['module']}
-import Lean
-def StudyInterface : {target}.Interface := {solution['interface_term']}
-theorem StudyTransport : {target}.Transport StudyInterface := {solution['transport_term']}
-theorem StudyObligation : {target}.Goal StudyInterface := {solution['term']}
-'''
+    header=f"import {target}\nimport {solution['module']}\nimport Lean\n"
+    return header+'\n'.join(
+        f'{kind} {name} : {typ} :=\n'+indent(lean_expr(solution[key]),'  ')
+        for kind,name,typ,key in [
+            ('def','StudyInterface',target+'.Interface','interface_term'),
+            ('theorem','StudyTransport',target+'.Transport StudyInterface','transport_term'),
+            ('theorem','StudyObligation',target+'.Goal StudyInterface','term')])+'\n'
+
 
 def check_task(workspace, task, solution, directory, seconds, *, live=False, stop=lambda: False,
                frozen_files=None, transfer_modules=None, required=(), contract=None):
@@ -218,6 +229,7 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
         prefix = sandbox_prefix(directory, deps) if live else []
         binaries = {str(p): sha(p) for p in (LEAN, CHECKER)}
         result.update(binary_hashes=binaries, launch_environment=env,
+                      pin_hashes={n:sha(ROOT/n) for n in ('lean-toolchain','lakefile.toml','lake-manifest.json')},
                       dependency_paths=list(map(str, deps)),
                       sandbox_profile_sha256=sha(directory/'validator.sb') if live else None)
         for operation in ('compile', 'kernel_replay'):
@@ -232,7 +244,7 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
                 output.parent.mkdir(parents=True, exist_ok=True)
                 argv = ([str(LEAN), '-j', '1', '-o', str(output), str(relative.with_suffix('.lean'))]
                         if operation == 'compile' else [str(CHECKER), module])
-                record = run(prefix+argv, cwd=source, env=env, timeout=min(180, remaining), output_bytes=1048576)
+                record = run(prefix+argv, cwd=source, env=env, timeout=min(1800, remaining), output_bytes=1048576)
                 result['checks'].append({'module': module, 'operation': operation, **record})
                 if live and (record['returncode'] < 0 or 'sandbox-exec:' in record['stderr']):
                     result.update(status='validator_infrastructure_failure', infrastructure_failure=True)
@@ -243,7 +255,7 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
         if stop() or seconds <= time.monotonic()-start:
             raise Invalid('interrupted or exhausted before premise inspection')
         inspected = run(prefix+[str(LEAN), '-j', '1', 'StudyInspect.lean'], cwd=source, env=env,
-                        timeout=min(180, seconds-(time.monotonic()-start)), output_bytes=1048576)
+                        timeout=min(1800, seconds-(time.monotonic()-start)), output_bytes=1048576)
         result['checks'].append({'operation': 'trusted_premise_inspection', **inspected})
         if live and (inspected['returncode'] < 0 or 'sandbox-exec:' in inspected['stderr']):
             result.update(status='validator_infrastructure_failure', infrastructure_failure=True)
@@ -271,11 +283,17 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
                       solution_binding=digest(solution))
         if nonsolution:
             result.update(checked=False, status='bounded_valid_non_solution', valid_attempt=True, reason=solution['reason'])
-    except (Invalid, OSError, KeyError, TypeError) as exc:
+    except (Invalid, OSError, KeyError, TypeError,ValueError) as exc:
         result['failure'] = str(exc)
     result['elapsed_seconds'] = time.monotonic()-start
     result['finished'] = time.time()
     write(directory/'result.json', result)
+    # Delete only this attempt's rebuildable objects, after durable recovery
+    # material. Sources, failures, inspector artifacts and receipts stay intact.
+    from .retention import retire_build
+    retire_build(directory, result)
+    from .validation_receipts import finish
+    finish(directory,task,solution,required)
     return result
 
 def catalog_snapshot(arm, source, manifest, directory, key):
@@ -283,7 +301,7 @@ def catalog_snapshot(arm, source, manifest, directory, key):
     This prevents comments/unrelated additions from masquerading as learned math.
     """
     if (directory/'result.json').exists():
-        return read(directory/'result.json')
+        return read(directory/'result.json',max_bytes=64*1024**2)
     marker = directory.parent/(directory.name+'.reserved.json')
     if marker.exists() or directory.exists():
         return {'checked': False, 'status': 'interrupted_catalog_not_replayed'}
@@ -329,7 +347,7 @@ def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
                'adaptation_seconds_each': arm.p['adaptation_seconds'],
                'validation_seconds_each_task': arm.p['validation_seconds']}
     if (directory/'result.json').exists():
-        previous = read(directory/'result.json')
+        previous = read(directory/'result.json',max_bytes=64*1024**2)
         if previous['binding'] != binding:
             raise Invalid('comparison result binding changed')
         return previous
@@ -385,7 +403,7 @@ def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
         for task in bound_tasks:
             target = directory/side/task['id']
             if (target/'result.json').exists():
-                checked = read(target/'result.json')
+                checked = read(target/'result.json',max_bytes=64*1024**2)
             else:
                 # Journal reservation before compiler effects. Recovery charges the
                 # full reservation if interrupted, never silently repeats a check.

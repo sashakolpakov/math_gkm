@@ -21,7 +21,7 @@ def main(job):
         artifact = workspace/f'research/toy-{r}.txt'
         if spec['role'] == 'researcher':
             artifact.write_text(f'SYNTHETIC FIXTURE round {r}; no mathematical progress\n')
-            if 'fixture component' in req['policy']['memory']:
+            if 'fixture component' in req['policy']['memory'] or (req.get('research_focus')=='root' and req.get('work_mode')=='exploration'):
                 (workspace/'MathGKM/FixtureComponent.lean').write_text('import Lean\nnamespace FixtureComponent\ndef value (n : Nat) : Nat := n\ntheorem use (n : Nat) : value n = n := rfl\nend FixtureComponent\n')
         evidence = [] if spec['role'] == 'proposer' else [{'path': str(artifact.relative_to(workspace)), 'sha256': sha(artifact), 'kind': 'experiment'}]
         hypotheses = [{'id': name, 'kind': kind, 'claim': claim,
@@ -38,7 +38,10 @@ def main(job):
             'use_links': [], 'policy_proposal': None, 'completion': None}
         if r == 0 and spec.get('fixture_policy_trial'):
             payload['policy_proposal'] = {**req['policy'], 'memory': 'toy candidate memory policy with fixture component'}
-            payload['executable_proposal'] = {'schema': 'math-gkm.request-program.v1', 'code': [{'op': 'reverse_agenda'}]}
+            payload['executable_proposal'] = {'schema': 'math-gkm.request-program.v1', 'code': [
+                {'op': 'select_obligation', 'id':'root'}, {'op':'allocate','exploration_percent':100},
+                {'op':'budgets','tool_seconds':req['limits']['call_seconds'],'validation_seconds':req['limits']['validation_seconds']},
+                {'op': 'reverse_agenda'}]}
         if spec.get('fixture_connected') and spec['role'] == 'researcher':
             if read(workspace/'contract.json')['id'] != 'neutral-mechanism-fixture-v1':
                 raise ValueError('connected mechanism fixture requires the neutral contract')
@@ -69,9 +72,17 @@ def main(job):
                         'statement': '∀ n : Nat, n = n', 'term': 'fun n => '+family['exports'][2]+' 0 n',
                         'dependencies': ['fixture-family'], 'required_constants': [family['exports'][2]]})
         if spec['role'] == 'researcher' and (workspace/'MathGKM/FixtureComponent.lean').exists():
-            payload.setdefault('mathematical_claims', []).append({'id': 'fixture-strategy-component',
-                'module': 'MathGKM.FixtureComponent', 'statement': '∀ n : Nat, n = n',
-                'term': 'FixtureComponent.use', 'required_constants': ['FixtureComponent.use']})
+            pending=[key for key,entry in req.get('pending_discoveries',{}).items()
+                if entry['core']['kind']=='mathematical_claims' and
+                entry['core']['proposal']['id']=='fixture-strategy-component']
+            if pending:
+                # A deterministic neutral fixture requests the same paid main
+                # recheck that a live researcher may choose. No auto admission.
+                payload['discovery_rechecks']=[sorted(pending)[0]]
+            else:
+                payload.setdefault('mathematical_claims', []).append({'id': 'fixture-strategy-component',
+                    'module': 'MathGKM.FixtureComponent', 'statement': '∀ n : Nat, n = n',
+                    'term': 'FixtureComponent.use', 'required_constants': ['FixtureComponent.use']})
     elif spec['role'] == 'reviewer':
         payload = {'findings': [{'path': 'inbox/records.json', 'sha256': sha(workspace/'inbox/records.json'),
                                 'finding': 'Fixture observes real process receipts; no theorem or transfer claim.'}],

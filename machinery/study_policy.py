@@ -32,15 +32,22 @@ def request(state, round_index, protocol, role='researcher'):
         'observations': state['observations'][-8:],
         'knowledge': state.get('knowledge', {}), 'components': state.get('components', {}),
         'remaining_obligations': state.get('remaining_obligations', {}),
+        'pending_discoveries': state.get('pending_discoveries', {}),
         'formal_obligations': state.get('formal_obligations', OBLIGATIONS),
         'delayed_use_links': state['use_links'],
+        'proposition_dag': state.get('proposition_dag',{}), 'findings': state.get('findings',[]),
         'limits': {k: protocol[k] for k in ('rounds', 'episode_rounds', 'invention_rounds', 'call_seconds', 'knowledge_checks_per_round', 'validation_seconds')},
         'status': 'experimental; no certified continuation improvement'}
-    projected['limits']['knowledge_counting'] = 'Aggregate entries across mathematical_claims, reductions, attachments, representations and fiber_gluings; repeated accepted identities count before skipping. Over-limit reports are rejected in full before checking.'
+    projected['limits']['knowledge_counting'] = 'Aggregate entries across mathematical_claims, reductions, attachments, representations, fiber_gluings and compositions; repeated accepted identities count before skipping. Items within the cap are checked independently; later items are retained as not checked.'
     projected['limits']['validation_scope'] = 'Per knowledge proposal validation timeout; separate exact-root completion timeout of validation_seconds. Episode reserves research, paired evaluation and reviewer/selector calls before execution.'
+    from .study_knowledge import SCHEMAS
+    projected['checked_submission_schemas']=SCHEMAS
+    projected['dag_submission_rules']='Use exact node ids/constants and original context modules. reductions target_id defaults to root; premises references existing nodes in order; residuals introduces fresh nodes after premises. Never rebind a known node. compositions requests a separately checked term through admitted edges, with every open leaf retained as an antecedent. Representation antecedents are nodes; connect them by a checked reduction. Graph status is planning information, never root completion or English/source approval.'
     return study_program.execute(state.get('program', study_program.REFERENCE), projected)
 
 def record(state, report, workspace, round_index, protocol, *, prospective=None):
+    if not isinstance(report,dict):
+        raise Invalid('report must be an object')
     if prospective is not None:
         validate_execution(prospective, report)
     if not isinstance(report.get('agenda'), list) or not all(isinstance(x, str) for x in report['agenda']):
@@ -53,47 +60,57 @@ def record(state, report, workspace, round_index, protocol, *, prospective=None)
         if item['kind'] not in ('experiment', 'source', 'representation', 'proof_candidate', 'capability_failure'):
             raise Invalid('reports cannot self-certify a theorem')
         evidence.append(item)
-    if state['mode'] != 'baseline':
-        alternatives = report.get('hypotheses', [])
-        if not state['portfolio'] and len(alternatives) < 2:
-            raise Invalid('initial portfolio must retain competing hypotheses')
-        for h in alternatives:
-            if set(h) != {'id', 'kind', 'claim', 'uncertainty', 'outcomes', 'status', 'reason', 'evidence'}:
-                raise Invalid('hypothesis fields invalid')
-            if h['kind'] not in ('obstacle', 'capability', 'strategy') or h['status'] not in (
-                    'open', 'supported_exploratorily', 'usefulness_not_demonstrated', 'refuted_by_evidence'):
-                raise Invalid('invalid hypothesis category/status')
-            if not h['claim'] or not h['reason']:
-                raise Invalid('hypothesis needs claim and decision reason')
-            if any(ref not in [e['path'] for e in evidence] for ref in h['evidence']):
-                raise Invalid('hypothesis evidence not bound to actual artifacts')
-            previous = state['portfolio'].get(h['id'])
-            if previous and (previous['claim'], previous['kind']) != (h['claim'], h['kind']):
-                raise Invalid('changed hypotheses require a new identity')
-            state['portfolio'][h['id']] = h
-        trial = report.get('trial')
-        if not trial or trial.get('hypothesis') not in state['portfolio']:
-            raise Invalid('trial must select a retained hypothesis')
-        episode = state['episode']
-        if episode is None or round_index > episode['review_round']:
-            if episode is not None:
-                state.setdefault('episode_history', []).append(episode)
-            horizon = min(protocol['episode_rounds'], protocol['rounds'] - round_index)
-            episode = {'start': round_index, 'review_round': round_index + horizon - 1,
-                'continuation_rounds': horizon, 'invention_used': 0,
-                'hypothesis': trial['hypothesis'], 'status': 'usefulness_not_demonstrated'}
-            state['episode'] = episode
+    # Fixed predictions live under immutable identities; findings are separate.
+    fixed=('id','kind','claim','uncertainty','outcomes')
+    for h in report.get('hypotheses',[]):
+        if not isinstance(h,dict) or any(k not in h for k in fixed):
+            raise Invalid('hypothesis identity, claim and predictions required')
+        if h['kind'] not in ('obstacle','capability','strategy') or not h['id'] or not h['claim']:
+            raise Invalid('invalid hypothesis identity or kind')
+        original=state['portfolio'].get(h['id'])
+        core={k:h[k] for k in fixed}
+        if original:
+            if any(original[k]!=core[k] for k in fixed):
+                raise Invalid('predictions immutable; create an explicit version descendant')
+            if h.get('parent',original['parent'])!=original['parent'] or h.get('revision',original['revision'])!=original['revision']:
+                raise Invalid('version ancestry immutable')
+        else:
+            parent=h.get('parent'); revision=h.get('revision',0)
+            ancestors=[v for v in state['portfolio'].values() if v['reference']==parent]
+            if (parent is None and revision!=0) or (parent is not None and (len(ancestors)!=1 or revision!=ancestors[0]['revision']+1)):
+                raise Invalid('unknown parent or invalid hypothesis revision')
+            version={**core,'parent':parent,'revision':revision}
+            reference=digest(version)
+            if h.get('reference',reference)!=reference: raise Invalid('hypothesis content hash mismatch')
+            state['portfolio'][h['id']]={**version,'reference':reference}
+        state.setdefault('findings',[]).append(dict(reference=state['portfolio'][h['id']]['reference'],round=round_index,
+            status=h.get('status','open'),reason=h.get('reason',''),evidence=h.get('evidence',[])))
+    trial=report.get('trial')
+    consequential=report.get('work_kind','ordinary') in ('exploration','strategy')
+    if consequential or trial:
+        if not isinstance(trial,dict) or trial.get('hypothesis') not in state['portfolio']:
+            raise Invalid('consequential experiment must select immutable hypothesis')
+        selected=state['portfolio'][trial['hypothesis']]
+        if not selected['uncertainty'] or len(selected['outcomes'])<2 or not all(
+                isinstance(o,dict) and set(o)=={'check','changes_next_choice'} and all(isinstance(v,str) and v for v in o.values()) for o in selected['outcomes']):
+            raise Invalid('consequential experiment needs discriminating outcomes and consequences')
+        episode=state.get('episode')
+        if episode is None or round_index>episode['review_round']:
+            if episode: state.setdefault('episode_history',[]).append(episode)
+            horizon=min(protocol['episode_rounds'],max(1,protocol['rounds']-round_index))
+            episode=dict(start=round_index,review_round=round_index+horizon-1,continuation_rounds=horizon,
+                         invention_used=0,hypothesis=selected['id'],status='usefulness_not_demonstrated')
+            state['episode']=episode
         if trial.get('invention') and prospective is None:
-            if episode['invention_used'] >= protocol['invention_rounds']:
-                raise Invalid('bounded invention allowance exhausted')
-            episode['invention_used'] += 1
-        elif not trial.get('invention'):
-            h = state['portfolio'][trial['hypothesis']]
-            if not h['uncertainty'] or len(h['outcomes']) < 2 or not all(
-                    set(o) == {'check', 'changes_next_choice'} and all(o.values()) for o in h['outcomes']):
-                raise Invalid('exploratory trial requires consequential, prospective checkable outcomes')
-        state['decisions'].append({'round': round_index, 'trial': trial, 'evidence': evidence,
-                                  'review_round': episode['review_round']})
+            if episode['invention_used']>=protocol['invention_rounds']: raise Invalid('invention budget exhausted')
+            episode['invention_used']+=1
+        state['decisions'].append(dict(round=round_index,trial=trial,reference=selected['reference'],evidence=evidence))
+    else:
+        state['decisions'].append(dict(round=round_index,work_kind='ordinary',evidence=evidence))
+    for finding in report.get('findings',[]):
+        if finding.get('reference') not in {h['reference'] for h in state['portfolio'].values()}:
+            raise Invalid('finding references unknown immutable hypothesis')
+        state.setdefault('findings',[]).append({**finding,'round':round_index})
     for link in report.get('use_links', []):
         if set(link) != {'artifact', 'consumer', 'claim'}:
             raise Invalid('invalid use link')
@@ -121,21 +138,16 @@ def commit(state, report, workspace, round_index, protocol):
     import copy
     staged = copy.deepcopy(state)
     record(staged, report, workspace, round_index, protocol)
-    candidates = staged['portfolio'] if state['mode'] != 'baseline' else {h['id']: h for h in report.get('hypotheses', [])}
-    if report.get('trial', {}).get('hypothesis') not in candidates:
-        raise Invalid('prospective action must identify its explicit claim')
-    selected = candidates[report['trial']['hypothesis']]
-    if not selected.get('uncertainty') or len(selected.get('outcomes', [])) < 2:
-        raise Invalid('prospective uncertainty and alternative outcome checks required')
-    if not all(set(o) == {'check', 'changes_next_choice'} and all(isinstance(v, str) and v for v in o.values())
-               for o in selected['outcomes']):
-        raise Invalid('prospective outcome checks and decision consequences must be explicit')
+    trial=report.get('trial')
+    candidates=staged['portfolio']
+    selected=candidates[trial['hypothesis']] if trial else None
     fixed = ('id', 'kind', 'claim', 'uncertainty', 'outcomes')
     commitment = {'schema': 'math-gkm.prospective.v3', 'round': round_index,
-        'trial': copy.deepcopy(report['trial']),
-        'selected': {k: copy.deepcopy(selected[k]) for k in fixed},
+        'trial': copy.deepcopy(trial), 'work_kind': report.get('work_kind','ordinary'),
+        'selected_reference': selected['reference'] if selected else None,
+        'selected': {k: copy.deepcopy(selected[k]) for k in fixed} if selected else None,
         'alternatives': [{k: copy.deepcopy(h[k]) for k in fixed}
-                         for h in candidates.values() if h['id'] != selected['id']],
+                         for h in candidates.values() if selected and h['id'] != selected['id']],
         'episode': copy.deepcopy(staged['episode']),
         'resource_reservation_seconds': protocol['call_seconds'],
         'continuation_envelope': {'rounds': max(1, (staged.get('episode') or {}).get('review_round', round_index)-round_index+1),
@@ -149,14 +161,12 @@ def commit(state, report, workspace, round_index, protocol):
 def validate_execution(commitment, report):
     if report.get('trial') != commitment['trial']:
         raise Invalid('executed trial differs from prospective commitment')
-    hypotheses = {h['id']: h for h in report.get('hypotheses', [])}
-    h = hypotheses.get(commitment['selected']['id'])
-    if h is None or any(h.get(k) != v for k, v in commitment['selected'].items()):
-        raise Invalid('claim, uncertainty or outcome consequences changed after commitment')
-    for alternative in commitment['alternatives']:
-        actual = hypotheses.get(alternative['id'])
-        if actual is not None and any(actual.get(k) != v for k, v in alternative.items()):
-            raise Invalid('committed alternative changed retrospectively')
+    # A content-addressed reference replaces verbatim prediction prose.
+    if commitment.get('selected_reference') and report.get('commitment_ref') != commitment['selected_reference']:
+        hypotheses={h['id']:h for h in report.get('hypotheses',[])}
+        actual=hypotheses.get(commitment['selected']['id'])
+        if actual is None or any(actual.get(k)!=v for k,v in commitment['selected'].items()):
+            raise Invalid('changed prediction or missing immutable commitment reference')
     if report.get('prospective_binding') != digest(commitment):
         raise Invalid('execution does not bind the full prospective plan')
 
@@ -164,24 +174,27 @@ def validate_execution(commitment, report):
 def finish_episode(state, round_index, review):
     episode = state.get('episode')
     if episode is not None:
+        # An executable strategy may request earlier reassessment; preserve the
+        # original horizon and mark this as an interim review.
         if round_index-1 < episode['review_round']:
-            raise Invalid('premature episode review')
+            episode.setdefault('interim_reviews',[]).append(dict(round=round_index,review=review))
+            return
         episode['review'] = review
         episode['status'] = 'reviewed; delayed use remains observable'
 
-COMMON = '''Read MISSION.md, docs/DESIGN.md and contract.json. The active versioned contract supplies the exact task and permitted assumptions. Follow its phase; do not start a different campaign. Historical campaigns are not rerun or inherited. Choose your own mathematical actions: literature, experiments using installed Python/Sage/GAP, representations, conjectures, proofs or refutations, typed attachments, strategy and executable request-program proposals. Missing tools are capability failures. A finite-budget failure is not unprovability. Do not use complexity, description length, compression or derived proxies in decisions. Never invoke another LLM, Codex, controllers or background processes. Do not access other workspaces, evaluation answers, audit records, Git, archives or credentials. No network shell, downloads, package updates, publication or messaging. Use .scratch for temporary files, pinned dependencies and /opt/homebrew/bin/python3. No sorry, admit, axioms or native_decide. Reports do not certify proofs. Checkpoint in research/ with unique names. Use existing artifacts; keep failed attempts. No supervisor supplies mathematical advice.'''
+COMMON = '''Read MISSION.md, docs/DESIGN.md and contract.json. The active versioned contract supplies the exact task and permitted assumptions. Follow its phase; do not start a different campaign. Historical campaigns are not rerun or inherited. Choose your own mathematical actions: literature, experiments using installed Python/Sage/GAP, representations, conjectures, proofs or refutations, typed attachments, strategy and executable request-program proposals. Missing tools are capability failures. A finite-budget failure is not unprovability. Do not use complexity, description length, compression or derived proxies in decisions. Use at most one Lean compiler at a time. Never invoke another LLM, Codex, controllers or background processes. Do not access other workspaces, evaluation answers, audit records, Git, archives or credentials. No network shell, downloads, package updates, publication or messaging. Use .scratch for temporary files, pinned dependencies and /opt/homebrew/bin/python3. No sorry, admit, axioms or native_decide. Reports do not certify proofs. Checkpoint in research/ with unique names. Use existing artifacts; keep failed attempts. No supervisor supplies mathematical advice.'''
 
 def prompt(req):
     if req['role'] == 'proposer':
         extra = ('Plan the next bounded trial BEFORE execution. You have read-only access to own mathematical artifacts. '
-                 'Generate/retain competing explicit obstacle, capability and strategy hypotheses, not a prescribed math recipe. '
+                 'Ordinary proof exploitation is the default: trial:null and hypotheses:[] are valid. For consequential exploration/strategy experiments choose work_kind:exploration or strategy and precommit discriminating outcomes. '
                  'Return agenda, summary, hypotheses, evidence, trial, use_links, policy_proposal and completion (null). '
                  'Each hypothesis has id, kind (obstacle/capability/strategy), claim, uncertainty, outcomes '
                  '(list of {check, changes_next_choice}), status (open/supported_exploratorily/usefulness_not_demonstrated/refuted_by_evidence), '
                  'reason, evidence (artifact paths). trial has hypothesis and invention boolean. Evidence entries have path, sha256, '
                  'kind (experiment/source/representation/proof_candidate/capability_failure). '
                  'Commit alternative observable outcomes and what changes next; invention is bounded by the episode. '
-                 'Baseline keeps a single agenda and need not retain competing hypotheses; still explicitly commit its selected claim and outcome checks. '
+                 'Hypothesis identities are immutable versions with parent reference, revision and content hash. Changed predictions require a new descendant. '
                  'No execution or invented success. Do not create research artifacts or endpoints while planning. '
                  'Describe intended future work and intended reuse in agenda, summary, hypothesis claims and outcome checks. '
                  'Future artifact paths may appear there as intentions, even when they do not exist yet. '
@@ -190,7 +203,7 @@ def prompt(req):
                  'Proposed policy/program changes are experimental candidates.')
     elif req['role'] == 'researcher':
         extra = ('Execute the committed_trial in this request. Its hypotheses/outcomes were recorded by a separate proposer before this call. '
-                 'Return the same trial identity and hypothesis claims, with actual evidence and updated status. A bounded invention round may precede a formal root reduction. '
+                 'Return the same trial identity and commitment_ref from commitment.selected_reference, with findings separate from immutable predictions. Routine work needs no artificial hypotheses. '
                  'Echo prospective_binding exactly. Honor episode horizons; delayed usefulness is distinct from refutation. '
                  'Baseline keeps its incumbent single-agenda policy; changes are logged but not installed. '
                  'Policy/program changes are proposals for equal-budget trials. Submit mathematical_claims, attachments, representations or reductions using the typed schemas in the request.')
@@ -203,15 +216,15 @@ def prompt(req):
                  'only with cited records; unknown/failed validation cannot authorize a change. No universal score or theorem count. '
                  'A selected change is experimental, never a certified switch.')
     if req['role'] in ('proposer', 'researcher'):
-        report_fields = '''agenda:[strings], summary:string, hypotheses:[{id,kind,claim,uncertainty,outcomes:[{check,changes_next_choice}],status,reason,evidence:[paths]}], evidence:[{path,sha256,kind}], trial:{hypothesis,invention}, use_links:[{artifact,consumer,claim}], policy_proposal:null or {search,memory,allocation,reassessment}, executable_proposal:null or {schema:"math-gkm.request-program.v1",code:[instructions]}'''
+        report_fields = '''agenda:[strings], summary:string, hypotheses:[{id,kind,claim,uncertainty,outcomes:[{check,changes_next_choice}],status,reason,evidence:[paths]}], evidence:[{path,sha256,kind}], trial:null or {hypothesis,invention}, work_kind:ordinary/exploration/strategy, findings:[{reference,observation,uncertainty}], commitment_ref:null or immutable hash, use_links:[{artifact,consumer,claim}], policy_proposal:null or {search,memory,allocation,reassessment}, executable_proposal:null or {schema:"math-gkm.request-program.v1",code:[instructions]}'''
         if req['role'] == 'proposer':
             schema = 'Proposer payload: {' + report_fields + ', completion:null}.'
         else:
-            schema = 'Researcher payload: {' + report_fields + ', prospective_binding:request.prospective_binding, mathematical_claims:[], attachments:[], representations:[], reductions:[], fiber_gluings:[], completion:null or {kind,module,declaration,correspondence}}.'
+            schema = 'Researcher payload: {' + report_fields + ', discovery_rechecks:[pending discovery bindings; charged within knowledge_checks_per_round], discovery_completion:null or pending completion binding, prospective_binding:request.prospective_binding, mathematical_claims:[], attachments:[], representations:[], reductions:[], fiber_gluings:[], completion:null or {kind,module,declaration,correspondence}}.'
         schema += '''
-Artifact reporting contract (both proposer and researcher): use_links reports observed reuse, never intended future reuse. Each entry has exactly artifact, consumer and claim. Both artifact and consumer must name files that already exist in your workspace at report validation, using safe workspace-relative paths. Missing endpoints are rejected even in a prospective plan. Do not fabricate files to satisfy this requirement. Empty use_links is valid. File existence does not establish the claim: accepted links remain reported_use_pending_checked_interface until separately checked. Checked delayed_use_links in the request are controller-produced records, not the report entry schema; do not copy their status, receipt_hash or declaration identifiers into use_links.
+Pending discoveries are immutable RESEARCHER-origin branch candidates from either side, independent of policy selection. They are not main accepted mathematics. Inspect exact inbox source_paths and provenance. Request discovery_rechecks in dependency order for ordinary paid compile/replay/premise admission, or discovery_completion for the unchanged exact-root and independent audit gate. No automatic imports, hidden answers, usefulness certification or extra allowance. When budget is unavailable they remain pending.\nArtifact reporting contract (both proposer and researcher): use_links reports observed reuse, never intended future reuse. Each entry has exactly artifact, consumer and claim. Both artifact and consumer must name files that already exist in your workspace at report validation, using safe workspace-relative paths. Missing endpoints are rejected even in a prospective plan. Do not fabricate files to satisfy this requirement. Empty use_links is valid. File existence does not establish the claim: accepted links remain reported_use_pending_checked_interface until separately checked. Checked delayed_use_links in the request are controller-produced records, not the report entry schema; do not copy their status, receipt_hash or declaration identifiers into use_links.
 Evidence likewise requires an existing file and its actual sha256; kind must be experiment/source/representation/proof_candidate/capability_failure. Hypothesis evidence references must be bound in evidence. Intentions belong in agenda/summary/hypothesis claims/outcome checks, not evidence or use_links. Reports cannot self-certify theorems.
-Executable instructions: reverse_agenda, reverse_portfolio; rotate_agenda/keep_observations with integer n; if_open_obligations with then/else instruction lists. These cannot edit admission, contract, costs or authority.'''
+Executable instructions: select_obligation {id}; reuse_library {ids}; allocate {exploration_percent}; budgets {tool_seconds,validation_seconds}; reassess {after_rounds}; reverse_agenda, reverse_portfolio; rotate_agenda/keep_observations with integer n; if_open_obligations with then/else instruction lists. These cannot edit admission, contract, costs or authority.'''
     elif req['role'] == 'reviewer':
         schema = 'Reviewer payload: {findings:[{path,sha256,finding}], correctness,scope,transfer,costs,recommendation}.'
     else:

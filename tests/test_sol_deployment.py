@@ -93,7 +93,7 @@ class SolDeployment(unittest.TestCase):
 
     def test_exact_model_admission_and_config_parity(self):
         original = read(ROOT/'studies/v2-study.json')
-        self.assertEqual(study.DEFAULT['model'], 'gpt-6-astra')
+        self.assertEqual(study.DEFAULT['model'], 'gpt-6.1-sol')
         for label, model in [('sol', 'gpt-6.1-sol'), ('astra', 'gpt-6-astra')]:
             config = read(ROOT/('studies/v2-study-'+label+'.json'))
             self.assertEqual(config, {**original, 'model': model})
@@ -277,7 +277,8 @@ class SolDeployment(unittest.TestCase):
         self.assertEqual(checker.call_count, 3)
         for call in checker.call_args_list:
             self.assertIs(call.kwargs['live'], True)
-            self.assertLessEqual(call.args[4], 120)
+            self.assertLessEqual(call.args[4], 1200)
+        self.assertIn('import Mathlib\n',(self.base/'synthetic-flow/workspace/MathGKM/DeploymentRoot.lean').read_text())
         for call in runner.call_args_list:
             self.assertEqual(call.args[0][0], '/usr/bin/sandbox-exec')
         self.assertEqual(complete.call_args.args[0].p['transport'], 'live')

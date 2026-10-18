@@ -21,7 +21,7 @@ def sha(path):
 
 
 def environment(imports=()):
-    return {'PATH': '/opt/homebrew/bin:/usr/bin:/bin',
+    return {'PATH': '/opt/homebrew/bin:/Users/sasha/.elan/bin:/usr/bin:/bin',
             'LEAN_PATH': ':'.join(map(str, imports)),
             'LEAN_SYSROOT': str(TOOLCHAIN),
             'GIT_CONFIG_NOSYSTEM': '1', 'GIT_CONFIG_GLOBAL': '/dev/null',

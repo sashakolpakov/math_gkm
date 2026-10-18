@@ -7,8 +7,8 @@ a reduction in difficulty. English/source completion remains a separate gate.
 """
 import copy
 import re
-from .study_common import Invalid, digest, read, write, sha, inside
-from .study_transfer import check_task, wrapper, bind_task
+from .study_common import Invalid, digest, read, write, sha, inside,atomic_text,save_state,load_state
+from .study_transfer import check_task, wrapper, bind_task, lean_structure, lean_expr
 
 SCHEMAS = {
  'mathematical_claims': {'id': 'new identity', 'module': 'MathGKM module',
@@ -25,14 +25,31 @@ SCHEMAS = {
      'law': '∀ b, target_predicate (forward b) ↔ predicate b proof',
      'dependencies': ['checked ids'], 'required_constants': ['used Lean declarations']},
  'reductions': {'id': 'new identity', 'module': 'MathGKM module',
+     'target_id': 'root (default) or an existing exact DAG node id',
+     'premises': ['existing exact DAG node ids; immutable constants/context, never redefine'],
      'residuals': [{'id': 'new residual id', 'statement': 'closed Lean proposition'}],
-     'term': 'conjunction of residual propositions → exact pinned root proof',
+     'term': '(conjunction: existing premises in listed order, then new residuals) → exact target constant',
      'dependencies': ['checked ids'], 'required_constants': ['used Lean declarations']},
+ 'compositions': {'id': 'new identity', 'target_id': 'root or exact named residual; checked composition keeps open leaves'},
  'fiber_gluings': {'id': 'new identity', 'module': 'MathGKM.ResearchSemantics or importing module',
      'base': 'index type I', 'extended': 'index type J', 'map': 'I → J',
      'family': 'I → Type', 'target_family': 'J → Type',
      'family_map': '∀ i, family i → target_family (map i)',
      'dependencies': ['checked ids'], 'required_constants': ['used declarations']}}
+
+def verify_record(record,workspace):
+    if any(sha(inside(workspace,p))!=h for p,h in record['source_files'].items()):
+        raise Invalid('accepted component version changed; cannot reuse identity')
+    binding=record.get('validation_bundle')
+    if not binding: raise Invalid('accepted item lacks finished validator bundle')
+    from pathlib import Path
+    from .study_common import ROOT
+    from .validation_receipts import reuse
+    directory=Path(binding['directory']).resolve()
+    if not directory.is_relative_to(ROOT) or sha(directory/'FINISHED.json')!=binding['finished_sha256']:
+        raise Invalid('accepted validator receipt changed')
+    reused=reuse(directory,record['task'],record['solution'],record['task'].get('required_constants',[]))
+    if digest(reused)!=record['receipt_hash']: raise Invalid('accepted validator result changed')
 
 
 def task_for(kind, item, contract):
@@ -49,8 +66,8 @@ def task_for(kind, item, contract):
         base.update(interface_type=f'MathGKM.ResearchSemantics.ConservativeExtension ({B}) ({E})',
             transport_type=f'∀ b : ({B}), StudyInterface.forget (StudyInterface.extend b) = b',
             statement=f'∀ e : ({E}), ({P}) (StudyInterface.forget e)')
-        solution.update(interface_term='{ forget := '+item['forget']+', extend := '+item['extend']+
-            ', forget_extend := '+item['section_law']+' }',
+        solution.update(interface_term=lean_structure([('forget',item['forget']),('extend',item['extend']),
+                ('forget_extend',item['section_law'])]),
             transport_term='StudyInterface.forget_extend',
             term=f'MathGKM.ResearchSemantics.ConservativeExtension.preserves StudyInterface ({P}) ({item["base_proof"]})')
     elif kind == 'representations':
@@ -58,7 +75,7 @@ def task_for(kind, item, contract):
         base.update(interface_type=f'MathGKM.ResearchSemantics.Representation ({B}) ({E}) ({P}) ({Q})',
             transport_type=f'∀ b : ({B}), ({Q}) (StudyInterface.forward b) ↔ ({P}) b',
             statement=f'(∀ e : ({E}), ({Q}) e) → ∀ b : ({B}), ({P}) b')
-        solution.update(interface_term='{ forward := '+item['forward']+', law := '+item['law']+' }',
+        solution.update(interface_term=lean_structure([('forward',item['forward']),('law',item['law'])]),
             transport_term='StudyInterface.law',
             term='MathGKM.ResearchSemantics.Representation.consume StudyInterface')
     elif kind == 'reductions':
@@ -87,9 +104,10 @@ def task_for(kind, item, contract):
     return base, solution
 
 
-def ingest(arm, state, report, workspace, directory):
+def _ingest_batch(arm, state, report, workspace, directory):
     """Called on main AND experimental continuation reports before next request."""
     contract = read(workspace/'contract.json')
+    validation_seconds=min(arm.p['validation_seconds'],state.get('execution_budget',{}).get('validation_seconds',arm.p['validation_seconds']))
     if sum(len(report.get(k, [])) for k in SCHEMAS) > arm.p.get('knowledge_checks_per_round', 6):
         raise Invalid('declared per-round validation envelope exceeded; no checks executed')
     for kind in SCHEMAS:
@@ -101,12 +119,32 @@ def ingest(arm, state, report, workspace, directory):
                 old = state['knowledge'].get(identifier, state['components'].get(identifier))
                 if old['proposal_hash'] != digest(item):
                     raise Invalid('knowledge identities are immutable; use a new version')
+                verify_record(old,workspace)
                 continue
             dependencies = item.get('dependencies', [])
             if any(dep not in state['knowledge'] and dep not in state['components'] for dep in dependencies):
                 raise Invalid('omitted, unknown, circular or unaccepted attachment dependency')
-            task, solution = task_for(kind, item, contract)
-            modules = [item['module']]
+            from . import residual_dag as dag_api
+            dag = dag_api.graph(state, contract)
+            derived = copy.deepcopy(item)
+            target_id = None
+            composition = None
+            if kind == 'reductions':
+                target_id, premise_ids, residuals = dag_api.prepare(dag, item)
+                derived['residuals'] = residuals
+                local_contract = {**contract, 'root_declaration': dag['nodes'][target_id]['constant']}
+                task, solution = task_for(kind, derived, local_contract)
+                modules = [item['module'], dag['nodes'][target_id]['module']] + [dag['nodes'][p]['module'] for p in item.get('premises', [])]
+            elif kind == 'compositions':
+                composition = dag_api.composition(dag, state, item.get('target_id','root'))
+                dependencies = composition['dependencies']
+                derived.update(module=composition['modules'][0], statement=composition['statement'], term=composition['term'])
+                task, solution = task_for('mathematical_claims', derived, contract)
+                modules = composition['modules']
+                task['required_constants'] = [state['knowledge'].get(d,state['components'].get(d))['exports'][0] for d in dependencies]
+            else:
+                task, solution = task_for(kind, item, contract)
+                modules = [item['module']]
             if kind in ('attachments', 'representations', 'fiber_gluings'):
                 from .study_common import ROOT
                 foundation = 'MathGKM/ResearchSemantics.lean'
@@ -114,7 +152,7 @@ def ingest(arm, state, report, workspace, directory):
                     raise Invalid('canonical generic foundation changed')
                 modules.append('MathGKM.ResearchSemantics')
             if kind == 'reductions':
-                task['residuals'] = item['residuals']
+                task['residuals'] = derived['residuals']
             if kind == 'representations':
                 task['residuals'] = [{'statement': f'∀ e : ({item["extended"]}), ({item["target_predicate"]}) e'}]
             if kind == 'mathematical_claims' and item.get('discharges'):
@@ -122,15 +160,14 @@ def ingest(arm, state, report, workspace, directory):
                 modules += [r['target_module'] for r in residuals]
                 propositions = [item['statement']] + [r['target_constant'] for r in residuals]
                 task['statement'] = ' ∧ '.join('('+v+')' for v in propositions)
-                terms = ['(show '+item['statement']+' from '+item['term']+')'] * len(propositions)
+                terms = [lean_expr('show '+lean_expr(item['statement'])+' from '+lean_expr(item['term']))] * len(propositions)
                 solution['term'] = '⟨'+', '.join(terms)+'⟩'
             task = bind_task(workspace, task, modules)
             key = digest({'kind': kind, 'item': item, 'task': task})
             dest = directory/key
             if (dest/'result.json').exists():
-                checked = read(dest/'result.json')
-                if checked.get('task_hash') != digest(task):
-                    raise Invalid('checked artifact task binding changed')
+                from .validation_receipts import reuse
+                checked = reuse(dest,task,solution,task.get('required_constants',[]))
             elif dest.exists():
                 checked = {'checked': False, 'status': 'interrupted_validation_not_replayed',
                            'task_hash': digest(task)}
@@ -143,11 +180,11 @@ def ingest(arm, state, report, workspace, directory):
                                'task_hash': digest(task)}
                     write(dest/'result.json', checked)
                 else:
-                    write(reservation, {'seconds': arm.p['validation_seconds'], 'task_hash': digest(task)})
-                    arm.reserve('knowledge-'+digest(str(dest.resolve())), arm.p['validation_seconds'])
-                    checked = check_task(workspace, task, solution, dest, arm.p['validation_seconds'],
+                    write(reservation, {'seconds': validation_seconds, 'task_hash': digest(task)})
+                    arm.reserve('knowledge-'+digest(str(dest.resolve())), validation_seconds)
+                    checked = check_task(workspace, task, solution, dest, validation_seconds,
                         live=arm.p['transport'] == 'live', stop=arm.stopped,
-                        required=item.get('required_constants', []), contract=contract)
+                        required=task.get('required_constants', []), contract=contract)
             state['observations'].append({'knowledge_attempt': identifier, 'kind': kind,
                 'checked': checked['checked'], 'status': checked['status'], 'receipt_hash': digest(checked)})
             if not checked['checked']:
@@ -161,13 +198,16 @@ def ingest(arm, state, report, workspace, directory):
                     raise Invalid('declared component dependency absent from actual consumer closure')
                 if any(sha(inside(workspace, p)) != h for p, h in prior['source_files'].items()):
                     raise Invalid('accepted component version changed')
+                verify_record(prior,workspace)
             # Materialize a reusable module from the exact checked composition.
             # The next consumer freshly rebuilds it, including the renamed defs.
             prefix = 'Accepted'+key[:24]
             module_path = 'MathGKM/'+prefix+'.lean'
             target_file = workspace/(task['target_module'].replace('.', '/')+'.lean')
             target_file.parent.mkdir(parents=True, exist_ok=True)
-            target_file.write_text(checked['target_source'])
+            if target_file.exists() and target_file.read_text()!=checked['target_source']:
+                raise Invalid('generated frozen target binding conflict')
+            atomic_text(target_file,checked['target_source'])
             exported = wrapper(task, solution)
             exports = []
             for old, new in [('StudyObligation', 'obligation'), ('StudyInterface', 'interface'), ('StudyTransport', 'transport')]:
@@ -177,9 +217,10 @@ def ingest(arm, state, report, workspace, directory):
             target_path = inside(workspace, module_path)
             if target_path.exists() and target_path.read_text() != exported:
                 raise Invalid('generated component binding conflict')
-            target_path.write_text(exported)
+            atomic_text(target_path,exported)
             record = {'id': identifier, 'kind': kind, 'proposal_hash': digest(item),
                 'proposal': copy.deepcopy(item), 'task': task, 'receipt_hash': digest(checked),
+                'solution':solution,'validation_bundle':dict(directory=str(dest.resolve()),finished_sha256=sha(dest/'FINISHED.json')),
                 'dependencies': dependencies, 'claim': checked['claim'],
                 'used_declarations': checked['frozen_used_declarations'],
                 'source_files': {**checked['imported_sources'], str(target_file.relative_to(workspace)): sha(target_file), module_path: sha(target_path)},
@@ -196,8 +237,15 @@ def ingest(arm, state, report, workspace, directory):
                     'target_module': task['target_module'], 'target_constant': task['target_module']+'.Residual0',
                     'context_binding': digest(task['context_sources']),
                     'status': 'open', 'source': identifier, 'connection': 'representation antecedent'}
+                residual=state['remaining_obligations'][identifier]
+                if identifier in dag['nodes']: raise Invalid('representation residual identity already bound')
+                dag['nodes'][identifier]=dict(constant=residual['target_constant'],module=residual['target_module'],
+                    context=residual['context_binding'],status='open',source=identifier,
+                    connection='representation antecedent; connect by an explicit checked reduction')
             if kind == 'reductions':
-                for n, residual in enumerate(item['residuals']):
+                for n, residual in enumerate(derived['residuals']):
+                    if residual['id'] in item.get('premises', []):
+                        continue  # Reference the original exact constant/context.
                     old = state['remaining_obligations'].get(residual['id'])
                     value = {**residual, 'status': 'open', 'source': identifier,
                              'target_module': task['target_module'], 'target_constant': task['target_module']+'.Residual'+str(n),
@@ -206,11 +254,71 @@ def ingest(arm, state, report, workspace, directory):
                     if old and (old['statement'], old.get('context_binding')) != (value['statement'], value['context_binding']):
                         raise Invalid('residual identity changed')
                     state['remaining_obligations'][residual['id']] = old or value
+                    if residual['id'] not in dag['nodes']:
+                        dag['nodes'][residual['id']] = dict(constant=value['target_constant'],module=value['target_module'],context=value['context_binding'],status='open')
+                dag['edges'].setdefault(target_id,[]).append(dict(id=identifier,premises=premise_ids,
+                    proof=exports[0],module=record['export_module'],receipt_hash=digest(checked)))
+            if composition:
+                record['composition'] = composition
+                record['relevance'] = 'checked composed path; open antecedents retained'
+                if not composition['open_leaves']:
+                    node=dag['nodes'][composition['target']]
+                    node.update(proof=exports[0],proof_id=identifier,proof_module=record['export_module'],status='checked')
             # Close only exactly matching explicit propositions, never a metric.
             if kind == 'mathematical_claims':
                 for rid in item.get('discharges', []):
                     state['remaining_obligations'][rid].update(status='checked', discharge=identifier)
+                    if rid in dag['nodes']:
+                        index=item['discharges'].index(rid)+1
+                        dag['nodes'][rid].update(status='checked', proof=dag_api.projection(exports[0],index,len(item['discharges'])+1),
+                            proof_id=identifier,proof_module=record['export_module'])
             state['use_links'].append({'artifact': identifier, 'consumer': checked['claim'],
                 'status': 'checked generated composition' if kind in ('attachments', 'representations') else 'checked declaration closure',
                 'receipt_hash': digest(checked)})
+    return state
+
+
+def ingest(arm, state, report, workspace, directory):
+    """Each item commits independently; bad later items cannot roll back math."""
+    failures = state.setdefault('submission_failures', [])
+    items=[]
+    for kind in SCHEMAS:
+        values=report.get(kind,[])
+        if not isinstance(values,list):
+            failures.append(dict(kind=kind,status='invalid_submission_list')); continue
+        items.extend((kind,item) for item in values)
+    cap=arm.p.get('knowledge_checks_per_round',6)
+    for index,(kind,item) in enumerate(items):
+        attempt=dict(kind=kind,index=index,proposal_hash=digest(item))
+        dest=directory/(str(index)+'-'+digest(item))
+        if index>=cap:
+            failure={**attempt,'status':'per_round_cap_exhausted; not checked'}
+        else:
+            staged=copy.deepcopy(state)
+            try:
+                if not isinstance(item,dict): raise Invalid('submission must be an object')
+                journal=dest/'ADMITTED.json'
+                if journal.exists():
+                    transaction=load_state(journal)
+                    if transaction['before_hash']!=digest(state):
+                        # A state that already contains the identity is handled by
+                        # the ordinary idempotent/source-integrity path below.
+                        _ingest_batch(arm,staged,{kind:[item]},workspace,dest)
+                    else:
+                        staged=transaction['after']
+                        for record in list(staged['knowledge'].values())+list(staged['components'].values()):
+                            verify_record(record,workspace)
+                else:
+                    _ingest_batch(arm,staged,{kind:[item]},workspace,dest)
+                    save_state(journal,dict(before_hash=digest(state),after=staged,
+                        proposal_hash=digest(item),status='processed independently; no mathematical action replay'))
+                state.clear(); state.update(staged)
+                failures=state.setdefault('submission_failures',[])
+                continue
+            except (Invalid,KeyError,TypeError,ValueError,OSError) as exc:
+                failure={**attempt,'status':'submission_rejected_or_operationally_incomplete',
+                         'error_class':type(exc).__name__,'reason':str(exc)}
+        receipt=dest/('rejection-'+digest(failure)+'.json')
+        if not receipt.exists(): write(receipt,failure)
+        if failure not in failures: failures.append(failure)
     return state

@@ -1,5 +1,9 @@
 # Experimental study harness
 
+Historical V2 account. Current source-only repair status and superseding trial
+authorization are in `docs/STUDY_V3.md`; no current V3 tests have run. The earlier
+later-user-OK requirement below no longer applies after audit and passing tests.
+
 Current construction evidence: evidence/neutral-validation/ACCEPTANCE_REPORT.md.
 Requirement/producer/artifact/consumer/status mapping: docs/REQUIREMENT_MAP.md.
 Supported complete neutral regression commands: docs/REGRESSION.md (49 distinct

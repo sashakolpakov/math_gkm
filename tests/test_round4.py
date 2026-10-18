@@ -35,7 +35,10 @@ class Round4(unittest.TestCase):
         self.assertFalse(self.directory.exists())
 
     def test_complete_episode_pools_protect_seconds_and_calls(self):
-        self.freeze({'rounds': 2, 'max_calls': 6, 'meta_calls': 4})
+        with self.assertRaises(Invalid), patch.object(study.Arm, 'call', side_effect=AssertionError('role executed')):
+            self.freeze({'rounds': 2, 'max_calls': 6, 'meta_calls': 4})
+        self.assertFalse(self.directory.exists())
+        self.freeze({'rounds': 2, 'max_calls': 8, 'meta_calls': 6})
         with lock(self.directory/'controller.lock') as fd:
             arm = study.Arm(self.directory, 'exploration', fd)
             with patch.object(arm, '_research_round') as execute:
@@ -67,8 +70,40 @@ class Round4(unittest.TestCase):
             self.assertEqual(req['limits']['knowledge_checks_per_round'], arm.p['knowledge_checks_per_round'])
             self.assertEqual(req['limits']['validation_seconds'], arm.p['validation_seconds'])
             with patch('machinery.study_knowledge.check_task', side_effect=AssertionError('over-limit validation')):
-                with self.assertRaises(Invalid):
-                    ingest(arm, arm.s['research'], {'mathematical_claims': [{}]*7}, arm.workspace, self.base/'invalid')
+                before=copy.deepcopy(arm.s)
+                ingest(arm, arm.s['research'], {'mathematical_claims': [{}]*7}, arm.workspace, self.base/'invalid')
+            state=arm.s['research']
+            failures=state['submission_failures']
+            self.assertEqual(len(failures),7)
+            self.assertTrue(all(f['status']=='submission_rejected_or_operationally_incomplete' for f in failures[:6]))
+            self.assertTrue(all(f['reason']=='invalid knowledge identity' for f in failures[:6]))
+            self.assertEqual(failures[6]['status'],'per_round_cap_exhausted; not checked')
+            self.assertEqual(len(list((self.base/'invalid').rglob('rejection-*.json'))),7)
+            for name in ('knowledge','components','remaining_obligations'):
+                self.assertEqual(state[name],before['research'][name])
+            for name in ('seconds','calls','meta_calls','reservations','budget_pools'):
+                self.assertEqual(arm.s.get(name),before.get(name))
+
+    def test_seven_valid_proposals_route_only_six_failed_checks(self):
+        from machinery.study_knowledge import ingest
+        self.freeze()
+        with lock(self.directory/'controller.lock') as fd:
+            arm=study.Arm(self.directory,'exploration',fd)
+            state=arm.s['research']; before=copy.deepcopy(state)
+            proposals=[dict(id='boundary-'+str(i),module='MathGKM.HarnessFixture',
+                            statement='True',term='True.intro') for i in range(7)]
+            seconds=arm.s['seconds']; reservations=set(arm.s.get('reservations',{}))
+            with patch('machinery.study_knowledge.check_task',return_value={'checked':False,'status':'simulated_checked_false'}) as checker:
+                ingest(arm,state,{'mathematical_claims':proposals},arm.workspace,self.base/'boundary')
+            self.assertEqual(checker.call_count,6)
+            self.assertEqual(len(set(arm.s['reservations'])-reservations),6)
+            self.assertEqual(arm.s['seconds']-seconds,6*arm.p['validation_seconds'])
+            self.assertEqual(len(list((self.base/'boundary').rglob('*.reservation.json'))),6)
+            self.assertEqual(len(state['observations'])-len(before['observations']),6)
+            self.assertEqual(state['submission_failures'][-1]['index'],6)
+            self.assertEqual(state['submission_failures'][-1]['status'],'per_round_cap_exhausted; not checked')
+            for name in ('knowledge','components','remaining_obligations'):
+                self.assertEqual(state[name],before[name])
 
     def test_reference_mutations_invalidate_direct_and_report_audits(self):
         self.freeze()

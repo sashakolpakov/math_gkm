@@ -8,7 +8,35 @@ import html
 from pathlib import Path
 import time
 import zlib
+import json
+import os
 from .study_common import ROOT, Invalid, read, write, sha, load_state, canonical, verify_snapshot
+
+def encoding_sizes(path):
+    raw=packed=0; compressor=zlib.compressobj(9)
+    with path.open('rb') as source:
+        for block in iter(lambda:source.read(65536),b''):
+            raw+=len(block)
+            if raw>128*1024**2: raise Invalid('audit artifact bound; observation unavailable')
+            packed+=len(compressor.compress(block))
+    return raw,packed+len(compressor.flush())
+
+def source_bundle(snapshot_path,manifest,bundle):
+    bundle.parent.mkdir(parents=True,exist_ok=True)
+    tmp=bundle.with_name(bundle.name+'.next'); total=0
+    with tmp.open('w') as out:
+        out.write('{'); first=True
+        for name in sorted(manifest['files']):
+            if not (name.startswith('MathGKM/') and name.endswith('.lean')): continue
+            source=snapshot_path/'source'/name
+            if source.stat().st_size>8*1024**2: raise Invalid('audit source bound')
+            text=source.read_text(); encoded=canonical(name)+':'+canonical(text)
+            total+=len(encoded.encode())
+            if total>128*1024**2: raise Invalid('audit bundle bound')
+            if not first: out.write(',')
+            first=False; out.write(encoded)
+        out.write('}\n'); out.flush(); os.fsync(out.fileno())
+    os.replace(tmp,bundle)
 
 def measured_cost(study, arm):
     root = study/'arms'/arm
@@ -24,13 +52,13 @@ def measure(study, arm, artifact, dataset, reference_set, representation, marker
     artifact, dataset = artifact.resolve(), dataset.resolve()
     if not artifact.is_relative_to(study.resolve()) or not dataset.is_relative_to(study.resolve()):
         raise Invalid('audit artifacts must be actual local study artifacts')
-    raw = artifact.read_bytes()
+    raw_bytes,zlib_bytes=encoding_sizes(artifact)
     costs = measured_cost(study, arm)
     record = {'schema': 'math-gkm.audit.v2', 'synthetic': read(study/'protocol.json')['transport'] == 'fixture',
         'arm': arm, 'artifact': str(artifact), 'artifact_sha256': sha(artifact),
         'dataset_sha256': sha(dataset), 'reference_set': reference_set,
         'representation': representation, 'pair_id': pair_id, 'marker': marker,
-        'raw_bytes': len(raw), 'zlib9_bytes': len(zlib.compress(raw, 9)),
+        'raw_bytes': raw_bytes, 'zlib9_bytes': zlib_bytes,
         'cost': costs, 'cumulative_research_seconds': costs['subprocess_wall_seconds']+costs['validation_wall_seconds'],
         'cost_basis': 'worker_plus_standalone_validation_wall',
         'meaning': 'Bytes of the specified representation artifact; no estimate of shortest description or intrinsic mathematical difficulty.',
@@ -41,7 +69,9 @@ def measure(study, arm, artifact, dataset, reference_set, representation, marker
     return record
 
 def report(study, output):
-    records = [read(p) for p in sorted((study/'audit/raw').glob('*.json'))]
+    paths=sorted((study/'audit/raw').glob('*.json'))
+    if len(paths)>4096 or any(p.stat().st_size>65536 for p in paths): raise Invalid('audit report bound')
+    records = [read(p) for p in paths]
     output.mkdir(parents=True, exist_ok=True)
     write(output/'raw.json', records)
     synthetic = read(study/'protocol.json')['transport'] == 'fixture' or any(r.get('synthetic') for r in records)
@@ -119,11 +149,9 @@ def collect(study):
         for path in sorted((root/'snapshots').iterdir()):
             manifest = verify_snapshot(path)
             start = time.monotonic()
-            sources = {name: (path/'source'/name).read_text() for name in sorted(manifest['files'])
-                       if name.startswith('MathGKM/') and name.endswith('.lean')}
             bundle = study/'audit/bundles'/f'{arm}-{path.name}.json'
-            write(bundle, sources)
-            raw = bundle.read_bytes()
+            source_bundle(path,manifest,bundle)
+            raw_bytes,zlib_bytes=encoding_sizes(bundle)
             cost = sum(r.get('elapsed_seconds', 0) for r in receipts
                        if r.get('finished', float('inf')) <= manifest['created'])
             marker = 'initial representation' if previous_policy is None else (
@@ -133,7 +161,7 @@ def collect(study):
                 'arm': arm, 'artifact': str(bundle), 'artifact_sha256': sha(bundle),
                 'dataset_sha256': sha(study/'seed'/read(study/'seed/contract.json')['root_file']), 'reference_set': 'fixed-pinned-target-source',
                 'representation': 'canonical active MathGKM source bundle at '+path.name,
-                'pair_id': None, 'marker': marker, 'raw_bytes': len(raw), 'zlib9_bytes': len(zlib.compress(raw, 9)),
+                'pair_id': None, 'marker': marker, 'raw_bytes': raw_bytes, 'zlib9_bytes': zlib_bytes,
                 'cumulative_research_seconds': cost, 'timestamp': manifest['created'],
                 'cost_basis': 'worker_wall_only_before_snapshot',
                 'measurement_seconds': time.monotonic()-start,
