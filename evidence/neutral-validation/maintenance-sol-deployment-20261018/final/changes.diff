@@ -1,0 +1,791 @@
+--- input/machinery/study.py
++++ candidate/machinery/study.py
+@@ -16,7 +16,8 @@
+ 
+ from .study_common import (ROOT, PYTHON, SEED, Invalid, canonical, digest, sha, read,
+     write, save_state, load_state, lock, inventory, snapshot, verify_snapshot,
+-    clean_contract, copy_seed, implementation, dependency_identity, authorize_live)
++    clean_contract, copy_seed, implementation, dependency_identity, authorize_live,
++    validate_model, REASONING_EFFORT)
+ from . import study_policy as policy
+ 
+ DEFAULT = {'schema': 'math-gkm.study.v2', 'transport': 'fixture',
+@@ -53,8 +54,9 @@
+ def validate_protocol(p):
+     if set(p) != set(DEFAULT) or p['schema'] != DEFAULT['schema']:
+         raise Invalid('protocol keys/schema mismatch')
+-    if p['transport'] not in ('fixture', 'live') or p['model'] != 'gpt-6-astra':
+-        raise Invalid('only explicitly selected fixture or Astra transport')
++    if p['transport'] not in ('fixture', 'live'):
++        raise Invalid('only explicitly selected fixture or live transport')
++    validate_model(p['model'])
+     if p['fixture_behavior'] not in ('normal', 'sleep', 'missing', 'exit') or (p['transport'] == 'live' and (p['fixture_behavior'] != 'normal' or p['fixture_policy_trial'] or p['fixture_connected'])):
+         raise Invalid('deterministic fixture behaviors are never live research settings')
+     for k in ('rounds', 'episode_rounds', 'call_seconds', 'adaptation_seconds', 'arm_seconds',
+@@ -135,6 +137,10 @@
+     if p['transport'] == 'live' and any(any(k.startswith('fixture_') for k in t) for t in suite['tasks']):
+         raise Invalid('fixture answers cannot enter a live suite')
+     directory.mkdir(parents=True, exist_ok=False)
++    deployment = None
++    if p['transport'] == 'live':
++        from .study_deployment import require_deployment
++        deployment = require_deployment(directory/'deployment-preflight')
+     seed = directory/'seed'
+     seed.mkdir()
+     seed_files = list(dict.fromkeys([x for x in SEED if x != 'MathGKM/Markov.lean'] +
+@@ -151,7 +157,7 @@
+     write(directory/'evaluation/suite.json', suite)
+     seal = {'seed': {name: sha(seed/name) for name in seed_files + ['contract.json']},
+         'seed_files_sha256': sha(seed/'seed-files.json'),
+-        'curation': curation,
++        'curation': curation, 'deployment_preflight': deployment,
+         'protocol': digest(p), 'suite': digest(suite), 'implementation': implementation(),
+         'dependencies': dependency_identity(),
+         'baseline_adjustments': ['empty history and agenda; no inherited artifacts',
+@@ -182,6 +188,7 @@
+         from .study_observer import checkpoint
+         checkpoint(directory, mode, 'initial', load_state(arm/'state.json'), arm/'snapshots/initial')
+     write(directory/'setup-cost.json', {'elapsed_seconds': time.monotonic()-setup_start,
++        'deployment_preflight': deployment,
+         'accounting': 'common setup overhead, separately disclosed, no token/currency equivalence',
+         'curation': curation or {'status': 'not provided', 'selection_basis': suite.get('selection_basis')},
+         'ordering': 'baseline then exploration unless operator specifies; provider drift uncontrolled'})
+@@ -193,6 +200,9 @@
+         raise Invalid('frozen protocol/evaluation suite changed')
+     if implementation() != seal['implementation']:
+         raise Invalid('implementation changed since freeze; new reviewed study required')
++    if read(directory/'protocol.json')['transport'] == 'live':
++        from .study_deployment import verify_receipt
++        verify_receipt(seal.get('deployment_preflight'))
+     for name, expected in seal['seed'].items():
+         if sha(directory/'seed'/name) != expected:
+             raise Invalid('frozen seed changed')
+@@ -225,6 +235,16 @@
+         self.s = load_state(self.root/'state.json')
+         self.tick = time.monotonic()
+         self.active_budget = None
++        self.deployment_ready = False
++
++    def ensure_deployment(self):
++        if self.p['transport'] == 'live' and not self.deployment_ready:
++            from .study_deployment import require_deployment
++            require_deployment(self.root/'deployment-preflights'/str(time.time_ns()))
++            self.deployment_ready = True
++            # Preflight is separately recorded common infrastructure overhead,
++            # never a deduction from one arm's frozen research opportunities.
++            # Controller wall still includes it; overlapping times are not summed.
+ 
+     def admitted(self, research):
+         seed = [n for n in read(self.study/'seed/seed-files.json') if n.endswith('.lean')]
+@@ -366,6 +386,7 @@
+             raise Invalid('orphan job lacks binding; manual reconciliation required; no replay')
+         spec = read(job/'spec.json')
+         receipt = {'outcome': 'uncertain_effects_not_replayed', 'payload': None,
++            'model': self.p['model'], 'reasoning_effort': REASONING_EFFORT,
+             'elapsed_seconds': spec['seconds'], 'role': spec['role'],
+             'usage_raw': [], 'normalized_tokens': None, 'mathematical_resolution': False,
+             'request_id': spec['request_id'], 'recovery': 'full reservation charged; inspect retained partial artifacts'}
+@@ -375,11 +396,13 @@
+     def call(self, key, role, req, workspace=None, readonly=False, seconds=None):
+         """Idempotent logical invocation; completed or uncertain effects never replay."""
+         job = self.root/'jobs'/key
++        req = {**req, 'model': self.p['model'], 'reasoning_effort': REASONING_EFFORT}
+         if (job/'receipt.json').exists():
+             expected = {**req, 'request_id': key}
+             if (job/'request.json').exists() and read(job/'request.json') != expected:
+                 raise Invalid('logical invocation request changed after execution')
+             return self.consume(job, read(job/'receipt.json'))
++        self.ensure_deployment()
+         seconds = seconds or self.p['call_seconds']
+         if not self.permitted(role, seconds):
+             raise Invalid('resource allowance exhausted or stop requested')
+@@ -389,6 +412,7 @@
+         req = {**req, 'request_id': key}
+         spec = {'request_id': key, 'workspace': str(workspace), 'role': role,
+             'transport': self.p['transport'], 'model': self.p['model'], 'provider': self.p['provider'],
++            'reasoning_effort': REASONING_EFFORT,
+             'usage_semantics': self.p['usage_semantics'], 'readonly': readonly,
+             'seconds': seconds, 'output_bytes': self.p['output_bytes'], 'stop': str(self.study/'STOP.json'),
+             'fixture_policy_trial': self.p['fixture_policy_trial'], 'fixture_behavior': self.p['fixture_behavior'],
+@@ -413,11 +437,13 @@
+         write(job/'spec.json', spec)
+         write(job/'request.json', req)
+         from .study_policy import prompt
+-        (job/'prompt.txt').write_text(prompt(req) if role in ('proposer', 'researcher', 'reviewer', 'selector') else
++        # Retain execution identity in metadata without changing study prompts.
++        prompt_req = {k: v for k, v in req.items() if k not in ('model', 'reasoning_effort')}
++        (job/'prompt.txt').write_text(prompt(prompt_req) if role in ('proposer', 'researcher', 'reviewer', 'selector') else
+             policy.COMMON + '\nAdapt the frozen solver to these exact obligations. Do not change hypotheses or source. '
+             'Return solutions keyed by task id with module, term, interface_term and transport_term, or '
+             '{status:"bounded_non_solution",reason:string} for a valid bounded attempt without a solution. '
+-            'No independent test answers are supplied.\n' + canonical(req))
++            'No independent test answers are supplied.\n' + canonical(prompt_req))
+         from .study_bridge import event
+         event(self, {'issue': {'id': key}})
+         event(self, {'claim': {'id': key}})
+--- input/machinery/study_common.py
++++ candidate/machinery/study_common.py
+@@ -10,12 +10,19 @@
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+ PYTHON = '/opt/homebrew/bin/python3'
++MODELS = ('gpt-6-astra', 'gpt-6.1-sol')
++REASONING_EFFORT = 'high'
+ ROOT_SHA = '8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe'
+ SEED = ('MathGKM/Markov.lean', 'MathGKM/Protocol.lean', 'MISSION.md',
+         'docs/DESIGN.md', 'lakefile.toml', 'lake-manifest.json', 'lean-toolchain')
+ 
+ class Invalid(ValueError):
+     pass
++
++def validate_model(model):
++    if model not in MODELS:
++        raise Invalid('explicit supported model required: '+', '.join(MODELS))
++    return model
+ 
+ def canonical(value):
+     return json.dumps(value, sort_keys=True, separators=(',', ':'), ensure_ascii=False)
+--- input/machinery/study_worker.py
++++ candidate/machinery/study_worker.py
+@@ -12,7 +12,8 @@
+ import subprocess
+ import sys
+ import time
+-from .study_common import ROOT, PYTHON, read, write, inventory, sha, authorize_live
++from .study_common import (ROOT, PYTHON, read, write, inventory, sha, authorize_live,
++                           validate_model, REASONING_EFFORT, Invalid)
+ from .worker import inline
+ 
+ SCHEMA = {'type': 'object', 'additionalProperties': False, 'properties': {
+@@ -43,6 +44,9 @@
+ 
+ def command(job, spec):
+     """Pure argv construction, exercised without live launch in tests."""
++    validate_model(spec['model'])
++    if spec.get('reasoning_effort', REASONING_EFFORT) != REASONING_EFFORT:
++        raise Invalid('study reasoning effort must remain high')
+     workspace = Path(spec['workspace'])
+     write(job/'permissions.json', permissions(workspace, readonly=spec['readonly'], retained_sources=spec.get('retained_sources')))
+     write(job/'schema.json', SCHEMA)
+@@ -55,7 +59,7 @@
+         '--skip-git-repo-check', '--json', '--color', 'never', '-C', str(workspace),
+         '-c', 'default_permissions="cleanroom"',
+         '-c', 'permissions.cleanroom='+inline(read(job/'permissions.json')),
+-        '-c', 'web_search="live"', '-c', 'model_reasoning_effort="high"',
++        '-c', 'web_search="live"', '-c', 'model_reasoning_effort="'+REASONING_EFFORT+'"',
+         '-c', 'shell_environment_policy.inherit="none"',
+         '-c', 'shell_environment_policy.set='+inline(env),
+         '--output-schema', str(job/'schema.json'), '--output-last-message', str(job/'final.json')]
+@@ -161,7 +165,8 @@
+         'transport': spec['transport'], 'classification': 'SYNTHETIC FIXTURE; no mathematical progress' if spec['transport'] == 'fixture' else 'live experimental observation',
+         'outcome': error or 'completed', 'payload': payload, 'usage_raw': usage,
+         'provider': 'deterministic_fixture' if spec['transport'] == 'fixture' else spec['provider'],
+-        'model': spec['model'], 'started': wall_start, 'finished': time.time(),
++        'model': spec['model'], 'reasoning_effort': REASONING_EFFORT,
++        'started': wall_start, 'finished': time.time(),
+         'elapsed_seconds': time.monotonic()-start, 'usage_semantics': spec['usage_semantics'],
+         'money': None, 'normalized_tokens': None, 'mathematical_resolution': False,
+         'before': before, 'after': after, 'returncode': p.returncode if p else None}
+--- input/machinery/study_transfer.py
++++ candidate/machinery/study_transfer.py
+@@ -148,6 +148,7 @@
+     result = {'task_id': task['id'], 'task_hash': digest(task), 'checked': False,
+         'source_sha256': task['source_sha256'], 'scope': task['scope'], 'hypotheses': task['hypotheses'],
+         'budget_seconds': seconds, 'checks': [], 'status': 'invalid_comparison',
++        'validation_mode': 'deployed_sandbox' if live else 'unwrapped_fixture',
+         'required_constants': task['required_constants']}
+     try:
+         contract = contract or read(workspace/'contract.json')
+@@ -203,6 +204,9 @@
+         env['TMPDIR'] = str(directory)
+         prefix = sandbox_prefix(directory, deps) if live else []
+         binaries = {str(p): sha(p) for p in (LEAN, CHECKER)}
++        result.update(binary_hashes=binaries, launch_environment=env,
++                      dependency_paths=list(map(str, deps)),
++                      sandbox_profile_sha256=sha(directory/'validator.sb') if live else None)
+         for operation in ('compile', 'kernel_replay'):
+             for module in order + ['StudyCheck']:
+                 if stop():
+@@ -217,6 +221,8 @@
+                         if operation == 'compile' else [str(CHECKER), module])
+                 record = run(prefix+argv, cwd=source, env=env, timeout=min(180, remaining), output_bytes=1048576)
+                 result['checks'].append({'module': module, 'operation': operation, **record})
++                if live and (record['returncode'] < 0 or 'sandbox-exec:' in record['stderr']):
++                    result.update(status='validator_infrastructure_failure', infrastructure_failure=True)
+                 write(directory/'result.json', result)
+                 if record['returncode'] or record['termination']:
+                     raise Invalid('failure within compilation/replay budget: '+module)
+@@ -226,6 +232,8 @@
+         inspected = run(prefix+[str(LEAN), '-j', '1', 'StudyInspect.lean'], cwd=source, env=env,
+                         timeout=min(180, seconds-(time.monotonic()-start)), output_bytes=1048576)
+         result['checks'].append({'operation': 'trusted_premise_inspection', **inspected})
++        if live and (inspected['returncode'] < 0 or 'sandbox-exec:' in inspected['stderr']):
++            result.update(status='validator_infrastructure_failure', infrastructure_failure=True)
+         result['declarations'] = proof_audit.parse_artifact(inspected, declarations, source/'declarations.json')
+         result['declaration_artifact_sha256'] = sha(source/'declarations.json')
+         if objects != {str(p.relative_to(build)): sha(p) for p in build.rglob('*') if p.is_file()}:
+@@ -234,6 +242,8 @@
+             raise Invalid('validator or staged source changed')
+         if binaries != {str(p): sha(p) for p in (LEAN, CHECKER)}:
+             raise Invalid('validator binaries changed')
++        if live and sha(directory/'validator.sb') != result['sandbox_profile_sha256']:
++            raise Invalid('validator sandbox profile changed')
+         if inventory(workspace) != before:
+             raise Invalid('solver changed during check')
+         versions = proof_audit.used_versions(result['declarations'], frozen_files)
+--- /dev/null
++++ candidate/machinery/study_deployment.py
+@@ -0,0 +1,216 @@
++"""Bounded neutral deployment preflight. No hosted model or research inputs.
++
++Run in the approved host context:
++  /opt/homebrew/bin/python3 -m machinery.study_deployment --out .scratch/FRESH_NAME
++Exit 0 requires the real sandbox, fresh Lean/kernel/premise checks, rejected
++negative controls, and the actual completion adapter's exact-root check. This
++is operational evidence for independent review, never a self-certification.
++"""
++import argparse
++from pathlib import Path
++import platform
++import sys
++import time
++from types import SimpleNamespace
++
++from .study_common import ROOT, Invalid, digest, read, sha, write
++from .study_transfer import check_task, sandbox_prefix
++from .trust import CORE, LEAN, CHECKER, environment
++from .process import run
++
++
++def accepted_controls(positive, wrong_target, missing_premise, completion):
++    """Infrastructure failures cannot count as successful negative controls."""
++    return (positive.get('checked') is True and
++        positive.get('validation_mode') == 'deployed_sandbox' and
++        positive.get('component_use_checked') is True and
++        {'compile', 'kernel_replay', 'trusted_premise_inspection'} <=
++            {c['operation'] for c in positive.get('checks', [])} and
++        not wrong_target.get('checked') and
++        any(c.get('module') == 'StudyCheck' and c['operation'] == 'compile' and
++            c.get('returncode') == 1 and not c.get('termination') and
++            'type mismatch' in c.get('stdout', '').lower()
++            for c in wrong_target.get('checks', [])) and
++        not missing_premise.get('checked') and
++        'inspector' in missing_premise.get('failure', '').lower() and
++        any(c['operation'] == 'trusted_premise_inspection' and
++            c.get('returncode') == 1 and not c.get('termination') and
++            'consumer does not use MathGKM.DeploymentRoot.Root' in c.get('stdout', '')
++            for c in missing_premise.get('checks', [])) and
++        completion.get('lean_exact_root_checked') is True and
++        completion.get('resolved') is False and
++        completion.get('rejection') ==
++            'independent source/English correspondence audit required for this exact bundle')
++
++
++def preflight(directory, seconds=120):
++    directory = Path(directory).resolve()
++    if (not directory.is_relative_to(ROOT) or directory == ROOT or
++        directory.exists() or type(seconds) is not int or not 10 <= seconds <= 180):
++        raise Invalid('fresh local output and 10..180 second total preflight bound required')
++    directory.mkdir(parents=True)
++    start = time.monotonic()
++    report = {'schema': 'math-gkm.deployment-preflight.v1', 'ready': False,
++        'neutral': True, 'hosted_model_calls': 0, 'budget_seconds': seconds,
++        'started': time.time(), 'probes': [], 'host': {'system': platform.system(),
++            'release': platform.release(), 'machine': platform.machine()},
++        'accounting': 'separate infrastructure setup overhead; unchanged frozen arm opportunities',
++        'cause': 'Unproved. Startup failure is infrastructure evidence, never a mathematical rejection.',
++        'scope': 'neutral deployed-path observations requiring independent review; no host refinement or continuation proof'}
++
++    def remaining():
++        left = seconds-(time.monotonic()-start)
++        if left <= 0:
++            raise Invalid('preflight total time budget exhausted')
++        return left
++
++    try:
++        report['source_hashes'] = {str(p.relative_to(ROOT)): sha(p) for p in
++            sorted((ROOT/'machinery').glob('*.py'))}
++        report['binary_hashes'] = {str(p): sha(p) for p in (LEAN, CHECKER)}
++        startup = directory/'startup'
++        startup.mkdir()
++        env = environment([CORE])
++        env['TMPDIR'] = str(startup)
++        prefix = sandbox_prefix(startup, [CORE])
++        report.update(environment=env, sandbox_profile_sha256=sha(startup/'validator.sb'))
++        # Both independent startup probes are retained even when the first fails.
++        for label, argv in [('echo', ['/bin/echo', 'neutral-wrapper-startup']),
++                            ('lean_version', [str(LEAN), '--version'])]:
++            record = run(prefix+argv, cwd=startup, env=env,
++                         timeout=min(5, remaining()), output_bytes=65536)
++            report['probes'].append({'label': label, **record})
++            write(directory/'result.json', report)
++        if any(p['returncode'] or p['termination'] for p in report['probes']):
++            raise Invalid('real wrapper startup failed; no compiler validation established')
++        if report['probes'][0]['stdout'].strip() != 'neutral-wrapper-startup':
++            raise Invalid('wrapper echo output mismatch')
++
++        # Files immediately outside the allowed validation directory must stay
++        # inaccessible, even though the host running this diagnostic owns them.
++        forbidden = directory/'outside-validator.txt'
++        forbidden.write_text('neutral-private-boundary-token\n')
++        denied_write = directory/'outside-validator-write.txt'
++        for label, argv in [('denied_read', ['/bin/cat', str(forbidden)]),
++                ('denied_write', ['/bin/sh', '-c', 'printf neutral > "$1"',
++                                  'neutral-boundary', str(denied_write)])]:
++            record = run(prefix+argv, cwd=startup, env=env,
++                         timeout=min(5, remaining()), output_bytes=65536)
++            report['probes'].append({'label': label, **record})
++            expected_exits = (1,) if label == 'denied_read' else (1, 2)
++            if (record['returncode'] not in expected_exits or record['termination'] or
++                'neutral-private-boundary-token' in record['stdout'] or
++                not any(s in record['stderr'].lower() for s in ('operation not permitted', 'permission denied'))):
++                raise Invalid('sandbox boundary control did not demonstrate denial: '+label)
++        if denied_write.exists():
++            raise Invalid('sandbox wrote outside the validator directory')
++
++        workspace = directory/'workspace'
++        (workspace/'MathGKM').mkdir(parents=True)
++        (workspace/'.lake/packages').mkdir(parents=True)
++        (workspace/'research').mkdir()
++        foundation = 'MathGKM/ResearchSemantics.lean'
++        (workspace/foundation).write_bytes((ROOT/foundation).read_bytes())
++        root = workspace/'MathGKM/DeploymentRoot.lean'
++        root.write_text('import MathGKM.ResearchSemantics\n'
++            'namespace MathGKM.DeploymentRoot\n'
++            'def Root : Prop := ∀ n : Nat, n = n\n'
++            'theorem identity (n : Nat) : n = n := rfl\n'
++            'end MathGKM.DeploymentRoot\n')
++        contract = {'id': 'neutral-deployment-v1', 'root_file': str(root.relative_to(workspace)),
++            'root_sha256': sha(root), 'root_declaration': 'MathGKM.DeploymentRoot.Root',
++            'assumptions': ['propext', 'Classical.choice', 'Quot.sound'],
++            'correspondence_obligations': ['neutral_identity']}
++        write(workspace/'contract.json', contract)
++        report['neutral_sources'] = {foundation: sha(workspace/foundation),
++                                    contract['root_file']: sha(root)}
++        task = {'id': 'neutral-identity', 'statement': '∀ n : Nat, n = n',
++            'hypotheses': [], 'scope': 'Neutral deployment check only',
++            'source_sha256': sha(root), 'kind': 'regression', 'interface_type': 'True',
++            'transport_type': 'True', 'required_constants': ['MathGKM.DeploymentRoot.identity']}
++        solution = {'module': 'MathGKM.DeploymentRoot', 'term': 'MathGKM.DeploymentRoot.identity',
++                    'interface_term': 'True.intro', 'transport_term': 'True.intro'}
++        positive = check_task(workspace, task, solution, directory/'positive', remaining(),
++                              live=True, required=task['required_constants'])
++        report['positive'] = positive
++        if not positive.get('checked'):
++            raise Invalid('neutral actual-wrapper compilation/replay/premise inspection failed')
++        wrong = check_task(workspace, {**task, 'id': 'wrong-target', 'statement': 'False'},
++                           solution, directory/'wrong-target', remaining(), live=True)
++        missing = check_task(workspace, task, solution, directory/'missing-premise', remaining(),
++                             live=True, required=['MathGKM.DeploymentRoot.Root'])
++        report.update(wrong_target=wrong, missing_premise=missing)
++
++        # Exercise the actual completion adapter, while leaving independent
++        # correspondence unfulfilled. A diagnostic cannot resolve a study root.
++        from .study_completion import check
++        (workspace/'research/correspondence.txt').write_text('Neutral identity only. No independent audit supplied.\n')
++        reservations = []
++        arm = SimpleNamespace(p={'transport': 'live', 'validation_seconds': remaining()},
++            root=directory/'completion-adapter', workspace=workspace, s={'round': 0},
++            reserve=lambda key, cap: reservations.append({'key': key, 'seconds': cap}),
++            stopped=lambda: False)
++        completed = check(arm, {'kind': 'proof', 'module': solution['module'],
++            'declaration': 'MathGKM.DeploymentRoot.identity', 'correspondence': 'research/correspondence.txt'})
++        report.update(completion=completed, completion_reservations=reservations)
++        if not accepted_controls(positive, wrong, missing, completed):
++            raise Invalid('neutral positive/negative/completion controls not all established')
++        if report['binary_hashes'] != {str(p): sha(p) for p in (LEAN, CHECKER)}:
++            raise Invalid('preflight binaries changed')
++        if report['source_hashes'] != {str(p.relative_to(ROOT)): sha(p) for p in sorted((ROOT/'machinery').glob('*.py'))}:
++            raise Invalid('preflight machinery changed')
++        remaining()
++        report['ready'] = True
++    except (Invalid, OSError, ValueError, KeyError, TypeError) as exc:
++        report['failure'] = type(exc).__name__+': '+str(exc)
++    report.update(elapsed_seconds=time.monotonic()-start, finished=time.time())
++    write(directory/'result.json', report)
++    # Bind all retained profiles, neutral sources, compiler/premise artifacts and
++    # raw results, including failures. Existing paths are never overwritten.
++    files = {str(p.relative_to(directory)): sha(p) for p in directory.rglob('*') if p.is_file()}
++    write(directory/'receipt.json', {'result_sha256': sha(directory/'result.json'),
++        'files': files, 'files_binding': digest(files), 'ready': report['ready']})
++    return report
++
++
++def require_deployment(directory):
++    report = preflight(directory)
++    if not report['ready']:
++        raise Invalid('deployment preflight failed before research calls; inspect '+str(directory/'result.json'))
++    return {'receipt': str(directory/'receipt.json'), 'receipt_sha256': sha(directory/'receipt.json'),
++            'elapsed_seconds': report['elapsed_seconds'], 'ready': True}
++
++
++def verify_receipt(binding):
++    if not binding or binding.get('ready') is not True:
++        raise Invalid('missing successful deployment preflight')
++    path = Path(binding['receipt']).resolve()
++    if not path.is_relative_to(ROOT) or sha(path) != binding['receipt_sha256']:
++        raise Invalid('deployment receipt binding changed')
++    receipt = read(path)
++    if receipt.get('ready') is not True or digest(receipt['files']) != receipt['files_binding']:
++        raise Invalid('deployment receipt is incomplete')
++    for name, expected in receipt['files'].items():
++        item = (path.parent/name).resolve()
++        if not item.is_relative_to(path.parent) or sha(item) != expected:
++            raise Invalid('deployment preflight artifact changed')
++    if sha(path.parent/'result.json') != receipt['result_sha256'] or not read(path.parent/'result.json')['ready']:
++        raise Invalid('deployment preflight result changed')
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--out', type=Path, required=True)
++    parser.add_argument('--seconds', type=int, default=120)
++    args = parser.parse_args()
++    try:
++        result = preflight(args.out, args.seconds)
++    except Invalid as exc:
++        print(str(exc), file=sys.stderr)
++        return 2
++    print('READY' if result['ready'] else 'FAILED', args.out/'result.json')
++    return 0 if result['ready'] else 1
++
++
++if __name__ == '__main__':
++    sys.exit(main())
+--- /dev/null
++++ candidate/tests/test_sol_deployment.py
+@@ -0,0 +1,218 @@
++"""Neutral maintenance regressions. Mocks never attest real host deployment."""
++from pathlib import Path
++import tempfile
++import unittest
++from unittest.mock import patch
++
++from machinery import study, study_worker, study_deployment as deployment
++from machinery.study_common import ROOT, Invalid, read, write, sha, digest, lock, load_state
++from machinery.study_transfer import check_task
++from tests.test_revision_static_checkpoint import neutral_contract
++
++
++class SolDeployment(unittest.TestCase):
++    def setUp(self):
++        self.base = Path(tempfile.mkdtemp(dir=ROOT/'.scratch', prefix='sol-deployment-neutral-'))
++        print('RETAINED', self.base, flush=True)
++
++    def freeze(self, model='gpt-6.1-sol'):
++        directory = self.base/'study'
++        with patch('machinery.study.dependency_identity', return_value={'fixture': 'fixed'}):
++            study.freeze(directory, {'model': model, 'rounds': 2}, contract=neutral_contract())
++        return directory
++
++    def test_exact_model_admission_and_config_parity(self):
++        original = read(ROOT/'studies/v2-study.json')
++        self.assertEqual(study.DEFAULT['model'], 'gpt-6-astra')
++        for label, model in [('sol', 'gpt-6.1-sol'), ('astra', 'gpt-6-astra')]:
++            config = read(ROOT/('studies/v2-study-'+label+'.json'))
++            self.assertEqual(config, {**original, 'model': model})
++            for transport in ('fixture', 'live'):
++                study.validate_protocol({**study.DEFAULT, 'transport': transport, 'model': model})
++        for model in ('gpt-6-sol', 'gpt-6.1', 'gpt-6-astra ', '', None):
++            with self.subTest(model=model), self.assertRaises(Invalid):
++                study.validate_protocol({**study.DEFAULT, 'model': model})
++
++    def test_worker_argv_only_model_changes_and_high_effort_is_fixed(self):
++        ws = self.base/'workspace'
++        ws.mkdir()
++        astra = study_worker.command(self.base/'astra', {'workspace': str(ws), 'readonly': False,
++                                                        'model': 'gpt-6-astra'})
++        sol = study_worker.command(self.base/'sol', {'workspace': str(ws), 'readonly': False,
++                                                    'model': 'gpt-6.1-sol'})
++        normalized = lambda argv, label: [x.replace(str(self.base/label), 'JOB').replace('gpt-6.1-sol', 'MODEL').replace('gpt-6-astra', 'MODEL') for x in argv]
++        self.assertEqual(normalized(astra, 'astra'), normalized(sol, 'sol'))
++        self.assertEqual(sol[sol.index('--model')+1], 'gpt-6.1-sol')
++        self.assertIn('model_reasoning_effort="high"', sol)
++        for spec in ({'model': 'unknown'}, {'model': 'gpt-6.1-sol', 'reasoning_effort': 'low'}):
++            with self.assertRaises(Invalid):
++                study_worker.command(self.base/'rejected', {'workspace': str(ws), 'readonly': False, **spec})
++
++    def test_sol_reaches_frozen_protocol_role_request_spec_and_real_fixture_receipt(self):
++        directory = self.freeze()
++        with lock(directory/'controller.lock') as fd:
++            arm = study.Arm(directory, 'baseline', fd)
++            # This is an actual deterministic subprocess, never a model.
++            receipt = arm.call('selection-test', 'adapter', {'role': 'adapter', 'tasks': []})
++        job = directory/'arms/baseline/jobs/selection-test'
++        self.assertEqual(receipt['outcome'], 'completed', receipt)
++        for item in (read(directory/'protocol.json'), read(job/'spec.json'),
++                     read(job/'request.json'), read(job/'receipt.json')):
++            self.assertEqual(item['model'], 'gpt-6.1-sol')
++        for item in (read(job/'spec.json'), read(job/'request.json'), receipt):
++            self.assertEqual(item['reasoning_effort'], 'high')
++        self.assertEqual(receipt['transport'], 'fixture')
++        sol_prompt = (job/'prompt.txt').read_text()
++        self.assertNotIn('gpt-6.1-sol', sol_prompt)
++        self.assertNotIn('reasoning_effort', sol_prompt)
++        self.assertEqual(read(directory/'seal.json')['protocol'], digest(read(directory/'protocol.json')))
++        with patch('machinery.study.dependency_identity', return_value={'fixture': 'fixed'}):
++            study.verify(directory)
++            protocol = read(directory/'protocol.json')
++            write(directory/'protocol.json', {**protocol, 'model': 'gpt-6-astra'})
++            with self.assertRaises(Invalid):
++                study.verify(directory)
++
++    def test_uncertain_recovery_records_sol_without_any_relaunch(self):
++        directory = self.freeze()
++        with lock(directory/'controller.lock') as fd:
++            arm = study.Arm(directory, 'baseline', fd)
++            job = arm.root/'jobs/interrupted'
++            write(job/'spec.json', {'seconds': 3, 'role': 'researcher', 'request_id': 'interrupted',
++                                    'model': 'gpt-6.1-sol'})
++            arm.s['active'] = str(job)
++            arm.save()
++            with patch('machinery.study.subprocess.Popen', side_effect=AssertionError('no replay')):
++                receipt = arm.recover()
++            self.assertEqual(receipt['model'], 'gpt-6.1-sol')
++            self.assertEqual(receipt['reasoning_effort'], 'high')
++            self.assertEqual(receipt['outcome'], 'uncertain_effects_not_replayed')
++
++    def test_live_freeze_failure_precedes_seed_and_roles(self):
++        directory = self.base/'live'
++        with patch('machinery.study.authorize_live'), patch(
++            'machinery.study_deployment.require_deployment', side_effect=Invalid('neutral deployment failure')) as guard, patch(
++            'machinery.study.subprocess.Popen', side_effect=AssertionError('model launch forbidden')):
++            with self.assertRaisesRegex(Invalid, 'neutral deployment failure'):
++                study.freeze(directory, {'transport': 'live', 'model': 'gpt-6.1-sol'}, contract=neutral_contract())
++        guard.assert_called_once_with(directory/'deployment-preflight')
++        self.assertFalse((directory/'seed').exists())
++        self.assertFalse((directory/'seal.json').exists())
++
++    def test_each_live_arm_session_blocks_before_call_accounting(self):
++        directory = self.freeze()
++        with lock(directory/'controller.lock') as fd:
++            arm = study.Arm(directory, 'baseline', fd)
++            arm.p['transport'] = 'live'  # unit branch only; no frozen-study activation
++            with patch('machinery.study_deployment.require_deployment', side_effect=Invalid('blocked')):
++                with self.assertRaisesRegex(Invalid, 'blocked'):
++                    arm.call('forbidden', 'researcher', {'role': 'researcher'})
++            self.assertEqual(arm.s['calls'], 0)
++            self.assertEqual(arm.s['seconds'], 0)
++            self.assertFalse((arm.root/'jobs/forbidden').exists())
++
++    def test_real_wrapper_startup_failure_is_preserved_without_unwrapped_retry(self):
++        failed = {'returncode': -6, 'stdout': '', 'stderr': '', 'termination': None,
++                  'argv': [], 'elapsed_ns': 10000000, 'captured_bytes': 0}
++        out = self.base/'preflight'
++        with patch('machinery.study_deployment.run', return_value=failed) as runner, patch(
++            'machinery.study_deployment.check_task', side_effect=AssertionError('startup failed')):
++            result = deployment.preflight(out)
++        self.assertFalse(result['ready'])
++        self.assertEqual(runner.call_count, 2)
++        for call in runner.call_args_list:
++            self.assertEqual(call.args[0][0], '/usr/bin/sandbox-exec')
++            self.assertLessEqual(call.kwargs['timeout'], 5)
++        self.assertEqual([p['returncode'] for p in result['probes']], [-6, -6])
++        self.assertEqual(read(out/'receipt.json')['result_sha256'], sha(out/'result.json'))
++        with self.assertRaises(Invalid):
++            deployment.preflight(out)
++
++    def test_signal_on_first_live_compile_is_infrastructure_not_math(self):
++        directory = self.freeze()
++        ws = directory/'arms/baseline/workspace'
++        contract = neutral_contract()
++        task = {'id': 'neutral', 'statement': 'True', 'hypotheses': [], 'scope': 'neutral',
++                'source_sha256': contract['root_sha256'], 'kind': 'regression',
++                'interface_type': 'True', 'transport_type': 'True', 'required_constants': []}
++        solution = {'module': 'MathGKM.HarnessFixture', 'term': 'True.intro',
++                    'interface_term': 'True.intro', 'transport_term': 'True.intro'}
++        failed = {'returncode': -6, 'stdout': '', 'stderr': '', 'termination': None,
++                  'argv': [], 'elapsed_ns': 10000000}
++        with patch('machinery.study_transfer.run', return_value=failed) as runner:
++            result = check_task(ws, task, solution, self.base/'first-failure', 10, live=True)
++        self.assertFalse(result['checked'])
++        self.assertEqual(result['status'], 'validator_infrastructure_failure')
++        self.assertEqual(runner.call_count, 1)
++        self.assertEqual(runner.call_args.args[0][0], '/usr/bin/sandbox-exec')
++        self.assertEqual(result['checks'][0]['returncode'], -6)
++        self.assertTrue(result['sandbox_profile_sha256'])
++
++    def test_control_criteria_reject_infrastructure_negatives_and_unwrapped_evidence(self):
++        good = {'checked': True, 'validation_mode': 'deployed_sandbox', 'component_use_checked': True,
++            'checks': [{'operation': op} for op in ('compile', 'kernel_replay', 'trusted_premise_inspection')]}
++        wrong = {'checked': False, 'checks': [{'module': 'StudyCheck', 'operation': 'compile',
++            'returncode': 1, 'termination': None, 'stdout': 'Type mismatch'}]}
++        missing = {'checked': False, 'failure': 'trusted premise inspector failed',
++            'checks': [{'operation': 'trusted_premise_inspection', 'returncode': 1,
++                'termination': None, 'stdout': 'consumer does not use MathGKM.DeploymentRoot.Root'}]}
++        completed = {'resolved': False, 'lean_exact_root_checked': True,
++            'rejection': 'independent source/English correspondence audit required for this exact bundle'}
++        self.assertTrue(deployment.accepted_controls(good, wrong, missing, completed))
++        cases = [(dict(good, validation_mode='unwrapped_fixture'), wrong, missing, completed),
++                 (dict(good, checked=False), wrong, missing, completed),
++                 (good, dict(wrong, checks=[]), missing, completed),
++                 (good, wrong, dict(missing, checks=[]), completed),
++                 (good, wrong, missing, dict(completed, resolved=True))]
++        for case in cases:
++            self.assertFalse(deployment.accepted_controls(*case))
++
++    def test_receipt_tampering_and_missing_success_rejected(self):
++        out = self.base/'receipt'
++        out.mkdir()
++        write(out/'result.json', {'ready': True})
++        files = {'result.json': sha(out/'result.json')}
++        write(out/'receipt.json', {'ready': True, 'files': files, 'files_binding': digest(files),
++                                  'result_sha256': files['result.json']})
++        binding = {'ready': True, 'receipt': str(out/'receipt.json'), 'receipt_sha256': sha(out/'receipt.json')}
++        deployment.verify_receipt(binding)  # serialization unit fixture only
++        write(out/'result.json', {'ready': False})
++        with self.assertRaises(Invalid):
++            deployment.verify_receipt(binding)
++        with self.assertRaises(Invalid):
++            deployment.verify_receipt(None)
++
++    def test_preflight_control_flow_keeps_all_validation_on_live_path(self):
++        # Synthetic orchestration only; never evidence of host compatibility.
++        probes = [
++            {'returncode': 0, 'stdout': 'neutral-wrapper-startup\n', 'stderr': ''},
++            {'returncode': 0, 'stdout': 'SYNTHETIC Lean version\n', 'stderr': ''},
++            {'returncode': 1, 'stdout': '', 'stderr': 'Operation not permitted'},
++            {'returncode': 2, 'stdout': '', 'stderr': 'Permission denied'}]
++        probes = [{**p, 'termination': None, 'argv': [], 'elapsed_ns': 1} for p in probes]
++        good = {'checked': True, 'validation_mode': 'deployed_sandbox', 'component_use_checked': True,
++            'checks': [{'operation': op} for op in ('compile', 'kernel_replay', 'trusted_premise_inspection')]}
++        wrong = {'checked': False, 'checks': [{'module': 'StudyCheck', 'operation': 'compile',
++            'returncode': 1, 'termination': None, 'stdout': 'Type mismatch'}]}
++        missing = {'checked': False, 'failure': 'trusted premise inspector failed',
++            'checks': [{'operation': 'trusted_premise_inspection', 'returncode': 1,
++                'termination': None, 'stdout': 'consumer does not use MathGKM.DeploymentRoot.Root'}]}
++        completed = {'resolved': False, 'lean_exact_root_checked': True,
++            'rejection': 'independent source/English correspondence audit required for this exact bundle'}
++        with patch('machinery.study_deployment.run', side_effect=probes) as runner, patch(
++            'machinery.study_deployment.check_task', side_effect=[good, wrong, missing]) as checker, patch(
++            'machinery.study_completion.check', return_value=completed) as complete:
++            result = deployment.preflight(self.base/'synthetic-flow')
++        self.assertTrue(result['ready'], result)
++        self.assertEqual(checker.call_count, 3)
++        for call in checker.call_args_list:
++            self.assertIs(call.kwargs['live'], True)
++            self.assertLessEqual(call.args[4], 120)
++        for call in runner.call_args_list:
++            self.assertEqual(call.args[0][0], '/usr/bin/sandbox-exec')
++        self.assertEqual(complete.call_args.args[0].p['transport'], 'live')
++        self.assertEqual(result['hosted_model_calls'], 0)
++
++
++if __name__ == '__main__':
++    unittest.main()
+--- /dev/null
++++ candidate/studies/v2-study-sol.json
+@@ -0,0 +1,16 @@
++{
++  "transport": "live",
++  "rounds": 8,
++  "episode_rounds": 2,
++  "invention_rounds": 0,
++  "call_seconds": 300,
++  "adaptation_seconds": 120,
++  "arm_seconds": 14400,
++  "max_calls": 60,
++  "meta_calls": 24,
++  "policy_trials": 1,
++  "policy_trial_rounds": 2,
++  "validation_seconds": 120,
++  "ablations": [],
++  "model": "gpt-6.1-sol"
++}
+--- /dev/null
++++ candidate/studies/v2-study-astra.json
+@@ -0,0 +1,16 @@
++{
++  "transport": "live",
++  "rounds": 8,
++  "episode_rounds": 2,
++  "invention_rounds": 0,
++  "call_seconds": 300,
++  "adaptation_seconds": 120,
++  "arm_seconds": 14400,
++  "max_calls": 60,
++  "meta_calls": 24,
++  "policy_trials": 1,
++  "policy_trial_rounds": 2,
++  "validation_seconds": 120,
++  "ablations": [],
++  "model": "gpt-6-astra"
++}
+--- /dev/null
++++ candidate/docs/DEPLOYMENT_PREFLIGHT.md
+@@ -0,0 +1,75 @@
++# Model selection and neutral deployment preflight
++
++This is experimental construction maintenance. No hosted model, curator,
++researcher, or campaign is started by the preflight. It supplies bounded neutral
++deployment observations for independent review. Host refinement and the whole
++continuation proof remain open.
++
++Use `studies/v2-study-sol.json` to select exactly `gpt-6.1-sol`, or
++`studies/v2-study-astra.json` to select exactly `gpt-6-astra`. Both copy every
++opportunity and budget from the unchanged `studies/v2-study.json`. The historical
++Astra default is retained. Unknown identifiers fail admission and worker argv
++construction; there is no model substitution. High reasoning effort, transport,
++authentication, endpoint, permissions, tool flags, output schema and prompts
++are unchanged. Execution identity is recorded in frozen protocol, role request,
++job spec and receipt metadata, without entering the research prompt. Worker
++metadata records the requested model; hosted provider identity remains untested
++here. The independently frozen pretrial panel is reused unchanged; this work
++does not start or change a curator.
++
++Before any approved fresh live study, run this command from the installed
++candidate root in the supervisor's approved host context. Choose an unused
++output path for every invocation:
++
++```sh
++export PATH=/opt/homebrew/bin:/Users/sasha/.elan/bin:/usr/bin:/bin:/usr/sbin:/sbin
++export GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null
++export TMPDIR="$PWD/.scratch"
++/opt/homebrew/bin/python3 -m machinery.study_deployment --out .scratch/deployment-host-001 --seconds 120
++```
++
++Exit 0 requires all of these on the actual `sandbox_prefix` path:
++
++- Wrapped echo and pinned Lean version start successfully.
++- Sibling-file read and write probes demonstrate denial outside the validator
++  directory. These contain only newly generated neutral text.
++- The unchanged generic `ResearchSemantics` foundation and a new neutral identity
++  root compile freshly; kernel replay and the actual-premise inspector succeed.
++  A required identity declaration must occur in the checked dependency closure.
++- A false target fails with an actual type mismatch. A missing mandatory
++  dependency fails at the actual inspector. Startup failure, signal, or timeout
++  cannot satisfy either negative control.
++- The actual `study_completion.check` adapter freshly compiles/replays/inspects
++  the neutral exact root, then refuses resolution because an independent
++  correspondence audit was deliberately not supplied.
++
++The total compiler/probe allowance is bounded by 120 seconds by default, with
++5-second startup/boundary probe caps and capped captured output. Source/profile,
++environment, executable hashes, argv, return codes, signals, errors, timings,
++object and premise artifacts are retained and hashed in `result.json` and
++`receipt.json`. Failure exits 1 and keeps the failed evidence. A reused output
++path is rejected. No unwrapped retry occurs. Review the full receipt and retained
++artifacts independently; the word READY alone is not certification.
++
++Live freeze automatically performs a new neutral preflight before creating arm
++seeds or a study seal. Failure leaves only diagnostic evidence and admits no
++study. A successful receipt is bound into the seal and checked on verification.
++Each live arm session also runs a fresh preflight before its first new role
++call, including adapter calls; failure precedes role intent/call reservations.
++Recorded preflight time is separate infrastructure overhead. Frozen arm role,
++validation and meta-call opportunities are unchanged. Controller wall overlaps
++this time and must not be added to it. Existing live authorization is still
++required; the preflight cannot authorize any model call.
++
++The builder's actual wrapped echo/version probes exited 71 with
++`sandbox-exec: sandbox_apply: Operation not permitted`. This establishes that
++the nested environment cannot apply the profile. It does not establish the
++cause of the supervisor-reported host exit -6 with empty streams. The profile
++and its permissions remain unchanged; no cause-specific repair is claimed.
++The focused mock/fixture and unwrapped neutral Lean tests establish only their
++stated machinery cases. They cannot establish live deployment compatibility.
++Host startup, boundary controls, neutral validation and completion checks all
++remain to be demonstrated there. Actual research results must still pass the
++unchanged exact-source, held-out separation, kernel replay, premise and root
++correspondence gates. Interrupted and infrastructure-failed checkpoints are
++reported separately from completed matched checkpoints.

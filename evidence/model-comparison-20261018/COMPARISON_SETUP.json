@@ -1,0 +1,57 @@
+{
+  "recorded_at_utc": "2026-10-18T11:36:15.052385+00:00",
+  "user_request": "switch to gpt-6.1-sol; start from square one; compare at matching completed checkpoints",
+  "astra": {
+    "baseline": {
+      "status": "finite_budget_finished; root_open",
+      "round": 8,
+      "calls": 24,
+      "meta_calls": 16,
+      "resolution": null,
+      "accepted_knowledge": 0,
+      "accepted_components": 0,
+      "researcher_outcomes": {
+        "round-0004": "completed",
+        "round-0003": "failure_within_time_budget",
+        "round-0002": "failure_within_time_budget",
+        "round-0005": "failure_within_time_budget",
+        "round-0000": "completed",
+        "round-0007": "failure_within_time_budget",
+        "round-0006": "failure_within_time_budget",
+        "round-0001": "completed"
+      }
+    },
+    "exploration": {
+      "status": "stopped",
+      "round": 3,
+      "calls": 8,
+      "meta_calls": 5,
+      "resolution": null,
+      "accepted_knowledge": 0,
+      "accepted_components": 0,
+      "researcher_outcomes": {
+        "round-0002": "stopped",
+        "round-0000": "completed",
+        "round-0001": "failure_within_time_budget"
+      }
+    }
+  },
+  "target_model": "gpt-6.1-sol",
+  "fresh_root_and_history": true,
+  "evaluation_panel": "reuse unchanged independent pretrial panel",
+  "comparison_limit": "Prior Astra validation aborted before mathematical checks; do not infer a model-quality effect from absent accepted proofs. Exclude the interrupted exploration attempt from matched completed-checkpoint comparison.",
+  "archive_sha256": "97928a721131ab8a419c7b3d9447d21706591b5d5ae6fad82adfefb6ddb7a549",
+  "archive_bytes": 9790142,
+  "startup_probes": {
+    "same_original_profile_echo": {
+      "returncode": -6,
+      "stdout": "",
+      "stderr": ""
+    },
+    "same_original_profile_lean_version": {
+      "returncode": -6,
+      "stdout": "",
+      "stderr": ""
+    }
+  }
+}

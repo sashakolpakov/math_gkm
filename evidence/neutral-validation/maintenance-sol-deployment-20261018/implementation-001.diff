@@ -1,0 +1,235 @@
+--- input/machinery/study.py
++++ candidate/machinery/study.py
+@@ -16,7 +16,8 @@
+ 
+ from .study_common import (ROOT, PYTHON, SEED, Invalid, canonical, digest, sha, read,
+     write, save_state, load_state, lock, inventory, snapshot, verify_snapshot,
+-    clean_contract, copy_seed, implementation, dependency_identity, authorize_live)
++    clean_contract, copy_seed, implementation, dependency_identity, authorize_live,
++    validate_model, REASONING_EFFORT)
+ from . import study_policy as policy
+ 
+ DEFAULT = {'schema': 'math-gkm.study.v2', 'transport': 'fixture',
+@@ -53,8 +54,9 @@
+ def validate_protocol(p):
+     if set(p) != set(DEFAULT) or p['schema'] != DEFAULT['schema']:
+         raise Invalid('protocol keys/schema mismatch')
+-    if p['transport'] not in ('fixture', 'live') or p['model'] != 'gpt-6-astra':
+-        raise Invalid('only explicitly selected fixture or Astra transport')
++    if p['transport'] not in ('fixture', 'live'):
++        raise Invalid('only explicitly selected fixture or live transport')
++    validate_model(p['model'])
+     if p['fixture_behavior'] not in ('normal', 'sleep', 'missing', 'exit') or (p['transport'] == 'live' and (p['fixture_behavior'] != 'normal' or p['fixture_policy_trial'] or p['fixture_connected'])):
+         raise Invalid('deterministic fixture behaviors are never live research settings')
+     for k in ('rounds', 'episode_rounds', 'call_seconds', 'adaptation_seconds', 'arm_seconds',
+@@ -135,6 +137,10 @@
+     if p['transport'] == 'live' and any(any(k.startswith('fixture_') for k in t) for t in suite['tasks']):
+         raise Invalid('fixture answers cannot enter a live suite')
+     directory.mkdir(parents=True, exist_ok=False)
++    deployment = None
++    if p['transport'] == 'live':
++        from .study_deployment import require_deployment
++        deployment = require_deployment(directory/'deployment-preflight')
+     seed = directory/'seed'
+     seed.mkdir()
+     seed_files = list(dict.fromkeys([x for x in SEED if x != 'MathGKM/Markov.lean'] +
+@@ -151,7 +157,7 @@
+     write(directory/'evaluation/suite.json', suite)
+     seal = {'seed': {name: sha(seed/name) for name in seed_files + ['contract.json']},
+         'seed_files_sha256': sha(seed/'seed-files.json'),
+-        'curation': curation,
++        'curation': curation, 'deployment_preflight': deployment,
+         'protocol': digest(p), 'suite': digest(suite), 'implementation': implementation(),
+         'dependencies': dependency_identity(),
+         'baseline_adjustments': ['empty history and agenda; no inherited artifacts',
+@@ -182,6 +188,7 @@
+         from .study_observer import checkpoint
+         checkpoint(directory, mode, 'initial', load_state(arm/'state.json'), arm/'snapshots/initial')
+     write(directory/'setup-cost.json', {'elapsed_seconds': time.monotonic()-setup_start,
++        'deployment_preflight': deployment,
+         'accounting': 'common setup overhead, separately disclosed, no token/currency equivalence',
+         'curation': curation or {'status': 'not provided', 'selection_basis': suite.get('selection_basis')},
+         'ordering': 'baseline then exploration unless operator specifies; provider drift uncontrolled'})
+@@ -193,6 +200,9 @@
+         raise Invalid('frozen protocol/evaluation suite changed')
+     if implementation() != seal['implementation']:
+         raise Invalid('implementation changed since freeze; new reviewed study required')
++    if read(directory/'protocol.json')['transport'] == 'live':
++        from .study_deployment import verify_receipt
++        verify_receipt(seal.get('deployment_preflight'))
+     for name, expected in seal['seed'].items():
+         if sha(directory/'seed'/name) != expected:
+             raise Invalid('frozen seed changed')
+@@ -225,6 +235,16 @@
+         self.s = load_state(self.root/'state.json')
+         self.tick = time.monotonic()
+         self.active_budget = None
++        self.deployment_ready = False
++
++    def ensure_deployment(self):
++        if self.p['transport'] == 'live' and not self.deployment_ready:
++            from .study_deployment import require_deployment
++            require_deployment(self.root/'deployment-preflights'/str(time.time_ns()))
++            self.deployment_ready = True
++            # Preflight is separately recorded common infrastructure overhead,
++            # never a deduction from one arm's frozen research opportunities.
++            self.tick = time.monotonic()
+ 
+     def admitted(self, research):
+         seed = [n for n in read(self.study/'seed/seed-files.json') if n.endswith('.lean')]
+@@ -366,6 +386,7 @@
+             raise Invalid('orphan job lacks binding; manual reconciliation required; no replay')
+         spec = read(job/'spec.json')
+         receipt = {'outcome': 'uncertain_effects_not_replayed', 'payload': None,
++            'model': self.p['model'], 'reasoning_effort': REASONING_EFFORT,
+             'elapsed_seconds': spec['seconds'], 'role': spec['role'],
+             'usage_raw': [], 'normalized_tokens': None, 'mathematical_resolution': False,
+             'request_id': spec['request_id'], 'recovery': 'full reservation charged; inspect retained partial artifacts'}
+@@ -375,11 +396,13 @@
+     def call(self, key, role, req, workspace=None, readonly=False, seconds=None):
+         """Idempotent logical invocation; completed or uncertain effects never replay."""
+         job = self.root/'jobs'/key
++        req = {**req, 'model': self.p['model'], 'reasoning_effort': REASONING_EFFORT}
+         if (job/'receipt.json').exists():
+             expected = {**req, 'request_id': key}
+             if (job/'request.json').exists() and read(job/'request.json') != expected:
+                 raise Invalid('logical invocation request changed after execution')
+             return self.consume(job, read(job/'receipt.json'))
++        self.ensure_deployment()
+         seconds = seconds or self.p['call_seconds']
+         if not self.permitted(role, seconds):
+             raise Invalid('resource allowance exhausted or stop requested')
+@@ -389,6 +412,7 @@
+         req = {**req, 'request_id': key}
+         spec = {'request_id': key, 'workspace': str(workspace), 'role': role,
+             'transport': self.p['transport'], 'model': self.p['model'], 'provider': self.p['provider'],
++            'reasoning_effort': REASONING_EFFORT,
+             'usage_semantics': self.p['usage_semantics'], 'readonly': readonly,
+             'seconds': seconds, 'output_bytes': self.p['output_bytes'], 'stop': str(self.study/'STOP.json'),
+             'fixture_policy_trial': self.p['fixture_policy_trial'], 'fixture_behavior': self.p['fixture_behavior'],
+@@ -413,11 +437,13 @@
+         write(job/'spec.json', spec)
+         write(job/'request.json', req)
+         from .study_policy import prompt
+-        (job/'prompt.txt').write_text(prompt(req) if role in ('proposer', 'researcher', 'reviewer', 'selector') else
++        # Retain execution identity in metadata without changing study prompts.
++        prompt_req = {k: v for k, v in req.items() if k not in ('model', 'reasoning_effort')}
++        (job/'prompt.txt').write_text(prompt(prompt_req) if role in ('proposer', 'researcher', 'reviewer', 'selector') else
+             policy.COMMON + '\nAdapt the frozen solver to these exact obligations. Do not change hypotheses or source. '
+             'Return solutions keyed by task id with module, term, interface_term and transport_term, or '
+             '{status:"bounded_non_solution",reason:string} for a valid bounded attempt without a solution. '
+-            'No independent test answers are supplied.\n' + canonical(req))
++            'No independent test answers are supplied.\n' + canonical(prompt_req))
+         from .study_bridge import event
+         event(self, {'issue': {'id': key}})
+         event(self, {'claim': {'id': key}})
+--- input/machinery/study_common.py
++++ candidate/machinery/study_common.py
+@@ -10,12 +10,19 @@
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+ PYTHON = '/opt/homebrew/bin/python3'
++MODELS = ('gpt-6-astra', 'gpt-6.1-sol')
++REASONING_EFFORT = 'high'
+ ROOT_SHA = '8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe'
+ SEED = ('MathGKM/Markov.lean', 'MathGKM/Protocol.lean', 'MISSION.md',
+         'docs/DESIGN.md', 'lakefile.toml', 'lake-manifest.json', 'lean-toolchain')
+ 
+ class Invalid(ValueError):
+     pass
++
++def validate_model(model):
++    if model not in MODELS:
++        raise Invalid('explicit supported model required: '+', '.join(MODELS))
++    return model
+ 
+ def canonical(value):
+     return json.dumps(value, sort_keys=True, separators=(',', ':'), ensure_ascii=False)
+--- input/machinery/study_worker.py
++++ candidate/machinery/study_worker.py
+@@ -12,7 +12,8 @@
+ import subprocess
+ import sys
+ import time
+-from .study_common import ROOT, PYTHON, read, write, inventory, sha, authorize_live
++from .study_common import (ROOT, PYTHON, read, write, inventory, sha, authorize_live,
++                           validate_model, REASONING_EFFORT, Invalid)
+ from .worker import inline
+ 
+ SCHEMA = {'type': 'object', 'additionalProperties': False, 'properties': {
+@@ -43,6 +44,9 @@
+ 
+ def command(job, spec):
+     """Pure argv construction, exercised without live launch in tests."""
++    validate_model(spec['model'])
++    if spec.get('reasoning_effort', REASONING_EFFORT) != REASONING_EFFORT:
++        raise Invalid('study reasoning effort must remain high')
+     workspace = Path(spec['workspace'])
+     write(job/'permissions.json', permissions(workspace, readonly=spec['readonly'], retained_sources=spec.get('retained_sources')))
+     write(job/'schema.json', SCHEMA)
+@@ -55,7 +59,7 @@
+         '--skip-git-repo-check', '--json', '--color', 'never', '-C', str(workspace),
+         '-c', 'default_permissions="cleanroom"',
+         '-c', 'permissions.cleanroom='+inline(read(job/'permissions.json')),
+-        '-c', 'web_search="live"', '-c', 'model_reasoning_effort="high"',
++        '-c', 'web_search="live"', '-c', 'model_reasoning_effort="'+REASONING_EFFORT+'"',
+         '-c', 'shell_environment_policy.inherit="none"',
+         '-c', 'shell_environment_policy.set='+inline(env),
+         '--output-schema', str(job/'schema.json'), '--output-last-message', str(job/'final.json')]
+@@ -161,7 +165,8 @@
+         'transport': spec['transport'], 'classification': 'SYNTHETIC FIXTURE; no mathematical progress' if spec['transport'] == 'fixture' else 'live experimental observation',
+         'outcome': error or 'completed', 'payload': payload, 'usage_raw': usage,
+         'provider': 'deterministic_fixture' if spec['transport'] == 'fixture' else spec['provider'],
+-        'model': spec['model'], 'started': wall_start, 'finished': time.time(),
++        'model': spec['model'], 'reasoning_effort': REASONING_EFFORT,
++        'started': wall_start, 'finished': time.time(),
+         'elapsed_seconds': time.monotonic()-start, 'usage_semantics': spec['usage_semantics'],
+         'money': None, 'normalized_tokens': None, 'mathematical_resolution': False,
+         'before': before, 'after': after, 'returncode': p.returncode if p else None}
+--- input/machinery/study_transfer.py
++++ candidate/machinery/study_transfer.py
+@@ -148,6 +148,7 @@
+     result = {'task_id': task['id'], 'task_hash': digest(task), 'checked': False,
+         'source_sha256': task['source_sha256'], 'scope': task['scope'], 'hypotheses': task['hypotheses'],
+         'budget_seconds': seconds, 'checks': [], 'status': 'invalid_comparison',
++        'validation_mode': 'deployed_sandbox' if live else 'unwrapped_fixture',
+         'required_constants': task['required_constants']}
+     try:
+         contract = contract or read(workspace/'contract.json')
+@@ -203,6 +204,9 @@
+         env['TMPDIR'] = str(directory)
+         prefix = sandbox_prefix(directory, deps) if live else []
+         binaries = {str(p): sha(p) for p in (LEAN, CHECKER)}
++        result.update(binary_hashes=binaries, launch_environment=env,
++                      dependency_paths=list(map(str, deps)),
++                      sandbox_profile_sha256=sha(directory/'validator.sb') if live else None)
+         for operation in ('compile', 'kernel_replay'):
+             for module in order + ['StudyCheck']:
+                 if stop():
+@@ -217,6 +221,8 @@
+                         if operation == 'compile' else [str(CHECKER), module])
+                 record = run(prefix+argv, cwd=source, env=env, timeout=min(180, remaining), output_bytes=1048576)
+                 result['checks'].append({'module': module, 'operation': operation, **record})
++                if live and (record['returncode'] < 0 or 'sandbox-exec:' in record['stderr']):
++                    result.update(status='validator_infrastructure_failure', infrastructure_failure=True)
+                 write(directory/'result.json', result)
+                 if record['returncode'] or record['termination']:
+                     raise Invalid('failure within compilation/replay budget: '+module)
+@@ -226,6 +232,8 @@
+         inspected = run(prefix+[str(LEAN), '-j', '1', 'StudyInspect.lean'], cwd=source, env=env,
+                         timeout=min(180, seconds-(time.monotonic()-start)), output_bytes=1048576)
+         result['checks'].append({'operation': 'trusted_premise_inspection', **inspected})
++        if live and (inspected['returncode'] < 0 or 'sandbox-exec:' in inspected['stderr']):
++            result.update(status='validator_infrastructure_failure', infrastructure_failure=True)
+         result['declarations'] = proof_audit.parse_artifact(inspected, declarations, source/'declarations.json')
+         result['declaration_artifact_sha256'] = sha(source/'declarations.json')
+         if objects != {str(p.relative_to(build)): sha(p) for p in build.rglob('*') if p.is_file()}:
+@@ -234,6 +242,8 @@
+             raise Invalid('validator or staged source changed')
+         if binaries != {str(p): sha(p) for p in (LEAN, CHECKER)}:
+             raise Invalid('validator binaries changed')
++        if live and sha(directory/'validator.sb') != result['sandbox_profile_sha256']:
++            raise Invalid('validator sandbox profile changed')
+         if inventory(workspace) != before:
+             raise Invalid('solver changed during check')
+         versions = proof_audit.used_versions(result['declarations'], frozen_files)

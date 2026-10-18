@@ -1,0 +1,30 @@
+{
+  "phase": "construction",
+  "summary": "Explicit Sol/Astra selection is connected end to end. Added a model-free deployment preflight that fails before research calls. Deployment remains unvalidated.",
+  "files_changed": [
+    "machinery/study.py",
+    "machinery/study_common.py",
+    "machinery/study_worker.py",
+    "machinery/study_transfer.py",
+    "machinery/study_deployment.py",
+    "studies/v2-study-sol.json",
+    "studies/v2-study-astra.json",
+    "tests/test_sol_deployment.py",
+    "docs/DEPLOYMENT_PREFLIGHT.md",
+    "evidence/neutral-validation/maintenance-sol-deployment-20261018/"
+  ],
+  "checks": [
+    "/opt/homebrew/bin/python3 -m unittest -v tests.test_sol_deployment: 11 passed.",
+    "Four targeted existing configuration, recovery and real unwrapped Lean checks passed.",
+    "Connected regression: initial source-seal failure preserved; corrective run interrupted at its 480-second bound, not passed.",
+    "Actual wrapper diagnostic: wrapped echo and lean --version both exited 71 with sandbox_apply: Operation not permitted. No deployed mathematical validation established.",
+    "Exact commands/results: evidence/neutral-validation/maintenance-sol-deployment-20261018/RESULTS.md.",
+    "Read-only checkpoints and installation input/final hashes: evidence/neutral-validation/maintenance-sol-deployment-20261018/INSTALLATION_MANIFEST.json. Protected foundations, historical configuration and sandbox profile unchanged."
+  ],
+  "remaining": [
+    "Supervisor host exit -6 cause remains unproved; actual wrapped neutral validation and containment controls require approved-host verification.",
+    "Connected regression requires a completed bounded verification run.",
+    "Host-refinement and whole-continuation proof gaps remain open."
+  ],
+  "next_step": "Review the installation manifest, then run /opt/homebrew/bin/python3 -m machinery.study_deployment --out .scratch/deployment-host-001 --seconds 120 in the approved host context. Complete connected verification before starting a separately authorized fresh study with studies/v2-study-sol.json."
+}

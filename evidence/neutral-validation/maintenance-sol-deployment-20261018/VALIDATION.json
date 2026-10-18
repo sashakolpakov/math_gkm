@@ -1,0 +1,138 @@
+{
+  "phase": "construction",
+  "runs": [
+    {
+      "argv": [
+        "/opt/homebrew/bin/python3",
+        "-m",
+        "unittest",
+        "-v",
+        "tests.test_sol_deployment"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "cap_seconds": 180,
+      "elapsed_seconds": 11.57338975003222,
+      "log": "evidence/neutral-validation/maintenance-sol-deployment-20261018/focused-001.log",
+      "log_sha256": "0ff82c65b6d92bfe03f9413d33664ae59b9afcd38fec0e243b43ebfb057054d1",
+      "label": "focused-001",
+      "scope": "10 passing neutral configuration/mock/fixture tests; pretest-001",
+      "test_count": 10
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/python3",
+        "-m",
+        "unittest",
+        "-v",
+        "tests.test_revision_static_checkpoint.RealLeanMechanisms.test_true_proof_and_missing_premise_are_different",
+        "tests.test_revision_static_checkpoint.RealLeanMechanisms.test_hidden_premise_with_spoofed_empty_reports_rejected",
+        "tests.test_study_v2.StudyFixtures.test_live_argv_constructed_only_and_read_grants_are_isolated",
+        "tests.test_study_v2.StudyFixtures.test_finite_budget_failure_and_uncertain_recovery_without_replay"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "cap_seconds": 180,
+      "elapsed_seconds": 50.347010708996095,
+      "log": "evidence/neutral-validation/maintenance-sol-deployment-20261018/lean-controls-001.log",
+      "log_sha256": "d90a1d6e9b599be6097b641599b7efa6a373f1bd702d3eccb442aef717ba2ced",
+      "label": "lean-controls-001",
+      "scope": "4 passing targeted tests; real unwrapped neutral Lean and argv/recovery; static dispositions bind unchanged affected code",
+      "test_count": 4
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/python3",
+        "-m",
+        "unittest",
+        "-v",
+        "tests.test_revision_static_checkpoint.RealLeanMechanisms.test_connected_cycle_delayed_use_policy_install_and_next_actual_request"
+      ],
+      "returncode": 1,
+      "timeout": false,
+      "cap_seconds": 480,
+      "elapsed_seconds": 130.87151829199865,
+      "log": "evidence/neutral-validation/maintenance-sol-deployment-20261018/connected-001.log",
+      "log_sha256": "b340fbbf8720e0b12c16d4763321555eb82f3c7fae237c47ae25a1b07dc5484e",
+      "label": "connected-001",
+      "scope": "failed source-seal guard after builder edited controller while running; retained without repair",
+      "test_count": 1
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/python3",
+        "-m",
+        "unittest",
+        "-v",
+        "tests.test_sol_deployment"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "cap_seconds": 180,
+      "elapsed_seconds": 6.208578416961245,
+      "log": "evidence/neutral-validation/maintenance-sol-deployment-20261018/focused-002.log",
+      "log_sha256": "cea3b9bfce6fd3fb044cdd59a450d5594332aa5dd6a7980903b39d0ba3013f26",
+      "label": "focused-002",
+      "scope": "11 passing final neutral configuration/mock/fixture tests; pretest-002",
+      "test_count": 11
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/python3",
+        "-m",
+        "unittest",
+        "-v",
+        "tests.test_revision_static_checkpoint.RealLeanMechanisms.test_connected_cycle_delayed_use_policy_install_and_next_actual_request"
+      ],
+      "returncode": -9,
+      "timeout": true,
+      "cap_seconds": 480,
+      "elapsed_seconds": 480.0064637080068,
+      "log": "evidence/neutral-validation/maintenance-sol-deployment-20261018/connected-002.log",
+      "log_sha256": "25c7e277728ed9cb801dbca7c26a4040a7f38bcbc826211c36cb852883325498",
+      "label": "connected-002",
+      "scope": "corrective fresh connected neutral fixture run; pretest-002; real unwrapped Lean, no OS deployment attestation",
+      "test_count": null
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/python3",
+        "-m",
+        "machinery.study_deployment",
+        "--out",
+        "evidence/neutral-validation/maintenance-sol-deployment-20261018/deployment-attempt-002",
+        "--seconds",
+        "120"
+      ],
+      "returncode": 1,
+      "timeout": false,
+      "cap_seconds": 130,
+      "elapsed_seconds": 0.1831782499793917,
+      "log": "evidence/neutral-validation/maintenance-sol-deployment-20261018/deployment-002.log",
+      "log_sha256": "a430a27ae302fe0052c55a8feec0806d13f526de13647816838bccad75d7b972",
+      "label": "deployment-002",
+      "scope": "actual real-wrapper startup diagnostic; failed closed in nested environment; not mathematical validation",
+      "test_count": null
+    }
+  ],
+  "environment": {
+    "PATH": "/opt/homebrew/bin:/Users/sasha/.elan/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+    "GIT_CONFIG_NOSYSTEM": "1",
+    "GIT_CONFIG_GLOBAL": "/dev/null"
+  },
+  "source_postcheck": "All pretest-002 file hashes still match; installed-source manifest unchanged.",
+  "retained_artifacts_manifest": "RETAINED_ARTIFACTS.json",
+  "deployment_valid": false,
+  "host_remaining": [
+    "Approved-host real-wrapper echo and version startup.",
+    "Neutral wrapped fresh compilation, kernel replay and actual premise closure.",
+    "Read/write containment, wrong-target and missing-use negative controls.",
+    "Actual completion adapter exact-root check without correspondence approval.",
+    "Independently review artifacts; host -6 cause remains unproved."
+  ],
+  "limitations": [
+    "No hosted model calls or provider execution attestation.",
+    "Fixture and unwrapped Lean results do not establish live deployment compatibility.",
+    "Whole-continuation and host-refinement proof gaps remain open."
+  ]
+}

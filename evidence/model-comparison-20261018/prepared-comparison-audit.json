@@ -1,0 +1,250 @@
+{
+  "time_utc": "2026-10-18T11:52:38.876190+00:00",
+  "reference": "/Users/sasha/math_gkm/.control/markov-v2-20261018-restart",
+  "prepared": "/Users/sasha/math_gkm/.control/markov-v2-sol-20261018",
+  "config_equal_except_model": true,
+  "prepared_config": {
+    "ablations": [],
+    "adaptation_seconds": 120,
+    "arm_seconds": 28800,
+    "call_seconds": 300,
+    "episode_rounds": 2,
+    "invention_rounds": 1,
+    "max_calls": 60,
+    "meta_calls": 24,
+    "model": "gpt-6.1-sol",
+    "policy_trial_rounds": 2,
+    "policy_trials": 1,
+    "rounds": 8,
+    "transport": "live",
+    "validation_seconds": 120
+  },
+  "reference_protocol": {
+    "ablations": [],
+    "adaptation_seconds": 120,
+    "arm_seconds": 28800,
+    "call_seconds": 300,
+    "episode_rounds": 2,
+    "failure_limit": 3,
+    "fixture_behavior": "normal",
+    "fixture_connected": false,
+    "fixture_policy_trial": false,
+    "invention_rounds": 1,
+    "knowledge_checks_per_round": 6,
+    "max_calls": 60,
+    "meta_calls": 24,
+    "model": "gpt-6-astra",
+    "output_bytes": 2097152,
+    "policy_trial_rounds": 2,
+    "policy_trials": 1,
+    "provider": "codex-configured-provider",
+    "rounds": 8,
+    "schema": "math-gkm.study.v2",
+    "transport": "live",
+    "usage_semantics": "unverified_raw_only",
+    "validation_seconds": 120
+  },
+  "seed_hash_comparisons": [
+    {
+      "seed_relative": "MISSION.md",
+      "source_path": "/Users/sasha/math_gkm/MISSION.md",
+      "frozen_sha256": "9cfa1230bd2e0e92dfaec64f68ee72143dc1a17d1435d449cba0ff16da0ce727",
+      "current_sha256": "9cfa1230bd2e0e92dfaec64f68ee72143dc1a17d1435d449cba0ff16da0ce727",
+      "same": true
+    },
+    {
+      "seed_relative": "MathGKM/ContinuationObligations.lean",
+      "source_path": "/Users/sasha/math_gkm/MathGKM/ContinuationObligations.lean",
+      "frozen_sha256": "18bbc446a91dc190f908ad6378f5e8e74f0c4d8be0ba8313f24cba3e04d33e8f",
+      "current_sha256": "18bbc446a91dc190f908ad6378f5e8e74f0c4d8be0ba8313f24cba3e04d33e8f",
+      "same": true
+    },
+    {
+      "seed_relative": "MathGKM/Markov.lean",
+      "source_path": "/Users/sasha/math_gkm/MathGKM/Markov.lean",
+      "frozen_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "current_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "same": true
+    },
+    {
+      "seed_relative": "MathGKM/Protocol.lean",
+      "source_path": "/Users/sasha/math_gkm/MathGKM/Protocol.lean",
+      "frozen_sha256": "60b543592c2dadac3aeefea7ea2dd664c36a7910723e65bfd4e9e2e179bcf97c",
+      "current_sha256": "60b543592c2dadac3aeefea7ea2dd664c36a7910723e65bfd4e9e2e179bcf97c",
+      "same": true
+    },
+    {
+      "seed_relative": "MathGKM/ResearchSemantics.lean",
+      "source_path": "/Users/sasha/math_gkm/MathGKM/ResearchSemantics.lean",
+      "frozen_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+      "current_sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+      "same": true
+    },
+    {
+      "seed_relative": "contract.json",
+      "source_path": "/Users/sasha/math_gkm/contracts/markov-clean-v2.json",
+      "frozen_sha256": "495cf67ff80de3f6265a52266d8d212fc6e4ec411b0b2c0384cda47e84d29da3",
+      "current_sha256": "495cf67ff80de3f6265a52266d8d212fc6e4ec411b0b2c0384cda47e84d29da3",
+      "same": true
+    },
+    {
+      "seed_relative": "docs/DESIGN.md",
+      "source_path": "/Users/sasha/math_gkm/docs/DESIGN.md",
+      "frozen_sha256": "47ebe858b2d7b06a9ac29527d74a7d65d7c39f988c399537b8da38bd24ce7d15",
+      "current_sha256": "47ebe858b2d7b06a9ac29527d74a7d65d7c39f988c399537b8da38bd24ce7d15",
+      "same": true
+    },
+    {
+      "seed_relative": "lake-manifest.json",
+      "source_path": "/Users/sasha/math_gkm/lake-manifest.json",
+      "frozen_sha256": "b513f28de3996d022de1bad05cd06002dc5f21286f4cd26454fcfae26a745725",
+      "current_sha256": "b513f28de3996d022de1bad05cd06002dc5f21286f4cd26454fcfae26a745725",
+      "same": true
+    },
+    {
+      "seed_relative": "lakefile.toml",
+      "source_path": "/Users/sasha/math_gkm/lakefile.toml",
+      "frozen_sha256": "211507039f4919cdc9d54f87efaf7bebf53532272377623f75269c714fb5b575",
+      "current_sha256": "211507039f4919cdc9d54f87efaf7bebf53532272377623f75269c714fb5b575",
+      "same": true
+    },
+    {
+      "seed_relative": "lean-toolchain",
+      "source_path": "/Users/sasha/math_gkm/lean-toolchain",
+      "frozen_sha256": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+      "current_sha256": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+      "same": true
+    }
+  ],
+  "curation_hash_comparisons": [
+    {
+      "path": "job/argv.json",
+      "prepared_sha256": "9e3aa831a4b19256502fd9a850410dffc4606b8a65efc04dae960dbffeec5c80",
+      "reference_sha256": "9e3aa831a4b19256502fd9a850410dffc4606b8a65efc04dae960dbffeec5c80",
+      "same": true
+    },
+    {
+      "path": "job/before.json",
+      "prepared_sha256": "2dbe18c37b35fbfa9d8e348b2010e2bcfb890cac483bd2472be9d552a2ac116f",
+      "reference_sha256": "2dbe18c37b35fbfa9d8e348b2010e2bcfb890cac483bd2472be9d552a2ac116f",
+      "same": true
+    },
+    {
+      "path": "job/events.jsonl",
+      "prepared_sha256": "82f94750765e74c76c1b7477743697b48c197766cb7329841d3602fa4005007d",
+      "reference_sha256": "82f94750765e74c76c1b7477743697b48c197766cb7329841d3602fa4005007d",
+      "same": true
+    },
+    {
+      "path": "job/final.json",
+      "prepared_sha256": "4cd0f04fedf896c8739eded59cd21cb2eca933ee8564379ff824b9958d191a68",
+      "reference_sha256": "4cd0f04fedf896c8739eded59cd21cb2eca933ee8564379ff824b9958d191a68",
+      "same": true
+    },
+    {
+      "path": "job/heartbeat.json",
+      "prepared_sha256": "0dedce82fbf1102e7ea2e66643786bf546b673bac63ffe16da22f7307c0efad4",
+      "reference_sha256": "0dedce82fbf1102e7ea2e66643786bf546b673bac63ffe16da22f7307c0efad4",
+      "same": true
+    },
+    {
+      "path": "job/permissions.json",
+      "prepared_sha256": "d0f4bb11ba1a929f3113c659eb86629802a53cd92f42357703304831139d4229",
+      "reference_sha256": "d0f4bb11ba1a929f3113c659eb86629802a53cd92f42357703304831139d4229",
+      "same": true
+    },
+    {
+      "path": "job/process.json",
+      "prepared_sha256": "967bf2b5f947d3073b28d13c0694f6436b6cd40d489c614f653146aad9add522",
+      "reference_sha256": "967bf2b5f947d3073b28d13c0694f6436b6cd40d489c614f653146aad9add522",
+      "same": true
+    },
+    {
+      "path": "job/prompt.txt",
+      "prepared_sha256": "b19e157f10210425017509cf4ac6c74b21719b2a149c6b6ed3b8b2424db65d96",
+      "reference_sha256": "b19e157f10210425017509cf4ac6c74b21719b2a149c6b6ed3b8b2424db65d96",
+      "same": true
+    },
+    {
+      "path": "job/receipt.json",
+      "prepared_sha256": "1c2ba5517883231f6fbf57778e5b7f3da793f0039d1822d8be53f2e978661b8a",
+      "reference_sha256": "1c2ba5517883231f6fbf57778e5b7f3da793f0039d1822d8be53f2e978661b8a",
+      "same": true
+    },
+    {
+      "path": "job/request.json",
+      "prepared_sha256": "2ed6463ae8e0cd7c4f66bfcd4c2575916a398cd4cf6264b25d6b6742ef145385",
+      "reference_sha256": "2ed6463ae8e0cd7c4f66bfcd4c2575916a398cd4cf6264b25d6b6742ef145385",
+      "same": true
+    },
+    {
+      "path": "job/schema.json",
+      "prepared_sha256": "4225c8e62fe022a07a7df8ffdf259f200b47016c246e1eb4080ef57a41d24acb",
+      "reference_sha256": "4225c8e62fe022a07a7df8ffdf259f200b47016c246e1eb4080ef57a41d24acb",
+      "same": true
+    },
+    {
+      "path": "job/spec.json",
+      "prepared_sha256": "98c83cf28ca83e3a8eb3166962a6ef7b4d4ea26dc2eff4647787e6e40e87a401",
+      "reference_sha256": "98c83cf28ca83e3a8eb3166962a6ef7b4d4ea26dc2eff4647787e6e40e87a401",
+      "same": true
+    },
+    {
+      "path": "job/stderr.log",
+      "prepared_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reference_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "same": true
+    },
+    {
+      "path": "job/tool-environment.json",
+      "prepared_sha256": "438e942022deccdca5e41fe2dc9904f682c1e6a256d52cd38ae3eb18bc704501",
+      "reference_sha256": "438e942022deccdca5e41fe2dc9904f682c1e6a256d52cd38ae3eb18bc704501",
+      "same": true
+    },
+    {
+      "path": "provenance.json",
+      "prepared_sha256": "1ef64bf806dea9dae47f337b6b759dcdb2bd459208c7da781ef7c72bdf7b22c7",
+      "reference_sha256": "c345cf25f6c446940306581a1e24fdba520f69a2798d191372050389adc18759",
+      "same": false
+    },
+    {
+      "path": "suite.json",
+      "prepared_sha256": "f8a43f40fd85469ae2e8a76768e9bb5ccc03d68c1ee900d2c7f0f8feb152f6dd",
+      "reference_sha256": "f8a43f40fd85469ae2e8a76768e9bb5ccc03d68c1ee900d2c7f0f8feb152f6dd",
+      "same": true
+    }
+  ],
+  "provenance_differences": {
+    "receipt": {
+      "reference": "/Users/sasha/math_gkm/.control/markov-v2-20261018-restart/curation/job/receipt.json",
+      "prepared": "/Users/sasha/math_gkm/.control/markov-v2-sol-20261018/curation/job/receipt.json"
+    }
+  },
+  "suite_raw_sha256": "f8a43f40fd85469ae2e8a76768e9bb5ccc03d68c1ee900d2c7f0f8feb152f6dd",
+  "suite_digest": "3029883107f35ec5a882b6df1eaa671bc9c1b7641f9281fb68e69768e9efb590",
+  "suite_provenance_digest": "3029883107f35ec5a882b6df1eaa671bc9c1b7641f9281fb68e69768e9efb590",
+  "suite_digest_matches_provenance": true,
+  "prepared_has_study_directory": false,
+  "prepared_top_level": [
+    "comparison-plan.json",
+    "config.json",
+    "curation"
+  ],
+  "comparison_plan": {
+    "status": "prepared; not frozen or launched; deployment validation pending",
+    "created_at_utc": "2026-10-18T11:43:56.061083+00:00",
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "high",
+    "same_root": true,
+    "same_independent_panel": true,
+    "inherited_research": "none",
+    "same_opportunity_config_except_model": true,
+    "reference": "/Users/sasha/math_gkm/.control/markov-v2-20261018-restart",
+    "matched_reference_checkpoints": {
+      "baseline": 8,
+      "exploration": 2
+    },
+    "excluded_reference_attempt": "exploration round-0002 interrupted by requested switch",
+    "comparison_limit": "Astra independent checks aborted before mathematics; infrastructure differences prevent clean causal model-quality inference. Do not turn invalid comparisons into negative mathematical evidence."
+  }
+}

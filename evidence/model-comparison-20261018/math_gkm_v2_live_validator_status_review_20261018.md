@@ -1,0 +1,15 @@
+# Read-only live validator status — 2026-10-18
+
+The run has no valid retained research comparison and no accepted knowledge/components in either arm at this observation. Baseline completed eight scheduling rounds, but all four episode comparisons and its final comparison are `invalid_frozen_context`. Exploration’s first episode comparison fails identically. This is six ineligible comparisons, each with empty transfer/regression results.
+
+All six fail on the first compile of the unchanged foundation `MathGKM.ContinuationObligations`. Three baseline knowledge-ingestion checks also fail on the first compile of the unchanged `MathGKM.Markov` root. All nine return `-6` (SIGABRT on this host), capture zero output and have no timeout/other termination reason. They run for approximately 6.8–14.9 milliseconds. They reach neither kernel replay nor premise inspection. The generic “failure within compilation/replay budget” text is not evidence that their 120-second budget expired.
+
+This strongly points to a host validator startup/runtime/containment failure rather than a mathematical error in submitted work. It does not prove the exact cause: empty logs do not identify whether `sandbox-exec` or Lean aborted, or which resource/permission caused it. No repair or probe was executed here.
+
+The installed and candidate validator, process, trust and relevant test source hashes agree. The installed, candidate, frozen-seed and failing staged foundation all have SHA `18bbc446a91dc190f908ad6378f5e8e74f0c4d8be0ba8313f24cba3e04d33e8f`. The important untested deployment distinction is visible in source: `check_task` defaults to `live=False`, and the real-Lean neutral tests use that default or fixture transport under `.scratch`. Live validation under `.control` adds `sandbox-exec` and the generated containment profile. Passing those neutral tests did not establish that this live OS-sandbox path works.
+
+Separate process/report outcomes: baseline’s eight researcher calls yielded three completed reports and five `failure_within_time_budget` receipts. Exploration has one completed research report rejected for changing its committed claim/uncertainty/outcome consequences, one budget failure and one stopped receipt. Baseline’s nine use links are all pending/unverified, not accepted facts. Neither arm has a completion-claim receipt. Exploration became `stopped`, round 3, active null during review; the reviewer did not stop it. Baseline remains `finite_budget_finished; root_open`.
+
+Source references: `study_transfer.py:70–88, 142, 204, 220–224, 283–285, 337–344`; `study_knowledge.py:148–150`; `process.py:13–67`; neutral cases in `tests/test_study_v2.py:349–382`, `test_revision_static_checkpoint.py:129–220`, and recovery-only live flag at `test_context_revision.py:103`. The companion JSON binds exact result/profile/state/source hashes and counts. Observation is time-bounded, not a claim about later state.
+
+Read-only scope: no mathematical task/plan/source bodies read, no models, tests, validation executions, process control, repairs or repository writes. Only these review notes were written under `/private/tmp`.

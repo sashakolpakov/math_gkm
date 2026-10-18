@@ -1,0 +1,11 @@
+# Pre-test affected-path audit
+
+Maintenance only. Required mission/design/requirement/study documents read. No research outputs, old plans, live studies, Git, or external project sources inspected. Input checkpoint precedes tests. No foundation, dependency, mission or design changes.
+
+Model path: study.DEFAULT Astra -> validate_protocol Astra-only -> frozen protocol/seal -> Arm.call spec -> study_worker.command --model spec value (high effort fixed) -> receipt model. Requests and uncertain recovery receipts currently omit model metadata. Preserve default and historical config; add explicit Sol config and exact Astra/Sol admission without fallback. Curation/panel unchanged and no curator invocation.
+
+Validation: knowledge, frozen catalog and transfer -> check_task(live=transport==live) -> sandbox_prefix -> process.run(prefix+compiler/checker/inspector). Completion separately uses the same prefix through a bounded adapter. Preserve source staging, target-before-adapter ordering, fresh objects, binary/source integrity, replay and actual-premise artifacts. Existing fixtures use live=False and cannot attest deployment.
+
+Current profile denies by default, allows existing process/sysctl/mach operations, reads staged/toolchain/system/dependency roots, and writes only the validation directory and /dev/null. Empty-stream -6 establishes startup failure, not its cause or a mathematical error. No permission expansion authorized. Add bounded model-free actual-wrapper probes and positive/negative neutral live=True validation, retaining errors, exact profiles, source/binary/environment provenance. Gate new live studies before research calls; no unwrapped fallback. Neutral setup preflight cost separate from unchanged frozen arm allowances. Nested sandbox denial may prevent reproducing the host failure; report this honestly.
+
+Focused tests: exact model positives/negatives, high effort/tools unchanged, protocol/request/spec/receipt binding, failure before role effects, preflight acceptance/rejection criteria, actual-wrapper diagnostic, existing real Lean premise/closure checks and affected connected path. No historical sweep. Optional OpenAI skill file was unreadable under the supplied boundary; model capability input is the user's explicit official-doc confirmation.

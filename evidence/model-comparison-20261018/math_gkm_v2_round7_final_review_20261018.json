@@ -1,0 +1,523 @@
+{
+  "schema": "round7-independent-final-review.v1",
+  "observed_utc": "2026-10-18T11:56:43.964805+00:00",
+  "scope": "Static candidate source and retained neutral records only. Reviewer executed no code/tests/models/validators, changed no source, and inspected no live mathematical plans. Only /private/tmp review notes written.",
+  "disposition": "Model propagation is connected and proof gates preserved. Not launch approval: deployment unvalidated, cached-request fixture stale, connected final assertions uncompleted. Round8 targeted repair/validation required.",
+  "source_checkpoint": {
+    "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/maintenance-sol-deployment-20261018/pretest-002/manifest.json",
+    "sha256": "6b7803c5e22e15ac18ecc8428f519c26637b87ded9fcc4df0cb778d9149fd53c",
+    "entries": 63,
+    "all_current_match": true
+  },
+  "installation_entries": [
+    {
+      "path": "machinery/study.py",
+      "input_sha256": "e6803c8d6fc4b410325ce314b0f4fe182fe12c782c793dd954176e2aac6e639d",
+      "final_sha256": "0e748072adf260365c0b1e1d9c19e8595bae26e41342fc2fdca4fd37348d2cb5",
+      "candidate_and_install_copy_match": true,
+      "installed_input_or_absence_match": true
+    },
+    {
+      "path": "machinery/study_common.py",
+      "input_sha256": "23cfdf11a71698d6a05bff45e53ff4201bdb5b99aa0642759cab6e85d4177b95",
+      "final_sha256": "4ce3900bde642af7f62f769008ec007db34d8c8d0bc1b24de3838abe0730d9b4",
+      "candidate_and_install_copy_match": true,
+      "installed_input_or_absence_match": true
+    },
+    {
+      "path": "machinery/study_worker.py",
+      "input_sha256": "cea861dbbb4285fe71f91eeeb6cf68eac2176428ac6cc36efd49b4ca5b39993f",
+      "final_sha256": "735f73f3780cd10d11e09d6620c2fee7f24164c8054d2fa6d6d68b055aca5f7f",
+      "candidate_and_install_copy_match": true,
+      "installed_input_or_absence_match": true
+    },
+    {
+      "path": "machinery/study_transfer.py",
+      "input_sha256": "a1687f48b0ecbcc1a7dba1aab3fd63a1106dd22827e669b01bfdb8ceede98e08",
+      "final_sha256": "a2d063420f93a04a052b6f8cc2d4be41692d9494304f4416d09e1c1eada743c4",
+      "candidate_and_install_copy_match": true,
+      "installed_input_or_absence_match": true
+    },
+    {
+      "path": "machinery/study_deployment.py",
+      "input_sha256": null,
+      "final_sha256": "060819f22cd9b2a42f7e781c3640dcc46aa24963d7aeafecc912b24b07cac59f",
+      "candidate_and_install_copy_match": true,
+      "installed_input_or_absence_match": true
+    },
+    {
+      "path": "tests/test_sol_deployment.py",
+      "input_sha256": null,
+      "final_sha256": "7ea46ffbcda391cf5b944f99b9dda0d96bd8246454cf9908bec5b1e749891f1a",
+      "candidate_and_install_copy_match": true,
+      "installed_input_or_absence_match": true
+    },
+    {
+      "path": "studies/v2-study-sol.json",
+      "input_sha256": null,
+      "final_sha256": "f77baba5c1dccda2d941738611242f4b6e6734c6c68a712a6b1b75f8b5a9d6e6",
+      "candidate_and_install_copy_match": true,
+      "installed_input_or_absence_match": true
+    },
+    {
+      "path": "studies/v2-study-astra.json",
+      "input_sha256": null,
+      "final_sha256": "0e47e21df9260f09e593594a92d6e2b82384052c6518c32d8d3d5a6d3c022215",
+      "candidate_and_install_copy_match": true,
+      "installed_input_or_absence_match": true
+    },
+    {
+      "path": "docs/DEPLOYMENT_PREFLIGHT.md",
+      "input_sha256": null,
+      "final_sha256": "3e1874b58c1c1502e554f2c4bf99944c38d35fabe26111e386031a986b2b7c94",
+      "candidate_and_install_copy_match": true,
+      "installed_input_or_absence_match": true
+    }
+  ],
+  "protected_unchanged": {
+    "MISSION.md": "9cfa1230bd2e0e92dfaec64f68ee72143dc1a17d1435d449cba0ff16da0ce727",
+    "docs/DESIGN.md": "47ebe858b2d7b06a9ac29527d74a7d65d7c39f988c399537b8da38bd24ce7d15",
+    "docs/REQUIREMENT_MAP.md": "36c70883a77e17d6d8ae0d12f6e67f8c0b1f35b40e2686ed21fdcbddfc84edf8",
+    "docs/STUDY_V2.md": "29414da93e4ba2b72c41737992247e98bea30d276139492e57d7ad045acf26b3",
+    "lakefile.toml": "211507039f4919cdc9d54f87efaf7bebf53532272377623f75269c714fb5b575",
+    "lake-manifest.json": "b513f28de3996d022de1bad05cd06002dc5f21286f4cd26454fcfae26a745725",
+    "lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+    "studies/v2-study.json": "e263e7a7d10506633365351b5570bc114e195d7b4ec904b748717abe471d71c2",
+    "MathGKM/ContinuationObligations.lean": "18bbc446a91dc190f908ad6378f5e8e74f0c4d8be0ba8313f24cba3e04d33e8f",
+    "MathGKM/HarnessFixture.lean": "c80abb02c0214d590076af368d12966e382fd5752f78621c4dbc7dd3aa8691dd",
+    "MathGKM/Markov.lean": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+    "MathGKM/Protocol.lean": "60b543592c2dadac3aeefea7ea2dd664c36a7910723e65bfd4e9e2e179bcf97c",
+    "MathGKM/ResearchSemantics.lean": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+  },
+  "sandbox_prefix_ast_unchanged": true,
+  "evidence_pins": {
+    "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/maintenance-sol-deployment-20261018/pretest-001/manifest.json": "742d51fd054f2a9db95172f0bdf7bf8ccf237c545ab2389e984cab9dfed04d2f",
+    "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/maintenance-sol-deployment-20261018/pretest-002/manifest.json": "6b7803c5e22e15ac18ecc8428f519c26637b87ded9fcc4df0cb778d9149fd53c",
+    "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/maintenance-sol-deployment-20261018/INSTALLATION_MANIFEST.json": "dbaff25c5ae3fca5caa167c293184b515fdb46714215880d534f5c440e8e5e3f",
+    "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/maintenance-sol-deployment-20261018/VALIDATION.json": "1de629b1add2bb9d49b68ad339ca17190e8bcc64dd55ca3c5a2b7c516c96ee42",
+    "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/maintenance-sol-deployment-20261018/HANDOFF.md": "3ece8e6c92a8b2969f63d2a0a44327653fe01a130c84c6bf55d746c8ad8ef6c1",
+    "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/maintenance-sol-deployment-20261018/RESULTS.md": "2bee63174b1f0276236c9af5ce21b66e82d9a3e2047b10474ba8c095dc5a3650",
+    "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/maintenance-sol-deployment-20261018/STATIC_DISPOSITIONS.json": "143e37fce8d520e3afddac7ae50e8428e9aaf060daa1b4df2c7311d8a78ba27f",
+    "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/maintenance-sol-deployment-20261018/source-invariants.json": "7932a2c965c173033836193ed4667cf6eeee613710e49ee47f4ae670417c9e2c",
+    "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/maintenance-sol-deployment-20261018/deployment-attempt-002/result.json": "ed65636e22496d109d13c42c64bde908904eac0aca3513bdd8c3157993bb27c6",
+    "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/maintenance-sol-deployment-20261018/deployment-attempt-002/receipt.json": "6d9e66b5b3bdb49f29c718d02e12163a49161d85e571f7a9f36183e05c60e35f",
+    "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/maintenance-sol-deployment-20261018/connected-002.json": "a87d53047083da807a63a9fdfa292e07a3f5ccdf520d88e32fa6b4b28acdd13e",
+    "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/maintenance-sol-deployment-20261018/connected-002.log": "25c7e277728ed9cb801dbca7c26a4040a7f38bcbc826211c36cb852883325498"
+  },
+  "runs": [
+    {
+      "argv": [
+        "/opt/homebrew/bin/python3",
+        "-m",
+        "unittest",
+        "-v",
+        "tests.test_sol_deployment"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "cap_seconds": 180,
+      "elapsed_seconds": 11.57338975003222,
+      "log": "evidence/neutral-validation/maintenance-sol-deployment-20261018/focused-001.log",
+      "log_sha256": "0ff82c65b6d92bfe03f9413d33664ae59b9afcd38fec0e243b43ebfb057054d1",
+      "label": "focused-001",
+      "scope": "10 passing neutral configuration/mock/fixture tests; pretest-001",
+      "test_count": 10
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/python3",
+        "-m",
+        "unittest",
+        "-v",
+        "tests.test_revision_static_checkpoint.RealLeanMechanisms.test_true_proof_and_missing_premise_are_different",
+        "tests.test_revision_static_checkpoint.RealLeanMechanisms.test_hidden_premise_with_spoofed_empty_reports_rejected",
+        "tests.test_study_v2.StudyFixtures.test_live_argv_constructed_only_and_read_grants_are_isolated",
+        "tests.test_study_v2.StudyFixtures.test_finite_budget_failure_and_uncertain_recovery_without_replay"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "cap_seconds": 180,
+      "elapsed_seconds": 50.347010708996095,
+      "log": "evidence/neutral-validation/maintenance-sol-deployment-20261018/lean-controls-001.log",
+      "log_sha256": "d90a1d6e9b599be6097b641599b7efa6a373f1bd702d3eccb442aef717ba2ced",
+      "label": "lean-controls-001",
+      "scope": "4 passing targeted tests; real unwrapped neutral Lean and argv/recovery; static dispositions bind unchanged affected code",
+      "test_count": 4
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/python3",
+        "-m",
+        "unittest",
+        "-v",
+        "tests.test_revision_static_checkpoint.RealLeanMechanisms.test_connected_cycle_delayed_use_policy_install_and_next_actual_request"
+      ],
+      "returncode": 1,
+      "timeout": false,
+      "cap_seconds": 480,
+      "elapsed_seconds": 130.87151829199865,
+      "log": "evidence/neutral-validation/maintenance-sol-deployment-20261018/connected-001.log",
+      "log_sha256": "b340fbbf8720e0b12c16d4763321555eb82f3c7fae237c47ae25a1b07dc5484e",
+      "label": "connected-001",
+      "scope": "failed source-seal guard after builder edited controller while running; retained without repair",
+      "test_count": 1
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/python3",
+        "-m",
+        "unittest",
+        "-v",
+        "tests.test_sol_deployment"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "cap_seconds": 180,
+      "elapsed_seconds": 6.208578416961245,
+      "log": "evidence/neutral-validation/maintenance-sol-deployment-20261018/focused-002.log",
+      "log_sha256": "cea3b9bfce6fd3fb044cdd59a450d5594332aa5dd6a7980903b39d0ba3013f26",
+      "label": "focused-002",
+      "scope": "11 passing final neutral configuration/mock/fixture tests; pretest-002",
+      "test_count": 11
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/python3",
+        "-m",
+        "unittest",
+        "-v",
+        "tests.test_revision_static_checkpoint.RealLeanMechanisms.test_connected_cycle_delayed_use_policy_install_and_next_actual_request"
+      ],
+      "returncode": -9,
+      "timeout": true,
+      "cap_seconds": 480,
+      "elapsed_seconds": 480.0064637080068,
+      "log": "evidence/neutral-validation/maintenance-sol-deployment-20261018/connected-002.log",
+      "log_sha256": "25c7e277728ed9cb801dbca7c26a4040a7f38bcbc826211c36cb852883325498",
+      "label": "connected-002",
+      "scope": "corrective fresh connected neutral fixture run; pretest-002; real unwrapped Lean, no OS deployment attestation",
+      "test_count": null
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/python3",
+        "-m",
+        "machinery.study_deployment",
+        "--out",
+        "evidence/neutral-validation/maintenance-sol-deployment-20261018/deployment-attempt-002",
+        "--seconds",
+        "120"
+      ],
+      "returncode": 1,
+      "timeout": false,
+      "cap_seconds": 130,
+      "elapsed_seconds": 0.1831782499793917,
+      "log": "evidence/neutral-validation/maintenance-sol-deployment-20261018/deployment-002.log",
+      "log_sha256": "a430a27ae302fe0052c55a8feec0806d13f526de13647816838bccad75d7b972",
+      "label": "deployment-002",
+      "scope": "actual real-wrapper startup diagnostic; failed closed in nested environment; not mathematical validation",
+      "test_count": null
+    }
+  ],
+  "connected002": {
+    "outcome": "outer480s timeout; incomplete, not a functional assertion failure or a pass",
+    "state_sha256": "ee4d38e699313d1b1b310e7dfcdc23ce045910d8efb1696da523c8117c7a2db6",
+    "state": {
+      "round": 2,
+      "phase": "review",
+      "status": "running",
+      "reason": null,
+      "active": null,
+      "calls": 16,
+      "meta_calls": 6,
+      "policy_trials": 0
+    },
+    "accepted_neutral_counts": {
+      "knowledge": 4,
+      "components": 2,
+      "remaining_obligations": 1
+    },
+    "retained_validator_summary": {
+      "(True, 'checked_exact_obligation_and_interfaces', True)": 11,
+      "(False, 'invalid_comparison', False)": 1,
+      "(False, 'bounded_valid_non_solution', True)": 3
+    },
+    "records": [
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-a4sil2g_/connected/arms/exploration/rounds/0001/checks/aefd49fa1521554951c1cdb2d2c724005f9ac9801c2cfc19f0cddaa3cccb378f/result.json",
+        "sha256": "f5bfa7f48897e072a6a72f7614fdef7098e72940516924607cdc86efbf1e7033",
+        "checked": true,
+        "status": "checked_exact_obligation_and_interfaces",
+        "finished": true,
+        "failure": null,
+        "last_check": [
+          {
+            "operation": "trusted_premise_inspection",
+            "module": null,
+            "returncode": 0,
+            "termination": null
+          }
+        ]
+      },
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-a4sil2g_/connected/arms/exploration/rounds/0001/checks/9aa1b42e6f5b7f07d5912777f2cef72d00f514670c129529070fb21f11c8e0c2/result.json",
+        "sha256": "b7175025683a68e74202185bf7f654537870dd7a747b96eed19c53b45c728ed7",
+        "checked": true,
+        "status": "checked_exact_obligation_and_interfaces",
+        "finished": true,
+        "failure": null,
+        "last_check": [
+          {
+            "operation": "trusted_premise_inspection",
+            "module": null,
+            "returncode": 0,
+            "termination": null
+          }
+        ]
+      },
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-a4sil2g_/connected/arms/exploration/rounds/0001/checks/a9c0744e54f0c01ba0375d644893a165779d77d26966cb58de9ff03beac00d89/result.json",
+        "sha256": "b2ad6352f4e378b163840a629d0d459b660cc4fb98d4d15ad6b3c9d332b3449a",
+        "checked": true,
+        "status": "checked_exact_obligation_and_interfaces",
+        "finished": true,
+        "failure": null,
+        "last_check": [
+          {
+            "operation": "trusted_premise_inspection",
+            "module": null,
+            "returncode": 0,
+            "termination": null
+          }
+        ]
+      },
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-a4sil2g_/connected/arms/exploration/rounds/0000/checks/4cabe22e0e1cee3a56cf334508786debfb427b5d8f40394b2d82e6aae14452f3/result.json",
+        "sha256": "3710007f599177e25378792dc80a5daa6587f8151ef072e2dd2c43157b610acf",
+        "checked": true,
+        "status": "checked_exact_obligation_and_interfaces",
+        "finished": true,
+        "failure": null,
+        "last_check": [
+          {
+            "operation": "trusted_premise_inspection",
+            "module": null,
+            "returncode": 0,
+            "termination": null
+          }
+        ]
+      },
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-a4sil2g_/connected/arms/exploration/rounds/0000/checks/850eb30550d569e2c57c58461f7dae2244a008f23f5efeabd30a98031fd82d02/result.json",
+        "sha256": "0097293008d21dd472e505d2879ca3458316a0c9fc5e4340b4b1e59a00348439",
+        "checked": true,
+        "status": "checked_exact_obligation_and_interfaces",
+        "finished": true,
+        "failure": null,
+        "last_check": [
+          {
+            "operation": "trusted_premise_inspection",
+            "module": null,
+            "returncode": 0,
+            "termination": null
+          }
+        ]
+      },
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-a4sil2g_/connected/arms/exploration/rounds/0000/checks/19b5ba76b0f7693f0684470f09e9a2fae2cb09860e90599c3b0554d853dc8ab9/result.json",
+        "sha256": "1441a81e07fb6e43b5f16d1483ed82d6e37dd48653687349eeffca13ae8aa880",
+        "checked": true,
+        "status": "checked_exact_obligation_and_interfaces",
+        "finished": true,
+        "failure": null,
+        "last_check": [
+          {
+            "operation": "trusted_premise_inspection",
+            "module": null,
+            "returncode": 0,
+            "termination": null
+          }
+        ]
+      },
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-a4sil2g_/connected/arms/exploration/policy_trials/policy-c9bc9ff46e59b147-r2/candidate-checks-0/3dd27706de4b5e8e658f93b012cd24dc606c885e292d8de73c4dbcf30da0a55b/result.json",
+        "sha256": "48ff9f28175dc73cb9517c63fd65c9b8de1b879af7a86bf5f28ce709c0a14b76",
+        "checked": true,
+        "status": "checked_exact_obligation_and_interfaces",
+        "finished": true,
+        "failure": null,
+        "last_check": [
+          {
+            "operation": "trusted_premise_inspection",
+            "module": null,
+            "returncode": 0,
+            "termination": null
+          }
+        ]
+      },
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-a4sil2g_/connected/arms/exploration/evaluations/policy-c9bc9ff46e59b147-r2/catalog-after/result.json",
+        "sha256": "7cd645b4123602f4828c0d2c41f0a8e77fb131d8f50a0f588465c5ce3df05b4f",
+        "checked": true,
+        "status": "checked_exact_obligation_and_interfaces",
+        "finished": true,
+        "failure": null,
+        "last_check": [
+          {
+            "operation": "trusted_premise_inspection",
+            "module": null,
+            "returncode": 0,
+            "termination": null
+          }
+        ]
+      },
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-a4sil2g_/connected/arms/exploration/evaluations/policy-c9bc9ff46e59b147-r2/catalog-before/result.json",
+        "sha256": "9a21da7c6c227c56f39c187ae5e9bc2c359adb88f2ae686c142b56974fe6d5e9",
+        "checked": true,
+        "status": "checked_exact_obligation_and_interfaces",
+        "finished": true,
+        "failure": null,
+        "last_check": [
+          {
+            "operation": "trusted_premise_inspection",
+            "module": null,
+            "returncode": 0,
+            "termination": null
+          }
+        ]
+      },
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-a4sil2g_/connected/arms/exploration/evaluations/policy-c9bc9ff46e59b147-r2/after/heldout-identity/result.json",
+        "sha256": "a2fb2d22cd53a146bbfd2bd4ea5717775903292114d640b00d13546bf1db73b4",
+        "checked": false,
+        "status": "invalid_comparison",
+        "finished": false,
+        "failure": null,
+        "last_check": [
+          {
+            "operation": "compile",
+            "module": "MathGKM.HarnessFixture",
+            "returncode": 0,
+            "termination": null
+          }
+        ]
+      },
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-a4sil2g_/connected/arms/exploration/evaluations/policy-c9bc9ff46e59b147-r2/before/heldout-identity/result.json",
+        "sha256": "e6ace47f9ff4a33cbafcfabc2514d2b8275ff65ea30d640a0ec4dfe53f18701c",
+        "checked": false,
+        "status": "bounded_valid_non_solution",
+        "finished": true,
+        "failure": null,
+        "last_check": [
+          {
+            "operation": "trusted_premise_inspection",
+            "module": null,
+            "returncode": 0,
+            "termination": null
+          }
+        ]
+      },
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-a4sil2g_/connected/arms/exploration/evaluations/episode-2/catalog-after/result.json",
+        "sha256": "444933db0c680ea64d916afaad09176f30d6e992fbaa3799331410a1dfcbd055",
+        "checked": true,
+        "status": "checked_exact_obligation_and_interfaces",
+        "finished": true,
+        "failure": null,
+        "last_check": [
+          {
+            "operation": "trusted_premise_inspection",
+            "module": null,
+            "returncode": 0,
+            "termination": null
+          }
+        ]
+      },
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-a4sil2g_/connected/arms/exploration/evaluations/episode-2/catalog-before/result.json",
+        "sha256": "0d94e2e2cf98147d1f61a5ac4011c3fe777d8cbdc0a0de6576ccead0d44a5b72",
+        "checked": true,
+        "status": "checked_exact_obligation_and_interfaces",
+        "finished": true,
+        "failure": null,
+        "last_check": [
+          {
+            "operation": "trusted_premise_inspection",
+            "module": null,
+            "returncode": 0,
+            "termination": null
+          }
+        ]
+      },
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-a4sil2g_/connected/arms/exploration/evaluations/episode-2/after/heldout-identity/result.json",
+        "sha256": "6307f128e8bbe72b58c53aa3e7ed9f282c46e4fbbf92ecc6f24655205ca950f8",
+        "checked": false,
+        "status": "bounded_valid_non_solution",
+        "finished": true,
+        "failure": null,
+        "last_check": [
+          {
+            "operation": "trusted_premise_inspection",
+            "module": null,
+            "returncode": 0,
+            "termination": null
+          }
+        ]
+      },
+      {
+        "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/revision-lean-a4sil2g_/connected/arms/exploration/evaluations/episode-2/before/heldout-identity/result.json",
+        "sha256": "07ef2e3ec5173dc951f9735735fbc44efa4ffd1e04e5c2898426e30a6c5486fe",
+        "checked": false,
+        "status": "bounded_valid_non_solution",
+        "finished": true,
+        "failure": null,
+        "last_check": [
+          {
+            "operation": "trusted_premise_inspection",
+            "module": null,
+            "returncode": 0,
+            "termination": null
+          }
+        ]
+      }
+    ],
+    "prior_same_test": {
+      "path": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/evidence/neutral-validation/repair-role-report-20261018/connected.json",
+      "sha256": "a031a216c61cfd8ea72ae1cdf53783dc5e34655c0d000e44a890a8a365f18e16",
+      "returncode": 0,
+      "elapsed_seconds": 542.7368607521057,
+      "source_mismatches_after": []
+    },
+    "interpretation": "All16 deterministic jobs completed; valid episode comparison and both two-step policy branches reached. Eleven validators checked, three valid bounded non-solutions, zero recorded validator failures, one unfinished after-side heldout check. Previous same test passed in542.737s, already exceeding480; fresh720s unchanged-source rerun is justified, no broad historical repetition implied."
+  },
+  "concrete_outstanding": [
+    {
+      "id": "deployment",
+      "finding": "Same sandbox profile remains unchanged. Builder actual startup reports nested sandbox_apply EPERM/71, ready:false, before compilation. Approved-host -6 is not fixed by round7. Next independent builder owns cause-specific minimal repair and approved-host neutral preflight including actual dependency-profile scope; do not use unwrapped fallback."
+    },
+    {
+      "id": "cached_request_fixture",
+      "finding": "tests/test_role_report_contract.py:146 still writes request without model/reasoning_effort. New Arm.call prepends both before cached equality; line155 fails before endpoint/idempotence assertions. Update only neutral fixture metadata and run the affected role-report tests, retaining runtime request equality."
+    },
+    {
+      "id": "connected_completion",
+      "finding": "Connected001 failed because builder changed source during execution; preserved as failure. Connected002 used stablepretest002 but outer480s interrupted it before assertions. A new frozen connected rerun with justified720s cap is needed; neutral test success still does not attest live sandbox deployment."
+    }
+  ],
+  "confirmed_design": [
+    "Exact Astra/Sol selection, no fallback; high effort fixed; model passes frozen protocol, request/spec, worker --model, ordinary and uncertain receipts. Metadata excluded from prompts. Existing curation remains Astra-origin historical panel, reused unchanged.",
+    "Real preflight route executes startup/boundary probes through sandbox_prefix, neutral check_task(live=True) positive/negative premise controls, and actual completion adapter without independent correspondence approval. Live freeze and first new role call per session fail closed.",
+    "No root, premise, hypothesis, source staging, accepted-component, resource opportunity, heldout or mathematical source change. Source/binary/profile launch metadata expanded; check remains fail-closed.",
+    "New sample configs retain shipped14400s/invention0. Fresh same-opportunity comparison should use root run-local28800s/invention1, same panel and clean seeds, changing model only."
+  ],
+  "limitations": [
+    "Requested-model metadata is not provider attestation.",
+    "Negative-returncode infrastructure label includes timeout/SIGKILL; raw termination must distinguish it from startup abort.",
+    "Mocked controls and unwrapped Lean tests do not validate actual host deployment.",
+    "Prior Astra infrastructure failures preclude a clean theorem-score A/B comparison.",
+    "Root-reported host neutral minimal-profile diagnosis was not independently executed or applied by this reviewer."
+  ]
+}

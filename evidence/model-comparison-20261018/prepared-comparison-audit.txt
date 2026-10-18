@@ -1,0 +1,20 @@
+Prepared Sol comparison-integrity audit
+
+Verified at audit time:
+- Opportunity config is identical except explicit prepared model gpt-6.1-sol; reference frozen protocol uses gpt-6-astra. Both share rounds8, arm_seconds28800, call_seconds300, max_calls60, meta_calls24, invention_rounds1, episode_rounds2, policy_trial_rounds2, policy_trials1, adaptation_seconds120, validation_seconds120, live transport, empty ablations.
+- All ten current initial seed source hashes, including full contract bytes, equal the stopped reference frozen seal. Root identity remains MathGKM.Markov.Conjecture63. Contract SHA256 495cf67ff80de3f6265a52266d8d212fc6e4ec411b0b2c0384cda47e84d29da3.
+- Prepared panel suite and all fourteen curation job files are byte-identical to reference copies. Only curation provenance receipt path changes. Receipt SHA256 1c2ba5517883231f6fbf57778e5b7f3da793f0039d1822d8be53f2e978661b8a.
+- Suite raw SHA256 f8a43f40fd85469ae2e8a76768e9bb5ccc03d68c1ee900d2c7f0f8feb152f6dd. Canonical digest, using machinery.study_common canonical JSON with ensure_ascii=False, is 3029883107f35ec5a882b6df1eaa671bc9c1b7641f9281fb68e69768e9efb590 and matches both provenance records. No hash inconsistency.
+- Prepared directory contains only config.json, comparison-plan.json, and shared pretrial curation. No stopped study arm, evaluation, adaptation, or post-trial research artifacts are present in prepared inputs. Shared independent pretrial selection is intentionally retained as common setup; it is not a new independent Sol curation.
+
+Pending freeze/launch limitations:
+- Prepared Sol study has not been frozen. Actual frozen seed, protocol defaults, model binding, reasoning effort, dependency/implementation seals, permissions, and runtime path exclusions are not yet independently attested.
+- Intended reasoning effort is high in comparison-plan; it is absent from config.json, so actual launch binding remains pending.
+- Directory inventory and byte equality establish prepared artifact provenance, not a formal proof of all future runtime access restrictions. Future permissions must exclude stopped arms and research logs; verify generated job inputs and read roots without feeding their mathematical contents to Sol.
+- Validator startup repair changes infrastructure relative to reference, whose independent checks aborted before mathematics. No clean causal model-quality comparison is available from these runs. Sequential provider drift, shared pretrial curation, stochastic variation, and unequal realized resource use also limit inference.
+
+Recommended matched-checkpoint fields:
+Run/arm/model/effort/provider; initial seed+contract+suite digests; implementation/dependency/validator-profile hashes; attempted vs completed round count; accepted checkpoint identity; actual model calls, wall time and raw usage; budget consumed and remaining; artifact hashes; independent check attempted/completed; validation failure phase; validated outcome/status and unresolved obligation counts if those are established by existing receipts.
+Compare reference baseline completed8 and exploration completed2 checkpoints to the same Sol completed-round positions. Exclude interrupted reference exploration round-0002. Also report actual resource consumption at those checkpoints; equal round counts alone are not equal compute. Keep infrastructure-aborted outcomes distinct from mathematical outcomes.
+
+Scope: operational JSON, file metadata, and opaque hashes only. No prior mathematical contents inspected, no mathematical suggestions provided, no launches or production writes performed.
