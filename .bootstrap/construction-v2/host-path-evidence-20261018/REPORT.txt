@@ -1,0 +1,22 @@
+Round8 copied-neutral host diagnosis
+
+Original frozen round8 preflight and smoke remain FAILED and unchanged. This directory records separate temporary-profile diagnostics, not a repaired installed implementation.
+
+Observed causes and sufficient narrow changes:
+1. Existing runtime patch fixes dyld startup and Lean --version. Compilation additionally needs file-read-metadata on exact ancestors of the validation directory/source cwd. Copied original profile gives the same existing-source-directory ENOENT. Adding only literal metadata /, /private, /private/tmp, /private/tmp/round8-path-diagnosis-p4utdjyq fixes fresh ResearchSemantics compilation. Read/write subtrees and network denial unchanged. Evidence: first-module-results.json, source_ancestor_metadata/validator.sb.
+2. Full dependency import still fails unknown module prefix Mathlib after (1). Adding exact lexical LEAN_PATH dependency paths and their parents fixes it. Adding only resolved target ancestors fails. Evidence: package-source-ancestor-results.json and package-dependency-metadata-results.json. Passing profile: package_source_ancestors/dependency_lexical_metadata.sb; failed resolved-only profile: package_source_ancestors/dependency_resolved_metadata.sb. Derive these literals from pinned approved paths, preserving lexical symlink chains; do not grant recursive ancestor/home/root reads. Lists include already permitted literals, so no claim that every listed literal is individually necessary.
+
+Successful independent diagnostics:
+- Core neutral proof: four fresh module compiles, four independent leanchecker replays, actual trusted-premise inspector, all rc0. Inspector StudyObligation closure contains required MathGKM.DeploymentRoot.identity; inspected axiom lists empty. First compile record is in first-module-results.json; remaining eight operations in core-complete-results.json.
+- Full dependency neutral HarnessFixture/ResearchSemantics/Mathlib route: six fresh module compiles, six independent leanchecker replays, actual premise/catalog inspector, all13 rc0, no timeout, about89seconds. Required catalog names MathGKM.HarnessFixture.Root and MathGKM.DeploymentMathlib.identity found. Evidence: package-complete-results.json, inspector declarations artifact referenced by SUMMARY.json. This is not an audit of actual Markov root.
+- Both passing profiles deny neutral outside-directory cat/touch rc1 EPERM, empty read stdout, write targets absent; boundary-results.json.
+- Copied neutral .lean sources unchanged. All72 candidate frozen source hashes unchanged after diagnosis.
+
+Exact retained original failures:
+Original preflight result SHA256 3132527a86f18ac228d8337fcc68dcd488053a70741a36fd26478b8ddbf6f54f
+Original smoke result SHA256 7ae71ff99e9da57e995c05ab0676bb9cea9038cdd83c5fb16f593d410008a4d1
+Original frozen manifest SHA256 b70a180dd46321f4999cfadf0511ebceba8ec9132d4b1c20a887ce917be0b2a1
+Original test copies: /private/tmp/round8-host-audit-52xxhbpi
+
+Next independent builder owns implementation. It must include validation-directory ancestor metadata and lexical dependency path metadata, then rerun real complete deployment preflight and package smoke. Independently reported helper identity mismatch remains: raw expected dependency paths under seed differ from actual catalog-workspace symlink names despite same resolved targets; correction must preserve intended dependency identity checks.
+No implementation/production/recorded-preflight edits, hosted models, research launch, old research consumption, or recursive permission expansion occurred. These diagnostic manual positives do not establish the preflight's false-target/missing-premise negative controls or completion-adapter unresolved-English-audit behavior. Those remain required gates in a repaired actual preflight.

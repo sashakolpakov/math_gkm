@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/usr/bin/sandbox-exec",
+    "-f",
+    "/private/tmp/validator-startup-5dre8gti/minimal-startup.sb",
+    "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "--stdin",
+    "-o",
+    "/dev/null"
+  ],
+  "source": "import Init\nexample : True := True.intro\n",
+  "source_sha256": "a68109e9494bd77e7503b4a4dc46610c4f7162d2c069ccfa5ef0e4e12a148942",
+  "rc": 1,
+  "stdout": "",
+  "stderr": "failed to write '/dev/null': failed to create file '/dev/null'\n"
+}

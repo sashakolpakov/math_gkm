@@ -1,0 +1,23 @@
+{
+  "phase": "construction",
+  "summary": "Implemented narrow portable profile correction and fixture repair. Cumulative installation manifest saved; deployment remains pending.",
+  "files_changed": [
+    "machinery/study_transfer.py",
+    "tests/test_role_report_contract.py",
+    "tests/test_sol_deployment.py",
+    "docs/DEPLOYMENT_PREFLIGHT.md",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/"
+  ],
+  "checks": [
+    "20 affected tests and 3 helper tests passed.",
+    "All 12 connected-cycle assertions passed against the completed four-round state without replay.",
+    "Full method timed out at 900 seconds during additional final evaluation; no full-method pass claimed.",
+    "Final hashes verified; cumulative INSTALLATION_MANIFEST.json binds 16 paths and preserves round7 origins/evidence."
+  ],
+  "remaining": [
+    "Approved-host preflight and Mathlib catalog smoke remain pending.",
+    "Additional final evaluation unfinished.",
+    "Host refinement and whole-continuation proof remain open; no certified Goedel switch."
+  ],
+  "next_step": "Review the installation manifest and HANDOFF.md. From the installed candidate root, run these approved-host commands; run the second check only after reviewing a passing first result:\nexport PATH=/opt/homebrew/bin:\"$HOME/.elan/bin\":/usr/bin:/bin:/usr/sbin:/sbin GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null TMPDIR=\"$PWD/.scratch\"\nVERIFY_TOOLS=evidence/neutral-validation/maintenance-startup-sol-20261018/tools\n/opt/homebrew/bin/python3 \"$VERIFY_TOOLS/run.py\" host-preflight-001 210 /opt/homebrew/bin/python3 -m machinery.study_deployment --out .scratch/deployment-host-startup-001 --seconds 180\n/opt/homebrew/bin/python3 \"$VERIFY_TOOLS/run.py\" host-mathlib-001 630 /opt/homebrew/bin/python3 \"$VERIFY_TOOLS/host_mathlib_smoke.py\" --out .scratch/deployment-host-mathlib-001 --seconds 600"
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "dyld_logging",
+    "environment_overrides": {
+      "DYLD_PRINT_LIBRARIES": "1",
+      "DYLD_PRINT_TO_STDERR": "1"
+    },
+    "rc": -6,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "name": "dyld_avoid_shared_region",
+    "environment_overrides": {
+      "DYLD_SHARED_REGION": "avoid",
+      "DYLD_PRINT_LIBRARIES": "1"
+    },
+    "rc": -6,
+    "stdout": "",
+    "stderr": ""
+  }
+]

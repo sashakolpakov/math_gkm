@@ -1,0 +1,46 @@
+[
+  {
+    "variant": "root_directory_read",
+    "profile_sha256": "6d180a5dbac6d35b496a9cffba481197806ffbff19c44dccfbd88c44414c393b",
+    "command": [
+      "/bin/echo",
+      "test"
+    ],
+    "rc": 0,
+    "stdout": "test\n",
+    "stderr": ""
+  },
+  {
+    "variant": "root_directory_read",
+    "profile_sha256": "6d180a5dbac6d35b496a9cffba481197806ffbff19c44dccfbd88c44414c393b",
+    "command": [
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+      "--version"
+    ],
+    "rc": 1,
+    "stdout": "",
+    "stderr": "error: failed to resolve symbolic links when locating application\n"
+  },
+  {
+    "variant": "file_ioctl",
+    "profile_sha256": "1d86e3f3aae9354bc10c612f660c5f44d0bb2fc79b4463fcc348acda9d7ee82c",
+    "command": [
+      "/bin/echo",
+      "test"
+    ],
+    "rc": -6,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "variant": "file_ioctl",
+    "profile_sha256": "1d86e3f3aae9354bc10c612f660c5f44d0bb2fc79b4463fcc348acda9d7ee82c",
+    "command": [
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+      "--version"
+    ],
+    "rc": -6,
+    "stdout": "",
+    "stderr": ""
+  }
+]

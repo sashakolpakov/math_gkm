@@ -1,0 +1,67 @@
+[
+  {
+    "variant": "copied_original",
+    "profile_sha256": "504c8b55bc3c74616eff874e30235b378fc6b3bc7a9bf2c5e4489b5b9602a7ff",
+    "added_metadata_literals": [],
+    "argv": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/copied_original/validator.sb",
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+      "-j",
+      "1",
+      "-o",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/copied_original/build/MathGKM/ResearchSemantics.olean",
+      "MathGKM/ResearchSemantics.lean"
+    ],
+    "cwd": "/private/tmp/round8-path-diagnosis-p4utdjyq/copied_original/source",
+    "environment": {
+      "PATH": "/opt/homebrew/bin:/usr/bin:/bin",
+      "LANG": "en_US.UTF-8",
+      "LEAN_SYSROOT": "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2",
+      "LEAN_PATH": "/private/tmp/round8-path-diagnosis-p4utdjyq/copied_original/build:/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean",
+      "TMPDIR": "/private/tmp/round8-path-diagnosis-p4utdjyq/copied_original",
+      "GIT_CONFIG_NOSYSTEM": "1",
+      "GIT_CONFIG_GLOBAL": "/dev/null"
+    },
+    "rc": 1,
+    "elapsed": 0.05070570900000001,
+    "stdout": "",
+    "stderr": "no such file or directory (error code: 2)\n  file: /private/tmp/round8-path-diagnosis-p4utdjyq/copied_original/source\n"
+  },
+  {
+    "variant": "source_ancestor_metadata",
+    "profile_sha256": "93a7a2902d72e07690a18dd27307cd2291755c624ec297d3664d0fa3eee17e04",
+    "added_metadata_literals": [
+      "/",
+      "/private",
+      "/private/tmp",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq"
+    ],
+    "argv": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/validator.sb",
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+      "-j",
+      "1",
+      "-o",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/build/MathGKM/ResearchSemantics.olean",
+      "MathGKM/ResearchSemantics.lean"
+    ],
+    "cwd": "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/source",
+    "environment": {
+      "PATH": "/opt/homebrew/bin:/usr/bin:/bin",
+      "LANG": "en_US.UTF-8",
+      "LEAN_SYSROOT": "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2",
+      "LEAN_PATH": "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/build:/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean",
+      "TMPDIR": "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata",
+      "GIT_CONFIG_NOSYSTEM": "1",
+      "GIT_CONFIG_GLOBAL": "/dev/null"
+    },
+    "rc": 0,
+    "elapsed": 1.218365541,
+    "stdout": "MathGKM/ResearchSemantics.lean:30:37: warning: This simp argument is unused:\n  Function.comp_def\n\nHint: Omit it from the simp argument list.\n  simp [F\u0335u\u0335n\u0335c\u0335t\u0335i\u0335o\u0335n\u0335.\u0335c\u0335o\u0335m\u0335p\u0335_\u0335d\u0335e\u0335f\u0335,\u0335 \u0335b.forget_extend, a.forget_extend]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nMathGKM/ResearchSemantics.lean:80:8: warning: Variable name `x` is not explicitly referenced.\n\nThe binding can be removed (if unused) or named `_` (if used implicitly).\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n",
+    "stderr": ""
+  }
+]

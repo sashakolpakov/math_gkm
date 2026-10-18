@@ -1,0 +1,62 @@
+[
+  {
+    "operation": "compile",
+    "module": "MathGKM.HarnessFixture",
+    "argv": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/package_source_ancestors/validator.sb",
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+      "-j",
+      "1",
+      "-o",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/package_source_ancestors/build/MathGKM/HarnessFixture.olean",
+      "MathGKM/HarnessFixture.lean"
+    ],
+    "cwd": "/private/tmp/round8-path-diagnosis-p4utdjyq/package_source_ancestors/source",
+    "rc": 0,
+    "elapsed": 1.978669333,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "operation": "compile",
+    "module": "MathGKM.ResearchSemantics",
+    "argv": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/package_source_ancestors/validator.sb",
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+      "-j",
+      "1",
+      "-o",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/package_source_ancestors/build/MathGKM/ResearchSemantics.olean",
+      "MathGKM/ResearchSemantics.lean"
+    ],
+    "cwd": "/private/tmp/round8-path-diagnosis-p4utdjyq/package_source_ancestors/source",
+    "rc": 0,
+    "elapsed": 1.549094958,
+    "stdout": "MathGKM/ResearchSemantics.lean:30:37: warning: This simp argument is unused:\n  Function.comp_def\n\nHint: Omit it from the simp argument list.\n  simp [F\u0335u\u0335n\u0335c\u0335t\u0335i\u0335o\u0335n\u0335.\u0335c\u0335o\u0335m\u0335p\u0335_\u0335d\u0335e\u0335f\u0335,\u0335 \u0335b.forget_extend, a.forget_extend]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nMathGKM/ResearchSemantics.lean:80:8: warning: Variable name `x` is not explicitly referenced.\n\nThe binding can be removed (if unused) or named `_` (if used implicitly).\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n",
+    "stderr": ""
+  },
+  {
+    "operation": "compile",
+    "module": "MathGKM.DeploymentMathlib",
+    "argv": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/package_source_ancestors/validator.sb",
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+      "-j",
+      "1",
+      "-o",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/package_source_ancestors/build/MathGKM/DeploymentMathlib.olean",
+      "MathGKM/DeploymentMathlib.lean"
+    ],
+    "cwd": "/private/tmp/round8-path-diagnosis-p4utdjyq/package_source_ancestors/source",
+    "rc": 1,
+    "elapsed": 0.21123758299999995,
+    "stdout": "MathGKM/DeploymentMathlib.lean:1:0: error: unknown module prefix 'Mathlib'\n\nNo directory 'Mathlib' or file 'Mathlib.olean' in the search path entries:\n/private/tmp/round8-path-diagnosis-p4utdjyq/package_source_ancestors/build\n/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean\n/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/deployment-host-mathlib-audit-001/catalog-workspace/.lake/packages/Cli/.lake/build/lib/lean\n/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/deployment-host-mathlib-audit-001/catalog-workspace/.lake/packages/LeanSearchClient/.lake/build/lib/lean\n/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/deployment-host-mathlib-audit-001/catalog-workspace/.lake/packages/Qq/.lake/build/lib/lean\n/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/deployment-host-mathlib-audit-001/catalog-workspace/.lake/packages/aesop/.lake/build/lib/lean\n/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/deployment-host-mathlib-audit-001/catalog-workspace/.lake/packages/batteries/.lake/build/lib/lean\n/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/deployment-host-mathlib-audit-001/catalog-workspace/.lake/packages/importGraph/.lake/build/lib/lean\n/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/deployment-host-mathlib-audit-001/catalog-workspace/.lake/packages/mathlib/.lake/build/lib/lean\n/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/deployment-host-mathlib-audit-001/catalog-workspace/.lake/packages/plausible/.lake/build/lib/lean\n/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/deployment-host-mathlib-audit-001/catalog-workspace/.lake/packages/proofwidgets/.lake/build/lib/lean\n/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,20 @@
+Exact commands and results; construction only. Host deployment remains PENDING.
+
+/opt/homebrew/bin/python3 -m unittest -v tests.test_sol_deployment tests.test_role_report_contract
+exit=0; timeout=False; seconds=15.467867958010174; cap=90; source_postcheck=True
+log=evidence/neutral-validation/maintenance-startup-sol-20261018/focused.log; sha256=28f0834a1405216fe8619e0749bc3aef771667b0fcb09ca5855b670512cf2cf1
+
+/opt/homebrew/bin/python3 -m unittest -v tests.test_revision_static_checkpoint.RealLeanMechanisms.test_connected_cycle_delayed_use_policy_install_and_next_actual_request
+exit=-9; timeout=True; seconds=900.0076967920177; cap=900; source_postcheck=True
+log=evidence/neutral-validation/maintenance-startup-sol-20261018/connected.log; sha256=9edb08d67910c6878432e6c63a447af12eadb0b3a09e2d4275af5c890e2ba4e6
+
+/opt/homebrew/bin/python3 evidence/neutral-validation/maintenance-startup-sol-20261018/tools/test_host_smoke.py
+exit=0; timeout=False; seconds=0.29470249998848885; cap=30; source_postcheck=True
+log=evidence/neutral-validation/maintenance-startup-sol-20261018/tooling.log; sha256=b5d12391bc14ab05976b5bb982f665ed218ca44b4404f131a1d0a2a827e5c88c
+
+/opt/homebrew/bin/python3 evidence/neutral-validation/maintenance-startup-sol-20261018/tools/connected_assertions.py
+exit=0; timeout=False; seconds=0.348224957997445; cap=60; source_postcheck=True
+log=evidence/neutral-validation/maintenance-startup-sol-20261018/connected-core.log; sha256=ea2098d52f42f44a3909e06e36ceb7b9bb92d14da93d79af5827ba73e0481275
+
+900-second full-method timeout preserved during extra final evaluation; all original connected-cycle postconditions separately executed, without replaying roles or altering retained state.
+See HANDOFF.md for exact bounded approved-host commands and pending gaps.

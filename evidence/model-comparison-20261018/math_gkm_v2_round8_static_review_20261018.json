@@ -1,0 +1,83 @@
+{
+  "reviewed_utc": "2026-10-18T12:02:03.434736+00:00",
+  "candidate": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017",
+  "scope": "Independent read-only round8 source/checkpoint/evidence audit; no candidate execution, tests, live mathematical plans or code edits.",
+  "checkpoint_sha256": "b70a180dd46321f4999cfadf0511ebceba8ec9132d4b1c20a887ce917be0b2a1",
+  "checkpoint_count": 72,
+  "checkpoint_mismatches": [],
+  "production_changes_from_round7": [
+    "machinery/study_transfer.py"
+  ],
+  "pins": {
+    "machinery/study_transfer.py": "0c68a9a41a13eebdec6d5ca6d0ca531fd9f5cfc6da950d4a8998e288f7e7c55d",
+    "machinery/study_deployment.py": "060819f22cd9b2a42f7e781c3640dcc46aa24963d7aeafecc912b24b07cac59f",
+    "machinery/study.py": "0e748072adf260365c0b1e1d9c19e8595bae26e41342fc2fdca4fd37348d2cb5",
+    "machinery/study_common.py": "4ce3900bde642af7f62f769008ec007db34d8c8d0bc1b24de3838abe0730d9b4",
+    "machinery/study_worker.py": "735f73f3780cd10d11e09d6620c2fee7f24164c8054d2fa6d6d68b055aca5f7f",
+    "tests/test_role_report_contract.py": "6e28133b52913c8ad5a6929cb3ff4388bd29f2fd46bb12b2de1c538e435efadc",
+    "tests/test_sol_deployment.py": "592ef1ccac473710feffd90b39d4bec5015129e5ed7810b5c13f87212f1cc4a8",
+    "docs/DEPLOYMENT_PREFLIGHT.md": "aa04d61653c231d1cba9276133642dbbb61047f54301ea6d610c3a89dbd216b7",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/host_mathlib_smoke.py": "9435970949763edd5df49ffa6722731a6e21b60476f703bbaa3597602cc09911",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/run.py": "9437dfa48121e0715801f2f005a034f16f41e34c84053e86ae26677cd7f2e6b8",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/checkpoint.py": "38b2321f6ba6e32bd4ee8d27ea23306716194e0899e5c4ca770d0bd1b3bf51b9",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/finalize.py": "b30bfd6d02502806920182e4092e77de1d2027f43d33f854acb53b11fab84f51",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/pretest/manifest.json": "b70a180dd46321f4999cfadf0511ebceba8ec9132d4b1c20a887ce917be0b2a1",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/AUDIT.md": "993d4509c7a1a2d28becd870fd60410559c7ff4ada8d175028d6665726255584",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/focused.json": "a0166ac589b04e52036d86b1a307224e8fff7c9e382b11cf6e9435887305b8d8",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/focused.log": "28f0834a1405216fe8619e0749bc3aef771667b0fcb09ca5855b670512cf2cf1",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/connected-started.json": "508ac068275690530da38b6bfaa397d73dff2a67e9eacb8735041897e13c5770"
+  },
+  "findings": [
+    {
+      "id": "R8-SMOKE-PATHS",
+      "severity": "blocks smoke-helper success, not production profile logic",
+      "path": "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/host_mathlib_smoke.py",
+      "lines": [
+        64,
+        67,
+        68,
+        74
+      ],
+      "reason": "Expected dependency strings use seed/.lake/packages; actual catalog_snapshot copies into catalog-workspace and check_task returns that workspace package strings. dependency_paths does not resolve symlinks. These differ even though their resolved package identities agree.",
+      "supporting_references": [
+        "machinery/study_transfer.py:21-22",
+        "machinery/study_transfer.py:287-303",
+        "machinery/study_common.py:129-145"
+      ],
+      "disposition": "Root notified; preserve frozen connected test. Root plans independent next-builder helper-only correction and affected host-smoke rerun."
+    }
+  ],
+  "source_findings": [
+    "sandbox_prefix adds literal root directory data access and exact resolved toolchain-parent metadata; prior deny default, output-write boundary, runtime/package read subtrees and lack of network grants remain. Toolchain subtree resolves pinned binary.",
+    "Cached-request fixture adds model and reasoning_effort only, matching actual normalization; runtime cached-request equality is unchanged.",
+    "Helper invokes actual catalog_snapshot with live transport, unchanged neutral root/foundation, Mathlib-dependent neutral identity, fresh output and bounded processes. No hosted roles or old mathematical source."
+  ],
+  "evidence": {
+    "focused": {
+      "argv": [
+        "/opt/homebrew/bin/python3",
+        "-m",
+        "unittest",
+        "-v",
+        "tests.test_sol_deployment",
+        "tests.test_role_report_contract"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "cap_seconds": 90,
+      "elapsed_seconds": 15.467867958010174,
+      "source_postcheck": true,
+      "log": "evidence/neutral-validation/maintenance-startup-sol-20261018/focused.log",
+      "log_sha256": "28f0834a1405216fe8619e0749bc3aef771667b0fcb09ca5855b670512cf2cf1"
+    },
+    "focused_count": 20,
+    "connected": "running at this observation, no pass inferred",
+    "host_deployment": "pending authorized independent host execution; focused mocks/profile serialization and unwrapped connected do not establish deployed wrapper success"
+  },
+  "limits": [
+    "No approval to launch a new study from this record.",
+    "Host root-data syscall explanation is an inference from differential diagnostics, not syscall tracing.",
+    "Profile unit tests are serialization tests, not OS behavior.",
+    "No assertion of whole campaign proof certification or cold bootstrap."
+  ]
+}

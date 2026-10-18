@@ -1,0 +1,57 @@
+[
+  {
+    "variant": "root_data_only",
+    "profile_sha256": "77698a6ddd3e72adb0316243245b4aa406291896f1f4d06a8cd8241974ac9f3e",
+    "command": [
+      "/bin/echo",
+      "test"
+    ],
+    "rc": 0,
+    "stdout": "test\n",
+    "stderr": ""
+  },
+  {
+    "variant": "omit_Users",
+    "profile_sha256": "039c8eea28c648dce0641114a47189296fc48ec529836b44601d6efb5eef281a",
+    "command": [
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+      "--version"
+    ],
+    "rc": 1,
+    "stdout": "",
+    "stderr": "error: failed to resolve symbolic links when locating application\n"
+  },
+  {
+    "variant": "omit_sasha",
+    "profile_sha256": "73d5e994e0f3e1e269e313331e427c6b308a6f302dd7d484487abea59c63873d",
+    "command": [
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+      "--version"
+    ],
+    "rc": 1,
+    "stdout": "",
+    "stderr": "error: failed to resolve symbolic links when locating application\n"
+  },
+  {
+    "variant": "omit_.elan",
+    "profile_sha256": "68353dd1869711eea6f3a27f0a4a42dcb92096a3f631fa29c243f7c842d52a64",
+    "command": [
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+      "--version"
+    ],
+    "rc": 1,
+    "stdout": "",
+    "stderr": "error: failed to resolve symbolic links when locating application\n"
+  },
+  {
+    "variant": "omit_toolchains",
+    "profile_sha256": "811ff0483215ed302751a68bb4c17fae51e9efdfd4213c63c0b0e7d68fcf8739",
+    "command": [
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+      "--version"
+    ],
+    "rc": 1,
+    "stdout": "",
+    "stderr": "error: failed to resolve symbolic links when locating application\n"
+  }
+]

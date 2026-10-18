@@ -1,0 +1,72 @@
+{
+  "phase": "construction",
+  "runs": [
+    {
+      "label": "focused",
+      "argv": [
+        "/opt/homebrew/bin/python3",
+        "-m",
+        "unittest",
+        "-v",
+        "tests.test_sol_deployment",
+        "tests.test_role_report_contract"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "cap_seconds": 90,
+      "elapsed_seconds": 15.467867958010174,
+      "source_postcheck": true,
+      "log": "evidence/neutral-validation/maintenance-startup-sol-20261018/focused.log",
+      "log_sha256": "28f0834a1405216fe8619e0749bc3aef771667b0fcb09ca5855b670512cf2cf1"
+    },
+    {
+      "label": "connected",
+      "argv": [
+        "/opt/homebrew/bin/python3",
+        "-m",
+        "unittest",
+        "-v",
+        "tests.test_revision_static_checkpoint.RealLeanMechanisms.test_connected_cycle_delayed_use_policy_install_and_next_actual_request"
+      ],
+      "returncode": -9,
+      "timeout": true,
+      "cap_seconds": 900,
+      "elapsed_seconds": 900.0076967920177,
+      "source_postcheck": true,
+      "log": "evidence/neutral-validation/maintenance-startup-sol-20261018/connected.log",
+      "log_sha256": "9edb08d67910c6878432e6c63a447af12eadb0b3a09e2d4275af5c890e2ba4e6"
+    },
+    {
+      "label": "tooling",
+      "argv": [
+        "/opt/homebrew/bin/python3",
+        "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/test_host_smoke.py"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "cap_seconds": 30,
+      "elapsed_seconds": 0.29470249998848885,
+      "source_postcheck": true,
+      "log": "evidence/neutral-validation/maintenance-startup-sol-20261018/tooling.log",
+      "log_sha256": "b5d12391bc14ab05976b5bb982f665ed218ca44b4404f131a1d0a2a827e5c88c"
+    },
+    {
+      "label": "connected-core",
+      "argv": [
+        "/opt/homebrew/bin/python3",
+        "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/connected_assertions.py"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "cap_seconds": 60,
+      "elapsed_seconds": 0.348224957997445,
+      "source_postcheck": true,
+      "log": "evidence/neutral-validation/maintenance-startup-sol-20261018/connected-core.log",
+      "log_sha256": "ea2098d52f42f44a3909e06e36ceb7b9bb92d14da93d79af5827ba73e0481275"
+    }
+  ],
+  "deployment": "PENDING approved-host execution",
+  "source_postcheck": true,
+  "connected_scope": "900-second full-method timeout preserved during extra final evaluation; all original connected-cycle postconditions separately executed, without replaying roles or altering retained state.",
+  "runtime_tests_docs_unchanged_since_connected": true
+}

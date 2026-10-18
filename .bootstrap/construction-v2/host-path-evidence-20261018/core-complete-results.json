@@ -1,0 +1,144 @@
+[
+  {
+    "operation": "compile",
+    "module": "MathGKM.DeploymentRoot",
+    "argv": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/validator.sb",
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+      "-j",
+      "1",
+      "-o",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/build/MathGKM/DeploymentRoot.olean",
+      "MathGKM/DeploymentRoot.lean"
+    ],
+    "cwd": "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/source",
+    "rc": 0,
+    "elapsed": 1.104813417,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "operation": "compile",
+    "module": "MathGKM.Target43cfeec68572dda7f4e8e6de",
+    "argv": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/validator.sb",
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+      "-j",
+      "1",
+      "-o",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/build/MathGKM/Target43cfeec68572dda7f4e8e6de.olean",
+      "MathGKM/Target43cfeec68572dda7f4e8e6de.lean"
+    ],
+    "cwd": "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/source",
+    "rc": 0,
+    "elapsed": 1.087280042,
+    "stdout": "MathGKM/Target43cfeec68572dda7f4e8e6de.lean:3:54: warning: Variable name `StudyInterface` is not explicitly referenced.\n\nThe binding can be removed (if unused) or named `_` (if used implicitly).\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nMathGKM/Target43cfeec68572dda7f4e8e6de.lean:4:49: warning: Variable name `StudyInterface` is not explicitly referenced.\n\nThe binding can be removed (if unused) or named `_` (if used implicitly).\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n",
+    "stderr": ""
+  },
+  {
+    "operation": "compile",
+    "module": "StudyCheck",
+    "argv": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/validator.sb",
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+      "-j",
+      "1",
+      "-o",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/build/StudyCheck.olean",
+      "StudyCheck.lean"
+    ],
+    "cwd": "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/source",
+    "rc": 0,
+    "elapsed": 0.8647381250000001,
+    "stdout": "StudyCheck.lean:4:0: warning: Definition `StudyInterface` is a proposition; use `theorem` instead of `def`\n\nNote: This linter can be disabled with `set_option linter.defProp false`\n",
+    "stderr": ""
+  },
+  {
+    "operation": "kernel_replay",
+    "module": "MathGKM.ResearchSemantics",
+    "argv": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/validator.sb",
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+      "MathGKM.ResearchSemantics"
+    ],
+    "cwd": "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/source",
+    "rc": 0,
+    "elapsed": 1.5928971669999998,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "operation": "kernel_replay",
+    "module": "MathGKM.DeploymentRoot",
+    "argv": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/validator.sb",
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+      "MathGKM.DeploymentRoot"
+    ],
+    "cwd": "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/source",
+    "rc": 0,
+    "elapsed": 1.71021775,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "operation": "kernel_replay",
+    "module": "MathGKM.Target43cfeec68572dda7f4e8e6de",
+    "argv": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/validator.sb",
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+      "MathGKM.Target43cfeec68572dda7f4e8e6de"
+    ],
+    "cwd": "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/source",
+    "rc": 0,
+    "elapsed": 1.9786367079999998,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "operation": "kernel_replay",
+    "module": "StudyCheck",
+    "argv": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/validator.sb",
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker",
+      "StudyCheck"
+    ],
+    "cwd": "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/source",
+    "rc": 0,
+    "elapsed": 2.238205333,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "operation": "trusted_premise_inspection",
+    "module": "StudyInspect",
+    "argv": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/validator.sb",
+      "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+      "-j",
+      "1",
+      "StudyInspect.lean"
+    ],
+    "cwd": "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/source",
+    "rc": 0,
+    "elapsed": 7.16913875,
+    "stdout": "GKM_DECLARATIONS_FILE_V1:declarations.json\n",
+    "stderr": ""
+  }
+]

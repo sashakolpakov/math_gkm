@@ -1,0 +1,133 @@
+{
+  "observed_utc": "2026-10-18T12:04:37.116001+00:00",
+  "scope": "Independent read-only review of approved-host agent receipts; no execution by this reviewer",
+  "source_manifest_sha256": "b70a180dd46321f4999cfadf0511ebceba8ec9132d4b1c20a887ce917be0b2a1",
+  "checkpoint_mismatches": [],
+  "host_checks": {
+    "host-preflight-audit-001": {
+      "wrapper_record": {
+        "argv": [
+          "/opt/homebrew/bin/python3",
+          "-m",
+          "machinery.study_deployment",
+          "--out",
+          ".scratch/deployment-host-startup-audit-001",
+          "--seconds",
+          "180"
+        ],
+        "returncode": 1,
+        "timeout": false,
+        "cap_seconds": 210,
+        "elapsed_seconds": 0.3414638329995796,
+        "source_postcheck": true,
+        "log": "evidence/neutral-validation/maintenance-startup-sol-20261018/host-preflight-audit-001.log",
+        "log_sha256": "81b654e90324687a57e083b88a3429090a545b976aed1cded4b7b543a707691c"
+      },
+      "result_sha256": "3132527a86f18ac228d8337fcc68dcd488053a70741a36fd26478b8ddbf6f54f",
+      "receipt_sha256": "39ea15781ac7637cc7143350eb4e6f2cb00df8aacafb98ffe8f560022da52477",
+      "receipt_file_count": 13,
+      "receipt_mismatches": [],
+      "ready": false,
+      "failure": "Invalid: neutral actual-wrapper compilation/replay/premise inspection failed",
+      "first_check": {
+        "argv": [
+          "/usr/bin/sandbox-exec",
+          "-f",
+          "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/deployment-host-startup-audit-001/positive/validator.sb",
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+          "-j",
+          "1",
+          "-o",
+          "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/deployment-host-startup-audit-001/positive/build/MathGKM/ResearchSemantics.olean",
+          "MathGKM/ResearchSemantics.lean"
+        ],
+        "captured_bytes": 161,
+        "elapsed_ns": 59711416,
+        "module": "MathGKM.ResearchSemantics",
+        "operation": "compile",
+        "returncode": 1,
+        "stderr": "no such file or directory (error code: 2)\n  file: /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/deployment-host-startup-audit-001/positive/source\n",
+        "stdout": "",
+        "termination": null
+      },
+      "completed_operations": [
+        "compile"
+      ],
+      "source_directory_exists": true,
+      "probes": [
+        {
+          "label": "echo",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "label": "lean_version",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "label": "denied_read",
+          "returncode": 1,
+          "termination": null
+        },
+        {
+          "label": "denied_write",
+          "returncode": 1,
+          "termination": null
+        }
+      ]
+    },
+    "host-mathlib-audit-001": {
+      "wrapper_record": {
+        "argv": [
+          "/opt/homebrew/bin/python3",
+          "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/host_mathlib_smoke.py",
+          "--out",
+          ".scratch/deployment-host-mathlib-audit-001",
+          "--seconds",
+          "600"
+        ],
+        "returncode": 1,
+        "timeout": false,
+        "cap_seconds": 630,
+        "elapsed_seconds": 0.285275082977023,
+        "source_postcheck": true,
+        "log": "evidence/neutral-validation/maintenance-startup-sol-20261018/host-mathlib-audit-001.log",
+        "log_sha256": "17b0ec61f75dbc26a22c5ada86506ed46c672e6d6c2f9578aa9836d56323b809"
+      },
+      "result_sha256": "7ae71ff99e9da57e995c05ab0676bb9cea9038cdd83c5fb16f593d410008a4d1",
+      "receipt_sha256": "35fe4f794e018f1bb6a2281aeee281a22fa01dad06c1d5868d4247e5a3eff7b8",
+      "receipt_file_count": 25,
+      "receipt_mismatches": [],
+      "ready": false,
+      "failure": "Invalid: actual full-dependency catalog/replay/inspection not established",
+      "first_check": {
+        "argv": [
+          "/usr/bin/sandbox-exec",
+          "-f",
+          "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/deployment-host-mathlib-audit-001/catalog/validator.sb",
+          "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+          "-j",
+          "1",
+          "-o",
+          "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/deployment-host-mathlib-audit-001/catalog/build/MathGKM/HarnessFixture.olean",
+          "MathGKM/HarnessFixture.lean"
+        ],
+        "captured_bytes": 160,
+        "elapsed_ns": 69741250,
+        "module": "MathGKM.HarnessFixture",
+        "operation": "compile",
+        "returncode": 1,
+        "stderr": "no such file or directory (error code: 2)\n  file: /Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/deployment-host-mathlib-audit-001/catalog/source\n",
+        "stdout": "",
+        "termination": null
+      },
+      "completed_operations": [
+        "compile"
+      ],
+      "source_directory_exists": true,
+      "probes": []
+    }
+  },
+  "disposition": "Deployment not established: both first wrapped compilations fail before replay/premise inspection; exact cause remains unproved. A separately established smoke-helper path-comparison defect is masked by the earlier compile failure."
+}

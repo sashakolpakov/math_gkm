@@ -1,0 +1,20 @@
+Host startup diagnosis (macOS 26.4.1, build 25E253)
+
+Original validator.sb SHA256: 90bbe6e6d99b2a978f6f03bf7f48c86cbcf602315ebd0cdf92822d130572ef24
+Original profile aborts echo and lean --version with SIGABRT (-6), empty streams.
+Matching original echo PID11483 crash report: /Users/sasha/Library/Logs/DiagnosticReports/echo-2026-10-18-134324.ips
+Crash report SHA256: 4b310b50d63ac4f71907d0adef01a5856a8493c97d118cefdc2e48d5b598861e
+Stack: __abort_with_payload -> abort_with_reason -> ignition_halt -> boot_boot -> ignite -> dyld4::CacheFinder -> ProcessConfig startup. Namespace <0x23>, code2.
+
+Observed correction in TEMPORARY profile only:
+(allow file-read-data (literal "/"))
+(allow file-read-metadata (literal "/") (literal "/Users") (literal "/Users/sasha") (literal "/Users/sasha/.elan") (literal "/Users/sasha/.elan/toolchains"))
+Temporary profile minimal-startup.sb SHA256: bd23afcde47404023bbe67b52fccccf5c060a70c9af7b59aac9193013ed54ddd
+
+Root metadata alone did not fix abort. Root data alone fixed echo. Root read alone advanced Lean to rc1 path resolution error. Adding toolchain ancestor metadata fixed Lean --version. Leave-one-out omission of each /Users, /Users/sasha, /Users/sasha/.elan, /Users/sasha/.elan/toolchains caused same Lean rc1 path resolution failure.
+This establishes missing literal root-directory data-read access for dyld startup, plus missing literal ancestor metadata access for Lean application-path resolution. Specific failed dyld syscall is inferred from differential results and crash stack, not traced directly.
+
+Boundary results: echo rc0 test; Lean --version rc0 version4.32.2 f3b06c705e6c85f5314019d5d3baab0fec5b580c. Neutral /private/tmp canary read by /bin/cat rc1 EPERM, empty stdout. Neutral /private/tmp write via /usr/bin/touch rc1 EPERM; target absent. All original write/subtree/network restrictions retained; new root data grant is literal /, not recursive root access.
+Neutral stdin source 'import Init\nexample : True := True.intro\n' checked rc0, empty streams. Source SHA256 a68109e9494bd77e7503b4a4dc46610c4f7162d2c069ccfa5ef0e4e12a148942. -o /dev/null attempt rc1 failed to create file; actual artifact compile/replay unverified. No study or production files modified. External builder must independently implement/review correction and validate actual proof gates and replay in clean study.
+
+Nonfixing controls: file-map-executable on allowed roots, literal ancestor metadata without root data, stdio literals, ipc-posix*, mach*, file-ioctl, dyld diagnostic environment flags. Profile version3 instead returned execvp EPERM and is not a correction.

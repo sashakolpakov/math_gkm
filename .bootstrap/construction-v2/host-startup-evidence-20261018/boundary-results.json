@@ -1,0 +1,42 @@
+{
+  "profile_sha256": "bd23afcde47404023bbe67b52fccccf5c060a70c9af7b59aac9193013ed54ddd",
+  "write_canary_exists": false,
+  "results": [
+    {
+      "command": [
+        "/bin/echo",
+        "test"
+      ],
+      "rc": 0,
+      "stdout": "test\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+        "--version"
+      ],
+      "rc": 0,
+      "stdout": "Lean (version 4.32.2, arm64-apple-darwin24.6.0, commit f3b06c705e6c85f5314019d5d3baab0fec5b580c, Release)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/bin/cat",
+        "/private/tmp/validator-startup-5dre8gti/outside-readable-canary.txt"
+      ],
+      "rc": 1,
+      "stdout": "",
+      "stderr": "cat: /private/tmp/validator-startup-5dre8gti/outside-readable-canary.txt: Operation not permitted\n"
+    },
+    {
+      "command": [
+        "/usr/bin/touch",
+        "/private/tmp/validator-startup-5dre8gti/outside-write-canary.txt"
+      ],
+      "rc": 1,
+      "stdout": "",
+      "stderr": "touch: /private/tmp/validator-startup-5dre8gti/outside-write-canary.txt: Operation not permitted\n"
+    }
+  ]
+}

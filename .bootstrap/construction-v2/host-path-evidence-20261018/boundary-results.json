@@ -1,0 +1,62 @@
+[
+  {
+    "profile": "core",
+    "operation": "outside_read",
+    "argv": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/validator.sb",
+      "/bin/cat",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/outside-neutral.txt"
+    ],
+    "rc": 1,
+    "stdout": "",
+    "stderr": "cat: /private/tmp/round8-path-diagnosis-p4utdjyq/outside-neutral.txt: Operation not permitted\n",
+    "write_target_exists": false
+  },
+  {
+    "profile": "core",
+    "operation": "outside_write",
+    "argv": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata/validator.sb",
+      "/usr/bin/touch",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/core-outside-write.txt"
+    ],
+    "rc": 1,
+    "stdout": "",
+    "stderr": "touch: /private/tmp/round8-path-diagnosis-p4utdjyq/core-outside-write.txt: Operation not permitted\n",
+    "write_target_exists": false
+  },
+  {
+    "profile": "package",
+    "operation": "outside_read",
+    "argv": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/package_source_ancestors/dependency_lexical_metadata.sb",
+      "/bin/cat",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/outside-neutral.txt"
+    ],
+    "rc": 1,
+    "stdout": "",
+    "stderr": "cat: /private/tmp/round8-path-diagnosis-p4utdjyq/outside-neutral.txt: Operation not permitted\n",
+    "write_target_exists": false
+  },
+  {
+    "profile": "package",
+    "operation": "outside_write",
+    "argv": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/package_source_ancestors/dependency_lexical_metadata.sb",
+      "/usr/bin/touch",
+      "/private/tmp/round8-path-diagnosis-p4utdjyq/package-outside-write.txt"
+    ],
+    "rc": 1,
+    "stdout": "",
+    "stderr": "touch: /private/tmp/round8-path-diagnosis-p4utdjyq/package-outside-write.txt: Operation not permitted\n",
+    "write_target_exists": false
+  }
+]

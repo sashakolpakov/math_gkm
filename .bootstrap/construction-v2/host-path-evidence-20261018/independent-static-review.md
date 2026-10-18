@@ -1,0 +1,11 @@
+# Round8 independent static review
+
+Reviewed frozen candidate pretest `b70a180dd46321f4999cfadf0511ebceba8ec9132d4b1c20a887ce917be0b2a1` (72 entries), all current pins matching. No code/tests/models were executed by this reviewer; no mathematical plans were read. Exact file pins are in the companion JSON.
+
+**One necessary helper correction:** `tools/host_mathlib_smoke.py:64,67–74` compares dependency strings from `seed/.lake/packages` against actual catalog-workspace dependency strings. `study_transfer.dependency_paths:21–22` leaves these paths unresolved; `catalog_snapshot:287–303` necessarily uses a different workspace. The helper therefore rejects an otherwise successful catalog check. Compare resolved pinned package identities or derive expectations from the actual catalog workspace in a separately checkpointed builder correction. Root was notified before host smoke. Do not change the frozen sources during the connected test.
+
+The production delta from round7 is confined to `study_transfer.sandbox_prefix:79–91`: resolve the pinned toolchain, allow data for literal `/`, and metadata for exact toolchain ancestors. No recursive parent/home grant, write-boundary expansion, network permission, proof/premise/root weakening, or model fallback was found. Existing broad system runtime subtrees are unchanged. OS behavior remains for approved-host verification.
+
+The cached-request regression now includes the normalized model and reasoning-effort fields (`test_role_report_contract.py:146–147`), so it reaches the intended invalid-endpoint check, verifies no process relaunch, and compares charged state/receipt hashes across recovery. Runtime strict equality remains unchanged. The added profile tests assert the complete serialized permission delta and relocation through a symlink.
+
+Focused20 passed in15.47s against these bytes. The connected900-second test is still running at this observation. The neutral host preflight remains pending; it uses the actual wrapper and positive/negative/premise/completion controls. The new Mathlib smoke uses actual live catalog validation, unchanged neutral contract/foundations and a neutral Mathlib-importing identity, but its acceptance bug above must be addressed independently. No mathematical research or launch approval is inferred.

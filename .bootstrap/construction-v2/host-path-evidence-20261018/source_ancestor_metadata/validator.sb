@@ -1,0 +1,10 @@
+(version 1)
+(deny default)
+(allow process* sysctl-read mach-lookup)
+(allow file-read* (subpath "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata") (subpath "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2") (subpath "/System") (subpath "/usr") (subpath "/bin") (subpath "/sbin") (subpath "/Library") (subpath "/opt/homebrew") (subpath "/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/lib/lean"))
+(allow file-read* (literal "/dev/null") (literal "/dev/urandom"))
+(allow file-read-data (literal "/"))
+(allow file-read-metadata (literal "/") (literal "/Users") (literal "/Users/sasha") (literal "/Users/sasha/.elan") (literal "/Users/sasha/.elan/toolchains"))
+(allow file-write* (subpath "/private/tmp/round8-path-diagnosis-p4utdjyq/source_ancestor_metadata") (literal "/dev/null"))
+
+(allow file-read-metadata (literal "/") (literal "/private") (literal "/private/tmp") (literal "/private/tmp/round8-path-diagnosis-p4utdjyq"))
