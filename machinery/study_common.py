@@ -10,12 +10,19 @@ import time
 
 ROOT = Path(__file__).resolve().parents[1]
 PYTHON = '/opt/homebrew/bin/python3'
+MODELS = ('gpt-6-astra', 'gpt-6.1-sol')
+REASONING_EFFORT = 'high'
 ROOT_SHA = '8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe'
 SEED = ('MathGKM/Markov.lean', 'MathGKM/Protocol.lean', 'MISSION.md',
         'docs/DESIGN.md', 'lakefile.toml', 'lake-manifest.json', 'lean-toolchain')
 
 class Invalid(ValueError):
     pass
+
+def validate_model(model):
+    if model not in MODELS:
+        raise Invalid('explicit supported model required: '+', '.join(MODELS))
+    return model
 
 def canonical(value):
     return json.dumps(value, sort_keys=True, separators=(',', ':'), ensure_ascii=False)

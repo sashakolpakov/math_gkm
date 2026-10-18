@@ -1,0 +1,132 @@
+{
+  "observed_utc": "2026-10-18T12:23:00.801338+00:00",
+  "scope": "Read-only package/source/result review; no candidate code or tests executed",
+  "pins": {
+    "pretest/manifest.json": "b70a180dd46321f4999cfadf0511ebceba8ec9132d4b1c20a887ce917be0b2a1",
+    "final/manifest.json": "5f227b3886bc72d8c317209701939565f80634dab55e3cba4a3d3b61765fcfbb",
+    "INSTALLATION_MANIFEST.json": "e5264fe3b64628d434a36a85f9437e40d13faf6ab73e39e1f7053974d45e7cb6",
+    "EVIDENCE_MANIFEST.json": "645fc53faf1703ba946b546d31593004fc26bc94f267b2bc19bcd03681da8431",
+    "VALIDATION.json": "15fc544a69465d407652780b5674402ef2609cbbde568246321982e1289917c2",
+    "HANDOFF.md": "7b53bd71ed7a416709f61be4d7199384411776a3ad862a4cbd53d0eeb8ce21b8",
+    "CONNECTED_CORE_RESULT.json": "bc4cd366220aeffab318a40eb1459d598a103890dcae2b30195e9ba0adbbf5cd"
+  },
+  "verified_counts": {
+    "pretest_sources": 72,
+    "final_sources": 74,
+    "installation_entries": 16,
+    "evidence_files": 337
+  },
+  "all_saved_copy_hashes_and_evidence_pins_match": true,
+  "original_production_inputs_match": true,
+  "already_retained_new_evidence_paths_matching_final": [
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/checkpoint.py",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/connected_assertions.py",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/finalize.py",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/host_mathlib_smoke.py",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/run.py",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/test_host_smoke.py"
+  ],
+  "changes_after_connected": [
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/finalize.py",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/host_mathlib_smoke.py",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/run.py"
+  ],
+  "new_after_connected": [
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/connected_assertions.py",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/test_host_smoke.py"
+  ],
+  "runtime_tests_docs_unchanged_after_connected": true,
+  "runs": {
+    "phase": "construction",
+    "runs": [
+      {
+        "label": "focused",
+        "argv": [
+          "/opt/homebrew/bin/python3",
+          "-m",
+          "unittest",
+          "-v",
+          "tests.test_sol_deployment",
+          "tests.test_role_report_contract"
+        ],
+        "returncode": 0,
+        "timeout": false,
+        "cap_seconds": 90,
+        "elapsed_seconds": 15.467867958010174,
+        "source_postcheck": true,
+        "log": "evidence/neutral-validation/maintenance-startup-sol-20261018/focused.log",
+        "log_sha256": "28f0834a1405216fe8619e0749bc3aef771667b0fcb09ca5855b670512cf2cf1"
+      },
+      {
+        "label": "connected",
+        "argv": [
+          "/opt/homebrew/bin/python3",
+          "-m",
+          "unittest",
+          "-v",
+          "tests.test_revision_static_checkpoint.RealLeanMechanisms.test_connected_cycle_delayed_use_policy_install_and_next_actual_request"
+        ],
+        "returncode": -9,
+        "timeout": true,
+        "cap_seconds": 900,
+        "elapsed_seconds": 900.0076967920177,
+        "source_postcheck": true,
+        "log": "evidence/neutral-validation/maintenance-startup-sol-20261018/connected.log",
+        "log_sha256": "9edb08d67910c6878432e6c63a447af12eadb0b3a09e2d4275af5c890e2ba4e6"
+      },
+      {
+        "label": "tooling",
+        "argv": [
+          "/opt/homebrew/bin/python3",
+          "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/test_host_smoke.py"
+        ],
+        "returncode": 0,
+        "timeout": false,
+        "cap_seconds": 30,
+        "elapsed_seconds": 0.29470249998848885,
+        "source_postcheck": true,
+        "log": "evidence/neutral-validation/maintenance-startup-sol-20261018/tooling.log",
+        "log_sha256": "b5d12391bc14ab05976b5bb982f665ed218ca44b4404f131a1d0a2a827e5c88c"
+      },
+      {
+        "label": "connected-core",
+        "argv": [
+          "/opt/homebrew/bin/python3",
+          "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/connected_assertions.py"
+        ],
+        "returncode": 0,
+        "timeout": false,
+        "cap_seconds": 60,
+        "elapsed_seconds": 0.348224957997445,
+        "source_postcheck": true,
+        "log": "evidence/neutral-validation/maintenance-startup-sol-20261018/connected-core.log",
+        "log_sha256": "ea2098d52f42f44a3909e06e36ceb7b9bb92d14da93d79af5827ba73e0481275"
+      }
+    ],
+    "deployment": "PENDING approved-host execution",
+    "source_postcheck": true,
+    "connected_scope": "900-second full-method timeout preserved during extra final evaluation; all original connected-cycle postconditions separately executed, without replaying roles or altering retained state.",
+    "runtime_tests_docs_unchanged_since_connected": true
+  },
+  "connected_assertion_review": {
+    "original_test_sha256": "fd5117fec6288f65e51f96526d671d87b5453253edd3782a671f13661b6bdf04",
+    "assertion_calls": 12,
+    "state_sha256": "c632cc44533fe8eecb008aed4a68000a3e66e8718d7c202ac78c9891ec9f3468",
+    "state": {
+      "round": 4,
+      "phase": "research",
+      "status": "finite_budget_finished; root_open",
+      "calls": 27,
+      "failures": 0
+    },
+    "original_twelve_assertions_preserved": true,
+    "no_roles_replayed": true
+  },
+  "smoke_helper_fix": "Final accepted_catalog compares resolved ordered dependency identities; three synthetic tests cover aliases, extra/replaced roots, unwrapped/missing-root/failed-replay rejection. No deployed success inferred.",
+  "disposition": "Package consistent. Full connected method timed out at900s during additional terminal evaluation; original twelve connected postconditions separately passed with unchanged retained state. Round8 actual host checks failed first wrapped compile before replay/premise inspection; manual diagnostic success informs round9 but is not final deployed approval.",
+  "prior_records": [
+    "/private/tmp/math_gkm_v2_round8_static_review_20261018.json",
+    "/private/tmp/math_gkm_v2_round8_host_receipt_review_20261018.json"
+  ],
+  "audit_preparation": "Own read-only report preparation corrected state envelope addressing; subsequent strict new-path absence assertion encountered six evidence tools newly retained under root, independently verified byte-identical. No candidate/evidence mutation by reviewer."
+}

@@ -16,7 +16,8 @@ import time
 
 from .study_common import (ROOT, PYTHON, SEED, Invalid, canonical, digest, sha, read,
     write, save_state, load_state, lock, inventory, snapshot, verify_snapshot,
-    clean_contract, copy_seed, implementation, dependency_identity, authorize_live)
+    clean_contract, copy_seed, implementation, dependency_identity, authorize_live,
+    validate_model, REASONING_EFFORT)
 from . import study_policy as policy
 
 DEFAULT = {'schema': 'math-gkm.study.v2', 'transport': 'fixture',
@@ -53,8 +54,9 @@ def validate_commitment(p, tasks=0):
 def validate_protocol(p):
     if set(p) != set(DEFAULT) or p['schema'] != DEFAULT['schema']:
         raise Invalid('protocol keys/schema mismatch')
-    if p['transport'] not in ('fixture', 'live') or p['model'] != 'gpt-6-astra':
-        raise Invalid('only explicitly selected fixture or Astra transport')
+    if p['transport'] not in ('fixture', 'live'):
+        raise Invalid('only explicitly selected fixture or live transport')
+    validate_model(p['model'])
     if p['fixture_behavior'] not in ('normal', 'sleep', 'missing', 'exit') or (p['transport'] == 'live' and (p['fixture_behavior'] != 'normal' or p['fixture_policy_trial'] or p['fixture_connected'])):
         raise Invalid('deterministic fixture behaviors are never live research settings')
     for k in ('rounds', 'episode_rounds', 'call_seconds', 'adaptation_seconds', 'arm_seconds',
@@ -135,6 +137,10 @@ def freeze(directory, config=None, suite=None, contract=None, curation=None):
     if p['transport'] == 'live' and any(any(k.startswith('fixture_') for k in t) for t in suite['tasks']):
         raise Invalid('fixture answers cannot enter a live suite')
     directory.mkdir(parents=True, exist_ok=False)
+    deployment = None
+    if p['transport'] == 'live':
+        from .study_deployment import require_deployment
+        deployment = require_deployment(directory/'deployment-preflight')
     seed = directory/'seed'
     seed.mkdir()
     seed_files = list(dict.fromkeys([x for x in SEED if x != 'MathGKM/Markov.lean'] +
@@ -151,7 +157,7 @@ def freeze(directory, config=None, suite=None, contract=None, curation=None):
     write(directory/'evaluation/suite.json', suite)
     seal = {'seed': {name: sha(seed/name) for name in seed_files + ['contract.json']},
         'seed_files_sha256': sha(seed/'seed-files.json'),
-        'curation': curation,
+        'curation': curation, 'deployment_preflight': deployment,
         'protocol': digest(p), 'suite': digest(suite), 'implementation': implementation(),
         'dependencies': dependency_identity(),
         'baseline_adjustments': ['empty history and agenda; no inherited artifacts',
@@ -182,6 +188,7 @@ def freeze(directory, config=None, suite=None, contract=None, curation=None):
         from .study_observer import checkpoint
         checkpoint(directory, mode, 'initial', load_state(arm/'state.json'), arm/'snapshots/initial')
     write(directory/'setup-cost.json', {'elapsed_seconds': time.monotonic()-setup_start,
+        'deployment_preflight': deployment,
         'accounting': 'common setup overhead, separately disclosed, no token/currency equivalence',
         'curation': curation or {'status': 'not provided', 'selection_basis': suite.get('selection_basis')},
         'ordering': 'baseline then exploration unless operator specifies; provider drift uncontrolled'})
@@ -193,6 +200,9 @@ def verify(directory):
         raise Invalid('frozen protocol/evaluation suite changed')
     if implementation() != seal['implementation']:
         raise Invalid('implementation changed since freeze; new reviewed study required')
+    if read(directory/'protocol.json')['transport'] == 'live':
+        from .study_deployment import verify_receipt
+        verify_receipt(seal.get('deployment_preflight'))
     for name, expected in seal['seed'].items():
         if sha(directory/'seed'/name) != expected:
             raise Invalid('frozen seed changed')
@@ -225,6 +235,16 @@ class Arm:
         self.s = load_state(self.root/'state.json')
         self.tick = time.monotonic()
         self.active_budget = None
+        self.deployment_ready = False
+
+    def ensure_deployment(self):
+        if self.p['transport'] == 'live' and not self.deployment_ready:
+            from .study_deployment import require_deployment
+            require_deployment(self.root/'deployment-preflights'/str(time.time_ns()))
+            self.deployment_ready = True
+            # Preflight is separately recorded common infrastructure overhead,
+            # never a deduction from one arm's frozen research opportunities.
+            # Controller wall still includes it; overlapping times are not summed.
 
     def admitted(self, research):
         seed = [n for n in read(self.study/'seed/seed-files.json') if n.endswith('.lean')]
@@ -366,6 +386,7 @@ class Arm:
             raise Invalid('orphan job lacks binding; manual reconciliation required; no replay')
         spec = read(job/'spec.json')
         receipt = {'outcome': 'uncertain_effects_not_replayed', 'payload': None,
+            'model': self.p['model'], 'reasoning_effort': REASONING_EFFORT,
             'elapsed_seconds': spec['seconds'], 'role': spec['role'],
             'usage_raw': [], 'normalized_tokens': None, 'mathematical_resolution': False,
             'request_id': spec['request_id'], 'recovery': 'full reservation charged; inspect retained partial artifacts'}
@@ -375,11 +396,13 @@ class Arm:
     def call(self, key, role, req, workspace=None, readonly=False, seconds=None):
         """Idempotent logical invocation; completed or uncertain effects never replay."""
         job = self.root/'jobs'/key
+        req = {**req, 'model': self.p['model'], 'reasoning_effort': REASONING_EFFORT}
         if (job/'receipt.json').exists():
             expected = {**req, 'request_id': key}
             if (job/'request.json').exists() and read(job/'request.json') != expected:
                 raise Invalid('logical invocation request changed after execution')
             return self.consume(job, read(job/'receipt.json'))
+        self.ensure_deployment()
         seconds = seconds or self.p['call_seconds']
         if not self.permitted(role, seconds):
             raise Invalid('resource allowance exhausted or stop requested')
@@ -389,6 +412,7 @@ class Arm:
         req = {**req, 'request_id': key}
         spec = {'request_id': key, 'workspace': str(workspace), 'role': role,
             'transport': self.p['transport'], 'model': self.p['model'], 'provider': self.p['provider'],
+            'reasoning_effort': REASONING_EFFORT,
             'usage_semantics': self.p['usage_semantics'], 'readonly': readonly,
             'seconds': seconds, 'output_bytes': self.p['output_bytes'], 'stop': str(self.study/'STOP.json'),
             'fixture_policy_trial': self.p['fixture_policy_trial'], 'fixture_behavior': self.p['fixture_behavior'],
@@ -413,11 +437,13 @@ class Arm:
         write(job/'spec.json', spec)
         write(job/'request.json', req)
         from .study_policy import prompt
-        (job/'prompt.txt').write_text(prompt(req) if role in ('proposer', 'researcher', 'reviewer', 'selector') else
+        # Retain execution identity in metadata without changing study prompts.
+        prompt_req = {k: v for k, v in req.items() if k not in ('model', 'reasoning_effort')}
+        (job/'prompt.txt').write_text(prompt(prompt_req) if role in ('proposer', 'researcher', 'reviewer', 'selector') else
             policy.COMMON + '\nAdapt the frozen solver to these exact obligations. Do not change hypotheses or source. '
             'Return solutions keyed by task id with module, term, interface_term and transport_term, or '
             '{status:"bounded_non_solution",reason:string} for a valid bounded attempt without a solution. '
-            'No independent test answers are supplied.\n' + canonical(req))
+            'No independent test answers are supplied.\n' + canonical(prompt_req))
         from .study_bridge import event
         event(self, {'issue': {'id': key}})
         event(self, {'claim': {'id': key}})

@@ -1,0 +1,176 @@
+{
+  "scope": "Independent static implementation/package review and read-only verification of separate approved-host neutral results. No candidate/test/model/research execution or code edits by this reviewer.",
+  "reviewed_utc": "2026-10-18T12:29:18.944351+00:00",
+  "source_checkpoint_sha256": "f2fb0812b1d0c10f91215487b3d9391fca74533572bbeffa6faaa9812a0038f0",
+  "source_count": 73,
+  "installation_manifest_sha256": "5d2ff1fee110693cff4893a331532c9b9f1c4d715a48e949db9e43dbb31be8f4",
+  "installation_entries": 21,
+  "installation_categories": {
+    "documentation": 1,
+    "host_evidence_tooling": 11,
+    "machine_source": 7,
+    "fixtures": 2
+  },
+  "existing_identical_added_evidence_paths": [
+    "docs/DEPLOYMENT_PREFLIGHT.md",
+    "evidence/neutral-validation/maintenance-path-sol-20261018/tools/audit.py",
+    "evidence/neutral-validation/maintenance-path-sol-20261018/tools/checkpoint.py",
+    "evidence/neutral-validation/maintenance-path-sol-20261018/tools/host_mathlib_smoke.py",
+    "evidence/neutral-validation/maintenance-path-sol-20261018/tools/run.py",
+    "evidence/neutral-validation/maintenance-path-sol-20261018/tools/test_host_smoke.py",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/checkpoint.py",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/connected_assertions.py",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/finalize.py",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/host_mathlib_smoke.py",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/run.py",
+    "evidence/neutral-validation/maintenance-startup-sol-20261018/tools/test_host_smoke.py",
+    "machinery/study_deployment.py",
+    "studies/v2-study-astra.json",
+    "studies/v2-study-sol.json",
+    "tests/test_sol_deployment.py"
+  ],
+  "builder_evidence_manifest_sha256": "d7946df2baf2ed200011b1dd9b09d28c467addbd935758221d92bf299a84cfa1",
+  "builder_evidence_entries": 263,
+  "all_source_copy_install_evidence_hashes_match": true,
+  "prior_manifest_chain_matches": true,
+  "source_findings": {
+    "production_delta_from_round8": "sandbox_prefix only; remaining full module AST and every other machinery byte identical",
+    "profile_change_lines": "machinery/study_transfer.py:79-98",
+    "profile_change": "Literal root data retained; exact resolved toolchain parents, validation directory ancestors and lexical pinned dependency path/parent metadata. Prior content-read subtrees/write scope/default-denied network unchanged. No proof/root/premise/heldout/budget weakening.",
+    "helper": "New dated helper byte-identical to corrected round8 final; ordered resolved dependency identity, required catalog names, actual wrapped operations required.",
+    "model_propagation": "Round7 requested Sol model/high reasoning propagation remains unchanged, with no fallback. Metadata is requested identity, not provider attestation.",
+    "runner_newline": "AST constant is one LF; earlier peer literal-slash-n concern withdrawn."
+  },
+  "focused_checks": {
+    "phase": "construction",
+    "runs": [
+      {
+        "label": "focused",
+        "test_count": 21,
+        "argv": [
+          "/opt/homebrew/bin/python3",
+          "-m",
+          "unittest",
+          "-v",
+          "tests.test_sol_deployment",
+          "tests.test_role_report_contract"
+        ],
+        "returncode": 0,
+        "timeout": false,
+        "cap_seconds": 90,
+        "elapsed_seconds": 8.944090041972231,
+        "source_postcheck": true,
+        "log": "evidence/neutral-validation/maintenance-path-sol-20261018/focused.log",
+        "log_sha256": "f67ecc0c1f18243d2aebcb1a34abdacbe3caa014bd0549b39cd8338b035ecadd"
+      },
+      {
+        "label": "helper",
+        "test_count": 5,
+        "argv": [
+          "/opt/homebrew/bin/python3",
+          "evidence/neutral-validation/maintenance-path-sol-20261018/tools/test_host_smoke.py"
+        ],
+        "returncode": 0,
+        "timeout": false,
+        "cap_seconds": 30,
+        "elapsed_seconds": 0.1296925829956308,
+        "source_postcheck": true,
+        "log": "evidence/neutral-validation/maintenance-path-sol-20261018/helper.log",
+        "log_sha256": "c7d15771a4d2d8233be8038d4385740c0464618f13d28b918646aa8abf06da1f"
+      }
+    ],
+    "tested_final_source_manifest_sha256": "f2fb0812b1d0c10f91215487b3d9391fca74533572bbeffa6faaa9812a0038f0",
+    "pretest_equals_final": true,
+    "source_postcheck": true,
+    "connected_reuse": {
+      "assertions_passed_round8": 12,
+      "whole_driver_passed": false,
+      "whole_driver_timeout_seconds": 900,
+      "terminal_duplicate_comparison": "unfinished",
+      "rerun": false,
+      "reason": "Only sandbox_prefix changed; fixture uses live=False; exercised code bytes unchanged.",
+      "identity_evidence": "UNCHANGED_EXERCISED_CODE.json"
+    },
+    "deployment": "PENDING actual final-source supervisor-host controls",
+    "no_nested_profile_attempt": true
+  },
+  "host_results": {
+    "core": {
+      "result": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/deployment-host-path-default-audit-001/result.json",
+      "result_sha256": "6901a8bd133ae20796d3fb320052b6431f0d83a26b734479b78f0c3aedab44e3",
+      "receipt_sha256": "bb6afd0f75abbcc125aea3e18995052b8b19e6c9ba9cd651d7b92fec1ed27e56",
+      "receipt_file_count": 50,
+      "all_receipt_hashes_match": true,
+      "elapsed_seconds": 31.40072400000645,
+      "budget_seconds": 120,
+      "ready": true,
+      "positive_operation_counts": {
+        "compile": 4,
+        "kernel_replay": 4,
+        "trusted_premise_inspection": 1
+      },
+      "all_operations_wrapped": true,
+      "real_type_mismatch_rejected": true,
+      "actual_missing_premise_rejected": true,
+      "exact_root_checked_but_independent_correspondence_unfulfilled": true,
+      "probes": [
+        {
+          "label": "echo",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "label": "lean_version",
+          "returncode": 0,
+          "termination": null
+        },
+        {
+          "label": "denied_read",
+          "returncode": 1,
+          "termination": null
+        },
+        {
+          "label": "denied_write",
+          "returncode": 1,
+          "termination": null
+        }
+      ]
+    },
+    "mathlib": {
+      "result": "/Users/sasha/math_gkm/.scratch/strategy-v2-20261017/.scratch/deployment-host-path-mathlib-audit-001/result.json",
+      "result_sha256": "0a3364427407784f4616defda5f900538742491002e4d646dff99d361ba11d10",
+      "receipt_sha256": "563fd1284ed233dc8a631535d5abf4a9514a22a0d234a534b15bb5860ac69cab",
+      "receipt_file_count": 32,
+      "all_receipt_hashes_match": true,
+      "elapsed_seconds": 44.37237316701794,
+      "budget_seconds": 300,
+      "ready": true,
+      "operation_counts": {
+        "compile": 6,
+        "kernel_replay": 6,
+        "trusted_premise_inspection": 1
+      },
+      "all_operations_wrapped": true,
+      "dependency_count": 10,
+      "ordered_dependency_identity_matches": true,
+      "required_neutral_root_and_probe_in_catalog": true
+    }
+  },
+  "important_pins": {
+    "machinery/study.py": "0e748072adf260365c0b1e1d9c19e8595bae26e41342fc2fdca4fd37348d2cb5",
+    "machinery/study_common.py": "4ce3900bde642af7f62f769008ec007db34d8c8d0bc1b24de3838abe0730d9b4",
+    "machinery/study_worker.py": "735f73f3780cd10d11e09d6620c2fee7f24164c8054d2fa6d6d68b055aca5f7f",
+    "machinery/study_transfer.py": "f8884e8b086ff5ed8c540404f71e236524ced2d047749a78003cc826a94bda9a",
+    "machinery/study_deployment.py": "060819f22cd9b2a42f7e781c3640dcc46aa24963d7aeafecc912b24b07cac59f",
+    "tests/test_sol_deployment.py": "4b7d5a4b871450139cf3e02e82eb46bdcf04222e6f36cb2cda33afa4ac181cda",
+    "tests/test_role_report_contract.py": "6e28133b52913c8ad5a6929cb3ff4388bd29f2fd46bb12b2de1c538e435efadc",
+    "docs/DEPLOYMENT_PREFLIGHT.md": "d691e51369b88907b40b2fea4e74f39bd62e9db87fbfef208f26861595215c04"
+  },
+  "disposition": "No necessary source/package correction found. Actual candidate-path neutral deployed core preflight and full-package catalog smoke passed, including negative gates. Installation must copy exact reviewed bytes; new frozen studies require new implementation binding and actual installed-path preflight. No old failed study should be resumed with changed implementation.",
+  "limitations": [
+    "Round8 full connected method timed out during additional terminal comparison;12 original connected postconditions separately passed. Round9 reuses only exact unchanged exercised code, not a fabricated full-method pass.",
+    "Neutral wrapper success is operational evidence on this host, not a theorem about OS confinement or whole-continuation refinement.",
+    "No mathematical campaign, model service behavior, old research result or proof progress was evaluated.",
+    "Builder docs pending-host wording belongs to its cutoff; this separate report binds later completed host evidence."
+  ]
+}

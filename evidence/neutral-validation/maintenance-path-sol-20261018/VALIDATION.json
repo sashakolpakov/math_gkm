@@ -1,0 +1,53 @@
+{
+  "phase": "construction",
+  "runs": [
+    {
+      "label": "focused",
+      "test_count": 21,
+      "argv": [
+        "/opt/homebrew/bin/python3",
+        "-m",
+        "unittest",
+        "-v",
+        "tests.test_sol_deployment",
+        "tests.test_role_report_contract"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "cap_seconds": 90,
+      "elapsed_seconds": 8.944090041972231,
+      "source_postcheck": true,
+      "log": "evidence/neutral-validation/maintenance-path-sol-20261018/focused.log",
+      "log_sha256": "f67ecc0c1f18243d2aebcb1a34abdacbe3caa014bd0549b39cd8338b035ecadd"
+    },
+    {
+      "label": "helper",
+      "test_count": 5,
+      "argv": [
+        "/opt/homebrew/bin/python3",
+        "evidence/neutral-validation/maintenance-path-sol-20261018/tools/test_host_smoke.py"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "cap_seconds": 30,
+      "elapsed_seconds": 0.1296925829956308,
+      "source_postcheck": true,
+      "log": "evidence/neutral-validation/maintenance-path-sol-20261018/helper.log",
+      "log_sha256": "c7d15771a4d2d8233be8038d4385740c0464618f13d28b918646aa8abf06da1f"
+    }
+  ],
+  "tested_final_source_manifest_sha256": "f2fb0812b1d0c10f91215487b3d9391fca74533572bbeffa6faaa9812a0038f0",
+  "pretest_equals_final": true,
+  "source_postcheck": true,
+  "connected_reuse": {
+    "assertions_passed_round8": 12,
+    "whole_driver_passed": false,
+    "whole_driver_timeout_seconds": 900,
+    "terminal_duplicate_comparison": "unfinished",
+    "rerun": false,
+    "reason": "Only sandbox_prefix changed; fixture uses live=False; exercised code bytes unchanged.",
+    "identity_evidence": "UNCHANGED_EXERCISED_CODE.json"
+  },
+  "deployment": "PENDING actual final-source supervisor-host controls",
+  "no_nested_profile_attempt": true
+}

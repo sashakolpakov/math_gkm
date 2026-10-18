@@ -12,7 +12,8 @@ import signal
 import subprocess
 import sys
 import time
-from .study_common import ROOT, PYTHON, read, write, inventory, sha, authorize_live
+from .study_common import (ROOT, PYTHON, read, write, inventory, sha, authorize_live,
+                           validate_model, REASONING_EFFORT, Invalid)
 from .worker import inline
 
 SCHEMA = {'type': 'object', 'additionalProperties': False, 'properties': {
@@ -43,6 +44,9 @@ def permissions(workspace, *, readonly=False, retained_sources=None):
 
 def command(job, spec):
     """Pure argv construction, exercised without live launch in tests."""
+    validate_model(spec['model'])
+    if spec.get('reasoning_effort', REASONING_EFFORT) != REASONING_EFFORT:
+        raise Invalid('study reasoning effort must remain high')
     workspace = Path(spec['workspace'])
     write(job/'permissions.json', permissions(workspace, readonly=spec['readonly'], retained_sources=spec.get('retained_sources')))
     write(job/'schema.json', SCHEMA)
@@ -55,7 +59,7 @@ def command(job, spec):
         '--skip-git-repo-check', '--json', '--color', 'never', '-C', str(workspace),
         '-c', 'default_permissions="cleanroom"',
         '-c', 'permissions.cleanroom='+inline(read(job/'permissions.json')),
-        '-c', 'web_search="live"', '-c', 'model_reasoning_effort="high"',
+        '-c', 'web_search="live"', '-c', 'model_reasoning_effort="'+REASONING_EFFORT+'"',
         '-c', 'shell_environment_policy.inherit="none"',
         '-c', 'shell_environment_policy.set='+inline(env),
         '--output-schema', str(job/'schema.json'), '--output-last-message', str(job/'final.json')]
@@ -161,7 +165,8 @@ def execute(job):
         'transport': spec['transport'], 'classification': 'SYNTHETIC FIXTURE; no mathematical progress' if spec['transport'] == 'fixture' else 'live experimental observation',
         'outcome': error or 'completed', 'payload': payload, 'usage_raw': usage,
         'provider': 'deterministic_fixture' if spec['transport'] == 'fixture' else spec['provider'],
-        'model': spec['model'], 'started': wall_start, 'finished': time.time(),
+        'model': spec['model'], 'reasoning_effort': REASONING_EFFORT,
+        'started': wall_start, 'finished': time.time(),
         'elapsed_seconds': time.monotonic()-start, 'usage_semantics': spec['usage_semantics'],
         'money': None, 'normalized_tokens': None, 'mathematical_resolution': False,
         'before': before, 'after': after, 'returncode': p.returncode if p else None}

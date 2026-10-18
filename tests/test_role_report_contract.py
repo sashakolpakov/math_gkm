@@ -143,7 +143,8 @@ class RoleReportContract(unittest.TestCase):
             arm.s['calls'] += 1
             arm.s['meta_calls'] += 1
             arm.s.setdefault('counted_jobs', []).append(key)
-            write(job / 'request.json', {**req, 'request_id': key})
+            write(job / 'request.json', {**req, 'request_id': key,
+                  'model': arm.p['model'], 'reasoning_effort': study.REASONING_EFFORT})
             write(job / 'receipt.json', receipt)
             arm.consume(job, receipt)
             before = {k: copy.deepcopy(arm.s.get(k)) for k in

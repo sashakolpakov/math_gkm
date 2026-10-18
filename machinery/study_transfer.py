@@ -76,12 +76,25 @@ def sandbox_prefix(directory, dependencies):
     if not Path('/usr/bin/sandbox-exec').exists():
         raise Invalid('live validation requires reviewed OS sandbox adapter')
     import json
-    read_roots = [directory, LEAN.parent.parent, Path('/System'), Path('/usr'), Path('/bin'),
+    toolchain = LEAN.resolve().parent.parent
+    read_roots = [directory, toolchain, Path('/System'), Path('/usr'), Path('/bin'),
                   Path('/sbin'), Path('/Library'), Path('/opt/homebrew')]
     read_roots += [p.resolve() for p in dependencies]
     profile = '(version 1)\n(deny default)\n(allow process* sysctl-read mach-lookup)\n'
     profile += '(allow file-read* ' + ' '.join('(subpath '+json.dumps(str(p))+')' for p in read_roots) + ')\n'
     profile += '(allow file-read* (literal "/dev/null") (literal "/dev/urandom"))\n'
+    # macOS dyld needs the root directory itself, not its descendants. Lean also
+    # resolves its application path, source cwd and lexical LEAN_PATH symlinks.
+    # Metadata literals permit traversal without recursive ancestor content reads.
+    profile += '(allow file-read-data (literal "/"))\n'
+    metadata = list(reversed(toolchain.parents))
+    metadata.extend(reversed(directory.absolute().parents))
+    for dependency in dependencies:
+        lexical = dependency.absolute()  # Preserve approved LEAN_PATH symlink chains.
+        metadata.extend(reversed(lexical.parents))
+        metadata.append(lexical)
+    profile += '(allow file-read-metadata ' + ' '.join(
+        '(literal '+json.dumps(str(p))+')' for p in dict.fromkeys(metadata)) + ')\n'
     profile += '(allow file-write* (subpath '+json.dumps(str(directory))+') (literal "/dev/null"))\n'
     path = directory/'validator.sb'
     path.write_text(profile)
@@ -148,6 +161,7 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
     result = {'task_id': task['id'], 'task_hash': digest(task), 'checked': False,
         'source_sha256': task['source_sha256'], 'scope': task['scope'], 'hypotheses': task['hypotheses'],
         'budget_seconds': seconds, 'checks': [], 'status': 'invalid_comparison',
+        'validation_mode': 'deployed_sandbox' if live else 'unwrapped_fixture',
         'required_constants': task['required_constants']}
     try:
         contract = contract or read(workspace/'contract.json')
@@ -203,6 +217,9 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
         env['TMPDIR'] = str(directory)
         prefix = sandbox_prefix(directory, deps) if live else []
         binaries = {str(p): sha(p) for p in (LEAN, CHECKER)}
+        result.update(binary_hashes=binaries, launch_environment=env,
+                      dependency_paths=list(map(str, deps)),
+                      sandbox_profile_sha256=sha(directory/'validator.sb') if live else None)
         for operation in ('compile', 'kernel_replay'):
             for module in order + ['StudyCheck']:
                 if stop():
@@ -217,6 +234,8 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
                         if operation == 'compile' else [str(CHECKER), module])
                 record = run(prefix+argv, cwd=source, env=env, timeout=min(180, remaining), output_bytes=1048576)
                 result['checks'].append({'module': module, 'operation': operation, **record})
+                if live and (record['returncode'] < 0 or 'sandbox-exec:' in record['stderr']):
+                    result.update(status='validator_infrastructure_failure', infrastructure_failure=True)
                 write(directory/'result.json', result)
                 if record['returncode'] or record['termination']:
                     raise Invalid('failure within compilation/replay budget: '+module)
@@ -226,6 +245,8 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
         inspected = run(prefix+[str(LEAN), '-j', '1', 'StudyInspect.lean'], cwd=source, env=env,
                         timeout=min(180, seconds-(time.monotonic()-start)), output_bytes=1048576)
         result['checks'].append({'operation': 'trusted_premise_inspection', **inspected})
+        if live and (inspected['returncode'] < 0 or 'sandbox-exec:' in inspected['stderr']):
+            result.update(status='validator_infrastructure_failure', infrastructure_failure=True)
         result['declarations'] = proof_audit.parse_artifact(inspected, declarations, source/'declarations.json')
         result['declaration_artifact_sha256'] = sha(source/'declarations.json')
         if objects != {str(p.relative_to(build)): sha(p) for p in build.rglob('*') if p.is_file()}:
@@ -234,6 +255,8 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
             raise Invalid('validator or staged source changed')
         if binaries != {str(p): sha(p) for p in (LEAN, CHECKER)}:
             raise Invalid('validator binaries changed')
+        if live and sha(directory/'validator.sb') != result['sandbox_profile_sha256']:
+            raise Invalid('validator sandbox profile changed')
         if inventory(workspace) != before:
             raise Invalid('solver changed during check')
         versions = proof_audit.used_versions(result['declarations'], frozen_files)
