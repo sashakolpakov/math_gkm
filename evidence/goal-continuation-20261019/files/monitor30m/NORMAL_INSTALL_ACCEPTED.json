@@ -1,0 +1,49 @@
+{
+  "accepted": true,
+  "actual_queue_calls_in_install": 0,
+  "commands": [
+    {
+      "argv": [
+        "/bin/launchctl",
+        "bootstrap",
+        "gui/501",
+        "/Users/sasha/Library/LaunchAgents/org.sasha.math-gkm.monitor017.plist"
+      ],
+      "returncode": 0,
+      "stderr_bytes": 0,
+      "stdout_bytes": 0
+    },
+    {
+      "argv": [
+        "/bin/launchctl",
+        "print",
+        "gui/501/org.sasha.math-gkm.monitor017"
+      ],
+      "returncode": 0,
+      "stderr_bytes": 0,
+      "stdout_bytes": 1233
+    },
+    {
+      "argv": [
+        "/bin/launchctl",
+        "bootout",
+        "gui/501/org.sasha.math-gkm.monitor017-idle-validation"
+      ],
+      "returncode": 0,
+      "stderr_bytes": 0,
+      "stdout_bytes": 0
+    }
+  ],
+  "helper_sha256": "55e1c96f45052aff8c23f95d6e59f6c4506d8aefe1d0df3c0dc55e4ed9d11cc9",
+  "idle_delivery_review_sha256": "27cf46e7241ba71d093ae7c040bb849ea37da729410758dd94019d3f4c3a7a83",
+  "installed_at": 1792418616.631694,
+  "label": "org.sasha.math-gkm.monitor017",
+  "normal_loaded": true,
+  "normal_plist_sha256": "59887c185697f33833148ad766c193f8e08931122cf077a10cc2c6276a93e882",
+  "research_runtime_changed": false,
+  "schema": "math-gkm.monitor017.normal-install.v1",
+  "source_proposal_manifest_sha256": "d0af5428e25bd6f1c423c711e01f82566fa6835eba3cc31fa5f59a22358f47f9",
+  "start_interval_seconds": 1800,
+  "temporary_validation_home_plist_removed": true,
+  "temporary_validation_job_booted_out": true
+}
