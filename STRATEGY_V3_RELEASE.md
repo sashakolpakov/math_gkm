@@ -71,7 +71,7 @@ is used.
 
 ## Acceptance evidence and status
 
-Current installed source checkpoint **015** is bound by SHA256
+Previous installed source checkpoint **015** is bound by SHA256
 `bfec46aa82823a1424ee4ae1ea3c8facb8c06f9926db8adb3bb4cd16262780a2`.
 All 369 frozen/live source files were independently checked. The exact
 20-file overlay preserves every Lean source, the historical aggregate and
@@ -170,34 +170,43 @@ are not a hard OOM guarantee. No worker can raise fixed caps or lower admission
 floors. The successful manual 006 preflight and its later failed study freeze
 remain distinct historical observations, not relabeled 007 passes.
 
-## Fresh comparison
+## Adapter repair and clean restart
 
-The new 19 October comparison uses study `paired-v3-live-20261019-study-0005`.
-Its official setup passed in about 398 seconds, including the deployed Lean
-preflight. Both arms start from the same nine clean seed
-files, with no pilot proofs or agendas. The original two-task curation, model
-`gpt-6.1-sol` with high reasoning, protocol, budgets and order are unchanged.
-The original pilot stays stopped and its reference arm remains untouched.
-The supervising session maintains and audits the machinery; separate external
-proposers choose all mathematical work.
+The previous paired comparison was invalidated by an adapter report-format
+mismatch. At the user's request, both invalid runs and their publication commits
+were removed rather than retained as research evidence. No performance winner
+can be inferred from that pair. Earlier independent pilot proofs remain available.
 
-The arm order was recorded before mathematical outcomes: combined exploration,
-then exploitation. Both arms use identical clean definitions, pins, model,
-admission rules and upper allowances. Common curation/setup costs are separate;
-actual costs may differ. Provider drift and the single sequential pair limit
-causal conclusions.
+Installed checkpoint **017** accepts the documented canonical report and the
+unambiguous legacy report, including a task named `solutions`. It rejects
+malformed or ambiguous reports without changing the mathematical admission
+conditions. Its 73-file implementation identity is
+`01a5f6e6644d8b5ebbb199efba27bef2f65cf0dfe4e0413d48742d4d4effac89`.
+Seven focused protocol tests passed. A separate live gpt-6.1-sol proposer then
+wrote a neutral identity proof which passed ordinary Lean compilation, independent
+kernel replay and premise inspection through the actual adapter intake. An
+explicit decline remained an unproved non-solution. These are engineering
+controls, not new Markov results. The [017 reproduction packet](evidence/adapter017-restart-validation-20261019/README.md)
+records the exact sources, failures, tests and live evidence.
 
-For each accepted theorem the report must give its exact Lean proposition and
-English meaning, quantified inputs, all conditions, checked premise closure and
-actual later use. Structural identities, conditional reductions, unbounded
-log-concavity families and finite cases remain distinguishable observations,
-without imposing a universal numeric ranking. Exact root completion additionally
-requires an independent source/English correspondence audit.
+The replacement pair uses a new independent curation and identical clean seeds.
+Separate external gpt-6.1-sol proposers with high reasoning choose all mathematical
+work. Neither arm receives previous discoveries or the supervisor's mathematical
+advice. Both retain the original Markov goal, fixed model, admission rules and
+resource caps. The generic preference favors reusable statements uniform over
+unbounded families. Complexity remains audit-only.
 
-Report actual exploration commitments, executed outcomes, consequent decisions,
-checked transfer, delayed reuse and strategy changes. Optional exploration may
-not occur; that absence is a result. A timeout is not a mathematical refutation.
-Neutral acceptance tests establish no new Markov theorem.
+The recorded order is combined exploration, then the reference arm, with one
+heavy process at a time. Deployment and common setup costs are recorded separately.
+Research reports compare exact quantified scope, conditions, actual proof reuse,
+research time and elapsed time at matching completed researcher roles. Counting
+lemmas does not establish progress toward the general conjecture. One sequential
+pair and possible provider drift limit any causal conclusion.
+
+The retained early pilot reached a broader log-concavity family than the discarded
+pair at a comparable amount of researcher time. This motivates measuring scope
+and overhead carefully; it does not establish a causal ranking of the harnesses.
+The general arbitrary-path conjecture remains open.
 
 ## Reproduction and preservation
 

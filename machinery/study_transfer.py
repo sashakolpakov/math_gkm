@@ -19,6 +19,7 @@ from .trust import LEAN, CHECKER, CORE, environment
 from .process import run
 from .completion import NAME, ALLOWED, without_comments
 from . import proof_audit
+from .adapter_protocol import intake, AdapterProtocolError
 
 def dependency_paths(workspace):
     return [CORE] + [p/'.lake/build/lib/lean' for p in sorted((workspace/'.lake/packages').iterdir())]
@@ -355,6 +356,43 @@ def evaluate_pair(arm, before, after, key, *, policy_comparison=False):
     return _evaluate_pair(arm, before, after, key, policy_comparison=policy_comparison)
 
 
+def adapter_checks(arm, receipt, tasks, bound_tasks, directory, side, ws, key, binding, manifest, bm, am):
+    """Submission intake only; existing validation and reservation stay authoritative."""
+    intake_error = None
+    try:
+        payload, intake_provenance = intake(receipt, tasks)
+        solutions = payload['solutions']
+    except AdapterProtocolError as exc:
+        intake_error = exc.code
+        intake_provenance = None
+    checks = []
+    for task in bound_tasks:
+        target = directory/side/task['id']
+        if intake_error:
+            checked = {'checked': False, 'status': 'adapter_protocol_error',
+                       'protocol_error': intake_error, 'elapsed_seconds': 0}
+        elif (target/'result.json').exists():
+            checked = read(target/'result.json',max_bytes=64*1024**2)
+        else:
+            # Journal reservation before compiler effects. Recovery charges the
+            # full reservation if interrupted, never silently repeats a check.
+            journal = directory/'reservations'/f'{side}-{task["id"]}.json'
+            if target.exists() or journal.exists():
+                checked = {'checked': False, 'task_id': task['id'], 'status': 'interrupted_validation_not_replayed',
+                           'elapsed_seconds': 0, 'component_use_checked': False}
+                write(target/'result.json', checked)
+            else:
+                arm.reserve('evaluation-'+key+'-'+side+'-'+task['id'], arm.p['validation_seconds'])
+                write(journal, {'binding': binding, 'task_hash': digest(task), 'side': side})
+                checked = check_task(ws, task, solutions[task['id']], target, arm.p['validation_seconds'],
+                    live=arm.p['transport'] == 'live', stop=arm.stopped, frozen_files=manifest['files'],
+                    transfer_modules=[name[:-5].replace('/', '.') for name, hashed in am['files'].items()
+                        if name.endswith('.lean') and name.startswith('MathGKM/') and bm['files'].get(name) != hashed])
+                # Reserved budget stays charged; measured costs remain separate.
+        checks.append(checked)
+    return checks, intake_provenance, intake_error
+
+
 def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
     directory = arm.root/'evaluations'/key
     suite = read(arm.study/'evaluation/suite.json')
@@ -418,30 +456,10 @@ def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
         req = {'role': 'adapter', 'tasks': tasks, 'policy': manifest['policy'],
                'solver_binding': manifest['binding'], 'purpose': 'withheld structural obligation; no training feedback'}
         receipt = arm.call(f'eval-{key}-{side}', 'adapter', req, ws, False, arm.p['adaptation_seconds'])
-        solutions = receipt.get('payload', {}).get('solutions', {}) if receipt['outcome'] == 'completed' else {}
-        checks = []
-        for task in bound_tasks:
-            target = directory/side/task['id']
-            if (target/'result.json').exists():
-                checked = read(target/'result.json',max_bytes=64*1024**2)
-            else:
-                # Journal reservation before compiler effects. Recovery charges the
-                # full reservation if interrupted, never silently repeats a check.
-                journal = directory/'reservations'/f'{side}-{task["id"]}.json'
-                if target.exists() or journal.exists():
-                    checked = {'checked': False, 'task_id': task['id'], 'status': 'interrupted_validation_not_replayed',
-                               'elapsed_seconds': 0, 'component_use_checked': False}
-                    write(target/'result.json', checked)
-                else:
-                    arm.reserve('evaluation-'+key+'-'+side+'-'+task['id'], arm.p['validation_seconds'])
-                    write(journal, {'binding': binding, 'task_hash': digest(task), 'side': side})
-                    checked = check_task(ws, task, solutions.get(task['id']), target, arm.p['validation_seconds'],
-                        live=arm.p['transport'] == 'live', stop=arm.stopped, frozen_files=manifest['files'],
-                        transfer_modules=[name[:-5].replace('/', '.') for name, hashed in am['files'].items()
-                            if name.endswith('.lean') and name.startswith('MathGKM/') and bm['files'].get(name) != hashed])
-                    # Reserved budget stays charged; measured costs remain separate.
-            checks.append(checked)
-        sides[side] = {'adapter_receipt': receipt, 'checks': checks}
+        checks, intake_provenance, intake_error = adapter_checks(
+            arm, receipt, tasks, bound_tasks, directory, side, ws, key, binding, manifest, bm, am)
+        sides[side] = {'adapter_receipt': receipt, 'checks': checks,
+                       'adapter_intake': intake_provenance, 'adapter_protocol_error': intake_error}
     old, new = sides['before']['checks'], sides['after']['checks']
     valid = all(c.get('valid_attempt', False) for c in old+new) and all(
         side['adapter_receipt']['outcome'] == 'completed' for side in sides.values())

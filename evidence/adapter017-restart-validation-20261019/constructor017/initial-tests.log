@@ -1,0 +1,32 @@
+test_actual_prompt_worker_receipt_consumer (test_adapter_protocol016.ProtocolTests.test_actual_prompt_worker_receipt_consumer) ... ok
+test_direct_dictionary_and_declines (test_adapter_protocol016.ProtocolTests.test_direct_dictionary_and_declines) ... ok
+test_duplicates_envelope_and_bounded_errors (test_adapter_protocol016.ProtocolTests.test_duplicates_envelope_and_bounded_errors) ... ok
+test_invalid_shapes_never_call_checker (test_adapter_protocol016.ProtocolTests.test_invalid_shapes_never_call_checker) ... ok
+test_other_role_decoding_unchanged (test_adapter_protocol016.ProtocolTests.test_other_role_decoding_unchanged) ... ok
+test_solutions_task_id_forms_and_provenance (test_adapter_protocol016.ProtocolTests.test_solutions_task_id_forms_and_provenance) ... ok
+test_solutions_task_id_invalid_forms_never_call_checker (test_adapter_protocol016.ProtocolTests.test_solutions_task_id_invalid_forms_never_call_checker) ... 
+  test_solutions_task_id_invalid_forms_never_call_checker (test_adapter_protocol016.ProtocolTests.test_solutions_task_id_invalid_forms_never_call_checker) (ids=['solutions'], value={'solutions': {'solutions': {'module': 'Opaque.Proposal', 'term': '  opaque proposal α\n\t', 'interface_term': 'opaque interface\r\n', 'transport_term': 'opaque transport \\ " '}}}) ... FAIL
+  test_solutions_task_id_invalid_forms_never_call_checker (test_adapter_protocol016.ProtocolTests.test_solutions_task_id_invalid_forms_never_call_checker) (ids=['solutions'], value={'solutions': {'solutions': {'module': 'Opaque.Proposal', 'term': '  opaque proposal α\n\t', 'interface_term': 'opaque interface\r\n', 'transport_term': 'opaque transport \\ " '}}}) ... FAIL
+
+======================================================================
+FAIL: test_solutions_task_id_invalid_forms_never_call_checker (test_adapter_protocol016.ProtocolTests.test_solutions_task_id_invalid_forms_never_call_checker) (ids=['solutions'], value={'solutions': {'solutions': {'module': 'Opaque.Proposal', 'term': '  opaque proposal α\n\t', 'interface_term': 'opaque interface\r\n', 'transport_term': 'opaque transport \\ " '}}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/math_gkm_adapter_protocol016_candidate/tests/test_adapter_protocol016.py", line 251, in test_solutions_task_id_invalid_forms_never_call_checker
+    self.assertIsNotNone(error)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+AssertionError: unexpectedly None
+
+======================================================================
+FAIL: test_solutions_task_id_invalid_forms_never_call_checker (test_adapter_protocol016.ProtocolTests.test_solutions_task_id_invalid_forms_never_call_checker) (ids=['solutions'], value={'solutions': {'solutions': {'module': 'Opaque.Proposal', 'term': '  opaque proposal α\n\t', 'interface_term': 'opaque interface\r\n', 'transport_term': 'opaque transport \\ " '}}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/math_gkm_adapter_protocol016_candidate/tests/test_adapter_protocol016.py", line 251, in test_solutions_task_id_invalid_forms_never_call_checker
+    self.assertIsNotNone(error)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+AssertionError: unexpectedly None
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.048s
+
+FAILED (failures=2)

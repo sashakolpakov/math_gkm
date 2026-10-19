@@ -1,0 +1,1 @@
+Neutral adapter protocol engineering smoke only. No research campaign. Preserve the supplied root and pinned dependencies. Write a new MathGKM.AdapterLiveProposal017 source module for the identity proposal. Do not use Git, downloads, other project sources, or old case material.

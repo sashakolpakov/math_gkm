@@ -1,0 +1,15 @@
+{
+  "changed_vs016": [
+    "machinery/adapter_protocol.py",
+    "tests/test_adapter_protocol016.py"
+  ],
+  "findings": [],
+  "historical_constructor": "120-second bounded invocation timed out; initial seven-method run had two bad-negative-fixture failures. These statuses stay failed. Final-current seven-method rerun not executed by reviewer and still required.",
+  "manifest_sha256": "84626d42d8cff47cf739b559896192846eacd604274c8f8a5236b268bb2cac76",
+  "review": "Removed reserved solutions ID ban. Canonical and legacy structural candidates are separately fully validated against exact IDs and complete entry schema; accepts exactly one valid candidate and rejects none/multiple. Existing byte-preserving strings and hashes, duplicate-key rejection,4MiB parsing limit, worker/prompt/consumer wiring,proof/context/premise/validity and resource/process modules remain unchanged. Final negative fixture no longer labels a valid sole-ID canonical form invalid.",
+  "reviewer_execution": "Read-only source/hashes only; no tests,Lean,model,provider or realcase replay; no edits/integration.",
+  "schema": "protocol017-independent-source-scope.v1",
+  "source_count": 62,
+  "utc": "2026-10-19T11:53:09.308772+00:00",
+  "verdict": "PASS for seven bounded synthetic methods and parent-owned active-copy preparation after their current-source PASS; not deployment/campaign acceptance"
+}

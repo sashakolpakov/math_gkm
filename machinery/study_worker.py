@@ -22,6 +22,33 @@ SCHEMA = {'type': 'object', 'additionalProperties': False, 'properties': {
     'request_id': {'type': 'string'}, 'payload_json': {'type': 'string'}},
     'required': ['request_id', 'payload_json']}
 
+def decode_report(job, spec):
+    """Strict adapter decoding; other roles retain their existing parsing."""
+    if spec['role'] == 'adapter':
+        from .adapter_protocol import decode_final, AdapterProtocolError
+        try:
+            limit = min(spec['output_bytes'], 4*1024**2)
+            with (job/'final.json').open('rb') as source:
+                raw = source.read(limit + 1)
+            if len(raw) > limit:
+                raise AdapterProtocolError('input_too_large')
+            request = read(job/'request.json')
+            return decode_final(raw, spec['request_id'], [t['id'] for t in request['tasks']])
+        except (OSError, KeyError, TypeError, ValueError, RecursionError) as exc:
+            if isinstance(exc, AdapterProtocolError):
+                raise
+            raise AdapterProtocolError('invalid_artifact') from None
+    if (job/'final.json').stat().st_size > min(spec['output_bytes'],4*1024**2):
+        raise ValueError('final payload exceeds bounded parser capacity')
+    final = read(job/'final.json')
+    if final['request_id'] != spec['request_id']:
+        raise ValueError('request mismatch')
+    payload = json.loads(final['payload_json'])
+    if not isinstance(payload, dict):
+        raise ValueError('report must be object')
+    return payload, None
+
+
 def permissions(workspace, *, readonly=False, retained_sources=None):
     profile = read(ROOT/'config/study-base-permissions.json')
     fs = profile['filesystem']
@@ -167,16 +194,9 @@ def _execute(job, cap):
             p.stdout.close()
             p.stderr.close()
             if cleanup_errors: cleanup_hold('; '.join(cleanup_errors),guard.owned if guard else {})
-    payload, usage = None, []
+    payload, usage, adapter_provenance = None, [], None
     try:
-        if (job/'final.json').stat().st_size > min(spec['output_bytes'],4*1024**2):
-            raise ValueError('final payload exceeds bounded parser capacity')
-        final = read(job/'final.json')
-        if final['request_id'] != spec['request_id']:
-            raise ValueError('request mismatch')
-        payload = json.loads(final['payload_json'])
-        if not isinstance(payload, dict):
-            raise ValueError('report must be object')
+        payload, adapter_provenance = decode_report(job, spec)
     except (OSError, ValueError, KeyError, TypeError) as exc:
         error = error or 'invalid_report: '+str(exc)
     if not p or p.returncode:
@@ -200,6 +220,8 @@ def _execute(job, cap):
         'elapsed_seconds': time.monotonic()-start, 'usage_semantics': spec['usage_semantics'],
         'money': None, 'normalized_tokens': None, 'mathematical_resolution': False,
         'before': before, 'after': after, 'returncode': p.returncode if p else None}
+    if spec['role'] == 'adapter':
+        result['adapter_protocol'] = adapter_provenance
     result['resources'] = guard.receipt() if guard else {'monitor': 'not started'}
     write(job/'receipt.json', result)
 

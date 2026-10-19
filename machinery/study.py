@@ -445,6 +445,17 @@ class Arm:
         prompt_req = {k: v for k, v in req.items() if k not in ('model', 'reasoning_effort')}
         (job/'prompt.txt').write_text(prompt(prompt_req) if role in ('proposer', 'researcher', 'reviewer', 'selector') else
             policy.COMMON + '\nAdapt the frozen solver to these exact obligations. Do not change hypotheses or source. '
+            'Return the existing outer JSON envelope {"request_id":"<request_id from request>",'
+            '"payload_json":"<JSON-encoded inner object>"}. Canonical INNER: '
+            '{"solutions":{"<task_id>":entry}} with exactly every requested task id. '
+            'Each proof entry has exactly module, term, interface_term and transport_term, all nonempty '
+            'strings; module must be a dotted module identifier. Explicit decline entry: '
+            '{"status":"bounded_non_solution","reason":"<nonempty reason>"}. '
+            'No extra/duplicate keys, mixed forms or omitted tasks. Exact legacy direct task-id maps '
+            'are supported with identical entry checks. Shape validity does not establish mathematical '
+            'acceptance; ordinary proof/context/premise checks remain authoritative. '
+            'No independent test answers are supplied.\n' + canonical(prompt_req) if role == 'adapter' else
+            policy.COMMON + '\nAdapt the frozen solver to these exact obligations. Do not change hypotheses or source. '
             'Return solutions keyed by task id with module, term, interface_term and transport_term, or '
             '{status:"bounded_non_solution",reason:string} for a valid bounded attempt without a solution. '
             'No independent test answers are supplied.\n' + canonical(prompt_req))
