@@ -1,0 +1,301 @@
+{
+  "admissions": [
+    {
+      "arm": "exploration",
+      "english_scope_and_conditions": "For every bivariate integer-polynomial family Q satisfying the three specified seeds at 0/1, 1/1 and 1/2 and the complete FareyNumeratorRecurrence predicate, and every natural coprime pair 0<a<=b, either a=b=1 and Q(a,b)=U+V, or some finite Boolean path has middle label (a,b) and middle polynomial Q(a,b). The recurrence hypothesis applies to every adjacent determinant +/-1 pair with positive denominators and labels in [0,1], not only an enumerated finite sample.",
+      "exact_formal_claim": "∀ Q : ℕ → ℕ → MathGKM.Markov.BiPoly, Q 0 1 = 1 → Q 1 1 = MathGKM.Markov.U + MathGKM.Markov.V → Q 1 2 = (MathGKM.Markov.U + MathGKM.Markov.V)^2 + MathGKM.Markov.U → MathGKM.Markov.FareyNumeratorRecurrence Q → ∀ a b : ℕ, 0 < a → a ≤ b → Nat.Coprime a b → ((a = 1 ∧ b = 1) ∧ Q a b = MathGKM.Markov.U + MathGKM.Markov.V) ∨ ∃ path : List Bool, (MathGKM.Markov.frame path).mid.a = a ∧ (MathGKM.Markov.frame path).mid.b = b ∧ Q a b = (MathGKM.Markov.frame path).mid.p",
+      "id": "markov-r0000-conditional-family-coverage-v1",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [],
+      "used_accepted_declarations": []
+    },
+    {
+      "arm": "exploration",
+      "english_scope_and_conditions": "For every finite Boolean path, the middle label is the componentwise sum of the two endpoint labels; endpoint denominators are positive, endpoint numerators do not exceed denominators, and their oriented determinant is one. The middle denominator is positive and its numerator does not exceed it. All three numerator/denominator pairs are coprime.",
+      "exact_formal_claim": "∀ path : List Bool, MathGKM.Markov.FrameInvariant (MathGKM.Markov.frame path) ∧ (0 < (MathGKM.Markov.frame path).mid.b ∧ (MathGKM.Markov.frame path).mid.a ≤ (MathGKM.Markov.frame path).mid.b) ∧ Nat.Coprime (MathGKM.Markov.frame path).lo.a (MathGKM.Markov.frame path).lo.b ∧ Nat.Coprime (MathGKM.Markov.frame path).mid.a (MathGKM.Markov.frame path).mid.b ∧ Nat.Coprime (MathGKM.Markov.frame path).hi.a (MathGKM.Markov.frame path).hi.b",
+      "id": "markov-r0000-path-arithmetic-v1",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [],
+      "used_accepted_declarations": []
+    },
+    {
+      "arm": "exploration",
+      "english_scope_and_conditions": "Every natural coprime pair 0<a<=b is either (1,1) or the middle label of some finite Boolean path. Existence is uniform without a denominator bound; uniqueness is not asserted by this admission.",
+      "exact_formal_claim": "∀ a b : ℕ, 0 < a → a ≤ b → Nat.Coprime a b → (a = 1 ∧ b = 1) ∨ ∃ path : List Bool, (MathGKM.Markov.frame path).mid.a = a ∧ (MathGKM.Markov.frame path).mid.b = b",
+      "id": "markov-r0000-rational-coverage-v1",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [],
+      "used_accepted_declarations": []
+    },
+    {
+      "arm": "exploration",
+      "english_scope_and_conditions": "For any field K, injective ring homomorphism phi from the bivariate integer polynomial ring into K, nonzero x,y with phi(U)=x^2 and phi(V)=y^2, a field-valued family M satisfying AffineLaurentFamily x y M, and polynomial family Q normalized by phi(Q(a,b))=x^(a-1)*y^(b-1)*M(a,b) for ALL natural a,b (integer exponents), every natural coprime 0<a<=b is represented by the endpoint (1,1), Q=U+V, or by a path with exactly that middle label and polynomial Q(a,b). The injectivity, nonzero conditions, seeds, recurrence, and global normalization are hypotheses, not consequences or omitted source-identification obligations.",
+      "exact_formal_claim": "∀ (K : Type) [Field K] (φ : MathGKM.Markov.BiPoly →+* K), Function.Injective φ → ∀ x y : K, x ≠ 0 → y ≠ 0 → φ MathGKM.Markov.U = x^2 → φ MathGKM.Markov.V = y^2 → ∀ (M : ℕ → ℕ → K) (Q : ℕ → ℕ → MathGKM.Markov.BiPoly), MathGKM.Markov.AffineLaurentFamily x y M → (∀ a b, φ (Q a b) = MathGKM.Markov.affineDen x y a b * M a b) → ∀ a b : ℕ, 0<a → a≤b → Nat.Coprime a b → ((a=1 ∧ b=1) ∧ Q a b = MathGKM.Markov.U+MathGKM.Markov.V) ∨ ∃ path : List Bool, (MathGKM.Markov.frame path).mid.a=a ∧ (MathGKM.Markov.frame path).mid.b=b ∧ Q a b = (MathGKM.Markov.frame path).mid.p",
+      "id": "markov-r0001-affine-source-conditional-coverage-v1",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [
+        "markov-r0000-conditional-family-coverage-v1"
+      ],
+      "used_accepted_declarations": [
+        "Accepted622fa1ce4c6e5c6585deaf83.interface",
+        "Accepted622fa1ce4c6e5c6585deaf83.obligation"
+      ]
+    },
+    {
+      "arm": "exploration",
+      "english_scope_and_conditions": "For every finite Boolean path, the square-variable embedding of its middle bivariate polynomial equals x^(a-1)*y^(b-1) times the middle entry of the separately defined affine Laurent path frame, for the formal fraction-field variables x=affineX and y=affineY and that path middle label (a,b). It is an unconditional identity of these defined path constructions, not identification with an arbitrary independent global source family.",
+      "exact_formal_claim": "∀ path : List Bool, MathGKM.Markov.squareEmbedding (MathGKM.Markov.frame path).mid.p = MathGKM.Markov.affineDen MathGKM.Markov.affineX MathGKM.Markov.affineY (MathGKM.Markov.frame path).mid.a (MathGKM.Markov.frame path).mid.b * (MathGKM.Markov.affineLaurentFrame MathGKM.Markov.affineX MathGKM.Markov.affineY path).mid",
+      "id": "markov-r0001-source-path-polynomiality-v1",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [],
+      "used_accepted_declarations": []
+    },
+    {
+      "arm": "exploration",
+      "english_scope_and_conditions": "For every finite Boolean path with middle label (a,b) and polynomial P, its homogeneous lift at natural degree a+b-1, evaluated through squareEmbedding with homogenizing variable one, equals x^(a-1)*y^(b-1) times the middle affine Laurent path entry in the formal fraction field. This joins the admitted path identity and homogeneous specialization; it remains a path-construction identity.",
+      "exact_formal_claim": "∀ path : List Bool, let m := (MathGKM.Markov.frame path).mid; (MathGKM.Markov.homogeneousLift m.p (m.a+m.b-1)).eval₂ MathGKM.Markov.squareEmbedding 1 = MathGKM.Markov.affineDen MathGKM.Markov.affineX MathGKM.Markov.affineY m.a m.b * (MathGKM.Markov.affineLaurentFrame MathGKM.Markov.affineX MathGKM.Markov.affineY path).mid",
+      "id": "markov-r0002-homogeneous-affine-path-v1",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [
+        "markov-r0001-source-path-polynomiality-v1"
+      ],
+      "used_accepted_declarations": [
+        "Accepted3f4facbfb80089ba12c09144.interface",
+        "Accepted3f4facbfb80089ba12c09144.obligation"
+      ]
+    },
+    {
+      "arm": "exploration",
+      "english_scope_and_conditions": "For every bivariate integer polynomial P and natural d, provided all coefficients above total degree d vanish, homogeneousLift(P,d) has all nonzero terms of total degree d, specializes back to P, has coefficient at (k,i,j) equal to coeff(P,i,j) exactly when k+i+j=d and zero otherwise, recovers coeff(P,i,j) at k=d-i-j using natural subtraction, and is the unique homogeneous polynomial of degree d with that specialization. The support hypothesis controls coefficients beyond the bound; homogeneity permits the zero polynomial and does not assert a nonzero exact degree.",
+      "exact_formal_claim": "∀ (P : MathGKM.Markov.BiPoly) (d : ℕ), (∀ i j, d < i+j → MathGKM.Markov.coeff P i j = 0) → MathGKM.Markov.TriHomogeneous (MathGKM.Markov.homogeneousLift P d) d ∧ MathGKM.Markov.dehomogenize (MathGKM.Markov.homogeneousLift P d) = P ∧ (∀ k i j, MathGKM.Markov.triCoeff (MathGKM.Markov.homogeneousLift P d) k i j = if k+i+j = d then MathGKM.Markov.coeff P i j else 0) ∧ (∀ i j, MathGKM.Markov.triCoeff (MathGKM.Markov.homogeneousLift P d) (d-i-j) i j = MathGKM.Markov.coeff P i j) ∧ (∀ F : MathGKM.Markov.TriPoly, MathGKM.Markov.TriHomogeneous F d → MathGKM.Markov.dehomogenize F = P → F = MathGKM.Markov.homogeneousLift P d)",
+      "id": "markov-r0002-homogeneous-lift-laws-v1",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [],
+      "used_accepted_declarations": []
+    },
+    {
+      "arm": "exploration",
+      "english_scope_and_conditions": "For every finite Boolean path and each of its lower, middle and upper entries L=(a,b,P), every coefficient with i+j>a+b-1 is zero. All indices and label components are natural numbers; no fixed numerator, denominator, or asymptotic threshold is imposed.",
+      "exact_formal_claim": "∀ path : List Bool, (∀ i j, (MathGKM.Markov.frame path).lo.a + (MathGKM.Markov.frame path).lo.b - 1 < i+j → MathGKM.Markov.coeff (MathGKM.Markov.frame path).lo.p i j = 0) ∧ (∀ i j, (MathGKM.Markov.frame path).mid.a + (MathGKM.Markov.frame path).mid.b - 1 < i+j → MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p i j = 0) ∧ (∀ i j, (MathGKM.Markov.frame path).hi.a + (MathGKM.Markov.frame path).hi.b - 1 < i+j → MathGKM.Markov.coeff (MathGKM.Markov.frame path).hi.p i j = 0)",
+      "id": "markov-r0002-uniform-frame-support-v1",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [],
+      "used_accepted_declarations": []
+    },
+    {
+      "arm": "exploration",
+      "english_scope_and_conditions": "For all natural d,i,j the integer lattice index is (d-i-j,i,j), where subtraction in its first coordinate is over integers; when i+j<=d it agrees with casting natural d-i-j. The three elementary changes have vectors (-1,1,0), (-1,0,1), (0,1,-1). For any natural a,b and polynomial P supported in total degree <=a+b-1, the pinned bivariate WeakLC predicate is equivalent to TriWeakLC of its homogeneous lift. The pinned polygon is a singleton at 0/1 and the line i+j=1 at 1/1; WeakLC holds for the two endpoint seed polynomials, with no eligible three-point comparisons. Both LC predicates retain the same pinned InPolygon test. This is transport of an unproved predicate, not proof of interior LC or equality with the published Newton polygon.",
+      "exact_formal_claim": "(∀ d i j, i+j≤d → MathGKM.Markov.latticeIndex d i j = ![((d-i-j:ℕ):ℤ),i,j]) ∧\n    (∀ d i j,\n      MathGKM.Markov.latticeIndex d (i+1) j = MathGKM.Markov.latticeIndex d i j + ![-1,1,0] ∧\n      MathGKM.Markov.latticeIndex d i (j+1) = MathGKM.Markov.latticeIndex d i j + ![-1,0,1] ∧\n      MathGKM.Markov.latticeIndex d (i+1) j = MathGKM.Markov.latticeIndex d i (j+1) + ![0,1,-1]) ∧\n    (∀ a b P, MathGKM.Markov.SupportBound P (a+b-1) →\n      (MathGKM.Markov.WeakLC a b P ↔ MathGKM.Markov.TriWeakLC a b (MathGKM.Markov.homogeneousLift P (a+b-1)))) ∧\n    (∀ i j, MathGKM.Markov.InPolygon 0 1 i j ↔ i=0 ∧ j=0) ∧\n    (∀ i j, MathGKM.Markov.InPolygon 1 1 i j ↔ i+j=1) ∧\n    MathGKM.Markov.WeakLC 0 1 1 ∧ MathGKM.Markov.WeakLC 1 1 (MathGKM.Markov.U+MathGKM.Markov.V)",
+      "id": "markov-r0003-coefficient-triple-transport-v1",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [
+        "markov-r0002-homogeneous-lift-laws-v1"
+      ],
+      "used_accepted_declarations": [
+        "Accepted65ed3447f553d2b625153a1a.interface",
+        "Accepted65ed3447f553d2b625153a1a.obligation"
+      ]
+    },
+    {
+      "arm": "exploration",
+      "english_scope_and_conditions": "For every field K, x,y in K, and M satisfying AffineLaurentFamily x y M, every finite path has all three M-values at its frame labels equal to the corresponding independently defined affine Laurent path-frame entries. The predicate includes all three seeds and the adjacent-pair mutation recurrence. This theorem adds no separate x!=0 or y!=0 hypothesis; those conditions must not be silently inserted or removed from other theorems.",
+      "exact_formal_claim": "∀ (K : Type) [Field K] (x y : K) (M : ℕ → ℕ → K), MathGKM.Markov.AffineLaurentFamily x y M → ∀ path : List Bool,\n    M (MathGKM.Markov.frame path).lo.a (MathGKM.Markov.frame path).lo.b = (MathGKM.Markov.affineLaurentFrame x y path).lo ∧\n    M (MathGKM.Markov.frame path).mid.a (MathGKM.Markov.frame path).mid.b = (MathGKM.Markov.affineLaurentFrame x y path).mid ∧\n    M (MathGKM.Markov.frame path).hi.a (MathGKM.Markov.frame path).hi.b = (MathGKM.Markov.affineLaurentFrame x y path).hi",
+      "id": "markov-r0003-laurent-family-agreement-v1",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [],
+      "used_accepted_declarations": []
+    },
+    {
+      "arm": "baseline",
+      "english_scope_and_conditions": "Every finite Boolean path preserves the FareyFrame predicate: middle labels are endpoint mediants, endpoint denominators are positive, endpoint numerator/denominator ratios lie in [0,1], and the oriented endpoint determinant is one. Each adjacent lower/middle and middle/upper pair also has oriented determinant one, expressed using natural-number equalities.",
+      "exact_formal_claim": "∀ p : List Bool, MathGKM.Markov.FareyFrame (MathGKM.Markov.frame p) ∧ ((MathGKM.Markov.frame p).lo.b * (MathGKM.Markov.frame p).mid.a = (MathGKM.Markov.frame p).lo.a * (MathGKM.Markov.frame p).mid.b + 1 ∧ (MathGKM.Markov.frame p).mid.b * (MathGKM.Markov.frame p).hi.a = (MathGKM.Markov.frame p).mid.a * (MathGKM.Markov.frame p).hi.b + 1)",
+      "id": "r0000-markov-frame-invariants-20261019",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [],
+      "used_accepted_declarations": []
+    },
+    {
+      "arm": "baseline",
+      "english_scope_and_conditions": "For every natural a,b with 0<a<=b and coprimality, either a=b=1 or there exists a finite path with middle label exactly (a,b). This admission asserts existence only.",
+      "exact_formal_claim": "∀ a b : ℕ, 0 < a → a ≤ b → Nat.Coprime a b → ((a = 1 ∧ b = 1) ∨ ∃ p : List Bool, (MathGKM.Markov.frame p).mid.a = a ∧ (MathGKM.Markov.frame p).mid.b = b)",
+      "id": "r0000-markov-reduced-pair-coverage-20261019",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [],
+      "used_accepted_declarations": []
+    },
+    {
+      "arm": "baseline",
+      "english_scope_and_conditions": "For any bivariate integer polynomial P, natural d, and trivariate integer polynomial T, if every nonzero term of T has total degree d and specializing w=1 gives P, then T=liftHomogeneous(P,d). These two premises are explicit. No separate support hypothesis on P is an input to this uniqueness theorem.",
+      "exact_formal_claim": "∀ (P : MathGKM.Markov.BiPoly) (d : ℕ) (T : MathGKM.Markov.TriPoly), MathGKM.Markov.HomogeneousAt T d → MathGKM.Markov.specializeW T = P → T = MathGKM.Markov.liftHomogeneous P d",
+      "id": "r0001-markov-homogeneous-lift-unique-20261019",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [],
+      "used_accepted_declarations": []
+    },
+    {
+      "arm": "baseline",
+      "english_scope_and_conditions": "For every finite path and any of its three frame entries L=(a,b,P), let d=a+b-1. Its homogeneous lift specializes at w=1 back to P; for all natural i,j with i+j<=d it has coefficient coeff(P,i,j) at (i,j,d-i-j); coefficients of P above i+j>d vanish; and every nonzero lift coefficient at (i,j,k) has i+j+k=d. Homogeneity does not require the polynomial to be nonzero.",
+      "exact_formal_claim": "∀ p : List Bool, ∀ L ∈ [(MathGKM.Markov.frame p).lo, (MathGKM.Markov.frame p).mid, (MathGKM.Markov.frame p).hi], let d := L.a+L.b-1; MathGKM.Markov.specializeW (MathGKM.Markov.liftHomogeneous L.p d) = L.p ∧ (∀ i j, i+j ≤ d → MathGKM.Markov.triCoeff (MathGKM.Markov.liftHomogeneous L.p d) i j (d-i-j) = MathGKM.Markov.coeff L.p i j) ∧ (∀ i j, d < i+j → MathGKM.Markov.coeff L.p i j = 0) ∧ (∀ i j k, MathGKM.Markov.triCoeff (MathGKM.Markov.liftHomogeneous L.p d) i j k ≠ 0 → i+j+k = d)",
+      "id": "r0001-markov-homogeneous-transport-20261019",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [
+        "r0000-markov-frame-invariants-20261019"
+      ],
+      "used_accepted_declarations": [
+        "Accepted54255e349b93aabd9e655107.interface",
+        "Accepted54255e349b93aabd9e655107.obligation"
+      ]
+    },
+    {
+      "arm": "baseline",
+      "english_scope_and_conditions": "For every finite path, each of its three frame entries L=(a,b,P), and natural i,j, a nonzero coefficient coeff(P,i,j) implies i+j<=a+b-1. No finite numerator or denominator restriction occurs.",
+      "exact_formal_claim": "∀ p : List Bool, ∀ L ∈ [(MathGKM.Markov.frame p).lo, (MathGKM.Markov.frame p).mid, (MathGKM.Markov.frame p).hi], ∀ i j : ℕ, MathGKM.Markov.coeff L.p i j ≠ 0 → i+j ≤ L.a+L.b-1",
+      "id": "r0001-markov-uniform-support-20261019",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [
+        "r0000-markov-frame-invariants-20261019"
+      ],
+      "used_accepted_declarations": [
+        "Accepted54255e349b93aabd9e655107.interface",
+        "Accepted54255e349b93aabd9e655107.obligation"
+      ]
+    },
+    {
+      "arm": "baseline",
+      "english_scope_and_conditions": "For every finite Boolean path, writing ell,m,h for its lower,middle,upper entries and H(L)=liftHomogeneous(L.p,L.a+L.b-1), the homogeneous middle polynomial after the false/left mutation is (u+v+w)*H(ell)*H(m)-u^ell.a*v^ell.b*w^(ell.a+ell.b)*H(h). False denotes a branch, not a disproof.",
+      "exact_formal_claim": "∀ p : List Bool, MathGKM.Markov.H (MathGKM.Markov.advance (MathGKM.Markov.frame p) false).mid = (MathGKM.Markov.u+MathGKM.Markov.v+MathGKM.Markov.w)*MathGKM.Markov.H (MathGKM.Markov.frame p).lo*MathGKM.Markov.H (MathGKM.Markov.frame p).mid - MathGKM.Markov.u^(MathGKM.Markov.frame p).lo.a*MathGKM.Markov.v^(MathGKM.Markov.frame p).lo.b*MathGKM.Markov.w^((MathGKM.Markov.frame p).lo.a+(MathGKM.Markov.frame p).lo.b)*MathGKM.Markov.H (MathGKM.Markov.frame p).hi",
+      "id": "r0002-markov-homogeneous-mutation-false-20261019",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [
+        "r0000-markov-frame-invariants-20261019",
+        "r0001-markov-homogeneous-lift-unique-20261019",
+        "r0001-markov-homogeneous-transport-20261019"
+      ],
+      "used_accepted_declarations": [
+        "Accepted54255e349b93aabd9e655107.interface",
+        "Accepted54255e349b93aabd9e655107.obligation",
+        "Acceptedcb1615e51542ac6eb2dd5748.interface",
+        "Acceptedcb1615e51542ac6eb2dd5748.obligation",
+        "Acceptedf9f6dde28a842e02dcb86480.interface",
+        "Acceptedf9f6dde28a842e02dcb86480.obligation"
+      ]
+    },
+    {
+      "arm": "baseline",
+      "english_scope_and_conditions": "For every finite Boolean path, writing ell,m,h for its lower,middle,upper entries and H(L)=liftHomogeneous(L.p,L.a+L.b-1), the homogeneous middle polynomial after the true/right mutation is (u+v+w)*H(h)*H(m)-u^h.a*v^h.b*w^(h.a+h.b)*H(ell). True denotes a branch.",
+      "exact_formal_claim": "∀ p : List Bool, MathGKM.Markov.H (MathGKM.Markov.advance (MathGKM.Markov.frame p) true).mid = (MathGKM.Markov.u+MathGKM.Markov.v+MathGKM.Markov.w)*MathGKM.Markov.H (MathGKM.Markov.frame p).hi*MathGKM.Markov.H (MathGKM.Markov.frame p).mid - MathGKM.Markov.u^(MathGKM.Markov.frame p).hi.a*MathGKM.Markov.v^(MathGKM.Markov.frame p).hi.b*MathGKM.Markov.w^((MathGKM.Markov.frame p).hi.a+(MathGKM.Markov.frame p).hi.b)*MathGKM.Markov.H (MathGKM.Markov.frame p).lo",
+      "id": "r0002-markov-homogeneous-mutation-true-20261019",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [
+        "r0000-markov-frame-invariants-20261019",
+        "r0001-markov-homogeneous-lift-unique-20261019",
+        "r0001-markov-homogeneous-transport-20261019"
+      ],
+      "used_accepted_declarations": [
+        "Accepted54255e349b93aabd9e655107.interface",
+        "Accepted54255e349b93aabd9e655107.obligation",
+        "Acceptedcb1615e51542ac6eb2dd5748.interface",
+        "Acceptedcb1615e51542ac6eb2dd5748.obligation",
+        "Acceptedf9f6dde28a842e02dcb86480.interface",
+        "Acceptedf9f6dde28a842e02dcb86480.obligation"
+      ]
+    },
+    {
+      "arm": "baseline",
+      "english_scope_and_conditions": "The homogeneous lifts of the initial lower,middle,upper entries are 1, (u+v)^2+u*w, and u+v. For every finite Boolean path, the independently defined numeratorFrame equals liftedFrame(frame(path)), including all three labels and polynomials. The numerator recurrence uses those seeds and the two homogeneous mutations without calling the lift in its definitions. This identifies defined path constructions; external published-family identification is not proved.",
+      "exact_formal_claim": "MathGKM.Markov.H MathGKM.Markov.initial.lo = 1 ∧ MathGKM.Markov.H MathGKM.Markov.initial.mid = (MathGKM.Markov.u+MathGKM.Markov.v)^2+MathGKM.Markov.u*MathGKM.Markov.w ∧ MathGKM.Markov.H MathGKM.Markov.initial.hi = MathGKM.Markov.u+MathGKM.Markov.v ∧ ∀ p : List Bool, MathGKM.Markov.numeratorFrame p = MathGKM.Markov.liftedFrame (MathGKM.Markov.frame p)",
+      "id": "r0002-markov-path-numerator-identification-20261019",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [
+        "r0000-markov-frame-invariants-20261019",
+        "r0001-markov-homogeneous-lift-unique-20261019",
+        "r0001-markov-homogeneous-transport-20261019"
+      ],
+      "used_accepted_declarations": [
+        "Accepted54255e349b93aabd9e655107.interface",
+        "Accepted54255e349b93aabd9e655107.obligation",
+        "Acceptedcb1615e51542ac6eb2dd5748.interface",
+        "Acceptedcb1615e51542ac6eb2dd5748.obligation",
+        "Acceptedf9f6dde28a842e02dcb86480.interface",
+        "Acceptedf9f6dde28a842e02dcb86480.obligation"
+      ]
+    },
+    {
+      "arm": "baseline",
+      "english_scope_and_conditions": "For any finite Boolean paths p,q, equality of their middle rational labels expressed by a_p*b_q=a_q*b_p implies p=q. Positivity/invariants needed for this statement follow from the fixed generated frames, not additional input assumptions.",
+      "exact_formal_claim": "∀ p q : List Bool, (MathGKM.Markov.frame p).mid.a * (MathGKM.Markov.frame q).mid.b = (MathGKM.Markov.frame q).mid.a * (MathGKM.Markov.frame p).mid.b → p = q",
+      "id": "r0003-markov-path-uniqueness-20261019",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [],
+      "used_accepted_declarations": []
+    },
+    {
+      "arm": "baseline",
+      "english_scope_and_conditions": "Every natural pair a,b satisfying 0<a<b and coprimality has exactly one finite Boolean path whose middle numerator and denominator are a and b. The strict inequality excludes the 1/1 endpoint.",
+      "exact_formal_claim": "∀ a b : ℕ, 0 < a → a < b → Nat.Coprime a b → ∃! p : List Bool, (MathGKM.Markov.frame p).mid.a = a ∧ (MathGKM.Markov.frame p).mid.b = b",
+      "id": "r0003-markov-reduced-pair-unique-path-20261019",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [
+        "r0000-markov-reduced-pair-coverage-20261019"
+      ],
+      "used_accepted_declarations": [
+        "Accepted8acfcca661d31b57110fe18a.interface",
+        "Accepted8acfcca661d31b57110fe18a.obligation"
+      ]
+    },
+    {
+      "arm": "baseline",
+      "english_scope_and_conditions": "For every natural coprime pair 0<a<=b, exactly one trivariate integer polynomial T satisfies GeneratedNumerator(a,b,T) and equals the homogeneous lift at degree a+b-1 of the middle polynomial of every path with middle label (a,b). GeneratedNumerator means either a=b=1 and T=u+v, or an independently generated numeratorFrame path has that middle label and polynomial T. At 1/1 the universal middle-path clause is vacuous; its polynomial is explicitly fixed. The 0/1 endpoint is excluded. This provides an unambiguous generated family; published Laurent-family identification remains open.",
+      "exact_formal_claim": "∀ a b : ℕ, 0 < a → a ≤ b → Nat.Coprime a b → ∃! T : MathGKM.Markov.TriPoly, MathGKM.Markov.GeneratedNumerator a b T ∧ ∀ p : List Bool, (MathGKM.Markov.frame p).mid.a = a → (MathGKM.Markov.frame p).mid.b = b → T = MathGKM.Markov.liftHomogeneous (MathGKM.Markov.frame p).mid.p (a+b-1)",
+      "id": "r0003-markov-unique-generated-numerator-lift-20261019",
+      "mathematical_classification": "structural or conditional reduction; no substantive interior log-concavity proved",
+      "reuse_note": "These entries describe actual checked Accepted declaration consumption. Other reuse through source imports is preserved in the checked source/declaration artifact; absence here does not mean absence of earlier source lemmas.",
+      "used_accepted_admissions": [
+        "r0000-markov-frame-invariants-20261019",
+        "r0000-markov-reduced-pair-coverage-20261019",
+        "r0001-markov-homogeneous-lift-unique-20261019",
+        "r0001-markov-homogeneous-transport-20261019",
+        "r0002-markov-path-numerator-identification-20261019"
+      ],
+      "used_accepted_declarations": [
+        "Accepted54255e349b93aabd9e655107.interface",
+        "Accepted54255e349b93aabd9e655107.obligation",
+        "Accepted7faadd426b2fb604af5918ff.interface",
+        "Accepted7faadd426b2fb604af5918ff.obligation",
+        "Accepted8acfcca661d31b57110fe18a.interface",
+        "Accepted8acfcca661d31b57110fe18a.obligation",
+        "Acceptedcb1615e51542ac6eb2dd5748.interface",
+        "Acceptedcb1615e51542ac6eb2dd5748.obligation",
+        "Acceptedf9f6dde28a842e02dcb86480.interface",
+        "Acceptedf9f6dde28a842e02dcb86480.obligation"
+      ]
+    }
+  ],
+  "conventions": [
+    "The authoritative exact propositions are the preserved Target definitions and knowledge tasks. English descriptions retain their conditions and describe defined objects rather than adding an external source identification.",
+    "All coefficient values are raw integer coefficients; no factorial normalization is added.",
+    "Exploration and baseline have different trivariate coordinate conventions; their source modules must remain in separate projects.",
+    "The legacy task.kind label holdout on a submitted claim is a harness schema value. These are the researcher’s own admitted mathematical claims, not the private evaluation suite."
+  ],
+  "schema": "math-gkm.admitted-english-scope.v1"
+}
