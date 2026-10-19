@@ -1,0 +1,29 @@
+# Closed013/014 preservation proposal — no archive created
+
+The fixed source selection is `/private/tmp/math_gkm_inspection013_014_preservation_inventory_20261019.json` (SHA256 `27b5e13458a903504f706f495a9dbbcaef5efbdfa9aa1f62b8f66bd6090f0148`). It selects 1,384 original files and 68,626,012 bytes, with 13 explicit build/link/evaluation exclusions. Each selected original has a fixed relative archive path, byte size and SHA256. Hashing used 1 MiB buffers. This is a reviewable proposal; no tar archive, source edit, deletion or Git operation has occurred.
+
+The proposed destination is `evidence/blended-inspection013-014-validation-source-20261019/`. A gzip tar would retain original bytes with regular relative members only. Its decoded manifest would include this fixed selection, source checkpoint bindings, scope and exclusions. A second streaming pass would hash every archive member, verify all originals remained stable, and scan UTF8 contents without whole-catalog loading. The two exact frozen `construction-inspector.json.gz` copies require the already approved narrow nested-decompression scan (64 MiB expanded archival bound); no other binary payload is selected.
+
+## Selected evidence
+
+- All 367 frozen013 and 368 frozen014 source files, both exact source manifests, source checkpoint metadata, inputs, diffs and preserved raw source receipts. Frozen sources come from each checkpoint's `sources/`, not later live machinery.
+- Exact executed external constructor round12/round13 prompt, launcher, command, environment, input manifest, events, receipt, watcher and outer observations; operator prompts and before/after protected inventories. Round12 remains a failed, timed-out invocation: child exit0 does not override the recorded360.198s TimeoutError/outer exit1. Round13 completed normally, outer198.656s/exit0.
+- Both independent source/resource reviews, the explicit014 verification correction, small quiescence records and the engineering-only remaining-integration checklist.
+- Closed actual `cp013-pure-entrypoints`, `cp013-producer-binding`, `cp014-producer-binding`, `cp014-largepilot` and `cp014-largepilot-v2` intent/result/raw log records with their exact watcher receipts.
+- Thirty-one synthetic fixture roots:27 associated with pure013,2 with producer013 and2 with producer014. Roots are selected by known test prefixes inside the closed intent/result timestamp intervals±0.2s, then fixed by selected hashes. This timestamp association does not prove causal ownership. Retained test sources regenerate excluded synthetic evaluation derivatives; no actual curator/evaluation suite or answers are selected.
+- Both now-closed largepilot workspaces, source-only check bundles, exact generated Lean sources, pins, sandbox profile, REBUILD, result, FINISHED, retired-object inventories, engineering measurements and the complete compact catalog from the successful second attempt. Compiled/cache payload is excluded.
+- Exact reviewed operator v1/v2 sources, immutable013 engineering fixture-data packet (including byte-exact original PUBLIC proof/context/task/solution data and explicitly new neutral identity controls), exact helper-manifest copy and old010 source-reference provenance. None of this fixture knowledge may enter a future clean research seed.
+
+## Claims this package may make
+
+Pure013 passed32 tests. Producer013's raw result was1PASS/1FAIL; its apparent capacity-negative PASS is inconclusive because unrelated generated utility errors could also trigger the token. Producer014 passed both repaired methods, including the clean utility elaboration, eight SHA/chunk vectors, completed producer-consumer and a faithful unrelated-error negative.
+
+Largepilot v1 stopped at setup/receipt-equality issues: the additional package symlink chain was invisible to the sandbox and persisted JSON normalizes integer PID keys. It is not a mathematical counterexample. V2 changes only the fresh workspace's package layout via the ordinary existing `dependencies(workspace)` operation and compares persisted JSON consistently. With the same original proof/task/solution/context/pins/900-second validator budget, it passed21 operations:10 compiles,10 kernel replays and1 complete trusted premise inspection. The compact artifact is3,022,351 bytes. Its result is `checked:true` and its FINISHED reuse is exact. The recorded axiom lists contain only standard permitted axioms. It rechecks a PUBLIC restricted all-false branch theorem; it is neither an installation nor a new registry admission, paper/root resolution or proof of arbitrary Markov paths.
+
+The second attempt's outer observation recorded187.574s/exit0/cleanup[], peak native1,004,835,296B and aggregate RSS5,847,498,752B under unchanged007 caps. Independent current-birth observation found all22 recorded owned process identities absent. No OOM or cleanup hold was reported. This demonstrates the one bounded run, not an absolute OOM guarantee or portability beyond the recorded pinned host.
+
+## Reproduction limits
+
+Use the exact014 source overlay and retained executed commands with the dependency pins and ordinary resolved-package layout. The historical installed010 reference remains the public733914c8e7883f3eb6340d7f213ee7e3e4800d9b report-repair archive, SHA256 `e164c426cb48ba26a467e29c7a4717498b7285d3fb80a76579bf1c1d724eba96`. This preserves the actual failed and successful execution evidence and necessary proof/fixture source. It does not claim a new cold dependency bootstrap, fresh host portability, completed full-Mathlib neutral preflight, full historical differential, negative control suite, final installation or clean-pair readiness.
+
+Parent review should approve or narrow this fixed selection before archive creation. Later closed neutral/full-Mathlib/differential evidence can be preserved separately; no active streams or output trees are swept by this proposal.

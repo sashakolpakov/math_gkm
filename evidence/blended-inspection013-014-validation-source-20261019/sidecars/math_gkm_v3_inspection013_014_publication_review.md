@@ -1,0 +1,38 @@
+# Independent publication review: closed013/014 source and validation
+
+Final2026-10-19. Reviewer /root/blend_source_review. Publication/evidence scope only; no execution, installation, registry, research-seed or campaign authorization.
+
+Package /Users/sasha/math_gkm/evidence/blended-inspection013-014-validation-source-20261019/.
+Closed archive inspection013-014-source-evidence.tar.gz SHA878a320fcad060585c8299b9a4d7cd6b83dad97b6afe42179ba2d5d577645e49,19,541,846bytes.
+Manifest b8047aef42059a8294e10e0f81ef54df3cc1c68f9f0bc90f651c64b7e36f5539.
+CLOSED b925149ce53324f3ab7d0b9222a7ccce7f67a6a12e46111292bdb07e14754f0d.
+
+ACCEPTED FOR PUBLICATION within README's stated closed engineering/proof-check scope. No must-fix source-selection, evidence or documentation issue found. This review does not infer that current active neutral/identity/differential stages succeeded or authorize source015. No active output/private evaluation was read. No tests, compilers, models, source edits or mathematical research were performed by reviewer.
+
+## Independent byte and coverage verification
+
+Using64KiB buffers independently streamed/rehashed the complete archive and every member: exactly1385 regular entries,1384 originals plus byte-identical embedded MANIFEST,68,626,012original bytes. No duplicate/absolute/traversal/link/nonregular member; no missing selected member, hash/size mismatch or original-after-hash mismatch. Independently reread ALL1384 selected original paths and verified they remain exact. Embedded frozen013 manifestb7f0e1f0d76ed9233b61321ce39f123c80a954ac436e66d7a885cbc12700558c contains367 required file-map entries, all present exactly;014 manifest86b321c9628ce7493c89e06ab0000050375974fd7fe10c1c28181e5467e8ee3f contains368, all present exactly.
+
+SOURCE_SELECTION is byte-identical to the parent-approved /private/tmp/math_gkm_inspection013_014_preservation_inventory_20261019.json, SHA27b5e13458a903504f706f495a9dbbcaef5efbdfa9aa1f62b8f66bd6090f0148. All CLOSED-listed metadata hashes match actual bytes. Final independent proof audit is a separately recorded sidecar, not silently inserted into the fixed archive. Sidecar math_gkm_v3_largepilot014_v2_finished_audit.md is exact8902bytes SHA b19577c0805f5e4ef6fcfb8410ad9b41035b3ecc624d19b2c1ce9ef6b91e8d1e; its archived source/receipt bindings match the prior closed independent audit. The separate preservation-proposal sidecar also matches SIDECARS.json.
+
+Both exact historical construction-inspector.json.gz source members were separately decompressed/read under64MiB each, with no whole-catalog JSON load. Each expands to24,807,578bytes SHAf589f3193024c7a5f6d8ea6c95169460ab81e62617ab6a74cf09b1b844080290. UTF8/no-NUL and bounded common credential/private-network-URL scans pass for all ordinary text and expanded nested text. This is an archival read bound, not a changed validator limit. Original compressed bytes/hashes remain retained.
+
+## Exact test/history claims
+
+Read the archived closed test logs. Pure013:32tests PASS in13.950s. Producer013:raw1PASS/1FAIL in5.877s; authentic capacity tokens were not sufficient to establish isolated intended rejection because unrelated utility errors also occurred. Producer014:both repaired methods PASS in14.515s, including successful clean utility, known SHA/chunk vectors, completed producer-consumer binding, separate record/total bounds and the unrelated-error-with-valid-token rejecting control. No014 pure suite is falsely claimed rerun. Source-construction013's360.198second TimeoutError/outerrc1 remains failure despite child exit0;014's normal198.656second construction is separately reported, not equated with Lean execution.
+
+Largepilot-v1's actual operator log fails the full reuse-equality assertion; its underlying check had failed Mathlib resolution before proof checking through the extra dependency link chain. V2 corrects only ordinary canonical package layout and full JSON normalization at the receipt comparison. Its exact same original task/solution/context/pins/900second allowance then records10successful compiles,10successful independent kernel replays and one completed standard-only trusted inspector. Read its archived185.981second unittest pass; complete validation elapsed185.9231seconds, outer approximately186seconds before wrapper accounting. README accurately distinguishes retained v1 failure, raw v2 success and absence of any mathematical counterexample or retroactive registry admission.
+
+The fresh finished proof/result hashes, complete3,022,351byte artifact, nonce/SHA/end/row bindings, standard3axiom closure and actual earlier bridge use were independently audited in the final math sidecar. Its precise theorem is forall k>=0 all-left middle-label(1,k+2) raw WeakLC at every admissible horizontal/vertical/diagonal triple, with no eventual-index condition or unresolved antecedent. Full arbitrary-path Conjecture63 remains open. No novelty/external-paper correspondence claim, changed historical admission, clean comparison or general uniform-capacity guarantee is made.
+
+## Selection/privacy/reproduction limits
+
+The fixed selected set contains closed constructor/operator/test/proof data only. No active neutral/full/identity output, actual private heldout suite, curator task/answer, compiled objects or dependency cache payload is selected. Paths and bounded text scans show no common credential/private endpoint finding; this is not a guarantee against arbitrary secret formats. Original local absolute paths, synthetic canaries and public own task metadata are provenance, not disclosed private evaluation tasks. The31 synthetic fixture roots are honestly labeled timestamp/prefix-associated with0.2second tolerance rather than authenticated causal ownership. Declared link/build/evaluation exclusions remain explicit, and regeneration requires retained tests.
+
+Source reconstruction is accurately limited to exact frozen source maps, generated Lean/proof/context, pins, REBUILD recipes, profiles/commands and recorded host dependencies. Historical installed aggregate/API are preserved on reviewed overlays. No cache blobs/cold bootstrap/new-platform success is claimed. The exact published010 source reference remains a separate content-bound prerequisite; no completed historical differential is claimed. Fixture/proof knowledge must stay out of future clean research seeds. Recorded native/RSS/cleanup observations are not an unconditional OOM guarantee.
+
+## Root documentation diff review
+
+Also reviewed only the pending root README.md and STRATEGY_V3_RELEASE.md diffs requested by parent. README now links the precise fresh numerator-one result and says general Markov remains open. The new dated release section states exact k>=0/labels(1,k+2)/all3directions/alladmissibletriples, original900second proof/context and actual bridge/coefficient/formula inputs; it points to the closed package and exact independent math sidecar. It preserves old failed-admission evidence and registry, stopped pilot/reference-never-started status, no novelty/full-paper correspondence or strategy advantage claim, candidate014notinstalled status and remaining neutral/differential/deployment work. The separate nested integer-PID JSON comparison readiness defect is described as an operational false rejection, without implying a mathematical gate was weakened. These descriptions are consistent with closed evidence and do not seed a researcher or assert current active test outcomes.
+
+This memo is closed. Publication remains a parent-controlled action; no Git operation was performed by reviewer. Later source015 or further actual fixtures need separate exact receipts and reviews.

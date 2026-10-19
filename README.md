@@ -9,6 +9,12 @@ compiled, replayed and actually proved. The fixed [mission](MISSION.md) and
 
 ## Blended strategy V3
 
+The latest fresh Lean verification covers every polynomial in the numerator-one
+branch, in all three coefficient directions and at every admissible triple.
+The general Markov conjecture remains open. See the
+[exact result and current comparison status](STRATEGY_V3_RELEASE.md#fresh-verification-of-the-numerator-one-family);
+the older campaign results below remain historical.
+
 The combined harness keeps ordinary theorem development as its default. The
 researcher can also investigate a consequential uncertainty, change a
 representation, or test a research strategy. Typed interfaces and checked
