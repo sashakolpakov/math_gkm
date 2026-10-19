@@ -1,0 +1,193 @@
+{
+  "admissions": [
+    {
+      "actual_used_accepted_declarations": [],
+      "arm": "exploration",
+      "checks_by_operation": {
+        "compile": 6,
+        "kernel_replay": 6,
+        "trusted_premise_inspection": 1
+      },
+      "conditions": [
+        "Finite paths in the pinned recursive frame; all three entries, uniformly.",
+        "Natural degree/index arithmetic; i+j=d.",
+        "No log-concavity or residual assumption."
+      ],
+      "english": "For every finite Boolean Farey path, each lower/middle/upper frame entry L=(a,b,P), and natural i,j with i+j=d=a+b-1, the raw integer coefficient c_P(i,j) equals binomial(d,i).",
+      "exact_formal_claim": "∀ path : List Bool, (∀ i j, i+j=(MathGKM.Markov.frame path).lo.a+(MathGKM.Markov.frame path).lo.b-1 → MathGKM.Markov.coeff (MathGKM.Markov.frame path).lo.p i j = (Nat.choose ((MathGKM.Markov.frame path).lo.a+(MathGKM.Markov.frame path).lo.b-1) i : ℤ)) ∧ (∀ i j, i+j=(MathGKM.Markov.frame path).mid.a+(MathGKM.Markov.frame path).mid.b-1 → MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p i j = (Nat.choose ((MathGKM.Markov.frame path).mid.a+(MathGKM.Markov.frame path).mid.b-1) i : ℤ)) ∧ (∀ i j, i+j=(MathGKM.Markov.frame path).hi.a+(MathGKM.Markov.frame path).hi.b-1 → MathGKM.Markov.coeff (MathGKM.Markov.frame path).hi.p i j = (Nat.choose ((MathGKM.Markov.frame path).hi.a+(MathGKM.Markov.frame path).hi.b-1) i : ℤ))",
+      "id": "markov-r0004-uniform-top-coefficients-v1",
+      "reuse": "Earlier frame invariants and support bounds are actually used through source lemmas. No earlier Accepted export occurs in the checked closure.",
+      "root_axioms": [
+        {
+          "axioms": [
+            "propext",
+            "Quot.sound",
+            "Classical.choice"
+          ],
+          "name": "StudyObligation"
+        },
+        {
+          "axioms": [],
+          "name": "StudyInterface"
+        },
+        {
+          "axioms": [],
+          "name": "StudyTransport"
+        }
+      ]
+    },
+    {
+      "actual_used_accepted_declarations": [],
+      "arm": "exploration",
+      "checks_by_operation": {
+        "compile": 7,
+        "kernel_replay": 7,
+        "trusted_premise_inspection": 1
+      },
+      "conditions": [
+        "All finite paths and all three frame entries.",
+        "Each of the three explicit polygon memberships.",
+        "Top-degree equality i+j+2=a+b-1.",
+        "No log-concavity or unresolved residual hypothesis."
+      ],
+      "english": "For every finite Boolean path and each lower/middle/upper entry L=(a,b,P), for all natural i,j with i+j+2=d=a+b-1 and all three points (i,j+2),(i+1,j+1),(i+2,j) in the pinned polygon, c_P(i,j+2)*c_P(i+2,j) <= c_P(i+1,j+1)^2.",
+      "exact_formal_claim": "∀ path : List Bool, MathGKM.Markov.LabelTopLC (MathGKM.Markov.frame path).lo ∧ MathGKM.Markov.LabelTopLC (MathGKM.Markov.frame path).mid ∧ MathGKM.Markov.LabelTopLC (MathGKM.Markov.frame path).hi",
+      "id": "markov-r0004-top-diagonal-inequality-v1",
+      "reuse": "Uses frame_top, TopForm.coefficient, TopForm.diagonal, binomial choose_log_concave and older frame/support source lemmas. It does not consume the separate same-round top-coefficient Accepted export.",
+      "root_axioms": [
+        {
+          "axioms": [
+            "propext",
+            "Quot.sound",
+            "Classical.choice"
+          ],
+          "name": "StudyObligation"
+        },
+        {
+          "axioms": [],
+          "name": "StudyInterface"
+        },
+        {
+          "axioms": [],
+          "name": "StudyTransport"
+        }
+      ]
+    },
+    {
+      "actual_used_accepted_declarations": [
+        "Accepted65ed3447f553d2b625153a1a.interface",
+        "Accepted65ed3447f553d2b625153a1a.obligation",
+        "Acceptedece47dcbaf17012fa9f29e24.interface",
+        "Acceptedece47dcbaf17012fa9f29e24.obligation"
+      ],
+      "arm": "exploration",
+      "checks_by_operation": {
+        "compile": 14,
+        "kernel_replay": 14,
+        "trusted_premise_inspection": 1
+      },
+      "conditions": [
+        "TopBoundaryResidual remains an open antecedent.",
+        "Its clauses universally quantify over every finite path and all natural indices with their polygon memberships.",
+        "No proof of the residual or full conjecture is claimed."
+      ],
+      "english": "TopBoundaryResidual implies the unchanged Conjecture63. For every path middle polynomial, the residual requires every horizontal and vertical admissible triple inequality, and every admissible diagonal triple inequality strictly below the top line i+j+2<a+b-1. The checked boundary theorem supplies the top diagonal, and earlier endpoint results supply 0/1 and 1/1.",
+      "exact_formal_claim": "((MathGKM.Markov.TopBoundaryResidual)) → MathGKM.Markov.Conjecture63",
+      "id": "markov-r0004-top-boundary-reduction-v1",
+      "reuse": "Directly uses the new all_frame_top_diagonal source theorem and Acceptedece47dcbaf17012fa9f29e24.obligation endpoint facts. Accepted65ed3447f553d2b625153a1a homogeneous lift laws occur transitively in the checked closure. The source also contains residual_iff, not counted as a fourth admission.",
+      "root_axioms": [
+        {
+          "axioms": [
+            "propext",
+            "Quot.sound",
+            "Classical.choice"
+          ],
+          "name": "StudyObligation"
+        },
+        {
+          "axioms": [],
+          "name": "StudyInterface"
+        },
+        {
+          "axioms": [],
+          "name": "StudyTransport"
+        }
+      ]
+    }
+  ],
+  "historical_caveat_correction": "CORRECTIONS.md distinguishes the earlier overbroad source-family caveat from the passed direct definition-matching audit.",
+  "nonvacuity": {
+    "actual_inequality": "1*1 <= 2^2",
+    "admissible_points": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "d": 2,
+    "entry": "middle",
+    "indices": {
+      "i": 0,
+      "j": 0
+    },
+    "label": [
+      1,
+      2
+    ],
+    "method": "Inspection/instantiation of existing accepted source and theorem; no new Lean test or proof.",
+    "path": [],
+    "polygon_lower_lhs": 2,
+    "polygon_lower_rhs": [
+      2,
+      3,
+      4
+    ],
+    "polynomial": "(U+V)^2+U",
+    "raw_coefficients": [
+      1,
+      2,
+      1
+    ]
+  },
+  "novelty": "Known published uniform boundary log-concavity formally reproduced; no newly solved open case and no full conjecture proof.",
+  "primary_source": {
+    "authors": [
+      "S.J. Evans",
+      "A.P. Veselov",
+      "B. Winn"
+    ],
+    "references": [
+      "equation (5)",
+      "equation (7)",
+      "equation (8)",
+      "equation (9)",
+      "equation (11)",
+      "Theorem 3.1",
+      "Theorem 3.2",
+      "Theorem 4.1",
+      "Definitions 6.1 and 6.2",
+      "Conjecture 6.3",
+      "boundary observation following Theorem 6.4"
+    ],
+    "title": "Arithmetic and Geometry of Markov polynomials",
+    "url": "https://armj.math.stonybrook.edu/Articles/250708-Winn/index.html"
+  },
+  "remaining_open": "All horizontal and vertical admissible triple inequalities and strictly interior diagonal inequalities in TopBoundaryResidual, universally over middle paths.",
+  "schema": "math-gkm.admitted-boundary-lc-scope.v1",
+  "source_matching": {
+    "arbitrary_family_bridge": "An additional theorem about an arbitrary independently supplied AffineLaurentFamily is not necessary to identify this directly defined recursive family. Its absence is not a mismatch.",
+    "audit_record": "observer-reviews/source-definition-audit.json",
+    "audit_sha256": "0cf627d5855cbd638793491361dd86e80f8a829abcfa92ec0eb780f593b156fc",
+    "coverage": "Prior checked coverage represents every reduced positive pair 0<a<=b by a middle path, except the separately represented endpoint1/1. The original21 packet preserves that prior evidence; the three current proof closures independently rebuild from this packet.",
+    "kernel_external_boundary": "Kernel checking proves the exact recursive propositions. Identifying those definitions with mathematical prose is the explicitly recorded human source audit; no extra kernel theorem about the prose is claimed.",
+    "verdict": "Human English/Lean definition-match audit passed: Markov.lean seeds, both numerator recurrences, squared-variable raw coefficient convention, and polygon match the paper equations(5),(7)-(11)."
+  }
+}

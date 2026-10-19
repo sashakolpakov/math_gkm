@@ -1,0 +1,2278 @@
+{
+  "markov-r0004-top-boundary-reduction-v1": {
+    "claim": {
+      "hypotheses": [],
+      "statement": "((MathGKM.Markov.TopBoundaryResidual)) → MathGKM.Markov.Conjecture63"
+    },
+    "dependencies": [
+      "markov-r0003-coefficient-triple-transport-v1"
+    ],
+    "export_module": "MathGKM.Accepted5d6e230b241d6782f3fb251b",
+    "export_status": "exact checked composition renamed; fresh rebuild mandatory for every consumer",
+    "exports": [
+      "Accepted5d6e230b241d6782f3fb251b.obligation",
+      "Accepted5d6e230b241d6782f3fb251b.interface",
+      "Accepted5d6e230b241d6782f3fb251b.transport"
+    ],
+    "id": "markov-r0004-top-boundary-reduction-v1",
+    "kind": "reductions",
+    "novelty": "not assessed",
+    "proposal": {
+      "dependencies": [
+        "markov-r0003-coefficient-triple-transport-v1"
+      ],
+      "id": "markov-r0004-top-boundary-reduction-v1",
+      "module": "MathGKM.MarkovTopReduction",
+      "premises": [],
+      "required_constants": [
+        "MathGKM.Markov.Conjecture63",
+        "MathGKM.Markov.TopBoundaryResidual",
+        "MathGKM.Markov.all_frame_top_diagonal",
+        "Acceptedece47dcbaf17012fa9f29e24.obligation"
+      ],
+      "residuals": [
+        {
+          "id": "markov-r0004-horizontal-vertical-interior",
+          "statement": "MathGKM.Markov.TopBoundaryResidual"
+        }
+      ],
+      "target_id": "root",
+      "term": "MathGKM.Markov.top_boundary_reduction"
+    },
+    "proposal_hash": "ce73ee7a42e1018a4bd0d1246866c7168eae8b9cd0f2d2244b2d899cadf8ea47",
+    "receipt_hash": "74902ad6a3bcbac441a232f1fbed1b89fa3d60fd0588953bbb33bc8fdf715d6f",
+    "relevance": "checked residual implication",
+    "solution": {
+      "interface_term": "True.intro",
+      "module": "MathGKM.MarkovTopReduction",
+      "term": "MathGKM.Markov.top_boundary_reduction",
+      "transport_term": "True.intro"
+    },
+    "source_files": {
+      "MathGKM/Accepted5d6e230b241d6782f3fb251b.lean": "41ac5ac6c802bcc8a2e46738db6d79c47600353f35c952aca9453b2d7405fd87",
+      "MathGKM/Accepted65ed3447f553d2b625153a1a.lean": "3dbd7f3a42770feaecc56362bb5d8eaa97b5122411c2a7caedb0a38697a1dc16",
+      "MathGKM/Acceptedece47dcbaf17012fa9f29e24.lean": "244b7bdc860737b985698367043b4ec6f7327046f6a3669ac6f6b50becddddf1",
+      "MathGKM/Markov.lean": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "MathGKM/MarkovCoverage.lean": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a",
+      "MathGKM/MarkovHomogeneous.lean": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480",
+      "MathGKM/MarkovSupport.lean": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a",
+      "MathGKM/MarkovTopBoundary.lean": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1",
+      "MathGKM/MarkovTopLC.lean": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e",
+      "MathGKM/MarkovTopReduction.lean": "3d278f70c679c65bf5a616535b1d0ccc532b687c9946a56e9ac19c3cd140c2f9",
+      "MathGKM/MarkovTripleTransport.lean": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05",
+      "MathGKM/Target4fe3181ffc85917dc2486060.lean": "5f33773bff1c406b16d33cbf88424db3e66ad3da0540b261704d99e52da9cc32",
+      "MathGKM/Target79a428e033d36adf5fa527fb.lean": "da0b48138861dfd08bb66244fedf93b81c4e24fdd56a9deabd497482a13165b8",
+      "MathGKM/Targetf06b6162d5f620cdedf13b72.lean": "a31dcfa2e44c7a49f41302598359828a2c55c5a360ee02bb96188f17f83c6b1a"
+    },
+    "task": {
+      "context_modules": [
+        "MathGKM.MarkovTopReduction",
+        "MathGKM.Markov"
+      ],
+      "context_sources": {
+        "MathGKM/Accepted65ed3447f553d2b625153a1a.lean": "7ad233a894d104b887a3cd8e353c1d4efdf8c94bff5055388e30033a56111eea",
+        "MathGKM/Acceptedece47dcbaf17012fa9f29e24.lean": "592fe6d54550cb1feb35a9cd19606d5a1f9071e8944cff999ce9c87ae1748686",
+        "MathGKM/Markov.lean": "7a870468ca84fffa6b629f42bf32f38c23fda67a34d313485baddd7300ea2df8",
+        "MathGKM/MarkovCoverage.lean": "659c60e3828355c3e3ae121887b071014fbdc64c261d1241aaee0a2da9223c74",
+        "MathGKM/MarkovHomogeneous.lean": "ee86effdb1eb9799197d583ba3cbfd315bdd3660101103f0396546d8827182a0",
+        "MathGKM/MarkovSupport.lean": "4169c3124673c0aecfa1d76040588d00e5cd31b7d20670fc21b42f2b15fda278",
+        "MathGKM/MarkovTopBoundary.lean": "1f20606bd2786c544a296378d50b277f9c45d01f571e53afec45c82540e01385",
+        "MathGKM/MarkovTopLC.lean": "42324be8b829c99e162e504859fa676194c0e8434881ceec0733a7ba2d716aff",
+        "MathGKM/MarkovTopReduction.lean": "c329fd2207c2f7c152c91ce7335fc4fb5ce73fc0c4a9f9278ceb5d837198d506",
+        "MathGKM/MarkovTripleTransport.lean": "62d79922529fc11130a92db797d4afe4967983edf4b94df1ce7d500caee3e51e",
+        "MathGKM/Target4fe3181ffc85917dc2486060.lean": "ccb6ef31dcc944215f8113cde6645887003da6376b2cc686c53164dda9b95366",
+        "MathGKM/Target79a428e033d36adf5fa527fb.lean": "191d11924650a0b8eb7204bfc64194c6e9a697a107f04287159dad4698ae5a39"
+      },
+      "hypotheses": [],
+      "id": "markov-r0004-top-boundary-reduction-v1",
+      "interface_type": "True",
+      "kind": "holdout",
+      "reduction_root": "MathGKM.Markov.Conjecture63",
+      "required_constants": [
+        "MathGKM.Markov.Conjecture63",
+        "MathGKM.Markov.TopBoundaryResidual",
+        "MathGKM.Markov.all_frame_top_diagonal",
+        "Acceptedece47dcbaf17012fa9f29e24.obligation"
+      ],
+      "residuals": [
+        {
+          "id": "markov-r0004-horizontal-vertical-interior",
+          "statement": "MathGKM.Markov.TopBoundaryResidual"
+        }
+      ],
+      "scope": "exact proposal; usefulness and novelty unassessed",
+      "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "statement": "((MathGKM.Markov.TopBoundaryResidual)) → MathGKM.Markov.Conjecture63",
+      "target_module": "MathGKM.Targetf06b6162d5f620cdedf13b72",
+      "transport_type": "True"
+    },
+    "truth": "checked exact proposition under allowed premise closure",
+    "used_declarations": {
+      "Accepted65ed3447f553d2b625153a1a.interface": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Accepted65ed3447f553d2b625153a1a",
+        "semantic_sha256": "7e401280f57a423bf936e9274a353b7b6330c703daaf8e2ff351107243f7319f",
+        "source_sha256": "3dbd7f3a42770feaecc56362bb5d8eaa97b5122411c2a7caedb0a38697a1dc16"
+      },
+      "Accepted65ed3447f553d2b625153a1a.obligation": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Accepted65ed3447f553d2b625153a1a",
+        "semantic_sha256": "f492e39073117cbecd997c6f10515d89417ba06da52e49a653e2036678d39a12",
+        "source_sha256": "3dbd7f3a42770feaecc56362bb5d8eaa97b5122411c2a7caedb0a38697a1dc16"
+      },
+      "Acceptedece47dcbaf17012fa9f29e24.interface": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Acceptedece47dcbaf17012fa9f29e24",
+        "semantic_sha256": "fb36e38ee35e3fcc58e0f6037e390daa4d0c80bd02624d406c877d9f61342a7f",
+        "source_sha256": "244b7bdc860737b985698367043b4ec6f7327046f6a3669ac6f6b50becddddf1"
+      },
+      "Acceptedece47dcbaf17012fa9f29e24.obligation": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Acceptedece47dcbaf17012fa9f29e24",
+        "semantic_sha256": "9debf878f866f31e32cf636fac09ecb297782708ffd26afc3a229cb75cd0bc5a",
+        "source_sha256": "244b7bdc860737b985698367043b4ec6f7327046f6a3669ac6f6b50becddddf1"
+      },
+      "MathGKM.Markov.Below": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "602396819564e4a8ad808d020a52b318e6317c03545b802e2aace025e4e5fdf7",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.Below.add": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "0cf7fdce9f7f412df62be0ba4763b4ef0c87ca248ef8654116b5928c54aebec4",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.Below.mul": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "7c46af0427a8a3e4ac021682b1f639edb74fbaf88afef3282e87fb10ad5fec91",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.Below.mul._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "3f2f419eefa7efdd21b10fee80ec75c98d37e65b06b4336fba4f8885738a7ad3",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.Below.of_bound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "9e7896a5c290928615c60ebce4c8d9a9081596d022ffec2e3f4473d701d268f2",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.Below.of_bound._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "f848f9bf8b9c03e41e44715c74b6b5461477969b959927df72993046d7af64bc",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.BiPoly": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "432518e7799ea5c17f8ea5155aefb26b7d8dc84596fc92c7e96784e9d551af74",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Conjecture63": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "3724994a26ad31a68ef108d4d65765126c4a06c317ac4db005142776cea5c318",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Frame": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "7cfa55670cceebb2ea4bf30104a6d726cc193af869e03bd24574d40074c50a86",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Frame.hi": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "659e42f4487c4c56dbe79e3c402b9c6ca33ad4756393d5506bdf127f5362d5ca",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Frame.lo": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "e2d547fdf23c7b1c13e7a035f553b92b7765f79da8a16897935043fb8b6085e9",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Frame.mid": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "50f9dd9b7b14fc751490d4575ca0b9919e26fb4007ba34667eb35aa9451f22cb",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Frame.mk": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "8fcc0619b963992bb935f04b395a95c21e980d59529fa5d5da32ff7083883731",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.FrameBound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "7da24e51909a71bf725b482b409ddd58115866acd74f6d83869d381a9e70ef00",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.FrameInvariant": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "c8611de3ea4ab6b9feb61758d952bfce8f08325fe589bba307f81429ef303784",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.casesOn": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "4e4f3cdeadf440bfcfd060dd5ac47c666232e95810391df9ab392ce9acd9f158",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.hi_pos": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "335769732405663ed7f44be0e2c1be703482d3d1b286213cf621ed0c9d4a6ec8",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.lo_pos": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "faf3e4180f4db342efdf8e88fc9759b2addf7c011085e5d3b602f22ec629498b",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.mk": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "c6eaf24f985122b36dd3b31cacf49940d3e4b04e8257d50e7f7c9dcd7eb8d805",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.rec": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "4bfcbd4d231ff99aebafd786f0db210997618a9fa41504fe040e6bcbf3c5966b",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.sum_a": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "cc501f15adc3405e893545c64d86c348e791241f9d513408733e64541e8982c1",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.sum_b": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "f8bed0c7a17e7d332aa17962f01e4d87f223a1b5d4fbe04c20f88c0a54039173",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameTop": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "7f60e8da8f1de2a701763a7bb89a77a7572ad268c302de06f154ca6ae39bec03",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.InPolygon": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "e4fee47ea7d2b9a2fb50eed6b3362422388563670563b3f97ca083a205616197",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Label": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "7cfa55670cceebb2ea4bf30104a6d726cc193af869e03bd24574d40074c50a86",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Label.a": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "5d853551169d5bad03cb478a8cad9bba5efb9d8bf8e26e3cc46d28d88390d777",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Label.b": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "7be767fd793ffa854a05c605112a3017ce90d9eec179b75e42b998dd8f4c67e2",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Label.mk": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "7edc7096bc13a7fe1be2aaa410e7519113d1fc9b72fd00eff9bab5887decadaf",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Label.p": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "af4287af0992e159995664efce4e2ae409a3830ddaddbd4dd299dcb764d6194f",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.LabelBound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "a3cacfd3b93b20d435fe14904b16dd55f1333fa42ef8888fbf0e4d6111ad9dec",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.LabelTop": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "e527c83f0383fd1375ca6e443d35a1aaaebac74b7009b75ac7668ec28f2c9c4b",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.LabelTopLC": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "9d50369cd0ce81750985d3518765703ee1dae44bd252b7a65f79a4a4bf9615e6",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.S": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "0d61fa103ed288679129a677449881b5bbf0998c02f6f579fdce49019bbf419e",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.SupportBound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "675f91f8b1b78773b27d9fcaa26dac43fa9ec81aea770b74a8dc2e88de6484f0",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.add": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "a598ab7808d4eff558fdaa71efdbe7ee3b54a61ff6a90e10e41d06f0afe0348f",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.add._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "893bcf3008a72f5204ef018b2dc6138e474b82ab4762ea21cdf40f39ec182140",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.add._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "345a7332a483d661ad9d34298bb77aee812cbdc073c933cc46bbb87756c69dd7",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.mono": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "908fdcb5667b6d397854ce27e7349e7352cd96e80687c02eaeb58c395eb4ace2",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.mul": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "d8fee18a7d6c8292f8d872c3cc5f3022e1ccc92ddc89326642146aeabab4efd3",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.mul._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "b3ac8e1e3b8e2b525f87f86af4c22f5f2ba9f03f25216843181b8251db047cef",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.one": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "98b8e2e8440c770a083e4076ac18b3cb1c0b8915dfd4399012e15860fa84f969",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.pow": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "e01adc698be51305a39a28880be8f1fc5f125a0d13b2f9511076bf3a6fcf0ef0",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.s": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "c2ef831d3312db61c49df6d9f9b8907ccb95e0c3eb27ab7909fa20370d653c58",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.sub": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "0fbd484b0af9856d4cdad4ce4486a7c0ecf64288288a6310d4276b89a3140dae",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.sub._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "3745a545e80e0c824f093cd608a9a21fc39d7678e78e2d1caf5f6adec25dd116",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.sub._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "d8ad8caca9d4279c3a231d0ac6f592d004d47b56622a6b037a5b0f766119df98",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.u": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "ef82a73a15f764bb490bb8ecfa42bf0c4725a1bf9d09d329ffcb6de62853fb63",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.u._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "3948b36bbdd269de96c030784701eb6caf6916cc9b09ae13841a0e59e2d94e6c",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.v": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "5d1215e45d4baf1fc7e4c57847c76f0affce948523489b94210e237a780437c0",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.v._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "9e064e438402726133f65a644146ce1c85ba06ef28d2c164bcc9ca905f7d4f2b",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.TopBoundaryResidual": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopReduction",
+        "semantic_sha256": "63479a860ddfe98c4f96cfd985a572181d5c8835bd128789e7c5498c8dd98c03",
+        "source_sha256": "3d278f70c679c65bf5a616535b1d0ccc532b687c9946a56e9ac19c3cd140c2f9"
+      },
+      "MathGKM.Markov.TopForm": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "6aefb3f55f35d6b4b65d601e75dc38b34943cb262eee11ed1e02d00b1e0ee1cc",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.TopForm.coefficient": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "1c2e4786f4839b32a3f2187ae8dae22abcbe7d26d909c9a9a413ccf86b5ff118",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.TopForm.coefficient._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "53b5f828366fd58113c4610db406cd639e1a586ee65c6646f5203b5a2152fadf",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.TopForm.diagonal": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "7a977cd9526ba836c94d9ea99d82b8d3df4cf8eecfcb83c7e245d484a550dc0a",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.TopForm.diagonal._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "313fe4a7847ed3422f56130ededf876040d192dec7be9f5fea099905d0f7260a",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.TopForm.diagonal._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "5573abecce94ebfa479fdf6be1db65439385dc8229d67a9a9d3fff6cfe1537f7",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.TopForm.diagonal._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "f05f20416f7b824d335413b064eb62d6da66a8576f651fbf322ebf30badbe9eb",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.TriHomogeneous": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "53995f5c8cf4fab8d9487ea4cf06811cb6f5d77ce626b753ad54fe117386e33d",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.TriPoly": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "9afaf218930f2d70479907a5822123ec953d6653c872d95cf55711f729a13d43",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.TriWeakLC": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "3f147443c73350fc526a95de5f388a06b2ba211a13608d3e04df0e635310beb8",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.U": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "95384326f96f67b81da680dec42d2d57491a6d056d6b1e2b04be1ee47bc63807",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.V": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "6866b768304ce01fe2391f930c229da1d25a9db77e5239008202feb53cc89af8",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.WeakLC": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "a8f8c356e0325fde0cff9c00df89b3f23f5fcd58bec2a837239a12657d6d0f6b",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.advance": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "4bf8cf464fd1f7dc815c9fe4151dc468fdaea6786a80f61cb599b53838ef6ac9",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.advance_bound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "8c085f2dc8f528a9fdb035ccc115a6b7af4488a14bbb0a7eb864e958eb40eca4",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.advance_bound._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "84ba5fc3da8fc2811fb26d051eae191cd5f166ef6568dea49f524c870b0e17a9",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.advance_bound._proof_1_4": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "654b97338f91686f90ef9733085adc20044f887ec6a2327c9d906f5cbbf777d7",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.advance_invariant": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "fd613adbf9a185a78edd7927cf0d3aa3b55df469e5591fdf27384d2eebc6fdf3",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.advance_invariant._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "5773610b36122cf3b75b1a9e8201b309f42cd325f0dd6772a28652db76ed1c3d",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.advance_invariant._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "7c99de2001b69f962ca3d25dc3baea12de27121ed9d8d0e305628c7584acc52a",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.advance_top": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "614c9b188fed844121763a80c5a8e652475f6b92323686811877898287fb3459",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.advance_top._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "3266c413b45eedb8ca4fef3bf578d76d6ecd3caa00c052d064fb49398adc272f",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.advance_top._proof_1_4": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "71f71a422a3e0f6989b098e454c3e5f002808caf0ffed6541b4914e149cd262d",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.advance_top._proof_1_5": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "a75bea9c5f57ecfbcce58ee57f847a816a5315c21f284ab7ffe788c6a88f86fa",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.advance_top._proof_1_6": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "a974dae7f79f9229ce8c96dcb06286e37e374ea3475af55f04549959fbd95fb6",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.all_frame_top_diagonal": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "2f4dd4df8429f3e15681b82ccf03dfacdfd89846f5810e0b30e9820e47da09d4",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.binomial_boundary": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "d986a81f7aa837225d4f6eb6fbb3f90728c1ac33e5a0e7599b420f4beee90ca7",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.binomial_boundary._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "61318b02ff6c942f4b6184b15f2f0d1bb692e3b1332421bc7e0e890ff384f3f8",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.choose_log_concave": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "f7fc12568e3c7f807f34cc4331d78a8d71c2e5788c68ea8a7cf8294e4cce6409",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.choose_log_concave._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "0f5d45c121f3740618376c6afc513d3e18064d9e668b72a29c7a815afc4ff4e5",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.choose_log_concave._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "dac73ada77ae5f2068531a441dd6a58e9cbcd64d32003b27c1cfa9b7cfa78795",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.choose_log_concave._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "0823fd43d351988741505093b40bd0bde1e04e90e650449fa545bba001c85a9c",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.choose_log_concave._proof_1_4": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "af72335865030d7cc67bb81ae5ddaaa03130a837bfe18aae437b9631d5b25f19",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.coeff": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "da6740362a2d8a95a0dd3113078e6a8d76c39f05c3480a6745b4d25920a83d19",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.coefficient_triple_transport": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "3f6b9792fbed13fb41dc5c43007f06f9273ef06346d086ecaeec21a3578ace4d",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.coefficient_triple_transport._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "3dbd299bc7ee9ce2809c9c7bcaff5884c9f2bac144748abb3f82b11f554da118",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.coefficient_triple_transport._proof_1_10": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "70a2184d38cf3ca11c65431e6a90f590d34575e53612330ecaac1f54b64ebaf1",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.coefficient_triple_transport._proof_1_11": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "f40f7f3bee35a9759cd2496dcb4d03f13d33e6084957733245d10cd7163a3936",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.coefficient_triple_transport._proof_1_12": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "25639250720ab8de70af8477ac9bffde293b1210bcf9062693854d41eda3fa78",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.coefficient_triple_transport._proof_1_13": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "153982a0e637c9ae8ddb15c351d854d2fde48b480f86a53d8fe48ff4c7aae544",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.coefficient_triple_transport._proof_1_14": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "2d31828b8786dd005a96f36ee6062416c2aea626d1637aa2410deeb6833f8a98",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.coefficient_triple_transport._proof_1_15": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "f73c1b32edaf791d4f2883f4e29fb186d11004a42e023edc3d17d4d1de5091eb",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.coefficient_triple_transport._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "01e95ce2f224890e4e5d47d53251da1dbff3c77ff5b16bcba32b4086bd4cb0ca",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.coefficient_triple_transport._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "bf8a5c5713d68b05f940b61e9b042f976f00a5294deeeef63b85bf5fa9847085",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.coefficient_triple_transport._proof_1_4": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "fff5c929eb2f2ba349c011477c8d89e65b55a7f23a9c9d3421fee233f4b5e06b",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.coefficient_triple_transport._proof_1_5": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "0d0b502b2e041ac0f8a74530261cf07d3cce18302903f6af1dbda846fede8bb3",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.coefficient_triple_transport._proof_1_6": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "054da4515620ec5f43ce0d4205761f586c733643803d504496e4b66e79ca69eb",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.coefficient_triple_transport._proof_1_7": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "3a2a8ceeb2a373f5c24f5e1c15bf01364a1f9c124fd6a94fb6ed1da1d7354687",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.coefficient_triple_transport._proof_1_8": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "9ae3a064c836cfa0c0b567866ee90976b7c02670f2f7a4de27aa9cb6522cb98e",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.coefficient_triple_transport._proof_1_9": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "db0428ed27c86a63324816dddb570c1acc78c25e8ebe0a85f2df5c6dc43309a1",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.dehom_coeff": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "9ba8e7643749a7824f6e19adc475d437743dee23996f1a54e8d12ac528fb0df9",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.dehom_lift_coeff": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "5ac948c4221c9d2e50541b1fd3eb55cdab8f324dc4bcadef01f7b3569378cfda",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.dehomogenize": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "c7505e09f61abcd1c3055a21624569c4a2688f39c65419ad06eeac0e237b3148",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.dehomogenize_lift": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "03cc5f961f0258df24bfd810c4eb5d7c9b3b88ded990490e95c83c4233052106",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.dehomogenize_lift._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "d420a9bb85794f587261bac511e9f6489496154bfb4f9e0d45a11160356a8622",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.endpoint_polygons": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "2f8dd8f79b1084852d9026dbd80b728ecec71d551723635ee12649bb16ec9ac8",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.endpoint_polygons._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "092f394bea4d23d34d7f9c8474850c3d601c3eb6df170195dd37f18b1d27e072",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.endpoint_polygons._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "202552d617db47ccdca5e0c0497aa8070c988c73392b12b66a8375517d4ef2f3",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.frame": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "2f4996f0fc666ada1a441849dd93fa152ecda19a73a1562b0486dfd3dbc570e6",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.frame_invariant": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "218403b870e6f220bddd3be80c949c812d452a5b97dee839276ec7c23ada3df7",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.frame_support_bound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "c262b26928e688ec95700e0f8dd2556559ee358aa52c5dd12426ddc755dd858c",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.frame_top": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "77eb325d4996bbdee68e8fff9f227f6937da544bc278f6253da07b28ea0c6930",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.homogeneousLift": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "f176e9c91f1bd806f0ffec28fe5d258e3439e02d1397f0e9c902d92b0b94d7f9",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.homogeneous_dehom_coeff": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "3220185968eb63d37971271a5fe1a58193faf9db1d19bc1423a6712ea0850ac5",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.homogeneous_dehom_coeff._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "f3f76e6d1e4ca081ab807a203b1d9e610835e1f2b8a30741023c86a482861d58",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.homogeneous_dehom_coeff._simp_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "e88406ab3cf0b96d46fe79159478fc6a4261a469f9e488e4130171b457977346",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.homogeneous_dehom_coeff._simp_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "67637aece91aea7324e30f915a24ef809c281d49ee77ead036620bb79964a260",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.homogeneous_dehom_injective": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "a6f808e4ebd295a635076d47cd1b35bde731935583c0750252bd243c45bacd4c",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.homogeneous_lift_laws": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "637d26b4581a784a4e5fc6bc3aa46d94f07a2674ae96ccdfd25dfe3d4c4fb631",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.homogeneous_lift_unique": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "b72faa3b9c519915509fee3117c65f9c923d359bf9b849b862c955c3b2298421",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.initial": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "49e719f76b86575bbd2c7b2f9afdf12bed6aeb80c47e595334a45761701cbc2e",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.initial_bound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "8101c1c9745cd449992706252a58bead68c7911458e2d7d5cf32d1e6765b9468",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.initial_invariant": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "c4f729c77c3c89f7df2011a6e34110fc1cf28b69a1432b268325e0b748f805f9",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.initial_top": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "e6754ede3a85a2dc533013392b8534ad33e2c5540b53f393f14aa9f867cac872",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.initial_top._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "c7dcedc8ab10d1616a498494412c42b70d55ab7420d51541ee655a0b5bfa2037",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.latticeIndex": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "e907e71838764b199890526123cd1e101ac15ba95c085f6994a6e15fb43ef20c",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.latticeIndex_natural": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "12a37f9aff2ab60e83635809a6ae3105bb04956f0bd5931406f406d476ddd49a",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.latticeIndex_natural._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "a72191a4062270ed6f741fc8457d01dc681084fae7e4817112e7175fc986f1bc",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.latticeIndex_steps": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "48f2c806fd64ce7aa086005691833254518d4661438445d9b49f6b5e693d1ba4",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.latticeIndex_steps._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "a1717e65f948706197866408e04fb3909efc979dccbfaca7f8d7fd3af0426106",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.latticeIndex_steps._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "e16dbbc32f3a661e9221b59ce09bcf8436c1c035bff084ade155935e4aa0f9b1",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.latticeIndex_steps._proof_1_4": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "0938c088e0af99973f866d1035eef708959bd2014f07fca2c42fc5cf368e4dda",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.lift_coeff": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "74cb71be94d250ba945ec044512dc1c108b880096796f97e5244d6be7d59458e",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.lift_coeff._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "60b1b3dc4a261904b214222e2b7e0c70c88bac58bdb2890f589a5c4e299ea242",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.lift_coeff._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "0c1812e7b3030bf674857db8e20890bbafc4ebcebcde2e84d71414534b065295",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.lift_coeff._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "c55c5f2ee00cd9c60459614983b653b315c482bcde7d75f07a6c2876db2af1c3",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.lift_coeff._proof_1_4": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "1f2fd04706dda142f95cc5a1a65a419e3d56cf895cae293d051d272e4c941d25",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.lift_coeff_raw": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "03e5350b7b2db127ea3a9f166dc4d6c2eaaffee2dba7050d7a1bbae6ab0444d6",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.lift_coefficient_recovery": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "29c4741ac852af003053cef36c96995afc65c64766ae60e3289f1f36c419dee6",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.lift_coefficient_recovery._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "a4afb221c054348c48ea1fc7682081f44396cb00dbc1b2b3cbc5f872f42d9310",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.lift_coefficient_recovery._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "20531fc40fa3efccf844aefb0b9e54dfe916a81ca723082c3de64fde95450d1f",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.lift_homogeneous": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "8bd14e7bdad8615eb9201198c9cfb8b10cf8a39dcc853be7e2a4072e8f823e3d",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.low_degree_weakLC": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "7917f3414ca1ed7a02c5a7c12716b99e9c8cbed0e7e59a4ffcfeba3e845297e2",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.low_degree_weakLC._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "34aab6503c17a4c9fcbc959b88efaf6d183c20dab06326c45901f81b4a841659",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.low_degree_weakLC._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "6e2c606ca3ecd5ff083a47bfb6db1cc37b6de9eeee86c47905eeff41dee5b8a9",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Markov.topForm_mul": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "53daaf3502e56978541cb232a7fe61e92d108f9ba844701599be6a6b7fdf6cff",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.topForm_s": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "2db61641990fb165ef048aa86a25a6dcb563a1610c8d7532c1e6be6c0b1501cc",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.topForm_s._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "4bef8f28465f0d7657fea269e0f83d385a06d82dfd17078489771fc0c5e46b5f",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.topForm_sub": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "44d821f7fb9cbe198a0c30b773ec71c766b3e3ac03c4471ed23acf8cf8e57f20",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.top_boundary_reduction": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopReduction",
+        "semantic_sha256": "5589139ceda9ffc9dec401334b5ab4431df15b14d3e47128f4f19cd8f2c32776",
+        "source_sha256": "3d278f70c679c65bf5a616535b1d0ccc532b687c9946a56e9ac19c3cd140c2f9"
+      },
+      "MathGKM.Markov.top_boundary_reduction._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopReduction",
+        "semantic_sha256": "a2c0a4f0570bba1107d62e926140217b84c5c3575c9477f9c215f955e8188403",
+        "source_sha256": "3d278f70c679c65bf5a616535b1d0ccc532b687c9946a56e9ac19c3cd140c2f9"
+      },
+      "MathGKM.Markov.triCoeff": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "bcdf816e84a994940ace10654d35fd60a1151b17500ce63b038326e239c3d2c8",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.triCoeff_monomial": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovHomogeneous",
+        "semantic_sha256": "0855f93c9457bcde8421048c37e7d5dfba010a9aeee417b620ef73f5a1382cd1",
+        "source_sha256": "51035ddc59d684cf8cfcfd6c17f589fe83aa640df697c15831057f56958c0480"
+      },
+      "MathGKM.Markov.triple_transport_bundle": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTripleTransport",
+        "semantic_sha256": "f1b759db645fb161d4469141b03bc145a33e565572e009495f49eaf241322d6a",
+        "source_sha256": "c802615c77936021af654019c50f452228db4466c69b4788a1cec5fb269d0c05"
+      },
+      "MathGKM.Target4fe3181ffc85917dc2486060.Goal": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Target4fe3181ffc85917dc2486060",
+        "semantic_sha256": "686032844e6feeca9fd16862674d457319723258687e66ed56bed5f585706530",
+        "source_sha256": "5f33773bff1c406b16d33cbf88424db3e66ad3da0540b261704d99e52da9cc32"
+      },
+      "MathGKM.Target4fe3181ffc85917dc2486060.Interface": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Target4fe3181ffc85917dc2486060",
+        "semantic_sha256": "0af27e2feca7dd732502ce681501bfb5acfafd66d9aa7d86207e5a60c55820d3",
+        "source_sha256": "5f33773bff1c406b16d33cbf88424db3e66ad3da0540b261704d99e52da9cc32"
+      },
+      "MathGKM.Target79a428e033d36adf5fa527fb.Goal": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Target79a428e033d36adf5fa527fb",
+        "semantic_sha256": "cae60cafa9f5d3334244e45c8000d087fb8e3cfc1833f8db097b49dff6bd7ddb",
+        "source_sha256": "da0b48138861dfd08bb66244fedf93b81c4e24fdd56a9deabd497482a13165b8"
+      },
+      "MathGKM.Target79a428e033d36adf5fa527fb.Interface": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Target79a428e033d36adf5fa527fb",
+        "semantic_sha256": "0af27e2feca7dd732502ce681501bfb5acfafd66d9aa7d86207e5a60c55820d3",
+        "source_sha256": "da0b48138861dfd08bb66244fedf93b81c4e24fdd56a9deabd497482a13165b8"
+      }
+    },
+    "usefulness": "not established by checking",
+    "validation_bundle": {
+      "directory": "/Users/sasha/math_gkm/.scratch/paired-v3-restart-20261019-goal-continuation-0001/arms/exploration/rounds/0004/checks/math/2-ce73ee7a42e1018a4bd0d1246866c7168eae8b9cd0f2d2244b2d899cadf8ea47/5d6e230b241d6782f3fb251b997245f28e61f0da345e6b325a02fef050d52dfd",
+      "finished_sha256": "d623ec0bd0834f4d6877bd129fb3daaa2a3dc57234c03f64d40aa0b818b98be3"
+    }
+  },
+  "markov-r0004-top-diagonal-inequality-v1": {
+    "claim": {
+      "hypotheses": [],
+      "statement": "∀ path : List Bool, MathGKM.Markov.LabelTopLC (MathGKM.Markov.frame path).lo ∧ MathGKM.Markov.LabelTopLC (MathGKM.Markov.frame path).mid ∧ MathGKM.Markov.LabelTopLC (MathGKM.Markov.frame path).hi"
+    },
+    "dependencies": [],
+    "export_module": "MathGKM.Accepted609ebe2e34e32fad912995c7",
+    "export_status": "exact checked composition renamed; fresh rebuild mandatory for every consumer",
+    "exports": [
+      "Accepted609ebe2e34e32fad912995c7.obligation",
+      "Accepted609ebe2e34e32fad912995c7.interface",
+      "Accepted609ebe2e34e32fad912995c7.transport"
+    ],
+    "id": "markov-r0004-top-diagonal-inequality-v1",
+    "kind": "mathematical_claims",
+    "novelty": "not assessed",
+    "proposal": {
+      "discharges": [],
+      "id": "markov-r0004-top-diagonal-inequality-v1",
+      "module": "MathGKM.MarkovTopLC",
+      "statement": "∀ path : List Bool, MathGKM.Markov.LabelTopLC (MathGKM.Markov.frame path).lo ∧ MathGKM.Markov.LabelTopLC (MathGKM.Markov.frame path).mid ∧ MathGKM.Markov.LabelTopLC (MathGKM.Markov.frame path).hi",
+      "term": "MathGKM.Markov.all_frame_top_diagonal"
+    },
+    "proposal_hash": "64c9c2c959bbb094dac98317b2129dfd00a4a4c53712474eedaff9726abcd22f",
+    "receipt_hash": "87e7341aa12defeed58f5d661626ab77e4337ecc4049153256f1269bbcae2a21",
+    "relevance": "not asserted",
+    "solution": {
+      "interface_term": "True.intro",
+      "module": "MathGKM.MarkovTopLC",
+      "term": "MathGKM.Markov.all_frame_top_diagonal",
+      "transport_term": "True.intro"
+    },
+    "source_files": {
+      "MathGKM/Accepted609ebe2e34e32fad912995c7.lean": "8976eb48f97c2362274c7d88aeeacd2feeb1c23ac3949f3d9a081f38a57b5dd0",
+      "MathGKM/Markov.lean": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "MathGKM/MarkovCoverage.lean": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a",
+      "MathGKM/MarkovSupport.lean": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a",
+      "MathGKM/MarkovTopBoundary.lean": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1",
+      "MathGKM/MarkovTopLC.lean": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e",
+      "MathGKM/Target08dece41e56eedf51de3b86c.lean": "28ad75ec5a081441d3eca57609cb2134222009f128cabf3526c13b7e80b3b260"
+    },
+    "task": {
+      "context_modules": [
+        "MathGKM.MarkovTopLC",
+        "MathGKM.Markov"
+      ],
+      "context_sources": {
+        "MathGKM/Markov.lean": "7a870468ca84fffa6b629f42bf32f38c23fda67a34d313485baddd7300ea2df8",
+        "MathGKM/MarkovCoverage.lean": "659c60e3828355c3e3ae121887b071014fbdc64c261d1241aaee0a2da9223c74",
+        "MathGKM/MarkovSupport.lean": "4169c3124673c0aecfa1d76040588d00e5cd31b7d20670fc21b42f2b15fda278",
+        "MathGKM/MarkovTopBoundary.lean": "1f20606bd2786c544a296378d50b277f9c45d01f571e53afec45c82540e01385",
+        "MathGKM/MarkovTopLC.lean": "42324be8b829c99e162e504859fa676194c0e8434881ceec0733a7ba2d716aff"
+      },
+      "hypotheses": [],
+      "id": "markov-r0004-top-diagonal-inequality-v1",
+      "interface_type": "True",
+      "kind": "holdout",
+      "required_constants": [],
+      "scope": "exact proposal; usefulness and novelty unassessed",
+      "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "statement": "∀ path : List Bool, MathGKM.Markov.LabelTopLC (MathGKM.Markov.frame path).lo ∧ MathGKM.Markov.LabelTopLC (MathGKM.Markov.frame path).mid ∧ MathGKM.Markov.LabelTopLC (MathGKM.Markov.frame path).hi",
+      "target_module": "MathGKM.Target08dece41e56eedf51de3b86c",
+      "transport_type": "True"
+    },
+    "truth": "checked exact proposition under allowed premise closure",
+    "used_declarations": {
+      "MathGKM.Markov.Below": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "602396819564e4a8ad808d020a52b318e6317c03545b802e2aace025e4e5fdf7",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.Below.add": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "0cf7fdce9f7f412df62be0ba4763b4ef0c87ca248ef8654116b5928c54aebec4",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.Below.mul": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "7c46af0427a8a3e4ac021682b1f639edb74fbaf88afef3282e87fb10ad5fec91",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.Below.mul._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "3f2f419eefa7efdd21b10fee80ec75c98d37e65b06b4336fba4f8885738a7ad3",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.Below.of_bound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "9e7896a5c290928615c60ebce4c8d9a9081596d022ffec2e3f4473d701d268f2",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.Below.of_bound._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "f848f9bf8b9c03e41e44715c74b6b5461477969b959927df72993046d7af64bc",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.BiPoly": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "432518e7799ea5c17f8ea5155aefb26b7d8dc84596fc92c7e96784e9d551af74",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Frame": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "7cfa55670cceebb2ea4bf30104a6d726cc193af869e03bd24574d40074c50a86",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Frame.hi": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "659e42f4487c4c56dbe79e3c402b9c6ca33ad4756393d5506bdf127f5362d5ca",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Frame.lo": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "e2d547fdf23c7b1c13e7a035f553b92b7765f79da8a16897935043fb8b6085e9",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Frame.mid": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "50f9dd9b7b14fc751490d4575ca0b9919e26fb4007ba34667eb35aa9451f22cb",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Frame.mk": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "8fcc0619b963992bb935f04b395a95c21e980d59529fa5d5da32ff7083883731",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.FrameBound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "7da24e51909a71bf725b482b409ddd58115866acd74f6d83869d381a9e70ef00",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.FrameInvariant": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "c8611de3ea4ab6b9feb61758d952bfce8f08325fe589bba307f81429ef303784",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.casesOn": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "4e4f3cdeadf440bfcfd060dd5ac47c666232e95810391df9ab392ce9acd9f158",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.hi_pos": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "335769732405663ed7f44be0e2c1be703482d3d1b286213cf621ed0c9d4a6ec8",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.lo_pos": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "faf3e4180f4db342efdf8e88fc9759b2addf7c011085e5d3b602f22ec629498b",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.mk": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "c6eaf24f985122b36dd3b31cacf49940d3e4b04e8257d50e7f7c9dcd7eb8d805",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.rec": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "4bfcbd4d231ff99aebafd786f0db210997618a9fa41504fe040e6bcbf3c5966b",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.sum_a": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "cc501f15adc3405e893545c64d86c348e791241f9d513408733e64541e8982c1",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.sum_b": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "f8bed0c7a17e7d332aa17962f01e4d87f223a1b5d4fbe04c20f88c0a54039173",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameTop": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "7f60e8da8f1de2a701763a7bb89a77a7572ad268c302de06f154ca6ae39bec03",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.InPolygon": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "e4fee47ea7d2b9a2fb50eed6b3362422388563670563b3f97ca083a205616197",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Label": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "7cfa55670cceebb2ea4bf30104a6d726cc193af869e03bd24574d40074c50a86",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Label.a": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "5d853551169d5bad03cb478a8cad9bba5efb9d8bf8e26e3cc46d28d88390d777",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Label.b": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "7be767fd793ffa854a05c605112a3017ce90d9eec179b75e42b998dd8f4c67e2",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Label.mk": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "7edc7096bc13a7fe1be2aaa410e7519113d1fc9b72fd00eff9bab5887decadaf",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Label.p": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "af4287af0992e159995664efce4e2ae409a3830ddaddbd4dd299dcb764d6194f",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.LabelBound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "a3cacfd3b93b20d435fe14904b16dd55f1333fa42ef8888fbf0e4d6111ad9dec",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.LabelTop": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "e527c83f0383fd1375ca6e443d35a1aaaebac74b7009b75ac7668ec28f2c9c4b",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.LabelTopLC": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "9d50369cd0ce81750985d3518765703ee1dae44bd252b7a65f79a4a4bf9615e6",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.S": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "0d61fa103ed288679129a677449881b5bbf0998c02f6f579fdce49019bbf419e",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.SupportBound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "675f91f8b1b78773b27d9fcaa26dac43fa9ec81aea770b74a8dc2e88de6484f0",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.add": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "a598ab7808d4eff558fdaa71efdbe7ee3b54a61ff6a90e10e41d06f0afe0348f",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.add._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "893bcf3008a72f5204ef018b2dc6138e474b82ab4762ea21cdf40f39ec182140",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.add._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "345a7332a483d661ad9d34298bb77aee812cbdc073c933cc46bbb87756c69dd7",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.mono": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "908fdcb5667b6d397854ce27e7349e7352cd96e80687c02eaeb58c395eb4ace2",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.mul": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "d8fee18a7d6c8292f8d872c3cc5f3022e1ccc92ddc89326642146aeabab4efd3",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.mul._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "b3ac8e1e3b8e2b525f87f86af4c22f5f2ba9f03f25216843181b8251db047cef",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.one": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "98b8e2e8440c770a083e4076ac18b3cb1c0b8915dfd4399012e15860fa84f969",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.pow": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "e01adc698be51305a39a28880be8f1fc5f125a0d13b2f9511076bf3a6fcf0ef0",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.s": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "c2ef831d3312db61c49df6d9f9b8907ccb95e0c3eb27ab7909fa20370d653c58",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.sub": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "0fbd484b0af9856d4cdad4ce4486a7c0ecf64288288a6310d4276b89a3140dae",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.sub._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "3745a545e80e0c824f093cd608a9a21fc39d7678e78e2d1caf5f6adec25dd116",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.sub._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "d8ad8caca9d4279c3a231d0ac6f592d004d47b56622a6b037a5b0f766119df98",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.u": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "ef82a73a15f764bb490bb8ecfa42bf0c4725a1bf9d09d329ffcb6de62853fb63",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.u._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "3948b36bbdd269de96c030784701eb6caf6916cc9b09ae13841a0e59e2d94e6c",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.v": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "5d1215e45d4baf1fc7e4c57847c76f0affce948523489b94210e237a780437c0",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.v._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "9e064e438402726133f65a644146ce1c85ba06ef28d2c164bcc9ca905f7d4f2b",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.TopForm": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "6aefb3f55f35d6b4b65d601e75dc38b34943cb262eee11ed1e02d00b1e0ee1cc",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.TopForm.coefficient": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "1c2e4786f4839b32a3f2187ae8dae22abcbe7d26d909c9a9a413ccf86b5ff118",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.TopForm.coefficient._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "53b5f828366fd58113c4610db406cd639e1a586ee65c6646f5203b5a2152fadf",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.TopForm.diagonal": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "7a977cd9526ba836c94d9ea99d82b8d3df4cf8eecfcb83c7e245d484a550dc0a",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.TopForm.diagonal._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "313fe4a7847ed3422f56130ededf876040d192dec7be9f5fea099905d0f7260a",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.TopForm.diagonal._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "5573abecce94ebfa479fdf6be1db65439385dc8229d67a9a9d3fff6cfe1537f7",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.TopForm.diagonal._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "f05f20416f7b824d335413b064eb62d6da66a8576f651fbf322ebf30badbe9eb",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.U": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "95384326f96f67b81da680dec42d2d57491a6d056d6b1e2b04be1ee47bc63807",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.V": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "6866b768304ce01fe2391f930c229da1d25a9db77e5239008202feb53cc89af8",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.advance": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "4bf8cf464fd1f7dc815c9fe4151dc468fdaea6786a80f61cb599b53838ef6ac9",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.advance_bound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "8c085f2dc8f528a9fdb035ccc115a6b7af4488a14bbb0a7eb864e958eb40eca4",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.advance_bound._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "84ba5fc3da8fc2811fb26d051eae191cd5f166ef6568dea49f524c870b0e17a9",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.advance_bound._proof_1_4": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "654b97338f91686f90ef9733085adc20044f887ec6a2327c9d906f5cbbf777d7",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.advance_invariant": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "fd613adbf9a185a78edd7927cf0d3aa3b55df469e5591fdf27384d2eebc6fdf3",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.advance_invariant._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "5773610b36122cf3b75b1a9e8201b309f42cd325f0dd6772a28652db76ed1c3d",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.advance_invariant._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "7c99de2001b69f962ca3d25dc3baea12de27121ed9d8d0e305628c7584acc52a",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.advance_top": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "614c9b188fed844121763a80c5a8e652475f6b92323686811877898287fb3459",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.advance_top._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "3266c413b45eedb8ca4fef3bf578d76d6ecd3caa00c052d064fb49398adc272f",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.advance_top._proof_1_4": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "71f71a422a3e0f6989b098e454c3e5f002808caf0ffed6541b4914e149cd262d",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.advance_top._proof_1_5": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "a75bea9c5f57ecfbcce58ee57f847a816a5315c21f284ab7ffe788c6a88f86fa",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.advance_top._proof_1_6": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "a974dae7f79f9229ce8c96dcb06286e37e374ea3475af55f04549959fbd95fb6",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.all_frame_top_diagonal": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "2f4dd4df8429f3e15681b82ccf03dfacdfd89846f5810e0b30e9820e47da09d4",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.binomial_boundary": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "d986a81f7aa837225d4f6eb6fbb3f90728c1ac33e5a0e7599b420f4beee90ca7",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.binomial_boundary._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "61318b02ff6c942f4b6184b15f2f0d1bb692e3b1332421bc7e0e890ff384f3f8",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.choose_log_concave": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "f7fc12568e3c7f807f34cc4331d78a8d71c2e5788c68ea8a7cf8294e4cce6409",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.choose_log_concave._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "0f5d45c121f3740618376c6afc513d3e18064d9e668b72a29c7a815afc4ff4e5",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.choose_log_concave._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "dac73ada77ae5f2068531a441dd6a58e9cbcd64d32003b27c1cfa9b7cfa78795",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.choose_log_concave._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "0823fd43d351988741505093b40bd0bde1e04e90e650449fa545bba001c85a9c",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.choose_log_concave._proof_1_4": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopLC",
+        "semantic_sha256": "af72335865030d7cc67bb81ae5ddaaa03130a837bfe18aae437b9631d5b25f19",
+        "source_sha256": "e47fea514e07b317b703c2b4d083c08eb9afc1c362bcc6d9e3f8a08b7f2bf94e"
+      },
+      "MathGKM.Markov.coeff": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "da6740362a2d8a95a0dd3113078e6a8d76c39f05c3480a6745b4d25920a83d19",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.frame": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "2f4996f0fc666ada1a441849dd93fa152ecda19a73a1562b0486dfd3dbc570e6",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.frame_invariant": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "218403b870e6f220bddd3be80c949c812d452a5b97dee839276ec7c23ada3df7",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.frame_support_bound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "c262b26928e688ec95700e0f8dd2556559ee358aa52c5dd12426ddc755dd858c",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.frame_top": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "77eb325d4996bbdee68e8fff9f227f6937da544bc278f6253da07b28ea0c6930",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.initial": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "49e719f76b86575bbd2c7b2f9afdf12bed6aeb80c47e595334a45761701cbc2e",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.initial_bound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "8101c1c9745cd449992706252a58bead68c7911458e2d7d5cf32d1e6765b9468",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.initial_invariant": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "c4f729c77c3c89f7df2011a6e34110fc1cf28b69a1432b268325e0b748f805f9",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.initial_top": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "e6754ede3a85a2dc533013392b8534ad33e2c5540b53f393f14aa9f867cac872",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.initial_top._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "c7dcedc8ab10d1616a498494412c42b70d55ab7420d51541ee655a0b5bfa2037",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.topForm_mul": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "53daaf3502e56978541cb232a7fe61e92d108f9ba844701599be6a6b7fdf6cff",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.topForm_s": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "2db61641990fb165ef048aa86a25a6dcb563a1610c8d7532c1e6be6c0b1501cc",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.topForm_s._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "4bef8f28465f0d7657fea269e0f83d385a06d82dfd17078489771fc0c5e46b5f",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.topForm_sub": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "44d821f7fb9cbe198a0c30b773ec71c766b3e3ac03c4471ed23acf8cf8e57f20",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      }
+    },
+    "usefulness": "not established by checking",
+    "validation_bundle": {
+      "directory": "/Users/sasha/math_gkm/.scratch/paired-v3-restart-20261019-goal-continuation-0001/arms/exploration/rounds/0004/checks/math/1-64c9c2c959bbb094dac98317b2129dfd00a4a4c53712474eedaff9726abcd22f/609ebe2e34e32fad912995c7d5c747910e994d859119ac9f073f6b92d20f3ba2",
+      "finished_sha256": "b200dc94eb04b0c52fa00e5f1b2ae9b39d813f40fdd75a779c7aed782705c31c"
+    }
+  },
+  "markov-r0004-uniform-top-coefficients-v1": {
+    "claim": {
+      "hypotheses": [],
+      "statement": "∀ path : List Bool, (∀ i j, i+j=(MathGKM.Markov.frame path).lo.a+(MathGKM.Markov.frame path).lo.b-1 → MathGKM.Markov.coeff (MathGKM.Markov.frame path).lo.p i j = (Nat.choose ((MathGKM.Markov.frame path).lo.a+(MathGKM.Markov.frame path).lo.b-1) i : ℤ)) ∧ (∀ i j, i+j=(MathGKM.Markov.frame path).mid.a+(MathGKM.Markov.frame path).mid.b-1 → MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p i j = (Nat.choose ((MathGKM.Markov.frame path).mid.a+(MathGKM.Markov.frame path).mid.b-1) i : ℤ)) ∧ (∀ i j, i+j=(MathGKM.Markov.frame path).hi.a+(MathGKM.Markov.frame path).hi.b-1 → MathGKM.Markov.coeff (MathGKM.Markov.frame path).hi.p i j = (Nat.choose ((MathGKM.Markov.frame path).hi.a+(MathGKM.Markov.frame path).hi.b-1) i : ℤ))"
+    },
+    "dependencies": [],
+    "export_module": "MathGKM.Acceptedb4a889ace43416d5430630f1",
+    "export_status": "exact checked composition renamed; fresh rebuild mandatory for every consumer",
+    "exports": [
+      "Acceptedb4a889ace43416d5430630f1.obligation",
+      "Acceptedb4a889ace43416d5430630f1.interface",
+      "Acceptedb4a889ace43416d5430630f1.transport"
+    ],
+    "id": "markov-r0004-uniform-top-coefficients-v1",
+    "kind": "mathematical_claims",
+    "novelty": "not assessed",
+    "proposal": {
+      "discharges": [],
+      "id": "markov-r0004-uniform-top-coefficients-v1",
+      "module": "MathGKM.MarkovTopBoundary",
+      "statement": "∀ path : List Bool, (∀ i j, i+j=(MathGKM.Markov.frame path).lo.a+(MathGKM.Markov.frame path).lo.b-1 → MathGKM.Markov.coeff (MathGKM.Markov.frame path).lo.p i j = (Nat.choose ((MathGKM.Markov.frame path).lo.a+(MathGKM.Markov.frame path).lo.b-1) i : ℤ)) ∧ (∀ i j, i+j=(MathGKM.Markov.frame path).mid.a+(MathGKM.Markov.frame path).mid.b-1 → MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p i j = (Nat.choose ((MathGKM.Markov.frame path).mid.a+(MathGKM.Markov.frame path).mid.b-1) i : ℤ)) ∧ (∀ i j, i+j=(MathGKM.Markov.frame path).hi.a+(MathGKM.Markov.frame path).hi.b-1 → MathGKM.Markov.coeff (MathGKM.Markov.frame path).hi.p i j = (Nat.choose ((MathGKM.Markov.frame path).hi.a+(MathGKM.Markov.frame path).hi.b-1) i : ℤ))",
+      "term": "MathGKM.Markov.all_frame_top_coeff"
+    },
+    "proposal_hash": "bccc51131515666bc0f6cc653a23bd6e3da3827938e72e5bfd4124d0dfd31435",
+    "receipt_hash": "4d958a1de98756ac16049f179d23fb9e31a33d60d1c81f693f7bc5393389fadb",
+    "relevance": "not asserted",
+    "solution": {
+      "interface_term": "True.intro",
+      "module": "MathGKM.MarkovTopBoundary",
+      "term": "MathGKM.Markov.all_frame_top_coeff",
+      "transport_term": "True.intro"
+    },
+    "source_files": {
+      "MathGKM/Acceptedb4a889ace43416d5430630f1.lean": "73634d33d0ceefaf854d1b827cc86e6061c6f54ef06c81d2ea785493ec6316f8",
+      "MathGKM/Markov.lean": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "MathGKM/MarkovCoverage.lean": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a",
+      "MathGKM/MarkovSupport.lean": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a",
+      "MathGKM/MarkovTopBoundary.lean": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1",
+      "MathGKM/Target1abf618da05fbbe373564629.lean": "1e62e0e27576f9a4684e6c08bf79a51af80ed3d5ebe8678698cbf1c71383442d"
+    },
+    "task": {
+      "context_modules": [
+        "MathGKM.MarkovTopBoundary",
+        "MathGKM.Markov"
+      ],
+      "context_sources": {
+        "MathGKM/Markov.lean": "7a870468ca84fffa6b629f42bf32f38c23fda67a34d313485baddd7300ea2df8",
+        "MathGKM/MarkovCoverage.lean": "659c60e3828355c3e3ae121887b071014fbdc64c261d1241aaee0a2da9223c74",
+        "MathGKM/MarkovSupport.lean": "4169c3124673c0aecfa1d76040588d00e5cd31b7d20670fc21b42f2b15fda278",
+        "MathGKM/MarkovTopBoundary.lean": "1f20606bd2786c544a296378d50b277f9c45d01f571e53afec45c82540e01385"
+      },
+      "hypotheses": [],
+      "id": "markov-r0004-uniform-top-coefficients-v1",
+      "interface_type": "True",
+      "kind": "holdout",
+      "required_constants": [],
+      "scope": "exact proposal; usefulness and novelty unassessed",
+      "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe",
+      "statement": "∀ path : List Bool, (∀ i j, i+j=(MathGKM.Markov.frame path).lo.a+(MathGKM.Markov.frame path).lo.b-1 → MathGKM.Markov.coeff (MathGKM.Markov.frame path).lo.p i j = (Nat.choose ((MathGKM.Markov.frame path).lo.a+(MathGKM.Markov.frame path).lo.b-1) i : ℤ)) ∧ (∀ i j, i+j=(MathGKM.Markov.frame path).mid.a+(MathGKM.Markov.frame path).mid.b-1 → MathGKM.Markov.coeff (MathGKM.Markov.frame path).mid.p i j = (Nat.choose ((MathGKM.Markov.frame path).mid.a+(MathGKM.Markov.frame path).mid.b-1) i : ℤ)) ∧ (∀ i j, i+j=(MathGKM.Markov.frame path).hi.a+(MathGKM.Markov.frame path).hi.b-1 → MathGKM.Markov.coeff (MathGKM.Markov.frame path).hi.p i j = (Nat.choose ((MathGKM.Markov.frame path).hi.a+(MathGKM.Markov.frame path).hi.b-1) i : ℤ))",
+      "target_module": "MathGKM.Target1abf618da05fbbe373564629",
+      "transport_type": "True"
+    },
+    "truth": "checked exact proposition under allowed premise closure",
+    "used_declarations": {
+      "MathGKM.Markov.Below": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "602396819564e4a8ad808d020a52b318e6317c03545b802e2aace025e4e5fdf7",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.Below.add": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "0cf7fdce9f7f412df62be0ba4763b4ef0c87ca248ef8654116b5928c54aebec4",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.Below.mul": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "7c46af0427a8a3e4ac021682b1f639edb74fbaf88afef3282e87fb10ad5fec91",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.Below.mul._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "3f2f419eefa7efdd21b10fee80ec75c98d37e65b06b4336fba4f8885738a7ad3",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.Below.of_bound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "9e7896a5c290928615c60ebce4c8d9a9081596d022ffec2e3f4473d701d268f2",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.Below.of_bound._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "f848f9bf8b9c03e41e44715c74b6b5461477969b959927df72993046d7af64bc",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.BiPoly": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "432518e7799ea5c17f8ea5155aefb26b7d8dc84596fc92c7e96784e9d551af74",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Frame": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "7cfa55670cceebb2ea4bf30104a6d726cc193af869e03bd24574d40074c50a86",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Frame.hi": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "659e42f4487c4c56dbe79e3c402b9c6ca33ad4756393d5506bdf127f5362d5ca",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Frame.lo": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "e2d547fdf23c7b1c13e7a035f553b92b7765f79da8a16897935043fb8b6085e9",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Frame.mid": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "50f9dd9b7b14fc751490d4575ca0b9919e26fb4007ba34667eb35aa9451f22cb",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Frame.mk": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "8fcc0619b963992bb935f04b395a95c21e980d59529fa5d5da32ff7083883731",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.FrameBound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "7da24e51909a71bf725b482b409ddd58115866acd74f6d83869d381a9e70ef00",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.FrameInvariant": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "c8611de3ea4ab6b9feb61758d952bfce8f08325fe589bba307f81429ef303784",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.casesOn": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "4e4f3cdeadf440bfcfd060dd5ac47c666232e95810391df9ab392ce9acd9f158",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.hi_pos": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "335769732405663ed7f44be0e2c1be703482d3d1b286213cf621ed0c9d4a6ec8",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.lo_pos": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "faf3e4180f4db342efdf8e88fc9759b2addf7c011085e5d3b602f22ec629498b",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.mk": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "c6eaf24f985122b36dd3b31cacf49940d3e4b04e8257d50e7f7c9dcd7eb8d805",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.rec": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "4bfcbd4d231ff99aebafd786f0db210997618a9fa41504fe040e6bcbf3c5966b",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.sum_a": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "cc501f15adc3405e893545c64d86c348e791241f9d513408733e64541e8982c1",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameInvariant.sum_b": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "f8bed0c7a17e7d332aa17962f01e4d87f223a1b5d4fbe04c20f88c0a54039173",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.FrameTop": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "7f60e8da8f1de2a701763a7bb89a77a7572ad268c302de06f154ca6ae39bec03",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.Label": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "7cfa55670cceebb2ea4bf30104a6d726cc193af869e03bd24574d40074c50a86",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Label.a": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "5d853551169d5bad03cb478a8cad9bba5efb9d8bf8e26e3cc46d28d88390d777",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Label.b": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "7be767fd793ffa854a05c605112a3017ce90d9eec179b75e42b998dd8f4c67e2",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Label.mk": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "7edc7096bc13a7fe1be2aaa410e7519113d1fc9b72fd00eff9bab5887decadaf",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.Label.p": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "af4287af0992e159995664efce4e2ae409a3830ddaddbd4dd299dcb764d6194f",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.LabelBound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "a3cacfd3b93b20d435fe14904b16dd55f1333fa42ef8888fbf0e4d6111ad9dec",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.LabelTop": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "e527c83f0383fd1375ca6e443d35a1aaaebac74b7009b75ac7668ec28f2c9c4b",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.S": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "0d61fa103ed288679129a677449881b5bbf0998c02f6f579fdce49019bbf419e",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.SupportBound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "675f91f8b1b78773b27d9fcaa26dac43fa9ec81aea770b74a8dc2e88de6484f0",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.add": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "a598ab7808d4eff558fdaa71efdbe7ee3b54a61ff6a90e10e41d06f0afe0348f",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.add._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "893bcf3008a72f5204ef018b2dc6138e474b82ab4762ea21cdf40f39ec182140",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.add._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "345a7332a483d661ad9d34298bb77aee812cbdc073c933cc46bbb87756c69dd7",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.mono": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "908fdcb5667b6d397854ce27e7349e7352cd96e80687c02eaeb58c395eb4ace2",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.mul": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "d8fee18a7d6c8292f8d872c3cc5f3022e1ccc92ddc89326642146aeabab4efd3",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.mul._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "b3ac8e1e3b8e2b525f87f86af4c22f5f2ba9f03f25216843181b8251db047cef",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.one": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "98b8e2e8440c770a083e4076ac18b3cb1c0b8915dfd4399012e15860fa84f969",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.pow": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "e01adc698be51305a39a28880be8f1fc5f125a0d13b2f9511076bf3a6fcf0ef0",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.s": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "c2ef831d3312db61c49df6d9f9b8907ccb95e0c3eb27ab7909fa20370d653c58",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.sub": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "0fbd484b0af9856d4cdad4ce4486a7c0ecf64288288a6310d4276b89a3140dae",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.sub._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "3745a545e80e0c824f093cd608a9a21fc39d7678e78e2d1caf5f6adec25dd116",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.sub._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "d8ad8caca9d4279c3a231d0ac6f592d004d47b56622a6b037a5b0f766119df98",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.u": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "ef82a73a15f764bb490bb8ecfa42bf0c4725a1bf9d09d329ffcb6de62853fb63",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.u._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "3948b36bbdd269de96c030784701eb6caf6916cc9b09ae13841a0e59e2d94e6c",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.v": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "5d1215e45d4baf1fc7e4c57847c76f0affce948523489b94210e237a780437c0",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.SupportBound.v._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "9e064e438402726133f65a644146ce1c85ba06ef28d2c164bcc9ca905f7d4f2b",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.TopForm": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "6aefb3f55f35d6b4b65d601e75dc38b34943cb262eee11ed1e02d00b1e0ee1cc",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.TopForm.coefficient": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "1c2e4786f4839b32a3f2187ae8dae22abcbe7d26d909c9a9a413ccf86b5ff118",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.TopForm.coefficient._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "53b5f828366fd58113c4610db406cd639e1a586ee65c6646f5203b5a2152fadf",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.U": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "95384326f96f67b81da680dec42d2d57491a6d056d6b1e2b04be1ee47bc63807",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.V": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "6866b768304ce01fe2391f930c229da1d25a9db77e5239008202feb53cc89af8",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.advance": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "4bf8cf464fd1f7dc815c9fe4151dc468fdaea6786a80f61cb599b53838ef6ac9",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.advance_bound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "8c085f2dc8f528a9fdb035ccc115a6b7af4488a14bbb0a7eb864e958eb40eca4",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.advance_bound._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "84ba5fc3da8fc2811fb26d051eae191cd5f166ef6568dea49f524c870b0e17a9",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.advance_bound._proof_1_4": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "654b97338f91686f90ef9733085adc20044f887ec6a2327c9d906f5cbbf777d7",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.advance_invariant": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "fd613adbf9a185a78edd7927cf0d3aa3b55df469e5591fdf27384d2eebc6fdf3",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.advance_invariant._proof_1_2": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "5773610b36122cf3b75b1a9e8201b309f42cd325f0dd6772a28652db76ed1c3d",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.advance_invariant._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "7c99de2001b69f962ca3d25dc3baea12de27121ed9d8d0e305628c7584acc52a",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.advance_top": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "614c9b188fed844121763a80c5a8e652475f6b92323686811877898287fb3459",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.advance_top._proof_1_3": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "3266c413b45eedb8ca4fef3bf578d76d6ecd3caa00c052d064fb49398adc272f",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.advance_top._proof_1_4": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "71f71a422a3e0f6989b098e454c3e5f002808caf0ffed6541b4914e149cd262d",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.advance_top._proof_1_5": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "a75bea9c5f57ecfbcce58ee57f847a816a5315c21f284ab7ffe788c6a88f86fa",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.advance_top._proof_1_6": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "a974dae7f79f9229ce8c96dcb06286e37e374ea3475af55f04549959fbd95fb6",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.all_frame_top_coeff": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "0c7c3af7e56df3d6e108d1ff0d196a7f9d72990677a8cdab237c739b2e9dca2e",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.binomial_boundary": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "d986a81f7aa837225d4f6eb6fbb3f90728c1ac33e5a0e7599b420f4beee90ca7",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.binomial_boundary._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "61318b02ff6c942f4b6184b15f2f0d1bb692e3b1332421bc7e0e890ff384f3f8",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.coeff": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "da6740362a2d8a95a0dd3113078e6a8d76c39f05c3480a6745b4d25920a83d19",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.frame": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "2f4996f0fc666ada1a441849dd93fa152ecda19a73a1562b0486dfd3dbc570e6",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.frame_invariant": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "218403b870e6f220bddd3be80c949c812d452a5b97dee839276ec7c23ada3df7",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.frame_support_bound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "c262b26928e688ec95700e0f8dd2556559ee358aa52c5dd12426ddc755dd858c",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.frame_top": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "77eb325d4996bbdee68e8fff9f227f6937da544bc278f6253da07b28ea0c6930",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.initial": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.Markov",
+        "semantic_sha256": "49e719f76b86575bbd2c7b2f9afdf12bed6aeb80c47e595334a45761701cbc2e",
+        "source_sha256": "8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe"
+      },
+      "MathGKM.Markov.initial_bound": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovSupport",
+        "semantic_sha256": "8101c1c9745cd449992706252a58bead68c7911458e2d7d5cf32d1e6765b9468",
+        "source_sha256": "0edd5db4e996063a6edc4197309140b23897231d3b105ccaf186604154c5032a"
+      },
+      "MathGKM.Markov.initial_invariant": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovCoverage",
+        "semantic_sha256": "c4f729c77c3c89f7df2011a6e34110fc1cf28b69a1432b268325e0b748f805f9",
+        "source_sha256": "f65a4ff9136843d927f682d5b5a3b21a50e7fb172eba0735f2faedb6b631101a"
+      },
+      "MathGKM.Markov.initial_top": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "e6754ede3a85a2dc533013392b8534ad33e2c5540b53f393f14aa9f867cac872",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.initial_top._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "c7dcedc8ab10d1616a498494412c42b70d55ab7420d51541ee655a0b5bfa2037",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.topForm_mul": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "53daaf3502e56978541cb232a7fe61e92d108f9ba844701599be6a6b7fdf6cff",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.topForm_s": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "2db61641990fb165ef048aa86a25a6dcb563a1610c8d7532c1e6be6c0b1501cc",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.topForm_s._proof_1_1": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "4bef8f28465f0d7657fea269e0f83d385a06d82dfd17078489771fc0c5e46b5f",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      },
+      "MathGKM.Markov.topForm_sub": {
+        "identity_schema": "math-gkm.expr-merkle-sha256.v2",
+        "module": "MathGKM.MarkovTopBoundary",
+        "semantic_sha256": "44d821f7fb9cbe198a0c30b773ec71c766b3e3ac03c4471ed23acf8cf8e57f20",
+        "source_sha256": "551e582bd4d2e0e1bda43794b0eb41704bebad9367cfcb6ee69b83220cfa56c1"
+      }
+    },
+    "usefulness": "not established by checking",
+    "validation_bundle": {
+      "directory": "/Users/sasha/math_gkm/.scratch/paired-v3-restart-20261019-goal-continuation-0001/arms/exploration/rounds/0004/checks/math/0-bccc51131515666bc0f6cc653a23bd6e3da3827938e72e5bfd4124d0dfd31435/b4a889ace43416d5430630f188cdc1f534e5a47029c949db280fe62d7e197392",
+      "finished_sha256": "dca7cb3803e783f38115debc3546e7ac3c6a74331a4a3ce65e8ba5b22572f1f1"
+    }
+  }
+}
