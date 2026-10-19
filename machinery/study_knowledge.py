@@ -182,9 +182,21 @@ def _ingest_batch(arm, state, report, workspace, directory):
                 else:
                     write(reservation, {'seconds': validation_seconds, 'task_hash': digest(task)})
                     arm.reserve('knowledge-'+digest(str(dest.resolve())), validation_seconds)
-                    checked = check_task(workspace, task, solution, dest, validation_seconds,
-                        live=arm.p['transport'] == 'live', stop=arm.stopped,
-                        required=task.get('required_constants', []), contract=contract)
+                    try:
+                        checked = check_task(workspace, task, solution, dest, validation_seconds,
+                            live=arm.p['transport'] == 'live', stop=arm.stopped,
+                            required=task.get('required_constants', []), contract=contract)
+                    except (Invalid,OSError,ValueError):
+                        # A raw result can finish without a reusable FINISHED bundle.
+                        # Preserve its operational cause without accepting that item.
+                        if (dest/'result.json').is_file():
+                            raw=read(dest/'result.json',max_bytes=64*1024**2)
+                            from .own_feedback import retain, operational_failure
+                            retain(state,workspace,operational_failure(raw,sha(dest/'result.json')),
+                                kind=kind,proposal_hash=digest(item))
+                        raise
+            from .own_feedback import retain
+            retain(state, workspace, checked, kind=kind, proposal_hash=digest(item))
             state['observations'].append({'knowledge_attempt': identifier, 'kind': kind,
                 'checked': checked['checked'], 'status': checked['status'], 'receipt_hash': digest(checked)})
             if not checked['checked']:
@@ -316,9 +328,14 @@ def ingest(arm, state, report, workspace, directory):
                 failures=state.setdefault('submission_failures',[])
                 continue
             except (Invalid,KeyError,TypeError,ValueError,OSError) as exc:
+                if 'own_check_feedback' in staged:
+                    state['own_check_feedback']=staged['own_check_feedback']
                 failure={**attempt,'status':'submission_rejected_or_operationally_incomplete',
                          'error_class':type(exc).__name__,'reason':str(exc)}
         receipt=dest/('rejection-'+digest(failure)+'.json')
         if not receipt.exists(): write(receipt,failure)
         if failure not in failures: failures.append(failure)
+        from .own_feedback import retain
+        retain(state,workspace,{'checked':False,'controller_stage':'intake',
+            'own_rejection_receipt_sha256':sha(receipt)},kind=kind,proposal_hash=digest(item))
     return state

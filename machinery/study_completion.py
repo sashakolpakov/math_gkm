@@ -11,6 +11,17 @@ from .study_common import Invalid, read, write, canonical, lock, digest
 from .study import Arm, verify
 from .study_transfer import sandbox_prefix, dependency_paths
 
+def retain_failure(arm, directory, claim, *, unfinished=False):
+    from .own_feedback import retain, operational_failure
+    from .study_common import sha
+    path=directory/'result.json'
+    raw=read(path,max_bytes=64*1024**2) if path.is_file() else {}
+    result=operational_failure(raw,sha(path) if path.is_file() else None,
+        category='unfinished_receipt' if unfinished else 'finalization_failure')
+    retain(arm.s['research'],arm.workspace,result,kind='completion',proposal_hash=digest(claim))
+    arm.save()
+
+
 def check(arm, claim, audit=None):
     if arm.p['transport'] == 'fixture':
         return {'resolved': False, 'rejection': 'fixture can never resolve mathematics'}
@@ -18,8 +29,12 @@ def check(arm, claim, audit=None):
     key = digest({'claim': claim, 'audit': audit, 'round': arm.s['round']})
     directory = arm.root/'completion'/key
     if (directory/'result.json').exists():
-        from .validation_receipts import reuse
-        result = reuse(directory,{'contract':read(arm.workspace/'contract.json'),'claim':claim,'audit':audit},claim,())
+        from .validation_receipts import reuse, UnfinishedReceipt
+        try:
+            result = reuse(directory,{'contract':read(arm.workspace/'contract.json'),'claim':claim,'audit':audit},claim,())
+        except (Invalid,OSError,ValueError) as exc:
+            retain_failure(arm,directory,claim,unfinished=type(exc) is UnfinishedReceipt)
+            raise
         # A result file is written during validation too. Only a finished exact
         # bundle may be reused, and resolution survives recovery.
         if 'finished' not in result:
@@ -36,8 +51,14 @@ def check(arm, claim, audit=None):
             arm.s['resolution_receipt'] = str((directory/'result.json').relative_to(arm.study))
             arm.save()
             terminal(arm)
+        else:
+            from .own_feedback import retain
+            retain(arm.s['research'],arm.workspace,{**result,'checked':False,'raw_result_sha256':digest(result)},
+                kind='completion',proposal_hash=digest(claim))
+            arm.save()
         return result
     if directory.exists():
+        retain_failure(arm,directory,claim,unfinished=True)
         raise Invalid('interrupted completion validation; new independently reviewed attempt required')
     arm.reserve('completion-'+key, seconds)
     directory.mkdir(parents=True)
@@ -56,6 +77,9 @@ def check(arm, claim, audit=None):
         completion.run = bounded
         result = completion.verify(read(arm.workspace/'contract.json'), claim, directory,
                                    audit=audit, stop=arm.stopped)
+    except (Invalid,completion.Rejected,OSError,ValueError):
+        retain_failure(arm,directory,claim)
+        raise
     finally:
         completion.ROOT, completion.run = old_root, old_run
     if result['resolved']:
@@ -64,6 +88,11 @@ def check(arm, claim, audit=None):
         arm.s['status'] = 'mathematically_resolved'
         arm.save()
         terminal(arm)
+    else:
+        from .own_feedback import retain
+        retain(arm.s['research'],arm.workspace,{**result,'checked':False,'raw_result_sha256':digest(result)},
+            kind='completion',proposal_hash=digest(claim))
+        arm.save()
     return result
 
 

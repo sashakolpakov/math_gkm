@@ -37,12 +37,11 @@ stopped pilot's admission registry. The earlier
 retains its original failed-admission status.
 
 The old pilot remains stopped, and its reference arm never started. No
-exploration-versus-reference advantage can yet be inferred. Candidate 014 is
-not installed: neutral/differential integration and the remaining deployment
-checks precede a new comparison from identical clean seeds. A readiness check
-also needs a narrow correction to compare an in-memory resource receipt with
-its complete persisted JSON form; integer process-ID keys otherwise cause a
-false rejection. This does not change mathematical proof acceptance.
+exploration-versus-reference advantage can yet be inferred. At that verification checkpoint, candidate 014 still awaited
+neutral/differential and deployment integration. Checkpoint 015 subsequently
+completed those checks and corrected the complete JSON receipt comparison:
+integer process-ID keys now agree with their persisted JSON form. Mathematical
+proof acceptance remains unchanged; see the current installation record below.
 
 
 ## Connected research loop
@@ -72,7 +71,38 @@ is used.
 
 ## Acceptance evidence and status
 
-Current installed source checkpoint 010 is bound by SHA256
+Current installed source checkpoint **015** is bound by SHA256
+`bfec46aa82823a1424ee4ae1ea3c8facb8c06f9926db8adb3bb4cd16262780a2`.
+All 369 frozen/live source files were independently checked. The exact
+20-file overlay preserves every Lean source, the historical aggregate and
+dependency/resource pins. The [installed manifest](evidence/harness-v3-install/20261019-015/INSTALLED_SOURCE_MANIFEST.json)
+contains 131 verified files; its SHA256 is
+`82a229da8c2b1866e856910b986456f497722f5420867cf5f14dc0e867dbdc00`.
+The independently reproduced 72-file implementation identity is
+`5924dddfec0b52173ff111ac20b299a4a3d38532749fd4c8385594e2d1a9c294`.
+
+The compact inspector preserves complete declaration expressions and premises,
+including unused declarations and opaque proof bodies. Fresh producer/consumer
+binding checks, the unchanged full numerator-one proof, original neutral cases
+and old/new identity comparisons passed on 014. Checkpoint 015 then passed three
+focused JSON-receipt methods, an actual full-Mathlib deployment preflight and
+nine specific consumer integrations. Those include actual gluing and later
+proof reuse, genuine premise/context negatives, the conditional continuation
+model, and a deterministic two-by-two strategy trial with changed requests and
+a separately checked main admission. These are known neutral examples. They
+establish working integration; they are not live research superiority or new
+Markov discoveries. The [validation inventory](evidence/harness-v3-install/20261019-015/CANDIDATE_VALIDATION015.json)
+and [independent installed acceptance](evidence/harness-v3-install/20261019-015/INSTALLED_SOURCE_ACCEPTANCE.json)
+retain the exact scopes. This is targeted validation, not a whole-suite rerun.
+
+The [015 source and validation package](evidence/blended-inspection015-final-validation-source-20261019/README.md)
+preserves exact code, fixtures, generated proofs, receipts and failures. Its
+source constructor timed out; the coherent frozen checkpoint subsequently
+passed separate independent review and the stated tests. The timeout remains
+a failed invocation. D1/D2/D3 remain open. Fresh official setup and verified
+public-source gates precede the new live comparison.
+
+The preceding installed source checkpoint 010 is bound by SHA256
 `91849c3534793fc2c9b0c77303816bc3d7c322b310eb09d5a9745734953cbd7b`.
 All 347 frozen/live source hashes were independently verified. The
 [installed 010 manifest](evidence/harness-v3-install/20261018-010/INSTALLED_SOURCE_MANIFEST.json),
@@ -142,6 +172,15 @@ remain distinct historical observations, not relabeled 007 passes.
 
 ## Fresh comparison
 
+The new 19 October comparison uses study `paired-v3-live-20261019-study-0005`.
+Its official setup passed in about 398 seconds, including the deployed Lean
+preflight. Both arms start from the same nine clean seed
+files, with no pilot proofs or agendas. The original two-task curation, model
+`gpt-6.1-sol` with high reasoning, protocol, budgets and order are unchanged.
+The original pilot stays stopped and its reference arm remains untouched.
+The supervising session maintains and audits the machinery; separate external
+proposers choose all mathematical work.
+
 The arm order was recorded before mathematical outcomes: combined exploration,
 then exploitation. Both arms use identical clean definitions, pins, model,
 admission rules and upper allowances. Common curation/setup costs are separate;
@@ -182,7 +221,7 @@ aggregate RSS 5,799,034,880 bytes and charged physical footprint 1,001,361,336 b
 with no resource termination or source mismatch. These are actual receipt
 observations, not a continuous maximum or a hard memory guarantee.
 
-Current checkpoint (18 October 2026): reviewed 010 is installed and all 16
+Historical activation checkpoint (18 October 2026): reviewed 010 was installed and all 16
 selected pure report-contract methods passed. Independent installed-source review
 authorizes a genuinely fresh study-0004 official freeze with its own deployment
 verification; no extra manual preflight is required. This does not relabel the

@@ -4,6 +4,7 @@ General Lean elaboration is trusted code execution under the supplied execution
 profile. This is not a hardened hostile-Lean admission service or switch proof.
 Independent source/English review is mandatory and cannot be supplied by a worker.
 """
+import secrets
 import json
 from pathlib import Path
 import re
@@ -123,11 +124,14 @@ def verify(contract, claim, directory, *, audit=None, stop=lambda: False):
             '#print axioms ControllerRootCheck\n')
         (source/'ControllerCompletion.lean').write_text(wrapper)
         from . import proof_audit
-        inspector = proof_audit.inspector('ControllerCompletion', ('ControllerRootCheck',))
+        inspection_nonce = secrets.token_hex(32)
+        inspector = proof_audit.inspector('ControllerCompletion', ('ControllerRootCheck',), artifact='declarations.json', nonce=inspection_nonce)
+        result['inspection_schema'] = proof_audit.SCHEMA
         (source/'ControllerInspect.lean').write_text(inspector)
         binaries = {str(p): sha(p) for p in (LEAN, CHECKER)}
         # Reject a wrong closed target before spending time on kernel replay.
         for operation in ('compile', 'kernel_replay'):
+            result['controller_stage'] = operation
             for module in bundle['order']+['ControllerCompletion']:
                 if stop():
                     raise Rejected('validation stopped')
@@ -142,10 +146,17 @@ def verify(contract, claim, directory, *, audit=None, stop=lambda: False):
                 if record['returncode'] or record['termination']:
                     raise Rejected('Lean '+operation+' failed: '+module)
         objects = {str(p.relative_to(build)): sha(p) for p in build.rglob('*') if p.is_file()}
+        result['controller_stage'] = 'trusted_premise_inspection'
         inspected = run([str(LEAN), '-j', '1', 'ControllerInspect.lean'], cwd=source,
                         env=env, timeout=1800, output_bytes=1048576)
         result['checks'].append({'operation': 'trusted_premise_inspection', **inspected})
-        result['declarations'] = proof_audit.parse(inspected, ('ControllerRootCheck',))
+        if inspected['returncode'] and (source/'ControllerInspect.lean').read_text()==inspector:
+            result['trusted_inspector_failure']=proof_audit.failure_artifact(source/'declarations.json',('ControllerRootCheck',),inspected,nonce=inspection_nonce)
+        result['declarations'] = proof_audit.parse_artifact(inspected, ('ControllerRootCheck',), source/'declarations.json', nonce=inspection_nonce)
+        result['producer_completion'] = result['declarations'][0]['producer_completion']
+        result['declaration_artifact_sha256'] = sha(source/'declarations.json')
+        if result['declaration_artifact_sha256'] != result['declarations'][0]['artifact_sha256']:
+            raise Rejected('inspector artifact changed after parsing')
         result['axioms'] = result['declarations'][0]['axioms']
         if objects != {str(p.relative_to(build)): sha(p) for p in build.rglob('*') if p.is_file()}:
             raise Rejected('checked object changed during inspection')
@@ -172,6 +183,8 @@ def verify(contract, claim, directory, *, audit=None, stop=lambda: False):
         result['rejection'] = str(exc)
         result['error_type'] = type(exc).__name__
         result['traceback'] = traceback.format_exc()
+        from .own_feedback import diagnostic
+        result['controller_diagnostic']=diagnostic(result,exc)
     result['finished'] = time.time()
     atomic(directory/'result.json', result)
     from .retention import retire_build

@@ -15,6 +15,76 @@ class SolDeployment(unittest.TestCase):
         self.base = Path(tempfile.mkdtemp(dir=ROOT/'.scratch', prefix='sol-deployment-neutral-'))
         print('RETAINED', self.base, flush=True)
 
+    def missing_control(self, workspace=None, task=None, solution=None, directory=None):
+        """Synthetic process records, real source/receipt/failure authentication."""
+        from machinery import proof_audit
+        from machinery.study_transfer import bind_task, inventory, target_source, wrapper, collect
+        from machinery.validation_receipts import finish
+        from machinery.trust import LEAN, CHECKER
+        if workspace is None:
+            workspace=self.base/'control-workspace'
+            (workspace/'MathGKM').mkdir(parents=True)
+            (workspace/'MathGKM/DeploymentRoot.lean').write_text(
+                'namespace MathGKM.DeploymentRoot\n'
+                'def Root : Prop := ∀ n : Nat, n + 0 = n\n'
+                'theorem identity (n : Nat) : n + 0 = n := Nat.add_zero n\n'
+                'end MathGKM.DeploymentRoot\n')
+            write(workspace/'contract.json',dict(root_file='MathGKM/DeploymentRoot.lean',
+                root_sha256=sha(workspace/'MathGKM/DeploymentRoot.lean')))
+        contract=read(workspace/'contract.json')
+        task=task or dict(id='neutral-missing-root',statement='∀ n : Nat, n + 0 = n',
+            hypotheses=[],scope='Neutral deployment check only',source_sha256=contract['root_sha256'],
+            kind='regression',interface_type='True',transport_type='True',
+            required_constants=deployment.ROOT_REQUIRED)
+        solution=solution or dict(module='MathGKM.DeploymentRoot',term='MathGKM.DeploymentRoot.identity',
+            interface_term='True.intro',transport_term='True.intro')
+        directory=directory or self.base/'missing-control'
+        task=bind_task(workspace,task)
+        source=directory/'source'; source.mkdir(parents=True)
+        texts={}
+        for module in task['context_modules']+[solution['module']]:
+            texts.update(collect(workspace,module)[0])
+        texts[task['target_module']]=target_source(task)
+        texts['StudyCheck']=wrapper(task,solution)
+        modules=[n[:-5].replace('/','.') for n in inventory(workspace)
+            if n.startswith('MathGKM/') and n.endswith('.lean')]
+        declarations=('StudyObligation','StudyInterface','StudyTransport')
+        nonce='a'*64
+        texts['StudyInspect']=proof_audit.inspector('StudyCheck',declarations,
+            deployment.ROOT_REQUIRED,modules,artifact='declarations.json',nonce=nonce)
+        for module,text in texts.items():
+            path=source/(module.replace('.','/')+'.lean')
+            path.parent.mkdir(parents=True,exist_ok=True); path.write_text(text)
+        import json
+        failure=['failure','missing_required',0,0,None,None]
+        (source/'declarations.json').write_text(
+            json.dumps(['header',proof_audit.SCHEMA,list(declarations)])+'\n'+json.dumps(failure)+'\n')
+        (directory/'validator.sb').write_text('SYNTHETIC profile; no process executed\n')
+        checks=[dict(operation=op,module=m,returncode=0,termination=None,
+            argv=['/usr/bin/sandbox-exec','SYNTHETIC'],stdout='',stderr='')
+            for op in ('compile','kernel_replay') for m in texts if m!='StudyInspect']
+        checks.append(dict(operation='trusted_premise_inspection',returncode=1,termination=None,
+            argv=['/usr/bin/sandbox-exec','SYNTHETIC'],stderr='',
+            stdout='GKM_INSPECTION_FAILURE_V3:'+nonce+':'+json.dumps(failure)+'\n'))
+        for record in checks:
+            record['resources']=dict(owned_identities={81494:'1792367011:809282'},
+                peak_rss_observed=2129920,termination_cause=None,
+                last_samples=[dict(owned_processes=1,rss_sum=2129920,
+                    native_birth_owned=[dict(pid=81494,birth='1792367011:809282',
+                        resident_bytes=21053440,phys_footprint_bytes=10731976)])])
+        result=dict(checked=False,validation_mode='deployed_sandbox',checks=checks,
+            controller_stage='trusted_premise_inspection',required_constants=deployment.ROOT_REQUIRED,
+            task_hash=digest(task),source_sha256=contract['root_sha256'],finished=1,
+            inspection_schema=proof_audit.SCHEMA,
+            sandbox_profile_sha256=sha(directory/'validator.sb'),
+            binary_hashes={str(p):sha(p) for p in (LEAN,CHECKER)},
+            pin_hashes={n:sha(ROOT/n) for n in ('lean-toolchain','lakefile.toml','lake-manifest.json')},
+            trusted_inspector_failure=dict(category='missing_required',measured={}))
+        write(directory/'result.json',result)
+        finish(directory,task,solution,deployment.ROOT_REQUIRED)
+        self.missing_binding=dict(directory=directory,workspace=workspace,task=task,solution=solution)
+        return result
+
     def freeze(self, model='gpt-6.1-sol'):
         directory = self.base/'study'
         with patch('machinery.study.dependency_identity', return_value={'fixture': 'fixed'}):
@@ -223,19 +293,87 @@ class SolDeployment(unittest.TestCase):
             'checks': [{'operation': op} for op in ('compile', 'kernel_replay', 'trusted_premise_inspection')]}
         wrong = {'checked': False, 'checks': [{'module': 'StudyCheck', 'operation': 'compile',
             'returncode': 1, 'termination': None, 'stdout': 'Type mismatch'}]}
-        missing = {'checked': False, 'failure': 'trusted premise inspector failed',
-            'checks': [{'operation': 'trusted_premise_inspection', 'returncode': 1,
-                'termination': None, 'stdout': 'consumer does not use MathGKM.DeploymentRoot.Root'}]}
+        missing = self.missing_control()
         completed = {'resolved': False, 'lean_exact_root_checked': True,
             'rejection': 'independent source/English correspondence audit required for this exact bundle'}
-        self.assertTrue(deployment.accepted_controls(good, wrong, missing, completed))
+        self.assertTrue(deployment.accepted_controls(good, wrong, missing, completed, missing_binding=self.missing_binding))
         cases = [(dict(good, validation_mode='unwrapped_fixture'), wrong, missing, completed),
                  (dict(good, checked=False), wrong, missing, completed),
                  (good, dict(wrong, checks=[]), missing, completed),
                  (good, wrong, dict(missing, checks=[]), completed),
                  (good, wrong, missing, dict(completed, resolved=True))]
         for case in cases:
-            self.assertFalse(deployment.accepted_controls(*case))
+            self.assertFalse(deployment.accepted_controls(*case, missing_binding=self.missing_binding))
+
+    def test_missing_root_json_form_preserves_complete_resource_evidence(self):
+        import copy
+        from machinery.validation_receipts import reuse, finish
+        result=self.missing_control()
+        binding=self.missing_binding
+        checked=reuse(binding['directory'],binding['task'],binding['solution'],deployment.ROOT_REQUIRED)
+        self.assertIn(81494,result['checks'][-1]['resources']['owned_identities'])
+        self.assertIn('81494',checked['checks'][-1]['resources']['owned_identities'])
+        self.assertNotEqual(checked,result)  # Previous direct equality rejects this valid receipt.
+        self.assertTrue(deployment.missing_required_control(result,binding))
+        for key,value in (('81494','changed-birth'),('99999','added-birth')):
+            changed=copy.deepcopy(checked)
+            changed['checks'][-1]['resources']['owned_identities'][key]=value
+            write(binding['directory']/'result.json',changed)
+            finish(binding['directory'],binding['task'],binding['solution'],deployment.ROOT_REQUIRED)
+            self.assertFalse(deployment.missing_required_control(result,binding))
+        write(binding['directory']/'result.json',result)
+        finish(binding['directory'],binding['task'],binding['solution'],deployment.ROOT_REQUIRED)
+        for value in (object(),float('nan')):
+            changed=copy.deepcopy(result)
+            changed['checks'][-1]['resources']['invalid']=value
+            self.assertFalse(deployment.missing_required_control(changed,binding))
+
+    def test_missing_root_rejects_mismatch_spoof_and_infrastructure(self):
+        import copy
+        from machinery.validation_receipts import finish
+        result=self.missing_control()
+        binding=self.missing_binding
+        self.assertTrue(deployment.missing_required_control(result,binding))
+        def reject(mutator):
+            changed=copy.deepcopy(result)
+            mutator(changed)
+            write(binding['directory']/'result.json',changed)
+            finish(binding['directory'],binding['task'],binding['solution'],deployment.ROOT_REQUIRED)
+            self.assertFalse(deployment.missing_required_control(changed,binding),changed)
+        for termination in ('timeout','output_limit','resource_guard:memory','unresolved_cleanup:owned'):
+            reject(lambda r,t=termination:r['checks'][-1].update(termination=t))
+        for exit_code in (-6,0,2):
+            reject(lambda r,c=exit_code:r['checks'][-1].update(returncode=c))
+        reject(lambda r:r.update(required_constants=['MathGKM.DeploymentRoot.identity']))
+        reject(lambda r:r['checks'][0].update(returncode=1))
+        reject(lambda r:r['checks'][-1].update(stdout='missing_required'))
+        reject(lambda r:r['checks'][-1].update(stdout=r['checks'][-1]['stdout'].replace('missing_required','unsupported_token')))
+        reject(lambda r:r['checks'][-1].update(stdout=r['checks'][-1]['stdout'].replace('a'*64,'b'*64)))
+        reject(lambda r:r.update(trusted_inspector_failure='missing_required'))
+        reject(lambda r:r['checks'][-1].update(operationally_incomplete=True))
+        write(binding['directory']/'result.json',result)
+        finish(binding['directory'],binding['task'],binding['solution'],deployment.ROOT_REQUIRED)
+        wrong_binding={**binding,'task':{**binding['task'],'required_constants':['MathGKM.DeploymentRoot.identity']}}
+        self.assertFalse(deployment.missing_required_control(result,wrong_binding))
+        artifact=binding['directory']/'source/declarations.json'
+        for raw in ('malformed\n',''):
+            artifact.write_text(raw)
+            finish(binding['directory'],binding['task'],binding['solution'],deployment.ROOT_REQUIRED)
+            self.assertFalse(deployment.missing_required_control(result,binding))
+        artifact.unlink()
+        finish(binding['directory'],binding['task'],binding['solution'],deployment.ROOT_REQUIRED)
+        self.assertFalse(deployment.missing_required_control(result,binding))
+        (binding['directory']/'FINISHED.json').unlink()
+        self.assertFalse(deployment.missing_required_control(result,binding))
+
+    def test_neutral_arm_reservation_and_stop_are_durable(self):
+        stopped=lambda: True
+        arm=deployment.NeutralArm(self.base/'neutral-arm',self.base/'workspace',10,stopped)
+        arm.reserve('original-charge',10)
+        self.assertTrue(arm.stopped())
+        self.assertEqual(read(arm.root/'state.json')['reservations'],
+            [{'key':'original-charge','seconds':10}])
+        self.assertEqual(arm.s['research']['mode'],'baseline')
 
     def test_receipt_tampering_and_missing_success_rejected(self):
         out = self.base/'receipt'
@@ -264,14 +402,18 @@ class SolDeployment(unittest.TestCase):
             'checks': [{'operation': op} for op in ('compile', 'kernel_replay', 'trusted_premise_inspection')]}
         wrong = {'checked': False, 'checks': [{'module': 'StudyCheck', 'operation': 'compile',
             'returncode': 1, 'termination': None, 'stdout': 'Type mismatch'}]}
-        missing = {'checked': False, 'failure': 'trusted premise inspector failed',
-            'checks': [{'operation': 'trusted_premise_inspection', 'returncode': 1,
-                'termination': None, 'stdout': 'consumer does not use MathGKM.DeploymentRoot.Root'}]}
         completed = {'resolved': False, 'lean_exact_root_checked': True,
             'rejection': 'independent source/English correspondence audit required for this exact bundle'}
+        def checked(workspace, task, solution, directory, seconds, **kwargs):
+            if directory.name == 'positive': return good
+            if directory.name == 'wrong-target': return wrong
+            self.assertEqual(task['required_constants'],deployment.ROOT_REQUIRED)
+            self.assertEqual(kwargs['required'],deployment.ROOT_REQUIRED)
+            return self.missing_control(workspace,task,solution,directory)
+        # Real completion adapter, with only its expensive verifier stubbed.
         with patch('machinery.study_deployment.run', side_effect=probes) as runner, patch(
-            'machinery.study_deployment.check_task', side_effect=[good, wrong, missing]) as checker, patch(
-            'machinery.study_completion.check', return_value=completed) as complete:
+            'machinery.study_deployment.check_task', side_effect=checked) as checker, patch(
+            'machinery.completion.verify', return_value=completed) as complete:
             result = deployment.preflight(self.base/'synthetic-flow')
         self.assertTrue(result['ready'], result)
         self.assertEqual(checker.call_count, 3)
@@ -281,7 +423,25 @@ class SolDeployment(unittest.TestCase):
         self.assertIn('import Mathlib\n',(self.base/'synthetic-flow/workspace/MathGKM/DeploymentRoot.lean').read_text())
         for call in runner.call_args_list:
             self.assertEqual(call.args[0][0], '/usr/bin/sandbox-exec')
-        self.assertEqual(complete.call_args.args[0].p['transport'], 'live')
+        self.assertEqual(complete.call_count,1)
+        self.assertEqual(complete.call_args.kwargs['audit'],None)
+        saved=read(self.base/'synthetic-flow/completion-adapter/state.json')
+        self.assertEqual(saved['status'],'neutral_unresolved')
+        self.assertEqual(len(saved['reservations']),1)
+        self.assertEqual(saved['reservations'],result['completion_reservations'])
+        feedback=saved['research']['own_check_feedback']
+        self.assertEqual(len(feedback),1)
+        self.assertFalse(feedback[0]['checked'])
+        projection=self.base/'synthetic-flow/workspace'/feedback[0]['projection_path']
+        self.assertTrue(projection.is_file())
+        self.assertEqual(digest(read(projection)),feedback[0]['projection_hash'])
+        from machinery import study_policy, study_program
+        state=saved['research']
+        state['program']={**study_program.REFERENCE,'code':[dict(op='keep_observations',n=0)]}
+        for role in ('proposer','researcher'):
+            future=study_policy.request(state,1,study.DEFAULT,role)
+            self.assertEqual(future['own_check_feedback'],feedback)
+            self.assertEqual(future['observations'],[])
         self.assertEqual(result['hosted_model_calls'], 0)
 
 

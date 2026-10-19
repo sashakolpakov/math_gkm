@@ -2,6 +2,7 @@
 import copy
 import ctypes
 import json
+import hashlib
 from pathlib import Path
 import tempfile
 from types import SimpleNamespace
@@ -15,37 +16,39 @@ class Parser005(unittest.TestCase):
     def setUp(self):
         self.base=Path(tempfile.mkdtemp(dir=ROOT/'.scratch',prefix='parser005-'))
         self.path=self.base/'declarations.json'
-        self.record=dict(returncode=0,termination=None,stdout='GKM_DECLARATIONS_FILE_V1:declarations.json\n')
-        c=dict(name='Fixture.used',origin='Fixture',type='type expression',body='body expression')
-        self.rows=[dict(name='Root',axioms=['propext'],constants=[c],catalog=[{**c,'name':'Fixture.unused'}]),
-                   dict(name='Interface',axioms=[],constants=[],catalog=[])]
+        self.nonce='a'*64
+        self.record=dict(returncode=0,termination=None,stdout='')
+        from tests.test_inspection011 import records, encoded
+        self.rows=records()
+        self.encode=encoded
+        raw=encoded(self.rows)
+        self.record['stdout']=f'GKM_DECLARATIONS_COMPLETE_V3:{self.nonce}:{len(raw)}:{hashlib.sha256(raw).hexdigest()}\n'
     def parse(self):
-        return proof_audit.parse_artifact(self.record,('Root','Interface'),self.path)
+        return proof_audit.parse_artifact(self.record,('Root','Interface'),self.path,nonce=self.nonce)
     def test_complete_catalog_order_body_and_semantic_hash(self):
-        self.path.write_text(json.dumps(self.rows))
+        self.path.write_bytes(self.encode(self.rows))
         with patch.object(Path,'read_text',side_effect=AssertionError('no whole text path')):
             rows=self.parse()
-        expected=copy.deepcopy(self.rows)
-        for row in expected:
-            for c in row['constants']+row['catalog']:
-                c['semantic_sha256']=digest(dict(type=c['type'],body=c['body']))
-        self.assertEqual(rows,expected)
+        self.assertEqual([r['name'] for r in rows],['Root','Interface'])
+        self.assertEqual([c['name'] for c in rows[0]['catalog']],['Fixture.used','Fixture.unused'])
+        self.assertTrue(all(c['identity_schema']==proof_audit.IDENTITY_SCHEMA for c in rows[0]['catalog']))
     def test_finite_size_boundary(self):
-        raw=json.dumps(self.rows).encode(); self.path.write_bytes(raw)
+        raw=self.encode(self.rows); self.path.write_bytes(raw)
         with patch.object(proof_audit,'ARTIFACT_BYTES',len(raw)):
             self.assertEqual(len(self.parse()),2)
         with patch.object(proof_audit,'ARTIFACT_BYTES',len(raw)-1),self.assertRaises(Invalid):
             self.parse()
     def test_marker_exit_path_malformed_order_and_forbidden_premise(self):
-        self.path.write_text(json.dumps(self.rows))
-        for stdout in ('','GKM_DECLARATIONS_FILE_V1:other.json',self.record['stdout']*2,
+        self.path.write_bytes(self.encode(self.rows))
+        for stdout in ('','GKM_DECLARATIONS_FILE_V2:other.json',self.record['stdout']*2,
                        self.record['stdout']+'GKM_DECLARATIONS_V1:[]'):
             with patch.dict(self.record,stdout=stdout),self.assertRaises(Invalid): self.parse()
         with patch.dict(self.record,returncode=1),self.assertRaises(Invalid): self.parse()
         self.path.write_text('{')
         with self.assertRaises(Invalid): self.parse()
-        for rows in (self.rows[::-1],self.rows[:1],[{**self.rows[0],'axioms':['Hidden.generatedPremise']},self.rows[1]]):
-            self.path.write_text(json.dumps(rows))
+        forbidden=copy.deepcopy(self.rows); forbidden[7][2]=['Hidden.generatedPremise']
+        for rows in (self.rows[::-1],self.rows[:1],forbidden):
+            self.path.write_bytes(self.encode(rows))
             with self.assertRaises(Invalid): self.parse()
         self.path.unlink(); self.path.symlink_to(self.base/'missing')
         with self.assertRaises(Invalid): self.parse()

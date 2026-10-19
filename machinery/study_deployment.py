@@ -7,20 +7,118 @@ negative controls, and the actual completion adapter's exact-root check. This
 is operational evidence for independent review, never a self-certification.
 """
 import argparse
+import json
 from pathlib import Path
 import platform
 import sys
 import time
 import shutil
-from types import SimpleNamespace
+import re
 
-from .study_common import ROOT, Invalid, digest, read, sha, write, dependencies, dependency_identity
+from .study_common import ROOT, Invalid, canonical, digest, read, sha, write, dependencies, dependency_identity
 from .study_transfer import check_task, sandbox_prefix
 from .trust import CORE, LEAN, CHECKER, environment
 from .process import run
 
 
-def accepted_controls(positive, wrong_target, missing_premise, completion):
+ROOT_REQUIRED = ['MathGKM.DeploymentRoot.Root']
+
+
+class NeutralArm:
+    """Ordinary own state for the real adapter; never a correspondence audit."""
+    def __init__(self, directory, workspace, seconds, stopped=lambda: False):
+        from .study_policy import initial
+        self.study = Path(directory)
+        self.root = self.study/'completion-adapter'
+        self.workspace = workspace
+        self.p = {'transport': 'live', 'validation_seconds': seconds}
+        self.s = {'round': 0, 'status': 'neutral_unresolved', 'research': initial('baseline')}
+        self.reservations = []
+        self.stopped = stopped
+        self.save()
+
+    def reserve(self, key, cap):
+        self.reservations.append({'key': key, 'seconds': cap})
+        self.save()
+
+    def save(self):
+        # study_common.write flushes/fsyncs the file and parent after replacement.
+        write(self.root/'state.json', {**self.s, 'reservations': self.reservations})
+
+
+def missing_required_control(result, binding):
+    """Authenticate this own attempt, not reported categories or error prose."""
+    if not binding:
+        return False
+    from .study_transfer import bind_task, inventory, target_source, wrapper
+    from .validation_receipts import reuse
+    from . import proof_audit
+    try:
+        directory, workspace = binding['directory'], binding['workspace']
+        task, solution = binding['task'], binding['solution']
+        if task['required_constants'] != ROOT_REQUIRED:
+            return False
+        task = bind_task(workspace, task) if 'target_module' not in task else task
+        checked = reuse(directory, task, solution, ROOT_REQUIRED)
+        # Match the writer's complete JSON form, including integer PID map keys.
+        persisted = json.loads(canonical(result))
+        if json.dumps(checked, sort_keys=True, allow_nan=False) != json.dumps(persisted, sort_keys=True, allow_nan=False) or result.get('checked') is not False or result.get('validation_mode') != 'deployed_sandbox':
+            return False
+        if result.get('controller_stage') != 'trusted_premise_inspection' or result.get('infrastructure_failure'):
+            return False
+        if result.get('required_constants') != ROOT_REQUIRED or result.get('task_hash') != digest(task):
+            return False
+        contract = read(workspace/'contract.json')
+        if sha(workspace/contract['root_file']) != contract['root_sha256'] or result['source_sha256'] != contract['root_sha256']:
+            return False
+        source = directory/'source'
+        inspector = (source/'StudyInspect.lean').read_text()
+        nonces = re.findall(r'nonce := "([0-9a-f]{64})"', inspector)
+        if len(nonces) != 1:
+            return False
+        modules = [n[:-5].replace('/', '.') for n in inventory(workspace) if n.startswith('MathGKM/') and n.endswith('.lean')]
+        declarations = ('StudyObligation', 'StudyInterface', 'StudyTransport')
+        if inspector != proof_audit.inspector('StudyCheck', declarations, ROOT_REQUIRED, modules, artifact='declarations.json', nonce=nonces[0]):
+            return False
+        if (source/'StudyCheck.lean').read_text() != wrapper(task, solution) or (source/(task['target_module'].replace('.', '/')+'.lean')).read_text() != target_source(task):
+            return False
+        for name in task['context_sources']:
+            if not (source/name).is_file() or sha(source/name) != sha(workspace/name):
+                return False
+        if set(result.get('binary_hashes', {})) != {str(LEAN), str(CHECKER)}:
+            return False
+        if set(result.get('pin_hashes', {})) != {'lean-toolchain','lakefile.toml','lake-manifest.json'}:
+            return False
+        checks = result.get('checks', [])
+        inspected = [c for c in checks if c.get('operation') == 'trusted_premise_inspection']
+        preceding = checks[:-1]
+        if (len(inspected) != 1 or checks[-1] != inspected[0] or not preceding or
+            any(c.get('returncode') != 0 or c.get('termination') or c.get('operationally_incomplete') for c in preceding) or
+            {c.get('operation') for c in preceding} != {'compile', 'kernel_replay'}):
+            return False
+        staged_modules = {str(p.relative_to(source))[:-5].replace('/', '.') for p in source.rglob('*.lean')} - {'StudyInspect'}
+        for op in ('compile', 'kernel_replay'):
+            if {c.get('module') for c in preceding if c.get('operation') == op} != staged_modules:
+                return False
+        record = inspected[0]
+        if record.get('returncode') != 1 or record.get('termination') or record.get('operationally_incomplete'):
+            return False
+        if any(not c.get('argv') or c['argv'][0] != '/usr/bin/sandbox-exec' for c in checks):
+            return False
+        if sha(directory/'validator.sb') != result.get('sandbox_profile_sha256'):
+            return False
+        artifact = source/'declarations.json'
+        if not artifact.is_file() or artifact.is_symlink():
+            return False
+        expected = {'category': 'missing_required', 'measured': {}}
+        return (proof_audit.failure_artifact(artifact, declarations, record, nonce=nonces[0]) == expected and
+            proof_audit.failure_artifact(artifact, declarations) == expected and
+            result.get('trusted_inspector_failure') == expected)
+    except (Invalid, OSError, ValueError, KeyError, TypeError):
+        return False
+
+
+def accepted_controls(positive, wrong_target, missing_premise, completion, *, missing_binding=None):
     """Infrastructure failures cannot count as successful negative controls."""
     return (positive.get('checked') is True and
         positive.get('validation_mode') == 'deployed_sandbox' and
@@ -32,12 +130,7 @@ def accepted_controls(positive, wrong_target, missing_premise, completion):
             c.get('returncode') == 1 and not c.get('termination') and
             'type mismatch' in c.get('stdout', '').lower()
             for c in wrong_target.get('checks', [])) and
-        not missing_premise.get('checked') and
-        'inspector' in missing_premise.get('failure', '').lower() and
-        any(c['operation'] == 'trusted_premise_inspection' and
-            c.get('returncode') == 1 and not c.get('termination') and
-            'consumer does not use MathGKM.DeploymentRoot.Root' in c.get('stdout', '')
-            for c in missing_premise.get('checks', [])) and
+        missing_required_control(missing_premise, missing_binding) and
         completion.get('lean_exact_root_checked') is True and
         completion.get('resolved') is False and
         completion.get('rejection') ==
@@ -147,23 +240,22 @@ def preflight(directory, seconds=1200):
             raise Invalid('neutral actual-wrapper compilation/replay/premise inspection failed')
         wrong = check_task(workspace, {**task, 'id': 'wrong-target', 'statement': 'False'},
                            solution, directory/'wrong-target', remaining(), live=True)
-        missing = check_task(workspace, task, solution, directory/'missing-premise', remaining(),
-                             live=True, required=['MathGKM.DeploymentRoot.Root'])
+        missing_task = {**task, 'id': 'neutral-missing-root', 'required_constants': ROOT_REQUIRED}
+        missing = check_task(workspace, missing_task, solution, directory/'missing-premise', remaining(),
+                             live=True, required=ROOT_REQUIRED)
         report.update(wrong_target=wrong, missing_premise=missing)
 
         # Exercise the actual completion adapter, while leaving independent
         # correspondence unfulfilled. A diagnostic cannot resolve a study root.
         from .study_completion import check
         (workspace/'research/correspondence.txt').write_text('Neutral identity only. No independent audit supplied.\n')
-        reservations = []
-        arm = SimpleNamespace(p={'transport': 'live', 'validation_seconds': remaining()},
-            root=directory/'completion-adapter', workspace=workspace, s={'round': 0},
-            reserve=lambda key, cap: reservations.append({'key': key, 'seconds': cap}),
-            stopped=lambda: False)
+        arm = NeutralArm(directory, workspace, remaining())
         completed = check(arm, {'kind': 'proof', 'module': solution['module'],
             'declaration': 'MathGKM.DeploymentRoot.identity', 'correspondence': 'research/correspondence.txt'})
-        report.update(completion=completed, completion_reservations=reservations)
-        if not accepted_controls(positive, wrong, missing, completed):
+        report.update(completion=completed, completion_reservations=arm.reservations,
+            completion_state_sha256=sha(arm.root/'state.json'))
+        if not accepted_controls(positive, wrong, missing, completed, missing_binding=dict(
+                directory=directory/'missing-premise', workspace=workspace, task=missing_task, solution=solution)):
             raise Invalid('neutral positive/negative/completion controls not all established')
         if report['binary_hashes'] != {str(p): sha(p) for p in (LEAN, CHECKER)}:
             raise Invalid('preflight binaries changed')

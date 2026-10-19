@@ -6,6 +6,7 @@ closure; this establishes use, not causal indispensability. Optional ablation
 comparisons use the same evaluate_pair API and debit the same owning arm.
 """
 import os
+import secrets
 from pathlib import Path
 import re
 import shutil
@@ -173,7 +174,8 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
         'source_sha256': task['source_sha256'], 'scope': task['scope'], 'hypotheses': task['hypotheses'],
         'budget_seconds': seconds, 'checks': [], 'status': 'invalid_comparison',
         'validation_mode': 'deployed_sandbox' if live else 'unwrapped_fixture',
-        'required_constants': task['required_constants']}
+        'required_constants': task['required_constants'], 'inspection_schema': proof_audit.SCHEMA,
+        'controller_stage': 'context'}
     try:
         contract = contract or read(workspace/'contract.json')
         if sha(workspace/contract['root_file']) != task['source_sha256'] or task['source_sha256'] != contract['root_sha256']:
@@ -211,7 +213,8 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
             'theorem StudyTransport : True := True.intro\ntheorem StudyObligation : True := True.intro\n'
             if nonsolution else wrapper(task, solution))
         declarations = ('StudyObligation', 'StudyInterface', 'StudyTransport')
-        sources['StudyInspect'] = proof_audit.inspector('StudyCheck', declarations, required, frozen_modules, artifact='declarations.json')
+        inspection_nonce = secrets.token_hex(32)
+        sources['StudyInspect'] = proof_audit.inspector('StudyCheck', declarations, required, frozen_modules, artifact='declarations.json', nonce=inspection_nonce)
         # Terms are elaborated as code; reject obvious authority-changing constructs.
         for key in ('term', 'interface_term', 'transport_term'):
             if re.search(r'\b(sorry|admit|axiom|native_decide)\b', without_comments(solution.get(key, ''))):
@@ -233,6 +236,7 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
                       dependency_paths=list(map(str, deps)),
                       sandbox_profile_sha256=sha(directory/'validator.sb') if live else None)
         for operation in ('compile', 'kernel_replay'):
+            result['controller_stage'] = operation
             for module in order + ['StudyCheck']:
                 if stop():
                     raise Invalid('validation stopped; no mathematical conclusion')
@@ -254,13 +258,20 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
         objects = {str(p.relative_to(build)): sha(p) for p in build.rglob('*') if p.is_file()}
         if stop() or seconds <= time.monotonic()-start:
             raise Invalid('interrupted or exhausted before premise inspection')
+        result['controller_stage'] = 'trusted_premise_inspection'
         inspected = run(prefix+[str(LEAN), '-j', '1', 'StudyInspect.lean'], cwd=source, env=env,
                         timeout=min(1800, seconds-(time.monotonic()-start)), output_bytes=1048576)
         result['checks'].append({'operation': 'trusted_premise_inspection', **inspected})
+        if inspected['returncode'] and (source/'StudyInspect.lean').read_text()==sources['StudyInspect']:
+            result['trusted_inspector_failure']=proof_audit.failure_artifact(source/'declarations.json',declarations,inspected,nonce=inspection_nonce)
         if live and (inspected['returncode'] < 0 or 'sandbox-exec:' in inspected['stderr']):
             result.update(status='validator_infrastructure_failure', infrastructure_failure=True)
-        result['declarations'] = proof_audit.parse_artifact(inspected, declarations, source/'declarations.json')
+        result['declarations'] = proof_audit.parse_artifact(inspected, declarations, source/'declarations.json', nonce=inspection_nonce)
+        result['producer_completion'] = result['declarations'][0]['producer_completion']
         result['declaration_artifact_sha256'] = sha(source/'declarations.json')
+        if result['declaration_artifact_sha256'] != result['declarations'][0]['artifact_sha256']:
+            raise Invalid('inspector artifact changed after parsing')
+        result['controller_stage'] = 'binding'
         if objects != {str(p.relative_to(build)): sha(p) for p in build.rglob('*') if p.is_file()}:
             raise Invalid('checked objects changed during inspection')
         if any((source/(m.replace('.', '/')+'.lean')).read_text() != text for m, text in sources.items()):
@@ -283,8 +294,14 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
                       solution_binding=digest(solution))
         if nonsolution:
             result.update(checked=False, status='bounded_valid_non_solution', valid_attempt=True, reason=solution['reason'])
+        result['controller_stage'] = 'complete'
     except (Invalid, OSError, KeyError, TypeError,ValueError) as exc:
         result['failure'] = str(exc)
+        from .own_feedback import diagnostic
+        result['controller_diagnostic'] = diagnostic(result, exc)
+    if 'controller_diagnostic' not in result:
+        from .own_feedback import diagnostic
+        result['controller_diagnostic'] = diagnostic(result)
     result['elapsed_seconds'] = time.monotonic()-start
     result['finished'] = time.time()
     write(directory/'result.json', result)
@@ -343,6 +360,7 @@ def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
     suite = read(arm.study/'evaluation/suite.json')
     bm, am = verify_snapshot(before), verify_snapshot(after)
     binding = {'before': bm['binding'], 'after': am['binding'], 'suite': digest(suite),
+               'inspection_schema': proof_audit.SCHEMA,
                'policy_comparison': policy_comparison,
                'adaptation_seconds_each': arm.p['adaptation_seconds'],
                'validation_seconds_each_task': arm.p['validation_seconds']}
@@ -383,7 +401,9 @@ def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
                       'catalog_failure': checked, 'transfer': [], 'regressions': []}
             write(directory/'result.json', result)
             return result
-        catalogs[side] = {c['name']: c['semantic_sha256'] for c in checked['declarations'][0]['catalog']}
+        if checked.get('inspection_schema') != proof_audit.SCHEMA:
+            raise Invalid('catalog identity schema changed; charged fresh comparison required')
+        catalogs[side] = {c['name']: (c['identity_schema'], c['semantic_sha256']) for c in checked['declarations'][0]['catalog']}
     retained = all(catalogs['after'].get(n) == h for n, h in catalogs['before'].items())
     sides = {}
     for side, source, manifest in [('before', before, bm), ('after', after, am)]:
@@ -431,7 +451,7 @@ def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
     transfer = []
     for task, a, b in zip(suite['tasks'], old, new):
         actual_new = {n: v for n, v in b.get('frozen_used_declarations', {}).items()
-            if catalogs['after'].get(n) == v['semantic_sha256'] and catalogs['before'].get(n) != v['semantic_sha256']}
+            if catalogs['after'].get(n) == (v['identity_schema'], v['semantic_sha256']) and catalogs['before'].get(n) != (v['identity_schema'], v['semantic_sha256'])}
         # Origin in a changed module is insufficient; exact declaration type/body
         # must differ, be present before adaptation, and occur in the proof closure.
         b['changed_component_use_checked'] = bool(actual_new)

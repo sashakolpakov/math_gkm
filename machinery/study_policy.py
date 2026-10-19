@@ -49,6 +49,7 @@ def request(state, round_index, protocol, role='researcher'):
         'mode': state['mode'], 'agenda': state['agenda'],
         'portfolio': list(state['portfolio'].values()), 'episode': state['episode'],
         'observations': state['observations'][-8:],
+        'own_check_feedback': state.get('own_check_feedback', [])[-32:],
         'knowledge': state.get('knowledge', {}), 'components': state.get('components', {}),
         'remaining_obligations': state.get('remaining_obligations', {}),
         'pending_discoveries': state.get('pending_discoveries', {}),
