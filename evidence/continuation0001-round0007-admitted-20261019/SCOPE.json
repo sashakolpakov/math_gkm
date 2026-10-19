@@ -1,0 +1,66 @@
+{
+  "actual_accepted_exports_used": [],
+  "actual_selected_source_reuse": [
+    "MathGKM.Markov.SecondForm.coefficient",
+    "MathGKM.Markov.frame_invariant",
+    "MathGKM.Markov.frame_second",
+    "MathGKM.Markov.frame_support_bound",
+    "MathGKM.Markov.frame_top",
+    "MathGKM.Markov.middle_second",
+    "MathGKM.Markov.totalComponent_coeff",
+    "MathGKM.Markov.totalComponent_eq_of_coeff"
+  ],
+  "axioms": [
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "name": "StudyObligation"
+    },
+    {
+      "axioms": [],
+      "name": "StudyInterface"
+    },
+    {
+      "axioms": [],
+      "name": "StudyTransport"
+    }
+  ],
+  "conditional_vs_unconditional": "SecondForm is an internal helper predicate, proved by induction along every generated path; the admitted theorem is not a conditional SecondForm implication.",
+  "english_statement": "For every finite Boolean Farey path, let its middle frame entry be (a,b,P) and d=a+b-1. The total-degree-(d-1) homogeneous component of P is exactly ((b-1)*U+(a-1)*V)*(U+V)^(d-2), as a polynomial over the integers.",
+  "exact_formal_claim": "∀ path : List Bool,\n    let m := (MathGKM.Markov.frame path).mid\n    let d := m.a+m.b-1\n    MathGKM.Markov.totalComponent m.p (d-1) =\n      (((m.b-1:ℕ):ℤ) • MathGKM.Markov.U + ((m.a-1:ℕ):ℤ) • MathGKM.Markov.V)*\n      (MathGKM.Markov.U+MathGKM.Markov.V)^(d-2)",
+  "id": "markov-r0007-uniform-subleading-component-v1",
+  "new_log_concavity_cases": "None certified by this admission: it is an exact next-layer coefficient formula, not an inequality, LC theorem or root reduction. No WeakLC, LabelTopLC, Conjecture63 or choose_log_concave theorem occurs in its proof closure. Existing open horizontal/vertical and strictly interior diagonal obligations remain open.",
+  "nonvacuity": {
+    "component": "U",
+    "d": 2,
+    "degree_component": 1,
+    "meaning": "A nonzero homogeneous component is identified; this is not an additional LC triple witness.",
+    "method": "Inspection of the already defined empty-path middle polynomial, not a new Lean proof or test.",
+    "middle_label": [
+      1,
+      2
+    ],
+    "path": [],
+    "polynomial": "(U+V)^2+U"
+  },
+  "novelty": "Not assessed; no scientific novelty claim.",
+  "primary_paper": "https://armj.math.stonybrook.edu/Articles/250708-Winn/index.html",
+  "prior_source_definition_audit": {
+    "human_audit_path": ".bootstrap/paired-v3-restart-20261019/observer-audits/top-boundary-source-identification-20261019.json",
+    "preserved_in_prior_packet": "evidence/continuation0001-round0004-admitted-20261019/observer-reviews/source-definition-audit.json",
+    "scope": "Identifies the common recursive source definitions; it does not assess novelty or supply a new Lean proof of this subleading formula.",
+    "sha256": "0cf627d5855cbd638793491361dd86e80f8a829abcfa92ec0eb780f593b156fc"
+  },
+  "quantifiers_and_conditions": [
+    "Universal over every finite path, with no fixed numerator or denominator bound.",
+    "The selected theorem concerns the middle frame entry, not an asserted component formula for all three entries.",
+    "The theorem has no unproved mathematical hypothesis. The generated-label facts a>=1, b>=2 and d>=2 are proved internally.",
+    "Subtractions in the exact Lean statement are natural-number subtraction before the specified integer casts; the proved positivity makes the displayed ordinary degree/exponent interpretation valid."
+  ],
+  "schema": "math-gkm.admitted-subleading-scope.v1",
+  "source_family": "The core pinned Markov.lean seed/recurrence/raw-coefficient definition is unchanged (SHA2568b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe). The separately completed human English/Lean source-definition audit matched that recursive family to Evans–Veselov–Winn; an arbitrary independently supplied affine-family transport is not an extra premise of this theorem.",
+  "totalComponent_definition": "Sum of c_P(i,j)*U^i*V^j over exactly the natural pairs i+j=n. The source proves its coefficient is coeff(P,i,j) on that degree and zero off it."
+}
