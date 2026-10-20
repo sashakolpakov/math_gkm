@@ -14,7 +14,7 @@ MODELS = ('gpt-6-astra', 'gpt-6.1-sol')
 REASONING_EFFORT = 'high'
 ROOT_SHA = '8b8408e5cae9822fe0969afd4a70b408d48e69f750dffb88c253dba8ef167dbe'
 SEED = ('MathGKM/Markov.lean', 'MathGKM/Protocol.lean', 'MISSION.md',
-        'docs/DESIGN.md', 'lakefile.toml', 'lake-manifest.json', 'lean-toolchain')
+        'docs/DESIGN.md', 'docs/CONCEPT_DRIVER.md', 'lakefile.toml', 'lake-manifest.json', 'lean-toolchain')
 
 class Invalid(ValueError):
     pass

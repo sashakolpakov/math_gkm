@@ -1,0 +1,140 @@
+{
+  "fixed_inputs": [
+    {
+      "path": "lean-toolchain",
+      "sha256": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+    },
+    {
+      "path": "lakefile.toml",
+      "sha256": "211507039f4919cdc9d54f87efaf7bebf53532272377623f75269c714fb5b575"
+    },
+    {
+      "path": "lake-manifest.json",
+      "sha256": "b513f28de3996d022de1bad05cd06002dc5f21286f4cd26454fcfae26a745725"
+    }
+  ],
+  "packages": [
+    {
+      "name": "mathlib",
+      "rev": "905b95818eb32af7874a58b427f50c1711a5e96c",
+      "url": "https://github.com/leanprover-community/mathlib4.git"
+    },
+    {
+      "name": "plausible",
+      "rev": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+      "url": "https://github.com/leanprover-community/plausible"
+    },
+    {
+      "name": "LeanSearchClient",
+      "rev": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+      "url": "https://github.com/leanprover-community/LeanSearchClient"
+    },
+    {
+      "name": "importGraph",
+      "rev": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+      "url": "https://github.com/leanprover-community/import-graph"
+    },
+    {
+      "name": "proofwidgets",
+      "rev": "6e311e2a844da9b2cc3971187df2fe0066947b93",
+      "url": "https://github.com/leanprover-community/ProofWidgets4"
+    },
+    {
+      "name": "aesop",
+      "rev": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+      "url": "https://github.com/leanprover-community/aesop"
+    },
+    {
+      "name": "Qq",
+      "rev": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+      "url": "https://github.com/leanprover-community/quote4"
+    },
+    {
+      "name": "batteries",
+      "rev": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+      "url": "https://github.com/leanprover-community/batteries"
+    },
+    {
+      "name": "Cli",
+      "rev": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+      "url": "https://github.com/leanprover/lean4-cli"
+    }
+  ],
+  "profiles": {
+    "construction-v3": {
+      "modules": [
+        "MathGKM.Construction"
+      ],
+      "scope": "Fresh compilation and independent leanchecker replay of the exact seven-module formal Construction closure. This profile alone does not run premise inspection, Python harness tests, live research, or certify actual host self-changes. D1/D2/D3 remain open."
+    }
+  },
+  "published_commit": "4915b7c6cfa50c2c66c33155d944e13d2f067f84",
+  "repository": "https://github.com/sashakolpakov/math_gkm.git",
+  "schema": 1,
+  "sources": {
+    "MathGKM.Construction": {
+      "imports": [
+        "MathGKM.Foundations",
+        "MathGKM.Machine",
+        "MathGKM.Gluing",
+        "MathGKM.Continuation",
+        "MathGKM.ResearchSemantics",
+        "MathGKM.ContinuationObligations"
+      ],
+      "path": "MathGKM/Construction.lean",
+      "sha256": "1d122b11d3e408c350e9776f7bf709f2e55168fb675330fc17a4891395dda3d0"
+    },
+    "MathGKM.Continuation": {
+      "imports": [
+        "MathGKM.Machine",
+        "MathGKM.Gluing",
+        "Mathlib.Data.Int.Basic",
+        "Mathlib.Logic.Equiv.Defs"
+      ],
+      "path": "MathGKM/Continuation.lean",
+      "sha256": "599a14bd3c6bbe8a461820c52448983886a8a25ce1630f9006b0c41abbb42e87"
+    },
+    "MathGKM.ContinuationObligations": {
+      "imports": [
+        "Lean"
+      ],
+      "path": "MathGKM/ContinuationObligations.lean",
+      "sha256": "18bbc446a91dc190f908ad6378f5e8e74f0c4d8be0ba8313f24cba3e04d33e8f"
+    },
+    "MathGKM.Foundations": {
+      "imports": [
+        "Mathlib.Data.Nat.Basic"
+      ],
+      "path": "MathGKM/Foundations.lean",
+      "sha256": "c01afc90b2cd6b4d51409b3b113d612d4609d07456079ab47643dc051e0c0ec3"
+    },
+    "MathGKM.Gluing": {
+      "imports": [
+        "Mathlib.Data.Quot"
+      ],
+      "path": "MathGKM/Gluing.lean",
+      "sha256": "c0572c8d6557dac7bfd2bc4b8e699e2a4be9337e7d997f3f71c3176fca47a558"
+    },
+    "MathGKM.Machine": {
+      "imports": [
+        "Mathlib.Data.Nat.Basic",
+        "Lean.Elab.Tactic.Omega"
+      ],
+      "path": "MathGKM/Machine.lean",
+      "sha256": "eff72e2f2d558a96b27eb1d90cf91fff6a658a8f628bcf87f965138bdc01f3de"
+    },
+    "MathGKM.ResearchSemantics": {
+      "imports": [
+        "Lean"
+      ],
+      "path": "MathGKM/ResearchSemantics.lean",
+      "sha256": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b"
+    }
+  },
+  "toolchain": "leanprover/lean4:v4.32.2",
+  "validation": {
+    "dependency_mode": "explicit pinned dependency binaries for the local prepare/run check; bootstrap can reconstruct exact source/package pins",
+    "host_controller_certified": false,
+    "outcomes": "recorded separately in per-run receipts; none inherited from historical profiles"
+  }
+}

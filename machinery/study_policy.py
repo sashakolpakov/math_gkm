@@ -35,13 +35,18 @@ def validate_policy(policy):
     if set(policy) != set(BASELINE) or not all(isinstance(x, str) and 0 < len(x) <= 2000 for x in policy.values()):
         raise Invalid('policy changes may only change search/memory/allocation/reassessment guidance')
 
-def initial(mode):
-    return {'mode': mode, 'policy': BASELINE if mode == 'baseline' else EXPLORATION,
+def initial(mode, protocol=None):
+    state = {'mode': mode, 'policy': BASELINE if mode == 'baseline' else EXPLORATION,
             'portfolio': {}, 'agenda': [], 'episode': None, 'decisions': [],
             'use_links': [], 'pending_policy': None, 'observations': [],
             'program': study_program.REFERENCE, 'pending_program': None,
             'knowledge': {}, 'components': {}, 'remaining_obligations': {},
             'formal_obligations': OBLIGATIONS, 'episode_history': []}
+    from .study_concepts import initial as initial_concepts
+    config = (protocol or {}).get('concept_driver') if mode == 'exploration' else None
+    if config:
+        state['concepts'] = initial_concepts(config)
+    return state
 
 def request(state, round_index, protocol, role='researcher'):
     # Explicit projection: never serialize the full controller state or audit tree.
@@ -63,6 +68,15 @@ def request(state, round_index, protocol, role='researcher'):
     from .study_knowledge import SCHEMAS
     projected['checked_submission_schemas']=SCHEMAS
     projected['dag_submission_rules']='Use exact node ids/constants and original context modules. reductions target_id defaults to root; premises references existing nodes in order; residuals introduces fresh nodes after premises. Never rebind a known node. compositions requests a separately checked term through admitted edges, with every open leaf retained as an antecedent. Representation antecedents are nodes; connect them by a checked reduction. Graph status is planning information, never root completion or English/source approval.'
+    from .study_research_feedback import request_feedback
+    projected['research_feedback'] = request_feedback(state)
+    from .study_concepts import project as project_concepts, SCHEMAS
+    config = protocol.get('concept_driver') if state['mode'] == 'exploration' else None
+    if config:
+        projected['concept_driver'] = project_concepts(state.get('concepts'), round_index, config,
+            round_limit=protocol['rounds'])
+        projected['concept_submission_schemas'] = SCHEMAS
+    projected['limits']['remaining_rounds'] = max(0, protocol['rounds']-round_index)
     return study_program.execute(state.get('program', study_program.REFERENCE), projected)
 
 def record(state, report, workspace, round_index, protocol, *, prospective=None):
@@ -112,7 +126,14 @@ def record(state, report, workspace, round_index, protocol, *, prospective=None)
             status=h.get('status','open'),reason=h.get('reason',''),evidence=h.get('evidence',[])))
     trial=report.get('trial')
     consequential=report.get('work_kind','ordinary') in ('exploration','strategy')
-    if consequential or trial:
+    active_concept = (state.get('concepts') or {}).get('active')
+    concept_trial = bool(protocol.get('concept_driver') and state['mode'] == 'exploration' and
+        active_concept and active_concept['start_round'] <= round_index <= active_concept['end_round'])
+    if prospective is not None:
+        bound = prospective.get('concept_commitment') or {}
+        concept_trial = bool(concept_trial and bound.get('mode') == 'protected_concept' and
+            bound.get('episode_reference') == active_concept['reference'])
+    if (consequential and not concept_trial) or trial:
         if not isinstance(trial,dict) or trial.get('hypothesis') not in state['portfolio']:
             raise Invalid('consequential experiment must select immutable hypothesis')
         selected=state['portfolio'][trial['hypothesis']]
@@ -131,7 +152,8 @@ def record(state, report, workspace, round_index, protocol, *, prospective=None)
             episode['invention_used']+=1
         state['decisions'].append(dict(round=round_index,trial=trial,reference=selected['reference'],evidence=evidence))
     else:
-        state['decisions'].append(dict(round=round_index,work_kind='ordinary',evidence=evidence))
+        state['decisions'].append(dict(round=round_index,
+            work_kind='concept_investigation' if concept_trial else 'ordinary', evidence=evidence))
     findings = report.get('findings', [])
     if not isinstance(findings, list):
         raise Invalid('findings must be a list')
@@ -158,16 +180,30 @@ def record(state, report, workspace, round_index, protocol, *, prospective=None)
         candidate = study_program.proposal(executable, round_index)
         if state['mode'] != 'baseline':
             state['pending_program'] = candidate
+    if prospective is not None and protocol.get('concept_driver') and state['mode'] == 'exploration':
+        from .study_concepts import report as report_concept
+        state['concepts'] = report_concept(state.get('concepts'), report.get('concept_report'),
+            round_index, protocol['concept_driver'], commitment=prospective.get('concept_commitment'))
     state['agenda'] = report['agenda']
     state['observations'].append({'round': round_index, 'evidence': evidence,
                                   'summary': report.get('summary', ''), 'class': 'unverified_research_report'})
 
 
-def commit(state, report, workspace, round_index, protocol):
+def commit(state, report, workspace, round_index, protocol, *, request_id=None):
     """Construct full commitment before action effects; no retrospective edits."""
     import copy
     staged = copy.deepcopy(state)
+    concept_commitment = None
+    config = protocol.get('concept_driver') if staged['mode'] == 'exploration' else None
+    if config:
+        from .study_concepts import commit as commit_concept
+        staged['concepts'], concept_commitment = commit_concept(staged.get('concepts'),
+            report.get('concept_plan'), round_index, config, round_limit=protocol['rounds'])
     record(staged, report, workspace, round_index, protocol)
+    from .study_research_feedback import request_feedback, record_feedback_consumption
+    feedback = request_feedback(state)
+    record_feedback_consumption(staged, request_id or f'plan-{round_index:04d}', round_index, 'proposer',
+        [packet['reference'] for packet in feedback['history']])
     trial=report.get('trial')
     candidates=staged['portfolio']
     selected=candidates[trial['hypothesis']] if trial else None
@@ -185,6 +221,8 @@ def commit(state, report, workspace, round_index, protocol):
             'validation_limit_each_round': protocol.get('knowledge_checks_per_round', 6),
             'semantics': 'prepaid research and validation caps; operational protocol wall separately bounded and measured'},
         'state_binding': digest(state), 'program_hash': digest(staged['program'])}
+    if concept_commitment is not None:
+        commitment['concept_commitment'] = concept_commitment
     return staged, commitment
 
 
@@ -217,7 +255,7 @@ COMMON = '''Read MISSION.md, docs/DESIGN.md and contract.json. The active versio
 def prompt(req):
     if req['role'] == 'proposer':
         extra = ('Plan the next bounded trial BEFORE execution. You have read-only access to own mathematical artifacts. '
-                 'Ordinary proof exploitation is the default: trial:null and hypotheses:[] are valid. For consequential exploration/strategy experiments choose work_kind:exploration or strategy and precommit discriminating outcomes. '
+                 'Keep ordinary proof production available. In a concept-enabled run honor the protected concept schedule and choose consequential discriminating experiments; trial:null and hypotheses:[] remain valid for ordinary work. For other exploration/strategy experiments choose work_kind:exploration or strategy and precommit discriminating outcomes. '
                  'Return agenda, summary, hypotheses, evidence, trial, use_links, policy_proposal and completion (null). '
                  'Each hypothesis has id, kind (obstacle/capability/strategy), claim, uncertainty, outcomes '
                  '(list of {check, changes_next_choice}), status (open/supported_exploratorily/usefulness_not_demonstrated/refuted_by_evidence), '
@@ -254,7 +292,7 @@ def prompt(req):
         schema += '''
 Hypothesis findings contract (both proposer and researcher): findings[i].reference must be an immutable HYPOTHESIS CONTENT REFERENCE in the exact staged portfolio, NOT a source filename, ordinary hypothesis id or arbitrary hash. Existing references are visible in request.portfolio; the researcher also receives commitment.selected_reference. Known retained historic/version references remain valid. Unknown references, including stale or changed references absent from that exact registry, are rejected. Valid new hypotheses are staged before explicit findings, so their exact deterministic content references are legal in the same report.
 Version rules: id, kind, claim, uncertainty and outcomes form the immutable core. New root hypotheses default to parent:null and revision:0. A changed prediction needs a fresh id, parent equal to a known hypothesis content reference, and revision equal to that parent's revision plus one. Parents must already be in the portfolio or precede the child in hypotheses. The version hash is lowercase SHA256 of UTF-8 JSON for exactly {id,kind,claim,uncertainty,outcomes,parent,revision}, with keys sorted, separators comma/colon without spaces, and ensure_ascii=false. Array order is preserved. Optional reference on a new hypothesis must equal this hash; status, reason and evidence are not hashed. Existing ids must preserve core and ancestry; omit optional reference rather than trying to change identity. The controller computes references and records hypothesis status/reason/evidence automatically. It is valid to omit explicit findings in an initial plan (or use findings:[]) without computing any new hash yourself.
-Use findings:[] whenever no hypothesis finding is reported, including ordinary source observations. Put source-file observations in summary plus evidence entries naming actual existing paths and their actual sha256. Ordinary work requires no artificial hypothesis or forced exploration. findings must be a list of objects with the hypothesis reference above; never translate a file path into a finding reference.
+Use findings:[] whenever no hypothesis finding is reported, including ordinary source observations. Put source-file observations in summary plus evidence entries naming actual existing paths and their actual sha256. Ordinary work requires no artificial legacy hypothesis; concept-enabled requests separately specify protected episode scheduling. findings must be a list of objects with the hypothesis reference above; never translate a file path into a finding reference.
 Pending discoveries are immutable RESEARCHER-origin branch candidates from either side, independent of policy selection. They are not main accepted mathematics. Inspect exact inbox source_paths and provenance. Request discovery_rechecks in dependency order for ordinary paid compile/replay/premise admission, or discovery_completion for the unchanged exact-root and independent audit gate. No automatic imports, hidden answers, usefulness certification or extra allowance. When budget is unavailable they remain pending.\nArtifact reporting contract (both proposer and researcher): use_links reports observed reuse, never intended future reuse. Each entry has exactly artifact, consumer and claim. Both artifact and consumer must name files that already exist in your workspace at report validation, using safe workspace-relative paths. Missing endpoints are rejected even in a prospective plan. Do not fabricate files to satisfy this requirement. Empty use_links is valid. File existence does not establish the claim: accepted links remain reported_use_pending_checked_interface until separately checked. Checked delayed_use_links in the request are controller-produced records, not the report entry schema; do not copy their status, receipt_hash or declaration identifiers into use_links.
 Evidence likewise requires an existing file and its actual sha256; kind must be experiment/source/representation/proof_candidate/capability_failure. Hypothesis evidence references must be bound in evidence. Intentions belong in agenda/summary/hypothesis claims/outcome checks, not evidence or use_links. Reports cannot self-certify theorems.
 Executable instructions: select_obligation {id}; reuse_library {ids}; allocate {exploration_percent}; budgets {tool_seconds,validation_seconds}; reassess {after_rounds}; reverse_agenda, reverse_portfolio; rotate_agenda/keep_observations with integer n; if_open_obligations with then/else instruction lists. These cannot edit admission, contract, costs or authority.'''
@@ -262,5 +300,22 @@ Executable instructions: select_obligation {id}; reuse_library {ids}; allocate {
         schema = 'Reviewer payload: {findings:[{path,sha256,finding}], correctness,scope,transfer,costs,recommendation}.'
     else:
         schema = 'Selector payload: {choice:"incumbent" or "candidate",reason,evidence:[{path,sha256}]}.'
+    if req['role'] in ('proposer', 'researcher'):
+        extra += (' Read research_feedback: its source_review is fallible mathematical diagnosis; '
+                  'comparison aggregates describe measured transfer only when valid. Operational limits '
+                  'and invalid comparisons are inconclusive. Use findings to revise your next choices; '
+                  'do not reconstruct hidden tasks or treat feedback as proof.')
+        if req.get('concept_driver'):
+            from .study_concepts import PROMPT_RULES
+            extra += '\n'+PROMPT_RULES
+            schema += ('\nConcept proposer field: concept_plan (see request.concept_submission_schemas); '
+                       'researcher field: concept_report. These fields supplement ordinary mathematical '
+                       'submissions; correctness, typed gluing and exact-root closure remain independently checked.')
+    elif req['role'] == 'reviewer' and req.get('review_scope') == 'own_sources_only':
+        extra += (' Your input contains only this arm\'s own sources and main research reports, '
+                  'with no withheld evaluation tasks or answers. Give a bounded substantive diagnosis '
+                  'of scope, mechanisms, remaining obstacles and discriminating research questions. '
+                  'Your diagnosis will be returned to the autonomous proposer as interpretation, not proof. '
+                  'Do not claim measured transfer from these sources alone.')
     return (COMMON + '\n' + extra + '\nThe output envelope has request_id and payload_json (a JSON-encoded object).\n'
             + schema + '\nREQUEST:\n' + __import__('json').dumps(req, indent=2))

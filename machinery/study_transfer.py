@@ -314,35 +314,156 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
     finish(directory,task,solution,required)
     return result
 
+def _catalog_identity(arm, manifest, task, solution):
+    """Exact immutable context identity; no evaluator answer material enters it."""
+    sealed = read(arm.study/'seal.json')
+    if 'dependencies' not in sealed:
+        raise Invalid('frozen catalog cache requires sealed dependency identity')
+    return {'schema': 'math-gkm.frozen-catalog-identity.v1',
+            'snapshot_binding': manifest['binding'],
+            'snapshot_files': manifest['files'],
+            'admitted_modules': manifest.get('admitted_modules'),
+            'source_sha256': task['source_sha256'],
+            'task': task, 'solution': solution, 'required': [],
+            'validation_mode': arm.p['transport'],
+            'inspection_schema': proof_audit.SCHEMA,
+            'binaries': {str(p): sha(p) for p in (LEAN, CHECKER)},
+            'pins': {n: sha(ROOT/n) for n in ('lean-toolchain','lakefile.toml','lake-manifest.json')},
+            'dependency_identity': digest(sealed['dependencies']),
+            'implementation': {n: sha(ROOT/'machinery'/n) for n in
+                ('proof_audit.py','inspection_stream.py','validation_receipts.py','study_transfer.py')}}
+
+
+def _catalog_verified(directory, task, solution, identity):
+    from .validation_receipts import reuse
+    result = reuse(directory, task, solution, ())
+    if (result.get('checked') is not True or result.get('inspection_schema') != proof_audit.SCHEMA or
+            result.get('target_binding') != digest(task) or result.get('solution_binding') != digest(solution) or
+            result.get('binary_hashes') != identity['binaries'] or result.get('pin_hashes') != identity['pins'] or
+            not result.get('declarations') or 'catalog' not in result['declarations'][0]):
+        raise Invalid('frozen catalog successful exact inspection binding required')
+    return result
+
+
+def _catalog_cached(arm, entry, identity, task, solution):
+    if (not isinstance(entry, dict) or set(entry) != {'schema','identity','validator_directory','finished_sha256'} or
+            entry['schema'] != 'math-gkm.frozen-catalog-cache.v1' or entry['identity'] != identity):
+        raise Invalid('frozen catalog cache identity changed')
+    relative = Path(entry['validator_directory'])
+    directory = arm.root/relative
+    if (relative.is_absolute() or '..' in relative.parts or directory.is_symlink() or
+            not directory.resolve().is_relative_to(arm.root.resolve()) or
+            sha(directory/'FINISHED.json') != entry['finished_sha256']):
+        raise Invalid('frozen catalog cache finished receipt changed')
+    return _catalog_verified(directory, task, solution, identity), directory
+
+
+def _catalog_account(result, *, reused, start, origin):
+    # Preserve the original receipt's elapsed compile/replay/inspection costs;
+    # current comparison accounting uses only this invocation's actual work.
+    out = dict(result)
+    out['catalog_accounting'] = {'reused_finished_receipt': reused,
+        'current_elapsed_seconds': time.monotonic()-start,
+        'original_validation_seconds': result.get('elapsed_seconds'),
+        'validator_directory': str(origin),
+        'scope': 'exact frozen declaration catalog; full reservation remains charged'}
+    return out
+
+
 def catalog_snapshot(arm, source, manifest, directory, key):
-    """Inspect frozen declarations BEFORE adaptation, including unused bodies.
-    This prevents comments/unrelated additions from masquerading as learned math.
+    """Inspect every frozen declaration, reusing only exact FINISHED receipts.
+
+    A cached success never substitutes for a different context. Cache verification
+    still hashes all retained receipt artifacts and checks binaries/pins through
+    the official validator-reuse path. Failed, stale or partial entries are
+    inconclusive; caps and declaration inspection remain unchanged.
     """
-    if (directory/'result.json').exists():
-        return read(directory/'result.json',max_bytes=64*1024**2)
-    marker = directory.parent/(directory.name+'.reserved.json')
-    if marker.exists() or directory.exists():
-        return {'checked': False, 'status': 'interrupted_catalog_not_replayed'}
+    started = time.monotonic()
+    actual = verify_snapshot(source)
+    if actual != manifest:
+        raise Invalid('frozen catalog snapshot manifest changed')
     arm.reserve('catalog-'+key, arm.p['validation_seconds'])
-    write(marker, {'snapshot': manifest['binding'], 'seconds': arm.p['validation_seconds']})
+    marker = directory.parent/(directory.name+'.reserved.json')
+    cached_attempt = directory/'CACHE_REUSE.json'
+    existing = (directory/'result.json').exists() or cached_attempt.exists()
+    if not existing and (marker.exists() or directory.exists()):
+        return {'checked': False, 'status': 'interrupted_catalog_not_replayed',
+                'elapsed_seconds': time.monotonic()-started}
+    if not existing:
+        write(marker, {'snapshot': manifest['binding'], 'seconds': arm.p['validation_seconds']})
     ws = directory.parent/(directory.name+'-workspace')
-    copy_seed(arm.study/'seed', ws)
-    for name in manifest['files']:
-        p = ws/name
-        p.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(source/'source'/name, p)
+    if not ws.exists():
+        copy_seed(arm.study/'seed', ws)
+        for name in manifest['files']:
+            p = ws/name
+            p.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(source/'source'/name, p)
     admitted = manifest.get('admitted_modules', [p for p in read(arm.study/'seed/seed-files.json') if p.endswith('.lean')])
     modules = [p[:-5].replace('/', '.') for p in admitted]
-    (ws/'MathGKM/FrozenCatalog.lean').write_text('\n'.join('import '+m for m in modules)+'\n')
+    catalog_source = '\n'.join('import '+m for m in modules)+'\n'
+    catalog_file = ws/'MathGKM/FrozenCatalog.lean'
+    if catalog_file.exists() and catalog_file.read_text() != catalog_source:
+        return {'checked': False, 'status': 'frozen_catalog_source_changed',
+                'elapsed_seconds': time.monotonic()-started}
+    catalog_file.write_text(catalog_source)
     contract = read(ws/'contract.json')
     task = {'id': 'catalog', 'statement': 'True', 'interface_type': 'True', 'transport_type': 'True',
             'hypotheses': [], 'scope': 'frozen declaration versions; not a research theorem',
             'required_constants': [], 'source_sha256': contract['root_sha256']}
     task = bind_task(ws, task, ['MathGKM.FrozenCatalog'])
-    return check_task(ws, task, {'module': 'MathGKM.FrozenCatalog', 'term': 'True.intro',
-        'interface_term': 'True.intro', 'transport_term': 'True.intro'}, directory,
-        arm.p['validation_seconds'], live=arm.p['transport'] == 'live', stop=arm.stopped,
-        frozen_files=manifest['files'])
+    solution = {'module': 'MathGKM.FrozenCatalog', 'term': 'True.intro',
+                'interface_term': 'True.intro', 'transport_term': 'True.intro'}
+    identity = _catalog_identity(arm, manifest, task, solution)
+    cache = arm.root/'frozen-catalog-cache'/digest(identity)/'index.json'
+    try:
+        if cached_attempt.exists():
+            checked, origin = _catalog_cached(arm, read(cached_attempt), identity, task, solution)
+            return _catalog_account(checked, reused=True, start=started, origin=origin)
+        if (directory/'result.json').exists():
+            checked = _catalog_verified(directory, task, solution, identity)
+            return _catalog_account(checked, reused=True, start=started, origin=directory)
+        if cache.exists():
+            entry = read(cache)
+            checked, origin = _catalog_cached(arm, entry, identity, task, solution)
+            write(cached_attempt, entry)
+            return _catalog_account(checked, reused=True, start=started, origin=origin)
+    except (Invalid, OSError, KeyError, TypeError, ValueError):
+        return {'checked': False, 'status': 'invalid_finished_catalog_cache; inconclusive',
+                'elapsed_seconds': time.monotonic()-started}
+    result = check_task(ws, task, solution, directory, arm.p['validation_seconds'],
+        live=arm.p['transport'] == 'live', stop=arm.stopped, frozen_files=manifest['files'])
+    if result.get('checked'):
+        try:
+            _catalog_verified(directory, task, solution, identity)
+            entry = {'schema': 'math-gkm.frozen-catalog-cache.v1', 'identity': identity,
+                     'validator_directory': str(directory.relative_to(arm.root)),
+                     'finished_sha256': sha(directory/'FINISHED.json')}
+            write(cache, entry)
+        except (Invalid, OSError, KeyError, TypeError, ValueError):
+            return {'checked': False, 'status': 'unbound_frozen_catalog_result; inconclusive',
+                    'elapsed_seconds': time.monotonic()-started}
+    return _catalog_account(result, reused=False, start=started, origin=directory)
+
+
+def _measured_number(value):
+    import math
+    return value if type(value) in (int,float) and math.isfinite(value) and value >= 0 else None
+
+
+def _measured_costs(sides, contexts):
+    """Controller elapsed times only; reservation caps are separate evidence."""
+    measured = {}
+    for side in ('before','after'):
+        records = sides.get(side)
+        context = contexts.get(side)
+        checks = records.get('checks', []) if records else []
+        elapsed = [_measured_number(c.get('elapsed_seconds')) for c in checks]
+        measured[side] = {
+            'adapter_seconds': _measured_number(records.get('adapter_receipt', {}).get('elapsed_seconds')) if records else None,
+            'validation_seconds': sum(elapsed) if records and all(v is not None for v in elapsed) else None,
+            'context_validation_seconds': _measured_number(context.get('catalog_accounting', {}).get(
+                'current_elapsed_seconds', context.get('elapsed_seconds'))) if context else None}
+    return measured
 
 
 def evaluate_pair(arm, before, after, key, *, policy_comparison=False):
@@ -409,7 +530,8 @@ def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
         return previous
     if not suite['tasks']:
         result = {'binding': binding, 'eligible': False, 'status': 'no_independent_holdout; transfer_not_demonstrated',
-                  'correctness': 'not_evaluated', 'scope': 'exact_root_unchanged', 'costs': {}, 'transfer': 'not_demonstrated'}
+                  'correctness': 'not_evaluated', 'scope': 'exact_root_unchanged', 'costs': {}, 'transfer': 'not_demonstrated',
+                  'measured_costs': _measured_costs({}, {})}
         write(directory/'result.json', result)
         return result
     # Reserve symmetric entire comparison before any adaptation call.
@@ -432,11 +554,14 @@ def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
     bound_tasks = [bind_task(target_ws, t) for t in suite['tasks']]
     write(directory/'bound-tasks.json', bound_tasks)
     catalogs = {}
+    context_checks = {}
     for side, source, manifest in [('before', before, bm), ('after', after, am)]:
         checked = catalog_snapshot(arm, source, manifest, directory/('catalog-'+side), key+'-'+side)
+        context_checks[side] = {k: checked[k] for k in ('elapsed_seconds','catalog_accounting') if k in checked}
         if not checked['checked']:
             result = {'binding': binding, 'eligible': False, 'status': 'invalid_frozen_context',
-                      'catalog_failure': checked, 'transfer': [], 'regressions': []}
+                      'catalog_failure': checked, 'transfer': [], 'regressions': [],
+                      'measured_costs': _measured_costs({}, context_checks)}
             write(directory/'result.json', result)
             return result
         if checked.get('inspection_schema') != proof_audit.SCHEMA:
@@ -481,6 +606,8 @@ def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
         'transfer': transfer, 'task_gains': gains, 'regressions': regressions,
         'all_frozen_declarations_retained': retained, 'catalogs': catalogs,
         'costs': 'raw receipts plus full validation/call reservations and measured seconds',
+        'measured_costs': _measured_costs(sides, context_checks),
+        'catalog_accounting': {side: result.get('catalog_accounting') for side,result in context_checks.items()},
         'eligible': bool(suite['independent'] and valid and retained and (gains if policy_comparison else transfer) and not regressions),
         'status': 'valid_finite_budget_comparison' if valid and retained else 'invalid_comparison_or_capability_regression',
         'independence': 'precommitted selection provenance; not authenticated by JSON alone',

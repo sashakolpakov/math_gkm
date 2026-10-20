@@ -75,6 +75,12 @@ class StudyFixtures(StudyFixtureSupport, unittest.TestCase):
         self.assertEqual(baseline['round'], 2)
         self.assertEqual(explored['round'], 2)
         self.assertFalse(baseline['research']['portfolio'])
+        self.assertIsNone(baseline['research']['episode'])
+        self.assertEqual(baseline['research']['policy'], study_policy.BASELINE)
+        baseline_plan = read(self.directory/'arms/baseline/jobs/plan-0000/receipt.json')['payload']
+        self.assertEqual(baseline_plan['work_kind'], 'ordinary')
+        self.assertEqual(baseline_plan['hypotheses'], [])
+        self.assertIsNone(baseline_plan['trial'])
         self.assertEqual(set(explored['research']['portfolio']), {'h-a', 'h-b'})
         self.assertEqual(explored['research']['episode']['review_round'], 1)
         self.assertEqual(explored['research']['episode']['continuation_rounds'], 2)
@@ -85,8 +91,8 @@ class StudyFixtures(StudyFixtureSupport, unittest.TestCase):
         self.assertLessEqual(plan['finished'], execute['started'])
         req = read(root/'jobs/round-0000/request.json')
         self.assertEqual(req['prospective_binding'], digest(read(root/'jobs/plan-0000/validated-plan.json')['commitment']))
-        self.assertEqual(read(root/'jobs/review-2/spec.json')['readonly'], True)
-        self.assertNotEqual(read(root/'jobs/review-2/spec.json')['workspace'], str(root/'workspace'))
+        self.assertEqual(read(root/'jobs/review-source-v1-2/spec.json')['readonly'], True)
+        self.assertNotEqual(read(root/'jobs/review-source-v1-2/spec.json')['workspace'], str(root/'workspace'))
         self.assertTrue((root/'workspace/history/objects').is_dir())
         self.assertIsNone(explored['resolution'])
         self.assertIn('root_open', explored['status'])
@@ -127,7 +133,9 @@ class StudyFixtures(StudyFixtureSupport, unittest.TestCase):
                 path.write_bytes(before)
 
     def test_no_praise_or_self_report_can_choose_policy(self):
-        self.freeze({'fixture_policy_trial': True, 'meta_calls': 16, 'max_calls': 40})
+        # Fixture opportunity: 8640 main + 16080 complete optional-trial reservations.
+        self.freeze({'fixture_policy_trial': True, 'meta_calls': 16, 'max_calls': 40,
+                     'arm_seconds': 30000})
         state = self.run_arm('exploration')
         comparison = next((self.directory/'arms/exploration/policy_trials').glob('*/result.json'))
         result = read(comparison)
@@ -317,9 +325,9 @@ class StudyFixtures(StudyFixtureSupport, unittest.TestCase):
             with patch.object(arm, 'call', side_effect=interrupted):
                 with self.assertRaises(RuntimeError):
                     arm.review()
-            reviewer = arm.root/'jobs/review-2/receipt.json'
+            reviewer = arm.root/'jobs/review-source-v1-2/receipt.json'
             before = reviewer.read_bytes()
-            inputs = arm.root/'review-inputs/review-2.json'
+            inputs = arm.root/'review-inputs/own-source-v1-review-2.json'
             frozen_inputs = inputs.read_bytes()
             calls, meta_calls = arm.s['calls'], arm.s['meta_calls']
             spent = arm.s['budget_pools']['review-2']['spent']
@@ -401,8 +409,9 @@ class LeanTransferFixtures(StudyFixtureSupport, unittest.TestCase):
     def test_checked_transfer_drives_experimental_policy_change_with_equal_branches(self):
         obligation = task(statement='∀ n : Nat, n = n', interface_type='True', transport_type='True',
             required_constants=['FixtureComponent.value'], fixture_strategy='component_or_bounded')
+        # Fixture opportunity: 11100 main + 17280 trial + 2460 final reservations.
         self.freeze({'fixture_policy_trial': True, 'meta_calls': 16, 'max_calls': 40,
-                     'arm_seconds': 20000}, suite([obligation]))
+                     'arm_seconds': 40000}, suite([obligation]))
         state = self.run_arm('exploration')
         self.assertIn('fixture component', state['research']['policy']['memory'])
         decision = read(self.directory/'arms/exploration/decisions/review-2.json')

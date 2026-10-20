@@ -5,6 +5,38 @@ import sys
 import time
 from .study_common import read, write, sha
 
+def concept_fixture(req):
+    """Synthetic scheduling data only, never a proposal for the live campaign."""
+    driver = req.get('concept_driver')
+    if not driver:
+        return None
+    if driver['required_action'] == 'continue_protected_episode':
+        return {'continue': driver['active_episode']['reference']}
+    if driver['required_action'] != 'start_concept_episode':
+        return None
+    horizon = driver['bounds']['min_horizon_rounds']
+    return {
+        'id': 'synthetic-concept-'+str(req['round']),
+        'explanations': [
+            {'id': 'common', 'claim': 'SYNTHETIC common toy operation.',
+             'discriminator': 'Check an independent toy consumer.', 'changes_choice': 'Retain or revise the toy interface.'},
+            {'id': 'separate', 'claim': 'SYNTHETIC separate toy operations.',
+             'discriminator': 'Check whether the toy interface transports.', 'changes_choice': 'Keep the separate toy descriptions.'}],
+        'selected_explanation': 'common', 'mechanism': 'SYNTHETIC shared toy operation.',
+        'explains': ['First synthetic observation.', 'Second synthetic observation.'],
+        'goal_bridge': {'claim': 'SYNTHETIC toy correspondence only.', 'status': 'conjectural',
+                        'remaining_obligations': ['Check the toy correspondence.']},
+        'consequences': [
+            {'id': 'transport', 'target': 'SYNTHETIC toy transport.',
+             'structural_difference': 'Transport rather than an initial identity.',
+             'observable_check': 'Check toy transport.', 'changes_choice': 'Revise the toy interpretation if needed.'},
+            {'id': 'composition', 'target': 'SYNTHETIC toy composition.',
+             'structural_difference': 'Composition rather than transport.',
+             'observable_check': 'Check toy composition.', 'changes_choice': 'Revise the toy operation if needed.'}],
+        'horizon_rounds': horizon,
+        'checkpoints': [{'after_rounds': horizon, 'consequence_ids': ['transport', 'composition'],
+                         'question': 'Which toy consequences have evidence?'}]}
+
 def main(job):
     spec = read(job/'spec.json')
     req = read(job/'request.json')
@@ -36,6 +68,19 @@ def main(job):
             'trial': {'hypothesis': 'h-a' if r % 2 == 0 else 'h-b', 'invention': False},
             'prospective_binding': req.get('prospective_binding'),
             'use_links': [], 'policy_proposal': None, 'completion': None}
+        if req.get('concept_driver'):
+            if spec['role'] == 'proposer':
+                payload['concept_plan'] = concept_fixture(req)
+                if payload['concept_plan'] is not None:
+                    payload.update(work_kind='exploration', trial=None, hypotheses=[])
+            else:
+                if (req.get('commitment', {}).get('concept_commitment') or {}).get('mode') == 'protected_concept':
+                    payload.update(work_kind='exploration', trial=None, hypotheses=[])
+                # Missing observations deliberately exercise protected horizons.
+                payload['concept_report'] = None
+        if req.get('mode') == 'baseline':
+            # The baseline fixture follows one ordinary agenda, without a portfolio trial.
+            payload.update(work_kind='ordinary', hypotheses=[], trial=None)
         if r == 0 and spec.get('fixture_policy_trial'):
             payload['policy_proposal'] = {**req['policy'], 'memory': 'toy candidate memory policy with fixture component'}
             payload['executable_proposal'] = {'schema': 'math-gkm.request-program.v1', 'code': [

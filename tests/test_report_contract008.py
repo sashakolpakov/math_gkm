@@ -30,7 +30,7 @@ def reference(h):
 
 class ReportContract008(unittest.TestCase):
     def setUp(self):
-        self.base = Path(tempfile.mkdtemp(prefix='report008-', dir=ROOT / 'local.scratch'))
+        self.base = Path(tempfile.mkdtemp(prefix='report008-', dir=ROOT / '.scratch'))
         (self.base / 'contract.json').write_text('{"neutral":true}\n')
         (self.base / 'source.txt').write_text('Neutral existing source.\n')
 
@@ -107,7 +107,8 @@ class ReportContract008(unittest.TestCase):
                              'request.portfolio', 'commitment.selected_reference',
                              'Known retained historic/version references remain valid',
                              'staged before explicit findings', 'findings:[]',
-                             'controller computes references', 'Ordinary work requires no artificial hypothesis',
+                             'controller computes references', 'Ordinary work requires no artificial legacy hypothesis',
+                             'concept-enabled requests separately specify protected episode scheduling',
                              'ensure_ascii=false', 'status, reason and evidence are not hashed'):
                     with self.subTest(mode=mode, role=role, text=text): self.assertIn(text, instructions)
 

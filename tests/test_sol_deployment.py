@@ -235,7 +235,7 @@ class SolDeployment(unittest.TestCase):
             'machinery.study.subprocess.Popen', side_effect=AssertionError('model launch forbidden')):
             with self.assertRaisesRegex(Invalid, 'neutral deployment failure'):
                 study.freeze(directory, {'transport': 'live', 'model': 'gpt-6.1-sol'}, contract=neutral_contract())
-        guard.assert_called_once_with(directory/'deployment-preflight')
+        guard.assert_called_once_with(directory/'deployment-preflight', seconds=1800)
         self.assertFalse((directory/'seed').exists())
         self.assertFalse((directory/'seal.json').exists())
 
@@ -244,7 +244,7 @@ class SolDeployment(unittest.TestCase):
         with lock(directory/'controller.lock') as fd:
             arm = study.Arm(directory, 'baseline', fd)
             arm.p['transport'] = 'live'  # unit branch only; no frozen-study activation
-            with patch('machinery.study_deployment.require_deployment', side_effect=Invalid('blocked')):
+            with patch('machinery.study_deployment.reuse_deployment', side_effect=Invalid('blocked')):
                 with self.assertRaisesRegex(Invalid, 'blocked'):
                     arm.call('forbidden', 'researcher', {'role': 'researcher'})
             self.assertEqual(arm.s['calls'], 0)

@@ -1,0 +1,32 @@
+{
+  "schema": "math-gkm.prospective-darwin-memory-profile.v1",
+  "approved_utc": "2026-10-18T18:29:29.450007+00:00",
+  "authority": "Root prospective approval DARWIN_ADMISSION_DECISION_006.json; measured cp005 full-Mathlib compiles and kernel replays; independent resource review before source change.",
+  "darwin": {
+    "charged_phys_footprint_sustained_bytes": 4294967296,
+    "charged_phys_footprint_hard_bytes": 5368709120,
+    "aggregate_rss_absolute_bytes": 8589934592,
+    "sustained_seconds": 3,
+    "poll_seconds": 1,
+    "host_memory_admission_bytes": 7516192768,
+    "host_memory_dynamic_bytes": 5368709120
+  },
+  "linux": "Retain historical RSS4GiB sustained/5GiB hard.",
+  "other_bounds": "unchanged; one j1 compiler; strict bounded privileged ps helper; source-bound profile, never worker-chosen; unavailable native metric fails closed",
+  "scope": "operational observation/cost capacity only; no mathematical target or premise change",
+  "linux_memory_admission_bytes": 8589934592,
+  "disk_admission_bytes": 8589934592,
+  "disk_dynamic_bytes": 5368709120,
+  "os_pressure_admission_percent": 30,
+  "os_pressure_dynamic_percent": 25,
+  "available_memory_estimator": "Unchanged: free + inactive + speculative VM pages; no extra cache.",
+  "approval_provenance": {
+    "path": "evidence/construction-v3/source-audit-006/inputs/DARWIN_ADMISSION_DECISION_006.json",
+    "sha256": "2c63149aa998dfb1ef188177eba33b5927dc3243c8e3d7ec85319ca7c0bc597a"
+  },
+  "prior_profile": {
+    "path": "config/darwin-memory-profile-005.json",
+    "sha256": "312f018e2b89df208f8e34140cbce8b0a4b09094f344421e32b12a86b9686850",
+    "disposition": "immutable005 provenance;005 results remain005"
+  }
+}

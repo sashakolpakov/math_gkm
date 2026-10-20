@@ -443,7 +443,21 @@ class Guard:
         if any(v['rss']>64*1024**2 for v in own_observers):
             raise ResourceFailure('monitor_unavailable: system observer RSS bound')
         rss=sum(table[p]['rss'] for p in owned)+sum(h['rss'] for h in helpers.values())+sum(v['rss'] for v in own_observers)
-        native=[native_footprint(p,self.owned[p]) for p in sorted(owned)] if darwin_profile() else []
+        native = []
+        exited_during_sample = []
+        if darwin_profile():
+            for p in sorted(owned):
+                try:
+                    native.append(native_footprint(p, self.owned[p]))
+                except ResourceFailure:
+                    # A sampled child may have exited since enumeration. Only
+                    # kernel-confirmed absence or the same birth as a zombie is
+                    # sufficient; a live/reused PID or failed query still stops.
+                    status = process_status(p)
+                    if status is None or (status['identity'] == self.owned[p] and status['zombie']):
+                        exited_during_sample.append({'pid': p, 'birth': self.owned[p]})
+                        continue
+                    raise
         helper_charge=sum(h['rss'] for h in helpers.values())+sum(v['rss'] for v in own_observers)
         charged=sum(r['phys_footprint_bytes'] for r in native)+helper_charge if darwin_profile() else None
         process_count=len(owned)+len(helpers)+len(own_observers)
@@ -451,7 +465,7 @@ class Guard:
         growth=disk_bytes(self.scope)-self.baseline
         compilers=sum(Path(table[p]['command']).name in ('lean','leanchecker') for p in owned)
         sample=dict(rss_sum=rss,memory_observation=memory,free_disk=free,growth=growth,owned_processes=process_count,compilers=compilers,privileged_observers=list(helpers.values()))
-        sample.update(charged_phys_footprint=charged,native_birth_owned=native,helper_rss_charge=helper_charge)
+        sample.update(charged_phys_footprint=charged,native_birth_owned=native,helper_rss_charge=helper_charge,exited_during_sample=exited_during_sample)
         self.samples=(self.samples+[sample])[-8:]
         self.peak_rss=max(self.peak_rss,rss)
         if charged is not None: self.peak_footprint=max(self.peak_footprint,charged)

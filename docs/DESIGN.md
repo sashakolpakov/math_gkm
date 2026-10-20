@@ -372,3 +372,13 @@ The absence of inherited answers does not establish historical originality:
 claims of novelty still require a literature audit. Failed searches, timeouts,
 and unfinished formalizations remain incomplete work, not evidence that the
 mathematical target is false or unprovable.
+
+## Concept-driver revision, 20 October 2026
+
+The connected implementation and experiment are specified in
+[CONCEPT_DRIVER.md](CONCEPT_DRIVER.md). This revision returns source-only review
+diagnoses to the proposer, protects bounded conceptual episodes while preserving
+ordinary proof work, and assesses library-package transfer against exact
+prospectively selected obligations. It is an operator-engineered harness change;
+its future research utility is empirical, and its research mathematics remains
+autonomous. The clean mathematical seed contains no prior campaign proofs.

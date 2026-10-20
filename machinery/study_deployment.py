@@ -15,7 +15,7 @@ import time
 import shutil
 import re
 
-from .study_common import ROOT, Invalid, canonical, digest, read, sha, write, dependencies, dependency_identity
+from .study_common import ROOT, Invalid, canonical, digest, read, sha, write, dependencies, dependency_identity, implementation
 from .study_transfer import check_task, sandbox_prefix
 from .trust import CORE, LEAN, CHECKER, environment
 from .process import run
@@ -137,6 +137,46 @@ def accepted_controls(positive, wrong_target, missing_premise, completion, *, mi
             'independent source/English correspondence audit required for this exact bundle')
 
 
+def deployment_identity():
+    """Current exact host inputs. No process launch or proof execution."""
+    from .resources import profile_identity
+    return {
+        'source_hashes': {str(p.relative_to(ROOT)): sha(p) for p in
+                          sorted((ROOT/'machinery').glob('*.py'))},
+        'binary_hashes': {str(p): sha(p) for p in (LEAN, CHECKER)},
+        'dependency_identity': dependency_identity(),
+        'implementation_hashes': implementation(),
+        'resource_profile': profile_identity(),
+    }
+
+
+def reuse_deployment(binding):
+    """Reuse checked neutral deployment only for identical current host inputs.
+
+    The frozen receipt is authenticated before current inputs are compared. A
+    fresh headroom check (including cleanup holds) still precedes every arm
+    session. Actual role and validator launches retain their own heavy lease
+    and live resource guards. This does not replay controls or certify research.
+    Legacy receipts without the complete identity are deliberately ineligible.
+    """
+    verify_receipt(binding)
+    report = read(Path(binding['receipt']).resolve().parent/'result.json')
+    current = deployment_identity()
+    for name, actual in current.items():
+        if report.get(name) != actual:
+            raise Invalid('deployment reuse identity changed: '+name)
+    from .resources import headroom, limits
+    observation = headroom(limits())
+    return {
+        'schema': 'math-gkm.deployment-session-admission.v1',
+        'ready': True, 'reused': True, 'receipt': binding['receipt'],
+        'receipt_sha256': binding['receipt_sha256'],
+        'identity_sha256': digest(current), 'checked_at': time.time(),
+        'resource_observation': observation,
+        'scope': 'exact checked deployment inputs; fresh headroom; no new compiler or model calls',
+    }
+
+
 def preflight(directory, seconds=1200):
     directory = Path(directory).resolve()
     if (not directory.is_relative_to(ROOT) or directory == ROOT or
@@ -159,10 +199,7 @@ def preflight(directory, seconds=1200):
         return left
 
     try:
-        report['source_hashes'] = {str(p.relative_to(ROOT)): sha(p) for p in
-            sorted((ROOT/'machinery').glob('*.py'))}
-        report['binary_hashes'] = {str(p): sha(p) for p in (LEAN, CHECKER)}
-        report['dependency_identity'] = dependency_identity()
+        report.update(deployment_identity())
         startup = directory/'startup'
         startup.mkdir()
         env = environment([CORE])
@@ -259,8 +296,8 @@ def preflight(directory, seconds=1200):
             raise Invalid('neutral positive/negative/completion controls not all established')
         if report['binary_hashes'] != {str(p): sha(p) for p in (LEAN, CHECKER)}:
             raise Invalid('preflight binaries changed')
-        if report['source_hashes'] != {str(p.relative_to(ROOT)): sha(p) for p in sorted((ROOT/'machinery').glob('*.py'))}:
-            raise Invalid('preflight machinery changed')
+        if any(report.get(name) != actual for name, actual in deployment_identity().items()):
+            raise Invalid('preflight host inputs changed')
         remaining()
         report['ready'] = True
     except (Invalid, OSError, ValueError, KeyError, TypeError) as exc:
@@ -275,8 +312,8 @@ def preflight(directory, seconds=1200):
     return report
 
 
-def require_deployment(directory):
-    report = preflight(directory)
+def require_deployment(directory, seconds=1200):
+    report = preflight(directory, seconds=seconds)
     if not report['ready']:
         raise Invalid('deployment preflight failed before research calls; inspect '+str(directory/'result.json'))
     return {'receipt': str(directory/'receipt.json'), 'receipt_sha256': sha(directory/'receipt.json'),

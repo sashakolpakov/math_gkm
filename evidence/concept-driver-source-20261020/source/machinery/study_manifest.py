@@ -1,0 +1,46 @@
+"""Reproducible source/install manifest; never reads Git or historical research."""
+import argparse
+import platform
+from pathlib import Path
+import sys
+import time
+from .study_common import ROOT, SEED, read, write, sha
+
+def generate(output):
+    if output.exists():
+        raise FileExistsError('preserve earlier evidence; choose a new manifest path: '+str(output))
+    disposition=read(ROOT/'INSTALLATION_SOURCE_DISPOSITION.json')
+    paths=set(disposition['artifacts'])
+    paths.add('INSTALLATION_SOURCE_DISPOSITION.json')
+    files = []
+    for name in sorted(paths):
+        p = ROOT/name
+        after = sha(p) if p.is_file() else None
+        files.append({'path': name, 'sha256': after, 'status': 'current_pin'})
+    protected = {name: {'sha256': sha(ROOT/name), 'status': 'current_pin; no historical baseline comparison'} for name in SEED}
+    logs = {str(p.relative_to(ROOT)): sha(p) for p in (ROOT/'evidence/neutral-validation').glob('*.log')}
+    result = {'schema': 'math-gkm.install-manifest.v2', 'phase': 'construction',
+        'status': 'reviewable experimental sources; no live installation/migration/publication',
+        'source_files': files, 'protected_inputs': protected,
+        'validation_logs': logs, 'python': {'executable': sys.executable, 'version': platform.python_version()},
+        'dependency_pins': {'lean-toolchain': (ROOT/'lean-toolchain').read_text().strip(),
+            'lake-manifest.json': sha(ROOT/'lake-manifest.json'), 'lakefile.toml': sha(ROOT/'lakefile.toml')},
+        'reproduce': [line for line in (ROOT/'docs/REGRESSION.md').read_text().splitlines()
+                      if line.startswith('/opt/homebrew/bin/python3 ')],
+        'reproduction_scope': 'Complete supported neutral harness suite; fresh checkpoint/log labels required. Each test group has a 720-second bound. See docs/REGRESSION.md for roles, real Lean and historical exclusions.',
+        'install': 'No installation/activation here. Root has user authorization for fresh matched trials only after meaningful audit and actual acceptance. Preserve installed aggregate/historical modules.',
+        'limitations': ['No live Codex invocation tested by builder',
+            'Nested sandbox-exec denied by managed builder environment; live validator fails closed',
+            'Provider token semantics/prices unverified; only raw usage and time/call caps',
+            'Independent holdout relevance and published-source correspondence need actual independent review',
+            'No modeled whole-continuation improvement proof or Python/LLM implementation bridge',
+            'General Lean elaboration remains trusted executable code; not a hostile-code admission service']}
+    write(output, result)
+    return result
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--out', type=Path, default=ROOT/'.scratch'/('study-install-'+str(time.time_ns())+'.json'))
+    args = parser.parse_args()
+    result = generate(args.out)
+    print('Wrote', args.out, 'with', len(result['source_files']), 'source hashes; protected inputs pinned (no historical comparison).')

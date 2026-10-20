@@ -28,7 +28,7 @@ DEFAULT = {'schema': 'math-gkm.study.v2', 'transport': 'fixture',
     'policy_trials': 1, 'policy_trial_rounds': 2, 'output_bytes': 2097152,
     'validation_seconds': 600, 'failure_limit': 3, 'fixture_policy_trial': False,
     'fixture_behavior': 'normal', 'ablations': [], 'fixture_connected': False,
-    'knowledge_checks_per_round': 6, 'proposal_repairs': 1}
+    'knowledge_checks_per_round': 6, 'proposal_repairs': 1, 'concept_driver': None}
 
 def public_receipt(receipt):
     """Evaluation answers and compiler diagnostics never enter research roles."""
@@ -52,7 +52,7 @@ def validate_commitment(p, tasks=0):
             raise Invalid('impossible episode through evaluation/review: '+limit)
 
 def validate_protocol(p):
-    if set(p) != set(DEFAULT) or p['schema'] != DEFAULT['schema']:
+    if set(p) not in (set(DEFAULT), set(DEFAULT)-{'concept_driver'}) or p['schema'] != DEFAULT['schema']:
         raise Invalid('protocol keys/schema mismatch')
     if p['transport'] not in ('fixture', 'live'):
         raise Invalid('only explicitly selected fixture or live transport')
@@ -81,6 +81,8 @@ def validate_protocol(p):
 
     if type(p['proposal_repairs']) is not int or not 0 <= p['proposal_repairs'] <= 2:
         raise Invalid('proposal repair bound must be 0..2')
+    from .study_concepts import validate_config
+    validate_config(p.get('concept_driver'))
     validate_commitment(p)
 
 def validate_suite(suite, contract=None):
@@ -145,7 +147,7 @@ def freeze(directory, config=None, suite=None, contract=None, curation=None):
     deployment = None
     if p['transport'] == 'live':
         from .study_deployment import require_deployment
-        deployment = require_deployment(directory/'deployment-preflight')
+        deployment = require_deployment(directory/'deployment-preflight', seconds=1800)
     seed = directory/'seed'
     seed.mkdir()
     seed_files = list(dict.fromkeys([x for x in SEED if x != 'MathGKM/Markov.lean'] +
@@ -183,9 +185,9 @@ def freeze(directory, config=None, suite=None, contract=None, curation=None):
     for mode in ('baseline', 'exploration'):
         arm = directory/'arms'/mode
         copy_seed(seed, arm/'workspace')
-        snapshot(arm/'workspace', arm/'snapshots/initial', policy.initial(mode)['policy'],
+        snapshot(arm/'workspace', arm/'snapshots/initial', policy.initial(mode, p)['policy'],
                  [n for n in seed_files if n.endswith('.lean')])
-        save_state(arm/'state.json', {'research': policy.initial(mode), 'round': 0,
+        save_state(arm/'state.json', {'research': policy.initial(mode, p), 'round': 0,
             'calls': 0, 'meta_calls': 0, 'seconds': 0., 'status': 'ready',
             'active': None, 'receipts': [], 'policy_trials': 0, 'failures': 0,
             'phase': 'research', 'reviewed_rounds': [], 'evaluations': [],
@@ -243,8 +245,9 @@ class Arm:
 
     def ensure_deployment(self):
         if self.p['transport'] == 'live' and not self.deployment_ready:
-            from .study_deployment import require_deployment
-            require_deployment(self.root/'deployment-preflights'/str(time.time_ns()))
+            from .study_deployment import reuse_deployment
+            admission = reuse_deployment(read(self.study/'seal.json')['deployment_preflight'])
+            write(self.root/'deployment-admissions'/f'{time.time_ns()}.json', admission)
             self.deployment_ready = True
             # Preflight is separately recorded common infrastructure overhead,
             # never a deduction from one arm's frozen research opportunities.
@@ -488,7 +491,7 @@ class Arm:
             if receipt['outcome']!='completed' and not receipt['outcome'].startswith('invalid_report:'):
                 raise Invalid('operational proposer failure; no uncertain action replay')
             try:
-                staged,commitment=policy.commit(state,receipt.get('payload'),workspace,index,protocol)
+                staged,commitment=policy.commit(state,receipt.get('payload'),workspace,index,protocol, request_id=logical)
             except (Invalid,KeyError,TypeError,ValueError) as exc:
                 invalid=self.root/'jobs'/logical/'invalid-plan.json'
                 record=dict(status='invalid_proposer_payload',receipt_hash=digest(receipt),
@@ -553,6 +556,36 @@ class Arm:
         with self.budget(key):
             self._research_round()
 
+    def protect_concept_horizon(self, commitment):
+        protected = commitment.get('concept_commitment') or {}
+        if protected.get('mode') != 'protected_concept':
+            return
+        end = protected['end_round']
+        if end >= self.p['rounds']:
+            raise Invalid('concept grant exceeds frozen campaign')
+        width = self.p['episode_rounds']
+        current = self.s['round'] - self.s['round'] % width
+        tasks = len(read(self.study/'evaluation/suite.json')['tasks'])
+        entries = {}
+        for first in range(current + width, end + 1, width):
+            count = min(width, self.p['rounds'] - first)
+            pools = episode_envelope(self.p, count, tasks)
+            entries['episode-research-'+str(first)] = pools['research']
+            entries['paired-evaluation-episode-'+str(first+count)] = pools['evaluation']
+            entries['review-'+str(first+count)] = pools['review']
+        # A concept may end between ordinary review boundaries. Its own paired
+        # assessment and review are also prepaid before the first action.
+        boundary = end + 1
+        if boundary % width and boundary != self.p['rounds']:
+            pools = episode_envelope(self.p, min(width, self.p['rounds']), tasks)
+            entries['paired-evaluation-episode-'+str(boundary)] = pools['evaluation']
+            entries['review-'+str(boundary)] = pools['review']
+        # Existing episode pools are already paid globally. Protect future pools
+        # from the remaining arm allowance, not from the current episode twice.
+        if entries:
+            with self.budget(None):
+                self.fund_many(entries)
+
     def _research_round(self):
         r = self.s['round']
         self.archive_sources()
@@ -562,6 +595,7 @@ class Arm:
         start = read(transaction/'start.json')
         req = policy.request(start['research'], r, self.p)
         staged, commitment = self.plan_with_repair(f'plan-{r:04d}', req, start['research'], self.workspace, r, self.p)
+        self.protect_concept_horizon(commitment)
         req = policy.request(staged, r, self.p)
         req.update(committed_trial=commitment['trial'], prospective_binding=digest(commitment),
                    commitment=commitment)
@@ -569,6 +603,9 @@ class Arm:
         req['checked_submission_schemas'] = SCHEMAS
         result = self.call(f'round-{r:04d}', 'researcher', req,
                            seconds=req.get('execution_budget',{}).get('tool_seconds'))
+        from .study_research_feedback import record_feedback_consumption
+        record_feedback_consumption(staged, f'round-{r:04d}', r, 'researcher',
+            [packet['reference'] for packet in req['research_feedback']['history']])
         updated = copy.deepcopy(staged)
         updated['execution_budget'] = req.get('execution_budget',{})
         if result['outcome'] == 'completed':
@@ -601,6 +638,9 @@ class Arm:
         self.s['round'] += 1
         self.s['phase'] = 'review' if self.s['round'] % self.p['episode_rounds'] == 0 or self.s['round'] == self.p['rounds'] else 'research'
         if self.s['round'] % req.get('reassess_after_rounds', self.p['episode_rounds']) == 0:
+            self.s['phase'] = 'review'
+        concept = (self.s['research'].get('concepts') or {}).get('active')
+        if concept and self.s['round'] == concept['end_round'] + 1:
             self.s['phase'] = 'review'
         from .study_observer import checkpoint
         checkpoint(self.study, self.mode, f'round-{r:04d}', self.s, target)
@@ -635,20 +675,47 @@ class Arm:
             candidate = {'policy': pending_policy['policy'] if pending_policy else self.s['research']['policy'],
                          'program': pending_program['program'] if pending_program else self.s['research']['program']}
             candidate['hash'] = digest(candidate)
-        committed = self.root/f'review-inputs/review-{r}.json'
+        committed = self.root/f'review-inputs/own-source-v1-review-{r}.json'
         if committed.exists():
             frozen = read(committed)
             records, trial = frozen['records'], frozen['trial']
         else:
-            records = {'round': r, 'receipts': [public_receipt(read(Path(p)/'receipt.json')) for p in self.s['receipts']],
+            import re
+            main_receipts = lambda: [public_receipt(read(Path(p)/'receipt.json'))
+                for p in self.s['receipts'] if re.fullmatch(
+                    r'(?:plan-\d{4}(?:-repair-\d+)?|round-\d{4})', Path(p).name)]
+            records = {'round': r, 'receipts': main_receipts(),
                 'decisions': self.s['research']['decisions'], 'evaluations': self.s['evaluations'],
                 'knowledge': self.s['research']['knowledge'], 'components': self.s['research']['components'],
                 'remaining_obligations': self.s['research']['remaining_obligations'],
-                'formal_obligations': self.s['research']['formal_obligations']}
+                'formal_obligations': self.s['research']['formal_obligations'],
+                'concepts': self.s['research'].get('concepts'),
+                'portfolio': self.s['research'].get('portfolio', {}),
+                'agenda': self.s['research'].get('agenda', [])}
             from .study_transfer import evaluate_pair
             episode_start = max(0, r-self.p['episode_rounds'])
             before = self.root/'snapshots'/('initial' if episode_start == 0 else f'round-{episode_start-1:04d}')
             after = self.root/'snapshots'/f'round-{r-1:04d}'
+            context = {'kind': 'ordinary_episode', 'concept_reference': None,
+                       'start_round': episode_start, 'end_round': r, 'complete': True}
+            concept = (self.s['research'].get('concepts') or {}).get('active')
+            if concept and concept['end_round'] < r:
+                first, last = concept['start_round'], concept['end_round']
+                before = self.root/'snapshots'/('initial' if first == 0 else f'round-{first-1:04d}')
+                after = self.root/'snapshots'/f'round-{last:04d}'
+                context = {'kind': 'concept_episode_package',
+                    'concept_reference': concept['reference'], 'start_round': first,
+                    'end_round': last+1, 'complete': True}
+            records['comparison_context'] = context
+            def in_development_interval(receipt):
+                match = re.fullmatch(r'(?:plan-|round-)(\d{4})(?:-repair-\d+)?', receipt.get('request_id', ''))
+                return match and context['start_round'] <= int(match.group(1)) < context['end_round']
+            elapsed = [item.get('elapsed_seconds') for item in records['receipts']
+                if in_development_interval(item)]
+            import math
+            records['development_role_seconds'] = (sum(elapsed) if elapsed and all(
+                type(value) in (int, float) and math.isfinite(value) and value >= 0
+                for value in elapsed) else None)
             records['episode_transfer'] = public_comparison(evaluate_pair(self, before, after, f'episode-{r}'))
             trial = None
             if candidate and self.s['policy_trials'] < self.p['policy_trials']:
@@ -661,14 +728,19 @@ class Arm:
                     records['compared_sources'][side] = {'binding': manifest['binding'],
                         'files': {name: (frozen_source/'source'/name).read_text()
                                   for name in manifest['files'] if name.endswith('.lean')}}
-            records['receipts'] = [public_receipt(read(Path(p)/'receipt.json')) for p in self.s['receipts']]
+            records['receipts'] = main_receipts()
             write(committed, {'records': records, 'trial': trial})
-        ws = self.role_workspace(f'review-{r}', records, self.workspace)
+        from .study_research_feedback import own_source_review_records
+        source_records = own_source_review_records(records)
+        ws = self.role_workspace(f'review-source-v1-{r}', source_records, self.workspace)
         self.fund('review-'+str(r), 2*self.p['call_seconds'])
         with self.budget('review-'+str(r)):
-            result = self.call(f'review-{r}', 'reviewer', {'role': 'reviewer', 'records': 'inbox/records.json'}, ws, True)
+            result = self.call(f'review-source-v1-{r}', 'reviewer', {'role': 'reviewer', 'records': 'inbox/records.json',
+                'review_scope': 'own_sources_only'}, ws, True)
         valid = self.checked_findings(result, ws)
-        selection_records = {'review': result, 'review_artifact_refs_valid': valid, 'comparison': public_comparison(trial) if trial else None}
+        from .study_research_feedback import comparison_feedback
+        selection_records = {'review': result, 'review_artifact_refs_valid': valid,
+            'comparison': comparison_feedback(trial) if trial else None}
         sel_ws = self.role_workspace(f'select-{r}', selection_records)
         with self.budget('review-'+str(r)):
             selected = self.call(f'select-{r}', 'selector', {'role': 'selector', 'records': 'inbox/records.json'}, sel_ws, True)
@@ -689,7 +761,19 @@ class Arm:
             'certified_switch': False, 'comparison': trial})
         self.s['research']['pending_policy'] = None
         self.s['research']['pending_program'] = None
-        policy.finish_episode(self.s['research'], r, {'accepted': bool(accepted), 'decision': f'review-{r}'})
+        from .study_research_feedback import build_review_feedback, append_review_feedback
+        packet = build_review_feedback(r, result, valid, reviewer_scope='own_sources_only',
+            episode_transfer=records.get('episode_transfer'), policy_comparison=trial,
+            comparison_context=records.get('comparison_context'),
+            development_role_seconds=records.get('development_role_seconds'))
+        append_review_feedback(self.s['research'], packet)
+        from .study_concepts import finish as finish_concept
+        config = self.p.get('concept_driver') if self.mode == 'exploration' else None
+        if config:
+            self.s['research']['concepts'] = finish_concept(
+                self.s['research'].get('concepts'), r, packet, config)
+        policy.finish_episode(self.s['research'], r, {'accepted': bool(accepted),
+            'decision': f'review-{r}', 'research_feedback_reference': packet['reference']})
         self.s['reviewed_rounds'].append(r)
         self.s['phase'] = 'research'
         self.save()
@@ -735,7 +819,7 @@ class Arm:
         if not (destination/'decision-state.json').exists():
             write(destination/'decision-state.json', {'research': self.s['research'], 'round': self.s['round']})
         decision = read(destination/'decision-state.json')
-        branch_protocol = {**self.p, 'rounds': max(self.p['rounds'], decision['round']+self.p['policy_trial_rounds'])}
+        branch_protocol = {**self.p, 'rounds': decision['round']+self.p['policy_trial_rounds']}
         outcomes = {}
         for side, p, program in [('incumbent', decision['research']['policy'], decision['research']['program']),
                                   ('candidate', candidate['policy'], candidate['program'])]:
@@ -762,15 +846,24 @@ class Arm:
                 local = progress['research']
                 req = policy.request(local, index, branch_protocol)
                 req['comparison_branch'] = 'blinded-policy-continuation'
+                req['continuation_scope'] = {'kind': 'finite_strategy_trial_prefix',
+                    'end_round': branch_protocol['rounds'],
+                    'interpretation': 'Only this finite prefix is funded and compared. An inherited concept horizon beyond it remains unresolved; no whole-continuation claim.'}
                 with self.budget(key+'-'+side):
                     staged, commitment = self.plan_with_repair(f'{key}-{side}-plan-{n}', req, local, ws, index, branch_protocol)
                 req = policy.request(staged, index, branch_protocol)
+                req['continuation_scope'] = {'kind': 'finite_strategy_trial_prefix',
+                    'end_round': branch_protocol['rounds'],
+                    'interpretation': 'Only this finite prefix is funded and compared; longer inherited obligations remain unresolved.'}
                 from .study_knowledge import SCHEMAS, ingest
                 req.update(committed_trial=commitment['trial'], prospective_binding=digest(commitment),
                            commitment=commitment, checked_submission_schemas=SCHEMAS)
                 with self.budget(key+'-'+side):
                     result = self.call(f'{key}-{side}-{n}', 'researcher', req, ws,
                                        seconds=req.get('execution_budget',{}).get('tool_seconds'))
+                from .study_research_feedback import record_feedback_consumption
+                record_feedback_consumption(staged, f'{key}-{side}-{n}', index, 'researcher',
+                    [packet['reference'] for packet in req['research_feedback']['history']])
                 progress['receipts'].append(result)
                 if result['outcome'] == 'completed':
                     from .study_reports import accept_report

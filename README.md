@@ -7,6 +7,17 @@ retained records and independent review distinguish what was proposed, executed,
 compiled, replayed and actually proved. The fixed [mission](MISSION.md) and
 [design](docs/DESIGN.md) govern the project.
 
+## Concept-driver revision
+
+The [concept-directed loop](docs/CONCEPT_DRIVER.md) connects source-review
+diagnoses to subsequent proposals, reserves multi-round conceptual investigations
+alongside ordinary proof work, and evaluates the resulting library package on
+fixed independent obligations. Invalid comparisons remain inconclusive.
+Complexity stays audit-only; typed gluing and exact Lean admission remain separate
+from empirical research usefulness. This is an operator-engineered revision, not
+a certified Goedel self-improvement. The dated launch records preserve its tests,
+review, clean-seed comparison and actual activation status.
+
 ## Blended strategy V3
 
 The latest fresh Lean verification covers every polynomial in the numerator-one

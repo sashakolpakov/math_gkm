@@ -15,8 +15,10 @@ def transition(state, command):
     path.write_text(json.dumps({'state':state,'command':command}))
     source=ROOT/'MathGKM/Protocol.lean'
     before=sha(source)
+    env = environment([CORE])
+    env['TMPDIR'] = str(directory)
     r=run([str(LEAN),'--run',str(source),str(path)],cwd=directory,
-          env=environment([CORE]),timeout=30)
+          env=env,timeout=30,scope=directory)
     if r['returncode'] != 0 or r['termination'] or before != sha(source):
         raise Rejected('Lean protocol transition failed: '+r['stdout']+r['stderr'])
     return json.loads(r['stdout'])
