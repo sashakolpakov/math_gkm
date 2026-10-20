@@ -350,14 +350,22 @@ def preserve_initial_state(common,state_path,destination):
     return dict(path=str(destination),sha256=expected)
 
 
-def migrate(parent,number):
+def migrate(parent,number,*,destination=None,caller_binding=None,ongoing=False):
     global COPY_GUARD
     a=api();common=a['common'];parent=Path(parent)
-    old,p,contract,suite,curation=inspect_plan(parent,number,include_private_evaluator_inputs=True)
+    if ongoing:
+        if destination is None or not isinstance(caller_binding,dict):
+            raise RuntimeError('ongoing migration requires explicit destination and caller binding')
+        if (caller_binding.get('follow_sha256')!=sha(OPS/'follow.py') or
+            caller_binding.get('checkpoint_sha256')!=sha(OPS/'FOLLOW.json')):
+            raise RuntimeError('ongoing caller source/checkpoint binding changed')
+    elif destination is not None or caller_binding is not None:
+        raise RuntimeError('explicit migration context requires ongoing authorization')
+    old,p,contract,suite,curation=inspect_plan(parent,number,include_private_evaluator_inputs=True,ongoing=ongoing)
     parent_protocol=common.read(parent/'protocol.json')
     ready,reason=parent_ready(parent,first=(parent==INITIAL_PARENT))
     if not ready: raise RuntimeError(reason)
-    new=successor_path(number)
+    new=ongoing_destination(destination,number) if ongoing else successor_path(number)
     if new.exists(): raise RuntimeError('successor already exists; no overwrite or uncertain replay')
     old_arm=parent/'arms/exploration';old_ws=old_arm/'workspace'
     planned=planned_copy_bytes(old_arm,old)
@@ -490,9 +498,20 @@ def migrate(parent,number):
     write(new/'MIGRATION_FINISHED.json',dict(initial_state_path=initial_state['path'],initial_state_sha256=initial_state['sha256'],
         provenance_sha256=sha(new/'CONTINUATION_PROVENANCE.json'),
         seal_sha256=sha(new/'seal.json'),state_sha256=sha(arm/'state.json'),finished=time.time(),
-        source_sha256=sha(__file__),review_sha256=sha(REVIEW_PATH)))
+        source_sha256=sha(__file__),
+        **({'ongoing_caller':copy.deepcopy(caller_binding)} if ongoing else {'review_sha256':sha(REVIEW_PATH)})))
     COPY_GUARD=None
     return new
+
+
+def ongoing_destination(destination,number):
+    import re
+    path=Path(destination)
+    if type(number) is not int or number<1 or not re.fullmatch(r'concept-driver-20261020-follow-[0-9]{6,}',path.name):
+        raise RuntimeError('explicit fresh ongoing destination required')
+    if path.name!=f'concept-driver-20261020-follow-{number:06d}' or path.is_symlink() or path.parent.resolve()!=(ROOT/'.scratch').resolve():
+        raise RuntimeError('ongoing destination must be the exact fresh scratch successor')
+    return path.resolve()
 
 
 def successor_path(number):
@@ -525,7 +544,7 @@ def controls():
         raise RuntimeError('unresolved resource cleanup hold; independent reconciliation required')
 
 
-def immutable_bindings():
+def immutable_bindings(*,ongoing=False):
     a=api();common=a['common']
     if digest(common.implementation())!=EXPECTED_IMPL:
         raise RuntimeError('frozen implementation changed')
@@ -544,9 +563,12 @@ def immutable_bindings():
             raise RuntimeError('original clean seed changed')
     common.authorize_live(contract)
     authorization=read(ROOT/'.bootstrap/study-authorization.json')
-    scope=str(authorization.get('authorized_continuation',''))
-    if 'successor' not in scope.lower() or '8' not in scope:
-        raise RuntimeError('explicit current sustained-successor authorization required')
+    if ongoing:
+        authorize_ongoing(authorization)
+    else:
+        scope=str(authorization.get('authorized_continuation',''))
+        if 'successor' not in scope.lower() or '8' not in scope:
+            raise RuntimeError('explicit current sustained-successor authorization required')
     finalization=read(FINALIZATION/'FINISHED.json')
     if finalization.get('round')!=2 or finalization.get('phase')!='review' or finalization.get('role_calls')!=0 or finalization.get('proof_checks')!=0:
         raise RuntimeError('reviewed exact failed-tail finalization missing')
@@ -571,6 +593,18 @@ def immutable_bindings():
         failed_tail_finalization_sha256=sha(FINALIZATION/'FINISHED.json'),
         initial_resume_review_sha256=consumed['review_sha256'],
         source_sha256=sha(__file__),tests_source_sha256=sha(OPS/'test_continue_machine.py'))
+
+
+def authorize_ongoing(record=None):
+    record=record or read(ROOT/'.bootstrap/study-authorization.json')
+    expected={'ongoing_follow_sha256':sha(OPS/'follow.py'),
+        'ongoing_migration_sha256':sha(__file__),
+        'ongoing_tests_sha256':sha(OPS/'test_continue_machine.py')}
+    if (record.get('ongoing_goal_authorized') is not True or
+        not isinstance(record.get('ongoing_source_reviewer'),str) or not record['ongoing_source_reviewer'].strip() or
+        any(record.get(k)!=v for k,v in expected.items())):
+        raise RuntimeError('exact independently audited ongoing-goal authority required')
+    return record
 
 
 def planned_protocol(parent_round,phase='research'):
@@ -670,8 +704,8 @@ def parent_ready(parent,first=False):
     return True,None
 
 
-def inspect_plan(parent,number,*,include_private_evaluator_inputs=False):
-    a=api();parent=Path(parent);immutable_bindings()
+def inspect_plan(parent,number,*,include_private_evaluator_inputs=False,ongoing=False):
+    a=api();parent=Path(parent);immutable_bindings(ongoing=ongoing)
     state=a['common'].load_state(parent/'arms/exploration/state.json')
     p=planned_protocol(state['round'],state['phase'])
     expected_parent=read(INITIAL_PARENT/'protocol.json') if parent==INITIAL_PARENT else planned_protocol(state['round']-ADDITIONAL_ROUNDS,state['phase'])

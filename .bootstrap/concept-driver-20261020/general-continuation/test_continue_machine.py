@@ -366,4 +366,120 @@ class OperationsFixtures(unittest.TestCase):
         with patch.object(ops,'api',return_value={'common':SimpleNamespace(load_state=lambda p:state)}):
             with self.assertRaisesRegex(RuntimeError,'unsafe'):ops.verified_resolution(self.root/'study')
 
+spec_follow=importlib.util.spec_from_file_location('ongoing_follow',Path(__file__).with_name('follow.py'))
+follow=importlib.util.module_from_spec(spec_follow);spec_follow.loader.exec_module(follow)
+
+
+class FollowFixtures(unittest.TestCase):
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory(prefix='math-gkm-follow-only-');self.addCleanup(self.temp.cleanup)
+        self.root=Path(self.temp.name).resolve();self.initial=self.root/'.scratch/current'
+        ops.write(self.initial/'protocol.json',{'rounds':8})
+        self.owner={'study':str(self.initial),'controller_pid':1234,'controller_birth':'fixture-birth'}
+
+    def test_ongoing_namespace_exceeds_old_eight_epoch_limit(self):
+        with patch.object(ops,'ROOT',self.root):
+            path=self.root/'.scratch/concept-driver-20261020-follow-000009'
+            self.assertEqual(ops.ongoing_destination(path,9),path)
+            self.assertEqual(ops.ongoing_destination(self.root/'.scratch/concept-driver-20261020-follow-1000000',1000000).name,'concept-driver-20261020-follow-1000000')
+            for bad in (self.root/'concept-driver-20261020-follow-000009',self.root/'.scratch/concept-driver-20261020-follow-000010'):
+                with self.assertRaises(RuntimeError):ops.ongoing_destination(bad,9)
+
+    def test_exact_source_audit_authority_required(self):
+        (self.root/'follow.py').write_text('fixture');(self.root/'test_continue_machine.py').write_text('fixture')
+        with patch.object(ops,'OPS',self.root):
+            record={'ongoing_goal_authorized':True,'ongoing_source_reviewer':'independent fixture',
+                'ongoing_follow_sha256':ops.sha(self.root/'follow.py'),'ongoing_migration_sha256':ops.sha(ops.__file__),
+                'ongoing_tests_sha256':ops.sha(self.root/'test_continue_machine.py')}
+            self.assertEqual(ops.authorize_ongoing(record),record)
+            for delta in ({'ongoing_goal_authorized':False},{'ongoing_source_reviewer':''},{'ongoing_migration_sha256':'wrong'}):
+                with self.subTest(delta=delta),self.assertRaisesRegex(RuntimeError,'authority'):ops.authorize_ongoing({**record,**delta})
+
+    def test_initial_controller_binding_is_explicit(self):
+        self.assertEqual(follow.initial_binding(self.initial,{'ongoing_initial':self.owner}),self.owner)
+        with self.assertRaisesRegex(RuntimeError,'ownership'):follow.initial_binding(self.initial,{})
+        with self.assertRaisesRegex(RuntimeError,'ownership'):follow.initial_binding(self.root/'other',{'ongoing_initial':self.owner})
+
+    def test_native_birth_reuse_refuses_replacement(self):
+        resources=SimpleNamespace(current_process=lambda pid:{'identity':'different'})
+        with patch.object(follow.ops,'api',return_value={'resources':resources}):
+            with self.assertRaisesRegex(RuntimeError,'another birth'):follow.live_identity(1234,'original')
+        with patch.object(follow.ops,'api',return_value={'resources':SimpleNamespace(current_process=lambda pid:None)}):
+            self.assertFalse(follow.live_identity(1234,'original'))
+
+    def test_wait_observes_external_controller_without_signalling(self):
+        common=SimpleNamespace(load_state=lambda p:{'active':None,'active_intent':None,'resolution':None})
+        with patch.object(follow.ops,'lock_available',side_effect=[False,True]),patch.object(follow,'controls'),             patch.object(follow,'live_identity',side_effect=[True,False,False]) as identity,patch.object(follow.time,'sleep') as sleep,             patch.object(follow.ops,'api',return_value={'common':common}),patch.object(follow,'terminal',return_value=False),             patch.object(follow.ops,'parent_ready',return_value=(True,None)),patch.object(follow.subprocess,'Popen') as spawn:
+            self.assertTrue(follow.wait_closed(self.initial,self.owner));spawn.assert_not_called();sleep.assert_called_once()
+            self.assertEqual(identity.call_count,3)
+
+    def test_initial_birth_exit_after_lock_release_is_waited_for(self):
+        common=SimpleNamespace(load_state=lambda p:{'active':None,'active_intent':None,'resolution':None})
+        with patch.object(follow.ops,'lock_available',return_value=True),patch.object(follow,'controls'),             patch.object(follow,'live_identity',side_effect=[True,False,False]),patch.object(follow.time,'sleep') as sleep,             patch.object(follow.ops,'api',return_value={'common':common}),patch.object(follow,'terminal',return_value=False),             patch.object(follow.ops,'parent_ready',return_value=(True,None)):
+            self.assertTrue(follow.wait_closed(self.initial,self.owner));sleep.assert_called_once()
+
+    def test_uncertain_parent_intent_never_replayed(self):
+        common=SimpleNamespace(load_state=lambda p:{'active':None,'active_intent':{'uncertain':True}})
+        with patch.object(follow.ops,'lock_available',return_value=True),patch.object(follow,'controls'),             patch.object(follow.ops,'api',return_value={'common':common}),patch.object(follow.subprocess,'Popen') as spawn:
+            with self.assertRaisesRegex(RuntimeError,'uncertain'):follow.wait_closed(self.initial)
+            spawn.assert_not_called()
+
+    def test_completed_proof_and_refutation_are_distinct(self):
+        for kind in ('proof','refutation'):
+            common=SimpleNamespace(load_state=lambda p:{'resolution':{'kind':kind,'binding':{'claim':{'kind':kind}}}})
+            with patch.object(follow,'CHECKPOINT',self.root/'FOLLOW.json'),patch.object(follow.ops,'verified_resolution',return_value=True),patch.object(follow.ops,'api',return_value={'common':common}):
+                self.assertTrue(follow.terminal(self.initial));state=ops.read(self.root/'FOLLOW.json')
+                self.assertEqual(state['goal_achieved'],kind=='proof');self.assertEqual(state['theorem_proved'],kind=='proof')
+                self.assertEqual(state['phase'],'theorem_proved' if kind=='proof' else 'theorem_refuted')
+        with patch.object(follow.ops,'verified_resolution',return_value=False):self.assertIsNone(follow.outcome(self.initial))
+
+    def fixture_api(self):
+        return {'resources':SimpleNamespace(headroom=lambda cap:None,limits=lambda:{},current_process=lambda pid:{'identity':'self-fixture'})}
+
+    def fixture_state(self,phase='waiting'):
+        return dict(phase=phase,current_study=str(self.initial),next_sequence=1,
+            helper_sha256=ops.sha(follow.ops.__file__),follow_sha256=ops.sha(follow.__file__),initial_owner=self.owner,
+            operator_pid=None,caffeinate_pid=None)
+
+    def test_uncertain_owned_launch_checkpoint_not_replayed(self):
+        with patch.object(follow,'OPS',self.root),patch.object(follow,'ROOT',self.root),patch.object(follow,'CHECKPOINT',self.root/'FOLLOW.json'),             patch.object(follow,'controls'),patch.object(follow.subprocess,'Popen') as spawn:
+            ops.write(self.root/'FOLLOW.json',self.fixture_state('launch_intent'))
+            with self.assertRaisesRegex(RuntimeError,'unfinished'):follow.follow(self.initial)
+            spawn.assert_not_called()
+
+    def test_terminal_checkpoint_is_reverified(self):
+        with patch.object(follow,'OPS',self.root),patch.object(follow,'ROOT',self.root),patch.object(follow,'CHECKPOINT',self.root/'FOLLOW.json'),             patch.object(follow,'controls'),patch.object(follow,'outcome',return_value=None),patch.object(follow.subprocess,'Popen') as spawn:
+            ops.write(self.root/'FOLLOW.json',self.fixture_state('theorem_proved'))
+            with self.assertRaisesRegex(RuntimeError,'current exact evidence'):follow.follow(self.initial)
+            spawn.assert_not_called()
+
+    def test_previous_live_same_birth_owner_is_not_replaced(self):
+        state=self.fixture_state();state.update(operator_pid=1234,operator_birth='same')
+        with patch.object(follow,'OPS',self.root),patch.object(follow,'ROOT',self.root),patch.object(follow,'CHECKPOINT',self.root/'FOLLOW.json'),             patch.object(follow,'controls'),patch.object(follow,'live_identity',return_value=True),patch.object(follow.subprocess,'Popen') as spawn:
+            ops.write(self.root/'FOLLOW.json',state)
+            with self.assertRaisesRegex(RuntimeError,'still lives'):follow.follow(self.initial)
+            spawn.assert_not_called()
+
+    def test_finite_deadline_prevents_spawn_after_migration(self):
+        with patch.object(follow,'OPS',self.root),patch.object(follow,'CHECKPOINT',self.root/'FOLLOW.json'),patch.object(follow.ops,'OPS',self.root),             patch.object(follow.ops,'ROOT',self.root),patch.object(follow.ops,'DEADLINE',0),patch.object(follow.ops,'authorize_ongoing'),             patch.object(follow.subprocess,'Popen') as spawn:
+            with self.assertRaisesRegex(RuntimeError,'wall ceiling'):follow.execute(self.initial,0)
+            spawn.assert_not_called();self.assertEqual(ops.read(self.root/'FOLLOW.json')['phase'],'needs_reconciliation')
+
+    def test_more_than_eight_epochs_keep_finite_envelopes(self):
+        api=self.fixture_api();calls=[]
+        def migrate(parent,number,**kwargs):
+            self.assertTrue(kwargs['ongoing']);self.assertGreater(follow.ops.DEADLINE,time.monotonic())
+            new=Path(kwargs['destination']);ops.write(new/'protocol.json',{'rounds':8+4*number});calls.append(number);return new
+        import time
+        with patch.object(follow,'OPS',self.root),patch.object(follow,'ROOT',self.root),patch.object(follow,'CHECKPOINT',self.root/'FOLLOW.json'),             patch.object(follow,'controls'),patch.object(follow.ops,'authorize_ongoing',return_value={'ongoing_initial':self.owner}),             patch.object(follow.ops,'api',return_value=api),patch.object(follow.ops,'immutable_bindings'),             patch.object(follow.ops,'planned_protocol',return_value={'arm_seconds':180000,'max_calls':64}),             patch.object(follow.ops,'start_keep_awake',return_value=None),patch.object(follow.ops,'migrate',side_effect=migrate),             patch.object(follow,'wait_closed',side_effect=[True]*18+[False]),patch.object(follow,'execute') as execute:
+            follow.follow(self.initial)
+            self.assertEqual(calls,list(range(1,10)));self.assertEqual(execute.call_count,9)
+            self.assertEqual(ops.read(self.root/'FOLLOW.json')['next_sequence'],10)
+            self.assertIsNone(follow.ops.DEADLINE)
+
+    def test_stop_before_migration_preserves_open_goal(self):
+        with patch.object(follow,'OPS',self.root),patch.object(follow,'CHECKPOINT',self.root/'FOLLOW.json'),             patch.object(follow,'STOPPED',True),patch.object(follow.ops,'migrate') as migrate:
+            with self.assertRaisesRegex(RuntimeError,'signal'):follow.controls()
+            migrate.assert_not_called()
+
 if __name__=='__main__':unittest.main(verbosity=2)
