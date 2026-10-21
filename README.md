@@ -18,14 +18,23 @@ from empirical research usefulness. This is an operator-engineered revision, not
 a certified Goedel self-improvement. The dated launch records preserve its tests,
 review, clean-seed comparison and actual activation status.
 
-**Clean-seed concept campaign, through round 29 on 21 October 2026:** 29
+**Clean-seed concept campaign, through round 31 on 21 October 2026:** 31
 independently admitted results. All three original weak log-concavity directions
 are now proved for every constant-left path of length `k >= 0`, with midpoint
 label `(1, k + 2)`, at every index satisfying the original polygon conditions.
 The coefficients remain raw integers, including zeros; the proof uses the
 previously admitted exact coefficient formula. A checked conditional reduction
 restricts the remaining interior obligation to paths containing at least one
-right turn. **Full Conjecture 6.3 remains open**.
+right turn.
+
+Two new universal structural bundles cover every constant-right path of length
+`k >= 0`, with midpoint label `(k + 1, k + 2)`. For its actual midpoint polynomial
+`M_k` and `T = U + V`, they prove the recurrence
+`M_(k+2) = T(T+1) M_(k+1) - UV M_k`, exact coefficient-array recovery and
+coefficient nonnegativity, and a homogeneous substitution giving every
+total-degree layer. These bundles add no log-concavity inequality, arbitrary-path
+result or discharge of the remaining root obligations. **Full Conjecture 6.3
+remains open**.
 
 The [canonical accepted checkpoint](evidence/accepted-checkpoint-20261020.tar.gz)
 preserves original proof sources, checked receipts, dependency pins and separately
