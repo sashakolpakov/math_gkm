@@ -127,3 +127,54 @@ are preserved. An interrupted rebind must be reconciled before research resumes.
 This is an operator-engineered repair, not a certified Goedel-machine switch or
 a new mathematical result.
 
+
+## Prepared catalogue-capacity candidate (inactive)
+
+The canonical `evidence/accepted-checkpoint-20261020.tar.gz` also preserves an
+inactive engineering candidate under
+`prepared-candidates/catalogue-capacity-d540901eb08bfea0662128227c98da282d5637d323e3088e1994674b903cc02b/`.
+Its `PACKET.json` and original `SOURCE_BINDING.json` bind the prospective
+`590648…` → `5aca2555…` source change and exact reproduction inputs. This packet
+is preparation evidence, not an applied source transition. The current accepted
+31-record proof checkpoint, its open root/DAG and all original proof receipts
+retain their existing source provenance. No fresh mathematical validation or
+certified researcher self-change is asserted.
+
+Run these commands from this repository using a new empty extraction directory:
+
+```sh
+GKM_PREPARED_REPRO=/ABSOLUTE/NEW/CANDIDATE_REPRO
+GKM_PREPARED_PACKET=prepared-candidates/catalogue-capacity-d540901eb08bfea0662128227c98da282d5637d323e3088e1994674b903cc02b
+mkdir "$GKM_PREPARED_REPRO"
+tar -xzf evidence/accepted-checkpoint-20261020.tar.gz -C "$GKM_PREPARED_REPRO" "$GKM_PREPARED_PACKET"
+python3 -B "$GKM_PREPARED_REPRO/$GKM_PREPARED_PACKET/run_pure.py"
+python3 -B "$GKM_PREPARED_REPRO/$GKM_PREPARED_PACKET/test_boundary_guardian.py"
+```
+
+The first command runs the exact 163 pure capacity, cache, feedback and
+continuation controls; the second runs 37 pure guardian controls. Both use neutral
+fixtures and mocked process/validation effects. The overlay runner belongs inside
+this isolated packet, where its sibling `tests/` contains exactly three selected
+test files. Installing it at repository root would broaden discovery beyond this
+pure suite. Unchanged imports come from the repository's pinned source context.
+The packet includes no live authority, study state, evaluation answers or
+automatic activation command.
+
+The catalogue allowance is derived as `min(1800, 2*validation_seconds)`; ordinary
+main-proof and heldout-task limits remain unchanged. The prepared hook targets
+only a reviewed normal successor-7/round-36 boundary and a fresh successor 8. Its
+guardian deliberately retains the earlier epoch-6 outer deadline as an extra
+conservative ceiling; it does not reconstruct the actual epoch-7 deadline and
+refuses insufficient time. The earlier finite guardian hold released before a
+manual handoff, without applying the source change.
+
+The separately recorded native Darwin ABI fixture tested only its own disposable
+children, with all children reaped. The earlier guardian, test and native-fixture
+sources are retained as the three flat `*.before-parent7.py` siblings required by
+the current pure suite; their historical summaries are under `evidence/`. That
+ABI check was not rerun for the current guardian revision. Current guardian
+evidence consists of the 37 pure controls, with no claim that the new handoff was
+exercised on live research processes. To repeat the native fixture separately,
+copy `native_boundary_fixture.before-parent7.py` to a fresh temporary directory
+and run that copy from repository root; it writes its new summary beside the
+copied script.
