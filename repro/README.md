@@ -240,3 +240,30 @@ use a disposable extraction to preserve the archived result. Historical temporar
 paths in `PRESERVED_INPUTS.json` identify prepared engineering sources only;
 the runner does not resolve them or require them to exist. No private evaluation
 inputs, live study state, grants or authorization are included.
+
+
+## Preserved migration retention allowance
+
+A separate prepared engineering packet in the accepted archive preserves the
+reviewed 896 MiB migration helper, its exact source binding and pure controls:
+`prepared-candidates/migration-retention-ad5c57cfae546035f908c5193e55879064f1e9fb99989da82efafb8862bc27d0/`.
+Its `source/` folder contains all 18 frozen preparation files, including the
+15 bound inputs and the author 181-test result/log. `evidence/independent/`
+contains the separately recorded independent 181-test result/log. Both runs
+passed the 178 existing controls and three neutral migration-guard checks. The
+810,147,794-byte forecast is below the 896 MiB helper retention ceiling; the
+cap+1 rejection and full planned-disk reservation remain checked. No large
+fixture data was allocated. The source target `ffd4aee…` and all other resource guards are unchanged.
+
+This packet records prepared engineering evidence only. Core source activation
+and fresh deployment are separate operations; neither is established by these
+Python fixtures or this backup. All 35 accepted proof records, their snapshots
+and the earlier `e15…` combined packet retain their original bytes and status.
+The archive's current proof/source checkpoint is unchanged.
+
+For pure reproduction, use the preserved 590648 repository context and a fresh
+disposable extraction, as in the combined-packet instructions above. Run
+`PYTHONDONTWRITEBYTECODE=1 python3 -B /ABSOLUTE/EXTRACTED/prepared-candidates/migration-retention-ad5c57cfae546035f908c5193e55879064f1e9fb99989da82efafb8862bc27d0/source/run_pure.py`
+from repository root. Keep the runner inside its packet. It verifies every
+frozen input and all three actual core overlays, then runs 181 controls; a new
+result is written beside the copied runner. It runs no models or Lean proofs.
