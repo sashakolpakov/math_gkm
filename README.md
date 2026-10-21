@@ -18,7 +18,7 @@ from empirical research usefulness. This is an operator-engineered revision, not
 a certified Goedel self-improvement. The dated launch records preserve its tests,
 review, clean-seed comparison and actual activation status.
 
-**Clean-seed concept campaign, through round 32 on 21 October 2026:** 33
+**Clean-seed concept campaign, through round 34 on 21 October 2026:** 34
 independently admitted results. All three original weak log-concavity directions
 are now proved for every constant-left path of length `k >= 0`, with midpoint
 label `(1, k + 2)`, at every index satisfying the original polygon conditions.
@@ -42,9 +42,16 @@ log-concave. The second lemma is general: if the degree-`m` layer of an integer
 bivariate polynomial is `(U+V)^b R`, where `m=b+r`, `R` is homogeneous of degree
 `r`, and the coefficients of `R(U,1)` are nonnegative, have no internal zeros
 and are log-concave, then that layer satisfies the antidiagonal log-concavity
-inequalities. These results have not yet been composed into an additional
-actual-Markov-family theorem or used to discharge either remaining root
-obligation. **Full Conjecture 6.3 remains open**.
+inequalities.
+
+Round 34 composes these results to prove the original antidiagonal inequality
+for every constant-right path of length `k >= 0`, with midpoint label
+`(k + 1, k + 2)`. For every natural `i,j`, if the three points `(i,j+2)`,
+`(i+1,j+1)` and `(i+2,j)` satisfy the original polygon conditions, its actual
+midpoint polynomial satisfies `c(i,j+2)c(i+2,j) <= c(i+1,j+1)^2`, including raw
+zero coefficients. This supplies no new horizontal or vertical inequality for
+that family, no arbitrary-path result and no discharge of either remaining
+root obligation. **Full Conjecture 6.3 remains open**.
 
 The [canonical accepted checkpoint](evidence/accepted-checkpoint-20261020.tar.gz)
 preserves original proof sources, checked receipts, dependency pins and separately

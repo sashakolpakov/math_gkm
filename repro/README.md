@@ -179,3 +179,56 @@ exercised on live research processes. To repeat the native fixture separately,
 copy `native_boundary_fixture.before-parent7.py` to a fresh temporary directory
 and run that copy from repository root; it writes its new summary beside the
 copied script.
+
+
+## Current accepted checkpoint and combined candidate
+
+The canonical accepted archive now preserves 34 independently admitted results,
+through round 34. Its top-level `MANIFEST.json` points to the immutable accepted
+registry, checked DAG and open residuals. Older snapshots, proof sources, original
+FINISHED receipts, pins and generated exports retain their original bytes. The
+new result is the original antidiagonal inequality for every constant-right
+Markov path, under the three original polygon-membership premises. It adds no
+horizontal, vertical or arbitrary-path theorem and does not close the root.
+Each proof's `REBUILD.json` records its pinned source/compile/replay/inspection
+inputs; this archival update performs hash and receipt verification, not a fresh
+rebuild of the entire campaign.
+
+A separate inactive packet preserves the reviewed combined catalogue-capacity
+and reviewer-outcome diagnostic variant:
+`prepared-candidates/catalogue-review-output-e15efddb1b96d397a75ccf6e56b0d35a92d100ac026132798745c18ee104b56e/`.
+Its `combined/` folder contains the exact 17 prepared files; `diagnostic-origin/`
+contains the eight original diagnostic files. The two records in
+`evidence/independent/` are a separate independent run of the same 178 pure
+controls. The original author run and original 15-test diagnostic result remain
+unchanged. Both combined runs passed 163 existing capacity/operations controls
+and 15 diagnostic controls with all three actual source overlays. These are
+neutral Python fixtures, not Lean proofs, a deployment or an activated change.
+
+The installed implementation recorded by this checkpoint remains `590648…`.
+The new packet describes prospective implementation `ffd4aee…`; the older
+`5aca2555…` packet above remains separately preserved and inactive. The new hook
+still requires genuine old-source verification and the exact normal
+successor-7/round-36 boundary before a fresh successor 8. It supplies no authority,
+automatic replay, guardian or activation command. No historical feedback packet,
+proof charge or proof receipt is relabeled.
+
+For pure reproduction, start from the preserved `590648…` repository source
+context, using the source packet and applied source replacements in the archive
+if a later checkout has changed. Extract into a new disposable directory:
+
+```sh
+GKM_COMBINED_REPRO=/ABSOLUTE/NEW/COMBINED_REPRO
+GKM_COMBINED_PACKET=prepared-candidates/catalogue-review-output-e15efddb1b96d397a75ccf6e56b0d35a92d100ac026132798745c18ee104b56e
+mkdir "$GKM_COMBINED_REPRO"
+tar -xzf evidence/accepted-checkpoint-20261020.tar.gz -C "$GKM_COMBINED_REPRO" "$GKM_COMBINED_PACKET"
+PYTHONDONTWRITEBYTECODE=1 python3 -B "$GKM_COMBINED_REPRO/$GKM_COMBINED_PACKET/combined/run_pure.py"
+```
+
+Run from repository root; keep the overlay runner inside its packet. It checks
+the exact source context, all three overlays and every frozen input before
+running the 178 controls. A new result is written beside the copied runner, so
+use a disposable extraction to preserve the archived result. Historical temporary
+paths in `PRESERVED_INPUTS.json` identify prepared engineering sources only;
+the runner does not resolve them or require them to exist. No private evaluation
+inputs, live study state, grants or authorization are included.
