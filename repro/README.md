@@ -183,13 +183,21 @@ copied script.
 
 ## Current accepted checkpoint and combined candidate
 
-The canonical accepted archive now preserves 34 independently admitted results,
-through round 34. Its top-level `MANIFEST.json` points to the immutable accepted
+The canonical accepted archive now preserves 35 independently admitted results,
+through round 35. Its top-level `MANIFEST.json` points to the immutable accepted
 registry, checked DAG and open residuals. Older snapshots, proof sources, original
 FINISHED receipts, pins and generated exports retain their original bytes. The
-new result is the original antidiagonal inequality for every constant-right
-Markov path, under the three original polygon-membership premises. It adds no
-horizontal, vertical or arbitrary-path theorem and does not close the root.
+round-34 result is the original antidiagonal inequality for every constant-right
+Markov path, under the three original polygon-membership premises. Round 35 adds
+only a checked implication from a new residual to the previous true-path
+interior residual. The new residual retains horizontal inequalities with
+`j > 0` and vertical inequalities with `i > 0` for every path containing `true`;
+its diagonal clause additionally requires `false` in the path and
+`i+j+2 < E.a+E.b-1`. All three original polygon premises remain explicit in each
+direction, and coefficients remain raw integers. It proves no unconditional
+horizontal, vertical or mixed-path diagonal claim. The new open residual and
+checked edge are preserved alongside every prior node and edge; the root and
+all residual nodes remain open.
 Each proof's `REBUILD.json` records its pinned source/compile/replay/inspection
 inputs; this archival update performs hash and receipt verification, not a fresh
 rebuild of the entire campaign.

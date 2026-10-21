@@ -18,7 +18,7 @@ from empirical research usefulness. This is an operator-engineered revision, not
 a certified Goedel self-improvement. The dated launch records preserve its tests,
 review, clean-seed comparison and actual activation status.
 
-**Clean-seed concept campaign, through round 34 on 21 October 2026:** 34
+**Clean-seed concept campaign, through round 35 on 21 October 2026:** 35
 independently admitted results. All three original weak log-concavity directions
 are now proved for every constant-left path of length `k >= 0`, with midpoint
 label `(1, k + 2)`, at every index satisfying the original polygon conditions.
@@ -50,8 +50,19 @@ for every constant-right path of length `k >= 0`, with midpoint label
 `(i+1,j+1)` and `(i+2,j)` satisfy the original polygon conditions, its actual
 midpoint polynomial satisfies `c(i,j+2)c(i+2,j) <= c(i+1,j+1)^2`, including raw
 zero coefficients. This supplies no new horizontal or vertical inequality for
-that family, no arbitrary-path result and no discharge of either remaining
-root obligation. **Full Conjecture 6.3 remains open**.
+that family, no arbitrary-path result and no discharge of a root obligation.
+
+Round 35 adds a checked conditional reduction to the previous true-path
+interior obligation. Its new residual still requires horizontal inequalities
+with `j > 0` and vertical inequalities with `i > 0` for every path containing
+`true`, with all three original polygon premises in each direction. It requires
+antidiagonal inequalities only for paths also containing `false`, with the
+original strict degree guard `i+j+2 < E.a+E.b-1` and all three polygon premises,
+where `E` is the path's actual midpoint entry, with label `(E.a,E.b)`. These are
+open hypotheses of the
+reduction, not newly proved inequalities. The admitted constant-right theorem
+supplies the all-`true` diagonal cases. The new residual, previous residuals and
+root remain open. **Full Conjecture 6.3 remains open**.
 
 The [canonical accepted checkpoint](evidence/accepted-checkpoint-20261020.tar.gz)
 preserves original proof sources, checked receipts, dependency pins and separately
