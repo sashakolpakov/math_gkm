@@ -18,12 +18,14 @@ from empirical research usefulness. This is an operator-engineered revision, not
 a certified Goedel self-improvement. The dated launch records preserve its tests,
 review, clean-seed comparison and actual activation status.
 
-**Clean-seed concept campaign, through round 28 on 21 October 2026:** 26
-independently admitted results. Its latest additions are a formal renewal-series
-identity for arbitrary fixed-branch runs, an exact coefficient formula at every
-index for the constant-left family, and a control showing that nonnegative
-transfer weights alone do not ensure log-concavity. These are identities and a
-negative control; **full Conjecture 6.3 remains open**.
+**Clean-seed concept campaign, through round 29 on 21 October 2026:** 29
+independently admitted results. All three original weak log-concavity directions
+are now proved for every constant-left path of length `k >= 0`, with midpoint
+label `(1, k + 2)`, at every index satisfying the original polygon conditions.
+The coefficients remain raw integers, including zeros; the proof uses the
+previously admitted exact coefficient formula. A checked conditional reduction
+restricts the remaining interior obligation to paths containing at least one
+right turn. **Full Conjecture 6.3 remains open**.
 
 The [canonical accepted checkpoint](evidence/accepted-checkpoint-20261020.tar.gz)
 preserves original proof sources, checked receipts, dependency pins and separately
