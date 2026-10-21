@@ -366,6 +366,199 @@ class OperationsFixtures(unittest.TestCase):
         with patch.object(ops,'api',return_value={'common':SimpleNamespace(load_state=lambda p:state)}):
             with self.assertRaisesRegex(RuntimeError,'unsafe'):ops.verified_resolution(self.root/'study')
 
+class SnapshotRetentionFixtures(unittest.TestCase):
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory(prefix='gkm-snapshot-retention-');self.addCleanup(self.temp.cleanup)
+        self.root=Path(self.temp.name);self.old=self.root/'parent';self.new=self.root/'successor'
+        self.ws=self.old/'workspace';self.source=self.ws/'research/fixture.txt'
+        self.source.parent.mkdir(parents=True);self.source.write_text('original operations bytes')
+        from machinery import study_common
+        self.common=study_common
+        study_common.snapshot(self.ws,self.old/'snapshots/initial',{'fixture':'old initial'},[])
+        self.source.write_text('next operations bytes')
+        study_common.snapshot(self.ws,self.old/'snapshots/round-0000',{'fixture':'round zero'},[])
+        self.source.write_text('latest operations bytes')
+        study_common.snapshot(self.ws,self.old/'snapshots/round-0001',{'fixture':'round one'},[])
+
+    def test_every_historical_view_and_manifest_preserved_once(self):
+        originals={str(p.relative_to(self.old)):ops.sha(p) for p in self.old.rglob('*') if p.is_file()}
+        with patch.object(ops,'api',return_value={'common':self.common}):
+            bindings=ops.copy_snapshots(self.old,self.new)
+        self.assertEqual(set(bindings),{'initial','round-0000','round-0001'})
+        for name in bindings:
+            dest=self.new/('snapshots' if name.startswith('round-') else 'inherited/snapshots')/name
+            self.assertEqual(self.common.verify_snapshot(dest),self.common.verify_snapshot(self.old/'snapshots'/name))
+            self.assertEqual(ops.sha(dest/'manifest.json'),ops.sha(self.old/'snapshots'/name/'manifest.json'))
+        self.assertFalse((self.new/'inherited/snapshots/round-0000').exists())
+        self.assertFalse((self.new/'inherited/snapshots/round-0001').exists())
+        self.assertEqual(originals,{str(p.relative_to(self.old)):ops.sha(p) for p in self.old.rglob('*') if p.is_file()})
+        self.assertNotEqual((self.old/'snapshots/round-0000/source/research/fixture.txt').stat().st_ino,
+                            (self.new/'snapshots/round-0000/source/research/fixture.txt').stat().st_ino)
+
+    def test_corrupt_historical_snapshot_rejected_before_copy(self):
+        source=self.old/'snapshots/round-0000/source/research/fixture.txt';source.chmod(0o644);source.write_text('changed')
+        with patch.object(ops,'api',return_value={'common':self.common}),self.assertRaisesRegex(self.common.Invalid,'frozen solver'):
+            ops.copy_snapshots(self.old,self.new)
+        self.assertFalse((self.new/'snapshots/round-0000').exists())
+
+    def test_forecast_counts_one_copy_and_remains_bounded(self):
+        history=self.ws/'history/objects/object';history.parent.mkdir(parents=True);history.write_text('own history')
+        ops.write(self.old/'state.json',{'fixture':'state bytes'})
+        state={'research':{'knowledge':{},'components':{},'pending_discoveries':{}}}
+        source_bytes=sum((self.ws/n).stat().st_size for n in self.common.inventory(self.ws))
+        snapshot_bytes=sum(p.stat().st_size for p in (self.old/'snapshots').rglob('*') if p.is_file())
+        expected=2*source_bytes+history.stat().st_size+snapshot_bytes+(self.old/'state.json').stat().st_size+16*1024**2
+        with patch.object(ops,'api',return_value={'common':self.common}):
+            self.assertEqual(ops.planned_copy_bytes(self.old,state),expected)
+            with patch.object(ops,'MIGRATION_CAP',expected-1),self.assertRaisesRegex(RuntimeError,'retention cap'):
+                ops.planned_copy_bytes(self.old,state)
+        self.assertEqual(ops.MIGRATION_CAP,768*1024**2)
+
+    def test_forecast_cap_fails_before_creating_destination(self):
+        state={'research':{'knowledge':{},'components':{},'pending_discoveries':{}}}
+        ops.write(self.old/'state.json',{'fixture':'state'})
+        with patch.object(ops,'api',return_value={'common':self.common}),patch.object(ops,'MIGRATION_CAP',0):
+            with self.assertRaisesRegex(RuntimeError,'retention cap'):ops.planned_copy_bytes(self.old,state)
+        self.assertFalse(self.new.exists())
+
+
+class MaintenanceFixtures(unittest.TestCase):
+    def setUp(self):
+        import os,contextlib,hashlib
+        self.temp=tempfile.TemporaryDirectory(prefix='gkm-maintenance-fixture-');self.addCleanup(self.temp.cleanup)
+        self.root=Path(self.temp.name).resolve();self.opsdir=self.root/'.bootstrap/operations';self.opsdir.mkdir(parents=True)
+        self.parent=self.root/'.scratch/concept-driver-20261020-follow-000004'
+        self.destination=self.root/'.scratch/concept-driver-20261020-follow-000005'
+        self.original=self.root/'.scratch/original';self.archive=self.root/'evidence/source'
+        self.worker=self.root/'machinery/study_worker.py';self.worker.parent.mkdir(parents=True)
+        self.oldbytes=b"def fixture():\n    fs = profile['filesystem']\n    return fs\n"
+        self.newbytes=self.oldbytes.replace(b"    fs = profile['filesystem']\n",b"    fs = profile['filesystem']\n    fs[':tmpdir'] = 'write'  # TMPDIR is this role's workspace/.scratch.\n")
+        self.worker.write_bytes(self.oldbytes)
+        source=self.root/'MathGKM/Fixture.lean';source.parent.mkdir();source.write_text('operations fixture bytes')
+        def implementation():
+            paths=list((self.root/'machinery').glob('*.py'))+list((self.root/'MathGKM').glob('*.lean'))
+            return {str(p.relative_to(self.root)):ops.sha(p) for p in sorted(paths)}
+        self.implementation=implementation;self.oldmap=implementation();self.newmap=dict(self.oldmap)
+        self.newmap['machinery/study_worker.py']=hashlib.sha256(self.newbytes).hexdigest()
+        self.oldid=ops.digest(self.oldmap);self.newid=ops.digest(self.newmap)
+        for name in self.oldmap:
+            target=self.archive/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes((self.root/name).read_bytes())
+        ops.write(self.original/'seal.json',{'implementation':self.oldmap})
+        ops.write(self.parent/'CONTINUATION_PROVENANCE.json',{'fixture':'retained parent provenance'})
+        self.seal={'implementation':self.oldmap,'continuation_provenance_sha256':ops.sha(self.parent/'CONTINUATION_PROVENANCE.json')}
+        ops.write(self.parent/'seal.json',self.seal)
+        from machinery.study_common import save_state,load_state
+        save_state(self.parent/'arms/exploration/state.json',{'active':None,'active_intent':None,'status':'finite_budget_finished; root_open','round':24,'phase':'research'})
+        ops.write(self.parent/'protocol.json',{'rounds':24});ops.write(self.parent/'seed/contract.json',{'fixture':True})
+        for path in [self.opsdir/'FOLLOW.lock',self.opsdir/'operator.lock',self.parent/'controller.lock',self.root/'.scratch/resources/heavy.lock']:
+            path.parent.mkdir(parents=True,exist_ok=True);path.write_text('')
+        (self.opsdir/'follow.py').write_text('fixture follow');(self.opsdir/'test_continue_machine.py').write_text('fixture tests')
+        self.authority=self.root/'.bootstrap/study-authorization.json'
+        spec={'authorized':True,'reviewer':'independent fixture','parent_study':str(self.parent),'destination':str(self.destination),
+            'parent_state_sha256':ops.sha(self.parent/'arms/exploration/state.json'),'parent_seal_sha256':ops.sha(self.parent/'seal.json'),
+            'old_implementation_sha256':self.oldid,'new_implementation_sha256':self.newid,
+            'old_worker_sha256':ops.sha(self.worker),'new_worker_sha256':self.newmap['machinery/study_worker.py'],'source_archive':str(self.archive)}
+        self.grant={'implementation_sha256':self.oldid,'ongoing_goal_authorized':True,'ongoing_source_reviewer':'independent fixture',
+            'ongoing_follow_sha256':ops.sha(self.opsdir/'follow.py'),'ongoing_migration_sha256':ops.sha(ops.__file__),
+            'ongoing_tests_sha256':ops.sha(self.opsdir/'test_continue_machine.py'),'source_maintenance':spec}
+        ops.write(self.authority,self.grant);self.authority.chmod(0o444)
+        ops.write(self.opsdir/'FOLLOW.json',{'phase':'migration_intent','parent_study':str(self.parent),'destination':str(self.destination),
+            'operator_pid':os.getpid(),'operator_birth':'fixture-native-birth'})
+        self.common=SimpleNamespace(implementation=implementation,load_state=load_state,read=ops.read,verify_snapshot=lambda p:{'fixture':True})
+        def authorize(contract):
+            if ops.read(self.authority)['implementation_sha256']!=ops.digest(implementation()):raise RuntimeError('authority implementation mismatch')
+        self.common.authorize_live=authorize
+        self.resources=SimpleNamespace(current_process=lambda pid:{'identity':'fixture-native-birth'},headroom=lambda cap:None,limits=lambda:{})
+        self.stack=contextlib.ExitStack();self.addCleanup(self.stack.close)
+        self.stack.enter_context(patch.multiple(ops,ROOT=self.root,OPS=self.opsdir,INITIAL_PARENT=self.original,SOURCE_ARCHIVE=self.archive,
+            MAINTENANCE_PARENT=self.parent,MAINTENANCE_DESTINATION=self.destination,EXPECTED_IMPL=self.oldid,NEW_IMPL=self.newid,
+            OLD_WORKER=self.oldmap['machinery/study_worker.py'],NEW_WORKER=self.newmap['machinery/study_worker.py']))
+        self.stack.enter_context(patch.object(ops,'api',return_value={'common':self.common,'resources':self.resources}))
+        self.stack.enter_context(patch.object(ops,'DEADLINE',None))
+        self.stack.enter_context(patch.object(ops,'COPY_GUARD',None))
+        import fcntl
+        for path in (self.opsdir/'FOLLOW.lock',self.opsdir/'operator.lock'):
+            stream=self.stack.enter_context(path.open('rb'));fcntl.flock(stream,fcntl.LOCK_EX|fcntl.LOCK_NB)
+
+    def test_exact_one_file_transition_preserves_old_parent_and_authority_mode(self):
+        old_parent={str(p.relative_to(self.parent)):ops.sha(p) for p in self.parent.rglob('*') if p.is_file()}
+        with ops.parent_ownership(self.parent):result=ops.apply_source_maintenance(self.parent,self.destination,self.seal)
+        self.assertEqual(result['status'],'applied');self.assertEqual(self.worker.read_bytes(),self.newbytes)
+        self.assertEqual(ops.checked_implementation(self.common),self.newid)
+        self.assertEqual(ops.read(self.authority)['implementation_sha256'],self.newid)
+        self.assertEqual(self.authority.stat().st_mode & 0o777,0o444)
+        self.assertEqual(ops.read(self.parent/'seal.json')['implementation'],self.oldmap)
+        self.assertEqual(old_parent,{str(p.relative_to(self.parent)):ops.sha(p) for p in self.parent.rglob('*') if p.is_file()})
+        self.assertEqual(ops.read(self.opsdir/'FOLLOW.json')['source_transition']['status'],'applied')
+        self.assertTrue(ops.lock_available(self.root/'.scratch/resources/heavy.lock'))
+
+    def test_wrong_parent_state_or_source_delta_is_never_accepted(self):
+        grant=copy.deepcopy(self.grant);grant['source_maintenance']['parent_state_sha256']='wrong';ops.write(self.authority,grant)
+        with self.assertRaisesRegex(RuntimeError,'parent checkpoint'):ops.apply_source_maintenance(self.parent,self.destination,self.seal)
+        self.assertEqual(self.worker.read_bytes(),self.oldbytes)
+        ops.write(self.authority,self.grant)
+        with self.assertRaisesRegex(RuntimeError,'one-time'):ops.apply_source_maintenance(self.root/'other',self.destination,self.seal)
+        (self.root/'machinery/extra.py').write_text('extra unreviewed source')
+        with self.assertRaisesRegex(RuntimeError,'unreviewed source delta'):ops.checked_implementation(self.common)
+
+    def test_archived_original_bytes_required(self):
+        (self.archive/'MathGKM/Fixture.lean').write_text('changed archive')
+        with self.assertRaisesRegex(RuntimeError,'source archive'):ops.apply_source_maintenance(self.parent,self.destination,self.seal)
+        self.assertEqual(self.worker.read_bytes(),self.oldbytes)
+
+    def test_missing_singleton_or_native_owner_refuses_patch(self):
+        with patch.object(ops,'lock_available',return_value=True),self.assertRaisesRegex(RuntimeError,'singleton'):
+            ops.apply_source_maintenance(self.parent,self.destination,self.seal)
+        with patch.object(self.resources,'current_process',return_value={'identity':'different'}),self.assertRaisesRegex(RuntimeError,'native ownership'):
+            ops.apply_source_maintenance(self.parent,self.destination,self.seal)
+        self.assertEqual(self.worker.read_bytes(),self.oldbytes)
+
+    def test_partial_patch_is_durable_failure_without_rollback_or_replay(self):
+        atomic=ops.atomic_protected
+        def fail_authority(path,data,mode):
+            if path==self.authority:raise OSError('fixture interruption after worker replacement')
+            return atomic(path,data,mode)
+        with patch.object(ops,'atomic_protected',side_effect=fail_authority),self.assertRaisesRegex(OSError,'interruption'):
+            ops.apply_source_maintenance(self.parent,self.destination,self.seal)
+        self.assertEqual(self.worker.read_bytes(),self.newbytes)
+        self.assertEqual(ops.read(self.authority)['implementation_sha256'],self.oldid)
+        self.assertEqual(ops.read(self.opsdir/'FOLLOW.json')['source_transition']['status'],'intent')
+        with self.assertRaisesRegex(RuntimeError,'historical old parent'):
+            ops.apply_source_maintenance(self.parent,self.destination,self.seal)
+
+    def test_existing_intent_or_destination_is_not_replayed(self):
+        cp=ops.read(self.opsdir/'FOLLOW.json');cp['source_transition']={'status':'intent'};ops.write(self.opsdir/'FOLLOW.json',cp)
+        with self.assertRaisesRegex(RuntimeError,'already consumed'):ops.apply_source_maintenance(self.parent,self.destination,self.seal)
+        cp.pop('source_transition');ops.write(self.opsdir/'FOLLOW.json',cp);self.destination.mkdir()
+        with self.assertRaisesRegex(RuntimeError,'already exists'):ops.apply_source_maintenance(self.parent,self.destination,self.seal)
+        self.assertEqual(self.worker.read_bytes(),self.oldbytes)
+
+    def test_atomic_target_alias_or_escape_rejected(self):
+        alias=self.root/'.bootstrap/alias.json';alias.symlink_to(self.authority)
+        with self.assertRaisesRegex(RuntimeError,'escaped'):ops.atomic_protected(alias,b'wrong',0o444)
+        with self.assertRaisesRegex(RuntimeError,'escaped'):ops.atomic_protected(self.root/'elsewhere.json',b'wrong',0o444)
+        self.assertEqual(self.worker.read_bytes(),self.oldbytes)
+
+    def test_actual_migration_orders_old_verify_patch_authority_then_new_freeze(self):
+        events=[]
+        def verify(parent):
+            self.assertEqual(ops.checked_implementation(self.common),self.oldid);events.append('actual-old-parent-verify')
+        def freeze(*args):
+            self.assertEqual(ops.checked_implementation(self.common),self.newid)
+            self.common.authorize_live({'fixture':True})
+            self.assertTrue(ops.lock_available(self.root/'.scratch/resources/heavy.lock'))
+            self.assertFalse(ops.lock_available(self.parent/'controller.lock'))
+            events.append('new-source-freeze');raise RuntimeError('fixture stopped at actual freeze boundary')
+        api={'common':self.common,'resources':self.resources,'study':SimpleNamespace(verify=verify,freeze=freeze)}
+        binding={'follow_sha256':ops.sha(self.opsdir/'follow.py'),'checkpoint_sha256':ops.sha(self.opsdir/'FOLLOW.json')}
+        with patch.object(ops,'api',return_value=api),patch.object(ops,'inspect_plan',return_value=({'round':24},{},{},{},None)),             patch.object(ops,'parent_ready',return_value=(True,None)),patch.object(ops,'planned_copy_bytes',return_value=1),patch.object(ops,'CopyGuard'):
+            with self.assertRaisesRegex(RuntimeError,'actual freeze boundary'):
+                ops.migrate(self.parent,5,destination=self.destination,caller_binding=binding,ongoing=True)
+        self.assertEqual(events,['actual-old-parent-verify','new-source-freeze'])
+        self.assertEqual(ops.read(self.parent/'seal.json')['implementation'],self.oldmap)
+        self.assertEqual(ops.read(self.opsdir/'FOLLOW.json')['source_transition']['status'],'applied')
+
+
 spec_follow=importlib.util.spec_from_file_location('ongoing_follow',Path(__file__).with_name('follow.py'))
 follow=importlib.util.module_from_spec(spec_follow);spec_follow.loader.exec_module(follow)
 

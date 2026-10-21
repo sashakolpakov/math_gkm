@@ -52,6 +52,7 @@ def decode_report(job, spec):
 def permissions(workspace, *, readonly=False, retained_sources=None):
     profile = read(ROOT/'config/study-base-permissions.json')
     fs = profile['filesystem']
+    fs[':tmpdir'] = 'write'  # TMPDIR is this role's workspace/.scratch.
     fs[str(ROOT)] = 'deny'
     # No inherited workspace, bootstrap, old history or evaluator read grant.
     fs[':workspace_roots'] = {'.git': 'deny', '.bootstrap': 'deny',

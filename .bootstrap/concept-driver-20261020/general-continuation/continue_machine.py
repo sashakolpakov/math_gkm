@@ -1,11 +1,13 @@
 """Bounded operations-only continuation of exploration's own universal-root research.
 
-This module adds no mathematics, edits no machinery, and never uses baseline
-knowledge. An independently reviewed, single-consumption supervisor waits for
+This module adds no mathematics and never uses baseline knowledge. One explicitly
+authorized maintenance branch repairs the role TMPDIR permission, preserving the
+old implementation identity and binding the exact new worker implementation. An independently reviewed, single-consumption supervisor waits for
 the official resumed parent, then funds at most eight fresh finite epochs.
 """
 import argparse
 import copy
+import contextlib
 import fcntl
 import hashlib
 import json
@@ -35,6 +37,12 @@ LOG_LIMIT=8*1024**2
 MIGRATION_CAP=768*1024**2
 PYTHON='/opt/homebrew/bin/python3'
 EXPECTED_IMPL='66e3aa3f8dddeaafde8456e46b3636fb23f3737128ce53020e847319db3368ff'
+NEW_IMPL='7772dfefd0e76d355edbdcd1a1414a4fcaccb7ec1aa0d298de99b8d7e1f84aa3'
+OLD_WORKER='569f2531e6bf310a7260ea4c6b7574171fd72ea783bfec895c0ba7dfac99a80d'
+NEW_WORKER='d605eb833614df50c3782862430dbeb8a550b3b8c248adde19fa211254e1cf76'
+SOURCE_ARCHIVE=ROOT/'evidence/concept-driver-source-20261020/source'
+MAINTENANCE_PARENT=ROOT/'.scratch/concept-driver-20261020-follow-000004'
+MAINTENANCE_DESTINATION=ROOT/'.scratch/concept-driver-20261020-follow-000005'
 EXPECTED_CONTRACT='564b2659c941bcf76484bcf20de5dfc4808c9379306f773d1642748e2a02c91d'
 EXPECTED_SUITE='88e05a48bac42ae11db2a12c2c748b03eac9904e8782fd5b5e52ebf8f3c641d1'
 GOAL='Continue autonomous research toward the unchanged exact universal root, not a partial log-concavity family.'
@@ -128,11 +136,11 @@ def planned_copy_bytes(old_arm,old):
     common=api()['common'];workspace=old_arm/'workspace'
     total=sum((workspace/n).stat().st_size for n in common.inventory(workspace))
     total+=sum(p.stat().st_size for p in tree_files(workspace/'history'))
-    # Each snapshot has both a clearly inherited archive and a working named view.
+    # Retain one exact historical snapshot view; round names remain usable by reviews.
     for snapshot in (old_arm/'snapshots').iterdir():
         if snapshot.is_dir() and not snapshot.name.endswith('.staging'):
             manifest=common.verify_snapshot(snapshot)
-            total+=2*(sum((snapshot/'source'/n).stat().st_size for n in manifest['files'])+(snapshot/'manifest.json').stat().st_size)
+            total+=sum((snapshot/'source'/n).stat().st_size for n in manifest['files'])+(snapshot/'manifest.json').stat().st_size
     for group in ('knowledge','components'):
         for record in old['research'][group].values():
             base=Path(record['validation_bundle']['directory']);finished=read(base/'FINISHED.json')
@@ -149,6 +157,21 @@ def planned_copy_bytes(old_arm,old):
     total+=sum((workspace/n).stat().st_size for n in common.inventory(workspace))+(old_arm/'state.json').stat().st_size+16*1024**2
     if total>MIGRATION_CAP: raise RuntimeError('cumulative migration retention cap')
     return total
+
+
+def copy_snapshots(old_arm,arm):
+    """Preserve every frozen view once, without duplicating round archives."""
+    common=api()['common'];inherited={}
+    for source in sorted((old_arm/'snapshots').iterdir()):
+        if source.is_dir() and not source.name.endswith('.staging'):
+            manifest=common.verify_snapshot(source)
+            container=arm/'snapshots' if source.name.startswith('round-') else arm/'inherited/snapshots'
+            destination=container/source.name
+            for name,expected in manifest['files'].items():
+                copy_file(source/'source'/safe_relative(name),destination/'source'/safe_relative(name),expected)
+            copy_file(source/'manifest.json',destination/'manifest.json')
+            common.verify_snapshot(destination);inherited[source.name]=manifest['binding']
+    return inherited
 
 
 def copy_file(source,destination,expected=None,replace=False):
@@ -370,139 +393,127 @@ def migrate(parent,number,*,destination=None,caller_binding=None,ongoing=False):
     old_arm=parent/'arms/exploration';old_ws=old_arm/'workspace'
     planned=planned_copy_bytes(old_arm,old)
     COPY_GUARD=CopyGuard(planned,a['resources'])
-    a['study'].verify(parent)
-    parent_seal=common.read(parent/'seal.json')
-    if parent!=INITIAL_PARENT and sha(parent/'CONTINUATION_PROVENANCE.json')!=parent_seal.get('continuation_provenance_sha256'):
-        raise RuntimeError('parent continuation provenance changed')
-    common.verify_snapshot(old_arm/'snapshots'/f'round-{old["round"]-1:04d}')
-    # freeze performs real neutral deployment checks only after launch review;
-    # ordinary official research still starts later, in one separate child.
-    controls()
-    a['study'].freeze(new,p,suite,contract,curation)
-    if common.read(new/'seal.json')['seed'] != common.read(INITIAL_PARENT/'seal.json')['seed']:
-        raise RuntimeError('successor seed differs from exact original clean seed')
-    arm=new/'arms/exploration';workspace=arm/'workspace'
-    files=common.inventory(old_ws)
-    for name,expected in files.items():
-        copy_file(old_ws/name,workspace/name,expected,replace=True)
-    copy_history(old_ws/'history',workspace/'history')
-    research=copy.deepcopy(old['research'])
-    remaps=[]
-    for group in ('knowledge','components'):
-        for key,record in old['research'][group].items():
-            source=Path(record['validation_bundle']['directory'])
-            if not source.resolve().is_relative_to(old_arm.resolve()):
-                raise RuntimeError('accepted validator not from own parent arm')
-            destination=arm/'inherited/validators'/key
-            migrated=copy_closed_bundle(source,destination,record,a['receipts'].reuse)
-            a['knowledge'].verify_record(migrated,workspace)
-            research[group][key]=migrated
-            remaps.append(dict(id=key,source=str(source),destination=str(destination),
-                finished_sha256=record['validation_bundle']['finished_sha256']))
-    inherited_jobs=[];pending_dependencies=[]
-    from types import SimpleNamespace
-    for key,entry in old['research'].get('pending_discoveries',{}).items():
-        copied,dependency=copy_pending(a,old_arm,old_ws,arm,workspace,old['research'],key)
-        inherited_jobs.append(copied)
-        if dependency: pending_dependencies.append(dependency)
-    inherited_jobs=dedupe_inherited_jobs(inherited_jobs)
-    # Old snapshots remain clearly inherited; rounds preserve their global labels.
-    # The successor's initial checkpoint is the resumed source/state, not a claim
-    # of a pristine paired seed. Parent originals are never changed.
-    inherited_snapshots={}
-    for path in sorted((old_arm/'snapshots').iterdir()):
-        if path.is_dir() and not path.name.endswith('.staging'):
-            manifest=common.verify_snapshot(path)
-            dest=arm/'inherited/snapshots'/path.name
-            for name,expected in manifest['files'].items():
-                copy_file(path/'source'/safe_relative(name),dest/'source'/safe_relative(name),expected)
-            copy_file(path/'manifest.json',dest/'manifest.json')
-            common.verify_snapshot(dest);inherited_snapshots[path.name]=manifest['binding']
-            if path.name.startswith('round-'):
-                # Future ordinary episode review names these exact snapshots.
-                live=arm/'snapshots'/path.name
-                for name,expected in manifest['files'].items():
-                    copy_file(dest/'source'/name,live/'source'/name,expected)
-                copy_file(dest/'manifest.json',live/'manifest.json')
-    provenance=dict(schema='math-gkm.own-continuation-provenance.v1',parent_study=str(parent),
-        parent_state_sha256=sha(old_arm/'state.json'),parent_seal_sha256=sha(parent/'seal.json'),
-        parent_round=old['round'],parent_phase=old['phase'],additional_rounds=ADDITIONAL_ROUNDS,
-        protocol_changes={k:dict(before=parent_protocol[k],after=p[k]) for k in p if parent_protocol[k]!=p[k]},
-        new_capacity_plan=capacity_plan(p,old['round'],old['phase']),
-        initial_resume_launch_sha256=sha(RESUME/'LAUNCH_CONSUMED.json'),
-        review_resume='Preserve pending review and mathematics; run new isolated roles with new allowance; no prior partial evaluation outputs copied.',
-        parent_research_sha256=digest(old['research']),parent_workspace_inventory=files,
-        preserved_mathematical_state='identical except explicit validator directory relocation',
-        old_accounting={k:v for k,v in old.items() if k!='research'},
-        validator_remaps=remaps,inherited_snapshots=inherited_snapshots,
-        inherited_origin_jobs=inherited_jobs,pending_original_dependencies=pending_dependencies,
-        inherited_receipt_paths=[j['path'] for j in inherited_jobs],
-        inherited_worker_elapsed=sum(j['inherited_elapsed_seconds'] for j in inherited_jobs),
-        observer_elapsed_scope='raw receipt sum includes inherited origin jobs; use deltas/new job IDs for new elapsed',
-        original_paired_comparison='retained immutable at original path; this successor is not a fresh comparison',
-        reused_evaluation_panel_sha256=EXPECTED_SUITE,
-        evaluation_scope='same original frozen panel, reused; no new independent performance claim',
-        excluded='old role trees, adapter jobs, evaluation outputs, active jobs, caches and compiled build files',
-        user_goal=GOAL,goal_channel='operator-only; no proof ideas or additional proposer instructions',
-        created=time.time())
-    write(new/'CONTINUATION_PROVENANCE.json',provenance)
-    seal=common.read(new/'seal.json')
-    seal['continuation_provenance_sha256']=sha(new/'CONTINUATION_PROVENANCE.json')
-    seal['baseline_adjustments']=['noncomparative own-history continuation; baseline placeholder is dormant',
-        'exploration resumes only its own mathematical state and sources',
-        'fresh finite accounting allowance; previous costs retained in continuation provenance',
-        'same frozen evaluator panel reused, no new independent performance claim']
-    plan=common.read(new/'audit/plan.json')
-    plan['checkpoints']=['initial']+[f'round-{r:04d}' for r in range(old['round'],p['rounds'])]+['terminal']
-    plan['initial_scope']='resumed own source and admitted knowledge; not a pristine comparison seed'
-    plan['continuation_provenance_sha256']=seal['continuation_provenance_sha256']
-    common.write(new/'audit/plan.json',plan)
-    seal['observer_plan']=plan;seal['audit_plan_sha256']=sha(new/'audit/plan.json')
-    common.write(new/'seal.json',seal)
-    seal_hash=common.digest(seal)
-    for mode in ('baseline','exploration'):
-        path=new/'arms'/mode/'state.json';fresh=common.load_state(path)
-        state=epoch_state(fresh,old,research,seal_hash) if mode=='exploration' else {**fresh,'seal_hash':seal_hash}
-        if mode=='exploration':
-            mark_inherited_consumed(state,inherited_jobs)
-        common.save_state(path,state)
-    # Protect the complete requested horizon before any optional strategy trial.
-    a['study'].Arm(new,'exploration',-1).fund_many(protected_horizon(p,old['round'],old['phase']))
-    for key in research.get('pending_discoveries',{}):
-        a['discoveries'].verify(SimpleNamespace(root=arm,mode='exploration'),research,workspace,key)
-    # Replace only newly created seed checkpoint artifacts, recording the prior
-    # placeholders. No previously published/research checkpoint is overwritten.
-    placeholders={}
-    initial=arm/'snapshots/initial'
-    placeholders['seed_snapshot_binding']=common.verify_snapshot(initial)['binding']
-    import shutil
-    placeholder=arm/'inherited/freeze-placeholders/initial'
-    placeholder_manifest=common.verify_snapshot(initial)
-    for name,expected in placeholder_manifest['files'].items():
-        copy_file(initial/'source'/name,placeholder/'source'/name,expected)
-    copy_file(initial/'manifest.json',placeholder/'manifest.json')
-    shutil.rmtree(initial)
-    for path in (arm/'observer-outbox/initial.json',new/'audit/inputs/exploration/initial.json'):
-        if path.exists():
-            placeholders[str(path.relative_to(new))]=sha(path)
-            copy_file(path,new/'freeze-placeholder-records'/path.relative_to(new))
-            path.unlink()
-    state=common.load_state(arm/'state.json')
-    common.snapshot(workspace,initial,research['policy'],a['study'].Arm(new,'exploration',-1).admitted(research))
-    a['observer'].checkpoint(new,'exploration','initial',state,initial)
-    write(new/'CONTINUATION_PLACEHOLDERS.json',placeholders)
-    a['study'].verify(new)
-    if common.inventory(old_ws)!=files or sha(old_arm/'state.json')!=provenance['parent_state_sha256']:
-        raise RuntimeError('parent changed during migration')
-    initial_state=preserve_initial_state(common,arm/'state.json',new/'MIGRATION_INITIAL_STATE.json')
-    write(new/'MIGRATION_FINISHED.json',dict(initial_state_path=initial_state['path'],initial_state_sha256=initial_state['sha256'],
-        provenance_sha256=sha(new/'CONTINUATION_PROVENANCE.json'),
-        seal_sha256=sha(new/'seal.json'),state_sha256=sha(arm/'state.json'),finished=time.time(),
-        source_sha256=sha(__file__),
-        **({'ongoing_caller':copy.deepcopy(caller_binding)} if ongoing else {'review_sha256':sha(REVIEW_PATH)})))
-    COPY_GUARD=None
-    return new
-
+    with parent_ownership(parent):
+        a['study'].verify(parent)
+        parent_seal=common.read(parent/'seal.json')
+        if parent!=INITIAL_PARENT and sha(parent/'CONTINUATION_PROVENANCE.json')!=parent_seal.get('continuation_provenance_sha256'):
+            raise RuntimeError('parent continuation provenance changed')
+        common.verify_snapshot(old_arm/'snapshots'/f'round-{old["round"]-1:04d}')
+        transition=apply_source_maintenance(parent,new,parent_seal) if ongoing else None
+        # freeze performs real neutral deployment checks only after launch review;
+        # ordinary official research still starts later, in one separate child.
+        controls()
+        a['study'].freeze(new,p,suite,contract,curation)
+        if common.read(new/'seal.json')['seed'] != common.read(INITIAL_PARENT/'seal.json')['seed']:
+            raise RuntimeError('successor seed differs from exact original clean seed')
+        arm=new/'arms/exploration';workspace=arm/'workspace'
+        files=common.inventory(old_ws)
+        for name,expected in files.items():
+            copy_file(old_ws/name,workspace/name,expected,replace=True)
+        copy_history(old_ws/'history',workspace/'history')
+        research=copy.deepcopy(old['research'])
+        remaps=[]
+        for group in ('knowledge','components'):
+            for key,record in old['research'][group].items():
+                source=Path(record['validation_bundle']['directory'])
+                if not source.resolve().is_relative_to(old_arm.resolve()):
+                    raise RuntimeError('accepted validator not from own parent arm')
+                destination=arm/'inherited/validators'/key
+                migrated=copy_closed_bundle(source,destination,record,a['receipts'].reuse)
+                a['knowledge'].verify_record(migrated,workspace)
+                research[group][key]=migrated
+                remaps.append(dict(id=key,source=str(source),destination=str(destination),
+                    finished_sha256=record['validation_bundle']['finished_sha256']))
+        inherited_jobs=[];pending_dependencies=[]
+        from types import SimpleNamespace
+        for key,entry in old['research'].get('pending_discoveries',{}).items():
+            copied,dependency=copy_pending(a,old_arm,old_ws,arm,workspace,old['research'],key)
+            inherited_jobs.append(copied)
+            if dependency: pending_dependencies.append(dependency)
+        inherited_jobs=dedupe_inherited_jobs(inherited_jobs)
+        # Keep all original bindings and global round labels, with one copy per view.
+        inherited_snapshots=copy_snapshots(old_arm,arm)
+        provenance=dict(schema='math-gkm.own-continuation-provenance.v1',parent_study=str(parent),
+            parent_state_sha256=sha(old_arm/'state.json'),parent_seal_sha256=sha(parent/'seal.json'),
+            parent_round=old['round'],parent_phase=old['phase'],additional_rounds=ADDITIONAL_ROUNDS,
+            parent_verification_implementation_sha256=digest(parent_seal['implementation']),
+            source_transition=transition,successor_implementation_sha256=digest(common.implementation()),
+            protocol_changes={k:dict(before=parent_protocol[k],after=p[k]) for k in p if parent_protocol[k]!=p[k]},
+            new_capacity_plan=capacity_plan(p,old['round'],old['phase']),
+            initial_resume_launch_sha256=sha(RESUME/'LAUNCH_CONSUMED.json'),
+            review_resume='Preserve pending review and mathematics; run new isolated roles with new allowance; no prior partial evaluation outputs copied.',
+            parent_research_sha256=digest(old['research']),parent_workspace_inventory=files,
+            preserved_mathematical_state='identical except explicit validator directory relocation',
+            old_accounting={k:v for k,v in old.items() if k!='research'},
+            validator_remaps=remaps,inherited_snapshots=inherited_snapshots,
+            snapshot_retention='one exact copy per historical snapshot; round views at snapshots/, other views at inherited/snapshots/',
+            inherited_origin_jobs=inherited_jobs,pending_original_dependencies=pending_dependencies,
+            inherited_receipt_paths=[j['path'] for j in inherited_jobs],
+            inherited_worker_elapsed=sum(j['inherited_elapsed_seconds'] for j in inherited_jobs),
+            observer_elapsed_scope='raw receipt sum includes inherited origin jobs; use deltas/new job IDs for new elapsed',
+            original_paired_comparison='retained immutable at original path; this successor is not a fresh comparison',
+            reused_evaluation_panel_sha256=EXPECTED_SUITE,
+            evaluation_scope='same original frozen panel, reused; no new independent performance claim',
+            excluded='old role trees, adapter jobs, evaluation outputs, active jobs, caches and compiled build files',
+            user_goal=GOAL,goal_channel='operator-only; no proof ideas or additional proposer instructions',
+            created=time.time())
+        write(new/'CONTINUATION_PROVENANCE.json',provenance)
+        seal=common.read(new/'seal.json')
+        seal['continuation_provenance_sha256']=sha(new/'CONTINUATION_PROVENANCE.json')
+        seal['baseline_adjustments']=['noncomparative own-history continuation; baseline placeholder is dormant',
+            'exploration resumes only its own mathematical state and sources',
+            'fresh finite accounting allowance; previous costs retained in continuation provenance',
+            'same frozen evaluator panel reused, no new independent performance claim']
+        plan=common.read(new/'audit/plan.json')
+        plan['checkpoints']=['initial']+[f'round-{r:04d}' for r in range(old['round'],p['rounds'])]+['terminal']
+        plan['initial_scope']='resumed own source and admitted knowledge; not a pristine comparison seed'
+        plan['continuation_provenance_sha256']=seal['continuation_provenance_sha256']
+        common.write(new/'audit/plan.json',plan)
+        seal['observer_plan']=plan;seal['audit_plan_sha256']=sha(new/'audit/plan.json')
+        common.write(new/'seal.json',seal)
+        seal_hash=common.digest(seal)
+        for mode in ('baseline','exploration'):
+            path=new/'arms'/mode/'state.json';fresh=common.load_state(path)
+            state=epoch_state(fresh,old,research,seal_hash) if mode=='exploration' else {**fresh,'seal_hash':seal_hash}
+            if mode=='exploration':
+                mark_inherited_consumed(state,inherited_jobs)
+            common.save_state(path,state)
+        # Protect the complete requested horizon before any optional strategy trial.
+        a['study'].Arm(new,'exploration',-1).fund_many(protected_horizon(p,old['round'],old['phase']))
+        for key in research.get('pending_discoveries',{}):
+            a['discoveries'].verify(SimpleNamespace(root=arm,mode='exploration'),research,workspace,key)
+        # Replace only newly created seed checkpoint artifacts, recording the prior
+        # placeholders. No previously published/research checkpoint is overwritten.
+        placeholders={}
+        initial=arm/'snapshots/initial'
+        placeholders['seed_snapshot_binding']=common.verify_snapshot(initial)['binding']
+        import shutil
+        placeholder=arm/'inherited/freeze-placeholders/initial'
+        placeholder_manifest=common.verify_snapshot(initial)
+        for name,expected in placeholder_manifest['files'].items():
+            copy_file(initial/'source'/name,placeholder/'source'/name,expected)
+        copy_file(initial/'manifest.json',placeholder/'manifest.json')
+        shutil.rmtree(initial)
+        for path in (arm/'observer-outbox/initial.json',new/'audit/inputs/exploration/initial.json'):
+            if path.exists():
+                placeholders[str(path.relative_to(new))]=sha(path)
+                copy_file(path,new/'freeze-placeholder-records'/path.relative_to(new))
+                path.unlink()
+        state=common.load_state(arm/'state.json')
+        common.snapshot(workspace,initial,research['policy'],a['study'].Arm(new,'exploration',-1).admitted(research))
+        a['observer'].checkpoint(new,'exploration','initial',state,initial)
+        write(new/'CONTINUATION_PLACEHOLDERS.json',placeholders)
+        a['study'].verify(new)
+        if common.inventory(old_ws)!=files or sha(old_arm/'state.json')!=provenance['parent_state_sha256']:
+            raise RuntimeError('parent changed during migration')
+        initial_state=preserve_initial_state(common,arm/'state.json',new/'MIGRATION_INITIAL_STATE.json')
+        write(new/'MIGRATION_FINISHED.json',dict(initial_state_path=initial_state['path'],initial_state_sha256=initial_state['sha256'],
+            provenance_sha256=sha(new/'CONTINUATION_PROVENANCE.json'),
+            seal_sha256=sha(new/'seal.json'),state_sha256=sha(arm/'state.json'),finished=time.time(),
+            source_sha256=sha(__file__),
+            **({'ongoing_caller':copy.deepcopy(caller_binding)} if ongoing else {'review_sha256':sha(REVIEW_PATH)})))
+        COPY_GUARD=None
+        return new
 
 def ongoing_destination(destination,number):
     import re
@@ -544,10 +555,109 @@ def controls():
         raise RuntimeError('unresolved resource cleanup hold; independent reconciliation required')
 
 
+@contextlib.contextmanager
+def parent_ownership(parent):
+    with (Path(parent)/'controller.lock').open('rb') as lease:
+        fcntl.flock(lease,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        yield
+
+
+def checked_implementation(common):
+    original=read(INITIAL_PARENT/'seal.json')['implementation']
+    if digest(original)!=EXPECTED_IMPL:raise RuntimeError('original implementation archive binding changed')
+    for name,expected in original.items():
+        source=SOURCE_ARCHIVE/safe_relative(name)
+        if source.is_symlink() or not source.resolve().is_relative_to(SOURCE_ARCHIVE.resolve()) or sha(source)!=expected:
+            raise RuntimeError('pinned old implementation source archive changed')
+    new=dict(original);new['machinery/study_worker.py']=NEW_WORKER
+    if original.get('machinery/study_worker.py')!=OLD_WORKER or digest(new)!=NEW_IMPL:
+        raise RuntimeError('exact reviewed one-file implementation delta changed')
+    actual=common.implementation()
+    if actual not in (original,new):raise RuntimeError('implementation has an unreviewed source delta')
+    return digest(actual)
+
+
+def atomic_protected(path,data,mode):
+    path=Path(path)
+    allowed=(ROOT/'machinery/study_worker.py',ROOT/'.bootstrap/study-authorization.json')
+    if (path not in allowed or path.is_symlink() or path.parent.is_symlink() or
+        path.parent.resolve()!=ROOT.resolve()/path.relative_to(ROOT).parent):
+        raise RuntimeError('maintenance target escaped workspace')
+    temporary=path.with_name(path.name+'.maintenance.next')
+    with temporary.open('xb') as output:
+        output.write(data);output.flush();os.fsync(output.fileno())
+    temporary.chmod(mode);os.replace(temporary,path)
+    descriptor=os.open(path.parent,os.O_RDONLY)
+    try:os.fsync(descriptor)
+    finally:os.close(descriptor)
+
+
+def apply_source_maintenance(parent,destination,parent_seal):
+    """Genuine old verification has just run; never verify that old study as new."""
+    a=api();common=a['common'];actual=checked_implementation(common)
+    if actual==NEW_IMPL:
+        if digest(parent_seal['implementation'])!=NEW_IMPL:
+            raise RuntimeError('historical old parent cannot be reverified as the new implementation')
+        completed=read(OPS/'FOLLOW.json').get('source_transition',{})
+        if completed.get('status')!='applied':raise RuntimeError('source transition is incomplete; no replay')
+        return None
+    record=authorize_ongoing();spec=record.get('source_maintenance')
+    expected={'parent_study':str(MAINTENANCE_PARENT),'destination':str(MAINTENANCE_DESTINATION),
+        'old_implementation_sha256':EXPECTED_IMPL,'new_implementation_sha256':NEW_IMPL,
+        'old_worker_sha256':OLD_WORKER,'new_worker_sha256':NEW_WORKER,'source_archive':str(SOURCE_ARCHIVE.resolve())}
+    if (not isinstance(spec,dict) or spec.get('authorized') is not True or not spec.get('reviewer') or
+        any(spec.get(k)!=v for k,v in expected.items()) or Path(parent)!=MAINTENANCE_PARENT or Path(destination)!=MAINTENANCE_DESTINATION):
+        raise RuntimeError('exact one-time source maintenance authority required')
+    state_path=Path(parent)/'arms/exploration/state.json'
+    if (sha(state_path)!=spec.get('parent_state_sha256') or sha(Path(parent)/'seal.json')!=spec.get('parent_seal_sha256') or
+        digest(parent_seal['implementation'])!=EXPECTED_IMPL or record.get('implementation_sha256')!=EXPECTED_IMPL):
+        raise RuntimeError('authorized historical parent checkpoint changed')
+    state=common.load_state(state_path)
+    if state.get('active') is not None or state.get('active_intent') is not None or state['status']!='finite_budget_finished; root_open':
+        raise RuntimeError('maintenance parent is not quiescent')
+    checkpoint=read(OPS/'FOLLOW.json')
+    for name in ('FOLLOW.lock','operator.lock'):
+        if not (OPS/name).is_file() or lock_available(OPS/name):
+            raise RuntimeError('maintenance requires both owned supervisor singleton locks')
+    identity=a['resources'].current_process(os.getpid())
+    if checkpoint.get('operator_pid')!=os.getpid() or not identity or checkpoint.get('operator_birth')!=identity['identity']:
+        raise RuntimeError('maintenance supervisor native ownership binding changed')
+    if checkpoint.get('source_transition') or checkpoint.get('phase')!='migration_intent' or checkpoint.get('parent_study')!=str(parent) or checkpoint.get('destination')!=str(destination):
+        raise RuntimeError('maintenance intent is uncertain or already consumed; no replay')
+    if Path(destination).exists() or Path(destination).is_symlink():raise RuntimeError('maintenance successor already exists')
+    worker=ROOT/'machinery/study_worker.py';authority=ROOT/'.bootstrap/study-authorization.json'
+    original=worker.read_bytes();needle=b"    fs = profile['filesystem']\n"
+    if sha(worker)!=OLD_WORKER or original.count(needle)!=1:raise RuntimeError('exact worker maintenance hunk changed')
+    revised=original.replace(needle,needle+b"    fs[':tmpdir'] = 'write'  # TMPDIR is this role's workspace/.scratch.\n")
+    if hashlib.sha256(revised).hexdigest()!=NEW_WORKER:raise RuntimeError('reviewed replacement worker bytes differ')
+    intent={'status':'intent','old_implementation_sha256':EXPECTED_IMPL,'new_implementation_sha256':NEW_IMPL,
+        'parent_study':str(parent),'parent_state_sha256':sha(state_path),'parent_seal_sha256':sha(Path(parent)/'seal.json'),
+        'old_worker_sha256':OLD_WORKER,'new_worker_sha256':NEW_WORKER,'source_archive':str(SOURCE_ARCHIVE.resolve()),
+        'historical_verification':'official study.verify completed against the actual old implementation before this intent',
+        'authorized_reviewer':spec['reviewer'],'created':time.time()}
+    with (ROOT/'.scratch/resources/heavy.lock').open('rb') as heavy:
+        fcntl.flock(heavy,fcntl.LOCK_EX|fcntl.LOCK_NB);controls()
+        a['resources'].headroom(a['resources'].limits())
+        if checked_implementation(common)!=EXPECTED_IMPL or sha(state_path)!=intent['parent_state_sha256'] or read(authority)!=record:
+            raise RuntimeError('quiescent maintenance bindings changed')
+        checkpoint['source_transition']=intent;write(OPS/'FOLLOW.json',checkpoint)
+        atomic_protected(worker,revised,worker.stat().st_mode & 0o777)
+        if checked_implementation(common)!=NEW_IMPL:raise RuntimeError('actual source transition differs from reviewed map')
+        updated=copy.deepcopy(record);updated['implementation_sha256']=NEW_IMPL
+        updated['source_maintenance']={**spec,'status':'applied'}
+        atomic_protected(authority,(canonical(updated)+'\n').encode(),0o444)
+        common.authorize_live(read(Path(parent)/'seed/contract.json'))
+        completed={**intent,'status':'applied','intent_sha256':digest(intent),
+            'authorization_sha256':sha(authority),'actual_implementation_sha256':checked_implementation(common),'finished':time.time()}
+        checkpoint['source_transition']=completed;write(OPS/'FOLLOW.json',checkpoint)
+    return completed
+
+
 def immutable_bindings(*,ongoing=False):
     a=api();common=a['common']
-    if digest(common.implementation())!=EXPECTED_IMPL:
-        raise RuntimeError('frozen implementation changed')
+    actual_implementation=checked_implementation(common)
+    if not ongoing and actual_implementation!=EXPECTED_IMPL:
+        raise RuntimeError('bounded legacy operator cannot use a changed implementation')
     seal=read(INITIAL_PARENT/'seal.json');p=read(INITIAL_PARENT/'protocol.json')
     contract=read(INITIAL_PARENT/'seed/contract.json')
     if digest(seal['implementation'])!=EXPECTED_IMPL or digest(p)!=seal['protocol']:
@@ -562,6 +672,10 @@ def immutable_bindings(*,ongoing=False):
         if sha(INITIAL_PARENT/'seed'/safe_relative(name))!=expected:
             raise RuntimeError('original clean seed changed')
     common.authorize_live(contract)
+    if actual_implementation==NEW_IMPL:
+        applied=read(OPS/'FOLLOW.json').get('source_transition',{})
+        if applied.get('status')!='applied' or applied.get('actual_implementation_sha256')!=NEW_IMPL:
+            raise RuntimeError('reviewed source transition has not completed')
     authorization=read(ROOT/'.bootstrap/study-authorization.json')
     if ongoing:
         authorize_ongoing(authorization)
@@ -581,7 +695,7 @@ def immutable_bindings(*,ongoing=False):
         launch.get('finalization_sha256')!=sha(FINALIZATION/'FINISHED.json')):
         raise RuntimeError('initial official resume launch binding changed')
     tests=read(OPS/'TEST_RESULT.json') if (OPS/'TEST_RESULT.json').exists() else None
-    return dict(implementation_sha256=EXPECTED_IMPL,original_study=str(INITIAL_PARENT),
+    return dict(implementation_sha256=actual_implementation,original_implementation_sha256=EXPECTED_IMPL,original_study=str(INITIAL_PARENT),
         original_seal_sha256=sha(INITIAL_PARENT/'seal.json'),original_protocol_sha256=sha(INITIAL_PARENT/'protocol.json'),
         original_contract_sha256=digest(contract),original_suite_sha256=EXPECTED_SUITE,suite_tasks=2,
         original_seed=seal['seed'],dependencies_sha256=digest(seal['dependencies']),
