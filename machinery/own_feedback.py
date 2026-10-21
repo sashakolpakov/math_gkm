@@ -47,7 +47,7 @@ def diagnostic(result, exc=None):
         category='type_or_elaboration_rejection'
     elif stage=='kernel_replay' and record.get('returncode')==1:
         category='kernel_rejection'
-    from .proof_audit import InspectionFailure
+    from .proof_audit import InspectionFailure, EDGE_LIMIT
     if type(exc) is InspectionFailure:
         category=exc.category
         measured.update(exc.measured)
@@ -60,7 +60,7 @@ def diagnostic(result, exc=None):
             category='context_rejection'
     if category not in CATEGORIES: category='unknown'
     if category in ('dependency_node_limit','catalog_node_limit'): measured['limit_nodes']=200000
-    if category=='dependency_edge_limit': measured['limit_edges']=200000
+    if category=='dependency_edge_limit': measured['limit_edges']=EDGE_LIMIT
     if category=='expression_node_limit': measured['limit_nodes']=1000000
     if category=='artifact_size_limit': measured.setdefault('limit_bytes',32*1024**2)
     if category=='record_size_limit': measured.setdefault('limit_bytes',1024**2)

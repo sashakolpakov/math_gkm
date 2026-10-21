@@ -1,0 +1,76 @@
+import Lean
+namespace MathGKM.InspectionCapacityNeutral
+def base : Nat := 0
+def unused : Nat := 37
+def shared0 : Nat := base
+def shared1 : Nat := Nat.add shared0 base
+def shared2 : Nat := Nat.add shared1 base
+def shared3 : Nat := Nat.add shared2 base
+def shared4 : Nat := Nat.add shared3 base
+def shared5 : Nat := Nat.add shared4 base
+def shared6 : Nat := Nat.add shared5 base
+def shared7 : Nat := Nat.add shared6 base
+def shared8 : Nat := Nat.add shared7 base
+def shared9 : Nat := Nat.add shared8 base
+def shared10 : Nat := Nat.add shared9 base
+def shared11 : Nat := Nat.add shared10 base
+def shared12 : Nat := Nat.add shared11 base
+def shared13 : Nat := Nat.add shared12 base
+def shared14 : Nat := Nat.add shared13 base
+def shared15 : Nat := Nat.add shared14 base
+def shared16 : Nat := Nat.add shared15 base
+def shared17 : Nat := Nat.add shared16 base
+def shared18 : Nat := Nat.add shared17 base
+def shared19 : Nat := Nat.add shared18 base
+def shared20 : Nat := Nat.add shared19 base
+def shared21 : Nat := Nat.add shared20 base
+def shared22 : Nat := Nat.add shared21 base
+def shared23 : Nat := Nat.add shared22 base
+def shared24 : Nat := Nat.add shared23 base
+def shared25 : Nat := Nat.add shared24 base
+def shared26 : Nat := Nat.add shared25 base
+def shared27 : Nat := Nat.add shared26 base
+def shared28 : Nat := Nat.add shared27 base
+def shared29 : Nat := Nat.add shared28 base
+def shared30 : Nat := Nat.add shared29 base
+def shared31 : Nat := Nat.add shared30 base
+def shared32 : Nat := Nat.add shared31 base
+def goodRoot : Nat := shared32
+axiom forbidden : Nat
+noncomputable section
+def poison0 : Nat := forbidden
+def poison1 : Nat := Nat.add poison0 base
+def poison2 : Nat := Nat.add poison1 base
+def poison3 : Nat := Nat.add poison2 base
+def poison4 : Nat := Nat.add poison3 base
+def poison5 : Nat := Nat.add poison4 base
+def poison6 : Nat := Nat.add poison5 base
+def poison7 : Nat := Nat.add poison6 base
+def poison8 : Nat := Nat.add poison7 base
+def poison9 : Nat := Nat.add poison8 base
+def poison10 : Nat := Nat.add poison9 base
+def poison11 : Nat := Nat.add poison10 base
+def poison12 : Nat := Nat.add poison11 base
+def poison13 : Nat := Nat.add poison12 base
+def poison14 : Nat := Nat.add poison13 base
+def poison15 : Nat := Nat.add poison14 base
+def poison16 : Nat := Nat.add poison15 base
+def poison17 : Nat := Nat.add poison16 base
+def poison18 : Nat := Nat.add poison17 base
+def poison19 : Nat := Nat.add poison18 base
+def poison20 : Nat := Nat.add poison19 base
+def poison21 : Nat := Nat.add poison20 base
+def poison22 : Nat := Nat.add poison21 base
+def poison23 : Nat := Nat.add poison22 base
+def poison24 : Nat := Nat.add poison23 base
+def poison25 : Nat := Nat.add poison24 base
+def poison26 : Nat := Nat.add poison25 base
+def poison27 : Nat := Nat.add poison26 base
+def poison28 : Nat := Nat.add poison27 base
+def poison29 : Nat := Nat.add poison28 base
+def poison30 : Nat := Nat.add poison29 base
+def poison31 : Nat := Nat.add poison30 base
+def poison32 : Nat := Nat.add poison31 base
+def poisonRoot : Nat := poison32
+end
+end MathGKM.InspectionCapacityNeutral

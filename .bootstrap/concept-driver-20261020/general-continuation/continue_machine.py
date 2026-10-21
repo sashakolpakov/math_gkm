@@ -1,8 +1,8 @@
 """Bounded operations-only continuation of exploration's own universal-root research.
 
 This module adds no mathematics and never uses baseline knowledge. One explicitly
-authorized maintenance branch repairs the role TMPDIR permission, preserving the
-old implementation identity and binding the exact new worker implementation. An independently reviewed, single-consumption supervisor waits for
+authorized maintenance branches repair role TMPDIR permission and expand only the
+trusted dependency-edge capacity, preserving every historical implementation identity. An independently reviewed, single-consumption supervisor waits for
 the official resumed parent, then funds at most eight fresh finite epochs.
 """
 import argparse
@@ -10,6 +10,7 @@ import copy
 import contextlib
 import fcntl
 import hashlib
+import importlib
 import json
 import os
 from pathlib import Path
@@ -43,6 +44,30 @@ NEW_WORKER='d605eb833614df50c3782862430dbeb8a550b3b8c248adde19fa211254e1cf76'
 SOURCE_ARCHIVE=ROOT/'evidence/concept-driver-source-20261020/source'
 MAINTENANCE_PARENT=ROOT/'.scratch/concept-driver-20261020-follow-000004'
 MAINTENANCE_DESTINATION=ROOT/'.scratch/concept-driver-20261020-follow-000005'
+CAPACITY_PARENT=ROOT/'.scratch/concept-driver-20261020-follow-000005'
+CAPACITY_DESTINATION=ROOT/'.scratch/concept-driver-20261020-follow-000006'
+CAPACITY_IMPL='bac1b8f622077e362fc2d078e87bab3bad4114882700d722b09498f3481878fa'
+CAPACITY_CHANGES={'machinery/inspection_stream.py': ('cb0ff86634236920531ea15f5151ad94ad0782a908ead12ce88f83ee647c4ab3',
+                                    '217715dbf3d302fc7097bca8442afd8323af643c406eb67f6bd3947e52b2ffd7',
+                                    ((b'def program(module, declarations, required, catalog_modules, nonce):\n',
+                                      b'def program(module, declarations, required, catalog_modules, nonce):\n   '
+                                      b' from .proof_audit import EDGE_LIMIT\n'),
+                                     (b'          if edges >= 200000 then fail "dependency_edge_limit"\n',
+                                      b'          if edges >= {EDGE_LIMIT} then fail "dependency_edge_limit"\n'))),
+ 'machinery/proof_audit.py': ('1c836ec67bdd37ce05dc80d35a34d5d9cf4b526c552afc2f5e83d653323753ba',
+                              '5a9f763b5058ec5b01e38d0a7892d072fada04039ba03c23b6cc4fb44e81cc18',
+                              ((b'DECL_LIMIT = WORK_LIMIT = 200000\n',
+                                b'DECL_LIMIT = WORK_LIMIT = 200000\nEDGE_LIMIT = 2000000\n'),
+                               (b'            for n in (nodes,edges,duplicates): _nat(n,WORK_LIMIT)\n',
+                                b'            _nat(nodes,WORK_LIMIT)\n            for n in (edges,duplicates): '
+                                b'_nat(n,EDGE_LIMIT)\n'))),
+ 'machinery/own_feedback.py': ('1d5bda9d3ce3f4957b13e7f5efcf554ef3ae059d802500465042f50ff30a8d69',
+                               'fa9c5d77b1a6d6093fac3f85f27467ea3fdd57f464a0cc60f1feb2baa8f4772a',
+                               ((b'    from .proof_audit import InspectionFailure\n',
+                                 b'    from .proof_audit import InspectionFailure, EDGE_LIMIT\n'),
+                                (b"    if category=='dependency_edge_limit': measured['limit_edges']=200000\n",
+                                 b"    if category=='dependency_edge_limit': measured['limit_edges']=EDGE_LIMIT"
+                                 b'\n')))}
 EXPECTED_CONTRACT='564b2659c941bcf76484bcf20de5dfc4808c9379306f773d1642748e2a02c91d'
 EXPECTED_SUITE='88e05a48bac42ae11db2a12c2c748b03eac9904e8782fd5b5e52ebf8f3c641d1'
 GOAL='Continue autonomous research toward the unchanged exact universal root, not a partial log-concavity family.'
@@ -572,14 +597,23 @@ def checked_implementation(common):
     new=dict(original);new['machinery/study_worker.py']=NEW_WORKER
     if original.get('machinery/study_worker.py')!=OLD_WORKER or digest(new)!=NEW_IMPL:
         raise RuntimeError('exact reviewed one-file implementation delta changed')
+    allowed=[original,new]
+    if CAPACITY_CHANGES:
+        capacity=dict(new)
+        for name,(old_hash,new_hash,hunks) in CAPACITY_CHANGES.items():
+            if new.get(name)!=old_hash:raise RuntimeError('capacity old implementation binding changed')
+            capacity[name]=new_hash
+        if digest(capacity)!=CAPACITY_IMPL:raise RuntimeError('exact reviewed capacity implementation delta changed')
+        allowed.append(capacity)
     actual=common.implementation()
-    if actual not in (original,new):raise RuntimeError('implementation has an unreviewed source delta')
+    if actual not in allowed:raise RuntimeError('implementation has an unreviewed source delta')
     return digest(actual)
 
 
 def atomic_protected(path,data,mode):
     path=Path(path)
-    allowed=(ROOT/'machinery/study_worker.py',ROOT/'.bootstrap/study-authorization.json')
+    allowed=(ROOT/'machinery/study_worker.py',ROOT/'.bootstrap/study-authorization.json',
+        *(ROOT/name for name in CAPACITY_CHANGES))
     if (path not in allowed or path.is_symlink() or path.parent.is_symlink() or
         path.parent.resolve()!=ROOT.resolve()/path.relative_to(ROOT).parent):
         raise RuntimeError('maintenance target escaped workspace')
@@ -592,64 +626,107 @@ def atomic_protected(path,data,mode):
     finally:os.close(descriptor)
 
 
+def reload_capacity_modules():
+    """Reload shared module objects, before freeze uses the changed inspector."""
+    importlib.invalidate_caches()
+    names=('machinery.proof_audit','machinery.inspection_stream','machinery.own_feedback')
+    for name in names:
+        module=importlib.import_module(name)
+        if Path(module.__file__).resolve()!=ROOT/(name.replace('.', '/')+'.py'):
+            raise RuntimeError('capacity module import escaped pinned source')
+        importlib.reload(module)
+    proof=importlib.import_module('machinery.proof_audit')
+    if proof.EDGE_LIMIT!=2000000 or proof.WORK_LIMIT!=200000:
+        raise RuntimeError('loaded capacity bounds differ from reviewed source')
+    return list(names)
+
+
 def apply_source_maintenance(parent,destination,parent_seal):
     """Genuine old verification has just run; never verify that old study as new."""
     a=api();common=a['common'];actual=checked_implementation(common)
-    if actual==NEW_IMPL:
-        if digest(parent_seal['implementation'])!=NEW_IMPL:
+    record=authorize_ongoing();checkpoint=read(OPS/'FOLLOW.json')
+    capacity=(actual==NEW_IMPL and bool(CAPACITY_CHANGES) and 'inspection_capacity_maintenance' in record)
+    if capacity and (not isinstance(record['inspection_capacity_maintenance'],dict) or
+        record['inspection_capacity_maintenance'].get('status')=='applied'):
+        raise RuntimeError('capacity maintenance grant is malformed or already applied; reconcile explicitly')
+    if actual in (NEW_IMPL,CAPACITY_IMPL) and not capacity:
+        if digest(parent_seal['implementation'])!=actual:
             raise RuntimeError('historical old parent cannot be reverified as the new implementation')
-        completed=read(OPS/'FOLLOW.json').get('source_transition',{})
+        field='inspection_capacity_transition' if actual==CAPACITY_IMPL else 'source_transition'
+        completed=checkpoint.get(field,{})
         if completed.get('status')!='applied':raise RuntimeError('source transition is incomplete; no replay')
         return None
-    record=authorize_ongoing();spec=record.get('source_maintenance')
-    expected={'parent_study':str(MAINTENANCE_PARENT),'destination':str(MAINTENANCE_DESTINATION),
-        'old_implementation_sha256':EXPECTED_IMPL,'new_implementation_sha256':NEW_IMPL,
-        'old_worker_sha256':OLD_WORKER,'new_worker_sha256':NEW_WORKER,'source_archive':str(SOURCE_ARCHIVE.resolve())}
+    old_id,new_id=(NEW_IMPL,CAPACITY_IMPL) if capacity else (EXPECTED_IMPL,NEW_IMPL)
+    parent_expected,destination_expected=(CAPACITY_PARENT,CAPACITY_DESTINATION) if capacity else (MAINTENANCE_PARENT,MAINTENANCE_DESTINATION)
+    key,field=('inspection_capacity_maintenance','inspection_capacity_transition') if capacity else ('source_maintenance','source_transition')
+    spec=record.get(key)
+    expected={'parent_study':str(parent_expected),'destination':str(destination_expected),
+        'old_implementation_sha256':old_id,'new_implementation_sha256':new_id}
+    if capacity:
+        prior=checkpoint.get('source_transition',{})
+        if prior.get('status')!='applied' or prior.get('actual_implementation_sha256')!=NEW_IMPL:
+            raise RuntimeError('prior worker source transition missing or incomplete')
+        expected['source_files']={name:{'before':row[0],'after':row[1]} for name,row in CAPACITY_CHANGES.items()}
+    else:
+        expected.update(old_worker_sha256=OLD_WORKER,new_worker_sha256=NEW_WORKER,source_archive=str(SOURCE_ARCHIVE.resolve()))
     if (not isinstance(spec,dict) or spec.get('authorized') is not True or not spec.get('reviewer') or
-        any(spec.get(k)!=v for k,v in expected.items()) or Path(parent)!=MAINTENANCE_PARENT or Path(destination)!=MAINTENANCE_DESTINATION):
+        any(spec.get(k)!=v for k,v in expected.items()) or Path(parent)!=parent_expected or Path(destination)!=destination_expected):
         raise RuntimeError('exact one-time source maintenance authority required')
     state_path=Path(parent)/'arms/exploration/state.json'
     if (sha(state_path)!=spec.get('parent_state_sha256') or sha(Path(parent)/'seal.json')!=spec.get('parent_seal_sha256') or
-        digest(parent_seal['implementation'])!=EXPECTED_IMPL or record.get('implementation_sha256')!=EXPECTED_IMPL):
+        digest(parent_seal['implementation'])!=old_id or record.get('implementation_sha256')!=old_id):
         raise RuntimeError('authorized historical parent checkpoint changed')
     state=common.load_state(state_path)
-    if state.get('active') is not None or state.get('active_intent') is not None or state['status']!='finite_budget_finished; root_open':
+    if (state.get('active') is not None or state.get('active_intent') is not None or
+        state['status']!='finite_budget_finished; root_open' or
+        (capacity and (state.get('resolution') is not None or state['round']!=28 or read(Path(parent)/'protocol.json')['rounds']!=28 or
+            (Path(parent)/'STOP.json').exists()))):
         raise RuntimeError('maintenance parent is not quiescent')
-    checkpoint=read(OPS/'FOLLOW.json')
     for name in ('FOLLOW.lock','operator.lock'):
         if not (OPS/name).is_file() or lock_available(OPS/name):
             raise RuntimeError('maintenance requires both owned supervisor singleton locks')
     identity=a['resources'].current_process(os.getpid())
     if checkpoint.get('operator_pid')!=os.getpid() or not identity or checkpoint.get('operator_birth')!=identity['identity']:
         raise RuntimeError('maintenance supervisor native ownership binding changed')
-    if checkpoint.get('source_transition') or checkpoint.get('phase')!='migration_intent' or checkpoint.get('parent_study')!=str(parent) or checkpoint.get('destination')!=str(destination):
+    if checkpoint.get(field) or checkpoint.get('phase')!='migration_intent' or checkpoint.get('parent_study')!=str(parent) or checkpoint.get('destination')!=str(destination):
         raise RuntimeError('maintenance intent is uncertain or already consumed; no replay')
     if Path(destination).exists() or Path(destination).is_symlink():raise RuntimeError('maintenance successor already exists')
-    worker=ROOT/'machinery/study_worker.py';authority=ROOT/'.bootstrap/study-authorization.json'
-    original=worker.read_bytes();needle=b"    fs = profile['filesystem']\n"
-    if sha(worker)!=OLD_WORKER or original.count(needle)!=1:raise RuntimeError('exact worker maintenance hunk changed')
-    revised=original.replace(needle,needle+b"    fs[':tmpdir'] = 'write'  # TMPDIR is this role's workspace/.scratch.\n")
-    if hashlib.sha256(revised).hexdigest()!=NEW_WORKER:raise RuntimeError('reviewed replacement worker bytes differ')
-    intent={'status':'intent','old_implementation_sha256':EXPECTED_IMPL,'new_implementation_sha256':NEW_IMPL,
-        'parent_study':str(parent),'parent_state_sha256':sha(state_path),'parent_seal_sha256':sha(Path(parent)/'seal.json'),
-        'old_worker_sha256':OLD_WORKER,'new_worker_sha256':NEW_WORKER,'source_archive':str(SOURCE_ARCHIVE.resolve()),
+    replacements={};authority=ROOT/'.bootstrap/study-authorization.json'
+    if capacity:
+        for name,(old_hash,new_hash,hunks) in CAPACITY_CHANGES.items():
+            target=ROOT/name;revised=target.read_bytes()
+            if sha(target)!=old_hash:raise RuntimeError('exact capacity maintenance source changed')
+            for before,after in hunks:
+                if revised.count(before)!=1:raise RuntimeError('exact capacity maintenance hunk changed')
+                revised=revised.replace(before,after)
+            if hashlib.sha256(revised).hexdigest()!=new_hash:raise RuntimeError('reviewed capacity replacement bytes differ')
+            replacements[target]=revised
+    else:
+        worker=ROOT/'machinery/study_worker.py';original=worker.read_bytes();needle=b"    fs = profile['filesystem']\n"
+        if sha(worker)!=OLD_WORKER or original.count(needle)!=1:raise RuntimeError('exact worker maintenance hunk changed')
+        revised=original.replace(needle,needle+b"    fs[':tmpdir'] = 'write'  # TMPDIR is this role's workspace/.scratch.\n")
+        if hashlib.sha256(revised).hexdigest()!=NEW_WORKER:raise RuntimeError('reviewed replacement worker bytes differ')
+        replacements[worker]=revised
+    intent={'status':'intent',**expected,'parent_state_sha256':sha(state_path),'parent_seal_sha256':sha(Path(parent)/'seal.json'),
         'historical_verification':'official study.verify completed against the actual old implementation before this intent',
         'authorized_reviewer':spec['reviewer'],'created':time.time()}
     with (ROOT/'.scratch/resources/heavy.lock').open('rb') as heavy:
         fcntl.flock(heavy,fcntl.LOCK_EX|fcntl.LOCK_NB);controls()
         a['resources'].headroom(a['resources'].limits())
-        if checked_implementation(common)!=EXPECTED_IMPL or sha(state_path)!=intent['parent_state_sha256'] or read(authority)!=record:
+        if checked_implementation(common)!=old_id or sha(state_path)!=intent['parent_state_sha256'] or read(authority)!=record:
             raise RuntimeError('quiescent maintenance bindings changed')
-        checkpoint['source_transition']=intent;write(OPS/'FOLLOW.json',checkpoint)
-        atomic_protected(worker,revised,worker.stat().st_mode & 0o777)
-        if checked_implementation(common)!=NEW_IMPL:raise RuntimeError('actual source transition differs from reviewed map')
-        updated=copy.deepcopy(record);updated['implementation_sha256']=NEW_IMPL
-        updated['source_maintenance']={**spec,'status':'applied'}
+        checkpoint[field]=intent;write(OPS/'FOLLOW.json',checkpoint)
+        for target,revised in replacements.items():atomic_protected(target,revised,target.stat().st_mode & 0o777)
+        if checked_implementation(common)!=new_id:raise RuntimeError('actual source transition differs from reviewed map')
+        loaded=reload_capacity_modules() if capacity else None
+        updated=copy.deepcopy(record);updated['implementation_sha256']=new_id
+        updated[key]={**spec,'status':'applied'}
         atomic_protected(authority,(canonical(updated)+'\n').encode(),0o444)
         common.authorize_live(read(Path(parent)/'seed/contract.json'))
         completed={**intent,'status':'applied','intent_sha256':digest(intent),
             'authorization_sha256':sha(authority),'actual_implementation_sha256':checked_implementation(common),'finished':time.time()}
-        checkpoint['source_transition']=completed;write(OPS/'FOLLOW.json',checkpoint)
+        if capacity:completed['reloaded_modules']=loaded
+        checkpoint[field]=completed;write(OPS/'FOLLOW.json',checkpoint)
     return completed
 
 
@@ -672,10 +749,14 @@ def immutable_bindings(*,ongoing=False):
         if sha(INITIAL_PARENT/'seed'/safe_relative(name))!=expected:
             raise RuntimeError('original clean seed changed')
     common.authorize_live(contract)
-    if actual_implementation==NEW_IMPL:
-        applied=read(OPS/'FOLLOW.json').get('source_transition',{})
+    if actual_implementation in (NEW_IMPL,CAPACITY_IMPL):
+        checkpoint=read(OPS/'FOLLOW.json');applied=checkpoint.get('source_transition',{})
         if applied.get('status')!='applied' or applied.get('actual_implementation_sha256')!=NEW_IMPL:
             raise RuntimeError('reviewed source transition has not completed')
+        if actual_implementation==CAPACITY_IMPL:
+            applied=checkpoint.get('inspection_capacity_transition',{})
+            if applied.get('status')!='applied' or applied.get('actual_implementation_sha256')!=CAPACITY_IMPL:
+                raise RuntimeError('reviewed capacity source transition has not completed')
     authorization=read(ROOT/'.bootstrap/study-authorization.json')
     if ongoing:
         authorize_ongoing(authorization)

@@ -174,6 +174,7 @@ private def declaration (env : Environment) (n : Name) : M Unit := do
 
 
 def program(module, declarations, required, catalog_modules, nonce):
+    from .proof_audit import EDGE_LIMIT
     names = lambda xs: ', '.join('`'+x for x in xs)
     # Each selected module is enumerated in full, including unused declarations.
     return 'import '+module+'\nimport Lean\nimport Lean.Meta.Sym.ExprPtr\n'+PRELUDE+f'''
@@ -219,7 +220,7 @@ run_cmd do
         | .inductInfo v => deps := deps ++ v.ctors
         | _ => pure ()
         for dep in deps do
-          if edges >= 200000 then fail "dependency_edge_limit"
+          if edges >= {EDGE_LIMIT} then fail "dependency_edge_limit"
           edges := edges+1
           if enqueued.contains dep then duplicates := duplicates+1
           else

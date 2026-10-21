@@ -16,6 +16,7 @@ ARTIFACT_BYTES = 32*1024**2
 LINE_BYTES = 1024**2
 NODE_LIMIT = 1000000
 DECL_LIMIT = WORK_LIMIT = 200000
+EDGE_LIMIT = 2000000
 
 
 class InspectionFailure(Invalid):
@@ -162,7 +163,8 @@ def _stream(source,declarations):
             if not set(axioms)<={'propext','Classical.choice','Quot.sound'}: raise Invalid('unpermitted inspected premises')
             if (name not in constants or any(n not in table for n in constants) or
                     not table[name]['body_present']): raise Invalid('missing declaration/body reference')
-            for n in (nodes,edges,duplicates): _nat(n,WORK_LIMIT)
+            _nat(nodes,WORK_LIMIT)
+            for n in (edges,duplicates): _nat(n,EDGE_LIMIT)
             if nodes<1 or len(constants)>nodes or duplicates>edges or edges-duplicates!=nodes-1:
                 raise Invalid('conflicting traversal counts')
             rows.append(dict(name=name,axioms=axioms,constants=[table[n] for n in constants],

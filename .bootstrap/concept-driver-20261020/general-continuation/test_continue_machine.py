@@ -434,6 +434,8 @@ class MaintenanceFixtures(unittest.TestCase):
         self.oldbytes=b"def fixture():\n    fs = profile['filesystem']\n    return fs\n"
         self.newbytes=self.oldbytes.replace(b"    fs = profile['filesystem']\n",b"    fs = profile['filesystem']\n    fs[':tmpdir'] = 'write'  # TMPDIR is this role's workspace/.scratch.\n")
         self.worker.write_bytes(self.oldbytes)
+        for name,data in getattr(self,'extra_sources',{}).items():
+            target=self.root/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(data)
         source=self.root/'MathGKM/Fixture.lean';source.parent.mkdir();source.write_text('operations fixture bytes')
         def implementation():
             paths=list((self.root/'machinery').glob('*.py'))+list((self.root/'MathGKM').glob('*.lean'))
@@ -472,7 +474,7 @@ class MaintenanceFixtures(unittest.TestCase):
         self.stack=contextlib.ExitStack();self.addCleanup(self.stack.close)
         self.stack.enter_context(patch.multiple(ops,ROOT=self.root,OPS=self.opsdir,INITIAL_PARENT=self.original,SOURCE_ARCHIVE=self.archive,
             MAINTENANCE_PARENT=self.parent,MAINTENANCE_DESTINATION=self.destination,EXPECTED_IMPL=self.oldid,NEW_IMPL=self.newid,
-            OLD_WORKER=self.oldmap['machinery/study_worker.py'],NEW_WORKER=self.newmap['machinery/study_worker.py']))
+            OLD_WORKER=self.oldmap['machinery/study_worker.py'],NEW_WORKER=self.newmap['machinery/study_worker.py'],CAPACITY_CHANGES={}))
         self.stack.enter_context(patch.object(ops,'api',return_value={'common':self.common,'resources':self.resources}))
         self.stack.enter_context(patch.object(ops,'DEADLINE',None))
         self.stack.enter_context(patch.object(ops,'COPY_GUARD',None))
@@ -557,6 +559,205 @@ class MaintenanceFixtures(unittest.TestCase):
         self.assertEqual(events,['actual-old-parent-verify','new-source-freeze'])
         self.assertEqual(ops.read(self.parent/'seal.json')['implementation'],self.oldmap)
         self.assertEqual(ops.read(self.opsdir/'FOLLOW.json')['source_transition']['status'],'applied')
+
+
+class CapacityMaintenanceFixtures(unittest.TestCase):
+    extra_sources={f'machinery/{name}.py': b'CAPACITY = 200000\n' for name in
+        ('inspection_stream','proof_audit','own_feedback')}
+
+    def setUp(self):
+        MaintenanceFixtures.setUp(self)
+        with ops.parent_ownership(self.parent):ops.apply_source_maintenance(self.parent,self.destination,self.seal)
+        self.prior_transition=copy.deepcopy(ops.read(self.opsdir/'FOLLOW.json')['source_transition'])
+        self.parent=self.destination;self.destination=self.root/'.scratch/concept-driver-20261020-follow-000006'
+        self.capacity_map=dict(self.newmap);self.changes={}
+        import hashlib
+        for name,before in self.extra_sources.items():
+            after=before.replace(b'200000',b'2000000')
+            self.changes[name]=(hashlib.sha256(before).hexdigest(),hashlib.sha256(after).hexdigest(),((before,after),))
+            self.capacity_map[name]=hashlib.sha256(after).hexdigest()
+        self.capacity_id=ops.digest(self.capacity_map)
+        ops.write(self.parent/'CONTINUATION_PROVENANCE.json',{'fixture':'immutable old7772 provenance'})
+        self.seal={'implementation':self.newmap,'continuation_provenance_sha256':ops.sha(self.parent/'CONTINUATION_PROVENANCE.json')}
+        ops.write(self.parent/'seal.json',self.seal)
+        from machinery.study_common import save_state
+        self.save_state=save_state
+        save_state(self.parent/'arms/exploration/state.json',{'active':None,'active_intent':None,
+            'status':'finite_budget_finished; root_open','round':28,'phase':'research','resolution':None})
+        ops.write(self.parent/'protocol.json',{'rounds':28});ops.write(self.parent/'seed/contract.json',{'fixture':True})
+        (self.parent/'controller.lock').write_text('')
+        self.grant=ops.read(self.authority)
+        self.grant['inspection_capacity_maintenance']={'authorized':True,'reviewer':'independent capacity fixture',
+            'parent_study':str(self.parent),'destination':str(self.destination),
+            'parent_state_sha256':ops.sha(self.parent/'arms/exploration/state.json'),'parent_seal_sha256':ops.sha(self.parent/'seal.json'),
+            'old_implementation_sha256':self.newid,'new_implementation_sha256':self.capacity_id,
+            'source_files':{name:{'before':row[0],'after':row[1]} for name,row in self.changes.items()}}
+        ops.write(self.authority,self.grant);self.authority.chmod(0o444)
+        cp=ops.read(self.opsdir/'FOLLOW.json');cp.update(parent_study=str(self.parent),destination=str(self.destination))
+        ops.write(self.opsdir/'FOLLOW.json',cp)
+        self.stack.enter_context(patch.multiple(ops,CAPACITY_PARENT=self.parent,CAPACITY_DESTINATION=self.destination,
+            CAPACITY_IMPL=self.capacity_id,CAPACITY_CHANGES=self.changes))
+        self.reloaded=[]
+        self.real_reload_capacity_modules=ops.reload_capacity_modules
+        def reload_modules():
+            self.assertEqual(ops.checked_implementation(self.common),self.capacity_id)
+            self.reloaded.append('all-three-new-modules')
+            return ['machinery.proof_audit','machinery.inspection_stream','machinery.own_feedback']
+        self.stack.enter_context(patch.object(ops,'reload_capacity_modules',side_effect=reload_modules))
+
+    def apply(self):
+        with ops.parent_ownership(self.parent):return ops.apply_source_maintenance(self.parent,self.destination,self.seal)
+
+    def assert_unmodified(self):
+        self.assertEqual(ops.checked_implementation(self.common),self.newid)
+        self.assertEqual(ops.read(self.opsdir/'FOLLOW.json')['source_transition'],self.prior_transition)
+
+    def test_three_file_capacity_transition_preserves_all_historical_bytes(self):
+        before={str(p.relative_to(self.parent)):ops.sha(p) for p in self.parent.rglob('*') if p.is_file()}
+        result=self.apply()
+        self.assertEqual(result['old_implementation_sha256'],self.newid)
+        self.assertEqual(result['new_implementation_sha256'],self.capacity_id)
+        self.assertEqual(result['status'],'applied');self.assertEqual(self.reloaded,['all-three-new-modules'])
+        self.assertEqual(result['reloaded_modules'],['machinery.proof_audit','machinery.inspection_stream','machinery.own_feedback'])
+        cp=ops.read(self.opsdir/'FOLLOW.json')
+        self.assertEqual(cp['source_transition'],self.prior_transition)
+        self.assertEqual(cp['inspection_capacity_transition'],result)
+        self.assertEqual(before,{str(p.relative_to(self.parent)):ops.sha(p) for p in self.parent.rglob('*') if p.is_file()})
+        self.assertEqual(ops.read(self.authority)['implementation_sha256'],self.capacity_id)
+        self.assertEqual(self.authority.stat().st_mode & 0o777,0o444)
+        self.assertEqual(ops.sha(self.worker),self.newmap['machinery/study_worker.py'])
+        self.assertTrue(ops.lock_available(self.root/'.scratch/resources/heavy.lock'))
+
+    def test_wrong_parent_checkpoint_or_destination_refuses_before_patch(self):
+        grant=copy.deepcopy(self.grant);grant['inspection_capacity_maintenance']['parent_state_sha256']='wrong';ops.write(self.authority,grant)
+        with self.assertRaisesRegex(RuntimeError,'parent checkpoint'):self.apply()
+        ops.write(self.authority,self.grant)
+        with self.assertRaisesRegex(RuntimeError,'one-time'):ops.apply_source_maintenance(self.parent,self.root/'other',self.seal)
+        self.assert_unmodified()
+
+    def test_explicit_invalid_capacity_grant_cannot_fall_through_to_old_source_migration(self):
+        for value in [None,{**self.grant['inspection_capacity_maintenance'],'authorized':False},
+            {**self.grant['inspection_capacity_maintenance'],'status':'applied'}]:
+            with self.subTest(value=value):
+                grant=copy.deepcopy(self.grant);grant['inspection_capacity_maintenance']=value;ops.write(self.authority,grant)
+                with self.assertRaisesRegex(RuntimeError,'maintenance (grant|authority)'):self.apply()
+                self.assert_unmodified()
+
+    def test_extra_source_delta_and_changed_pinned_hunk_are_rejected(self):
+        extra=self.root/'machinery/extra.py';extra.write_text('unreviewed')
+        with self.assertRaisesRegex(RuntimeError,'unreviewed source delta'):self.apply()
+        extra.unlink();name=next(iter(self.changes));target=self.root/name;target.write_bytes(target.read_bytes()+b'# changed\n')
+        with self.assertRaisesRegex(RuntimeError,'unreviewed source delta'):self.apply()
+        self.assertEqual(self.reloaded,[])
+
+    def test_existing_capacity_intent_or_destination_never_replayed(self):
+        cp=ops.read(self.opsdir/'FOLLOW.json');cp['inspection_capacity_transition']={'status':'intent'};ops.write(self.opsdir/'FOLLOW.json',cp)
+        with self.assertRaisesRegex(RuntimeError,'already consumed'):self.apply()
+        cp.pop('inspection_capacity_transition');ops.write(self.opsdir/'FOLLOW.json',cp);self.destination.mkdir()
+        with self.assertRaisesRegex(RuntimeError,'already exists'):self.apply()
+        self.assert_unmodified()
+
+    def test_partial_multi_file_replacement_preserves_uncertain_intent(self):
+        atomic=ops.atomic_protected;count=0
+        def interrupted(path,data,mode):
+            nonlocal count
+            if path!=self.authority:
+                count+=1
+                if count==2:raise OSError('fixture interruption between exact replacements')
+            return atomic(path,data,mode)
+        with patch.object(ops,'atomic_protected',side_effect=interrupted),self.assertRaisesRegex(OSError,'between exact'):
+            self.apply()
+        cp=ops.read(self.opsdir/'FOLLOW.json')
+        self.assertEqual(cp['inspection_capacity_transition']['status'],'intent')
+        self.assertEqual(cp['source_transition'],self.prior_transition)
+        self.assertEqual(ops.read(self.authority)['implementation_sha256'],self.newid)
+        with self.assertRaisesRegex(RuntimeError,'unreviewed source delta'):self.apply()
+        self.assertEqual(self.reloaded,[])
+
+    def test_reload_failure_is_uncertain_not_rolled_back_or_replayed(self):
+        with patch.object(ops,'reload_capacity_modules',side_effect=RuntimeError('fixture reload failure')),self.assertRaisesRegex(RuntimeError,'reload failure'):
+            self.apply()
+        self.assertEqual(ops.checked_implementation(self.common),self.capacity_id)
+        self.assertEqual(ops.read(self.authority)['implementation_sha256'],self.newid)
+        self.assertEqual(ops.read(self.opsdir/'FOLLOW.json')['inspection_capacity_transition']['status'],'intent')
+        with self.assertRaisesRegex(RuntimeError,'historical old parent'):self.apply()
+
+    def test_authority_interruption_keeps_new_sources_and_old_immutable_parent(self):
+        atomic=ops.atomic_protected
+        def interrupted(path,data,mode):
+            if path==self.authority:raise OSError('fixture authority replacement interruption')
+            return atomic(path,data,mode)
+        with patch.object(ops,'atomic_protected',side_effect=interrupted),self.assertRaisesRegex(OSError,'authority replacement'):
+            self.apply()
+        self.assertEqual(ops.checked_implementation(self.common),self.capacity_id)
+        self.assertEqual(ops.read(self.parent/'seal.json')['implementation'],self.newmap)
+        self.assertEqual(ops.read(self.opsdir/'FOLLOW.json')['inspection_capacity_transition']['status'],'intent')
+        with self.assertRaisesRegex(RuntimeError,'historical old parent'):self.apply()
+
+    def test_same_new_source_future_parent_needs_no_transition_or_reload(self):
+        self.apply();cp=ops.read(self.opsdir/'FOLLOW.json');grant=ops.read(self.authority)
+        result=ops.apply_source_maintenance(self.root/'.scratch/future',self.root/'.scratch/later',{'implementation':self.capacity_map})
+        self.assertIsNone(result);self.assertEqual(ops.read(self.opsdir/'FOLLOW.json'),cp)
+        self.assertEqual(ops.read(self.authority),grant);self.assertEqual(len(self.reloaded),1)
+        with self.assertRaisesRegex(RuntimeError,'historical old parent'):self.apply()
+
+    def test_prior_worker_transition_cannot_be_removed_or_relabelled(self):
+        cp=ops.read(self.opsdir/'FOLLOW.json');cp['source_transition']['actual_implementation_sha256']='wrong';ops.write(self.opsdir/'FOLLOW.json',cp)
+        with self.assertRaisesRegex(RuntimeError,'prior worker'):self.apply()
+        self.assertEqual(ops.checked_implementation(self.common),self.newid)
+
+    def test_native_owner_and_singleton_locks_still_required(self):
+        with patch.object(ops,'lock_available',return_value=True),self.assertRaisesRegex(RuntimeError,'singleton'):self.apply()
+        with patch.object(self.resources,'current_process',return_value={'identity':'other'}),self.assertRaisesRegex(RuntimeError,'native ownership'):self.apply()
+        self.assert_unmodified()
+
+    def test_round28_normal_root_open_boundary_is_required(self):
+        original=self.common.load_state(self.parent/'arms/exploration/state.json')
+        for change in [{'round':27},{'active':'uncertain'},{'active_intent':{'uncertain':True}},{'status':'stopped'},{'resolution':{'kind':'proof'}}]:
+            with self.subTest(change=change):
+                self.save_state(self.parent/'arms/exploration/state.json',{**original,**change})
+                grant=copy.deepcopy(self.grant);grant['inspection_capacity_maintenance']['parent_state_sha256']=ops.sha(self.parent/'arms/exploration/state.json');ops.write(self.authority,grant)
+                with self.assertRaisesRegex(RuntimeError,'not quiescent'):self.apply()
+                self.assert_unmodified()
+
+    def test_migrate_orders_old_verify_then_reload_then_new_freeze(self):
+        events=[]
+        def verify(parent):
+            self.assertEqual(ops.checked_implementation(self.common),self.newid);events.append('verify-parent7772')
+        def freeze(*args):
+            self.assertEqual(ops.checked_implementation(self.common),self.capacity_id)
+            self.assertEqual(self.reloaded,['all-three-new-modules'])
+            self.common.authorize_live({'fixture':True})
+            self.assertFalse(ops.lock_available(self.parent/'controller.lock'))
+            self.assertTrue(ops.lock_available(self.root/'.scratch/resources/heavy.lock'))
+            events.append('freeze-successor-capacity');raise RuntimeError('fixture actual new freeze boundary')
+        api={'common':self.common,'resources':self.resources,'study':SimpleNamespace(verify=verify,freeze=freeze)}
+        binding={'follow_sha256':ops.sha(self.opsdir/'follow.py'),'checkpoint_sha256':ops.sha(self.opsdir/'FOLLOW.json')}
+        with patch.object(ops,'api',return_value=api),patch.object(ops,'inspect_plan',return_value=({'round':28},{},{},{},None)),patch.object(ops,'parent_ready',return_value=(True,None)),patch.object(ops,'planned_copy_bytes',return_value=1),patch.object(ops,'CopyGuard'):
+            with self.assertRaisesRegex(RuntimeError,'actual new freeze'):ops.migrate(self.parent,6,destination=self.destination,caller_binding=binding,ongoing=True)
+        self.assertEqual(events,['verify-parent7772','freeze-successor-capacity'])
+        self.assertEqual(ops.read(self.parent/'seal.json')['implementation'],self.newmap)
+        self.assertEqual(ops.read(self.opsdir/'FOLLOW.json')['source_transition'],self.prior_transition)
+
+    def test_actual_reload_refreshes_the_same_module_objects_before_freeze(self):
+        # Exercise the real reload helper with mocked importlib, never live modules.
+        module_names=['machinery.proof_audit','machinery.inspection_stream','machinery.own_feedback']
+        modules={name:SimpleNamespace(__file__=str(self.root/(name.replace('.','/')+'.py')),EDGE_LIMIT=2000000,WORK_LIMIT=200000) for name in module_names}
+        seen=[];old_alias=modules[module_names[0]]
+        def reload(module):
+            seen.append(module)
+            if module is old_alias:module.EDGE_LIMIT=2000000
+            return module
+        fake=SimpleNamespace(invalidate_caches=lambda:None,import_module=lambda name:modules[name],reload=reload)
+        old_alias.EDGE_LIMIT=200000
+        with patch.object(ops,'importlib',fake):
+            self.assertEqual(self.real_reload_capacity_modules(),module_names)
+            self.assertIs(old_alias,modules[module_names[0]])
+            self.assertEqual(old_alias.EDGE_LIMIT,2000000)
+            self.assertEqual(seen,[modules[name] for name in module_names])
+            old_alias.WORK_LIMIT=200001
+            with self.assertRaisesRegex(RuntimeError,'loaded capacity bounds'):self.real_reload_capacity_modules()
+
 
 
 spec_follow=importlib.util.spec_from_file_location('ongoing_follow',Path(__file__).with_name('follow.py'))
