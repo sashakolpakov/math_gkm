@@ -271,12 +271,12 @@ frozen input and all three actual core overlays, then runs 181 controls; a new
 result is written beside the copied runner. It runs no models or Lean proofs.
 
 
-## Accepted checkpoint through round 37
+## Historical accepted checkpoint through round 37
 
-The latest checkpoint preserves 38 independently admitted results through round
-37. Its `MANIFEST.json` `current_checkpoint` selects the accepted registry,
-checked proposition DAG and every remaining residual; follow that pointer rather
-than an older snapshot. The three new records are:
+The round-37 checkpoint preserves 38 independently admitted results. The
+archive's `MANIFEST.json` `current_checkpoint` selects the latest accepted
+registry, checked proposition DAG and every remaining residual; follow that
+pointer rather than an older snapshot. The three records added at round 37 are:
 
 - `markov-summand-midpoint-separators-r0036-v1`: two exact failures of the proposed
   termwise midpoint condition, on valid vertical polygon triples for labels
@@ -354,3 +354,89 @@ baseline source sets. They are not a 38-result campaign profile, and their
 historical passing checks must not be presented as a rebuild of these new
 closures. This update preserves the complete recorded inputs and replay recipes;
 no new automated full-campaign replay is asserted.
+
+
+## Accepted checkpoint through round 38
+
+The latest checkpoint preserves **41 independently admitted results through
+round 38**. The top-level `MANIFEST.json` `current_checkpoint` indexes the exact
+accepted registry, checked DAG and every open residual. All earlier archive
+payloads retain their original bytes, including the round-37 checkpoint, its
+proof receipts, the separately recorded `ffd4aee…` activation metadata and all
+historical prepared-candidate packets. The three new exact proof directories
+are:
+
+- `markov-actual-right-cross-separator-r0038-v1`: at the actual midpoint
+  `M_3=(frame(replicate 3 true)).mid.p`, with label `(4,5)`, all three points
+  `(4,0)`, `(4,1)` and `(4,2)` belong to the original polygon. Their midpoint
+  coefficients are `[1,11,63]`; the gap
+  `G_3=M_3-U*(frame(replicate 3 true)).lo.p` has coefficients `[0,3,37]`.
+  The cross product `1*37` exceeds `11*3`, while the two individual adjacent
+  log-concavity margins are `58` and `9`. The statement also includes the same
+  strict reversal for integer zero-extended coefficients. This is a closed
+  fixed-instance theorem with no hypotheses. It refutes the proposed stronger
+  cross-state criterion, not an original Markov inequality. The additional
+  finite scan reversals are experimental evidence, not further universal
+  consequences of this fixed-instance theorem.
+- `markov-conditional-nonnegative-mixture-r0038-v1`: for arbitrary finitely
+  supported integer sequences `a,b : Z -> Z` and natural weights `alpha,beta`,
+  suppose `a(x),b(x) >= 0` at every integer `x`, each sequence satisfies
+  `a(x)*a(x+2) <= a(x+1)^2` and `b(x)*b(x+2) <= b(x+1)^2`, and both
+  `a(x)*b(x+2) <= a(x+1)*b(x+1)` and
+  `b(x)*a(x+2) <= a(x+1)*b(x+1)` hold at every integer `x`. Then
+  `alpha*a+beta*b` satisfies the adjacent log-concavity inequality at every
+  integer `x`. Finite support is part of the Lean type; no common support,
+  gap-free support, strict positivity or original polygon premise is added.
+  Zero coefficients and zero weights remain allowed. Every individual and
+  cross premise remains explicit; no actual-family consumer is proved here.
+- `markov-cross-positive-transfer-control-r0038-v1`: the fixed auxiliary
+  polynomials `A=1`, `B=U^2 V` satisfy pointwise nonnegativity and both individual
+  adjacent inequalities and both cross inequalities at every integer start in
+  each direction `(1,0)` and `(0,1)`. Negative coefficient indices are explicitly
+  zero. The weights `H=(U+V)^2`, `r=U`, `q=V` have nonnegative natural-index
+  coefficients. One step of the exact renewal update
+  `(A,B) -> ((H+r)*A+q*B, H*A+q*B)` gives an `A'` whose coefficients at
+  `(0,2)`, `(1,2)`, `(2,2)` are `[1,0,1]`, so its adjacent inequality fails.
+  This is a closed auxiliary control with no assumptions and no assertion that
+  the input belongs to the actual Markov family. It does not prove
+  nonreachability as a separate statement and supplies no original-polygon
+  counterexample.
+
+The original independent admission records contain **75 successful checks**:
+36 project compilations, 36 independent kernel replays and three complete
+premise inspections, each within its recorded 900-second admission allowance.
+The obligation closures use only `propext`, `Classical.choice` and `Quot.sound`;
+the interface and transport closures use no axioms. The separate English/Lean
+scope audit authenticated the records, original FINISHED receipts, source
+snapshot, checked targets and exported aliases. It ran no new Lean compiler,
+kernel replay, inspector, model or campaign test. This is not a fresh rebuild
+of all 41 results.
+
+All 38 previous accepted records remain unchanged. The full proposition DAG
+and remaining obligations are unchanged: all root and residual nodes remain
+open, with no new reduction or discharge. No additional unconditional Markov
+log-concavity coverage is established by these three admissions. The full
+all-path, all-three-direction Conjecture 6.3, including its original endpoints
+and raw zero coefficients, remains open. Novelty, publication correspondence,
+measured usefulness and certified researcher self-improvement are not inferred.
+
+For manual reproduction, extract the archive into a new empty directory and
+follow the current manifest's registry and hash bindings. Each of the three
+`proofs/<record-id>/` directories contains its original `FINISHED.json`,
+`REBUILD.json`, `source/` and `rebuild-pins/`; generated aliases are separately
+under `exports/`. Restore the exact Lean toolchain and dependency pins, use a
+fresh source/build workspace, and relocate only the historical source, build,
+toolchain and dependency paths in the recorded commands. Recreate the bounded
+sandbox and output directories for those new paths; preserve source bytes,
+module order, flags, isolated imports and every compile, kernel-replay and
+premise-inspection step. Generated aliases require a fresh rebuild in each new
+consumer. Original receipt and snapshot identities remain historical; do not
+rewrite them to describe a new run. Incomplete or failed checks do not establish
+a reproduced proof.
+
+The existing `repro/repro.py` baseline profiles are unchanged and are **not a
+41-result campaign profile**. The archive retains the required proof sources,
+pins, receipt bindings and recorded manual recipes; this update neither adds
+an automatic all-41 runner nor claims a fresh all-campaign rebuild. The applied
+`ffd4aee…` source transition remains distinct from every historical prepared
+packet and from the mathematical proof receipts.

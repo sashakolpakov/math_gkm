@@ -18,8 +18,8 @@ from empirical research usefulness. This is an operator-engineered revision, not
 a certified Goedel self-improvement. The dated launch records preserve its tests,
 review, clean-seed comparison and actual activation status.
 
-**Clean-seed concept campaign, through round 35 on 21 October 2026:** 35
-independently admitted results. All three original weak log-concavity directions
+**Clean-seed concept campaign, through round 38 (checked 21 October 2026 UTC):**
+41 independently admitted results. All three original weak log-concavity directions
 are now proved for every constant-left path of length `k >= 0`, with midpoint
 label `(1, k + 2)`, at every index satisfying the original polygon conditions.
 The coefficients remain raw integers, including zeros; the proof uses the
@@ -63,6 +63,26 @@ open hypotheses of the
 reduction, not newly proved inequalities. The admitted constant-right theorem
 supplies the all-`true` diagonal cases. The new residual, previous residuals and
 root remain open. **Full Conjecture 6.3 remains open**.
+
+Rounds 36–37 added exact separators to a stronger termwise midpoint criterion,
+universal constant-right raw-coefficient recovery and a generic marginalization
+theorem with explicit pointwise compatibility premises. These results supply no
+new unconditional Markov log-concavity inequality.
+
+Round 38 adds three independently admitted statements. At the actual
+constant-right state with label `(4,5)`, the vertical triple `(4,0..2)` has
+midpoint coefficients `[1,11,63]` and gap coefficients `[0,3,37]`. The proposed
+cross-state condition fails because `37 > 33`, while the individual raw
+log-concavity margins are `58` and `9`. A general conditional theorem proves
+that nonnegative finitely supported integer sequences with individual adjacent
+log-concavity and both cross-product inequalities retain log-concavity under
+any nonnegative natural constant mixture. A separate auxiliary input
+`A=1, B=U^2 V` satisfies those coordinate conditions, yet the specified positive
+transfer produces coefficients `[1,0,1]`. It has no actual-family reachability
+assertion. These results reject two stronger preservation criteria; they are
+not counterexamples to the original conjecture and add no unconditional Markov
+log-concavity coverage. All root and residual obligations remain open. See the
+[exact scopes and reproduction limits](repro/README.md#accepted-checkpoint-through-round-38).
 
 The [canonical accepted checkpoint](evidence/accepted-checkpoint-20261020.tar.gz)
 preserves original proof sources, checked receipts, dependency pins and separately
