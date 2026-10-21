@@ -18,7 +18,7 @@ from empirical research usefulness. This is an operator-engineered revision, not
 a certified Goedel self-improvement. The dated launch records preserve its tests,
 review, clean-seed comparison and actual activation status.
 
-**Clean-seed concept campaign, through round 31 on 21 October 2026:** 31
+**Clean-seed concept campaign, through round 32 on 21 October 2026:** 33
 independently admitted results. All three original weak log-concavity directions
 are now proved for every constant-left path of length `k >= 0`, with midpoint
 label `(1, k + 2)`, at every index satisfying the original polygon conditions.
@@ -32,9 +32,19 @@ Two new universal structural bundles cover every constant-right path of length
 `M_k` and `T = U + V`, they prove the recurrence
 `M_(k+2) = T(T+1) M_(k+1) - UV M_k`, exact coefficient-array recovery and
 coefficient nonnegativity, and a homogeneous substitution giving every
-total-degree layer. These bundles add no log-concavity inequality, arbitrary-path
-result or discharge of the remaining root obligations. **Full Conjecture 6.3
-remains open**.
+total-degree layer. These structural bundles establish no additional
+log-concavity inequality.
+
+Round 32 adds two independently admitted lemmas. For all natural `1 <= h <= n`,
+the sequence `binom(h+s,h) binom(n-s-1,h-1)` on `0 <= s <= n-h`, extended by
+zero outside that interval, is nonnegative, has no internal zeros and is
+log-concave. The second lemma is general: if the degree-`m` layer of an integer
+bivariate polynomial is `(U+V)^b R`, where `m=b+r`, `R` is homogeneous of degree
+`r`, and the coefficients of `R(U,1)` are nonnegative, have no internal zeros
+and are log-concave, then that layer satisfies the antidiagonal log-concavity
+inequalities. These results have not yet been composed into an additional
+actual-Markov-family theorem or used to discharge either remaining root
+obligation. **Full Conjecture 6.3 remains open**.
 
 The [canonical accepted checkpoint](evidence/accepted-checkpoint-20261020.tar.gz)
 preserves original proof sources, checked receipts, dependency pins and separately

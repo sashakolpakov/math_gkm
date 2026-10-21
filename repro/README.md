@@ -135,10 +135,11 @@ inactive engineering candidate under
 `prepared-candidates/catalogue-capacity-d540901eb08bfea0662128227c98da282d5637d323e3088e1994674b903cc02b/`.
 Its `PACKET.json` and original `SOURCE_BINDING.json` bind the prospective
 `590648…` → `5aca2555…` source change and exact reproduction inputs. This packet
-is preparation evidence, not an applied source transition. The current accepted
-31-record proof checkpoint, its open root/DAG and all original proof receipts
-retain their existing source provenance. No fresh mathematical validation or
-certified researcher self-change is asserted.
+is preparation evidence, not an applied source transition. It does not change
+the accepted proof checkpoint, its open root/DAG or the source provenance of
+original proof receipts. The packet asserts no fresh mathematical validation or
+certified researcher self-change. Later admitted proofs are recorded separately
+by the top-level manifest's current checkpoint.
 
 Run these commands from this repository using a new empty extraction directory:
 
