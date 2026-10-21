@@ -181,12 +181,13 @@ and run that copy from repository root; it writes its new summary beside the
 copied script.
 
 
-## Current accepted checkpoint and combined candidate
+## Historical round-35 checkpoint and combined candidate
 
-The canonical accepted archive now preserves 35 independently admitted results,
-through round 35. Its top-level `MANIFEST.json` points to the immutable accepted
-registry, checked DAG and open residuals. Older snapshots, proof sources, original
-FINISHED receipts, pins and generated exports retain their original bytes. The
+The historical round-35 checkpoint preserves 35 independently admitted results.
+The top-level `MANIFEST.json` uses `current_checkpoint` to select the latest
+immutable accepted registry, checked DAG and open residuals. Older snapshots,
+proof sources, original FINISHED receipts, pins and generated exports retain
+their original bytes. The
 round-34 result is the original antidiagonal inequality for every constant-right
 Markov path, under the three original polygon-membership premises. Round 35 adds
 only a checked implication from a new residual to the previous true-path
@@ -213,8 +214,8 @@ unchanged. Both combined runs passed 163 existing capacity/operations controls
 and 15 diagnostic controls with all three actual source overlays. These are
 neutral Python fixtures, not Lean proofs, a deployment or an activated change.
 
-The installed implementation recorded by this checkpoint remains `590648…`.
-The new packet describes prospective implementation `ffd4aee…`; the older
+The implementation recorded by that historical checkpoint is `590648…`.
+That prepared packet describes prospective implementation `ffd4aee…`; the older
 `5aca2555…` packet above remains separately preserved and inactive. The new hook
 still requires genuine old-source verification and the exact normal
 successor-7/round-36 boundary before a fresh successor 8. It supplies no authority,
@@ -257,9 +258,10 @@ fixture data was allocated. The source target `ffd4aee…` and all other resourc
 
 This packet records prepared engineering evidence only. Core source activation
 and fresh deployment are separate operations; neither is established by these
-Python fixtures or this backup. All 35 accepted proof records, their snapshots
-and the earlier `e15…` combined packet retain their original bytes and status.
-The archive's current proof/source checkpoint is unchanged.
+Python fixtures or this backup. At this packet's preservation step, all 35
+accepted proof records, their snapshots and the earlier `e15…` combined packet
+retained their original bytes and status. The then-current proof/source
+checkpoint was unchanged.
 
 For pure reproduction, use the preserved 590648 repository context and a fresh
 disposable extraction, as in the combined-packet instructions above. Run
@@ -267,3 +269,88 @@ disposable extraction, as in the combined-packet instructions above. Run
 from repository root. Keep the runner inside its packet. It verifies every
 frozen input and all three actual core overlays, then runs 181 controls; a new
 result is written beside the copied runner. It runs no models or Lean proofs.
+
+
+## Accepted checkpoint through round 37
+
+The latest checkpoint preserves 38 independently admitted results through round
+37. Its `MANIFEST.json` `current_checkpoint` selects the accepted registry,
+checked proposition DAG and every remaining residual; follow that pointer rather
+than an older snapshot. The three new records are:
+
+- `markov-summand-midpoint-separators-r0036-v1`: two exact failures of the proposed
+  termwise midpoint condition, on valid vertical polygon triples for labels
+  `(5,6)` and `(8,9)`. The reversed summand products are `48 > 40` and
+  `5040 > 4704`, while the complete coefficient triples `(1,14,117)` and
+  `(8,154,1590)` have positive raw log-concavity margins `79` and `10996`.
+  These separate a stronger sufficient condition from the original inequality;
+  they are not counterexamples to Markov log-concavity.
+- `markov-right-summand-raw-recovery-r0036-v1`: for every natural `n >= 1` and
+  every natural `i,j`, the actual midpoint polynomial for
+  `frame(replicate (n-1) true)`, labeled `(n,n+1)`, has coefficient
+  `sum_{s=0}^n W_n(i,j,s)`. There is no polygon-membership or positivity premise.
+  The weight is zero unless `n <= i+j <= 2*n` and `s <= i`. When these guards hold it is
+  `mc(n,i+j-n,s) * binom(2*(i+j-n),i-s)`. The `h=0` corner convention is
+  `mc(n,0,s)=1` exactly when `s=n`, and zero otherwise. Natural-subtraction
+  guards, the corner, outside-support zeros and raw integer coefficients are
+  retained. This is a coefficient identity, not a new directional inequality.
+- `markov-generic-midpoint-marginalization-r0037-v1`: for arbitrary finitely
+  supported functions `f,g,b : Z -> Z`, assume all three functions are
+  nonnegative at every integer and, for every integer `s,t`,
+  `f(s)*g(t) <= b(floor((s+t)/2))*b(ceil((s+t)/2))`. Then
+  `(sum f)*(sum g) <= (sum b)^2`. Finite support is part of the Lean function
+  type; no positivity of masses, interval-support or log-concavity hypothesis
+  is hidden. `Compatible` contains only the stated pointwise premises, not the
+  conclusion. The proof derives fixed-sum interval domination and convolution
+  domination before finite-sum reindexing. This is a one-dimensional,
+  integer-valued theorem, conditional on compatibility. The checked separators
+  prevent using the rejected universal termwise premise to obtain unconditional
+  Markov coordinate inequalities by this route.
+
+The original independent admission records contain 91 successful checks:
+44 project compilations, 44 independent kernel replays and three premise
+inspections. Their obligation closures use only `propext`, `Classical.choice`
+and `Quot.sound`. The later preservation audit checked hashes, exact statements,
+FINISHED reuse and English/Lean scope; it did not freshly rebuild the entire
+campaign. Generated exports remain separately hash-bound aliases of checked
+compositions and require a fresh rebuild in every new consumer.
+
+All 35 previous mathematical records remain unchanged except the explicitly
+recorded validator-directory relocation into the new continuation. No new
+reduction or discharge was submitted with these three results. The proposition
+DAG is unchanged; all residuals and the full all-path, all-three-direction
+conjecture, including its original endpoints and raw zero coefficients, remain
+open. No new universal horizontal or vertical Markov
+inequality, mixed-path theorem, root refutation, publication correspondence or
+novelty claim is established here.
+
+This checkpoint records the actually used `ffd4aee9df33c2b3503a3ec1833e95ad5da29949394a2558c23ec01f6efffbdf`
+implementation. Its complete 76-file source map is
+`reviewed-source/patches/ffd4aee9df33c2b3503a3ec1833e95ad5da29949394a2558c23ec01f6efffbdf/SOURCE_BINDING.json`
+inside the archive. The top-level `catalogue_feedback_source_transition`
+references this source binding and its separate
+`reviewed-source/patches/ffd4aee9df33c2b3503a3ec1833e95ad5da29949394a2558c23ec01f6efffbdf/evidence/ACTIVATION.summary.json`.
+This records the reviewed engineering activation and neutral deployment
+separately from all preserved prepared-candidate packets. Those packets retain their historical
+status and original bytes; their pure tests do not establish activation, a
+mathematical theorem or a certified arbitrary researcher self-change. Earlier
+proofs keep their original implementation, receipt and dependency identities.
+
+For the new proof closures, extract the archive into an absent or new empty
+directory. The original inputs and commands are under each
+`proofs/<record-id>/REBUILD.json`, with exact `FINISHED.json`, `source/` and
+`rebuild-pins/` companions; generated aliases are separately under `exports/`.
+The three record IDs above are the exact proof-directory names. Follow the
+current manifest's hashes and registry bindings before using a bundle. Restore
+the recorded Lean/toolchain and dependency pins, copy sources into a fresh
+workspace, and relocate only the historical source/build/toolchain/dependency paths in
+the recorded commands, recreating the sandbox and output working directories
+for those new paths. Preserve module order, flags, compile/replay/inspection
+steps and import isolation; original source bytes and evidence must not be
+rewritten. A failed or incomplete rebuild is not an accepted reproduction.
+
+The existing `repro/repro.py` profiles described above reproduce their pinned
+baseline source sets. They are not a 38-result campaign profile, and their
+historical passing checks must not be presented as a rebuild of these new
+closures. This update preserves the complete recorded inputs and replay recipes;
+no new automated full-campaign replay is asserted.
