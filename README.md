@@ -18,6 +18,20 @@ from empirical research usefulness. This is an operator-engineered revision, not
 a certified Goedel self-improvement. The dated launch records preserve its tests,
 review, clean-seed comparison and actual activation status.
 
+**Clean-seed concept campaign, through round 28 on 21 October 2026:** 26
+independently admitted results. Its latest additions are a formal renewal-series
+identity for arbitrary fixed-branch runs, an exact coefficient formula at every
+index for the constant-left family, and a control showing that nonnegative
+transfer weights alone do not ensure log-concavity. These are identities and a
+negative control; **full Conjecture 6.3 remains open**.
+
+The [canonical accepted checkpoint](evidence/accepted-checkpoint-20261020.tar.gz)
+preserves original proof sources, checked receipts, dependency pins and separately
+bound exported declarations. Its top-level `MANIFEST.json` identifies the latest
+accepted registry and checked proposition DAG through `current_checkpoint`;
+earlier snapshot payloads retain their original bytes and provenance. The V3 and
+older campaign results below have their own dated scope.
+
 ## Blended strategy V3
 
 The latest fresh Lean verification covers every polynomial in the numerator-one
