@@ -474,13 +474,14 @@ class MaintenanceFixtures(unittest.TestCase):
         self.stack=contextlib.ExitStack();self.addCleanup(self.stack.close)
         self.stack.enter_context(patch.multiple(ops,ROOT=self.root,OPS=self.opsdir,INITIAL_PARENT=self.original,SOURCE_ARCHIVE=self.archive,
             MAINTENANCE_PARENT=self.parent,MAINTENANCE_DESTINATION=self.destination,EXPECTED_IMPL=self.oldid,NEW_IMPL=self.newid,
-            OLD_WORKER=self.oldmap['machinery/study_worker.py'],NEW_WORKER=self.newmap['machinery/study_worker.py'],CAPACITY_CHANGES={}))
+            OLD_WORKER=self.oldmap['machinery/study_worker.py'],NEW_WORKER=self.newmap['machinery/study_worker.py'],CAPACITY_CHANGES={},REQUEST_CONTEXT_FILES={}))
         self.stack.enter_context(patch.object(ops,'api',return_value={'common':self.common,'resources':self.resources}))
         self.stack.enter_context(patch.object(ops,'DEADLINE',None))
         self.stack.enter_context(patch.object(ops,'COPY_GUARD',None))
         import fcntl
+        self.singleton_streams=[]
         for path in (self.opsdir/'FOLLOW.lock',self.opsdir/'operator.lock'):
-            stream=self.stack.enter_context(path.open('rb'));fcntl.flock(stream,fcntl.LOCK_EX|fcntl.LOCK_NB)
+            stream=self.stack.enter_context(path.open('rb'));fcntl.flock(stream,fcntl.LOCK_EX|fcntl.LOCK_NB);self.singleton_streams.append(stream)
 
     def test_exact_one_file_transition_preserves_old_parent_and_authority_mode(self):
         old_parent={str(p.relative_to(self.parent)):ops.sha(p) for p in self.parent.rglob('*') if p.is_file()}
@@ -760,6 +761,176 @@ class CapacityMaintenanceFixtures(unittest.TestCase):
 
 
 
+class RequestContextRevisionFixtures(unittest.TestCase):
+    extra_sources={**CapacityMaintenanceFixtures.extra_sources,
+        'machinery/study.py':b'old study fixture\n','machinery/study_policy.py':b'old policy fixture\n'}
+
+    def setUp(self):
+        import fcntl,hashlib
+        CapacityMaintenanceFixtures.setUp(self)
+        CapacityMaintenanceFixtures.apply(self)
+        for stream in self.singleton_streams:fcntl.flock(stream,fcntl.LOCK_UN)
+        self.study=self.destination;self.study.mkdir(parents=True)
+        self.context_map=dict(self.capacity_map);changes={}
+        for name in ['machinery/study.py','machinery/study_policy.py','machinery/study_worker.py','machinery/study_context.py']:
+            target=self.root/name;raw=('new context fixture '+name+'\n').encode();before=self.context_map.get(name)
+            target.write_bytes(raw);self.context_map[name]=hashlib.sha256(raw).hexdigest();changes[name]=(before,self.context_map[name])
+        self.context_id=ops.digest(self.context_map)
+        self.stack.enter_context(patch.multiple(ops,REQUEST_CONTEXT_STUDY=self.study,REQUEST_CONTEXT_IMPL=self.context_id,REQUEST_CONTEXT_FILES=changes))
+        old_receipt=self.study/'old-deployment/receipt.json';ops.write(old_receipt,{'ready':True,'implementation':self.capacity_id})
+        self.old_deployment={'ready':True,'implementation':self.capacity_id,'receipt':str(old_receipt),'receipt_sha256':ops.sha(old_receipt)}
+        self.seal={'implementation':self.capacity_map,'deployment_preflight':self.old_deployment,'protocol':'same'}
+        ops.write(self.study/'seal.json',self.seal);ops.write(self.study/'protocol.json',{'rounds':32,'proposal_repairs':1})
+        ops.write(self.study/'seed/contract.json',{'fixture':True})
+        for name in ['CONTINUATION_PROVENANCE.json','MIGRATION_FINISHED.json','MIGRATION_INITIAL_STATE.json']:ops.write(self.study/name,{'historical':name})
+        self.job=self.study/'arms/exploration/jobs/plan-0030';self.job.mkdir(parents=True)
+        self.receipt={'role':'proposer','outcome':'invalid_report: missing final','returncode':1,'payload':None,
+            'before':{'retained':'same'},'after':{'retained':'same'},'resources':{'owned_identities':{'222':'fixture-child'}}}
+        ops.write(self.job/'receipt.json',self.receipt);ops.write(self.job/'request.json',{'role':'proposer','request_id':'plan-0030'})
+        ops.write(self.job/'spec.json',{'seconds':1800,'role':'proposer','readonly':True})
+        self.prompt_chars=1048577;(self.job/'prompt.txt').write_text('x'*self.prompt_chars)
+        (self.job/'events.jsonl').write_text('{"type":"thread.started"}\n')
+        (self.job/'stderr.log').write_text('Error: rejected, data: '+ops.canonical({'input_error_code':'input_too_large','max_chars':1048576,'actual_chars':self.prompt_chars})+'\n')
+        self.exploration={'round':30,'phase':'research','status':'running','active':None,'active_intent':None,'resolution':None,
+            'calls':7,'meta_calls':5,'seconds':95400.,'failures':1,'policy_trials':0,'research':{'knowledge':{'retained':'same'}},
+            'receipts':[str(self.job)],'receipt_hashes':{str(self.job):ops.digest(self.receipt)},'counted_jobs':['plan-0030'],
+            'reservations':{'call-plan-0030':1800},'budget_pools':{'episode-research-30':{'spent':1800,'cap':18000}},'seal_hash':ops.digest(self.seal)}
+        self.baseline={'round':0,'phase':'research','status':'ready','active':None,'active_intent':None,'research':{'baseline':'unchanged'},
+            'calls':0,'meta_calls':0,'seconds':0.,'resolution':None,'seal_hash':ops.digest(self.seal)}
+        for mode,state in [('baseline',self.baseline),('exploration',self.exploration)]:self.save_state(self.study/'arms'/mode/'state.json',state)
+        (self.study/'controller.lock').write_text('')
+        self.witness=self.root/'old-verification.json';self.supplement=self.root/'baseline-supplement.json'
+        ops.write(self.witness,{'schema':'math-gkm.request-context-reconciliation-start.v1','genuine_old_study_verify_passed':True,
+            'verified_old_implementation':self.capacity_id,'study':str(self.study),'old_seal_sha256':ops.sha(self.study/'seal.json'),
+            'old_state_sha256':ops.sha(self.study/'arms/exploration/state.json'),'old_protocol_sha256':ops.sha(self.study/'protocol.json')})
+        ops.write(self.supplement,{'baseline_seal_binding_matches':True,'old_seal_sha256':ops.sha(self.study/'seal.json'),
+            'baseline_state_sha256':ops.sha(self.study/'arms/baseline/state.json'),'old_verification_witness_sha256':ops.sha(self.witness)})
+        self.original_authority=self.root/'original-authorization.json';self.original_authority.write_bytes(self.authority.read_bytes())
+        grant=ops.read(self.authority);grant.update(implementation_sha256=self.context_id,request_context_maintenance={
+            'authorized':True,'reviewer':'independent fixture','study':str(self.study),'old_implementation_sha256':self.capacity_id,
+            'implementation_sha256':self.context_id,'old_verification_path':str(self.witness),'old_verification_sha256':ops.sha(self.witness),
+            'old_authorization_path':str(self.original_authority),'old_authorization_sha256':ops.sha(self.original_authority),
+            'baseline_observation_path':str(self.supplement),'baseline_observation_sha256':ops.sha(self.supplement),'native_cleanup_verified':True,
+            'native_owners':{'111':'fixture-old-owner'}})
+        ops.write(self.authority,grant);self.authority.chmod(0o444)
+        self.deployment={'ready':True,'implementation':self.context_id,'receipt':'new official fixture preflight'};self.deployment_checks=[]
+        from machinery.study_context import recovery_projection
+        def deployment(value):
+            self.deployment_checks.append(value)
+            if value.get('implementation')!=self.context_id:raise RuntimeError('historical deployment source mismatch')
+        self.stack.enter_context(patch.object(ops,'request_context_api',return_value={'projection':recovery_projection,'verify_deployment':deployment}))
+        self.resources.process_status=lambda pid:None
+        def verify(study):
+            seal=ops.read(study/'seal.json');self.assertEqual(seal['implementation'],self.context_map)
+            for mode in ('baseline','exploration'):self.assertEqual(self.common.load_state(study/'arms'/mode/'state.json')['seal_hash'],ops.digest(seal))
+        self.stack.enter_context(patch.object(ops,'api',return_value={'common':self.common,'resources':self.resources,'study':SimpleNamespace(verify=verify)}))
+        self.original={str(p.relative_to(self.study)):p.read_bytes() for p in self.study.rglob('*') if p.is_file()}
+
+    def apply(self):return ops.rebind_request_context(self.deployment)
+
+    def assert_state_preserved(self):
+        for mode,before in [('baseline',self.baseline),('exploration',self.exploration)]:
+            after=self.common.load_state(self.study/'arms'/mode/'state.json')
+            self.assertEqual({k:v for k,v in after.items() if k!='seal_hash'},{k:v for k,v in before.items() if k!='seal_hash'})
+        self.assertEqual(ops.read(self.job/'receipt.json'),self.receipt)
+        for name in ['CONTINUATION_PROVENANCE.json','MIGRATION_FINISHED.json','MIGRATION_INITIAL_STATE.json']:
+            self.assertEqual((self.study/name).read_bytes(),self.original[name])
+
+    def test_versioned_rebind_preserves_both_arms_and_original_receipt_accounting(self):
+        result=self.apply();self.assertEqual(result['status'],'applied');self.assert_state_preserved()
+        record=ops.read(self.opsdir/'REQUEST_CONTEXT_REVISION.json');self.assertEqual(record['classification'],'closed_input_too_large_no_model')
+        self.assertEqual(record['next_request_id'],'plan-0030-repair-1');self.assertEqual(record['revision_core']['old_deployment'],self.old_deployment)
+        self.assertEqual(ops.read(self.authority)['operational_recovery']['sha256'],ops.sha(self.opsdir/'REQUEST_CONTEXT_REVISION.json'))
+        self.assertEqual((self.opsdir/'REQUEST_CONTEXT_REVISION.json').stat().st_mode & 0o777,0o444)
+        import base64
+        self.assertEqual(base64.b64decode(record['archived_original_authorization']),self.original_authority.read_bytes())
+        for name,row in record['archived_files'].items():self.assertEqual(base64.b64decode(row['old_bytes_base64']),self.original[name])
+        with self.assertRaisesRegex(RuntimeError,'already started'):self.apply()
+        with self.assertRaisesRegex(RuntimeError,'no exact incomplete'):ops.finish_request_context_rebind()
+
+    def test_valid_historical_deployment_cannot_replace_fresh_identity_check(self):
+        with self.assertRaisesRegex(RuntimeError,'historical deployment'):ops.rebind_request_context(self.old_deployment)
+        self.assertFalse((self.opsdir/'REQUEST_CONTEXT_REVISION.json').exists());self.assert_state_preserved()
+
+    def test_wrong_old_witness_or_baseline_rejects_before_any_install(self):
+        self.witness.write_text('{}')
+        with self.assertRaisesRegex(RuntimeError,'old verification'):self.apply()
+        self.assertEqual((self.study/'seal.json').read_bytes(),self.original['seal.json'])
+
+    def test_live_owned_process_or_user_stop_blocks_revision(self):
+        with patch.object(self.resources,'process_status',return_value={'identity':'fixture-old-owner'}),self.assertRaisesRegex(RuntimeError,'owner remains'):self.apply()
+        ops.write(self.study/'STOP.json',{'user':True})
+        with self.assertRaisesRegex(RuntimeError,'provider rejection'):self.apply()
+        self.assertFalse((self.opsdir/'REQUEST_CONTEXT_REVISION.json').exists())
+
+    def test_provider_stream_must_prove_no_model_started(self):
+        (self.job/'events.jsonl').write_text('{"type":"turn.started"}\n')
+        with self.assertRaisesRegex(RuntimeError,'provider rejection'):self.apply()
+        self.assertFalse((self.opsdir/'REQUEST_CONTEXT_REVISION.json').exists())
+
+    def partial_install(self):
+        atomic=ops.atomic_protected
+        def interrupted(path,data,mode):
+            if path==self.study/'arms/exploration/state.json':raise OSError('fixture three-file interruption')
+            return atomic(path,data,mode)
+        with patch.object(ops,'atomic_protected',side_effect=interrupted),self.assertRaisesRegex(OSError,'three-file'):self.apply()
+        self.assertEqual(ops.read(self.opsdir/'FOLLOW.json')['request_context_revision']['status'],'install_intent')
+
+    def test_explicit_finish_completes_known_partial_three_file_transaction_only(self):
+        self.partial_install();checks=len(self.deployment_checks)
+        with self.assertRaisesRegex(RuntimeError,'already started'):self.apply()
+        result=ops.finish_request_context_rebind();self.assertEqual(result['status'],'applied');self.assert_state_preserved()
+        self.assertEqual(len(self.deployment_checks),checks+1) # metadata admission only; no new preflight/compiler
+
+    def test_explicit_finish_survives_ephemeral_witness_cleanup(self):
+        self.partial_install();self.witness.unlink();self.supplement.unlink();self.original_authority.unlink()
+        self.assertEqual(ops.finish_request_context_rebind()['status'],'applied');self.assert_state_preserved()
+
+    def test_unknown_partial_state_bytes_refuse_without_rollback(self):
+        self.partial_install();(self.study/'arms/exploration/state.json').write_text('unknown bytes')
+        with self.assertRaisesRegex(RuntimeError,'uncertain seal/state'):ops.finish_request_context_rebind()
+        self.assertEqual((self.study/'arms/exploration/state.json').read_text(),'unknown bytes')
+
+    def test_authority_change_during_partial_install_requires_explicit_reconciliation(self):
+        self.partial_install();grant=ops.read(self.authority);grant['unexpected']='change';ops.write(self.authority,grant)
+        with self.assertRaisesRegex(RuntimeError,'authority changed'):ops.finish_request_context_rebind()
+
+    def test_archive_mutation_during_partial_install_is_not_accepted(self):
+        self.partial_install();p=self.opsdir/'REQUEST_CONTEXT_REVISION.json';p.chmod(0o644);p.write_bytes(p.read_bytes()+b' ')
+        with self.assertRaisesRegex(RuntimeError,'no exact incomplete'):ops.finish_request_context_rebind()
+
+    def test_future_same_source_migration_recognizes_applied_revision(self):
+        self.apply();seal=ops.read(self.study/'seal.json')
+        self.assertIsNone(ops.apply_source_maintenance(self.root/'future',self.root/'later',seal))
+        (self.root/'machinery/unreviewed.py').write_text('extra')
+        with self.assertRaisesRegex(RuntimeError,'unreviewed source delta'):ops.checked_implementation(self.common)
+
+
+class OwnContextHistoryFixtures(unittest.TestCase):
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory(prefix='gkm-own-context-copy-');self.addCleanup(self.temp.cleanup)
+        self.root=Path(self.temp.name);self.source=self.root/'history';self.destination=self.root/'copied';self.source.mkdir()
+    def context(self,role='proposer'):
+        import hashlib
+        raw=ops.revision_bytes({'role':role,'knowledge':{'unchanged':'full context'}});name=hashlib.sha256(raw).hexdigest()+'.json'
+        target=self.source/'context'/name;target.parent.mkdir(exist_ok=True);target.write_bytes(raw);return target
+    def test_exact_own_context_is_copied_read_only_without_changing_bytes(self):
+        p=self.context();ops.copy_history(self.source,self.destination);q=self.destination/'context'/p.name
+        self.assertEqual(q.read_bytes(),p.read_bytes());self.assertEqual(q.stat().st_mode & 0o777,0o444)
+    def test_private_role_or_filename_hash_mutation_is_rejected(self):
+        p=self.context('adapter')
+        with self.assertRaisesRegex(RuntimeError,'own context'):ops.copy_history(self.source,self.destination)
+        p.unlink();p=self.context();p.write_bytes(p.read_bytes()+b' ')
+        with self.assertRaisesRegex(RuntimeError,'own context'):ops.copy_history(self.source,self.destination)
+    def test_nonhash_filename_or_nested_alias_is_rejected(self):
+        p=self.context();p.rename(p.with_name('wrong.json'))
+        with self.assertRaisesRegex(RuntimeError,'own context'):ops.copy_history(self.source,self.destination)
+    def test_context_individual_eight_megabyte_limit_is_unchanged(self):
+        p=self.context()
+        with p.open('wb') as stream:stream.truncate(8*1024**2+1)
+        with self.assertRaisesRegex(RuntimeError,'own context'):ops.copy_history(self.source,self.destination)
+
+
 spec_follow=importlib.util.spec_from_file_location('ongoing_follow',Path(__file__).with_name('follow.py'))
 follow=importlib.util.module_from_spec(spec_follow);spec_follow.loader.exec_module(follow)
 
@@ -875,5 +1046,116 @@ class FollowFixtures(unittest.TestCase):
         with patch.object(follow,'OPS',self.root),patch.object(follow,'CHECKPOINT',self.root/'FOLLOW.json'),             patch.object(follow,'STOPPED',True),patch.object(follow.ops,'migrate') as migrate:
             with self.assertRaisesRegex(RuntimeError,'signal'):follow.controls()
             migrate.assert_not_called()
+
+
+class CurrentResumeFixtures(unittest.TestCase):
+    def setUp(self):
+        from contextlib import ExitStack
+        import time
+        self.temp=tempfile.TemporaryDirectory(prefix='math-gkm-current-resume-only-');self.addCleanup(self.temp.cleanup)
+        self.root=Path(self.temp.name).resolve();self.opsdir=self.root/'ops';self.opsdir.mkdir()
+        self.study=self.root/'.scratch/concept-driver-20261020-follow-000006'
+        self.current={'round':30,'phase':'research','status':'running','resolution':None,'active':None,'active_intent':None,
+            'seconds':95400,'calls':7,'meta_calls':5,'budget_pools':{'fixture':{'cap':75600,'spent':0}},'receipts':[]}
+        self.protocol={'rounds':32,'arm_seconds':180000,'max_calls':64,'meta_calls':32}
+        ops.write(self.study/'arms/exploration/state.json',{'state':self.current})
+        (self.study/'arms/exploration/jobs').mkdir();(self.study/'controller.lock').touch()
+        ops.write(self.study/'protocol.json',self.protocol);ops.write(self.study/'seal.json',{'source':'fixture'})
+        ops.write(self.opsdir/'REQUEST_CONTEXT_REVISION.json',{'fixture':'version record'})
+        self.owner={'study':str(self.root/'.scratch/original-parent'),'controller_pid':100,'controller_birth':'old'}
+        now=time.time();self.grant={'authorized':True,'reviewer':'independent operations fixture','study':str(self.study),
+            'current_sequence':6,'next_sequence':7,'revision_sha256':ops.sha(self.opsdir/'REQUEST_CONTEXT_REVISION.json'),
+            'seal_sha256':ops.sha(self.study/'seal.json'),'protocol_sha256':ops.sha(self.study/'protocol.json'),
+            'state_sha256':ops.sha(self.study/'arms/exploration/state.json'),'native_cleanup_verified':True,
+            'native_owners':{'123':'old-birth'},'authorized_at':now,'deadline_wall':now+170800}
+        self.authorization={'ongoing_initial':self.owner,'ongoing_current_resume':self.grant,
+            'operational_recovery':{'path':str(self.opsdir/'REQUEST_CONTEXT_REVISION.json'),'sha256':self.grant['revision_sha256']}}
+        self.state={'phase':'ready_to_resume_current','current_study':str(self.study),'next_sequence':6,
+            'initial_owner':self.owner,'operator_pid':None,'caffeinate_pid':None,'current_resume':self.grant,
+            'request_context_revision':{'status':'applied','record_sha256':self.grant['revision_sha256']},
+            'helper_sha256':ops.sha(follow.ops.__file__),'follow_sha256':ops.sha(follow.__file__)}
+        self.stack=ExitStack();self.addCleanup(self.stack.close)
+        api={'common':SimpleNamespace(load_state=lambda path:ops.read(path)['state']),
+            'study':SimpleNamespace(verify=lambda path:None),
+            'resources':SimpleNamespace(current_process=lambda pid:{'identity':'fixture-operator'})}
+        for obj,key,value in [(follow,'ROOT',self.root),(follow,'OPS',self.opsdir),(follow,'CHECKPOINT',self.opsdir/'FOLLOW.json'),
+            (follow.ops,'OPS',self.opsdir),(follow.ops,'ROOT',self.root),(follow.ops,'REQUEST_CONTEXT_STUDY',self.study)]:
+            self.stack.enter_context(patch.object(obj,key,value))
+        for obj,key,value in [(follow,'controls',None),(follow.ops,'immutable_bindings',None),
+            (follow.ops,'authorize_ongoing',self.authorization),(follow.ops,'api',api),(follow.ops,'lock_available',True),
+            (follow,'live_identity',False),(follow.ops,'start_keep_awake',None),(follow.ops,'close_keep_awake',None)]:
+            self.stack.enter_context(patch.object(obj,key,return_value=value))
+        ops.write(follow.CHECKPOINT,self.state)
+
+    def test_remaining_wall_includes_funded_unspent_not_only_unfunded(self):
+        self.assertEqual(follow.remaining_wall(self.protocol,self.current),170800)
+        self.assertEqual(self.current['seconds'],95400)
+
+    def test_exact_ready_revision_authorizes_only_remaining_wall(self):
+        import time
+        deadline=follow.resume_current(self.study,self.state)
+        self.assertLessEqual(deadline-time.monotonic(),170800)
+        self.assertGreater(deadline-time.monotonic(),170790)
+
+    def test_wrong_revision_source_state_or_sequence_refuses_before_spawn(self):
+        for target,key,value in [(self.grant,'state_sha256','wrong'),(self.grant,'revision_sha256','wrong'),
+            (self.state,'next_sequence',7),(self.state['request_context_revision'],'status','install_intent')]:
+            old=target[key];target[key]=value
+            try:
+                with self.subTest(key=key),self.assertRaises(RuntimeError),patch.object(follow.subprocess,'Popen') as spawn:
+                    follow.resume_current(self.study,self.state)
+                spawn.assert_not_called()
+            finally:target[key]=old
+
+    def test_fixed_deadline_cannot_be_refreshed_or_exceed_accounted_allowance(self):
+        import time
+        for end in (time.time()-1,self.grant['authorized_at']+170801):
+            self.grant['deadline_wall']=end
+            with self.subTest(end=end),self.assertRaisesRegex(RuntimeError,'remaining wall'):
+                follow.resume_current(self.study,self.state)
+
+    def test_user_stop_and_live_historical_owner_block_resume(self):
+        ops.write(self.study/'STOP.json',{'source':'user'})
+        with self.assertRaisesRegex(RuntimeError,'stopped'):follow.resume_current(self.study,self.state)
+        (self.study/'STOP.json').unlink()
+        with patch.object(follow,'live_identity',return_value=True),self.assertRaisesRegex(RuntimeError,'owner remains'):
+            follow.resume_current(self.study,self.state)
+
+    def test_unaccounted_job_or_active_intent_blocks_resume(self):
+        (self.study/'arms/exploration/jobs/unaccounted').mkdir()
+        with self.assertRaisesRegex(RuntimeError,'uncertain'):follow.resume_current(self.study,self.state)
+        (self.study/'arms/exploration/jobs/unaccounted').rmdir()
+        self.current['active_intent']={'uncertain':True}
+        ops.write(self.study/'arms/exploration/state.json',{'state':self.current})
+        self.grant['state_sha256']=ops.sha(self.study/'arms/exploration/state.json')
+        with self.assertRaisesRegex(RuntimeError,'uncertain'):follow.resume_current(self.study,self.state)
+
+    def test_current_six_runs_before_migration_then_schedules_seven_once(self):
+        with patch.object(follow,'execute') as execute,patch.object(follow,'wait_closed',side_effect=[True,False]), \
+            patch.object(follow.ops,'migrate') as migrate:
+            follow.follow(self.study)
+        execute.assert_called_once();self.assertEqual(execute.call_args.args[0],self.study);migrate.assert_not_called()
+        final=ops.read(follow.CHECKPOINT);self.assertEqual(final['next_sequence'],7)
+        self.assertEqual(final['initial_owner'],self.owner);self.assertEqual(final['phase'],'waiting')
+        self.assertEqual(self.current['calls'],7);self.assertIsNone(follow.ops.DEADLINE)
+
+    def test_uncertain_owned_resume_launch_is_not_replayed(self):
+        def fail_launch(study,deadline):
+            follow.checkpoint(phase='launch_intent');raise RuntimeError('fixture uncertain launch')
+        with patch.object(follow,'execute',side_effect=fail_launch),self.assertRaisesRegex(RuntimeError,'uncertain launch'):
+            follow.follow(self.study)
+        self.assertEqual(ops.read(follow.CHECKPOINT)['phase'],'needs_reconciliation')
+        with patch.object(follow,'execute') as execute,self.assertRaisesRegex(RuntimeError,'unfinished'):
+            follow.follow(self.study)
+        execute.assert_not_called();self.assertEqual(ops.read(follow.CHECKPOINT)['next_sequence'],6)
+
+    def test_owned_execute_uses_saved_state_and_never_clears_stop(self):
+        class Child:
+            pid=1234;returncode=0
+            def poll(self):return 0
+        with patch.object(follow.subprocess,'Popen',return_value=Child()) as spawn,patch.object(follow.ops,'own_birth',return_value='fixture'):
+            follow.execute(self.study,1e30)
+        argv=spawn.call_args.args[0]
+        self.assertIn('run',argv);self.assertNotIn('--resume',argv)
 
 if __name__=='__main__':unittest.main(verbosity=2)

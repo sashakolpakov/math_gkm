@@ -22,6 +22,15 @@ SCHEMA = {'type': 'object', 'additionalProperties': False, 'properties': {
     'request_id': {'type': 'string'}, 'payload_json': {'type': 'string'}},
     'required': ['request_id', 'payload_json']}
 
+def classify_outcome(error,returncode,final_exists):
+    # No final response/nonzero CLI exit is operational, not a schema repair.
+    if returncode is None or returncode!=0:
+        return error if error and not error.startswith('invalid_report:') else 'nonzero_exit'
+    if not final_exists and (not error or error.startswith('invalid_report:')):
+        return 'missing_final_report'
+    return error or 'completed'
+
+
 def decode_report(job, spec):
     """Strict adapter decoding; other roles retain their existing parsing."""
     if spec['role'] == 'adapter':
@@ -128,6 +137,8 @@ def _execute(job, cap):
         env = os.environ.copy()
         env.update(GIT_CONFIG_NOSYSTEM='1', GIT_CONFIG_GLOBAL='/dev/null', TMPDIR=str(workspace/'.scratch'))
         guard = Guard(0, job.parent.parent, cap)
+        from .study_context import check_prompt_file
+        check_prompt_file(job/'prompt.txt')
         with (job/'prompt.txt').open('rb') as prompt:
             if signal.getsignal(signal.SIGCHLD)!=signal.SIG_DFL:
                 raise ResourceFailure('default SIGCHLD required for unreaped private group')
@@ -200,8 +211,8 @@ def _execute(job, cap):
         payload, adapter_provenance = decode_report(job, spec)
     except (OSError, ValueError, KeyError, TypeError) as exc:
         error = error or 'invalid_report: '+str(exc)
-    if not p or p.returncode:
-        error = error or 'nonzero_exit'
+    classified = classify_outcome(error,p.returncode if p else None,(job/'final.json').is_file())
+    error = None if classified=='completed' else classified
     for event in events(job/'events.jsonl'):
         if 'usage' in event and len(usage)<1024:
             usage.append({'event_type': event.get('type'), 'raw': event['usage']})

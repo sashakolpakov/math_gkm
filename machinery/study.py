@@ -427,6 +427,30 @@ class Arm:
         spec['retained_sources'] = {p: h for record in
             list(req.get('knowledge', {}).values()) + list(req.get('components', {}).values())
             for p, h in record['source_files'].items()}
+        from .study_policy import prompt
+        # Retain execution identity in metadata without changing study prompts.
+        prompt_req = {k: v for k, v in req.items() if k not in ('model', 'reasoning_effort')}
+        rendered = (prompt(prompt_req) if role in ('proposer', 'researcher', 'reviewer', 'selector') else
+            policy.COMMON + '\nAdapt the frozen solver to these exact obligations. Do not change hypotheses or source. '
+            'Return the existing outer JSON envelope {"request_id":"<request_id from request>",'
+            '"payload_json":"<JSON-encoded inner object>"}. Canonical INNER: '
+            '{"solutions":{"<task_id>":entry}} with exactly every requested task id. '
+            'Each proof entry has exactly module, term, interface_term and transport_term, all nonempty '
+            'strings; module must be a dotted module identifier. Explicit decline entry: '
+            '{"status":"bounded_non_solution","reason":"<nonempty reason>"}. '
+            'No extra/duplicate keys, mixed forms or omitted tasks. Exact legacy direct task-id maps '
+            'are supported with identical entry checks. Shape validity does not establish mathematical '
+            'acceptance; ordinary proof/context/premise checks remain authoritative. '
+            'No independent test answers are supplied.\n' + canonical(prompt_req) if role == 'adapter' else
+            policy.COMMON + '\nAdapt the frozen solver to these exact obligations. Do not change hypotheses or source. '
+            'Return solutions keyed by task id with module, term, interface_term and transport_term, or '
+            '{status:"bounded_non_solution",reason:string} for a valid bounded attempt without a solution. '
+            'No independent test answers are supplied.\n' + canonical(prompt_req))
+        from .study_context import prepare_prompt, check_prompt
+        if role in ('proposer','researcher','reviewer','selector'):
+            rendered = prepare_prompt(prompt_req, workspace, role, prompt)
+        else:
+            check_prompt(rendered)
         # Persist intent and accounting BEFORE creating a job or any role effect.
         self.reserve('call-'+key, seconds)
         self.s['active'] = str(job)
@@ -443,25 +467,7 @@ class Arm:
         self.save()
         write(job/'spec.json', spec)
         write(job/'request.json', req)
-        from .study_policy import prompt
-        # Retain execution identity in metadata without changing study prompts.
-        prompt_req = {k: v for k, v in req.items() if k not in ('model', 'reasoning_effort')}
-        (job/'prompt.txt').write_text(prompt(prompt_req) if role in ('proposer', 'researcher', 'reviewer', 'selector') else
-            policy.COMMON + '\nAdapt the frozen solver to these exact obligations. Do not change hypotheses or source. '
-            'Return the existing outer JSON envelope {"request_id":"<request_id from request>",'
-            '"payload_json":"<JSON-encoded inner object>"}. Canonical INNER: '
-            '{"solutions":{"<task_id>":entry}} with exactly every requested task id. '
-            'Each proof entry has exactly module, term, interface_term and transport_term, all nonempty '
-            'strings; module must be a dotted module identifier. Explicit decline entry: '
-            '{"status":"bounded_non_solution","reason":"<nonempty reason>"}. '
-            'No extra/duplicate keys, mixed forms or omitted tasks. Exact legacy direct task-id maps '
-            'are supported with identical entry checks. Shape validity does not establish mathematical '
-            'acceptance; ordinary proof/context/premise checks remain authoritative. '
-            'No independent test answers are supplied.\n' + canonical(prompt_req) if role == 'adapter' else
-            policy.COMMON + '\nAdapt the frozen solver to these exact obligations. Do not change hypotheses or source. '
-            'Return solutions keyed by task id with module, term, interface_term and transport_term, or '
-            '{status:"bounded_non_solution",reason:string} for a valid bounded attempt without a solution. '
-            'No independent test answers are supplied.\n' + canonical(prompt_req))
+        (job/'prompt.txt').write_text(rendered)
         from .study_bridge import event
         event(self, {'issue': {'id': key}})
         event(self, {'claim': {'id': key}})
@@ -488,7 +494,13 @@ class Arm:
                 if binding['receipt_hash']!=digest(receipt): raise Invalid('immutable plan receipt changed')
                 return binding['research'],binding['commitment']
             # Parsing errors from a completed, read-only proposer are safe to repair.
-            if receipt['outcome']!='completed' and not receipt['outcome'].startswith('invalid_report:'):
+            normal = receipt.get('returncode',0)==0 and not receipt.get('operationally_incomplete')
+            if not normal or (receipt['outcome']!='completed' and not receipt['outcome'].startswith('invalid_report:')):
+                from .study_context import operational_recovery
+                granted = operational_recovery(self,key,receipt,request,workspace,index) if attempt==0 else None
+                if granted is not None:
+                    repair=granted
+                    continue
                 raise Invalid('operational proposer failure; no uncertain action replay')
             try:
                 staged,commitment=policy.commit(state,receipt.get('payload'),workspace,index,protocol, request_id=logical)

@@ -2,6 +2,7 @@
 import argparse
 import fcntl
 import importlib.util
+import math
 import os
 from pathlib import Path
 import signal
@@ -111,6 +112,49 @@ def execute(study,deadline):
         if child is None or child.poll() is not None:checkpoint(controller_pid=None,controller_birth=None)
 
 
+def remaining_wall(protocol,state):
+    # seconds includes funded pools, so their unspent balances remain available.
+    unfunded=protocol['arm_seconds']-state['seconds']
+    funded=sum(pool['cap']-pool['spent'] for pool in state['budget_pools'].values())
+    calls=protocol['max_calls']-state['calls']
+    if min(unfunded,funded,calls,protocol['meta_calls']-state['meta_calls'])<0:
+        raise RuntimeError('remaining finite accounting is invalid')
+    return unfunded+funded+(4*calls+2)*30+ops.SETUP_SECONDS+ops.CLEANUP_SECONDS
+
+
+def resume_current(study,state):
+    """Authorize one owned continuation of the exact stopped revision; no fresh epoch."""
+    record=ops.authorize_ongoing();grant=record.get('ongoing_current_resume')
+    revision=state.get('request_context_revision',{});path=OPS/'REQUEST_CONTEXT_REVISION.json'
+    if (not isinstance(grant,dict) or grant!=state.get('current_resume') or grant.get('authorized') is not True or
+        not grant.get('reviewer') or grant.get('study')!=str(study) or study!=ops.REQUEST_CONTEXT_STUDY or
+        grant.get('current_sequence')!=6 or grant.get('next_sequence')!=7 or state.get('next_sequence')!=6 or
+        revision.get('status')!='applied' or revision.get('record_sha256')!=ops.sha(path) or
+        grant.get('revision_sha256')!=ops.sha(path) or
+        record.get('operational_recovery')!={'path':str(path),'sha256':ops.sha(path)}):
+        raise RuntimeError('exact reviewed current-study resume authority required')
+    for name,key in [('seal.json','seal_sha256'),('protocol.json','protocol_sha256'),('arms/exploration/state.json','state_sha256')]:
+        if ops.sha(study/name)!=grant.get(key):raise RuntimeError('current-study resume bytes changed')
+    controls();ops.immutable_bindings(ongoing=True);ops.api()['study'].verify(study)
+    if (study/'STOP.json').exists() or not ops.lock_available(study/'controller.lock'):
+        raise RuntimeError('current study stopped or controller remains')
+    if grant.get('native_cleanup_verified') is not True or not grant.get('native_owners'):
+        raise RuntimeError('current-study native closure not attested')
+    for pid,birth in grant['native_owners'].items():
+        if live_identity(int(pid),birth):raise RuntimeError('current-study historical owner remains')
+    current=ops.api()['common'].load_state(study/'arms/exploration/state.json')
+    if (current.get('round')!=30 or current.get('phase')!='research' or current.get('resolution') is not None or
+        current.get('active') is not None or current.get('active_intent') is not None or
+        any(str(job) not in current['receipts'] for job in (study/'arms/exploration/jobs').iterdir() if job.is_dir())):
+        raise RuntimeError('current-study invocation uncertain; no replay')
+    allowed=remaining_wall(ops.read(study/'protocol.json'),current)
+    start,end=grant.get('authorized_at'),grant.get('deadline_wall')
+    if (any(type(v) not in (int,float) or not math.isfinite(v) for v in (start,end)) or
+        start>time.time() or end>start+allowed or end-time.time()<=ops.CLEANUP_SECONDS):
+        raise RuntimeError('current-study finite remaining wall is invalid or exhausted')
+    return time.monotonic()+end-time.time()
+
+
 def follow(initial):
     initial=Path(initial).resolve()
     if initial.parent!=(ROOT/'.scratch').resolve():raise RuntimeError('study must be inside scratch')
@@ -119,7 +163,7 @@ def follow(initial):
         fcntl.flock(shared,fcntl.LOCK_EX|fcntl.LOCK_NB);controls()
         state=ops.read(CHECKPOINT) if CHECKPOINT.exists() else None
         if state:
-            if state.get('phase') not in ('waiting','theorem_proved','theorem_refuted'):
+            if state.get('phase') not in ('waiting','ready_to_resume_current','theorem_proved','theorem_refuted'):
                 raise RuntimeError('unfinished owned intent; reconcile explicitly, never replay')
             if state['helper_sha256']!=ops.sha(ops.__file__) or state['follow_sha256']!=ops.sha(__file__):
                 raise RuntimeError('existing follow source binding changed')
@@ -139,7 +183,9 @@ def follow(initial):
         else:
             current=initial;number=1
             owner=initial_binding(initial,ops.authorize_ongoing())
-        checkpoint(phase='waiting',current_study=str(current),next_sequence=number,
+        resuming=bool(state and state.get('phase')=='ready_to_resume_current')
+        resume_deadline=resume_current(current,state) if resuming else None
+        checkpoint(phase='ready_to_resume_current' if resuming else 'waiting',current_study=str(current),next_sequence=number,
             helper_sha256=ops.sha(ops.__file__),follow_sha256=ops.sha(__file__),
             goal_root=ops.EXPECTED_CONTRACT,goal_achieved=False,root_resolved=False,
             initial_owner=owner if state is None else state.get('initial_owner'),operator_pid=os.getpid(),
@@ -148,6 +194,12 @@ def follow(initial):
         try:
             awake=ops.start_keep_awake()
             checkpoint(caffeinate_pid=awake.pid if awake else None,caffeinate_birth=ops.own_birth(awake) if awake else None)
+            if resuming:
+                ops.DEADLINE=resume_deadline;controls()
+                execute(current,resume_deadline)
+                if not wait_closed(current):return
+                number=state['current_resume']['next_sequence'];owner=None;ops.DEADLINE=None
+                checkpoint(phase='waiting',current_study=str(current),next_sequence=number,current_resume_finished_at=time.time())
             while wait_closed(current,owner):
                 owner=None
                 controls();ops.immutable_bindings(ongoing=True)

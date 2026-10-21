@@ -6,6 +6,7 @@ trusted dependency-edge capacity, preserving every historical implementation ide
 the official resumed parent, then funds at most eight fresh finite epochs.
 """
 import argparse
+import base64
 import copy
 import contextlib
 import fcntl
@@ -13,6 +14,7 @@ import hashlib
 import importlib
 import json
 import os
+import re
 from pathlib import Path
 import signal
 import subprocess
@@ -68,6 +70,10 @@ CAPACITY_CHANGES={'machinery/inspection_stream.py': ('cb0ff86634236920531ea15f51
                                 (b"    if category=='dependency_edge_limit': measured['limit_edges']=200000\n",
                                  b"    if category=='dependency_edge_limit': measured['limit_edges']=EDGE_LIMIT"
                                  b'\n')))}
+REQUEST_CONTEXT_STUDY=ROOT/'.scratch/concept-driver-20261020-follow-000006'
+REQUEST_CONTEXT_IMPL='590648a8eb6c9ee626c63077cbdbd7963aa53d946ceac9cfe3f73e4591b63b7d'
+REQUEST_CONTEXT_FILES={'machinery/study.py': ('037caafc4def94e50b2749999e313ed3c45152551aa794ffa19de2b751181064', '21d229d19485d78152792f349f13a343ca7b3a6b11b12933ed59054b8c9b18ed'), 'machinery/study_context.py': (None, '3ceac2970a7c85e3bc8db8eec5613cb9e31f44e0a3d6093d993f6e2c51990d94'), 'machinery/study_policy.py': ('902eebdcbfc10de78ae6fc5d2df92e0e6b5f1e330975491149559655d578b38a', '35c832306d3b445304745a254c3973ea0b07dce663e76e3613731b13a3b56432'), 'machinery/study_worker.py': ('d605eb833614df50c3782862430dbeb8a550b3b8c248adde19fa211254e1cf76', '8535b04376c51634bcbafd449c7946346877f545423a68dee1a3095cc828bdbd')}
+
 EXPECTED_CONTRACT='564b2659c941bcf76484bcf20de5dfc4808c9379306f773d1642748e2a02c91d'
 EXPECTED_SUITE='88e05a48bac42ae11db2a12c2c748b03eac9904e8782fd5b5e52ebf8f3c641d1'
 GOAL='Continue autonomous research toward the unchanged exact universal root, not a partial log-concavity family.'
@@ -255,13 +261,20 @@ def copy_history(source,destination):
             path=Path(directory)/name
             if path.is_symlink(): raise RuntimeError('history alias forbidden')
             relative=path.relative_to(source)
-            if relative.parts[0] not in ('objects','manifests','own-checks') and not (
+            context=relative.parts[0]=='context'
+            if context:
+                if (len(relative.parts)!=2 or not re.fullmatch(r'[0-9a-f]{64}\.json',relative.name) or
+                    path.stat().st_size>8*1024**2 or sha(path)!=relative.stem or
+                    read(path).get('role') not in ('proposer','researcher')):
+                    raise RuntimeError('invalid own context history')
+            if relative.parts[0] not in ('objects','manifests','own-checks','context') and not (
                     len(relative.parts)==1 and relative.name.startswith('round-') and relative.suffix=='.json'):
                 raise RuntimeError('unknown history provenance; preserve parent and stop')
             size=path.stat().st_size;total+=size;count+=1
             if size>32*1024**2 or total>256*1024**2 or count>10000:
                 raise RuntimeError('inherited history bound')
             copy_file(path,destination/relative)
+            if context:(destination/relative).chmod(0o444)
 
 
 
@@ -605,6 +618,13 @@ def checked_implementation(common):
             capacity[name]=new_hash
         if digest(capacity)!=CAPACITY_IMPL:raise RuntimeError('exact reviewed capacity implementation delta changed')
         allowed.append(capacity)
+        if REQUEST_CONTEXT_FILES:
+            revised=dict(capacity)
+            for name,(before,after) in REQUEST_CONTEXT_FILES.items():
+                if revised.get(name)!=before:raise RuntimeError('request context old source binding changed')
+                revised[name]=after
+            if digest(revised)!=REQUEST_CONTEXT_IMPL:raise RuntimeError('reviewed request context source map changed')
+            allowed.append(revised)
     actual=common.implementation()
     if actual not in allowed:raise RuntimeError('implementation has an unreviewed source delta')
     return digest(actual)
@@ -613,7 +633,9 @@ def checked_implementation(common):
 def atomic_protected(path,data,mode):
     path=Path(path)
     allowed=(ROOT/'machinery/study_worker.py',ROOT/'.bootstrap/study-authorization.json',
-        *(ROOT/name for name in CAPACITY_CHANGES))
+        *(ROOT/name for name in CAPACITY_CHANGES),
+        REQUEST_CONTEXT_STUDY/'seal.json',REQUEST_CONTEXT_STUDY/'arms/baseline/state.json',
+        REQUEST_CONTEXT_STUDY/'arms/exploration/state.json',OPS/'REQUEST_CONTEXT_REVISION.json')
     if (path not in allowed or path.is_symlink() or path.parent.is_symlink() or
         path.parent.resolve()!=ROOT.resolve()/path.relative_to(ROOT).parent):
         raise RuntimeError('maintenance target escaped workspace')
@@ -649,10 +671,11 @@ def apply_source_maintenance(parent,destination,parent_seal):
     if capacity and (not isinstance(record['inspection_capacity_maintenance'],dict) or
         record['inspection_capacity_maintenance'].get('status')=='applied'):
         raise RuntimeError('capacity maintenance grant is malformed or already applied; reconcile explicitly')
-    if actual in (NEW_IMPL,CAPACITY_IMPL) and not capacity:
+    if actual in (NEW_IMPL,CAPACITY_IMPL,REQUEST_CONTEXT_IMPL) and not capacity:
         if digest(parent_seal['implementation'])!=actual:
             raise RuntimeError('historical old parent cannot be reverified as the new implementation')
-        field='inspection_capacity_transition' if actual==CAPACITY_IMPL else 'source_transition'
+        field=('request_context_revision' if actual==REQUEST_CONTEXT_IMPL else
+            'inspection_capacity_transition' if actual==CAPACITY_IMPL else 'source_transition')
         completed=checkpoint.get(field,{})
         if completed.get('status')!='applied':raise RuntimeError('source transition is incomplete; no replay')
         return None
@@ -730,6 +753,190 @@ def apply_source_maintenance(parent,destination,parent_seal):
     return completed
 
 
+def request_context_api():
+    from machinery import study_context,study_deployment
+    return {'projection':study_context.recovery_projection,'verify_deployment':study_deployment.reuse_deployment}
+
+
+@contextlib.contextmanager
+def request_context_locks():
+    # No child launch. A failed/partial transaction remains explicit and is never replayed.
+    with contextlib.ExitStack() as stack:
+        for path in (OPS/'FOLLOW.lock',OPS/'operator.lock',REQUEST_CONTEXT_STUDY/'controller.lock',ROOT/'.scratch/resources/heavy.lock'):
+            stream=stack.enter_context(path.open('rb'));fcntl.flock(stream,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        controls();yield
+
+
+def revision_bytes(value):
+    return (canonical(value)+'\n').encode()
+
+
+def rebind_request_context(deployment):
+    """Explicit source-version revision at closed round30; preserves every cost/path."""
+    with request_context_locks():
+        a=api();common=a['common'];context=request_context_api();study=REQUEST_CONTEXT_STUDY
+        authorization=authorize_ongoing();spec=authorization.get('request_context_maintenance',{})
+        if (spec.get('authorized') is not True or not spec.get('reviewer') or
+            spec.get('study')!=str(study) or spec.get('old_implementation_sha256')!=CAPACITY_IMPL or
+            spec.get('implementation_sha256')!=REQUEST_CONTEXT_IMPL or checked_implementation(common)!=REQUEST_CONTEXT_IMPL):
+            raise RuntimeError('exact reviewed request context revision authority required')
+        record_path=OPS/'REQUEST_CONTEXT_REVISION.json';checkpoint=read(OPS/'FOLLOW.json')
+        if record_path.exists() or checkpoint.get('request_context_revision'):
+            raise RuntimeError('request context revision already started; explicit finish only, never replay')
+        original_authority=Path(spec['old_authorization_path']).read_bytes()
+        if (hashlib.sha256(original_authority).hexdigest()!=spec['old_authorization_sha256'] or
+            json.loads(original_authority).get('implementation_sha256')!=CAPACITY_IMPL):
+            raise RuntimeError('original pre-maintenance authorization archive changed')
+        witness=read(Path(spec['old_verification_path']));supplement=read(Path(spec['baseline_observation_path']))
+        if (sha(spec['old_verification_path'])!=spec['old_verification_sha256'] or
+            sha(spec['baseline_observation_path'])!=spec['baseline_observation_sha256'] or
+            witness.get('schema')!='math-gkm.request-context-reconciliation-start.v1' or
+            witness.get('genuine_old_study_verify_passed') is not True or witness.get('verified_old_implementation')!=CAPACITY_IMPL or
+            witness.get('study')!=str(study) or supplement.get('baseline_seal_binding_matches') is not True):
+            raise RuntimeError('genuine old verification and supplemental baseline witness required')
+        paths={'seal.json':study/'seal.json',**{f'arms/{mode}/state.json':study/'arms'/mode/'state.json' for mode in ('baseline','exploration')}}
+        old={name:path.read_bytes() for name,path in paths.items()};seal=json.loads(old['seal.json'])
+        states={mode:common.load_state(paths[f'arms/{mode}/state.json']) for mode in ('baseline','exploration')}
+        old_hashes={name:hashlib.sha256(raw).hexdigest() for name,raw in old.items()}
+        if (old_hashes['seal.json']!=witness['old_seal_sha256'] or digest(seal['implementation'])!=CAPACITY_IMPL or
+            old_hashes['arms/exploration/state.json']!=witness['old_state_sha256'] or
+            old_hashes['arms/baseline/state.json']!=supplement['baseline_state_sha256'] or
+            supplement.get('old_seal_sha256')!=old_hashes['seal.json'] or
+            supplement.get('old_verification_witness_sha256')!=spec['old_verification_sha256'] or
+            sha(study/'protocol.json')!=witness['old_protocol_sha256']):
+            raise RuntimeError('old stopped source/version bindings changed')
+        if any(v.get('seal_hash')!=digest(seal) for v in states.values()):raise RuntimeError('old arm seal bindings changed')
+        common.authorize_live(read(study/'seed/contract.json'))
+        state=states['exploration'];job=study/'arms/exploration/jobs/plan-0030';receipt=read(job/'receipt.json')
+        if (state.get('round')!=30 or state.get('phase')!='research' or state.get('active') is not None or
+            state.get('active_intent') is not None or state.get('resolution') is not None or
+            any(s.get('active') is not None or s.get('active_intent') is not None for s in states.values()) or
+            str(job) not in state['receipts'] or state['receipt_hashes'].get(str(job))!=digest(receipt) or
+            state['reservations'].get('call-plan-0030')!=read(job/'spec.json')['seconds'] or
+            'plan-0030' not in state['counted_jobs'] or receipt.get('returncode')!=1 or receipt.get('payload') is not None or
+            receipt.get('before')!=receipt.get('after') or not receipt.get('outcome','').startswith('invalid_report:') or
+            (job/'final.json').exists() or (job.parent/'plan-0030-repair-1').exists() or
+            any(str(p) not in state['receipts'] for p in job.parent.iterdir() if p.is_dir())):
+            raise RuntimeError('only exact closed consumed input rejection may be rebound')
+        stderr=(job/'stderr.log').read_text();match=re.search(r'data: (\{.*\})\s*$',stderr)
+        diagnostic=json.loads(match[1]) if match else {}
+        events=[json.loads(line) for line in (job/'events.jsonl').read_text().splitlines() if line]
+        prompt_chars=len((job/'prompt.txt').read_text())
+        if ((study/'STOP.json').exists() or diagnostic.get('input_error_code')!='input_too_large' or
+            diagnostic.get('max_chars')!=1048576 or diagnostic.get('actual_chars')!=prompt_chars or prompt_chars<=1048576 or
+            not events or any(v.get('type')!='thread.started' for v in events)):
+            raise RuntimeError('no exact provider rejection before model start')
+        if spec.get('native_cleanup_verified') is not True:raise RuntimeError('independent native cleanup witness required')
+        for pid,birth in spec.get('native_owners',{}).items():
+            info=a['resources'].process_status(int(pid))
+            if info and info['identity']==birth:raise RuntimeError('historical native owner remains')
+        for pid in receipt.get('resources',{}).get('owned_identities',{}):
+            if a['resources'].process_status(int(pid)):raise RuntimeError('failed proposer identity still present')
+        a['resources'].headroom(a['resources'].limits());context['verify_deployment'](deployment)
+        if not deployment.get('ready'):raise RuntimeError('fresh new implementation deployment not ready')
+        origin={name:sha(study/name) for name in ('CONTINUATION_PROVENANCE.json','MIGRATION_FINISHED.json','MIGRATION_INITIAL_STATE.json')}
+        core={'schema':'math-gkm.request-context-revision.v1','study':str(study),'old_implementation_sha256':CAPACITY_IMPL,
+            'implementation_sha256':REQUEST_CONTEXT_IMPL,'old_files':old_hashes,'old_verification_sha256':spec['old_verification_sha256'],
+            'original_authorization_sha256':spec['old_authorization_sha256'],
+            'baseline_observation_sha256':spec['baseline_observation_sha256'],'baseline_hash_observed_after_genuine_verify':True,
+            'protocol_sha256':sha(study/'protocol.json'),'unchanged_origins':origin,'deployment':deployment,
+            'old_deployment':seal.get('deployment_preflight'),
+            'recovery_projection_sha256':digest(context['projection'](state)),'created':time.time()}
+        binding=digest(core);new_seal={**seal,'implementation':common.implementation(),'deployment_preflight':deployment,
+            'frozen_at':time.time(),'source_revision':{'record':str(record_path),'binding':binding,'old_seal_sha256':old_hashes['seal.json']}}
+        revised={'seal.json':revision_bytes(new_seal)}
+        for mode in ('baseline','exploration'):
+            updated={**states[mode],'seal_hash':digest(new_seal)}
+            revised[f'arms/{mode}/state.json']=revision_bytes({'state':updated,'sha256':digest(updated)})
+        files={name:{'old_sha256':old_hashes[name],'old_bytes_base64':base64.b64encode(old[name]).decode(),
+            'new_sha256':hashlib.sha256(revised[name]).hexdigest(),'new_bytes_base64':base64.b64encode(revised[name]).decode()} for name in paths}
+        record={'schema':'math-gkm.closed-proposer-recovery.v1','study':str(study),'arm':'exploration',
+            'failed_request_id':'plan-0030','next_request_id':'plan-0030-repair-1','request_binding':digest(read(job/'request.json')),
+            'receipt_binding':digest(receipt),'receipt_file_sha256':sha(job/'receipt.json'),'spec_sha256':sha(job/'spec.json'),
+            'events_sha256':sha(job/'events.jsonl'),'stderr_sha256':sha(job/'stderr.log'),'old_implementation_sha256':CAPACITY_IMPL,
+            'implementation_sha256':REQUEST_CONTEXT_IMPL,'old_seal_sha256':old_hashes['seal.json'],
+            'stopped_state_sha256':old_hashes['arms/exploration/state.json'],'recovery_projection_sha256':core['recovery_projection_sha256'],
+            'no_model_started':True,'native_cleanup_verified':True,'classification':'closed_input_too_large_no_model',
+            'revision_binding':binding,'revision_core':core,'archived_files':files,
+            'archived_original_authorization':base64.b64encode(original_authority).decode(),
+            'archived_witnesses':{key:base64.b64encode(Path(spec[key]).read_bytes()).decode()
+                for key in ('old_verification_path','baseline_observation_path')},
+            'archived_origins':{name:base64.b64encode((study/name).read_bytes()).decode() for name in origin},
+            'archived_old_deployment_receipt':base64.b64encode(Path(seal['deployment_preflight']['receipt']).read_bytes()).decode()}
+        # Archive first, then persist the complete three-file intent before changing any seal/state.
+        atomic_protected(record_path,revision_bytes(record),0o444)
+        after={**authorization,'operational_recovery':{'path':str(record_path),'sha256':sha(record_path)}}
+        checkpoint['request_context_revision']={'status':'install_intent','record':str(record_path),'record_sha256':sha(record_path),
+            'authorization_before_sha256':sha(ROOT/'.bootstrap/study-authorization.json'),
+            'authorization_after_sha256':hashlib.sha256(revision_bytes(after)).hexdigest(),'actual_implementation_sha256':REQUEST_CONTEXT_IMPL}
+        write(OPS/'FOLLOW.json',checkpoint)
+        return _finish_request_context_rebind()
+
+
+def finish_request_context_rebind():
+    """Explicit completion of known three-file writes; no deployment, model or job replay."""
+    with request_context_locks():return _finish_request_context_rebind()
+
+
+def _finish_request_context_rebind():
+    a=api();common=a['common'];context=request_context_api();study=REQUEST_CONTEXT_STUDY
+    checkpoint=read(OPS/'FOLLOW.json');intent=checkpoint.get('request_context_revision',{});path=OPS/'REQUEST_CONTEXT_REVISION.json'
+    if intent.get('status')!='install_intent' or intent.get('record')!=str(path) or sha(path)!=intent.get('record_sha256'):
+        raise RuntimeError('no exact incomplete request context revision; never replay')
+    record=read(path);core=record['revision_core'];authorization=authorize_ongoing()
+    if (checked_implementation(common)!=REQUEST_CONTEXT_IMPL or record['implementation_sha256']!=REQUEST_CONTEXT_IMPL or
+        record['revision_binding']!=digest(core) or record['study']!=str(study)):
+        raise RuntimeError('request context revision source or archive binding changed')
+    raw_authority=base64.b64decode(record['archived_original_authorization'],validate=True)
+    if (hashlib.sha256(raw_authority).hexdigest()!=core['original_authorization_sha256'] or
+        json.loads(raw_authority).get('implementation_sha256')!=CAPACITY_IMPL):
+        raise RuntimeError('permanent original authorization archive changed')
+    for name,key in [('old_verification_path','old_verification_sha256'),('baseline_observation_path','baseline_observation_sha256')]:
+        raw=base64.b64decode(record['archived_witnesses'][name],validate=True)
+        if hashlib.sha256(raw).hexdigest()!=core[key]:raise RuntimeError('permanent old verification archive changed')
+    for name,raw in record['archived_origins'].items():
+        if name not in core['unchanged_origins'] or hashlib.sha256(base64.b64decode(raw,validate=True)).hexdigest()!=core['unchanged_origins'][name]:
+            raise RuntimeError('permanent old origin archive changed')
+    if hashlib.sha256(base64.b64decode(record['archived_old_deployment_receipt'],validate=True)).hexdigest()!=core['old_deployment']['receipt_sha256']:
+        raise RuntimeError('permanent old deployment archive changed')
+    current_authority=sha(ROOT/'.bootstrap/study-authorization.json')
+    if current_authority not in (intent['authorization_before_sha256'],intent['authorization_after_sha256']):
+        raise RuntimeError('request context revision authority changed')
+    expected={'seal.json','arms/baseline/state.json','arms/exploration/state.json'}
+    if set(record['archived_files'])!=expected:raise RuntimeError('unexpected revision install target')
+    decoded={}
+    for name,entry in record['archived_files'].items():
+        before=base64.b64decode(entry['old_bytes_base64'],validate=True);after=base64.b64decode(entry['new_bytes_base64'],validate=True)
+        if hashlib.sha256(before).hexdigest()!=entry['old_sha256'] or hashlib.sha256(after).hexdigest()!=entry['new_sha256']:
+            raise RuntimeError('revision byte archive changed')
+        target=study/name
+        if sha(target) not in (entry['old_sha256'],entry['new_sha256']):raise RuntimeError('uncertain seal/state bytes; no automatic repair')
+        decoded[name]=(before,after)
+    seal=json.loads(decoded['seal.json'][1])
+    if digest(seal['implementation'])!=REQUEST_CONTEXT_IMPL:raise RuntimeError('revision seal source changed')
+    if sha(study/'protocol.json')!=core['protocol_sha256'] or any(sha(study/name)!=value for name,value in core['unchanged_origins'].items()):
+        raise RuntimeError('historical protocol or origin provenance changed')
+    if seal.get('source_revision')!={'record':str(path),'binding':record['revision_binding'],'old_seal_sha256':record['old_seal_sha256']}:
+        raise RuntimeError('revision seal does not bind archive')
+    for mode in ('baseline','exploration'):
+        old_envelope,new_envelope=(json.loads(v) for v in decoded[f'arms/{mode}/state.json'])
+        before,after=old_envelope['state'],new_envelope['state']
+        if old_envelope['sha256']!=digest(before) or new_envelope['sha256']!=digest(after):raise RuntimeError('revision state envelope changed')
+        if {k:v for k,v in before.items() if k!='seal_hash'}!={k:v for k,v in after.items() if k!='seal_hash'} or after['seal_hash']!=digest(seal):
+            raise RuntimeError('revision changed mathematical state or accounting')
+    for name,(_,raw) in decoded.items():
+        if sha(study/name)!=record['archived_files'][name]['new_sha256']:atomic_protected(study/name,raw,(study/name).stat().st_mode & 0o777)
+    context['verify_deployment'](core['deployment']);a['study'].verify(study)
+    updated={**authorization,'operational_recovery':{'path':str(path),'sha256':sha(path)}}
+    if hashlib.sha256(revision_bytes(updated)).hexdigest()!=intent['authorization_after_sha256']:
+        raise RuntimeError('revision authorization replacement differs')
+    atomic_protected(ROOT/'.bootstrap/study-authorization.json',revision_bytes(updated),0o444)
+    checkpoint['request_context_revision']={**intent,'status':'applied','actual_implementation_sha256':REQUEST_CONTEXT_IMPL,
+        'new_seal_sha256':sha(study/'seal.json'),'finished':time.time()}
+    write(OPS/'FOLLOW.json',checkpoint)
+    return checkpoint['request_context_revision']
+
+
 def immutable_bindings(*,ongoing=False):
     a=api();common=a['common']
     actual_implementation=checked_implementation(common)
@@ -749,14 +956,18 @@ def immutable_bindings(*,ongoing=False):
         if sha(INITIAL_PARENT/'seed'/safe_relative(name))!=expected:
             raise RuntimeError('original clean seed changed')
     common.authorize_live(contract)
-    if actual_implementation in (NEW_IMPL,CAPACITY_IMPL):
+    if actual_implementation in (NEW_IMPL,CAPACITY_IMPL,REQUEST_CONTEXT_IMPL):
         checkpoint=read(OPS/'FOLLOW.json');applied=checkpoint.get('source_transition',{})
         if applied.get('status')!='applied' or applied.get('actual_implementation_sha256')!=NEW_IMPL:
             raise RuntimeError('reviewed source transition has not completed')
-        if actual_implementation==CAPACITY_IMPL:
+        if actual_implementation in (CAPACITY_IMPL,REQUEST_CONTEXT_IMPL):
             applied=checkpoint.get('inspection_capacity_transition',{})
             if applied.get('status')!='applied' or applied.get('actual_implementation_sha256')!=CAPACITY_IMPL:
                 raise RuntimeError('reviewed capacity source transition has not completed')
+        if actual_implementation==REQUEST_CONTEXT_IMPL:
+            applied=checkpoint.get('request_context_revision',{})
+            if applied.get('status')!='applied' or applied.get('actual_implementation_sha256')!=REQUEST_CONTEXT_IMPL:
+                raise RuntimeError('reviewed request context revision has not completed')
     authorization=read(ROOT/'.bootstrap/study-authorization.json')
     if ongoing:
         authorize_ongoing(authorization)

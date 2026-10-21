@@ -191,6 +191,8 @@ def record(state, report, workspace, round_index, protocol, *, prospective=None)
 
 def commit(state, report, workspace, round_index, protocol, *, request_id=None):
     """Construct full commitment before action effects; no retrospective edits."""
+    if not isinstance(report,dict):
+        raise Invalid('report must be an object')
     import copy
     staged = copy.deepcopy(state)
     concept_commitment = None
@@ -227,6 +229,8 @@ def commit(state, report, workspace, round_index, protocol, *, request_id=None):
 
 
 def validate_execution(commitment, report):
+    if not isinstance(report,dict):
+        raise Invalid('report must be an object')
     if report.get('trial') != commitment['trial']:
         raise Invalid('executed trial differs from prospective commitment')
     # A content-addressed reference replaces verbatim prediction prose.
@@ -251,6 +255,11 @@ def finish_episode(state, round_index, review):
         episode['status'] = 'reviewed; delayed use remains observable'
 
 COMMON = '''Read MISSION.md, docs/DESIGN.md and contract.json. The active versioned contract supplies the exact task and permitted assumptions. Follow its phase; do not start a different campaign. Historical campaigns are not rerun or inherited. Choose your own mathematical actions: literature, experiments using installed Python/Sage/GAP, representations, conjectures, proofs or refutations, typed attachments, strategy and executable request-program proposals. Missing tools are capability failures. A finite-budget failure is not unprovability. Do not use complexity, description length, compression or derived proxies in decisions. Use at most one Lean compiler at a time. Never invoke another LLM, Codex, controllers or background processes. Do not access other workspaces, evaluation answers, audit records, Git, archives or credentials. No network shell, downloads, package updates, publication or messaging. Use .scratch for temporary files, pinned dependencies and /opt/homebrew/bin/python3. No sorry, admit, axioms or native_decide. Reports do not certify proofs. Checkpoint in research/ with unique names. Use existing artifacts; keep failed attempts. No supervisor supplies mathematical advice.'''
+
+def canonical_request(req):
+    from .study_common import canonical
+    return canonical(req)
+
 
 def prompt(req):
     if req['role'] == 'proposer':
@@ -318,4 +327,4 @@ Executable instructions: select_obligation {id}; reuse_library {ids}; allocate {
                   'Your diagnosis will be returned to the autonomous proposer as interpretation, not proof. '
                   'Do not claim measured transfer from these sources alone.')
     return (COMMON + '\n' + extra + '\nThe output envelope has request_id and payload_json (a JSON-encoded object).\n'
-            + schema + '\nREQUEST:\n' + __import__('json').dumps(req, indent=2))
+            + schema + '\nREQUEST:\n' + canonical_request(req))

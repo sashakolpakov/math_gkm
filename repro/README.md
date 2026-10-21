@@ -96,3 +96,34 @@ Construction closure. Actual Python-harness positive/negative controls, premise
 inspection and English/source audits have separate versioned receipts in the
 [V3 release record](../STRATEGY_V3_RELEASE.md). A generic continuation theorem is
 not a certified arbitrary host edit; D1/D2/D3 remain open.
+
+## Request transport and reviewed source revisions
+
+Request transport preserves the full controller request and its identity. Source
+protection, admission and executable request programs continue to use that full
+record. Proposer and researcher prompts use compact JSON and check the length
+of the complete rendered prompt before launching a model. Large accepted-library
+records can instead be presented through an index backed by their complete,
+hash-bound context in the arm's read-only history. Exact claim statements and
+exports, the goal and open proposition graph, the current commitment, protected
+concept predictions and the latest research feedback remain directly visible.
+No theorem, hypothesis or historical record is shortened or deleted from its
+retained source. Private evaluation, selector and adapter material must never be
+placed in researcher-readable history by this transport.
+
+An input rejected before a proposal is an operational failure, not a failed
+mathematical prediction or a completed plan. Non-object reports are rejected
+before concept processing. Ordinary schema repair is distinct from a transport
+failure; an explicit operations-only recovery must bind the closed failed
+invocation and authorize a fresh request identity. The original request, receipt
+and full reservation remain unchanged. No uncertain action is replayed or cost
+refunded.
+
+A reviewed source revision at a stopped boundary retains the original seal,
+both arm states, deployment evidence and provenance. A fresh deployment check is
+required for the new implementation. A versioned rebind changes only the seal
+identity in each arm state; mathematical state, protocol, receipts and accounting
+are preserved. An interrupted rebind must be reconciled before research resumes.
+This is an operator-engineered repair, not a certified Goedel-machine switch or
+a new mathematical result.
+
