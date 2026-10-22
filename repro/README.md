@@ -593,8 +593,9 @@ and keeps their historical and applied evidence separate.
 
 ## Accepted proof checkpoint through round 40
 
-The checkpoint preserves **47 independently admitted results** through closed
-round 40. The new archive SHA-256 is **`273496ec8d581d084e277402d0cbe31d4fd5cec1d985b6702adcda30f98b167a`**. Its top-level
+The historical round-40 checkpoint preserves **47 independently admitted
+results** through that round. The latest 50-result scope appears in the
+[round-41 section](#accepted-proof-checkpoint-through-round-41). Its archive SHA-256 is **`273496ec8d581d084e277402d0cbe31d4fd5cec1d985b6702adcda30f98b167a`**. Its top-level
 `MANIFEST.json` `current_checkpoint` identifies the accepted registry, checked
 proposition graph and open residuals. Earlier proof payloads and source-version
 records retain their original bytes and provenance. The 44 inherited admission
@@ -653,8 +654,9 @@ There are three new record IDs. All polynomials below have integer coefficients.
   `c_E(i,j)*c_E(i+2,j) <= c_E(i+1,j)^2` and
   `c_E(i,j)*c_E(i,j+2) <= c_E(i,j+1)^2` at every corresponding original
   polygon triple. The inputs and conclusions use the original raw integer
-  coefficients, including zeros; the corner `k=0` is included. The uniform
-  actual-family signs `H` and `V` are not proved.
+  coefficients, including zeros; the corner `k=0` is included. Neither
+  universal actual-family sign premise was proved in round 40. The conditional
+  theorem remains valid; round 41 below refutes its universal vertical premise.
 
 These three admissions have **225 original successful checks**: 111 project
 compilations, 111 independent kernel replays and three complete premise
@@ -670,8 +672,10 @@ The proposition graph and all remaining obligations are unchanged. There is no
 new reduction, discharged node or unconditional Markov log-concavity coverage.
 The strongest unconditional coverage remains all three original directions for
 every constant-left path, and the antidiagonal direction for every
-constant-right path. Uniform actual-family grouped signs, all root and residual
-obligations, and the full arbitrary-path conjecture remain open. That original
+constant-right path. At the round-40 checkpoint the universal actual-family
+grouped signs remained unproved. The root, residual obligations and full
+arbitrary-path conjecture remain open; the later vertical sign counterexample
+is described below. That original
 goal still includes both endpoints, every finite path, all three directions,
 every original polygon triple and the raw integer coefficients including zeros.
 
@@ -693,3 +697,107 @@ source closures, dependency pins and recorded rebuild recipes does not claim
 that this archive update performed a fresh whole-campaign replay or provides
 an automatic all-47 runner. Historical prepared packets and applied engineering
 versions remain separate from mathematical admission and certified self-change.
+
+
+## Accepted proof checkpoint through round 41
+
+The checkpoint preserves **50 independently admitted results** through closed
+round 41. The new archive SHA-256 is **`c312f3fcd8158db4a1d64dceb21721397948339899961fcc75c9a57a32eff2f1`**. Top-level
+`MANIFEST.json` `current_checkpoint` identifies the exact accepted registry,
+checked proposition graph and open obligations. All 47 preceding admission
+records and their original proof identities are unchanged, as are the graph and
+remaining obligations. Historical archive hashes, prepared packets and applied
+source-version records above retain their dated meaning.
+
+Use the original natural-coordinate polygon predicate, raw integer coefficients
+and literal weights `W` and groups `G` defined in the round-40 section. Natural
+subtraction is truncated at zero throughout. The three new record IDs are:
+
+- `markov-grouped-vertical-separator-r0041-v1`: the actual midpoint
+  `E=(frame(replicate 9 true)).mid`, corresponding to `R^9`, has label `(10,11)`.
+  All three points `(10,0),(10,1),(10,2)` lie in its original polygon and
+  `16 <= 2*10`. The proof establishes
+  `G(10,10,0,0,1,16)=-3`, `G(10,10,0,0,1,17)=72` and
+  `G(10,10,0,0,1,18)=130`. For every natural `s,t <= 10`, the ordered
+  contribution to group 16 is `81` at `(s,t)=(8,8)`, `-84` at `(10,6)`,
+  and zero otherwise. Thus group 16 is `81-84=-3`; the negative ordered
+  contribution is not counted twice.
+
+  The exact weight profiles are `W(10,10,0,s)=1` at `s=10` and zero elsewhere;
+  `W(10,10,1,s)=9,20` at `s=8,9` and zero elsewhere; and
+  `W(10,10,2,s)=84,288,270` at `s=6,7,8` and zero elsewhere, in each case
+  for every natural `s <= 10`. Independent exact raw-coefficient recovery gives
+  `c_E(10,0)=1`, `c_E(10,1)=29`, `c_E(10,2)=642`, and margin
+  `29^2-1*642=199`.
+
+  This refutes the statement that, for every natural `n >= 1` and every
+  vertical triple in the original polygon for label `(n,n+1)`, all groups with
+  natural `l <= 2n` are nonnegative. The witness is actual-family data, unlike
+  the auxiliary controls in round 40. The old conditional implication remains
+  correct, but its proposed universal vertical premise is false. The witness
+  satisfies the original raw log-concavity inequality and **does not refute
+  Conjecture 6.3**. No universal symbolic corner formula, horizontal group-sign
+  theorem, reduction or root discharge is asserted.
+- `markov-guarded-weight-support-r0041-v1` proves four exact statements about
+  the literal individual weights, with all variables natural:
+
+  1. If `1 <= n` and `i+j=n`, then `W(n,i,j,s)` is one exactly when
+     `i=n`, `j=0` and `s=n`, and is zero otherwise. This separately retains
+     the degree-zero-layer corner; it makes no `n=0` assertion in this clause.
+  2. If `0 < h`, `h <= n` and `i+j=n+h`, then
+     `W(n,i,j,s)>0` if and only if
+     `s <= i`, `h+s <= n` and `i <= s+2h`.
+  3. If `i+j < n` or `2n < i+j`, then `W(n,i,j,s)=0`, with no positivity
+     assumption on `n`.
+  4. If `(dx,dy)` is `(1,0)` or `(0,1)`, `0 < h+r`, `h+r <= n` and
+     `i+j=n+h`, then `W(n,i+r*dx,j+r*dy,s)>0` if and only if
+     `(i+r*dx)-2(h+r) <= s <= min(i+r*dx,n-(h+r))`.
+     The lower bound uses natural truncated subtraction. This clause does not
+     cover arbitrary directions or the shifted layer `h+r=0`.
+
+  These are support/positivity identities for individual weights. They imply
+  no grouped sign or original coefficient log-concavity inequality here.
+- `markov-grouped-antidiagonal-r0041-v1` reindexes and symmetrizes the finite
+  convolution sum. For arbitrary natural `n,i,j,dx,dy,l`, write
+  `A_s=W(n,i,j,s)`, `B_s=W(n,i+dx,j+dy,s)` and
+  `C_s=W(n,i+2dx,j+2dy,s)`. Then
+  `G(n,i,j,dx,dy,l)=sum_s [B_s*B_(l-s)-A_s*C_(l-s)]`, and
+  `2G(n,i,j,dx,dy,l)=sum_s [2*B_s*B_(l-s)-A_s*C_(l-s)-A_(l-s)*C_s]`.
+  Both sums range over `0 <= s <= n`; a term is included only if
+  `s <= l` and `l-s <= n`, and is zero otherwise. The factor 2 and both ordered
+  negative products in the second identity are retained. There is no
+  `n >= 1`, polygon, positivity, direction or `l <= 2n` hypothesis.
+  “Antidiagonal” here refers only to the convolution indices `s+t=l`, not
+  the original coefficient-direction antidiagonal inequality. Neither identity
+  gives a sign or original log-concavity conclusion.
+
+The three new admissions recorded **167 original successful checks**:
+82 project compilations, 82 independent kernel replays and three complete
+premise inspections. The English/Lean and checkpoint audits authenticated the
+original FINISHED, producer-completion, source, result, dependency-pin, generated
+export, admission-journal and committed-registry bindings. They did not perform
+fresh Lean compilation, kernel replay, premise inspection, model calls or a
+whole-campaign rebuild. The proof-source implementation remains
+`3cfd280fbeea15b0a2ca0a434a7333304d282ee97ed5a66d840ad2c340f76478`.
+
+The exact finite witness proves one positive raw margin; it adds no general or
+unbounded log-concavity region or family theorem. The strongest unconditional
+coverage remains all three original directions for every constant-left path
+and the antidiagonal direction for every constant-right path. No new node is
+discharged and the root, residual obligations and full arbitrary-path conjecture
+remain open. Horizontal grouped signs are neither proved nor refuted by these
+three statements. The original goal retains both endpoints, every finite path,
+all three directions, all original polygon premises and raw coefficients
+including zeros.
+
+For each of the 50 admissions, the retained original `REBUILD.json`, FINISHED
+source closure, exact toolchain and dependency pins, and separately bound
+exported declaration provide the inputs and recorded steps for an isolated
+rebuild. Follow the extraction, manifest verification, path-relocation, fresh
+output, import-isolation and complete checking requirements above. Preserve
+original receipt identities; rebuild generated aliases for every new consumer.
+The automated `repro/repro.py` profiles remain their original baseline profiles,
+**not a 50-result campaign profile**. This publication retains proof/rebuild
+sources and original check evidence; it claims neither a fresh replay of all
+50 admissions nor an automatic all-50 runner. Engineering-source provenance
+and proof admission remain distinct from certified controller self-change.

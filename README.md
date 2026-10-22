@@ -18,8 +18,8 @@ from empirical research usefulness. This is an operator-engineered revision, not
 a certified Goedel self-improvement. The dated launch records preserve its tests,
 review, clean-seed comparison and actual activation status.
 
-**Clean-seed concept campaign, through closed round 40:**
-47 independently admitted results. All three original weak log-concavity directions
+**Clean-seed concept campaign, through closed round 41:**
+50 independently admitted results. All three original weak log-concavity directions
 are now proved for every constant-left path of length `k >= 0`, with midpoint
 label `(1, k + 2)`, at every index satisfying the original polygon conditions.
 The coefficients remain raw integers, including zeros; the proof uses the
@@ -107,13 +107,28 @@ constant-right path of length `k >= 0`. The bridge sums coefficient groups of
 `A_1^2 - A_0*A_2`; it permits cancellation within each group. The actual-family
 theorem retains **both universal horizontal and vertical grouped-sign
 assumptions**, at every original polygon triple and every group index
-`0 <= l <= 2(k+1)`. Those signs remain unproved for the actual family. The two
+`0 <= l <= 2(k+1)`. At that checkpoint these signs were unproved for the
+actual family; round 41 below refutes the universal vertical premise. The two
 controls separate sufficient conditions on auxiliary polynomials; they are not
 Markov counterexamples. The strongest unconditional coverage remains all three
 directions for constant-left paths and the antidiagonal direction for
 constant-right paths. The root, all residual obligations and full arbitrary-path
 Conjecture 6.3 remain open. See the
 [exact hypotheses and retained reproduction inputs](repro/README.md#accepted-proof-checkpoint-through-round-40).
+
+Round 41 proves that the proposed universal vertical grouped-sign premise is
+**false on an actual constant-right path**. For `R^9`, with label `(10,11)`, the
+original-polygon vertical triple `(10,0),(10,1),(10,2)` has group
+`G(10,10,0,0,1,16)=81-84=-3`. Its raw coefficients are `1,29,642`, with positive
+log-concavity margin `29^2-1*642=199`. Thus the round-40 conditional implication
+remains valid, while this universal premise cannot establish the family result;
+**the original Markov conjecture is not refuted**. Two further admissions give
+exact guarded support/positivity formulas for individual weights and exact
+reindexing and symmetrization along convolution indices `s+t=l`. These identities
+make no grouped-sign or original log-concavity conclusion. No new general or
+unbounded log-concavity coverage or root discharge follows; the strongest
+unconditional family coverage remains unchanged. See the
+[exact round-41 statements and reproduction boundary](repro/README.md#accepted-proof-checkpoint-through-round-41).
 
 The [canonical accepted checkpoint](evidence/accepted-checkpoint-20261020.tar.gz)
 preserves original proof sources, checked receipts, dependency pins and separately
