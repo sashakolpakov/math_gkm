@@ -18,8 +18,8 @@ from empirical research usefulness. This is an operator-engineered revision, not
 a certified Goedel self-improvement. The dated launch records preserve its tests,
 review, clean-seed comparison and actual activation status.
 
-**Clean-seed concept campaign, through closed round 41:**
-50 independently admitted results. All three original weak log-concavity directions
+**Clean-seed concept campaign, through closed round 42:**
+52 independently admitted results. All three original weak log-concavity directions
 are now proved for every constant-left path of length `k >= 0`, with midpoint
 label `(1, k + 2)`, at every index satisfying the original polygon conditions.
 The coefficients remain raw integers, including zeros; the proof uses the
@@ -110,7 +110,7 @@ assumptions**, at every original polygon triple and every group index
 `0 <= l <= 2(k+1)`. At that checkpoint these signs were unproved for the
 actual family; round 41 below refutes the universal vertical premise. The two
 controls separate sufficient conditions on auxiliary polynomials; they are not
-Markov counterexamples. The strongest unconditional coverage remains all three
+Markov counterexamples. At that checkpoint, unconditional coverage remained all three
 directions for constant-left paths and the antidiagonal direction for
 constant-right paths. The root, all residual obligations and full arbitrary-path
 Conjecture 6.3 remain open. See the
@@ -129,6 +129,18 @@ make no grouped-sign or original log-concavity conclusion. No new general or
 unbounded log-concavity coverage or root discharge follows; the strongest
 unconditional family coverage remains unchanged. See the
 [exact round-41 statements and reproduction boundary](repro/README.md#accepted-proof-checkpoint-through-round-41).
+
+Round 42 adds an unconditional boundary-triple result for every natural
+`n >= 2`. The actual midpoint of `replicate (n-1) true` has label `(n,n+1)`;
+its three original-polygon points `(n,0),(n,1),(n,2)` satisfy strict vertical
+log-concavity. Their raw coefficients are `1`, `3n-1` and
+`(17n^2-45n+34)/2`, with doubled margin `n^2+33n-32 > 0`.
+No grouped-sign premise is required. This proves one boundary triple uniformly
+across an infinite family; it does not prove every horizontal or vertical
+triple in that family or arbitrary-path log-concavity. Both new admissions
+passed the original independent checks. The root and all residual obligations
+remain open. See the
+[exact round-42 statements and reproduction boundary](repro/README.md#accepted-proof-checkpoint-through-round-42).
 
 The [canonical accepted checkpoint](evidence/accepted-checkpoint-20261020.tar.gz)
 preserves original proof sources, checked receipts, dependency pins and separately

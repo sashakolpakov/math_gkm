@@ -444,7 +444,7 @@ packet and from the mathematical proof receipts.
 ## Accepted proof checkpoint through round 39
 
 The historical round-39 checkpoint preserves **44 independently admitted
-results** through that round. The latest 47-result scope is described in the
+results** through that round. The later 47-result scope is described in the
 [round-40 section](#accepted-proof-checkpoint-through-round-40). Follow top-level `MANIFEST.json` `current_checkpoint` for the
 exact accepted registry, checked DAG and open residuals. All 41 prior records,
 original proof payloads and earlier source-transition and prepared-candidate
@@ -594,7 +594,7 @@ and keeps their historical and applied evidence separate.
 ## Accepted proof checkpoint through round 40
 
 The historical round-40 checkpoint preserves **47 independently admitted
-results** through that round. The latest 50-result scope appears in the
+results** through that round. The later 50-result scope appears in the
 [round-41 section](#accepted-proof-checkpoint-through-round-41). Its archive SHA-256 is **`273496ec8d581d084e277402d0cbe31d4fd5cec1d985b6702adcda30f98b167a`**. Its top-level
 `MANIFEST.json` `current_checkpoint` identifies the accepted registry, checked
 proposition graph and open residuals. Earlier proof payloads and source-version
@@ -701,8 +701,9 @@ versions remain separate from mathematical admission and certified self-change.
 
 ## Accepted proof checkpoint through round 41
 
-The checkpoint preserves **50 independently admitted results** through closed
-round 41. The new archive SHA-256 is **`c312f3fcd8158db4a1d64dceb21721397948339899961fcc75c9a57a32eff2f1`**. Top-level
+The historical checkpoint preserves **50 independently admitted results** through closed
+round 41. The latest 52-result scope appears in the
+[round-42 section](#accepted-proof-checkpoint-through-round-42). Its archive SHA-256 is **`c312f3fcd8158db4a1d64dceb21721397948339899961fcc75c9a57a32eff2f1`**. Top-level
 `MANIFEST.json` `current_checkpoint` identifies the exact accepted registry,
 checked proposition graph and open obligations. All 47 preceding admission
 records and their original proof identities are unchanged, as are the graph and
@@ -801,3 +802,72 @@ The automated `repro/repro.py` profiles remain their original baseline profiles,
 sources and original check evidence; it claims neither a fresh replay of all
 50 admissions nor an automatic all-50 runner. Engineering-source provenance
 and proof admission remain distinct from certified controller self-change.
+
+
+## Accepted proof checkpoint through round 42
+
+The checkpoint preserves **52 independently admitted results** through closed
+round 42. The archive SHA-256 is **`2d571e719be4ef3379c190abac57c1d82c9628a1b867c9b849e74ca76c1f8eb8`**. The top-level
+`MANIFEST.json` `current_checkpoint` identifies the exact accepted registry,
+checked proposition graph and open obligations. All 50 preceding admission
+records and all 1,613 previously indexed archive payloads retain their original
+bytes and proof identities. The graph and remaining obligations are unchanged.
+Historical prepared packets and applied engineering-source records are retained.
+
+For every natural `n >= 2`, define the actual midpoint entry
+`E_n=(frame(replicate (n-1) true)).mid` and the raw integer coefficients
+`c_j=coeff E_n.p n j`. Natural subtraction is truncated at zero; under the
+stated premise the path has length `n-1 >= 1`. The two new records are:
+
+- `markov-right-corner-coefficients-margin-r0042-v1` proves
+  `c_0=1`, `c_1=3*(n:Z)-1`,
+  `2*c_2=17*(n:Z)^2-45*(n:Z)+34`,
+  `2*(c_1^2-c_0*c_2)=(n:Z)^2+33*(n:Z)-32`, and
+  `0 < c_1^2-c_0*c_2`.
+  Every displayed coefficient and margin equality is an equality in the
+  integers; the doubled form makes no convention about division necessary.
+- `markov-original-right-vertical-corner-r0042-v1` proves the actual labels
+  `E_n.a=n`, `E_n.b=n+1`, membership of all three points
+  `(n,0),(n,1),(n,2)` in the original `InPolygon E_n.a E_n.b`, and
+  `coeff E_n.p n 0 * coeff E_n.p n 2 < (coeff E_n.p n 1)^2`.
+
+The only hypothesis of either record is `n >= 2`. There is no grouped-sign,
+compatibility, positive-coefficient or recurrence assumption supplied by the
+caller. The statements concern the actual constant-right Markov family, not
+an auxiliary polynomial. Explicit small cases in the proof do not restrict
+the universally quantified conclusions. The first result gives exact
+coefficients and a positive margin; the second includes the original polygon
+conditions and strict inequality. Neither quantifies over other vertical
+triples, all horizontal triples, arbitrary paths or all rational labels.
+
+These two admissions passed **162 original successful checks**: 80 project
+compilations, 80 independent kernel replays and two complete premise inspections.
+Each admission's entire independent validation had its original 900-second
+allowance. Original result records bind their elapsed times and source identities.
+The retained English/Lean and checkpoint audits authenticate the successful
+FINISHED, producer-completion, source, task, solution, result, dependency pins,
+generated exports and admission journals. Preservation adds no fresh Lean
+compilation, kernel replay, premise inspection, hosted model call or
+whole-campaign replay. The proof-source implementation remains
+`3cfd280fbeea15b0a2ca0a434a7333304d282ee97ed5a66d840ad2c340f76478`.
+
+The new coverage is an infinite family of one boundary vertical triple per
+polynomial. Full all-index coverage remains all three original directions for
+every constant-left path, and the antidiagonal direction for every constant-right
+path. General coordinate inequalities and the full arbitrary-path conjecture
+remain open; no root or residual node was discharged. The original goal still
+includes both endpoints, every finite path, all three directions, every original
+polygon premise and raw integer coefficients including zeros. The new theorem
+does not restore the vertical grouped-sign premise refuted in round 41.
+
+All 52 admissions retain their original `REBUILD.json`, FINISHED source
+closure, exact toolchain and dependency pins, and separately bound generated
+exports. Follow the extraction, manifest verification, path-relocation,
+fresh-output, import-isolation and complete checking requirements above.
+Original receipts remain historical evidence; generated aliases need a fresh
+rebuild in every new consumer. The automated `repro/repro.py` profiles remain
+the original baseline profiles, **not a 52-result campaign profile**. This
+publication preserves the inputs and original check evidence; it claims neither
+a fresh replay of all 52 admissions nor an automatic all-52 runner. Engineering
+maintenance and proof admission remain distinct from certified researcher
+self-change.
