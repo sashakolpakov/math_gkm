@@ -18,8 +18,8 @@ from empirical research usefulness. This is an operator-engineered revision, not
 a certified Goedel self-improvement. The dated launch records preserve its tests,
 review, clean-seed comparison and actual activation status.
 
-**Clean-seed concept campaign, through round 38 (checked 21 October 2026 UTC):**
-41 independently admitted results. All three original weak log-concavity directions
+**Clean-seed concept campaign, through round 39 (checked 21 October 2026 UTC):**
+44 independently admitted results. All three original weak log-concavity directions
 are now proved for every constant-left path of length `k >= 0`, with midpoint
 label `(1, k + 2)`, at every index satisfying the original polygon conditions.
 The coefficients remain raw integers, including zeros; the proof uses the
@@ -82,7 +82,24 @@ transfer produces coefficients `[1,0,1]`. It has no actual-family reachability
 assertion. These results reject two stronger preservation criteria; they are
 not counterexamples to the original conjecture and add no unconditional Markov
 log-concavity coverage. All root and residual obligations remain open. See the
-[exact scopes and reproduction limits](repro/README.md#accepted-checkpoint-through-round-38).
+[exact scopes and reproduction limits](repro/README.md#historical-accepted-checkpoint-through-round-38).
+
+Round 39 extends the conditional mixture theorem to finite families of integer
+sequences with natural weights, pointwise nonnegativity, individual adjacent
+log-concavity and both cross inequalities for every distinct pair. It also
+proves the exact five-shift form of both actual-state updates. Coordinate
+log-concavity of their outputs follows only from input nonnegativity, both
+input coordinate inequalities and pairwise compatibility of every distinct
+shifted pair, at all integer starts with zero extension. Those additional
+premises remain unproved for actual states. A fixed auxiliary control shows
+that the old unshifted conditions do not supply one of the shifted conditions;
+it makes no actual-family reachability assertion. No new unconditional Markov
+log-concavity coverage or root discharge follows. All 44 proof admissions were
+committed before the recorded storage-guard stop. A subsequently reviewed storage
+repair and continuation from the existing receipts completed the round-39 source
+snapshot without replaying that research or changing its charged calls. Original
+proof provenance remains unchanged.
+See the [full hypotheses and reproduction boundary](repro/README.md#accepted-proof-checkpoint-through-round-39).
 
 The [canonical accepted checkpoint](evidence/accepted-checkpoint-20261020.tar.gz)
 preserves original proof sources, checked receipts, dependency pins and separately

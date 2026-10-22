@@ -356,10 +356,9 @@ closures. This update preserves the complete recorded inputs and replay recipes;
 no new automated full-campaign replay is asserted.
 
 
-## Accepted checkpoint through round 38
+## Historical accepted checkpoint through round 38
 
-The latest checkpoint preserves **41 independently admitted results through
-round 38**. The top-level `MANIFEST.json` `current_checkpoint` indexes the exact
+The round-38 checkpoint preserves **41 independently admitted results**. The top-level `MANIFEST.json` `current_checkpoint` indexes the exact
 accepted registry, checked DAG and every open residual. All earlier archive
 payloads retain their original bytes, including the round-37 checkpoint, its
 proof receipts, the separately recorded `ffd4aee…` activation metadata and all
@@ -440,3 +439,152 @@ pins, receipt bindings and recorded manual recipes; this update neither adds
 an automatic all-41 runner nor claims a fresh all-campaign rebuild. The applied
 `ffd4aee…` source transition remains distinct from every historical prepared
 packet and from the mathematical proof receipts.
+
+
+## Accepted proof checkpoint through round 39
+
+The accepted proof checkpoint preserves **44 independently admitted results**
+through round 39. Follow top-level `MANIFEST.json` `current_checkpoint` for the
+exact accepted registry, checked DAG and open residuals. All 41 prior records,
+original proof payloads and earlier source-transition and prepared-candidate
+metadata retain their original bytes and provenance.
+
+The original aggregate retained-source/history guard stopped the controller
+**after the three round-39 proof admissions but before completion of the
+round-39 source snapshot**. A subsequently reviewed storage-version repair and
+continuation from the existing receipts completed that snapshot without
+replaying round-39 research or changing the original charged calls. The latest
+checkpoint separately binds its completed source manifest, observer endpoint,
+44-result registry and unchanged open DAG. The original English/Lean audit is
+retained byte for byte: its earlier statement that the snapshot was incomplete
+records the situation at that audit, before the repair.
+
+For the precise statements, let `c_P(i,j)` be the raw integer coefficient of an
+integer bivariate polynomial, extended by zero whenever either integer index
+is negative. For a sequence `a : Z -> Z`, `LC(a)` means
+`a(t)*a(t+2) <= a(t+1)^2` at every integer `t`. `Cross(a,b)` means both
+`a(t)*b(t+2) <= a(t+1)*b(t+1)` and
+`b(t)*a(t+2) <= a(t+1)*b(t+1)` at every integer `t`.
+
+The three exact new record IDs and scopes are:
+
+- `markov-finite-family-mixture-r0039-v1`: for any index type in Lean `Type`,
+  finite set `s`, finitely supported integer sequences `f_r` and natural weights
+  `w_r`, assume pointwise nonnegativity and `LC(f_r)` for every `r` in `s`, and
+  `Cross(f_r,f_q)` for every pair of distinct indices `r,q` in `s`. Then
+  `sum_{r in s} w_r*f_r` satisfies `LC` at every integer index. No finiteness
+  assumption on the entire index type, common-support, gap-free-support or
+  strict-positivity premise is required. Empty finite sets, zero weights and
+  zero coefficients remain allowed. The proof consumes the previously admitted
+  binary mixture and explicitly proves compatibility with each partial sum;
+  it does not supply actual-family premises.
+- `markov-conditional-shifted-transfer-r0039-v1`: write `T=U+V` and define
+  `O_true(P,Q)=(T^2+U)*P+V*Q`, `O_false(P,Q)=T^2*P+V*Q`. For any integer start
+  `(i,j)`, direction `(dx,dy)` and sequence parameter `t`, the five sequences are
+  `f_0(t)=c_P(i+t*dx-2,j+t*dy)`,
+  `f_1(t)=c_P(i+t*dx-1,j+t*dy-1)`,
+  `f_2(t)=c_P(i+t*dx,j+t*dy-2)`,
+  `f_3(t)=c_P(i+t*dx-1,j+t*dy)`, and
+  `f_4(t)=c_Q(i+t*dx,j+t*dy-1)`. The output coefficient at
+  `(i+t*dx,j+t*dy)` is exactly their weighted sum, with weights
+  `(1,2,1,1,1)` for `true` and `(1,2,1,0,1)` for `false`. This identity holds
+  for arbitrary integer directions, including zero or negative directions,
+  with no sign or log-concavity assumption.
+
+  Its coordinate conclusion restricts directions to `(1,0)` and `(0,1)`.
+  `CoordLC(P)` requires the adjacent inequality for all integer starts in
+  those directions. The complete `Premises(P,Q)` requires nonnegative
+  zero-extended coefficients of both inputs, `CoordLC(P)`, `CoordLC(Q)`, and,
+  for every integer start and either coordinate direction, `Cross(f_r,f_q)`
+  for every distinct `r,q` among the five sequences. Each `Cross` includes
+  every integer `t` and both product inequalities. Under all these premises,
+  both outputs satisfy `CoordLC`. There is no polygon restriction or hidden
+  output inequality in the premises.
+
+  For every natural `k`, the actual constant-right midpoint and gap also satisfy
+  the unconditional identities `M_(k+1)=O_true(M_k,G_k)` and
+  `G_(k+1)=O_false(M_k,G_k)`. Their coordinate log-concavity consequence
+  retains the complete `Premises(M_k,G_k)` assumption. Here
+  `M_k=(frame(replicate k true)).mid.p`, with label `(k+1,k+2)`, and
+  `G_k=M_k-U*(frame(replicate k true)).lo.p`. No assertion that all actual
+  states satisfy the shifted premises, no antidiagonal result and no
+  unconditional actual-family coordinate theorem is proved.
+- `markov-missing-shifted-compatibility-r0039-v1`: the fixed auxiliary input
+  `P=1`, `Q=U^2 V` satisfies the previously admitted unshifted
+  `CoordinateInputs` conditions: nonnegativity, both individual coordinate
+  inequalities and both cross inequalities at every integer start in either
+  coordinate direction. At start `(0,2)`, direction `(1,0)`, its sequences
+  `f_2(t)=c_1(t,0)` and `f_4(t)=c_(U^2 V)(t,1)` have
+  `f_2(0)*f_4(2)=1` and `f_2(1)*f_4(1)=0`; hence `Cross(f_2,f_4)` is false.
+  The statement has no assumptions. It separates the old unshifted conditions
+  from this extra sufficient-bridge premise. It proves neither necessity of
+  every shifted premise nor failure on reachable inputs, and makes no
+  actual-family reachability or separate nonreachability assertion.
+
+Their original independent validators recorded **125 successful checks**:
+61 project compilations, 61 independent kernel replays and three complete
+premise inspections, under the unchanged 900-second allowance for each
+admission. Only `propext`, `Classical.choice` and `Quot.sound` occur in the
+obligation closures; the interface and transport closures use no axioms. The
+later English/Lean audit authenticated the original FINISHED/task/solution,
+source, result, pin and export bindings and expanded every named predicate.
+It performed no new Lean compilation, kernel replay, inspector or model call.
+
+The entire proposition DAG and every remaining obligation are unchanged.
+There is no new reduction, discharged node or unconditional Markov
+log-concavity coverage. All root and residual nodes remain open. Full
+Conjecture 6.3 still requires both original endpoints and every finite path,
+all three original directions and every original polygon triple with raw
+integer coefficients including zeros. Novelty, publication correspondence,
+measured usefulness and certified controller improvement are not inferred.
+
+The original manual inputs remain under each exact
+`proofs/<record-id>/REBUILD.json`, alongside `FINISHED.json`, `source/` and
+`rebuild-pins/`; generated aliases are separately under `exports/`. Extract into
+a new empty directory and verify the manifest and registry bindings. Restore
+the exact toolchain and dependency pins, use fresh source/build/output trees,
+and relocate only historical source, build, toolchain and dependency paths in
+the recorded commands. Preserve source bytes, module order, flags, import
+isolation, bounded sandbox rules and every compilation, kernel replay and
+premise-inspection step. A new consumer must rebuild the generated aliases.
+Do not rewrite an original receipt to claim a new run; failed or incomplete
+checks do not establish reproduction.
+
+The existing `repro/repro.py` profiles remain their original baseline profiles,
+**not a 44-result campaign profile**. Required source closures, pins and exact
+recorded recipes are preserved here; no automatic all-44 runner or fresh
+full-campaign rebuild is claimed. Original proof provenance, including the
+`ffd4aee…` provenance of the three new admissions, remains unchanged. All
+historical prepared packets retain their recorded status; their mathematical
+admissions do not certify the later storage repair.
+
+### Applied storage-version provenance and neutral controls
+
+Top-level `MANIFEST.json` `storage_capacity_source_transition` identifies the
+separate source binding and sanitized activation summary under
+`reviewed-source/patches/3cfd280fbeea15b0a2ca0a434a7333304d282ee97ed5a66d840ad2c340f76478/`.
+The full 76-file source vector differs from the preceding `ffd4aee…` vector
+only in `machinery/study_common.py`: aggregate retained-source/history capacity
+increases from 1 GiB to 2 GiB. The separately bound continuation helper raises
+its finite migration allowance from 896 MiB to 1.5 GiB. Per-file, source
+inventory, proof-bundle, per-job, time, memory, premise and kernel checks retain
+their existing limits. The applied summary records the actual neutral readiness
+check (316.719 seconds, zero hosted model calls), preservation of both arm
+states apart from their seal binding, and continuation from the original ten
+closed calls with their charges unchanged. This is engineering evidence, not
+a new mathematical admission or a whole-campaign rebuild.
+
+The exact historical preparation sources and the recorded **184 passing pure
+controls** are retained under `prepared-origin/`, with their original inactive
+preparation binding. Their runner requires an **isolated reconstructed
+`ffd4aee…` baseline**; it must not be run directly against the newer `3cfd…`
+source vector. Follow `SOURCE_REPRO.md`: use the earlier FFD binding's
+`source_archive_paths` to restore and hash-check all 76 source files into a new
+empty baseline directory, then run a disposable extracted copy of
+`prepared-origin/run_pure.py` from that baseline with
+`PYTHONDONTWRITEBYTECODE=1` and `python3 -B`. The frozen runner supplies its
+reviewed new-common overlay and writes fresh result files beside itself.
+Preserve the original recorded results. These controls require no Lean, model,
+actual deployment or live research. This archive append did not rerun that
+suite or the mathematical campaign; it preserves the complete recorded inputs
+and keeps their historical and applied evidence separate.
