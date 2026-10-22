@@ -1325,3 +1325,162 @@ campaign profile**. This checkpoint claims neither a fresh replay of all 61
 admissions nor an automatic all-61 runner, a certified arbitrary self-change
 or measured conceptual gain. All earlier architecture, source-version and
 historical reproduction boundaries remain in force.
+
+## Accepted proof checkpoint through round 47
+
+The checkpoint preserves **64 independently admitted results** through closed
+round 47. Its archive SHA-256 is
+**`1ef1cde454c2b868a8f8914f4ffdbd0e34ae2dabeaba1efc5ac6fb143f027f79`**,
+with 63,192,150 bytes, 2,313 indexed payloads and 2,314 regular members.
+All 2,138 earlier payloads are retained byte for byte. There are 175 additions:
+170 original proof/export/FINISHED inputs and five accepted checkpoint/audit
+metadata payloads. The earlier
+[immutable public 61-result archive](https://raw.githubusercontent.com/sashakolpakov/math_gkm/0c9732551f7514bd3da4578b93e8806589e06a8d/evidence/accepted-checkpoint-20261020.tar.gz)
+has SHA-256
+`fa8297e0d009b39a8cf65cd416d3e21c64d146068e2d587fc17d63a53fa75ee8`.
+All prior snapshots, source versions and preparation statuses remain retained.
+
+The current `MANIFEST.json` points to accepted registry/proof snapshot
+`f1e171a947fb2ecb5d8113e0155dfaa5081eab7c31cb70d0bf4193771070a6fa`.
+Its immutable round-47 source snapshot has binding
+`95275e5c7b595fa41715feeb0220ee79bdb1fa7858d3682f478327bf469393bb`,
+manifest SHA-256
+`db4d66334679b7b1f6d86582d85840769963078a3c0d71ce0f2eb75a65772efd`,
+and 3,175 source files. The accepted registry binds 194 distinct source paths
+and 197 admitted module paths. All 61 inherited admission records **and their
+validator-directory locations** remain unchanged; no new relocation occurs.
+
+The three original admissions recorded **277 successful checks**:
+137 compilations, 137 independent kernel replays and three complete premise
+inspections. Their individual counts were 91/93/93, with original elapsed times
+530.535/547.723/543.806 seconds, each within its own unchanged 900-second
+whole-item allowance. This raises the retained total to 2,584 original checks:
+1,260 compilations, 1,260 replays and 64 inspections. Only `propext`,
+`Classical.choice` and `Quot.sound` occur in the checked obligation closures;
+the generated interface and transport declarations use no axioms.
+These are the original successful records, not new audit executions.
+
+All new formulas retain the round-46 definitions of `F` and `complete` above.
+All parameters and sum indices are natural. Every subtraction is truncated
+**before** casting, and each natural binomial factor is separately cast to
+the integers. Finite windows include both endpoints; zeros and every literal
+support guard remain present. Write `M=2*(n-h)-2`.
+
+**Restricted boundary signs.**
+`markov-horizontal-boundary-signs-r0047-v1` proves three clauses:
+
+- For all natural `n,h,l`, without additional assumptions,
+  `complete(n,h,0,l)` equals
+  `choose(n,h+1)^2-choose(n,h)*choose(n,h+2)` when `l=M`, and zero otherwise.
+  The binomial factors in this integer difference are individually cast.
+- For all natural `n,i,j,l`, assume `n>=1` and all three original horizontal
+  polygon memberships at `(i,j),(i+1,j),(i+2,j)`. Put `h=i+j-n`.
+  If `h=0 OR j=0 OR M<l`, then `complete(n,h,j,l)>=0`.
+  All three polygon premises remain in the admitted statement, including
+  the middle and far premises not needed by its proof.
+- For all natural `n,h,j,l`, the sole premise `M<l` implies
+  `complete(n,h,j,l)=0`.
+
+The axis proof uses the previously checked binomial log-concavity theorem.
+The zero-layer case uses the polygon implication `h=0 => j=0`.
+These conclusions concern the displayed signed sum, not a newly admitted
+raw-coefficient log-concavity consumer or an interior sign theorem.
+
+**Guarded neighboring-weight identity.**
+`markov-guarded-q-recurrence-r0047-v1` defines the integer multipliers
+
+```text
+A = castZ(n-q) * castZ(q+1) * castZ(2*h-(j-q)+1)
+B = castZ(n-h-q) * castZ(h+q) * castZ(j-q).
+```
+
+For every natural `n,h,j,q` with
+`h>0, q+1<=n-h, q+1<=j, j<=q+2*h`, it proves
+
+```text
+A * F(n,h,j,q+1) = B * F(n,h,j,q).
+```
+
+The **separate** positivity clause assumes only
+`q+1<=n-h` and `j<=q+2*h` and concludes `A>0`. It has no `h>0`,
+`q+1<=j`, polygon or actual-polynomial premise.
+The recurrence uses three exact binomial identities after checking the support
+guards at both indices. There is no division, omitted nonzero assumption or
+signed complete-sum comparison.
+
+**Endpoint-preserving finite-sum identity.**
+`markov-horizontal-two-step-boundary-identity-r0047-v1` uses
+
+```text
+C(a,b,f,g,l,m) =
+  SUM(q=0..a) SUM(v=0..b) [if q+v+l=m then f(q)*g(v) else 0]
+
+boundary(b,f,g,l,m) =
+  SUM(v=0..b) [if v+l=m then f(0)*g(v) else 0]
+  + SUM(v=0..b) [if 1+v+l=m then f(1)*g(v) else 0].
+```
+
+For arbitrary natural `a,b,l,m` and arbitrary functions `f,g:Nat->Int`,
+the source helper proves
+
+```text
+C(a+2,b,f,g,l,m) =
+  boundary(b,f,g,l,m) + C(a,b,(q=>f(q+2)),g,l+2,m).
+```
+
+The admitted obligation quantifies natural `n,h,j,l` and assumes only
+`h+4<=n`. Set `a=n-(h+1)`, `b=n-(h+2)`, `d=n-h`,
+`m=2*(n-h)-2` and `f_r(q)=F(n,r,j,q)`. It proves exactly
+
+```text
+complete(n,h,j,l) + complete(n,h,j,l+2)
+  = boundary(a,f_(h+1),f_(h+1),l,m)
+    - boundary(b,f_h,f_(h+2),l,m)
+    + C(a-2,a,(q=>f_(h+1)(q+2)),f_(h+1),l+2,m)
+    - C(d-2,b,(q=>f_h(q+2)),f_(h+2),l+2,m)
+    + complete(n,h,j,l+2).
+```
+
+Both `q=0` and `q=1` rows retain their complete `v` windows. The shifted
+windows retain the original right endpoints: `q=2..a` and `q=2..d`,
+respectively. All additive guards, natural subtractions and `F` support
+conditions remain literal. There is no positive-layer, polygon, sign or
+Capacity premise beyond the stated `h+4<=n` and the definitions' guards.
+In particular, **the identical `complete(n,h,j,l+2)` term remains on both
+sides**. This is an equality decomposition of `complete(l)`, not a proved
+two-step positivity recurrence or monotonicity inequality.
+
+The exact English/Lean/source audit is retained at
+`checkpoint/audits/round-0047/ENGLISH_LEAN_AUDIT.json` inside the archive;
+its SHA-256 is
+`9a7d8e7d0688a3c27e716abaf2a692a70b3bbaf650f39343ba9fd720eecb06ff`.
+The independent immutable-checkpoint review has SHA-256
+`9c3f83a117f3f49dd2029ffae251b3cf30774771932e3283578e884de80ba423`,
+bound in the endpoint metadata.
+
+None of these admissions establishes uniform interior sign, donor-size
+comparison, Capacity, a new unconditional actual-Markov log-concavity region,
+an arbitrary-path result or a root/residual discharge.
+The previously admitted log-concavity coverage remains: all three directions
+for every constant-left path, the antidiagonal direction for every constant-right
+path, and the infinite vertical-corner family with its original premises.
+The full conjecture still concerns both original endpoints, every finite path,
+all three original directions, original polygon conditions and raw integer
+coefficients including zeros. All five proposition nodes remain open.
+DAG binding `84fc51779a6fa9ca4297ebe0fe9093b314e6b03e6598d91f3e0c026a72b8be59`
+and remaining-obligation binding
+`acdddef93be03aab8e01d207e1f038cd07b0edf6750a964443811f5bf18f76b9`
+are unchanged.
+
+All 64 necessary original FINISHED source/task/solution/producer/result,
+`REBUILD.json`, exact toolchain/dependency pin/environment/binary identities and
+separately bound generated-export closures are retained. The three new proofs
+were checked under implementation `3cfd280f…`; historical proofs keep their
+original source identities. Generated exports remain aliases requiring a fresh
+checked rebuild in every new consumer. Follow the existing extraction,
+manifest verification, source relocation, fresh-output, import-isolation and
+complete checking instructions above. The automated `repro/repro.py` profiles
+remain **baseline-only**, not an automatic 64-result campaign runner.
+This preservation claims no fresh replay of all 64 results, certified arbitrary
+researcher self-change, measured conceptual gain or proof of the open conjecture.
+All earlier architecture and reproduction boundaries remain in force.

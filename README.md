@@ -18,8 +18,8 @@ from empirical research usefulness. This is an operator-engineered revision, not
 a certified Goedel self-improvement. The dated launch records preserve its tests,
 review, clean-seed comparison and actual activation status.
 
-**Clean-seed concept campaign, through closed round 46:**
-61 independently admitted results. All three original weak log-concavity directions
+**Clean-seed concept campaign, through closed round 47:**
+64 independently admitted results. All three original weak log-concavity directions
 are now proved for every constant-left path of length `k >= 0`, with midpoint
 label `(1, k + 2)`, at every index satisfying the original polygon conditions.
 The coefficients remain raw integers, including zeros; the proof uses the
@@ -189,6 +189,15 @@ no sign, donor-size, Capacity or log-concavity conclusion, no new unconditional
 region and no root reduction or discharge. All five proposition nodes remain
 open. See the
 [exact round-46 formulas and reproduction boundary](repro/README.md#accepted-proof-checkpoint-through-round-46).
+
+Round 47 adds restricted boundary signs for the complete signed sum, a guarded
+division-free recurrence for its binomial weights, and an exact two-row
+finite-convolution decomposition retaining both boundary contributions.
+The latter keeps the same shifted complete-sum term on both sides; it supplies
+no sign comparison. The uniform interior donor-size comparison remains open.
+These results add no unconditional actual-Markov log-concavity region or
+root discharge. See the
+[exact round-47 statements and reproduction boundary](repro/README.md#accepted-proof-checkpoint-through-round-47).
 
 The [canonical accepted checkpoint](evidence/accepted-checkpoint-20261020.tar.gz)
 preserves original proof sources, checked receipts, dependency pins and separately
