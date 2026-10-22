@@ -18,8 +18,8 @@ from empirical research usefulness. This is an operator-engineered revision, not
 a certified Goedel self-improvement. The dated launch records preserve its tests,
 review, clean-seed comparison and actual activation status.
 
-**Clean-seed concept campaign, through closed round 42:**
-52 independently admitted results. All three original weak log-concavity directions
+**Clean-seed concept campaign, through closed round 43:**
+53 independently admitted results. All three original weak log-concavity directions
 are now proved for every constant-left path of length `k >= 0`, with midpoint
 label `(1, k + 2)`, at every index satisfying the original polygon conditions.
 The coefficients remain raw integers, including zeros; the proof uses the
@@ -141,6 +141,16 @@ triple in that family or arbitrary-path log-concavity. Both new admissions
 passed the original independent checks. The root and all residual obligations
 remain open. See the
 [exact round-42 statements and reproduction boundary](repro/README.md#accepted-proof-checkpoint-through-round-42).
+
+Round 43 adds a checked conditional reduction using that corner theorem.
+Its new residual asks for every previously required horizontal and mixed-path
+antidiagonal inequality, and every previously required vertical inequality
+except the proved constant-right corner. A proof of this new residual would
+supply the prior round-35 obligation. The dependency graph retains every old
+node and adds this checked step and one **open residual**; it closes no node.
+This is a stitching result, with no additional unconditional log-concavity
+coverage or proof of the general conjecture. See the
+[exact residual and reproduction boundary](repro/README.md#accepted-proof-checkpoint-through-round-43).
 
 The [canonical accepted checkpoint](evidence/accepted-checkpoint-20261020.tar.gz)
 preserves original proof sources, checked receipts, dependency pins and separately

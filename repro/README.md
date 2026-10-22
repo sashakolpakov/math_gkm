@@ -702,7 +702,7 @@ versions remain separate from mathematical admission and certified self-change.
 ## Accepted proof checkpoint through round 41
 
 The historical checkpoint preserves **50 independently admitted results** through closed
-round 41. The latest 52-result scope appears in the
+round 41. The later 52-result scope appears in the
 [round-42 section](#accepted-proof-checkpoint-through-round-42). Its archive SHA-256 is **`c312f3fcd8158db4a1d64dceb21721397948339899961fcc75c9a57a32eff2f1`**. Top-level
 `MANIFEST.json` `current_checkpoint` identifies the exact accepted registry,
 checked proposition graph and open obligations. All 47 preceding admission
@@ -806,8 +806,9 @@ and proof admission remain distinct from certified controller self-change.
 
 ## Accepted proof checkpoint through round 42
 
-The checkpoint preserves **52 independently admitted results** through closed
-round 42. The archive SHA-256 is **`2d571e719be4ef3379c190abac57c1d82c9628a1b867c9b849e74ca76c1f8eb8`**. The top-level
+The historical checkpoint preserves **52 independently admitted results** through closed
+round 42. The latest 53-result scope appears in the
+[round-43 section](#accepted-proof-checkpoint-through-round-43). Its archive SHA-256 is **`2d571e719be4ef3379c190abac57c1d82c9628a1b867c9b849e74ca76c1f8eb8`**. The top-level
 `MANIFEST.json` `current_checkpoint` identifies the exact accepted registry,
 checked proposition graph and open obligations. All 50 preceding admission
 records and all 1,613 previously indexed archive payloads retain their original
@@ -871,3 +872,78 @@ publication preserves the inputs and original check evidence; it claims neither
 a fresh replay of all 52 admissions nor an automatic all-52 runner. Engineering
 maintenance and proof admission remain distinct from certified researcher
 self-change.
+
+
+## Accepted proof checkpoint through round 43
+
+The checkpoint preserves **53 independently admitted results** through closed
+round 43. The archive SHA-256 is **`88e5da9680bd1667867186d3702e47bec2d2bd493f03e07f232c5c5f954be114`**. Follow top-level
+`MANIFEST.json` `current_checkpoint` for its exact accepted registry, proof graph,
+open obligations and source bindings. All 52 prior admission records and all
+1,720 previously indexed archive payloads retain their exact original bytes and
+locations. The new conditional reduction changes the graph by adding one checked
+dependency and one open residual; it removes or closes no earlier node or edge.
+
+The new record is `markov-right-vertical-corner-partition-r0043-v1`. It consumes
+the admitted round-42 actual-polygon corner theorem and proves a map from the
+new residual `markov-true-path-except-right-vertical-corner-r0043-v1` to the prior
+`markov-true-path-mixed-diagonal-r0035-v1` obligation. This is a conditional proof;
+the new residual is **not proved or assumed as a global axiom**.
+
+Here is the complete English meaning of the new residual. For every finite
+Boolean path `w` containing `true`, let `E=(frame w).mid` and
+`c(i,j)=coeff E.p i j`, with raw integer coefficients. It requires all three
+of the following universally quantified natural-coordinate clauses:
+
+- Horizontal: for every natural `i,j`, if `j>0` and `(i,j)`, `(i+1,j)`,
+  `(i+2,j)` all satisfy the original `InPolygon E.a E.b`, then
+  `c(i,j)*c(i+2,j) <= c(i+1,j)^2`.
+- Vertical: for every natural `i,j`, if `i>0` and `(i,j)`, `(i,j+1)`,
+  `(i,j+2)` all satisfy the original polygon predicate, and there is **no**
+  natural `n>=2` with `w=replicate(n-1,true)`, `i=n`, `j=0`, then
+  `c(i,j)*c(i,j+2) <= c(i,j+1)^2`.
+- Antidiagonal: if the same path also contains `false`, then for every natural
+  `i,j` with the original strict degree guard
+  `i+j+2 < E.a+E.b-1` and all three original polygon memberships at
+  `(i,j+2)`, `(i+1,j+1)`, `(i+2,j)`, require
+  `c(i,j+2)*c(i+2,j) <= c(i+1,j+1)^2`.
+
+Subtraction in natural expressions remains truncated at zero. Every index
+condition, polygon premise and mixed-path degree guard above is retained from
+the prior residual. The excluded set consists exactly of the proved vertical
+corner. In the
+checked reduction, that corner is supplied by the strict round-42 theorem and
+its resulting weak inequality; every other vertical case is supplied by the
+new residual, and the horizontal and antidiagonal clauses pass through unchanged.
+There is no grouped-sign, compatibility or normalized-coefficient assumption.
+
+The proof map runs from the new residual to the old obligation. The graph's
+new dependency points from the old target to the new residual: these describe
+the same conditional step in opposite conventions. Every earlier node, edge and
+remaining-obligation record is retained. The new residual remains open, and
+neither an old residual nor the root has been unconditionally discharged.
+The unchanged general goal still covers both endpoints, every finite path,
+all three directions, every original polygon premise and raw coefficients,
+including zeros. This reduction adds no unconditional log-concavity region.
+
+The new admission passed **147 original successful checks**: 73 project
+compilations, 73 independent kernel replays and one complete premise inspection,
+in about 828 seconds within its original 900-second allowance. The original
+result and source closure bind the proved implication, the exact new residual
+definition and its complete formal context, producer completion, task, solution,
+dependency pins, rebuild recipe and separately bound generated exports.
+The later English/Lean and checkpoint audits checked these original bindings;
+they added no fresh mathematical compilation, kernel replay, premise inspection,
+hosted model call or whole-campaign replay. The new checkpoint's construction
+and the new admission use implementation
+`3cfd280fbeea15b0a2ca0a434a7333304d282ee97ed5a66d840ad2c340f76478`.
+Every older admission and snapshot retains its original source-version provenance.
+
+All 53 admissions retain their original proof and rebuild inputs. Follow the
+extraction, manifest verification, path-relocation, fresh-output, import-isolation
+and complete checking requirements above; rebuild generated aliases for each
+new consumer. The automated `repro/repro.py` profiles remain the original
+baseline profiles, **not a 53-result campaign profile**. This publication
+preserves proof/rebuild sources and the original checking evidence; it claims
+neither a fresh replay of all 53 admissions nor an automatic all-53 runner.
+The new conditional dependency is not a certified self-change of the researcher.
