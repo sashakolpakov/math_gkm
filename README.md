@@ -18,8 +18,8 @@ from empirical research usefulness. This is an operator-engineered revision, not
 a certified Goedel self-improvement. The dated launch records preserve its tests,
 review, clean-seed comparison and actual activation status.
 
-**Clean-seed concept campaign, through closed round 45:**
-59 independently admitted results. All three original weak log-concavity directions
+**Clean-seed concept campaign, through closed round 46:**
+61 independently admitted results. All three original weak log-concavity directions
 are now proved for every constant-left path of length `k >= 0`, with midpoint
 label `(1, k + 2)`, at every index satisfying the original polygon conditions.
 The coefficients remain raw integers, including zeros; the proof uses the
@@ -177,6 +177,18 @@ raw zero coefficients remain in that consumer. These results add no unconditiona
 log-concavity region or root discharge; all five proposition nodes and the full
 conjecture remain open. See the
 [exact round-45 scopes and reproduction boundary](repro/README.md#accepted-proof-checkpoint-through-round-45).
+
+Round 46 proves an exact guarded reverse-weight formula for all natural
+`n,h,i,j,s` with `n >= 1`, `h <= n` and `i+j=n+h`, including the degree-zero
+layer and zero tails. A second identity expresses every horizontal signed group
+of the actual constant-right family as a complete difference of two finite
+convolutions, retaining `n >= 1` and all three original polygon premises, with
+no bound on the natural group index. The exact sum windows, weight guards and
+additive index condition remain explicit. These are algebraic identities, with
+no sign, donor-size, Capacity or log-concavity conclusion, no new unconditional
+region and no root reduction or discharge. All five proposition nodes remain
+open. See the
+[exact round-46 formulas and reproduction boundary](repro/README.md#accepted-proof-checkpoint-through-round-46).
 
 The [canonical accepted checkpoint](evidence/accepted-checkpoint-20261020.tar.gz)
 preserves original proof sources, checked receipts, dependency pins and separately

@@ -1172,3 +1172,156 @@ a fresh replay of all 59 admissions nor an automatic all-59 runner. Proof reuse
 and admission do not establish measured conceptual gain or certify arbitrary
 self-change of the researcher. All earlier architecture, source-version and
 historical reproduction boundaries remain in force.
+
+
+## Accepted proof checkpoint through round 46
+
+The checkpoint preserves **61 independently admitted results** through closed
+round 46. Its archive SHA-256 is **`fa8297e0d009b39a8cf65cd416d3e21c64d146068e2d587fc17d63a53fa75ee8`**, with
+**`56,021,171` bytes**. The top-level `MANIFEST.json`
+`current_checkpoint` identifies the current accepted registry, proof graph,
+remaining obligations and source bindings. All 2,058 previously indexed payloads
+retain their literal bytes, including historical proof, source-version and
+reproduction evidence. The prior 59 accepted records and their validator-directory
+locations are unchanged; there are no new relocations. The
+[immutable public 59-result archive](https://raw.githubusercontent.com/sashakolpakov/math_gkm/7f5d664541fac31b2932e52c3b4eab21be30f55f/evidence/accepted-checkpoint-20261020.tar.gz)
+has SHA-256 `eaf2171ab6ce33f9a98c97f9c4c25a74163b4ed2e86ea274a91c8f7ffc952a34`
+and size 52,781,820 bytes. The round-45 account above remains historical.
+
+Use the original guarded integer weights `W(n,i,j,s)` and signed grouped
+defect `G(n,i,j,dx,dy,l)` defined in the earlier sections. For every natural
+`n >= 1`, the actual constant-right midpoint is
+`E_n=(frame(replicate (n-1) true)).mid`, with label `(n,n+1)` and raw integer
+coefficients, including zeros. The case `n=1` includes the empty path. All
+indices below are natural numbers. **Every subtraction in an index, binomial
+argument, cutoff or guard is natural subtraction, truncated at zero.** Each
+natural binomial value is separately cast into the integers before multiplication;
+there are no denominators, positivity filters or implicit nonzero assumptions.
+
+The first new source defines the guarded reverse weight exactly as follows:
+
+```text
+F(n,h,j,q) =
+  if q <= n-h and q <= j and j <= q+2*h then
+    (choose(n-q,h) : Z) * (choose(h+q-1,q) : Z)
+      * (choose(2*h,j-q) : Z)
+  else 0.
+```
+
+All three guards are part of this definition. In particular, the checked
+zero-layer helper gives `F(n,0,j,q)=1` exactly when `q=0` and `j=0`, and zero
+otherwise, for all natural `n,j,q`. It is not an extension of a positive-layer
+formula with the corner case omitted.
+
+- `markov-guarded-reverse-weights-r0046-v1`
+  (`HorizontalR46.guarded_reverse_all`): for **all natural `n,h,i,j,s`**, if
+  `n >= 1`, `h <= n` and `i+j=n+h`, then
+
+  ```text
+  W(n,i,j,s) = if s <= n-h then F(n,h,j,n-h-s) else 0.
+  ```
+
+  There is no polygon premise and no requirement `h > 0`. The bound on `s`
+  is the explicit branch of the conclusion, not a caller assumption. The
+  theorem retains the `h=0` corner and the exact zero tail beyond `s=n-h`.
+  It proves guarded reindexing of weights, without a sign, Capacity, donor-size
+  or log-concavity premise or conclusion.
+
+The second new source defines the following **complete signed difference** in
+`Z`. Both sums retain their own exact finite windows, and every displayed `F`
+retains its three guards:
+
+```text
+complete(n,h,j,l) =
+    sum q = 0..n-(h+1), sum v = 0..n-(h+1),
+      if q+v+l = 2*(n-h)-2 then
+        F(n,h+1,j,q) * F(n,h+1,j,v)
+      else 0
+  - sum q = 0..n-h, sum v = 0..n-(h+2),
+      if q+v+l = 2*(n-h)-2 then
+        F(n,h,j,q) * F(n,h+2,j,v)
+      else 0.
+```
+
+Here `sum q = 0..a` means `Finset.range(a+1)`, including both endpoints.
+The positive part uses the `h+1` layer twice; the subtracted part uses the
+`h` and `h+2` layers, with the different cutoffs shown above. The same
+**additive equality `q+v+l = 2*(n-h)-2`** is tested inside every summand of
+both parts. It is not replaced by a convolution obtained by subtracting `l`
+from the right-hand side with natural truncation. In particular, there is no
+silent negative-index convention, discarded tail or unrestricted convolution.
+The definition exists for all natural inputs; the following identity retains
+its own polygon hypotheses.
+
+- `markov-horizontal-complete-sum-identity-r0046-v1`
+  (`HorizontalR46.polygon_complete_group`): for **all natural `n,i,j,l`**,
+  assume `n >= 1` and **all three** original horizontal memberships
+
+  ```text
+  InPolygon n (n+1) i j,
+  InPolygon n (n+1) (i+1) j,
+  InPolygon n (n+1) (i+2) j.
+  ```
+
+  Then
+
+  ```text
+  G(n,i,j,1,0,l) = complete(n,i+j-n,j,l).
+  ```
+
+  There is no upper bound on `l`, no positive-layer assumption and no sign,
+  donor-size, Capacity or log-concavity premise. The middle polygon premise
+  is retained in the admitted statement even though its proof does not use it.
+  The base and far-point premises imply `h=i+j-n` satisfies `i+j=n+h` and
+  `h+2 <= n`; that layer correspondence is derived rather than supplied by
+  the caller. The original polygon predicate remains
+  `a*b <= b*i+a*j` and `i+j <= a+b-1` in natural arithmetic. The identity
+  includes the `h=0` case and exact zero tails; it asserts no nonempty set of
+  horizontal triples at `n=1`.
+
+These are exact algebraic and reindexing statements. Equality to `complete`
+proves neither its sign nor the sign of the corresponding grouped defect. It
+supplies no distance-two donor-size comparison, actual-family Capacity or
+original coefficient log-concavity inequality. The second admission is a
+horizontal constant-right identity, with no vertical, antidiagonal or
+arbitrary-path extension. No new unconditional log-concavity region, reduction
+or discharge follows. The uniform donor-size assertion and full original
+conjecture remain unproved. Existing unconditional coverage remains all three
+directions for every constant-left path, the antidiagonal direction for every
+constant-right path, and the infinite vertical-corner family from round 42.
+
+The two admissions recorded **108 original successful checks**: 53 project
+compilations, 53 independent kernel replays and two complete premise
+inspections. Their original validators recorded respectively 21 and 87 checks,
+with elapsed times 178.798 and 517.753 seconds, each under its original
+900-second admission allowance. All original return codes are zero, all typed
+terminations are null and both original checks are operationally complete.
+The obligation closures remain within `propext`, `Classical.choice` and
+`Quot.sound`; the interface and transport declarations add no axioms. The
+frozen English/source audit authenticates the literal conditions and formulas,
+including the zero-layer and sum-window boundaries. These are recorded original
+checks, not new compilation, kernel replay, premise inspection or hosted calls
+performed for preservation or publication.
+
+The proof-source implementation remains
+`3cfd280fbeea15b0a2ca0a434a7333304d282ee97ed5a66d840ad2c340f76478`.
+The proposition graph retains binding
+`84fc51779a6fa9ca4297ebe0fe9093b314e6b03e6598d91f3e0c026a72b8be59`
+and the remaining-obligation record retains binding
+`acdddef93be03aab8e01d207e1f038cd07b0edf6750a964443811f5bf18f76b9`.
+All five proposition nodes and the full original root remain open. The goal
+still covers both endpoints, every finite path, all three directions, every
+original polygon premise and raw integer coefficients including zeros.
+
+All 61 admissions retain their necessary original FINISHED source closures,
+producer-completion, task, solution and result bindings, `REBUILD.json` recipes,
+exact toolchain and dependency pins, separately bound generated exports and
+admission-journal provenance. A generated export is a separately materialized
+alias; each new consumer still needs its own fresh checked rebuild. Follow the
+extraction, manifest verification, path-relocation, fresh-output, import-isolation
+and complete checking requirements above, preserving original receipt identities.
+The automated `repro/repro.py` profiles remain baseline-only, **not a 61-result
+campaign profile**. This checkpoint claims neither a fresh replay of all 61
+admissions nor an automatic all-61 runner, a certified arbitrary self-change
+or measured conceptual gain. All earlier architecture, source-version and
+historical reproduction boundaries remain in force.
