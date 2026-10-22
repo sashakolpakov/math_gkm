@@ -18,8 +18,8 @@ from empirical research usefulness. This is an operator-engineered revision, not
 a certified Goedel self-improvement. The dated launch records preserve its tests,
 review, clean-seed comparison and actual activation status.
 
-**Clean-seed concept campaign, through round 39 (checked 21 October 2026 UTC):**
-44 independently admitted results. All three original weak log-concavity directions
+**Clean-seed concept campaign, through closed round 40:**
+47 independently admitted results. All three original weak log-concavity directions
 are now proved for every constant-left path of length `k >= 0`, with midpoint
 label `(1, k + 2)`, at every index satisfying the original polygon conditions.
 The coefficients remain raw integers, including zeros; the proof uses the
@@ -100,6 +100,20 @@ repair and continuation from the existing receipts completed the round-39 source
 snapshot without replaying that research or changing its charged calls. Original
 proof provenance remains unchanged.
 See the [full hypotheses and reproduction boundary](repro/README.md#accepted-proof-checkpoint-through-round-39).
+
+Round 40 adds a generic grouped-polynomial bridge, two fixed auxiliary
+nonimplication controls, and a conditional horizontal/vertical theorem for every
+constant-right path of length `k >= 0`. The bridge sums coefficient groups of
+`A_1^2 - A_0*A_2`; it permits cancellation within each group. The actual-family
+theorem retains **both universal horizontal and vertical grouped-sign
+assumptions**, at every original polygon triple and every group index
+`0 <= l <= 2(k+1)`. Those signs remain unproved for the actual family. The two
+controls separate sufficient conditions on auxiliary polynomials; they are not
+Markov counterexamples. The strongest unconditional coverage remains all three
+directions for constant-left paths and the antidiagonal direction for
+constant-right paths. The root, all residual obligations and full arbitrary-path
+Conjecture 6.3 remain open. See the
+[exact hypotheses and retained reproduction inputs](repro/README.md#accepted-proof-checkpoint-through-round-40).
 
 The [canonical accepted checkpoint](evidence/accepted-checkpoint-20261020.tar.gz)
 preserves original proof sources, checked receipts, dependency pins and separately

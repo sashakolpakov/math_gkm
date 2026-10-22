@@ -443,8 +443,9 @@ packet and from the mathematical proof receipts.
 
 ## Accepted proof checkpoint through round 39
 
-The accepted proof checkpoint preserves **44 independently admitted results**
-through round 39. Follow top-level `MANIFEST.json` `current_checkpoint` for the
+The historical round-39 checkpoint preserves **44 independently admitted
+results** through that round. The latest 47-result scope is described in the
+[round-40 section](#accepted-proof-checkpoint-through-round-40). Follow top-level `MANIFEST.json` `current_checkpoint` for the
 exact accepted registry, checked DAG and open residuals. All 41 prior records,
 original proof payloads and earlier source-transition and prepared-candidate
 metadata retain their original bytes and provenance.
@@ -453,7 +454,7 @@ The original aggregate retained-source/history guard stopped the controller
 **after the three round-39 proof admissions but before completion of the
 round-39 source snapshot**. A subsequently reviewed storage-version repair and
 continuation from the existing receipts completed that snapshot without
-replaying round-39 research or changing the original charged calls. The latest
+replaying round-39 research or changing the original charged calls. The round-39
 checkpoint separately binds its completed source manifest, observer endpoint,
 44-result registry and unchanged open DAG. The original English/Lean audit is
 retained byte for byte: its earlier statement that the snapshot was incomplete
@@ -588,3 +589,107 @@ Preserve the original recorded results. These controls require no Lean, model,
 actual deployment or live research. This archive append did not rerun that
 suite or the mathematical campaign; it preserves the complete recorded inputs
 and keeps their historical and applied evidence separate.
+
+
+## Accepted proof checkpoint through round 40
+
+The checkpoint preserves **47 independently admitted results** through closed
+round 40. The new archive SHA-256 is **`273496ec8d581d084e277402d0cbe31d4fd5cec1d985b6702adcda30f98b167a`**. Its top-level
+`MANIFEST.json` `current_checkpoint` identifies the accepted registry, checked
+proposition graph and open residuals. Earlier proof payloads and source-version
+records retain their original bytes and provenance. The 44 inherited admission
+records differ only in their declared validator-directory relocations into the
+new finite study; their original checked proof identities are unchanged.
+
+There are three new record IDs. All polynomials below have integer coefficients.
+
+- `markov-grouped-polynomial-bridge-r0040-v1`: for arbitrary
+  `A_0,A_1,A_2` in `Z[X]`, coefficientwise nonnegativity of
+  `D=A_1^2-A_0*A_2` implies `A_0(1)*A_2(1) <= A_1(1)^2`. For every natural
+  `n,l` and arbitrary functions `a,b,c : N -> Z`, put
+  `E_n(w)=sum_{s=0}^n w(s)X^s`. The exact grouped identity is
+  `coeff_l(D(E_n(a),E_n(b),E_n(c))) =
+  sum_{0<=s,t<=n, s+t=l} (b(s)b(t)-a(s)c(t))`.
+  If every such group is nonnegative for every natural `l <= 2n`, then
+  `(sum a(s))*(sum c(s)) <= (sum b(s))^2`, with all three sums over `0..n`.
+  Groups above `2n` vanish. No nonnegativity or log-concavity of the individual
+  inputs, pointwise compatibility, strict positivity, homogeneity or Markov
+  reachability is assumed. The case `n=0` and zero coefficients are included.
+- `markov-grouped-nonimplication-controls-r0040-v1` contains two fixed
+  auxiliary controls. For `(A_0,A_1,A_2)=(1,1+X,2X)`, the defect is `1+X^2`,
+  whose coefficients are nonnegative, but the specified termwise midpoint
+  product at indices `0,1` fails: `2 > 1`. Thus grouped signs need not imply
+  that stronger termwise condition. For `(2,1+X,1)`, the defect is
+  `-1+2X+X^2`, with value `2` at `X=1` but constant coefficient `-1`. Thus
+  even a positive evaluated defect need not imply coefficientwise signs.
+  Both statements are unconditional facts about these fixed auxiliary inputs.
+  Neither asserts actual-family reachability or nonreachability, necessity of
+  the sufficient conditions, or a counterexample to Conjecture 6.3.
+- `markov-conditional-grouped-coordinate-consumer-r0040-v1` concerns every
+  natural `k >= 0`, with actual constant-right midpoint
+  `E=(frame(replicate k true)).mid`, label `(k+1,k+2)`, and `n=k+1`.
+  The previously admitted exact weights `W_n(i,j,s)` recover its raw
+  coefficient by `c_E(i,j)=sum_{s=0}^n W_n(i,j,s)`. Write `h=i+j-n`, using
+  natural subtraction. The weight is zero unless `n <= i+j <= 2n` and `s <= i`;
+  otherwise it is `mc(n,h,s)*binom(2h,i-s)`. For `h=0`, `mc(n,0,s)` is one
+  when `s=n` and zero otherwise. For `h>0`, it is
+  `binom(h+s,h)*binom(n-s-1,h-1)` when `h+s <= n`, and zero otherwise.
+  All subtractions in this definition are natural subtraction and the
+  binomial values are cast to integers. The degree corner `h=0` is retained.
+  Define
+  `G(n,i,j,dx,dy,l)` as the sum, over `0<=s,t<=n` with `s+t=l`, of
+  `W_n(i+dx,j+dy,s)*W_n(i+dx,j+dy,t)
+  - W_n(i,j,s)*W_n(i+2dx,j+2dy,t)`.
+
+  Here the original polygon condition is
+  `a*b <= b*i+a*j` and `i+j <= a+b-1`, with natural indices and subtraction.
+  The theorem retains **both** complete premises. `H` requires
+  `G(k+1,i,j,1,0,l) >= 0` for every natural `i,j` for which all three points
+  `(i,j),(i+1,j),(i+2,j)` satisfy the original `InPolygon(E.a,E.b)`
+  predicate, and for every natural `l <= 2(k+1)`. `V` requires
+  `G(k+1,i,j,0,1,l) >= 0` for every natural `i,j` for which all three points
+  `(i,j),(i,j+1),(i,j+2)` satisfy that predicate, and every such `l`.
+  Under `H` and `V`, it concludes respectively
+  `c_E(i,j)*c_E(i+2,j) <= c_E(i+1,j)^2` and
+  `c_E(i,j)*c_E(i,j+2) <= c_E(i,j+1)^2` at every corresponding original
+  polygon triple. The inputs and conclusions use the original raw integer
+  coefficients, including zeros; the corner `k=0` is included. The uniform
+  actual-family signs `H` and `V` are not proved.
+
+These three admissions have **225 original successful checks**: 111 project
+compilations, 111 independent kernel replays and three complete premise
+inspections, with the original 900-second allowance for each admission. The
+obligation closures use only `propext`, `Classical.choice` and `Quot.sound`;
+interface and transport closures use no axioms. The English/Lean scope audit
+authenticated the original FINISHED, producer-completion, source, result, pin
+and export bindings. It performed no fresh compilation, replay, inspection,
+model call or test. The source-version provenance of these admissions is
+`3cfd280fbeea15b0a2ca0a434a7333304d282ee97ed5a66d840ad2c340f76478`.
+
+The proposition graph and all remaining obligations are unchanged. There is no
+new reduction, discharged node or unconditional Markov log-concavity coverage.
+The strongest unconditional coverage remains all three original directions for
+every constant-left path, and the antidiagonal direction for every
+constant-right path. Uniform actual-family grouped signs, all root and residual
+obligations, and the full arbitrary-path conjecture remain open. That original
+goal still includes both endpoints, every finite path, all three directions,
+every original polygon triple and the raw integer coefficients including zeros.
+
+For each admission, the archive retains its original
+`proofs/<record-id>/REBUILD.json`, `FINISHED.json`, source closure and exact
+`rebuild-pins/`, with the generated declaration separately bound under
+`exports/`. These are the necessary retained inputs and recorded checks for a
+new isolated rebuild. Extract into a new empty directory, verify the archive
+manifest and registry, restore the exact toolchain and dependencies, and use
+fresh source, build and output trees. Relocate historical host paths only; keep
+source bytes, module order, flags, import isolation, bounded sandbox rules and
+every recorded compile, kernel-replay and premise-inspection step. Generated
+aliases require a fresh rebuild in each new consumer. Original receipts record
+their original runs; incomplete or failed checks do not establish reproduction.
+
+The existing `repro/repro.py` automated profiles remain the baseline profiles
+described above, **not a 47-result campaign profile**. Retaining all 47 proof
+source closures, dependency pins and recorded rebuild recipes does not claim
+that this archive update performed a fresh whole-campaign replay or provides
+an automatic all-47 runner. Historical prepared packets and applied engineering
+versions remain separate from mathematical admission and certified self-change.
