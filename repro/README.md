@@ -1072,3 +1072,103 @@ profiles, **not a 56-result campaign profile**. Preserving proof/rebuild inputs
 and original check evidence claims neither a fresh replay of all 56 admissions
 nor an automatic all-56 runner. This conditional mathematical consumer is not a
 certified self-change of the researcher.
+
+
+## Accepted proof checkpoint through round 45
+
+The checkpoint preserves **59 independently admitted results** through closed
+round 45. Its archive SHA-256 is **`eaf2171ab6ce33f9a98c97f9c4c25a74163b4ed2e86ea274a91c8f7ffc952a34`**, with
+**`52,781,820` bytes**. Top-level `MANIFEST.json` `current_checkpoint`
+identifies the current accepted registry, proof graph, open obligations and
+source bindings. All 1,892 previously indexed payloads of the 56-result archive
+retain their exact bytes and historical proof/source/version identities. The
+[immutable public 56-result archive](https://raw.githubusercontent.com/sashakolpakov/math_gkm/0d92af9219a205982d211ef15c4d3e95dcd641f4/evidence/accepted-checkpoint-20261020.tar.gz)
+has SHA-256 `de543971f414222071b0d178cae9f845dd1b668b415e0a86154747a7bfe2d9c0`
+and size 46,655,469 bytes; its round-44 account above remains historical.
+
+Use the same original natural-coordinate polygon predicate, literal guarded
+weights `W`, signed grouped defects `G` and Capacity definition from the
+round-44 section. For every natural `n >= 1`, let
+`E_n=(frame(replicate (n-1) true)).mid`, with actual label `(n,n+1)`, and
+`c_n(i,j)=coeff E_n.p i j`. The indices `i,j,dx,dy,l` are natural, all natural
+subtractions are truncated at zero, and these are raw integer coefficients
+including zeros. The three new statements separate the two parts of Capacity:
+the availability of the donor index and the size of the donor value.
+
+- `markov-negative-group-donor-range-r0045-v1`: for every natural `n >= 1`
+  and natural `i,j,dx,dy,l`, assume `(dx,dy)=(1,0)` or `(dx,dy)=(0,1)`,
+  assume only the base membership `InPolygon n (n+1) i j`, and assume
+  `G(n,i,j,dx,dy,l) < 0`. Then `l+2 <= 2n`. There is **no** premise
+  `l <= 2n`, no polygon premise for the midpoint or far endpoint, and no
+  donor-size assumption. The conclusion gives index availability only; it
+  does not establish `-G_l <= G_(l+2)`, Capacity or log-concavity.
+- `markov-vertical-corner-capacity-r0045-v1`: for every natural `n >= 1`,
+  `Capacity(2n, l -> G(n,n,0,0,1,l))` holds. Explicitly, for each natural
+  `l <= 2n` with `G(n,n,0,0,1,l) < 0`, the index `l+2` is at most `2n` and
+  `-G(n,n,0,0,1,l) <= G(n,n,0,0,1,l+2)`. This is uniform over the infinite
+  actual constant-right family at the one fixed vertical triple based at
+  `(n,0)`. Its only caller hypothesis is `n >= 1`; it makes no all-coordinate
+  Capacity assertion. The case `n=1` includes the empty path.
+- `markov-comparison-only-original-consumer-r0045-v1`: for every natural
+  `n >= 1` and natural `i,j,dx,dy`, retain **all** these hypotheses:
+
+  1. `(dx,dy)=(1,0)` or `(dx,dy)=(0,1)`.
+  2. All three points `(i,j)`, `(i+dx,j+dy)` and `(i+2dx,j+2dy)` satisfy
+     the original `InPolygon n (n+1)` predicate.
+  3. For every natural `l <= 2n`, if `G_l < 0`, then
+     `-G_l <= G_(l+2)`, where `G_l=G(n,i,j,dx,dy,l)`.
+
+  It concludes the original raw inequality
+  `c_n(i,j)*c_n(i+2dx,j+2dy) <= c_n(i+dx,j+dy)^2`.
+  The earlier Capacity premise's donor-range clause is now supplied by the
+  proved index-availability result. The donor-size clause remains an explicit
+  hypothesis. It is not hidden in a positivity or support predicate and is
+  not proved uniformly for all actual triples by this consumer.
+
+The original polygon predicate still means `a*b <= b*i+a*j` and
+`i+j <= a+b-1` in natural arithmetic. The ordered products in `G`, every
+literal weight guard and the degree-zero-layer corner remain unchanged. There
+is no coefficient normalization, positivity filter, nonzero-coefficient
+restriction or sufficiently-large-index condition. The first statement must
+not be expanded from index availability to donor size. The second must not be
+expanded from its fixed vertical corner to arbitrary coordinates. The third
+retains both the unit-direction and all-three-polygon premises; it gives no
+new antidiagonal or arbitrary-path conclusion.
+
+These three admissions recorded **259 original successful checks**:
+128 project compilations, 128 independent kernel replays and three complete
+premise inspections. Their original validators recorded 79, 91 and 89 checks,
+each under its original 900-second allowance. The obligation closures remain
+within the usual allowlist `propext`, `Classical.choice` and `Quot.sound`.
+Original FINISHED, producer-completion, task, solution, source, result,
+dependency-pin, rebuild, generated-export and admission-journal bindings remain
+retained. Publication and preservation add no fresh mathematical compilation,
+kernel replay, premise inspection, hosted model call or whole-campaign replay.
+
+The proof-source implementation remains
+`3cfd280fbeea15b0a2ca0a434a7333304d282ee97ed5a66d840ad2c340f76478`.
+The proof graph retains binding
+`84fc51779a6fa9ca4297ebe0fe9093b314e6b03e6598d91f3e0c026a72b8be59`
+and the remaining-obligation record retains binding
+`acdddef93be03aab8e01d207e1f038cd07b0edf6750a964443811f5bf18f76b9`.
+All five proposition nodes remain open, with no new reduction or discharge.
+The uniform donor-size assertion and full original conjecture remain unproved.
+Round 45 adds a universal index-availability theorem and a fixed-corner Capacity
+theorem, but no new unconditional log-concavity region. Existing unconditional
+coverage remains all three directions for every constant-left path, the
+antidiagonal direction for every constant-right path, and the infinite vertical
+corner family from round 42. The goal still includes both endpoints, every
+finite path, all three directions, every original polygon premise and raw
+integer coefficients including zeros.
+
+All 59 admissions retain the necessary original proof sources, `REBUILD.json`
+recipes, FINISHED closures, exact toolchain and dependency pins, and separately
+bound generated exports. Follow the extraction, manifest verification,
+path-relocation, fresh-output, import-isolation and complete checking requirements
+above. Preserve original receipt identities and rebuild aliases in each new
+consumer. The automated `repro/repro.py` profiles remain the original baseline
+profiles, **not a 59-result campaign profile**. This publication claims neither
+a fresh replay of all 59 admissions nor an automatic all-59 runner. Proof reuse
+and admission do not establish measured conceptual gain or certify arbitrary
+self-change of the researcher. All earlier architecture, source-version and
+historical reproduction boundaries remain in force.

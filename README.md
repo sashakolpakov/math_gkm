@@ -18,8 +18,8 @@ from empirical research usefulness. This is an operator-engineered revision, not
 a certified Goedel self-improvement. The dated launch records preserve its tests,
 review, clean-seed comparison and actual activation status.
 
-**Clean-seed concept campaign, through closed round 44:**
-56 independently admitted results. All three original weak log-concavity directions
+**Clean-seed concept campaign, through closed round 45:**
+59 independently admitted results. All three original weak log-concavity directions
 are now proved for every constant-left path of length `k >= 0`, with midpoint
 label `(1, k + 2)`, at every index satisfying the original polygon conditions.
 The coefficients remain raw integers, including zeros; the proof uses the
@@ -164,6 +164,19 @@ Uniform actual-family Capacity remains unproved; there is no new unconditional
 log-concavity region, antidiagonal result or root discharge. The full conjecture
 and all five proposition nodes remain open. See the
 [exact round-44 hypotheses and reproduction boundary](repro/README.md#accepted-proof-checkpoint-through-round-44).
+
+For every `n >= 1`, round 45 proves that every negative grouped defect has its
+distance-two donor index inside the finite window, for either unit coordinate
+direction whenever the base point lies in the original constant-right polygon. It also proves the
+full Capacity condition at one fixed vertical corner for every `n >= 1`.
+For general horizontal or vertical triples, the new conditional consumer now
+requires only that each negative group be no larger in magnitude than its donor
+two indices later: **index availability is proved; the uniform donor-size bound
+remains open**. All three original polygon premises, unit-direction guards and
+raw zero coefficients remain in that consumer. These results add no unconditional
+log-concavity region or root discharge; all five proposition nodes and the full
+conjecture remain open. See the
+[exact round-45 scopes and reproduction boundary](repro/README.md#accepted-proof-checkpoint-through-round-45).
 
 The [canonical accepted checkpoint](evidence/accepted-checkpoint-20261020.tar.gz)
 preserves original proof sources, checked receipts, dependency pins and separately
