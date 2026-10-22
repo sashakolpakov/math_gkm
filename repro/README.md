@@ -1484,3 +1484,172 @@ remain **baseline-only**, not an automatic 64-result campaign runner.
 This preservation claims no fresh replay of all 64 results, certified arbitrary
 researcher self-change, measured conceptual gain or proof of the open conjecture.
 All earlier architecture and reproduction boundaries remain in force.
+
+
+## Accepted proof checkpoint through round 48
+
+This dated checkpoint preserves **67 independently admitted results** through
+closed round 48. Its archive SHA-256 is **`b03f14bbad50c76bc6e39a258a67b3ea5eb72e1dc0d96c931bf2b62f25088bbc`**, with
+65,821,356 bytes, 2,402 indexed payloads and 2,403 regular members.
+Every one of the preceding 2,313 indexed payloads is retained literally,
+including all older proof sources, receipts, snapshots, applied source versions
+and inactive prepared candidates. The 89 additions comprise 79 original
+proof/FINISHED/export inputs, seven accepted audit/checkpoint metadata payloads,
+and three source-reconstruction payloads. The
+[immutable public64 archive](https://raw.githubusercontent.com/sashakolpakov/math_gkm/1b71692b08f4f61157240d710bb6bd4e582023d9/evidence/accepted-checkpoint-20261020.tar.gz)
+has SHA-256
+`1ef1cde454c2b868a8f8914f4ffdbd0e34ae2dabeaba1efc5ac6fb143f027f79`.
+Its dated records and all their original source identities remain unchanged.
+
+Top-level `MANIFEST.json` selects the new registry, proof checkpoint and
+`SNAPSHOT.json` through `current_checkpoint`. The closed round-48 source manifest
+has SHA-256
+`93ddebaebafd32dae8d3b9cc77d2b9684607a29ad8a10c586d68c5b676cb4584`,
+binding `ae4001eaac9e466317b959f9d3985aa93768d8eaa1a103410286c2b171496642`
+and file-map binding
+`e403f498e14558c64cf49f2096e4660f3e407b1e55758cfedddee9f904ccd512`.
+It authenticates 3,280 source files, 203 accepted source paths and 206 admitted
+module paths. The 64 inherited records equal the immutable successor-initial
+registry. Compared with the older public registry, only their 64 declared
+validator-directory locations changed. The exact before/after map is in the new
+snapshot; no task, source, export, FINISHED or receipt identity was relabeled.
+
+**An ordered horizontal summand separator.**
+`markov-oriented-horizontal-separator-r0048-v1` concerns the retained integer
+weight `W`, with all its parameters natural:
+
+```text
+mc(b,h,s) =
+  if h=0 then (if s=b then 1 else 0)
+  else if h+s<=b then castZ(choose(h+s,h))*castZ(choose(b-s-1,h-1))
+  else 0
+
+W(n,i,j,s) =
+  if n<=i+j and i+j<=2*n and s<=i
+  then mc(n,i+j-n,s)*castZ(choose(2*(i+j-n),i-s))
+  else 0.
+```
+
+All subtractions here are natural truncated subtraction before casting;
+each binomial is separately cast to the integers. The `h=0` clause is the
+explicit delta at `s=b`. The accepted raw-recovery sum uses the full window
+`s=0,...,n`; none of these guards or zero terms is removed.
+
+The separator uses `n=32`, `(i,j)=(0,34)`, `s=0`, `t=1`. It proves all three
+original polygon memberships for label `(32,33)` at `(0,34)`, `(1,34)` and
+`(2,34)`, where `InPolygon(a,b,i,j)` means `a*b<=b*i+a*j` and
+`i+j<=a+b-1` in the naturals. The exact values are
+
+```text
+W(32,0,34,0)=31       W(32,1,34,0)=2790
+W(32,1,34,1)=1740     W(32,2,34,1)=162400
+31*162400 = 5034400 > 4854600 = 2790*1740.
+```
+
+This refutes the universal ordered pointwise summand inequality at the natural
+floor/ceiling midpoint indices `0` and `1`. It is not a counterexample to raw
+Markov log-concavity, nor a rejection of every possible sum-level formulation.
+
+**The corresponding original polynomial has positive raw margin.**
+`markov-oriented-separator-original-margin-r0048-v1` identifies the actual
+midpoint polynomial of the path of 31 right/true steps, with label `(32,33)`.
+At those same three horizontal points its raw integer coefficients are
+`31`, `4530` and `343070`. It proves
+
+```text
+4530^2 - 31*343070 = 9885730 > 0.
+```
+
+This is one fixed original-family triple. The separately inherited recovery
+identity is universal for `n>=1` and natural `i,j`, but this new margin theorem
+does not quantify over arbitrary parameters or every coordinate triple.
+The new margin target is `Target8cf110d8f1daed144fea0353`; the inherited general
+recovery target `Target9ee90fdd50db480fa8bd6eb8` is a dependency, not this new
+margin export.
+
+**An abstract conditional separable midpoint theorem.**
+`markov-cone-separable-diagonal-midpoint-r0048-v1` uses arbitrary functions
+`a,b:Int->Int`. Each must satisfy all three `Cone` clauses:
+
+- nonnegativity at every integer;
+- adjacent raw log-concavity `a(z)*a(z+2)<=a(z+1)^2` at every integer,
+  and the corresponding clause for `b`;
+- interval positive support: for integers `p<q<r`, positivity at `p` and `r`
+  implies positivity at `q`, separately for each sequence.
+
+For arbitrary integer `x,s,t`, put `u=(s+t)/2`, `v=(s+t+1)/2`, with Lean integer
+division by positive two (floor and ceiling). The conclusion is
+
+```text
+(a(s)*b(x-s))*(a(t)*b(x+2-t))
+  <= (a(u)*b(x+1-u))*(a(v)*b(x+1-v)).
+```
+
+All subtraction in this conclusion is integer subtraction. There is no
+finite-support, normalization or everywhere-strict-positivity assumption.
+Zeros and arbitrary integer indices are included. The theorem proves
+sufficiency from the displayed single-sequence hypotheses, which already
+include input log-concavity. It neither identifies actual Markov coefficients
+with these sequences nor proves their `Cone` hypotheses. There is no admitted
+convolution-sum theorem, necessity/equivalence theorem or actual-Markov
+specialization in this module.
+
+The three original admissions recorded **95 successful operations**: 46
+compilations, 46 independent kernel replays and three complete premise
+inspections. Listed alphabetically by identifier (cone, separator,
+original margin), the counts are 9/15/71 and the elapsed times are
+114.631/151.406/424.659 seconds; each retains its original 900-second gate.
+Only `propext`, `Classical.choice` and `Quot.sound` occur in the checked
+obligation closures. These are preserved original checks, not new executions.
+The combined English/Lean audit is
+`checkpoint/audits/round-0048/ENGLISH_LEAN_AUDIT.json`, SHA-256
+`d5cf976116bcf8efeb10e01ad0194b859b55667a7232d2d4471f7953418fc0d1`.
+Its exact separator and cone component audits are retained beside it, bound by
+`8751ea755f9060aaf4af9576c93d47d3aad43322ae9cae01b6a457e568f91b3e`
+and `5626086c633994f9581372ca9f802b4699c72d3099f7864f5672cbb443083f09`.
+The independently verified closed checkpoint is bound by
+`e1c350449e34c28bdd1d664fc27072894e610a8110f9712cdc0c5f1ba899f217`.
+
+All five proposition nodes remain open. The full original root, all prior
+checked dependency edges and all remaining obligations are unchanged:
+DAG `84fc51779a6fa9ca4297ebe0fe9093b314e6b03e6598d91f3e0c026a72b8be59`,
+remaining obligations
+`acdddef93be03aab8e01d207e1f038cd07b0edf6750a964443811f5bf18f76b9`.
+The three new admissions make no root/residual discharge and establish no new
+general unconditional actual-Markov region, uniform Capacity or donor-size
+comparison. Earlier unconditional families retain their exact dated scope.
+
+**Source and proof reproduction boundary.**
+The three new round-48 proofs record implementation
+`d7c3f043e81417605553e9e034415bff90fa2736f9e91d6ce41538a715891957`.
+Every historical proof retains its own original implementation/controller
+identity. The new source binding and reconstruction note are under
+`reviewed-source/patches/d7c3f043e81417605553e9e034415bff90fa2736f9e91d6ce41538a715891957/`.
+Its full 76-file map reuses 75 exact earlier archive payloads and adds only the
+new `machinery/study_context.py`; no earlier prepared/applied packet is changed.
+Reconstruct **all 76** paths into a new disposable, normally prepared pinned
+checkout and verify every raw-file SHA-256 and the implementation-map digest.
+Do not overlay only the new context renderer onto an older public core.
+
+The separately published
+[prompt-context source packet](../evidence/prompt-context-source-20261022.tar.gz)
+has SHA-256
+`707f90dc52160ff3f0bf2885be3aaef0355403f58719f0077f8dca24187b77c4`
+and was preserved at public commit
+`a47ff665fc183c000b1bcf84fc7564cb3ad074b0`. It includes the complete source vector,
+pinned setup inputs and existing17/new10 pure test sources with an explicit
+isolated namespace recipe. Its earlier recorded engineering controls are
+separate from mathematical admissions; no extracted suite is rerun by this
+preservation operation.
+
+Each of the 67 proof directories retains its exact original source, task,
+solution, producer-completion, result, `FINISHED.json`, `REBUILD.json`, toolchain
+and dependency pins, binary/environment identities and retired-object recipe.
+Generated exports remain separately hash-bound aliases outside the original
+`FINISHED.files`; a new consumer must rebuild them freshly. Follow the existing
+manual extraction, manifest verification, source relocation, fresh-output,
+import-isolation and complete-checking instructions. Automated `repro/repro.py`
+profiles remain baseline-only, with no automatic 67-result campaign runner or
+fresh whole-campaign replay claim. This preservation adds no model, compiler,
+proof or test execution, certified arbitrary researcher self-change or measured
+conceptual gain.

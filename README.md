@@ -18,8 +18,8 @@ from empirical research usefulness. This is an operator-engineered revision, not
 a certified Goedel self-improvement. The dated launch records preserve its tests,
 review, clean-seed comparison and actual activation status.
 
-**Clean-seed concept campaign, through closed round 47:**
-64 independently admitted results. All three original weak log-concavity directions
+**Clean-seed concept campaign, through closed round 48:**
+67 independently admitted results. All three original weak log-concavity directions
 are now proved for every constant-left path of length `k >= 0`, with midpoint
 label `(1, k + 2)`, at every index satisfying the original polygon conditions.
 The coefficients remain raw integers, including zeros; the proof uses the
@@ -198,6 +198,18 @@ no sign comparison. The uniform interior donor-size comparison remains open.
 These results add no unconditional actual-Markov log-concavity region or
 root discharge. See the
 [exact round-47 statements and reproduction boundary](repro/README.md#accepted-proof-checkpoint-through-round-47).
+
+Round 48 refutes a universal ordered pointwise inequality for the retained
+horizontal summands: at its exact polygon triple, the two products are
+`5,034,400 > 4,854,600`. A separate theorem checks that the corresponding actual
+constant-right polynomial has raw coefficients `31,4530,343070` and positive
+horizontal margin `9,885,730`. Thus this summand separator does not refute the
+original conjecture. A third, abstract theorem proves a separable midpoint
+product inequality for two integer sequences that each already satisfy
+nonnegativity, adjacent log-concavity and interval positive support. It does not
+certify those hypotheses for actual Markov coefficients or prove a convolution
+theorem. No general log-concavity region or root/residual discharge is added.
+See the [exact round-48 statements and reproduction boundary](repro/README.md#accepted-proof-checkpoint-through-round-48).
 
 The [canonical accepted checkpoint](evidence/accepted-checkpoint-20261020.tar.gz)
 preserves original proof sources, checked receipts, dependency pins and separately
