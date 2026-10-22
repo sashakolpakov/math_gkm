@@ -807,8 +807,8 @@ and proof admission remain distinct from certified controller self-change.
 ## Accepted proof checkpoint through round 42
 
 The historical checkpoint preserves **52 independently admitted results** through closed
-round 42. The latest 53-result scope appears in the
-[round-43 section](#accepted-proof-checkpoint-through-round-43). Its archive SHA-256 is **`2d571e719be4ef3379c190abac57c1d82c9628a1b867c9b849e74ca76c1f8eb8`**. The top-level
+round 42. The latest 56-result scope appears in the
+[round-44 section](#accepted-proof-checkpoint-through-round-44). Its archive SHA-256 is **`2d571e719be4ef3379c190abac57c1d82c9628a1b867c9b849e74ca76c1f8eb8`**. The top-level
 `MANIFEST.json` `current_checkpoint` identifies the exact accepted registry,
 checked proposition graph and open obligations. All 50 preceding admission
 records and all 1,613 previously indexed archive payloads retain their original
@@ -876,8 +876,11 @@ self-change.
 
 ## Accepted proof checkpoint through round 43
 
-The checkpoint preserves **53 independently admitted results** through closed
-round 43. The archive SHA-256 is **`88e5da9680bd1667867186d3702e47bec2d2bd493f03e07f232c5c5f954be114`**. Follow top-level
+The historical checkpoint preserves **53 independently admitted results** through
+closed round 43. The latest 56-result scope is in the
+[round-44 section](#accepted-proof-checkpoint-through-round-44). Its
+[immutable round-43 archive](https://raw.githubusercontent.com/sashakolpakov/math_gkm/3ee2682efb4a2c7028b175907a15fb7791c7cb61/evidence/accepted-checkpoint-20261020.tar.gz)
+has SHA-256 **`88e5da9680bd1667867186d3702e47bec2d2bd493f03e07f232c5c5f954be114`**. Follow its top-level
 `MANIFEST.json` `current_checkpoint` for its exact accepted registry, proof graph,
 open obligations and source bindings. All 52 prior admission records and all
 1,720 previously indexed archive payloads retain their exact original bytes and
@@ -947,3 +950,125 @@ baseline profiles, **not a 53-result campaign profile**. This publication
 preserves proof/rebuild sources and the original checking evidence; it claims
 neither a fresh replay of all 53 admissions nor an automatic all-53 runner.
 The new conditional dependency is not a certified self-change of the researcher.
+
+
+## Accepted proof checkpoint through round 44
+
+The checkpoint preserves **56 independently admitted results** through closed
+round 44. Its archive SHA-256 is
+**`de543971f414222071b0d178cae9f845dd1b668b415e0a86154747a7bfe2d9c0`**.
+Top-level `MANIFEST.json` `current_checkpoint` identifies the accepted registry,
+proof graph, open obligations and exact source bindings. All 1,809 previously
+indexed archive payloads retain their original bytes. The 53 inherited records
+in the new current registry have only their authenticated
+`validation_bundle.directory` relocations into the new finite study; every
+other field and original proof identity is unchanged. Original records and
+snapshots remain in their historical archive payloads. The finite continuation
+endpoint extends from round 44 to round 48, with the same model, source version,
+per-job guards and original mathematical goal.
+
+For natural `N` and an arbitrary integer-valued function `e : ℕ → ℤ`, define
+`Capacity(N,e)` by the following complete premise:
+
+> For every natural `l <= N`, if `e(l) < 0`, then `l+2 <= N` and
+> `-e(l) <= e(l+2)`.
+
+Only the window `0..N` is used. There is no requirement that `e` vanish or have
+finite support outside it, no individual nonnegativity requirement, and no
+assumed sign for its total. The three new records are:
+
+- `markov-finite-distance-two-transport-r0044-v1`, checked term
+  `DistanceTwoR44.finite_transport`: for every natural `N` and function
+  `e : ℕ → ℤ`, `Capacity(N,e)` implies `sum_{l=0}^N e(l) >= 0`. This includes
+  `N=0`. The proof pairs each negative entry with its in-range entry two
+  indices later; the pairing is injective, so the compensating entries are
+  not counted twice. It supplies no Capacity statement for actual Markov data.
+- `markov-distance-two-controls-r0044-v1`, checked term
+  `DistanceTwoR44.controls`: at `N=2`, `goodControl` has values `[-2,0,3]`
+  on `0,1,2` and zero elsewhere; `badControl` has `[-2,3,0]` and zero
+  elsewhere. Both finite sums equal `1`, but only the first satisfies
+  `Capacity(2,e)`. Thus a nonnegative total does not imply this sufficient
+  Capacity condition. These are fixed abstract signed sequences, with no
+  actual-family reachability or nonreachability assertion and no counterexample
+  to original Markov log-concavity.
+- `markov-conditional-distance-two-original-r0044-v1`, checked term
+  `DistanceTwoR44.original_polygon_consumer`: for every natural `n >= 1`, let
+  `E=(frame(replicate (n-1) true)).mid`, with actual label `(n,n+1)`, and
+  `c(i,j)=coeff E.p i j`. For natural `i,j,dx,dy`, retain **all** these premises:
+
+  1. `(dx,dy)=(1,0)` or `(dx,dy)=(0,1)`.
+  2. Each of `(i,j)`, `(i+dx,j+dy)` and `(i+2dx,j+2dy)` satisfies the original
+     `InPolygon n (n+1)` predicate.
+  3. `Capacity(2n,G)` for the exact signed grouped defect function below.
+
+  Under these premises it concludes the original raw inequality
+  `c(i,j)*c(i+2dx,j+2dy) <= c(i+dx,j+dy)^2`.
+
+Here `InPolygon(a,b,i,j)` means `a*b <= b*i+a*j` and `i+j <= a+b-1` in the
+original natural-coordinate convention. Use the literal guarded weights `W`
+defined in the round-40 section, including their degree-zero-layer corner.
+For the fixed `n,i,j,dx,dy`, the integer `G_l` is
+
+`sum_{0<=s,t<=n, s+t=l}
+ [W(n,i+dx,j+dy,s)*W(n,i+dx,j+dy,t)
+  - W(n,i,j,s)*W(n,i+2dx,j+2dy,t)]`.
+
+The order of the two endpoint factors and every original weight guard is
+unchanged. Thus the exact additional hypothesis is: for every natural
+`l <= 2n` with `G_l < 0`, the index `l+2` is still at most `2n` and
+`-G_l <= G_(l+2)`. It is a sufficient condition on these actual signed groups,
+not a proof that all actual triples satisfy it. All natural subtractions are
+truncated at zero, binomial values are cast into integers, raw zero coefficients
+are retained, and `n=1` includes the empty path. There is no normalization,
+nonzero-coefficient filter, strict positivity or sufficiently-large-index
+restriction.
+
+The frozen source also proves `DistanceTwoR44.group_total`, an unconditional
+finite algebraic identity between the grouped sum and three finite weight
+sums. Identifying these weight sums with actual coefficients requires `n >= 1`;
+the algebraic identity supplies no sign by itself. Its stronger
+conditional helper `DistanceTwoR44.original_raw_consumer` drops the unit-direction
+and polygon premises but still requires `n >= 1` and the exact Capacity premise.
+The admitted wrapper above retains all its stated guards. These helper scopes
+must not be relabeled as an unconditional actual-family theorem. The actual
+consumer uses the generic transport source declaration and the previously
+admitted raw-coefficient recovery export; successful source reuse is distinct
+from a measured transfer advantage or novelty claim.
+
+The three admissions recorded **93 original successful checks**: 45 project
+compilations, 45 independent kernel replays and three complete premise
+inspections. Their original elapsed times were respectively 123.297, 105.793
+and 431.034 seconds, each within its original 900-second admission allowance.
+All recorded return codes are zero. The obligation closures remain within the
+usual allowlist `propext`, `Classical.choice` and `Quot.sound`. The retained
+English/source and checkpoint audits authenticate the original FINISHED,
+producer-completion, task, solution, source, result, dependency-pin, rebuild,
+generated-export and admission-journal identities. They add no fresh Lean
+compilation, kernel replay, premise inspection, hosted model call or
+whole-campaign replay.
+
+The proof-source implementation remains
+`3cfd280fbeea15b0a2ca0a434a7333304d282ee97ed5a66d840ad2c340f76478`.
+The proposition graph retains binding
+`84fc51779a6fa9ca4297ebe0fe9093b314e6b03e6598d91f3e0c026a72b8be59`
+and the remaining-obligation record retains binding
+`acdddef93be03aab8e01d207e1f038cd07b0edf6750a964443811f5bf18f76b9`.
+All five proposition nodes remain open: there is no new reduction or discharge.
+Uniform actual-family Capacity and the full arbitrary-path conjecture remain
+unproved. Round 44 adds no antidiagonal result or unconditional log-concavity
+region. Existing unconditional coverage remains all three directions for every
+constant-left path, the antidiagonal direction for every constant-right path,
+and the infinite vertical-corner family from round 42. The original goal still
+includes both endpoints, every finite path, all three directions, every original
+polygon premise and raw integer coefficients including zeros.
+
+All 56 admissions retain their necessary original `REBUILD.json`, FINISHED
+source closure, exact toolchain and dependency pins, and separately bound
+exported declarations. Follow the extraction, manifest verification,
+path-relocation, fresh-output, import-isolation and complete checking requirements
+above. Preserve original receipt identities and rebuild aliases in each new
+consumer. The automated `repro/repro.py` profiles remain the original baseline
+profiles, **not a 56-result campaign profile**. Preserving proof/rebuild inputs
+and original check evidence claims neither a fresh replay of all 56 admissions
+nor an automatic all-56 runner. This conditional mathematical consumer is not a
+certified self-change of the researcher.

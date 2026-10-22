@@ -18,8 +18,8 @@ from empirical research usefulness. This is an operator-engineered revision, not
 a certified Goedel self-improvement. The dated launch records preserve its tests,
 review, clean-seed comparison and actual activation status.
 
-**Clean-seed concept campaign, through closed round 43:**
-53 independently admitted results. All three original weak log-concavity directions
+**Clean-seed concept campaign, through closed round 44:**
+56 independently admitted results. All three original weak log-concavity directions
 are now proved for every constant-left path of length `k >= 0`, with midpoint
 label `(1, k + 2)`, at every index satisfying the original polygon conditions.
 The coefficients remain raw integers, including zeros; the proof uses the
@@ -151,6 +151,19 @@ node and adds this checked step and one **open residual**; it closes no node.
 This is a stitching result, with no additional unconditional log-concavity
 coverage or proof of the general conjecture. See the
 [exact residual and reproduction boundary](repro/README.md#accepted-proof-checkpoint-through-round-43).
+
+Round 44 proves a general principle for finite signed data: if every negative
+entry is compensated by the entry two indices later, still inside the finite
+window, the total sum is nonnegative. Two fixed controls show that this
+sufficient condition does not follow merely from a nonnegative total. Applied
+to the actual constant-right family, it gives horizontal or vertical raw
+log-concavity **conditional on that same Capacity premise** for the signed
+coefficient groups at the triple. Every original polygon and unit-direction
+guard is retained, including the empty-path corner and zero coefficients.
+Uniform actual-family Capacity remains unproved; there is no new unconditional
+log-concavity region, antidiagonal result or root discharge. The full conjecture
+and all five proposition nodes remain open. See the
+[exact round-44 hypotheses and reproduction boundary](repro/README.md#accepted-proof-checkpoint-through-round-44).
 
 The [canonical accepted checkpoint](evidence/accepted-checkpoint-20261020.tar.gz)
 preserves original proof sources, checked receipts, dependency pins and separately
