@@ -91,7 +91,8 @@ class FrozenCatalogCache(unittest.TestCase):
         self.assertTrue(second['catalog_accounting']['reused_finished_receipt'])
         self.assertEqual(second['catalog_accounting']['original_validation_seconds'],12.5)
         self.assertLess(second['catalog_accounting']['current_elapsed_seconds'],12.5)
-        self.assertEqual(self.reservations,{'catalog-first-before':90,'catalog-second-before':90})
+        # Fixture ordinary allowance90: min(1800,2*90)=180 for each catalogue.
+        self.assertEqual(self.reservations,{'catalog-first-before':180,'catalog-second-before':180})
         self.assertEqual(second['catalog_accounting']['validator_directory'],str(self.first_directory()))
         self.assertTrue((self.armroot/'evaluations/second/catalog-before/CACHE_REUSE.json').is_file())
         again = self.catalog('second')

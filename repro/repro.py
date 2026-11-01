@@ -8,6 +8,14 @@ import argparse, hashlib, json, os, platform, re, shutil, subprocess, sys, tarfi
 from pathlib import Path, PurePosixPath
 
 MARKER = '.repro-workspace.json'
+RETIRED_CACHE_POLICY = Path(__file__).with_name('retired-cache-policy.json')
+def reject_retired_cache(spec):
+    if not RETIRED_CACHE_POLICY.is_file():return
+    policy=load(RETIRED_CACHE_POLICY)
+    if policy.get('schema')!=1:return
+    repository=spec.get('repository','').removeprefix('https://github.com/').rstrip('/').removesuffix('.git').casefold()
+    if any(row.get('status')=='retired' and row.get('repository','').casefold()==repository and row.get('tag')==spec.get('tag') for row in policy.get('releases',[])):
+        raise ValueError('Optional compiled cache release is retired; rebuild from pinned public sources with repro/repro.py bootstrap --workspace NEW_PATH --dependencies cache (upstream dependency cache) or --dependencies build; see repro/README.md. Historical cache checksums remain unchanged.')
 def sha(path):
     h=hashlib.sha256()
     with Path(path).open('rb') as f:
@@ -162,7 +170,9 @@ def run_profile(args,manifest):
         save(report,{'status':'failed','profile':args.profile,'records':records,'error':str(e),'historical_validation_unchanged':True});raise
     print(report)
 def recover(args):
-    spec=load(args.recovery_manifest);dest=Path(args.destination).absolute()
+    spec=load(args.recovery_manifest)
+    reject_retired_cache(spec)
+    dest=Path(args.destination).absolute()
     if spec.get('schema')!=1:raise ValueError('unsupported recovery schema')
     if not re.fullmatch('[0-9a-f]{40}',spec['public_source_commit']):raise ValueError('exact public source commit required')
     if spec['platform']!=sys.platform+'-'+platform.machine():raise ValueError('cache platform mismatch')

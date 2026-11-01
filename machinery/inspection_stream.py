@@ -112,7 +112,7 @@ private def fail (category : String) (observed : Option Nat := none) (limit : Op
   let st ← get
   let record := j [s "failure", s category, toJson st.nodes, toJson st.decls, toJson observed, toJson limit]
   let text := record.compress ++ "\n"
-  if st.bytes + text.utf8ByteSize <= 33554432 then
+  if st.bytes + text.utf8ByteSize <= 67108864 then
     st.handle.putStr text
     st.handle.flush
   IO.println ("GKM_INSPECTION_FAILURE_V3:" ++ st.nonce ++ ":" ++ record.compress)
@@ -121,7 +121,7 @@ private def emit (v : Json) : M Unit := do
   let text := v.compress ++ "\n"
   let st ← get
   if text.utf8ByteSize > 1048576 then fail "record_size_limit" (some text.utf8ByteSize) (some 1048576)
-  if st.bytes + text.utf8ByteSize > 33554432 then fail "artifact_size_limit" (some (st.bytes + text.utf8ByteSize)) (some 33554432)
+  if st.bytes + text.utf8ByteSize > 67108864 then fail "artifact_size_limit" (some (st.bytes + text.utf8ByteSize)) (some 67108864)
   st.handle.putStr text
   modify fun st => { st with bytes := st.bytes + text.utf8ByteSize, sha := shaUpdate st.sha text.toUTF8 }
 private partial def expr (e : Expr) (depth : Nat := 0) : M Nat := do
@@ -173,17 +173,33 @@ private def declaration (env : Environment) (n : Name) : M Unit := do
 '''
 
 
-def program(module, declarations, required, catalog_modules, nonce):
+def program(module, declarations, required, catalog_modules, nonce, *, inspection_profile=None):
     from .proof_audit import EDGE_LIMIT
+    from .inspection_profiles import resolve
+    profile=resolve(inspection_profile)
+    prelude=PRELUDE
+    header='s "math-gkm.inspection-dag.v3", toJson ([{roots}] : List Json)'
+    completion='GKM_DECLARATIONS_COMPLETE_V3:'+nonce+':'
+    if profile.catalogue:
+        import json
+        prelude=(prelude.replace('67108864',str(profile.artifact_bytes))
+                 .replace('if id >= 1000000', 'if id >= '+str(profile.node_limit))
+                 .replace('GKM_INSPECTION_FAILURE_V3:', 'GKM_INSPECTION_FAILURE_CATALOGUE_V1:')
+                 .replace('st.nonce ++ ":" ++ record.compress', 'st.nonce ++ ":'+profile.id+':" ++ record.compress'))
+        # Parse the canonical JSON binding in Lean rather than hand-transcribing quotas.
+        binding=json.dumps(profile.binding(),sort_keys=True,separators=(',',':'))
+        header='s "'+profile.inspection_schema+'", toJson ([{roots}] : List Json), (Json.parse '+json.dumps(binding)+').toOption.get!'
+        completion='GKM_DECLARATIONS_COMPLETE_CATALOGUE_V1:'+nonce+':'+profile.id+':'
+    header=header.replace('{roots}', ', '.join('s '+__import__('json').dumps(x) for x in declarations))
     names = lambda xs: ', '.join('`'+x for x in xs)
     # Each selected module is enumerated in full, including unused declarations.
-    return 'import '+module+'\nimport Lean\nimport Lean.Meta.Sym.ExprPtr\n'+PRELUDE+f'''
+    return 'import '+module+'\nimport Lean\nimport Lean.Meta.Sym.ExprPtr\n'+prelude+f'''
 open Lean Elab Command in
 run_cmd do
   let env ← getEnv
   let handle ← IO.FS.Handle.mk "declarations.json" IO.FS.Mode.write
   let action : M Unit := do
-    emit <| j [s "header", s "math-gkm.inspection-dag.v3", toJson ([{', '.join('s '+__import__('json').dumps(x) for x in declarations)}] : List Json)]
+    emit <| j [s "header", {header}]
     let mut emitted : NameHashSet := {{}}
     let mut catalog : Array String := #[]
     for (n, _) in env.constants.toList do
@@ -245,6 +261,6 @@ run_cmd do
     emit <| j [s "end", toJson st.nodes, toJson st.decls, toJson ({len(declarations)} : Nat), toJson catalog.size]
   let (_, final) ← liftIO <| action.run {{handle := handle, nonce := "{nonce}"}}
   liftIO <| handle.flush
-  liftIO <| IO.println ("GKM_DECLARATIONS_COMPLETE_V3:{nonce}:" ++ toString final.bytes ++ ":" ++ shaFinish final.sha final.bytes)
+  liftIO <| IO.println ("{completion}" ++ toString final.bytes ++ ":" ++ shaFinish final.sha final.bytes)
 end MathGKMTrustedInspection013
 '''

@@ -47,7 +47,11 @@ Each run checks exact inputs, compiles in dependency order into a new `.scratch/
 
 ## Restore archived caches
 
-Necessary sources, scripts, inputs, pins and manifests stay in ordinary Git. Local cache removal must not become a Git deletion commit or history rewrite. Large optional caches live in the [recovery release](https://github.com/sashakolpakov/math_gkm/releases/tag/recovery-cache-2026-10-17), and **are not downloaded by `git clone`**.
+Necessary sources, scripts, inputs, pins and manifests stay in ordinary Git. Local cache removal must not become a Git deletion commit or history rewrite. The historical optional batch is recorded in the [recovery release](https://github.com/sashakolpakov/math_gkm/releases/tag/recovery-cache-2026-10-17) and its unchanged checksum manifest.
+
+The five `inactive-lean-cache-*.tar.gz` assets are retired from supported recovery. `retired-cache-policy.json` makes the historical command below fail before network access or destination writes. Rebuild from the pinned public sources with `bootstrap --dependencies cache` (the upstream Mathlib dependency cache), or use `--dependencies build`. Sources, pins and historical checksums remain unchanged. This source policy does not itself attest that remote assets have already been deleted.
+
+Historical command (now refused for this retired batch):
 
 ```sh
 python3 repro/repro.py recover --recovery-manifest repro/cache-2026-10-17.json --destination /path/to/new-cache-restore

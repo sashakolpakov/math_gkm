@@ -15,7 +15,7 @@ import time
 from .study_common import (ROOT, PYTHON, read, write, inventory, sha, authorize_live,
                            validate_model, REASONING_EFFORT, Invalid)
 from .worker import inline
-from .resources import admission, Guard, ResourceFailure, cleanup_hold, child_exited, cleanup_private_group
+from .resources import admission, Guard, ResourceFailure, cleanup_hold, child_exited, cleanup_private_group, disk_scope_roots
 from .event_stream import events
 
 SCHEMA = {'type': 'object', 'additionalProperties': False, 'properties': {
@@ -58,7 +58,7 @@ def decode_report(job, spec):
     return payload, None
 
 
-def permissions(workspace, *, readonly=False, retained_sources=None):
+def permissions(workspace, *, readonly=False, retained_sources=None, research_notes=None):
     profile = read(ROOT/'config/study-base-permissions.json')
     fs = profile['filesystem']
     fs[':tmpdir'] = 'write'  # TMPDIR is this role's workspace/.scratch.
@@ -76,6 +76,9 @@ def permissions(workspace, *, readonly=False, retained_sources=None):
         fs[':workspace_roots'][name] = 'read'
     for name in (retained_sources or {}):
         fs[':workspace_roots'][name] = 'read'
+    if research_notes is not None:
+        from .snapshot_routing import verify_delivery
+        fs[str(verify_delivery(research_notes))] = 'read'
     fs[str(workspace)] = 'read' if readonly else 'write'
     if readonly:
         fs[':workspace_roots']['.scratch'] = 'write'
@@ -87,7 +90,12 @@ def command(job, spec):
     if spec.get('reasoning_effort', REASONING_EFFORT) != REASONING_EFFORT:
         raise Invalid('study reasoning effort must remain high')
     workspace = Path(spec['workspace'])
-    write(job/'permissions.json', permissions(workspace, readonly=spec['readonly'], retained_sources=spec.get('retained_sources')))
+    from .snapshot_routing import verify_job_context
+    verify_job_context(job)
+    routed = 'research_context_binding' in spec
+    write(job/'permissions.json', permissions(workspace, readonly=spec['readonly'],
+        retained_sources=spec.get('retained_sources'),
+        research_notes=spec.get('research_notes') if routed else None))
     write(job/'schema.json', SCHEMA)
     env = {'PATH': '/opt/homebrew/bin:/Users/sasha/.elan/bin:/usr/bin:/bin:/usr/sbin:/sbin',
         'HOME': '/Users/sasha', 'LANG': 'en_US.UTF-8', 'GIT_CONFIG_NOSYSTEM': '1',
@@ -109,6 +117,66 @@ def command(job, spec):
         argv += ['-c', key+'=false']
     return argv + ['-c', 'features.skip_host_skill_discovery=true', '-c', 'project_doc_max_bytes=0', '-']
 
+# Conservative supported-config roots for the inherited native broker process,
+# not the separate tool shell environment. Optional state/log defaults are under
+# CODEX_HOME. This finite table does not assert whole-host or undocumented native
+# broker coverage; outside-arm roots retain the prior observer's blind spots.
+BROKER_HOME_DEFAULTS = {'CODEX_HOME': '.codex', 'XDG_CONFIG_HOME': '.config',
+    'XDG_CACHE_HOME': '.cache', 'XDG_DATA_HOME': '.local/share',
+    'XDG_STATE_HOME': '.local/state'}
+BROKER_OPTIONAL_ROOTS = ('CODEX_SQLITE_HOME','CODEX_LOG_DIR','XDG_RUNTIME_DIR','TMP','TEMP')
+
+def broker_root_preflight(arm, roots, env, cwd):
+    """Keep the inherited environment exact; reject missed in-arm write roots."""
+    def path(value, key):
+        if not isinstance(value,str) or not value or '\x00' in value or value.startswith('~'):
+            raise ResourceFailure('monitor_unavailable: ambiguous broker root '+key)
+        try:
+            value=Path(value)
+            return (value if value.is_absolute() else cwd/value).resolve()
+        except (OSError,ValueError,RuntimeError):
+            raise ResourceFailure('monitor_unavailable: invalid broker root '+key) from None
+    if 'HOME' in env:
+        home=env['HOME']
+    else:
+        import pwd
+        try: home=pwd.getpwuid(os.getuid()).pw_dir
+        except (KeyError,OSError):
+            raise ResourceFailure('monitor_unavailable: missing broker home') from None
+    home=path(home,'HOME')
+    selected={'HOME': home}
+    for key,suffix in BROKER_HOME_DEFAULTS.items():
+        selected[key]=path(env[key] if key in env else str(home/suffix),key)
+    for key in BROKER_OPTIONAL_ROOTS:
+        if key in env: selected[key]=path(env[key],key)
+    if 'TMPDIR' not in env:
+        raise ResourceFailure('monitor_unavailable: missing broker TMPDIR')
+    selected['TMPDIR']=path(env['TMPDIR'],'TMPDIR')
+    for key,value in selected.items():
+        # HOME is contextual: its actual default state/cache descendants above
+        # are classified separately. State/temp roots may not broadly cover an
+        # unobserved part of the arm by being an ancestor of it either.
+        intersects=value.is_relative_to(arm) or (key!='HOME' and arm.is_relative_to(value))
+        if intersects and not any(value.is_relative_to(root) for root in roots):
+            raise ResourceFailure('monitor_unavailable: broker root outside observed workspace/job '+key)
+
+def hosted_disk_scopes(job, workspace, env):
+    """Only controller arm jobs use a union; curation keeps legacy coverage."""
+    if job.parent.name!='jobs': return None
+    arm=job.parent.parent
+    if arm.name not in ('baseline','exploration') or arm.parent.name!='arms':
+        raise ResourceFailure('monitor_unavailable: invalid hosted arm layout')
+    roots=disk_scope_roots((workspace,job))
+    try:
+        if (not arm.is_absolute() or arm.resolve(strict=True)!=arm or
+            not arm.is_relative_to(ROOT.resolve()) or
+            workspace==arm or not workspace.is_relative_to(arm) or not job.is_relative_to(arm)):
+            raise ResourceFailure('monitor_unavailable: invalid hosted disk containment')
+    except (OSError,ValueError,RuntimeError) as exc:
+        raise ResourceFailure('monitor_unavailable: invalid hosted disk containment') from exc
+    broker_root_preflight(arm,roots,env,ROOT)
+    return roots
+
 def execute(job):
     try:
         with admission('external-proposer-or-fixture') as cap:
@@ -117,7 +185,11 @@ def execute(job):
         spec = read(job/'spec.json')
         write(job/'receipt.json', dict(request_id=spec['request_id'], role=spec['role'],
             outcome='resource_guard: '+str(exc), payload=None, usage_raw=[],
-            elapsed_seconds=0, mathematical_resolution=False, operationally_incomplete=True))
+            elapsed_seconds=0, mathematical_resolution=False, operationally_incomplete=True,
+            **({'research_context_binding': spec['research_context_binding']}
+               if spec.get('research_context_binding') else {}),
+            **({'snapshot_context_schema': spec['snapshot_context_schema']}
+               if spec.get('snapshot_context_schema') is not None else {})))
 
 def _execute(job, cap):
     spec = read(job/'spec.json')
@@ -136,7 +208,9 @@ def _execute(job, cap):
     try:
         env = os.environ.copy()
         env.update(GIT_CONFIG_NOSYSTEM='1', GIT_CONFIG_GLOBAL='/dev/null', TMPDIR=str(workspace/'.scratch'))
-        guard = Guard(0, job.parent.parent, cap)
+        disk_scopes=hosted_disk_scopes(job,workspace,env)
+        guard = (Guard(0,job.parent.parent,cap,disk_scopes=disk_scopes) if disk_scopes is not None
+            else Guard(0,job.parent.parent,cap))
         from .study_context import check_prompt_file
         check_prompt_file(job/'prompt.txt')
         with (job/'prompt.txt').open('rb') as prompt:
@@ -235,6 +309,12 @@ def _execute(job, cap):
     if spec['role'] == 'adapter':
         result['adapter_protocol'] = adapter_provenance
     result['resources'] = guard.receipt() if guard else {'monitor': 'not started'}
+    if spec.get('research_context_binding'):
+        from .snapshot_routing import verify_job_context
+        verify_job_context(job)
+        result['research_context_binding'] = spec['research_context_binding']
+        if spec.get('snapshot_context_schema') is not None:
+            result['snapshot_context_schema'] = spec['snapshot_context_schema']
     write(job/'receipt.json', result)
 
 if __name__ == '__main__':

@@ -1,3 +1,17 @@
+# Current status — 1 November 2026
+
+The current Gaussian-quotient campaign has eight admitted results, including
+uniform positivity for the known index-gap-one and index-gap-two families and
+an exact reduction to the remaining separated interval-product case. The full
+conjecture remains unproved. The run stopped after three research rounds at the
+8 MiB source-file limit; it is not currently running.
+
+See [the checked proof archive](research/gaussian-quotient-20261031/README.md)
+for exact statements, certificates, source closure and reproduction commands.
+The Markov campaign remains archived. The following dated records are historical.
+
+---
+
 # Research status: audited snapshot through worker 188
 
 **Cutoff: closed worker 188, 17 October 2026. Full Markov Conjecture 6.3 remains open.**

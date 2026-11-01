@@ -11,7 +11,7 @@ from .study_common import (ROOT, Invalid, canonical, digest, sha, read, write,
     atomic_text, retention_room, implementation, REASONING_EFFORT)
 
 PROMPT_CHAR_LIMIT = 900_000
-CONTEXT_BYTE_LIMIT = 8 * 1024**2
+CONTEXT_BYTE_LIMIT = 16 * 1024**2
 INDEX_OMISSIONS = {'used_declarations', 'proposal', 'solution', 'validation_bundle'}
 RECOVERY_FIELDS = ('calls','meta_calls','seconds','reservations','budget_pools',
     'counted_jobs','receipts','receipt_hashes','round','phase','status','failures',
@@ -52,9 +52,281 @@ def _safe_history_path(workspace, name):
     return path
 
 
+def _pointer(*parts):
+    return '/' + '/'.join(str(part).replace('~', '~0').replace('/', '~1') for part in parts)
+
+
+def _compact_library_metadata(view, request, relative, content_hash):
+    """Defer provenance maps, retaining every mathematical/typed task field.
+
+    A value_binding is digest(JSON value), not either hash domain used inside
+    source_files or task.context_sources. The complete request remains unchanged.
+    """
+    def reference(value, *parts):
+        return {'path': relative, 'sha256': content_hash,
+                'json_pointer': _pointer(*parts), 'value_binding': digest(value)}
+
+    for field in ('knowledge', 'components', 'reuse_interfaces'):
+        for identity, item in view.get(field, {}).items():
+            original = request[field][identity]
+            deferred = {}
+            if 'source_files' in item:
+                deferred['source_files'] = reference(item.pop('source_files'), field, identity, 'source_files')
+            task = item.get('task')
+            if isinstance(task, dict) and 'context_sources' in task:
+                deferred['task.context_sources'] = reference(task.pop('context_sources'), field, identity, 'task', 'context_sources')
+            if deferred:
+                item['full_record']['deferred_fields'] = deferred
+
+    # A selected interface is an alias only for an identical full original
+    # record. Same ids with different provenance or versions never collapse.
+    for identity, original in request.get('reuse_interfaces', {}).items():
+        for field in ('knowledge', 'components'):
+            if identity in request.get(field, {}) and original == request[field][identity]:
+                full_record = view['reuse_interfaces'][identity]['full_record']
+                view['reuse_interfaces'][identity] = {
+                    'id': original.get('id', identity),
+                    'library_record': {'json_pointer': _pointer(field, identity),
+                                       'record_binding': digest(original)},
+                    'full_record': full_record}
+                break
+    view['own_context']['transport_view'] = {
+        'schema': 'math-gkm.own-library-metadata-index.v1',
+        'interpretation': 'Only repeated provenance maps are indirect. full_record.deferred_fields '
+            'names exact values in the complete own request; read them before reuse. '
+            'library_record points to the identical displayed knowledge/components record. '
+            'Map value_binding hashes JSON values, not source text or raw source-file bytes. '
+            'The complete request controls permissions, identity and checking.'}
+
+
+def _compact_exact_feedback_aliases(view, request, relative, content_hash):
+    """Alias only canonically identical feedback copies; keep one full copy inline."""
+    feedback = request.get('research_feedback')
+    history = feedback.get('history') if isinstance(feedback, dict) else None
+    if not isinstance(history, list) or not history:
+        return
+    aliases = []
+    def alias(original, source_parts, target_index):
+        target_parts = ('research_feedback', 'history', target_index)
+        aliases.append(_pointer(*source_parts))
+        return {'own_context_alias': {
+            'schema': 'math-gkm.own-request-exact-alias.v1',
+            'path': relative, 'sha256': content_hash,
+            'json_pointer': _pointer(*target_parts),
+            'inline_json_pointer': _pointer(*target_parts),
+            'value_binding': digest(original)}}
+    latest = feedback.get('latest')
+    if isinstance(latest, dict) and canonical(latest) == canonical(history[-1]):
+        view['research_feedback']['latest'] = alias(latest, ('research_feedback', 'latest'), len(history)-1)
+    concept = request.get('concept_driver')
+    repeated = concept.get('review_feedback') if isinstance(concept, dict) else None
+    if isinstance(repeated, list):
+        for index, packet in enumerate(repeated):
+            if not isinstance(packet, dict):
+                continue
+            for target_index, original in enumerate(history):
+                if canonical(packet) == canonical(original):
+                    view['concept_driver']['review_feedback'][index] = alias(packet,
+                        ('concept_driver', 'review_feedback', index), target_index)
+                    break
+    if aliases:
+        view['own_context']['transport_view']['exact_feedback_aliases'] = aliases
+        view['own_context']['transport_view']['interpretation'] += (
+            ' Exact feedback aliases point to a canonically identical complete packet '
+            'still inline in research_feedback.history and in the immutable own request. '
+            'No commitment, feedback packet content, typed statement or source grant is changed.')
+
+
+def _compact_exact_commitment_alternatives(view, request, relative, content_hash):
+    """Alias ONLY exact public five-field copies already present inline.
+
+    Original commitment, trial, selected prediction, resource grant and digest
+    remain unchanged. JSON canonical equality, not id or Python equality,
+    establishes every alias; the alternative list's positions/order remain.
+    """
+    commitment = request.get('commitment')
+    portfolio = request.get('portfolio')
+    if (not isinstance(commitment, dict) or commitment.get('schema') != 'math-gkm.prospective.v3'
+            or not isinstance(commitment.get('alternatives'), list) or not isinstance(portfolio, list)):
+        return
+    fields = ('id', 'kind', 'claim', 'uncertainty', 'outcomes')
+    projections = {}
+    for index, item in enumerate(portfolio):
+        if isinstance(item, dict) and all(field in item for field in fields):
+            projected = {field: item[field] for field in fields}
+            projections.setdefault(canonical(projected), index)
+    aliases = []
+    for index, original in enumerate(commitment['alternatives']):
+        if not isinstance(original, dict) or set(original) != set(fields):
+            continue
+        target = projections.get(canonical(original))
+        if target is None:
+            continue
+        parts = ('commitment', 'alternatives', index)
+        view['commitment']['alternatives'][index] = {'own_context_alias': {
+            'schema': 'math-gkm.own-request-exact-projection-alias.v1',
+            'path': relative, 'sha256': content_hash, 'json_pointer': _pointer(*parts),
+            'value_binding': digest(original), 'inline_json_pointer': _pointer('portfolio', target),
+            'projection_fields': list(fields)}}
+        aliases.append(_pointer(*parts))
+    if aliases:
+        view['own_context']['transport_view']['exact_commitment_alternative_aliases'] = aliases
+        view['own_context']['transport_view']['interpretation'] += (
+            ' Each commitment.alternatives alias means take exactly projection_fields '
+            'from the unchanged inline portfolio entry at inline_json_pointer, retaining '
+            'the alternative list order. That value is canonically identical to the '
+            'original alternative bound by value_binding and its full-request pointer. '
+            'Extra portfolio fields are not part of this projection. The complete original '
+            'commitment, selected/trial/resource fields and prospective binding are unchanged.')
+
+
+def _compact_exact_claim_aliases(view, request, relative, content_hash):
+    """Alias exact claim copies while keeping their complete task text inline."""
+    fields = ('statement', 'hypotheses')
+    transport = view.get('own_context', {}).get('transport_view')
+    if not isinstance(transport, dict) or 'exact_claim_aliases' in transport:
+        return
+    interpretation = transport.get('interpretation')
+    if not isinstance(interpretation, str):
+        return
+    explanation = (' Exact claim aliases project statement and hypotheses from '
+        'the canonically identical same-record task still inline at inline_json_pointer. '
+        'All task types and conditions, and the complete original request, are unchanged.')
+    candidate = copy.deepcopy(view)
+    aliases = []
+    for field in ('knowledge', 'components', 'reuse_interfaces'):
+        original_library = request.get(field)
+        displayed_library = candidate.get(field)
+        if not isinstance(original_library, dict) or not isinstance(displayed_library, dict):
+            continue
+        for identity, item in displayed_library.items():
+            original_record = original_library.get(identity)
+            if not isinstance(item, dict) or not isinstance(original_record, dict):
+                continue
+            original = original_record.get('claim')
+            original_task = original_record.get('task')
+            task = item.get('task')
+            if (not isinstance(original, dict) or set(original) != set(fields)
+                    or not isinstance(original_task, dict) or not all(key in original_task for key in fields)
+                    or not isinstance(task, dict) or not all(key in task for key in fields)
+                    or canonical(item.get('claim')) != canonical(original)):
+                continue
+            projected = {key: task[key] for key in fields}
+            if (canonical(original) != canonical(projected)
+                    or canonical(projected) != canonical({key: original_task[key] for key in fields})):
+                continue
+            pointer = _pointer(field, identity, 'claim')
+            alias = {'own_context_alias': {
+                'schema': 'math-gkm.own-request-exact-projection-alias.v1',
+                'path': relative, 'sha256': content_hash, 'json_pointer': pointer,
+                'value_binding': digest(original),
+                'inline_json_pointer': _pointer(field, identity, 'task'),
+                'projection_fields': list(fields)}}
+            # Charge each candidate the entire explanatory metadata overhead.
+            # This is conservative when multiple exact copies are aliased.
+            overhead = len(canonical({'exact_claim_aliases': [pointer]})) + len(canonical(explanation))
+            if len(canonical(original)) <= len(canonical(alias)) + overhead:
+                continue
+            item['claim'] = alias
+            aliases.append(pointer)
+    if aliases:
+        candidate['own_context']['transport_view']['exact_claim_aliases'] = aliases
+        candidate['own_context']['transport_view']['interpretation'] = interpretation + explanation
+        if len(canonical(candidate)) < len(canonical(view)):
+            view.clear()
+            view.update(candidate)
+
+
+def _compact_context_file_references(view):
+    """Share only exact generated library-reference file metadata, losslessly."""
+    header = view.get('own_context')
+    transport = header.get('transport_view') if isinstance(header, dict) else None
+    if (not isinstance(transport, dict) or 'file_reference_defaults' in transport
+            or not isinstance(transport.get('interpretation'), str)
+            or not isinstance(header.get('path'), str)
+            or not isinstance(header.get('sha256'), str)
+            or not re.fullmatch('[0-9a-f]{64}', header['sha256'])):
+        return
+    candidate = copy.deepcopy(view)
+    changed = False
+    def compact(reference, pointer, binding):
+        nonlocal changed
+        if (not isinstance(reference, dict) or 'own_context_file' in reference
+                or not {'path', 'sha256', 'json_pointer', binding} <= set(reference)
+                or reference['json_pointer'] != pointer
+                or not isinstance(reference[binding], str)
+                or not re.fullmatch('[0-9a-f]{64}', reference[binding])
+                or canonical(reference['path']) != canonical(header['path'])
+                or canonical(reference['sha256']) != canonical(header['sha256'])):
+            return
+        del reference['path'], reference['sha256']
+        reference['own_context_file'] = True
+        changed = True
+    for field in ('knowledge', 'components', 'reuse_interfaces'):
+        library = candidate.get(field)
+        if not isinstance(library, dict):
+            continue
+        for identity, item in library.items():
+            if not isinstance(item, dict):
+                continue
+            reference = item.get('full_record')
+            compact(reference, _pointer(field, identity), 'record_binding')
+            deferred = reference.get('deferred_fields') if isinstance(reference, dict) else None
+            if isinstance(deferred, dict):
+                for name, parts in (('source_files', ('source_files',)),
+                        ('task.context_sources', ('task', 'context_sources'))):
+                    compact(deferred.get(name), _pointer(field, identity, *parts), 'value_binding')
+    if changed:
+        transport = candidate['own_context']['transport_view']
+        transport['file_reference_defaults'] = 'math-gkm.own-context-file-reference-defaults.v1'
+        transport['interpretation'] += (
+            ' In library full_record and its source_files/task.context_sources '
+            'deferred_fields only, own_context_file=true means restore path and sha256 '
+            'from own_context and remove that marker. All other reference fields, '
+            'pointers, bindings and inline mathematical content are unchanged.')
+        if len(canonical(candidate)) < len(canonical(view)):
+            view.clear()
+            view.update(candidate)
+
+
+def _file_reference_prompt(original, request, relative, content_hash, raw_bytes):
+    """Factor only an exact canonical JSON suffix; retain all original input."""
+    request_text = canonical(request)
+    if not request_text or not original.endswith(request_text):
+        raise PromptContextLimit('complete prompt lacks exact canonical request suffix')
+    prefix = original[:-len(request_text)]
+    import hashlib
+    prefix_raw = prefix.encode('utf-8')
+    original_raw = original.encode('utf-8')
+    envelope = {
+        'schema': 'math-gkm.own-request-file-transport.v1',
+        'interpretation': (
+            'This is a lossless transport envelope for the complete original role request. '
+            'Before any substantive action, read complete_request.path in full as UTF-8, '
+            'continuing across tool-output limits as necessary, and verify its byte count, '
+            'SHA-256 and request_binding. Replace this entire JSON envelope with that '
+            'file text excluding its single final LF; leave the preceding instruction '
+            'prefix byte-for-byte unchanged. The result is the exact original prompt '
+            'bound by original_prompt, and all of its instructions, task conditions, '
+            'feedback, mathematical content and permissions are authoritative. '
+            'request_binding is SHA-256 of canonical request JSON without the final LF. '
+            'No original field is optional, summarized or selected by this envelope. '
+            'This transport adds no source grant, mathematical suggestion, permission '
+            'or resource allowance. If complete reading or verification fails, stop '
+            'with a transport failure; do not infer or approximate missing contents.'),
+        'complete_request': {'path': relative, 'sha256': content_hash,
+            'bytes': raw_bytes, 'request_binding': digest(request)},
+        'original_prompt': {'sha256': hashlib.sha256(original_raw).hexdigest(),
+            'bytes': len(original_raw),
+            'instruction_prefix_sha256': hashlib.sha256(prefix_raw).hexdigest(),
+            'instruction_prefix_bytes': len(prefix_raw)}}
+    return check_prompt(prefix + canonical(envelope))
+
+
 def prepare_prompt(request, workspace, role, renderer):
     """Render only. The caller retains its original request and source grants."""
     rendered=renderer(request)
+    original_rendered=rendered
     if len(rendered)<=PROMPT_CHAR_LIMIT:
         return rendered
     if role not in ('proposer','researcher') or request.get('role')!=role:
@@ -83,7 +355,20 @@ def prepare_prompt(request, workspace, role, renderer):
     view['own_context']={'schema':'math-gkm.own-prompt-context.v1','path':relative,
         'sha256':content_hash,'bytes':len(raw),'request_binding':digest(request),
         'scope':'Exact full OWN role request. Read omitted proof/provenance details on demand; indexes do not change mathematical admission or obligations.'}
-    rendered=check_prompt(renderer(view))
+    rendered=renderer(view)
+    if len(rendered)>PROMPT_CHAR_LIMIT:
+        _compact_library_metadata(view, request, relative, content_hash)
+        rendered=renderer(view)
+    if len(rendered)>PROMPT_CHAR_LIMIT:
+        _compact_exact_feedback_aliases(view, request, relative, content_hash)
+        _compact_exact_commitment_alternatives(view, request, relative, content_hash)
+        _compact_exact_claim_aliases(view, request, relative, content_hash)
+        rendered=renderer(view)
+    _compact_context_file_references(view)
+    rendered=renderer(view)
+    if len(rendered)>PROMPT_CHAR_LIMIT:
+        rendered=_file_reference_prompt(original_rendered, request, relative, content_hash, len(raw))
+    rendered=check_prompt(rendered)
     path=_safe_history_path(workspace,content_hash+'.json')
     if path.exists():
         if path.read_bytes()!=raw: raise Invalid('immutable own context changed')

@@ -5,6 +5,7 @@ required component constants must occur in the checked consumer's dependency
 closure; this establishes use, not causal indispensability. Optional ablation
 comparisons use the same evaluate_pair API and debit the same owning arm.
 """
+import copy
 import os
 import secrets
 from pathlib import Path
@@ -19,7 +20,49 @@ from .trust import LEAN, CHECKER, CORE, environment
 from .process import run
 from .completion import NAME, ALLOWED, without_comments
 from . import proof_audit
+from .inspection_profiles import resolve, catalogue_selection, validate_binding, from_result
 from .adapter_protocol import intake, AdapterProtocolError
+
+# PROPOSED ONLY: root must fill the exact separately built/qualified engine
+# pointer/hash map before this source can be frozen or deployed. No writable
+# manifest, role request or protocol option can select a replay implementation.
+CATALOG_REPLAY_ENGINE = {'executable': {'path': '/Users/sasha/math_gkm/.bootstrap/concept-driver-20261020/general-continuation/context-replay25-20261026/standalone-origin-0002/native/leanchecker', 'sha256': '408d922ca4bc2cfa2f8f4757c35d1133d9c16881e9f6c0448dc46dcb66c3e41e'}, 'interface_source': {'path': '/Users/sasha/math_gkm/machinery/serial_replay.py', 'sha256': '38673be376e02423efd213a9bcc0ca71ed222e4acb41e3e3c6aff92e18e5cfa4'}, 'official_source': {'path': '/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/src/lean/LeanChecker.lean', 'sha256': 'eb5dee411837629f09c5c18d63cc833d30335a46048bc586642742e90aa65d5f'}, 'official_worker_sha256': '4a1a5a15aa9296ca7fa05bc6fae5413962b27b718ab9acf1b50b6c461bbe7464', 'schema': 'math-gkm.catalogue-serial-engine.v1', 'source': {'path': '/Users/sasha/math_gkm/.bootstrap/concept-driver-20261020/general-continuation/context-replay25-20261026/standalone-origin-0002/sources/SerialReplay.lean', 'sha256': '9109555d0a15a52861ba74adfe61a02f692f96ac07f9eb3354b18555cdc47116'}, 'toolchain': {'checker': {'path': '/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/leanchecker', 'sha256': '4c4f966e8c42ae7a7ce6d7f5999de8c1b1fbc920040f72e60d2086aa25ceec01'}, 'lean': {'path': '/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean', 'sha256': '1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554'}, 'root': '/Users/sasha/.elan/toolchains/leanprover--lean4---v4.32.2'}}
+
+
+# INACTIVE: later source review/calibration is required to select a catalogue
+# preset here. Proposal/protocol/result data cannot select this controller value.
+CATALOG_INSPECTION_PROFILE = 'catalogue-4m-256mib-v1'
+
+
+def _catalog_engine():
+    if CATALOG_REPLAY_ENGINE is None:
+        raise Invalid('catalogue serial replay engine has not been qualified and source-pinned')
+    from . import serial_replay
+    engine = {k: dict(v) if isinstance(v, dict) else v
+              for k, v in CATALOG_REPLAY_ENGINE.items()}
+    serial_replay.engine_identity(engine)
+    return engine
+
+
+def catalogue_seconds(protocol):
+    """Derived frozen-own-context allowance; ordinary proof caps are unchanged."""
+    seconds = protocol['validation_seconds']
+    if type(seconds) is not int or not 1 <= seconds <= 1800:
+        raise Invalid('invalid catalogue validation basis')
+    return min(5400, 3*seconds)
+
+
+def paired_evaluation_seconds(protocol, tasks):
+    """Symmetric reserved ceiling; each task retains the ordinary proof cap.
+
+    The zero-task formula remains useful for conservative trial reservations;
+    callers with an empty suite still skip evaluation work as before.
+    """
+    if type(tasks) is not int or tasks < 0:
+        raise Invalid('invalid paired evaluation task count')
+    return (2*protocol['adaptation_seconds'] +
+            2*tasks*protocol['validation_seconds'] + 2*catalogue_seconds(protocol))
+
 
 def dependency_paths(workspace):
     return [CORE] + [p/'.lake/build/lib/lean' for p in sorted((workspace/'.lake/packages').iterdir())]
@@ -166,18 +209,28 @@ def wrapper(task, solution, frozen_modules=None, transfer_modules=None):
 
 
 def check_task(workspace, task, solution, directory, seconds, *, live=False, stop=lambda: False,
-               frozen_files=None, transfer_modules=None, required=(), contract=None):
+               frozen_files=None, transfer_modules=None, required=(), contract=None,
+               catalog_replay_engine=None, catalog_inspection_profile=None):
     """Whole compilation/replay sequence shares one timeout; failures are bounded."""
     task = task if 'target_module' in task else bind_task(workspace, task)
     directory.mkdir(parents=True, exist_ok=False)
     start = time.monotonic()
+    profile = resolve()
     result = {'task_id': task['id'], 'task_hash': digest(task), 'checked': False,
         'source_sha256': task['source_sha256'], 'scope': task['scope'], 'hypotheses': task['hypotheses'],
         'budget_seconds': seconds, 'checks': [], 'status': 'invalid_comparison',
         'validation_mode': 'deployed_sandbox' if live else 'unwrapped_fixture',
-        'required_constants': task['required_constants'], 'inspection_schema': proof_audit.SCHEMA,
+        'required_constants': task['required_constants'], 'inspection_schema': profile.inspection_schema,
+        'inspection_profile': profile.binding(),
         'controller_stage': 'context'}
     try:
+        if catalog_replay_engine is not None and (
+                task.get('id') != 'catalog' or not isinstance(solution, dict) or
+                solution.get('module') != 'MathGKM.FrozenCatalog'):
+            raise Invalid('serial replay is restricted to the frozen own catalogue')
+        profile = catalogue_selection(catalog_inspection_profile, task=task, solution=solution,
+            replay_engine=catalog_replay_engine)
+        result.update(inspection_schema=profile.inspection_schema, inspection_profile=profile.binding())
         contract = contract or read(workspace/'contract.json')
         if sha(workspace/contract['root_file']) != task['source_sha256'] or task['source_sha256'] != contract['root_sha256']:
             raise Invalid('exact source check failed')
@@ -215,7 +268,7 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
             if nonsolution else wrapper(task, solution))
         declarations = ('StudyObligation', 'StudyInterface', 'StudyTransport')
         inspection_nonce = secrets.token_hex(32)
-        sources['StudyInspect'] = proof_audit.inspector('StudyCheck', declarations, required, frozen_modules, artifact='declarations.json', nonce=inspection_nonce)
+        sources['StudyInspect'] = proof_audit.inspector('StudyCheck', declarations, required, frozen_modules, artifact='declarations.json', nonce=inspection_nonce, inspection_profile=profile.id)
         # Terms are elaborated as code; reject obvious authority-changing constructs.
         for key in ('term', 'interface_term', 'transport_term'):
             if re.search(r'\b(sorry|admit|axiom|native_decide)\b', without_comments(solution.get(key, ''))):
@@ -238,6 +291,35 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
                       sandbox_profile_sha256=sha(directory/'validator.sb') if live else None)
         for operation in ('compile', 'kernel_replay'):
             result['controller_stage'] = operation
+            if operation == 'kernel_replay' and catalog_replay_engine is not None:
+                from . import serial_replay
+                prefixes = order + ['StudyCheck']
+                replayed = serial_replay.run(directory/'serial-replay', prefixes,
+                    engine=catalog_replay_engine, cwd=source, env=env,
+                    launcher_prefix=prefix,
+                    remaining=lambda: seconds-(time.monotonic()-start),
+                    invoke=run, stop=stop)
+                for item in replayed['process_records']:
+                    record = item['record']
+                    result['checks'].append({'operation': 'kernel_replay',
+                        'serial_phase': item['phase'],
+                        'prefix_index': item['prefix_index'], 'batch_index': item['batch_index'],
+                        'serial_trace': item['trace'], **record})
+                    if live and (record['returncode'] < 0 or 'sandbox-exec:' in record['stderr']):
+                        result.update(status='validator_infrastructure_failure', infrastructure_failure=True)
+                result['catalog_replay'] = {
+                    'engine_identity': serial_replay.engine_identity(catalog_replay_engine),
+                    'receipt': replayed['receipt'], 'checked': replayed['checked']}
+                write(directory/'result.json', result)
+                if not replayed['checked'] or any(
+                        item['record']['returncode'] or item['record']['termination']
+                        for item in replayed['process_records']):
+                    raise Invalid('frozen catalogue serial kernel replay incomplete')
+                verified = serial_replay.verify(directory/'serial-replay', prefixes=prefixes,
+                    engine=catalog_replay_engine)
+                if not verified['checked'] or verified['receipt'] != replayed['receipt']:
+                    raise Invalid('frozen catalogue serial kernel replay binding changed')
+                continue
             for module in order + ['StudyCheck']:
                 if stop():
                     raise Invalid('validation stopped; no mathematical conclusion')
@@ -264,10 +346,10 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
                         timeout=min(1800, seconds-(time.monotonic()-start)), output_bytes=1048576)
         result['checks'].append({'operation': 'trusted_premise_inspection', **inspected})
         if inspected['returncode'] and (source/'StudyInspect.lean').read_text()==sources['StudyInspect']:
-            result['trusted_inspector_failure']=proof_audit.failure_artifact(source/'declarations.json',declarations,inspected,nonce=inspection_nonce)
+            result['trusted_inspector_failure']=proof_audit.failure_artifact(source/'declarations.json',declarations,inspected,nonce=inspection_nonce,inspection_profile=profile.id)
         if live and (inspected['returncode'] < 0 or 'sandbox-exec:' in inspected['stderr']):
             result.update(status='validator_infrastructure_failure', infrastructure_failure=True)
-        result['declarations'] = proof_audit.parse_artifact(inspected, declarations, source/'declarations.json', nonce=inspection_nonce)
+        result['declarations'] = proof_audit.parse_artifact(inspected, declarations, source/'declarations.json', nonce=inspection_nonce,inspection_profile=profile.id)
         result['producer_completion'] = result['declarations'][0]['producer_completion']
         result['declaration_artifact_sha256'] = sha(source/'declarations.json')
         if result['declaration_artifact_sha256'] != result['declarations'][0]['artifact_sha256']:
@@ -281,6 +363,12 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
             raise Invalid('validator binaries changed')
         if live and sha(directory/'validator.sb') != result['sandbox_profile_sha256']:
             raise Invalid('validator sandbox profile changed')
+        if catalog_replay_engine is not None:
+            verified = serial_replay.verify(directory/'serial-replay', prefixes=order+['StudyCheck'],
+                engine=catalog_replay_engine)
+            if (not verified['checked'] or
+                    verified['receipt'] != result['catalog_replay']['receipt']):
+                raise Invalid('frozen catalogue serial replay changed during premise inspection')
         if inventory(workspace) != before:
             raise Invalid('solver changed during check')
         versions = proof_audit.used_versions(result['declarations'], frozen_files)
@@ -311,7 +399,7 @@ def check_task(workspace, task, solution, directory, seconds, *, live=False, sto
     from .retention import retire_build
     retire_build(directory, result)
     from .validation_receipts import finish
-    finish(directory,task,solution,required)
+    finish(directory,task,solution,required,inspection_profile=profile.id)
     return result
 
 def _catalog_identity(arm, manifest, task, solution):
@@ -319,29 +407,47 @@ def _catalog_identity(arm, manifest, task, solution):
     sealed = read(arm.study/'seal.json')
     if 'dependencies' not in sealed:
         raise Invalid('frozen catalog cache requires sealed dependency identity')
-    return {'schema': 'math-gkm.frozen-catalog-identity.v1',
+    from . import serial_replay
+    profile = catalogue_selection(CATALOG_INSPECTION_PROFILE, task=task, solution=solution,
+        replay_engine=_catalog_engine())
+    return {'schema': 'math-gkm.frozen-catalog-identity.v2',
             'snapshot_binding': manifest['binding'],
             'snapshot_files': manifest['files'],
             'admitted_modules': manifest.get('admitted_modules'),
             'source_sha256': task['source_sha256'],
             'task': task, 'solution': solution, 'required': [],
             'validation_mode': arm.p['transport'],
-            'inspection_schema': proof_audit.SCHEMA,
+            'inspection_schema': profile.inspection_schema,
+            'inspection_profile': profile.binding(),
             'binaries': {str(p): sha(p) for p in (LEAN, CHECKER)},
             'pins': {n: sha(ROOT/n) for n in ('lean-toolchain','lakefile.toml','lake-manifest.json')},
             'dependency_identity': digest(sealed['dependencies']),
+            'serial_replay_engine': serial_replay.engine_identity(_catalog_engine()),
             'implementation': {n: sha(ROOT/'machinery'/n) for n in
-                ('proof_audit.py','inspection_stream.py','validation_receipts.py','study_transfer.py')}}
+                ('proof_audit.py','inspection_stream.py','inspection_profiles.py','validation_receipts.py','own_feedback.py','study_transfer.py')}}
 
 
 def _catalog_verified(directory, task, solution, identity):
     from .validation_receipts import reuse
-    result = reuse(directory, task, solution, ())
-    if (result.get('checked') is not True or result.get('inspection_schema') != proof_audit.SCHEMA or
+    profile = resolve(identity['inspection_profile']['id'])
+    validate_binding(identity['inspection_profile'], profile.id)
+    result = reuse(directory, task, solution, (), inspection_profile=profile.id)
+    from_result(result, profile.id)
+    if (result.get('checked') is not True or result.get('inspection_schema') != profile.inspection_schema or
             result.get('target_binding') != digest(task) or result.get('solution_binding') != digest(solution) or
             result.get('binary_hashes') != identity['binaries'] or result.get('pin_hashes') != identity['pins'] or
             not result.get('declarations') or 'catalog' not in result['declarations'][0]):
         raise Invalid('frozen catalog successful exact inspection binding required')
+    from . import serial_replay
+    replay = result.get('catalog_replay', {})
+    prefixes = [row['module'] for row in result.get('checks', [])
+                if row.get('operation') == 'compile']
+    if (not prefixes or replay.get('checked') is not True or
+            replay.get('engine_identity') != identity['serial_replay_engine']):
+        raise Invalid('frozen catalog serial replay identity or coverage missing')
+    verified = serial_replay.verify(directory/'serial-replay', prefixes=prefixes, engine=_catalog_engine())
+    if not verified['checked'] or replay.get('receipt') != verified['receipt']:
+        raise Invalid('frozen catalog serial replay receipt changed')
     return result
 
 
@@ -367,6 +473,14 @@ def _catalog_account(result, *, reused, start, origin):
         'original_validation_seconds': result.get('elapsed_seconds'),
         'validator_directory': str(origin),
         'scope': 'exact frozen declaration catalog; full reservation remains charged'}
+    # This function is called only for the frozen OWN catalogue. It projects a
+    # controller diagnostic token; never task text, compiler output, or reports.
+    diagnostic = result.get('controller_diagnostic')
+    if (result.get('checked') is False and isinstance(diagnostic, dict) and
+            diagnostic.get('schema') == 'math-gkm.own-check-feedback.v1' and
+            diagnostic.get('category') == 'timeout' and
+            diagnostic.get('mathematical_conclusion') == 'none'):
+        out['frozen_context_failure_category'] = 'timeout'
     return out
 
 
@@ -376,13 +490,13 @@ def catalog_snapshot(arm, source, manifest, directory, key):
     A cached success never substitutes for a different context. Cache verification
     still hashes all retained receipt artifacts and checks binaries/pins through
     the official validator-reuse path. Failed, stale or partial entries are
-    inconclusive; caps and declaration inspection remain unchanged.
+    inconclusive; wall caps and acceptance checks stay fixed; inspection uses the bound preset.
     """
     started = time.monotonic()
     actual = verify_snapshot(source)
     if actual != manifest:
         raise Invalid('frozen catalog snapshot manifest changed')
-    arm.reserve('catalog-'+key, arm.p['validation_seconds'])
+    arm.reserve('catalog-'+key, catalogue_seconds(arm.p))
     marker = directory.parent/(directory.name+'.reserved.json')
     cached_attempt = directory/'CACHE_REUSE.json'
     existing = (directory/'result.json').exists() or cached_attempt.exists()
@@ -390,7 +504,7 @@ def catalog_snapshot(arm, source, manifest, directory, key):
         return {'checked': False, 'status': 'interrupted_catalog_not_replayed',
                 'elapsed_seconds': time.monotonic()-started}
     if not existing:
-        write(marker, {'snapshot': manifest['binding'], 'seconds': arm.p['validation_seconds']})
+        write(marker, {'snapshot': manifest['binding'], 'seconds': catalogue_seconds(arm.p)})
     ws = directory.parent/(directory.name+'-workspace')
     if not ws.exists():
         copy_seed(arm.study/'seed', ws)
@@ -430,8 +544,10 @@ def catalog_snapshot(arm, source, manifest, directory, key):
     except (Invalid, OSError, KeyError, TypeError, ValueError):
         return {'checked': False, 'status': 'invalid_finished_catalog_cache; inconclusive',
                 'elapsed_seconds': time.monotonic()-started}
-    result = check_task(ws, task, solution, directory, arm.p['validation_seconds'],
-        live=arm.p['transport'] == 'live', stop=arm.stopped, frozen_files=manifest['files'])
+    result = check_task(ws, task, solution, directory, catalogue_seconds(arm.p),
+        live=arm.p['transport'] == 'live', stop=arm.stopped, frozen_files=manifest['files'],
+        catalog_replay_engine=_catalog_engine(),
+        catalog_inspection_profile=identity['inspection_profile']['id'])
     if result.get('checked'):
         try:
             _catalog_verified(directory, task, solution, identity)
@@ -470,7 +586,7 @@ def evaluate_pair(arm, before, after, key, *, policy_comparison=False):
     suite = read(arm.study/'evaluation/suite.json')
     result = arm.root/'evaluations'/key/'result.json'
     if suite['tasks'] and not result.exists():
-        cap = 2*arm.p['adaptation_seconds'] + 2*(len(suite['tasks'])+1)*arm.p['validation_seconds']
+        cap = paired_evaluation_seconds(arm.p, len(suite['tasks']))
         arm.fund('paired-evaluation-'+key, cap)
         with arm.budget('paired-evaluation-'+key):
             return _evaluate_pair(arm, before, after, key, policy_comparison=policy_comparison)
@@ -518,11 +634,25 @@ def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
     directory = arm.root/'evaluations'/key
     suite = read(arm.study/'evaluation/suite.json')
     bm, am = verify_snapshot(before), verify_snapshot(after)
+    from . import snapshot_routing
+    routes = None
+    if snapshot_routing.ENABLED:
+        routes = snapshot_routing.prepare_pair(arm, before, after, directory)
+        before = Path(routes['before']['validation_snapshot'])
+        after = Path(routes['after']['validation_snapshot'])
+        bm, am = verify_snapshot(before), verify_snapshot(after)
+    catalog_profile = resolve(CATALOG_INSPECTION_PROFILE)
     binding = {'before': bm['binding'], 'after': am['binding'], 'suite': digest(suite),
                'inspection_schema': proof_audit.SCHEMA,
+               'adapter_typing_contract_schema': ADAPTER_TYPING_CONTRACT_SCHEMA,
+               'catalog_inspection_profile': catalog_profile.binding(),
+               'catalog_inspection_schema': catalog_profile.inspection_schema,
                'policy_comparison': policy_comparison,
                'adaptation_seconds_each': arm.p['adaptation_seconds'],
-               'validation_seconds_each_task': arm.p['validation_seconds']}
+               'validation_seconds_each_task': arm.p['validation_seconds'],
+               'catalog_seconds_each': catalogue_seconds(arm.p)}
+    if routes is not None:
+        binding['snapshot_routing'] = routes
     if (directory/'result.json').exists():
         previous = read(directory/'result.json',max_bytes=64*1024**2)
         if previous['binding'] != binding:
@@ -535,7 +665,7 @@ def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
         write(directory/'result.json', result)
         return result
     # Reserve symmetric entire comparison before any adaptation call.
-    reserve = 2*arm.p['adaptation_seconds'] + 2*(len(suite['tasks'])+1)*arm.p['validation_seconds']
+    reserve = paired_evaluation_seconds(arm.p, len(suite['tasks']))
     if not (directory/'commitment.json').exists():
         if reserve > arm.available() or arm.available_calls() < 2:
             raise Invalid('insufficient equal adaptation/validation reservation for pair')
@@ -553,6 +683,7 @@ def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
             shutil.copyfile(before/'source'/name, p)
     bound_tasks = [bind_task(target_ws, t) for t in suite['tasks']]
     write(directory/'bound-tasks.json', bound_tasks)
+    typing_contract = adapter_typing_contract(bound_tasks)
     catalogs = {}
     context_checks = {}
     for side, source, manifest in [('before', before, bm), ('after', after, am)]:
@@ -561,10 +692,12 @@ def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
         if not checked['checked']:
             result = {'binding': binding, 'eligible': False, 'status': 'invalid_frozen_context',
                       'catalog_failure': checked, 'transfer': [], 'regressions': [],
+                      'own_context_status': ('timeout' if checked.get('frozen_context_failure_category') == 'timeout' else 'inconclusive'),
                       'measured_costs': _measured_costs({}, context_checks)}
             write(directory/'result.json', result)
             return result
-        if checked.get('inspection_schema') != proof_audit.SCHEMA:
+        from_result(checked, catalog_profile.id)
+        if checked.get('inspection_schema') != catalog_profile.inspection_schema:
             raise Invalid('catalog identity schema changed; charged fresh comparison required')
         catalogs[side] = {c['name']: (c['identity_schema'], c['semantic_sha256']) for c in checked['declarations'][0]['catalog']}
     retained = all(catalogs['after'].get(n) == h for n, h in catalogs['before'].items())
@@ -579,8 +712,17 @@ def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
                 shutil.copyfile(source/'source'/name, p)
         tasks = copy_tasks(suite['tasks'], arm.p['transport'])
         req = {'role': 'adapter', 'tasks': tasks, 'policy': manifest['policy'],
+               'typing_contract': copy.deepcopy(typing_contract),
                'solver_binding': manifest['binding'], 'purpose': 'withheld structural obligation; no training feedback'}
+        routed_side = routes is not None and routes[side]['execution_mode'] == 'dual_snapshot'
+        if routed_side:
+            req.update(snapshot_context_schema=snapshot_routing.CONTEXT_SCHEMA,
+                       snapshot_route=routes[side], research_notes=routes[side]['research_notes'],
+                       validation_frozen_files=manifest['files'])
         receipt = arm.call(f'eval-{key}-{side}', 'adapter', req, ws, False, arm.p['adaptation_seconds'])
+        if routed_side:
+            ws = snapshot_routing.validation_workspace(arm, source, manifest, ws,
+                directory/('validation-workspace-'+side))
         checks, intake_provenance, intake_error = adapter_checks(
             arm, receipt, tasks, bound_tasks, directory, side, ws, key, binding, manifest, bm, am)
         sides[side] = {'adapter_receipt': receipt, 'checks': checks,
@@ -617,6 +759,45 @@ def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
                                 'eligible': result['eligible']})
     arm.save()
     return result
+
+
+ADAPTER_TYPING_CONTRACT_SCHEMA = 'math-gkm.adapter-typing-contract.v1'
+
+
+def adapter_typing_contract(bound_tasks):
+    """Inline types/scope only, derived from the unchanged frozen generator.
+
+    Never serialize a complete bound task: fixture/hidden/reference fields are
+    not part of this API. No Lean module, import or wrapper declaration is made.
+    """
+    previews = []
+    for task in bound_tasks:
+        target = {key: copy.deepcopy(task[key]) for key in
+            ('target_module', 'context_modules', 'hypotheses', 'statement',
+             'interface_type', 'transport_type')}
+        if 'reduction_root' in task:
+            target['reduction_root'] = task['reduction_root']
+        if 'residuals' in task:
+            target['residuals'] = [{key: value for key, value in residual.items()
+                if key in ('statement', 'existing_constant')} for residual in task['residuals']]
+        generated = target_source(target)
+        imports = ''.join('import '+module+'\n' for module in target['context_modules'])
+        if not generated.startswith(imports):
+            raise Invalid('typing preview differs from authoritative target generator')
+        module = task['target_module']
+        interface = {'name': 'StudyInterface', 'type': module+'.Interface'}
+        transport = {'name': 'StudyTransport', 'type': module+'.Transport StudyInterface'}
+        previews.append({'task_id': task['id'],
+            'context_modules': copy.deepcopy(task['context_modules']),
+            'context_sources': copy.deepcopy(task['context_sources']),
+            'target_module': module, 'target_definitions': generated[len(imports):],
+            'entries': [
+                {'field': 'interface_term', 'expected_type': module+'.Interface', 'prior_bindings': []},
+                {'field': 'transport_term', 'expected_type': module+'.Transport StudyInterface',
+                 'prior_bindings': [copy.deepcopy(interface)]},
+                {'field': 'term', 'expected_type': module+'.Goal StudyInterface',
+                 'prior_bindings': [copy.deepcopy(interface), copy.deepcopy(transport)]}]})
+    return {'schema': ADAPTER_TYPING_CONTRACT_SCHEMA, 'tasks': previews}
 
 def copy_tasks(tasks, transport):
     # Neither reference solutions nor hidden evaluation notes enter the request.

@@ -7,6 +7,25 @@ retained records and independent review distinguish what was proposed, executed,
 compiled, replayed and actually proved. The fixed [mission](MISSION.md) and
 [design](docs/DESIGN.md) govern the project.
 
+## Current campaign: Gaussian-binomial quotient positivity
+
+The [Gaussian proof archive](research/gaussian-quotient-20261031/README.md)
+contains eight Lean-admitted results and their complete source-only reproduction
+suite. The strongest positivity results cover all valid Gaussian quotients with
+index gap two, and separately gap one, assuming exact polynomiality. These are
+known published subcases; the full general conjecture remains unproved.
+
+This clean-seed run used its own `gpt-6.1-sol` proposer. It completed three
+research rounds and stopped at the per-file source-retention limit after two
+numerical output files exceeded 8 MiB. No new open case is claimed. Sources,
+pins and validation records are retained; compiled objects and caches are not
+part of the new proof archive.
+
+Fresh [reproduction on 1 November 2026](research/gaussian-quotient-20261031/checks/2026-11-01/SUMMARY.json) compiled and kernel-replayed all 26 modules and reproduced all eight original inspector artifacts.
+
+The Markov campaign is stopped and archived. Its dated accounts below describe
+historical progress rather than the active Gaussian goal.
+
 ## Concept-driver revision
 
 The [concept-directed loop](docs/CONCEPT_DRIVER.md) connects source-review
@@ -18,8 +37,8 @@ from empirical research usefulness. This is an operator-engineered revision, not
 a certified Goedel self-improvement. The dated launch records preserve its tests,
 review, clean-seed comparison and actual activation status.
 
-**Clean-seed concept campaign, through closed round 48:**
-67 independently admitted results. All three original weak log-concavity directions
+**Clean-seed concept campaign, through closed round 49:**
+69 independently admitted results. All three original weak log-concavity directions
 are now proved for every constant-left path of length `k >= 0`, with midpoint
 label `(1, k + 2)`, at every index satisfying the original polygon conditions.
 The coefficients remain raw integers, including zeros; the proof uses the
@@ -211,6 +230,18 @@ certify those hypotheses for actual Markov coefficients or prove a convolution
 theorem. No general log-concavity region or root/residual discharge is added.
 See the [exact round-48 statements and reproduction boundary](repro/README.md#accepted-proof-checkpoint-through-round-48).
 
+Round 49 gives a uniform actual specialization of the round-48 midpoint
+mechanism: the concrete constant-right summand weights satisfy the pointwise
+antidiagonal comparison for every `n >= 1`, with the original three polygon
+premises and both summand-index bounds retained. A second admission constructs
+finite integer-indexed encodings of those exact weights and proves their
+`Compatible` property for every natural coordinate pair, without polygon
+premises. Their nonnegativity and compatibility are proved, rather than supplied
+by the caller. Neither admission exports a mass consumer or raw-coefficient
+log-concavity composition; constant-right raw antidiagonal log-concavity was
+already admitted earlier. No arbitrary-path result or root discharge is added.
+See the [exact round-49 statements and reproduction boundary](repro/README.md#accepted-proof-checkpoint-through-round-49).
+
 The [canonical accepted checkpoint](evidence/accepted-checkpoint-20261020.tar.gz)
 preserves original proof sources, checked receipts, dependency pins and separately
 bound exported declarations. Its top-level `MANIFEST.json` identifies the latest
@@ -320,10 +351,11 @@ campaign have not been rebuilt by that check. The historical wrappers and their
 environment-specific paths remain preserved.
 
 Sources, scripts, inputs, dependency pins and recovery manifests stay in Git.
-Large optional compilation caches are archived as checksum-verified
-[GitHub Release assets](https://github.com/sashakolpakov/math_gkm/releases/tag/recovery-cache-2026-10-17);
-`git clone` does not download those assets. The recovery tool downloads them
-explicitly. Local cache cleanup must never remove necessary public source/data
+The historical optional compilation-cache batch is described by its unchanged
+[release checksum manifest](repro/cache-2026-10-17.json). Its five assets are retired
+from supported recovery; use the portable source bootstrap with upstream dependency
+caches or a source build instead. The retirement policy rejects that legacy download
+before network access or destination writes; it does not itself attest remote deletion. Local cache cleanup must never remove necessary public source/data
 history or turn into a Git deletion commit. Ordinary `.olean` and `.lake` build
 caches remain untracked; explicitly sealed binary evidence keeps its recorded
 historical status.

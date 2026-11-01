@@ -9,10 +9,11 @@ import stat
 import hashlib
 import re
 from .study_common import Invalid, digest
+from .inspection_profiles import resolve, validate_binding
 
 SCHEMA = 'math-gkm.inspection-dag.v3'
 IDENTITY_SCHEMA = 'math-gkm.expr-merkle-sha256.v2'
-ARTIFACT_BYTES = 32*1024**2
+ARTIFACT_BYTES = 64*1024**2
 LINE_BYTES = 1024**2
 NODE_LIMIT = 1000000
 DECL_LIMIT = WORK_LIMIT = 200000
@@ -26,7 +27,7 @@ class InspectionFailure(Invalid):
         super().__init__('trusted inspection: '+category)
 
 
-def inspector(module, declarations, required=(), catalog_modules=(), artifact=None, nonce=None):
+def inspector(module, declarations, required=(), catalog_modules=(), artifact=None, nonce=None, *, inspection_profile=None):
     from .completion import NAME
     from .inspection_stream import program
     if (not declarations or len(declarations)>16 or len(set(declarations))!=len(declarations)
@@ -36,7 +37,7 @@ def inspector(module, declarations, required=(), catalog_modules=(), artifact=No
         raise Invalid('invalid inspector artifact name')
     if not isinstance(nonce,str) or not re.fullmatch(r"[0-9a-f]{64}",nonce):
         raise Invalid("fresh inspector nonce required")
-    return program(module,declarations,required,catalog_modules,nonce)
+    return program(module,declarations,required,catalog_modules,nonce, inspection_profile=inspection_profile)
 
 
 def _unique_object(pairs):
@@ -120,7 +121,8 @@ def _node(tag,fields,refs,hashes):
     return digest([IDENTITY_SCHEMA,'expr',tag,fields,children])
 
 
-def _stream(source,declarations):
+def _stream(source,declarations,*,inspection_profile=None):
+    profile=resolve(inspection_profile)
     hashes,table,rows,catalog=[],{},[],None
     total=0; phase='header'; ended=False; artifact_hash=hashlib.sha256()
     for raw in iter(lambda:source.readline(LINE_BYTES+1),b''):
@@ -128,18 +130,21 @@ def _stream(source,declarations):
         artifact_hash.update(raw)
         if len(raw)>LINE_BYTES:
             raise InspectionFailure("record_size_limit",observed_bytes=len(raw),limit_bytes=LINE_BYTES)
-        if total>ARTIFACT_BYTES:
-            raise InspectionFailure('artifact_size_limit',observed_bytes=total,limit_bytes=ARTIFACT_BYTES)
+        if total>profile.artifact_bytes:
+            raise InspectionFailure('artifact_size_limit',observed_bytes=total,limit_bytes=profile.artifact_bytes)
         if not raw.endswith(b'\n') or ended: raise Invalid('truncated/trailing inspector artifact')
         row=json.loads(raw,object_pairs_hook=_unique_object)
         if not isinstance(row,list) or not row: raise Invalid('invalid inspector record')
         tag,*a=row
         if phase=='header':
-            if row!=['header',SCHEMA,list(declarations)]: raise Invalid('inspector schema/ordered roots mismatch')
+            expected=['header',profile.inspection_schema,list(declarations)]
+            if profile.catalogue: expected.append(profile.binding())
+            if row!=expected: raise Invalid('inspector schema/ordered roots mismatch')
+            if profile.catalogue: validate_binding(row[3],profile.id)
             phase='table'; continue
         if tag=='expr' and phase in ('table','roots') and len(a)==4:
             i,t,f,refs=a
-            if type(i) is not int or i!=len(hashes) or i>=NODE_LIMIT: raise Invalid('duplicate/out-of-order Expr')
+            if type(i) is not int or i!=len(hashes) or i>=profile.node_limit: raise Invalid('duplicate/out-of-order Expr')
             hashes.append(_node(t,f,refs,hashes))
         elif tag=='decl' and phase in ('table','roots') and len(a)==7:
             name,origin,kind,unsafe,levels,t,b=a
@@ -169,7 +174,7 @@ def _stream(source,declarations):
                 raise Invalid('conflicting traversal counts')
             rows.append(dict(name=name,axioms=axioms,constants=[table[n] for n in constants],
                 catalog=[table[n] for n in catalog] if not rows else [],identity_schema=IDENTITY_SCHEMA,
-                inspection_schema=SCHEMA,traversal=dict(distinct_nodes=nodes,edges=edges,duplicate_edges=duplicates)))
+                inspection_schema=profile.inspection_schema,traversal=dict(distinct_nodes=nodes,edges=edges,duplicate_edges=duplicates)))
         elif tag=='end' and phase=='roots' and len(a)==4:
             if a!=[len(hashes),len(table),len(rows),len(catalog)] or len(rows)!=len(declarations):
                 raise Invalid('incomplete inspector counts')
@@ -180,23 +185,32 @@ def _stream(source,declarations):
     for row in rows: referenced.update(c['name'] for c in row['constants'])
     if referenced!=set(table): raise Invalid('unreferenced declaration record')
     for row in rows:
+        if profile.catalogue: row['inspection_profile']=profile.binding()
         row['artifact_sha256']=artifact_hash.hexdigest()
         row['artifact_bytes']=total
     return rows
 
 
-def parse_artifact(record,declarations,path,*,nonce):
+def parse_artifact(record,declarations,path,*,nonce,inspection_profile=None):
+    profile=resolve(inspection_profile)
     if record['returncode'] or record['termination']: raise Invalid('trusted premise inspector failed')
     if not isinstance(nonce,str) or not re.fullmatch(r"[0-9a-f]{64}",nonce):
         raise Invalid("invalid expected completion nonce")
     markers=[line for line in record["stdout"].splitlines() if line.startswith("GKM_DECLARATIONS")]
     if len(markers)!=1:
         raise Invalid("missing or ambiguous producer completion")
-    match=re.fullmatch(r"GKM_DECLARATIONS_COMPLETE_V3:([0-9a-f]{64}):([0-9]{1,8}):([0-9a-f]{64})",markers[0])
+    if profile.catalogue:
+        pattern=r"GKM_DECLARATIONS_COMPLETE_CATALOGUE_V1:([0-9a-f]{64}):"+re.escape(profile.id)+r":([0-9]{1,9}):([0-9a-f]{64})"
+    else:
+        pattern=r"GKM_DECLARATIONS_COMPLETE_V3:([0-9a-f]{64}):([0-9]{1,8}):([0-9a-f]{64})"
+    match=re.fullmatch(pattern,markers[0])
     if not match or match[1]!=nonce:
         raise Invalid("invalid or stale producer completion")
-    completed=dict(schema="math-gkm.producer-completion.v3",nonce=nonce,
+    completed=dict(schema=profile.completion_schema,nonce=nonce,
         artifact_bytes=int(match[2]),artifact_sha256=match[3])
+    if not 0<completed['artifact_bytes']<=profile.artifact_bytes:
+        raise Invalid('producer completion byte count exceeds selected profile')
+    if profile.catalogue: completed['inspection_profile']=profile.binding()
     if path.name!='declarations.json' or path.is_symlink() or not path.is_file():
         raise Invalid('missing inspector artifact')
     try:
@@ -204,9 +218,9 @@ def parse_artifact(record,declarations,path,*,nonce):
         with os.fdopen(fd,'rb') as source:
             before=os.fstat(source.fileno())
             if not stat.S_ISREG(before.st_mode): raise Invalid('nonregular inspector artifact')
-            if before.st_size>ARTIFACT_BYTES:
-                raise InspectionFailure('artifact_size_limit',observed_bytes=before.st_size,limit_bytes=ARTIFACT_BYTES)
-            data=_stream(source,declarations)
+            if before.st_size>profile.artifact_bytes:
+                raise InspectionFailure('artifact_size_limit',observed_bytes=before.st_size,limit_bytes=profile.artifact_bytes)
+            data=_stream(source,declarations,inspection_profile=profile.id)
             after=os.fstat(source.fileno()); named=path.stat(follow_symlinks=False)
             identity=lambda st:(st.st_dev,st.st_ino,st.st_size,st.st_mtime_ns,st.st_ctime_ns)
             if identity(before)!=identity(after) or identity(before)!=identity(named):
@@ -226,39 +240,47 @@ def parse(record,declarations):
     raise Invalid('legacy inspector encoding requires a charged fresh v3 check')
 
 
-def failure_artifact(path,declarations,record=None,*,nonce=None):
-    """Read only a bounded regular, unchanged producer failure stream.
-
-    This never returns an acceptance record; no stdout/exception prose is trusted.
-    """
+def _failure_record(value, profile):
+    """Typed failure evidence is diagnostic only and obeys selected fixed caps."""
     from .own_feedback import TOKENS
-    # A full artifact may leave no room for a terminal failure record. The
-    # bounded trusted process control channel binds a failure to this attempt.
+    if not isinstance(value,list) or len(value)!=6 or value[0]!='failure' or value[1] not in TOKENS:
+        return None
+    if (type(value[2]) is not int or not 0<=value[2]<=profile.node_limit or
+            type(value[3]) is not int or not 0<=value[3]<=DECL_LIMIT): return None
+    category=value[1]
+    if category in ('record_size_limit','artifact_size_limit'):
+        bound=LINE_BYTES if category=='record_size_limit' else profile.artifact_bytes
+        if (not all(type(n) is int and 0<n<2**63 for n in value[4:]) or
+                value[5]!=bound or value[4]<=bound): return None
+        if category=='artifact_size_limit' and value[4]>bound+LINE_BYTES: return None
+        return dict(category=category,measured=dict(observed_bytes=value[4],limit_bytes=bound))
+    if value[4:]!=[None,None]: return None
+    if category=='expression_node_limit' and value[2]!=profile.node_limit: return None
+    return dict(category=category,measured={})
+
+
+def failure_artifact(path,declarations,record=None,*,nonce=None,inspection_profile=None):
+    """Bounded typed failure evidence; never returns an acceptance record."""
+    profile=resolve(inspection_profile)
     if record is not None:
         if not record.get('returncode') or record.get('termination'): return None
         if not isinstance(nonce,str) or not re.fullmatch('[0-9a-f]{64}',nonce): return None
         markers=[v for v in record.get('stdout','').splitlines() if v.startswith('GKM_INSPECTION_FAILURE')]
-        prefix='GKM_INSPECTION_FAILURE_V3:'+nonce+':'
+        prefix=('GKM_INSPECTION_FAILURE_CATALOGUE_V1:'+nonce+':'+profile.id+':'
+                if profile.catalogue else 'GKM_INSPECTION_FAILURE_V3:'+nonce+':')
         if len(markers)!=1 or not markers[0].startswith(prefix) or len(markers[0])>LINE_BYTES: return None
-        try:
-            value=json.loads(markers[0][len(prefix):])
-            if not isinstance(value,list) or len(value)!=6 or value[0]!='failure' or value[1] not in TOKENS: return None
-            if not all(type(n) is int and 0<=n<=NODE_LIMIT for n in value[2:4]): return None
-            if value[1] in ('record_size_limit','artifact_size_limit'):
-                if not all(type(n) is int and 0<n<2**63 for n in value[4:]) or value[4]<=value[5]: return None
-                return dict(category=value[1],measured=dict(observed_bytes=value[4],limit_bytes=value[5]))
-            if value[4:]!=[None,None]: return None
-            return dict(category=value[1],measured={})
+        try: return _failure_record(json.loads(markers[0][len(prefix):],object_pairs_hook=_unique_object),profile)
         except (ValueError,TypeError): return None
-    if path.is_symlink(): return None
+    # Catalogue failures require the attempt's fresh nonce-bound control marker.
+    if profile.catalogue or path.is_symlink(): return None
     try:
         with os.fdopen(os.open(path,os.O_RDONLY|os.O_NOFOLLOW),'rb') as source:
             before=os.fstat(source.fileno())
-            if not stat.S_ISREG(before.st_mode) or before.st_size>ARTIFACT_BYTES: return None
+            if not stat.S_ISREG(before.st_mode) or before.st_size>profile.artifact_bytes: return None
             total=0; last=None; count=0
             for raw in iter(lambda:source.readline(LINE_BYTES+1),b''):
                 total+=len(raw); count+=1
-                if total>ARTIFACT_BYTES or len(raw)>LINE_BYTES or not raw.endswith(b'\n'): return None
+                if total>profile.artifact_bytes or len(raw)>LINE_BYTES or not raw.endswith(b'\n'): return None
                 value=json.loads(raw,object_pairs_hook=_unique_object)
                 if count==1 and value!=['header',SCHEMA,list(declarations)]: return None
                 if last and last[0]=='failure': return None
@@ -266,14 +288,7 @@ def failure_artifact(path,declarations,record=None,*,nonce=None):
             after=os.fstat(source.fileno()); named=path.stat(follow_symlinks=False)
             identity=lambda st:(st.st_dev,st.st_ino,st.st_size,st.st_mtime_ns,st.st_ctime_ns)
             if identity(before)!=identity(after) or identity(before)!=identity(named): return None
-            if (isinstance(last,list) and len(last)==6 and last[0]=='failure' and last[1] in TOKENS
-                    and all(type(n) is int and 0<=n<=NODE_LIMIT for n in last[2:4])):
-                if last[1] in ("record_size_limit","artifact_size_limit"):
-                    if not all(type(n) is int and 0<n<2**63 for n in last[4:]): return None
-                    if last[4]<=last[5]: return None
-                    return dict(category=last[1],measured=dict(observed_bytes=last[4],limit_bytes=last[5]))
-                if last[4:]!=[None,None]: return None
-                return dict(category=last[1],measured={})
+            return _failure_record(last,profile)
     except (OSError,ValueError,TypeError,KeyError,IndexError,RecursionError): pass
     return None
 

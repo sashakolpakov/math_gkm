@@ -8,6 +8,7 @@ This module does not inspect files, certify mathematics, set hypothesis statuses
 rank concepts, or consume audit-only complexity observations.
 """
 import copy
+import json
 import math
 import re
 
@@ -15,6 +16,12 @@ from .study_common import Invalid, digest
 
 SCHEMA = 'math-gkm.research-feedback.v1'
 OWN_REVIEW_SCOPE = 'own_sources_only'
+# Fixed operational labels only; legacy packets may omit this optional field.
+REVIEWER_OUTCOME_STATUSES = {
+    'completed': {'artifact_bound_source_assessment', 'unavailable_invalid_artifact_references'},
+    'output_budget_exceeded': {'unavailable_incomplete_review'},
+    'unavailable_other': {'unavailable_incomplete_review', 'unavailable_private_or_legacy_scope'},
+}
 HISTORY_LIMIT = 8
 CONSUMPTION_LIMIT = 32
 FINDINGS_LIMIT = 16
@@ -34,6 +41,22 @@ def _text(value, limit=TEXT_LIMIT):
     if not isinstance(value, str):
         return None
     return value if len(value) <= limit else value[:limit] + ' [bounded]'
+
+
+def _section_text(value):
+    """Normalize only the five own-source sections, retaining legacy prose.
+
+    Structured JSON uses deterministic text, never a prose rewrite or str/repr
+    fallback. The existing role-input bound precedes serialization; the existing
+    character cap and bounded suffix apply to its resulting text.
+    """
+    if isinstance(value, (dict, list)):
+        try:
+            value = json.dumps(value, sort_keys=True, separators=(',', ':'),
+                               ensure_ascii=False, allow_nan=False)
+        except (TypeError, ValueError, OverflowError, RecursionError):
+            return None, False
+    return _text(value), isinstance(value, str) and len(value) > TEXT_LIMIT
 
 
 def _number(value):
@@ -112,7 +135,10 @@ def comparison_feedback(result):
         'no_independent_holdout; transfer_not_demonstrated': 'no_independent_holdout',
     }
     if status != 'valid_finite_budget_comparison':
-        return {**unavailable, 'reason': reasons.get(status, 'invalid_or_unknown_comparison')}
+        reason = reasons.get(status, 'invalid_or_unknown_comparison')
+        if status == 'invalid_frozen_context' and result.get('own_context_status') == 'timeout':
+            reason = 'frozen_context_timeout'
+        return {**unavailable, 'reason': reason}
     count_fields = ('task_gains', 'transfer', 'regressions')
     if any(not isinstance(result.get(k), list) for k in count_fields):
         return {**unavailable, 'reason': 'incomplete_comparison'}
@@ -122,7 +148,7 @@ def comparison_feedback(result):
     binding = result.get('binding')
     budgets = {}
     if isinstance(binding, dict):
-        for field in ('adaptation_seconds_each', 'validation_seconds_each_task'):
+        for field in ('adaptation_seconds_each', 'validation_seconds_each_task', 'catalog_seconds_each'):
             value = _number(binding.get(field))
             if value is not None:
                 budgets[field] = value
@@ -184,11 +210,17 @@ def build_review_feedback(round_index, review_receipt, artifact_refs_valid, *,
               'unavailable_private_or_legacy_scope' if not trusted_scope else
               'unavailable_incomplete_review' if not completed else
               'unavailable_invalid_artifact_references')
+    # Never forward arbitrary exception text, payload claims or private-review outcomes.
+    own_outcome = receipt.get('outcome')
+    reviewer_outcome = (own_outcome if trusted_scope and
+        own_outcome in ('completed', 'output_budget_exceeded') else 'unavailable_other')
     diagnosis = {'status': status, 'authority': 'interpretation_only',
-                 'findings': [], 'truncated': False}
+                 'findings': [], 'truncated': False, 'reviewer_outcome': reviewer_outcome}
     if valid:
+        section_truncated = False
         for name in ('correctness', 'scope', 'transfer', 'costs', 'recommendation'):
-            text = _text(payload.get(name))
+            text, truncated = _section_text(payload.get(name))
+            section_truncated = section_truncated or truncated
             if text is not None:
                 diagnosis[name] = text
         findings = payload.get('findings', [])
@@ -208,9 +240,7 @@ def build_review_feedback(round_index, review_receipt, artifact_refs_valid, *,
                     text is None):
                 continue
             diagnosis['findings'].append({'path': path, 'sha256': hashed, 'finding': text})
-        diagnosis['truncated'] = len(findings) > FINDINGS_LIMIT or any(
-            isinstance(payload.get(name), str) and len(payload[name]) > TEXT_LIMIT
-            for name in ('correctness', 'scope', 'transfer', 'costs', 'recommendation'))
+        diagnosis['truncated'] = section_truncated or len(findings) > FINDINGS_LIMIT
     elapsed = _number(receipt.get('elapsed_seconds'))
     packet = {'schema': SCHEMA, 'round': round_index,
               'source_review': diagnosis,
@@ -254,10 +284,11 @@ def _validate_packet(packet):
     diagnosis = packet['source_review']
     base = {'status', 'authority', 'findings', 'truncated'}
     prose = {'correctness', 'scope', 'transfer', 'costs', 'recommendation'}
+    diagnostics = {'reviewer_outcome'}
     statuses = {'artifact_bound_source_assessment', 'unavailable_private_or_legacy_scope',
                 'unavailable_incomplete_review', 'unavailable_invalid_artifact_references'}
     if (not isinstance(diagnosis, dict) or not base <= set(diagnosis) or
-            not set(diagnosis) <= base | prose or diagnosis.get('status') not in statuses or
+            not set(diagnosis) <= base | prose | diagnostics or diagnosis.get('status') not in statuses or
             diagnosis.get('authority') != 'interpretation_only' or
             type(diagnosis.get('truncated')) is not bool or
             not isinstance(diagnosis.get('findings'), list) or
@@ -265,8 +296,13 @@ def _validate_packet(packet):
             any(not isinstance(diagnosis[k], str) or len(diagnosis[k]) > TEXT_LIMIT + 10
                 for k in prose & set(diagnosis))):
         raise Invalid('invalid source feedback diagnosis')
+    if 'reviewer_outcome' in diagnosis:
+        outcome = diagnosis['reviewer_outcome']
+        if (not isinstance(outcome, str) or outcome not in REVIEWER_OUTCOME_STATUSES or
+                diagnosis['status'] not in REVIEWER_OUTCOME_STATUSES[outcome]):
+            raise Invalid('invalid source review operational outcome')
     if diagnosis['status'] != 'artifact_bound_source_assessment' and (
-            diagnosis['findings'] or set(diagnosis) != base):
+            diagnosis['findings'] or set(diagnosis) - diagnostics != base):
         raise Invalid('unavailable source review cannot carry diagnosis')
     for finding in diagnosis['findings']:
         if (not isinstance(finding, dict) or set(finding) != {'path', 'sha256', 'finding'} or
@@ -294,7 +330,7 @@ def _validate_packet(packet):
             reasons = {'missing_comparison', 'invalid_policy_comparison', 'invalid_frozen_context',
                        'invalid_or_capability_regression', 'no_independent_holdout',
                        'invalid_or_unknown_comparison', 'incomplete_comparison',
-                       'incomplete_or_unretained_comparison'}
+                       'incomplete_or_unretained_comparison', 'frozen_context_timeout'}
             if (set(value) != base or value['reason'] not in reasons or value['eligible'] or
                     any(value[k] is not None for k in ('gains', 'checked_component_transfer', 'regressions'))):
                 raise Invalid('inconclusive comparison cannot report gains or private details')
@@ -305,7 +341,7 @@ def _validate_packet(packet):
                         for k in ('gains', 'checked_component_transfer', 'regressions')) or
                     not isinstance(value['budget_caps_seconds'], dict) or
                     not set(value['budget_caps_seconds']) <=
-                        {'adaptation_seconds_each', 'validation_seconds_each_task'} or
+                        {'adaptation_seconds_each', 'validation_seconds_each_task', 'catalog_seconds_each'} or
                     any(_number(v) is None for v in value['budget_caps_seconds'].values()) or
                     value['cost_interpretation'] != 'Caps are not elapsed costs; development costs are separate.' or
                     value['causal_interpretation'] != 'Checked dependency use does not establish indispensability.'):

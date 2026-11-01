@@ -1,0 +1,436 @@
+{
+  "accepted_claims": [
+    {
+      "FINISHED": {
+        "path": "validation/r0000-boundary-transport-v1/FINISHED.json",
+        "sha256": "815cad07d00ed191ebf10f4e4a48ee761b7a9787e4ae09f2541f787ba2049b0e"
+      },
+      "accepted_receipt_canonical_sha256": "1d6f2e2358698fef2ba42031902ef26a022e4b11be63f197f032fd36fb2078ba",
+      "all_returncodes_zero_termination_null": true,
+      "axiom_closure_allowlist": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "checks_count": 11,
+      "export_module": "MathGKM.Accepted30cb1ba43f22bb0566e20763",
+      "exports": [
+        "Accepted30cb1ba43f22bb0566e20763.obligation",
+        "Accepted30cb1ba43f22bb0566e20763.interface",
+        "Accepted30cb1ba43f22bb0566e20763.transport"
+      ],
+      "id": "r0000-boundary-transport-v1",
+      "inspector_artifact": "validation/r0000-boundary-transport-v1/source/declarations.json",
+      "kind": "mathematical_claims",
+      "novelty": "not assessed",
+      "producer_completion": {
+        "artifact_bytes": 507158,
+        "artifact_sha256": "3d48cf13137526af4b06654d51111ded4ffc19ecbeb8ef4003d016d256ac525b",
+        "nonce": "87d72bd9dd611d90245b92fd6532299a72b2bec044d03d35c91badf8e8f56db5",
+        "schema": "math-gkm.producer-completion.v3"
+      },
+      "result": {
+        "path": "validation/r0000-boundary-transport-v1/result.json",
+        "sha256": "da8cf1a56a2929395ca7e235c890db0e68e4f2e5e6c3a1867195895ea8520155"
+      },
+      "source_files": {
+        "MathGKM/Accepted30cb1ba43f22bb0566e20763.lean": "259ca7cbf40fcb59fb91ea8364d6dede61705b1e85ae11220b71367e8442b862",
+        "MathGKM/GaussianQuotient.lean": "b6e591d2f0e18b9bcc581073ced1d47a8bc9ff39288df50ee0e145dacb73470e",
+        "MathGKM/IntervalBridgeR0000.lean": "6b2592cc96849f615a301d626b6229d81f9c43dff88ccfbfd42d9b11ee204a5b",
+        "MathGKM/ResearchSemantics.lean": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+        "MathGKM/Target5cca97da915770ba864fe568.lean": "302ec5be8b2eb7d44bd854f87fa20fbe642bd16ce3839eadedd4dd2d449a04bf"
+      },
+      "statement_lean": "(\n    \u2200 (n k l : \u2115) (H : Polynomial \u211a), MathGKM.GaussianQuotient.B n l \u2260 0 \u2192 MathGKM.GaussianQuotient.B n k = MathGKM.GaussianQuotient.B n l * MathGKM.GaussianQuotient.iota H \u2192 (n < k \u2228 k = l \u2228 (l \u2264 n \u2227 k = n-l)) \u2192 MathGKM.GaussianQuotient.NatCoeffs H\n  )",
+      "target_module": "MathGKM.Target5cca97da915770ba864fe568",
+      "usefulness": "not established by checking",
+      "validation_mode": "deployed_sandbox",
+      "validation_status": "checked_exact_obligation_and_interfaces"
+    },
+    {
+      "FINISHED": {
+        "path": "validation/r0000-interval-correspondence-v1/FINISHED.json",
+        "sha256": "f7f237431febfdf964909eaeb18605181e1529ce4f28fef0b8744540918d18ee"
+      },
+      "accepted_receipt_canonical_sha256": "6aec7a48710285df15605017a1923475c2b4bb274e507dd88278239f21189be1",
+      "all_returncodes_zero_termination_null": true,
+      "axiom_closure_allowlist": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "checks_count": 11,
+      "export_module": "MathGKM.Accepted8d6330b3708d310a4b883202",
+      "exports": [
+        "Accepted8d6330b3708d310a4b883202.obligation",
+        "Accepted8d6330b3708d310a4b883202.interface",
+        "Accepted8d6330b3708d310a4b883202.transport"
+      ],
+      "id": "r0000-interval-correspondence-v1",
+      "inspector_artifact": "validation/r0000-interval-correspondence-v1/source/declarations.json",
+      "kind": "mathematical_claims",
+      "novelty": "not assessed",
+      "producer_completion": {
+        "artifact_bytes": 506840,
+        "artifact_sha256": "20b4e8d1ff7b2bd43a4788ef45410ed57aaa876a2c79ff821395477e223bf428",
+        "nonce": "bf26738a22b8f922b880cb4691ce95efb96e67b2be0ce28ca03b14d616e39fd1",
+        "schema": "math-gkm.producer-completion.v3"
+      },
+      "result": {
+        "path": "validation/r0000-interval-correspondence-v1/result.json",
+        "sha256": "6a7b9ee849c805aa0aff3ae62958e93d1c2fba478ec2e8861cfc56a8b1987e8c"
+      },
+      "source_files": {
+        "MathGKM/Accepted8d6330b3708d310a4b883202.lean": "50cf061430098cb3c93b875c58af828d44062d6bcc7e19fc0a6a4f1e8ab46a55",
+        "MathGKM/GaussianQuotient.lean": "b6e591d2f0e18b9bcc581073ced1d47a8bc9ff39288df50ee0e145dacb73470e",
+        "MathGKM/IntervalBridgeR0000.lean": "6b2592cc96849f615a301d626b6229d81f9c43dff88ccfbfd42d9b11ee204a5b",
+        "MathGKM/ResearchSemantics.lean": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+        "MathGKM/Target5b937df8f25c060df43e0388.lean": "e43cbd6a7556d1f78c9b4e62cf781c3f34428d283ab24009105a5386beeea85b"
+      },
+      "statement_lean": "(\n    (\u2200 n k l : \u2115, l \u2264 k \u2192 k \u2264 n \u2192 MathGKM.GaussianQuotient.B n k / MathGKM.GaussianQuotient.B n l = MathGKM.GaussianQuotient.IntervalBridgeR0000.F l (n-k) (k-l)) \u2227 (\u2200 a b r : \u2115, a+r \u2264 b \u2192 a \u2264 a+r \u2227 a+r \u2264 a+b+r \u2227 2*(a+r) \u2264 a+b+r \u2227 MathGKM.GaussianQuotient.B (a+b+r) (a+r) / MathGKM.GaussianQuotient.B (a+b+r) a = MathGKM.GaussianQuotient.IntervalBridgeR0000.F a b r)\n  )",
+      "target_module": "MathGKM.Target5b937df8f25c060df43e0388",
+      "usefulness": "not established by checking",
+      "validation_mode": "deployed_sandbox",
+      "validation_status": "checked_exact_obligation_and_interfaces"
+    },
+    {
+      "FINISHED": {
+        "path": "validation/r0000-support-matching-discriminator-v1/FINISHED.json",
+        "sha256": "35fe336584970b01184623a57575a5142afc0344f4f4e6b4e6c6859ebb3f79fd"
+      },
+      "accepted_receipt_canonical_sha256": "dbc41b8b03517f0d8e82602192fd6e43e8e07b9fa21459a6e3a9127c66e58a35",
+      "all_returncodes_zero_termination_null": true,
+      "axiom_closure_allowlist": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "checks_count": 13,
+      "export_module": "MathGKM.Acceptede4029cd27e89190fcd852e3d",
+      "exports": [
+        "Acceptede4029cd27e89190fcd852e3d.obligation",
+        "Acceptede4029cd27e89190fcd852e3d.interface",
+        "Acceptede4029cd27e89190fcd852e3d.transport"
+      ],
+      "id": "r0000-support-matching-discriminator-v1",
+      "inspector_artifact": "validation/r0000-support-matching-discriminator-v1/source/declarations.json",
+      "kind": "mathematical_claims",
+      "novelty": "not assessed",
+      "producer_completion": {
+        "artifact_bytes": 747397,
+        "artifact_sha256": "15e044cc3f52eefb366da74cb2c618f899190328c987e7e7ed2de7698c797324",
+        "nonce": "42461dc54fc4999900cc4dceec2eb236026dd917555d1488596bd04678e65fcc",
+        "schema": "math-gkm.producer-completion.v3"
+      },
+      "result": {
+        "path": "validation/r0000-support-matching-discriminator-v1/result.json",
+        "sha256": "9653efcd36d57d21f058bd930ec06e42bd9a9dfd25552599177c2eef21e9ff9a"
+      },
+      "source_files": {
+        "MathGKM/Acceptede4029cd27e89190fcd852e3d.lean": "d892a4521529df871d42162dd85ff36e49fee1253024e54240ac784135dc2dcd",
+        "MathGKM/GaussianQuotient.lean": "b6e591d2f0e18b9bcc581073ced1d47a8bc9ff39288df50ee0e145dacb73470e",
+        "MathGKM/IntervalBridgeR0000.lean": "6b2592cc96849f615a301d626b6229d81f9c43dff88ccfbfd42d9b11ee204a5b",
+        "MathGKM/IntervalWitnessR0000.lean": "59f7d8417c98fa8cf9684c78e68de29016229e85ec8532cee81b606954cf1b04",
+        "MathGKM/ResearchSemantics.lean": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+        "MathGKM/Targetfa59f73f79d9848b7b02c02f.lean": "563fcf9b55a262e563c71fa7e79b7517d4a6e5d8ec3d324ee6ffab503ad01583"
+      },
+      "statement_lean": "(\n    MathGKM.GaussianQuotient.B 7 1 \u2260 0 \u2227 MathGKM.GaussianQuotient.B 7 3 = MathGKM.GaussianQuotient.B 7 1 * MathGKM.GaussianQuotient.iota MathGKM.GaussianQuotient.IntervalWitnessR0000.witnessH \u2227 MathGKM.GaussianQuotient.NatCoeffs MathGKM.GaussianQuotient.IntervalWitnessR0000.witnessH \u2227 (\u00ac \u2203 x y : \u2115, ((x=5 \u2227 y=6) \u2228 (x=6 \u2227 y=5)) \u2227 2 \u2223 x \u2227 3 \u2223 y) \u2227 (((6 : \u2115) = 2*3) \u2227 ((6 : \u2115) = 3*2) \u2227 ((5 : \u2115) = 2*1+3*1) \u2227 ((6 : \u2115) = 2*3+3*0))\n  )",
+      "target_module": "MathGKM.Targetfa59f73f79d9848b7b02c02f",
+      "usefulness": "not established by checking",
+      "validation_mode": "deployed_sandbox",
+      "validation_status": "checked_exact_obligation_and_interfaces"
+    },
+    {
+      "FINISHED": {
+        "path": "validation/r0001-gap-two-positive-transport-v1/FINISHED.json",
+        "sha256": "a4e1815a51eb71194e9c89984f315f9024435cc104ec9ea5802799a5d7d62655"
+      },
+      "accepted_receipt_canonical_sha256": "60308193c35a62554462813f40ed249cbbbad34a252b767eebe9bbdd98efe44a",
+      "all_returncodes_zero_termination_null": true,
+      "axiom_closure_allowlist": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "checks_count": 15,
+      "export_module": "MathGKM.Accepted4dd5c4447dab4758ed8897bd",
+      "exports": [
+        "Accepted4dd5c4447dab4758ed8897bd.obligation",
+        "Accepted4dd5c4447dab4758ed8897bd.interface",
+        "Accepted4dd5c4447dab4758ed8897bd.transport"
+      ],
+      "id": "r0001-gap-two-positive-transport-v1",
+      "inspector_artifact": "validation/r0001-gap-two-positive-transport-v1/source/declarations.json",
+      "kind": "mathematical_claims",
+      "novelty": "not assessed",
+      "producer_completion": {
+        "artifact_bytes": 2121803,
+        "artifact_sha256": "7962dfea449a889816116771208b05383af438127d21e050555daabb8caf92cc",
+        "nonce": "d055ac8057ec0c08df412c80477907c1cd33f70bc48cf7d4d51f5cf1a6112d27",
+        "schema": "math-gkm.producer-completion.v3"
+      },
+      "result": {
+        "path": "validation/r0001-gap-two-positive-transport-v1/result.json",
+        "sha256": "267cb64680066620cc7dfdde327881b7d85a07fae22ee6e06182a483e1ff865e"
+      },
+      "source_files": {
+        "MathGKM/Accepted4dd5c4447dab4758ed8897bd.lean": "975c942db81988c1ba2a22503c815e5cb4fad268d5031e6c21cb7f2771cd159d",
+        "MathGKM/GaussianQuotient.lean": "b6e591d2f0e18b9bcc581073ced1d47a8bc9ff39288df50ee0e145dacb73470e",
+        "MathGKM/IntervalBridgeR0000.lean": "6b2592cc96849f615a301d626b6229d81f9c43dff88ccfbfd42d9b11ee204a5b",
+        "MathGKM/ResearchSemantics.lean": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+        "MathGKM/Targetf5aee8fbdefb5ce1d090f227.lean": "8bb81af76b8b49fd5b6b94047f17f89fb0dbb4995789c3f28dfdc7a8bd4db9b9",
+        "MathGKM/TwoDenominatorPositiveR0001.lean": "ed1c0cfa3cc40e4790226337e8f0312ab11c554bb8512acdb3e916e2cb4aeec7",
+        "MathGKM/TwoDenominatorR0001.lean": "916800852312e7df7575ca88d31afa0265c67534986803461aa4d8be3b05dc0d"
+      },
+      "statement_lean": "(\n    (\u2200 (a b : \u2115) (H : Polynomial \u211a), MathGKM.GaussianQuotient.IntervalBridgeR0000.F a b 2 = MathGKM.GaussianQuotient.iota H \u2192 \u2203 p : Polynomial \u2115, H = p.map (Nat.castRingHom \u211a)) \u2227 (\u2200 (n k l : \u2115) (H : Polynomial \u211a), l \u2264 k \u2192 k \u2264 n \u2192 k-l=2 \u2192 MathGKM.GaussianQuotient.B n l \u2260 0 \u2192 MathGKM.GaussianQuotient.B n k = MathGKM.GaussianQuotient.B n l * MathGKM.GaussianQuotient.iota H \u2192 MathGKM.GaussianQuotient.NatCoeffs H)\n  )",
+      "target_module": "MathGKM.Targetf5aee8fbdefb5ce1d090f227",
+      "usefulness": "not established by checking",
+      "validation_mode": "deployed_sandbox",
+      "validation_status": "checked_exact_obligation_and_interfaces"
+    },
+    {
+      "FINISHED": {
+        "path": "validation/r0001-rational-regular-realization-v1/FINISHED.json",
+        "sha256": "8e917694841887008fead637f1fd26ed2a744657f8f23cccec27a3f0a0deeb4e"
+      },
+      "accepted_receipt_canonical_sha256": "6c11310cde7ff5e7246d938eca880515a347d5435b883e71e9dd93377fdcc5b5",
+      "all_returncodes_zero_termination_null": true,
+      "axiom_closure_allowlist": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "checks_count": 15,
+      "export_module": "MathGKM.Acceptedab6d7ec0f16ee42d8c776741",
+      "exports": [
+        "Acceptedab6d7ec0f16ee42d8c776741.obligation",
+        "Acceptedab6d7ec0f16ee42d8c776741.interface",
+        "Acceptedab6d7ec0f16ee42d8c776741.transport"
+      ],
+      "id": "r0001-rational-regular-realization-v1",
+      "inspector_artifact": "validation/r0001-rational-regular-realization-v1/source/declarations.json",
+      "kind": "mathematical_claims",
+      "novelty": "not assessed",
+      "producer_completion": {
+        "artifact_bytes": 2043020,
+        "artifact_sha256": "05f0fc2f16f896c3a835f27dc6d3f63f1320f3e5cd307e6e39565684bbf8e940",
+        "nonce": "925d2180a210952f20c0dc88b5a53d102a14349cc042ab326538466c8f58b187",
+        "schema": "math-gkm.producer-completion.v3"
+      },
+      "result": {
+        "path": "validation/r0001-rational-regular-realization-v1/result.json",
+        "sha256": "bef04469e26ed2007b03ad61f91b1e4cf1b54d8ad2030aee326b5e0a2887ee41"
+      },
+      "source_files": {
+        "MathGKM/Acceptedab6d7ec0f16ee42d8c776741.lean": "8e1ba3b64a72c788d14e03d7dba0c9e765128888e913ce7adb83ab95b4ed0bad",
+        "MathGKM/GaussianQuotient.lean": "b6e591d2f0e18b9bcc581073ced1d47a8bc9ff39288df50ee0e145dacb73470e",
+        "MathGKM/IntervalBridgeR0000.lean": "6b2592cc96849f615a301d626b6229d81f9c43dff88ccfbfd42d9b11ee204a5b",
+        "MathGKM/ResearchSemantics.lean": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+        "MathGKM/Targeta2233ba2ee94f467f1b97e0c.lean": "51bf07473661528a78e370259cc78f2a2617579a0c66d6d205681de183472959",
+        "MathGKM/TwoDenominatorR0001.lean": "916800852312e7df7575ca88d31afa0265c67534986803461aa4d8be3b05dc0d",
+        "MathGKM/TwoVariableR0001.lean": "18481bb924b36c93264e226516c13fc2b0a76287dcddcdc3ea79188edac6f3fa"
+      },
+      "statement_lean": "(\n    (\u2200 (a b : \u2115) (H : Polynomial \u211a), MathGKM.GaussianQuotient.IntervalBridgeR0000.F a b 2 = MathGKM.GaussianQuotient.iota H \u2192 MathGKM.GaussianQuotient.TwoVariableR0001.Realization (a+1) (a+2) (b+1) (b+2)) \u2227 (\u2200 (u v n : \u2115) (I : Ideal (MvPolynomial Bool \u211a)), 0 < u \u2192 0 < v \u2192 Module.Finite \u211a (MathGKM.GaussianQuotient.TwoVariableR0001.quotientPiece u v n I))\n  )",
+      "target_module": "MathGKM.Targeta2233ba2ee94f467f1b97e0c",
+      "usefulness": "not established by checking",
+      "validation_mode": "deployed_sandbox",
+      "validation_status": "checked_exact_obligation_and_interfaces"
+    },
+    {
+      "FINISHED": {
+        "path": "validation/r0001-two-denominator-polynomiality-v1/FINISHED.json",
+        "sha256": "883b3d2749f6555f7d4da2205ea964ebf54a880527fe5265eceec3c7c05807a4"
+      },
+      "accepted_receipt_canonical_sha256": "de95b1a22b7387c806f97a85074a29117809ef42665ea93eb6411a876700ea0b",
+      "all_returncodes_zero_termination_null": true,
+      "axiom_closure_allowlist": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "checks_count": 15,
+      "export_module": "MathGKM.Acceptedd8770fda99a11b285fe4875a",
+      "exports": [
+        "Acceptedd8770fda99a11b285fe4875a.obligation",
+        "Acceptedd8770fda99a11b285fe4875a.interface",
+        "Acceptedd8770fda99a11b285fe4875a.transport"
+      ],
+      "id": "r0001-two-denominator-polynomiality-v1",
+      "inspector_artifact": "validation/r0001-two-denominator-polynomiality-v1/source/declarations.json",
+      "kind": "mathematical_claims",
+      "novelty": "not assessed",
+      "producer_completion": {
+        "artifact_bytes": 2117606,
+        "artifact_sha256": "c241617d684749f16b783b89fa466b0e61b6000c08084d8c7c8bb4cd6b48d0af",
+        "nonce": "c3b344dd23910153f06fb62280fae08ccdfa0777eaef9f3251bff191b557070e",
+        "schema": "math-gkm.producer-completion.v3"
+      },
+      "result": {
+        "path": "validation/r0001-two-denominator-polynomiality-v1/result.json",
+        "sha256": "9290bbf6da7871dfae84db8449db39c4e86dc229450c34ccaa90e1223dc749dc"
+      },
+      "source_files": {
+        "MathGKM/Acceptedd8770fda99a11b285fe4875a.lean": "7529ea9f68ebbc2c275b57e6611d4995808fb12d215daa1194d8d97cbdc3ac11",
+        "MathGKM/GaussianQuotient.lean": "b6e591d2f0e18b9bcc581073ced1d47a8bc9ff39288df50ee0e145dacb73470e",
+        "MathGKM/IntervalBridgeR0000.lean": "6b2592cc96849f615a301d626b6229d81f9c43dff88ccfbfd42d9b11ee204a5b",
+        "MathGKM/ResearchSemantics.lean": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+        "MathGKM/Target5b345df286a0870d64c4d671.lean": "b92edbfeaa88b5d06fd5b1186a89af0640b4df9a635160948ccf5c8d2232a810",
+        "MathGKM/TwoDenominatorPositiveR0001.lean": "ed1c0cfa3cc40e4790226337e8f0312ab11c554bb8512acdb3e916e2cb4aeec7",
+        "MathGKM/TwoDenominatorR0001.lean": "916800852312e7df7575ca88d31afa0265c67534986803461aa4d8be3b05dc0d"
+      },
+      "statement_lean": "(\n    \u2200 a b : \u2115, (\u2203 H : Polynomial \u211a, MathGKM.GaussianQuotient.IntervalBridgeR0000.F a b 2 = MathGKM.GaussianQuotient.iota H) \u2194 (((a+1) \u2223 (b+1) \u2228 (a+1) \u2223 (b+2)) \u2227 ((a+2) \u2223 (b+1) \u2228 (a+2) \u2223 (b+2)))\n  )",
+      "target_module": "MathGKM.Target5b345df286a0870d64c4d671",
+      "usefulness": "not established by checking",
+      "validation_mode": "deployed_sandbox",
+      "validation_status": "checked_exact_obligation_and_interfaces"
+    },
+    {
+      "FINISHED": {
+        "path": "validation/r0002-exhaustive-normalization-v1/FINISHED.json",
+        "sha256": "b44a9a3f425128baaef7e0b5c56790d1a4482b9f76f175157ee90fb761ec7799"
+      },
+      "accepted_receipt_canonical_sha256": "459bbc03fcfcff3aa7673ce84c7cebde3c4138a17a95a98f9aa8a410ef7fa6e8",
+      "all_returncodes_zero_termination_null": true,
+      "axiom_closure_allowlist": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "checks_count": 33,
+      "export_module": "MathGKM.Acceptedeac724a8048d27259fb04cb8",
+      "exports": [
+        "Acceptedeac724a8048d27259fb04cb8.obligation",
+        "Acceptedeac724a8048d27259fb04cb8.interface",
+        "Acceptedeac724a8048d27259fb04cb8.transport"
+      ],
+      "id": "r0002-exhaustive-normalization-v1",
+      "inspector_artifact": "validation/r0002-exhaustive-normalization-v1/source/declarations.json",
+      "kind": "mathematical_claims",
+      "novelty": "not assessed",
+      "producer_completion": {
+        "artifact_bytes": 3163235,
+        "artifact_sha256": "f1f9794f12145eb5d6972d7dd2fa0e0592253c6849172d5d7034fdf2359bc37d",
+        "nonce": "8d93b73939dcf039a93d526d72cae9b49e2ec1eec85762a13ebf644591c6c8f2",
+        "schema": "math-gkm.producer-completion.v3"
+      },
+      "result": {
+        "path": "validation/r0002-exhaustive-normalization-v1/result.json",
+        "sha256": "89aa8cc0256ee20cbfe0a54f2aa9ea6f4395cf91b4fff53414b6f9e72bde4114"
+      },
+      "source_files": {
+        "MathGKM/Accepted30cb1ba43f22bb0566e20763.lean": "259ca7cbf40fcb59fb91ea8364d6dede61705b1e85ae11220b71367e8442b862",
+        "MathGKM/Accepted4dd5c4447dab4758ed8897bd.lean": "975c942db81988c1ba2a22503c815e5cb4fad268d5031e6c21cb7f2771cd159d",
+        "MathGKM/Accepted8d6330b3708d310a4b883202.lean": "50cf061430098cb3c93b875c58af828d44062d6bcc7e19fc0a6a4f1e8ab46a55",
+        "MathGKM/Acceptedeac724a8048d27259fb04cb8.lean": "912e0b1b4a4777d0517fcd3c792694904bfa807e47a12eeb80385e0745672977",
+        "MathGKM/GapOneR0002.lean": "9e0988b7a15cdd09b7f9e8cba7c2851b95b347b404ee7aa4fdf3f9054ca33707",
+        "MathGKM/GaussianQuotient.lean": "b6e591d2f0e18b9bcc581073ced1d47a8bc9ff39288df50ee0e145dacb73470e",
+        "MathGKM/IntervalBridgeR0000.lean": "6b2592cc96849f615a301d626b6229d81f9c43dff88ccfbfd42d9b11ee204a5b",
+        "MathGKM/NormalizationR0002.lean": "a578587b43c17cd5cc0ed5c8e9af20e3e86b647a9072bb7af78b35327cbf6769",
+        "MathGKM/ResearchSemantics.lean": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+        "MathGKM/SeparatedResidualR0002.lean": "0439eed3ffe96565a7a8f58bd42f4568f752d408aeac59f4163577a08feadade",
+        "MathGKM/Target5b937df8f25c060df43e0388.lean": "e43cbd6a7556d1f78c9b4e62cf781c3f34428d283ab24009105a5386beeea85b",
+        "MathGKM/Target5cca97da915770ba864fe568.lean": "302ec5be8b2eb7d44bd854f87fa20fbe642bd16ce3839eadedd4dd2d449a04bf",
+        "MathGKM/Targetc4df071d1acda856f9857e5d.lean": "f6725ac8a28d8e0c0ffe6fa395510cb84ac1187a3fc05d945773cb26f2839c14",
+        "MathGKM/Targetf5aee8fbdefb5ce1d090f227.lean": "8bb81af76b8b49fd5b6b94047f17f89fb0dbb4995789c3f28dfdc7a8bd4db9b9",
+        "MathGKM/TwoDenominatorPositiveR0001.lean": "ed1c0cfa3cc40e4790226337e8f0312ab11c554bb8512acdb3e916e2cb4aeec7",
+        "MathGKM/TwoDenominatorR0001.lean": "916800852312e7df7575ca88d31afa0265c67534986803461aa4d8be3b05dc0d"
+      },
+      "statement_lean": "(\n    MathGKM.GaussianQuotient.FullPositivity \u2194 (\u2200 (a b r : \u2115) (H : Polynomial \u211a), a+r \u2264 b \u2192 3 \u2264 r \u2192 MathGKM.GaussianQuotient.IntervalBridgeR0000.F a b r = MathGKM.GaussianQuotient.iota H \u2192 MathGKM.GaussianQuotient.NatCoeffs H)\n  )",
+      "target_module": "MathGKM.Targetc4df071d1acda856f9857e5d",
+      "usefulness": "not established by checking",
+      "validation_mode": "deployed_sandbox",
+      "validation_status": "checked_exact_obligation_and_interfaces"
+    },
+    {
+      "FINISHED": {
+        "path": "validation/r0002-gap-one-positive-transport-v1/FINISHED.json",
+        "sha256": "51d868e93f0ce4b69cbafab9649a40a57d445f012f7e29b4cf2c43ea23332cb6"
+      },
+      "accepted_receipt_canonical_sha256": "5af8362ab4e5a6bfdb58afe21b407e9df1f10687ebd34b86e823708eac0815ae",
+      "all_returncodes_zero_termination_null": true,
+      "axiom_closure_allowlist": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "checks_count": 17,
+      "export_module": "MathGKM.Accepted5ab91272c3d7275a5bf3e8c0",
+      "exports": [
+        "Accepted5ab91272c3d7275a5bf3e8c0.obligation",
+        "Accepted5ab91272c3d7275a5bf3e8c0.interface",
+        "Accepted5ab91272c3d7275a5bf3e8c0.transport"
+      ],
+      "id": "r0002-gap-one-positive-transport-v1",
+      "inspector_artifact": "validation/r0002-gap-one-positive-transport-v1/source/declarations.json",
+      "kind": "mathematical_claims",
+      "novelty": "not assessed",
+      "producer_completion": {
+        "artifact_bytes": 2281985,
+        "artifact_sha256": "44c6455e4afc1898f208bbe09f40fca24a671903e1e8d9b02dfcc08920d52e8a",
+        "nonce": "bbd75fe3f3f3d4f5d4741a53a73c900fee51b5d8f435a8da3ee1b0fe59be4ae0",
+        "schema": "math-gkm.producer-completion.v3"
+      },
+      "result": {
+        "path": "validation/r0002-gap-one-positive-transport-v1/result.json",
+        "sha256": "471b70b49dd228152403781ad0d4ef32902249942173b71eb7a4340359c53b08"
+      },
+      "source_files": {
+        "MathGKM/Accepted5ab91272c3d7275a5bf3e8c0.lean": "8a8b8808185fa8fd7472be1cceda695997c0cf9bb86173daec2c9d893198b2c9",
+        "MathGKM/GapOneR0002.lean": "9e0988b7a15cdd09b7f9e8cba7c2851b95b347b404ee7aa4fdf3f9054ca33707",
+        "MathGKM/GaussianQuotient.lean": "b6e591d2f0e18b9bcc581073ced1d47a8bc9ff39288df50ee0e145dacb73470e",
+        "MathGKM/IntervalBridgeR0000.lean": "6b2592cc96849f615a301d626b6229d81f9c43dff88ccfbfd42d9b11ee204a5b",
+        "MathGKM/ResearchSemantics.lean": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+        "MathGKM/Targeta728105aea1c5fdf5e7c6864.lean": "71176b1126c372c8fb8b66f9e07c310685d29fa988cca49af45ea715db28171b",
+        "MathGKM/TwoDenominatorPositiveR0001.lean": "ed1c0cfa3cc40e4790226337e8f0312ab11c554bb8512acdb3e916e2cb4aeec7",
+        "MathGKM/TwoDenominatorR0001.lean": "916800852312e7df7575ca88d31afa0265c67534986803461aa4d8be3b05dc0d"
+      },
+      "statement_lean": "(\n    (\u2200 (a b : \u2115) (H : Polynomial \u211a), MathGKM.GaussianQuotient.IntervalBridgeR0000.F a b 1 = MathGKM.GaussianQuotient.iota H \u2192 \u2203 p : Polynomial \u2115, H = p.map (Nat.castRingHom \u211a)) \u2227 (\u2200 (n k l : \u2115) (H : Polynomial \u211a), l \u2264 k \u2192 k \u2264 n \u2192 k-l=1 \u2192 MathGKM.GaussianQuotient.B n l \u2260 0 \u2192 MathGKM.GaussianQuotient.B n k = MathGKM.GaussianQuotient.B n l * MathGKM.GaussianQuotient.iota H \u2192 MathGKM.GaussianQuotient.NatCoeffs H)\n  )",
+      "target_module": "MathGKM.Targeta728105aea1c5fdf5e7c6864",
+      "usefulness": "not established by checking",
+      "validation_mode": "deployed_sandbox",
+      "validation_status": "checked_exact_obligation_and_interfaces"
+    }
+  ],
+  "candidate_extras_included": false,
+  "compilation_objects_included": false,
+  "configuration_files": {
+    "lake-manifest.json": "b513f28de3996d022de1bad05cd06002dc5f21286f4cd26454fcfae26a745725",
+    "lakefile.toml": "211507039f4919cdc9d54f87efaf7bebf53532272377623f75269c714fb5b575",
+    "lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+  },
+  "full_conjecture_proved": false,
+  "original_checker_binary_sha256": {
+    "lean": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+    "leanchecker": "4c4f966e8c42ae7a7ce6d7f5999de8c1b1fbc920040f72e60d2086aa25ceec01"
+  },
+  "private_role_reports_requests_or_evaluation_tasks_included": false,
+  "schema": "math-gkm.gaussian-public-admitted-proof-registry.v1",
+  "source_files": {
+    "MathGKM/Accepted30cb1ba43f22bb0566e20763.lean": "259ca7cbf40fcb59fb91ea8364d6dede61705b1e85ae11220b71367e8442b862",
+    "MathGKM/Accepted4dd5c4447dab4758ed8897bd.lean": "975c942db81988c1ba2a22503c815e5cb4fad268d5031e6c21cb7f2771cd159d",
+    "MathGKM/Accepted5ab91272c3d7275a5bf3e8c0.lean": "8a8b8808185fa8fd7472be1cceda695997c0cf9bb86173daec2c9d893198b2c9",
+    "MathGKM/Accepted8d6330b3708d310a4b883202.lean": "50cf061430098cb3c93b875c58af828d44062d6bcc7e19fc0a6a4f1e8ab46a55",
+    "MathGKM/Acceptedab6d7ec0f16ee42d8c776741.lean": "8e1ba3b64a72c788d14e03d7dba0c9e765128888e913ce7adb83ab95b4ed0bad",
+    "MathGKM/Acceptedd8770fda99a11b285fe4875a.lean": "7529ea9f68ebbc2c275b57e6611d4995808fb12d215daa1194d8d97cbdc3ac11",
+    "MathGKM/Acceptede4029cd27e89190fcd852e3d.lean": "d892a4521529df871d42162dd85ff36e49fee1253024e54240ac784135dc2dcd",
+    "MathGKM/Acceptedeac724a8048d27259fb04cb8.lean": "912e0b1b4a4777d0517fcd3c792694904bfa807e47a12eeb80385e0745672977",
+    "MathGKM/GapOneR0002.lean": "9e0988b7a15cdd09b7f9e8cba7c2851b95b347b404ee7aa4fdf3f9054ca33707",
+    "MathGKM/GaussianQuotient.lean": "b6e591d2f0e18b9bcc581073ced1d47a8bc9ff39288df50ee0e145dacb73470e",
+    "MathGKM/IntervalBridgeR0000.lean": "6b2592cc96849f615a301d626b6229d81f9c43dff88ccfbfd42d9b11ee204a5b",
+    "MathGKM/IntervalWitnessR0000.lean": "59f7d8417c98fa8cf9684c78e68de29016229e85ec8532cee81b606954cf1b04",
+    "MathGKM/NormalizationR0002.lean": "a578587b43c17cd5cc0ed5c8e9af20e3e86b647a9072bb7af78b35327cbf6769",
+    "MathGKM/ResearchSemantics.lean": "9455d3edcdd46284e7fe4a70143c9e67cfcd665903d083817487e03aeee3750b",
+    "MathGKM/SeparatedResidualR0002.lean": "0439eed3ffe96565a7a8f58bd42f4568f752d408aeac59f4163577a08feadade",
+    "MathGKM/Target5b345df286a0870d64c4d671.lean": "b92edbfeaa88b5d06fd5b1186a89af0640b4df9a635160948ccf5c8d2232a810",
+    "MathGKM/Target5b937df8f25c060df43e0388.lean": "e43cbd6a7556d1f78c9b4e62cf781c3f34428d283ab24009105a5386beeea85b",
+    "MathGKM/Target5cca97da915770ba864fe568.lean": "302ec5be8b2eb7d44bd854f87fa20fbe642bd16ce3839eadedd4dd2d449a04bf",
+    "MathGKM/Targeta2233ba2ee94f467f1b97e0c.lean": "51bf07473661528a78e370259cc78f2a2617579a0c66d6d205681de183472959",
+    "MathGKM/Targeta728105aea1c5fdf5e7c6864.lean": "71176b1126c372c8fb8b66f9e07c310685d29fa988cca49af45ea715db28171b",
+    "MathGKM/Targetc4df071d1acda856f9857e5d.lean": "f6725ac8a28d8e0c0ffe6fa395510cb84ac1187a3fc05d945773cb26f2839c14",
+    "MathGKM/Targetf5aee8fbdefb5ce1d090f227.lean": "8bb81af76b8b49fd5b6b94047f17f89fb0dbb4995789c3f28dfdc7a8bd4db9b9",
+    "MathGKM/Targetfa59f73f79d9848b7b02c02f.lean": "563fcf9b55a262e563c71fa7e79b7517d4a6e5d8ec3d324ee6ffab503ad01583",
+    "MathGKM/TwoDenominatorPositiveR0001.lean": "ed1c0cfa3cc40e4790226337e8f0312ab11c554bb8512acdb3e916e2cb4aeec7",
+    "MathGKM/TwoDenominatorR0001.lean": "916800852312e7df7575ca88d31afa0265c67534986803461aa4d8be3b05dc0d",
+    "MathGKM/TwoVariableR0001.lean": "18481bb924b36c93264e226516c13fc2b0a76287dcddcdc3ea79188edac6f3fa"
+  },
+  "validation_sources_are_original_bytes": true
+}

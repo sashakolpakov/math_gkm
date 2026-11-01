@@ -19,6 +19,22 @@ TOKENS = {'dependency_node_limit','dependency_edge_limit','expression_node_limit
 
 
 def diagnostic(result, exc=None):
+    from .inspection_profiles import resolve, validate_binding
+    profile=None
+    malformed_profile=False
+    if 'inspection_profile' not in result:
+        profile=resolve()
+    else:
+        # This is a diagnostic projection, never authority to select a quota.
+        # Only a complete canonical preset may supply the displayed limits.
+        value=result['inspection_profile']
+        try:
+            if not isinstance(value,dict): raise Invalid('invalid inspection profile')
+            profile=resolve(value.get('id'))
+            validate_binding(value,profile.id)
+        except (Invalid,KeyError,TypeError,ValueError):
+            profile=None
+            malformed_profile=True
     stage=result.get('controller_stage','unknown')
     if stage not in STAGES: stage='unknown'
     category='accepted' if result.get('checked') is True else 'unknown'
@@ -61,9 +77,13 @@ def diagnostic(result, exc=None):
     if category not in CATEGORIES: category='unknown'
     if category in ('dependency_node_limit','catalog_node_limit'): measured['limit_nodes']=200000
     if category=='dependency_edge_limit': measured['limit_edges']=EDGE_LIMIT
-    if category=='expression_node_limit': measured['limit_nodes']=1000000
-    if category=='artifact_size_limit': measured.setdefault('limit_bytes',32*1024**2)
+    if category=='expression_node_limit' and profile is not None: measured['limit_nodes']=profile.node_limit
+    if category=='artifact_size_limit' and profile is not None: measured.setdefault('limit_bytes',profile.artifact_bytes)
     if category=='record_size_limit': measured.setdefault('limit_bytes',1024**2)
+    if malformed_profile:
+        category='unknown'
+        measured.pop('limit_nodes',None)
+        measured.pop('limit_bytes',None)
     for key,target in (('elapsed_ns','elapsed_ns'),('returncode','returncode')):
         if key in record: measured[target]=record[key]
     resources=record.get('resources',{})

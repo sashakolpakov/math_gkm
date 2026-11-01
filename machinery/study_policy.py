@@ -1,5 +1,6 @@
 """Explicit hypotheses and bounded episodes. Audit data has no input channel here."""
-from .study_common import Invalid, digest, inside, sha
+from .study_common import ROOT, Invalid, digest, inside, sha
+from pathlib import Path
 from . import study_program
 from .study_bridge import OBLIGATIONS
 
@@ -26,6 +27,40 @@ def report_diagnostic(exc):
         return dict(code='finding_reference_not_staged', field=f'findings[{exc.index}].reference',
                     expected=FINDING_REFERENCE_RULE)
     return None
+# Only public report validators; no evaluation, proof checking, locals or values.
+PLANNER_VALIDATORS = {
+    'study_policy.py': {'commit','record','validate_policy'},
+    'study_concepts.py': {'commit','validate','_checked','_round','_text','_id','_list_text','_active'},
+    'study_program.py': {'proposal','validate'},
+    'study_research_feedback.py': {'request_feedback','record_feedback_consumption','validate_feedback','_validate_packet'}}
+
+def valid_planner_diagnostic(value):
+    """Authenticate the fixed public-location shape of retained controller feedback."""
+    if not isinstance(value,dict) or set(value) != {'code','file','function','line','source_sha256'}:
+        return False
+    allowed = {'machinery/'+name: functions for name,functions in PLANNER_VALIDATORS.items()}
+    pin = value['source_sha256']
+    return (value['code'] == 'public_planner_validator_location' and
+        isinstance(value['file'],str) and value['file'] in allowed and
+        isinstance(value['function'],str) and value['function'] in allowed[value['file']] and
+        type(value['line']) is int and 0 < value['line'] < 2**31 and
+        isinstance(pin,str) and len(pin) == 64 and all(c in '0123456789abcdef' for c in pin))
+
+def planner_diagnostic(exc):
+    """Public validator coordinates only. Typed report_diagnostic stays unchanged."""
+    result = None
+    tb = exc.__traceback__
+    for _ in range(32):
+        if tb is None: break
+        code = tb.tb_frame.f_code
+        path = Path(code.co_filename)
+        if (path.parent == ROOT/'machinery' and path.name in PLANNER_VALIDATORS and
+            code.co_name in PLANNER_VALIDATORS[path.name] and type(tb.tb_lineno) is int and 0 < tb.tb_lineno < 2**31):
+            result = {'code':'public_planner_validator_location','file':'machinery/'+path.name,
+                'function':code.co_name,'line':tb.tb_lineno,'source_sha256':sha(path)}
+        tb = tb.tb_next
+    return result
+
 EXPLORATION = {'search': 'retain competing obstacle, capability and strategy hypotheses',
                'memory': 'retain alternatives, evidence and reasons; consult own history',
                'allocation': 'consequential uncertainty trials and bounded invention episodes',
@@ -254,7 +289,7 @@ def finish_episode(state, round_index, review):
         episode['review'] = review
         episode['status'] = 'reviewed; delayed use remains observable'
 
-COMMON = '''Read MISSION.md, docs/DESIGN.md and contract.json. The active versioned contract supplies the exact task and permitted assumptions. Follow its phase; do not start a different campaign. Historical campaigns are not rerun or inherited. Choose your own mathematical actions: literature, experiments using installed Python/Sage/GAP, representations, conjectures, proofs or refutations, typed attachments, strategy and executable request-program proposals. Missing tools are capability failures. A finite-budget failure is not unprovability. Do not use complexity, description length, compression or derived proxies in decisions. Use at most one Lean compiler at a time. Never invoke another LLM, Codex, controllers or background processes. Do not access other workspaces, evaluation answers, audit records, Git, archives or credentials. No network shell, downloads, package updates, publication or messaging. Use .scratch for temporary files, pinned dependencies and /opt/homebrew/bin/python3. No sorry, admit, axioms or native_decide. Reports do not certify proofs. Checkpoint in research/ with unique names. Use existing artifacts; keep failed attempts. No supervisor supplies mathematical advice.'''
+COMMON = '''Read MISSION.md, docs/DESIGN.md and contract.json. The active versioned contract supplies the exact task and permitted assumptions. Follow its phase; do not start a different campaign. Historical campaigns are not rerun or inherited. Choose your own mathematical actions: literature, experiments using installed Python/Sage/GAP, representations, conjectures, proofs or refutations, typed attachments, strategy and executable request-program proposals. Missing tools are capability failures. A finite-budget failure is not unprovability. Do not use complexity, description length, compression or derived proxies in decisions. Use at most one Lean compiler at a time within this call; run Lean commands serially. The controller already reserves this call's computation slot; a process-listing check is not a prerequisite for using Lean. Never invoke another LLM, Codex, controllers or background processes. Do not access other workspaces, evaluation answers, audit records, Git, archives or credentials. No network shell, downloads, package updates, publication or messaging. Use .scratch for temporary files, pinned dependencies and /opt/homebrew/bin/python3. No sorry, admit, axioms or native_decide. Reports do not certify proofs. Checkpoint in research/ with unique names. Use existing artifacts; keep failed attempts. No supervisor supplies mathematical advice.'''
 
 def canonical_request(req):
     from .study_common import canonical

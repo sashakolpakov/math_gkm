@@ -333,20 +333,58 @@ def process_table():
     if not table: raise ResourceFailure('monitor_unavailable: process table')
     return table
 
-def disk_bytes(root):
+DISK_SCAN_ENTRY_LIMIT = 100000
+RETENTION_SCAN_ENTRY_LIMIT = 1000000
+
+def _disk_bytes(roots, entry_limit):
+    if type(entry_limit) is not int or not 1 <= entry_limit <= RETENTION_SCAN_ENTRY_LIMIT:
+        raise ResourceFailure('monitor_unavailable: invalid disk scan bound')
     total=count=0
     def failed(exc): raise ResourceFailure('monitor_unavailable: disk scan: '+str(exc))
-    for directory,dirs,files in os.walk(root,followlinks=False,onerror=failed):
-        dirs[:] = [d for d in dirs if d not in ('.git','__pycache__') and not
-            (d=='packages' and Path(directory).name=='.lake') and not (Path(directory)/d).is_symlink()]
-        for name in files:
-            p=Path(directory)/name
-            if p.is_symlink(): continue
-            try: total += p.stat().st_size
-            except FileNotFoundError: continue
-            count+=1
-            if count>100000: raise ResourceFailure('monitor_unavailable: disk scan bound')
+    for root in roots:
+        for directory,dirs,files in os.walk(root,followlinks=False,onerror=failed):
+            dirs[:] = [d for d in dirs if d not in ('.git','__pycache__') and not
+                (d=='packages' and Path(directory).name=='.lake') and not (Path(directory)/d).is_symlink()]
+            for name in files:
+                p=Path(directory)/name
+                if p.is_symlink(): continue
+                try: total += p.stat().st_size
+                except FileNotFoundError: continue
+                count+=1
+                if count>entry_limit: raise ResourceFailure('monitor_unavailable: disk scan bound')
     return total
+
+def disk_bytes(root, *, entry_limit=DISK_SCAN_ENTRY_LIMIT):
+    """Legacy byte set; only retained-history callers select the distinct bound."""
+    return _disk_bytes((root,), entry_limit)
+
+def disk_scope_roots(roots):
+    """Canonical existing roots, without double-counting covered path subtrees."""
+    if not isinstance(roots, (tuple,list)) or not 1 <= len(roots) <= 2:
+        raise ResourceFailure('monitor_unavailable: invalid disk roots')
+    result=[]
+    for value in roots:
+        try:
+            root=Path(value)
+            if not root.is_absolute() or not root.is_dir() or root.resolve(strict=True)!=root:
+                raise ResourceFailure('monitor_unavailable: disk root alias or missing directory')
+        except (OSError,ValueError,RuntimeError,TypeError) as exc:
+            raise ResourceFailure('monitor_unavailable: invalid disk root') from exc
+        if root not in result: result.append(root)
+    def covered(parent, child):
+        if not child.is_relative_to(parent): return False
+        relative=child.relative_to(parent).parts
+        # A nested explicit root under an excluded directory is not scanned by
+        # its parent. Keep it so union accounting retains its ordinary byte set.
+        return not any(name in ('.git','__pycache__') or
+            (name=='packages' and (relative[index-1] if index else parent.name)=='.lake')
+            for index,name in enumerate(relative))
+    return tuple(root for root in result if not any(
+        other!=root and covered(other,root) for other in result))
+
+def disk_bytes_union(roots):
+    """Shared ordinary entry budget; paths, rather than inodes, define bytes."""
+    return _disk_bytes(disk_scope_roots(roots), DISK_SCAN_ENTRY_LIMIT)
 
 @contextlib.contextmanager
 def admission(kind='validator', overrides=None):
@@ -379,13 +417,16 @@ def admission(kind='validator', overrides=None):
             fcntl.flock(f,fcntl.LOCK_UN)
 
 class Guard:
-    def __init__(self,pid,scope,cap=None):
+    def __init__(self,pid,scope,cap=None,*,disk_scopes=None):
         self.pid=0; self.scope=Path(scope); self.cap=limits(cap)
+        self.disk_scopes=disk_scope_roots(disk_scopes) if disk_scopes is not None else None
         self.owned={}; self.last=0; self.over_since=None
         self.samples=[]; self.peak_rss=0; self.bound=False; self.helper_started={}
         self.profile=profile_identity(); self.peak_footprint=0; self.termination_cause=None
-        self.baseline=disk_bytes(self.scope)
+        self.baseline=self._disk_bytes()
         if pid: self.bind(pid)
+    def _disk_bytes(self):
+        return disk_bytes(self.scope) if self.disk_scopes is None else disk_bytes_union(self.disk_scopes)
     def bind(self,pid):
         if self.bound: raise ResourceFailure('root identity is immutable')
         self.bound=True; self.pid=pid
@@ -462,7 +503,7 @@ class Guard:
         charged=sum(r['phys_footprint_bytes'] for r in native)+helper_charge if darwin_profile() else None
         process_count=len(owned)+len(helpers)+len(own_observers)
         memory=memory_observation(); free=shutil.disk_usage(self.scope).free
-        growth=disk_bytes(self.scope)-self.baseline
+        growth=self._disk_bytes()-self.baseline
         compilers=sum(Path(table[p]['command']).name in ('lean','leanchecker') for p in owned)
         sample=dict(rss_sum=rss,memory_observation=memory,free_disk=free,growth=growth,owned_processes=process_count,compilers=compilers,privileged_observers=list(helpers.values()))
         sample.update(charged_phys_footprint=charged,native_birth_owned=native,helper_rss_charge=helper_charge,exited_during_sample=exited_during_sample)
@@ -504,7 +545,10 @@ class Guard:
             cleanup_hold('; '.join(errors),self.owned)
             raise ResourceFailure('unresolved cleanup: '+'; '.join(errors))
     def receipt(self):
-        return dict(limits=self.cap,last_samples=self.samples,peak_rss_observed=self.peak_rss,
+        result=dict(limits=self.cap,last_samples=self.samples,peak_rss_observed=self.peak_rss,
             peak_charged_phys_footprint_observed=self.peak_footprint if darwin_profile() else None,
             profile=self.profile,termination_cause=self.termination_cause,
             owned_identities=self.owned,scope=str(self.scope),monitor='Darwin native birth-bound phys_footprint plus conservative bounded helper RSS; separate raw RSS; Linux RSS and required MemAvailable bytes; Darwin required kernel OS free percentage; raw VM bytes AUDIT-ONLY value or failure, never allocatable byte guarantee',ownership='birth-bound descendants plus narrowly verified bounded public /bin/ps observers; private unreaped-leader group cleanup; hostile detached escape requires OS sandbox')
+        if self.disk_scopes is not None:
+            result['disk_scopes']=[str(root) for root in self.disk_scopes]
+        return result

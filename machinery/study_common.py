@@ -127,9 +127,11 @@ def inventory(root):
                 result[str(p.relative_to(root))] = sha(p)
     return result
 
+RETAINED_SOURCE_HISTORY_CAP = 8 * 1024**3
+
 def retention_room(root, extra):
-    from .resources import disk_bytes,GiB
-    if disk_bytes(root)+extra>GiB:
+    from .resources import disk_bytes, RETENTION_SCAN_ENTRY_LIMIT
+    if disk_bytes(root,entry_limit=RETENTION_SCAN_ENTRY_LIMIT)+extra>RETAINED_SOURCE_HISTORY_CAP:
         raise Invalid('aggregate retained source/history bound; preserve evidence and stop')
 
 def atomic_text(path,text):
