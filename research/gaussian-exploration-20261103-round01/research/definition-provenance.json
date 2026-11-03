@@ -1,0 +1,138 @@
+{
+  "schema": "math-gkm.definition-provenance.candidate.v1",
+  "candidate_root": "MathGKM.GaussianQuotient.FullPositivity",
+  "input_label": "supervisor target transcription; not a verbatim primary-source quotation",
+  "primary_sources": [
+    {
+      "id": "2603.22226v1",
+      "title": "Cyclotomic generating functions, empty weighted complete intersections and positivity",
+      "authors": [
+        "Mona Gatzweiler",
+        "Fabian Levican-Santibanez",
+        "Atsuro Yoshida"
+      ],
+      "version": "v1",
+      "submission_timestamp_utc": "2026-03-23 17:25:39",
+      "abstract_url": "https://arxiv.org/abs/2603.22226v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.22226v1",
+      "html_url": "https://arxiv.org/html/2603.22226v1",
+      "relevant_locations": [
+        "Introduction, printed p. 2 (PDF page index 1), q-integer definition and equation (2)",
+        "Same page, Conjecture 1.2 and equation (5)",
+        "Printed p. 3 (PDF page index 2), first paragraph, reduced-range note"
+      ],
+      "retrieved": "Versioned abstract, PDF text extraction and HTML text independently consulted using hosted retrieval.",
+      "statement_note": "Conjecture 1.2 quantifies non-negative n,k,l and concludes non-negative integer coefficients under polynomiality. Equation (5) identifies the Gaussian quotient with factorial and product expressions.",
+      "source_byte_sha256": null
+    },
+    {
+      "id": "2502.06032v3",
+      "title": "A positivity conjecture for a quotient of q-binomial coefficients",
+      "authors": [
+        "Mona Gatzweiler",
+        "Christian Krattenthaler"
+      ],
+      "version": "v3",
+      "submission_timestamp_utc": "2025-11-20 19:40:10",
+      "abstract_url": "https://arxiv.org/abs/2502.06032v3",
+      "pdf_url": "https://arxiv.org/pdf/2502.06032v3",
+      "relevant_locations": [
+        "Printed p. 1 (PDF page index 0), standard q-notations and piecewise q-binomial definition immediately before Conjecture 1",
+        "Conjecture 1, equation (1), printed pp. 1-2 (PDF page indices 0-1)",
+        "Printed p. 2, Remark 2(1)"
+      ],
+      "retrieved": "Versioned abstract and PDF text extraction independently consulted using hosted retrieval.",
+      "definition_note": "The source defines [0]_q! as 1 and the q-binomial as the factorial quotient for 0<=k<=n and zero otherwise.",
+      "statement_note": "Conjecture 1 concludes non-negative coefficients; unlike 2603.22226v1 it does not explicitly include the word integer in its conclusion.",
+      "source_byte_sha256": null
+    }
+  ],
+  "translation": [
+    {
+      "lean": "iota; q",
+      "meaning": "Use the library algebraMap from Polynomial Q into RatFunc Q; q is the image of Polynomial.X, not a numerical value."
+    },
+    {
+      "lean": "T",
+      "meaning": "Finset.range m indexes 0,...,m-1; exponent i+1 gives exactly the factors 1-q^1,...,1-q^m. For m=0 the product is empty."
+    },
+    {
+      "lean": "B",
+      "meaning": "Use the supervisor's T-product presentation of the standard Gaussian binomial, retaining the source's out-of-range zero branch. The n-k subtraction is confined to the k<=n branch. Correspondence with the source q-factorial formula is an audit obligation, not an assumed identity."
+    },
+    {
+      "lean": "NatCoeffs",
+      "meaning": "Use actual Polynomial.coeff on a rational polynomial at every natural degree; a natural-number witness requires both integral and non-negative coefficients."
+    },
+    {
+      "lean": "FullPositivity",
+      "meaning": "Quantify all n,k,l and all rational polynomials H. The nonzero denominator and exact equality in RatFunc Q express defined quotient polynomiality. Neither integrality nor positivity of H is a premise. No reduced-range normalization is performed."
+    }
+  ],
+  "unresolved_ambiguities": [
+    {
+      "id": "equation-2-indexing",
+      "observation": "In both retrieved PDF text and HTML for 2603.22226v1 equation (2), the partition frame uses n-l and the first denominator product has 1-q^l despite indexing by i. Nearby prose instead gives a k by (n-k) frame. These are apparent source indexing errors, not silently copied into B.",
+      "candidate_treatment": "Use the standard definition explicitly given in 2502.06032v3 and the supplied supervisor T-product specification; independent semantic audit must confirm this interpretation."
+    },
+    {
+      "id": "undefined-denominators-and-out-of-range",
+      "observation": "Both conjectures quantify non-negative indices without an explicit nonzero-denominator clause, while the older source defines out-of-range binomials as zero. Their cancelled factorial displays also do not literally cover arbitrary out-of-range indices.",
+      "candidate_treatment": "Retain all indices, the standard zero numerator convention, and require B(n,l)!=0 as in the supervisor transcription. Audit this explicit rendering of a defined mathematical quotient; no replacement index restriction is imposed."
+    },
+    {
+      "id": "integrality-wording",
+      "observation": "2603.22226v1 explicitly includes integer coefficients; 2502.06032v3 Conjecture 1 says non-negative coefficients.",
+      "candidate_treatment": "Keep the integer conclusion of the selected 2603.22226v1 target. No equivalence theorem between the two phrasings is supplied or assumed."
+    },
+    {
+      "id": "polynomial-coefficient-domain",
+      "observation": "The conjecture sentences say polynomial in q without specifying its coefficient field there.",
+      "candidate_treatment": "Use arbitrary H in Q[X], as specified by the supervisor. Audit this representation of polynomiality of a rational function over Q without inserting an integrality premise."
+    },
+    {
+      "id": "html-pdf-date-discrepancy",
+      "observation": "The retrieved 2603.22226v1 HTML displays Date: August 24, 2026; the versioned PDF text displays Date: March 24, 2026. The abstract submission history identifies v1 as March 23, 2026.",
+      "candidate_treatment": "Citations identify the versioned PDF and abstract history; the HTML is supplementary. The date mismatch is left explicit."
+    }
+  ],
+  "retrieval_limitations": [
+    "https://arxiv.org/html/2502.06032v3 returned HTTP 404; its versioned PDF supplied the relevant text.",
+    "PDF screenshot calls returned textual references without image content in the available tool response; no visual inspection is claimed.",
+    "Hosted extracted text was available, not a local exact-byte copy of either paper; source PDF byte hashes are therefore not claimed."
+  ],
+  "definition_boundaries": {
+    "substantive_proof_required_to_elaborate_definitions": false,
+    "correspondence_status": "Unproved and unaudited. In particular the standard Gaussian/q-factorial correspondence, the field interpretation of the polynomiality premise, and primary-statement equality remain semantic audit obligations, not hypotheses of the root.",
+    "root_status": "Closed proposition definition only; no proof term or theorem admission."
+  },
+  "pinned_environment": {
+    "toolchain": "leanprover/lean4:v4.32.2",
+    "mathlib_revision_from_input_manifest": "905b95818eb32af7874a58b427f50c1711a5e96c",
+    "imports": [
+      "Mathlib.FieldTheory.RatFunc.Basic",
+      "Mathlib.Algebra.BigOperators.Group.Finset.Basic"
+    ],
+    "dependency_definition_locations": [
+      "Mathlib/FieldTheory/RatFunc/Defs.lean: RatFunc structure",
+      "Mathlib/FieldTheory/RatFunc/Basic.lean: instField, Algebra instance, coePolynomial, IsFractionRing instance"
+    ],
+    "elaboration": "Passed with Lean 4.32.2 using direct invocation of the installed pinned toolchain, existing dependency build artifacts through LEAN_PATH, and output .scratch/GaussianQuotient.olean. No dependency rebuild or download. Definition elaboration only; no semantic acceptance."
+  },
+  "file_hashes_sha256": {
+    "MathGKM/GaussianQuotient.lean": "b6e591d2f0e18b9bcc581073ced1d47a8bc9ff39288df50ee0e145dacb73470e",
+    "research/contract.candidate.json": "901be4fde685b3c9b9d91408073820474b9ec245542c491b58116df24a6d16d5",
+    "contract.json": "21628111d1740eb095a3d88c700554992839895578360623fbe4ba2a1d856498",
+    "MISSION.md": "90cc63ded0878b479d6b3a9fed52d5c68c839a41cd03bfd2fa3fe9adba779c85",
+    "docs/DEFINITION_AUTHORING.md": "ff82a69fa1b42208bb2ec864368c99a1997053c9e40ebcd50a5be23b630dbbc6",
+    "evidence/PUBLIC_TARGET.md": "ab8edae7d8bed21dda4e4a4081b6cbacff791edbed8fc43ffb29a6b6a777fd17",
+    "evidence/SOURCE_LABELS.json": "a2f4a50041f30c6c4e3b27a922e7013bd62a62b64f826c29d8aa51e2a90c7eeb",
+    "lakefile.toml": "a04c6fd86f1db5254f146de641574f20e90183568e66778d87c795116856c9a9",
+    "lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+    "lake-manifest.json": "c6afcd8d662f18c1176536fad14f9b83af15bc34e32db44386de4313927623a2",
+    ".lake/packages/mathlib/Mathlib/FieldTheory/RatFunc/Defs.lean": "1cf64ac04a5f1f9a7c585c7ed1d6a4cf445109aff4a46ab4c7d2a0b61c1da479",
+    ".lake/packages/mathlib/Mathlib/FieldTheory/RatFunc/Basic.lean": "b614076b53401baaf605a293f603be41dbb53e56b243bed9337c0d4a240ae0d4",
+    ".lake/packages/mathlib/Mathlib/Algebra/BigOperators/Group/Finset/Basic.lean": "4c32ecf01fc4e2df35886863c7b9dcdfde8e482e2b882e1dec7b56ced0f43ac3"
+  },
+  "hash_scope": "Hashes cover the root, candidate contract, supplied authoring inputs, pinned configuration and the listed dependency source files only. This provenance JSON is not self-hashed; remote PDF exact bytes were unavailable."
+}
