@@ -1,5 +1,6 @@
 """Explicit hypotheses and bounded episodes. Audit data has no input channel here."""
-from .study_common import ROOT, Invalid, digest, inside, sha
+import copy
+from .study_common import ROOT, Invalid, canonical, digest, inside, sha
 from pathlib import Path
 from . import study_program
 from .study_bridge import OBLIGATIONS
@@ -81,6 +82,9 @@ def initial(mode, protocol=None):
     config = (protocol or {}).get('concept_driver') if mode == 'exploration' else None
     if config:
         state['concepts'] = initial_concepts(config)
+    from .study_methods import validate_config as method_config
+    if mode == 'exploration' and method_config((protocol or {}).get('method_learning'))['enabled']:
+        state['method_plans'] = {}
     return state
 
 def request(state, round_index, protocol, role='researcher'):
@@ -111,6 +115,11 @@ def request(state, round_index, protocol, role='researcher'):
         projected['concept_driver'] = project_concepts(state.get('concepts'), round_index, config,
             round_limit=protocol['rounds'])
         projected['concept_submission_schemas'] = SCHEMAS
+    from .study_methods import validate_config as method_config, SCHEMAS as METHOD_SCHEMAS, RULES as METHOD_RULES
+    methods = method_config(protocol.get('method_learning'))
+    if state['mode'] == 'exploration' and methods['enabled']:
+        projected['method_learning'] = {'config': methods, 'schemas': METHOD_SCHEMAS,
+            'plans': copy.deepcopy(state.get('method_plans', {})), 'interpretation': METHOD_RULES}
     projected['limits']['remaining_rounds'] = max(0, protocol['rounds']-round_index)
     return study_program.execute(state.get('program', study_program.REFERENCE), projected)
 
@@ -230,6 +239,20 @@ def commit(state, report, workspace, round_index, protocol, *, request_id=None):
         raise Invalid('report must be an object')
     import copy
     staged = copy.deepcopy(state)
+    from .study_methods import validate_config as method_config, validate_plan
+    methods = method_config(protocol.get('method_learning'))
+    if state['mode'] == 'exploration' and methods['enabled'] and report.get('method_plan') is not None:
+        plan = validate_plan(report['method_plan'])
+        plans = staged.setdefault('method_plans', {})
+        original = plans.get(plan['id'])
+        if original is not None and original['reference'] != digest(plan):
+            raise Invalid('method predictions are immutable; use a fresh method version')
+        if original is None:
+            if len(plans) >= methods['max_methods']:
+                raise Invalid('method prediction plan count bound')
+            plans[plan['id']] = {**plan, 'reference': digest(plan), 'start_round': round_index}
+        if len(canonical(plans)) > 8*1024**2:
+            raise Invalid('method prediction plan byte bound')
     concept_commitment = None
     config = protocol.get('concept_driver') if staged['mode'] == 'exploration' else None
     if config:
@@ -258,6 +281,8 @@ def commit(state, report, workspace, round_index, protocol, *, request_id=None):
             'validation_limit_each_round': protocol.get('knowledge_checks_per_round', 6),
             'semantics': 'prepaid research and validation caps; operational protocol wall separately bounded and measured'},
         'state_binding': digest(state), 'program_hash': digest(staged['program'])}
+    if state['mode'] == 'exploration' and methods['enabled']:
+        commitment['method_plans_binding'] = digest(staged.get('method_plans', {}))
     if concept_commitment is not None:
         commitment['concept_commitment'] = concept_commitment
     return staged, commitment
@@ -289,7 +314,7 @@ def finish_episode(state, round_index, review):
         episode['review'] = review
         episode['status'] = 'reviewed; delayed use remains observable'
 
-COMMON = '''Read MISSION.md, docs/DESIGN.md and contract.json. The active versioned contract supplies the exact task and permitted assumptions. Follow its phase; do not start a different campaign. Historical campaigns are not rerun or inherited. Choose your own mathematical actions: literature, experiments using installed Python/Sage/GAP, representations, conjectures, proofs or refutations, typed attachments, strategy and executable request-program proposals. Missing tools are capability failures. A finite-budget failure is not unprovability. Do not use complexity, description length, compression or derived proxies in decisions. Use at most one Lean compiler at a time within this call; run Lean commands serially. The controller already reserves this call's computation slot; a process-listing check is not a prerequisite for using Lean. Never invoke another LLM, Codex, controllers or background processes. Do not access other workspaces, evaluation answers, audit records, Git, archives or credentials. No network shell, downloads, package updates, publication or messaging. Use .scratch for temporary files, pinned dependencies and /opt/homebrew/bin/python3. No sorry, admit, axioms or native_decide. Reports do not certify proofs. Checkpoint in research/ with unique names. Use existing artifacts; keep failed attempts. No supervisor supplies mathematical advice.'''
+COMMON = '''Read MISSION.md, docs/DESIGN.md and contract.json. The active versioned contract supplies the exact task and permitted assumptions. Follow its phase; do not start a different campaign. Historical campaigns are not rerun or inherited. Choose your own mathematical actions: literature, experiments using installed Python/Sage/GAP, representations, conjectures, proofs or refutations, typed attachments, strategy and executable request-program proposals. Missing tools are capability failures. A finite-budget failure is not unprovability. Do not use complexity, description length, compression or derived proxies in decisions. Use at most one Lean compiler at a time within this call; run Lean commands serially. The controller already reserves this call's computation slot; a process-listing check is not a prerequisite for using Lean. Never invoke another LLM, Codex, controllers or background processes. Do not access other workspaces, evaluation answers, audit records, Git, archives or credentials. No network shell, downloads, package updates, publication or messaging. Use .scratch for temporary files, pinned dependencies and /opt/homebrew/bin/python3. Keep bulky temporary numerical output in .scratch; retain reproducible scripts, random seeds and bounded result summaries. Retained text sources are limited to 8 MiB per file and 128 MiB per current source inventory. No sorry, admit, axioms or native_decide. Reports do not certify proofs. Checkpoint in research/ with unique names. Use existing artifacts; keep failed attempts. No supervisor supplies mathematical advice.'''
 
 def canonical_request(req):
     from .study_common import canonical
@@ -349,6 +374,17 @@ Executable instructions: select_obligation {id}; reuse_library {ids}; allocate {
                   'comparison aggregates describe measured transfer only when valid. Operational limits '
                   'and invalid comparisons are inconclusive. Use findings to revise your next choices; '
                   'do not reconstruct hidden tasks or treat feedback as proof.')
+        if req.get('method_learning'):
+            from .study_methods import RULES
+            extra += '\n'+RULES
+            schema += ('\nMethod proposer field: method_plan:null or request.method_learning.schemas.method_plan. '
+                       'Commit exact closed Lean prediction statements BEFORE their development; identities and '
+                       'statements cannot change. The researcher may submit method_candidate:null or the '
+                       'method_candidate schema using a previously committed method id and independently '
+                       'admitted mathematical_claims. A method candidate never admits mathematics itself. '
+                       'Read method_comparisons in research_feedback and explain whether the next choice '
+                       'develops, applies, generalizes or deprioritizes that method. Bounded comparisons '
+                       'cannot establish predecessor unprovability or root completion.')
         if req.get('concept_driver'):
             from .study_concepts import PROMPT_RULES
             extra += '\n'+PROMPT_RULES

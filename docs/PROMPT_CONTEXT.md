@@ -2,7 +2,7 @@
 
 Own proposer and researcher prompts have a 900,000-character transport limit.
 When necessary, the controller retains the complete original request as an
-immutable, content-addressed file in that role's own history, limited to 8 MiB.
+immutable, content-addressed file in that role's own history, limited to 16 MiB.
 The inline view first omits proof/provenance details. If it remains too large,
 it also replaces repeated source-file and context-source hash maps with exact
 JSON pointers and value digests. Selected reuse records may refer to an
@@ -19,3 +19,11 @@ comparison/reviewer requests cannot be copied into the researcher's own history
 through this mechanism. This is an operator-maintained transport facility, not
 an admitted mathematical result or certified machine self-change.
 
+
+The current transport also has a final exact full-request envelope when inline
+semantic content itself exceeds the prompt ceiling. Its immutable file preserves
+the entire original request, including exact goals, method predictions and
+feedback, with byte counts and hashes. The worker must read and verify the full
+file before substantive work; it must stop on a reading or verification failure.
+This changes transport, without summarizing mathematical conditions or enlarging
+research permissions. The prompt ceiling remains 900,000 characters.

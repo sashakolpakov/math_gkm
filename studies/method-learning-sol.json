@@ -1,0 +1,31 @@
+{
+  "transport": "live",
+  "model": "gpt-6.1-sol",
+  "rounds": 8,
+  "episode_rounds": 2,
+  "invention_rounds": 1,
+  "call_seconds": 1800,
+  "adaptation_seconds": 1800,
+  "validation_seconds": 600,
+  "arm_seconds": 600000,
+  "max_calls": 160,
+  "meta_calls": 96,
+  "policy_trials": 1,
+  "policy_trial_rounds": 2,
+  "knowledge_checks_per_round": 6,
+  "proposal_repairs": 1,
+  "concept_driver": {
+    "enabled": true,
+    "min_horizon_rounds": 2,
+    "max_horizon_rounds": 4,
+    "max_ordinary_rounds": 2
+  },
+  "method_learning": {
+    "enabled": true,
+    "repetitions": 2,
+    "max_methods_per_review": 1,
+    "max_methods": 16,
+    "holdout_tasks": 2,
+    "regression_limit": 8
+  }
+}

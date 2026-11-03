@@ -65,7 +65,7 @@ class AliasLosslessness(unittest.TestCase):
             workspace = Path(directory).resolve()
             rendered = ctx.prepare_prompt(request, workspace, 'researcher', policy.prompt)
             view = json.loads(rendered.split('\nREQUEST:\n', 1)[1])
-            self.assertEqual((ctx.PROMPT_CHAR_LIMIT, ctx.CONTEXT_BYTE_LIMIT), (900000, 8*1024**2))
+            self.assertEqual((ctx.PROMPT_CHAR_LIMIT, ctx.CONTEXT_BYTE_LIMIT), (900000, 16*1024**2))
             self.assertLessEqual(len(rendered), ctx.PROMPT_CHAR_LIMIT)
             header = view['own_context']; full = workspace/header['path']
             expected = (canonical(original)+'\n').encode('utf-8')

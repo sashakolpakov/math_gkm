@@ -190,6 +190,7 @@ def target_source(task):
     def definition(name,typ,value):
         return f'def {name}{typ} :=\n'+indent(lean_expr(value),'  ')+'\n'
     return ('\n'.join('import '+m for m in task['context_modules'])+'\n'+
+        ('set_option autoImplicit false\n' if task.get('strict_closed_statement') is True else '')+
         ''.join(definition(f'{target}.Residual{n}',' : Prop',r['statement'])
             for n,r in enumerate(task.get('residuals', [])) if not r.get('existing_constant'))+
         definition(target+'.Interface','',exact_type(task,'interface_type'))+
@@ -582,15 +583,42 @@ def _measured_costs(sides, contexts):
     return measured
 
 
-def evaluate_pair(arm, before, after, key, *, policy_comparison=False):
-    suite = read(arm.study/'evaluation/suite.json')
+def evaluate_pair(arm, before, after, key, *, policy_comparison=False,
+                  suite=None, required_exports=(), side_order=('before', 'after'),
+                  route_snapshots=True):
+    """Exact solver comparison; optional controls belong to the controller.
+
+    Isolated methods use fresh exact snapshots, precommitted suite subsets,
+    selected exports and balanced adapter order. Role payloads select none of
+    these controls. Every call and validation debits the owning arm.
+    """
+    if suite is None:
+        from .study_methods import partition_suite
+        partition = 'final' if key.startswith('final-') else 'assessment'
+        suite = partition_suite(read(arm.study/'evaluation/suite.json'),
+                                arm.p.get('method_learning'))[partition]
+    else:
+        suite = copy.deepcopy(suite)
+    from .study import validate_suite
+    validate_suite(suite, read(arm.study/'seed/contract.json'))
+    if (tuple(side_order) not in (('before', 'after'), ('after', 'before')) or
+            type(route_snapshots) is not bool or
+            not isinstance(required_exports, (list, tuple)) or
+            any(not isinstance(n, str) or not NAME.fullmatch(n) for n in required_exports)):
+        raise Invalid('invalid controller comparison controls')
+    options = dict(policy_comparison=policy_comparison, suite=suite,
+                   required_exports=tuple(required_exports), side_order=tuple(side_order),
+                   route_snapshots=route_snapshots)
     result = arm.root/'evaluations'/key/'result.json'
     if suite['tasks'] and not result.exists():
         cap = paired_evaluation_seconds(arm.p, len(suite['tasks']))
-        arm.fund('paired-evaluation-'+key, cap)
+        if required_exports and not route_snapshots:
+            arm.fund_many({'paired-evaluation-'+key: (cap, 2, 0)})
+        else:
+            arm.fund('paired-evaluation-'+key, cap)
         with arm.budget('paired-evaluation-'+key):
-            return _evaluate_pair(arm, before, after, key, policy_comparison=policy_comparison)
-    return _evaluate_pair(arm, before, after, key, policy_comparison=policy_comparison)
+            return _evaluate_pair(arm, before, after, key, **options)
+    return _evaluate_pair(arm, before, after, key, **options)
 
 
 def adapter_checks(arm, receipt, tasks, bound_tasks, directory, side, ws, key, binding, manifest, bm, am):
@@ -630,13 +658,15 @@ def adapter_checks(arm, receipt, tasks, bound_tasks, directory, side, ws, key, b
     return checks, intake_provenance, intake_error
 
 
-def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
+def _evaluate_pair(arm, before, after, key, *, policy_comparison=False,
+                   suite=None, required_exports=(), side_order=('before', 'after'),
+                   route_snapshots=True):
     directory = arm.root/'evaluations'/key
-    suite = read(arm.study/'evaluation/suite.json')
+    suite = read(arm.study/'evaluation/suite.json') if suite is None else suite
     bm, am = verify_snapshot(before), verify_snapshot(after)
     from . import snapshot_routing
     routes = None
-    if snapshot_routing.ENABLED:
+    if snapshot_routing.ENABLED and route_snapshots:
         routes = snapshot_routing.prepare_pair(arm, before, after, directory)
         before = Path(routes['before']['validation_snapshot'])
         after = Path(routes['after']['validation_snapshot'])
@@ -653,6 +683,9 @@ def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
                'catalog_seconds_each': catalogue_seconds(arm.p)}
     if routes is not None:
         binding['snapshot_routing'] = routes
+    if required_exports or tuple(side_order) != ('before', 'after') or not route_snapshots:
+        binding['method_controls'] = {'required_exports': list(required_exports),
+            'side_order': list(side_order), 'exact_fresh_snapshots': not route_snapshots}
     if (directory/'result.json').exists():
         previous = read(directory/'result.json',max_bytes=64*1024**2)
         if previous['binding'] != binding:
@@ -702,7 +735,9 @@ def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
         catalogs[side] = {c['name']: (c['identity_schema'], c['semantic_sha256']) for c in checked['declarations'][0]['catalog']}
     retained = all(catalogs['after'].get(n) == h for n, h in catalogs['before'].items())
     sides = {}
-    for side, source, manifest in [('before', before, bm), ('after', after, am)]:
+    source_sides = {'before': (before, bm), 'after': (after, am)}
+    for side in side_order:
+        source, manifest = source_sides[side]
         ws = arm.root/'roles'/f'eval-{key}-{side}'
         if not ws.exists():
             copy_seed(arm.study/'seed', ws)
@@ -741,7 +776,11 @@ def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
         # must differ, be present before adaptation, and occur in the proof closure.
         b['changed_component_use_checked'] = bool(actual_new)
         b['changed_declarations_used'] = actual_new
-        if task['id'] in gains and actual_new and (not task['required_constants'] or b.get('component_use_checked')):
+        selected_use = {n: value for n, value in actual_new.items()
+                        if not required_exports or n in required_exports}
+        if required_exports:
+            b['method_exports_used'] = selected_use
+        if task['id'] in gains and selected_use and (not task['required_constants'] or b.get('component_use_checked')):
             transfer.append(task['id'])
     result = {'binding': binding, 'sides': sides, 'correctness': 'per_obligation_kernel_results',
         'scope': 'frozen exact hypotheses, source and interfaces only; not root completion',
@@ -754,6 +793,13 @@ def _evaluate_pair(arm, before, after, key, *, policy_comparison=False):
         'status': 'valid_finite_budget_comparison' if valid and retained else 'invalid_comparison_or_capability_regression',
         'independence': 'precommitted selection provenance; not authenticated by JSON alone',
         'causal_limit': 'dependency use is not indispensability; run a separately precommitted ablation where feasible'}
+    if required_exports:
+        result['bounded_counts'] = {
+            'before_successes': sum(c['checked'] is True for c in old),
+            'after_successes': sum(c['checked'] is True for c in new),
+            'obligations': len(suite['tasks']),
+            'holdouts': sum(t['kind'] == 'holdout' for t in suite['tasks']),
+            'regressions': sum(t['kind'] == 'regression' for t in suite['tasks'])}
     write(directory/'result.json', result)
     arm.s['evaluations'].append({'binding': binding, 'transfer': transfer, 'regressions': regressions,
                                 'eligible': result['eligible']})

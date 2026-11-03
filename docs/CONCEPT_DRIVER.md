@@ -109,6 +109,24 @@ reviewer is given a distinct workspace and job identity, with only main-arm
 proposer/researcher receipts and own source/history. A legacy reviewer that saw
 withheld material cannot be relabeled source-only on recovery.
 
+## Testing acquired methods
+
+A new study may enable the method-learning extension. The proposer first commits
+exact Lean prediction statements under an immutable method identifier. After
+ordinary independent mathematical admission, the researcher selects that method's
+accepted source closure and new application notes. At a development review the
+controller compares a frozen predecessor with its additive extension using fresh
+adapters, repeated equal-budget trials, unused pretrial challenges and rotating
+previously checked applications. Selected-export dependency use is checked.
+Method-specific aggregates return to subsequent research decisions. Full details,
+limits, configuration and neutral verification are in
+[Acquiring and testing mathematical methods](METHOD_LEARNING.md).
+
+These comparisons supplement the whole-episode comparisons above. They isolate
+selected source closures; declarations sharing a module can accompany the selected
+exports. Actual use does not establish semantic minimality or causal necessity.
+The predecessor may rediscover the method within its allowance.
+
 ## Costs, uncertainty and complexity audit
 
 Development role elapsed time is measured over the compared interval. Adapter,

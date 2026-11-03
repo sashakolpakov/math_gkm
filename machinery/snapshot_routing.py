@@ -32,7 +32,7 @@ NONFORMAL_FIELDS = frozenset({'mode', 'policy', 'portfolio', 'agenda', 'episode'
     'decisions', 'use_links', 'pending_policy', 'observations', 'program',
     'pending_program', 'episode_history', 'concepts', 'findings', 'execution_budget',
     'submission_failures', 'metadata_failures', 'own_check_feedback',
-    'review_feedback', 'review_feedback_deliveries'})
+    'review_feedback', 'review_feedback_deliveries', 'method_plans'})
 MAX_NOTES_BYTES = 2 * 1024**2
 MAX_DELIVERY_BYTES = 4 * 1024**2
 

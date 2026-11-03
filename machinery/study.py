@@ -29,7 +29,8 @@ DEFAULT = {'schema': 'math-gkm.study.v2', 'transport': 'fixture',
     'policy_trials': 1, 'policy_trial_rounds': 2, 'output_bytes': 2097152,
     'validation_seconds': 600, 'failure_limit': 3, 'fixture_policy_trial': False,
     'fixture_behavior': 'normal', 'ablations': [], 'fixture_connected': False,
-    'knowledge_checks_per_round': 6, 'proposal_repairs': 1, 'concept_driver': None}
+    'knowledge_checks_per_round': 6, 'proposal_repairs': 1, 'concept_driver': None,
+    'method_learning': None}
 
 def public_receipt(receipt):
     """Evaluation answers and compiler diagnostics never enter research roles."""
@@ -42,18 +43,34 @@ def public_comparison(result):
 
 def episode_envelope(p, count, tasks):
     evaluation = paired_evaluation_seconds(p, tasks) if tasks else 0
-    return {'research': (count*((1+2*(1+p['proposal_repairs']))*p['call_seconds'] + (p['knowledge_checks_per_round']+1)*p['validation_seconds']), (1+2*(1+p['proposal_repairs']))*count, 2*(1+p['proposal_repairs'])*count),
-            'evaluation': (evaluation, 2 if tasks else 0, 0),
-            'review': (2*p['call_seconds'], 2, 2)}
+    result = {'research': (count*((1+2*(1+p['proposal_repairs']))*p['call_seconds'] + (p['knowledge_checks_per_round']+1)*p['validation_seconds']), (1+2*(1+p['proposal_repairs']))*count, 2*(1+p['proposal_repairs'])*count),
+              'evaluation': (evaluation, 2 if tasks else 0, 0),
+              'review': (2*p['call_seconds'], 2, 2)}
+    from .study_methods import validate_config
+    methods = validate_config(p.get('method_learning'))
+    if methods['enabled']:
+        pairs = methods['max_methods_per_review'] * methods['repetitions']
+        maximum_tasks = methods['holdout_tasks'] + methods['regression_limit']
+        result['methods'] = (pairs * paired_evaluation_seconds(p, maximum_tasks) +
+                             methods['max_methods_per_review']*p['validation_seconds'], 2*pairs, 0)
+    return result
 
-def validate_commitment(p, tasks=0):
+def assessment_tasks(study, protocol):
+    from .study_methods import partition_suite
+    suite = read(Path(study)/'evaluation/suite.json')
+    return len(partition_suite(suite, protocol.get('method_learning'))['assessment']['tasks'])
+
+
+def validate_commitment(p, tasks=0, final_tasks=0):
     pools = episode_envelope(p, min(p['episode_rounds'], p['rounds']), tasks)
+    if final_tasks:
+        pools['terminal_assessment'] = (paired_evaluation_seconds(p, final_tasks), 2, 0)
     for index, limit in enumerate(('arm_seconds', 'max_calls', 'meta_calls')):
         if sum(v[index] for v in pools.values()) > p[limit]:
             raise Invalid('impossible episode through evaluation/review: '+limit)
 
 def validate_protocol(p):
-    if set(p) not in (set(DEFAULT), set(DEFAULT)-{'concept_driver'}) or p['schema'] != DEFAULT['schema']:
+    if not set(DEFAULT)-{'concept_driver', 'method_learning'} <= set(p) <= set(DEFAULT) or p['schema'] != DEFAULT['schema']:
         raise Invalid('protocol keys/schema mismatch')
     if p['transport'] not in ('fixture', 'live'):
         raise Invalid('only explicitly selected fixture or live transport')
@@ -84,6 +101,8 @@ def validate_protocol(p):
         raise Invalid('proposal repair bound must be 0..2')
     from .study_concepts import validate_config
     validate_config(p.get('concept_driver'))
+    from .study_methods import validate_config as validate_method_config
+    validate_method_config(p.get('method_learning'))
     validate_commitment(p)
 
 def validate_suite(suite, contract=None):
@@ -99,6 +118,8 @@ def validate_suite(suite, contract=None):
             raise Invalid('invalid/duplicate structural obligation')
         if not isinstance(task['id'], str) or not task['id'] or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_' for c in task['id']):
             raise Invalid('unsafe task id')
+        if task.get('evaluation_scope') not in (None, 'method', 'assessment', 'final'):
+            raise Invalid('invalid pretrial evaluation scope')
         if task['source_sha256'] != (contract or clean_contract())['root_sha256']:
             raise Invalid('suite source does not match exact root')
         if not all(isinstance(task[k], str) and task[k] for k in ('statement', 'scope', 'interface_type', 'transport_type')):
@@ -129,7 +150,16 @@ def freeze(directory, config=None, suite=None, contract=None, curation=None):
         'selection_basis': 'No independent holdout available; no transfer claim authorized.',
         'independent': False, 'tasks': []}
     validate_suite(suite, contract)
-    validate_commitment(p, len(suite['tasks']))
+    from .study_methods import partition_suite, validate_config as method_config
+    partitions = partition_suite(suite, p.get('method_learning'))
+    methods_enabled = method_config(p.get('method_learning'))['enabled']
+    validate_commitment(p, len(partitions['assessment']['tasks']),
+                        len(partitions['final']['tasks']) if methods_enabled else 0)
+    if p['transport'] == 'live' and methods_enabled and (not suite['independent'] or
+            sum(t['kind'] == 'holdout' for t in partitions['methods']['tasks']) <
+                method_config(p['method_learning'])['holdout_tasks'] or
+            not any(t['kind'] == 'holdout' for t in partitions['final']['tasks'])):
+        raise Invalid('method learning needs disjoint independently curated method and final challenges')
     if p['transport'] == 'live' and (suite['tasks'] or curation):
         if not curation:
             raise Invalid('live heldout suite requires retained pretrial curation provenance')
@@ -295,7 +325,13 @@ class Arm:
         for k,(seconds,calls,meta) in fresh.items():
             self.s.setdefault('reservations', {})['pool-'+k] = seconds
             if self.active_budget:
-                pools[self.active_budget]['spent'] += seconds
+                parent = pools[self.active_budget]
+                parent['spent'] += seconds
+                # Child reservations consume the parent's call allocation once;
+                # subsequent child calls debit the child and global usage only.
+                if calls is not None and 'calls' in parent:
+                    parent['calls_spent'] += calls
+                    parent['meta_calls_spent'] += meta or 0
             else:
                 self.s['seconds'] += seconds
             pools[k] = {'cap': seconds, 'spent': 0}
@@ -688,11 +724,21 @@ class Arm:
         count = min(self.p['episode_rounds'], self.p['rounds']-first)
         key = 'episode-research-'+str(first)
         if key not in self.s.get('budget_pools', {}):
-            pools = episode_envelope(self.p, count, len(read(self.study/'evaluation/suite.json')['tasks']))
+            pools = episode_envelope(self.p, count, assessment_tasks(self.study, self.p))
             end = first+count
-            self.fund_many({key: pools['research'],
+            entries = {key: pools['research'],
                 'paired-evaluation-episode-'+str(end): pools['evaluation'],
-                'review-'+str(end): pools['review']})
+                'review-'+str(end): pools['review']}
+            if self.mode == 'exploration' and 'methods' in pools:
+                entries['method-learning-review-'+str(end)] = pools['methods']
+            from .study_methods import partition_suite, validate_config as method_config
+            if method_config(self.p.get('method_learning'))['enabled']:
+                final_tasks = len(partition_suite(read(self.study/'evaluation/suite.json'),
+                                  self.p['method_learning'])['final']['tasks'])
+                if final_tasks:
+                    entries['paired-evaluation-final-'+str(self.p['rounds'])] = (
+                        paired_evaluation_seconds(self.p, final_tasks), 2, 0)
+            self.fund_many(entries)
         with self.budget(key):
             self._research_round()
 
@@ -705,7 +751,7 @@ class Arm:
             raise Invalid('concept grant exceeds frozen campaign')
         width = self.p['episode_rounds']
         current = self.s['round'] - self.s['round'] % width
-        tasks = len(read(self.study/'evaluation/suite.json')['tasks'])
+        tasks = assessment_tasks(self.study, self.p)
         entries = {}
         for first in range(current + width, end + 1, width):
             count = min(width, self.p['rounds'] - first)
@@ -713,6 +759,8 @@ class Arm:
             entries['episode-research-'+str(first)] = pools['research']
             entries['paired-evaluation-episode-'+str(first+count)] = pools['evaluation']
             entries['review-'+str(first+count)] = pools['review']
+            if self.mode == 'exploration' and 'methods' in pools:
+                entries['method-learning-review-'+str(first+count)] = pools['methods']
         # A concept may end between ordinary review boundaries. Its own paired
         # assessment and review are also prepaid before the first action.
         boundary = end + 1
@@ -720,6 +768,8 @@ class Arm:
             pools = episode_envelope(self.p, min(width, self.p['rounds']), tasks)
             entries['paired-evaluation-episode-'+str(boundary)] = pools['evaluation']
             entries['review-'+str(boundary)] = pools['review']
+            if self.mode == 'exploration' and 'methods' in pools:
+                entries['method-learning-review-'+str(boundary)] = pools['methods']
         # Existing episode pools are already paid globally. Protect future pools
         # from the remaining arm allowance, not from the current episode twice.
         if entries:
@@ -779,6 +829,8 @@ class Arm:
                 snapshot(self.workspace, target, self.s['research']['policy'], self.admitted(self.s['research']))
         else:
             verify_snapshot(target)
+        if result['outcome'] == 'completed':
+            self.queue_method_candidate(result['payload'].get('method_candidate'), target, r)
         self.archive_sources()
         self.s['round'] += 1
         self.s['phase'] = 'review' if self.s['round'] % self.p['episode_rounds'] == 0 or self.s['round'] == self.p['rounds'] else 'research'
@@ -806,6 +858,96 @@ class Arm:
                 target.chmod(0o444)
             elif sha(target)!=hashed: raise Invalid('retained history object changed')
         write(self.workspace/f'history/manifests/round-{self.s["round"]:04d}.json', files)
+
+    def queue_method_candidate(self, proposal, after, round_index):
+        """Optional learning metadata cannot roll back independently admitted math."""
+        if proposal is None:
+            return
+        from .study_methods import validate_config, validate_candidate, prepare_method
+        try:
+            cfg = validate_config(self.p.get('method_learning'))
+            if self.mode != 'exploration' or not cfg['enabled']:
+                raise Invalid('method comparison is unavailable in this arm')
+            proposal = validate_candidate(proposal)
+            plans = self.s['research'].get('method_plans', {})
+            plan = plans.get(proposal['id'])
+            if not plan or not proposal['predictions']:
+                raise Invalid('method candidate needs a prior exact prediction plan')
+            first = plan['start_round']
+            if type(first) is not int or not 0 <= first <= round_index:
+                raise Invalid('method development interval is invalid')
+            before = self.root/'snapshots'/('initial' if first == 0 else f'round-{first-1:04d}')
+            concept = (self.s['research'].get('concepts') or {}).get('active')
+            active = concept and concept['start_round'] <= round_index <= concept['end_round']
+            due = concept['end_round']+1 if active else min(self.p['rounds'],
+                (round_index//self.p['episode_rounds']+1)*self.p['episode_rounds'])
+            predictions = {item['consequence_id']: item['statement'] for item in plan['predictions']}
+            prepared = prepare_method(self, before, after, proposal,
+                concept_reference=concept['reference'] if active else None,
+                prediction_ids=list(predictions), prediction_statements=predictions)
+            queue = self.s.setdefault('method_learning', {'pending': [], 'submitted': {}, 'reviews': {}})
+            previous = queue['submitted'].get(proposal['id'])
+            if previous:
+                if previous != prepared['reference']:
+                    raise Invalid('method identity cannot change after submission')
+                return
+            if len(queue['submitted']) >= cfg['max_methods']:
+                raise Invalid('method acquisition queue count bound')
+            queue['pending'].append({'prepared': prepared, 'start_round': first,
+                'end_round': round_index+1, 'due_round': due})
+            queue['submitted'][proposal['id']] = prepared['reference']
+            self.save()
+        except (Invalid, OSError, KeyError, TypeError, ValueError) as exc:
+            rejection = {'round': round_index, 'status': 'method_candidate_rejected',
+                'proposal_hash': digest(proposal), 'error_class': type(exc).__name__,
+                'reason': str(exc), 'math_rollback': False}
+            write(self.root/'method-learning'/'rejections'/(digest(rejection)+'.json'), rejection)
+            self.s['research'].setdefault('metadata_failures', []).append(rejection)
+            self.save()
+
+    def review_methods(self, round_index):
+        """Evaluate queued methods at review, retaining results before feedback."""
+        from .study_methods import validate_config, compare_method
+        cfg = validate_config(self.p.get('method_learning'))
+        if self.mode != 'exploration' or not cfg['enabled']:
+            return None
+        queue = self.s.setdefault('method_learning', {'pending': [], 'submitted': {}, 'reviews': {}})
+        key = str(round_index)
+        previous = queue['reviews'].get(key)
+        if previous:
+            path = self.root/previous['path']
+            if sha(path) != previous['sha256']:
+                raise Invalid('completed method review evidence changed')
+            return read(path, max_bytes=64*1024**2)
+        chosen = [entry for entry in queue['pending'] if entry['due_round'] <= round_index][:cfg['max_methods_per_review']]
+        results = []
+        if chosen:
+            pool_key = 'method-learning-review-'+key
+            envelope = episode_envelope(self.p, 1, 0)['methods']
+            with self.budget(None):
+                self.fund_many({pool_key: envelope})
+            with self.budget(pool_key):
+                import math
+                import re
+                own_jobs = []
+                for entry in self.s['receipts']:
+                    job = Path(entry)
+                    match = re.fullmatch(r'(?:plan-|round-)([0-9]{4})(?:-generation-1)?(?:-repair-[0-9]+)?', job.name)
+                    if match:
+                        receipt = read(job/'receipt.json')
+                        own_jobs.append((int(match.group(1)), receipt.get('elapsed_seconds')))
+                for entry in chosen:
+                    elapsed = [v for r, v in own_jobs if entry['start_round'] <= r < entry['end_round']]
+                    development = sum(elapsed) if elapsed and all(type(v) in (int, float)
+                        and math.isfinite(v) and v >= 0 for v in elapsed) else None
+                    results.append(compare_method(self, entry['prepared'], development_role_seconds=development))
+        path = self.root/'method-learning'/'reviews'/(key+'.json')
+        write(path, results)
+        queue['reviews'][key] = {'path': str(path.relative_to(self.root)), 'sha256': sha(path)}
+        completed = {entry['prepared']['reference'] for entry in chosen}
+        queue['pending'] = [entry for entry in queue['pending'] if entry['prepared']['reference'] not in completed]
+        self.save()
+        return results
 
     def review(self):
         r = self.s['round']
@@ -862,6 +1004,9 @@ class Arm:
                 type(value) in (int, float) and math.isfinite(value) and value >= 0
                 for value in elapsed) else None)
             records['episode_transfer'] = public_comparison(evaluate_pair(self, before, after, f'episode-{r}'))
+            method_results = self.review_methods(r)
+            if method_results is not None:
+                records['method_comparisons'] = method_results
             trial = None
             if candidate and self.s['policy_trials'] < self.p['policy_trials']:
                 trial = self.policy_trial(candidate)
@@ -910,7 +1055,8 @@ class Arm:
         packet = build_review_feedback(r, result, valid, reviewer_scope='own_sources_only',
             episode_transfer=records.get('episode_transfer'), policy_comparison=trial,
             comparison_context=records.get('comparison_context'),
-            development_role_seconds=records.get('development_role_seconds'))
+            development_role_seconds=records.get('development_role_seconds'),
+            method_comparisons=records.get('method_comparisons'))
         append_review_feedback(self.s['research'], packet)
         from .study_concepts import finish as finish_concept
         config = self.p.get('concept_driver') if self.mode == 'exploration' else None
@@ -940,7 +1086,7 @@ class Arm:
         calls = 2*(1+2*(1+self.p['proposal_repairs']))*self.p['policy_trial_rounds']
         side_budget = self.p['policy_trial_rounds'] * ((1+2*(1+self.p['proposal_repairs']))*self.p['call_seconds'] +
             self.p['knowledge_checks_per_round']*self.p['validation_seconds'])
-        tasks = len(read(self.study/'evaluation/suite.json')['tasks'])
+        tasks = assessment_tasks(self.study, self.p)
         downstream = paired_evaluation_seconds(self.p, tasks) + 2*self.p['call_seconds']
         budget = 2*side_budget + downstream
         trial_commitment = destination/'trial-commitment.json'

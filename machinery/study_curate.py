@@ -46,9 +46,64 @@ def check_task_limits(suite, task_limits=None):
         raise Invalid('curator exceeded task-count bound; complete output retained, never truncated')
 
 
-def curate(directory, transport, seconds, contract=None, *, model='gpt-6.1-sol', task_limits=None):
+
+def validate_layout(value=None):
+    """Experiment roles/counts only; mathematical selection stays independent."""
+    if value is None:
+        return None
+    if (not isinstance(value, dict) or set(value) != {'method', 'assessment', 'final'} or
+            any(type(n) is not int or not 1 <= n <= 16 for n in value.values()) or
+            sum(value.values()) > 16):
+        raise Invalid('curator layout requires positive method/assessment/final counts with total at most 16')
+    return dict(value)
+
+
+def layout_prompt(layout=None):
+    value = validate_layout(layout)
+    if value is None:
+        return ''
+    return ('\nExperimental layout only: the fresh comparison needs '+
+        str(value['method'])+' method holdouts, '+str(value['assessment'])+
+        ' interim assessment holdouts, and '+str(value['final'])+
+        ' untouched final holdouts. For each holdout include evaluation_scope '
+        'equal to method, assessment, or final for its respective role. Choose '
+        'the mathematics independently from the unchanged root: seek defensible, '
+        'structurally varied obligations relevant to that goal, with exact '
+        'hypotheses and interpretations. Supply no solutions, proof recipes or '
+        'answers. These are experimental role/count requirements, not mathematical '
+        'claims supplied by the supervisor. If this many defensible obligations '
+        'cannot be chosen, return an honest smaller or empty suite and explain '
+        'the limitation in selection_basis; never invent weak tasks merely to '
+        'fill slots. Incomplete or mismatched layouts are retained and rejected '
+        'as a whole, never padded, relabeled or truncated. Regression tasks, if '
+        'chosen independently, have no evaluation_scope.\n')
+
+
+def check_layout(suite, layout=None):
+    value = validate_layout(layout)
+    if value is None:
+        return
+    counts = {name: 0 for name in value}
+    for task in suite['tasks']:
+        if task['kind'] == 'regression':
+            if 'evaluation_scope' in task:
+                raise Invalid('curator layout mismatch; complete output retained, never relabeled or truncated')
+            continue
+        scope = task.get('evaluation_scope')
+        if task['kind'] != 'holdout' or not isinstance(scope, str) or scope not in counts:
+            raise Invalid('curator layout mismatch; complete output retained, never relabeled or truncated')
+        counts[scope] += 1
+    if counts != value:
+        raise Invalid('curator layout incomplete or overfull; complete output retained, never padded or truncated')
+
+
+def curate(directory, transport, seconds, contract=None, *, model='gpt-6.1-sol', task_limits=None,
+           layout=None):
     validate_model(model)
     task_limits = validate_task_limits(task_limits)
+    layout = validate_layout(layout)
+    if task_limits is not None and layout is not None and sum(layout.values()) > task_limits['holdout']:
+        raise Invalid('curator layout exceeds the holdout size bound')
     if not directory.resolve().is_relative_to(ROOT) or directory.exists() or not 1 <= seconds <= 1800:
         raise Invalid('fresh local curation directory and bounded seconds required')
     directory.mkdir(parents=True)
@@ -72,9 +127,12 @@ def curate(directory, transport, seconds, contract=None, *, model='gpt-6.1-sol',
         'role': 'curator', 'transport': transport, 'model': model, 'reasoning_effort':REASONING_EFFORT,'provider': 'codex-configured-provider',
         'usage_semantics': 'unverified_raw_only', 'readonly': True, 'seconds': seconds,
         'output_bytes': 2097152, 'stop': str(directory/'STOP.json')})
-    write(job/'request.json', {'role': 'curator', 'request_id': 'independent-curation',
-                               'task_limits': task_limits})
-    (job/'prompt.txt').write_text(PROMPT+task_limits_prompt(task_limits)+'\nrequest_id=independent-curation\n')
+    request = {'role': 'curator', 'request_id': 'independent-curation',
+               'task_limits': task_limits}
+    if layout is not None:
+        request['layout'] = layout
+    write(job/'request.json', request)
+    (job/'prompt.txt').write_text(PROMPT+task_limits_prompt(task_limits)+layout_prompt(layout)+'\nrequest_id=independent-curation\n')
     # The watchdog owns the heavy lease; this parent observer must not reserve
     # it again. Bound stdout, descendants and common curation job disk growth.
     from .process import run
@@ -91,14 +149,18 @@ def curate(directory, transport, seconds, contract=None, *, model='gpt-6.1-sol',
     suite = result['payload']['suite']
     validate_suite(suite, contract)
     check_task_limits(suite, task_limits)
+    check_layout(suite, layout)
     write(directory/'suite.json', suite)
-    write(directory/'provenance.json', {'role': 'independent_pretrial_selector', 'receipt': str(job/'receipt.json'),
+    provenance = {'role': 'independent_pretrial_selector', 'receipt': str(job/'receipt.json'),
         'model':model,'reasoning_effort':REASONING_EFFORT,'transport':transport,
         'task_limits': task_limits,
         'receipt_sha256': sha(job/'receipt.json'), 'suite_sha256': digest(suite),
         'elapsed_seconds': result['elapsed_seconds'], 'usage_raw': result['usage_raw'],
         'accounting': 'common setup overhead, disclosed separately; each arm has the same later allowance',
-        'independence_limit': 'process/input separation; no statistical independence guarantee about the common model'})
+        'independence_limit': 'process/input separation; no statistical independence guarantee about the common model'}
+    if layout is not None:
+        provenance['layout'] = layout
+    write(directory/'provenance.json', provenance)
     return {'suite': str(directory/'suite.json'), 'provenance': str(directory/'provenance.json')}
 
 if __name__ == '__main__':
@@ -108,5 +170,7 @@ if __name__ == '__main__':
     p.add_argument('--seconds', type=int, default=120)
     p.add_argument('--contract', type=Path)
     p.add_argument('--model',choices=MODELS,required=True)
+    p.add_argument('--layout',type=Path)
     a = p.parse_args()
-    print(canonical(curate(a.out.resolve(), a.transport, a.seconds, read(a.contract) if a.contract else None,model=a.model)))
+    print(canonical(curate(a.out.resolve(), a.transport, a.seconds, read(a.contract) if a.contract else None,model=a.model,
+                          layout=read(a.layout) if a.layout else None)))

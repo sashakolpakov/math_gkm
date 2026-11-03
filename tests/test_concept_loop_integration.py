@@ -165,7 +165,14 @@ class ConceptControllerIntegration(unittest.TestCase):
         state = policy.initial('exploration')
         feedback.append_review_feedback(state, review_packet())
         seen = []
-        arm = SimpleNamespace(root=self.base, p=study.DEFAULT)
+        # Simulated role execution supplies the complete native closed-result
+        # ledger, so the actual receipt and cached-request checks remain active.
+        from types import MethodType
+        arm = SimpleNamespace(root=self.base, p=study.DEFAULT,
+            s={'reservations': {}, 'receipts': [], 'receipt_hashes': {},
+               'counted_jobs': [], 'active': None, 'active_intent': None})
+        arm.closed_planner_receipt = MethodType(study.Arm.closed_planner_receipt, arm)
+        arm.cached_planner_request = MethodType(study.Arm.cached_planner_request, arm)
         def call(key, role, req, workspace=None, readonly=False):
             cached = self.base/'jobs'/key/'receipt.json'
             if cached.exists():
@@ -173,9 +180,21 @@ class ConceptControllerIntegration(unittest.TestCase):
             seen.append((key, role, copy.deepcopy(req)))
             payload = {'agenda': 'bad'} if key == 'plan-0003' else ordinary()
             result = {'role': role, 'outcome': 'completed', 'payload': payload,
-                      'elapsed_seconds': 0, 'request_id': key}
-            write(self.base/'jobs'/key/'final.json', {'payload_json': payload})
-            write(self.base/'jobs'/key/'receipt.json', result)
+                      'elapsed_seconds': 0, 'request_id': key, 'returncode': 0,
+                      'model': arm.p['model'], 'reasoning_effort': study.REASONING_EFFORT,
+                      'before': {}, 'after': {}, 'resources': {'termination_cause': None}}
+            job = self.base/'jobs'/key
+            write(job/'request.json', {**req, 'request_id': key,
+                'model': arm.p['model'], 'reasoning_effort': study.REASONING_EFFORT})
+            write(job/'spec.json', {'request_id': key, 'role': role,
+                'readonly': readonly, 'workspace': str(workspace),
+                'seconds': arm.p['call_seconds'], 'transport': arm.p['transport'],
+                'model': arm.p['model'], 'reasoning_effort': study.REASONING_EFFORT})
+            write(job/'final.json', {'payload_json': payload})
+            write(job/'receipt.json', result)
+            arm.s['reservations']['call-'+key] = arm.p['call_seconds']
+            arm.s['receipts'].append(str(job)); arm.s['counted_jobs'].append(key)
+            arm.s['receipt_hashes'][str(job)] = digest(result)
             return result
         arm.call = call
         req = policy.request(state, 3, study.DEFAULT, 'proposer')

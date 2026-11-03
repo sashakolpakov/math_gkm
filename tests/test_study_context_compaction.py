@@ -174,15 +174,25 @@ class MetadataCompactionFixtures(unittest.TestCase):
         self.assertNotEqual(a['sha256'],b['sha256']);self.assertNotEqual(a['request_binding'],b['request_binding'])
         self.assertEqual(len(list((self.base/'history/context').iterdir())),2)
 
-    def test_semantic_overflow_fails_closed_before_any_context_file(self):
+    def test_semantic_overflow_preserves_the_entire_request_in_lossless_transport(self):
         req=request();req['remaining_obligations']['neutral-root']['statement']='x'*900001
-        with self.assertRaises(ctx.PromptContextLimit):self.render(req)
-        self.assertFalse((self.base/'history').exists())
+        rendered=self.render(req); envelope=body(rendered)
+        self.assertEqual(envelope['schema'],'math-gkm.own-request-file-transport.v1')
+        reference=envelope['complete_request']; path=self.base/reference['path']
+        raw=path.read_bytes()
+        self.assertEqual(len(raw),reference['bytes'])
+        self.assertEqual(sha(path),reference['sha256'])
+        self.assertEqual(reference['request_binding'],digest(req))
+        self.assertEqual(raw,(canonical(req)+'\n').encode('utf-8'))
+        original=rendered[:-len(canonical(envelope))]+raw.decode('utf-8')[:-1]
+        self.assertEqual(original,policy.prompt(req))
+        self.assertEqual(hashlib.sha256(original.encode()).hexdigest(),
+                         envelope['original_prompt']['sha256'])
 
     def test_full_context_bound_and_private_role_restrictions_are_unchanged(self):
         self.assertEqual(ctx.PROMPT_CHAR_LIMIT,900000)
-        self.assertEqual(ctx.CONTEXT_BYTE_LIMIT,8*1024**2)
-        req=request();req['padding']='x'*(8*1024**2)
+        self.assertEqual(ctx.CONTEXT_BYTE_LIMIT,16*1024**2)
+        req=request();req['padding']='x'*ctx.CONTEXT_BYTE_LIMIT
         with self.assertRaises(ctx.PromptContextLimit):self.render(req)
         for role in ['reviewer','selector','adapter']:
             with self.subTest(role=role),self.assertRaises(ctx.PromptContextLimit):

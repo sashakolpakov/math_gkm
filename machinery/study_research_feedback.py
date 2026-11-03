@@ -16,6 +16,22 @@ from .study_common import Invalid, digest
 
 SCHEMA = 'math-gkm.research-feedback.v1'
 OWN_REVIEW_SCOPE = 'own_sources_only'
+METHOD_SCHEMA = 'math-gkm.method-feedback.v1'
+METHOD_LIMIT = 8
+METHOD_TRIAL_LIMIT = 8
+_METHOD_IDENT = re.compile(r'[A-Za-z0-9][A-Za-z0-9_.-]{0,95}\Z')
+METHOD_INTERPRETATION = (
+    'Isolated method comparisons give empirical finite-budget evidence only. '
+    'A predecessor bounded non-solution is not mathematical unprovability. '
+    'Checked use does not establish indispensability. Invalid or missing trials '
+    'are inconclusive; development and application costs remain separate. '
+    'Prediction validation seconds record original validation execution elapsed, '
+    'including retained evidence; they do not measure current reuse cost. '
+    'No complexity or theorem-count reward is computed.')
+_METHOD_CAPS = ('adaptation_seconds_each', 'validation_seconds_each_task', 'catalog_seconds_each')
+_METHOD_REASONS = frozenset({'checked_isolated_method_comparison', 'missing_comparison',
+    'invalid_or_incomplete_trials', 'mismatched_method_binding', 'unequal_trial_caps',
+    'insufficient_budget', 'invalid_candidate_context', 'unavailable'})
 # Fixed operational labels only; legacy packets may omit this optional field.
 REVIEWER_OUTCOME_STATUSES = {
     'completed': {'artifact_bound_source_assessment', 'unavailable_invalid_artifact_references'},
@@ -163,6 +179,179 @@ def comparison_feedback(result):
             'causal_interpretation': 'Checked dependency use does not establish indispensability.'}
 
 
+def _method_identity(result):
+    if (not isinstance(result, dict) or
+            not {'method_id', 'reference', 'before', 'candidate'} <= set(result) or
+            not isinstance(result.get('method_id'), str) or
+            not _METHOD_IDENT.fullmatch(result['method_id']) or
+            any(not isinstance(result.get(k), str) or not _SHA.fullmatch(result[k])
+                for k in ('reference', 'before')) or
+            (result.get('candidate') is not None and
+             (not isinstance(result['candidate'], str) or not _SHA.fullmatch(result['candidate'])))):
+        raise Invalid('invalid own method comparison identity')
+    return {key: result[key] for key in ('method_id', 'reference', 'before', 'candidate')}
+
+
+def _method_cost_totals(trials):
+    projected = [_measured_costs(t.get('measured_costs')) if isinstance(t, dict)
+                 else _measured_costs(None) for t in trials]
+    result = {}
+    for side in ('before', 'after'):
+        result[side] = {}
+        for field in ('adapter_seconds', 'validation_seconds', 'context_validation_seconds'):
+            values = [item[side][field] for item in projected]
+            result[side][field] = (_number(sum(values))
+                if projected and all(value is not None for value in values) else None)
+    return result
+
+
+
+def _method_bounded_counts(raw):
+    value = raw.get('bounded_counts') if isinstance(raw, dict) else None
+    fields = {'before_successes', 'after_successes', 'obligations', 'holdouts', 'regressions'}
+    if (not isinstance(value, dict) or set(value) != fields or
+            any(type(value[key]) is not int or value[key] < 0 for key in fields) or
+            value['before_successes'] > value['obligations'] or
+            value['after_successes'] > value['obligations'] or
+            value['holdouts']+value['regressions'] != value['obligations']):
+        return None
+    return {key: value[key] for key in ('before_successes', 'after_successes', 'obligations')}
+
+
+def _method_predictions(raw):
+    value = raw.get('prediction_counts')
+    if (not isinstance(value, dict) or set(value) != {'checked', 'pending'} or
+            any(type(value[key]) is not int or value[key] < 0 for key in ('checked', 'pending')) or
+            value['checked']+value['pending'] > 16):
+        return {'prediction_checked': None, 'prediction_pending': None}
+    return {'prediction_checked': value['checked'], 'prediction_pending': value['pending']}
+
+
+def project_method_comparison(result):
+    """Project one controller-owned method comparison, never hidden task content.
+
+    Identity comes from the committed own-source method. Each comparison must
+    match both frozen snapshot bindings. Missing/invalid repetitions cannot be
+    erased by successes in other repetitions. This function intentionally reads
+    no target, solution, diagnostic, catalogue or evaluator prose.
+    """
+    identity = _method_identity(result)
+    trials = result.get('trials')
+    expected = result.get('expected_trials')
+    if (type(expected) is not int or not 1 <= expected <= METHOD_TRIAL_LIMIT or
+            not isinstance(trials, list) or len(trials) > expected):
+        raise Invalid('invalid method comparison repetition bound')
+    public = [comparison_feedback(t) for t in trials]
+    valid, bounded_counts, reason, caps = [], [], 'checked_isolated_method_comparison', None
+    for raw, projected in zip(trials, public):
+        if projected['assessment'] != 'valid_finite_budget_evidence':
+            reason = 'invalid_or_incomplete_trials'
+            continue
+        binding = raw.get('binding') if isinstance(raw, dict) else None
+        if (not isinstance(binding, dict) or binding.get('before') != identity['before'] or
+                binding.get('after') != identity['candidate'] or identity['candidate'] is None):
+            reason = 'mismatched_method_binding'
+            continue
+        trial_caps = {key: _number(binding.get(key)) for key in _METHOD_CAPS}
+        if any(v is None or v <= 0 for v in trial_caps.values()):
+            reason = 'invalid_or_incomplete_trials'
+            continue
+        if caps is not None and trial_caps != caps:
+            reason = 'unequal_trial_caps'
+            continue
+        caps = trial_caps
+        valid.append(projected)
+        bounded_counts.append(_method_bounded_counts(raw))
+    valid_count = len(valid)
+    complete = valid_count == expected
+    if not complete and reason == 'checked_isolated_method_comparison':
+        reason = 'missing_comparison' if not trials else 'invalid_or_incomplete_trials'
+    # Fixed operational labels are accepted only when no trial was performed.
+    if not trials and result.get('status') in ('insufficient_budget', 'invalid_candidate_context', 'invalid_candidate', 'unavailable'):
+        reason = 'invalid_candidate_context' if result['status'] == 'invalid_candidate' else result['status']
+    counts = {field: sum(t[field] for t in valid) if valid else None
+              for field in ('gains', 'checked_component_transfer', 'regressions')}
+    coverage = {field: sum(item[field] for item in bounded_counts)
+                if bounded_counts and all(item is not None for item in bounded_counts) else None
+                for field in ('before_successes', 'after_successes', 'obligations')}
+    supported = sum(t['eligible'] and t['checked_component_transfer'] > 0 and t['regressions'] == 0 for t in valid)
+    packet = {'schema': METHOD_SCHEMA, **identity,
+        'assessment': 'valid_finite_budget_evidence' if complete else 'inconclusive',
+        'reason': reason, 'expected_trials': expected, 'attempted_trials': len(trials),
+        'valid_trials': valid_count, 'invalid_or_missing_trials': expected-valid_count,
+        'supported_trials': supported, **counts, **coverage, **_method_predictions(result),
+        'eligible': bool(complete and supported > 0 and counts['regressions'] == 0),
+        'budget_caps_seconds': caps or {}, 'measured_costs': _method_cost_totals(trials),
+        'development_role_seconds': _number(result.get('development_role_seconds')),
+        'prediction_validation_seconds': _number(result.get('prediction_validation_seconds')),
+        'interpretation': METHOD_INTERPRETATION}
+    validate_method_feedback(packet)
+    return packet
+
+
+def validate_method_feedback(value):
+    """Strict bounded research-facing schema; extra private fields are rejected."""
+    fields = {'schema', 'method_id', 'reference', 'before', 'candidate', 'assessment',
+        'reason', 'expected_trials', 'attempted_trials', 'valid_trials',
+        'invalid_or_missing_trials', 'supported_trials', 'gains',
+        'checked_component_transfer', 'regressions', 'before_successes', 'after_successes',
+        'obligations', 'prediction_checked', 'prediction_pending', 'eligible', 'budget_caps_seconds',
+        'measured_costs', 'development_role_seconds', 'prediction_validation_seconds', 'interpretation'}
+    if not isinstance(value, dict) or set(value) != fields or value.get('schema') != METHOD_SCHEMA:
+        raise Invalid('invalid method feedback schema')
+    _method_identity(value)
+    count_fields = ('expected_trials', 'attempted_trials', 'valid_trials',
+                    'invalid_or_missing_trials', 'supported_trials')
+    if (any(type(value[k]) is not int or not 0 <= value[k] <= METHOD_TRIAL_LIMIT for k in count_fields) or
+            value['expected_trials'] < 1 or
+            not 0 <= value['supported_trials'] <= value['valid_trials'] <= value['attempted_trials'] <= value['expected_trials'] or
+            value['valid_trials']+value['invalid_or_missing_trials'] != value['expected_trials']):
+        raise Invalid('invalid method feedback trial counts')
+    if value['valid_trials']:
+        if any(type(value[k]) is not int or value[k] < 0 for k in ('gains', 'checked_component_transfer', 'regressions')):
+            raise Invalid('invalid method feedback measured gains')
+        if value['checked_component_transfer'] > value['gains'] or value['supported_trials'] > value['checked_component_transfer']:
+            raise Invalid('inconsistent method feedback use counts')
+    elif any(value[k] is not None for k in ('gains', 'checked_component_transfer', 'regressions')):
+        raise Invalid('unavailable method comparison cannot report zero gains')
+    coverage = ('before_successes', 'after_successes', 'obligations')
+    if any(value[key] is not None for key in coverage):
+        if (not value['valid_trials'] or
+                any(type(value[key]) is not int or value[key] < 0 for key in coverage) or
+                value['before_successes'] > value['obligations'] or
+                value['after_successes'] > value['obligations'] or
+                value['gains'] > value['after_successes']):
+            raise Invalid('invalid method feedback success coverage')
+    predictions = ('prediction_checked', 'prediction_pending')
+    if any(value[key] is not None for key in predictions):
+        if (any(type(value[key]) is not int or value[key] < 0 for key in predictions) or
+                sum(value[key] for key in predictions) > 16):
+            raise Invalid('invalid method feedback prediction counts')
+    complete = value['valid_trials'] == value['expected_trials']
+    if (value['assessment'] != ('valid_finite_budget_evidence' if complete else 'inconclusive') or
+            value['reason'] not in _METHOD_REASONS or
+            (value['reason'] == 'checked_isolated_method_comparison') != complete or
+            type(value['eligible']) is not bool or
+            value['eligible'] != bool(complete and value['supported_trials'] > 0 and value['regressions'] == 0) or
+            (value['candidate'] is None and value['valid_trials']) or
+            value['interpretation'] != METHOD_INTERPRETATION):
+        raise Invalid('invalid method feedback assessment')
+    caps = value['budget_caps_seconds']
+    if (not isinstance(caps, dict) or set(caps) != (set(_METHOD_CAPS) if value['valid_trials'] else set()) or
+            any(_number(v) is None or v <= 0 for v in caps.values())):
+        raise Invalid('invalid method feedback equal caps')
+    measured = value['measured_costs']
+    cost_fields = {'adapter_seconds', 'validation_seconds', 'context_validation_seconds'}
+    if (not isinstance(measured, dict) or set(measured) != {'before', 'after'} or
+            any(not isinstance(measured[side], dict) or set(measured[side]) != cost_fields or
+                any(v is not None and _number(v) is None for v in measured[side].values())
+                for side in ('before', 'after')) or
+            (value['development_role_seconds'] is not None and _number(value['development_role_seconds']) is None) or
+            (value['prediction_validation_seconds'] is not None and _number(value['prediction_validation_seconds']) is None)):
+        raise Invalid('invalid method feedback measured costs')
+    return copy.deepcopy(value)
+
+
 def _comparison_context(value):
     """Own controller provenance for the compared research interval [start,end).
 
@@ -191,7 +380,7 @@ def _comparison_context(value):
 def build_review_feedback(round_index, review_receipt, artifact_refs_valid, *,
                           reviewer_scope='untrusted_or_legacy',
                           episode_transfer=None, policy_comparison=None, comparison_context=None,
-                          development_role_seconds=None):
+                          development_role_seconds=None, method_comparisons=None):
     """Project an own-source review plus separately sanitized transfer evidence.
 
     ``reviewer_scope`` is controller provenance, not a field trusted from model
@@ -253,6 +442,12 @@ def build_review_feedback(round_index, review_receipt, artifact_refs_valid, *,
               'mathematical_admission_changed': False,
               'hypothesis_statuses_changed': False,
               'interpretation': INTERPRETATION}
+    if method_comparisons is not None:
+        if not isinstance(method_comparisons, list) or len(method_comparisons) > METHOD_LIMIT:
+            raise Invalid('method feedback list bound')
+        packet['method_comparisons'] = [project_method_comparison(item) for item in method_comparisons]
+        if len({item['reference'] for item in packet['method_comparisons']}) != len(packet['method_comparisons']):
+            raise Invalid('duplicate method comparison feedback')
     packet['reference'] = digest(packet)
     _validate_packet(packet)
     return packet
@@ -263,7 +458,7 @@ def _validate_packet(packet):
                 'policy_comparison', 'comparison_context', 'development_costs', 'review_elapsed_seconds',
                 'mathematical_admission_changed', 'hypothesis_statuses_changed',
                 'interpretation', 'reference'}
-    if (not isinstance(packet, dict) or set(packet) != required or
+    if (not isinstance(packet, dict) or set(packet) not in (required, required | {'method_comparisons'}) or
             packet.get('schema') != SCHEMA or
             type(packet.get('round')) is not int or packet['round'] < 0 or
             packet.get('reference') != digest({k: v for k, v in packet.items() if k != 'reference'}) or
@@ -273,6 +468,14 @@ def _validate_packet(packet):
             (packet['review_elapsed_seconds'] is not None and
              _number(packet['review_elapsed_seconds']) is None)):
         raise Invalid('invalid research feedback packet')
+    if 'method_comparisons' in packet:
+        methods = packet['method_comparisons']
+        if not isinstance(methods, list) or len(methods) > METHOD_LIMIT:
+            raise Invalid('method feedback list bound')
+        for method in methods:
+            validate_method_feedback(method)
+        if len({method['reference'] for method in methods}) != len(methods):
+            raise Invalid('duplicate method comparison feedback')
     development = packet['development_costs']
     if (not isinstance(development, dict) or set(development) != {'role_seconds', 'interpretation'} or
             (development['role_seconds'] is not None and _number(development['role_seconds']) is None) or

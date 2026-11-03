@@ -282,6 +282,14 @@ strategy reassessment. Report observed mathematical scope, actual checked reuse,
 strategy decisions and costs; one sequential pair does not establish causal
 superiority. The supervising session supplies no mathematical proof strategy.
 
+The [method-learning extension](docs/METHOD_LEARNING.md) adds a separate test of
+acquired mathematical methods. It commits predictions before development, checks
+them in the predecessor's mathematical context, and compares that predecessor
+with an additive method extension on disjoint pretrial challenges. Repeated
+matched trials, actual declaration use, retained applications, and measured costs
+feed the next research decision. The tests below verify the implementation;
+they do not establish improved research performance or resolve an open conjecture.
+
 The original campaign is stopped at worker 209. Research-status material below
 is historical. The [V2 release](STRATEGY_V2_RELEASE.md) and its dated evidence
 remain preserved; its test counts are not relabeled as V3 runs.
