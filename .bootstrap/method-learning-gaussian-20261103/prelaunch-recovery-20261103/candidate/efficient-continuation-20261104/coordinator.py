@@ -9,7 +9,7 @@ import subprocess
 import time
 
 ROOT=Path('/Users/sasha/math_gkm');HERE=Path(__file__).resolve().parent
-ADMISSION_SHA='d11718b1b4119fa5126b268c0ec8320986a4a65e009defded85c38a52957c310'
+ADMISSION_SHA='f177376aff988170928b5b063607d3f607b50c521943f89c75acf939f086a67f'
 if hashlib.sha256((HERE/'admission.py').read_bytes()).hexdigest()!=ADMISSION_SHA:raise RuntimeError('admission source changed')
 spec=importlib.util.spec_from_file_location('qualified_efficient_admission',HERE/'admission.py')
 A=importlib.util.module_from_spec(spec);spec.loader.exec_module(A)

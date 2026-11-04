@@ -37,7 +37,7 @@ def closed_handoff(binding,old,*,initial):
          exited.get('source')==binding['predecessor_source'] and exited.get('config')==binding['predecessor_config'] and
          exited.get('output')==h['predecessor_output'] and type(exited.get('observed_at')) in (int,float) and exited['observed_at']>0 and
          exited.get('actual_numeric_exit_observed') is True and type(exited.get('returncode')) is int and
-         exited['returncode']!=0 and isinstance(exited.get('owned_tool_handle'),str) and bool(exited['owned_tool_handle'].strip()) and
+         exited['returncode'] not in (0,3) and isinstance(exited.get('owned_tool_handle'),str) and bool(exited['owned_tool_handle'].strip()) and
          isinstance(exited.get('completion_reference'),str) and bool(exited['completion_reference'].strip()),
          'actual closed predecessor owner evidence is required; no PID adoption')
     output=Path(h['predecessor_output'])
@@ -86,8 +86,8 @@ def closed_handoff(binding,old,*,initial):
         if initial:reference(row['current'])
     if initial:
         rows=O.C.public_study(study,c,old['transition'])
-        need(set(rows)=={'baseline','exploration'} and all(row.get('all_jobs_settled') is True for row in rows.values()),
-             'an unfinished role cannot be adopted or replayed')
+        need(set(rows)=={'baseline','exploration'} and all(row.get('all_jobs_settled') is True and row.get('resolution_is_null') is True for row in rows.values()),
+             'unfinished roles or known resolutions cannot be adopted or replayed')
         for row in h['states'].values():reference(row['current'])
     return h
 

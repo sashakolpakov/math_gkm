@@ -53,12 +53,15 @@ contains `current` and `archive` references with identical byte hashes. The
 archives are opaque private records; they never enter a public source package.
 The exit reference authenticates a ROOT-authored
 `math-gkm.owned-controller-exit.v1` record containing `source`, `config`,
-`output`, `actual_numeric_exit_observed: true`, numeric non-success returncode,
+`output`, `actual_numeric_exit_observed: true`, numeric returncode other than 0 (success) or 3 (verified refutation),
 `owned_tool_handle`, `completion_reference`, and `observed_at`. It records an
 actual observed closed handle, never an inferred PID or file-based liveness.
 
-Initial admission checks the exact current opaque state pins and approved
-settled-role metadata. Closed receipts awaiting native bookkeeping can remain;
+Initial admission checks the exact current opaque state pins, approved
+settled-role metadata, and explicitly null resolutions in both arms. Genuine
+interrupted-owner codes such as -9, 137 and 130 are accepted only with the same
+actual owned-handle closure witness and complete closed-command evidence.
+Booleans, missing numeric exits, success and refutation are rejected. Closed receipts awaiting native bookkeeping can remain;
 no receipt, counter, workspace or prior paid action is reset. Later checks keep
 the immutable handoff but allow genuine state evolution. The handoff also lists every predecessor command as exact intent/exit/log
 references. All observed command directories must be listed, each EXIT must

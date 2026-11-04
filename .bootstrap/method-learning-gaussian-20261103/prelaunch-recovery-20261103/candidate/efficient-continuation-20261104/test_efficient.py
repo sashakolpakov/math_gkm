@@ -92,7 +92,7 @@ class Qualification(unittest.TestCase):
             q=patch.object(target,name,value);q.start();self.addCleanup(q.stop)
         def oldconfig(*args,**kwargs):self.events.append(('pure',kwargs));return self.old
         for target,name,kwargs in ((a,'reference',{'side_effect':checkref}),(a.O,'configuration',{'side_effect':oldconfig}),
-            (a.O.C,'public_study',{'return_value':{m:{'all_jobs_settled':True} for m in ('baseline','exploration')}}),
+            (a.O.C,'public_study',{'return_value':{m:{'all_jobs_settled':True,'resolution_is_null':True} for m in ('baseline','exploration')}}),
             (a,'headroom',{'side_effect':lambda:self.events.append(('headroom',))}),
             (a,'native_obligations',{'side_effect':lambda old:self.events.append(('native-once',))})):
             q=patch.object(target,name,**kwargs);q.start();self.addCleanup(q.stop)
@@ -117,16 +117,32 @@ class Qualification(unittest.TestCase):
         with patch.object(a,'native_obligations',side_effect=change):
             with self.assertRaises(RuntimeError):self.qualify(initial=True)
     def test_unsettled_receipt_refused_before_native_gates(self):
-        with patch.object(a.O.C,'public_study',return_value={'baseline':{'all_jobs_settled':True},'exploration':{'all_jobs_settled':False}}):
+        with patch.object(a.O.C,'public_study',return_value={'baseline':{'all_jobs_settled':True,'resolution_is_null':True},'exploration':{'all_jobs_settled':False,'resolution_is_null':True}}):
             with self.assertRaises(RuntimeError):self.qualify(initial=True)
         self.assertFalse(any(x[0]=='native-once' for x in self.events))
     def test_exit_witness_source_config_timing_and_numeric_closure_required(self):
         path=Path(self.handoff['exit']['path']);original=json.loads(path.read_text())
-        for key,value in (('actual_numeric_exit_observed',False),('owned_tool_handle',''),('returncode',None),('returncode',0),('observed_at',99),('schema','wrong'),('source',{})):
+        for key,value in (('actual_numeric_exit_observed',False),('owned_tool_handle',''),('returncode',None),('returncode',0),('returncode',3),('returncode',True),('returncode',False),('observed_at',99),('schema','wrong'),('source',{})):
             with self.subTest(key=key):
                 put(path,{**original,key:value});self.handoff['exit']=ref(path);self.save_handoff()
                 with self.assertRaises(RuntimeError):self.qualify(native_checks=False)
         put(path,original)
+    def test_actual_interrupted_owner_codes_are_accepted_without_counter_reset(self):
+        path=Path(self.handoff['exit']['path']);original=json.loads(path.read_text())
+        for code in (-9,137,130,1,2,4):
+            with self.subTest(code=code):
+                put(path,{**original,'returncode':code});self.handoff['exit']=ref(path);self.save_handoff()
+                result=self.qualify(initial=True,native_checks=False)
+                self.assertEqual(result['handoff']['states'],self.states)
+                self.assertEqual(json.loads(Path(self.states['exploration']['current']['path']).read_text())['counter'],87)
+    def test_initial_both_arm_resolutions_must_be_explicitly_null(self):
+        for mode in ('baseline','exploration'):
+            for value in (False,None,'missing'):
+                rows={m:{'all_jobs_settled':True,'resolution_is_null':True} for m in ('baseline','exploration')}
+                if value=='missing':rows[mode].pop('resolution_is_null')
+                else:rows[mode]['resolution_is_null']=value
+                with self.subTest(mode=mode,value=value),patch.object(a.O.C,'public_study',return_value=rows):
+                    with self.assertRaises(RuntimeError):self.qualify(initial=True,native_checks=False)
     def test_all_predecessor_commands_need_numeric_owned_exits_and_exact_logs(self):
         output=Path(self.handoff['predecessor_output']);directory=output/'commands/000000'
         intent=put(directory/'INTENT.json',{'kind':'recover','created':100})
