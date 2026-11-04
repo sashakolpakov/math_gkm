@@ -5,6 +5,7 @@ The receipts describe its narrow scope; they do not certify host effects or a
 whole continuation. Open obligations are durable inputs to subsequent requests.
 """
 import time
+import copy
 from . import protocol
 from .study_common import ROOT, digest, sha, write
 
@@ -24,20 +25,41 @@ def initial(limit):
 
 
 def event(arm, command):
-    # Separate bounded operational allowance, not hidden overspend of the
-    # symmetric role/validation envelopes. Each real attempt is counted before
-    # execution, including recovery; interruption cannot donate a free attempt.
-    attempts = arm.s.get('protocol_attempts', 0)
-    if attempts >= 4*arm.p['max_calls'] + 2:
-        from .study_common import Invalid
-        raise Invalid('separate protocol execution allowance exhausted')
-    arm.s['protocol_attempts'] = attempts + 1
-    arm.s['protocol_reserved_seconds'] = 30*(attempts+1)
-    arm.save()
-    before = arm.s.setdefault('protocol_state', initial(arm.p['max_calls']))
-    start = time.monotonic()
-    after = protocol.transition(before, command)
-    elapsed = time.monotonic()-start
+    # Two attempts at the pure Lean step are possible, never at a role/model.
+    # Each consumes the original separate allowance before execution.
+    from .gate import Rejected
+    from .study_common import Invalid
+    from .resources import headroom,limits
+    before=copy.deepcopy(arm.s.setdefault('protocol_state',initial(arm.p['max_calls'])))
+    identity=lambda:digest({'guard':arm.s.get('protocol_state'),
+        'events':arm.s.get('semantic_events',[]),'intent':arm.s.get('active_intent')})
+    binding=identity();command_binding=digest(command);saved_command=copy.deepcopy(command)
+    sources=lambda:{name:sha(ROOT/name) for name in ('MathGKM/Protocol.lean','machinery/protocol.py')}
+    pinned=sources()
+    for attempt in range(2):
+        attempts=arm.s.get('protocol_attempts',0)
+        if attempts>=4*arm.p['max_calls']+2:
+            raise Invalid('separate protocol execution allowance exhausted')
+        if identity()!=binding or sources()!=pinned or digest(command)!=command_binding:
+            raise Invalid('pure protocol input/source changed; no retry')
+        arm.s['protocol_attempts']=attempts+1
+        arm.s['protocol_reserved_seconds']=30*(attempts+1)
+        arm.save();start=time.monotonic()
+        try:
+            after=protocol.transition(copy.deepcopy(before),copy.deepcopy(saved_command))
+        except Rejected:
+            elapsed=time.monotonic()-start
+            arm.s['protocol_observed_seconds']=arm.s.get('protocol_observed_seconds',0)+elapsed
+            arm.save()
+            if (attempt or identity()!=binding or sources()!=pinned or digest(command)!=command_binding or
+                    arm.s['protocol_attempts']>=4*arm.p['max_calls']+2):
+                raise
+            headroom(limits())  # Existing floors/cleanup hold; no extra allowance.
+            continue
+        elapsed=time.monotonic()-start
+        if identity()!=binding or sources()!=pinned or digest(command)!=command_binding:
+            raise Invalid('pure protocol input/source changed before commit')
+        break
     index = len(arm.s.setdefault('semantic_events', []))
     record = {'index': index, 'before': before, 'command': command, 'after': after,
         'protocol_source_sha256': sha(ROOT/'MathGKM/Protocol.lean'),

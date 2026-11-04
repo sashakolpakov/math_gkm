@@ -1,14 +1,16 @@
 """Bounded prompt views of complete own requests; no change to proof state.
 
-The protected operational grant is consumed only for the one already closed
-historical input rejection. It is never supplied by a research report.
+The historical input-size recovery remains unchanged. A separate source-bound
+operator grant permits one ordinarily charged repair after a documented closed
+pre-watchdog proposer failure. Neither grant comes from a research report.
 """
 import copy
+import ast
 import json
 from pathlib import Path
 import re
 from .study_common import (ROOT, Invalid, canonical, digest, sha, read, write,
-    atomic_text, retention_room, implementation, REASONING_EFFORT)
+    atomic_text, retention_room, implementation, REASONING_EFFORT, inventory)
 
 PROMPT_CHAR_LIMIT = 900_000
 CONTEXT_BYTE_LIMIT = 16 * 1024**2
@@ -401,7 +403,7 @@ def _protected_grant(pointer):
     return read(path),pointer['sha256'],path.resolve()
 
 
-def operational_recovery(arm,key,receipt,request,workspace,index):
+def _historical_operational_recovery(arm,key,receipt,request,workspace,index):
     """Permit one new paid repair ID; never rerun or refund the failed job."""
     if key!='plan-0030' or index!=30 or getattr(arm,'mode',None)!='exploration':
         return None
@@ -473,3 +475,182 @@ def operational_recovery(arm,key,receipt,request,workspace,index):
     return {'previous_request':key,'receipt_hash':digest(receipt),
         'error':'Closed input-size rejection before model proposal; full own context remains available. Submit a new plan under this separately charged repair identity.',
         'previous_payload':None,'operational_recovery_binding':digest(binding)}
+
+# Prospective generic pre-watchdog recovery. Historical receipts are never
+# rewritten; this protected grant permits one distinct ordinarily charged ID.
+PRELAUNCH_FIELDS = {'schema','study','arm','logical_round','failed_request_id','next_request_id',
+    'request_binding','receipt_binding','receipt_file_sha256','spec_sha256','prompt_sha256','protocol_sha256',
+    'old_implementation_sha256','implementation_sha256','old_seal_sha256','stopped_state_sha256',
+    'recovery_projection_sha256','workspace_binding','prelaunch_observation','classification',
+    'no_model_started','native_cleanup_verified','revision_core','revision_binding'}
+PRELAUNCH_CORE_FIELDS = tuple(sorted(PRELAUNCH_FIELDS-{'schema','prelaunch_observation','classification',
+    'no_model_started','native_cleanup_verified','revision_core','revision_binding'}))
+PRELAUNCH_PROTOCOL_FIELDS = ('protocol_state','protocol_attempts','protocol_reserved_seconds',
+    'protocol_observed_seconds','semantic_events','host_events')
+
+
+def prelaunch_recovery_projection(state):
+    result=recovery_projection(state)
+    # Arm.run sets only this lifecycle tag before reaching the original slot.
+    result['status']='running'
+    result.update({key:copy.deepcopy(state.get(key)) for key in PRELAUNCH_PROTOCOL_FIELDS})
+    return result
+
+
+def _prelaunch_artifact(pointer,limit=16*1024**2):
+    if not isinstance(pointer,dict) or set(pointer)!={'path','sha256'}:
+        raise Invalid('prelaunch artifact pointer malformed')
+    path=Path(pointer['path']);path=path if path.is_absolute() else ROOT/path
+    if (not path.resolve().is_relative_to((ROOT/'.bootstrap').resolve()) or path.is_symlink() or
+            not path.is_file() or path.stat().st_size>limit or
+            not re.fullmatch('[0-9a-f]{64}',str(pointer['sha256'])) or sha(path)!=pointer['sha256']):
+        raise Invalid('prelaunch protected artifact changed')
+    relative=path.relative_to(ROOT)
+    if any(ROOT.joinpath(*relative.parts[:i]).is_symlink() for i in range(1,len(relative.parts))):
+        raise Invalid('prelaunch protected artifact parent alias')
+    return path
+
+
+def _prelaunch_evidence(grant,arm,key,index):
+    observation_path=_prelaunch_artifact(grant['prelaunch_observation'],1024**2)
+    observation=read(observation_path)
+    if (observation.get('schema')!='math-gkm.closed-prelaunch-proposer-observation.v1' or
+            any(observation.get(k)!=grant[k] for k in ('study','arm','logical_round','failed_request_id','old_implementation_sha256')) or
+            observation.get('watchdog_popen_reached') is not False or observation.get('model_started') is not False or
+            observation.get('cleanup_verified') is not True):
+        raise Invalid('prelaunch observation does not establish the matching no-launch case')
+    for name in ('old_owner_exit','old_native_exit','native_recovery_exit'):
+        value=observation.get(name,{})
+        if (value.get('actual_numeric_exit_observed') is not True or type(value.get('returncode')) is not int or
+                not isinstance(value.get('completion_reference'),str) or not value['completion_reference'].strip() or
+                (value['returncode']!=0 if name=='native_recovery_exit' else value['returncode']==0)):
+            raise Invalid('prelaunch actual owned command closure missing')
+    if not isinstance(observation['old_owner_exit'].get('owned_tool_handle'),str) or not observation['old_owner_exit']['owned_tool_handle'].strip():
+        raise Invalid('prelaunch actual owner handle missing')
+    archived_seal=_prelaunch_artifact(grant['revision_core'].get('old_seal',{}),8*1024**2)
+    old_seal=read(archived_seal);old_implementation=old_seal.get('implementation')
+    if (sha(archived_seal)!=grant['old_seal_sha256'] or not isinstance(old_implementation,dict) or
+            digest(old_implementation)!=grant['old_implementation_sha256'] or
+            old_implementation.get('machinery/study.py')!=observation['old_study_source']['sha256']):
+        raise Invalid('prelaunch archived source is not bound to the actual old seal implementation')
+    source=_prelaunch_artifact(observation['old_study_source'],8*1024**2)
+    trace=_prelaunch_artifact(observation['trace'],1024**2)
+    native_log=_prelaunch_artifact(observation['native_log'])
+    trace_bytes=trace.read_bytes()
+    if not trace_bytes or trace_bytes not in native_log.read_bytes():
+        raise Invalid('prelaunch trace is not an exact retained native-log excerpt')
+    frame=observation.get('failed_frame',{})
+    if (frame.get('filename')!=str(ROOT/'machinery/study.py') or frame.get('function')!='call' or type(frame.get('lineno')) is not int):
+        raise Invalid('prelaunch failed frame is not the native role-call function')
+    text=source.read_text();tree=ast.parse(text)
+    cls=next((n for n in tree.body if isinstance(n,ast.ClassDef) and n.name=='Arm'),None)
+    function=next((n for n in cls.body if isinstance(n,ast.FunctionDef) and n.name=='call'),None) if cls else None
+    if function is None:raise Invalid('prelaunch old Arm.call source missing')
+    launches=[n.lineno for n in ast.walk(function) if isinstance(n,ast.Call) and
+        isinstance(n.func,ast.Attribute) and isinstance(n.func.value,ast.Name) and n.func.value.id=='subprocess' and n.func.attr=='Popen']
+    guards=[n.lineno for n in ast.walk(function) if isinstance(n,ast.Call) and isinstance(n.func,ast.Name) and n.func.id=='event']
+    line=frame['lineno']
+    expected=f'File "{frame["filename"]}", line {line}, in call'
+    if not launches or line not in guards or line>=min(launches) or expected.encode() not in trace_bytes:
+        raise Invalid('prelaunch failure is not a source-verified guard before watchdog Popen')
+    return observation_path
+
+
+def _generic_prelaunch_recovery(arm,key,receipt,request,workspace,index,authorization,grant,grant_hash,grant_path):
+    if (type(index) is not int or index<0 or not re.fullmatch(r'plan-[0-9]{4,}',key) or
+            key!=f'plan-{index:04d}' or getattr(arm,'mode',None) not in ('baseline','exploration')):
+        return None
+    if grant.get('failed_request_id')!=key or grant.get('arm')!=arm.mode or grant.get('study')!=str(arm.study.resolve()):
+        return None
+    if not PRELAUNCH_FIELDS<=set(grant):raise Invalid('prelaunch grant schema incomplete')
+    for field in PRELAUNCH_CORE_FIELDS:
+        if field.endswith(('_sha256','_binding')) and not re.fullmatch('[0-9a-f]{64}',str(grant[field])):
+            raise Invalid('prelaunch grant hash malformed')
+    core=grant['revision_core'];current=implementation();seal=read(arm.study/'seal.json');revision=seal.get('source_revision',{})
+    if (grant['schema']!='math-gkm.closed-prelaunch-proposer-recovery.v1' or
+            type(grant['logical_round']) is not int or grant['logical_round']!=index or grant['next_request_id']!=key+'-repair-1' or
+            grant['classification']!='closed_protocol_guard_failure_before_watchdog' or
+            grant['no_model_started'] is not True or grant['native_cleanup_verified'] is not True or
+            not isinstance(core,dict) or core.get('schema')!='math-gkm.prelaunch-source-revision.v1' or
+            any(core.get(field)!=grant[field] for field in PRELAUNCH_CORE_FIELDS) or
+            core.get('prelaunch_observation_sha256')!=grant['prelaunch_observation']['sha256'] or
+            digest(core)!=grant['revision_binding'] or revision.get('record')!=str(grant_path) or
+            revision.get('binding')!=grant['revision_binding'] or revision.get('old_seal_sha256')!=grant['old_seal_sha256'] or
+            arm.s.get('seal_hash')!=digest(seal) or seal.get('implementation')!=current or
+            grant['implementation_sha256']!=digest(current) or authorization.get('implementation_sha256')!=digest(current) or
+            authorization.get('user_explicit_ok') is not True):
+        raise Invalid('prelaunch grant does not bind the reviewed source revision')
+    _prelaunch_evidence(grant,arm,key,index)
+    job=arm.root/'jobs'/key;marker=job/'prelaunch-recovery.json'
+    if job.is_symlink() or not job.resolve().is_relative_to(arm.root.resolve()):raise Invalid('prelaunch job alias')
+    allowed={'spec.json','request.json','prompt.txt','receipt.json','prelaunch-recovery.json'}
+    if any(p.name not in allowed or p.is_symlink() or not p.is_file() for p in job.iterdir()):
+        raise Invalid('worker/watchdog effects or unknown artifacts exist; no prelaunch repair')
+    full_request={**request,'model':arm.p['model'],'reasoning_effort':REASONING_EFFORT,'request_id':key}
+    if (read(job/'request.json')!=full_request or digest(full_request)!=grant['request_binding'] or
+            read(job/'receipt.json')!=receipt or digest(receipt)!=grant['receipt_binding'] or
+            any(sha(job/name)!=grant[field] for name,field in (('receipt.json','receipt_file_sha256'),('spec.json','spec_sha256'),('prompt.txt','prompt_sha256'))) or
+            sha(arm.study/'protocol.json')!=grant['protocol_sha256'] or read(arm.study/'protocol.json')!=arm.p):
+        raise Invalid('prelaunch immutable request/spec/prompt/receipt/protocol changed')
+    spec=read(job/'spec.json');guard=arm.s.get('protocol_state') or {}
+    if (receipt.get('outcome')!='uncertain_effects_not_replayed' or 'returncode' in receipt or
+            receipt.get('payload') is not None or receipt.get('role')!='proposer' or receipt.get('request_id')!=key or
+            receipt.get('model')!=arm.p['model'] or receipt.get('reasoning_effort')!=REASONING_EFFORT or
+            receipt.get('elapsed_seconds')!=spec.get('seconds') or spec.get('seconds')!=arm.p['call_seconds'] or
+            spec.get('role')!='proposer' or spec.get('readonly') is not True or spec.get('request_id')!=key or
+            spec.get('transport')!='live' or arm.p.get('transport')!='live' or spec.get('model')!=arm.p['model'] or
+            spec.get('reasoning_effort')!=REASONING_EFFORT or Path(spec.get('workspace','')).resolve()!=Path(workspace).resolve() or
+            arm.s.get('reservations',{}).get('call-'+key)!=spec['seconds'] or
+            arm.s.get('counted_jobs',[]).count(key)!=1 or arm.s.get('receipts',[]).count(str(job))!=1 or
+            arm.s.get('receipt_hashes',{}).get(str(job))!=digest(receipt) or
+            arm.s.get('round')!=index or arm.s.get('phase')!='research' or arm.s.get('status')!='running' or
+            arm.s.get('active') is not None or arm.s.get('active_intent') is not None or
+            arm.s.get('resolution') is not None or guard.get('pending') is not None or guard.get('inflight') or
+            type(arm.p.get('proposal_repairs')) is not int or arm.p['proposal_repairs']<1):
+        raise Invalid('prelaunch recovery is not an immutable fully charged settled read-only proposer')
+    binding={'schema':'math-gkm.prelaunch-proposer-consumption.v1','grant_sha256':grant_hash,
+        'request_binding':grant['request_binding'],'receipt_binding':grant['receipt_binding'],
+        'workspace_binding':grant['workspace_binding'],'next_request_id':grant['next_request_id'],
+        'accounting':'Original full reservation remains charged; exactly one distinct repair uses ordinary existing allowance.'}
+    repair_job=arm.root/'jobs'/grant['next_request_id']
+    if marker.exists():
+        if read(marker)!=binding:raise Invalid('prelaunch grant consumption changed')
+        if repair_job.exists():
+            repair_spec=read(repair_job/'spec.json')
+            if (repair_spec.get('request_id')!=grant['next_request_id'] or repair_spec.get('role')!='proposer' or
+                    repair_spec.get('readonly') is not True or repair_spec.get('seconds')!=arm.p['call_seconds'] or
+                    Path(repair_spec.get('workspace','')).resolve()!=Path(workspace).resolve() or
+                    arm.s.get('counted_jobs',[]).count(grant['next_request_id'])!=1 or
+                    arm.s.get('reservations',{}).get('call-'+grant['next_request_id'])!=arm.p['call_seconds']):
+                raise Invalid('existing repair is not the exact ordinarily charged invocation')
+        elif digest(prelaunch_recovery_projection(arm.s))!=grant['recovery_projection_sha256'] or digest(inventory(workspace))!=grant['workspace_binding']:
+            raise Invalid('prelaunch state/workspace changed before the first repair')
+    else:
+        if (repair_job.exists() or (job/'validated-plan.json').exists() or
+                digest(prelaunch_recovery_projection(arm.s))!=grant['recovery_projection_sha256'] or
+                digest(inventory(workspace))!=grant['workspace_binding']):
+            raise Invalid('prelaunch state/costs/workspace changed or repair identity already exists')
+        write(marker,binding)
+    return {'previous_request':key,'receipt_hash':digest(receipt),
+        'error':'Closed protocol-guard failure before any watchdog launch; retain original charge and use the unique separately charged repair identity.',
+        'previous_payload':None,'operational_recovery_binding':digest(binding)}
+
+
+def operational_recovery(arm,key,receipt,request,workspace,index):
+    authority=ROOT/'.bootstrap/study-authorization.json'
+    if authority.is_file():
+        authorization=read(authority)
+        if 'prelaunch_recovery' in authorization:
+            grant,grant_hash,path=_protected_grant(authorization['prelaunch_recovery'])
+            result=_generic_prelaunch_recovery(arm,key,receipt,request,workspace,index,authorization,grant,grant_hash,path)
+            if result is not None:return result
+    return _historical_operational_recovery(arm,key,receipt,request,workspace,index)
+
+
+def validate_prelaunch_evidence(grant):
+    """Pure source/trace/closure validation; no marker, charge or worker action."""
+    path=_prelaunch_evidence(grant,None,None,None)
+    observation=read(path)
+    return {'observation_sha256':sha(path),
+        'old_study_source_sha256':observation['old_study_source']['sha256'],
+        'trace_sha256':observation['trace']['sha256']}
