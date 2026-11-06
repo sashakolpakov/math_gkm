@@ -7,6 +7,12 @@ retained records and independent review distinguish what was proposed, executed,
 compiled, replayed and actually proved. The fixed [mission](MISSION.md) and
 [design](docs/DESIGN.md) govern the project.
 
+For a fresh checkout, clone this repository with `--depth 1`. The
+[source checkout guide](docs/CLEAN_CHECKOUT.md) covers rebuilding dependencies,
+the preserved proof sources and recovery of historical artifacts. Scratch
+workspaces, runtime state and compilation products are excluded from the
+current tree.
+
 ## Current campaign: Gaussian-binomial quotient positivity
 
 The [Gaussian proof archive](research/gaussian-quotient-20261031/README.md)
@@ -363,10 +369,12 @@ The historical optional compilation-cache batch is described by its unchanged
 [release checksum manifest](repro/cache-2026-10-17.json). Its five assets are retired
 from supported recovery; use the portable source bootstrap with upstream dependency
 caches or a source build instead. The retirement policy rejects that legacy download
-before network access or destination writes; it does not itself attest remote deletion. Local cache cleanup must never remove necessary public source/data
-history or turn into a Git deletion commit. Ordinary `.olean` and `.lake` build
-caches remain untracked; explicitly sealed binary evidence keeps its recorded
-historical status.
+before network access or destination writes; it does not itself attest remote deletion.
+The November 2026 cleanup removes generated workspaces, compiled evidence and
+packed snapshots from the current tree while preserving the published Git
+history. Ordinary `.olean` and `.lake` build caches remain untracked. Historical
+binary evidence can be recovered from its original commit; see the
+[source checkout guide](docs/CLEAN_CHECKOUT.md).
 
 ## Public evidence provenance
 

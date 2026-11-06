@@ -1,3 +1,0 @@
-import MarkovLowerDomainME9C
-#print axioms MathGKM.Markov.lower_kernel_outside_negativeME9C
-#print axioms MathGKM.Markov.lower_kernel_outside_sourceME9C

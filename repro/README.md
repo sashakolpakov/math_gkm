@@ -1,5 +1,12 @@
 # Reproduction and cache recovery
 
+For the current source layout, see the
+[November 2026 cleanup and recovery guide](../docs/CLEAN_CHECKOUT.md).
+Packed workspaces and runtime directories referenced in the historical sections
+below are available from their original public commits. The
+[preserved Markov source package](markov-source-20261028/README.md) contains the
+499-module union recovered from the later local closed-round archives.
+
 The standalone runner creates a separate workspace and fresh proof outputs. It does not invoke or modify the autonomous researcher, change theorem sources, or overwrite historical evidence.
 
 The pinned source snapshot is public commit `ca0cb5c1151a11237f11e7c759b81e8a84bf48c5`, through worker 188. `manifest.json` binds 2,874 project sources, three fixed build inputs, Lean 4.32.2 and all nine dependency commits. Every source/input hash was checked against that public Git tree. Later interrupted worker 189 records are preserved separately and are not included in this profile.
@@ -47,7 +54,9 @@ Each run checks exact inputs, compiles in dependency order into a new `.scratch/
 
 ## Restore archived caches
 
-Necessary sources, scripts, inputs, pins and manifests stay in ordinary Git. Local cache removal must not become a Git deletion commit or history rewrite. The historical optional batch is recorded in the [recovery release](https://github.com/sashakolpakov/math_gkm/releases/tag/recovery-cache-2026-10-17) and its unchanged checksum manifest.
+Necessary sources, scripts, inputs, pins and manifests stay in ordinary Git.
+The November 2026 cleanup removes generated workspaces and packed snapshots
+from the current tree; their published history remains recoverable. The historical optional batch is recorded in the [recovery release](https://github.com/sashakolpakov/math_gkm/releases/tag/recovery-cache-2026-10-17) and its unchanged checksum manifest.
 
 The five `inactive-lean-cache-*.tar.gz` assets are retired from supported recovery. `retired-cache-policy.json` makes the historical command below fail before network access or destination writes. Rebuild from the pinned public sources with `bootstrap --dependencies cache` (the upstream Mathlib dependency cache), or use `--dependencies build`. Sources, pins and historical checksums remain unchanged. This source policy does not itself attest that remote assets have already been deleted.
 

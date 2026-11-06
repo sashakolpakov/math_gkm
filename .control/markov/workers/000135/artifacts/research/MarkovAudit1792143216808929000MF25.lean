@@ -1,4 +1,0 @@
-import MarkovSourceFallingMF25
-#print axioms MathGKM.Markov.integer_smoothed_iffMF25
-#print axioms MathGKM.Markov.source_horizontal_falling_iffMF25
-#print axioms MathGKM.Markov.source_vertical_falling_iffMF25

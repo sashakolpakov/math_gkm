@@ -8,9 +8,6 @@ __pycache__/
 *.olean.private
 *.olean.server
 
-# Local raw controls and operational observations for the pending handoff.
-/.bootstrap/concept-driver-20261020/general-continuation/catalogue-duration-maintenance-20261026/private/
-
 # Generated compilation products; retain proof sources and rebuild metadata.
 *.olean.*
 *.c.o
@@ -19,6 +16,21 @@ __pycache__/
 *.so
 *.dylib
 *.bc
-# Execution workspaces and private operational records are published explicitly.
-/.scratch/
-/.bootstrap/
+# Local execution workspaces, operational records and caches.
+.scratch/
+*.scratch
+.bootstrap/
+.control/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+*.tmp
+*.tmp.*
+*.swp
+*.swo
+*~
+
+# Historical packed workspaces are recoverable from Git history.
+/evidence/**/*.tar.gz
+/evidence/*.tar.gz

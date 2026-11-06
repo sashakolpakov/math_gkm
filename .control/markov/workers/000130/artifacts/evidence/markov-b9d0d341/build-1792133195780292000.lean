@@ -1,3 +1,0 @@
-import MarkovBottomCoefficientsMAA6
-import MarkovHorizontalThirdSourceM13D
-#check MathGKM.Markov.horizontal_third_formulaM13D

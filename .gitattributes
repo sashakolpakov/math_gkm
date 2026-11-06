@@ -1,0 +1,6 @@
+# Preserve the exact bytes of hash-bound proof sources and frozen test inputs.
+repro/markov-source-20261028/** -text
+tests/fixtures/retention_capacity/** -text
+
+# Whitespace in archived Lean proofs is part of their original source hashes.
+repro/markov-source-20261028/MathGKM/*.lean -whitespace

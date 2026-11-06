@@ -11,7 +11,7 @@ import unittest
 
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parents[1]
-OPS = ROOT / '.bootstrap/concept-driver-20261020/general-continuation'
+OPS = ROOT / 'tests/fixtures/retention_capacity'
 NEW = OPS / 'retention-scan19-maintenance-20261024'
 OLD = OPS / 'retention-scan20-20261024'
 CASES = (
